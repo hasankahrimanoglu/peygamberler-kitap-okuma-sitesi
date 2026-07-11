@@ -33,6 +33,8 @@ export type BookQuestion = {
 export type BookChapter = {
   id: string;
   title: string;
+  /** Bölüm listelerinde başlığın altında görünen kısa açıklama */
+  ozet?: string;
   audioUrl: string;
   badgeName: string;
   paragraphs: BookContentBlock[];
@@ -123,6 +125,7 @@ export const books: BookDefinition[] = [
       {
         id: "1",
         title: "İlk İnsan, İlk Öğrenme",
+        ozet: "Hz. Âdem'in yaratılışı ve ilk öğrendikleri",
         audioUrl: "",
         badgeName: "İlk Adım Rozeti",
         has_question: true,
@@ -173,6 +176,7 @@ export const books: BookDefinition[] = [
       {
         id: "2",
         title: "İsimlerin Sırrı",
+        ozet: "İsimlerin öğretilmesi ve kibrin dersi",
         audioUrl: "",
         badgeName: "Bilgi Rozeti",
         has_question: false,
@@ -210,6 +214,7 @@ export const books: BookDefinition[] = [
       {
         id: "3",
         title: "Unutmak ve Hatırlamak",
+        ozet: "Bir hata, pişmanlık ve tövbenin kapısı",
         audioUrl: "",
         badgeName: "Tövbe Rozeti",
         has_question: true,
@@ -260,6 +265,7 @@ export const books: BookDefinition[] = [
       {
         id: "4",
         title: "Yeryüzünde İlk Sabah",
+        ozet: "Yeryüzüne iniş ve ilk sorumluluklar",
         audioUrl: "",
         badgeName: "Sorumluluk Rozeti",
         has_question: false,
@@ -297,6 +303,7 @@ export const books: BookDefinition[] = [
       {
         id: "5",
         title: "İlk Aile, İlk İyilik",
+        ozet: "İlk ailenin kuruluşu ve merhamet",
         audioUrl: "",
         badgeName: "Aile ve Merhamet Rozeti",
         has_question: true,
@@ -355,6 +362,7 @@ export const books: BookDefinition[] = [
       {
         id: "1",
         title: "Sabırlı Bir Davet",
+        ozet: "Usanmadan süren güzel bir çağrı",
         audioUrl: "",
         badgeName: "Sabır Başlangıç Rozeti",
         has_question: true,
@@ -409,6 +417,7 @@ export const books: BookDefinition[] = [
       {
         id: "2",
         title: "Geminin Hazırlığı",
+        ozet: "Emekle yükselen büyük gemi",
         audioUrl: "",
         badgeName: "Emek Rozeti",
         has_question: false,
@@ -447,6 +456,7 @@ export const books: BookDefinition[] = [
       {
         id: "3",
         title: "Yağmur Başlayınca",
+        ozet: "Fırtınada sakin kalan kalpler",
         audioUrl: "",
         badgeName: "Güven Rozeti",
         has_question: true,
@@ -490,6 +500,7 @@ export const books: BookDefinition[] = [
       {
         id: "4",
         title: "Güvenle Yolculuk",
+        ozet: "Dalgalar üzerinde tevekkül günleri",
         audioUrl: "",
         badgeName: "Tevekkül Rozeti",
         has_question: false,
@@ -522,6 +533,7 @@ export const books: BookDefinition[] = [
       {
         id: "5",
         title: "Yeni Bir Başlangıç",
+        ozet: "Yeryüzünde umutla açılan yeni sayfa",
         audioUrl: "",
         badgeName: "Yeni Başlangıç Rozeti",
         has_question: true,

@@ -4,12 +4,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabase";
+import { books as dataBooks } from "../../src/data/books";
 import {
   Buton,
   DurumCipi,
   IlerlemeCubugu,
   Kart,
   OdulIkonu,
+  YedekliGorsel,
 } from "../../src/components/ui";
 
 type AdventureStatus = "completed" | "active" | "locked";
@@ -291,6 +293,28 @@ const localTotalChapterCounts: Record<number, number> = {
   5: 1,
 };
 
+const bolumKataloglari: Record<number, { title: string; badgeName: string }[]> = {
+  1: ademChapterCatalog,
+  2: nuhChapterCatalog,
+  3: ebubekirChapterCatalog,
+  4: omerChapterCatalog,
+};
+
+// Gerçek içeriği olan kitaplarda (books.ts) bölüm özetini bulur
+const adventureBooksTsId: Record<number, string> = {
+  1: "hz-adem",
+  2: "hz-nuh",
+};
+
+function bolumOzetiBul(adventureId: number, bolumIndex: number) {
+  const bookId = adventureBooksTsId[adventureId];
+  if (!bookId) return undefined;
+
+  return dataBooks
+    .find((book) => book.id === bookId)
+    ?.chapters[bolumIndex]?.ozet;
+}
+
 function normalizeText(value: string) {
   return value
     .toLocaleLowerCase("tr-TR")
@@ -341,29 +365,49 @@ function KapakMini({
   bookKey: string | null;
   title: string;
 }) {
-  const [kaynak, setKaynak] = useState(
-    bookKey ? `/kapaklar/kapak-${bookKey}.png` : "/kapaklar/placeholder.svg",
-  );
-
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={kaynak}
+    <YedekliGorsel
+      src={
+        bookKey ? `/kapaklar/kapak-${bookKey}.png` : "/kapaklar/placeholder.svg"
+      }
+      yedekSrc="/kapaklar/placeholder.svg"
       alt={`${title} kitap kapağı`}
-      onError={() => {
-        if (kaynak !== "/kapaklar/placeholder.svg")
-          setKaynak("/kapaklar/placeholder.svg");
-      }}
-      className="w-24 shrink-0 rounded-lg shadow-kart-gece sm:w-28"
-      draggable={false}
+      className="h-56 w-auto shrink-0 rounded-lg object-contain shadow-kart-gece lg:h-72"
     />
   );
 }
+
+function KitapIkonu() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden
+      className="h-4 w-4"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z" />
+      <path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z" />
+    </svg>
+  );
+}
+
+type SonrakiBolum = {
+  ad: string;
+  ozet?: string;
+  rozetAdi?: string;
+  sira: number;
+};
 
 function KitapKarti({
   adventure,
   bookKey,
   oncekiAd,
+  oncekiIlerleme,
+  sonrakiBolum,
   isShaking,
   onLockedClick,
   onOpen,
@@ -371,15 +415,19 @@ function KitapKarti({
   adventure: AdventureCard;
   bookKey: string | null;
   oncekiAd: string | null;
+  oncekiIlerleme: { completed: number; total: number } | null;
+  sonrakiBolum: SonrakiBolum | null;
   isShaking: boolean;
   onLockedClick: (id: number) => void;
   onOpen?: () => void;
 }) {
   const kilitli = adventure.status === "locked";
   const tamamlandi = adventure.status === "completed";
-  const hicBaslamadi =
-    adventure.status === "active" && (adventure.earnedBadgeCount ?? 0) === 0;
+  const kazanilan = adventure.earnedBadgeCount ?? 0;
+  const toplam = adventure.totalBadgeCount ?? 0;
+  const hicBaslamadi = adventure.status === "active" && kazanilan === 0;
   const tiklanabilir = !kilitli && Boolean(onOpen);
+  const gosterilecekRozet = Math.min(toplam, 5);
 
   return (
     <motion.article
@@ -408,15 +456,25 @@ function KitapKarti({
             else onOpen?.();
           }
         }}
-        className={tiklanabilir ? "cursor-pointer" : kilitli ? "cursor-not-allowed" : ""}
+        className={`focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vurgu ${
+          tiklanabilir ? "cursor-pointer" : kilitli ? "cursor-not-allowed" : ""
+        }`}
       >
-        <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
-          <div className="flex justify-center sm:block">
+        {/* Üç kademe: mobil tek sütun; tablet dikey (md) kapak+bilgi yan yana,
+            kutu altta tam genişlik; geniş ekranda (lg) üç sütun */}
+        <div className="grid gap-5 md:grid-cols-[auto_minmax(0,1fr)] md:items-center lg:grid-cols-[auto_minmax(0,1fr)_17rem]">
+          <div className="flex justify-center">
             <KapakMini bookKey={bookKey} title={adventure.name} />
           </div>
 
+          {/* Orta: kitap bilgisi + ilerleme + rozet dizisi */}
           <div className="min-w-0 flex-1">
-            <p className="font-baslik text-xs font-semibold uppercase tracking-widest text-vurgu">
+            <p className="flex items-center gap-1.5 font-baslik text-xs font-semibold uppercase tracking-widest text-vurgu">
+              {tamamlandi ? (
+                <span aria-hidden className="text-eylem">
+                  ✓
+                </span>
+              ) : null}
               {adventure.id}. Kitap
             </p>
             <h2 className="font-baslik text-2xl font-bold sm:text-3xl">
@@ -428,69 +486,154 @@ function KitapKarti({
 
             {!kilitli ? (
               <>
-                <IlerlemeCubugu
-                  className="mt-4 max-w-md"
-                  yuzde={adventure.progress}
-                  etiket={`${adventure.earnedBadgeCount ?? 0} / ${adventure.totalBadgeCount ?? 0} bölüm tamamlandı`}
-                />
-                <p className="mt-2 font-govde text-sm text-murekkep-soluk">
-                  🏅 {adventure.earnedBadgeCount ?? 0} Kazanılan Rozet
+                <p
+                  className={`mt-4 flex items-center gap-2 font-baslik text-base font-semibold ${
+                    tamamlandi ? "text-eylem" : "text-vurgu"
+                  }`}
+                >
+                  <span aria-hidden>{tamamlandi ? "✓" : "🔒"}</span>
+                  Bölüm {kazanilan}/{toplam} —{" "}
+                  {tamamlandi ? "Tamamlandı" : "Devam Ediyor"}
                 </p>
+                <IlerlemeCubugu
+                  className="mt-1.5 max-w-xs"
+                  yuzde={adventure.progress}
+                />
+                <p className="mt-4 font-baslik text-[11px] font-semibold uppercase tracking-widest text-murekkep-soluk">
+                  Kazanılan Rozetler
+                </p>
+                <div className="mt-2 flex items-center gap-2">
+                  {Array.from({ length: gosterilecekRozet }, (_, i) => (
+                    <OdulIkonu
+                      key={i}
+                      tip="rozet"
+                      anahtar={`${bookKey ?? "kitap"}-bolum-${i + 1}`}
+                      boyut={38}
+                      kazanildi={i < kazanilan}
+                    />
+                  ))}
+                  {toplam > gosterilecekRozet ? (
+                    <span className="grid h-9 w-9 place-items-center rounded-full bg-yuzey-2 font-baslik text-xs font-bold text-murekkep-soluk">
+                      +{toplam - gosterilecekRozet}
+                    </span>
+                  ) : null}
+                </div>
               </>
             ) : (
-              <p className="mt-4 flex items-center gap-2 font-govde text-sm text-murekkep-soluk">
-                🔒 Kilidi henüz açılmadı
-              </p>
-            )}
-          </div>
-
-          <div className="w-full shrink-0 sm:w-60">
-            {tamamlandi ? (
-              <div className="rounded-buton border border-altin-400/50 bg-yuzey-2 p-4 text-center">
-                <p className="font-baslik text-[11px] font-semibold uppercase tracking-widest text-vurgu">
-                  Kazanılan Madalya
+              <>
+                <p className="mt-4 inline-flex items-center gap-2 rounded-buton border border-cizgi bg-yuzey-2 px-3 py-1.5 font-baslik text-sm font-semibold text-murekkep-soluk">
+                  🔒 Henüz açılmadı
                 </p>
-                <div className="mt-2 flex justify-center">
-                  <OdulIkonu
-                    tip="madalya"
-                    anahtar={bookKey ?? "kitap"}
-                    boyut={64}
-                    kazanildi
-                  />
-                </div>
-                <p className="mt-1 font-baslik text-sm font-bold text-vurgu">
-                  {adventure.name} Madalyası
-                </p>
-                <Buton
-                  varyant="cerceve"
-                  boyut="kucuk"
-                  tamGenislik
-                  className="mt-3"
-                >
-                  Tekrar Oku
-                </Buton>
-              </div>
-            ) : kilitli ? (
-              <div className="rounded-buton border border-cizgi bg-yuzey-2 p-4 text-center">
-                <p className="font-baslik text-[11px] font-semibold uppercase tracking-widest text-murekkep-soluk">
-                  Açılma Koşulu
-                </p>
-                <p className="mt-2 font-govde text-sm text-murekkep-soluk">
+                <p className="mt-3 font-govde text-sm text-murekkep-soluk">
                   {oncekiAd
                     ? `${oncekiAd} kitabındaki Büyük Final Testi'ni tamamladığında bu kitap açılacak.`
                     : "Önceki kitabı tamamladığında bu kitap açılacak."}
                 </p>
-              </div>
-            ) : (
-              <div className="flex flex-col items-stretch gap-2.5">
-                <DurumCipi
-                  durum={hicBaslamadi ? "yeni" : "devam"}
-                  className="self-center sm:self-end"
+              </>
+            )}
+          </div>
+
+          {/* Sağ kutu: üç durumda da aynı çerçeve yapısı */}
+          <div
+            className={`flex w-full shrink-0 flex-col items-center justify-center gap-2 rounded-buton border p-4 text-center md:col-span-2 lg:col-span-1 lg:h-72 ${
+              tamamlandi
+                ? "border-altin-400/70 bg-yuzey-2 shadow-parlama"
+                : "border-altin-400/40 bg-yuzey-2"
+            }`}
+          >
+            {tamamlandi ? (
+              <>
+                <OdulIkonu
+                  tip="madalya"
+                  anahtar={bookKey ?? "kitap"}
+                  boyut={72}
+                  kazanildi
                 />
-                <Buton varyant={hicBaslamadi ? "altin" : "eylem"} tamGenislik>
-                  {hicBaslamadi ? "Yolculuğa Başla ✦" : "Devam Et →"}
+                <p className="font-baslik text-xs font-semibold uppercase tracking-widest text-vurgu">
+                  {adventure.name} Madalyası
+                </p>
+                <p className="font-baslik text-xl font-bold text-vurgu">
+                  Tebrikler!
+                </p>
+                <p className="font-govde text-sm text-murekkep-soluk">
+                  Bu hikâyenin tüm duraklarını tamamladın.
+                </p>
+                <Buton varyant="eylem" boyut="kucuk" tamGenislik className="mt-1">
+                  <KitapIkonu /> Tekrar Oku
                 </Buton>
-              </div>
+              </>
+            ) : kilitli ? (
+              <>
+                <p className="font-baslik text-xs font-semibold uppercase tracking-widest text-murekkep-soluk">
+                  Açılma Koşulu
+                </p>
+                <span aria-hidden className="text-3xl">
+                  🔒
+                </span>
+                <p className="font-govde text-sm text-murekkep-soluk">
+                  {oncekiAd
+                    ? `${oncekiAd} kitabındaki Büyük Final Testi'ni tamamla.`
+                    : "Önceki kitabı tamamla."}
+                </p>
+                {oncekiIlerleme && oncekiIlerleme.total > 0 ? (
+                  <div className="mt-1 flex w-full items-center gap-2">
+                    <span className="font-baslik text-xs font-semibold text-murekkep-soluk">
+                      {oncekiIlerleme.completed} / {oncekiIlerleme.total}
+                    </span>
+                    <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-yuzey">
+                      <div
+                        className="h-full rounded-full bg-murekkep-soluk/60"
+                        style={{
+                          width: `${Math.min(100, Math.round((oncekiIlerleme.completed / oncekiIlerleme.total) * 100))}%`,
+                        }}
+                      />
+                    </div>
+                  </div>
+                ) : null}
+              </>
+            ) : (
+              <>
+                <p className="font-baslik text-xs font-semibold uppercase tracking-widest text-vurgu">
+                  Sıradaki Bölüm
+                </p>
+                {sonrakiBolum ? (
+                  <>
+                    <p className="font-baslik text-lg font-bold">
+                      {sonrakiBolum.ad}
+                    </p>
+                    {sonrakiBolum.ozet ? (
+                      <p className="-mt-1.5 font-govde text-sm text-murekkep-soluk">
+                        {sonrakiBolum.ozet}
+                      </p>
+                    ) : null}
+                    <OdulIkonu
+                      tip="rozet"
+                      anahtar={`${bookKey ?? "kitap"}-bolum-${sonrakiBolum.sira}`}
+                      boyut={58}
+                      kazanildi={false}
+                      className="!opacity-90 !grayscale-0"
+                    />
+                    {sonrakiBolum.rozetAdi ? (
+                      <div>
+                        <p className="font-govde text-xs text-murekkep-soluk">
+                          Kazanılacak Rozet
+                        </p>
+                        <p className="font-baslik text-sm font-bold uppercase tracking-wider text-vurgu">
+                          {sonrakiBolum.rozetAdi}
+                        </p>
+                      </div>
+                    ) : null}
+                  </>
+                ) : null}
+                <Buton
+                  varyant={hicBaslamadi ? "altin" : "eylem"}
+                  boyut="kucuk"
+                  tamGenislik
+                  className="mt-1"
+                >
+                  {hicBaslamadi ? "Yolculuğa Başla ✦" : "Okumaya Devam Et →"}
+                </Buton>
+              </>
             )}
           </div>
         </div>
@@ -498,6 +641,7 @@ function KitapKarti({
     </motion.article>
   );
 }
+
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -904,7 +1048,7 @@ export default function DashboardPage() {
     <main className="tema-cocuk zemin-yildizli relative min-h-screen text-murekkep">
       <div className="relative mx-auto max-w-5xl px-4 py-6 sm:px-8">
         <header className="mb-10">
-          <Kart className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <Kart className="flex flex-col gap-4 md:flex-row md:flex-wrap md:items-center md:justify-between">
             {/* Sol: avatar + isim */}
             <div className="flex items-center gap-4">
               <div className="grid h-16 w-16 shrink-0 place-items-center overflow-hidden rounded-full border-2 border-altin-400/60 bg-yuzey-2">
@@ -943,23 +1087,43 @@ export default function DashboardPage() {
 
             {/* Sağ: sayaçlar + çıkış */}
             <div className="flex flex-wrap items-center justify-center gap-3">
-              <div className="rounded-buton bg-yuzey-2 px-4 py-2 text-center">
-                <p className="font-baslik text-xl font-bold">
+              <div className="rounded-buton bg-yuzey-2 px-4 py-2">
+                <p className="flex items-center gap-2 font-baslik text-xl font-bold leading-tight">
+                  <span aria-hidden className="text-xl">
+                    🏅
+                  </span>
                   {totalEarnedBadgeCount}
                 </p>
-                <p className="font-govde text-xs text-murekkep-soluk">
+                <p className="mt-0.5 font-govde text-xs text-murekkep-soluk">
                   Toplam Rozet
                 </p>
               </div>
-              <div className="rounded-buton bg-yuzey-2 px-4 py-2 text-center">
-                <p className="font-baslik text-xl font-bold">
+              <div className="rounded-buton bg-yuzey-2 px-4 py-2">
+                <p className="flex items-center gap-2 font-baslik text-xl font-bold leading-tight">
+                  <span aria-hidden className="text-xl">
+                    📖
+                  </span>
                   {totalCompletedBookCountValue}
                 </p>
-                <p className="font-govde text-xs text-murekkep-soluk">
+                <p className="mt-0.5 font-govde text-xs text-murekkep-soluk">
                   Kitap Tamamlandı
                 </p>
               </div>
               <Buton varyant="cerceve" boyut="kucuk" onClick={cikisYap}>
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden
+                  className="h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4" />
+                  <path d="M16 17l5-5-5-5" />
+                  <path d="M21 12H9" />
+                </svg>
                 Çıkış Yap
               </Buton>
             </div>
@@ -1017,6 +1181,28 @@ export default function DashboardPage() {
               const kilitli = adventure.status === "locked";
               const tamamlandi = adventure.status === "completed";
 
+              // Kilitli kartın "Açılma Koşulu" kutusu için önceki kitabın ilerlemesi
+              const oncekiAdventure = adventures[index - 1];
+              const oncekiProgress = oncekiAdventure
+                ? bookProgressByAdventure[oncekiAdventure.id]
+                : undefined;
+
+              // Aktif kartın "Sıradaki Bölüm" kutusu için bölüm bilgisi
+              const katalog = bolumKataloglari[adventure.id];
+              const kazanilanSayi = adventure.earnedBadgeCount ?? 0;
+              const sonrakiKatalogBolumu =
+                adventure.status === "active" && katalog
+                  ? katalog[Math.min(kazanilanSayi, katalog.length - 1)]
+                  : undefined;
+              const sonrakiBolum = sonrakiKatalogBolumu
+                ? {
+                    ad: sonrakiKatalogBolumu.title,
+                    ozet: bolumOzetiBul(adventure.id, kazanilanSayi),
+                    rozetAdi: sonrakiKatalogBolumu.badgeName,
+                    sira: kazanilanSayi + 1,
+                  }
+                : null;
+
               return (
                 <li key={adventure.id} className="relative flex gap-4 sm:gap-6">
                   <div
@@ -1035,6 +1221,15 @@ export default function DashboardPage() {
                     adventure={adventure}
                     bookKey={bookKey}
                     oncekiAd={adventures[index - 1]?.name ?? null}
+                    oncekiIlerleme={
+                      oncekiProgress
+                        ? {
+                            completed: oncekiProgress.completedCount,
+                            total: oncekiProgress.totalCount,
+                          }
+                        : null
+                    }
+                    sonrakiBolum={sonrakiBolum}
                     isShaking={shakingCardId === adventure.id}
                     onLockedClick={handleLockedCardClick}
                     onOpen={

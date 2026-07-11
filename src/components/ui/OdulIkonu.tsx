@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { YedekliGorsel } from "./YedekliGorsel";
 
 type OdulTipi = "rozet" | "madalya" | "unvan" | "avatar";
 
@@ -40,22 +40,16 @@ export function OdulIkonu({
   alt,
   className = "",
 }: OdulIkonuProps) {
-  const [kaynak, setKaynak] = useState(`${klasorler[tip]}${anahtar}.png`);
-
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={kaynak}
-      alt={alt ?? ""}
+    <YedekliGorsel
+      src={`${klasorler[tip]}${anahtar}.png`}
+      yedekSrc={placeholderlar[tip]}
+      alt={alt}
       width={boyut}
       height={boyut}
-      onError={() => {
-        if (kaynak !== placeholderlar[tip]) setKaynak(placeholderlar[tip]);
-      }}
       className={`select-none object-contain ${
         kazanildi ? "" : "opacity-45 grayscale"
       } ${className}`}
-      draggable={false}
     />
   );
 }

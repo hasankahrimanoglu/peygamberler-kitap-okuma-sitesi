@@ -10,6 +10,7 @@ import {
   IlerlemeCubugu,
   Kart,
   OdulIkonu,
+  YedekliGorsel,
 } from "../../../src/components/ui";
 
 type KitapKey = "adem" | "nuh" | "ebubekir" | "omer";
@@ -17,6 +18,7 @@ type KitapKey = "adem" | "nuh" | "ebubekir" | "omer";
 type BolumBilgi = {
   id: string;
   title: string;
+  ozet?: string;
   badgeName: string;
   okumaYolu: string;
 };
@@ -45,6 +47,7 @@ function booksTsBolumleri(bookId: string, routePrefix: string): BolumBilgi[] {
   return kitap.chapters.map((bolum) => ({
     id: bolum.id,
     title: bolum.title,
+    ozet: bolum.ozet,
     badgeName: bolum.badgeName,
     okumaYolu: `/reader/${routePrefix}-${bolum.id}`,
   }));
@@ -53,16 +56,16 @@ function booksTsBolumleri(bookId: string, routePrefix: string): BolumBilgi[] {
 // Hz. Ebû Bekir ve Hz. Ömer içerikleri henüz books.ts'e taşınmadı;
 // bölüm listeleri harita sayfasındaki katalogla aynı tutulur.
 const ebubekirBolumleri: BolumBilgi[] = [
-  { id: "4", title: "Özgürlüğe Kavuşanlar", badgeName: "Mekke Çarşısı Rozeti" },
-  { id: "5", title: "Sabır Yılları", badgeName: "Habeşistan Yolu Çıkartması" },
-  { id: "6", title: "O Söylüyorsa Doğrudur", badgeName: "Doğruluk Rozeti" },
-  { id: "7", title: "Mağara Arkadaşı", badgeName: "Tevekkül Rozeti" },
-  { id: "8", title: "Medine'de Yeni Sabah", badgeName: "Kardeşlik Rozeti" },
-  { id: "9", title: "Birlikte Güçlüyüz", badgeName: "Dayanışma Rozeti" },
-  { id: "10", title: "Zor Günde Sakinlik", badgeName: "Teselli Rozeti" },
-  { id: "11", title: "Emaneti Taşıyan", badgeName: "Sorumluluk Rozeti" },
-  { id: "12", title: "Kararlılık Zamanı", badgeName: "Kararlılık Rozeti" },
-  { id: "13", title: "En Kutsal Görev", badgeName: "Vefa Rozeti" },
+  { id: "4", title: "Özgürlüğe Kavuşanlar", ozet: "Bilâl'in özgürlüğe kavuşma hikâyesi", badgeName: "Mekke Çarşısı Rozeti" },
+  { id: "5", title: "Sabır Yılları", ozet: "Zor günlerde direnen kalpler", badgeName: "Habeşistan Yolu Çıkartması" },
+  { id: "6", title: "O Söylüyorsa Doğrudur", ozet: "Sarsılmaz güvenin ve doğruluğun sesi", badgeName: "Doğruluk Rozeti" },
+  { id: "7", title: "Mağara Arkadaşı", ozet: "Hicret yolunda vefalı bir dostluk", badgeName: "Tevekkül Rozeti" },
+  { id: "8", title: "Medine'de Yeni Sabah", ozet: "Yeni yurtta kardeşliğin kuruluşu", badgeName: "Kardeşlik Rozeti" },
+  { id: "9", title: "Birlikte Güçlüyüz", ozet: "Dayanışmayla aşılan zorluklar", badgeName: "Dayanışma Rozeti" },
+  { id: "10", title: "Zor Günde Sakinlik", ozet: "Üzüntülü günde teselli veren duruş", badgeName: "Teselli Rozeti" },
+  { id: "11", title: "Emaneti Taşıyan", ozet: "Büyük sorumluluğun omuzlanışı", badgeName: "Sorumluluk Rozeti" },
+  { id: "12", title: "Kararlılık Zamanı", ozet: "Doğru bildiğinde sebat etmek", badgeName: "Kararlılık Rozeti" },
+  { id: "13", title: "En Kutsal Görev", ozet: "Vefayla taşınan kutsal emanet", badgeName: "Vefa Rozeti" },
 ].map((bolum) => ({ ...bolum, okumaYolu: `/test-reader?chapter=${bolum.id}` }));
 
 const kitaplar: Record<KitapKey, KitapBilgi> = {
@@ -104,9 +107,9 @@ const kitaplar: Record<KitapKey, KitapBilgi> = {
       "Adaletin, cesaretin ve doğruyu aramanın kapısı. Bölümler yakında bağlanacak.",
     dbKeywords: ["omer"],
     bolumler: [
-      { id: "1", title: "Adalet Kapısı Açılıyor", badgeName: "Adalet Başlangıç Rozeti", okumaYolu: "" },
-      { id: "2", title: "Güçlü Bir Karar", badgeName: "Cesaret Rozeti", okumaYolu: "" },
-      { id: "3", title: "Halkın Yanında", badgeName: "Sorumluluk Rozeti", okumaYolu: "" },
+      { id: "1", title: "Adalet Kapısı Açılıyor", ozet: "Adaletle tanışmanın ilk adımı", badgeName: "Adalet Başlangıç Rozeti", okumaYolu: "" },
+      { id: "2", title: "Güçlü Bir Karar", ozet: "Cesaretle verilen büyük bir karar", badgeName: "Cesaret Rozeti", okumaYolu: "" },
+      { id: "3", title: "Halkın Yanında", ozet: "Halkını gözeten bir yönetici", badgeName: "Sorumluluk Rozeti", okumaYolu: "" },
     ],
     quizYolu: null,
   },
@@ -126,20 +129,31 @@ function normalizeText(value: string) {
     .replaceAll("ç", "c");
 }
 
-function KapakGorseli({ kitapKey, title }: { kitapKey: string; title: string }) {
-  const [kaynak, setKaynak] = useState(`/kapaklar/kapak-${kitapKey}.png`);
-
+function KitapIkonu() {
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={kaynak}
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden
+      className="h-4 w-4"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z" />
+      <path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z" />
+    </svg>
+  );
+}
+
+function KapakGorseli({ kitapKey, title }: { kitapKey: string; title: string }) {
+  return (
+    <YedekliGorsel
+      src={`/kapaklar/kapak-${kitapKey}.png`}
+      yedekSrc="/kapaklar/placeholder.svg"
       alt={`${title} kitap kapağı`}
-      onError={() => {
-        if (kaynak !== "/kapaklar/placeholder.svg")
-          setKaynak("/kapaklar/placeholder.svg");
-      }}
       className="w-28 rounded-lg shadow-kart-gece sm:w-36"
-      draggable={false}
     />
   );
 }
@@ -339,7 +353,10 @@ export default function KitapDetaySayfasi() {
                   className="min-w-0 flex-1"
                 >
                   {/* Geniş ekranda tek satır: başlık | rozet (soldan hizalı sütun) | durum + buton */}
-                  <div className="flex flex-col gap-3 sm:grid sm:grid-cols-[minmax(0,5fr)_minmax(0,4fr)_auto] sm:items-center sm:gap-4">
+                  {/* Üç kademe: mobil dikey; tablet dikeyde (md) durum+buton alt alta
+                      dar sütunda; geniş ekranda (lg) sabit 18.5rem yan yana sütun.
+                      Sabit/dar son sütun sayesinde rozetler her satırda aynı hizada */}
+                  <div className="flex flex-col gap-3 md:grid md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_auto] md:items-center md:gap-4 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_18.5rem]">
                     <div className="min-w-0">
                       <p className="font-baslik text-xs font-semibold uppercase tracking-widest text-murekkep-soluk">
                         {index + 1}. Bölüm
@@ -347,6 +364,11 @@ export default function KitapDetaySayfasi() {
                       <h3 className="font-baslik text-lg font-bold">
                         {bolum.title}
                       </h3>
+                      {bolum.ozet ? (
+                        <p className="font-govde text-sm text-murekkep-soluk">
+                          {bolum.ozet}
+                        </p>
+                      ) : null}
                     </div>
 
                     <div className="flex items-center gap-2.5">
@@ -359,13 +381,13 @@ export default function KitapDetaySayfasi() {
                       />
                       <div>
                         <p className="font-baslik text-[11px] font-semibold uppercase tracking-wider text-murekkep-soluk">
-                          Kazanılacak Rozet
+                          {tamamlandi ? "Kazanılan Rozet" : "Kazanılacak Rozet"}
                         </p>
                         <p className="font-govde text-sm">{bolum.badgeName}</p>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-3 sm:justify-end">
+                    <div className="flex items-center gap-3 md:flex-col md:items-end md:justify-center md:gap-2 lg:flex-row lg:items-center lg:justify-end lg:gap-3">
                       <DurumCipi
                         durum={
                           tamamlandi ? "tamamlandi" : aktif ? "devam" : "kilitli"
@@ -384,28 +406,26 @@ export default function KitapDetaySayfasi() {
                                 : "eylem"
                           }
                           boyut="kucuk"
-                          className="hidden sm:inline-flex"
+                          className="hidden md:inline-flex"
                           onClick={() => router.push(bolum.okumaYolu)}
                         >
-                          {tamamlandi
-                            ? "Tekrar Oku"
-                            : hicBaslamadi
-                              ? "Yolculuğa Başla ✦"
-                              : "Devam Et →"}
+                          {tamamlandi ? (
+                            <>
+                              <KitapIkonu /> Tekrar Oku
+                            </>
+                          ) : hicBaslamadi ? (
+                            "Yolculuğa Başla ✦"
+                          ) : (
+                            "Devam Et →"
+                          )}
                         </Buton>
                       )}
                     </div>
                   </div>
 
-                  {kilitli ? (
-                    <p className="mt-3 font-govde text-sm text-murekkep-soluk">
-                      {bolumlerBagli
-                        ? `Bu bölüm, ${index}. bölümü tamamladığında açılacak.`
-                        : "Bu kitabın bölümleri yakında bağlanacak."}
-                    </p>
-                  ) : (
+                  {kilitli ? null : (
                     /* Mobilde buton kartın altında tam genişlik (dokunma kuralı) */
-                    <div className="mt-4 sm:hidden">
+                    <div className="mt-4 md:hidden">
                       <Buton
                         varyant={
                           tamamlandi ? "cerceve" : hicBaslamadi ? "altin" : "eylem"
@@ -414,11 +434,15 @@ export default function KitapDetaySayfasi() {
                         tamGenislik
                         onClick={() => router.push(bolum.okumaYolu)}
                       >
-                        {tamamlandi
-                          ? "Tekrar Oku"
-                          : hicBaslamadi
-                            ? "Yolculuğa Başla ✦"
-                            : "Devam Et →"}
+                        {tamamlandi ? (
+                          <>
+                            <KitapIkonu /> Tekrar Oku
+                          </>
+                        ) : hicBaslamadi ? (
+                          "Yolculuğa Başla ✦"
+                        ) : (
+                          "Devam Et →"
+                        )}
                       </Buton>
                     </div>
                   )}
