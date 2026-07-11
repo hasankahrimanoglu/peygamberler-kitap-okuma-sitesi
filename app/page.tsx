@@ -63,35 +63,53 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(255,247,223,0.98)_0%,rgba(255,247,223,0.92)_44%,rgba(226,247,232,0.86)_100%)]" />
         </div>
 
-        <header className="relative z-10 mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
-          <Link
-            href="/"
-            className="text-xs font-black uppercase tracking-[0.34em] text-[#8a3d12] sm:text-sm"
-          >
-            Peygamberler Keşif
-          </Link>
+        <header className="relative z-20 border-b border-[#ead39c] bg-[#fffaf0]/92 shadow-xl shadow-amber-950/8 backdrop-blur-xl">
+          <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-5 px-5 py-4 sm:px-8 lg:px-10">
+            <Link href="/" className="flex min-w-0 items-center gap-3">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#7c350f] text-xl font-black text-amber-100 shadow-lg shadow-amber-950/20">
+                PK
+              </span>
+              <span className="min-w-0">
+                <span className="block text-sm font-black uppercase tracking-[0.24em] text-[#8a3d12] sm:text-base">
+                  Peygamberler Keşif
+                </span>
+                <span className="hidden text-sm font-bold text-stone-600 sm:block">
+                  Aileler için güvenli okuma yolculuğu
+                </span>
+              </span>
+            </Link>
 
-          <nav className="hidden items-center gap-7 text-sm font-black text-stone-700 md:flex">
-            <a href="#nasil-calisir" className="hover:text-[#7c350f]">
-              Nasıl Çalışır?
-            </a>
-            <a href="#veli-paneli" className="hover:text-[#7c350f]">
-              Veli Paneli
-            </a>
-            <a href="#okuma" className="hover:text-[#7c350f]">
-              Okuma Deneyimi
-            </a>
-          </nav>
+            <nav className="hidden items-center rounded-lg border border-amber-200 bg-white/70 px-2 py-2 text-sm font-black text-stone-700 shadow-inner md:flex">
+              <a
+                href="#nasil-calisir"
+                className="rounded-md px-4 py-2 transition hover:bg-amber-100 hover:text-[#7c350f]"
+              >
+                Nasıl Çalışır?
+              </a>
+              <a
+                href="#veli-paneli"
+                className="rounded-md px-4 py-2 transition hover:bg-amber-100 hover:text-[#7c350f]"
+              >
+                Veli Paneli
+              </a>
+              <a
+                href="#okuma"
+                className="rounded-md px-4 py-2 transition hover:bg-amber-100 hover:text-[#7c350f]"
+              >
+                Okuma Deneyimi
+              </a>
+            </nav>
 
-          <Link
-            href="/login"
-            className="rounded-lg border border-amber-300 bg-white px-5 py-3 text-sm font-black text-[#4a210d] shadow-lg shadow-amber-950/10 transition hover:-translate-y-0.5 hover:border-[#7c350f]"
-          >
-            Giriş Yap
-          </Link>
+            <Link
+              href="/login"
+              className="shrink-0 rounded-lg bg-[#123225] px-5 py-3 text-sm font-black text-white shadow-lg shadow-emerald-950/15 transition hover:-translate-y-0.5 hover:bg-[#0b241a] sm:px-6"
+            >
+              Giriş Yap
+            </Link>
+          </div>
         </header>
 
-        <div className="relative z-10 mx-auto grid min-h-[calc(100vh-84px)] w-full max-w-7xl items-center gap-12 px-5 py-12 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:px-10 lg:py-16">
+        <div className="relative z-10 mx-auto grid min-h-[calc(100vh-96px)] w-full max-w-7xl items-center gap-12 px-5 py-12 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:px-10 lg:py-16">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.38em] text-emerald-800">
               Çocuklar İçin Değer Odaklı Okuma Platformu
