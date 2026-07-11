@@ -115,6 +115,238 @@ const nuhShipImage =
 
 export const books: BookDefinition[] = [
   {
+    id: "hz-adem",
+    routePrefix: "adem",
+    title: "Hz. Âdem",
+    eyebrow: "Hz. Âdem - İlk İnsan, İlk Yolculuk",
+    chapters: [
+      {
+        id: "1",
+        title: "İlk İnsan, İlk Öğrenme",
+        audioUrl: "",
+        badgeName: "İlk Adım Rozeti",
+        has_question: true,
+        paragraphs: [
+          {
+            type: "text",
+            text: "Çok ama çok uzun zaman önce, henüz yeryüzünde hiçbir insan yokken; gökyüzü, yıldızlar, dağlar ve denizler çoktan yaratılmıştı. Rüzgar esiyor, sular akıyor, kuşlar gökyüzünde süzülüyordu. Ama bu güzelim dünyada onu seyredecek, düşünecek ve anlayacak kimse yoktu henüz.",
+          },
+          {
+            type: "text",
+            text: "Sonra Allah, ilk insanı yaratmayı diledi. Hz. Âdem'i (a.s.) topraktan yarattı ve ona ruh verdi. Hz. Âdem gözlerini açtığında, dünyadaki ilk insan olarak yepyeni bir hayata başlıyordu. Her şey onun için ilkti: ilk nefes, ilk bakış, ilk adım...",
+          },
+          {
+            type: "interactive_word",
+            before: "Allah, Hz. Âdem'e çok kıymetli bir hediye verdi: ",
+            word: "akıl",
+            meaning:
+              "Akıl; düşünmemizi, öğrenmemizi ve doğru ile yanlışı ayırt etmemizi sağlayan büyük bir nimettir.",
+            after:
+              " ve öğrenen bir kalp. Hz. Âdem baktı, dinledi, düşündü ve öğrendi. Öğrendikçe dünyayı daha çok tanıdı; tanıdıkça da bu güzellikleri yaratan Rabbine şükretti.",
+          },
+          {
+            type: "text",
+            text: "Dur ve düşün: Sen de bir zamanlar yürümeyi, konuşmayı, harfleri tek tek öğrendin. Hâlâ da her gün yeni bir şey öğreniyorsun. İşte bu, insanın en özel yanlarından biridir. Öğrenmeye açık bir kalp, tıpkı güneşe dönen bir çiçek gibi hep büyür.",
+          },
+        ],
+        question: {
+          title: "İlk İnsan, İlk Öğrenme",
+          prompt:
+            "Yeni ve zor bir şey öğrenirken hata yaptığını fark ediyorsun. Ne yaparsın?",
+          correctOption: "b",
+          feedback:
+            "Harika bir karar! Öğrenen kalp, hata yapınca pes etmez; sakinleşir ve yeniden dener.",
+          options: [
+            { id: "a", text: "Hemen bırakır, bir daha denemezdim." },
+            { id: "b", text: "Sakin kalır, hatamı anlayıp yeniden denerdim." },
+            { id: "c", text: "Kimse görmesin diye konuyu kapatırdım." },
+          ],
+        },
+        learned: [
+          "Öğrenmeye açık olmak çok değerlidir.",
+          "Allah insana akıl ve öğrenen bir kalp vermiştir.",
+          "Hata yapmak öğrenmenin sonu değil, bir parçasıdır.",
+        ],
+        buguneTasi:
+          "Bugün bilmediğin bir şeyi öğrenmeyi dene ve öğrenebildiğin için şükret.",
+      },
+      {
+        id: "2",
+        title: "İsimlerin Sırrı",
+        audioUrl: "",
+        badgeName: "Bilgi Rozeti",
+        has_question: false,
+        paragraphs: [
+          {
+            type: "text",
+            text: "Allah, Hz. Âdem'e (a.s.) çok özel bir bilgi öğretti: varlıkların isimlerini. Hz. Âdem artık çevresindeki her şeyi tanıyor ve isimlendirebiliyordu. Bu, ona verilmiş büyük bir armağandı; çünkü bir şeyin adını bilmek, onu tanımanın ilk kapısıdır.",
+          },
+          {
+            type: "text",
+            text: "Sonra Allah, melekler ile Hz. Âdem'i buluşturdu ve meleklere o varlıkları sordu. Melekler edeple şöyle dediler: 'Biz ancak Senin bize öğrettiğini biliriz.' Hz. Âdem ise Allah'ın kendisine öğrettiği isimleri bir bir söyledi. Melekler, Allah'ın ilk insana verdiği bu bilgiye tanık oldular.",
+          },
+          {
+            type: "text",
+            text: "Allah, meleklerden Hz. Âdem'e saygı göstermelerini istedi. Meleklerin hepsi bu emre uydu. Ama orada bulunan İblis uymadı. 'Ben ondan üstünüm!' diyerek başını çevirdi. Emre uymamasının sebebi bilgisizlik değildi; kalbini kaplayan koca bir gururdu.",
+          },
+          {
+            type: "interactive_word",
+            before: "İblis'in bu davranışının adı ",
+            word: "kibir",
+            meaning:
+              "Kibir, kendini başkalarından üstün görmek ve bu yüzden doğruyu kabul etmemektir.",
+            after:
+              " idi. Kibir, İblis'i güzelliklerden uzaklaştırdı. İşte bu yüzden bilgi tek başına yetmez; onu güzel bir kalple taşımak gerekir. Bilgi, alçakgönüllü bir kalpte ışık olur; kibirli bir kalpte ise gölgede kalır.",
+          },
+        ],
+        learned: [
+          "Bilgi, Allah'ın insana verdiği değerli bir armağandır.",
+          "Melekler edepliydi; bilmediklerini dürüstçe söylediler.",
+          "Kibir, en güzel bilgiyi bile gölgede bırakır.",
+        ],
+        buguneTasi:
+          "Bugün öğrendiğin güzel bir bilgiyi, övünmeden bir yakınınla paylaş.",
+      },
+      {
+        id: "3",
+        title: "Unutmak ve Hatırlamak",
+        audioUrl: "",
+        badgeName: "Tövbe Rozeti",
+        has_question: true,
+        paragraphs: [
+          {
+            type: "text",
+            text: "Allah, Hz. Âdem'i (a.s.) ve eşi Hz. Havva'yı cennete yerleştirdi. Orası eşsiz güzellikte bir yurttu; diledikleri her nimetten bolca yararlanabilirlerdi. Yalnızca tek bir şey istenmişti onlardan: 'Şu ağaca yaklaşmayın.' Koca cennette sadece bir tek ağaç...",
+          },
+          {
+            type: "text",
+            text: "Ama şeytan boş durmadı. Onlara sinsice fısıldadı, o ağacı olduğundan güzel gösterdi ve sözler verdi. Hz. Âdem ile Hz. Havva, verdikleri sözü unutarak ağaca yaklaştılar. Ve o an, kalplerine daha önce hiç tatmadıkları bir duygu doldu: pişmanlık.",
+          },
+          {
+            type: "text",
+            text: "Peki hatalarını saklamaya mı çalıştılar? Hayır. Suçu birbirlerine mi attılar? Hayır. Kalpleri buruk, elleri açık, Rablerine şöyle dua ettiler: 'Rabbimiz! Biz kendimize yazık ettik. Eğer bizi bağışlamazsan ve bize merhamet etmezsen kaybedenlerden oluruz.'",
+          },
+          {
+            type: "interactive_word",
+            before: "Bu samimi dönüşün adı ",
+            word: "tövbe",
+            meaning:
+              "Tövbe; hatayı fark etmek, pişman olmak, özür dilemek ve bir daha yapmamaya karar vermektir.",
+            after:
+              " idi. Allah, tövbeleri kabul edendir; Hz. Âdem'in duasını kabul etti ve onu bağışladı. İşte o gün insanlık, en kıymetli derslerden birini öğrendi: Hata yapmak insanı küçültmez; hatada ısrar etmek küçültür.",
+          },
+        ],
+        question: {
+          title: "Unutmak ve Hatırlamak",
+          prompt:
+            "Bir arkadaşını kırdığını anladın. Kalbin de bunun doğru olmadığını söylüyor. Ne yaparsın?",
+          correctOption: "a",
+          feedback:
+            "Çok güzel! Yanlışı fark edip özür dilemek, güçlü ve temiz bir kalbin işidir.",
+          options: [
+            { id: "a", text: "Özür diler, hatamı düzeltmeye çalışırdım." },
+            { id: "b", text: "Hiçbir şey olmamış gibi davranırdım." },
+            { id: "c", text: "Suçu başka birine atmaya çalışırdım." },
+          ],
+        },
+        learned: [
+          "Hata yapınca en güzel yol, onu kabul edip tövbe etmektir.",
+          "Hz. Âdem pişmanlığını dua ile Allah'a söyledi ve bağışlandı.",
+          "Özür dilemek insanı küçültmez; kalbi hafifletir.",
+        ],
+        buguneTasi:
+          "Kırdığın ya da üzdüğün biri varsa, bugün ona içtenlikle özür dilemeyi dene.",
+      },
+      {
+        id: "4",
+        title: "Yeryüzünde İlk Sabah",
+        audioUrl: "",
+        badgeName: "Sorumluluk Rozeti",
+        has_question: false,
+        paragraphs: [
+          {
+            type: "text",
+            text: "Tövbeleri kabul edilen Hz. Âdem (a.s.) ile Hz. Havva için artık yeni bir yolculuk başlıyordu: yeryüzü. Allah onları, insanın asıl yurdu olan dünyaya gönderdi ve yalnız bırakmadı; doğru yolu gösterecek rehberliğini onlara vaat etti. Yolunu bu rehberle bulanlar için korku ve üzüntü yoktu.",
+          },
+          {
+            type: "text",
+            text: "Yeryüzündeki ilk sabahı bir düşün: Güneş ağır ağır yükseliyor, kuş sesleri duyuluyor, önlerinde uçsuz bucaksız bir dünya uzanıyor. Burası cennet gibi hazır bir sofra değildi; çalışmak, aramak, bulmak gerekiyordu. Hz. Âdem kollarını sıvadı. Barınak kurdu, yiyecek aradı, toprağı tanıdı.",
+          },
+          {
+            type: "interactive_word",
+            before: "Yeryüzü ona bir emanetti ve bu emaneti taşımanın adı ",
+            word: "sorumluluk",
+            meaning:
+              "Sorumluluk, üzerine düşen işi kimse söylemeden, özenle ve severek yapmaktır.",
+            after:
+              " idi. Hz. Âdem şikayet etmedi; öğrendiklerini kullandı, çalıştı ve her akşam Rabbine şükretti. Zorluklar onu yıldırmadı; çünkü o, dünyaya bir görevle geldiğini biliyordu.",
+          },
+          {
+            type: "text",
+            text: "Senin de her gün küçük görevlerin var: odanı toplamak, ödevini yapmak, sözünü tutmak... Bunlar küçük görünebilir; ama sorumluluk taşımayı öğrenen bir kalp, büyüyünce büyük emanetleri de taşıyabilir.",
+          },
+        ],
+        learned: [
+          "Yeryüzü, insanın çalışıp iyilik yapacağı yurdudur.",
+          "Allah, doğru yolu gösteren rehberliğini insandan esirgememiştir.",
+          "Sorumluluk almak, insanı güçlendirir ve büyütür.",
+        ],
+        buguneTasi:
+          "Bugün evde kimse söylemeden bir görevi üstlen ve onu özenle tamamla.",
+      },
+      {
+        id: "5",
+        title: "İlk Aile, İlk İyilik",
+        audioUrl: "",
+        badgeName: "Aile ve Merhamet Rozeti",
+        has_question: true,
+        paragraphs: [
+          {
+            type: "text",
+            text: "Zamanla Hz. Âdem (a.s.) ile Hz. Havva'nın çocukları oldu ve yeryüzünde ilk aile kuruldu. Artık sofralarda birlikte oturuluyor, işler birlikte yapılıyor, geceleri aynı gökyüzünün altında birlikte şükrediliyordu. İnsanlık, kocaman bir ailenin ilk küçük yuvasında filizlenmişti.",
+          },
+          {
+            type: "text",
+            text: "Hz. Âdem yalnızca bir baba değil, aynı zamanda ilk peygamberdi. Çocuklarına Allah'ı anlattı; doğru olmayı, güzel çalışmayı, paylaşmayı ve şükretmeyi öğretti. Bildiklerini kendine saklamadı; çünkü güzel bilgi, paylaşıldıkça çoğalan bir hazinedir.",
+          },
+          {
+            type: "interactive_word",
+            before: "Bu ilk yuvayı ayakta tutan en güzel duygu ",
+            word: "merhamet",
+            meaning:
+              "Merhamet; sevmek, korumak, incitmemek ve başkasının iyiliğini istemektir.",
+            after:
+              " idi. Aile üyeleri birbirini kolladı, yorulana yardım etti, üzülene sarıldı. İyilik önce evin içinde öğrenilir; sonra oradan bütün dünyaya yayılır.",
+          },
+          {
+            type: "text",
+            text: "Hz. Âdem'in yolculuğu işte böyle başladı ve insanlığa yol gösteren izler bıraktı: Öğrenmeye açık ol. Kibirden uzak dur. Hata yaparsan tövbe et. Sorumluluğunu taşı. Ve ailene hep merhametle davran. Bu izler, bugün senin kalbine kadar ulaştı.",
+          },
+        ],
+        question: {
+          title: "İlk Aile, İlk İyilik",
+          prompt:
+            "Kardeşin ya da bir yakının zor bir işle uğraşıyor ve yoruldu. Ne yaparsın?",
+          correctOption: "c",
+          feedback:
+            "Ne güzel! Ailene yardım eden bir kalp, merhameti hayatına taşıyor demektir.",
+          options: [
+            { id: "a", text: "Kendi işim olmadığı için karışmazdım." },
+            { id: "b", text: "Sadece izler, bitmesini beklerdim." },
+            { id: "c", text: "Yanına gider, elimden geldiğince yardım ederdim." },
+          ],
+        },
+        learned: [
+          "Aile, iyiliğin ilk öğrenildiği yerdir.",
+          "Hz. Âdem ilk peygamberdi; çocuklarına doğruluğu ve şükrü öğretti.",
+          "Merhamet, paylaştıkça büyüyen bir güzelliktir.",
+        ],
+        buguneTasi:
+          "Bugün ailenden birine, o istemeden küçük bir iyilik yap.",
+      },
+    ],
+  },
+  {
     id: "hz-nuh",
     routePrefix: "nuh",
     title: "Hz. Nuh",
