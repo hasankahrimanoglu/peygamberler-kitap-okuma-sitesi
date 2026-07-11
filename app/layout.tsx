@@ -14,8 +14,9 @@ const loraFont = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Hz. Ebû Bekir Okuma Sayfası",
-  description: "Çocuklar için interaktif kitap okuma deneyimi.",
+  title: "Peygamberler Keşif Dünyası",
+  description:
+    "Çocuklar için interaktif, rozetli ve güvenli kitap okuma deneyimi.",
 };
 
 export default function RootLayout({
