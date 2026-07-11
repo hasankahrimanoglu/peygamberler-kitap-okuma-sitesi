@@ -72,7 +72,9 @@ function resolvePackageLimit(payload: ShopierPayload) {
   const explicitProductMappings = [
     { id: process.env.SHOPIER_PACKAGE_10_PRODUCT_ID, limit: 10 },
     { id: process.env.SHOPIER_PACKAGE_5_PRODUCT_ID, limit: 5 },
+    { id: process.env.SHOPIER_PACKAGE_4_PRODUCT_ID, limit: 4 },
     { id: process.env.SHOPIER_PACKAGE_3_PRODUCT_ID, limit: 3 },
+    { id: process.env.SHOPIER_PACKAGE_2_PRODUCT_ID, limit: 2 },
     { id: process.env.SHOPIER_PACKAGE_1_PRODUCT_ID, limit: 1 },
   ];
 
@@ -85,7 +87,9 @@ function resolvePackageLimit(payload: ShopierPayload) {
 
   if (/(10|on)\s*(kullanıcı|profil|çocuk)/i.test(productData)) return 10;
   if (/(5|beş)\s*(kullanıcı|profil|çocuk)/i.test(productData)) return 5;
+  if (/(4|dört)\s*(kullanıcı|profil|çocuk)/i.test(productData)) return 4;
   if (/(3|üç)\s*(kullanıcı|profil|çocuk)/i.test(productData)) return 3;
+  if (/(2|iki)\s*(kullanıcı|profil|çocuk)/i.test(productData)) return 2;
   return 1;
 }
 
