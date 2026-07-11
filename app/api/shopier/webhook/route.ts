@@ -259,7 +259,18 @@ export async function POST(request: Request) {
       throw subscriptionError;
     }
 
-    await sendWelcomeEmail({ email, password, profileLimit });
+    try {
+      await sendWelcomeEmail({ email, password, profileLimit });
+    } catch (emailError) {
+      const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+      console.error("Shopier welcome email error:", emailError);
+      console.log("Shopier parent login fallback:", {
+        email,
+        password,
+        profileLimit,
+        loginUrl: `${siteUrl}/login`,
+      });
+    }
 
     return new Response("success", { status: 200 });
   } catch (error) {
