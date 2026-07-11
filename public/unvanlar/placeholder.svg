@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="arma" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f2ce7b"/>
+      <stop offset="1" stop-color="#c08f2f"/>
+    </linearGradient>
+  </defs>
+  <path d="M256 30c60 40 120 56 180 60v180c0 110-80 180-180 212C156 450 76 380 76 270V90c60-4 120-20 180-60Z" fill="url(#arma)"/>
+  <path d="M256 66c50 32 100 46 148 52v152c0 92-66 152-148 180-82-28-148-88-148-180V118c48-6 98-20 148-52Z" fill="#13223e"/>
+  <circle cx="256" cy="240" r="80" fill="none" stroke="#e8b84b" stroke-width="10"/>
+  <path d="M256 175v130M191 240h130M210 194l92 92M302 194l-92 92" stroke="#e8b84b" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="256" cy="240" r="18" fill="#f2ce7b"/>
+</svg>

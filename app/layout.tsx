@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
-import { Baloo_2, Lora } from "next/font/google";
+import { Baloo_2, Lora, Nunito } from "next/font/google";
 import "./globals.css";
 
 const balooFont = Baloo_2({
   subsets: ["latin", "latin-ext"],
   variable: "--font-baloo",
+});
+
+const nunitoFont = Nunito({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-nunito",
 });
 
 const loraFont = Lora({
@@ -25,7 +30,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" className={`${balooFont.variable} ${loraFont.variable}`}>
+    <html
+      lang="tr"
+      className={`${balooFont.variable} ${nunitoFont.variable} ${loraFont.variable}`}
+    >
       <body>{children}</body>
     </html>
   );

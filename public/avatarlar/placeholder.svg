@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="halka" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2ce7b"/>
+      <stop offset="1" stop-color="#c08f2f"/>
+    </linearGradient>
+  </defs>
+  <circle cx="256" cy="256" r="248" fill="url(#halka)"/>
+  <circle cx="256" cy="256" r="228" fill="#e8f3ea"/>
+  <circle cx="256" cy="204" r="86" fill="#2e7d5b"/>
+  <path d="M96 430c22-84 86-126 160-126s138 42 160 126a248 248 0 0 1-320 0Z" fill="#2e7d5b"/>
+  <circle cx="256" cy="204" r="86" fill="none" stroke="#256849" stroke-width="8" opacity="0.35"/>
+</svg>

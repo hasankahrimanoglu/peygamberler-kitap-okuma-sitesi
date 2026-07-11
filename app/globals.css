@@ -6,6 +6,43 @@
   color-scheme: light;
 }
 
+/*
+  Tema sistemi — PROJE-MODELI.md Bölüm 3.
+  Bileşenler yalnızca semantik değişkenleri kullanır (--zemin, --yuzey, --murekkep...).
+  .tema-veli ve .tema-cocuk bu değişkenlere kendi dünyasının değerlerini verir.
+*/
+.tema-veli {
+  --zemin: #faf6ed;
+  --yuzey: #fffdf8;
+  --yuzey-2: #f4eddd;
+  --cizgi: #e7dcc5;
+  --murekkep: #3d2b1f;
+  --murekkep-soluk: #8a7260;
+  --vurgu: #c9a227;
+  --vurgu-yumusak: #f4e9c8;
+  --eylem: #2e7d5b;
+  --eylem-koyu: #256849;
+  --eylem-metin: #ffffff;
+  --eylem-yumusak: #e8f3ea;
+  --okuma-yuzey: #fffdf8;
+}
+
+.tema-cocuk {
+  --zemin: #0a1428;
+  --yuzey: #13223e;
+  --yuzey-2: #1b2d4f;
+  --cizgi: #2a3c63;
+  --murekkep: #f4efe3;
+  --murekkep-soluk: #9facc7;
+  --vurgu: #e8b84b;
+  --vurgu-yumusak: #33301f;
+  --eylem: #34a06b;
+  --eylem-koyu: #2c8a5c;
+  --eylem-metin: #ffffff;
+  --eylem-yumusak: #16324a;
+  --okuma-yuzey: #fbf6e9;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -40,5 +77,30 @@ select {
 
   .scrollbar-none::-webkit-scrollbar {
     display: none;
+  }
+
+  /* Çocuk tarafı gece gökyüzü: CSS ile yıldız dokusu (görsel dosyası gerekmez) */
+  .zemin-yildizli {
+    background-color: var(--zemin);
+    background-image:
+      radial-gradient(1px 1px at 12% 22%, rgba(244, 239, 227, 0.55) 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 32% 68%, rgba(244, 239, 227, 0.35) 50%, transparent 51%),
+      radial-gradient(1px 1px at 48% 12%, rgba(232, 184, 75, 0.5) 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 64% 42%, rgba(244, 239, 227, 0.4) 50%, transparent 51%),
+      radial-gradient(1px 1px at 78% 78%, rgba(244, 239, 227, 0.5) 50%, transparent 51%),
+      radial-gradient(1px 1px at 88% 28%, rgba(232, 184, 75, 0.4) 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 8% 84%, rgba(244, 239, 227, 0.3) 50%, transparent 51%),
+      radial-gradient(1px 1px at 55% 90%, rgba(244, 239, 227, 0.45) 50%, transparent 51%),
+      linear-gradient(180deg, #0a1428 0%, #0e1a34 55%, #122142 100%);
+    background-size:
+      520px 520px,
+      520px 520px,
+      520px 520px,
+      520px 520px,
+      520px 520px,
+      520px 520px,
+      520px 520px,
+      520px 520px,
+      100% 100%;
   }
 }
