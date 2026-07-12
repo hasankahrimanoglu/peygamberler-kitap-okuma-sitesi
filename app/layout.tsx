@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Baloo_2, Lora, Nunito } from "next/font/google";
+import { HareketAyari } from "../src/components/ui/HareketAyari";
 import "./globals.css";
 
 const balooFont = Baloo_2({
@@ -34,7 +35,9 @@ export default function RootLayout({
       lang="tr"
       className={`${balooFont.variable} ${nunitoFont.variable} ${loraFont.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <HareketAyari>{children}</HareketAyari>
+      </body>
     </html>
   );
 }

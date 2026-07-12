@@ -7,6 +7,7 @@ import { books } from "../../../src/data/books";
 import {
   Buton,
   DurumCipi,
+  Ikon,
   IlerlemeCubugu,
   Kart,
   OdulIkonu,
@@ -344,7 +345,13 @@ export default function KitapDetaySayfasi() {
                         : "border-cizgi bg-yuzey text-murekkep-soluk"
                   }`}
                 >
-                  {tamamlandi ? "✓" : kilitli ? "🔒" : index + 1}
+                  {tamamlandi ? (
+                    <Ikon ad="onay" boyut={20} />
+                  ) : kilitli ? (
+                    <Ikon ad="kilit" boyut={18} />
+                  ) : (
+                    index + 1
+                  )}
                 </div>
 
                 <Kart

@@ -8,6 +8,7 @@ import { books as dataBooks } from "../../src/data/books";
 import {
   Buton,
   DurumCipi,
+  Ikon,
   IlerlemeCubugu,
   Kart,
   OdulIkonu,
@@ -471,9 +472,7 @@ function KitapKarti({
           <div className="min-w-0 flex-1">
             <p className="flex items-center gap-1.5 font-baslik text-xs font-semibold uppercase tracking-widest text-vurgu">
               {tamamlandi ? (
-                <span aria-hidden className="text-eylem">
-                  ✓
-                </span>
+                <Ikon ad="onay" boyut={14} className="text-eylem" />
               ) : null}
               {adventure.id}. Kitap
             </p>
@@ -491,7 +490,7 @@ function KitapKarti({
                     tamamlandi ? "text-eylem" : "text-vurgu"
                   }`}
                 >
-                  <span aria-hidden>{tamamlandi ? "✓" : "🔒"}</span>
+                  <Ikon ad={tamamlandi ? "onay" : "nokta"} boyut={tamamlandi ? 15 : 10} />
                   Bölüm {kazanilan}/{toplam} —{" "}
                   {tamamlandi ? "Tamamlandı" : "Devam Ediyor"}
                 </p>
@@ -522,7 +521,7 @@ function KitapKarti({
             ) : (
               <>
                 <p className="mt-4 inline-flex items-center gap-2 rounded-buton border border-cizgi bg-yuzey-2 px-3 py-1.5 font-baslik text-sm font-semibold text-murekkep-soluk">
-                  🔒 Henüz açılmadı
+                  <Ikon ad="kilit" boyut={15} /> Henüz açılmadı
                 </p>
                 <p className="mt-3 font-govde text-sm text-murekkep-soluk">
                   {oncekiAd
@@ -567,9 +566,7 @@ function KitapKarti({
                 <p className="font-baslik text-xs font-semibold uppercase tracking-widest text-murekkep-soluk">
                   Açılma Koşulu
                 </p>
-                <span aria-hidden className="text-3xl">
-                  🔒
-                </span>
+                <Ikon ad="kilit" boyut={30} className="text-murekkep-soluk" />
                 <p className="font-govde text-sm text-murekkep-soluk">
                   {oncekiAd
                     ? `${oncekiAd} kitabındaki Büyük Final Testi'ni tamamla.`
@@ -1089,9 +1086,7 @@ export default function DashboardPage() {
             <div className="flex flex-wrap items-center justify-center gap-3">
               <div className="rounded-buton bg-yuzey-2 px-4 py-2">
                 <p className="flex items-center gap-2 font-baslik text-xl font-bold leading-tight">
-                  <span aria-hidden className="text-xl">
-                    🏅
-                  </span>
+                  <Ikon ad="rozet" boyut={20} className="text-vurgu" />
                   {totalEarnedBadgeCount}
                 </p>
                 <p className="mt-0.5 font-govde text-xs text-murekkep-soluk">
@@ -1100,9 +1095,7 @@ export default function DashboardPage() {
               </div>
               <div className="rounded-buton bg-yuzey-2 px-4 py-2">
                 <p className="flex items-center gap-2 font-baslik text-xl font-bold leading-tight">
-                  <span aria-hidden className="text-xl">
-                    📖
-                  </span>
+                  <Ikon ad="kitap" boyut={20} className="text-vurgu" />
                   {totalCompletedBookCountValue}
                 </p>
                 <p className="mt-0.5 font-govde text-xs text-murekkep-soluk">
@@ -1214,7 +1207,13 @@ export default function DashboardPage() {
                           : "border-cizgi bg-yuzey text-murekkep-soluk"
                     }`}
                   >
-                    {tamamlandi ? "✓" : kilitli ? "🔒" : adventure.id}
+                    {tamamlandi ? (
+                      <Ikon ad="onay" boyut={20} />
+                    ) : kilitli ? (
+                      <Ikon ad="kilit" boyut={18} />
+                    ) : (
+                      adventure.id
+                    )}
                   </div>
 
                   <KitapKarti

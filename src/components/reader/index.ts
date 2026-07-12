@@ -1,0 +1,12 @@
+export { OkumaKarti, BolumBasligi } from "./OkumaKarti";
+export { Paragraf, KelimeliMetin } from "./Paragraf";
+export { SesCubugu } from "./SesCubugu";
+export { Konfeti } from "./Konfeti";
+export { KapakSayfasi } from "./KapakSayfasi";
+export { HikayeSayfasi } from "./HikayeSayfasi";
+export { KararSayfasi } from "./KararSayfasi";
+export { OgrendikSayfasi } from "./OgrendikSayfasi";
+export { GorevSayfasi } from "./GorevSayfasi";
+export { RozetSayfasi } from "./RozetSayfasi";
+export { okumaSayfalariniOlustur } from "./sayfalar";
+export type { OkumaSayfaModeli, OkumaGorseli } from "./sayfalar";
