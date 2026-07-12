@@ -55,6 +55,33 @@ function getBookKeywords(bookKey: ChapterData["bookKey"]) {
   return ["ebu bekir", "ebubekir"];
 }
 
+type EslesenKitap = {
+  id: string;
+  isim: string | null;
+  toplam_bolum: number | null;
+};
+
+/** Supabase books tablosunda bu bölümün kitabını ad benzerliğiyle bulur. */
+async function eslesenKitabiBul(
+  bookKey: ChapterData["bookKey"],
+): Promise<{ hata: boolean; kitap: EslesenKitap | null }> {
+  const { data: books, error } = await supabase
+    .from("books")
+    .select("id, isim, toplam_bolum");
+
+  if (error) return { hata: true, kitap: null };
+
+  const kitap =
+    books?.find((book) => {
+      const normalizedName = normalizeBookName(book.isim ?? "");
+      return getBookKeywords(bookKey).some((keyword) =>
+        normalizedName.includes(keyword),
+      );
+    }) ?? null;
+
+  return { hata: false, kitap };
+}
+
 async function syncChapterProgress(
   chapter: ChapterData,
 ): Promise<ProgressSyncResult> {
@@ -71,23 +98,15 @@ async function syncChapterProgress(
     };
   }
 
-  const { data: books, error: booksError } = await supabase
-    .from("books")
-    .select("id, isim, toplam_bolum");
+  const { hata: kitapHatasi, kitap: matchedBook } =
+    await eslesenKitabiBul(bookKey);
 
-  if (booksError) {
+  if (kitapHatasi) {
     return {
       ok: false,
       message: "Kitap bilgisi Supabase'den okunamadı. Lütfen tekrar dene.",
     };
   }
-
-  const matchedBook = books?.find((book) => {
-    const normalizedName = normalizeBookName(book.isim ?? "");
-    return getBookKeywords(bookKey).some((keyword) =>
-      normalizedName.includes(keyword),
-    );
-  });
 
   if (!matchedBook) {
     return {
@@ -99,7 +118,7 @@ async function syncChapterProgress(
 
   const { data: currentProgress, error: currentProgressError } = await supabase
     .from("user_progress")
-    .select("tamamlanan_bolum_sayisi")
+    .select("tamamlanan_bolum_sayisi, bitti_mi")
     .eq("profile_id", profileId)
     .eq("book_id", matchedBook.id)
     .maybeSingle();
@@ -117,6 +136,9 @@ async function syncChapterProgress(
     Math.max(0, currentProgress?.tamamlanan_bolum_sayisi ?? 0, chapterNumber),
   );
   const progressPercent = Math.round((completedCount / totalChapters) * 100);
+  // Final testiyle kazanılan "bitti" durumu (madalya) tekrar okumada geri
+  // alınmaz — bir kez true olduysa true kalır.
+  const kitapBittiMi = Boolean(currentProgress?.bitti_mi);
 
   const progressPayload = {
     profile_id: profileId,
@@ -124,7 +146,7 @@ async function syncChapterProgress(
     chapter_id: String(chapterNumber),
     tamamlanan_bolum_sayisi: completedCount,
     yuzde: progressPercent,
-    bitti_mi: false,
+    bitti_mi: kitapBittiMi,
     updated_at: new Date().toISOString(),
   };
   const { error: progressError } = await supabase.from("user_progress").upsert(
@@ -146,7 +168,7 @@ async function syncChapterProgress(
       book_id: matchedBook.id,
       tamamlanan_bolum_sayisi: completedCount,
       yuzde: progressPercent,
-      bitti_mi: false,
+      bitti_mi: kitapBittiMi,
       updated_at: new Date().toISOString(),
     },
     { onConflict: "profile_id,book_id" },
@@ -181,6 +203,7 @@ export default function ReaderPage() {
   const [kararSonucuAcik, setKararSonucuAcik] = useState(false);
   const [rozetKaydediliyor, setRozetKaydediliyor] = useState(false);
   const [kayitHatasi, setKayitHatasi] = useState<string | null>(null);
+  const [tekrarOkuma, setTekrarOkuma] = useState(false);
 
   const kararVar = Boolean(chapter.decision);
   const sonucAcik = !kararVar || kararSonucuAcik;
@@ -257,6 +280,47 @@ export default function ReaderPage() {
     setAktifSayfa(0);
     sliderRef.current?.scrollTo({ left: 0 });
   }, [chapter.id]);
+
+  // Tekrar okuma tespiti: bölüm daha önce tamamlandıysa Rozet Kapısı kutlama
+  // yerine hatırlatma yapar ve Supabase'e yeniden kayıt yazılmaz.
+  useEffect(() => {
+    let iptal = false;
+
+    async function tekrarOkumaKontrol() {
+      setTekrarOkuma(false);
+
+      const profileId = window.localStorage.getItem(
+        "selected_child_profile_id",
+      );
+
+      if (!profileId) return;
+
+      const { kitap } = await eslesenKitabiBul(chapter.bookKey ?? "ebubekir");
+
+      if (!kitap || iptal) return;
+
+      const { data: progress } = await supabase
+        .from("user_progress")
+        .select("tamamlanan_bolum_sayisi")
+        .eq("profile_id", profileId)
+        .eq("book_id", kitap.id)
+        .maybeSingle();
+
+      if (iptal || !progress) return;
+
+      const chapterNumber = chapter.chapterNumber ?? 1;
+
+      if ((progress.tamamlanan_bolum_sayisi ?? 0) >= chapterNumber) {
+        setTekrarOkuma(true);
+      }
+    }
+
+    void tekrarOkumaKontrol();
+
+    return () => {
+      iptal = true;
+    };
+  }, [chapter]);
 
   // Elle kaydırmada aktif sayfayı takip et.
   useEffect(() => {
@@ -338,6 +402,13 @@ export default function ReaderPage() {
   }, [chapter.decision, secilen]);
 
   async function bolumuBitirVeKitabaDon() {
+    // Tekrar okumada rozet zaten kazanılmış: kayıt yazmadan listeye dön
+    // (updated_at bile değişmez, madalya/rozet durumuna dokunulmaz).
+    if (tekrarOkuma) {
+      router.push(geriYolu);
+      return;
+    }
+
     setKayitHatasi(null);
     setRozetKaydediliyor(true);
     const sonuc = await syncChapterProgress(chapter);
@@ -440,6 +511,7 @@ export default function ReaderPage() {
         chapter={chapter}
         rozetAnahtari={rozetAnahtari}
         sonrakiBolumAdi={sonrakiBolumAdi}
+        tekrarOkuma={tekrarOkuma}
         kayitHatasi={kayitHatasi}
         onHaritayaDon={() => router.push("/map")}
         onBolumuBitir={ademDuzeni ? bolumuBitirVeKitabaDon : undefined}
@@ -477,9 +549,11 @@ export default function ReaderPage() {
     };
   } else if (aktifSayfaVerisi?.type === "rozet") {
     ozelAksiyon = {
-      etiket: rozetKaydediliyor
-        ? "Rozet Kaydediliyor..."
-        : "Bölümü Bitir ve Rozetini Kazan",
+      etiket: tekrarOkuma
+        ? "Bölüm Listesine Dön"
+        : rozetKaydediliyor
+          ? "Rozet Kaydediliyor..."
+          : "Bölümü Bitir ve Rozetini Kazan",
       onClick: bolumuBitirVeKitabaDon,
       disabled: rozetKaydediliyor,
       varyant: "eylem",

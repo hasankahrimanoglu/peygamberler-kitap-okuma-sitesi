@@ -11,6 +11,8 @@ type RozetSayfasiProps = {
   rozetAnahtari: string;
   /** Bir sonraki bölümün yalın adı; son bölümde null */
   sonrakiBolumAdi: string | null;
+  /** Bölüm daha önce tamamlanmış — kutlama yerine hatırlatma yapılır */
+  tekrarOkuma?: boolean;
   kayitHatasi: string | null;
   onHaritayaDon: () => void;
   /** Verilirse ana bitirme butonu kartın içinde gösterilir (yeni split düzen) */
@@ -26,6 +28,7 @@ export function RozetSayfasi({
   chapter,
   rozetAnahtari,
   sonrakiBolumAdi,
+  tekrarOkuma = false,
   kayitHatasi,
   onHaritayaDon,
   onBolumuBitir,
@@ -45,10 +48,19 @@ export function RozetSayfasi({
         </h2>
 
         <p className="max-w-md font-govde text-sm leading-6 text-murekkep-soluk sm:text-base">
-          Tebrikler! Bu bölümün rozetini kazandın.{" "}
-          {sonrakiBolumAdi
-            ? `Şimdi "${sonrakiBolumAdi}" bölümüne geçebilirsin.`
-            : "Kitabın tüm bölümlerini bitirdin — artık Büyük Final Testi'ne hazırsın!"}
+          {tekrarOkuma ? (
+            <>
+              Bu rozeti daha önce kazanmıştın! Tekrar okumak, öğrendiklerini
+              kalbinde büyütür.
+            </>
+          ) : (
+            <>
+              Tebrikler! Bu bölümün rozetini kazandın.{" "}
+              {sonrakiBolumAdi
+                ? `Şimdi "${sonrakiBolumAdi}" bölümüne geçebilirsin.`
+                : "Kitabın tüm bölümlerini bitirdin — artık Büyük Final Testi'ne hazırsın!"}
+            </>
+          )}
         </p>
 
         <motion.div
@@ -68,13 +80,15 @@ export function RozetSayfasi({
           </p>
         </motion.div>
 
-        <div className="flex w-full max-w-md items-start gap-2.5 rounded-kart border border-cizgi bg-yuzey px-4 py-3 text-left">
-          <Ikon ad="harita" boyut={18} className="mt-0.5 shrink-0 text-eylem" />
-          <p className="font-govde text-sm font-medium leading-6 text-murekkep">
-            Bu rozeti haritana ekleyerek yolculuğuna devam edebilirsin. Her
-            adım seni yeni keşiflere yaklaştırır.
-          </p>
-        </div>
+        {tekrarOkuma ? null : (
+          <div className="flex w-full max-w-md items-start gap-2.5 rounded-kart border border-cizgi bg-yuzey px-4 py-3 text-left">
+            <Ikon ad="harita" boyut={18} className="mt-0.5 shrink-0 text-eylem" />
+            <p className="font-govde text-sm font-medium leading-6 text-murekkep">
+              Bu rozeti haritana ekleyerek yolculuğuna devam edebilirsin. Her
+              adım seni yeni keşiflere yaklaştırır.
+            </p>
+          </div>
+        )}
 
         {chapter.mapNote ? (
           <p className="max-w-md font-story text-xs font-medium italic leading-5 text-murekkep-soluk sm:text-sm">
@@ -99,9 +113,11 @@ export function RozetSayfasi({
             onClick={onBolumuBitir}
             className="w-full max-w-md shadow-[0_6px_18px_-6px_rgba(46,125,91,0.55)]"
           >
-            {kaydediyor
-              ? "Rozet Kaydediliyor..."
-              : "Bölümü Bitir ve Rozetini Kazan"}
+            {tekrarOkuma
+              ? "Bölüm Listesine Dön"
+              : kaydediyor
+                ? "Rozet Kaydediliyor..."
+                : "Bölümü Bitir ve Rozetini Kazan"}
           </Buton>
         ) : null}
 
