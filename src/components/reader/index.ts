@@ -10,3 +10,8 @@ export { GorevSayfasi } from "./GorevSayfasi";
 export { RozetSayfasi } from "./RozetSayfasi";
 export { okumaSayfalariniOlustur } from "./sayfalar";
 export type { OkumaSayfaModeli, OkumaGorseli } from "./sayfalar";
+export { UstBarAdem } from "./UstBarAdem";
+export { AltBarAdem } from "./AltBarAdem";
+export { GorselAlani } from "./GorselAlani";
+export { KapakSayfasiAdem } from "./KapakSayfasiAdem";
+export { HikayeSayfasiAdem } from "./HikayeSayfasiAdem";

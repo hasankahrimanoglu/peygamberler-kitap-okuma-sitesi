@@ -115,6 +115,8 @@ export function KelimeliMetin({
 type ParagrafProps = KelimeDurumu & {
   block: BookContentBlock;
   blokIndex: number;
+  /** "buyuk": yeni split düzendeki ferah okuma puntosu */
+  boyut?: "normal" | "buyuk";
 };
 
 /**
@@ -124,13 +126,16 @@ type ParagrafProps = KelimeDurumu & {
 export function Paragraf({
   block,
   blokIndex,
+  boyut = "normal",
   aktifKelime,
   setAktifKelime,
 }: ParagrafProps) {
   if (block.type === "image") return null;
 
   const temelSinif =
-    "font-story text-base font-medium leading-7 sm:text-lg sm:leading-8";
+    boyut === "buyuk"
+      ? "font-story text-xl font-medium leading-9 md:text-2xl md:leading-10"
+      : "font-story text-base font-medium leading-7 sm:text-lg sm:leading-8";
 
   if (block.type === "interactive_word") {
     return (

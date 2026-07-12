@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import type { ChapterData, DecisionOption } from "../../data/demoChapters";
-import { Ikon } from "../ui";
+import { Buton, Ikon } from "../ui";
 import { Konfeti } from "./Konfeti";
 import { OkumaKarti } from "./OkumaKarti";
 import { KelimeliMetin } from "./Paragraf";
@@ -15,6 +15,8 @@ type KararSayfasiProps = {
   sonucAcik: boolean;
   /** Son onay denemesi yanlış seçenekle yapıldı */
   yanlisDenendi: boolean;
+  /** Verilirse onay butonu kartın içinde gösterilir (yeni split düzen) */
+  onKararOnayla?: () => void;
   aktifKelime: string | null;
   setAktifKelime: (value: string | null) => void;
 };
@@ -36,6 +38,7 @@ export function KararSayfasi({
   setSecilen,
   sonucAcik,
   yanlisDenendi,
+  onKararOnayla,
   aktifKelime,
   setAktifKelime,
 }: KararSayfasiProps) {
@@ -145,6 +148,18 @@ export function KararSayfasi({
             </motion.div>
           ) : null}
         </AnimatePresence>
+
+        {onKararOnayla && !sonucAcik ? (
+          <Buton
+            varyant="eylem"
+            disabled={!secilen}
+            onClick={onKararOnayla}
+            className="w-full max-w-2xl"
+          >
+            <Ikon ad="onay" boyut={18} />
+            Kararını Onayla
+          </Buton>
+        ) : null}
       </div>
     </OkumaKarti>
   );

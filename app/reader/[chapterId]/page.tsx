@@ -13,13 +13,17 @@ import type {
   DecisionOption,
 } from "../../../src/data/demoChapters";
 import {
+  AltBarAdem,
   GorevSayfasi,
   HikayeSayfasi,
+  HikayeSayfasiAdem,
   KapakSayfasi,
+  KapakSayfasiAdem,
   KararSayfasi,
   OgrendikSayfasi,
   RozetSayfasi,
   SesCubugu,
+  UstBarAdem,
   okumaSayfalariniOlustur,
 } from "../../../src/components/reader";
 import type { OkumaSayfaModeli } from "../../../src/components/reader";
@@ -189,6 +193,17 @@ export default function ReaderPage() {
   }`;
   const geriYolu = `/kitap/${chapter.bookKey ?? "ebubekir"}`;
 
+  // Yeni split okuma deneyimi önce Hz. Âdem'de finallenir (Hasan kararı,
+  // 12 Tem 2026); onaydan sonra aynı yapı tüm kitaplara açılacak.
+  const ademDuzeni = chapter.bookKey === "adem";
+
+  // Sayfa illüstrasyonu: gerçek görsel `/public/icerik/` klasörüne bu adla
+  // atıldığında kod değişmeden yayına girer; yoksa placeholder görünür.
+  const sayfaGorseli = (sayfaNo: number) =>
+    `/icerik/${chapter.bookKey ?? "ebubekir"}-bolum-${
+      chapter.chapterNumber ?? 1
+    }-sayfa-${sayfaNo}.png`;
+
   const sayfayaGit = useCallback(
     (sayfaIndex: number) => {
       const sonIndex = Math.max(0, sayfalar.length - 1);
@@ -342,12 +357,38 @@ export default function ReaderPage() {
     }, 1700);
   }
 
-  function sayfayiCiz(sayfa: OkumaSayfaModeli) {
+  function sayfayiCiz(sayfa: OkumaSayfaModeli, sayfaIndex: number) {
+    const sayfaNo = sayfaIndex + 1;
+
     if (sayfa.type === "kapak") {
+      if (ademDuzeni) {
+        return (
+          <KapakSayfasiAdem
+            chapter={chapter}
+            rozetAnahtari={rozetAnahtari}
+            gorselSrc={sayfaGorseli(sayfaNo)}
+            onBasla={() => sayfayaGit(1)}
+          />
+        );
+      }
+
       return <KapakSayfasi chapter={chapter} rozetAnahtari={rozetAnahtari} />;
     }
 
     if (sayfa.type === "okuma") {
+      if (ademDuzeni) {
+        return (
+          <HikayeSayfasiAdem
+            chapter={chapter}
+            sayfa={sayfa}
+            sayfaNo={sayfaNo}
+            gorselSrc={sayfaGorseli(sayfaNo)}
+            aktifKelime={aktifKelime}
+            setAktifKelime={setAktifKelime}
+          />
+        );
+      }
+
       return (
         <HikayeSayfasi
           chapter={chapter}
@@ -366,6 +407,7 @@ export default function ReaderPage() {
           setSecilen={secimYap}
           sonucAcik={kararSonucuAcik}
           yanlisDenendi={yanlisDenendi}
+          onKararOnayla={ademDuzeni ? kararOnayla : undefined}
           aktifKelime={aktifKelime}
           setAktifKelime={setAktifKelime}
         />
@@ -399,6 +441,8 @@ export default function ReaderPage() {
         rozetAnahtari={rozetAnahtari}
         kayitHatasi={kayitHatasi}
         onHaritayaDon={() => router.push("/map")}
+        onBolumuBitir={ademDuzeni ? bolumuBitirVeHaritayaDon : undefined}
+        kaydediyor={rozetKaydediliyor}
       />
     );
   }
@@ -443,33 +487,38 @@ export default function ReaderPage() {
 
   return (
     <main className="tema-cocuk zemin-yildizli relative flex h-[100dvh] flex-col overflow-hidden text-murekkep">
-      {/* Üst bar: geri + kitap kimliği + kompakt ses çubuğu */}
-      <header className="relative z-30 px-3 pt-3 sm:px-5 sm:pt-4">
-        <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center gap-x-3 gap-y-2">
-          <button
-            type="button"
-            aria-label="Kitap sayfasına dön"
-            onClick={() => router.push(geriYolu)}
-            className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-cizgi bg-yuzey text-murekkep transition hover:bg-yuzey-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-vurgu"
-          >
-            <Ikon ad="geri" boyut={20} />
-          </button>
+      {/* Üst bar: adem düzeninde profil kartlı yeni bar, diğerlerinde mevcut */}
+      {ademDuzeni ? (
+        <UstBarAdem chapter={chapter} onGeri={() => router.push(geriYolu)} />
+      ) : (
+        <header className="relative z-30 px-3 pt-3 sm:px-5 sm:pt-4">
+          <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center gap-x-3 gap-y-2">
+            <button
+              type="button"
+              aria-label="Kitap sayfasına dön"
+              onClick={() => router.push(geriYolu)}
+              className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-cizgi bg-yuzey text-murekkep transition hover:bg-yuzey-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-vurgu"
+            >
+              <Ikon ad="geri" boyut={20} />
+            </button>
 
-          <div className="min-w-0 flex-1 sm:flex-none">
-            <p className="truncate font-baslik text-base font-bold leading-tight sm:text-lg">
-              {chapter.bookName ?? "Kitap Yolculuğu"}
-            </p>
-            <p className="font-govde text-xs text-murekkep-soluk">
-              Bölüm {chapter.chapterNumber ?? 1} / {chapter.totalChapters ?? 1}
-            </p>
+            <div className="min-w-0 flex-1 sm:flex-none">
+              <p className="truncate font-baslik text-base font-bold leading-tight sm:text-lg">
+                {chapter.bookName ?? "Kitap Yolculuğu"}
+              </p>
+              <p className="font-govde text-xs text-murekkep-soluk">
+                Bölüm {chapter.chapterNumber ?? 1} /{" "}
+                {chapter.totalChapters ?? 1}
+              </p>
+            </div>
+
+            <SesCubugu
+              baslik={chapter.audioTitle}
+              className="w-full sm:ms-auto sm:w-auto sm:min-w-[280px] lg:min-w-[340px]"
+            />
           </div>
-
-          <SesCubugu
-            baslik={chapter.audioTitle}
-            className="w-full sm:ms-auto sm:w-auto sm:min-w-[280px] lg:min-w-[340px]"
-          />
-        </div>
-      </header>
+        </header>
+      )}
 
       {/* Sayfa kaydırıcısı */}
       <div className="relative min-h-0 flex-1">
@@ -477,18 +526,27 @@ export default function ReaderPage() {
           ref={sliderRef}
           className="scrollbar-none flex h-full w-full snap-x snap-mandatory overflow-x-auto overflow-y-hidden scroll-smooth"
         >
-          {sayfalar.map((sayfa) => (
+          {sayfalar.map((sayfa, sayfaIndex) => (
             <section
               key={sayfa.key}
               className="flex h-full w-full shrink-0 snap-start snap-always items-center justify-center px-3 py-2.5 sm:px-5 sm:py-3.5"
             >
-              {sayfayiCiz(sayfa)}
+              {sayfayiCiz(sayfa, sayfaIndex)}
             </section>
           ))}
         </div>
       </div>
 
-      {/* Alt güverte: yalnız Önceki/Sonraki + özel an butonu veya sayfa göstergesi */}
+      {/* Alt güverte: adem düzeninde etiketli pil barı, diğerlerinde mevcut */}
+      {ademDuzeni ? (
+        <AltBarAdem
+          aktifSayfa={aktifSayfa}
+          toplamSayfa={sayfalar.length}
+          onOnceki={() => sayfayaGit(aktifSayfa - 1)}
+          onSonraki={() => sayfayaGit(aktifSayfa + 1)}
+          sonrakiKilitli={sonSayfadaMi}
+        />
+      ) : (
       <div className="relative z-30 px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-2 sm:px-5 sm:pt-3">
         <div className="mx-auto grid w-full max-w-3xl grid-cols-[auto_1fr_auto] items-center gap-3 sm:gap-5">
           <button
@@ -529,6 +587,7 @@ export default function ReaderPage() {
           </button>
         </div>
       </div>
+      )}
 
       {/* Rozet kaydedilirken kutlama örtüsü */}
       <AnimatePresence>

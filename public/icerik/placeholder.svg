@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- İçerik illüstrasyonu placeholder'ı: gerçek görsel aynı adla klasöre
+       atıldığında kod değişmeden yayına girer (PROJE-MODELI.md 6.1). -->
+  <defs>
+    <linearGradient id="gok" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6dfae"/>
+      <stop offset="0.55" stop-color="#e8b84b"/>
+      <stop offset="1" stop-color="#d9a63c"/>
+    </linearGradient>
+    <linearGradient id="tepe1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4f9c72"/>
+      <stop offset="1" stop-color="#34745a"/>
+    </linearGradient>
+    <linearGradient id="tepe2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3d8564"/>
+      <stop offset="1" stop-color="#2a5c47"/>
+    </linearGradient>
+    <linearGradient id="nehir" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdf3d5"/>
+      <stop offset="1" stop-color="#c9e3d2"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#gok)"/>
+
+  <!-- Güneş -->
+  <circle cx="400" cy="285" r="64" fill="#fdf3d5"/>
+  <circle cx="400" cy="285" r="88" fill="#fdf3d5" opacity="0.35"/>
+
+  <!-- Uzak dağlar -->
+  <path d="M0 330 L120 240 L230 330 Z" fill="#b98a3a" opacity="0.55"/>
+  <path d="M560 330 L690 225 L800 330 Z" fill="#b98a3a" opacity="0.55"/>
+
+  <!-- Tepeler -->
+  <path d="M0 600 V360 Q200 300 400 355 T800 350 V600 Z" fill="url(#tepe1)"/>
+  <path d="M0 600 V440 Q240 380 470 435 T800 425 V600 Z" fill="url(#tepe2)"/>
+
+  <!-- Nehir -->
+  <path d="M350 600 Q380 520 360 470 Q345 430 400 355 Q440 430 425 475 Q410 525 450 600 Z" fill="url(#nehir)" opacity="0.9"/>
+
+  <!-- Ağaçlar -->
+  <g fill="#245040">
+    <circle cx="128" cy="430" r="34"/>
+    <circle cx="158" cy="448" r="26"/>
+    <rect x="136" y="452" width="10" height="34" rx="4" fill="#4a3426"/>
+    <circle cx="666" cy="415" r="38"/>
+    <circle cx="632" cy="438" r="27"/>
+    <rect x="658" y="442" width="10" height="36" rx="4" fill="#4a3426"/>
+  </g>
+
+  <!-- Kuşlar -->
+  <g stroke="#5c4326" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.7">
+    <path d="M300 180 q12 -12 24 0 q12 -12 24 0"/>
+    <path d="M492 150 q10 -10 20 0 q10 -10 20 0"/>
+  </g>
+</svg>

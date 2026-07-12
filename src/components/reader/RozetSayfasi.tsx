@@ -11,6 +11,9 @@ type RozetSayfasiProps = {
   rozetAnahtari: string;
   kayitHatasi: string | null;
   onHaritayaDon: () => void;
+  /** Verilirse ana bitirme butonu kartın içinde gösterilir (yeni split düzen) */
+  onBolumuBitir?: () => void;
+  kaydediyor?: boolean;
 };
 
 /**
@@ -22,6 +25,8 @@ export function RozetSayfasi({
   rozetAnahtari,
   kayitHatasi,
   onHaritayaDon,
+  onBolumuBitir,
+  kaydediyor = false,
 }: RozetSayfasiProps) {
   return (
     <OkumaKarti>
@@ -79,6 +84,20 @@ export function RozetSayfasi({
           >
             {kayitHatasi}
           </p>
+        ) : null}
+
+        {onBolumuBitir ? (
+          <Buton
+            varyant="eylem"
+            boyut="buyuk"
+            disabled={kaydediyor}
+            onClick={onBolumuBitir}
+            className="w-full max-w-md shadow-[0_6px_18px_-6px_rgba(46,125,91,0.55)]"
+          >
+            {kaydediyor
+              ? "Rozet Kaydediliyor..."
+              : "Bölümü Bitir ve Rozetini Kazan"}
+          </Buton>
         ) : null}
 
         <Buton varyant="cerceve" boyut="kucuk" onClick={onHaritayaDon}>

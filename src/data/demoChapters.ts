@@ -26,6 +26,8 @@ export type ChapterData = {
   title: string;
   /** Numarasız yalın bölüm adı — üst ortadaki başlıkta kullanılır */
   bolumAdi: string;
+  /** Kapak sayfasındaki kısa tanıtım cümlesi (books.ts `ozet` alanından) */
+  ozet?: string;
   audioTitle: string;
   decisionTitle: string;
   badgeName: string;
@@ -652,6 +654,7 @@ export function adaptDataChapter(routeId: string): ChapterData | null {
     eyebrow: book.eyebrow,
     title: `${chapter.id}. Bölüm - ${chapter.title}`,
     bolumAdi: chapter.title,
+    ozet: chapter.ozet,
     audioTitle: chapter.audioUrl
       ? `${book.title} sesli anlatım`
       : `${book.title} Bölüm ${chapter.id} Sesli Anlatım`,

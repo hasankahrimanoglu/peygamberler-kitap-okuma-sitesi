@@ -17,7 +17,9 @@ export type IkonAdi =
   | "ok-sol"
   | "ok-sag"
   | "oynat"
-  | "duraklat";
+  | "duraklat"
+  | "ses"
+  | "ses-kapali";
 
 type IkonProps = {
   ad: IkonAdi;
@@ -145,6 +147,25 @@ const ikonlar: Record<IkonAdi, ReactNode> = {
       fill="currentColor"
       d="M7.5 5h2.2c.8 0 1.3.5 1.3 1.3v11.4c0 .8-.5 1.3-1.3 1.3H7.5c-.8 0-1.3-.5-1.3-1.3V6.3C6.2 5.5 6.7 5 7.5 5Zm6.8 0h2.2c.8 0 1.3.5 1.3 1.3v11.4c0 .8-.5 1.3-1.3 1.3h-2.2c-.8 0-1.3-.5-1.3-1.3V6.3c0-.8.5-1.3 1.3-1.3Z"
     />
+  ),
+  ses: (
+    <>
+      <path
+        fill="currentColor"
+        d="M4 9.3v5.4c0 .6.4 1 1 1h2.2l4.2 3.5c.65.55 1.6.1 1.6-.75V5.55c0-.85-.95-1.3-1.6-.75L7.2 8.3H5c-.6 0-1 .4-1 1Z"
+      />
+      <path {...cizgi} d="M15.5 9.6a3.4 3.4 0 0 1 0 4.8" />
+      <path {...cizgi} d="M17.8 7.3a6.6 6.6 0 0 1 0 9.4" />
+    </>
+  ),
+  "ses-kapali": (
+    <>
+      <path
+        fill="currentColor"
+        d="M4 9.3v5.4c0 .6.4 1 1 1h2.2l4.2 3.5c.65.55 1.6.1 1.6-.75V5.55c0-.85-.95-1.3-1.6-.75L7.2 8.3H5c-.6 0-1 .4-1 1Z"
+      />
+      <path {...cizgi} d="m15.5 9.8 4.4 4.4m0-4.4-4.4 4.4" />
+    </>
   ),
 };
 
