@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
 import type { ChapterData } from "../../data/demoChapters";
-import { Ikon, OdulIkonu } from "../ui";
+import { Buton, Ikon, OdulIkonu } from "../ui";
 
 type CocukProfili = {
   isim: string;
@@ -101,7 +102,15 @@ type UstBarAdemProps = {
  * solda geri + kitap kimliği, ortada çocuk profil kartı, sağda ses oynatıcı.
  */
 export function UstBarAdem({ chapter, onGeri }: UstBarAdemProps) {
+  const router = useRouter();
   const [profil, setProfil] = useState<CocukProfili>(varsayilanProfil);
+
+  // Harita sayfasındaki çıkışla birebir aynı davranış.
+  function cikisYap() {
+    window.localStorage.removeItem("selected_child_profile_id");
+    window.localStorage.removeItem("selected_child_profile_name");
+    router.push("/dashboard");
+  }
 
   useEffect(() => {
     let iptal = false;
@@ -183,9 +192,18 @@ export function UstBarAdem({ chapter, onGeri }: UstBarAdemProps) {
           </div>
         </div>
 
-        {/* Sağ: ses oynatıcı + sustur */}
-        <div className="col-span-2 lg:col-span-1 lg:justify-self-end">
+        {/* Sağ: ses oynatıcı + sustur + çıkış */}
+        <div className="col-span-2 flex items-center gap-2 lg:col-span-1 lg:justify-self-end">
           <SesOynatici baslik={chapter.audioTitle} />
+          <Buton
+            varyant="cerceve"
+            boyut="kucuk"
+            onClick={cikisYap}
+            className="shrink-0"
+          >
+            <Ikon ad="cikis" boyut={15} />
+            Çıkış Yap
+          </Buton>
         </div>
       </div>
     </header>

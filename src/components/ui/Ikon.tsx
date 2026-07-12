@@ -19,7 +19,8 @@ export type IkonAdi =
   | "oynat"
   | "duraklat"
   | "ses"
-  | "ses-kapali";
+  | "ses-kapali"
+  | "cikis";
 
 type IkonProps = {
   ad: IkonAdi;
@@ -165,6 +166,13 @@ const ikonlar: Record<IkonAdi, ReactNode> = {
         d="M4 9.3v5.4c0 .6.4 1 1 1h2.2l4.2 3.5c.65.55 1.6.1 1.6-.75V5.55c0-.85-.95-1.3-1.6-.75L7.2 8.3H5c-.6 0-1 .4-1 1Z"
       />
       <path {...cizgi} d="m15.5 9.8 4.4 4.4m0-4.4-4.4 4.4" />
+    </>
+  ),
+  cikis: (
+    <>
+      <path {...cizgi} d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4" />
+      <path {...cizgi} d="M16 17l5-5-5-5" />
+      <path {...cizgi} d="M21 12H9" />
     </>
   ),
 };

@@ -13,7 +13,7 @@ type OkumaKartiProps = {
  */
 export function OkumaKarti({ children, className = "" }: OkumaKartiProps) {
   return (
-    <div className="tema-veli relative flex h-full w-full max-w-5xl flex-col overflow-hidden rounded-kart border border-altin-400/50 bg-zemin text-murekkep shadow-kart-gece">
+    <div className="tema-veli relative flex h-full w-full max-w-7xl flex-col overflow-hidden rounded-kart border border-altin-400/50 bg-zemin text-murekkep shadow-kart-gece">
       <div
         className={`flex min-h-0 flex-1 flex-col p-5 sm:p-7 lg:p-8 ${className}`}
       >

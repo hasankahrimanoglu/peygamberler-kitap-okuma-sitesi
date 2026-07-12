@@ -45,10 +45,9 @@ export function AltBarAdem({
         </button>
 
         <div className="flex min-w-0 justify-center">
-          <div className="flex max-w-full flex-col items-center gap-1.5 rounded-2xl border border-cizgi bg-yuzey px-4 py-2 sm:px-5">
-            <p className="flex items-center gap-2 font-baslik text-sm font-bold tabular-nums sm:text-base">
-              <Ikon ad="kitap" boyut={16} className="text-vurgu" />
-              Sayfa {aktifSayfa + 1} / {toplamSayfa}
+          <div className="flex max-w-full flex-col items-center gap-1.5">
+            <p className="font-baslik text-sm font-bold tabular-nums sm:text-base">
+              {aktifSayfa + 1} / {toplamSayfa}
             </p>
             <div
               className="flex items-center gap-1"

@@ -1103,20 +1103,7 @@ export default function DashboardPage() {
                 </p>
               </div>
               <Buton varyant="cerceve" boyut="kucuk" onClick={cikisYap}>
-                <svg
-                  viewBox="0 0 24 24"
-                  aria-hidden
-                  className="h-4 w-4"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4" />
-                  <path d="M16 17l5-5-5-5" />
-                  <path d="M21 12H9" />
-                </svg>
+                <Ikon ad="cikis" boyut={16} />
                 Çıkış Yap
               </Buton>
             </div>
