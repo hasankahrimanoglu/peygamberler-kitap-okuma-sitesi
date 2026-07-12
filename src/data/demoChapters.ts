@@ -1,5 +1,5 @@
 import type { BookContentBlock } from "./books";
-import { getBookChapterByRouteId } from "./books";
+import { books, getBookChapterByRouteId } from "./books";
 
 // Faz 3'te reader sayfasından taşındı: gerçek içerik books.ts'e geçene kadar
 // yaşayacak demo bölümler + sözlük. Reader yalnızca bu modülden okur.
@@ -676,4 +676,23 @@ export function adaptDataChapter(routeId: string): ChapterData | null {
     learned: chapter.learned,
     buguneTasi: chapter.buguneTasi,
   };
+}
+
+/**
+ * Rozet Kapısı'ndaki yönlendirme cümlesi için bir sonraki bölümün yalın adını
+ * bulur. Son bölümdeyse null döner (o zaman final testine yönlendirilir).
+ */
+export function sonrakiBolumAdiniBul(chapter: ChapterData): string | null {
+  const chapterNumber = chapter.chapterNumber ?? 1;
+  const totalChapters = chapter.totalChapters ?? 1;
+
+  if (chapterNumber >= totalChapters) return null;
+
+  // Gerçek içerikli kitaplar books.ts'ten okunur
+  const book = books.find((item) => item.routePrefix === chapter.bookKey);
+  if (book) return book.chapters[chapterNumber]?.title ?? null;
+
+  // Demo bölümler (Hz. Ebû Bekir) ardışık sayısal rota kimliği kullanır
+  const sonraki = demoChapters[String(Number(chapter.id) + 1)];
+  return sonraki?.bolumAdi ?? null;
 }

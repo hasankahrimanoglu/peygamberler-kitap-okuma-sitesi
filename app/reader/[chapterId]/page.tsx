@@ -7,6 +7,7 @@ import { supabase } from "../../../lib/supabase";
 import {
   adaptDataChapter,
   demoChapters,
+  sonrakiBolumAdiniBul,
 } from "../../../src/data/demoChapters";
 import type {
   ChapterData,
@@ -192,6 +193,10 @@ export default function ReaderPage() {
     chapter.chapterNumber ?? 1
   }`;
   const geriYolu = `/kitap/${chapter.bookKey ?? "ebubekir"}`;
+  const sonrakiBolumAdi = useMemo(
+    () => sonrakiBolumAdiniBul(chapter),
+    [chapter],
+  );
 
   // Yeni split okuma deneyimi önce Hz. Âdem'de finallenir (Hasan kararı,
   // 12 Tem 2026); onaydan sonra aynı yapı tüm kitaplara açılacak.
@@ -332,7 +337,7 @@ export default function ReaderPage() {
     setKararSonucuAcik(true);
   }, [chapter.decision, secilen]);
 
-  async function bolumuBitirVeHaritayaDon() {
+  async function bolumuBitirVeKitabaDon() {
     setKayitHatasi(null);
     setRozetKaydediliyor(true);
     const sonuc = await syncChapterProgress(chapter);
@@ -345,15 +350,10 @@ export default function ReaderPage() {
       return;
     }
 
+    // Bölüm bitince çocuk, kitabın bölüm listesine döner (Hasan kararı,
+    // 13 Tem 2026) — bir sonraki bölüm orada açılmış olarak görünür.
     window.setTimeout(() => {
-      const bookKey = chapter.bookKey ?? "ebubekir";
-      const query = new URLSearchParams({
-        completedBook: bookKey,
-        chapter: chapter.id,
-        badge: chapter.badgeName,
-      });
-
-      router.push(`/map?${query.toString()}`);
+      router.push(geriYolu);
     }, 1700);
   }
 
@@ -439,9 +439,10 @@ export default function ReaderPage() {
       <RozetSayfasi
         chapter={chapter}
         rozetAnahtari={rozetAnahtari}
+        sonrakiBolumAdi={sonrakiBolumAdi}
         kayitHatasi={kayitHatasi}
         onHaritayaDon={() => router.push("/map")}
-        onBolumuBitir={ademDuzeni ? bolumuBitirVeHaritayaDon : undefined}
+        onBolumuBitir={ademDuzeni ? bolumuBitirVeKitabaDon : undefined}
         kaydediyor={rozetKaydediliyor}
       />
     );
@@ -479,7 +480,7 @@ export default function ReaderPage() {
       etiket: rozetKaydediliyor
         ? "Rozet Kaydediliyor..."
         : "Bölümü Bitir ve Rozetini Kazan",
-      onClick: bolumuBitirVeHaritayaDon,
+      onClick: bolumuBitirVeKitabaDon,
       disabled: rozetKaydediliyor,
       varyant: "eylem",
     };

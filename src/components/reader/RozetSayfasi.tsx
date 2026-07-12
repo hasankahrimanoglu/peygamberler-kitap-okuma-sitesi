@@ -9,6 +9,8 @@ import { OkumaKarti } from "./OkumaKarti";
 type RozetSayfasiProps = {
   chapter: ChapterData;
   rozetAnahtari: string;
+  /** Bir sonraki bölümün yalın adı; son bölümde null */
+  sonrakiBolumAdi: string | null;
   kayitHatasi: string | null;
   onHaritayaDon: () => void;
   /** Verilirse ana bitirme butonu kartın içinde gösterilir (yeni split düzen) */
@@ -23,6 +25,7 @@ type RozetSayfasiProps = {
 export function RozetSayfasi({
   chapter,
   rozetAnahtari,
+  sonrakiBolumAdi,
   kayitHatasi,
   onHaritayaDon,
   onBolumuBitir,
@@ -42,8 +45,10 @@ export function RozetSayfasi({
         </h2>
 
         <p className="max-w-md font-govde text-sm leading-6 text-murekkep-soluk sm:text-base">
-          Tebrikler! Bu bölümü başarıyla tamamladın. Rozetin artık yolculuğuna
-          eklenmeye hazır.
+          Tebrikler! Bu bölümün rozetini kazandın.{" "}
+          {sonrakiBolumAdi
+            ? `Şimdi "${sonrakiBolumAdi}" bölümüne geçebilirsin.`
+            : "Kitabın tüm bölümlerini bitirdin — artık Büyük Final Testi'ne hazırsın!"}
         </p>
 
         <motion.div
