@@ -1,4 +1,4 @@
-import type { BookContentBlock } from "./books";
+import type { BookContentBlock, GorevTanimi } from "./books";
 import { books, getBookChapterByRouteId } from "./books";
 
 // Faz 3'te reader sayfasından taşındı: gerçek içerik books.ts'e geçene kadar
@@ -14,6 +14,10 @@ export type ReadingSection = {
 export type DecisionOption = {
   id: "a" | "b" | "c";
   text: string;
+  /** Bu şık seçildiğinde gösterilen geri bildirim (ESKİ akış — anlık). */
+  feedback?: string;
+  /** "Seçimini Karşılaştır" metni (YENİ akış — yalnız seçilen şık gösterilir). */
+  comparison?: string;
 };
 
 export type ChapterData = {
@@ -33,16 +37,26 @@ export type ChapterData = {
   badgeName: string;
   returnMessage: string;
   contentBlocks?: BookContentBlock[];
+  /**
+   * "Hikâye Devam Ediyor" blokları (YENİ akış — KARAR 15 Tem 2026).
+   * Dolu olması bölümün yeni akışla okunacağını belirtir: seçim sonrası
+   * doğru/yanlış açıklanmaz; devam + Seçimini Karşılaştır sayfaları açılır.
+   */
+  continuationBlocks?: BookContentBlock[];
   beforeDecision: ReadingSection[];
   decision?: {
     question: string;
     options: DecisionOption[];
     correctOption?: DecisionOption["id"];
     correctFeedback?: string;
+    /** YENİ akışta seçim onaylanınca gösterilen nötr yönlendirme notu. */
+    afterChoiceNote?: string;
   };
   afterDecision: ReadingSection[];
   learned: string[];
   buguneTasi?: string;
+  /** YENİ koşullu görev (Faz 6.1) — varsa Bugüne Taşı sayfası bundan beslenir */
+  gorev?: GorevTanimi;
   mapNote?: string;
 };
 
@@ -662,6 +676,7 @@ export function adaptDataChapter(routeId: string): ChapterData | null {
     badgeName: chapter.badgeName,
     returnMessage: `${chapter.badgeName} haritana işleniyor...`,
     contentBlocks: chapter.paragraphs,
+    continuationBlocks: chapter.continuationParagraphs,
     beforeDecision: [],
     decision:
       chapter.has_question && chapter.question
@@ -670,11 +685,13 @@ export function adaptDataChapter(routeId: string): ChapterData | null {
             options: chapter.question.options,
             correctOption: chapter.question.correctOption,
             correctFeedback: chapter.question.feedback,
+            afterChoiceNote: chapter.question.afterChoiceNote,
           }
         : undefined,
     afterDecision: [],
     learned: chapter.learned,
     buguneTasi: chapter.buguneTasi,
+    gorev: chapter.gorev,
   };
 }
 

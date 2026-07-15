@@ -28,6 +28,8 @@
 aile içi konuşma** döngüsüdür. Duolingo tarzı puan, seri (streak) ve bildirim
 baskısı bilinçli olarak YOKTUR.
 
+Hedef yaş grubu: **8–11**. Tüm içerik ve arayüz dili bu aralığa göre yazılır.
+
 Hedef içerik hacmi: **12–20 kitap**, kitap başına ortalama **8–10 bölüm**.
 Tüm kurgular bu ölçeğe göre tasarlanır (ör. veli raporu 20 kitapta da
 okunabilir kalmalı).
@@ -139,15 +141,21 @@ tamamladığında açılacak."* ("Önceki görevleri bekliyor" gibi soyut ifade 
 | 1 | Terminoloji standardizasyonu | Tüm ekran metinleri rozet/madalya/unvan sözlüğüne çekilir | Yok (adlandırma) |
 | 2 | Tasarım sistemi | Bölüm 3'teki tokenlar + ortak bileşenler (Card, Button, Badge, ProgressBar) | Yok |
 | 3 | Veli paneli yeniden kurgusu | Sol menülü (mobilde alt menülü) çok sayfalı yapı: Ana Sayfa, Kütüphane, Ödüller, Gelişim Raporları | Yok — mevcut veriden türetilir |
-| 4 | Veli ana sayfası | Çocuk kartları: avatar, unvan, okunan kitap, ilerleme, son rozet + "Okumaya Devam Et / Gelişim Raporu / Profili Düzenle". Profil ekleme formu ayrı ekrana taşınır; "Şifre Değiştir" sağ üst hesap menüsüne girer | Yok |
+| 4 | Veli ana sayfası | Çocuk kartları: avatar, unvan, okunan kitap, ilerleme, son rozet + **çocuğun güncel "Bugüne Taşı" görevi (tek satır, en güncel görev — veli kartı geçmiş görev listesi GÖSTERMEZ; çocuğun tam görev listesi kendi "Görevlerim" ekranındadır, bkz. madde 17)** + "Okumaya Devam Et / Gelişim Raporu / Profili Düzenle". Profil ekleme formu ayrı ekrana taşınır; "Şifre Değiştir" sağ üst hesap menüsüne girer | Yok |
 | 5 | Kütüphane sayfası (veli) | Tüm kitaplar, çocuk/durum filtresi, arama, kilitli kitap açıklamaları | Yok — books + user_progress |
 | 6 | Ödüller sayfası (veli) | Rozetler / Madalyalar / Unvanlar sekmeleri, rozet detay paneli | Yok — türetilir |
-| 7 | Gelişim raporu: modal → sekmeli tam sayfa | Genel Bakış, Kitaplar, Ödüller, Sohbet Önerileri sekmeleri; mobilde tam ekran | Yok |
+| 7 | Gelişim raporu: modal → sekmeli tam sayfa | Genel Bakış, Kitaplar, Ödüller, **Görevler**, Sohbet Önerileri sekmeleri; mobilde tam ekran | Yok (Görevler `profile_tasks`'tan) |
 | 8 | Çocuk kitap detayı: modal → tam ekran sayfa | Bölüm listesi, kazanılacak rozet, final testi kartı (kilitli/açık), çift scrollbar sorunu biter | Yok |
 | 9 | Harita durum dili | 3.4'teki durum tablosu uygulanır; "Maceraya Başla" tutarsızlığı düzelir | Yok |
 | 10 | Unvan sistemi | Bölüm 2'deki eşik tablosu; `profiles.unvan` alanı zaten mevcut | Çok düşük |
 | 11 | Sistem değerlendirme dili | Rapor metinleri kesin hüküm değil gözlem bildirir ("...temaları öne çıktı") | Yok (metin) |
 | 12 | Final testi dili | Çocuk ekranında pozitif dil ("5 sorunun 5'ini doğru cevapladın"); veli ekranında sayısal (5 Doğru / 0 Yanlış) | Yok |
+| 13 | Final testi geçme mantığı | **Testi tamamlamak** madalyayı kazandırır; doğru sayısı şartı YOK. Test bir engel değil, hatırlama+kutlama anıdır. Çocuk kaç doğru yaparsa yapsın testi bitirince madalyayı alır ve sonraki kitap açılır. Doğru sayısı yalnızca veli panelinde sayısal görünür; çocuk ekranında yanlışlar utandırıcı vurgulanmaz. ("Derecelendirmeme" felsefesinin gereği.) | Yok |
+| 14 | Kazanımlarım ekranı (çocuk) | Çocuğun kendi rozet/madalya/ünvan koleksiyonunu gördüğü vitrin (`/kazanimlarim`). Oyunlaştırmanın çocuk tarafındaki karşılığı; başarı görünür olur | Yok — türetilir |
+| 15 | Kelime Defterim ekranı (çocuk) | Çocuğun okuduğu kitaplardaki Kelime Kutusu kelimeleri, anlamlarıyla, aranabilir liste (`/kelime-defterim`). Öğrenilen kelimeler tek yerde birikir | Yok — books.ts'ten türetilir |
+| 16 | Bölüm içi karar akışı (KARAR 15 Tem 2026) | "Sen Olsaydın" bağımsız bir bölüm sonu sorusu DEĞİLDİR; hikâyenin karar/doruk noktasına yerleşir. Akış: **Hikâye — 1. Kısım → Sen Olsaydın → Hikâye Devam Ediyor → Seçimini Karşılaştır**. Seçim hikâyeyi DALLANDIRMAZ (tek hikâye); doğru cevap seçim anında AÇIKLANMAZ; hikâye devamı bittikten sonra yalnızca **seçilen şıkkın** karşılaştırma metni gösterilir (her şık için ayrı metin içerikte hazır). Seçim aynı okuma oturumu içinde tutulur (kalıcı kayıt ayrı iştir — bkz. S5) | Yok — books.ts + oturum içi state |
+| 17 | "Bugüne Taşı" görev takibi (KARAR 15 Tem 2026) | Görev KOŞULLUDUR (her bölümde değil; 8 bölümde ~3-4 görev editoryal hedeftir, teknik sınır olarak kodlanmaz) ve GÖNÜLLÜDÜR. Çocuk görevde "Görevi Listeme Ekle / Şimdilik Değil" seçer; eklediği görevleri "Görevlerim" ekranında görür, "Görevi Tamamladım" ile işaretler; Tamamlandı/Tamamlanmadı durumu KALICI saklanır (öz bildirim yeterli, kanıt istenmez). Görev; bölüm rozetinin, madalyanın, sonraki kitabın veya ilerlemenin ŞARTI DEĞİLDİR. Son tarih, ceza, seri YOK | Yeni tablo (bkz. 7.3 — Faz 6.1) |
+| 18 | Veli tarafında görev görünürlüğü (KARAR 15 Tem 2026 akşam) | Veli, çocuğun aldığı TÜM görevleri ve durumlarını Gelişim Raporu'ndaki **Görevler sekmesinden** görür (Alındı / Tamamlandı, hangi kitap-bölüm, tarih). Ana Sayfa kartı ise yalnız EN GÜNCEL tek görevi durum çipiyle ("Alındı"/"Tamamlandı") gösterir — tam liste değil. Veli görevleri yalnız GÖRÜR, düzenlemez/tamamlamaz (öz bildirim çocuğundur). Rapor dili gözlem bildirir; tamamlanmamış görev eksiklik/başarısızlık olarak sunulmaz | Yok — `profile_tasks`'tan türetilir |
 
 ### 4.2 SONRAYA BIRAKILDI (ayrı fazlarda)
 
@@ -157,7 +165,13 @@ tamamladığında açılacak."* ("Önceki görevleri bekliyor" gibi soyut ifade 
 | S2 | Ses çubuğu geliştirmeleri (hız, 10sn ileri/geri, kaldığı yerden devam) | Pozisyon kaydı ister | progress'e ses pozisyonu alanı |
 | S3 | Hesap aktivasyon akışı (şifre maili yerine tek kullanımlık bağlantı) | Çalışan Shopier akışını bozmadan, kendi fazında | E-posta şablonu + token akışı |
 | S4 | Çocuk girişi PIN'e geçiş + parola güvenliği | S3 ile birlikte ele alınır (bkz. Bölüm 8) | Şema + RLS değişikliği |
-| S5 | "Sen Olsaydın" cevaplarının kaydedilip veli raporunda gösterilmesi | Değerli ama zorunlu değil | Yeni tablo |
+| S5 | "Sen Olsaydın" cevaplarının **kalıcı** kaydı (geçmiş cevapların saklanması + veli raporunda `high/mixed/low` özet seçimi) | Değerli ama zorunlu değil. **İki ihtiyaç karıştırılmamalı:** seçimin AYNI OKUMA OTURUMUNDA tutulup bölüm sonunda "Seçimini Karşılaştır"da kullanılması S5 DEĞİLDİR — okuma akışının temel parçasıdır (4.1/16, Faz 6.1; oturum içi state, tablo gerektirmez). S5 yalnızca veritabanına kalıcı kayıttır | Yeni tablo |
+
+> **Not (değişken veli özeti):** İçerik şablonunda veli özeti üç varyant olarak
+> yazılır (`high` / `mixed` / `low`) ve çocuğun "Sen Olsaydın" performansına göre
+> seçilmesi hedeflenir. Bu seçim S5'e (cevap kaydı) bağlıdır; **S5 gelene kadar
+> sistem varsayılan olarak `mixed` varyantını gösterir.** Varyantlar içerikte hazır
+> bekler, S5 ile otomatik devreye girer.
 
 ### 4.3 EKLENMEYECEK (bilinçli karar)
 
@@ -167,6 +181,12 @@ tamamladığında açılacak."* ("Önceki görevleri bekliyor" gibi soyut ifade 
 - Değer radar grafiği (ölçülemeyen psikolojik puanlama üretir).
 - Seri kartları ("Peygamber Hikâyeleri Serisi" paketleri) — tek yol var.
 - "Sen Olsaydın" seçeneklerinde özel görsel (bkz. Bölüm 6.3).
+- **"Bugüne Taşı" görevleri için bağımsız ödül ekonomisi** — göreve ayrı rozet,
+  madalya, puan veya para benzeri sanal ödül VERİLMEZ; görev tamamlama kitap
+  ödüllerinin şartı YAPILMAZ. Görev tamamlanınca hafif bir görsel kutlama /
+  olumlu geri bildirim gösterilebilir; bu, yeni bir koleksiyon ödülüne dönüşmez.
+  "Görevlerim" ekranındaki Tamamlandı durumu çocuğun ilerlemesini görmesi için
+  yeterlidir.
 
 ---
 
@@ -178,8 +198,26 @@ tamamladığında açılacak."* ("Önceki görevleri bekliyor" gibi soyut ifade 
 |---|---|---|
 | `/map` | Keşif Dünyası (harita) | Masaüstü/tablet: hafif zikzak dikey yol; mobil: düz dikey yol. Aktif kitap en büyük kart |
 | `/kitap/[bookId]` | Kitap Yolculuğu (detay) | YENİ — modal yerine tam sayfa. Bölüm listesi + final testi kartı |
-| `/reader/[chapterId]` | Okuma akışı | Mevcut rota korunur. Sayfa tipleri: hikâye, Sen Olsaydın, Ne Öğrendik, Bugüne Taşı, Rozet Kapısı |
+| `/reader/[chapterId]` | Okuma akışı | Mevcut rota korunur. Sayfa tipleri: hikâye (**1. Kısım + Hikâye Devam Ediyor**), **Tanık Sayfası**, Sen Olsaydın, **Seçimini Karşılaştır**, Ne Öğrendik, Bugüne Taşı (**varsa**), Rozet Kapısı. Bölüm içi sıra için aşağıdaki "Bölüm içi akış" kararına bak |
 | `/quiz/[bookId]` | Büyük Final Testi | Mevcut rota korunur |
+| `/kazanimlarim` | Kazanımlarım (çocuk) | YENİ — çocuğun topladığı rozetler, madalyalar ve ünvanı gördüğü vitrin ekranı. Koleksiyon/başarı hissi verir; veri türetilir (yeni tablo yok) |
+| `/kelime-defterim` | Kelime Defterim (çocuk) | YENİ — çocuğun okuduğu kitaplardaki Kelime Kutusu kelimeleri, anlamlarıyla, aranabilir liste. Kelimeler `books.ts`'te zaten var; çocuğun gördükleri toplanıp gösterilir |
+| `/gorevlerim` | Görevlerim (çocuk) | PLANLANDI (Faz 6.1 — onaysız başlamaz) — çocuğun profiline eklediği "Bugüne Taşı" görevleri: görev adı, geldiği kitap+bölüm, Tamamlandı/Tamamlanmadı durumu, "Görevi Tamamladım" eylemi, görev ayrıntısı (varsa güvenlik notu görünür). **Rota adı ve giriş noktası ONAYLANDI (15 Tem 2026):** rota `/gorevlerim`; giriş, haritadaki Kazanımlarım / Kelime Defterim buton grubuna eklenen üçüncü buton |
+
+**Bölüm içi akış (KARAR 15 Tem 2026):** Her bölüm şu sırayla okunur:
+1. **Hikâye — 1. Kısım** (karar/gerilim noktasında biter)
+2. **Sen Olsaydın?** (her bölümde; soru hikâyenin doğal akışından doğar)
+3. **Hikâye Devam Ediyor** (kararın doğurabileceği sonuç hikâyede görülür)
+4. **Seçimini Karşılaştır** (yalnızca çocuğun seçtiği şıkka ait metin gösterilir)
+5. **Ne Öğrendik** (üç kısa madde)
+6. **Bugüne Taşı** (yalnızca görev tanımlanan bölümlerde)
+7. **İllüstrasyon** ve **Rozet Kapısı** (mevcut sistemdeki yeriyle)
+
+Kuralları: seçim hikâyeyi DALLANDIRMAZ; doğru cevap seçim anında AÇIKLANMAZ;
+seçim aynı okuma oturumunda tutulur (kalıcı kayıt S5'tir). **Sayfa yenilenirse
+seçim korunur (KARAR 15 Tem 2026 — `sessionStorage`; tablo gerektirmez),** bölüm
+ilerlemesinin yenilemede korunması davranışıyla tutarlı olması için. Tanık
+Sayfası, kullanılan kitaplarda hikâye sayfalarının içinde kalmaya devam eder.
 
 Okuma ekranı düzeni:
 - **Tablet yatay:** solda metin, sağda illüstrasyon; üstte ses çubuğu; altta Önceki/Sonraki.
@@ -188,6 +226,17 @@ Okuma ekranı düzeni:
 - Alt navigasyonda yalnızca Önceki/Sonraki; "Sayfayı Çevir" tekrarı kaldırılır.
   Ortadaki büyük buton yalnızca özel anlarda: Maceraya Başla / Kararını Onayla /
   Bölümü Bitir / Final Testine Geç.
+- **Tanık Sayfası:** okuma akışına giren özel bir sayfa tipi; olayları hikâyedeki
+  bir çocuk/genç karakterin günlüğünden anlatır (el yazısı font + defter görünümü).
+  **Tamamen opsiyoneldir** — kullanılan kitaplarda 2-3 kez, bölümün doruk
+  noktasından sonra; her kitapta bulunmak zorunda değildir (Hz. Âdem'de yoktur). Veri alanları: `witnessName`,
+  `witnessLabel`, `body`, `isFictional` (kurgusal karakterde sayfa altına "Bu
+  sayfadaki çocuk hayalîdir; anlattığı olaylar gerçektir." notu gösterilir).
+- **Sesli anlatım (KARAR — Model A):** Play'e basıldığında **bölümün tamamı**
+  baştan sona kesintisiz çalar; ses, sayfa kaydırmasına bağlı DEĞİLDİR (çocuk
+  dinlerken sayfaları kendi takip eder veya sadece dinler). Bu, "telefon =
+  dinleyerek devam etme cihazı" kararıyla (Bölüm 1) uyumludur. "Kaldığı yerden
+  devam" (ses pozisyonu kaydı) S2'de eklenir; Model A bu özellikle anlamlı çalışır.
 
 ### 5.2 Veli tarafı
 
@@ -196,7 +245,7 @@ Okuma ekranı düzeni:
 | `/dashboard` | Ana Sayfa (çocuk kartları + kısa bakış) | Sekme yapısının merkezi |
 | `/dashboard/kutuphane` | Kütüphane | Filtre: çocuk + durum; arama |
 | `/dashboard/oduller` | Ödüller | Rozetler / Madalyalar / Unvanlar sekmeleri |
-| `/dashboard/rapor/[profileId]` | Gelişim Raporu | Tam sayfa, sekmeli |
+| `/dashboard/rapor/[profileId]` | Gelişim Raporu | Tam sayfa, sekmeli: Genel Bakış · Kitaplar · Ödüller · **Görevler** · Sohbet Önerileri |
 
 Navigasyon:
 - **Masaüstü/tablet yatay:** sol dikey menü (tablette daraltılabilir).
@@ -235,6 +284,13 @@ public/
   yalnızca iç sembol). Gerekirse ara çözüm: bazı bölümler değer havuzundan
   ortak sembol kullanabilir — sistem iconKey sayesinde ikisini de destekler.
 - Dosya adı küçük harf, Türkçe karaktersiz, tire ile ayrılır.
+- **Merkezî Rozet Matrisi:** Tüm serinin rozetleri tek bir tabloda planlanır
+  (kolonlar: kitap · bölüm no · rozet adı · değer · rozetIcon). Bu tablo iki işi
+  birden yönetir: (a) **rozet adları set genelinde tekildir** — aynı değer birden
+  çok kitapta işlenirse her biri farklı ad + farklı nüansla gelir ("Sadakat
+  Rozeti" / "Bekleyen Kalp Rozeti"), (b) 150–200 rozet görselinin üretim listesidir.
+  İçerik şablonundaki "rozet adı" ve buradaki "rozetIcon" aynı satırda buluşur.
+  Yeni kitap eklenirken bu matrise bakılır; matris yaşayan belgedir.
 
 ### 6.2 Teknik özellikler
 
@@ -295,14 +351,32 @@ ileride istenirse eklenmesi kolaydır.)
 
 ### 7.3 İleriki faz eklemeleri
 
-- **Faz 5:** `activity_events` tablosu (id, profile_id, event_type, payload jsonb,
-  created_at) — tam aktivite akışı için. RLS: veli kendi çocuklarınınkini okur.
-- **Faz 6:** bkz. Bölüm 8.
+- **Faz 6.1 — "Bugüne Taşı" görev durumu (kalıcı veri GEREKTİRİR):**
+  - Görev TANIMLARI kitap içeriğiyle birlikte `books.ts`'te statik kalır
+    (görev ID, ad, kategori, açıklama, tahmini süre, tamamlanma ölçütü, varsa
+    güvenlik notu). Tanım için tablo açılmaz.
+  - Çocuk-görev DURUM ilişkisi kalıcı tablo ister (öneri adı: `profile_tasks`):
+    `profile_id`, `task_id`, `status` (eklendi | tamamlandi), `added_at`,
+    `completed_at`. Alan adları kod aşamasında netleşir.
+  - Bu durum `user_progress`'e sıkıştırılMAZ — o tablo profil+kitap başına TEK
+    satırdır (unique kısıtı) ve görevler bölüm+görev düzeyinde çok satır ister.
+  - RLS: veli yalnızca kendi çocuklarının görev durumunu okur; çocuk profili
+    yalnızca kendi görev durumunu ekler/günceller. Migration Faz 6.1'de yazılır
+    (mevcut veride görev durumu olmadığı için geriye dönük doldurma gerekmez).
+  - Not: 7.2'deki "türetilen kavramlar tablo gerektirmez" kuralı ROZET/MADALYA/
+    UNVAN için geçerliliğini korur; görev durumu türetilemez, bu yüzden bu
+    istisna açıkça buraya yazıldı.
+- **Faz 6 (S1 tam sürümü):** `activity_events` tablosu (id, profile_id,
+  event_type, payload jsonb, created_at) — tam aktivite akışı için. RLS: veli
+  kendi çocuklarınınkini okur. (İlk sürüm — `updated_at` özeti — uygulandı.)
+- **Faz 7:** bkz. Bölüm 8.
 - **S2 için:** `user_progress`e `audio_position` (jsonb veya ayrı kolon).
+- **S5 için:** "Sen Olsaydın" kalıcı cevap kaydı tablosu (profil + bölüm +
+  seçilen şık + zaman). Oturum içi seçim bu tabloya BAĞLI DEĞİLDİR (bkz. 4.2/S5).
 
 ---
 
-## 8. Güvenlik Notları (Faz 6'da ele alınacak — ŞİMDİ DOKUNULMUYOR)
+## 8. Güvenlik Notları (Faz 7'de ele alınacak — ŞİMDİ DOKUNULMUYOR)
 
 1. `child_password` düz metin saklanıyor → PIN'e geçiş + hash.
 2. `"Children can login with profile credentials"` RLS politikası, kimliği
@@ -327,11 +401,13 @@ ileride istenirse eklenmesi kolaydır.)
 | **0** | Bu doküman | Onaylanmış proje modeli |
 | **1** | Tasarım sistemi: Tailwind tokenları, ortak bileşenler (Button, Card, Badge, ProgressBar, StatusChip), placeholder görsel seti, klasör yapısı | Görsel dil hazır; henüz sayfa değişmedi |
 | **2** | Çocuk tarafı: harita yeniden tasarımı + `/kitap/[bookId]` tam sayfa detay + durum dili | Çocuk deneyiminin omurgası yeni tasarımda |
-| **3** | Okuma akışı: reader sayfa tipleri (hikâye, Sen Olsaydın, Ne Öğrendik, Bugüne Taşı, Rozet Kapısı) yeni tasarım + navigasyon sadeleşmesi | Okuma deneyimi tamam |
-| **4** | Veli paneli: ana sayfa, Kütüphane, Ödüller, Gelişim Raporu (tam sayfa) + mobil alt navigasyon | Veli deneyimi tamam |
-| **5** | Unvan hesaplama + son aktivite; istenirse `activity_events` | Küçük veri eklemeleri |
-| **6** | Güvenlik/hesap akışı (Bölüm 8) | Aktivasyon bağlantısı + PIN |
-| **7** | Landing page'in gerçek özelliklerle güncellenmesi | Pazarlama yüzü güncel |
+| **3** | Okuma akışı: reader sayfa tipleri (hikâye, Tanık Sayfası, Sen Olsaydın, Ne Öğrendik, Bugüne Taşı, Rozet Kapısı) yeni tasarım + navigasyon sadeleşmesi. *(Not: bölüm içi akış 15 Tem 2026'da revize edildi — iki parçalı hikâye + Seçimini Karşılaştır + koşullu Bugüne Taşı. Bu revizyonun uygulaması **Faz 6.1**'dedir; Faz 3'ün tamamlanmış hâli o günkü kararlara göredir)* | Okuma deneyimi tamam |
+| **4** | Çocuk tarafı ek ekranlar: **Kazanımlarım** (rozet/madalya/ünvan vitrini) + **Kelime Defterim** (okunan kitaplardaki kelimeler, aranabilir). İkisi de türetilir, yeni tablo yok | Çocuk kendi kazanımlarını ve öğrendiği kelimeleri görüyor |
+| **5** | Veli paneli: ana sayfa (+ çocuğun güncel Bugüne Taşı görevi), Kütüphane, Ödüller, Gelişim Raporu (tam sayfa) + mobil alt navigasyon | Veli deneyimi tamam |
+| **6** | Unvan hesaplama + son aktivite; istenirse `activity_events` | Küçük veri eklemeleri |
+| **6.1** | **İçerik ve Etkileşim Revizyonu (PLANLANDI — Hasan onayı olmadan BAŞLAMAZ):** (a) okuma akışı revizyonu: iki parçalı hikâye + karar noktasında "Sen Olsaydın" + "Seçimini Karşılaştır" + seçimin oturum içinde tutulması (4.1/16); (b) koşullu "Bugüne Taşı" + "Görevi Listeme Ekle / Şimdilik Değil" eylemleri; (c) görev veri altyapısı: `profile_tasks` tablosu + migration + RLS (7.3) — **ekrandan önce altyapı**; (d) çocuk "Görevlerim" ekranı (5.1); (e) veli ana sayfadaki güncel görev alanının yeni görev durumundan beslenmesi; (f) 8 bölümlük yeni Hz. Âdem içeriğinin `books.ts`'e aktarımı | Yeni bölüm akışı + kalıcı görev takibi çalışıyor |
+| **7** | Güvenlik/hesap akışı (Bölüm 8) | Aktivasyon bağlantısı + PIN |
+| **8** | Landing page'in gerçek özelliklerle güncellenmesi | Pazarlama yüzü güncel |
 
 Kurallar:
 - Her faz kendi içinde mobil + tablet + masaüstü ile birlikte biter
@@ -339,6 +415,42 @@ Kurallar:
 - Her fazın sonunda çalışan sistem bozulmamış olmalı; büyük ekran
   değişimlerinde eski ekran, yenisi bitene kadar silinmez.
 - Yapılmamış özellik landing page'de TANITILMAZ.
+
+> **Faz sırası kararı (14 Tem 2026 — Hasan onayı):** Faz 5 (veli paneli), Faz 4
+> (Kazanımlarım + Kelime Defterim) öncesinde uygulanmaya başlandı. Faz 4 sonraya
+> alındı; veli paneli bağımsız ve öncelikli olduğu için sıralama değiştirildi.
+> Faz 5 kademeli teslim ediliyor: **Etap 1** = ortak layout (`app/dashboard/layout.tsx`)
+> + sol menü/mobil alt navigasyon + hesap menüsü/çıkış + tema-veli'ye taşınmış Ana
+> Sayfa (çocuk kartlarında ilerleme, son rozet, güncel "Bugüne Taşı") + ayrı profil
+> ekleme ekranı. **Faz 5 KOD OLARAK TAMAMLANDI (4 etap):** Etap 2 Kütüphane
+> (`/dashboard/kutuphane` — çocuk seçici + arama + durum filtresi + sıralı kilit),
+> Etap 3 Ödüller (`/dashboard/oduller` — Rozetler/Madalyalar/Unvanlar sekmeleri +
+> rozet detayı), Etap 4 tam sayfa Gelişim Raporu (`/dashboard/rapor/[profileId]` —
+> Genel Bakış/Kitaplar/Ödüller/Sohbet Önerileri sekmeleri; Ana Sayfa kartındaki
+> modal bu rotaya taşındı, Raporlar için `/dashboard/rapor` çocuk seçim indeksi).
+> Ortak türetme `src/lib/derive.ts`, rapor türetmesi `src/lib/parent/report.ts`,
+> ortak veri `src/lib/parent/ParentDataProvider.tsx`. Hasan'ın görsel onayı bekleniyor.
+
+> **Durum güncellemesi (15 Tem 2026):** Faz 4 (Kazanımlarım + Kelime Defterim) ve
+> Faz 6'nın ilk sürümü (son aktivite özeti — `user_progress.updated_at`'ten
+> türetilir; `activity_events` tablosu AÇILMADI) kod olarak tamamlandı. İçerik
+> üretimi sırasında kesinleşen yeni kararlar (iki parçalı hikâye, "Seçimini
+> Karşılaştır", koşullu "Bugüne Taşı" + görev takibi — bkz. 4.1/16-17) tamamlanmış
+> Faz 3–6'ya geriye dönük yazılmadı; **Faz 6.1 — İçerik ve Etkileşim Revizyonu**
+> olarak planlandı. Faz 6.1, Hasan onayı olmadan uygulanmaz. Piksel/görsel ince
+> ayar turu (Faz 4+5+6 birlikte) ayrıca bekliyor.
+
+> **Durum güncellemesi (15 Tem 2026 — akşam):** Hasan onayıyla **Faz 6.1 KOD
+> OLARAK TAMAMLANDI:** (a) `profile_tasks` şeması + RLS (`supabase/
+> migration-profile-tasks.sql` — **Supabase'de manuel çalıştırılması bekliyor**);
+> (b) 8 bölümlük yeni Hz. Âdem içeriği `books.ts`'e + final testi quiz'e + veli
+> raporu aktarıldı (parser ile birebir); (c) reader yeni akışı: karar noktası →
+> Hikâye Devam Ediyor → Seçimini Karşılaştır (yalnız seçilen şık), doğru cevap
+> açıklanmaz, seçim `sessionStorage`'da; (d) Bugüne Taşı görev sayfası "Listeme
+> Ekle / Şimdilik Değil"; (e) `/gorevlerim` ekranı + haritada üçüncü buton;
+> (f) veli kartı güncel görevi `profile_tasks`'tan okur. Eski akış (Nuh demo /
+> Ebû Bekir) bilinçli korundu — yeni akış `continuationParagraphs` dolu
+> bölümlerde devreye girer.
 
 ---
 
@@ -352,16 +464,44 @@ Kurallar:
 - [x] Marka adı: **"Peygamberler Keşif Dünyası"** (ileride değişebilir;
       ekranlarda tek kaynaktan yönetilecek).
 
+### 15 Temmuz 2026 (içerik üretimi sırasında kesinleşen kararlar)
+
+- [x] Hedef yaş grubu: **8–11** (tüm belgelerde standart).
+- [x] Bölüm içi akış: **Hikâye 1. Kısım → Sen Olsaydın → Hikâye Devam Ediyor →
+      Seçimini Karşılaştır → Ne Öğrendik → (varsa) Bugüne Taşı → İllüstrasyon →
+      Rozet Kapısı.** Seçim dallandırmaz; doğru cevap seçim anında açıklanmaz;
+      yalnızca seçilen şıkkın karşılaştırma metni gösterilir (bkz. 4.1/16).
+- [x] "Bugüne Taşı" **koşullu ve gönüllü** görevdir; profile eklenir, "Görevlerim"
+      ekranında kalıcı Tamamlandı/Tamamlanmadı durumuyla izlenir (bkz. 4.1/17).
+      Göreve ayrı ödül YOK (bkz. 4.3).
+- [x] Hâbil-Kâbil kıssası **yalnızca Hz. Âdem kitabına özgü içerik kararı** olarak
+      dahil edildi (Bölüm 7, Mâide 5/27-31 merkezli, şiddet ayrıntısı gösterilmeden).
+      Bu bir genel proje kuralı DEĞİLDİR; kitaba özgü kararlar her kitabın
+      kimliğindeki "Kitaba özgü kararlar" alanında tutulur.
+- [x] Yeni özellikler **Faz 6.1** olarak planlandı; Hasan onayı olmadan uygulanmaz.
+- [x] Hz. Âdem yeni içeriği (8 bölüm): **dini doğruluk onayı verildi.** Geçerli
+      kaynak dosya `kitap-icerikleri/KITAP-HZ-ADEM-ICERIK-final.md`.
+- [x] "Sen Olsaydın" seçimi sayfa yenilemede **korunur** (`sessionStorage`).
+- [x] Çocuk görev ekranı: rota **`/gorevlerim`**, giriş noktası haritadaki
+      Kazanımlarım / Kelime Defterim buton grubuna üçüncü buton.
+- [x] Tanık Sayfası **tamamen opsiyoneldir** — kullanılan kitaplarda 2-3 kez;
+      her kitapta bulunmak zorunda değildir (Hz. Âdem'de yoktur).
+- [x] Veli, çocuğun görev takibini **Gelişim Raporu → Görevler sekmesinden**
+      görür (12.4'te açık bırakılan karar; salt görüntüleme). Ana Sayfa kartı
+      yalnız güncel görevi durum çipiyle gösterir (madde 18).
+
 ## 11. İçerik Durumu
 
 | Kitap | Durum |
 |---|---|
-| Hz. Âdem | ✅ Gerçek içerik yazıldı (5 bölüm + final testi) — kaynak: Peygamberler Tarihi serisi çerçevesi, Kur'an kıssası ana hattı. Hasan'ın dini doğruluk onayı bekleniyor |
-| Hz. Nuh | Demo içerik (kalite iyi; gerçek kaynak kontrolüyle gözden geçirilecek) |
+| Hz. Âdem | ✅ Yeni içerik yazıldı ve **dini doğruluk onayı verildi (Hasan, 15 Tem 2026)** — **8 bölüm + Büyük Final Testi**. **Geçerli tek kaynak dosya: `kitap-icerikleri/KITAP-HZ-ADEM-ICERIK-final.md`** (eski `KITAP-HZ-ADEM-ICERIK.md` geçersizdir). Yeni bölüm akışıyla: iki parçalı hikâye + Seçimini Karşılaştır. Hâbil-Kâbil kıssası **Bölüm 7** olarak dahil — Mâide 5/27-31 merkezli, şiddet ayrıntısı gösterilmeden (kitaba özgü karar, genel kural değil). **4 koşullu "Bugüne Taşı" görevi** (Bölüm 2, 3, 5, 7). **`books.ts`'e + final testine + veli raporuna Faz 6.1'de aktarıldı (birebir).** |
+| Hz. Nuh | Demo içerik (kalite iyi; gerçek kaynak kontrolüyle gözden geçirilecek; yeni bölüm akışına Faz 6.1 sonrası uyarlanacak) |
 | Diğer kitaplar | İçerik yok; fazlar ilerlerken kitap kitap eklenecek |
 
 İçerik yazım kuralları: Bahar Yayıncılık yazım kuralları esas alınır
 (peygamber adlarında "(a.s.)" ilk geçişte; kaynak dışına taşan kesin ifade yok;
-abartısız, sıcak, 7–10 yaş dili; peygamber tasviri yok).
-Hz. Âdem içeriğinde Hâbil-Kâbil kıssası bilinçli olarak DAHİL EDİLMEDİ
-(yaş grubuna ağır); istenirse ileride ayrı bölüm olarak değerlendirilir.
+abartısız, sıcak, 8-11 yaş dili; peygamber tasviri yok).
+Kitaba özgü kıssa/rivayet kararları (hangi rivayet kullanılmaz, hassas kıssa
+nasıl çerçevelenir) genel kural DEĞİLDİR; her kitabın kimliğindeki "Kitaba özgü
+kararlar" alanında tutulur. Örnek: Hz. Âdem'de Hâbil-Kâbil'in Mâide merkezli,
+şiddet ayrıntısız işlenmesi.

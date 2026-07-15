@@ -29,8 +29,12 @@ const secenekSirasi: Record<DecisionOption["id"], number> = {
 
 /**
  * Sen Olsaydın sayfası. Seçenekler salt metindir (PROJE-MODELI.md 6.3);
- * çocuk seçer, alttaki "Kararını Onayla" ile onaylar. Yanlış seçimde nazik
- * bir yeniden deneme daveti, doğru seçimde kutlama ve yolun açılması vardır.
+ * çocuk seçer, alttaki "Kararını Onayla" ile onaylar.
+ *
+ * ESKİ akış: yanlış seçimde nazik yeniden deneme, doğruda kutlama + konfeti.
+ * YENİ akış (KARAR 15 Tem 2026 — `continuationBlocks` dolu bölümler): doğru
+ * cevap seçim anında AÇIKLANMAZ; onay yalnızca hikâyenin devamını açar, nötr
+ * bir yönlendirme notu gösterilir. Karşılaştırma bölüm sonundadır.
  */
 export function KararSayfasi({
   chapter,
@@ -45,10 +49,11 @@ export function KararSayfasi({
   if (!chapter.decision) return null;
 
   const { decision } = chapter;
+  const yeniAkis = Boolean(chapter.continuationBlocks?.length);
 
   return (
     <OkumaKarti>
-      {sonucAcik ? <Konfeti /> : null}
+      {sonucAcik && !yeniAkis ? <Konfeti /> : null}
 
       <div className="relative flex min-h-0 flex-1 flex-col items-center gap-3 overflow-y-auto text-center sm:gap-4">
         <p className="flex items-center gap-2 pt-1 font-baslik text-xs font-semibold uppercase tracking-[0.24em] text-vurgu sm:text-sm">
@@ -74,7 +79,10 @@ export function KararSayfasi({
           {decision.options.map((option) => {
             const seciliMi = secilen === option.id;
             const dogruSecenek = decision.correctOption === option.id;
-            const kutlanan = sonucAcik && (dogruSecenek || (!decision.correctOption && seciliMi));
+            // Yeni akışta doğru şık vurgulanmaz — yalnız çocuğun seçimi işaretli kalır.
+            const kutlanan = yeniAkis
+              ? sonucAcik && seciliMi
+              : sonucAcik && (dogruSecenek || (!decision.correctOption && seciliMi));
             const sonumlu = sonucAcik && !kutlanan;
 
             return (
@@ -125,8 +133,9 @@ export function KararSayfasi({
             >
               <Ikon ad="dusunce" boyut={20} className="mt-0.5 shrink-0 text-vurgu" />
               <p className="font-govde text-sm font-semibold leading-6 text-murekkep sm:text-base">
-                Güzel düşündün. Bir kez daha dene: kahramanımızın kalbine en
-                çok hangisi yakışırdı?
+                {decision.options.find((option) => option.id === secilen)
+                  ?.feedback ??
+                  "Güzel düşündün. Bir kez daha dene: kahramanımızın kalbine en çok hangisi yakışırdı?"}
               </p>
             </motion.div>
           ) : null}
@@ -137,13 +146,22 @@ export function KararSayfasi({
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 8, scale: 0.97 }}
               transition={{ duration: 0.22 }}
-              className="flex w-full max-w-2xl items-start gap-2.5 rounded-kart bg-eylem-yumusak px-4 py-3 text-left sm:px-5"
+              className={`flex w-full max-w-2xl items-start gap-2.5 rounded-kart px-4 py-3 text-left sm:px-5 ${
+                yeniAkis ? "bg-vurgu-yumusak" : "bg-eylem-yumusak"
+              }`}
               aria-live="polite"
             >
-              <Ikon ad="yildiz" boyut={20} className="mt-0.5 shrink-0 text-eylem" />
+              <Ikon
+                ad={yeniAkis ? "dusunce" : "yildiz"}
+                boyut={20}
+                className={`mt-0.5 shrink-0 ${yeniAkis ? "text-vurgu" : "text-eylem"}`}
+              />
               <p className="font-govde text-sm font-semibold leading-6 text-murekkep sm:text-base">
-                {decision.correctFeedback ??
-                  "Harika bir karar! Sağdaki okla sayfayı çevir ve yolculuğuna devam et."}
+                {yeniAkis
+                  ? decision.afterChoiceNote ??
+                    "Cevabını aklında tut. Hikâyenin devamını okuyunca seçimini karşılaştıracaksın."
+                  : decision.correctFeedback ??
+                    "Harika bir karar! Sağdaki okla sayfayı çevir ve yolculuğuna devam et."}
               </p>
             </motion.div>
           ) : null}

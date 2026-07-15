@@ -6,6 +6,12 @@ import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabase";
 import { books as dataBooks } from "../../src/data/books";
 import {
+  clampProgress,
+  normalizeBookName as normalizeText,
+  unvanAnahtari,
+  unvanFromBookCount as getGlobalProfileTitle,
+} from "../../src/lib/derive";
+import {
   Buton,
   DurumCipi,
   Ikon,
@@ -104,43 +110,18 @@ const ebubekirChapterCatalog = [
   { id: "13", title: "En Kutsal Görev", badgeName: "Vefa Rozeti" },
 ];
 
-const ademChapterCatalog: ChapterStop[] = [
-  {
-    id: "1",
-    title: "İlk İnsan, İlk Öğrenme",
-    badgeName: "İlk Adım Rozeti",
-    isUnlocked: true,
-    isCompleted: false,
-  },
-  {
-    id: "2",
-    title: "İsimlerin Sırrı",
-    badgeName: "Bilgi Rozeti",
-    isUnlocked: false,
-    isCompleted: false,
-  },
-  {
-    id: "3",
-    title: "Unutmak ve Hatırlamak",
-    badgeName: "Tövbe Rozeti",
-    isUnlocked: false,
-    isCompleted: false,
-  },
-  {
-    id: "4",
-    title: "Yeryüzünde İlk Sabah",
-    badgeName: "Sorumluluk Rozeti",
-    isUnlocked: false,
-    isCompleted: false,
-  },
-  {
-    id: "5",
-    title: "İlk Aile, İlk İyilik",
-    badgeName: "Aile ve Merhamet Rozeti",
-    isUnlocked: false,
-    isCompleted: false,
-  },
-];
+// Hz. Âdem katalogu books.ts'ten türetilir — içerik güncellenince harita
+// kartındaki bölüm/rozet adları kod değişmeden güncel kalır (Faz 6.1).
+const ademChapterCatalog: ChapterStop[] =
+  dataBooks
+    .find((book) => book.id === "hz-adem")
+    ?.chapters.map((chapter, index) => ({
+      id: chapter.id,
+      title: chapter.title,
+      badgeName: chapter.badgeName,
+      isUnlocked: index === 0,
+      isCompleted: false,
+    })) ?? [];
 
 const nuhChapterCatalog: ChapterStop[] = [
   {
@@ -316,36 +297,6 @@ function bolumOzetiBul(adventureId: number, bolumIndex: number) {
     ?.chapters[bolumIndex]?.ozet;
 }
 
-function normalizeText(value: string) {
-  return value
-    .toLocaleLowerCase("tr-TR")
-    .replaceAll("â", "a")
-    .replaceAll("î", "i")
-    .replaceAll("û", "u")
-    .replaceAll("ü", "u")
-    .replaceAll("ö", "o")
-    .replaceAll("ı", "i")
-    .replaceAll("ş", "s")
-    .replaceAll("ğ", "g")
-    .replaceAll("ç", "c");
-}
-
-function clampProgress(value: number) {
-  return Math.min(100, Math.max(0, Math.round(value)));
-}
-
-// PROJE-MODELI.md Bölüm 2 — unvan, tamamlanan kitap sayısına bağlıdır (puan yok)
-function getGlobalProfileTitle({
-  completedBookCount,
-}: Omit<GlobalProfileStats, "title">) {
-  if (completedBookCount >= 15) return "Hikâye Ustası";
-  if (completedBookCount >= 10) return "Bilge Yolcu";
-  if (completedBookCount >= 6) return "Yol Arkadaşı";
-  if (completedBookCount >= 3) return "Değer Toplayıcısı";
-  if (completedBookCount >= 1) return "Yol Kaşifi";
-  return "Yeni Gezgin";
-}
-
 function getMatchedAdventureId(bookName: string) {
   const normalizedName = normalizeText(bookName);
   const matchedEntry = Object.entries(adventureBookKeywords).find(([, keywords]) =>
@@ -355,9 +306,6 @@ function getMatchedAdventureId(bookName: string) {
   return matchedEntry ? Number(matchedEntry[0]) : null;
 }
 
-function unvanAnahtari(unvan: string) {
-  return normalizeText(unvan).replaceAll(" ", "-");
-}
 
 function KapakMini({
   bookKey,
@@ -794,7 +742,7 @@ export default function DashboardPage() {
       );
       const nextGlobalStats: GlobalProfileStats = {
         ...nextGlobalStatsBase,
-        title: getGlobalProfileTitle(nextGlobalStatsBase),
+        title: getGlobalProfileTitle(nextGlobalStatsBase.completedBookCount),
       };
 
       setBookProgressByAdventure(computedProgress);
@@ -1108,6 +1056,34 @@ export default function DashboardPage() {
               </Buton>
             </div>
           </Kart>
+
+          {/* Çocuk ek ekranları: koleksiyon, kelime defteri, görevler (Faz 6.1) */}
+          <div className="mt-4 grid gap-3 sm:grid-cols-3">
+            <Buton
+              varyant="ikincil"
+              tamGenislik
+              onClick={() => router.push("/kazanimlarim")}
+            >
+              <Ikon ad="rozet" boyut={18} />
+              Kazanımlarım
+            </Buton>
+            <Buton
+              varyant="ikincil"
+              tamGenislik
+              onClick={() => router.push("/kelime-defterim")}
+            >
+              <Ikon ad="kitap" boyut={18} />
+              Kelime Defterim
+            </Buton>
+            <Buton
+              varyant="ikincil"
+              tamGenislik
+              onClick={() => router.push("/gorevlerim")}
+            >
+              <Ikon ad="fener" boyut={18} />
+              Görevlerim
+            </Buton>
+          </div>
         </header>
 
         {isProfileProgressLoading ? (

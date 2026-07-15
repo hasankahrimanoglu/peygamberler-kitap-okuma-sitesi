@@ -43,7 +43,7 @@ create table if not exists public.books (
 );
 
 insert into public.books (isim, aciklama, sira, toplam_bolum)
-select 'Hz. Adem', 'İlk insan, ilk yolculuk', 1, 5
+select 'Hz. Adem', 'İlk insan, ilk yolculuk', 1, 8
 where not exists (
   select 1 from public.books
   where lower(isim) like '%adem%'
@@ -78,7 +78,7 @@ where not exists (
 );
 
 update public.books
-set toplam_bolum = 5, sira = 1
+set toplam_bolum = 8, sira = 1
 where lower(isim) like '%adem%';
 
 update public.books
@@ -127,10 +127,24 @@ add column if not exists final_badge text;
 create unique index if not exists user_progress_profile_book_unique
 on public.user_progress (profile_id, book_id);
 
+-- FAZ 6.1 — "Bugüne Taşı" görev durumu (PROJE-MODELI.md 7.3).
+-- Görev TANIMLARI books.ts'te statiktir; burada yalnız çocuk-görev DURUMU tutulur.
+-- RLS politikaları migration-profile-tasks.sql içindedir (user_progress deseni).
+create table if not exists public.profile_tasks (
+  id uuid primary key default gen_random_uuid(),
+  profile_id uuid not null references public.profiles(id) on delete cascade,
+  task_id text not null,
+  status text not null default 'eklendi' check (status in ('eklendi', 'tamamlandi')),
+  added_at timestamptz not null default now(),
+  completed_at timestamptz,
+  unique(profile_id, task_id)
+);
+
 alter table public.profiles enable row level security;
 alter table public.books enable row level security;
 alter table public.user_progress enable row level security;
 alter table public.parent_subscriptions enable row level security;
+alter table public.profile_tasks enable row level security;
 
 drop policy if exists "Parents manage own child profiles" on public.profiles;
 create policy "Parents manage own child profiles"

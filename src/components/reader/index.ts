@@ -5,6 +5,8 @@ export { Konfeti } from "./Konfeti";
 export { KapakSayfasi } from "./KapakSayfasi";
 export { HikayeSayfasi } from "./HikayeSayfasi";
 export { KararSayfasi } from "./KararSayfasi";
+export { KarsilastirmaSayfasi } from "./KarsilastirmaSayfasi";
+export { TanikSayfasi } from "./TanikSayfasi";
 export { OgrendikSayfasi } from "./OgrendikSayfasi";
 export { GorevSayfasi } from "./GorevSayfasi";
 export { RozetSayfasi } from "./RozetSayfasi";

@@ -17,8 +17,9 @@ type QuizQuestion = {
   correctOption: QuizOption["id"];
 };
 
-type TitleResult = {
-  title: string;
+type CompletionResult = {
+  madalya: string;
+  headline: string;
   message: string;
   className: string;
 };
@@ -166,52 +167,82 @@ const quizQuestions: QuizQuestion[] = [
 const ademQuizQuestions: QuizQuestion[] = [
   {
     id: 1,
-    question: "Allah, Hz. Âdem'i yarattıktan sonra ona ne öğretti?",
+    question: "Hz. Âdem'in yeryüzündeki sorumluluğu neyi gerektiriyordu?",
     correctOption: "b",
     options: [
-      { id: "a", text: "Sadece yürümeyi" },
-      { id: "b", text: "Varlıkların isimlerini" },
-      { id: "c", text: "Sadece gemi yapmayı" },
+      { id: "a", text: "Yeryüzündeki her şeyi istediği gibi kullanmayı" },
+      { id: "b", text: "Kendisine verilen imkânları iyilikle ve özenle kullanmayı" },
+      { id: "c", text: "Hiçbir varlıktan yardım almamayı" },
     ],
   },
   {
     id: 2,
-    question: "İblis, Hz. Âdem'e saygı göstermeyi neden kabul etmedi?",
-    correctOption: "a",
+    question: "İsimlerin öğretilmesi insana verilen hangi armağanı gösterdi?",
+    correctOption: "c",
     options: [
-      { id: "a", text: "Kibirlendiği ve kendini üstün gördüğü için" },
-      { id: "b", text: "Hz. Âdem'i hiç tanımadığı için" },
-      { id: "c", text: "Çok yorgun olduğu için" },
+      { id: "a", text: "Hiç yorulmama özelliğini" },
+      { id: "b", text: "Başkalarından üstün olma hakkını" },
+      { id: "c", text: "Öğrenme, düşünme ve bilgisini paylaşma yeteneğini" },
     ],
   },
   {
     id: 3,
-    question: "Hz. Âdem, hata yaptığını anlayınca ne yaptı?",
-    correctOption: "c",
+    question: "Kur'an'a göre yasak ağacın türü neydi?",
+    correctOption: "a",
     options: [
-      { id: "a", text: "Hatasını saklayıp unutmaya çalıştı" },
-      { id: "b", text: "Suçu başkasına attı" },
-      { id: "c", text: "Pişman oldu, dua etti ve tövbe etti" },
+      { id: "a", text: "Türü açıklanmamıştır." },
+      { id: "b", text: "Elma ağacıydı." },
+      { id: "c", text: "Buğday ağacıydı." },
     ],
   },
   {
     id: 4,
-    question: "Yeryüzü, Hz. Âdem için nasıl bir yer oldu?",
-    correctOption: "a",
+    question: "Şeytan yasak ağaç konusunda kimi aldattı?",
+    correctOption: "b",
     options: [
-      { id: "a", text: "Çalışıp iyilik yapacağı yeni yurdu" },
-      { id: "b", text: "Kısa süre kalacağı bir misafirlik yeri" },
-      { id: "c", text: "Hiçbir şey yapmadan bekleyeceği bir yer" },
+      { id: "a", text: "Yalnızca Hz. Havva'yı" },
+      { id: "b", text: "Hz. Âdem ile Hz. Havva'yı birlikte" },
+      { id: "c", text: "Yalnızca melekleri" },
     ],
   },
   {
     id: 5,
-    question: "Hz. Âdem, çocuklarına en çok neyi öğretti?",
-    correctOption: "b",
+    question: "Hz. Âdem ile Hz. Havva hatalarını anlayınca ne yaptı?",
+    correctOption: "c",
     options: [
-      { id: "a", text: "Kimseyle paylaşmamayı" },
-      { id: "b", text: "Doğruluğu, iyiliği ve şükretmeyi" },
-      { id: "c", text: "Hep yalnız çalışmayı" },
+      { id: "a", text: "Birbirlerini suçladı." },
+      { id: "b", text: "Hatalarını sakladı." },
+      { id: "c", text: "Sorumluluklarını kabul edip Allah'tan bağışlanma istedi." },
+    ],
+  },
+  {
+    id: 6,
+    question: "Hz. Âdem ile Hz. Havva'nın yeryüzünde nereye indirildiği hakkında ne biliyoruz?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Kur'an kesin bir yer bildirmez." },
+      { id: "b", text: "İkisinin de aynı şehre indiği kesin olarak bilinir." },
+      { id: "c", text: "Yolculuklarının bütün durakları Kur'an'da yazılıdır." },
+    ],
+  },
+  {
+    id: 7,
+    question: "Öfkenin büyüdüğünü fark eden birinin yapabileceği en doğru şey nedir?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Durmak, uzaklaşmak ve güvendiği bir yetişkinden yardım istemek" },
+      { id: "b", text: "Öfkesini karşısındaki kişiden çıkarmak" },
+      { id: "c", text: "Öfkesini kimseye söylemeden içinde büyütmek" },
+    ],
+  },
+  {
+    id: 8,
+    question: "Hz. Âdem'in bıraktığı en değerli miras neydi?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Kesin yeri bilinen büyük bir yapı" },
+      { id: "b", text: "Yeryüzündeki bütün eşyalar" },
+      { id: "c", text: "Doğru bilgi, tövbe örneği ve güzel değerler" },
     ],
   },
 ];
@@ -271,7 +302,7 @@ const nuhQuizQuestions: QuizQuestion[] = [
 
 const quizConfig: Record<string, QuizConfig> = {
   adem: {
-    label: "Hz. Adem",
+    label: "Hz. Âdem",
     questions: ademQuizQuestions,
     storagePrefix: "adem",
     keywords: ["adem"],
@@ -301,41 +332,24 @@ const confettiPieces = [
   { left: "93%", delay: 0.14, color: "bg-lime-300", rotate: 16 },
 ];
 
-function getTitleResult(score: number, totalQuestions: number): TitleResult {
-  const successRate = totalQuestions > 0 ? score / totalQuestions : 0;
-
-  if (successRate >= 0.9) {
-    return {
-      title: "🌟 Altın Yol Arkadaşı!",
-      message:
-        "Harika! Bu kitabın değerlerini çok iyi yakalamışsın. Yolculuğun ışıl ışıl tamamlandı!",
-      className: "border-yellow-300/60 bg-yellow-300/15 text-yellow-100",
-    };
-  }
-
-  if (successRate >= 0.7) {
-    return {
-      title: "🏅 Değer Ustası!",
-      message:
-        "Çok iyi gidiyorsun. Birkaç küçük detayı tekrar edersen zirveye tamamen yerleşirsin.",
-      className: "border-amber-300/55 bg-amber-300/15 text-amber-100",
-    };
-  }
-
-  if (successRate >= 0.4) {
-    return {
-      title: "🗺️ Meraklı Kâşif!",
-      message:
-        "Güzel başlangıç. Bazı duraklara yeniden uğrayınca cevapların daha da güçlenecek.",
-      className: "border-sky-300/55 bg-sky-300/15 text-sky-100",
-    };
-  }
+// PROJE-MODELI #13: Testi tamamlamak madalyayı kazandırır; doğru sayısı önemli
+// değil. Sonuç ekranı derecelendirme/unvan (Altın Yol Arkadaşı vb.) göstermez —
+// kazanılan kitap MADALYASINI ve pozitif bir tebrik gösterir.
+function getCompletionResult(
+  score: number,
+  totalQuestions: number,
+  label: string,
+): CompletionResult {
+  const madalya = `${label} Yolculuk Madalyası`;
+  const hepsiDogru = totalQuestions > 0 && score === totalQuestions;
 
   return {
-    title: "🎒 Şanslı Yolcu!",
-    message:
-      "Neden mi şanslı? Çünkü bu güzel kitabı bir kez daha okumak için harika bir bahanen var!",
-    className: "border-emerald-300/55 bg-emerald-300/15 text-emerald-100",
+    madalya,
+    headline: "Madalyanı Kazandın!",
+    message: hepsiDogru
+      ? `Bu yolculuğu tamamladın ve her soruyu tek tek hatırladın. ${madalya} artık senin!`
+      : `Bu yolculuğu tamamladın ve ${madalya}'nı kazandın. Haritada yeni bir kitabın kilidi açıldı.`,
+    className: "border-amber-300/60 bg-amber-300/15 text-amber-100",
   };
 }
 
@@ -367,20 +381,19 @@ function isMissingFinalProgressColumn(message?: string) {
 async function saveQuizCompletionToSupabase({
   profileId,
   activeQuiz,
-  title,
+  madalya,
   score,
   totalQuestions,
 }: {
   profileId: string;
   activeQuiz: QuizConfig;
-  title: string;
+  madalya: string;
   score: number;
   totalQuestions: number;
 }) {
-  const successRate = totalQuestions > 0 ? score / totalQuestions : 0;
-  const isSuccessful = successRate >= 0.9;
-
-  if (!isSuccessful) return;
+  // PROJE-MODELI #13: Testi tamamlamak madalyayı kazandırır; doğru sayısı şart
+  // DEĞİLDİR. Bu yüzden eski %90 skor eşiği kaldırıldı — çocuk testi bitirince
+  // "bitti" durumu ve madalya her hâlükârda yazılır, sonraki kitap açılır.
 
   const { data: books, error: booksError } = await supabase
     .from("books")
@@ -412,9 +425,9 @@ async function saveQuizCompletionToSupabase({
   };
   const richPayload = {
     ...basePayload,
-    final_title: title,
+    final_title: madalya,
     final_score: score,
-    final_badge: `${activeQuiz.label} Final Testi`,
+    final_badge: `${activeQuiz.label} Yolculuk Madalyası`,
   };
 
   const { error: richProgressError } = await supabase
@@ -435,14 +448,9 @@ async function saveQuizCompletionToSupabase({
     return;
   }
 
-  const { error: titleError } = await supabase
-    .from("profiles")
-    .update({ unvan: title })
-    .eq("id", profileId);
-
-  if (titleError) {
-    console.error("Final unvanı profile yazılamadı:", titleError.message);
-  }
+  // Unvan burada YAZILMAZ: unvan skora değil, tamamlanan kitap sayısına bağlıdır
+  // (PROJE-MODELI Bölüm 2; puan/derecelendirme yasağı). Unvan hesabı tamamlanan
+  // kitap eşiğinden yapılır — bu iş Faz 6'ya bırakılmıştır.
 }
 
 function CheckIcon() {
@@ -484,9 +492,9 @@ export default function QuizPage() {
   const activeQuestion = questions[questionIndex];
   const selectedIsCorrect = selectedOption === activeQuestion.correctOption;
   const progress = Math.round(((questionIndex + 1) / questions.length) * 100);
-  const titleResult = useMemo(
-    () => getTitleResult(score, questions.length),
-    [score, questions.length],
+  const completion = useMemo(
+    () => getCompletionResult(score, questions.length, activeQuiz.label),
+    [score, questions.length, activeQuiz.label],
   );
 
   function checkAnswer() {
@@ -517,7 +525,7 @@ export default function QuizPage() {
       await saveQuizCompletionToSupabase({
         profileId,
         activeQuiz,
-        title: titleResult.title,
+        madalya: completion.madalya,
         score,
         totalQuestions: questions.length,
       });
@@ -586,25 +594,25 @@ export default function QuizPage() {
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className={[
                   "relative mx-auto mb-6 max-w-xl rounded-3xl border p-6 shadow-2xl",
-                  titleResult.className,
+                  completion.className,
                 ].join(" ")}
               >
                 <p className="text-sm font-bold uppercase tracking-[0.2em] opacity-80">
-                  Yeni Unvan
+                  🏅 {completion.headline}
                 </p>
-                <h2 className="mt-3 text-3xl font-black tracking-normal sm:text-4xl">
-                  {titleResult.title}
+                <h2 className="mt-3 text-2xl font-black tracking-normal sm:text-3xl">
+                  {completion.madalya}
                 </h2>
                 <p className="mt-4 text-lg font-semibold leading-8">
-                  {titleResult.message}
+                  {completion.message}
                 </p>
               </motion.div>
 
               <p className="relative text-2xl font-black text-white">
-                {score}/{questions.length} doğru
+                {questions.length} sorunun {score} tanesini doğru cevapladın.
               </p>
               <p className="relative mx-auto mt-3 max-w-xl text-base leading-7 text-slate-300">
-                Bu nişan haritada {activeQuiz.label} kartının üzerinde parlayacak.
+                Bu madalya haritada {activeQuiz.label} kartının üzerinde parlayacak.
               </p>
 
               <button

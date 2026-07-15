@@ -50,6 +50,7 @@ const config: Config = {
         baslik: ["var(--font-baloo)", "Arial", "sans-serif"],
         govde: ["var(--font-nunito)", "Arial", "sans-serif"],
         story: ["var(--font-lora)", "Georgia", "serif"],
+        elyazi: ["var(--font-elyazi)", "cursive"],
       },
       borderRadius: {
         kart: "1.25rem",

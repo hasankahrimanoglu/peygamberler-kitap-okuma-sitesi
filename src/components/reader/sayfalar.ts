@@ -17,7 +17,16 @@ export type OkumaSayfaModeli =
       bloklar: BookContentBlock[];
       gorsel?: OkumaGorseli;
     }
+  | {
+      key: string;
+      type: "tanik";
+      witnessName: string;
+      witnessLabel: string;
+      body: string;
+      isFictional: boolean;
+    }
   | { key: string; type: "karar" }
+  | { key: string; type: "karsilastirma" }
   | { key: string; type: "ogrendik" }
   | { key: string; type: "gorev" }
   | { key: string; type: "rozet" };
@@ -70,6 +79,21 @@ function bloklariGrupla(
       // sayfada zaten görsel varsa yeni sayfa açılır.
       if (gorsel) sayfayiKapat();
       gorsel = { src: block.src, alt: block.alt, caption: block.caption };
+      continue;
+    }
+
+    if (block.type === "witness") {
+      // Tanık Sayfası kendi başına tam bir sayfadır (defter görünümü);
+      // önce bekleyen metin sayfasını kapatır, sonra ayrı sayfa açar.
+      sayfayiKapat();
+      sayfalar.push({
+        key: `${keyOneki}-tanik-${sayfalar.length}`,
+        type: "tanik",
+        witnessName: block.witnessName,
+        witnessLabel: block.witnessLabel,
+        body: block.body,
+        isFictional: block.isFictional,
+      });
       continue;
     }
 
@@ -126,14 +150,21 @@ function bolumcukleriGrupla(
 
 /**
  * Bölümün tüm okuma akışını sıralı sayfa listesine çevirir.
- * `sonucAcik` false iken karar sonrası sayfalar (sonuç, Ne Öğrendik,
- * Bugüne Taşı, Rozet Kapısı) listeye eklenmez — Sen Olsaydın kapısı kapalıdır.
+ * `sonucAcik` false iken karar sonrası sayfalar listeye eklenmez —
+ * Sen Olsaydın kapısı kapalıdır.
+ *
+ * YENİ akış (KARAR 15 Tem 2026 — `continuationBlocks` dolu bölümlerde):
+ * kapak → Hikâye 1. Kısım → Sen Olsaydın → [seçim yapılınca] Hikâye Devam
+ * Ediyor → Seçimini Karşılaştır → Ne Öğrendik → (görev varsa) Bugüne Taşı →
+ * Rozet Kapısı. `sonucAcik` bu akışta "seçim yapıldı" demektir (doğru şart
+ * DEĞİL — doğru cevap seçim anında açıklanmaz).
  */
 export function okumaSayfalariniOlustur(
   chapter: ChapterData,
   sonucAcik: boolean,
 ): OkumaSayfaModeli[] {
   const sayfalar: OkumaSayfaModeli[] = [{ key: "kapak", type: "kapak" }];
+  const yeniAkis = Boolean(chapter.continuationBlocks?.length);
 
   if (chapter.contentBlocks) {
     sayfalar.push(...bloklariGrupla(chapter.contentBlocks, "icerik"));
@@ -146,10 +177,16 @@ export function okumaSayfalariniOlustur(
   }
 
   if (sonucAcik) {
-    sayfalar.push(...bolumcukleriGrupla(chapter.afterDecision, "sonra"));
+    if (yeniAkis && chapter.continuationBlocks) {
+      sayfalar.push(...bloklariGrupla(chapter.continuationBlocks, "devam"));
+      sayfalar.push({ key: "karsilastirma", type: "karsilastirma" });
+    } else {
+      sayfalar.push(...bolumcukleriGrupla(chapter.afterDecision, "sonra"));
+    }
+
     sayfalar.push({ key: "ogrendik", type: "ogrendik" });
 
-    if (chapter.buguneTasi) {
+    if (chapter.gorev || chapter.buguneTasi) {
       sayfalar.push({ key: "gorev", type: "gorev" });
     }
 

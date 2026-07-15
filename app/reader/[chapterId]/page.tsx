@@ -21,8 +21,10 @@ import {
   KapakSayfasi,
   KapakSayfasiAdem,
   KararSayfasi,
+  KarsilastirmaSayfasi,
   OgrendikSayfasi,
   RozetSayfasi,
+  TanikSayfasi,
   SesCubugu,
   UstBarAdem,
   okumaSayfalariniOlustur,
@@ -204,9 +206,23 @@ export default function ReaderPage() {
   const [rozetKaydediliyor, setRozetKaydediliyor] = useState(false);
   const [kayitHatasi, setKayitHatasi] = useState<string | null>(null);
   const [tekrarOkuma, setTekrarOkuma] = useState(false);
+  const [gorevEkleniyor, setGorevEkleniyor] = useState(false);
 
   const kararVar = Boolean(chapter.decision);
   const sonucAcik = !kararVar || kararSonucuAcik;
+  // YENİ akış (KARAR 15 Tem 2026): hikâye iki parçalı, karşılaştırma bölüm sonunda
+  const yeniAkis = Boolean(chapter.continuationBlocks?.length);
+  const secimAnahtari = `sen-olsaydin-${params.chapterId}`;
+
+  // Onaylanmış seçim sayfa yenilemede korunur (KARAR 15 Tem 2026 —
+  // sessionStorage; bölüm ilerlemesinin korunmasıyla tutarlı, S5 değildir).
+  useEffect(() => {
+    const kayitli = window.sessionStorage.getItem(secimAnahtari);
+    if (kayitli === "a" || kayitli === "b" || kayitli === "c") {
+      setSecilen(kayitli);
+      setKararSonucuAcik(true);
+    }
+  }, [secimAnahtari]);
   const sayfalar = useMemo(
     () => okumaSayfalariniOlustur(chapter, sonucAcik),
     [chapter, sonucAcik],
@@ -388,6 +404,16 @@ export default function ReaderPage() {
   const kararOnayla = useCallback(() => {
     if (!chapter.decision || !secilen) return;
 
+    // YENİ akış: doğru cevap seçim anında AÇIKLANMAZ; onay yalnızca hikâyenin
+    // devamını açar (karşılaştırma bölüm sonunda). Seçim yenilemeye dayanıklı.
+    if (yeniAkis) {
+      window.sessionStorage.setItem(secimAnahtari, secilen);
+      setYanlisDenendi(false);
+      setKararSonucuAcik(true);
+      return;
+    }
+
+    // ESKİ akış (comparison'sız kitaplar): doğru/yanlış + nazik tekrar dene.
     const dogru =
       !chapter.decision.correctOption ||
       secilen === chapter.decision.correctOption;
@@ -399,7 +425,27 @@ export default function ReaderPage() {
 
     setYanlisDenendi(false);
     setKararSonucuAcik(true);
-  }, [chapter.decision, secilen]);
+  }, [chapter.decision, secilen, yeniAkis, secimAnahtari]);
+
+  // Görevi profile ekle (profile_tasks). Görev gönüllüdür: hata olsa bile
+  // çocuğun yolculuğu ENGELLENMEZ — sayfa yine ilerler (4.1/17).
+  const gorevListeyeEkle = useCallback(async () => {
+    const gorev = chapter.gorev;
+    const profileId = window.localStorage.getItem("selected_child_profile_id");
+
+    if (gorev && profileId) {
+      setGorevEkleniyor(true);
+      await supabase
+        .from("profile_tasks")
+        .upsert(
+          { profile_id: profileId, task_id: gorev.id, status: "eklendi" },
+          { onConflict: "profile_id,task_id", ignoreDuplicates: true },
+        );
+      setGorevEkleniyor(false);
+    }
+
+    sayfayaGit(aktifSayfa + 1);
+  }, [chapter.gorev, aktifSayfa, sayfayaGit]);
 
   async function bolumuBitirVeKitabaDon() {
     // Tekrar okumada rozet zaten kazanılmış: kayıt yazmadan listeye dön
@@ -485,6 +531,10 @@ export default function ReaderPage() {
       );
     }
 
+    if (sayfa.type === "karsilastirma") {
+      return <KarsilastirmaSayfasi chapter={chapter} secilen={secilen} />;
+    }
+
     if (sayfa.type === "ogrendik") {
       return (
         <OgrendikSayfasi
@@ -500,10 +550,17 @@ export default function ReaderPage() {
         <GorevSayfasi
           chapter={chapter}
           onGoreviAnladim={() => sayfayaGit(aktifSayfa + 1)}
+          onGoreviListeyeEkle={gorevListeyeEkle}
+          onSimdilikDegil={() => sayfayaGit(aktifSayfa + 1)}
+          ekleniyor={gorevEkleniyor}
           aktifKelime={aktifKelime}
           setAktifKelime={setAktifKelime}
         />
       );
+    }
+
+    if (sayfa.type === "tanik") {
+      return <TanikSayfasi sayfa={sayfa} />;
     }
 
     return (

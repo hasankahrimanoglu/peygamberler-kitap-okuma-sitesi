@@ -130,7 +130,9 @@ export function Paragraf({
   aktifKelime,
   setAktifKelime,
 }: ParagrafProps) {
-  if (block.type === "image") return null;
+  // Görsel ve Tanık blokları burada çizilmez: görseli HikayeSayfasi düzenler,
+  // Tanık bloğu ayrı bir "tanik" sayfası olarak (TanikSayfasi) gösterilir.
+  if (block.type === "image" || block.type === "witness") return null;
 
   const temelSinif =
     boyut === "buyuk"

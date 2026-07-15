@@ -20,7 +20,14 @@ export type IkonAdi =
   | "duraklat"
   | "ses"
   | "ses-kapali"
-  | "cikis";
+  | "cikis"
+  | "arama"
+  | "filtre"
+  | "kapat"
+  | "menu"
+  | "hesap"
+  | "odul"
+  | "saat";
 
 type IkonProps = {
   ad: IkonAdi;
@@ -173,6 +180,33 @@ const ikonlar: Record<IkonAdi, ReactNode> = {
       <path {...cizgi} d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4" />
       <path {...cizgi} d="M16 17l5-5-5-5" />
       <path {...cizgi} d="M21 12H9" />
+    </>
+  ),
+  arama: (
+    <>
+      <circle {...cizgi} cx="11" cy="11" r="6" />
+      <path {...cizgi} d="m20 20-3.5-3.5" />
+    </>
+  ),
+  filtre: <path {...cizgi} d="M4 5h16l-6 7v6l-4 2v-8L4 5Z" />,
+  kapat: <path {...cizgi} d="M6 6l12 12M18 6 6 18" />,
+  menu: <path {...cizgi} d="M4 7h16M4 12h16M4 17h16" />,
+  hesap: (
+    <>
+      <circle {...cizgi} cx="12" cy="8.5" r="3.5" />
+      <path {...cizgi} d="M5 20c.8-3.6 3.4-5.5 7-5.5s6.2 1.9 7 5.5" />
+    </>
+  ),
+  odul: (
+    <>
+      <circle {...cizgi} cx="12" cy="9" r="5" />
+      <path {...cizgi} d="M9 13.5 7.5 21l4.5-2.6L16.5 21 15 13.5" />
+    </>
+  ),
+  saat: (
+    <>
+      <circle {...cizgi} cx="12" cy="12" r="8" />
+      <path {...cizgi} d="M12 8v4.3l2.8 1.7" />
     </>
   ),
 };

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Baloo_2, Lora, Nunito } from "next/font/google";
+import { Baloo_2, Caveat, Lora, Nunito } from "next/font/google";
 import { HareketAyari } from "../src/components/ui/HareketAyari";
 import "./globals.css";
 
@@ -19,6 +19,12 @@ const loraFont = Lora({
   variable: "--font-lora",
 });
 
+// El yazısı fontu — yalnızca Tanık Sayfası (günlük) görünümünde kullanılır.
+const caveatFont = Caveat({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-elyazi",
+});
+
 export const metadata: Metadata = {
   title: "Peygamberler Keşif Dünyası",
   description:
@@ -33,7 +39,7 @@ export default function RootLayout({
   return (
     <html
       lang="tr"
-      className={`${balooFont.variable} ${nunitoFont.variable} ${loraFont.variable}`}
+      className={`${balooFont.variable} ${nunitoFont.variable} ${loraFont.variable} ${caveatFont.variable}`}
     >
       <body>
         <HareketAyari>{children}</HareketAyari>
