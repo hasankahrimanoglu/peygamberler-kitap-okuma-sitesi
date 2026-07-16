@@ -1556,34 +1556,35 @@
 
 .navButton {
   display: flex;
-  min-width: 116px;
-  min-height: 52px;
+  min-width: 148px;
+  min-height: 48px;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 5px 12px 5px 5px;
+  gap: 9px;
+  padding: 8px 14px;
   border: 1px solid var(--night-line);
-  border-radius: 999px;
+  border-radius: 14px;
   color: var(--murekkep);
-  background: color-mix(in srgb, var(--yuzey) 78%, transparent);
-  box-shadow: 0 10px 22px var(--reader-shadow);
+  background: color-mix(in srgb, var(--yuzey) 62%, transparent);
+  box-shadow: 0 5px 14px color-mix(in srgb, var(--reader-shadow) 58%, transparent);
   cursor: pointer;
   font-size: 14px;
   backdrop-filter: blur(10px);
+  transition: border-color 160ms ease, background-color 160ms ease;
 }
 
 .navButton:last-child {
-  padding: 5px 5px 5px 12px;
+  padding: 8px 14px;
 }
 
 .navButton > span {
   display: grid;
-  width: 42px;
-  height: 42px;
+  width: 28px;
+  height: 28px;
   place-items: center;
   border-radius: 50%;
-  color: var(--eylem-metin);
-  background: var(--eylem);
+  color: color-mix(in srgb, var(--eylem) 64%, var(--murekkep));
+  background: color-mix(in srgb, var(--eylem) 20%, transparent);
 }
 
 .navButton strong {
@@ -1591,8 +1592,9 @@
   font-size: 14px;
 }
 
-.navButton:hover:not(:disabled) > span {
-  background: var(--eylem-koyu);
+.navButton:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--eylem) 54%, var(--night-line));
+  background: color-mix(in srgb, var(--yuzey) 78%, transparent);
 }
 
 .navButton:disabled {
@@ -1632,7 +1634,7 @@
   width: clamp(6px, 1.1vw, 11px);
   height: 4px;
   border-radius: 999px;
-  background: var(--cizgi);
+  background: color-mix(in srgb, var(--murekkep) 44%, transparent);
 }
 
 .pageProgress span.progressDone {
@@ -2240,19 +2242,19 @@
   }
 
   .navButton {
-    min-width: 50px;
-    min-height: 50px;
-    padding: 4px;
-    border-radius: 16px;
+    min-width: 48px;
+    min-height: 48px;
+    padding: 5px;
+    border-radius: 14px;
   }
 
   .navButton:last-child {
-    padding: 4px;
+    padding: 5px;
   }
 
   .navButton > span {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
   }
 
   .navButton strong {

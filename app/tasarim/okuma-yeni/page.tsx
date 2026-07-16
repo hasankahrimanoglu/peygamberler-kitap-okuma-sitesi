@@ -832,8 +832,8 @@ export default function OkumaYeniOnizleme() {
             onClick={() => sayfayaGit(aktifSayfa - 1)}
             data-qa="previous-page"
           >
-            <span><Ikon ad="ok-sol" boyut={20} /></span>
-            <strong>Önceki</strong>
+            <span><Ikon ad="ok-sol" boyut={18} /></span>
+            <strong>Önceki Sayfa</strong>
           </button>
 
           <div className={styles.dockCenter}>
@@ -877,8 +877,8 @@ export default function OkumaYeniOnizleme() {
             onClick={() => sayfayaGit(aktifSayfa + 1)}
             data-qa="next-page"
           >
-            <strong>Sonraki</strong>
-            <span><Ikon ad="ok-sag" boyut={20} /></span>
+            <strong>Sonraki Sayfa</strong>
+            <span><Ikon ad="ok-sag" boyut={18} /></span>
           </button>
         </nav>
 

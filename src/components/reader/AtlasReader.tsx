@@ -502,13 +502,13 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
         </div>
 
         <nav className={styles.readerDock} aria-label="Okuma sayfası gezinmesi">
-          <button type="button" className={styles.navButton} aria-label="Önceki sayfa" disabled={aktifSayfa === 0} onClick={() => sayfayaGit(aktifSayfa - 1)}><span><Ikon ad="ok-sol" boyut={20} /></span><strong>Önceki</strong></button>
+          <button type="button" className={styles.navButton} aria-label="Önceki sayfa" disabled={aktifSayfa === 0} onClick={() => sayfayaGit(aktifSayfa - 1)}><span><Ikon ad="ok-sol" boyut={18} /></span><strong>Önceki Sayfa</strong></button>
           <div className={styles.dockCenter}>
             {ozelAksiyon ? <button type="button" className={`${styles.specialAction} ${ozelAksiyon.sinif}`} disabled={ozelAksiyon.disabled} onClick={ozelAksiyon.onClick}><Ikon ad={ozelAksiyon.ikon} boyut={18} />{ozelAksiyon.etiket}</button> : (
               <div className={styles.pageProgress}><p>Sayfa {aktifSayfa + 1} / {sayfalar.length}</p><div role="progressbar" aria-label="Bölüm sayfa ilerlemesi" aria-valuemin={1} aria-valuemax={sayfalar.length} aria-valuenow={aktifSayfa + 1}>{sayfalar.map((_, index) => <span key={index} className={index <= aktifSayfa ? styles.progressDone : ""} />)}</div></div>
             )}
           </div>
-          <button type="button" className={styles.navButton} aria-label="Sonraki sayfa" disabled={sonrakiKilitli} onClick={() => sayfayaGit(aktifSayfa + 1)}><strong>Sonraki</strong><span><Ikon ad="ok-sag" boyut={20} /></span></button>
+          <button type="button" className={styles.navButton} aria-label="Sonraki sayfa" disabled={sonrakiKilitli} onClick={() => sayfayaGit(aktifSayfa + 1)}><strong>Sonraki Sayfa</strong><span><Ikon ad="ok-sag" boyut={18} /></span></button>
         </nav>
         <p className={styles.srOnly} aria-live="polite">{duyuru}</p>
       </div>
