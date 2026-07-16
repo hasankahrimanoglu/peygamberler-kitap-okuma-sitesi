@@ -1530,9 +1530,17 @@
 
   .dockActions button {
     min-height: 61px;
+    flex-direction: column;
     gap: 5px;
     padding-inline: 5px;
     font-size: 13px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .dockActions button svg {
+    width: 18px;
+    height: 18px;
   }
 
   .liveNote {

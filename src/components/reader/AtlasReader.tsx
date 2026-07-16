@@ -149,6 +149,7 @@ function IcerikBlogu({
 export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
   const router = useRouter();
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const pageTransitionRef = useRef<HTMLDivElement | null>(null);
   const [aktifSayfa, setAktifSayfa] = useState(0);
   const [secilen, setSecilen] = useState<DecisionOption["id"] | null>(null);
   const [kararOnayli, setKararOnayli] = useState(false);
@@ -255,6 +256,15 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
 
   useEffect(() => () => audioRef.current?.pause(), []);
 
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      pageTransitionRef.current
+        ?.querySelectorAll<HTMLElement>("[data-reader-scroll]")
+        .forEach((element) => element.scrollTo({ top: 0, left: 0, behavior: "auto" }));
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [sayfa.key]);
+
   function karariOnayla() {
     if (!secilen) return;
     window.sessionStorage.setItem(secimAnahtari, secilen);
@@ -310,7 +320,7 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
   function sayfayiCiz() {
     if (sayfa.type === "kapak") {
       return (
-        <div className={styles.coverLayout}>
+        <div className={styles.coverLayout} data-reader-scroll>
           <div className={styles.coverVisual}>
             <span className={styles.coverGlow} aria-hidden="true" />
             <YedekliGorsel src={`/kapaklar/kapak-${chapter.bookKey ?? "ebubekir"}.png`} yedekSrc="/kapaklar/placeholder.svg" alt={`${chapter.bookName ?? "Kitap"} kapağı`} width={238} height={356} className={styles.coverImage} />
@@ -333,7 +343,7 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
       return (
         <div className={styles.storyLayout}>
           <DogaSahnesi chapter={chapter} devamEdiyor={devamEdiyor} />
-          <section className={styles.textPage}>
+          <section className={styles.textPage} data-reader-scroll>
             <div className={styles.textHeading}>
               <p className={styles.pageEyebrow}>{devamEdiyor ? "Hikâye Devam Ediyor" : "Hikâye · 1. Kısım"}</p>
               <h1>{temizMetin(chapter.bolumAdi)}</h1>
@@ -351,7 +361,7 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
 
     if (sayfa.type === "karar" && chapter.decision) {
       return (
-        <section className={styles.decisionView}>
+        <section className={styles.decisionView} data-reader-scroll>
           <div className={styles.focusIntro}>
             <span className={styles.focusIcon}><Ikon ad="dusunce" boyut={29} /></span>
             <p className={styles.pageEyebrow}>Sen Olsaydın?</p>
@@ -377,7 +387,7 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
     if (sayfa.type === "karsilastirma") {
       const secenek = chapter.decision?.options.find((option) => option.id === secilen);
       return (
-        <section className={styles.compareView}>
+        <section className={styles.compareView} data-reader-scroll>
           <span className={styles.focusIcon}><Ikon ad="kalp" boyut={29} /></span>
           <p className={styles.pageEyebrow}>Düşünme Durağı</p>
           <h1>Seçimini Karşılaştır</h1>
@@ -395,7 +405,7 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
 
     if (sayfa.type === "ogrendik") {
       return (
-        <section className={styles.learnedView}>
+        <section className={styles.learnedView} data-reader-scroll>
           <div className={styles.focusIntro}><span className={styles.focusIcon}><Ikon ad="fidan" boyut={30} /></span><p className={styles.pageEyebrow}>Yolculuk Defteri</p><h1>Ne Öğrendik?</h1><p>Bu bölümden yanında götüreceğin üç düşünce.</p></div>
           <ol className={styles.learnedList}>{chapter.learned.map((madde, index) => <li key={madde}><span>{index + 1}</span><p>{madde}</p></li>)}</ol>
           <div className={styles.nextHint}><Ikon ad="rozet" boyut={20} /><p>Öğrendiklerini hatırladın. Yolculuğun sıradaki durağı seni bekliyor.</p></div>
@@ -406,7 +416,7 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
     if (sayfa.type === "gorev") {
       const gorev = chapter.gorev;
       return (
-        <section className={styles.taskView}>
+        <section className={styles.taskView} data-reader-scroll>
           <span className={styles.focusIcon}><Ikon ad="fidan" boyut={30} /></span>
           <p className={styles.pageEyebrow}>Hayata Açılan Kapı</p>
           <h1>Bugüne Taşı</h1>
@@ -427,7 +437,7 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
 
     if (sayfa.type === "tanik") {
       return (
-        <section className={styles.witnessView}>
+        <section className={styles.witnessView} data-reader-scroll>
           <p className={styles.pageEyebrow}>Tanık Sayfası</p>
           <article className={styles.witnessPaper}>
             <h1>{sayfa.witnessLabel}</h1>
@@ -440,7 +450,7 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
     }
 
     return (
-      <section className={styles.rewardView}>
+      <section className={styles.rewardView} data-reader-scroll>
         <div className={styles.rewardGlow} aria-hidden="true" />
         <p className={styles.pageEyebrow}>Bölüm Tamamlandı</p>
         <h1>Rozet Kapısı</h1>
@@ -497,7 +507,7 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
 
         <div className={styles.readingViewport}>
           <article className={styles.bookSurface} data-page-type={sayfa.type}>
-            <div className={styles.pageTransition} key={sayfa.key}>{sayfayiCiz()}</div>
+            <div ref={pageTransitionRef} className={styles.pageTransition} key={sayfa.key}>{sayfayiCiz()}</div>
           </article>
         </div>
 

@@ -725,6 +725,8 @@
     radial-gradient(circle at 12% 8%, var(--reader-gold-soft), transparent 30%),
     var(--reader-paper);
   scrollbar-color: var(--reader-line) transparent;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .textPage::after {
@@ -855,6 +857,8 @@
 
 .coverLayout {
   overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .coverVisual {
@@ -961,11 +965,14 @@
   overflow-y: auto;
   padding: clamp(22px, 4vw, 48px);
   scrollbar-color: var(--reader-line) transparent;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .decisionView {
   display: grid;
-  align-content: center;
+  align-content: start;
+  align-content: safe center;
   gap: 16px;
 }
 
@@ -1101,7 +1108,8 @@
 .rewardView {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  justify-content: safe center;
   flex-direction: column;
   text-align: center;
 }
@@ -1201,7 +1209,8 @@
 
 .learnedView {
   display: grid;
-  align-content: center;
+  align-content: start;
+  align-content: safe center;
   gap: 16px;
 }
 
@@ -1230,8 +1239,10 @@
 
 .learnedList li > span {
   display: grid;
+  flex: 0 0 42px;
   width: 42px;
   height: 42px;
+  aspect-ratio: 1;
   place-items: center;
   border-radius: 50%;
   color: var(--eylem-metin);
@@ -1340,6 +1351,16 @@
   width: min(100%, 1328px);
 }
 
+.integratedPage {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
 .integratedHeader {
   grid-template-columns: minmax(190px, 0.8fr) minmax(220px, 1fr) auto;
 }
@@ -1358,6 +1379,8 @@
   padding: clamp(22px, 4vw, 48px);
   color: var(--reader-ink);
   text-align: center;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .taskView > h1 {
@@ -1556,35 +1579,35 @@
 
 .navButton {
   display: flex;
-  min-width: 148px;
+  min-width: 142px;
   min-height: 48px;
   align-items: center;
   justify-content: center;
-  gap: 9px;
-  padding: 8px 14px;
-  border: 1px solid var(--night-line);
-  border-radius: 14px;
+  gap: 8px;
+  padding: 4px;
+  border: 0;
   color: var(--murekkep);
-  background: color-mix(in srgb, var(--yuzey) 62%, transparent);
-  box-shadow: 0 5px 14px color-mix(in srgb, var(--reader-shadow) 58%, transparent);
+  background: transparent;
+  box-shadow: none;
   cursor: pointer;
   font-size: 14px;
-  backdrop-filter: blur(10px);
-  transition: border-color 160ms ease, background-color 160ms ease;
 }
 
 .navButton:last-child {
-  padding: 8px 14px;
+  padding: 4px;
 }
 
 .navButton > span {
   display: grid;
-  width: 28px;
-  height: 28px;
+  width: 44px;
+  height: 44px;
   place-items: center;
   border-radius: 50%;
-  color: color-mix(in srgb, var(--eylem) 64%, var(--murekkep));
-  background: color-mix(in srgb, var(--eylem) 20%, transparent);
+  border: 1px solid color-mix(in srgb, var(--reader-gold) 34%, transparent);
+  color: var(--reader-ink);
+  background: var(--reader-paper-raised);
+  box-shadow: 0 5px 13px color-mix(in srgb, var(--reader-shadow) 58%, transparent);
+  transition: border-color 160ms ease, background-color 160ms ease;
 }
 
 .navButton strong {
@@ -1592,9 +1615,9 @@
   font-size: 14px;
 }
 
-.navButton:hover:not(:disabled) {
-  border-color: color-mix(in srgb, var(--eylem) 54%, var(--night-line));
-  background: color-mix(in srgb, var(--yuzey) 78%, transparent);
+.navButton:hover:not(:disabled) > span {
+  border-color: color-mix(in srgb, var(--reader-gold) 70%, transparent);
+  background: color-mix(in srgb, var(--reader-paper) 88%, var(--reader-gold));
 }
 
 .navButton:disabled {
@@ -2184,6 +2207,24 @@
     padding: 20px 17px 26px;
   }
 
+  .decisionView,
+  .compareView,
+  .learnedView {
+    padding: 14px 12px 18px;
+  }
+
+  .decisionView {
+    gap: 10px;
+  }
+
+  .decisionView .focusIcon,
+  .compareView .focusIcon,
+  .learnedView .focusIcon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 4px;
+  }
+
   .taskCard {
     padding: 15px;
   }
@@ -2211,15 +2252,37 @@
     font-size: 27px;
   }
 
+  .decisionView .focusIntro h1 {
+    font-size: clamp(24px, 6.5vw, 27px);
+    line-height: 1.12;
+  }
+
   .focusIntro > p:last-child,
   .focusDescription {
     font-size: 15px;
   }
 
+  .decisionView .focusIntro > p:last-child,
+  .compareView .focusDescription {
+    margin-top: 5px !important;
+    line-height: 1.4;
+  }
+
+  .options {
+    gap: 7px;
+  }
+
   .optionButton {
-    min-height: 62px;
-    grid-template-columns: 42px minmax(0, 1fr);
-    padding: 8px 10px;
+    min-height: 56px;
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 10px;
+    padding: 7px 10px;
+    border-radius: 14px;
+  }
+
+  .optionButton > span {
+    width: 38px;
+    height: 38px;
   }
 
   .optionButton strong {
@@ -2229,6 +2292,72 @@
   .chosenAnswer p > strong,
   .comparisonText p {
     font-size: 16px;
+  }
+
+  .neutralNote {
+    gap: 8px;
+    padding: 9px 10px;
+  }
+
+  .chosenAnswer {
+    margin-top: 12px;
+    padding: 11px 12px;
+  }
+
+  .chosenAnswer p > span {
+    flex-basis: 34px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .chosenAnswer p > strong {
+    padding-top: 3px;
+    line-height: 1.4;
+  }
+
+  .comparisonText {
+    gap: 9px;
+    margin-top: 8px;
+    padding: 11px 12px;
+  }
+
+  .comparisonText p {
+    line-height: 1.45;
+  }
+
+  .compareFootnote {
+    margin-top: 8px !important;
+  }
+
+  .learnedView {
+    gap: 10px;
+  }
+
+  .learnedList {
+    gap: 8px;
+  }
+
+  .learnedList li {
+    gap: 10px;
+    padding: 11px 12px;
+    border-radius: 14px;
+  }
+
+  .learnedList li > span {
+    flex-basis: 38px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .learnedList li > p {
+    padding-top: 0;
+    font-size: 16px;
+    line-height: 1.42;
+  }
+
+  .nextHint {
+    gap: 8px;
+    padding: 9px 11px;
   }
 
   .rewardImage {
@@ -2244,17 +2373,16 @@
   .navButton {
     min-width: 48px;
     min-height: 48px;
-    padding: 5px;
-    border-radius: 14px;
+    padding: 2px;
   }
 
   .navButton:last-child {
-    padding: 5px;
+    padding: 2px;
   }
 
   .navButton > span {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
   }
 
   .navButton strong {
