@@ -27,6 +27,7 @@ export type IkonAdi =
   | "menu"
   | "hesap"
   | "odul"
+  | "liste-ekle"
   | "saat";
 
 type IkonProps = {
@@ -201,6 +202,13 @@ const ikonlar: Record<IkonAdi, ReactNode> = {
     <>
       <circle {...cizgi} cx="12" cy="9" r="5" />
       <path {...cizgi} d="M9 13.5 7.5 21l4.5-2.6L16.5 21 15 13.5" />
+    </>
+  ),
+  "liste-ekle": (
+    <>
+      <rect {...cizgi} x="4" y="3.5" width="12" height="17" rx="2.5" />
+      <path {...cizgi} d="M7.5 8h5M7.5 12h4" />
+      <path {...cizgi} d="M16.5 14.5v6M13.5 17.5h6" />
     </>
   ),
   saat: (

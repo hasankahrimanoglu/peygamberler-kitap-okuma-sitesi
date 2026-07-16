@@ -31,6 +31,7 @@ import {
 } from "../../../src/components/reader";
 import type { OkumaSayfaModeli } from "../../../src/components/reader";
 import { Buton, Ikon, OdulIkonu } from "../../../src/components/ui";
+import { AtlasReader } from "../../../src/components/reader/AtlasReader";
 
 type ProgressSyncResult = {
   ok: boolean;
@@ -196,6 +197,16 @@ export default function ReaderPage() {
 
   // Geçersiz bölüm kimliği başka bir bölümün içeriğine düşmez; 404 gösterilir.
   if (!chapter) notFound();
+
+  if (chapter.bookKey === "adem") {
+    return (
+      <AtlasReader
+        key={chapter.id}
+        chapter={chapter}
+        onProgressSync={() => syncChapterProgress(chapter)}
+      />
+    );
+  }
 
   return <ReaderContent chapter={chapter} />;
 }

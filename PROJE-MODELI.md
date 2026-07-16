@@ -130,6 +130,29 @@ tamamladığında açılacak."* ("Önceki görevleri bekliyor" gibi soyut ifade 
 - Gövde metni ≥ 16px; mobil yatay boşluk 16px, tablet 24–32px
 - Mobilde metin ve görsel yan yana KONMAZ; tek sütun.
 
+### 3.6 Masalsı Keşif Atlası yönü (ONAY — 16 Temmuz 2026)
+
+Çocuk tarafının harita, bölüm rotası ve Hz. Âdem okuma ekranında ortak görsel
+yön **“Masalsı Keşif Atlası”**dır:
+
+- Harita, büyük dashboard kartları yerine kıvrımlı yol üzerindeki keşif
+  duraklarından oluşur; katmanlı gece göğü, dağ, nehir, bitki ve pusula
+  ayrıntıları responsive CSS ile kurulur.
+- Tablet yatayda harita baskın alanda, seçili kitap bilgisi sağ paneldedir;
+  tablet dikey ve mobilde alanlar alt alta geçer.
+- Kitap detayında bölümler, aynı atlas dünyasında kıvrımlı bölüm rotası olarak
+  gösterilir; kilit koşulları somut yazılır.
+- Hz. Âdem okuma ekranında üst bar ve okuma yüzeyi aynı genişlikte hizalanır.
+  Tablet yatay/masaüstünde metin ve illüstrasyon yan yana; dikey cihazlarda
+  illüstrasyon üstte, metin alttadır.
+- “Sen Olsaydın?” sorusu ile seçenekler alt alta yerleşir. Seçenek grubu geniş
+  ekranlarda metni gereksiz boşlukla çevrelemeyecek biçimde en fazla 620px'tir;
+  dar ekranlarda kullanılabilir genişliğe uyum sağlar.
+- Production rotalarında “Tasarım Önizlemesi” etiketi kullanılmaz. Önizleme
+  rotaları tasarım karşılaştırması için ayrı kalabilir.
+- Bu entegrasyonun içerik referansı yalnızca Hz. Âdem'dir. Diğer kitapların
+  mevcut detay ve okuma düzenleri, içerikleri güncellenene kadar korunur.
+
 ---
 
 ## 4. Özellik Kararları

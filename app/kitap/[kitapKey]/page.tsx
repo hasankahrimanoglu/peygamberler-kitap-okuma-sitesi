@@ -13,16 +13,14 @@ import {
   OdulIkonu,
   YedekliGorsel,
 } from "../../../src/components/ui";
+import {
+  KitapBolumRotasi,
+  type AtlasBolum,
+} from "../../../src/components/atlas/KitapBolumRotasi";
 
 type KitapKey = "adem" | "nuh" | "ebubekir" | "omer";
 
-type BolumBilgi = {
-  id: string;
-  title: string;
-  ozet?: string;
-  badgeName: string;
-  okumaYolu: string;
-};
+type BolumBilgi = AtlasBolum;
 
 type KitapBilgi = {
   sira: number;
@@ -51,6 +49,13 @@ function booksTsBolumleri(bookId: string, routePrefix: string): BolumBilgi[] {
     ozet: bolum.ozet,
     badgeName: bolum.badgeName,
     okumaYolu: `/reader/${routePrefix}-${bolum.id}`,
+    gorev: bolum.gorev
+      ? {
+          ad: bolum.gorev.ad,
+          kategori: bolum.gorev.kategori,
+          sure: bolum.gorev.sure,
+        }
+      : undefined,
   }));
 }
 
@@ -172,12 +177,16 @@ export default function KitapDetaySayfasi() {
     bittiMi: false,
   });
   const [yukleniyor, setYukleniyor] = useState(true);
+  const [profilAdi, setProfilAdi] = useState("Gezgin");
 
   useEffect(() => {
     if (!kitap) return;
 
     async function ilerlemeYukle() {
       const profilId = window.localStorage.getItem("selected_child_profile_id");
+      setProfilAdi(
+        window.localStorage.getItem("selected_child_profile_name") || "Gezgin",
+      );
 
       if (!profilId) {
         router.push("/dashboard");
@@ -251,6 +260,28 @@ export default function KitapDetaySayfasi() {
     ilerleme.tamamlananBolum,
     kitap.bolumler.length,
   );
+
+  if (kitapKey === "adem") {
+    return (
+      <KitapBolumRotasi
+        key={`${kitapKey}-${yukleniyor ? "yukleniyor" : kazanilanRozet}`}
+        kitapKey={kitapKey}
+        kitapSira={kitap.sira}
+        kitapAdi={kitap.title}
+        altBaslik={kitap.subtitle}
+        profilAdi={profilAdi}
+        bolumler={kitap.bolumler}
+        tamamlananBolum={kazanilanRozet}
+        ilerlemeYuzdesi={ilerleme.yuzde}
+        kitapBitti={ilerleme.bittiMi}
+        yukleniyor={yukleniyor}
+        quizYolu={kitap.quizYolu}
+        onHaritayaDon={() => router.push("/map")}
+        onBolumAc={(yol) => router.push(yol)}
+        onFinalAc={(yol) => router.push(yol)}
+      />
+    );
+  }
 
   return (
     <main className="tema-cocuk zemin-yildizli min-h-screen px-4 py-6 text-murekkep sm:px-8">

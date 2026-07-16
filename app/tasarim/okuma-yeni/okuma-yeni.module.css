@@ -1336,6 +1336,210 @@
   line-height: 1.45;
 }
 
+.integratedPage .readerShell {
+  width: min(100%, 1328px);
+}
+
+.integratedHeader {
+  grid-template-columns: minmax(190px, 0.8fr) minmax(220px, 1fr) auto;
+}
+
+.taskView,
+.witnessView {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: clamp(22px, 4vw, 48px);
+  color: var(--reader-ink);
+  text-align: center;
+}
+
+.taskView > h1 {
+  margin-top: 4px;
+  font-size: clamp(28px, 3.5vw, 42px);
+}
+
+.taskCard {
+  display: grid;
+  width: min(100%, 720px);
+  gap: 13px;
+  margin-top: 17px;
+  padding: 18px 20px;
+  border: 1px solid var(--reader-line);
+  border-radius: 18px;
+  background: var(--reader-paper-raised);
+  text-align: left;
+}
+
+.taskCard > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.taskCard h2 {
+  font-size: 21px;
+}
+
+.taskCard > div:first-child > span {
+  padding: 4px 9px;
+  border-radius: 999px;
+  color: var(--eylem-koyu);
+  background: color-mix(in srgb, var(--eylem) 10%, transparent);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.taskCard > p {
+  font-family: var(--font-lora), Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+.taskCard dl {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding-top: 11px;
+  border-top: 1px solid var(--reader-line);
+}
+
+.taskCard dl div {
+  display: grid;
+  grid-template-columns: 145px minmax(0, 1fr);
+  gap: 10px;
+}
+
+.taskCard dt,
+.taskCard dd {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.taskCard dt {
+  color: var(--reader-muted);
+  font-weight: 850;
+}
+
+.taskCard dd {
+  font-weight: 700;
+}
+
+.taskCard aside {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 13px;
+  background: var(--reader-gold-soft);
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.taskCard aside svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.taskActions {
+  display: flex;
+  width: min(100%, 720px);
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.taskActions > button {
+  width: 100%;
+  max-width: 260px;
+  min-height: 52px;
+  flex: 1 1 0;
+  margin-top: 0;
+}
+
+.taskSecondaryAction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-color: var(--reader-line);
+  color: var(--reader-ink);
+  background: color-mix(in srgb, var(--reader-paper) 80%, transparent);
+  box-shadow: none;
+}
+
+.taskSecondaryAction:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--reader-gold) 65%, var(--reader-line));
+  background: var(--reader-gold-soft);
+}
+
+.taskSecondaryAction:disabled {
+  cursor: default;
+  opacity: 0.42;
+}
+
+.witnessPaper {
+  position: relative;
+  width: min(100%, 760px);
+  margin-top: 14px;
+  padding: 26px 30px 25px 58px;
+  border: 1px solid color-mix(in srgb, var(--reader-gold) 45%, transparent);
+  border-radius: 18px;
+  background:
+    linear-gradient(90deg, transparent 38px, color-mix(in srgb, var(--tehlike) 28%, transparent) 39px, transparent 40px),
+    repeating-linear-gradient(180deg, transparent 0, transparent 38px, var(--reader-line) 39px, transparent 40px),
+    var(--reader-paper-raised);
+  box-shadow: 0 18px 36px color-mix(in srgb, var(--reader-ink) 12%, transparent);
+  text-align: left;
+  transform: rotate(-0.35deg);
+}
+
+.witnessPaper h1 {
+  color: var(--eylem-koyu);
+  font-size: 20px;
+}
+
+.witnessPaper p,
+.witnessPaper strong {
+  white-space: pre-line;
+  font-family: var(--font-elyazi), cursive;
+  font-size: clamp(21px, 2.3vw, 29px);
+  line-height: 1.55;
+}
+
+.witnessPaper strong {
+  display: block;
+  margin-top: 12px;
+  color: var(--reader-muted);
+  text-align: right;
+}
+
+.witnessView .neutralNote {
+  margin-top: 14px;
+}
+
+.errorMessage {
+  max-width: 580px;
+  margin-top: 12px !important;
+  padding: 10px 13px;
+  border: 1px solid color-mix(in srgb, var(--tehlike) 42%, transparent);
+  border-radius: 13px;
+  color: var(--tehlike);
+  font-size: 14px;
+  font-weight: 800;
+}
+
 .readerDock {
   position: relative;
   z-index: 20;
@@ -1639,6 +1843,36 @@
     grid-template-columns: minmax(290px, 1fr) auto;
   }
 
+  .integratedHeader {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .integratedHeader .previewGroup {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .integratedHeader .chapterIdentity {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+  }
+
+  .integratedHeader .headerActions {
+    display: contents;
+  }
+
+  .integratedHeader .audioPlayer {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .integratedHeader .toolsButton {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+  }
+
   .previewGroup {
     grid-column: 1;
   }
@@ -1710,6 +1944,21 @@
   .learnedList li > p {
     padding-top: 4px;
   }
+
+  .taskCard dl div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .taskActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .taskActions > button {
+    max-width: none;
+    flex-basis: auto;
+  }
 }
 
 @media (max-width: 620px) {
@@ -1736,6 +1985,34 @@
     min-height: 0;
     padding: 7px 8px;
     border-radius: 17px;
+  }
+
+  .integratedHeader {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .integratedHeader .previewGroup {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .integratedHeader .backLink {
+    width: 44px;
+    min-height: 44px;
+    justify-content: center;
+    padding: 0;
+    overflow: hidden;
+    font-size: 0;
+  }
+
+  .integratedHeader .chapterIdentity {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  .integratedHeader .headerActions {
+    display: contents;
   }
 
   .previewGroup {
@@ -1899,8 +2176,24 @@
   .decisionView,
   .compareView,
   .learnedView,
-  .rewardView {
+  .rewardView,
+  .taskView,
+  .witnessView {
     padding: 20px 17px 26px;
+  }
+
+  .taskCard {
+    padding: 15px;
+  }
+
+  .taskCard > div:first-child {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .witnessPaper {
+    padding: 22px 18px 22px 44px;
   }
 
   .focusIcon {

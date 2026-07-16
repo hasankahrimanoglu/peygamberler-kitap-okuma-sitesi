@@ -20,6 +20,10 @@ import {
   OdulIkonu,
   YedekliGorsel,
 } from "../../src/components/ui";
+import {
+  AtlasHarita,
+  type AtlasDurak,
+} from "../../src/components/atlas/AtlasHarita";
 
 type AdventureStatus = "completed" | "active" | "locked";
 
@@ -199,6 +203,8 @@ const defaultGlobalProfileStats: GlobalProfileStats = {
   totalBookCount: 0,
   title: "Yeni Gezgin",
 };
+
+const MASALSI_ATLAS_ETKIN = true;
 
 const adventures: AdventureCard[] = [
   {
@@ -987,6 +993,52 @@ export default function DashboardPage() {
     window.localStorage.removeItem("selected_child_profile_id");
     window.localStorage.removeItem("selected_child_profile_name");
     router.push("/dashboard");
+  }
+
+  const atlasAciklamalari: Record<number, string> = {
+    1: "Öğrenme, sorumluluk, tövbe ve umutla başlayan ilk yolculuğun izini sür.",
+    2: "Sabırla sürdürülen bir yolculukta güvenin ve emeğin bıraktığı izleri keşfet.",
+    3: "Sadakatin, dostluğun ve cömertliğin izlerini taşıyan bu durağı keşfet.",
+    4: "Adaletin, cesaretin ve doğruyu aramanın kapısına doğru ilerle.",
+  };
+  const atlasKitapAnahtarlari: Record<number, AtlasDurak["kitapKey"]> = {
+    1: "adem",
+    2: "nuh",
+    3: "ebubekir",
+    4: "omer",
+  };
+  const atlasDuraklar: AtlasDurak[] = visibleAdventures
+    .slice(0, 4)
+    .map((adventure) => ({
+      id: adventure.id,
+      kitapKey: atlasKitapAnahtarlari[adventure.id],
+      ad: adventure.name,
+      altBaslik: adventure.subtitle,
+      aciklama: atlasAciklamalari[adventure.id],
+      durum: adventure.status,
+      tamamlananBolum: adventure.earnedBadgeCount ?? 0,
+      toplamBolum: adventure.totalBadgeCount ?? 1,
+      ilerleme: adventure.progress,
+      sonRozet: adventure.lastEarnedBadge,
+      madalyaKazanildi: adventure.status === "completed",
+    }));
+
+  if (MASALSI_ATLAS_ETKIN) {
+    return (
+      <AtlasHarita
+        profil={{
+          ad: selectedChildProfile.name,
+          avatarAnahtari: selectedChildProfile.avatarType,
+          unvan: selectedChildProfile.title,
+        }}
+        toplamRozet={totalEarnedBadgeCount}
+        tamamlananKitap={totalCompletedBookCountValue}
+        duraklar={atlasDuraklar}
+        yukleniyor={isProfileProgressLoading}
+        bildirim={success ?? warning}
+        onProfilSecimineDon={cikisYap}
+      />
+    );
   }
 
   return (
