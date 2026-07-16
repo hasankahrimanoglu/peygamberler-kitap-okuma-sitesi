@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { rozetIconKey } from "../../lib/derive";
 import { Ikon, OdulIkonu, YedekliGorsel } from "../ui";
 import styles from "../../../app/tasarim/harita-yeni/harita-yeni.module.css";
 
@@ -43,6 +44,8 @@ const DURUM_IKONLARI = {
 
 const MOBIL_PANEL_SORGUSU = "(max-width: 620px)";
 const MOBIL_PANEL_GECMIS_ANAHTARI = "atlasBookPanel";
+const ODAKLANABILIR_OGELER =
+  'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 function atlasDurumu(durum: AtlasDurakDurumu) {
   if (durum === "completed") return "tamamlandi" as const;
@@ -75,6 +78,7 @@ export function AtlasHarita({
   const [seciliDurakId, setSeciliDurakId] = useState(duraklar[0]?.id ?? 1);
   const [mobilDetayAcik, setMobilDetayAcik] = useState(false);
   const panelKapatRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLElement>(null);
   const sonDurakRef = useRef<HTMLButtonElement>(null);
   const oncekiPanelDurumuRef = useRef(false);
   const seciliDurak =
@@ -117,7 +121,7 @@ export function AtlasHarita({
         window.history.pushState(
           {
             ...window.history.state,
-            [MOBIL_PANEL_GECMIS_ANAHTARI]: true,
+            [MOBIL_PANEL_GECMIS_ANAHTARI]: durakId,
           },
           "",
           window.location.href,
@@ -133,15 +137,53 @@ export function AtlasHarita({
     const mobilSorgu = window.matchMedia(MOBIL_PANEL_SORGUSU);
 
     const gecmistenPanelDurumunuOku = () => {
-      setMobilDetayAcik(
-        mobilSorgu.matches &&
-          Boolean(window.history.state?.[MOBIL_PANEL_GECMIS_ANAHTARI]),
-      );
+      const gecmistekiDurakId =
+        window.history.state?.[MOBIL_PANEL_GECMIS_ANAHTARI];
+
+      if (mobilSorgu.matches && typeof gecmistekiDurakId === "number") {
+        setSeciliDurakId(gecmistekiDurakId);
+        setMobilDetayAcik(true);
+        return;
+      }
+
+      setMobilDetayAcik(false);
+
+      if (!mobilSorgu.matches && gecmistekiDurakId) {
+        const yeniGecmisDurumu = { ...window.history.state };
+        delete yeniGecmisDurumu[MOBIL_PANEL_GECMIS_ANAHTARI];
+        window.history.replaceState(yeniGecmisDurumu, "", window.location.href);
+      }
     };
 
     const klavyeyiDinle = (olay: KeyboardEvent) => {
-      if (olay.key === "Escape" && mobilDetayAcik) {
+      if (!mobilDetayAcik) return;
+
+      if (olay.key === "Escape") {
         mobilDetayiKapat();
+        return;
+      }
+
+      if (olay.key !== "Tab" || !panelRef.current) return;
+
+      const odaklanabilirOgeler = Array.from(
+        panelRef.current.querySelectorAll<HTMLElement>(ODAKLANABILIR_OGELER),
+      ).filter((oge) => oge.offsetParent !== null);
+
+      if (odaklanabilirOgeler.length === 0) {
+        olay.preventDefault();
+        return;
+      }
+
+      const ilkOge = odaklanabilirOgeler[0];
+      const sonOge = odaklanabilirOgeler[odaklanabilirOgeler.length - 1];
+      const aktifOge = document.activeElement;
+
+      if (olay.shiftKey && (aktifOge === ilkOge || !panelRef.current.contains(aktifOge))) {
+        olay.preventDefault();
+        sonOge.focus();
+      } else if (!olay.shiftKey && (aktifOge === sonOge || !panelRef.current.contains(aktifOge))) {
+        olay.preventDefault();
+        ilkOge.focus();
       }
     };
 
@@ -184,6 +226,32 @@ export function AtlasHarita({
 
   const seciliDurum = atlasDurumu(seciliDurak.durum);
   const seciliDurumMetni = durumMetni(seciliDurak);
+  const toplamBolum = Math.max(1, seciliDurak.toplamBolum);
+  const tamamlananBolum =
+    seciliDurak.durum === "completed"
+      ? toplamBolum
+      : Math.min(Math.max(0, seciliDurak.tamamlananBolum), toplamBolum);
+  const ilerleme =
+    seciliDurak.durum === "completed"
+      ? 100
+      : Math.min(100, Math.max(0, seciliDurak.ilerleme));
+  const rozetSutunSayisi =
+    toplamBolum >= 9 ? 5 : toplamBolum >= 6 ? 4 : toplamBolum;
+  const bolumRozetleri = Array.from({ length: toplamBolum }, (_, index) => {
+    const bolumNo = index + 1;
+    const durum =
+      seciliDurak.durum === "completed" || index < tamamlananBolum
+        ? "earned"
+        : seciliDurak.durum === "active" && index === tamamlananBolum
+          ? "available"
+          : "locked";
+
+    return {
+      bolumNo,
+      iconKey: rozetIconKey(seciliDurak.kitapKey, bolumNo),
+      durum,
+    } as const;
+  });
   const aksiyon =
     seciliDurak.durum === "completed"
       ? "Tekrar Oku"
@@ -310,79 +378,152 @@ export function AtlasHarita({
             type="button"
             className={`${styles.mobilePanelBackdrop} ${mobilDetayAcik ? styles.mobilePanelBackdropOpen : ""}`}
             aria-label="Kitap ayrıntılarını kapat"
-            aria-hidden={!mobilDetayAcik}
-            tabIndex={mobilDetayAcik ? 0 : -1}
+            aria-hidden="true"
+            tabIndex={-1}
             onClick={mobilDetayiKapat}
           />
 
           <aside
-            className={`${styles.bookPanel} ${styles[`panel_${seciliDurum}`]} ${mobilDetayAcik ? styles.bookPanelOpen : ""}`}
-            aria-label="Seçili kitap bilgisi"
+            ref={panelRef}
+            className={`${styles.bookPanel} ${styles.drawerPanel} ${styles[`panel_${seciliDurum}`]} ${mobilDetayAcik ? styles.bookPanelOpen : ""}`}
+            aria-labelledby={`atlas-panel-title-${seciliDurak.id}`}
+            aria-describedby={`atlas-panel-description-${seciliDurak.id}`}
             aria-modal={mobilDetayAcik ? true : undefined}
             role={mobilDetayAcik ? "dialog" : undefined}
           >
             <div className={styles.panelContent} key={seciliDurak.id}>
-              <button
-                ref={panelKapatRef}
-                type="button"
-                className={styles.mobilePanelClose}
-                onClick={mobilDetayiKapat}
-              >
-                <Ikon ad="geri" boyut={19} /> Haritaya Dön
-              </button>
-              <div className={styles.panelTopline}>
-                <span>Seçili keşif durağı</span>
-                <span className={styles.panelOrder}>{seciliDurak.id} / {duraklar.length}</span>
-              </div>
-              <div className={styles.bookHero}>
-                <div className={styles.coverFrame}>
-                  <YedekliGorsel
-                    src={`/kapaklar/kapak-${seciliDurak.kitapKey}.png`}
-                    yedekSrc="/kapaklar/placeholder.svg"
-                    alt={`${seciliDurak.ad} kitap kapağı`}
-                    width={597}
-                    height={891}
-                    className={styles.cover}
-                  />
-                  {seciliDurak.durum === "locked" ? (
-                    <span className={styles.coverLock} aria-hidden="true"><Ikon ad="kilit" boyut={24} /></span>
-                  ) : null}
+              <div className={styles.panelScrollBody}>
+                <div className={styles.mobilePanelHeader}>
+                  <button
+                    ref={panelKapatRef}
+                    type="button"
+                    className={styles.mobilePanelClose}
+                    onClick={mobilDetayiKapat}
+                  >
+                    <Ikon ad="geri" boyut={18} /> Haritaya Dön
+                  </button>
+                  <div className={styles.panelTopline}>
+                    <span>Seçili keşif durağı</span>
+                    <span className={styles.panelOrder}>{seciliDurak.id} / {duraklar.length}</span>
+                  </div>
                 </div>
-                <div className={styles.bookIdentity}>
-                  <span className={styles.statusChip}>
-                    <Ikon ad={DURUM_IKONLARI[seciliDurum]} boyut={15} /> {seciliDurumMetni}
-                  </span>
-                  <h2>{seciliDurak.ad}</h2>
-                  <p>{seciliDurak.altBaslik}</p>
+                <div className={styles.bookHero}>
+                  <div className={styles.coverFrame}>
+                    <YedekliGorsel
+                      src={`/kapaklar/kapak-${seciliDurak.kitapKey}.png`}
+                      yedekSrc="/kapaklar/placeholder.svg"
+                      alt={`${seciliDurak.ad} kitap kapağı`}
+                      width={597}
+                      height={891}
+                      className={styles.cover}
+                    />
+                    {seciliDurak.durum === "locked" ? (
+                      <span className={styles.coverLock} aria-hidden="true"><Ikon ad="kilit" boyut={24} /></span>
+                    ) : null}
+                  </div>
+                  <div className={styles.bookIdentity}>
+                    <span className={styles.statusChip}>
+                      <Ikon ad={DURUM_IKONLARI[seciliDurum]} boyut={15} /> {seciliDurumMetni}
+                    </span>
+                    <h2 id={`atlas-panel-title-${seciliDurak.id}`}>{seciliDurak.ad}</h2>
+                    <p>{seciliDurak.altBaslik}</p>
+                  </div>
                 </div>
-              </div>
-              <p className={styles.description}>{seciliDurak.aciklama}</p>
-              <div className={styles.progressBlock}>
-                <div className={styles.progressLabel}>
-                  <span>Bölüm ilerlemesi</span>
-                  <strong>{seciliDurak.tamamlananBolum} / {seciliDurak.toplamBolum}</strong>
+                <p id={`atlas-panel-description-${seciliDurak.id}`} className={styles.description}>{seciliDurak.aciklama}</p>
+                <div className={styles.progressBlock}>
+                  <div className={styles.progressLabel}>
+                    <span className={styles.progressTitle}>
+                      {seciliDurak.durum === "completed" ? <><Ikon ad="onay" boyut={16} /> Yolculuk tamamlandı</> : "Bölüm ilerlemesi"}
+                    </span>
+                    <strong>{tamamlananBolum} / {toplamBolum}</strong>
+                  </div>
+                  <div
+                    className={styles.progressTrack}
+                    role="progressbar"
+                    aria-label={`${seciliDurak.ad} bölüm ilerlemesi`}
+                    aria-valuemin={0}
+                    aria-valuemax={100}
+                    aria-valuenow={ilerleme}
+                    aria-valuetext={`${tamamlananBolum} / ${toplamBolum} bölüm tamamlandı`}
+                  >
+                    <span style={{ width: `${ilerleme}%` }} />
+                  </div>
                 </div>
-                <div className={styles.progressTrack} role="progressbar" aria-label={`${seciliDurak.ad} bölüm ilerlemesi`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={seciliDurak.ilerleme}>
-                  <span style={{ width: `${seciliDurak.ilerleme}%` }} />
-                </div>
-              </div>
-              <dl className={styles.rewardSummary}>
-                <div><dt><Ikon ad="rozet" boyut={19} /> Rozet</dt><dd>{seciliDurak.tamamlananBolum} / {seciliDurak.toplamBolum} kazanıldı</dd></div>
-                <div><dt><Ikon ad="madalya" boyut={19} /> Madalya</dt><dd>{seciliDurak.madalyaKazanildi ? "Kazanıldı" : seciliDurak.durum === "locked" ? "Kilitli" : "Finalden sonra"}</dd></div>
-              </dl>
+                <dl className={styles.rewardSummary}>
+                  <div><dt><Ikon ad="rozet" boyut={19} /> Rozet</dt><dd>{tamamlananBolum} / {toplamBolum} kazanıldı</dd></div>
+                  <div><dt><Ikon ad="madalya" boyut={19} /> Madalya</dt><dd>{seciliDurak.madalyaKazanildi ? "Kazanıldı" : seciliDurak.durum === "locked" ? "Kilitli" : "Finalden sonra"}</dd></div>
+                </dl>
 
-              {seciliDurak.madalyaKazanildi ? (
-                <div className={styles.medalNote}><span><Ikon ad="madalya" boyut={25} /></span><div><small>Kazanılan madalya</small><strong>{seciliDurak.ad} Yolculuk Madalyası</strong></div></div>
-              ) : seciliDurak.durum === "locked" ? (
-                <div className={styles.lockNote}><Ikon ad="kilit" boyut={21} /><div><strong>Açılma koşulu</strong><p>{acilmaKosulu(seciliDurak, duraklar)}</p></div></div>
-              ) : (
-                <div className={styles.currentNote}><Ikon ad="fener" boyut={20} /><span>Sıradaki durak: {Math.min(seciliDurak.tamamlananBolum + 1, seciliDurak.toplamBolum)}. bölüm</span></div>
-              )}
+                <section className={styles.mobileBadgeSection} aria-labelledby={`atlas-badges-title-${seciliDurak.id}`}>
+                  <div className={styles.mobileBadgeHeading}>
+                    <h3 id={`atlas-badges-title-${seciliDurak.id}`}>Bölüm Rozetleri</h3>
+                    <strong>{tamamlananBolum} / {toplamBolum}</strong>
+                  </div>
+                  <ul
+                    className={styles.badgeGrid}
+                    style={{ gridTemplateColumns: `repeat(${rozetSutunSayisi}, minmax(0, 1fr))` }}
+                  >
+                    {bolumRozetleri.map((rozet) => {
+                      const durumEtiketi =
+                        rozet.durum === "earned"
+                          ? "kazanıldı"
+                          : rozet.durum === "available"
+                            ? "sıradaki rozet"
+                            : "kilitli";
+                      const durumIkonu =
+                        rozet.durum === "earned"
+                          ? "onay"
+                          : rozet.durum === "available"
+                            ? "fener"
+                            : "kilit";
+
+                      return (
+                        <li
+                          key={rozet.iconKey}
+                          className={`${styles.badgeCell} ${styles[`badge_${rozet.durum}`]}`}
+                          aria-label={`${rozet.bolumNo}. bölüm rozeti, ${durumEtiketi}`}
+                        >
+                          <span className={styles.badgeIconWrap} aria-hidden="true">
+                            <OdulIkonu
+                              key={rozet.iconKey}
+                              tip="rozet"
+                              anahtar={rozet.iconKey}
+                              kazanildi={rozet.durum === "earned"}
+                              boyut={46}
+                              alt=""
+                              className={styles.badgeImage}
+                            />
+                            <span className={styles.badgeState}><Ikon ad={durumIkonu} boyut={11} /></span>
+                          </span>
+                          <small>{rozet.bolumNo}. bölüm</small>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </section>
+
+                {!seciliDurak.madalyaKazanildi ? (
+                  <div className={styles.mobileMedalStatus}>
+                    <span><Ikon ad="madalya" boyut={17} /> Madalya</span>
+                    <strong>{seciliDurak.durum === "locked" ? "Kilitli" : "Finalden sonra"}</strong>
+                  </div>
+                ) : null}
+
+                {seciliDurak.madalyaKazanildi ? (
+                  <div className={styles.medalNote}><span><Ikon ad="madalya" boyut={25} /></span><div><small>Kitap Madalyası</small><strong>{seciliDurak.ad} Yolculuk Madalyası</strong></div></div>
+                ) : seciliDurak.durum === "locked" ? (
+                  <div className={styles.lockNote}><Ikon ad="kilit" boyut={21} /><div><strong>Açılma koşulu</strong><p>{acilmaKosulu(seciliDurak, duraklar)}</p></div></div>
+                ) : (
+                  <div className={styles.currentNote}><Ikon ad="fener" boyut={20} /><span>Sıradaki durak: {Math.min(tamamlananBolum + 1, toplamBolum)}. bölüm</span></div>
+                )}
+              </div>
 
               {seciliDurak.durum !== "locked" ? (
-                <button type="button" className={`${styles.primaryAction} ${styles.actionGreen}`} onClick={() => router.push(`/kitap/${seciliDurak.kitapKey}`)}>
-                  <Ikon ad={seciliDurak.durum === "completed" ? "kitap" : "ok-sag"} boyut={19} /> {aksiyon}
-                </button>
+                <div className={styles.panelFooter}>
+                  <button type="button" className={`${styles.primaryAction} ${styles.actionGreen}`} onClick={() => router.push(`/kitap/${seciliDurak.kitapKey}`)}>
+                    <Ikon ad={seciliDurak.durum === "completed" ? "kitap" : "ok-sag"} boyut={19} /> {aksiyon}
+                  </button>
+                </div>
               ) : null}
             </div>
           </aside>

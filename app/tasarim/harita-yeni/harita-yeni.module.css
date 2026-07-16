@@ -872,6 +872,35 @@
   display: none;
 }
 
+.drawerPanel {
+  min-width: 0;
+}
+
+.mobilePanelHeader {
+  display: contents;
+}
+
+.panelScrollBody {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.panelFooter {
+  margin-top: auto;
+}
+
+.panelFooter .primaryAction {
+  margin-top: 0;
+}
+
+.mobileBadgeSection,
+.mobileMedalStatus {
+  display: none;
+}
+
 .panelContent {
   display: flex;
   min-height: 100%;
@@ -1006,6 +1035,12 @@
 .progressLabel strong {
   color: var(--atlas-ink);
   font-size: 15px;
+}
+
+.progressTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .progressTrack {
@@ -1486,6 +1521,12 @@
   }
 
   .bookPanel {
+    min-height: 0;
+    border-radius: 23px;
+    overflow: hidden;
+  }
+
+  .drawerPanel {
     position: fixed;
     z-index: 90;
     top: 0;
@@ -1493,9 +1534,7 @@
     bottom: 0;
     width: min(90vw, 430px);
     height: 100dvh;
-    min-height: 0;
     border-radius: 25px 0 0 25px;
-    overflow: hidden;
     pointer-events: none;
     transform: translateX(104%);
     visibility: hidden;
@@ -1504,7 +1543,7 @@
       visibility 0s linear 220ms;
   }
 
-  .bookPanelOpen {
+  .drawerPanel.bookPanelOpen {
     pointer-events: auto;
     transform: translateX(0);
     visibility: visible;
@@ -1533,34 +1572,83 @@
   }
 
   .mobilePanelClose {
-    position: sticky;
-    z-index: 2;
-    top: 0;
     display: inline-flex;
     width: max-content;
     min-height: 44px;
     align-items: center;
-    gap: 7px;
-    margin: -4px 0 1px;
-    padding: 8px 11px;
-    border: 1px solid color-mix(in srgb, var(--atlas-ink) 15%, transparent);
+    gap: 5px;
+    margin: 0;
+    padding: 6px 8px;
+    border: 0;
     border-radius: 999px;
-    background: color-mix(in srgb, var(--atlas-paper) 94%, transparent);
+    background: transparent;
     color: var(--atlas-ink);
-    box-shadow: 0 7px 18px color-mix(in srgb, var(--atlas-ink) 12%, transparent);
     cursor: pointer;
     font-family: var(--font-nunito), Arial, sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 900;
   }
 
   .panelContent {
-    height: 100%;
     min-height: 0;
+    padding: 18px;
+  }
+
+  .drawerPanel .panelContent {
+    display: grid;
+    height: 100%;
+    grid-template-rows: minmax(0, 1fr) auto;
+    gap: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .drawerPanel .panelScrollBody {
+    display: grid;
+    min-height: 0;
+    grid-template-columns: 94px minmax(0, 1fr);
+    grid-template-areas:
+      "header header"
+      "cover identity"
+      "cover description"
+      "progress progress"
+      "badges badges"
+      "medal medal"
+      "note note";
+    align-content: start;
+    column-gap: 12px;
+    row-gap: 9px;
     overflow-y: auto;
     overscroll-behavior: contain;
-    padding: max(14px, env(safe-area-inset-top)) 18px max(18px, env(safe-area-inset-bottom));
+    padding:
+      max(10px, env(safe-area-inset-top))
+      18px
+      18px;
     scrollbar-gutter: stable;
+  }
+
+  .drawerPanel .mobilePanelHeader {
+    position: sticky;
+    z-index: 4;
+    top: 0;
+    display: flex;
+    min-width: 0;
+    grid-area: header;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-bottom: 5px;
+    background: color-mix(in srgb, var(--atlas-paper) 96%, transparent);
+  }
+
+  .drawerPanel .panelTopline {
+    min-width: 0;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+
+  .drawerPanel .panelTopline > span:first-child {
+    display: none;
   }
 
   .bookHero {
@@ -1581,6 +1669,198 @@
     text-align: center;
   }
 
+  .drawerPanel .bookHero {
+    display: contents;
+    text-align: left;
+  }
+
+  .drawerPanel .coverFrame {
+    width: 94px;
+    grid-area: cover;
+    align-self: start;
+  }
+
+  .drawerPanel .bookIdentity {
+    grid-area: identity;
+    align-self: end;
+    text-align: left;
+  }
+
+  .drawerPanel .bookIdentity h2 {
+    margin-top: 5px;
+    font-size: clamp(24px, 7vw, 28px);
+    line-height: 1;
+  }
+
+  .drawerPanel .bookIdentity p {
+    margin-top: 3px;
+    font-size: 14px;
+  }
+
+  .drawerPanel .description {
+    grid-area: description;
+    align-self: start;
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  .drawerPanel .progressBlock {
+    grid-area: progress;
+    margin-top: 2px;
+  }
+
+  .drawerPanel .rewardSummary {
+    display: none;
+  }
+
+  .drawerPanel .mobileBadgeSection {
+    display: grid;
+    grid-area: badges;
+    gap: 7px;
+    padding-block: 9px;
+    border-block: 1px solid color-mix(in srgb, var(--atlas-ink) 11%, transparent);
+  }
+
+  .mobileBadgeHeading,
+  .mobileMedalStatus {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .mobileBadgeHeading h3,
+  .mobileBadgeHeading strong {
+    margin: 0;
+    font-family: var(--font-nunito), Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+  }
+
+  .mobileBadgeHeading h3 {
+    color: var(--atlas-ink-muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .mobileBadgeHeading strong {
+    color: var(--atlas-ink);
+  }
+
+  .badgeGrid {
+    display: grid;
+    min-width: 0;
+    align-items: start;
+    justify-items: stretch;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .badgeCell {
+    display: grid;
+    min-width: 0;
+    justify-items: center;
+    gap: 2px;
+    color: var(--atlas-ink-muted);
+  }
+
+  .badgeIconWrap {
+    position: relative;
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--atlas-ink) 4%, var(--atlas-paper));
+  }
+
+  .badgeImage {
+    display: block;
+    width: 44px;
+    height: 44px;
+  }
+
+  .badgeState {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    display: grid;
+    width: 18px;
+    height: 18px;
+    place-items: center;
+    border: 2px solid var(--atlas-paper);
+    border-radius: 50%;
+    background: var(--atlas-forest);
+    color: var(--atlas-paper);
+  }
+
+  .badge_available .badgeIconWrap {
+    outline: 2px solid color-mix(in srgb, var(--atlas-gold) 64%, transparent);
+    outline-offset: 1px;
+  }
+
+  .badge_available .badgeState {
+    background: var(--atlas-gold);
+    color: var(--atlas-ink);
+  }
+
+  .badge_locked .badgeState {
+    background: color-mix(in srgb, var(--atlas-ink-muted) 78%, var(--atlas-paper));
+  }
+
+  .badgeCell small {
+    overflow: hidden;
+    max-width: 100%;
+    font-size: 9px;
+    font-weight: 800;
+    line-height: 1.15;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .drawerPanel .mobileMedalStatus {
+    grid-area: medal;
+    min-height: 38px;
+    padding: 7px 9px;
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--atlas-gold) 10%, var(--atlas-paper));
+    color: var(--atlas-ink-muted);
+    font-size: 13px;
+    font-weight: 900;
+  }
+
+  .mobileMedalStatus span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--atlas-forest);
+    text-transform: uppercase;
+  }
+
+  .mobileMedalStatus strong {
+    color: var(--atlas-ink-muted);
+  }
+
+  .drawerPanel .medalNote,
+  .drawerPanel .currentNote,
+  .drawerPanel .lockNote {
+    grid-area: note;
+  }
+
+  .drawerPanel .medalNote {
+    padding: 10px;
+    border: 1px solid color-mix(in srgb, var(--atlas-gold) 25%, transparent);
+  }
+
+  .drawerPanel .medalNote small {
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
   .rewardSummary dd {
     font-size: 13px;
   }
@@ -1589,13 +1869,23 @@
     white-space: normal;
   }
 
-  .primaryAction {
-    position: sticky;
-    bottom: 0;
-    flex: 0 0 auto;
+  .drawerPanel .panelFooter {
+    display: block;
+    margin: 0;
+    padding:
+      8px
+      18px
+      max(12px, env(safe-area-inset-bottom));
+    border-top: 1px solid color-mix(in srgb, var(--atlas-ink) 12%, transparent);
+    background: var(--atlas-paper);
     box-shadow:
-      0 -12px 24px color-mix(in srgb, var(--atlas-paper) 82%, transparent),
-      0 8px 18px color-mix(in srgb, var(--atlas-moss) 26%, transparent);
+      0 -12px 24px color-mix(in srgb, var(--atlas-paper) 88%, transparent);
+  }
+
+  .drawerPanel .primaryAction {
+    position: static;
+    min-height: 48px;
+    margin: 0;
   }
 
   .exploreDock {
@@ -1660,6 +1950,42 @@
 
   .stopLabel {
     width: 116px;
+  }
+
+  .drawerPanel .panelScrollBody {
+    grid-template-columns: 82px minmax(0, 1fr);
+    column-gap: 10px;
+    padding-inline: 14px;
+  }
+
+  .drawerPanel .coverFrame {
+    width: 82px;
+  }
+
+  .drawerPanel .bookIdentity h2 {
+    font-size: 23px;
+  }
+
+  .drawerPanel .description {
+    line-height: 1.3;
+  }
+
+  .badgeGrid {
+    gap: 4px;
+  }
+
+  .badgeIconWrap {
+    width: 43px;
+    height: 43px;
+  }
+
+  .badgeImage {
+    width: 40px;
+    height: 40px;
+  }
+
+  .drawerPanel .panelFooter {
+    padding-inline: 14px;
   }
 
   .dockActions button {
