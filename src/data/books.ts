@@ -230,9 +230,9 @@ export const books: BookDefinition[] = [
     chapters: [
       {
         id: "1",
-        title: "Beklenen Misafir",
+        title: "Beklenen   Misafir",
         ozet: "Yeryüzü, Allah'ın kendisine sorumluluk vereceği ilk insanla tanışmaya hazırlanır.",
-        audioUrl: "",
+        audioUrl: "/sesli-anlatim/hz-adem/hz-adem-sesli-anlatim.mp3",
         badgeName: "İlk Adım Rozeti",
         paragraphs: [
           { type: "text", text: "Çok eski zamanlarda yeryüzünde henüz hiçbir insan yaşamıyordu. Dağlar göğe uzanıyor, nehirler vadilerden geçiyor, rüzgâr toprağın üzerinde dolaşıyordu. Geceleri yıldızlar parlıyor, sabahları ışık yeniden yayılıyordu. Yeryüzü, sanki önemli bir misafiri bekliyordu." },

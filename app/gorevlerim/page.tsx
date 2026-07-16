@@ -67,14 +67,15 @@ export default function GorevlerimSayfasi() {
   const bekleyenler = gorevler.filter((g) => g.status === "eklendi");
   const tamamlananlar = gorevler.filter((g) => g.status === "tamamlandi");
 
+  const childId = child?.id;
   const goreviTamamla = useCallback(
     async (gorev: GorevOgesi) => {
-      if (!child?.id) return;
+      if (!childId) return;
       setIsaretlenen(gorev.gorev.id);
       const { error } = await supabase
         .from("profile_tasks")
         .update({ status: "tamamlandi", completed_at: new Date().toISOString() })
-        .eq("profile_id", child.id)
+        .eq("profile_id", childId)
         .eq("task_id", gorev.gorev.id);
       setIsaretlenen(null);
 
@@ -91,7 +92,7 @@ export default function GorevlerimSayfasi() {
         window.setTimeout(() => setKutlama(null), 2600);
       }
     },
-    [child?.id],
+    [childId],
   );
 
   function GorevKarti({ gorev }: { gorev: GorevOgesi }) {
@@ -147,11 +148,11 @@ export default function GorevlerimSayfasi() {
               className="overflow-hidden"
             >
               <div className="mt-3 border-t border-cizgi pt-3">
-                <p className="whitespace-pre-line font-story text-sm font-semibold leading-6 sm:text-base sm:leading-7">
+                <p className="whitespace-pre-line font-story text-base font-semibold leading-7">
                   {gorev.gorev.aciklama}
                 </p>
 
-                <div className="mt-3 grid gap-1.5 font-govde text-sm text-murekkep-soluk">
+                <div className="mt-3 grid gap-1.5 font-govde text-base text-murekkep-soluk">
                   <p className="flex items-start gap-1.5">
                     <Ikon ad="saat" boyut={15} className="mt-0.5 shrink-0" />
                     <span>Tahmini süre: {gorev.gorev.sure}</span>
@@ -163,7 +164,7 @@ export default function GorevlerimSayfasi() {
                 </div>
 
                 {gorev.gorev.guvenlikNotu ? (
-                  <p className="mt-3 flex items-start gap-2 rounded-buton bg-vurgu-yumusak px-3 py-2.5 font-govde text-sm font-semibold leading-6">
+                  <p className="mt-3 flex items-start gap-2 rounded-buton bg-vurgu-yumusak px-3 py-2.5 font-govde text-base font-semibold leading-7">
                     <Ikon ad="kalp" boyut={16} className="mt-0.5 shrink-0 text-vurgu" />
                     {gorev.gorev.guvenlikNotu}
                   </p>
@@ -218,7 +219,7 @@ export default function GorevlerimSayfasi() {
             {child?.name ? `${child.name} için` : "Senin için"}
           </p>
           <h1 className="font-baslik text-3xl font-bold sm:text-4xl">Görevlerim</h1>
-          <p className="mt-1 font-govde text-sm text-murekkep-soluk">
+          <p className="mt-1 font-govde text-base text-murekkep-soluk">
             Kitaplardan listene eklediğin &quot;Bugüne Taşı&quot; görevleri burada.
             Hepsi gönüllü — kendi hızında.
           </p>

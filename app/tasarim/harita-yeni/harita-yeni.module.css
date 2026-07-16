@@ -1,0 +1,1588 @@
+.page {
+  --atlas-night: var(--zemin);
+  --atlas-night-soft: var(--yuzey);
+  --atlas-night-raised: var(--yuzey-2);
+  --atlas-forest: var(--eylem-koyu);
+  --atlas-moss: var(--eylem);
+  --atlas-gold: var(--vurgu);
+  --atlas-gold-soft: var(--vurgu-yumusak);
+  --atlas-paper: var(--okuma-yuzey);
+  --atlas-paper-soft: color-mix(
+    in srgb,
+    var(--atlas-paper) 90%,
+    var(--atlas-gold)
+  );
+  --atlas-ink: var(--zemin);
+  --atlas-ink-muted: color-mix(
+    in srgb,
+    var(--atlas-ink) 68%,
+    var(--atlas-paper)
+  );
+  --atlas-mist: color-mix(in srgb, var(--murekkep) 18%, transparent);
+  --atlas-river: color-mix(
+    in srgb,
+    var(--atlas-night-raised) 66%,
+    var(--atlas-moss)
+  );
+  position: relative;
+  min-height: 100svh;
+  overflow-x: clip;
+  background:
+    radial-gradient(
+      circle at 74% 14%,
+      color-mix(in srgb, var(--atlas-gold) 9%, transparent),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      var(--atlas-night),
+      color-mix(in srgb, var(--atlas-night) 88%, var(--atlas-forest))
+    );
+  color: var(--murekkep);
+  font-family: var(--font-nunito), Arial, sans-serif;
+  isolation: isolate;
+}
+
+.page::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  background-image:
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--murekkep) 14%, transparent) 0 0.7px,
+      transparent 0.9px
+    ),
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--atlas-gold) 8%, transparent) 0 0.6px,
+      transparent 0.8px
+    );
+  background-position:
+    0 0,
+    4px 6px;
+  background-size:
+    7px 7px,
+    11px 11px;
+  content: "";
+  opacity: 0.24;
+  pointer-events: none;
+}
+
+.atlasShell {
+  display: grid;
+  width: min(100%, 1360px);
+  min-width: 0;
+  margin-inline: auto;
+  padding: 12px clamp(16px, 2vw, 28px);
+  gap: 12px;
+}
+
+.explorerBar {
+  display: grid;
+  grid-template-columns: auto minmax(190px, 1fr) auto;
+  min-width: 0;
+  min-height: 66px;
+  align-items: center;
+  gap: 18px;
+  padding: 9px 12px;
+  border: 1px solid color-mix(in srgb, var(--atlas-gold) 28%, transparent);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--atlas-night-soft) 84%, transparent);
+  box-shadow: 0 12px 34px color-mix(in srgb, var(--atlas-night) 42%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.previewGroup,
+.profileGroup,
+.profileStats,
+.profileStats div,
+.backLink,
+.previewBadge {
+  display: flex;
+  align-items: center;
+}
+
+.previewGroup {
+  min-width: 0;
+  gap: 8px;
+}
+
+.previewBadge {
+  min-height: 34px;
+  gap: 7px;
+  padding: 6px 10px;
+  border: 1px solid color-mix(in srgb, var(--atlas-gold) 48%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--atlas-gold-soft) 74%, transparent);
+  color: var(--atlas-gold);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.backLink {
+  min-height: 44px;
+  gap: 7px;
+  padding-inline: 10px;
+  border-radius: 12px;
+  color: var(--murekkep);
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.backLink:hover {
+  background: color-mix(in srgb, var(--murekkep) 8%, transparent);
+  color: var(--atlas-gold);
+}
+
+.profileGroup {
+  min-width: 0;
+  justify-self: center;
+  gap: 10px;
+}
+
+.avatar {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--atlas-gold) 70%, transparent);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      color-mix(in srgb, var(--atlas-gold) 26%, transparent),
+      transparent 62%
+    ),
+    var(--atlas-night-raised);
+  color: var(--atlas-gold);
+  box-shadow: inset 0 0 0 3px color-mix(in srgb, var(--atlas-night) 50%, transparent);
+}
+
+.profileCopy {
+  display: grid;
+  min-width: 0;
+  line-height: 1.15;
+}
+
+.profileCopy strong {
+  overflow: hidden;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profileCopy span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+  color: var(--atlas-gold);
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.profileStats {
+  min-width: 0;
+  justify-content: flex-end;
+  gap: 5px;
+  margin: 0;
+}
+
+.profileStats div {
+  min-width: 128px;
+  min-height: 50px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column-reverse;
+  gap: 2px;
+  padding: 6px 10px;
+  border-left: 1px solid color-mix(in srgb, var(--atlas-gold) 20%, transparent);
+}
+
+.profileStats dt {
+  color: var(--murekkep-soluk);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.profileStats dd {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  color: var(--atlas-gold);
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.workspace {
+  display: grid;
+  min-width: 0;
+  gap: 14px;
+}
+
+.mapStage {
+  position: relative;
+  min-width: 0;
+  height: 560px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--atlas-gold) 38%, transparent);
+  border-radius: 28px;
+  background:
+    radial-gradient(
+      circle at 72% 45%,
+      color-mix(in srgb, var(--atlas-gold) 17%, transparent),
+      transparent 24%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--atlas-night) 92%, var(--atlas-night-soft)) 0 35%,
+      color-mix(in srgb, var(--atlas-night-soft) 76%, var(--atlas-forest)) 66%,
+      color-mix(in srgb, var(--atlas-forest) 72%, var(--atlas-night)) 100%
+    );
+  box-shadow:
+    inset 0 0 60px color-mix(in srgb, var(--atlas-night) 55%, transparent),
+    0 18px 42px color-mix(in srgb, var(--atlas-night) 48%, transparent);
+  isolation: isolate;
+}
+
+.mapStage::before {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background-image:
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--atlas-paper) 11%, transparent) 0 0.7px,
+      transparent 0.9px
+    ),
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--atlas-night) 22%, transparent) 0 0.8px,
+      transparent 1px
+    );
+  background-position:
+    0 0,
+    5px 7px;
+  background-size:
+    8px 8px,
+    13px 13px;
+  content: "";
+  opacity: 0.34;
+  pointer-events: none;
+}
+
+.mapStage::after {
+  position: absolute;
+  z-index: 7;
+  inset: 8px;
+  border: 1px solid color-mix(in srgb, var(--atlas-gold) 16%, transparent);
+  border-radius: 21px;
+  content: "";
+  pointer-events: none;
+}
+
+.mapHeading {
+  position: absolute;
+  z-index: 6;
+  top: 18px;
+  left: 20px;
+  max-width: min(340px, 64%);
+  text-shadow: 0 2px 10px color-mix(in srgb, var(--atlas-night) 72%, transparent);
+}
+
+.mapHeading p,
+.mapHeading h1,
+.mapHeading span {
+  margin: 0;
+}
+
+.mapHeading p {
+  color: var(--atlas-gold);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.mapHeading h1 {
+  margin-top: 2px;
+  color: var(--murekkep);
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 800;
+  line-height: 1.02;
+}
+
+.mapHeading span {
+  display: block;
+  margin-top: 4px;
+  color: color-mix(in srgb, var(--murekkep) 76%, transparent);
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.compass {
+  position: absolute;
+  z-index: 3;
+  top: 18px;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  border: 1px solid color-mix(in srgb, var(--atlas-gold) 27%, transparent);
+  border-radius: 50%;
+  color: color-mix(in srgb, var(--atlas-gold) 54%, transparent);
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 900;
+  opacity: 0.72;
+}
+
+.compass::before,
+.compass::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: currentColor;
+  content: "";
+  transform: translate(-50%, -50%);
+}
+
+.compass::before {
+  width: 1px;
+  height: 52px;
+}
+
+.compass::after {
+  width: 52px;
+  height: 1px;
+}
+
+.compass i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border: 1px solid currentColor;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.compass span {
+  position: absolute;
+}
+
+.compassNorth {
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.compassEast {
+  top: 50%;
+  right: 4px;
+  transform: translateY(-50%);
+}
+
+.compassSouth {
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.compassWest {
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+}
+
+.stars,
+.stars i {
+  position: absolute;
+}
+
+.stars {
+  z-index: 2;
+  inset: 0;
+  pointer-events: none;
+}
+
+.stars i {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--atlas-paper) 82%, transparent);
+  box-shadow: 0 0 7px color-mix(in srgb, var(--atlas-paper) 36%, transparent);
+}
+
+.stars i:nth-child(3n) {
+  background: color-mix(in srgb, var(--atlas-gold) 86%, transparent);
+}
+
+.starOne {
+  top: 12%;
+  left: 48%;
+}
+
+.starTwo {
+  top: 17%;
+  left: 82%;
+}
+
+.starThree {
+  top: 8%;
+  left: 66%;
+}
+
+.starFour {
+  top: 27%;
+  left: 90%;
+}
+
+.starFive {
+  top: 25%;
+  left: 12%;
+}
+
+.starSix {
+  top: 35%;
+  left: 52%;
+}
+
+.starSeven {
+  top: 19%;
+  left: 37%;
+}
+
+.mountainBack,
+.mountainFront,
+.meadowMist {
+  position: absolute;
+  pointer-events: none;
+}
+
+.mountainBack {
+  z-index: 0;
+  right: -8%;
+  bottom: 20%;
+  left: -8%;
+  height: 43%;
+  background: color-mix(
+    in srgb,
+    var(--atlas-night-raised) 58%,
+    var(--atlas-forest)
+  );
+  clip-path: polygon(
+    0 72%,
+    11% 42%,
+    20% 64%,
+    33% 25%,
+    45% 63%,
+    58% 34%,
+    70% 68%,
+    83% 20%,
+    100% 68%,
+    100% 100%,
+    0 100%
+  );
+  opacity: 0.34;
+}
+
+.mountainFront {
+  z-index: 0;
+  right: -7%;
+  bottom: -2%;
+  left: -7%;
+  height: 42%;
+  background: color-mix(
+    in srgb,
+    var(--atlas-forest) 78%,
+    var(--atlas-night)
+  );
+  clip-path: polygon(
+    0 65%,
+    10% 45%,
+    22% 72%,
+    36% 41%,
+    49% 70%,
+    61% 38%,
+    74% 68%,
+    88% 38%,
+    100% 58%,
+    100% 100%,
+    0 100%
+  );
+  opacity: 0.64;
+}
+
+.meadowMist {
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 36%;
+  background:
+    radial-gradient(
+      ellipse at 50% 90%,
+      color-mix(in srgb, var(--atlas-moss) 20%, transparent),
+      transparent 58%
+    ),
+    linear-gradient(0deg, color-mix(in srgb, var(--atlas-night) 28%, transparent), transparent);
+}
+
+.river,
+.trail {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.river {
+  z-index: 1;
+  opacity: 0.28;
+}
+
+.river path {
+  fill: none;
+  stroke: var(--atlas-river);
+  stroke-linecap: round;
+  stroke-width: 9;
+  vector-effect: non-scaling-stroke;
+}
+
+.trail {
+  z-index: 2;
+}
+
+.trail path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.trailShadow {
+  stroke: color-mix(in srgb, var(--atlas-night) 66%, transparent);
+  stroke-width: 9;
+}
+
+.trailBase {
+  stroke: color-mix(in srgb, var(--atlas-gold) 60%, var(--atlas-paper));
+  stroke-dasharray: 1.5 2.25;
+  stroke-width: 4;
+}
+
+.trailCompleted {
+  stroke: color-mix(in srgb, var(--atlas-moss) 70%, var(--atlas-paper));
+  stroke-dasharray: 31 69;
+  stroke-width: 4.5;
+}
+
+.routeLight {
+  position: absolute;
+  z-index: 1;
+  top: 36%;
+  left: 60%;
+  width: 24%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--atlas-gold) 24%, transparent),
+    transparent 68%
+  );
+  filter: blur(7px);
+  pointer-events: none;
+}
+
+.stops {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stopItem {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.stopOne {
+  top: 28%;
+  left: 24%;
+}
+
+.stopTwo {
+  top: 46%;
+  left: 72%;
+}
+
+.stopThree {
+  top: 64%;
+  left: 28%;
+}
+
+.stopFour {
+  top: 82%;
+  left: 68%;
+}
+
+.stopButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: max-content;
+  min-width: 0;
+  min-height: 64px;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--murekkep);
+  cursor: pointer;
+  font-family: var(--font-nunito), Arial, sans-serif;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.stopOne .stopButton,
+.stopThree .stopButton {
+  transform: translate(-31px, -50%);
+}
+
+.stopTwo .stopButton,
+.stopFour .stopButton {
+  flex-direction: row-reverse;
+  text-align: right;
+  transform: translate(calc(-100% + 31px), -50%);
+}
+
+.marker {
+  position: relative;
+  display: grid;
+  width: 62px;
+  height: 62px;
+  flex: 0 0 62px;
+  place-items: center;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  background: var(--atlas-night-soft);
+  box-shadow:
+    0 9px 20px color-mix(in srgb, var(--atlas-night) 55%, transparent),
+    inset 0 0 0 4px color-mix(in srgb, var(--atlas-night) 42%, transparent);
+  transition:
+    transform 190ms ease,
+    box-shadow 190ms ease,
+    background-color 190ms ease;
+}
+
+.markerRing {
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed currentColor;
+  border-radius: 50%;
+  opacity: 0.42;
+}
+
+.stopLabel {
+  display: grid;
+  width: 136px;
+  min-height: 58px;
+  align-content: center;
+  padding: 7px 10px;
+  border: 1px solid color-mix(in srgb, currentColor 32%, transparent);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--atlas-night) 82%, transparent);
+  box-shadow: 0 8px 19px color-mix(in srgb, var(--atlas-night) 40%, transparent);
+  backdrop-filter: blur(7px);
+  transition:
+    background-color 190ms ease,
+    border-color 190ms ease,
+    transform 190ms ease;
+}
+
+.stopLabel small,
+.stopLabel strong,
+.stopLabel em {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stopLabel small {
+  color: color-mix(in srgb, currentColor 74%, transparent);
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.stopLabel strong {
+  margin-top: 2px;
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.stopLabel em {
+  margin-top: 1px;
+  color: color-mix(in srgb, currentColor 80%, transparent);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.stop_tamamlandi {
+  color: color-mix(in srgb, var(--atlas-moss) 72%, var(--atlas-paper));
+}
+
+.stop_tamamlandi .marker {
+  background: color-mix(in srgb, var(--atlas-forest) 76%, var(--atlas-night));
+}
+
+.stop_aktif {
+  color: var(--atlas-gold);
+}
+
+.stop_aktif .marker {
+  background: color-mix(in srgb, var(--atlas-gold-soft) 72%, var(--atlas-night));
+  box-shadow:
+    0 0 0 8px color-mix(in srgb, var(--atlas-gold) 7%, transparent),
+    0 0 29px color-mix(in srgb, var(--atlas-gold) 31%, transparent),
+    inset 0 0 0 4px color-mix(in srgb, var(--atlas-night) 32%, transparent);
+  animation: lanternGlow 3.6s ease-in-out infinite;
+}
+
+.stop_kilitli {
+  color: color-mix(in srgb, var(--murekkep-soluk) 74%, transparent);
+}
+
+.stop_kilitli .marker,
+.stop_kilitli .stopLabel {
+  filter: saturate(0.42);
+}
+
+.stop_kilitli .marker {
+  background: color-mix(in srgb, var(--atlas-night-raised) 72%, transparent);
+}
+
+.stopSelected .marker {
+  transform: scale(1.06);
+  box-shadow:
+    0 0 0 3px var(--atlas-paper),
+    0 0 0 7px color-mix(in srgb, currentColor 50%, transparent),
+    0 11px 24px color-mix(in srgb, var(--atlas-night) 58%, transparent);
+}
+
+.stopSelected .stopLabel {
+  border-color: color-mix(in srgb, currentColor 66%, transparent);
+  background: color-mix(in srgb, var(--atlas-night-soft) 92%, transparent);
+}
+
+.stopButton:hover .marker {
+  transform: scale(1.04);
+}
+
+.botanicalMark {
+  position: absolute;
+  z-index: 3;
+  right: 3%;
+  bottom: 1%;
+  width: 96px;
+  height: 90px;
+  border-left: 2px solid color-mix(in srgb, var(--atlas-moss) 48%, transparent);
+  border-radius: 48% 0 0 0;
+  opacity: 0.7;
+  pointer-events: none;
+  transform: rotate(8deg);
+  transform-origin: bottom;
+}
+
+.botanicalMark i {
+  position: absolute;
+  width: 24px;
+  height: 11px;
+  border-radius: 100% 0 100% 0;
+  background: color-mix(in srgb, var(--atlas-moss) 50%, transparent);
+}
+
+.botanicalMark i:nth-child(1) {
+  top: 21px;
+  left: -1px;
+  transform: rotate(-24deg);
+}
+
+.botanicalMark i:nth-child(2) {
+  top: 43px;
+  left: -22px;
+  transform: scaleX(-1) rotate(-12deg);
+}
+
+.botanicalMark i:nth-child(3) {
+  top: 63px;
+  left: 0;
+  transform: rotate(-18deg);
+}
+
+.bookPanel {
+  min-width: 0;
+  overflow: auto;
+  border: 1px solid color-mix(in srgb, var(--atlas-gold) 54%, transparent);
+  border-radius: 28px;
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--atlas-paper) 96%, var(--atlas-gold)) 0 28%,
+      var(--atlas-paper) 64%
+    );
+  color: var(--atlas-ink);
+  box-shadow:
+    inset 0 0 0 7px color-mix(in srgb, var(--atlas-gold) 5%, transparent),
+    0 18px 42px color-mix(in srgb, var(--atlas-night) 48%, transparent);
+  scrollbar-color: color-mix(in srgb, var(--atlas-gold) 35%, transparent)
+    transparent;
+}
+
+.panelContent {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  gap: 10px;
+  padding: 17px;
+  animation: panelEnter 240ms ease-out both;
+}
+
+.panelTopline,
+.progressLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.panelTopline {
+  color: var(--atlas-ink-muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.panelOrder {
+  color: var(--atlas-forest);
+}
+
+.bookHero {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  min-width: 0;
+  align-items: center;
+  gap: 14px;
+}
+
+.coverFrame {
+  position: relative;
+  width: 92px;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border: 2px solid color-mix(in srgb, var(--atlas-gold) 72%, transparent);
+  border-radius: 10px;
+  background: var(--atlas-forest);
+  box-shadow: 0 10px 19px color-mix(in srgb, var(--atlas-ink) 22%, transparent);
+}
+
+.cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.panel_kilitli .cover {
+  filter: grayscale(0.72) brightness(0.72);
+}
+
+.coverLock {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--atlas-ink) 46%, transparent);
+  color: var(--atlas-paper);
+}
+
+.bookIdentity {
+  min-width: 0;
+}
+
+.statusChip {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--atlas-forest) 11%, var(--atlas-paper));
+  color: var(--atlas-forest);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.panel_aktif .statusChip {
+  background: color-mix(in srgb, var(--atlas-gold) 19%, var(--atlas-paper));
+  color: color-mix(in srgb, var(--atlas-gold) 70%, var(--atlas-ink));
+}
+
+.panel_kilitli .statusChip {
+  background: color-mix(in srgb, var(--atlas-ink) 8%, var(--atlas-paper));
+  color: var(--atlas-ink-muted);
+}
+
+.bookIdentity h2 {
+  margin: 7px 0 0;
+  color: var(--atlas-ink);
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: clamp(25px, 3vw, 31px);
+  font-weight: 800;
+  line-height: 0.98;
+}
+
+.bookIdentity p {
+  margin: 5px 0 0;
+  color: var(--atlas-ink-muted);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.description {
+  margin: 0;
+  color: var(--atlas-ink-muted);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.progressBlock {
+  display: grid;
+  gap: 6px;
+}
+
+.progressLabel {
+  color: var(--atlas-ink-muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.progressLabel strong {
+  color: var(--atlas-ink);
+  font-size: 15px;
+}
+
+.progressTrack {
+  width: 100%;
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--atlas-ink) 10%, var(--atlas-paper));
+}
+
+.progressTrack span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--atlas-moss);
+  transition: width 240ms ease;
+}
+
+.panel_aktif .progressTrack span {
+  background: var(--atlas-gold);
+}
+
+.rewardSummary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  padding-block: 9px;
+  border-block: 1px solid color-mix(in srgb, var(--atlas-ink) 11%, transparent);
+}
+
+.rewardSummary div {
+  min-width: 0;
+  padding-inline: 9px;
+}
+
+.rewardSummary div:first-child {
+  padding-left: 0;
+  border-right: 1px solid color-mix(in srgb, var(--atlas-ink) 11%, transparent);
+}
+
+.rewardSummary dt {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--atlas-forest);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.rewardSummary dd {
+  margin: 3px 0 0;
+  color: var(--atlas-ink-muted);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.medalNote,
+.currentNote,
+.lockNote {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.medalNote {
+  gap: 10px;
+  padding: 8px 10px;
+  background: color-mix(in srgb, var(--atlas-gold) 13%, var(--atlas-paper));
+}
+
+.medalNote > span {
+  display: grid;
+  width: 39px;
+  height: 39px;
+  flex: 0 0 39px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--atlas-gold);
+  color: var(--atlas-ink);
+}
+
+.medalNote div {
+  display: grid;
+  min-width: 0;
+}
+
+.medalNote small {
+  color: var(--atlas-ink-muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.medalNote strong {
+  overflow: hidden;
+  color: var(--atlas-ink);
+  font-size: 14px;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.currentNote {
+  min-height: 47px;
+  gap: 9px;
+  padding: 9px 12px;
+  background: color-mix(in srgb, var(--atlas-gold) 13%, var(--atlas-paper));
+  color: color-mix(in srgb, var(--atlas-gold) 68%, var(--atlas-ink));
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.lockNote {
+  align-items: flex-start;
+  gap: 9px;
+  padding: 10px 11px;
+  background: color-mix(in srgb, var(--atlas-ink) 7%, var(--atlas-paper));
+  color: var(--atlas-ink-muted);
+}
+
+.lockNote > svg {
+  margin-top: 2px;
+}
+
+.lockNote div {
+  min-width: 0;
+}
+
+.lockNote strong {
+  color: var(--atlas-ink);
+  font-size: 14px;
+}
+
+.lockNote p {
+  margin: 3px 0 0;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.primaryAction {
+  display: inline-flex;
+  width: 100%;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: auto;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 14px;
+  color: var(--eylem-metin);
+  cursor: pointer;
+  font-family: var(--font-nunito), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.actionGreen {
+  background: var(--atlas-moss);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--atlas-moss) 26%, transparent);
+}
+
+.primaryAction:hover {
+  background: var(--atlas-forest);
+  transform: translateY(-1px);
+}
+
+.exploreDock {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  min-width: 0;
+  min-height: 62px;
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--atlas-gold) 28%, transparent);
+  border-radius: 19px;
+  background: color-mix(in srgb, var(--atlas-night-soft) 85%, transparent);
+  box-shadow: 0 12px 32px color-mix(in srgb, var(--atlas-night) 38%, transparent);
+}
+
+.dockLabel {
+  display: flex;
+  min-width: 128px;
+  align-items: center;
+  padding-inline: 16px;
+  border-right: 1px solid color-mix(in srgb, var(--atlas-gold) 20%, transparent);
+  color: var(--atlas-gold);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.dockActions {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.dockActions button {
+  display: flex;
+  min-width: 0;
+  min-height: 60px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border: 0;
+  background: transparent;
+  color: var(--murekkep);
+  cursor: pointer;
+  font-family: var(--font-nunito), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.15;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.dockActions button + button {
+  border-left: 1px solid color-mix(in srgb, var(--atlas-gold) 16%, transparent);
+}
+
+.dockActions button:hover {
+  background: color-mix(in srgb, var(--atlas-gold) 8%, transparent);
+  color: var(--atlas-gold);
+}
+
+.liveNote {
+  min-height: 18px;
+  margin: -2px 4px 0;
+  color: var(--murekkep-soluk);
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: right;
+}
+
+.backLink:focus-visible,
+.stopButton:focus-visible,
+.primaryAction:focus-visible,
+.dockActions button:focus-visible {
+  outline: 3px solid var(--atlas-gold);
+  outline-offset: 3px;
+}
+
+@keyframes lanternGlow {
+  0%,
+  100% {
+    filter: brightness(0.98);
+  }
+
+  50% {
+    filter: brightness(1.08);
+  }
+}
+
+@keyframes panelEnter {
+  from {
+    opacity: 0.35;
+    transform: translateY(7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 960px) {
+  .workspace {
+    height: clamp(31rem, calc(100svh - 250px), 38rem);
+    grid-template-columns: minmax(0, 1.65fr) minmax(330px, 0.95fr);
+  }
+
+  .mapStage {
+    height: 100%;
+  }
+
+  .bookPanel {
+    height: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .panelContent {
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .bookHero {
+    grid-template-columns: 108px minmax(0, 1fr);
+  }
+
+  .coverFrame {
+    width: 108px;
+  }
+
+  .bookIdentity p {
+    font-size: 16px;
+  }
+
+  .rewardSummary dd,
+  .medalNote strong {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 959px) {
+  .explorerBar {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .previewGroup {
+    grid-column: 1 / -1;
+    justify-content: space-between;
+  }
+
+  .profileGroup {
+    grid-column: 1 / 3;
+    justify-self: start;
+  }
+
+  .profileStats {
+    grid-column: 3;
+  }
+
+  .mapStage {
+    height: 550px;
+  }
+
+  .bookPanel {
+    min-height: 470px;
+  }
+
+  .panelContent {
+    min-height: 470px;
+  }
+}
+
+@media (max-width: 620px) {
+  .atlasShell {
+    padding-inline: 16px;
+  }
+
+  .explorerBar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px 12px;
+    padding: 9px 10px;
+  }
+
+  .previewGroup {
+    grid-column: 1 / -1;
+  }
+
+  .previewBadge {
+    min-height: 32px;
+    padding-inline: 8px;
+    font-size: 11px;
+  }
+
+  .backLink {
+    padding-inline: 7px;
+    font-size: 13px;
+  }
+
+  .profileGroup {
+    grid-column: 1;
+  }
+
+  .avatar {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+  }
+
+  .profileCopy strong {
+    font-size: 15px;
+  }
+
+  .profileCopy span {
+    font-size: 12px;
+  }
+
+  .profileStats {
+    grid-column: 2;
+    gap: 0;
+  }
+
+  .profileStats div {
+    min-width: 54px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+  }
+
+  .profileStats dt {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .profileStats dd {
+    font-size: 16px;
+  }
+
+  .mapStage {
+    height: 500px;
+    border-radius: 23px;
+  }
+
+  .mapStage::after {
+    inset: 6px;
+    border-radius: 17px;
+  }
+
+  .mapHeading {
+    top: 16px;
+    left: 16px;
+    max-width: 72%;
+  }
+
+  .mapHeading h1 {
+    font-size: 25px;
+  }
+
+  .mapHeading span {
+    max-width: 225px;
+    font-size: 12px;
+  }
+
+  .compass {
+    top: 15px;
+    right: 15px;
+    width: 58px;
+    height: 58px;
+  }
+
+  .compass::before {
+    height: 42px;
+  }
+
+  .compass::after {
+    width: 42px;
+  }
+
+  .stopLabel {
+    width: 124px;
+    min-height: 54px;
+    padding: 6px 8px;
+  }
+
+  .stopLabel strong {
+    font-size: 16px;
+  }
+
+  .stopLabel em {
+    font-size: 10px;
+  }
+
+  .botanicalMark {
+    right: -4%;
+    opacity: 0.46;
+  }
+
+  .bookPanel {
+    min-height: 0;
+    border-radius: 23px;
+    overflow: hidden;
+  }
+
+  .panelContent {
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .bookHero {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .coverFrame {
+    width: 132px;
+  }
+
+  .bookIdentity h2 {
+    font-size: 30px;
+  }
+
+  .description {
+    text-align: center;
+  }
+
+  .rewardSummary dd {
+    font-size: 13px;
+  }
+
+  .medalNote strong {
+    white-space: normal;
+  }
+
+  .exploreDock {
+    display: block;
+    min-height: 86px;
+  }
+
+  .dockLabel {
+    min-height: 25px;
+    justify-content: center;
+    border-right: 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--atlas-gold) 16%, transparent);
+    font-size: 9px;
+  }
+
+  .dockActions button {
+    min-height: 61px;
+    gap: 5px;
+    padding-inline: 5px;
+    font-size: 13px;
+  }
+
+  .liveNote {
+    min-height: 16px;
+    font-size: 11px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 370px) {
+  .previewBadge svg {
+    display: none;
+  }
+
+  .backLink {
+    font-size: 12px;
+  }
+
+  .marker {
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+  }
+
+  .stopOne .stopButton,
+  .stopThree .stopButton {
+    transform: translate(-29px, -50%);
+  }
+
+  .stopTwo .stopButton,
+  .stopFour .stopButton {
+    transform: translate(calc(-100% + 29px), -50%);
+  }
+
+  .stopLabel {
+    width: 116px;
+  }
+
+  .dockActions button {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page *,
+  .page *::before,
+  .page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

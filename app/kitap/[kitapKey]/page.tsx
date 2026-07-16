@@ -372,19 +372,19 @@ export default function KitapDetaySayfasi() {
                         {bolum.title}
                       </h3>
                       {bolum.ozet ? (
-                        <p className="font-govde text-sm text-murekkep-soluk">
+                        <p className="font-govde text-base leading-7 text-murekkep-soluk">
                           {bolum.ozet}
                         </p>
                       ) : null}
                     </div>
 
                     <div className="flex items-center gap-2.5">
+                      {/* Rozet adı hemen yanda görünür; görsel dekoratif (alt=""). */}
                       <OdulIkonu
                         tip="rozet"
                         anahtar={`${kitapKey}-bolum-${index + 1}`}
                         boyut={42}
                         kazanildi={tamamlandi}
-                        alt={bolum.badgeName}
                       />
                       <div>
                         <p className="font-baslik text-[11px] font-semibold uppercase tracking-wider text-murekkep-soluk">

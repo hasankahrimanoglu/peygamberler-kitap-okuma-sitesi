@@ -33,6 +33,8 @@ export type ChapterData = {
   /** Kapak sayfasındaki kısa tanıtım cümlesi (books.ts `ozet` alanından) */
   ozet?: string;
   audioTitle: string;
+  /** Bölümün gerçek ses dosyası (books.ts `audioUrl`); yoksa ses kontrolü hiç gösterilmez. */
+  audioUrl?: string;
   decisionTitle: string;
   badgeName: string;
   returnMessage: string;
@@ -197,7 +199,7 @@ function createDemoBookChapter({
 const ademDemoChapters = [
   createDemoBookChapter({
     bookKey: "adem",
-    bookName: "Hz. Adem",
+    bookName: "Hz. Âdem",
     id: "1",
     title: "İlk İnsan, İlk Öğrenme",
     badgeName: "İlk Adım Rozeti",
@@ -217,7 +219,7 @@ const ademDemoChapters = [
   }),
   createDemoBookChapter({
     bookKey: "adem",
-    bookName: "Hz. Adem",
+    bookName: "Hz. Âdem",
     id: "2",
     title: "İsimlerin Sırrı",
     badgeName: "Bilgi Rozeti",
@@ -225,7 +227,7 @@ const ademDemoChapters = [
   }),
   createDemoBookChapter({
     bookKey: "adem",
-    bookName: "Hz. Adem",
+    bookName: "Hz. Âdem",
     id: "3",
     title: "Unutmak ve Hatırlamak",
     badgeName: "Tövbe Rozeti",
@@ -245,7 +247,7 @@ const ademDemoChapters = [
   }),
   createDemoBookChapter({
     bookKey: "adem",
-    bookName: "Hz. Adem",
+    bookName: "Hz. Âdem",
     id: "4",
     title: "Yeryüzünde İlk Sabah",
     badgeName: "Sorumluluk Rozeti",
@@ -253,7 +255,7 @@ const ademDemoChapters = [
   }),
   createDemoBookChapter({
     bookKey: "adem",
-    bookName: "Hz. Adem",
+    bookName: "Hz. Âdem",
     id: "5",
     title: "İlk Aile, İlk İyilik",
     badgeName: "Aile ve Merhamet Rozeti",
@@ -672,6 +674,7 @@ export function adaptDataChapter(routeId: string): ChapterData | null {
     audioTitle: chapter.audioUrl
       ? `${book.title} sesli anlatım`
       : `${book.title} Bölüm ${chapter.id} Sesli Anlatım`,
+    audioUrl: chapter.audioUrl || undefined,
     decisionTitle: chapter.question?.title ?? chapter.title,
     badgeName: chapter.badgeName,
     returnMessage: `${chapter.badgeName} haritana işleniyor...`,

@@ -26,8 +26,10 @@ const varyantSiniflari: Record<ButonVaryant, string> = {
     "bg-tehlike text-white hover:brightness-90 shadow-sm",
 };
 
+// Ölçü standardı (PROJE-MODELI.md 3.5): dokunma alanı ≥44px; ana aksiyonlar
+// "normal"/"buyuk" ile ≥48px. "kucuk" bu yüzden 44px'in altına inemez.
 const boyutSiniflari: Record<ButonBoyut, string> = {
-  kucuk: "h-10 px-4 text-sm",
+  kucuk: "h-11 px-4 text-sm",
   normal: "h-12 px-6 text-base",
   buyuk: "h-14 px-8 text-lg",
 };

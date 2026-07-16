@@ -110,18 +110,18 @@ const ebubekirChapterCatalog = [
   { id: "13", title: "En Kutsal Görev", badgeName: "Vefa Rozeti" },
 ];
 
-// Hz. Âdem katalogu books.ts'ten türetilir — içerik güncellenince harita
-// kartındaki bölüm/rozet adları kod değişmeden güncel kalır (Faz 6.1).
+// Hz. Âdem kart adı ve katalogu books.ts'ten türetilir — içerik güncellenince
+// harita kartındaki kitap/bölüm/rozet adları kod değişmeden güncel kalır (Faz 6.1).
+const ademBook = dataBooks.find((book) => book.id === "hz-adem");
+
 const ademChapterCatalog: ChapterStop[] =
-  dataBooks
-    .find((book) => book.id === "hz-adem")
-    ?.chapters.map((chapter, index) => ({
-      id: chapter.id,
-      title: chapter.title,
-      badgeName: chapter.badgeName,
-      isUnlocked: index === 0,
-      isCompleted: false,
-    })) ?? [];
+  ademBook?.chapters.map((chapter, index) => ({
+    id: chapter.id,
+    title: chapter.title,
+    badgeName: chapter.badgeName,
+    isUnlocked: index === 0,
+    isCompleted: false,
+  })) ?? [];
 
 const nuhChapterCatalog: ChapterStop[] = [
   {
@@ -203,7 +203,7 @@ const defaultGlobalProfileStats: GlobalProfileStats = {
 const adventures: AdventureCard[] = [
   {
     id: 1,
-    name: "Hz. Adem",
+    name: ademBook?.title ?? "Hz. Âdem",
     subtitle: "İlk insan, ilk yolculuk",
     status: "completed",
     progress: 100,
@@ -427,7 +427,7 @@ function KitapKarti({
             <h2 className="font-baslik text-2xl font-bold sm:text-3xl">
               {adventure.name}
             </h2>
-            <p className="font-govde text-sm text-murekkep-soluk">
+            <p className="font-govde text-base text-murekkep-soluk">
               {adventure.subtitle}
             </p>
 
@@ -502,7 +502,7 @@ function KitapKarti({
                 <p className="font-baslik text-xl font-bold text-vurgu">
                   Tebrikler!
                 </p>
-                <p className="font-govde text-sm text-murekkep-soluk">
+                <p className="font-govde text-base text-murekkep-soluk">
                   Bu hikâyenin tüm duraklarını tamamladın.
                 </p>
                 <Buton varyant="eylem" boyut="kucuk" tamGenislik className="mt-1">
@@ -515,7 +515,7 @@ function KitapKarti({
                   Açılma Koşulu
                 </p>
                 <Ikon ad="kilit" boyut={30} className="text-murekkep-soluk" />
-                <p className="font-govde text-sm text-murekkep-soluk">
+                <p className="font-govde text-base text-murekkep-soluk">
                   {oncekiAd
                     ? `${oncekiAd} kitabındaki Büyük Final Testi'ni tamamla.`
                     : "Önceki kitabı tamamla."}
@@ -547,7 +547,7 @@ function KitapKarti({
                       {sonrakiBolum.ad}
                     </p>
                     {sonrakiBolum.ozet ? (
-                      <p className="-mt-1.5 font-govde text-sm text-murekkep-soluk">
+                      <p className="-mt-1.5 font-govde text-base text-murekkep-soluk">
                         {sonrakiBolum.ozet}
                       </p>
                     ) : null}

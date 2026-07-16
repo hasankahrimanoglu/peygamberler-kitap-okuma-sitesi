@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useParams, useRouter } from "next/navigation";
+import { notFound, useParams, useRouter } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
 import {
   adaptDataChapter,
@@ -187,15 +187,22 @@ async function syncChapterProgress(
 }
 
 export default function ReaderPage() {
-  const router = useRouter();
   const params = useParams<{ chapterId: string }>();
   const chapter = useMemo(
     () =>
-      adaptDataChapter(params.chapterId) ??
-      demoChapters[params.chapterId] ??
-      demoChapters["4"],
+      adaptDataChapter(params.chapterId) ?? demoChapters[params.chapterId] ?? null,
     [params.chapterId],
   );
+
+  // Geçersiz bölüm kimliği başka bir bölümün içeriğine düşmez; 404 gösterilir.
+  if (!chapter) notFound();
+
+  return <ReaderContent chapter={chapter} />;
+}
+
+function ReaderContent({ chapter }: { chapter: ChapterData }) {
+  const router = useRouter();
+  const params = useParams<{ chapterId: string }>();
 
   const sliderRef = useRef<HTMLDivElement | null>(null);
   const [aktifKelime, setAktifKelime] = useState<string | null>(null);
@@ -644,10 +651,13 @@ export default function ReaderPage() {
               </p>
             </div>
 
-            <SesCubugu
-              baslik={chapter.audioTitle}
-              className="w-full sm:ms-auto sm:w-auto sm:min-w-[280px] lg:min-w-[340px]"
-            />
+            {/* Ses dosyası olmayan bölümde sahte bar gösterilmez (denetim 4). */}
+            {chapter.audioUrl ? (
+              <SesCubugu
+                baslik={chapter.audioTitle}
+                className="w-full sm:ms-auto sm:w-auto sm:min-w-[280px] lg:min-w-[340px]"
+              />
+            ) : null}
           </div>
         </header>
       )}

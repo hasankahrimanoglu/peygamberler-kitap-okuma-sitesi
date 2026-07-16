@@ -152,12 +152,12 @@ export default function OdullerSayfasi() {
                       onClick={() => setSecilenRozet(rozet)}
                       className="flex flex-col items-center gap-1.5 rounded-kart border border-cizgi bg-yuzey p-3 text-center transition-colors hover:border-vurgu"
                     >
+                      {/* Görünür başlık hemen altta; görsel dekoratif (alt=""). */}
                       <OdulIkonu
                         tip="rozet"
                         anahtar={rozet.iconKey}
                         kazanildi={rozet.kazanildi}
                         boyut={56}
-                        alt={rozet.ad}
                       />
                       <span
                         className={`text-[11px] font-semibold leading-tight ${
@@ -196,7 +196,6 @@ export default function OdullerSayfasi() {
                         anahtar={madalya.iconKey}
                         kazanildi={madalya.kazanildi}
                         boyut={56}
-                        alt={madalya.ad}
                       />
                       <div className="min-w-0">
                         <p className="truncate font-baslik text-sm font-bold text-murekkep">
@@ -227,7 +226,6 @@ export default function OdullerSayfasi() {
                     anahtar={unvan.iconKey}
                     kazanildi={unvan.kazanildi}
                     boyut={56}
-                    alt={unvan.unvan}
                   />
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
@@ -276,7 +274,7 @@ export default function OdullerSayfasi() {
                   type="button"
                   onClick={() => setSecilenRozet(null)}
                   aria-label="Kapat"
-                  className="grid h-9 w-9 place-items-center rounded-full border border-cizgi text-murekkep-soluk transition-colors hover:bg-yuzey-2"
+                  className="grid h-11 w-11 place-items-center rounded-full border border-cizgi text-murekkep-soluk transition-colors hover:bg-yuzey-2"
                 >
                   <Ikon ad="kapat" boyut={16} />
                 </button>
@@ -287,7 +285,6 @@ export default function OdullerSayfasi() {
                   anahtar={secilenRozet.iconKey}
                   kazanildi={secilenRozet.kazanildi}
                   boyut={112}
-                  alt={secilenRozet.ad}
                 />
               </div>
               <h3 className="mt-4 font-baslik text-xl font-bold text-murekkep">

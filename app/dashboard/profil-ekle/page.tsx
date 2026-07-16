@@ -115,7 +115,7 @@ export default function ProfilEkleSayfasi() {
       <div className="mb-5">
         <Link
           href="/dashboard"
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-murekkep-soluk transition-colors hover:text-murekkep"
+          className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-murekkep-soluk transition-colors hover:text-murekkep"
         >
           <Ikon ad="geri" boyut={18} />
           Ana Sayfa

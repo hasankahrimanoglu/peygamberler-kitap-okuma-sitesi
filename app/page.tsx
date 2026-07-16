@@ -20,14 +20,14 @@ const journeySteps = [
   "Veli hesabına giriş yapar ve çocuk profillerini oluşturur.",
   "Çocuk kendi kullanıcı adıyla güvenli keşif haritasına girer.",
   "Kitap bölümlerini okur, kelime kutularıyla anlamları keşfeder.",
-  "Bölüm sonunda rozet kazanır; kitap bitince final testiyle unvan alır.",
+  "Bölüm sonunda rozet kazanır; kitabı ve final testini bitirince madalya alır. Unvanı, tamamladığı kitap sayısıyla yükselir.",
 ];
 
 const readerFeatures = [
   "Canlı sözlük kutuları",
   "Sesli anlatım barı",
   "Sen olsaydın soruları",
-  "Rozet ve unvan sistemi",
+  "Rozet, madalya ve unvan sistemi",
   "Kilit açılan kitap haritası",
   "Ebeveyn gelişim raporu",
 ];

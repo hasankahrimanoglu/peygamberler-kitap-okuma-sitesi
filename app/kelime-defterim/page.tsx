@@ -115,7 +115,7 @@ export default function KelimeDefterimSayfasi() {
                           {kelime.bolumNo}. Bölüm
                         </span>
                       </div>
-                      <p className="mt-1.5 font-govde text-sm leading-6 text-murekkep">
+                      <p className="mt-1.5 font-govde text-base leading-7 text-murekkep">
                         {kelime.meaning}
                       </p>
                       <p className="mt-2 font-govde text-xs text-murekkep-soluk">

@@ -122,10 +122,10 @@ export function CocukKarti({
           Okumaya Devam Et
         </Buton>
         <div className="grid grid-cols-2 gap-2.5">
-          <Buton varyant="ikincil" boyut="kucuk" className="min-h-[44px]" onClick={onRapor}>
+          <Buton varyant="ikincil" boyut="kucuk" onClick={onRapor}>
             Gelişim Raporu
           </Buton>
-          <Buton varyant="cerceve" boyut="kucuk" className="min-h-[44px]" onClick={onDuzenle}>
+          <Buton varyant="cerceve" boyut="kucuk" onClick={onDuzenle}>
             Profili Düzenle
           </Buton>
         </div>

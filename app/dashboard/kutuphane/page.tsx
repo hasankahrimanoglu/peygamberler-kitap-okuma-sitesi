@@ -241,7 +241,7 @@ export default function KutuphaneSayfasi() {
             </span>
             <Link
               href="/dashboard"
-              className="ml-auto font-semibold text-eylem hover:underline"
+              className="ml-auto inline-flex min-h-[44px] items-center font-semibold text-eylem hover:underline"
             >
               Ana Sayfa
             </Link>

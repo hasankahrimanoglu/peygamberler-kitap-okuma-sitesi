@@ -15,7 +15,6 @@ import {
 
 export type ReportProfile = {
   isim: string;
-  unvan: string | null;
 };
 
 export type CompletedAdventureReport = {
@@ -24,9 +23,8 @@ export type CompletedAdventureReport = {
   totalChapters: number;
   finalScore: number | null;
   totalQuestions: number;
-  successRate: number | null;
-  finalTitle: string | null;
-  finalBadge: string | null;
+  /** Katalogdan türetilir; Supabase final_title/final_badge asla kullanılmaz (eski adlar sızmasın). */
+  medalName: string;
   updatedAt: string | null;
   parentMessage: string;
   chatQuestions: string[];
@@ -66,29 +64,18 @@ export function formatReportDate(value: string | null) {
 
 export function getParentMessage({
   childName,
-  successRate,
   reportBook,
 }: {
   childName: string;
-  successRate: number | null;
   reportBook?: ParentReportBook;
 }) {
-  if (successRate === null) {
-    return `${childName} bu macerayı tamamladı. Final testi puanı henüz kaydedilmemiş olsa da, kitabı bitirme emeği başlı başına çok kıymetli. Akşam ona yolculukta en çok hangi bölümü sevdiğini sorabilirsiniz.`;
-  }
-
-  if (successRate >= 80) {
-    return (
-      reportBook?.parent_summary ??
-      `${childName} bu kitabı çok güçlü bir dikkatle tamamladı. Okuma emeğini fark ettirmek ve sevdiği bölümü konuşmak, bu güzel kazanımı daha da kalıcı hale getirebilir.`
-    );
-  }
-
-  if (successRate >= 55) {
-    return `${childName} bu uzun ve güzel kitabı büyük bir emekle tamamladı! Kıssanın genel duygusunu çok güzel yakaladı, final testindeki bazı detay sorularında ise o anki odaklanmasına bağlı küçük tatlı dalgınlıklar olmuş olabilir, bu çok normal. Akşam onunla kitapta en çok hangi bölümü sevdiğini konuşup bu güzel yolculuğu birlikte taçlandırmaya ne dersiniz?`;
-  }
-
-  return `${childName} bu uzun macerayı başarıyla bitirdi ve harika bir okuma gayreti gösterdi! Bir sonraki heyecanlı kitaba bir an önce geçmek için final testindeki soruları biraz hızlıca geçmiş veya o an sıkılıp sallamış olabilir, bu çok doğal. Önemli olan bu güzel kitabı keyifle bitirmiş olması.`;
+  // S5 (Sen Olsaydın cevap kaydı) gelene kadar mixed varyantı gösterilir.
+  // Rapor dili gözlem bildirir; çocuğun davranışı hakkında tahmin yürütülmez.
+  return (
+    reportBook?.parent_summary_variants?.mixed ??
+    reportBook?.parent_summary ??
+    `${childName} bu kitabı tamamladı. Akşam ona yolculukta en çok hangi bölümü sevdiğini sorabilirsiniz.`
+  );
 }
 
 export function getDefaultChatQuestions(childName: string) {
@@ -145,10 +132,6 @@ export function buildChildReport(
         1;
       const finalScore = Math.max(0, progress?.final_score ?? NaN);
       const normalizedFinalScore = Number.isFinite(finalScore) ? finalScore : null;
-      const successRate =
-        normalizedFinalScore === null
-          ? null
-          : Math.round((normalizedFinalScore / totalQuestions) * 100);
 
       return {
         bookTitle: reportBook.title,
@@ -156,13 +139,10 @@ export function buildChildReport(
         totalChapters,
         finalScore: normalizedFinalScore,
         totalQuestions,
-        successRate,
-        finalTitle: progress?.final_title ?? profile.unvan ?? null,
-        finalBadge: progress?.final_badge ?? null,
+        medalName: `${reportBook.title} Yolculuk Madalyası`,
         updatedAt: progress?.updated_at ?? null,
         parentMessage: getParentMessage({
           childName: profile.isim,
-          successRate,
           reportBook,
         }),
         chatQuestions: reportBook.chat_questions?.length

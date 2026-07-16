@@ -225,10 +225,9 @@ export function madalyaVitrini(
     ogeler.push({
       bookKey: anahtar.bookKey,
       bookIsim: book.isim,
-      ad:
-        progress?.final_title ??
-        progress?.final_badge ??
-        `${book.isim} Yolculuk Madalyası`,
+      // Ad her zaman katalogdan türetilir; Supabase final_title/final_badge
+      // eski sürümden kalan adları ("Altın Yol Arkadaşı" gibi) taşıyabilir.
+      ad: `${book.isim} Yolculuk Madalyası`,
       iconKey: anahtar.bookKey,
       kazanildi: Boolean(progress?.bitti_mi),
     });

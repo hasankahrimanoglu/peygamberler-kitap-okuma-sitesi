@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
@@ -27,35 +27,57 @@ function sureBicimle(saniye: number, dolgulu = false) {
 }
 
 /**
- * Sesli anlatım oynatıcısı + ayrı sustur düğmesi (mockup sağ blok).
- * Gerçek ses dosyaları S2 fazında bağlanacak; şimdilik simülasyon.
+ * Sesli anlatım oynatıcısı (mockup sağ blok). Bölümün gerçek ses dosyasını
+ * (books.ts `audioUrl`) çalar; ses dosyası olmayan bölümlerde hiç render edilmez.
+ * Ayrı sustur düğmesi yok: duraklatmak susturmakla aynı işi görür (karar 15 Tem 2026).
  */
-function SesOynatici({ baslik }: { baslik: string }) {
+function SesOynatici({ baslik, audioUrl }: { baslik: string; audioUrl: string }) {
+  const sesRef = useRef<HTMLAudioElement | null>(null);
   const [caliyor, setCaliyor] = useState(false);
-  const [sessiz, setSessiz] = useState(false);
-  const [ilerleme, setIlerleme] = useState(0);
-  const toplamSure = 380;
-  const gecenSure = Math.round((toplamSure * ilerleme) / 100);
+  const [gecenSure, setGecenSure] = useState(0);
+  const [toplamSure, setToplamSure] = useState(0);
+  const ilerleme = toplamSure > 0 ? (gecenSure / toplamSure) * 100 : 0;
 
+  // Okuma ekranından ayrılınca anlatım açık kalmasın.
   useEffect(() => {
-    if (!caliyor) return;
+    const ses = sesRef.current;
+    return () => {
+      ses?.pause();
+    };
+  }, []);
 
-    const zamanlayici = window.setInterval(() => {
-      setIlerleme((mevcut) => (mevcut >= 100 ? 0 : Math.min(100, mevcut + 0.45)));
-    }, 650);
-
-    return () => window.clearInterval(zamanlayici);
-  }, [caliyor]);
+  function oynatDurdur() {
+    const ses = sesRef.current;
+    if (!ses) return;
+    if (caliyor) {
+      ses.pause();
+    } else {
+      void ses.play().catch(() => setCaliyor(false));
+    }
+  }
 
   return (
-    <div className="flex w-full items-center gap-2 lg:w-auto">
+    <div className="flex w-full min-w-0 items-center gap-2 lg:w-auto">
+      <audio
+        ref={sesRef}
+        src={audioUrl}
+        preload="metadata"
+        onLoadedMetadata={(olay) => setToplamSure(olay.currentTarget.duration)}
+        onTimeUpdate={(olay) => setGecenSure(olay.currentTarget.currentTime)}
+        onPlay={() => setCaliyor(true)}
+        onPause={() => setCaliyor(false)}
+        onEnded={() => {
+          setGecenSure(0);
+          if (sesRef.current) sesRef.current.currentTime = 0;
+        }}
+      />
       <div className="flex min-w-0 flex-1 items-center gap-2.5 rounded-full border border-cizgi bg-yuzey py-1.5 pl-1.5 pr-4 lg:w-[340px] lg:flex-none">
         <button
           type="button"
           aria-label={caliyor ? "Sesli anlatımı duraklat" : "Sesli anlatımı oynat"}
           aria-pressed={caliyor}
-          onClick={() => setCaliyor((deger) => !deger)}
-          className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-eylem text-eylem-metin shadow-[0_0_16px_rgba(52,160,107,0.45)] transition hover:bg-eylem-koyu focus:outline-none focus-visible:ring-2 focus-visible:ring-eylem focus-visible:ring-offset-2 focus-visible:ring-offset-yuzey"
+          onClick={oynatDurdur}
+          className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-eylem text-eylem-metin shadow-[0_0_16px_rgba(52,160,107,0.45)] transition hover:bg-eylem-koyu focus:outline-none focus-visible:ring-2 focus-visible:ring-eylem focus-visible:ring-offset-2 focus-visible:ring-offset-yuzey"
         >
           <Ikon ad={caliyor ? "duraklat" : "oynat"} boyut={16} />
         </button>
@@ -78,16 +100,6 @@ function SesOynatici({ baslik }: { baslik: string }) {
           </div>
         </div>
       </div>
-
-      <button
-        type="button"
-        aria-label={sessiz ? "Sesi aç" : "Sesi kapat"}
-        aria-pressed={sessiz}
-        onClick={() => setSessiz((deger) => !deger)}
-        className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border border-cizgi bg-yuzey text-murekkep transition hover:bg-yuzey-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-vurgu"
-      >
-        <Ikon ad={sessiz ? "ses-kapali" : "ses"} boyut={20} />
-      </button>
     </div>
   );
 }
@@ -192,17 +204,20 @@ export function UstBarAdem({ chapter, onGeri }: UstBarAdemProps) {
           </div>
         </div>
 
-        {/* Sağ: ses oynatıcı + sustur + çıkış */}
-        <div className="col-span-2 flex items-center gap-2 lg:col-span-1 lg:justify-self-end">
-          <SesOynatici baslik={chapter.audioTitle} />
+        {/* Sağ: ses oynatıcı (dosyası varsa) + çıkış */}
+        <div className="col-span-2 flex min-w-0 items-center justify-end gap-2 lg:col-span-1 lg:justify-self-end">
+          {chapter.audioUrl ? (
+            <SesOynatici baslik={chapter.audioTitle} audioUrl={chapter.audioUrl} />
+          ) : null}
           <Buton
             varyant="cerceve"
             boyut="kucuk"
             onClick={cikisYap}
             className="shrink-0"
+            aria-label="Çıkış Yap"
           >
             <Ikon ad="cikis" boyut={15} />
-            Çıkış Yap
+            <span className="hidden sm:inline">Çıkış Yap</span>
           </Buton>
         </div>
       </div>

@@ -60,7 +60,7 @@ export default function GelisimRaporuSayfasi() {
   const geriLink = (
     <Link
       href="/dashboard"
-      className="inline-flex items-center gap-1.5 text-sm font-semibold text-murekkep-soluk transition-colors hover:text-murekkep"
+      className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-murekkep-soluk transition-colors hover:text-murekkep"
     >
       <Ikon ad="geri" boyut={18} />
       Ana Sayfa
@@ -119,31 +119,50 @@ export default function GelisimRaporuSayfasi() {
       </div>
 
       {/* Sekmeler */}
-      <div
-        role="tablist"
-        aria-label="Rapor bölümleri"
-        className="mb-6 flex gap-1 overflow-x-auto rounded-buton border border-cizgi bg-yuzey-2 p-1 scrollbar-none"
-      >
-        {sekmeler.map((s) => {
-          const secili = sekme === s.deger;
-          return (
-            <button
-              key={s.deger}
-              type="button"
-              role="tab"
-              aria-selected={secili}
-              onClick={() => setSekme(s.deger)}
-              className={`min-h-[44px] shrink-0 rounded-[0.7rem] px-4 py-1.5 text-sm font-semibold transition-colors ${
-                secili
-                  ? "bg-yuzey text-murekkep shadow-kart"
-                  : "text-murekkep-soluk hover:text-murekkep"
-              }`}
-            >
-              {s.etiket}
-            </button>
-          );
-        })}
+      <div className="relative mb-6">
+        <div
+          role="tablist"
+          aria-label="Rapor bölümleri"
+          className="flex gap-1 overflow-x-auto rounded-buton border border-cizgi bg-yuzey-2 p-1 scrollbar-none"
+        >
+          {sekmeler.map((s) => {
+            const secili = sekme === s.deger;
+            return (
+              <button
+                key={s.deger}
+                type="button"
+                role="tab"
+                id={`sekme-${s.deger}`}
+                aria-selected={secili}
+                aria-controls="rapor-paneli"
+                onClick={(olay) => {
+                  setSekme(s.deger);
+                  // Mobilde tıklanan sekme görünür alana kaysın (yatay liste).
+                  olay.currentTarget.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                    inline: "nearest",
+                  });
+                }}
+                className={`min-h-[44px] shrink-0 rounded-[0.7rem] px-4 py-1.5 text-sm font-semibold transition-colors ${
+                  secili
+                    ? "bg-yuzey text-murekkep shadow-kart"
+                    : "text-murekkep-soluk hover:text-murekkep"
+                }`}
+              >
+                {s.etiket}
+              </button>
+            );
+          })}
+        </div>
+        {/* Mobilde sağda devam eden sekmeler olduğunu gösteren kaydırma ipucu */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 right-0 w-10 rounded-r-buton bg-gradient-to-l from-yuzey-2 to-transparent sm:hidden"
+        />
       </div>
+
+      <div role="tabpanel" id="rapor-paneli" aria-labelledby={`sekme-${sekme}`}>
 
       {/* Genel Bakış */}
       {sekme === "genel" ? (
@@ -230,11 +249,6 @@ export default function GelisimRaporuSayfasi() {
                         Yolculuk Günlüğü: {formatReportDate(adventure.updatedAt)}
                       </p>
                     </div>
-                    <div className="rounded-buton border border-eylem/30 bg-eylem-yumusak px-4 py-2 text-sm font-bold text-eylem-koyu">
-                      {adventure.finalScore === null || wrongCount === null
-                        ? "Final puanı yok"
-                        : `${adventure.finalScore} Doğru / ${wrongCount} Yanlış`}
-                    </div>
                   </div>
 
                   <div className="mt-4 grid gap-3 sm:grid-cols-3">
@@ -248,18 +262,20 @@ export default function GelisimRaporuSayfasi() {
                     </div>
                     <div className="rounded-buton border border-cizgi bg-yuzey-2 p-3">
                       <p className="text-[11px] font-semibold uppercase tracking-wide text-murekkep-soluk">
-                        Başarı
+                        Final Testi
                       </p>
-                      <p className="mt-1 font-baslik text-lg font-bold text-murekkep">
-                        {adventure.successRate === null ? "Kayıt yok" : `%${adventure.successRate}`}
+                      <p className="mt-1 font-baslik text-base font-bold text-murekkep">
+                        {adventure.finalScore === null || wrongCount === null
+                          ? "Kayıt yok"
+                          : `${adventure.finalScore} doğru · ${wrongCount} yanlış`}
                       </p>
                     </div>
                     <div className="rounded-buton border border-cizgi bg-yuzey-2 p-3">
                       <p className="text-[11px] font-semibold uppercase tracking-wide text-murekkep-soluk">
-                        Nişan
+                        Madalya
                       </p>
                       <p className="mt-1 text-sm font-bold text-murekkep">
-                        {adventure.finalTitle ?? adventure.finalBadge ?? "Okuma Emeği"}
+                        {adventure.medalName}
                       </p>
                     </div>
                   </div>
@@ -465,6 +481,7 @@ export default function GelisimRaporuSayfasi() {
           </div>
         )
       ) : null}
+      </div>
     </div>
   );
 }
