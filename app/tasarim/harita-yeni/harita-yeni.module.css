@@ -867,6 +867,11 @@
     transparent;
 }
 
+.mobilePanelBackdrop,
+.mobilePanelClose {
+  display: none;
+}
+
 .panelContent {
   display: flex;
   min-height: 100%;
@@ -1248,6 +1253,8 @@
 
 .backLink:focus-visible,
 .stopButton:focus-visible,
+.mobilePanelBackdrop:focus-visible,
+.mobilePanelClose:focus-visible,
 .primaryAction:focus-visible,
 .dockActions button:focus-visible {
   outline: 3px solid var(--atlas-gold);
@@ -1479,14 +1486,81 @@
   }
 
   .bookPanel {
+    position: fixed;
+    z-index: 90;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(90vw, 430px);
+    height: 100dvh;
     min-height: 0;
-    border-radius: 23px;
+    border-radius: 25px 0 0 25px;
     overflow: hidden;
+    pointer-events: none;
+    transform: translateX(104%);
+    visibility: hidden;
+    transition:
+      transform 220ms ease-out,
+      visibility 0s linear 220ms;
+  }
+
+  .bookPanelOpen {
+    pointer-events: auto;
+    transform: translateX(0);
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  .mobilePanelBackdrop {
+    position: fixed;
+    z-index: 80;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: color-mix(in srgb, var(--atlas-night) 62%, transparent);
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms ease;
+  }
+
+  .mobilePanelBackdropOpen {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobilePanelClose {
+    position: sticky;
+    z-index: 2;
+    top: 0;
+    display: inline-flex;
+    width: max-content;
+    min-height: 44px;
+    align-items: center;
+    gap: 7px;
+    margin: -4px 0 1px;
+    padding: 8px 11px;
+    border: 1px solid color-mix(in srgb, var(--atlas-ink) 15%, transparent);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--atlas-paper) 94%, transparent);
+    color: var(--atlas-ink);
+    box-shadow: 0 7px 18px color-mix(in srgb, var(--atlas-ink) 12%, transparent);
+    cursor: pointer;
+    font-family: var(--font-nunito), Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
   }
 
   .panelContent {
+    height: 100%;
     min-height: 0;
-    padding: 18px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: max(14px, env(safe-area-inset-top)) 18px max(18px, env(safe-area-inset-bottom));
+    scrollbar-gutter: stable;
   }
 
   .bookHero {
@@ -1513,6 +1587,15 @@
 
   .medalNote strong {
     white-space: normal;
+  }
+
+  .primaryAction {
+    position: sticky;
+    bottom: 0;
+    flex: 0 0 auto;
+    box-shadow:
+      0 -12px 24px color-mix(in srgb, var(--atlas-paper) 82%, transparent),
+      0 8px 18px color-mix(in srgb, var(--atlas-moss) 26%, transparent);
   }
 
   .exploreDock {

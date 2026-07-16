@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Ikon, OdulIkonu, YedekliGorsel } from "../ui";
 import styles from "../../../app/tasarim/harita-yeni/harita-yeni.module.css";
@@ -41,6 +41,9 @@ const DURUM_IKONLARI = {
   kilitli: "kilit",
 } as const;
 
+const MOBIL_PANEL_SORGUSU = "(max-width: 620px)";
+const MOBIL_PANEL_GECMIS_ANAHTARI = "atlasBookPanel";
+
 function atlasDurumu(durum: AtlasDurakDurumu) {
   if (durum === "completed") return "tamamlandi" as const;
   if (durum === "locked") return "kilitli" as const;
@@ -70,6 +73,10 @@ export function AtlasHarita({
 }: AtlasHaritaProps) {
   const router = useRouter();
   const [seciliDurakId, setSeciliDurakId] = useState(duraklar[0]?.id ?? 1);
+  const [mobilDetayAcik, setMobilDetayAcik] = useState(false);
+  const panelKapatRef = useRef<HTMLButtonElement>(null);
+  const sonDurakRef = useRef<HTMLButtonElement>(null);
+  const oncekiPanelDurumuRef = useRef(false);
   const seciliDurak =
     duraklar.find((durak) => durak.id === seciliDurakId) ?? duraklar[0];
   const durakKonumlari = [
@@ -84,6 +91,94 @@ export function AtlasHarita({
     const aktifPayi = duraklar.some((durak) => durak.durum === "active") ? 0.45 : 0;
     return Math.min(100, ((tamamlanan + aktifPayi) / (duraklar.length - 1)) * 100);
   }, [duraklar]);
+
+  const mobilDetayiKapat = useCallback(() => {
+    if (
+      typeof window !== "undefined" &&
+      window.history.state?.[MOBIL_PANEL_GECMIS_ANAHTARI]
+    ) {
+      window.history.back();
+      return;
+    }
+
+    setMobilDetayAcik(false);
+  }, []);
+
+  const durakSec = useCallback(
+    (durakId: number, tetikleyici: HTMLButtonElement) => {
+      setSeciliDurakId(durakId);
+      sonDurakRef.current = tetikleyici;
+
+      if (typeof window === "undefined" || !window.matchMedia(MOBIL_PANEL_SORGUSU).matches) {
+        return;
+      }
+
+      if (!mobilDetayAcik) {
+        window.history.pushState(
+          {
+            ...window.history.state,
+            [MOBIL_PANEL_GECMIS_ANAHTARI]: true,
+          },
+          "",
+          window.location.href,
+        );
+      }
+
+      setMobilDetayAcik(true);
+    },
+    [mobilDetayAcik],
+  );
+
+  useEffect(() => {
+    const mobilSorgu = window.matchMedia(MOBIL_PANEL_SORGUSU);
+
+    const gecmistenPanelDurumunuOku = () => {
+      setMobilDetayAcik(
+        mobilSorgu.matches &&
+          Boolean(window.history.state?.[MOBIL_PANEL_GECMIS_ANAHTARI]),
+      );
+    };
+
+    const klavyeyiDinle = (olay: KeyboardEvent) => {
+      if (olay.key === "Escape" && mobilDetayAcik) {
+        mobilDetayiKapat();
+      }
+    };
+
+    window.addEventListener("popstate", gecmistenPanelDurumunuOku);
+    window.addEventListener("keydown", klavyeyiDinle);
+    mobilSorgu.addEventListener("change", gecmistenPanelDurumunuOku);
+    gecmistenPanelDurumunuOku();
+
+    return () => {
+      window.removeEventListener("popstate", gecmistenPanelDurumunuOku);
+      window.removeEventListener("keydown", klavyeyiDinle);
+      mobilSorgu.removeEventListener("change", gecmistenPanelDurumunuOku);
+    };
+  }, [mobilDetayAcik, mobilDetayiKapat]);
+
+  useEffect(() => {
+    if (mobilDetayAcik) {
+      const oncekiTasima = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      window.requestAnimationFrame(() => panelKapatRef.current?.focus());
+
+      return () => {
+        document.body.style.overflow = oncekiTasima;
+      };
+    }
+
+    if (oncekiPanelDurumuRef.current) {
+      window.requestAnimationFrame(() => sonDurakRef.current?.focus());
+    }
+
+    oncekiPanelDurumuRef.current = mobilDetayAcik;
+    return undefined;
+  }, [mobilDetayAcik]);
+
+  useEffect(() => {
+    oncekiPanelDurumuRef.current = mobilDetayAcik;
+  }, [mobilDetayAcik]);
 
   if (!seciliDurak) return null;
 
@@ -192,7 +287,7 @@ export function AtlasHarita({
                       className={`${styles.stopButton} ${styles[`stop_${durum}`]} ${secili ? styles.stopSelected : ""}`}
                       aria-pressed={secili}
                       aria-label={`${durak.id}. durak, ${durak.ad}, ${durumMetni(durak)}`}
-                      onClick={() => setSeciliDurakId(durak.id)}
+                      onClick={(olay) => durakSec(durak.id, olay.currentTarget)}
                     >
                       <span className={styles.marker}>
                         <span className={styles.markerRing} />
@@ -211,8 +306,30 @@ export function AtlasHarita({
             <div className={styles.botanicalMark} aria-hidden="true"><i /><i /><i /></div>
           </section>
 
-          <aside className={`${styles.bookPanel} ${styles[`panel_${seciliDurum}`]}`} aria-label="Seçili kitap bilgisi">
+          <button
+            type="button"
+            className={`${styles.mobilePanelBackdrop} ${mobilDetayAcik ? styles.mobilePanelBackdropOpen : ""}`}
+            aria-label="Kitap ayrıntılarını kapat"
+            aria-hidden={!mobilDetayAcik}
+            tabIndex={mobilDetayAcik ? 0 : -1}
+            onClick={mobilDetayiKapat}
+          />
+
+          <aside
+            className={`${styles.bookPanel} ${styles[`panel_${seciliDurum}`]} ${mobilDetayAcik ? styles.bookPanelOpen : ""}`}
+            aria-label="Seçili kitap bilgisi"
+            aria-modal={mobilDetayAcik ? true : undefined}
+            role={mobilDetayAcik ? "dialog" : undefined}
+          >
             <div className={styles.panelContent} key={seciliDurak.id}>
+              <button
+                ref={panelKapatRef}
+                type="button"
+                className={styles.mobilePanelClose}
+                onClick={mobilDetayiKapat}
+              >
+                <Ikon ad="geri" boyut={19} /> Haritaya Dön
+              </button>
               <div className={styles.panelTopline}>
                 <span>Seçili keşif durağı</span>
                 <span className={styles.panelOrder}>{seciliDurak.id} / {duraklar.length}</span>
