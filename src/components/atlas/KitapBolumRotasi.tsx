@@ -316,7 +316,13 @@ export function KitapBolumRotasi({
   }
 
   const panelAksiyonu = finalSecili
-    ? finalAcik && !kitapBitti && quizYolu
+    ? kitapBitti && quizYolu
+      ? {
+          etiket: "Alıştırma Olarak Tekrarla",
+          tekrar: true,
+          calistir: () => finalAksiyonunuCalistir(`${quizYolu}?mode=practice`),
+        }
+      : finalAcik && quizYolu
       ? {
           etiket: "Final Testine Geç",
           tekrar: false,
@@ -482,7 +488,7 @@ export function KitapBolumRotasi({
                       <YedekliGorsel src={`/madalyalar/madalya-${kitapKey}.png`} yedekSrc="/madalyalar/placeholder.svg" alt={`${kitapAdi} Yolculuk Madalyası`} width={82} height={82} className={`${styles.rewardImage} ${kitapBitti ? "" : styles.rewardPending}`} />
                       <div><p>Yolculuk sonu</p><h3 id={panelBaslikId}>Büyük Final Testi</h3></div>
                     </div>
-                    <p id={panelAciklamaId} className={styles.summaryText}>Bölümlerde keşfettiğin değerleri hatırla ve {kitapAdi} yolculuğunu tamamla.</p>
+                    <p id={panelAciklamaId} className={styles.summaryText}>{kitapBitti ? "Bilgilerini tazele; ilk final sonucun ve kazandığın madalya değişmez." : `Bölümlerde keşfettiğin değerleri hatırla ve ${kitapAdi} yolculuğunu tamamla.`}</p>
                     <div className={styles.rewardRow}><Ikon ad="madalya" boyut={22} /><span><small>{kitapBitti ? "Kazanılan madalya" : "Kazanılacak madalya"}</small><strong>{kitapAdi} Yolculuk Madalyası</strong></span></div>
                     {!finalAcik && !kitapBitti ? <div className={styles.lockNotice}><Ikon ad="kilit" boyut={19} /><p>{toplamBolum}. Bölüm “{temizBaslik(bolumler[toplamBolum - 1]?.title ?? "Son Bölüm")}” tamamlandığında Büyük Final Testi açılacak.</p></div> : null}
                   </>

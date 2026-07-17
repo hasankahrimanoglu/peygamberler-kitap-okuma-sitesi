@@ -1,8 +1,8 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useParams, useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
 import { supabase } from "../../../lib/supabase";
 
 type QuizOption = {
@@ -30,6 +30,8 @@ type QuizConfig = {
   storagePrefix: string;
   keywords: string[];
 };
+
+type SavedCompletionState = "loading" | "completed" | "incomplete" | "unknown";
 
 const quizQuestions: QuizQuestion[] = [
   {
@@ -339,9 +341,19 @@ function getCompletionResult(
   score: number,
   totalQuestions: number,
   label: string,
+  practiceMode: boolean,
 ): CompletionResult {
   const madalya = `${label} Yolculuk Madalyası`;
   const hepsiDogru = totalQuestions > 0 && score === totalQuestions;
+
+  if (practiceMode) {
+    return {
+      madalya,
+      headline: "Finali Yeniden Tamamladın!",
+      message: `Bilgilerini tazeledin. ${madalya} zaten senin; bu alıştırma yolculuk kaydını değiştirmedi.`,
+      className: "border-emerald-300/60 bg-emerald-300/15 text-emerald-100",
+    };
+  }
 
   return {
     madalya,
@@ -378,6 +390,41 @@ function isMissingFinalProgressColumn(message?: string) {
   );
 }
 
+async function getSavedCompletionState(
+  profileId: string,
+  activeQuiz: QuizConfig,
+): Promise<Exclude<SavedCompletionState, "loading">> {
+  const { data: books, error: booksError } = await supabase
+    .from("books")
+    .select("id, isim");
+
+  if (booksError) {
+    console.error("Final durumu için kitap bilgisi okunamadı:", booksError.message);
+    return "unknown";
+  }
+
+  const matchedBook = books?.find((book) => {
+    const normalizedName = normalizeBookName(book.isim ?? "");
+    return activeQuiz.keywords.some((keyword) => normalizedName.includes(keyword));
+  });
+
+  if (!matchedBook) return "unknown";
+
+  const { data: progress, error: progressError } = await supabase
+    .from("user_progress")
+    .select("bitti_mi")
+    .eq("profile_id", profileId)
+    .eq("book_id", matchedBook.id)
+    .maybeSingle();
+
+  if (progressError) {
+    console.error("Kayıtlı final durumu okunamadı:", progressError.message);
+    return "unknown";
+  }
+
+  return progress?.bitti_mi ? "completed" : "incomplete";
+}
+
 async function saveQuizCompletionToSupabase({
   profileId,
   activeQuiz,
@@ -390,7 +437,7 @@ async function saveQuizCompletionToSupabase({
   madalya: string;
   score: number;
   totalQuestions: number;
-}) {
+}): Promise<"saved" | "already-completed" | "error"> {
   // PROJE-MODELI #13: Testi tamamlamak madalyayı kazandırır; doğru sayısı şart
   // DEĞİLDİR. Bu yüzden eski %90 skor eşiği kaldırıldı — çocuk testi bitirince
   // "bitti" durumu ve madalya her hâlükârda yazılır, sonraki kitap açılır.
@@ -401,7 +448,7 @@ async function saveQuizCompletionToSupabase({
 
   if (booksError) {
     console.error("Kitap bilgisi okunamadı:", booksError.message);
-    return;
+    return "error";
   }
 
   const matchedBook = books?.find((book) => {
@@ -411,7 +458,23 @@ async function saveQuizCompletionToSupabase({
 
   if (!matchedBook) {
     console.error(`${activeQuiz.label} için books tablosunda eşleşen kayıt yok.`);
-    return;
+    return "error";
+  }
+
+  const { data: currentProgress, error: currentProgressError } = await supabase
+    .from("user_progress")
+    .select("bitti_mi")
+    .eq("profile_id", profileId)
+    .eq("book_id", matchedBook.id)
+    .maybeSingle();
+
+  if (currentProgressError) {
+    console.error("Mevcut final durumu doğrulanamadı:", currentProgressError.message);
+    return "error";
+  }
+
+  if (currentProgress?.bitti_mi) {
+    return "already-completed";
   }
 
   const totalChapters = matchedBook.toplam_bolum || totalQuestions;
@@ -441,16 +504,17 @@ async function saveQuizCompletionToSupabase({
 
     if (fallbackProgressError) {
       console.error("Final testi kalıcı ilerleme kaydı yazılamadı:", fallbackProgressError.message);
-      return;
+      return "error";
     }
   } else if (richProgressError) {
     console.error("Final testi kalıcı ilerleme kaydı yazılamadı:", richProgressError.message);
-    return;
+    return "error";
   }
 
   // Unvan burada YAZILMAZ: unvan skora değil, tamamlanan kitap sayısına bağlıdır
   // (PROJE-MODELI Bölüm 2; puan/derecelendirme yasağı). Unvan hesabı tamamlanan
   // kitap eşiğinden yapılır — bu iş Faz 6'ya bırakılmıştır.
+  return "saved";
 }
 
 function CheckIcon() {
@@ -477,10 +541,14 @@ function XIcon() {
 
 export default function QuizPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const params = useParams<{ bookId: string }>();
   const bookId = params.bookId as keyof typeof quizConfig;
   const activeQuiz = quizConfig[bookId] ?? quizConfig.ebubekir;
   const questions = activeQuiz.questions;
+  const practiceRequested = searchParams.get("mode") === "practice";
+  const [savedCompletionState, setSavedCompletionState] =
+    useState<SavedCompletionState>("loading");
   const [questionIndex, setQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<QuizOption["id"] | null>(
     null,
@@ -488,14 +556,41 @@ export default function QuizPage() {
   const [isChecked, setIsChecked] = useState(false);
   const [score, setScore] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
+  const [saveError, setSaveError] = useState<string | null>(null);
+  const practiceMode = savedCompletionState === "completed" ||
+    (savedCompletionState === "unknown" && practiceRequested);
 
   const activeQuestion = questions[questionIndex];
   const selectedIsCorrect = selectedOption === activeQuestion.correctOption;
   const progress = Math.round(((questionIndex + 1) / questions.length) * 100);
   const completion = useMemo(
-    () => getCompletionResult(score, questions.length, activeQuiz.label),
-    [score, questions.length, activeQuiz.label],
+    () => getCompletionResult(score, questions.length, activeQuiz.label, practiceMode),
+    [score, questions.length, activeQuiz.label, practiceMode],
   );
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadSavedCompletionState() {
+      setSavedCompletionState("loading");
+      const profileId = window.localStorage.getItem("selected_child_profile_id");
+
+      if (!profileId) {
+        if (!cancelled) setSavedCompletionState("unknown");
+        return;
+      }
+
+      const state = await getSavedCompletionState(profileId, activeQuiz);
+      if (!cancelled) setSavedCompletionState(state);
+    }
+
+    void loadSavedCompletionState();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [activeQuiz]);
 
   function checkAnswer() {
     if (!selectedOption || isChecked) return;
@@ -519,19 +614,58 @@ export default function QuizPage() {
   }
 
   async function returnToMap() {
+    if (practiceMode) {
+      router.replace(`/kitap/${activeQuiz.storagePrefix}`);
+      return;
+    }
+
+    setSaveError(null);
     const profileId = window.localStorage.getItem("selected_child_profile_id");
 
-    if (profileId) {
-      await saveQuizCompletionToSupabase({
+    if (!profileId) {
+      setSaveError(
+        "İlerlemeni kaydedebilmek için çocuk profili bulunamadı. Bölüm rotasına dönüp yeniden deneyebilirsin.",
+      );
+      return;
+    }
+
+    setIsSaving(true);
+
+    try {
+      const saveResult = await saveQuizCompletionToSupabase({
         profileId,
         activeQuiz,
         madalya: completion.madalya,
         score,
         totalQuestions: questions.length,
       });
-    }
 
-    router.push(`/map?final=${activeQuiz.storagePrefix}`);
+      if (saveResult === "already-completed") {
+        router.replace(`/kitap/${activeQuiz.storagePrefix}`);
+        return;
+      }
+
+      if (saveResult === "error") {
+        setSaveError(
+          "Final sonucun şu anda kaydedilemedi. İnternet bağlantını kontrol edip tekrar deneyebilirsin.",
+        );
+        return;
+      }
+
+      router.push(`/map?final=${activeQuiz.storagePrefix}`);
+    } finally {
+      setIsSaving(false);
+    }
+  }
+
+  if (savedCompletionState === "loading") {
+    return (
+      <main className="grid min-h-screen place-items-center bg-slate-950 px-5 text-white">
+        <p className="text-center text-lg font-bold text-amber-100" role="status">
+          Final yolculuğu hazırlanıyor…
+        </p>
+      </main>
+    );
   }
 
   return (
@@ -543,11 +677,16 @@ export default function QuizPage() {
         <header className="mb-8 flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-5 shadow-2xl shadow-slate-950/40 backdrop-blur sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="mb-2 text-xs font-bold uppercase tracking-[0.22em] text-amber-200">
-              {activeQuiz.label}
+              {activeQuiz.label}{practiceMode ? " · Alıştırma" : ""}
             </p>
             <h1 className="text-3xl font-black tracking-normal text-white sm:text-5xl">
               Büyük Final Testi
             </h1>
+            {practiceMode ? (
+              <p className="mt-2 text-sm font-semibold text-emerald-200">
+                Bu tekrar ilerlemeni ve kazandığın madalyayı değiştirmez.
+              </p>
+            ) : null}
           </div>
           <div className="rounded-2xl border border-amber-300/30 bg-slate-900/70 px-4 py-3 text-amber-100">
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-amber-200/80">
@@ -569,24 +708,26 @@ export default function QuizPage() {
               transition={{ duration: 0.38, ease: "easeOut" }}
               className="relative overflow-hidden rounded-3xl border border-amber-300/35 bg-slate-900/85 p-6 text-center shadow-2xl shadow-amber-950/40 backdrop-blur sm:p-10"
             >
-              <div className="pointer-events-none absolute inset-0 overflow-hidden">
-                {confettiPieces.map((piece) => (
-                  <motion.span
-                    key={`${piece.left}-${piece.delay}`}
-                    initial={{ y: -28, opacity: 0, rotate: 0 }}
-                    animate={{ y: 280, opacity: [0, 1, 1, 0], rotate: piece.rotate }}
-                    transition={{
-                      duration: 1.4,
-                      delay: piece.delay,
-                      ease: "easeOut",
-                      repeat: 1,
-                      repeatDelay: 0.25,
-                    }}
-                    style={{ left: piece.left }}
-                    className={`absolute top-0 h-4 w-2 rounded-sm ${piece.color}`}
-                  />
-                ))}
-              </div>
+              {!practiceMode ? (
+                <div className="pointer-events-none absolute inset-0 overflow-hidden">
+                  {confettiPieces.map((piece) => (
+                    <motion.span
+                      key={`${piece.left}-${piece.delay}`}
+                      initial={{ y: -28, opacity: 0, rotate: 0 }}
+                      animate={{ y: 280, opacity: [0, 1, 1, 0], rotate: piece.rotate }}
+                      transition={{
+                        duration: 1.4,
+                        delay: piece.delay,
+                        ease: "easeOut",
+                        repeat: 1,
+                        repeatDelay: 0.25,
+                      }}
+                      style={{ left: piece.left }}
+                      className={`absolute top-0 h-4 w-2 rounded-sm ${piece.color}`}
+                    />
+                  ))}
+                </div>
+              ) : null}
 
               <motion.div
                 initial={{ rotate: -6, scale: 0.82 }}
@@ -612,16 +753,35 @@ export default function QuizPage() {
                 {questions.length} sorunun {score} tanesini doğru cevapladın.
               </p>
               <p className="relative mx-auto mt-3 max-w-xl text-base leading-7 text-slate-300">
-                Bu madalya haritada {activeQuiz.label} kartının üzerinde parlayacak.
+                {practiceMode
+                  ? "İlk final sonucun ve kazandığın madalya aynı kaldı."
+                  : `Bu madalya haritada ${activeQuiz.label} kartının üzerinde parlayacak.`}
               </p>
 
               <button
                 type="button"
                 onClick={returnToMap}
-                className="relative mt-8 rounded-full bg-yellow-300 px-7 py-4 text-lg font-black text-slate-950 shadow-lg shadow-yellow-950/25 transition hover:bg-yellow-200 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-offset-2 focus:ring-offset-slate-950"
+                disabled={isSaving}
+                aria-describedby={saveError ? "final-save-error" : undefined}
+                className="relative mt-8 rounded-full bg-yellow-300 px-7 py-4 text-lg font-black text-slate-950 shadow-lg shadow-yellow-950/25 transition hover:bg-yellow-200 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-offset-2 focus:ring-offset-slate-950 disabled:cursor-wait disabled:opacity-70"
               >
-                Haritaya Dön
+                {isSaving
+                  ? "Kaydediliyor…"
+                  : practiceMode
+                    ? "Bölüm Rotasına Dön"
+                    : saveError
+                      ? "Tekrar Dene"
+                      : "Haritaya Dön"}
               </button>
+              {saveError ? (
+                <p
+                  id="final-save-error"
+                  role="alert"
+                  className="relative mx-auto mt-4 max-w-xl rounded-2xl border border-red-300/35 bg-red-950/45 px-4 py-3 text-base font-bold leading-6 text-red-100"
+                >
+                  {saveError}
+                </p>
+              ) : null}
             </motion.section>
           ) : (
             <motion.section
