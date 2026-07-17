@@ -711,6 +711,11 @@
   min-width: 0;
 }
 
+.drawerScrollBody,
+.drawerFooter {
+  display: contents;
+}
+
 .detailPanel::before {
   position: absolute;
   inset: 8px;
@@ -731,9 +736,10 @@
 
 .coverFrame {
   position: relative;
-  flex: 0 0 78px;
+  flex: 0 0 auto;
   width: 78px;
-  height: 110px;
+  height: auto;
+  aspect-ratio: 2 / 3;
   overflow: hidden;
   border: 2px solid color-mix(in srgb, var(--atlas-gold) 48%, var(--atlas-paper));
   border-radius: 12px 9px 9px 12px;
@@ -785,6 +791,29 @@
   font-weight: 800;
 }
 
+.bookProgressBlock {
+  position: relative;
+  z-index: 1;
+  margin-top: 14px;
+}
+
+.bookProgressLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--paper-muted);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.bookProgressLabel strong {
+  color: var(--paper-ink);
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1;
+}
+
 .bookProgress {
   position: relative;
   z-index: 1;
@@ -801,6 +830,10 @@
   height: 100%;
   border-radius: inherit;
   background: linear-gradient(90deg, var(--eylem), var(--atlas-gold));
+}
+
+.bookProgressBlock .bookProgress {
+  margin-top: 8px;
 }
 
 .selectedContent {
@@ -867,7 +900,24 @@
   text-transform: uppercase;
 }
 
+.chapterTitleBlock {
+  display: grid;
+  gap: 4px;
+}
+
+.chapterTitleMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.chapterTitleMeta .chapterKicker {
+  margin-top: 0 !important;
+}
+
 .selectedContent > h3,
+.chapterTitleBlock h3,
 .rewardHero h3 {
   margin-top: 2px;
   font-size: clamp(28px, 3vw, 36px);
@@ -1335,13 +1385,10 @@
     height: 100dvh;
     max-height: none;
     margin-top: 0;
-    padding:
-      max(10px, env(safe-area-inset-top))
-      16px
-      max(16px, env(safe-area-inset-bottom));
-    overflow-x: hidden;
-    overflow-y: auto;
-    overscroll-behavior: contain;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    padding: 0;
+    overflow: hidden;
     border-radius: 25px 0 0 25px;
     pointer-events: none;
     transform: translateX(104%);
@@ -1349,6 +1396,37 @@
     transition:
       transform 220ms ease-out,
       visibility 0s linear 220ms;
+  }
+
+  .drawerScrollBody {
+    display: block;
+    min-width: 0;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding:
+      max(10px, env(safe-area-inset-top))
+      16px
+      16px;
+  }
+
+  .drawerFooter {
+    position: relative;
+    z-index: 5;
+    display: block;
+    padding:
+      10px
+      16px
+      max(12px, env(safe-area-inset-bottom));
+    border-top: 1px solid var(--paper-line);
+    background: color-mix(in srgb, var(--atlas-paper) 97%, transparent);
+    box-shadow: 0 -12px 26px color-mix(in srgb, var(--paper-ink) 10%, transparent);
+  }
+
+  .drawerFooter .primaryAction {
+    min-height: 54px;
+    margin: 0;
   }
 
   .chapterDrawerPanelOpen {
@@ -1425,9 +1503,10 @@
   }
 
   .chapterDrawerPanel .coverFrame {
-    flex-basis: 104px;
-    width: 74px;
-    height: 104px;
+    flex: 0 0 auto;
+    width: 92px;
+    height: auto;
+    aspect-ratio: 2 / 3;
   }
 
   .chapterDrawerPanel .bookCopy h2 {
@@ -1435,12 +1514,9 @@
   }
 
   .chapterDrawerPanel .selectedContent > h3,
+  .chapterDrawerPanel .chapterTitleBlock h3,
   .chapterDrawerPanel .rewardHero h3 {
     font-size: clamp(26px, 7.5vw, 30px);
-  }
-
-  .chapterDrawerPanel .primaryAction {
-    margin-bottom: 2px;
   }
 
   .bookSummary {
@@ -1449,9 +1525,10 @@
   }
 
   .coverFrame {
-    flex-basis: 170px;
+    flex: 0 0 auto;
     width: 120px;
-    height: 170px;
+    height: auto;
+    aspect-ratio: 2 / 3;
   }
 
   .bookCopy h2 {
@@ -1467,6 +1544,7 @@
   }
 
   .selectedContent > h3,
+  .chapterTitleBlock h3,
   .rewardHero h3 {
     font-size: 30px;
   }
@@ -1500,6 +1578,10 @@
 
   .taskPin {
     right: -3px;
+  }
+
+  .chapterDrawerPanel .coverFrame {
+    width: 82px;
   }
 }
 

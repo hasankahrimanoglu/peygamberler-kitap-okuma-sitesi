@@ -272,7 +272,6 @@ export default function KitapDetaySayfasi() {
         profilAdi={profilAdi}
         bolumler={kitap.bolumler}
         tamamlananBolum={kazanilanRozet}
-        ilerlemeYuzdesi={ilerleme.yuzde}
         kitapBitti={ilerleme.bittiMi}
         yukleniyor={yukleniyor}
         quizYolu={kitap.quizYolu}

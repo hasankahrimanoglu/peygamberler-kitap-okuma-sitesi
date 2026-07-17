@@ -28,7 +28,6 @@ type KitapBolumRotasiProps = {
   profilAdi: string;
   bolumler: AtlasBolum[];
   tamamlananBolum: number;
-  ilerlemeYuzdesi: number;
   kitapBitti: boolean;
   yukleniyor: boolean;
   quizYolu: string | null;
@@ -67,7 +66,6 @@ export function KitapBolumRotasi({
   profilAdi,
   bolumler,
   tamamlananBolum,
-  ilerlemeYuzdesi,
   kitapBitti,
   yukleniyor,
   quizYolu,
@@ -76,9 +74,15 @@ export function KitapBolumRotasi({
   onFinalAc,
 }: KitapBolumRotasiProps) {
   const toplamBolum = bolumler.length;
+  const etkinTamamlananBolum = kitapBitti
+    ? toplamBolum
+    : Math.min(Math.max(0, tamamlananBolum), toplamBolum);
+  const etkinIlerlemeYuzdesi = toplamBolum === 0
+    ? 0
+    : Math.round((etkinTamamlananBolum / toplamBolum) * 100);
   const aktifIndex = kitapBitti
     ? Math.max(0, toplamBolum - 1)
-    : Math.min(tamamlananBolum, Math.max(0, toplamBolum - 1));
+    : Math.min(etkinTamamlananBolum, Math.max(0, toplamBolum - 1));
   const [secim, setSecim] = useState<Secim>(aktifIndex);
   const [mobilDetayAcik, setMobilDetayAcik] = useState(false);
   const panelKapatRef = useRef<HTMLButtonElement>(null);
@@ -86,13 +90,13 @@ export function KitapBolumRotasi({
   const sonDurakRef = useRef<HTMLButtonElement>(null);
   const oncekiPanelDurumuRef = useRef(false);
 
-  const finalAcik = Boolean(quizYolu) && tamamlananBolum >= toplamBolum;
+  const finalAcik = Boolean(quizYolu) && etkinTamamlananBolum >= toplamBolum;
   const finalSecili = secim === "final";
   const seciliBolum = finalSecili ? null : bolumler[secim];
 
   function bolumDurumu(index: number): BolumDurumu {
-    if (index < tamamlananBolum || kitapBitti) return "tamamlandi";
-    if (index === tamamlananBolum && bolumler[index]?.okumaYolu) return "aktif";
+    if (index < etkinTamamlananBolum || kitapBitti) return "tamamlandi";
+    if (index === etkinTamamlananBolum && bolumler[index]?.okumaYolu) return "aktif";
     return "kilitli";
   }
 
@@ -311,6 +315,26 @@ export function KitapBolumRotasi({
     return `${index + 1}. Bölüm, ${index}. Bölüm “${temizBaslik(oncekiBolum.title)}” tamamlandığında açılacak.`;
   }
 
+  const panelAksiyonu = finalSecili
+    ? finalAcik && !kitapBitti && quizYolu
+      ? {
+          etiket: "Final Testine Geç",
+          tekrar: false,
+          calistir: () => finalAksiyonunuCalistir(quizYolu),
+        }
+      : null
+    : seciliBolum && seciliDurum !== "kilitli"
+      ? {
+          etiket: seciliDurum === "tamamlandi"
+            ? "Tekrar Oku"
+            : etkinTamamlananBolum === 0
+              ? "Yolculuğa Başla"
+              : "Okumaya Devam Et",
+          tekrar: seciliDurum === "tamamlandi",
+          calistir: () => bolumAksiyonunuCalistir(seciliBolum.okumaYolu),
+        }
+      : null;
+
   return (
     <main className={`tema-cocuk ${styles.page}`}>
       <div className={styles.atlasShell}>
@@ -330,8 +354,8 @@ export function KitapBolumRotasi({
           </div>
 
           <dl className={styles.headerStats} aria-label="Kitap ilerlemesi">
-            <div><dt>Bölüm</dt><dd>{yukleniyor ? "—" : `${tamamlananBolum} / ${toplamBolum}`}</dd></div>
-            <div><dt>Rozet</dt><dd><Ikon ad="rozet" boyut={16} /> {yukleniyor ? "—" : tamamlananBolum}</dd></div>
+            <div><dt>Bölüm</dt><dd>{yukleniyor ? "—" : `${etkinTamamlananBolum} / ${toplamBolum}`}</dd></div>
+            <div><dt>Rozet</dt><dd><Ikon ad="rozet" boyut={16} /> {yukleniyor ? "—" : etkinTamamlananBolum}</dd></div>
           </dl>
         </header>
 
@@ -361,7 +385,7 @@ export function KitapBolumRotasi({
               <svg className={styles.trail} viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
                 <path className={styles.trailShadow} d="M25 9 C43 3 58 3 75 9 C88 15 88 26 75 32 C58 40 42 25 25 32 C12 38 12 50 25 56 C42 64 58 49 75 56 C88 62 88 74 75 80 C58 88 42 73 25 80 C18 84 28 91 50 97" />
                 <path className={styles.trailBase} pathLength="100" d="M25 9 C43 3 58 3 75 9 C88 15 88 26 75 32 C58 40 42 25 25 32 C12 38 12 50 25 56 C42 64 58 49 75 56 C88 62 88 74 75 80 C58 88 42 73 25 80 C18 84 28 91 50 97" />
-                <path className={styles.trailProgress} pathLength="100" style={{ strokeDasharray: `${ilerlemeYuzdesi} 100` }} d="M25 9 C43 3 58 3 75 9 C88 15 88 26 75 32 C58 40 42 25 25 32 C12 38 12 50 25 56 C42 64 58 49 75 56 C88 62 88 74 75 80 C58 88 42 73 25 80 C18 84 28 91 50 97" />
+                <path className={styles.trailProgress} pathLength="100" style={{ strokeDasharray: `${etkinIlerlemeYuzdesi} 100` }} d="M25 9 C43 3 58 3 75 9 C88 15 88 26 75 32 C58 40 42 25 25 32 C12 38 12 50 25 56 C42 64 58 49 75 56 C88 62 88 74 75 80 C58 88 42 73 25 80 C18 84 28 91 50 97" />
               </svg>
 
               <ol className={styles.chapterStops} aria-label={`${kitapAdi} bölümleri`}>
@@ -374,7 +398,7 @@ export function KitapBolumRotasi({
                         type="button"
                         className={`${styles.chapterStop} ${styles[durum]} ${secili ? styles.selected : ""}`}
                         aria-pressed={secili}
-                        aria-label={`${index + 1}. bölüm, ${temizBaslik(bolum.title)}, ${DURUM_METINLERI[durum]}`}
+                        aria-label={`${index + 1}. bölüm, ${temizBaslik(bolum.title)}, ${DURUM_METINLERI[durum]}${bolum.gorev ? ", Bugüne Taşı görevi var" : ""}`}
                         onClick={(olay) => secimYap(index, olay.currentTarget)}
                       >
                         <span className={styles.stopMarker}><span>{index + 1}</span><Ikon ad={DURUM_IKONLARI[durum]} boyut={17} /></span>
@@ -410,61 +434,89 @@ export function KitapBolumRotasi({
             aria-modal={mobilDetayAcik ? true : undefined}
             role={mobilDetayAcik ? "dialog" : undefined}
           >
-            <div className={styles.mobileChapterPanelHeader}>
-              <button
-                ref={panelKapatRef}
-                type="button"
-                className={styles.mobilePanelClose}
-                onClick={mobilDetayiKapat}
-              >
-                <Ikon ad="geri" boyut={17} /> Bölüm Rotasına Dön
-              </button>
-              <span>{finalSecili ? "Final" : `${seciliSira} / ${toplamBolum}`}</span>
-            </div>
-            <div className={styles.bookSummary}>
-              <div className={styles.coverFrame}>
-                <YedekliGorsel src={`/kapaklar/kapak-${kitapKey}.png`} yedekSrc="/kapaklar/placeholder.svg" alt={`${kitapAdi} kitap kapağı`} width={112} height={168} className={styles.cover} />
+            <div className={styles.drawerScrollBody}>
+              <div className={styles.mobileChapterPanelHeader}>
+                <button
+                  ref={panelKapatRef}
+                  type="button"
+                  className={styles.mobilePanelClose}
+                  onClick={mobilDetayiKapat}
+                >
+                  <Ikon ad="geri" boyut={17} /> Bölüm Rotasına Dön
+                </button>
+                <span>{finalSecili ? "Final" : `${seciliSira} / ${toplamBolum}`}</span>
               </div>
-              <div className={styles.bookCopy}><p>{kitapAdi} — Çocuklar İçin</p><h2>{altBaslik}</h2><span>{tamamlananBolum} / {toplamBolum} bölüm</span></div>
-            </div>
-            <div className={styles.bookProgress} role="progressbar" aria-label="Bölüm ilerlemesi" aria-valuemin={0} aria-valuemax={toplamBolum} aria-valuenow={tamamlananBolum}><span style={{ width: `${ilerlemeYuzdesi}%` }} /></div>
-
-            <div className={styles.selectedContent} data-selection={finalSecili ? "final" : seciliSira} data-state={seciliDurum} key={finalSecili ? "final" : seciliBolum?.id}>
-              <div className={styles.selectionMeta}>
-                <span>{finalSecili ? "Yolculuğun sonu" : `Seçili Bölüm · ${seciliSira} / ${toplamBolum}`}</span>
-                <span className={`${styles.statusChip} ${styles[seciliDurum]}`}><Ikon ad={DURUM_IKONLARI[seciliDurum]} boyut={15} /> {DURUM_METINLERI[seciliDurum]}</span>
+              <div className={styles.bookSummary}>
+                <div className={styles.coverFrame}>
+                  <YedekliGorsel src={`/kapaklar/kapak-${kitapKey}.png`} yedekSrc="/kapaklar/placeholder.svg" alt={`${kitapAdi} kitap kapağı`} width={112} height={168} className={styles.cover} />
+                </div>
+                <div className={styles.bookCopy}><p>{kitapAdi}</p><h2>{altBaslik}</h2></div>
+              </div>
+              <div className={styles.bookProgressBlock}>
+                <div className={styles.bookProgressLabel}>
+                  <span>Bölüm ilerlemesi</span>
+                  <strong>{yukleniyor ? "—" : `${etkinTamamlananBolum} / ${toplamBolum}`}</strong>
+                </div>
+                <div
+                  className={styles.bookProgress}
+                  role="progressbar"
+                  aria-label={`${kitapAdi} bölüm ilerlemesi`}
+                  aria-valuemin={0}
+                  aria-valuemax={toplamBolum}
+                  aria-valuenow={yukleniyor ? undefined : etkinTamamlananBolum}
+                  aria-valuetext={yukleniyor ? "Bölüm ilerlemesi yükleniyor" : `${etkinTamamlananBolum} / ${toplamBolum} bölüm tamamlandı`}
+                  aria-busy={yukleniyor}
+                >
+                  <span style={{ width: `${etkinIlerlemeYuzdesi}%` }} />
+                </div>
               </div>
 
-              {finalSecili ? (
-                <>
-                  <div className={styles.rewardHero}>
-                    <YedekliGorsel src={`/madalyalar/madalya-${kitapKey}.png`} yedekSrc="/madalyalar/placeholder.svg" alt={`${kitapAdi} Yolculuk Madalyası`} width={82} height={82} className={`${styles.rewardImage} ${kitapBitti ? "" : styles.rewardPending}`} />
-                    <div><p>Yolculuk sonu</p><h3 id={panelBaslikId}>Büyük Final Testi</h3></div>
-                  </div>
-                  <p id={panelAciklamaId} className={styles.summaryText}>Bölümlerde keşfettiğin değerleri hatırla ve {kitapAdi} yolculuğunu tamamla.</p>
-                  <div className={styles.rewardRow}><Ikon ad="madalya" boyut={22} /><span><small>{kitapBitti ? "Kazanılan madalya" : "Kazanılacak madalya"}</small><strong>{kitapAdi} Yolculuk Madalyası</strong></span></div>
-                  {!finalAcik && !kitapBitti ? <div className={styles.lockNotice}><Ikon ad="kilit" boyut={19} /><p>{toplamBolum}. Bölüm “{temizBaslik(bolumler[toplamBolum - 1]?.title ?? "Son Bölüm")}” tamamlandığında Büyük Final Testi açılacak.</p></div> : null}
-                  {finalAcik && !kitapBitti && quizYolu ? <button type="button" className={styles.primaryAction} onClick={() => finalAksiyonunuCalistir(quizYolu)}>Final Testine Geç <Ikon ad="ok-sag" boyut={19} /></button> : null}
-                </>
-              ) : seciliBolum ? (
-                <>
-                  <p className={styles.chapterKicker}>{seciliSira}. Bölüm</p>
-                  <h3 id={panelBaslikId}>{temizBaslik(seciliBolum.title)}</h3>
-                  <p id={panelAciklamaId} className={styles.summaryText}>{seciliBolum.ozet}</p>
-                  <div className={styles.readingTrail} aria-label="Bölüm okuma akışı"><span>Hikâye</span><i /><span>Sen Olsaydın</span><i /><span>Ne Öğrendik</span></div>
-                  <div className={styles.rewardRow}>
-                    <YedekliGorsel src={`/rozetler/rozet-${kitapKey}-bolum-${seciliSira}.png`} yedekSrc="/rozetler/placeholder.svg" alt={`${seciliBolum.badgeName} görseli`} width={58} height={58} className={`${styles.rewardImage} ${seciliDurum === "tamamlandi" ? "" : styles.rewardPending}`} />
-                    <span><small>{seciliDurum === "tamamlandi" ? "Kazanılan rozet" : "Kazanılacak rozet"}</small><strong>{seciliBolum.badgeName}</strong></span>
-                  </div>
-                  {seciliBolum.gorev ? <div className={styles.taskNote}><span className={styles.taskIcon}><Ikon ad="dusunce" boyut={19} /></span><div><small>Bu bölümde Bugüne Taşı var</small><strong>{seciliBolum.gorev.ad}</strong><p>{seciliBolum.gorev.kategori} · {seciliBolum.gorev.sure}</p></div></div> : null}
-                  {seciliDurum === "kilitli" ? <div className={styles.lockNotice}><Ikon ad="kilit" boyut={19} /><p>{bolumAcilmaKosulu(secim)}</p></div> : (
-                    <button type="button" className={`${styles.primaryAction} ${seciliDurum === "tamamlandi" ? styles.reReadAction : ""}`} onClick={() => bolumAksiyonunuCalistir(seciliBolum.okumaYolu)}>
-                      {seciliDurum === "tamamlandi" ? "Tekrar Oku" : tamamlananBolum === 0 ? "Yolculuğa Başla" : "Okumaya Devam Et"}<Ikon ad="ok-sag" boyut={19} />
-                    </button>
-                  )}
-                </>
-              ) : null}
+              <div className={styles.selectedContent} data-selection={finalSecili ? "final" : seciliSira} data-state={seciliDurum} key={finalSecili ? "final" : seciliBolum?.id}>
+                {finalSecili ? (
+                  <>
+                    <div className={styles.selectionMeta}>
+                      <span>Yolculuğun sonu</span>
+                      <span className={`${styles.statusChip} ${styles[seciliDurum]}`}><Ikon ad={DURUM_IKONLARI[seciliDurum]} boyut={15} /> {DURUM_METINLERI[seciliDurum]}</span>
+                    </div>
+                    <div className={styles.rewardHero}>
+                      <YedekliGorsel src={`/madalyalar/madalya-${kitapKey}.png`} yedekSrc="/madalyalar/placeholder.svg" alt={`${kitapAdi} Yolculuk Madalyası`} width={82} height={82} className={`${styles.rewardImage} ${kitapBitti ? "" : styles.rewardPending}`} />
+                      <div><p>Yolculuk sonu</p><h3 id={panelBaslikId}>Büyük Final Testi</h3></div>
+                    </div>
+                    <p id={panelAciklamaId} className={styles.summaryText}>Bölümlerde keşfettiğin değerleri hatırla ve {kitapAdi} yolculuğunu tamamla.</p>
+                    <div className={styles.rewardRow}><Ikon ad="madalya" boyut={22} /><span><small>{kitapBitti ? "Kazanılan madalya" : "Kazanılacak madalya"}</small><strong>{kitapAdi} Yolculuk Madalyası</strong></span></div>
+                    {!finalAcik && !kitapBitti ? <div className={styles.lockNotice}><Ikon ad="kilit" boyut={19} /><p>{toplamBolum}. Bölüm “{temizBaslik(bolumler[toplamBolum - 1]?.title ?? "Son Bölüm")}” tamamlandığında Büyük Final Testi açılacak.</p></div> : null}
+                  </>
+                ) : seciliBolum ? (
+                  <>
+                    <div className={styles.chapterTitleBlock}>
+                      <div className={styles.chapterTitleMeta}>
+                        <span className={`${styles.statusChip} ${styles[seciliDurum]}`}><Ikon ad={DURUM_IKONLARI[seciliDurum]} boyut={15} /> {DURUM_METINLERI[seciliDurum]}</span>
+                        <span className={styles.chapterKicker}>{seciliSira}. Bölüm</span>
+                      </div>
+                      <h3 id={panelBaslikId}>{temizBaslik(seciliBolum.title)}</h3>
+                    </div>
+                    <p id={panelAciklamaId} className={styles.summaryText}>{seciliBolum.ozet}</p>
+                    <div className={styles.rewardRow}>
+                      <YedekliGorsel src={`/rozetler/rozet-${kitapKey}-bolum-${seciliSira}.png`} yedekSrc="/rozetler/placeholder.svg" alt={`${seciliBolum.badgeName} görseli`} width={58} height={58} className={`${styles.rewardImage} ${seciliDurum === "tamamlandi" ? "" : styles.rewardPending}`} />
+                      <span><small>{seciliDurum === "tamamlandi" ? "Kazanılan rozet" : "Kazanılacak rozet"}</small><strong>{seciliBolum.badgeName}</strong></span>
+                    </div>
+                    {seciliBolum.gorev ? <div className={styles.taskNote}><span className={styles.taskIcon}><Ikon ad="dusunce" boyut={19} /></span><div><small>Bu bölümde Bugüne Taşı var</small><strong>{seciliBolum.gorev.ad}</strong><p>{seciliBolum.gorev.kategori} · {seciliBolum.gorev.sure}</p></div></div> : null}
+                    {seciliDurum === "kilitli" ? <div className={styles.lockNotice}><Ikon ad="kilit" boyut={19} /><p>{bolumAcilmaKosulu(secim)}</p></div> : null}
+                  </>
+                ) : null}
+              </div>
             </div>
+            {panelAksiyonu ? (
+              <div className={styles.drawerFooter}>
+                <button
+                  type="button"
+                  className={`${styles.primaryAction} ${panelAksiyonu.tekrar ? styles.reReadAction : ""}`}
+                  onClick={panelAksiyonu.calistir}
+                >
+                  {panelAksiyonu.etiket}<Ikon ad="ok-sag" boyut={19} />
+                </button>
+              </div>
+            ) : null}
           </aside>
         </div>
       </div>
