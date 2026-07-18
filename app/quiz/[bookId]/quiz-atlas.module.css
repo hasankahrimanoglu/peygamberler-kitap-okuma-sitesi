@@ -133,9 +133,14 @@
     background-color 160ms ease;
 }
 
-.backLink:hover {
+.backLink:hover:not(:disabled) {
   color: var(--murekkep);
   background: color-mix(in srgb, var(--murekkep) 7%, transparent);
+}
+
+.backLink:disabled {
+  cursor: wait;
+  opacity: 0.55;
 }
 
 .bookIdentity {
@@ -796,6 +801,22 @@
   height: 124px;
 }
 
+.resultStatusIcon {
+  display: grid;
+  width: 84px;
+  height: 84px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--quiz-gold);
+  background: var(--quiz-gold-soft);
+  animation: lanternPulse 1.25s ease-in-out infinite alternate;
+}
+
+.resultStatusWarning {
+  color: color-mix(in srgb, var(--quiz-gold) 72%, var(--quiz-ink));
+  animation: none;
+}
+
 .resultKicker {
   margin-top: 20px !important;
   color: color-mix(in srgb, var(--quiz-gold) 72%, var(--quiz-ink));
@@ -844,6 +865,18 @@
 .resultAction {
   min-width: 230px;
   margin-top: 20px;
+}
+
+.resultActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.resultActions .resultAction {
+  margin-top: 0;
 }
 
 .errorMessage {
@@ -1268,7 +1301,9 @@
   }
 
   .primaryButton,
-  .resultAction {
+  .resultAction,
+  .resultActions,
+  .resultActions > button {
     width: 100%;
     min-width: 0;
   }
