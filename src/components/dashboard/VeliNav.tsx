@@ -9,12 +9,12 @@ type NavItem = {
   etiket: string;
   href: string;
   ikon: IkonAdi;
-  /** Faz 5'in sonraki etaplarında açılacak sayfalar henüz hazır değil */
+  /** Hazır olmayan bir sayfa ileride eklenirse pasif navigasyon için kullanılır. */
   hazir: boolean;
 };
 
-// PROJE-MODELI.md 5.2 — veli navigasyonu. Etap 1'de yalnızca Ana Sayfa hazır;
-// diğerleri "yakında" olarak pasif görünür (yapılmamış sayfaya yönlendirmez).
+// PROJE-MODELI.md 5.2 — veli navigasyonu. 1024px tablet yatayda dar ikon
+// menüsü, daha büyük masaüstünde geniş metinli menü kullanılır (3.7).
 const navItems: NavItem[] = [
   { key: "anasayfa", etiket: "Ana Sayfa", href: "/dashboard", ikon: "fener", hazir: true },
   { key: "kutuphane", etiket: "Kütüphane", href: "/dashboard/kutuphane", ikon: "kitap", hazir: true },
@@ -34,13 +34,13 @@ export function VeliYanMenu() {
   return (
     <nav
       aria-label="Veli paneli menüsü"
-      className="hidden lg:flex lg:w-60 lg:flex-col lg:gap-2 lg:border-r lg:border-cizgi lg:bg-yuzey lg:px-4 lg:py-6"
+      className="hidden lg:flex lg:w-24 lg:flex-col lg:gap-2 lg:border-r lg:border-cizgi lg:bg-yuzey lg:px-3 lg:py-6 xl:w-60 xl:px-4"
     >
-      <div className="mb-6 flex items-center gap-3 px-2">
+      <div className="mb-6 flex items-center justify-center gap-3 px-2 xl:justify-start">
         <span className="grid h-11 w-11 place-items-center rounded-buton bg-vurgu-yumusak text-vurgu">
           <Ikon ad="fener" boyut={24} />
         </span>
-        <div className="leading-tight">
+        <div className="sr-only leading-tight xl:not-sr-only">
           <p className="font-baslik text-sm font-bold text-murekkep">Veli Paneli</p>
           <p className="text-xs text-murekkep-soluk">Keşif Dünyası</p>
         </div>
@@ -49,20 +49,21 @@ export function VeliYanMenu() {
       {navItems.map((item) => {
         const aktif = aktifMi(pathname, item);
         const ortakSinif =
-          "flex items-center justify-between gap-3 rounded-buton px-3 py-3 text-base font-baslik font-semibold transition-colors";
+          "flex min-h-12 items-center justify-center gap-3 rounded-buton px-3 py-3 text-base font-baslik font-semibold transition-colors xl:justify-between";
 
         if (!item.hazir) {
           return (
             <span
               key={item.key}
               aria-disabled="true"
+              title={item.etiket}
               className={`${ortakSinif} cursor-not-allowed text-murekkep-soluk/70`}
             >
-              <span className="flex items-center gap-3">
+              <span className="flex items-center justify-center gap-3 xl:justify-start">
                 <Ikon ad={item.ikon} boyut={22} />
-                {item.etiket}
+                <span className="sr-only xl:not-sr-only">{item.etiket}</span>
               </span>
-              <span className="rounded-full bg-yuzey-2 px-2 py-0.5 text-[11px] font-bold text-murekkep-soluk">
+              <span className="sr-only rounded-full bg-yuzey-2 px-2 py-0.5 text-xs font-bold text-murekkep-soluk xl:not-sr-only">
                 Yakında
               </span>
             </span>
@@ -73,6 +74,7 @@ export function VeliYanMenu() {
           <Link
             key={item.key}
             href={item.href}
+            title={item.etiket}
             aria-current={aktif ? "page" : undefined}
             className={`${ortakSinif} ${
               aktif
@@ -80,9 +82,9 @@ export function VeliYanMenu() {
                 : "text-murekkep hover:bg-yuzey-2"
             }`}
           >
-            <span className="flex items-center gap-3">
+            <span className="flex items-center justify-center gap-3 xl:justify-start">
               <Ikon ad={item.ikon} boyut={22} />
-              {item.etiket}
+              <span className="sr-only xl:not-sr-only">{item.etiket}</span>
             </span>
           </Link>
         );
@@ -105,7 +107,7 @@ export function VeliAltNav() {
         const icerik = (
           <>
             <Ikon ad={item.ikon} boyut={24} />
-            <span className="text-[11px] font-semibold">{item.etiket}</span>
+            <span className="text-xs font-semibold">{item.etiket}</span>
           </>
         );
         const ortakSinif =

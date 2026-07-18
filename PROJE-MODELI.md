@@ -160,6 +160,53 @@ yön **“Masalsı Keşif Atlası”**dır:
   mevcut detay, okuma ve final testi düzenleri, içerikleri güncellenene kadar
   korunur.
 
+### 3.7 Veli ana sayfası bilgi mimarisi (ONAY — 18 Temmuz 2026)
+
+Veli panelinin ana sayfası salt profil seçici veya yoğun istatistik panosu
+değildir; çocuk başına **okuma yolculuğu özeti** gösterir:
+
+- Tablet yatay ve masaüstünde çocuklar küçük kart gridinde değil, içerik alanını
+  kullanan geniş yatay kartlarda alt alta gösterilir. Kartta avatar + unvan,
+  güncel kitap + ilerleme, son rozet, güncel tek "Bugüne Taşı" görevi, son okuma
+  zamanı ve ana eylemler birlikte görünür.
+- Tablet dikeyde aynı kartlar tek sütunda kalır. Mobilde bilgi sırası korunur,
+  ancak görsel ve metin yan yana getirilmez; kart kompakt tek sütuna dönüşür.
+- "Yeni Çocuk Profili Ekle" profil kartıyla eşit ağırlıkta büyük boş kart olmaz;
+  profil listesinin altında kompakt bir ekleme alanıdır. Form ayrı sayfada kalır.
+- Ana sayfa Kütüphane, Ödüller veya Gelişim Raporu'nun ayrıntılarını tekrar
+  etmez. Tüm kitap kataloğu, rozet galerisi, madalya/unvan koleksiyonu ve rapor
+  sekmeleri kendi sayfalarında kalır.
+- Puan, skor, ortalama başarı/tamamlama oranı veya çocukları kıyaslayan KPI
+  şeritleri kullanılmaz. Ana sayfanın amacı velinin "nerede kaldı, son kazanımı
+  ne, güncel görevi ne, sıradaki eylem ne" sorularını hızlıca yanıtlamaktır.
+- 1024px tablet yatayda sol menü daraltılmış ikon düzenine geçer; geniş metinli
+  menü daha büyük masaüstünde açılır. İşlevsel etiketler okunabilir boyutta,
+  dokunma alanları Bölüm 3.5 standardında kalır.
+
+### 3.8 Veli alt sayfaları görsel tutarlılığı (ONAY — 18 Temmuz 2026)
+
+Kütüphane, Ödüller ve Gelişim Raporları ana sayfadaki sakin ve geniş kart
+dilini paylaşır; her biri kendi işini yapar, ana sayfayı veya birbirini tekrar
+etmez:
+
+- Sayfa başlıklarında yinelenen "Veli Paneli" üst etiketi kullanılmaz. Başlık +
+  kısa açıklama ortak ölçü ve boşluk düzenindedir; hesap alanı ortak üst bardadır.
+- Kütüphane araçları (çocuk, arama, durum) tek sakin filtre yüzeyinde toplanır.
+  Kitaplar tablet yatay/dikeyde tek sütun, geniş masaüstünde iki sütundur;
+  mobilde kapak ve metin yan yana getirilmez. Durum dili ve somut kilit şartı
+  Bölüm 3.4'e uyar.
+- Ödüller sayfasında Rozetler/Madalyalar/Unvanlar ana sekmelerdir. Mobil rozet
+  galerisi okunabilir iki kolondur; genişlik arttıkça kolon sayısı kademeli artar.
+  Puan, kademe veya kıyaslama eklenmez; kazanılmayan ödül mevcut görselin soluk
+  hâlidir.
+- Rapor seçimi çocuk başına güncel kitap, unvan ve son okuma bağlamını gösteren
+  sakin kartlardan oluşur. Rapor detayı Genel Bakış · Kitaplar · Ödüller ·
+  Görevler · Sohbet Önerileri sekmelerini korur; mobilde sekmeler yatay
+  kaydırılır, içerik tek sütundur.
+- İşlevsel gövde metni 16px hedefini, buton ve dokunma alanları Bölüm 3.5'i
+  korur. Rapor metinleri gözlem bildirir; başarı puanı veya kesin çocuk
+  değerlendirmesi üretmez.
+
 ---
 
 ## 4. Özellik Kararları
@@ -171,7 +218,7 @@ yön **“Masalsı Keşif Atlası”**dır:
 | 1 | Terminoloji standardizasyonu | Tüm ekran metinleri rozet/madalya/unvan sözlüğüne çekilir | Yok (adlandırma) |
 | 2 | Tasarım sistemi | Bölüm 3'teki tokenlar + ortak bileşenler (Card, Button, Badge, ProgressBar) | Yok |
 | 3 | Veli paneli yeniden kurgusu | Sol menülü (mobilde alt menülü) çok sayfalı yapı: Ana Sayfa, Kütüphane, Ödüller, Gelişim Raporları | Yok — mevcut veriden türetilir |
-| 4 | Veli ana sayfası | Çocuk kartları: avatar, unvan, okunan kitap, ilerleme, son rozet + **çocuğun güncel "Bugüne Taşı" görevi (tek satır, en güncel görev — veli kartı geçmiş görev listesi GÖSTERMEZ; çocuğun tam görev listesi kendi "Görevlerim" ekranındadır, bkz. madde 17)** + "Okumaya Devam Et / Gelişim Raporu / Profili Düzenle". Profil ekleme formu ayrı ekrana taşınır; "Şifre Değiştir" sağ üst hesap menüsüne girer | Yok |
+| 4 | Veli ana sayfası | Bölüm 3.7'deki geniş okuma yolculuğu kartları: avatar, unvan, okunan kitap, ilerleme, son rozet + **çocuğun güncel "Bugüne Taşı" görevi (tek satır, en güncel görev — veli kartı geçmiş görev listesi GÖSTERMEZ; çocuğun tam görev listesi kendi "Görevlerim" ekranındadır, bkz. madde 17)** + son okuma zamanı + "Okumaya Devam Et / Gelişim Raporu / Profili Düzenle". Profil ekleme formu ayrı ekrana taşınır; ana sayfada yalnız kompakt ekleme alanı bulunur. "Şifre Değiştir" sağ üst hesap menüsüne girer | Yok |
 | 5 | Kütüphane sayfası (veli) | Tüm kitaplar, çocuk/durum filtresi, arama, kilitli kitap açıklamaları | Yok — books + user_progress |
 | 6 | Ödüller sayfası (veli) | Rozetler / Madalyalar / Unvanlar sekmeleri, rozet detay paneli | Yok — türetilir |
 | 7 | Gelişim raporu: modal → sekmeli tam sayfa | Genel Bakış, Kitaplar, Ödüller, **Görevler**, Sohbet Önerileri sekmeleri; mobilde tam ekran | Yok (Görevler `profile_tasks`'tan) |

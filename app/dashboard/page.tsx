@@ -156,15 +156,19 @@ export default function VeliAnaSayfa() {
 
   return (
     <div className="mx-auto max-w-6xl">
-      <div className="mb-6 flex flex-col gap-2">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-vurgu">
-          Veli Paneli
-        </p>
-        <h1 className="font-baslik text-3xl font-bold text-murekkep sm:text-4xl">
-          Çocuk Profilleri
-        </h1>
-        <p className="text-sm font-medium text-murekkep-soluk">
-          {profiles.length} / {profileLimit} profil kullanılıyor.
+      <div className="mb-7 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <h1 className="font-baslik text-3xl font-bold text-murekkep sm:text-4xl">
+            Çocuk Profilleri
+          </h1>
+          <p className="mt-2 max-w-2xl text-base font-medium text-murekkep-soluk">
+            Çocuklarının okuma yolculuğunda nerede kaldığını ve son kazanımlarını
+            buradan takip edebilirsin.
+          </p>
+        </div>
+        <p className="flex min-h-11 shrink-0 items-center gap-2 self-start rounded-full border border-eylem/20 bg-eylem-yumusak px-4 text-sm font-bold text-eylem-koyu sm:self-auto">
+          <Ikon ad="hesap" boyut={18} />
+          {profiles.length} / {profileLimit} profil kullanılıyor
         </p>
       </div>
 
@@ -187,7 +191,7 @@ export default function VeliAnaSayfa() {
           </div>
         </Kart>
       ) : (
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="space-y-5">
           {profiles.map((profile) => (
             <CocukKarti
               key={profile.id}
@@ -203,15 +207,22 @@ export default function VeliAnaSayfa() {
           {canAddProfile ? (
             <Link
               href="/dashboard/profil-ekle"
-              className="group flex min-h-[220px] flex-col items-center justify-center gap-3 rounded-kart border-2 border-dashed border-cizgi bg-yuzey/50 p-6 text-center transition-colors hover:border-eylem hover:bg-eylem-yumusak"
+              className="group flex min-h-[88px] flex-col items-start justify-center gap-3 rounded-kart border-2 border-dashed border-cizgi bg-yuzey/50 px-5 py-4 transition-colors hover:border-eylem hover:bg-eylem-yumusak sm:flex-row sm:items-center sm:justify-between sm:px-6"
             >
-              <span className="grid h-14 w-14 place-items-center rounded-full bg-vurgu-yumusak text-vurgu transition-colors group-hover:bg-eylem group-hover:text-eylem-metin">
-                <Ikon ad="onay" boyut={26} />
+              <span className="flex items-center gap-3">
+                <span className="grid h-11 w-11 place-items-center rounded-full bg-vurgu-yumusak font-baslik text-2xl font-bold text-vurgu transition-colors group-hover:bg-eylem group-hover:text-eylem-metin">
+                  +
+                </span>
+                <span>
+                  <span className="block font-baslik text-lg font-bold text-murekkep">
+                    Yeni Çocuk Profili Ekle
+                  </span>
+                  <span className="mt-0.5 block text-sm font-medium text-murekkep-soluk">
+                    Yeni bir okuma yolculuğu başlat
+                  </span>
+                </span>
               </span>
-              <span className="font-baslik text-base font-bold text-murekkep">
-                Yeni Çocuk Profili Ekle
-              </span>
-              <span className="text-xs font-medium text-murekkep-soluk">
+              <span className="text-sm font-semibold text-murekkep-soluk">
                 {profileLimit - profiles.length} profil hakkın kaldı
               </span>
             </Link>

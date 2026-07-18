@@ -12,6 +12,8 @@ import {
   type RozetOgesi,
 } from "../../../src/lib/derive";
 import { Buton, Ikon, Kart, OdulIkonu } from "../../../src/components/ui";
+import { VeliCocukSecici } from "../../../src/components/dashboard/VeliCocukSecici";
+import { VeliSayfaBasligi } from "../../../src/components/dashboard/VeliSayfaBasligi";
 
 type Sekme = "rozetler" | "madalyalar" | "unvanlar";
 
@@ -46,22 +48,16 @@ export default function OdullerSayfasi() {
       unvanlar,
       kazanilanRozet: rozetler.filter((r) => r.kazanildi).length,
       kazanilanMadalya: madalyalar.filter((m) => m.kazanildi).length,
+      guncelUnvan: unvanlar.find((u) => u.guncelMi)?.unvan ?? ozet.unvan,
     };
   }, [aktifCocukId, progressByProfile, books]);
 
   return (
-    <div className="mx-auto max-w-5xl">
-      <div className="mb-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-vurgu">
-          Veli Paneli
-        </p>
-        <h1 className="mt-1 font-baslik text-3xl font-bold text-murekkep sm:text-4xl">
-          Ödüller
-        </h1>
-        <p className="mt-1 text-sm font-medium text-murekkep-soluk">
-          Çocuğunun topladığı rozetler, kazandığı madalyalar ve unvan yolculuğu.
-        </p>
-      </div>
+    <div className="mx-auto max-w-6xl">
+      <VeliSayfaBasligi
+        baslik="Ödüller"
+        aciklama="Çocuğunun bölüm rozetlerini, tamamlanan kitaplardan kazandığı madalyaları ve ulaştığı unvanları burada görebilirsin."
+      />
 
       {isLoading ? (
         <Kart className="text-center font-semibold text-murekkep-soluk">
@@ -83,60 +79,72 @@ export default function OdullerSayfasi() {
         </Kart>
       ) : (
         <>
-          {/* Çocuk seçici */}
-          {profiles.length > 1 ? (
-            <div className="mb-4 flex flex-wrap gap-2">
-              {profiles.map((child) => {
-                const secili = child.id === aktifCocukId;
+          <Kart className="mb-5 space-y-4">
+            <VeliCocukSecici
+              profiles={profiles}
+              aktifCocukId={aktifCocukId}
+              onSec={setSecilenCocukId}
+            />
+
+            <div
+              role="tablist"
+              aria-label="Ödül türleri"
+              className="grid grid-cols-3 gap-1 border-t border-cizgi pt-4"
+            >
+              {sekmeler.map((s) => {
+                const secili = sekme === s.deger;
                 return (
                   <button
-                    key={child.id}
+                    key={s.deger}
                     type="button"
-                    onClick={() => setSecilenCocukId(child.id)}
-                    aria-pressed={secili}
-                    className={`min-h-[44px] rounded-buton border px-4 py-2 text-sm font-semibold transition-colors ${
+                    role="tab"
+                    aria-selected={secili}
+                    onClick={() => setSekme(s.deger)}
+                    className={`min-h-12 rounded-buton px-3 py-2 text-sm font-bold transition-colors ${
                       secili
-                        ? "border-eylem bg-eylem-yumusak text-eylem"
-                        : "border-cizgi bg-yuzey text-murekkep hover:bg-yuzey-2"
+                        ? "bg-eylem-yumusak text-eylem-koyu shadow-sm"
+                        : "bg-yuzey-2 text-murekkep-soluk hover:text-murekkep"
                     }`}
                   >
-                    {child.isim}
+                    {s.etiket}
                   </button>
                 );
               })}
             </div>
-          ) : null}
+          </Kart>
 
-          {/* Sekme kontrolü */}
-          <div
-            role="tablist"
-            aria-label="Ödül türleri"
-            className="mb-5 inline-flex rounded-buton border border-cizgi bg-yuzey-2 p-1"
-          >
-            {sekmeler.map((s) => {
-              const secili = sekme === s.deger;
-              return (
-                <button
-                  key={s.deger}
-                  type="button"
-                  role="tab"
-                  aria-selected={secili}
-                  onClick={() => setSekme(s.deger)}
-                  className={`min-h-[44px] rounded-[0.7rem] px-4 py-1.5 text-sm font-semibold transition-colors ${
-                    secili
-                      ? "bg-yuzey text-murekkep shadow-kart"
-                      : "text-murekkep-soluk hover:text-murekkep"
-                  }`}
-                >
-                  {s.etiket}
-                </button>
-              );
-            })}
+          <div className="mb-6 grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
+            <Kart className="text-center">
+              <p className="flex items-center justify-center gap-1.5 font-baslik text-2xl font-bold text-vurgu">
+                <Ikon ad="rozet" boyut={22} />
+                {veriler.kazanilanRozet}
+              </p>
+              <p className="mt-1 text-sm font-semibold text-murekkep-soluk">
+                Kazanılan Rozet
+              </p>
+            </Kart>
+            <Kart className="text-center">
+              <p className="flex items-center justify-center gap-1.5 font-baslik text-2xl font-bold text-vurgu">
+                <Ikon ad="madalya" boyut={22} />
+                {veriler.kazanilanMadalya}
+              </p>
+              <p className="mt-1 text-sm font-semibold text-murekkep-soluk">
+                Kazanılan Madalya
+              </p>
+            </Kart>
+            <Kart className="col-span-2 text-center sm:col-span-1">
+              <p className="font-baslik text-lg font-bold text-eylem">
+                {veriler.guncelUnvan}
+              </p>
+              <p className="mt-1 text-sm font-semibold text-murekkep-soluk">
+                Güncel Unvan
+              </p>
+            </Kart>
           </div>
 
           {sekme === "rozetler" ? (
             <div>
-              <p className="mb-4 text-sm font-semibold text-murekkep-soluk">
+              <p className="mb-4 text-base font-semibold text-murekkep-soluk">
                 {veriler.kazanilanRozet} / {veriler.rozetler.length} rozet kazanıldı
               </p>
               {veriler.rozetler.length === 0 ? (
@@ -144,23 +152,23 @@ export default function OdullerSayfasi() {
                   Bu çocuk için rozet bilgisi bulunamadı.
                 </Kart>
               ) : (
-                <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                   {veriler.rozetler.map((rozet) => (
                     <button
                       key={`${rozet.bookKey}-${rozet.bolumNo}`}
                       type="button"
                       onClick={() => setSecilenRozet(rozet)}
-                      className="flex flex-col items-center gap-1.5 rounded-kart border border-cizgi bg-yuzey p-3 text-center transition-colors hover:border-vurgu"
+                      className="flex min-h-[148px] flex-col items-center justify-center gap-3 rounded-kart border border-cizgi bg-yuzey p-4 text-center transition-colors hover:border-vurgu"
                     >
                       {/* Görünür başlık hemen altta; görsel dekoratif (alt=""). */}
                       <OdulIkonu
                         tip="rozet"
                         anahtar={rozet.iconKey}
                         kazanildi={rozet.kazanildi}
-                        boyut={56}
+                        boyut={68}
                       />
                       <span
-                        className={`text-[11px] font-semibold leading-tight ${
+                        className={`text-sm font-semibold leading-snug ${
                           rozet.kazanildi ? "text-murekkep" : "text-murekkep-soluk"
                         }`}
                       >
@@ -175,7 +183,7 @@ export default function OdullerSayfasi() {
 
           {sekme === "madalyalar" ? (
             <div>
-              <p className="mb-4 text-sm font-semibold text-murekkep-soluk">
+              <p className="mb-4 text-base font-semibold text-murekkep-soluk">
                 {veriler.kazanilanMadalya} / {veriler.madalyalar.length} madalya kazanıldı
               </p>
               {veriler.madalyalar.length === 0 ? (
@@ -189,7 +197,7 @@ export default function OdullerSayfasi() {
                       key={madalya.bookKey}
                       parlak={madalya.kazanildi}
                       kilitli={!madalya.kazanildi}
-                      className="flex items-center gap-3"
+                      className="flex flex-col items-start gap-3 sm:flex-row sm:items-center"
                     >
                       <OdulIkonu
                         tip="madalya"
@@ -198,10 +206,10 @@ export default function OdullerSayfasi() {
                         boyut={56}
                       />
                       <div className="min-w-0">
-                        <p className="truncate font-baslik text-sm font-bold text-murekkep">
+                        <p className="font-baslik text-base font-bold text-murekkep">
                           {madalya.ad}
                         </p>
-                        <p className="mt-0.5 text-xs font-semibold text-murekkep-soluk">
+                        <p className="mt-1 text-sm font-semibold text-murekkep-soluk">
                           {madalya.kazanildi ? "Kazanıldı" : "Kitabı bitirince açılacak"}
                         </p>
                       </div>
@@ -219,7 +227,7 @@ export default function OdullerSayfasi() {
                   key={unvan.unvan}
                   parlak={unvan.guncelMi}
                   kilitli={!unvan.kazanildi}
-                  className="flex items-center gap-3"
+                  className="flex flex-col items-start gap-3 sm:flex-row sm:items-center"
                 >
                   <OdulIkonu
                     tip="unvan"
@@ -229,16 +237,16 @@ export default function OdullerSayfasi() {
                   />
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
-                      <p className="truncate font-baslik text-sm font-bold text-murekkep">
+                      <p className="font-baslik text-base font-bold text-murekkep">
                         {unvan.unvan}
                       </p>
                       {unvan.guncelMi ? (
-                        <span className="rounded-full bg-eylem-yumusak px-2 py-0.5 text-[10px] font-bold text-eylem">
+                        <span className="rounded-full bg-eylem-yumusak px-2.5 py-1 text-xs font-bold text-eylem">
                           Şu an
                         </span>
                       ) : null}
                     </div>
-                    <p className="mt-0.5 text-xs font-semibold text-murekkep-soluk">
+                    <p className="mt-1 text-sm font-semibold text-murekkep-soluk">
                       {unvan.kitapEsik === 0
                         ? "Başlangıç unvanı"
                         : `${unvan.kitapEsik} kitap tamamlanınca`}

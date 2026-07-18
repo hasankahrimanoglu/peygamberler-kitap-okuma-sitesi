@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useParentData, type ChildProfile } from "../../../src/lib/parent/ParentDataProvider";
 import {
@@ -15,9 +14,10 @@ import {
   Ikon,
   IlerlemeCubugu,
   Kart,
-  OdulIkonu,
   YedekliGorsel,
 } from "../../../src/components/ui";
+import { VeliCocukSecici } from "../../../src/components/dashboard/VeliCocukSecici";
+import { VeliSayfaBasligi } from "../../../src/components/dashboard/VeliSayfaBasligi";
 
 type DurumFiltre = "hepsi" | KutuphaneDurum;
 
@@ -64,6 +64,15 @@ export default function KutuphaneSayfasi() {
     });
   }, [kitaplar, durumFiltre, arama]);
 
+  const durumSayilari = useMemo(
+    () => ({
+      devam: kitaplar.filter((kitap) => kitap.durum === "devam").length,
+      tamamlandi: kitaplar.filter((kitap) => kitap.durum === "tamamlandi").length,
+      acik: kitaplar.filter((kitap) => kitap.durum !== "kilitli").length,
+    }),
+    [kitaplar],
+  );
+
   function cocuklaOku(child: ChildProfile, bookKey: string | null) {
     window.localStorage.setItem("selected_child_profile_id", child.id);
     window.localStorage.setItem("selected_child_profile_name", child.isim);
@@ -72,18 +81,11 @@ export default function KutuphaneSayfasi() {
   }
 
   return (
-    <div className="mx-auto max-w-5xl">
-      <div className="mb-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-vurgu">
-          Veli Paneli
-        </p>
-        <h1 className="mt-1 font-baslik text-3xl font-bold text-murekkep sm:text-4xl">
-          Kütüphane
-        </h1>
-        <p className="mt-1 text-sm font-medium text-murekkep-soluk">
-          Çocuğunun kitap yolculuğunu ve hangi durakların açık olduğunu buradan izle.
-        </p>
-      </div>
+    <div className="mx-auto max-w-6xl">
+      <VeliSayfaBasligi
+        baslik="Kütüphane"
+        aciklama="Çocuğunun kitap yolculuğunu, ilerleyen okumalarını ve sıradaki açık durağı buradan takip edebilirsin."
+      />
 
       {isLoading ? (
         <Kart className="text-center font-semibold text-murekkep-soluk">
@@ -105,64 +107,73 @@ export default function KutuphaneSayfasi() {
         </Kart>
       ) : (
         <>
-          {/* Çocuk seçici */}
-          {profiles.length > 1 ? (
-            <div className="mb-4 flex flex-wrap gap-2">
-              {profiles.map((child) => {
-                const secili = child.id === aktifCocukId;
-                return (
-                  <button
-                    key={child.id}
-                    type="button"
-                    onClick={() => setSecilenCocukId(child.id)}
-                    aria-pressed={secili}
-                    className={`min-h-[44px] rounded-buton border px-4 py-2 text-sm font-semibold transition-colors ${
-                      secili
-                        ? "border-eylem bg-eylem-yumusak text-eylem"
-                        : "border-cizgi bg-yuzey text-murekkep hover:bg-yuzey-2"
-                    }`}
-                  >
-                    {child.isim}
-                  </button>
-                );
-              })}
-            </div>
-          ) : null}
+          <Kart className="mb-5 space-y-4">
+            <VeliCocukSecici
+              profiles={profiles}
+              aktifCocukId={aktifCocukId}
+              onSec={setSecilenCocukId}
+            />
 
-          {/* Arama + durum filtreleri */}
-          <div className="mb-5 flex flex-col gap-3">
-            <label className="relative block">
-              <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-murekkep-soluk">
-                <Ikon ad="arama" boyut={20} />
-              </span>
-              <input
-                value={arama}
-                onChange={(event) => setArama(event.target.value)}
-                placeholder="Kitap ara..."
-                className="h-12 w-full rounded-buton border border-cizgi bg-yuzey pl-11 pr-4 text-base font-medium text-murekkep outline-none transition focus:border-eylem focus:ring-2 focus:ring-eylem/30"
-              />
-            </label>
+            <div className="border-t border-cizgi pt-4">
+              <div className="grid gap-3 lg:grid-cols-[minmax(16rem,0.75fr)_minmax(0,1.25fr)] lg:items-center">
+                <label className="relative block">
+                  <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-murekkep-soluk">
+                    <Ikon ad="arama" boyut={20} />
+                  </span>
+                  <input
+                    value={arama}
+                    onChange={(event) => setArama(event.target.value)}
+                    placeholder="Kitap ara..."
+                    className="h-12 w-full rounded-buton border border-cizgi bg-yuzey pl-11 pr-4 text-base font-medium text-murekkep outline-none transition focus:border-eylem focus:ring-2 focus:ring-eylem/30"
+                  />
+                </label>
 
-            <div className="flex flex-wrap gap-2">
-              {durumFiltreleri.map((filtre) => {
-                const secili = durumFiltre === filtre.deger;
-                return (
-                  <button
-                    key={filtre.deger}
-                    type="button"
-                    onClick={() => setDurumFiltre(filtre.deger)}
-                    aria-pressed={secili}
-                    className={`min-h-[44px] rounded-full border px-4 py-1.5 text-sm font-semibold transition-colors ${
-                      secili
-                        ? "border-vurgu bg-vurgu-yumusak text-murekkep"
-                        : "border-cizgi bg-yuzey text-murekkep-soluk hover:bg-yuzey-2"
-                    }`}
-                  >
-                    {filtre.etiket}
-                  </button>
-                );
-              })}
+                <div className="flex flex-wrap gap-2 lg:justify-end">
+                  {durumFiltreleri.map((filtre) => {
+                    const secili = durumFiltre === filtre.deger;
+                    return (
+                      <button
+                        key={filtre.deger}
+                        type="button"
+                        onClick={() => setDurumFiltre(filtre.deger)}
+                        aria-pressed={secili}
+                        className={`min-h-11 rounded-full border px-4 py-1.5 text-sm font-bold transition-colors ${
+                          secili
+                            ? "border-vurgu bg-vurgu-yumusak text-murekkep"
+                            : "border-cizgi bg-yuzey text-murekkep-soluk hover:bg-yuzey-2"
+                        }`}
+                      >
+                        {filtre.etiket}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
+          </Kart>
+
+          <div className="mb-5 grid grid-cols-3 gap-2 sm:gap-3">
+            <Kart className="text-center">
+              <p className="flex items-center justify-center gap-1.5 font-baslik text-2xl font-bold text-eylem">
+                <Ikon ad="kitap" boyut={22} />
+                {durumSayilari.acik}
+              </p>
+              <p className="mt-1 text-sm font-semibold text-murekkep-soluk">Açık Kitap</p>
+            </Kart>
+            <Kart className="text-center">
+              <p className="flex items-center justify-center gap-1.5 font-baslik text-2xl font-bold text-vurgu">
+                <Ikon ad="harita" boyut={22} />
+                {durumSayilari.devam}
+              </p>
+              <p className="mt-1 text-sm font-semibold text-murekkep-soluk">Devam Eden</p>
+            </Kart>
+            <Kart className="text-center">
+              <p className="flex items-center justify-center gap-1.5 font-baslik text-2xl font-bold text-eylem">
+                <Ikon ad="onay" boyut={22} />
+                {durumSayilari.tamamlandi}
+              </p>
+              <p className="mt-1 text-sm font-semibold text-murekkep-soluk">Tamamlanan</p>
+            </Kart>
           </div>
 
           {/* Kitap listesi */}
@@ -171,12 +182,13 @@ export default function KutuphaneSayfasi() {
               Bu filtreye uygun kitap bulunamadı.
             </Kart>
           ) : (
-            <ol className="space-y-4">
+            <ol className="grid gap-4 xl:grid-cols-2">
               {gorunenKitaplar.map((kitap) => (
                 <li key={kitap.book.id}>
                   <Kart
                     parlak={kitap.durum === "devam"}
                     kilitli={kitap.durum === "kilitli"}
+                    className="h-full"
                   >
                     <div className="grid gap-4 sm:grid-cols-[auto_minmax(0,1fr)]">
                       <YedekliGorsel
@@ -187,7 +199,7 @@ export default function KutuphaneSayfasi() {
                         }
                         yedekSrc="/kapaklar/placeholder.svg"
                         alt={`${kitap.book.isim} kitap kapağı`}
-                        className="mx-auto h-40 w-auto rounded-kart object-contain shadow-kart sm:mx-0"
+                        className="mx-auto h-44 w-auto rounded-kart object-contain shadow-kart sm:mx-0"
                       />
 
                       <div className="flex flex-col">
@@ -199,7 +211,7 @@ export default function KutuphaneSayfasi() {
                         </div>
 
                         <div className="mt-3">
-                          <div className="mb-1.5 flex items-center justify-between text-xs font-semibold text-murekkep-soluk">
+                          <div className="mb-1.5 flex items-center justify-between text-sm font-semibold text-murekkep-soluk">
                             <span>Rozet ilerlemesi</span>
                             <span>
                               {kitap.tamamlanan}/{kitap.toplam}
@@ -210,8 +222,8 @@ export default function KutuphaneSayfasi() {
 
                         <div className="mt-4">
                           {kitap.durum === "kilitli" ? (
-                            <p className="flex items-start gap-2 rounded-kart border border-cizgi bg-yuzey-2 px-3 py-2.5 text-sm font-medium text-murekkep-soluk">
-                              <Ikon ad="kilit" boyut={16} className="mt-0.5 shrink-0" />
+                            <p className="flex items-start gap-2 rounded-kart border border-cizgi bg-yuzey-2 px-3 py-3 text-base font-medium leading-6 text-murekkep-soluk">
+                              <Ikon ad="kilit" boyut={18} className="mt-0.5 shrink-0" />
                               {kitap.oncekiKitapAdi
                                 ? `${kitap.book.isim}, ${kitap.oncekiKitapAdi} kitabının finalini tamamlayınca açılacak.`
                                 : "Bir önceki kitabın finali tamamlanınca açılacak."}
@@ -219,6 +231,7 @@ export default function KutuphaneSayfasi() {
                           ) : aktifCocuk ? (
                             <Buton
                               varyant={kitap.durum === "yeni" ? "altin" : "eylem"}
+                              tamGenislik
                               onClick={() => cocuklaOku(aktifCocuk, kitap.bookKey)}
                             >
                               {aksiyonMetni[kitap.durum]}
@@ -232,20 +245,6 @@ export default function KutuphaneSayfasi() {
               ))}
             </ol>
           )}
-
-          <div className="mt-6 flex items-center gap-2 text-sm text-murekkep-soluk">
-            <OdulIkonu tip="avatar" anahtar={aktifCocuk?.avatar_tipi ?? "lantern"} boyut={28} />
-            <span>
-              <span className="font-semibold text-murekkep">{aktifCocuk?.isim}</span> için
-              kütüphane gösteriliyor.
-            </span>
-            <Link
-              href="/dashboard"
-              className="ml-auto inline-flex min-h-[44px] items-center font-semibold text-eylem hover:underline"
-            >
-              Ana Sayfa
-            </Link>
-          </div>
         </>
       )}
     </div>

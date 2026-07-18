@@ -71,16 +71,15 @@ export function HesapMenusu() {
       <button
         type="button"
         onClick={() => setAcik((v) => !v)}
+        aria-label="Hesap menüsünü aç"
         aria-haspopup="menu"
         aria-expanded={acik}
-        className="flex min-h-[44px] items-center gap-2 rounded-buton border border-cizgi bg-yuzey px-3 py-2 font-baslik text-sm font-semibold text-murekkep transition-colors hover:bg-yuzey-2"
+        className="flex min-h-[44px] items-center gap-2 rounded-buton border border-cizgi bg-yuzey px-3 py-2 font-baslik text-base font-semibold text-murekkep transition-colors hover:bg-yuzey-2"
       >
         <span className="grid h-8 w-8 place-items-center rounded-full bg-vurgu-yumusak text-vurgu">
           <Ikon ad="hesap" boyut={20} />
         </span>
-        <span className="hidden max-w-[10rem] truncate sm:inline">
-          {email ?? "Hesap"}
-        </span>
+        <span>Hesap</span>
         <Ikon ad="ok-sag" boyut={16} className="rotate-90 text-murekkep-soluk" />
       </button>
 
@@ -109,7 +108,7 @@ export function HesapMenusu() {
                 setAcik(false);
                 setSifreModalAcik(true);
               }}
-              className="flex w-full items-center gap-3 px-4 py-3 text-left text-sm font-semibold text-murekkep transition-colors hover:bg-yuzey-2"
+              className="flex min-h-12 w-full items-center gap-3 px-4 py-3 text-left text-base font-semibold text-murekkep transition-colors hover:bg-yuzey-2"
             >
               <Ikon ad="kilit" boyut={18} className="text-murekkep-soluk" />
               Şifre Değiştir
@@ -119,7 +118,7 @@ export function HesapMenusu() {
               role="menuitem"
               onClick={cikisYap}
               disabled={cikisYapiliyor}
-              className="flex w-full items-center gap-3 px-4 py-3 text-left text-sm font-semibold text-tehlike transition-colors hover:bg-yuzey-2 disabled:opacity-60"
+              className="flex min-h-12 w-full items-center gap-3 px-4 py-3 text-left text-base font-semibold text-tehlike transition-colors hover:bg-yuzey-2 disabled:opacity-60"
             >
               <Ikon ad="cikis" boyut={18} />
               {cikisYapiliyor ? "Çıkış yapılıyor..." : "Çıkış Yap"}

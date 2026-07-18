@@ -10,6 +10,7 @@ import {
   type ChildProfile,
 } from "../../../src/lib/parent/ParentDataProvider";
 import { Buton, Ikon, Kart, OdulIkonu } from "../../../src/components/ui";
+import { VeliSayfaBasligi } from "../../../src/components/dashboard/VeliSayfaBasligi";
 
 const profileSelectWithChildLogin =
   "id, isim, avatar_tipi, unvan, child_username, child_password, profile_limit, created_at";
@@ -122,24 +123,22 @@ export default function ProfilEkleSayfasi() {
         </Link>
       </div>
 
-      <div className="mb-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-vurgu">
-          Yeni Profil
-        </p>
-        <h1 className="mt-1 font-baslik text-3xl font-bold text-murekkep">
-          Yeni Çocuk Profili Ekle
-        </h1>
-        <p className="mt-1 text-sm font-medium text-murekkep-soluk">
-          {profiles.length} / {profileLimit} profil kullanılıyor.
-        </p>
-      </div>
+      <VeliSayfaBasligi
+        baslik="Yeni Çocuk Profili Ekle"
+        aciklama="Yeni bir okuma yolculuğu başlatmak için çocuk profilinin temel bilgilerini gir."
+        ek={
+          <span className="flex min-h-11 items-center rounded-full border border-eylem/20 bg-eylem-yumusak px-4 text-sm font-bold text-eylem-koyu">
+            {profiles.length} / {profileLimit} profil kullanılıyor
+          </span>
+        }
+      />
 
       {!canAddProfile ? (
         <Kart dolgu="genis" className="text-center">
           <p className="font-baslik text-lg font-bold text-murekkep">
             Profil limitin dolu
           </p>
-          <p className="mt-2 text-sm font-medium text-murekkep-soluk">
+          <p className="mt-2 text-base font-medium leading-7 text-murekkep-soluk">
             Yeni profil eklemek için mevcut bir profili silebilir veya paketini
             yükseltebilirsin.
           </p>
@@ -159,7 +158,7 @@ export default function ProfilEkleSayfasi() {
             ) : null}
 
             <label className="block">
-              <span className="mb-2 block text-sm font-semibold text-murekkep">
+              <span className="mb-2 block text-base font-semibold text-murekkep">
                 Çocuğun İsmi
               </span>
               <input
@@ -172,7 +171,7 @@ export default function ProfilEkleSayfasi() {
 
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="block">
-                <span className="mb-2 block text-sm font-semibold text-murekkep">
+                <span className="mb-2 block text-base font-semibold text-murekkep">
                   Çocuğun Kullanıcı Adı
                 </span>
                 <input
@@ -185,7 +184,7 @@ export default function ProfilEkleSayfasi() {
               </label>
 
               <label className="block">
-                <span className="mb-2 block text-sm font-semibold text-murekkep">
+                <span className="mb-2 block text-base font-semibold text-murekkep">
                   Çocuğun Şifresi
                 </span>
                 <input
@@ -200,7 +199,7 @@ export default function ProfilEkleSayfasi() {
             </div>
 
             <div>
-              <span className="mb-2 block text-sm font-semibold text-murekkep">
+              <span className="mb-2 block text-base font-semibold text-murekkep">
                 Avatar Seç
               </span>
               <div className="grid grid-cols-3 gap-3">

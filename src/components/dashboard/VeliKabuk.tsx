@@ -24,7 +24,7 @@ export function VeliKabuk({ children }: { children: ReactNode }) {
                 <Ikon ad="fener" boyut={22} />
               </span>
               <span className="font-baslik text-base font-bold text-murekkep">
-                Veli Paneli
+                Keşif Dünyası
               </span>
             </div>
             <div className="hidden lg:block" />
