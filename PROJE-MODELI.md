@@ -145,13 +145,20 @@ yön **“Masalsı Keşif Atlası”**dır:
 - Hz. Âdem okuma ekranında üst bar ve okuma yüzeyi aynı genişlikte hizalanır.
   Tablet yatay/masaüstünde metin ve illüstrasyon yan yana; dikey cihazlarda
   illüstrasyon üstte, metin alttadır.
+- Hz. Âdem Büyük Final Testi de aynı atlas dünyasında gösterilir: ortak keşif
+  üst barı, katmanlı gece/doğa zemini ve krem soru yüzeyi kullanılır. Seçenekler
+  tek sütunda kalır; onay/devam eylemleri yeşil, sonucu görme ve ilk madalya
+  kutlaması altın semantiğini korur. Alıştırma girişi ve sonucu açıkça
+  "Alıştırma" olarak ayrışır; kayıtlı final sonucu, madalya, ilerleme ve
+  `updated_at` davranışı görsel değişiklikten etkilenmez.
 - “Sen Olsaydın?” sorusu ile seçenekler alt alta yerleşir. Seçenek grubu geniş
   ekranlarda metni gereksiz boşlukla çevrelemeyecek biçimde en fazla 620px'tir;
   dar ekranlarda kullanılabilir genişliğe uyum sağlar.
 - Production rotalarında “Tasarım Önizlemesi” etiketi kullanılmaz. Önizleme
   rotaları tasarım karşılaştırması için ayrı kalabilir.
 - Bu entegrasyonun içerik referansı yalnızca Hz. Âdem'dir. Diğer kitapların
-  mevcut detay ve okuma düzenleri, içerikleri güncellenene kadar korunur.
+  mevcut detay, okuma ve final testi düzenleri, içerikleri güncellenene kadar
+  korunur.
 
 ---
 

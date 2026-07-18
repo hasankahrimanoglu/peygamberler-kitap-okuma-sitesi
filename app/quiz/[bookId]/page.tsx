@@ -4,6 +4,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { supabase } from "../../../lib/supabase";
+import { Konfeti } from "../../../src/components/reader/Konfeti";
+import { Buton, Ikon, OdulIkonu } from "../../../src/components/ui";
+import styles from "./quiz-atlas.module.css";
 
 type QuizOption = {
   id: "a" | "b" | "c";
@@ -539,11 +542,366 @@ function XIcon() {
   );
 }
 
+type AtlasAdemQuizProps = {
+  activeQuestion: QuizQuestion;
+  completion: CompletionResult;
+  isChecked: boolean;
+  isFinished: boolean;
+  isSaving: boolean;
+  onBack: () => void;
+  onCheck: () => void;
+  onNext: () => void;
+  onReturn: () => void;
+  onSelect: (option: QuizOption["id"]) => void;
+  practiceMode: boolean;
+  progress: number;
+  questionIndex: number;
+  questions: QuizQuestion[];
+  saveError: string | null;
+  score: number;
+  selectedIsCorrect: boolean;
+  selectedOption: QuizOption["id"] | null;
+};
+
+function AtlasAdemQuiz({
+  activeQuestion,
+  completion,
+  isChecked,
+  isFinished,
+  isSaving,
+  onBack,
+  onCheck,
+  onNext,
+  onReturn,
+  onSelect,
+  practiceMode,
+  progress,
+  questionIndex,
+  questions,
+  saveError,
+  score,
+  selectedIsCorrect,
+  selectedOption,
+}: AtlasAdemQuizProps) {
+  const currentStep = isFinished ? questions.length : questionIndex + 1;
+
+  return (
+    <main
+      className={`tema-cocuk ${styles.page}`}
+      data-book="adem"
+      data-quiz-mode={practiceMode ? "practice" : "first-completion"}
+    >
+      <div className={styles.atlasBackdrop} aria-hidden="true">
+        <div className={styles.stars} />
+      </div>
+
+      <div className={styles.quizShell}>
+        <header className={styles.explorerBar}>
+          <button
+            type="button"
+            className={styles.backLink}
+            aria-label="Hz. Âdem bölüm rotasına dön"
+            onClick={onBack}
+          >
+            <Ikon ad="geri" boyut={18} />
+            <span className={styles.backLabel}>Bölüm Rotasına Dön</span>
+          </button>
+
+          <div className={styles.bookIdentity}>
+            <span className={styles.bookMark} aria-hidden="true">
+              <Ikon ad="madalya" boyut={21} />
+            </span>
+            <div>
+              <span>Hz. Âdem · Yolculuğun sonu</span>
+              <strong>Büyük Final Testi</strong>
+            </div>
+          </div>
+
+          <div className={styles.headerStatus}>
+            {practiceMode ? (
+              <span className={styles.modeChip}>
+                <Ikon ad="onay" boyut={15} /> Alıştırma
+              </span>
+            ) : null}
+            <div className={styles.progressPill} aria-label={`Soru ${currentStep} / ${questions.length}`}>
+              <span>Soru</span>
+              <strong>{currentStep}/{questions.length}</strong>
+            </div>
+          </div>
+        </header>
+
+        <section className={styles.quizStage} aria-labelledby="adem-final-title">
+          <div className={styles.stageContent}>
+            <div className={styles.stageHeading}>
+              <div>
+                <p className={styles.stageKicker}>Final kapısı</p>
+                <h1 id="adem-final-title">Büyük Final Testi</h1>
+                <p className={styles.stageDescription}>
+                  Bölümlerde keşfettiğin değerleri hatırla ve yolculuğunu tamamla.
+                </p>
+                {practiceMode ? (
+                  <span className={styles.mobileModeChip}>
+                    <Ikon ad="onay" boyut={14} /> Alıştırma · Yolculuk kaydın değişmez
+                  </span>
+                ) : null}
+              </div>
+              <div className={styles.compass} aria-hidden="true"><span>K</span></div>
+            </div>
+
+            <div className={styles.workspace}>
+              <aside className={styles.journeyCard} aria-label="Final yolculuğu özeti">
+                <div className={styles.medalPreview}>
+                  <span className={styles.medalFrame}>
+                    <OdulIkonu
+                      tip="madalya"
+                      anahtar="adem"
+                      kazanildi={practiceMode || isFinished}
+                      boyut={58}
+                      alt="Hz. Âdem Yolculuk Madalyası"
+                      className={styles.medalImage}
+                    />
+                  </span>
+                  <small>{practiceMode ? "Kazanılan madalya" : "Final ödülü"}</small>
+                  <strong>Hz. Âdem Yolculuk Madalyası</strong>
+                </div>
+                <p className={styles.journeyMessage}>
+                  {practiceMode
+                    ? (
+                        <>
+                          Bilgilerini tazele; ilk final sonucun ve{" "}
+                          <br className={styles.portraitMessageBreak} />
+                          madalyan aynı kalır.
+                        </>
+                      )
+                    : "Her soruda bir değeri hatırla. Doğru sayısı madalyanın şartı değildir."}
+                </p>
+                <p className={styles.routeHeading}>Final rotası</p>
+                <ol className={styles.routeSteps} aria-hidden="true">
+                  {questions.map((question, index) => {
+                    const routeState = isFinished || index < questionIndex
+                      ? styles.routeDone
+                      : index === questionIndex
+                        ? styles.routeActive
+                        : "";
+
+                    return (
+                      <li key={question.id} className={routeState}>
+                        <i>{isFinished || index < questionIndex ? <Ikon ad="onay" boyut={14} /> : index + 1}</i>
+                        <span>{index + 1}. soru</span>
+                      </li>
+                    );
+                  })}
+                </ol>
+              </aside>
+
+              <AnimatePresence mode="wait">
+                {isFinished ? (
+                  <motion.section
+                    key="atlas-result"
+                    initial={{ opacity: 0, y: 24, scale: 0.97 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 16 }}
+                    transition={{ duration: 0.34, ease: "easeOut" }}
+                    className={`${styles.paperCard} ${styles.resultCard} ${practiceMode ? styles.resultPractice : ""}`}
+                    aria-labelledby="final-result-title"
+                  >
+                    {!practiceMode ? <Konfeti /> : null}
+                    <div className={styles.resultInner}>
+                      <motion.div
+                        initial={{ rotate: -5, scale: 0.84 }}
+                        animate={{ rotate: 0, scale: [0.84, 1.05, 1] }}
+                        transition={{ duration: 0.48, ease: "easeOut" }}
+                        className={`${styles.resultMedal} ${practiceMode ? styles.resultMedalPractice : ""}`}
+                      >
+                        <OdulIkonu
+                          tip="madalya"
+                          anahtar="adem"
+                          boyut={124}
+                          alt="Hz. Âdem Yolculuk Madalyası"
+                          className={styles.resultImage}
+                        />
+                      </motion.div>
+                      <p className={styles.resultKicker}>{completion.headline}</p>
+                      <h2 id="final-result-title" className={styles.resultTitle}>
+                        {completion.madalya}
+                      </h2>
+                      <p className={styles.resultMessage}>{completion.message}</p>
+                      <p className={styles.scoreLine}>
+                        {questions.length} sorunun {score} tanesini doğru cevapladın.
+                      </p>
+                      <p className={styles.resultNote}>
+                        {practiceMode
+                          ? "İlk final sonucun ve kazandığın madalya aynı kaldı."
+                          : "Bu madalya keşif haritanda Hz. Âdem kitabının üzerinde parlayacak."}
+                      </p>
+                      <Buton
+                        type="button"
+                        varyant="eylem"
+                        boyut="buyuk"
+                        disabled={isSaving}
+                        aria-describedby={saveError ? "final-save-error" : undefined}
+                        className={styles.resultAction}
+                        onClick={onReturn}
+                      >
+                        {isSaving
+                          ? "Kaydediliyor…"
+                          : practiceMode
+                            ? "Bölüm Rotasına Dön"
+                            : saveError
+                              ? "Tekrar Dene"
+                              : "Haritaya Dön"}
+                        {!isSaving ? <Ikon ad="ok-sag" boyut={18} /> : null}
+                      </Buton>
+                      {saveError ? (
+                        <p id="final-save-error" role="alert" className={styles.errorMessage}>
+                          {saveError}
+                        </p>
+                      ) : null}
+                    </div>
+                  </motion.section>
+                ) : (
+                  <motion.section
+                    key={`atlas-question-${activeQuestion.id}`}
+                    initial={{ opacity: 0, x: 22 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -22 }}
+                    transition={{ duration: 0.26, ease: "easeOut" }}
+                    className={styles.paperCard}
+                    aria-labelledby={`atlas-question-title-${activeQuestion.id}`}
+                  >
+                    <div className={styles.questionMeta}>
+                      <span className={styles.questionLabel}>
+                        <Ikon ad="dusunce" boyut={17} /> Hatırlama durağı
+                      </span>
+                      <span className={styles.questionCount}>Soru {questionIndex + 1} / {questions.length}</span>
+                    </div>
+                    <div
+                      className={styles.progressTrack}
+                      role="progressbar"
+                      aria-label="Final testi ilerlemesi"
+                      aria-valuemin={1}
+                      aria-valuemax={questions.length}
+                      aria-valuenow={questionIndex + 1}
+                      aria-valuetext={`${questionIndex + 1} / ${questions.length} soru`}
+                    >
+                      <motion.span
+                        initial={{ width: 0 }}
+                        animate={{ width: `${progress}%` }}
+                        transition={{ duration: 0.35 }}
+                      />
+                    </div>
+
+                    <h2
+                      id={`atlas-question-title-${activeQuestion.id}`}
+                      className={styles.questionTitle}
+                    >
+                      {activeQuestion.question}
+                    </h2>
+
+                    <div className={styles.optionList} aria-label="Cevap seçenekleri">
+                      {activeQuestion.options.map((option) => {
+                        const isSelected = selectedOption === option.id;
+                        const isCorrect = activeQuestion.correctOption === option.id;
+                        const showCorrect = isChecked && isCorrect;
+                        const showWrong = isChecked && isSelected && !isCorrect;
+
+                        return (
+                          <button
+                            key={option.id}
+                            type="button"
+                            aria-pressed={isSelected}
+                            aria-disabled={isChecked}
+                            className={[
+                              styles.optionButton,
+                              isSelected ? styles.optionSelected : "",
+                              showCorrect ? styles.optionCorrect : "",
+                              showWrong ? styles.optionNeedsReview : "",
+                            ].filter(Boolean).join(" ")}
+                            onClick={() => {
+                              if (!isChecked) onSelect(option.id);
+                            }}
+                          >
+                            <span className={styles.optionLetter}>{option.id}</span>
+                            <span className={styles.optionText}>{option.text}</span>
+                            {showCorrect ? (
+                              <span className={styles.answerMark} role="img" aria-label="Doğru cevap">
+                                <CheckIcon />
+                              </span>
+                            ) : null}
+                            {showWrong ? <span className={styles.choiceTag}>Senin seçimin</span> : null}
+                          </button>
+                        );
+                      })}
+                    </div>
+
+                    <AnimatePresence>
+                      {isChecked ? (
+                        <motion.p
+                          initial={{ opacity: 0, y: 12 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 8 }}
+                          className={`${styles.feedback} ${selectedIsCorrect ? styles.feedbackCorrect : ""}`}
+                          role="status"
+                          aria-live="polite"
+                        >
+                          <span className={styles.feedbackIcon}>
+                            <Ikon ad={selectedIsCorrect ? "onay" : "dusunce"} boyut={18} />
+                          </span>
+                          {selectedIsCorrect
+                            ? "Harika! Doğru cevabı hatırladın."
+                            : "Güzel deneme. Yeşil parlayan seçenek doğru cevaptı."}
+                        </motion.p>
+                      ) : null}
+                    </AnimatePresence>
+
+                    <div className={styles.actionBar}>
+                      {!isChecked ? (
+                        <Buton
+                          type="button"
+                          varyant="eylem"
+                          boyut="buyuk"
+                          disabled={!selectedOption}
+                          className={styles.primaryButton}
+                          onClick={onCheck}
+                        >
+                          Cevabı Kontrol Et <Ikon ad="onay" boyut={18} />
+                        </Buton>
+                      ) : (
+                        <Buton
+                          type="button"
+                          varyant={questionIndex === questions.length - 1 ? "altin" : "eylem"}
+                          boyut="buyuk"
+                          className={styles.primaryButton}
+                          onClick={onNext}
+                        >
+                          {questionIndex === questions.length - 1 ? "Sonucu Gör" : "Sonraki Soru"}
+                          <Ikon ad="ok-sag" boyut={18} />
+                        </Buton>
+                      )}
+                    </div>
+                  </motion.section>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <p className={styles.srOnly} aria-live="polite">
+        {isFinished
+          ? completion.headline
+          : `Soru ${questionIndex + 1} / ${questions.length}: ${activeQuestion.question}`}
+      </p>
+    </main>
+  );
+}
+
 export default function QuizPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const params = useParams<{ bookId: string }>();
   const bookId = params.bookId as keyof typeof quizConfig;
+  const isAdemAtlas = bookId === "adem";
   const activeQuiz = quizConfig[bookId] ?? quizConfig.ebubekir;
   const questions = activeQuiz.questions;
   const practiceRequested = searchParams.get("mode") === "practice";
@@ -659,12 +1017,51 @@ export default function QuizPage() {
   }
 
   if (savedCompletionState === "loading") {
+    if (isAdemAtlas) {
+      return (
+        <main className={`tema-cocuk ${styles.page} ${styles.loadingPage}`}>
+          <div className={styles.atlasBackdrop} aria-hidden="true">
+            <div className={styles.stars} />
+          </div>
+          <div className={styles.loadingCard} role="status">
+            <span className={styles.loadingIcon}><Ikon ad="fener" boyut={28} /></span>
+            <p>Final yolculuğu hazırlanıyor…</p>
+          </div>
+        </main>
+      );
+    }
+
     return (
       <main className="grid min-h-screen place-items-center bg-slate-950 px-5 text-white">
         <p className="text-center text-lg font-bold text-amber-100" role="status">
           Final yolculuğu hazırlanıyor…
         </p>
       </main>
+    );
+  }
+
+  if (isAdemAtlas) {
+    return (
+      <AtlasAdemQuiz
+        activeQuestion={activeQuestion}
+        completion={completion}
+        isChecked={isChecked}
+        isFinished={isFinished}
+        isSaving={isSaving}
+        onBack={() => router.push(`/kitap/${activeQuiz.storagePrefix}`)}
+        onCheck={checkAnswer}
+        onNext={goNext}
+        onReturn={returnToMap}
+        onSelect={setSelectedOption}
+        practiceMode={practiceMode}
+        progress={progress}
+        questionIndex={questionIndex}
+        questions={questions}
+        saveError={saveError}
+        score={score}
+        selectedIsCorrect={selectedIsCorrect}
+        selectedOption={selectedOption}
+      />
     );
   }
 
