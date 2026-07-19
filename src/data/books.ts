@@ -2,12 +2,21 @@ export type BookContentBlock =
   | {
       type: "text";
       text: string;
+      /** Metnin içeriğini değiştirmeden editoryal olarak vurgulanacak kısa ifadeler. */
+      emphasis?: string[];
+      /** Paragrafı sakin altın çizgili anahtar cümle kutusuna dönüştürür. */
+      keySentence?: boolean;
+      /** Yalnız hikâyenin gerçek açılış paragrafındaki başlangıç harfi. */
+      dropCap?: boolean;
     }
   | {
       type: "image";
       src: string;
+      /** Tablet dikey ve mobil için aynı sahnenin 3:4 uyarlaması. */
+      portraitSrc?: string;
       alt: string;
       caption?: string;
+      discovery?: BookDiscovery;
     }
   | {
       type: "interactive_word";
@@ -26,6 +35,32 @@ export type BookContentBlock =
       body: string;
       isFictional: boolean;
     };
+
+export type BookDiscoveryPoint = {
+  id: string;
+  /** Görselin solundan yüzde konum. */
+  x: number;
+  /** Görselin üstünden yüzde konum. */
+  y: number;
+  title: string;
+  description: string;
+};
+
+export type BookDiscovery = {
+  prompt: string;
+  completionText: string;
+  points: BookDiscoveryPoint[];
+};
+
+export type BookIllustration = {
+  src: string;
+  /** Tablet dikey ve mobil için aynı sahnenin 3:4 uyarlaması. */
+  portraitSrc?: string;
+  alt: string;
+  caption?: string;
+  /** İsteğe bağlı, puansız ve ilerleme şartı olmayan görsel keşif noktaları. */
+  discovery?: BookDiscovery;
+};
 
 export type BookQuestionOption = {
   id: "a" | "b" | "c";
@@ -76,6 +111,10 @@ export type BookChapter = {
   ozet?: string;
   audioUrl: string;
   badgeName: string;
+  /** Bölüm açılışındaki tek güçlü kapak sahnesi; her bölümde zorunlu değildir. */
+  coverIllustration?: BookIllustration;
+  /** `sparse`: yalnız içerikte açıkça tanımlanan güçlü sahneler gösterilir. */
+  illustrationMode?: "sparse";
   /** YENİ akışta "Hikâye — 1. Kısım"; eski akışta bölümün tüm metni */
   paragraphs: BookContentBlock[];
   /**
@@ -234,18 +273,56 @@ export const books: BookDefinition[] = [
         ozet: "Yeryüzü, Allah'ın kendisine sorumluluk vereceği ilk insanla tanışmaya hazırlanır.",
         audioUrl: "/sesli-anlatim/hz-adem/hz-adem-sesli-anlatim.mp3",
         badgeName: "İlk Adım Rozeti",
+        coverIllustration: {
+          src: "/icerik/adem-bolum-1-acilis.png",
+          alt: "Dağlar, nehir ve yıldızlı gökyüzüyle insanı bekleyen yeryüzü",
+          discovery: {
+            prompt: "Görseldeki 3 keşif izine dokun",
+            completionText: "Yeryüzü bütün güzellikleriyle önemli bir misafiri bekliyordu.",
+            points: [
+              {
+                id: "yildizlar",
+                x: 72,
+                y: 18,
+                title: "Yıldızlar",
+                description: "Yıldızlar parlıyordu; fakat onları merakla izleyecek insan henüz yoktu.",
+              },
+              {
+                id: "nehir",
+                x: 63,
+                y: 61,
+                title: "Nehir",
+                description: "Nehir akıyordu; fakat suyunu inceleyecek ve koruyacak insan henüz yoktu.",
+              },
+              {
+                id: "toprak",
+                x: 31,
+                y: 82,
+                title: "Toprak",
+                description: "Toprak yağmurla ıslanıyor, yeni bir yaratılışa hazırlanıyordu.",
+              },
+            ],
+          },
+        },
+        illustrationMode: "sparse",
         paragraphs: [
-          { type: "text", text: "Çok eski zamanlarda yeryüzünde henüz hiçbir insan yaşamıyordu. Dağlar göğe uzanıyor, nehirler vadilerden geçiyor, rüzgâr toprağın üzerinde dolaşıyordu. Geceleri yıldızlar parlıyor, sabahları ışık yeniden yayılıyordu. Yeryüzü, sanki önemli bir misafiri bekliyordu." },
-          { type: "text", text: "Henüz bir çocuğun neşeli sesi vadilerde yankılanmamıştı. Hiçbir el toprağa bir tohum bırakmamış, hiçbir göz gökyüzüne merakla bakmamıştı. Yağmur yine yağıyor, bulutların gölgeleri ovalarda ilerliyordu. Fakat bütün bu güzellikleri görüp anlamlandıracak insan henüz yaratılmamıştı." },
-          { type: "text", text: "Bir kayanın yanında duran su damlası ile uzaktaki bir yıldız birbirinden çok farklıydı. İnsan, ikisini de fark edebilecek ve onlar hakkında düşünebilecekti. Gördüklerine isim verecek, öğrendiklerini hatırlayacak ve yeni bilgiler arayacaktı. Yeryüzü böyle bir misafiri ilk kez ağırlayacaktı." },
-          { type: "text", text: "Bir gün Yüce Allah, meleklere yeryüzünde sorumluluk taşıyacak bir insan yaratacağını bildirdi. Bu insan, kendisine verilen aklı ve imkânları güzel işler için kullanacaktı. Yeryüzünü koruyacak, doğruyla yanlışı seçebilecek ve yaptığı seçimlerden sorumlu olacaktı." },
+          { type: "text", text: "Çok eski zamanlarda yeryüzünde henüz hiçbir insan yaşamıyordu. Dağlar göğe uzanıyor, nehirler vadilerden geçiyor, rüzgâr toprağın üzerinde dolaşıyordu. Geceleri yıldızlar parlıyor, sabahları ışık yeniden yayılıyordu. Yeryüzü, sanki önemli bir misafiri bekliyordu.", emphasis: ["önemli bir misafiri bekliyordu"], dropCap: true },
+          { type: "text", text: "Henüz bir çocuğun neşeli sesi vadilerde yankılanmamıştı. Hiçbir el toprağa bir tohum bırakmamış, hiçbir göz gökyüzüne merakla bakmamıştı. Yağmur yine yağıyor, bulutların gölgeleri ovalarda ilerliyordu. Fakat bütün bu güzellikleri görüp anlamlandıracak insan henüz yaratılmamıştı.", emphasis: ["görüp anlamlandıracak insan"] },
+          { type: "text", text: "Bir kayanın yanında duran su damlası ile uzaktaki bir yıldız birbirinden çok farklıydı. İnsan, ikisini de fark edebilecek ve onlar hakkında düşünebilecekti. Gördüklerine isim verecek, öğrendiklerini hatırlayacak ve yeni bilgiler arayacaktı. Yeryüzü böyle bir misafiri ilk kez ağırlayacaktı.", emphasis: ["isim verecek", "yeni bilgiler arayacaktı"] },
+          { type: "text", text: "Bir gün Yüce Allah, meleklere yeryüzünde sorumluluk taşıyacak bir insan yaratacağını bildirdi. Bu insan, kendisine verilen aklı ve imkânları güzel işler için kullanacaktı. Yeryüzünü koruyacak, doğruyla yanlışı seçebilecek ve yaptığı seçimlerden sorumlu olacaktı.", emphasis: ["sorumluluk taşıyacak", "seçimlerinden sorumlu"] },
           { type: "text", text: "Melekler, insanın kötülük yapabilen ve kan dökebilen bir varlık olacağını anladılar. Bunun hikmetini öğrenmek istediler:" },
           { type: "text", text: "— Yeryüzünde bozgunculuk çıkarabilecek birini mi yaratacaksın?" },
           { type: "text", text: "Yüce Allah onlara şöyle karşılık verdi:" },
           { type: "text", text: "— Ben sizin bilmediklerinizi bilirim." },
-          { type: "text", text: "Bu cevap, insanın yalnızca yapabileceği kötülüklerle değerlendirilemeyeceğini gösteriyordu. İnsan öğrenebilecek, iyilik yapabilecek, hatasını anlayabilecek ve yeniden doğruya yönelebilecekti." },
+          { type: "text", text: "Bu cevap, insanın yalnızca yapabileceği kötülüklerle değerlendirilemeyeceğini gösteriyordu. İnsan öğrenebilecek, iyilik yapabilecek, hatasını anlayabilecek ve yeniden doğruya yönelebilecekti.", emphasis: ["öğrenebilecek", "yeniden doğruya yönelebilecekti"] },
           { type: "text", text: "İnsan güçlü olabilirdi; fakat gücünü korumak için kullanması gerekecekti. Konuşabilirdi; fakat sözlerini doğru ve güzel seçmeliydi. Toprağın ürünlerinden yararlanabilir, suyla hayatını sürdürebilirdi. Fakat bunları yalnız kendisinin malı sanmamalıydı." },
-          { type: "text", text: "Sorumluluk işte bu seçimlerin içinde saklıydı. Aynı el bir fidan dikebilir veya bir dalı gereksiz yere kırabilirdi. Aynı dil bir kalbi sevindirebilir veya incitebilirdi. İnsana yalnızca imkân değil, doğru olanı seçme görevi de verilecekti." },
+          { type: "text", text: "Sorumluluk işte bu seçimlerin içinde saklıydı. Aynı el bir fidan dikebilir veya bir dalı gereksiz yere kırabilirdi. Aynı dil bir kalbi sevindirebilir veya incitebilirdi. İnsana yalnızca imkân değil, doğru olanı seçme görevi de verilecekti.", emphasis: ["doğru olanı seçme görevi"] },
+          {
+            type: "image",
+            src: "/icerik/adem-bolum-1-secim-sorumluluk-yatay.png",
+            portraitSrc: "/icerik/adem-bolum-1-secim-sorumluluk-dikey.png",
+            alt: "İki doğal yola ayrılan vadide, su ve taşların arasında büyüyen genç bir fidan",
+          },
           {
             type: "interactive_word",
             before: "Yeryüzü insana verilmiş büyük bir ",
@@ -253,15 +330,27 @@ export const books: BookDefinition[] = [
             meaning: "Korumamız ve özen göstermemiz için bize güvenilerek verilen şeydir.",
             after: "ti; insan onu dilediği gibi değil, sorumlulukla kullanacaktı.",
           },
-          { type: "text", text: "Toprak sıradan görünebilirdi. Üzerine basılır, avuçta dağılır, yağmurla çamura dönüşürdü. Fakat Allah, ilk insan Hz. Âdem'i (a.s.) topraktan yarattı. Toprağa şekil verdi ve ona ruh verdi. Böylece yeryüzünün beklediği ilk insan yaratılmış oldu." },
+          { type: "text", text: "Toprak sıradan görünebilirdi. Üzerine basılır, avuçta dağılır, yağmurla çamura dönüşürdü. Fakat Allah, ilk insan Hz. Âdem'i (a.s.) topraktan yarattı. Toprağa şekil verdi ve ona ruh verdi. Böylece yeryüzünün beklediği ilk insan yaratılmış oldu.", emphasis: ["topraktan yarattı"] },
           { type: "text", text: "Kur'an, Hz. Âdem'in yaratılışını anlatırken toprağın farklı hâllerinden söz eder. Toprak suyla birleşir, çamura dönüşür ve Allah'ın dilemesiyle yepyeni bir yaratılışa hazırlanır. Bu aşamaların ne kadar sürdüğünü bilmiyoruz. Bildiğimiz, insanın Allah'ın kudretiyle ve özel bir yaratılışla var olduğudur." },
-          { type: "text", text: "Hz. Âdem'e hayat verildiğinde önünde öğrenilecek büyük bir âlem vardı. Toprak ayaklarının altında, gökyüzü üzerinde uzanıyordu. İnsan artık görecek, işitecek, düşünecek ve seçim yapacaktı. Bu yeteneklerin her biri aynı zamanda bir sorumluluk taşıyordu." },
-          { type: "text", text: "Hz. Âdem'in yaratılması, toprağın değersiz olmadığını da hatırlatıyordu. Bir tohum toprağa düşünce nasıl filizlenirse, insan da kendisine verilen yetenekleri kullanınca güzellikler ortaya çıkarabilirdi." },
-          { type: "text", text: "Fakat önemli bir görev verilmek, her şeyi önceden bilmek demek değildi. Hz. Âdem'in öğreneceği çok şey vardı. Melekler de Allah'ın insan için hazırladığı armağanın ne olduğunu henüz bilmiyordu." },
+          {
+            type: "image",
+            src: "/icerik/adem-bolum-1-toprak-isik-yatay.png",
+            portraitSrc: "/icerik/adem-bolum-1-toprak-isik-dikey.png",
+            alt: "Yağmurla ıslanmış toprak, doğal çamur katmanları, küçük bir filiz ve sabah ışığı",
+          },
+          { type: "text", text: "Hz. Âdem'e hayat verildiğinde önünde öğrenilecek büyük bir âlem vardı. Toprak ayaklarının altında, gökyüzü üzerinde uzanıyordu. İnsan artık görecek, işitecek, düşünecek ve seçim yapacaktı. Bu yeteneklerin her biri aynı zamanda bir sorumluluk taşıyordu.", emphasis: ["görecek, işitecek, düşünecek ve seçim yapacaktı"] },
+          { type: "text", text: "Hz. Âdem'in yaratılması, toprağın değersiz olmadığını da hatırlatıyordu. Bir tohum toprağa düşünce nasıl filizlenirse, insan da kendisine verilen yetenekleri kullanınca güzellikler ortaya çıkarabilirdi.", keySentence: true },
+          { type: "text", text: "Fakat önemli bir görev verilmek, her şeyi önceden bilmek demek değildi. Hz. Âdem'in öğreneceği çok şey vardı. Melekler de Allah'ın insan için hazırladığı armağanın ne olduğunu henüz bilmiyordu.", emphasis: ["öğreneceği çok şey vardı"] },
+          {
+            type: "image",
+            src: "/icerik/adem-bolum-1-ogrenme-alemi-yatay.png",
+            portraitSrc: "/icerik/adem-bolum-1-ogrenme-alemi-dikey.png",
+            alt: "Yıldızların yansıdığı sığ suyun yanında farklı taşlar, yaprak, tohum ve küçük bir filiz",
+          },
         ],
         continuationParagraphs: [
-          { type: "text", text: "Yüce Allah, Hz. Âdem'i bilgisiz ve yardımsız bırakmadı. Ona öğrenme yeteneği verdi. İnsanın yolculuğu, her şeyi bildiğini düşünerek değil, kendisine öğretilenleri dikkatle öğrenerek başlayacaktı." },
-          { type: "text", text: "Bu nedenle ilk insanın en büyük armağanlarından biri güç değil, bilgiydi. Hz. Âdem çevresindeki varlıkları tanıyacak, onların isimlerini öğrenecek ve öğrendiklerini kullanabilecekti." },
+          { type: "text", text: "Yüce Allah, Hz. Âdem'i bilgisiz ve yardımsız bırakmadı. Ona öğrenme yeteneği verdi. İnsanın yolculuğu, her şeyi bildiğini düşünerek değil, kendisine öğretilenleri dikkatle öğrenerek başlayacaktı.", emphasis: ["öğrenme yeteneği verdi"] },
+          { type: "text", text: "Bu nedenle ilk insanın en büyük armağanlarından biri güç değil, bilgiydi. Hz. Âdem çevresindeki varlıkları tanıyacak, onların isimlerini öğrenecek ve öğrendiklerini kullanabilecekti.", keySentence: true },
           { type: "text", text: "Yeryüzünün beklediği misafir artık gelmişti. Fakat bu misafirin neden bu kadar değerli olduğu, bir sonraki olayda daha açık görülecekti." },
         ],
         has_question: true,

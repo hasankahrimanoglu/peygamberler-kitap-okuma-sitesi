@@ -13,7 +13,7 @@
   --night-line: color-mix(in srgb, var(--murekkep) 16%, transparent);
   --reader-shadow: rgb(0 0 0 / 34%);
   --story-size: 19px;
-  --story-leading: 1.72;
+  --story-leading: 1.64;
   position: relative;
   height: 100svh;
   min-height: 560px;
@@ -41,17 +41,17 @@
 
 .yaziKucuk {
   --story-size: 17px;
-  --story-leading: 1.72;
+  --story-leading: 1.68;
 }
 
 .yaziNormal {
   --story-size: 19px;
-  --story-leading: 1.72;
+  --story-leading: 1.64;
 }
 
 .yaziBuyuk {
   --story-size: 22px;
-  --story-leading: 1.68;
+  --story-leading: 1.6;
 }
 
 .atlasBackdrop {
@@ -531,6 +531,7 @@
 }
 
 .storyLayout,
+.storyTextOnly,
 .coverLayout {
   display: flex;
   width: 100%;
@@ -538,6 +539,53 @@
   min-width: 0;
   min-height: 0;
   flex-direction: column;
+}
+
+.storyVisual {
+  position: relative;
+  display: grid;
+  flex: 0 0 210px;
+  min-width: 0;
+  min-height: 0;
+  place-items: stretch;
+  overflow: hidden;
+  padding: 0;
+  background:
+    radial-gradient(circle at 50% 45%, var(--reader-gold-soft), transparent 38%),
+    linear-gradient(145deg, var(--reader-night), var(--reader-forest));
+}
+
+.storyVisual picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+.storyImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  min-height: 0;
+  object-fit: cover;
+}
+
+.storyVisual figcaption {
+  position: absolute;
+  right: 20px;
+  bottom: 18px;
+  left: 20px;
+  padding: 8px 11px;
+  border-radius: 11px;
+  color: var(--murekkep);
+  background: color-mix(in srgb, var(--reader-night) 78%, transparent);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.4;
+  text-align: center;
+  backdrop-filter: blur(8px);
 }
 
 .natureScene {
@@ -742,10 +790,27 @@
   pointer-events: none;
 }
 
+.textPageFull {
+  padding-inline: clamp(22px, 6vw, 86px);
+}
+
+.readingGroup {
+  display: grid;
+  width: min(100%, 55ch);
+  height: 100%;
+  min-height: 0;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 0;
+  margin: 0 auto;
+}
+
+.textPageFull .readingGroup {
+  width: min(100%, 64ch);
+}
+
 .textHeading {
-  width: min(100%, 65ch);
-  margin: 0 auto 17px;
-  padding-bottom: 13px;
+  width: 100%;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--reader-line);
 }
 
@@ -758,33 +823,53 @@
 }
 
 .textHeading h1 {
-  margin-top: 2px;
-  font-size: clamp(27px, 3vw, 38px);
+  font-size: clamp(29px, 3vw, 38px);
   line-height: 1.04;
   letter-spacing: -0.02em;
 }
 
 .textHeading > span {
   display: block;
-  margin-top: 3px;
+  margin-top: 5px;
   color: var(--reader-muted);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 800;
 }
 
 .prose {
   display: grid;
-  width: min(100%, 65ch);
-  gap: 15px;
-  margin: auto;
+  width: 100%;
+  align-self: start;
+  gap: 18px;
+  margin-block: auto;
+  padding-block: clamp(18px, 3vh, 30px);
 }
 
 .storyParagraph {
-  font-family: var(--font-lora), Georgia, serif;
+  font-family: var(--font-literata), Georgia, serif;
   font-size: var(--story-size);
   font-weight: 500;
   line-height: var(--story-leading);
   text-wrap: pretty;
+}
+
+.keySentence {
+  padding: 14px 17px;
+  border: 1px solid color-mix(in srgb, var(--reader-gold) 30%, var(--reader-line));
+  border-left: 4px solid color-mix(in srgb, var(--reader-gold) 76%, var(--reader-forest));
+  border-radius: 0 14px 14px 0;
+  background: color-mix(in srgb, var(--reader-gold) 7%, transparent);
+  font-weight: 610;
+}
+
+.dropCap::first-letter {
+  float: left;
+  margin: 0.06em 0.12em 0 0;
+  color: color-mix(in srgb, var(--reader-forest) 74%, var(--reader-ink));
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 3.05em;
+  font-weight: 700;
+  line-height: 0.78;
 }
 
 .dialogue {
@@ -793,9 +878,47 @@
   font-style: italic;
 }
 
+.textPageFull[data-story-kind="diyalog"] .dialogue {
+  padding: 12px 16px;
+  border: 1px solid color-mix(in srgb, var(--reader-gold) 31%, var(--reader-line));
+  border-left: 4px solid color-mix(in srgb, var(--reader-gold) 72%, var(--reader-forest));
+  border-radius: 13px;
+  background: color-mix(in srgb, var(--reader-gold) 8%, transparent);
+}
+
+.textPageFull[data-story-kind="gecis"] .readingGroup {
+  width: min(100%, 58ch);
+}
+
+.textPageFull[data-story-kind="gecis"] .storyParagraph {
+  font-size: calc(var(--story-size) + 2px);
+}
+
 .wordBlock {
   display: grid;
   gap: 10px;
+}
+
+.textPageFull[data-story-kind="kelime"] .wordBlock {
+  padding: 15px 17px;
+  border: 1px solid color-mix(in srgb, var(--eylem) 25%, var(--reader-line));
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--eylem) 7%, transparent);
+}
+
+.wordLabel {
+  display: none;
+  align-items: center;
+  gap: 7px;
+  color: color-mix(in srgb, var(--reader-forest) 78%, var(--reader-ink));
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.textPageFull[data-story-kind="kelime"] .wordLabel {
+  display: flex;
 }
 
 .glossaryWord {
@@ -894,6 +1017,189 @@
   object-fit: contain;
   box-shadow: 0 18px 34px var(--reader-shadow);
   transform: rotate(-1deg);
+}
+
+.coverSceneImage {
+  width: min(92%, 620px);
+  max-width: min(92%, 620px);
+  height: min(92%, 480px);
+  max-height: 92%;
+  border-radius: 18px;
+  object-fit: cover;
+  transform: none;
+}
+
+.coverVisualInteractive,
+.storyVisualInteractive {
+  padding: 14px;
+}
+
+.discoveryExperience {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: min(100%, 620px);
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 9px;
+}
+
+.discoveryCanvas {
+  position: relative;
+  width: auto;
+  height: min(calc(100% - 108px), 465px);
+  min-height: 180px;
+  max-width: 100%;
+  aspect-ratio: 4 / 3;
+  flex: 1 1 auto;
+  overflow: hidden;
+  border: 2px solid color-mix(in srgb, var(--reader-gold) 55%, transparent);
+  border-radius: 18px;
+  background: var(--reader-night);
+  box-shadow: 0 18px 34px var(--reader-shadow);
+}
+
+.discoveryImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.discoveryCounter {
+  position: absolute;
+  z-index: 4;
+  top: 10px;
+  left: 10px;
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border: 1px solid color-mix(in srgb, var(--reader-gold) 55%, transparent);
+  border-radius: 999px;
+  color: var(--murekkep);
+  background: color-mix(in srgb, var(--reader-night) 76%, transparent);
+  font-size: 13px;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  backdrop-filter: blur(8px);
+}
+
+.discoveryPoint {
+  position: absolute;
+  z-index: 5;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  padding: 0;
+  border: 2px solid var(--reader-paper);
+  border-radius: 50%;
+  color: var(--reader-ink);
+  background: var(--reader-gold);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--reader-gold) 25%, transparent), 0 8px 20px var(--reader-shadow);
+  cursor: pointer;
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 900;
+  transform: translate(-50%, -50%);
+  transition: transform 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+}
+
+.discoveryPoint::before {
+  position: absolute;
+  z-index: -1;
+  width: 58px;
+  height: 58px;
+  border: 2px solid color-mix(in srgb, var(--reader-gold) 72%, transparent);
+  border-radius: 50%;
+  content: "";
+  animation: discoveryPulse 1.8s ease-out infinite;
+}
+
+.discoveryPoint:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.discoveryPointDone {
+  color: var(--eylem-metin);
+  background: var(--eylem);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--eylem) 24%, transparent), 0 8px 20px var(--reader-shadow);
+}
+
+.discoveryPointDone::before {
+  display: none;
+}
+
+.discoveryFeedback {
+  display: grid;
+  width: 100%;
+  min-height: 96px;
+  max-height: 132px;
+  grid-template-columns: 40px minmax(0, 1fr);
+  flex: 0 0 auto;
+  gap: 10px;
+  padding: 10px 12px;
+  overflow-y: auto;
+  border: 1px solid color-mix(in srgb, var(--reader-gold) 38%, var(--reader-line));
+  border-radius: 15px;
+  color: var(--reader-ink);
+  background: color-mix(in srgb, var(--reader-paper) 96%, transparent);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--reader-shadow) 62%, transparent);
+}
+
+.discoveryFeedbackIcon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--reader-forest);
+  background: color-mix(in srgb, var(--eylem) 13%, var(--reader-paper));
+}
+
+.discoveryFeedback > div {
+  min-width: 0;
+}
+
+.discoveryFeedback small {
+  display: block;
+  color: var(--reader-muted);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.discoveryFeedback strong {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 17px;
+}
+
+.discoveryFeedback p {
+  margin-top: 2px !important;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.discoveryCompletion {
+  margin-top: 7px !important;
+  padding-top: 7px;
+  border-top: 1px solid var(--reader-line);
+  color: var(--reader-forest);
+  font-weight: 850 !important;
+}
+
+.discoveryCaption {
+  color: var(--reader-muted);
+  font-style: italic;
 }
 
 .coverCopy {
@@ -1120,7 +1426,7 @@
   padding: 14px 16px;
   border: 1px solid var(--reader-line);
   border-radius: 16px;
-  text-align: left;
+  text-align: center;
   background: var(--reader-paper-raised);
 }
 
@@ -1135,6 +1441,7 @@
 .chosenAnswer > p {
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   gap: 11px;
   margin-top: 5px !important;
 }
@@ -1300,6 +1607,11 @@
   font-size: 16px;
   font-weight: 700;
   line-height: 1.5;
+}
+
+.rewardIntro > span {
+  display: block;
+  margin-top: 4px;
 }
 
 .rewardBadge {
@@ -1715,6 +2027,11 @@
   outline-offset: 3px;
 }
 
+.discoveryPoint:focus-visible {
+  outline: 3px solid var(--murekkep);
+  outline-offset: 4px;
+}
+
 .srOnly {
   position: absolute;
   width: 1px;
@@ -1747,7 +2064,31 @@
   }
 }
 
+@keyframes discoveryPulse {
+  0% {
+    opacity: 0.88;
+    transform: scale(0.78);
+  }
+  75%,
+  100% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+}
+
 @media (min-width: 880px) and (min-height: 650px) {
+  .yaziKucuk {
+    --story-size: 20px;
+  }
+
+  .yaziNormal {
+    --story-size: 22px;
+  }
+
+  .yaziBuyuk {
+    --story-size: 24px;
+  }
+
   .storyLayout {
     display: grid;
     grid-template-columns: minmax(0, 1.48fr) minmax(285px, 1fr);
@@ -1758,10 +2099,18 @@
     grid-area: text;
   }
 
-  .natureScene {
+  .natureScene,
+  .storyVisual {
     grid-area: scene;
     height: 100%;
     min-height: 0;
+  }
+
+  .storyImage {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    aspect-ratio: auto;
   }
 
   .sceneCaption p {
@@ -1784,8 +2133,7 @@
     grid-area: copy;
   }
 
-  .bookSurface[data-page-type="okuma"]::before,
-  .bookSurface[data-page-type="kapak"]::before {
+  .bookSurface[data-page-layout="split"]::before {
     position: absolute;
     z-index: 9;
     top: 0;
@@ -1832,12 +2180,16 @@
 }
 
 @media (min-width: 1200px) {
+  .yaziKucuk {
+    --story-size: 21px;
+  }
+
   .yaziNormal {
-    --story-size: 20px;
+    --story-size: 23px;
   }
 
   .yaziBuyuk {
-    --story-size: 23px;
+    --story-size: 25px;
   }
 }
 
@@ -1929,8 +2281,16 @@
     flex-basis: clamp(185px, 25vh, 230px);
   }
 
+  .storyVisual {
+    flex-basis: clamp(195px, 28vh, 250px);
+  }
+
   .coverVisual {
     flex-basis: clamp(220px, 32vh, 310px);
+  }
+
+  .coverVisualInteractive {
+    flex-basis: clamp(370px, 44vh, 430px);
   }
 
   .coverCopy {
@@ -1941,6 +2301,84 @@
   .badgePreview {
     justify-content: center;
     text-align: left;
+  }
+}
+
+@media (min-width: 621px) and (max-width: 879px) {
+  .yaziKucuk {
+    --story-size: 19px;
+  }
+
+  .yaziNormal {
+    --story-size: 21px;
+  }
+
+  .yaziBuyuk {
+    --story-size: 23px;
+  }
+
+  .storyVisual {
+    flex-basis: clamp(230px, 28vh, 280px);
+  }
+}
+
+@media (max-width: 879px) {
+  .coverVisual.coverVisualInteractive {
+    padding: 0;
+  }
+
+  .coverVisualInteractive .discoveryExperience {
+    width: 100%;
+    max-width: none;
+    justify-content: stretch;
+    gap: 0;
+  }
+
+  .coverVisualInteractive .discoveryCanvas {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-width: none;
+    flex: 1 1 0;
+    border-width: 0;
+    border-radius: 0;
+    aspect-ratio: auto;
+    box-shadow: none;
+  }
+
+  .coverVisualInteractive .discoveryFeedback {
+    width: calc(100% - 24px);
+    margin: 10px 12px 12px;
+  }
+
+  .decisionView .pageEyebrow,
+  .compareView > .pageEyebrow,
+  .rewardView > .pageEyebrow {
+    font-size: 13px;
+  }
+
+  .decisionView .focusIntro h1 {
+    max-width: 19ch;
+    font-size: 32px;
+    line-height: 1.12;
+  }
+
+  .compareView > h1 {
+    font-size: 36px;
+  }
+
+  .rewardView h1 {
+    font-size: 40px;
+  }
+
+  .decisionView .focusIntro > p:last-child,
+  .compareView .focusDescription,
+  .rewardIntro {
+    font-size: 17px;
+  }
+
+  .compareView {
+    justify-content: safe center;
   }
 }
 
@@ -1992,11 +2430,11 @@
   }
 
   .yaziNormal {
-    --story-size: 18px;
+    --story-size: 19px;
   }
 
   .yaziBuyuk {
-    --story-size: 20px;
+    --story-size: 22px;
   }
 
   .readerShell {
@@ -2140,22 +2578,13 @@
 
   .textPage {
     padding: 18px 17px 24px;
-    -webkit-mask-image: linear-gradient(
-      to bottom,
-      black 0,
-      black calc(100% - 16px),
-      transparent 100%
-    );
-    mask-image: linear-gradient(
-      to bottom,
-      black 0,
-      black calc(100% - 16px),
-      transparent 100%
-    );
+  }
+
+  .storyVisual {
+    flex-basis: 170px;
   }
 
   .textHeading {
-    margin-bottom: 13px;
     padding-bottom: 10px;
   }
 
@@ -2164,12 +2593,12 @@
   }
 
   .textHeading > span {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .prose {
     gap: 13px;
-    margin-block: 0 auto;
+    padding-block: 12px;
   }
 
   .wordMeaning p {
@@ -2180,6 +2609,25 @@
     flex-basis: 198px;
     min-height: 198px;
     padding: 17px;
+  }
+
+  .coverVisual.coverVisualInteractive {
+    flex-basis: 370px;
+    min-height: 370px;
+    padding: 0;
+  }
+
+  .discoveryFeedback {
+    min-height: 102px;
+    max-height: 140px;
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 8px;
+    padding: 9px 10px;
+  }
+
+  .discoveryFeedbackIcon {
+    width: 36px;
+    height: 36px;
   }
 
   .coverImage {
@@ -2253,8 +2701,16 @@
   }
 
   .decisionView .focusIntro h1 {
-    font-size: clamp(24px, 6.5vw, 27px);
+    font-size: 29px;
     line-height: 1.12;
+  }
+
+  .compareView > h1 {
+    font-size: 32px;
+  }
+
+  .rewardView h1 {
+    font-size: 34px;
   }
 
   .focusIntro > p:last-child,

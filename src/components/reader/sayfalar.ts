@@ -1,10 +1,12 @@
-import type { BookContentBlock } from "../../data/books";
+import type { BookContentBlock, BookDiscovery } from "../../data/books";
 import type { ChapterData, ReadingSection } from "../../data/demoChapters";
 
 export type OkumaGorseli = {
   src: string;
+  portraitSrc?: string;
   alt: string;
   caption?: string;
+  discovery?: BookDiscovery;
 };
 
 export type OkumaSayfaModeli =
@@ -36,7 +38,7 @@ export type OkumaSayfaModeli =
  * Mockuptaki "başlık + 2-4 kısa paragraf" yoğunluğunu hedefler;
  * taşma durumunda metin sütunu kendi içinde kaydırılabilir kalır.
  */
-const SAYFA_BUTCESI = 620;
+const SAYFA_BUTCESI = 420;
 
 function blokUzunlugu(block: BookContentBlock): number {
   if (block.type === "text") return block.text.length;
@@ -78,7 +80,28 @@ function bloklariGrupla(
       // Görsel, kendisinden önce gelen metnin sayfasına eşlik eder;
       // sayfada zaten görsel varsa yeni sayfa açılır.
       if (gorsel) sayfayiKapat();
-      gorsel = { src: block.src, alt: block.alt, caption: block.caption };
+
+      // Dikey ekranlarda görsel alanı metin yüksekliğini azalttığı için görselli
+      // sayfaya yalnızca sahnenin hemen öncesindeki içerik bloğunu bağla.
+      if (bekleyen.length > 1) {
+        const gorseleEsLikEdecekBlok = bekleyen[bekleyen.length - 1];
+        bekleyen = bekleyen.slice(0, -1);
+        uzunluk -= blokUzunlugu(gorseleEsLikEdecekBlok);
+        sayfayiKapat();
+        bekleyen = [gorseleEsLikEdecekBlok];
+        uzunluk = blokUzunlugu(gorseleEsLikEdecekBlok);
+      }
+
+      gorsel = {
+        src: block.src,
+        portraitSrc: block.portraitSrc,
+        alt: block.alt,
+        caption: block.caption,
+        discovery: block.discovery,
+      };
+      // Görsel, tanımlandığı hikâye anıyla birlikte kalır. Sonraki metinlerin
+      // aynı sayfaya sürüklenmesi sayfalama değişince sahne bağını bozmasın.
+      sayfayiKapat();
       continue;
     }
 

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
-import type { BookContentBlock } from "../../data/books";
+import type { BookContentBlock, BookDiscovery } from "../../data/books";
 import {
   sonrakiBolumAdiniBul,
   type ChapterData,
@@ -109,6 +109,90 @@ function DogaSahnesi({ chapter, devamEdiyor }: { chapter: ChapterData; devamEdiy
   );
 }
 
+function KesifliGorsel({
+  src,
+  alt,
+  caption,
+  discovery,
+  kesifAnahtari,
+  kesfedilenler,
+  acikNokta,
+  onKesfet,
+}: {
+  src: string;
+  alt: string;
+  caption?: string;
+  discovery: BookDiscovery;
+  kesifAnahtari: string;
+  kesfedilenler: string[];
+  acikNokta: string | null;
+  onKesfet: (noktaId: string, baslik: string, tamamliyor: boolean) => void;
+}) {
+  const acikKesif = discovery.points.find((point) => point.id === acikNokta);
+  const tamamlandi = kesfedilenler.length === discovery.points.length;
+
+  return (
+    <div className={styles.discoveryExperience}>
+      <div className={styles.discoveryCanvas}>
+        <YedekliGorsel
+          src={src}
+          yedekSrc="/icerik/placeholder.svg"
+          alt={alt}
+          width={800}
+          height={600}
+          className={styles.discoveryImage}
+        />
+        <span className={styles.discoveryCounter} aria-hidden="true">
+          <Ikon ad="harita" boyut={15} />
+          {kesfedilenler.length} / {discovery.points.length}
+        </span>
+        {discovery.points.map((point, index) => {
+          const kesfedildi = kesfedilenler.includes(point.id);
+          return (
+            <button
+              key={`${kesifAnahtari}-${point.id}`}
+              type="button"
+              className={`${styles.discoveryPoint} ${kesfedildi ? styles.discoveryPointDone : ""}`}
+              style={{ left: `${point.x}%`, top: `${point.y}%` }}
+              aria-label={`${point.title} keşif noktasını aç`}
+              aria-pressed={kesfedildi}
+              onClick={() =>
+                onKesfet(
+                  point.id,
+                  point.title,
+                  !kesfedildi && kesfedilenler.length + 1 === discovery.points.length,
+                )
+              }
+            >
+              {kesfedildi ? <Ikon ad="onay" boyut={18} /> : index + 1}
+            </button>
+          );
+        })}
+      </div>
+
+      <div className={styles.discoveryFeedback} aria-live="polite">
+        <span className={styles.discoveryFeedbackIcon}>
+          <Ikon ad={tamamlandi ? "onay" : acikKesif ? "fener" : "harita"} boyut={19} />
+        </span>
+        <div>
+          <small>{tamamlandi && !acikKesif ? "Tüm keşif izleri bulundu" : discovery.prompt}</small>
+          {acikKesif ? (
+            <>
+              <strong>{acikKesif.title}</strong>
+              <p>{acikKesif.description}</p>
+            </>
+          ) : tamamlandi ? (
+            <p className={styles.discoveryCompletion}>{discovery.completionText}</p>
+          ) : (
+            <p>Parlayan işaretlerden birine dokun ve sahnenin ayrıntısını keşfet.</p>
+          )}
+          {caption ? <p className={styles.discoveryCaption}>{caption}</p> : null}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function IcerikBlogu({
   block,
   kelimeId,
@@ -126,10 +210,11 @@ function IcerikBlogu({
     const acik = acikKelime === kelimeId;
     return (
       <div className={styles.wordBlock} data-glossary-root>
+        <span className={styles.wordLabel}><Ikon ad="kitap" boyut={16} />Kelime Sandığı</span>
         <p className={styles.storyParagraph}>
           {block.before}
           <button type="button" className={styles.glossaryWord} aria-expanded={acik} aria-controls={`${kelimeId}-aciklama`} onClick={() => onKelime(acik ? null : kelimeId)}>
-            {block.word}<Ikon ad="kitap" boyut={15} />
+            {block.word}
           </button>
           {block.after}
         </p>
@@ -143,7 +228,13 @@ function IcerikBlogu({
     );
   }
 
-  return <p className={`${styles.storyParagraph} ${block.text.trimStart().startsWith("—") ? styles.dialogue : ""}`}>{block.text}</p>;
+  return (
+    <p
+      className={`${styles.storyParagraph} ${block.text.trimStart().startsWith("—") ? styles.dialogue : ""} ${block.keySentence ? styles.keySentence : ""} ${block.dropCap ? styles.dropCap : ""}`}
+    >
+      {block.text}
+    </p>
+  );
 }
 
 export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
@@ -164,6 +255,11 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
   const [kayitHatasi, setKayitHatasi] = useState<string | null>(null);
   const [gorevEkleniyor, setGorevEkleniyor] = useState(false);
   const [duyuru, setDuyuru] = useState("");
+  const [kesfedilenNoktalar, setKesfedilenNoktalar] = useState<Record<string, string[]>>({});
+  const [acikKesifNoktasi, setAcikKesifNoktasi] = useState<{
+    kesifAnahtari: string;
+    noktaId: string;
+  } | null>(null);
 
   const secimAnahtari = `sen-olsaydin-${chapter.bookKey ?? "ebubekir"}-${chapter.id}`;
   const sayfalar = useMemo(
@@ -179,6 +275,9 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
   const kararSayfasinda = sayfa.type === "karar";
   const kapakSayfasinda = sayfa.type === "kapak";
   const rozetSayfasinda = sayfa.type === "rozet";
+  const bolunmusOkumaSayfasi =
+    sayfa.type === "okuma" &&
+    (Boolean(sayfa.gorsel) || chapter.illustrationMode !== "sparse");
   const sesHazir = Boolean(chapter.audioUrl);
   const sonrakiKilitli = sonSayfada || kapakSayfasinda || (kararSayfasinda && !kararOnayli);
 
@@ -286,6 +385,21 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
     setGecenSure(value);
   }
 
+  function kesifNoktasiniAc(
+    kesifAnahtari: string,
+    noktaId: string,
+    baslik: string,
+    tamamliyor: boolean,
+  ) {
+    setAcikKesifNoktasi(tamamliyor ? null : { kesifAnahtari, noktaId });
+    setKesfedilenNoktalar((mevcut) => {
+      const bulunanlar = mevcut[kesifAnahtari] ?? [];
+      if (bulunanlar.includes(noktaId)) return mevcut;
+      return { ...mevcut, [kesifAnahtari]: [...bulunanlar, noktaId] };
+    });
+    setDuyuru(tamamliyor ? "Tüm keşif izleri bulundu." : `${baslik} keşif noktası açıldı.`);
+  }
+
   async function goreviListeyeEkle() {
     const gorev = chapter.gorev;
     const profileId = window.localStorage.getItem("selected_child_profile_id");
@@ -319,11 +433,35 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
 
   function sayfayiCiz() {
     if (sayfa.type === "kapak") {
+      const kapakGorseli = chapter.coverIllustration;
+      const kapakKesifAnahtari = `${chapter.bookKey ?? "kitap"}-${chapter.id}-kapak`;
       return (
         <div className={styles.coverLayout} data-reader-scroll>
-          <div className={styles.coverVisual}>
+          <div className={`${styles.coverVisual} ${kapakGorseli?.discovery ? styles.coverVisualInteractive : ""}`}>
             <span className={styles.coverGlow} aria-hidden="true" />
-            <YedekliGorsel src={`/kapaklar/kapak-${chapter.bookKey ?? "ebubekir"}.png`} yedekSrc="/kapaklar/placeholder.svg" alt={`${chapter.bookName ?? "Kitap"} kapağı`} width={238} height={356} className={styles.coverImage} />
+            {kapakGorseli?.discovery ? (
+              <KesifliGorsel
+                src={kapakGorseli.src}
+                alt={kapakGorseli.alt}
+                caption={kapakGorseli.caption}
+                discovery={kapakGorseli.discovery}
+                kesifAnahtari={kapakKesifAnahtari}
+                kesfedilenler={kesfedilenNoktalar[kapakKesifAnahtari] ?? []}
+                acikNokta={acikKesifNoktasi?.kesifAnahtari === kapakKesifAnahtari ? acikKesifNoktasi.noktaId : null}
+                onKesfet={(noktaId, baslik, tamamliyor) =>
+                  kesifNoktasiniAc(kapakKesifAnahtari, noktaId, baslik, tamamliyor)
+                }
+              />
+            ) : (
+              <YedekliGorsel
+                src={kapakGorseli?.src ?? `/kapaklar/kapak-${chapter.bookKey ?? "ebubekir"}.png`}
+                yedekSrc={kapakGorseli ? "/icerik/placeholder.svg" : "/kapaklar/placeholder.svg"}
+                alt={kapakGorseli?.alt ?? `${chapter.bookName ?? "Kitap"} kapağı`}
+                width={kapakGorseli ? 800 : 238}
+                height={kapakGorseli ? 600 : 356}
+                className={`${styles.coverImage} ${kapakGorseli ? styles.coverSceneImage : ""}`}
+              />
+            )}
           </div>
           <section className={styles.coverCopy}>
             <p className={styles.pageEyebrow}>{chapter.chapterNumber ?? 1}. Bölüm · Yolculuk Başlıyor</p>
@@ -340,19 +478,78 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
 
     if (sayfa.type === "okuma") {
       const devamEdiyor = sayfa.key.startsWith("devam");
+      const seyrekGorselDuzeni = chapter.illustrationMode === "sparse";
+      const icerikGorseli = sayfa.gorsel;
+      const dogaSahnesiGoster = !seyrekGorselDuzeni && !icerikGorseli;
+      const gorselVar = Boolean(icerikGorseli) || dogaSahnesiGoster;
+      const metinBloklari = sayfa.bloklar.filter(
+        (block) => block.type !== "image" && block.type !== "witness",
+      );
+      const diyalogSayfasi = metinBloklari.some(
+        (block) => block.type === "text" && block.text.trimStart().startsWith("—"),
+      );
+      const kelimeSayfasi = metinBloklari.some(
+        (block) => block.type === "interactive_word",
+      );
+      const hikayeTuru = devamEdiyor
+        ? "devam"
+        : diyalogSayfasi
+          ? "diyalog"
+          : kelimeSayfasi
+            ? "kelime"
+            : metinBloklari.length === 1
+              ? "gecis"
+              : "atlas";
       return (
-        <div className={styles.storyLayout}>
-          <DogaSahnesi chapter={chapter} devamEdiyor={devamEdiyor} />
-          <section className={styles.textPage} data-reader-scroll>
-            <div className={styles.textHeading}>
-              <p className={styles.pageEyebrow}>{devamEdiyor ? "Hikâye Devam Ediyor" : "Hikâye · 1. Kısım"}</p>
-              <h1>{temizMetin(chapter.bolumAdi)}</h1>
-              <span>{chapter.chapterNumber ?? 1}. Bölüm · {chapter.bookName ?? "Kitap Yolculuğu"}</span>
-            </div>
-            <div className={styles.prose}>
-              {sayfa.bloklar.map((block, index) => (
-                <IcerikBlogu key={`${sayfa.key}-${index}`} block={block} kelimeId={`${sayfa.key}-kelime-${index}`} acikKelime={acikKelime} onKelime={setAcikKelime} />
-              ))}
+        <div className={gorselVar ? styles.storyLayout : styles.storyTextOnly}>
+          {icerikGorseli ? (
+            <figure className={`${styles.storyVisual} ${icerikGorseli.discovery ? styles.storyVisualInteractive : ""}`}>
+              {icerikGorseli.discovery ? (
+                <KesifliGorsel
+                  src={icerikGorseli.src}
+                  alt={icerikGorseli.alt}
+                  caption={icerikGorseli.caption}
+                  discovery={icerikGorseli.discovery}
+                  kesifAnahtari={sayfa.key}
+                  kesfedilenler={kesfedilenNoktalar[sayfa.key] ?? []}
+                  acikNokta={acikKesifNoktasi?.kesifAnahtari === sayfa.key ? acikKesifNoktasi.noktaId : null}
+                  onKesfet={(noktaId, baslik, tamamliyor) =>
+                    kesifNoktasiniAc(sayfa.key, noktaId, baslik, tamamliyor)
+                  }
+                />
+              ) : (
+                <>
+                  <YedekliGorsel
+                    src={icerikGorseli.src}
+                    portraitSrc={icerikGorseli.portraitSrc}
+                    yedekSrc="/icerik/placeholder.svg"
+                    alt={icerikGorseli.alt}
+                    width={800}
+                    height={600}
+                    className={styles.storyImage}
+                  />
+                  {icerikGorseli.caption ? <figcaption>{icerikGorseli.caption}</figcaption> : null}
+                </>
+              )}
+            </figure>
+          ) : dogaSahnesiGoster ? (
+            <DogaSahnesi chapter={chapter} devamEdiyor={devamEdiyor} />
+          ) : null}
+          <section
+            className={`${styles.textPage} ${gorselVar ? "" : styles.textPageFull}`}
+            data-reader-scroll
+            data-story-kind={hikayeTuru}
+          >
+            <div className={styles.readingGroup}>
+              <div className={styles.textHeading}>
+                <h1>{temizMetin(chapter.bolumAdi)}</h1>
+                <span>{chapter.bookName ?? "Kitap Yolculuğu"} · {chapter.chapterNumber ?? 1}. Bölüm</span>
+              </div>
+              <div className={styles.prose}>
+                {metinBloklari.map((block, index) => (
+                  <IcerikBlogu key={`${sayfa.key}-${index}`} block={block} kelimeId={`${sayfa.key}-kelime-${index}`} acikKelime={acikKelime} onKelime={setAcikKelime} />
+                ))}
+              </div>
             </div>
           </section>
         </div>
@@ -454,7 +651,7 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
         <div className={styles.rewardGlow} aria-hidden="true" />
         <p className={styles.pageEyebrow}>Bölüm Tamamlandı</p>
         <h1>Rozet Kapısı</h1>
-        <p className={styles.rewardIntro}>{tekrarOkuma ? "Bu rozeti daha önce kazanmıştın. Tekrar okumak, öğrendiklerini kalbinde büyütür." : sonrakiBolumAdi ? `Şimdi “${sonrakiBolumAdi}” bölümüne geçebilirsin.` : "Kitabın tüm bölümlerini tamamladın; Büyük Final Testi seni bekliyor."}</p>
+        <p className={styles.rewardIntro}>{tekrarOkuma ? <>Bu rozeti daha önce kazanmıştın.<span>Tekrar okumak, öğrendiklerini kalbinde büyütür.</span></> : sonrakiBolumAdi ? `Şimdi “${sonrakiBolumAdi}” bölümüne geçebilirsin.` : "Kitabın tüm bölümlerini tamamladın; Büyük Final Testi seni bekliyor."}</p>
         <div className={styles.rewardBadge}>
           <YedekliGorsel src={`/rozetler/rozet-${rozetAnahtari}.png`} yedekSrc="/rozetler/placeholder.svg" alt={chapter.badgeName} width={134} height={134} className={styles.rewardImage} />
           <strong>{chapter.badgeName}</strong>
@@ -500,13 +697,17 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
             <div className={styles.toolsHeading}><div><p>Okuma Deneyimi</p><h2>Okuma Araçları</h2></div><button type="button" aria-label="Okuma araçlarını kapat" onClick={() => setAraclarAcik(false)}><Ikon ad="kapat" boyut={20} /></button></div>
             <section className={styles.fontTools} aria-label="Yazı büyüklüğü"><div><strong>Yazı büyüklüğü</strong><span>{["Küçük", "Normal", "Büyük"][yaziDuzeyi]}</span></div><div><button type="button" aria-label="Yazıyı küçült" disabled={yaziDuzeyi === 0} onClick={() => setYaziDuzeyi((deger) => Math.max(0, deger - 1) as YaziDuzeyi)}>A−</button><button type="button" aria-label="Yazıyı büyüt" disabled={yaziDuzeyi === 2} onClick={() => setYaziDuzeyi((deger) => Math.min(2, deger + 1) as YaziDuzeyi)}>A+</button></div></section>
             <nav className={styles.flowNav} aria-label="Bölüm içi akış"><p>Bölüm içi akış</p><ol>{akisAdimlari.map((adim, index) => <li key={adim.id}><button type="button" className={akisId === adim.id ? styles.flowActive : ""} aria-current={akisId === adim.id ? "step" : undefined} onClick={() => sayfayaGit(adim.sayfaIndex)}><span>{index + 1}</span><Ikon ad={adim.ikon} boyut={18} /><strong>{adim.etiket}</strong></button></li>)}</ol></nav>
-            <button type="button" className={styles.resetButton} onClick={() => { window.sessionStorage.removeItem(secimAnahtari); setSecilen(null); setKararOnayli(false); setAktifSayfa(0); setAraclarAcik(false); }}>Bölümü Baştan Aç</button>
+            <button type="button" className={styles.resetButton} onClick={() => { window.sessionStorage.removeItem(secimAnahtari); setSecilen(null); setKararOnayli(false); setKesfedilenNoktalar({}); setAcikKesifNoktasi(null); setAktifSayfa(0); setAraclarAcik(false); }}>Bölümü Baştan Aç</button>
             <p className={styles.toolsPolicy}>Yazı büyüklüğü yalnızca bu okuma ekranının görünümünü değiştirir.</p>
           </aside>
         ) : null}
 
         <div className={styles.readingViewport}>
-          <article className={styles.bookSurface} data-page-type={sayfa.type}>
+          <article
+            className={styles.bookSurface}
+            data-page-type={sayfa.type}
+            data-page-layout={sayfa.type === "kapak" || bolunmusOkumaSayfasi ? "split" : "full"}
+          >
             <div ref={pageTransitionRef} className={styles.pageTransition} key={sayfa.key}>{sayfayiCiz()}</div>
           </article>
         </div>

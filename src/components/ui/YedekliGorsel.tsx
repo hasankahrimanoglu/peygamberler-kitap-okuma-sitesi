@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 
 type YedekliGorselProps = {
   src: string;
+  /** Dar/dikey cihazlarda art-directed olarak kullanılacak isteğe bağlı kaynak. */
+  portraitSrc?: string;
   /** src yüklenemezse gösterilecek görsel */
   yedekSrc: string;
   alt?: string;
@@ -20,6 +22,7 @@ type YedekliGorselProps = {
  */
 export function YedekliGorsel({
   src,
+  portraitSrc,
   yedekSrc,
   alt = "",
   width,
@@ -36,7 +39,7 @@ export function YedekliGorsel({
     }
   }, [kaynak, yedekSrc]);
 
-  return (
+  const gorsel = (
     // eslint-disable-next-line @next/next/no-img-element
     <img
       ref={ref}
@@ -50,5 +53,14 @@ export function YedekliGorsel({
       className={className}
       draggable={false}
     />
+  );
+
+  if (!portraitSrc || kaynak === yedekSrc) return gorsel;
+
+  return (
+    <picture>
+      <source media="(max-width: 879px)" srcSet={portraitSrc} />
+      {gorsel}
+    </picture>
   );
 }

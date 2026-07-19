@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Baloo_2, Caveat, Lora, Nunito } from "next/font/google";
+import { Baloo_2, Caveat, Literata, Lora, Nunito } from "next/font/google";
 import { HareketAyari } from "../src/components/ui/HareketAyari";
 import "./globals.css";
 
@@ -17,6 +17,14 @@ const loraFont = Lora({
   subsets: ["latin", "latin-ext"],
   style: ["normal", "italic"],
   variable: "--font-lora",
+});
+
+// Uzun hikâye metinlerinde çocuklar için daha açık harf biçimleri ve güçlü
+// Türkçe karakter desteği sağlar. Lora, mevcut kısa/dekoratif metinlerde kalır.
+const literataFont = Literata({
+  subsets: ["latin", "latin-ext"],
+  style: ["normal", "italic"],
+  variable: "--font-literata",
 });
 
 // El yazısı fontu — yalnızca Tanık Sayfası (günlük) görünümünde kullanılır.
@@ -39,7 +47,7 @@ export default function RootLayout({
   return (
     <html
       lang="tr"
-      className={`${balooFont.variable} ${nunitoFont.variable} ${loraFont.variable} ${caveatFont.variable}`}
+      className={`${balooFont.variable} ${nunitoFont.variable} ${loraFont.variable} ${literataFont.variable} ${caveatFont.variable}`}
     >
       <body>
         <HareketAyari>{children}</HareketAyari>

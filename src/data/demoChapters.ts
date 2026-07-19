@@ -1,4 +1,8 @@
-import type { BookContentBlock, GorevTanimi } from "./books";
+import type {
+  BookContentBlock,
+  BookIllustration,
+  GorevTanimi,
+} from "./books";
 import { books, getBookChapterByRouteId } from "./books";
 
 // Faz 3'te reader sayfasından taşındı: gerçek içerik books.ts'e geçene kadar
@@ -37,6 +41,10 @@ export type ChapterData = {
   audioUrl?: string;
   decisionTitle: string;
   badgeName: string;
+  /** Bölüm açılışında kullanılacak isteğe bağlı güçlü sahne. */
+  coverIllustration?: BookIllustration;
+  /** Yalnız açıkça tanımlanan hikâye görsellerini kullanan seyrek düzen. */
+  illustrationMode?: "sparse";
   returnMessage: string;
   contentBlocks?: BookContentBlock[];
   /**
@@ -677,6 +685,8 @@ export function adaptDataChapter(routeId: string): ChapterData | null {
     audioUrl: chapter.audioUrl || undefined,
     decisionTitle: chapter.question?.title ?? chapter.title,
     badgeName: chapter.badgeName,
+    coverIllustration: chapter.coverIllustration,
+    illustrationMode: chapter.illustrationMode,
     returnMessage: `${chapter.badgeName} haritana işleniyor...`,
     contentBlocks: chapter.paragraphs,
     continuationBlocks: chapter.continuationParagraphs,
