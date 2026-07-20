@@ -36,8 +36,9 @@ Stack: Next.js + TypeScript + Tailwind + Supabase. Paket yöneticisi: **npm**.
 
 ## İÇERİK & VERİ
 - Tüm kitap içeriği (bölümler, metinler, sorular, rozet adları/anahtarları)
-  **`src/data/books.ts`** içinde statik tutulur. 20 kitaba kadar Supabase'e
-  taşınmaz.
+  **`src/data/books.ts`** içinde statik tutulur. Kitap sayısının 20'yi aşması
+  tek başına Supabase'e taşıma gerekçesi değildir; böyle bir taşıma ancak ayrı
+  bir teknik karar ve faz ile yapılır.
 - Kitap içeriği **ayrı bir içerik oturumunda** `KITAP-ICERIK-SABLONU.md`'ye göre
   üretilir, sana **doldurulmuş metin** olarak gelir. Senin işin onu `books.ts`
   formatına **EKLEMEK** — içeriği kendin yazma, değiştirme, kısaltma.
@@ -102,8 +103,8 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
   Kurallar: seçim hikâyeyi DALLANDIRMAZ; doğru cevap seçim anında AÇIKLANMAZ;
   bölüm sonunda YALNIZCA seçilen şıkkın karşılaştırma metni gösterilir; seçim
   aynı okuma oturumunda tutulur (kalıcı kayıt S5'tir, karıştırma).
-- **"Bugüne Taşı" görevleri KOŞULLUDUR** — her bölümde değil (8 bölümde ~3-4;
-  editoryal hedef, teknik sınır olarak KODLANMAZ). Gönüllüdür: "Görevi Listeme
+- **"Bugüne Taşı" görevleri KOŞULLUDUR** — her bölümde değil (kitabın yaklaşık
+  %40–50'si; editoryal hedef, teknik sınır olarak KODLANMAZ). Gönüllüdür: "Görevi Listeme
   Ekle / Şimdilik Değil". İlerleme/rozet/madalya ŞARTI DEĞİLDİR; göreve ayrı
   ödül/puan YOK. Kalıcı durum (Tamamlandı/Tamamlanmadı) Faz 6.1'de yeni tabloyla
   gelir (`user_progress`'e sıkıştırılmaz). Görev meta alanları: ID, ad, kategori,

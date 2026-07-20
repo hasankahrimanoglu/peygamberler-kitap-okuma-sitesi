@@ -366,7 +366,10 @@ export function KitapBolumRotasi({
         </header>
 
         <div className={styles.workspace}>
-          <section className={styles.mapStage} aria-labelledby="route-title">
+          <section
+            className={`${styles.mapStage} ${kitapKey === "adem" ? styles.ademMapStage : ""}`}
+            aria-labelledby="route-title"
+          >
             <div className={styles.skyGlow} aria-hidden="true" />
             <div className={styles.stars} aria-hidden="true"><i className={styles.starOne} /><i className={styles.starTwo} /><i className={styles.starThree} /><i className={styles.starFour} /><i className={styles.starFive} /></div>
             <div className={styles.mountainBack} aria-hidden="true" />
@@ -416,8 +419,11 @@ export function KitapBolumRotasi({
                 })}
               </ol>
 
-              <button type="button" className={`${styles.finalGate} ${finalSecili ? styles.finalSelected : ""}`} aria-pressed={finalSecili} aria-label={`Büyük Final Testi, ${DURUM_METINLERI[kitapBitti ? "tamamlandi" : finalAcik ? "aktif" : "kilitli"]}`} onClick={(olay) => secimYap("final", olay.currentTarget)}>
-                <span className={styles.finalIcon}><Ikon ad={kitapBitti ? "onay" : finalAcik ? "fener" : "kilit"} boyut={18} /></span>
+              <button type="button" className={`${styles.finalGate} ${styles[kitapBitti ? "tamamlandi" : finalAcik ? "aktif" : "kilitli"]} ${finalSecili ? styles.finalSelected : ""}`} aria-pressed={finalSecili} aria-label={`Büyük Final Testi, ${DURUM_METINLERI[kitapBitti ? "tamamlandi" : finalAcik ? "aktif" : "kilitli"]}`} onClick={(olay) => secimYap("final", olay.currentTarget)}>
+                <span className={styles.finalIcon}>
+                  <Ikon ad="madalya" boyut={24} />
+                  <span className={styles.finalStatusIcon}><Ikon ad={kitapBitti ? "onay" : finalAcik ? "fener" : "kilit"} boyut={12} /></span>
+                </span>
                 <span><small>Final kapısı</small><strong>Büyük Final Testi</strong></span>
               </button>
             </div>

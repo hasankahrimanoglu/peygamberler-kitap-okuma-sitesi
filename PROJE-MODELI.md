@@ -30,9 +30,21 @@ baskısı bilinçli olarak YOKTUR.
 
 Hedef yaş grubu: **8–11**. Tüm içerik ve arayüz dili bu aralığa göre yazılır.
 
-Hedef içerik hacmi: **12–20 kitap**, kitap başına ortalama **8–10 bölüm**.
-Tüm kurgular bu ölçeğe göre tasarlanır (ör. veli raporu 20 kitapta da
-okunabilir kalmalı).
+İçerik kataloğunda sabit bir üst kitap sınırı yoktur. İlk yayın omurgası,
+peygamber yolculukları ile Dört Büyük Halife kitaplarını kapsayan **35 dijital
+kitap** olarak planlanır; güvenilir kaynak ve editoryal ihtiyaç oluştuğunda
+katalog büyüyebilir. Kitaplar kaynak yoğunluğuna göre **4–10 bölüm** arasında
+değişir. Fiziksel kaynak cildi ile dijital kitap birebir aynı olmak zorunda
+değildir: aynı PDF'deki isimler ayrı dijital kitaplara ayrılabilir, kısa anlatı
+yalnız sayıyı doldurmak için uzatılmaz. Kesin sıra, keşif bölgeleri ve hedef
+bölüm sayıları `KITAP-KATALOGU-VE-URETIM-PLANI.md` belgesinde tutulur.
+
+Tüm arayüzler büyüyen katalogda da okunabilir kalmalıdır; ana atlas tek ekranda
+onlarca kitabı düz bir kilit zinciri hâlinde göstermez, kitapları çocuk dostu
+keşif bölgelerinde gruplar. İlk katalog bölgeleri sırasıyla **İlk İzler
+Vadisi**, **Bereketli Aile Yolu**, **Sabır ve Cesaret Geçidi**, **Hikmet
+Sarayları**, **Umut Işıkları Diyarı**, **Rahmet Yolculuğu** ve Dört Büyük
+Halife'yi ayrı tür olarak belirten **Emaneti Taşıyan Dört Dost**tur.
 
 Cihaz önceliği: **1) Tablet yatay, 2) Tablet dikey, 3) Mobil dikey, 4) Masaüstü.**
 Uzun okuma cihazı tablettir; telefon "kısa okuma ve devam etme" cihazıdır.
@@ -252,7 +264,7 @@ etmez:
 | 14 | Kazanımlarım ekranı (çocuk) | Çocuğun kendi rozet/madalya/ünvan koleksiyonunu gördüğü vitrin (`/kazanimlarim`). Oyunlaştırmanın çocuk tarafındaki karşılığı; başarı görünür olur | Yok — türetilir |
 | 15 | Kelime Defterim ekranı (çocuk) | Çocuğun okuduğu kitaplardaki Kelime Kutusu kelimeleri, anlamlarıyla, aranabilir liste (`/kelime-defterim`). Öğrenilen kelimeler tek yerde birikir | Yok — books.ts'ten türetilir |
 | 16 | Bölüm içi karar akışı (KARAR 15 Tem 2026) | "Sen Olsaydın" bağımsız bir bölüm sonu sorusu DEĞİLDİR; hikâyenin karar/doruk noktasına yerleşir. Akış: **Hikâye — 1. Kısım → Sen Olsaydın → Hikâye Devam Ediyor → Seçimini Karşılaştır**. Seçim hikâyeyi DALLANDIRMAZ (tek hikâye); doğru cevap seçim anında AÇIKLANMAZ; hikâye devamı bittikten sonra yalnızca **seçilen şıkkın** karşılaştırma metni gösterilir (her şık için ayrı metin içerikte hazır). Seçim aynı okuma oturumu içinde tutulur (kalıcı kayıt ayrı iştir — bkz. S5) | Yok — books.ts + oturum içi state |
-| 17 | "Bugüne Taşı" görev takibi (KARAR 15 Tem 2026) | Görev KOŞULLUDUR (her bölümde değil; 8 bölümde ~3-4 görev editoryal hedeftir, teknik sınır olarak kodlanmaz) ve GÖNÜLLÜDÜR. Çocuk görevde "Görevi Listeme Ekle / Şimdilik Değil" seçer; eklediği görevleri "Görevlerim" ekranında görür, "Görevi Tamamladım" ile işaretler; Tamamlandı/Tamamlanmadı durumu KALICI saklanır (öz bildirim yeterli, kanıt istenmez). Görev; bölüm rozetinin, madalyanın, sonraki kitabın veya ilerlemenin ŞARTI DEĞİLDİR. Son tarih, ceza, seri YOK | Yeni tablo (bkz. 7.3 — Faz 6.1) |
+| 17 | "Bugüne Taşı" görev takibi (KARAR 15 Tem 2026) | Görev KOŞULLUDUR (her bölümde değil; kitabın yaklaşık %40–50'sinde görev bulunması editoryal hedeftir, teknik sınır olarak kodlanmaz) ve GÖNÜLLÜDÜR. Çocuk görevde "Görevi Listeme Ekle / Şimdilik Değil" seçer; eklediği görevleri "Görevlerim" ekranında görür, "Görevi Tamamladım" ile işaretler; Tamamlandı/Tamamlanmadı durumu KALICI saklanır (öz bildirim yeterli, kanıt istenmez). Görev; bölüm rozetinin, madalyanın, sonraki kitabın veya ilerlemenin ŞARTI DEĞİLDİR. Son tarih, ceza, seri YOK | Yeni tablo (bkz. 7.3 — Faz 6.1) |
 | 18 | Veli tarafında görev görünürlüğü (KARAR 15 Tem 2026 akşam) | Veli, çocuğun aldığı TÜM görevleri ve durumlarını Gelişim Raporu'ndaki **Görevler sekmesinden** görür (Alındı / Tamamlandı, hangi kitap-bölüm, tarih). Ana Sayfa kartı ise yalnız EN GÜNCEL tek görevi durum çipiyle ("Alındı"/"Tamamlandı") gösterir — tam liste değil. Veli görevleri yalnız GÖRÜR, düzenlemez/tamamlamaz (öz bildirim çocuğundur). Rapor dili gözlem bildirir; tamamlanmamış görev eksiklik/başarısızlık olarak sunulmaz | Yok — `profile_tasks`'tan türetilir |
 
 ### 4.2 SONRAYA BIRAKILDI (ayrı fazlarda)
@@ -380,7 +392,8 @@ public/
   `rozetIcon` anahtarı eklenir.
 - **KARAR (11 Temmuz 2026): Seçenek B** — her bölüme özel rozet görseli.
   iconKey bölüme özel yazılır: `adem-bolum-1`, `nuh-bolum-3` gibi.
-  Hedef hacim: 12–20 kitap × 8–10 bölüm ≈ **150–200 rozet görseli**.
+  İlk katalog hedefi: 35 kitap ve toplam **216 bölüm/rozet**. Katalog
+  büyüdüğünde sayı artabilir.
   Hepsi aynı şablon ailesinde üretilir (aynı çerçeve, aynı palet, değişen
   yalnızca iç sembol). Gerekirse ara çözüm: bazı bölümler değer havuzundan
   ortak sembol kullanabilir — sistem iconKey sayesinde ikisini de destekler.
@@ -469,8 +482,9 @@ ileride istenirse eklenmesi kolaydır.)
 - `books` — kitap meta (isim, sıra, toplam bölüm)
 - `user_progress` — profil+kitap başına ilerleme (bölüm sayısı, %, bitti_mi, final skoru)
 - İçerik (bölümler, metinler, sorular, rozet adları) `src/data/books.ts`
-  içinde statik dosyada. **Bu fazlarda taşınmaz** — 20 kitaba kadar sorunsuz;
-  ileride gerekirse Supabase'e taşıma ayrı proje olur.
+  içinde statik dosyada. **Bu fazlarda taşınmaz.** Kitap sayısının 20'yi aşması
+  tek başına Supabase'e taşıma gerekçesi değildir; ancak paket boyutu, bakım ve
+  yükleme performansı ölçülüp teknik ihtiyaç doğarsa taşıma ayrı proje olur.
 
 ### 7.2 Türetilen kavramlar (tablo GEREKTİRMEZ)
 
