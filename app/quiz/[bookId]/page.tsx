@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useParams, useRouter } from "next/navigation";
+import { notFound } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "../../../lib/supabase";
 import { Konfeti } from "../../../src/components/reader/Konfeti";
@@ -32,6 +33,7 @@ type QuizConfig = {
   questions: QuizQuestion[];
   storagePrefix: string;
   keywords: string[];
+  localOnly?: boolean;
 };
 
 type SavedCompletionState = "loading" | "completed" | "incomplete" | "unknown";
@@ -49,6 +51,7 @@ type FinalSaveResult =
   | "incomplete-journey"
   | "error";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- Önceki Ebû Bekir finali ürün rotasından çıkarıldı; içerik arşivi şimdilik bu dosyada tutuluyor.
 const quizQuestions: QuizQuestion[] = [
   {
     id: 1,
@@ -265,6 +268,7 @@ const ademQuizQuestions: QuizQuestion[] = [
   },
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- Önceki Nuh finali ürün rotasından çıkarıldı; içerik arşivi şimdilik bu dosyada tutuluyor.
 const nuhQuizQuestions: QuizQuestion[] = [
   {
     id: 1,
@@ -325,17 +329,17 @@ const quizConfig: Record<string, QuizConfig> = {
     storagePrefix: "adem",
     keywords: ["adem"],
   },
-  nuh: {
-    label: "Hz. Nuh",
-    questions: nuhQuizQuestions,
-    storagePrefix: "nuh",
-    keywords: ["nuh"],
-  },
-  ebubekir: {
-    label: "Hz. Ebû Bekir",
-    questions: quizQuestions,
-    storagePrefix: "ebubekir",
-    keywords: ["ebu bekir", "ebubekir"],
+  sit: {
+    label: "Hz. Şît",
+    storagePrefix: "sit",
+    keywords: ["sit", "şit"],
+    localOnly: true,
+    questions: [
+      { id: 1, question: "Emanet neyi anlatır?", correctOption: "b", options: [{ id: "a", text: "Yalnızca bize ait bir eşyayı" }, { id: "b", text: "Güvenilerek verilen ve korunması gereken şeyi" }, { id: "c", text: "Unutulması gereken bir sözü" }] },
+      { id: 2, question: "Doğruluğundan emin olmadığımız bir haberi ne yapmalıyız?", correctOption: "c", options: [{ id: "a", text: "Hemen yaymalıyız" }, { id: "b", text: "Daha ilginç hâle getirmeliyiz" }, { id: "c", text: "Güvenilir kaynaktan doğrulamalıyız" }] },
+      { id: 3, question: "Dayanışma nasıl büyür?", correctOption: "a", options: [{ id: "a", text: "Herkes yapabildiği katkıyı sunduğunda" }, { id: "b", text: "Bütün işi tek kişi yaptığında" }, { id: "c", text: "Kimse birbirini dinlemediğinde" }] },
+      { id: 4, question: "Güzel bir davranış ne zaman değerlidir?", correctOption: "b", options: [{ id: "a", text: "Yalnız herkes bizi izlediğinde" }, { id: "b", text: "Kimse görmese de doğru olduğu için yapıldığında" }, { id: "c", text: "Sadece bir ödül kazandırdığında" }] },
+    ],
   },
 };
 
@@ -409,6 +413,11 @@ async function getSavedCompletionState(
   profileId: string,
   activeQuiz: QuizConfig,
 ): Promise<Exclude<SavedCompletionState, "loading">> {
+  if (activeQuiz.localOnly) {
+    return window.localStorage.getItem(`pkd-demo-sit-finished-${profileId}`) === "true"
+      ? "completed"
+      : "incomplete";
+  }
   const { data: books, error: booksError } = await supabase
     .from("books")
     .select("id, isim");
@@ -453,6 +462,15 @@ async function saveQuizCompletionToSupabase({
   score: number;
   totalQuestions: number;
 }): Promise<FinalSaveResult> {
+  if (activeQuiz.localOnly) {
+    const completed = Number(
+      window.localStorage.getItem(`pkd-demo-sit-progress-${profileId}`) ?? 0,
+    );
+    if (completed < totalQuestions) return "incomplete-journey";
+    window.localStorage.setItem(`pkd-demo-sit-finished-${profileId}`, "true");
+    window.dispatchEvent(new Event("pkd-demo-progress"));
+    return "saved";
+  }
   // PROJE-MODELI #13: Testi tamamlamak madalyayı kazandırır; doğru sayısı şart
   // DEĞİLDİR. Bu yüzden eski %90 skor eşiği kaldırıldı — bütün bölümlerin
   // tamamlandığı doğrulanınca testin bitmesi "bitti" durumunu ve madalyayı yazar.
@@ -592,6 +610,8 @@ function XIcon() {
 
 type AtlasAdemQuizProps = {
   activeQuestion: QuizQuestion;
+  bookKey: string;
+  bookLabel: string;
   completion: CompletionResult;
   isChecked: boolean;
   isFinished: boolean;
@@ -615,6 +635,8 @@ type AtlasAdemQuizProps = {
 
 function AtlasAdemQuiz({
   activeQuestion,
+  bookKey,
+  bookLabel,
   completion,
   isChecked,
   isFinished,
@@ -659,7 +681,7 @@ function AtlasAdemQuiz({
   return (
     <main
       className={`tema-cocuk ${styles.page}`}
-      data-book="adem"
+      data-book={bookKey}
       data-quiz-mode={practiceMode ? "practice" : "first-completion"}
     >
       <div className={styles.atlasBackdrop} aria-hidden="true">
@@ -671,7 +693,7 @@ function AtlasAdemQuiz({
           <button
             type="button"
             className={styles.backLink}
-            aria-label="Hz. Âdem bölüm rotasına dön"
+            aria-label={`${bookLabel} bölüm rotasına dön`}
             disabled={isSaving || isRetryableError}
             onClick={onBack}
           >
@@ -684,7 +706,7 @@ function AtlasAdemQuiz({
               <Ikon ad="madalya" boyut={21} />
             </span>
             <div>
-              <span>Hz. Âdem · Yolculuğun sonu</span>
+              <span>{bookLabel} · Yolculuğun sonu</span>
               <strong>Büyük Final Testi</strong>
             </div>
           </div>
@@ -726,15 +748,15 @@ function AtlasAdemQuiz({
                   <span className={styles.medalFrame}>
                     <OdulIkonu
                       tip="madalya"
-                      anahtar="adem"
+                      anahtar={bookKey}
                       kazanildi={isConfirmedCompletion}
                       boyut={58}
-                      alt="Hz. Âdem Yolculuk Madalyası"
+                      alt={`${bookLabel} Yolculuk Madalyası`}
                       className={styles.medalImage}
                     />
                   </span>
                   <small>{isConfirmedCompletion ? "Kazanılan madalya" : "Final ödülü"}</small>
-                  <strong>Hz. Âdem Yolculuk Madalyası</strong>
+                  <strong>{bookLabel} Yolculuk Madalyası</strong>
                 </div>
                 <p className={styles.journeyMessage}>
                   {practiceMode || isAlreadyCompleted
@@ -867,9 +889,9 @@ function AtlasAdemQuiz({
                         <div className={`${styles.resultMedal} ${styles.resultMedalPractice}`}>
                           <OdulIkonu
                             tip="madalya"
-                            anahtar="adem"
+                            anahtar={bookKey}
                             boyut={124}
-                            alt="Hz. Âdem Yolculuk Madalyası"
+                            alt={`${bookLabel} Yolculuk Madalyası`}
                             className={styles.resultImage}
                           />
                         </div>
@@ -903,9 +925,9 @@ function AtlasAdemQuiz({
                         >
                           <OdulIkonu
                             tip="madalya"
-                            anahtar="adem"
+                            anahtar={bookKey}
                             boyut={124}
-                            alt="Hz. Âdem Yolculuk Madalyası"
+                            alt={`${bookLabel} Yolculuk Madalyası`}
                             className={styles.resultImage}
                           />
                         </motion.div>
@@ -920,7 +942,7 @@ function AtlasAdemQuiz({
                         <p className={styles.resultNote}>
                           {practiceMode
                             ? "İlk final sonucun ve kazandığın madalya aynı kaldı."
-                            : "Bu madalya keşif haritanda Hz. Âdem kitabının üzerinde parlayacak."}
+                            : `Bu madalya keşif haritanda ${bookLabel} kitabının üzerinde parlayacak.`}
                         </p>
                         <Buton
                           type="button"
@@ -1074,8 +1096,9 @@ export default function QuizPage() {
   const router = useRouter();
   const params = useParams<{ bookId: string }>();
   const bookId = params.bookId as keyof typeof quizConfig;
-  const isAdemAtlas = bookId === "adem";
-  const activeQuiz = quizConfig[bookId] ?? quizConfig.ebubekir;
+  if (!quizConfig[bookId]) notFound();
+  const isAdemAtlas = bookId === "adem" || bookId === "sit";
+  const activeQuiz = quizConfig[bookId];
   const questions = activeQuiz.questions;
   const [savedCompletionState, setSavedCompletionState] =
     useState<SavedCompletionState>("loading");
@@ -1291,6 +1314,8 @@ export default function QuizPage() {
     return (
       <AtlasAdemQuiz
         activeQuestion={activeQuestion}
+        bookKey={bookId}
+        bookLabel={activeQuiz.label}
         completion={completion}
         isChecked={isChecked}
         isFinished={isFinished}

@@ -255,12 +255,12 @@ export const parentReportBooks: ParentReportBook[] = [
       "Bir haksızlık gördüğünde en güzel tepki ne olabilir?",
     ],
   },
-];
+].filter((book) => book.key === "adem");
 
 const nuhShipImage =
   "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 540'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop stop-color='%230f766e'/%3E%3Cstop offset='1' stop-color='%23fbbf24'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='960' height='540' rx='42' fill='%23ecfeff'/%3E%3Ccircle cx='760' cy='120' r='70' fill='%23fde68a'/%3E%3Cpath d='M126 370c88-54 176-54 264 0s176 54 264 0 132-54 220 0' fill='none' stroke='%230e7490' stroke-width='28' stroke-linecap='round' opacity='.35'/%3E%3Cpath d='M250 295h460c-36 88-112 132-230 132s-194-44-230-132Z' fill='url(%23g)'/%3E%3Cpath d='M480 118v176M480 132l150 162H480V132Z' fill='%23fef3c7' opacity='.92'/%3E%3Cpath d='M480 132 330 294h150V132Z' fill='%23ccfbf1' opacity='.94'/%3E%3Cpath d='M218 440c80-38 160-38 240 0s160 38 240 0' fill='none' stroke='%230f766e' stroke-width='18' stroke-linecap='round' opacity='.45'/%3E%3C/svg%3E";
 
-export const books: BookDefinition[] = [
+export const books: BookDefinition[] = ([
   {
     id: "hz-adem",
     routePrefix: "adem",
@@ -1127,7 +1127,152 @@ export const books: BookDefinition[] = [
       },
     ],
   },
-];
+] as BookDefinition[]).filter((book) => book.id !== "hz-nuh");
+
+// Geçici sunum kitabı: Hz. Âdem finalinden sonraki kitap açılma ve ilerleme
+// akışını doğrulamak için kullanılır. Nihai kaynaklı içerik geldiğinde bu dört
+// bölüm, içerik ekibinin teslim ettiği metinle bütünüyle değiştirilecektir.
+books.push({
+  id: "hz-sit",
+  routePrefix: "sit",
+  title: "Hz. Şît",
+  eyebrow: "Hz. Şît — Geçici Sunum İçeriği",
+  chapters: [
+    {
+      id: "1",
+      title: "Emaneti Devralmak",
+      ozet: "Güzel bir mirası korumanın ne anlama geldiğini düşün.",
+      audioUrl: "",
+      badgeName: "Emanet Rozeti",
+      illustrationMode: "sparse",
+      paragraphs: [
+        { type: "text", text: "Bir yolculuk bittiğinde onun güzel izleri kaybolmak zorunda değildir. Öğrenilen bilgiler, özenle korunduğunda yeni kuşaklara ulaşır. Hz. Şît yolculuğunun bu geçici sunum bölümünde emanet kavramını keşfedeceğiz.", dropCap: true },
+        { type: "interactive_word", before: "Korunması ve doğru biçimde aktarılması gereken şeye ", word: "emanet", meaning: "Bize güvenilerek verilen ve özenle korumamız gereken şeydir.", after: " denir." },
+        { type: "text", text: "Bir emaneti taşımak yalnız onu saklamak değildir. Doğru anlamak, ona yeni sözler eklememek ve ihtiyaç duyulduğunda güvenilir biçimde paylaşmak da bu sorumluluğun parçasıdır." },
+      ],
+      continuationParagraphs: [
+        { type: "text", text: "Küçük bir bilgi bile dikkatle korunursa uzun bir yola çıkabilir. Bir çocuk öğrendiği doğru davranışı kardeşine gösterir; kardeşi de onu başka bir gün hatırlar." },
+        { type: "text", text: "Böylece iyilik, bir kişiden diğerine geçen sıcak bir ışık gibi büyür. Emaneti taşıyan kişi, kendisine güvenildiğini bilir ve acele etmeden özenli davranır." },
+      ],
+      has_question: true,
+      question: {
+        title: "Emaneti Devralmak",
+        prompt: "Ailenden öğrendiğin önemli bir bilgiyi küçük bir arkadaşına anlatman istendi. Ne yapardın?",
+        correctOption: "b",
+        afterChoiceNote: "Cevabını aklında tut. Emaneti korumanın neden özen istediğini okuyarak seçimini karşılaştır.",
+        options: [
+          { id: "a", text: "Daha ilginç olsun diye bilmediğim ayrıntılar eklerdim.", comparison: "Bilmediğimiz ayrıntıları eklemek, emanet edilen bilginin değişmesine yol açabilirdi." },
+          { id: "b", text: "Doğru anladığımdan emin olur, sakin biçimde anlatırdım.", comparison: "Seçimin emanet değerine uyumlu. Doğru bilgi, özenle öğrenilip güvenilir biçimde aktarılır." },
+          { id: "c", text: "Unuturum diye hiç anlatmamayı seçerdim.", comparison: "Hiç paylaşmamak güzel bilginin yolunu durdurabilirdi; hazırlanmak ve yardım istemek daha iyi bir adım olurdu." },
+        ],
+      },
+      learned: [
+        "Emanet, güvenilerek verilen ve korunması gereken şeydir.",
+        "Doğru bilgiyi aktarırken bilmediğimiz ayrıntıları eklememeliyiz.",
+        "İyilik, özenle paylaşıldığında yeni kuşaklara ulaşabilir.",
+      ],
+    },
+    {
+      id: "2",
+      title: "Doğru Sözü Korumak",
+      ozet: "Duyduğun bilgiyi doğrulamadan yaymamanın değerini keşfet.",
+      audioUrl: "",
+      badgeName: "Doğru Söz Rozeti",
+      illustrationMode: "sparse",
+      paragraphs: [
+        { type: "text", text: "Bazen bir söz, ağızdan ağıza geçerken değişebilir. İlk anlatılanla son anlatılan birbirinden çok farklı olabilir. Bu yüzden güvenilir bir yolcu, duyduğu her sözü hemen yaymaz.", dropCap: true },
+        { type: "text", text: "Önce kaynağını sorar, doğru anlayıp anlamadığını kontrol eder. Emin olmadığı yerde ise açıkça “Bunu bilmiyorum” diyebilir. Bilmediğini söylemek eksiklik değil, doğruluğa gösterilen saygıdır." },
+      ],
+      continuationParagraphs: [
+        { type: "text", text: "Doğru söz bazen kısa ve sade olur. Onu süslemek için eklenen ayrıntılar kulağa heyecanlı gelse de gerçeği gölgeleyebilir." },
+        { type: "text", text: "Güvenilir olmak, insanların söylediğimiz söze huzurla yaklaşabilmesini sağlar. Böyle bir güven yavaş oluşur fakat çok değerlidir." },
+      ],
+      has_question: true,
+      question: {
+        title: "Doğru Sözü Korumak",
+        prompt: "Bir arkadaşın doğruluğundan emin olmadığın şaşırtıcı bir haber anlattı. Ne yapardın?",
+        correctOption: "c",
+        afterChoiceNote: "Cevabını aklında tut. Güvenilir sözün nasıl korunduğunu okuyarak seçimini karşılaştır.",
+        options: [
+          { id: "a", text: "Hemen herkese anlatırdım.", comparison: "Hemen yaymak yanlış bir bilginin büyümesine neden olabilirdi." },
+          { id: "b", text: "Haberi daha heyecanlı yapmak için ayrıntı eklerdim.", comparison: "Bilmediğimiz ayrıntıları eklemek doğruluğu daha da uzaklaştırabilirdi." },
+          { id: "c", text: "Güvenilir bir kaynaktan doğrulamadan paylaşmazdım.", comparison: "Seçimin doğruluk değeriyle uyumlu. Güvenilir bilgi kontrol edilerek paylaşılır." },
+        ],
+      },
+      learned: [
+        "Duyduğumuz her bilgi doğru olmayabilir.",
+        "Bilmediğimizi dürüstçe söylemek güvenilir bir davranıştır.",
+        "Doğru söz, gereksiz eklemelerden korunmalıdır.",
+      ],
+    },
+    {
+      id: "3",
+      title: "Birlikte İyilik",
+      ozet: "Küçük iyiliklerin birlikte nasıl büyüdüğünü gör.",
+      audioUrl: "",
+      badgeName: "Dayanışma Rozeti",
+      illustrationMode: "sparse",
+      paragraphs: [
+        { type: "text", text: "Tek bir kişinin taşıdığı yük ağır gelebilir. Aynı işe birkaç kişi omuz verdiğinde ise yol kolaylaşır. Birlikte çalışmak, herkesin aynı şeyi yapması değil; gücünü ortak bir iyilik için kullanmasıdır.", dropCap: true },
+        { type: "text", text: "Biri plan yapabilir, biri eksik malzemeyi bulabilir, bir başkası yorulan arkadaşına destek olabilir. Her katkı farklı olsa da amaç aynıdır." },
+      ],
+      continuationParagraphs: [
+        { type: "text", text: "Dayanışma sırasında en güçlü kişinin bütün kararları tek başına vermesi gerekmez. Birbirini dinlemek ve görevi adil paylaşmak, yapılan işi de arkadaşlığı da güzelleştirir." },
+        { type: "text", text: "Küçük bir iyilik halkası böyle büyür: Bir kişi başlar, diğerleri katılır ve sonunda herkesin koruduğu ortak bir değere dönüşür." },
+      ],
+      has_question: true,
+      question: {
+        title: "Birlikte İyilik",
+        prompt: "Sınıfınız ortak bir yardım işi hazırlıyor. Sen ne yapardın?",
+        correctOption: "a",
+        afterChoiceNote: "Cevabını aklında tut. Birlikte iyiliğin nasıl büyüdüğünü okuyarak seçimini karşılaştır.",
+        options: [
+          { id: "a", text: "Yapabileceğim görevi seçer ve arkadaşlarımla uyum içinde çalışırdım.", comparison: "Seçimin dayanışma değeriyle uyumlu. Herkesin katkısı ortak iyiliği büyütür." },
+          { id: "b", text: "Bütün işi başkalarının yapmasını beklerdim.", comparison: "Yalnızca beklemek ortak yükün birkaç kişinin üzerinde kalmasına yol açabilirdi." },
+          { id: "c", text: "Sadece benim fikrim uygulansın isterdim.", comparison: "Birlikte çalışmak, başkalarının düşüncelerini de dinlemeyi gerektirir." },
+        ],
+      },
+      learned: [
+        "Dayanışma, ortak bir iyilik için birlikte çalışmaktır.",
+        "Her katkının aynı olması gerekmez; önemli olan sorumluluk almaktır.",
+        "Birbirimizi dinlemek ortak işi güzelleştirir.",
+      ],
+    },
+    {
+      id: "4",
+      title: "İyiliğin İzi",
+      ozet: "Bir yolculuğun ardından kalan güzel değerleri hatırla.",
+      audioUrl: "",
+      badgeName: "Güzel İz Rozeti",
+      illustrationMode: "sparse",
+      paragraphs: [
+        { type: "text", text: "Bir yolun sonunda geriye yalnız ayak izleri kalmaz. Söylenen doğru sözler, paylaşılan bilgiler ve yapılan küçük iyilikler de insanların kalbinde iz bırakır.", dropCap: true },
+        { type: "text", text: "Güzel bir iz bırakmak için herkesin bizi tanıması gerekmez. Kimse görmeden koruduğumuz bir emanet veya sessizce yaptığımız bir yardım da değerini korur." },
+      ],
+      continuationParagraphs: [
+        { type: "text", text: "Bu geçici sunum yolculuğunda emanet, doğruluk ve dayanışma duraklarından geçtin. Şimdi bu değerleri kendi gününde nasıl yaşatabileceğini düşünebilirsin." },
+        { type: "text", text: "İçerik ekibi kaynak çalışmasını tamamladığında Hz. Şît kitabının bütün metinleri yenilenecek. Bu bölüm şimdilik sistemde ikinci kitaba geçişi denemek için hazırlanmıştır." },
+      ],
+      has_question: true,
+      question: {
+        title: "İyiliğin İzi",
+        prompt: "Kimsenin fark etmediği küçük bir iyilik yapma fırsatı buldun. Ne yapardın?",
+        correctOption: "b",
+        afterChoiceNote: "Cevabını aklında tut. Güzel bir izin neden alkış beklemediğini okuyarak seçimini karşılaştır.",
+        options: [
+          { id: "a", text: "Beni övecek biri yoksa vazgeçerdim.", comparison: "İyiliğin değeri yalnız başkalarının alkışına bağlı olsaydı güzel fırsatlar kolayca kaybolabilirdi." },
+          { id: "b", text: "Doğru olduğu için iyiliği sessizce yapardım.", comparison: "Seçimin hikâyedeki değerle uyumlu. Güzel davranış, kimse görmese de değerini korur." },
+          { id: "c", text: "Önce herkesin beni izlemesini beklerdim.", comparison: "Görünür olmayı beklemek iyiliği geciktirebilirdi; önemli olan doğru davranışı seçmektir." },
+        ],
+      },
+      learned: [
+        "Güzel davranışlar başkalarının kalbinde iz bırakabilir.",
+        "İyilik değerini yalnızca görülmekten almaz.",
+        "Emanet, doğruluk ve dayanışma birlikte güçlü bir yol oluşturur.",
+      ],
+    },
+  ],
+});
 
 export function getBookChapterByRouteId(routeId: string) {
   for (const book of books) {

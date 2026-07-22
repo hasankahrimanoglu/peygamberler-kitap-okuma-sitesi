@@ -150,8 +150,10 @@ yön **“Masalsı Keşif Atlası”**dır:
 - Harita, büyük dashboard kartları yerine kıvrımlı yol üzerindeki keşif
   duraklarından oluşur; katmanlı gece göğü, dağ, nehir, bitki ve pusula
   ayrıntıları responsive CSS ile kurulur.
-- Tablet yatayda harita baskın alanda, seçili kitap bilgisi sağ paneldedir;
-  tablet dikey ve mobilde alanlar alt alta geçer.
+- Tablet yatay ve masaüstünde harita baskın alanda, seçili kitap bilgisi sağdaki
+  sabit paneldedir. Tablet dikey ve mobilde bilgi paneli haritanın altına inmez;
+  bir kitap durağına dokunulduğunda sağdan açılan, arka planı örten ve
+  “Haritaya Dön” eylemiyle kapanan drawer olarak gösterilir.
 - Kitap detayında bölümler, aynı atlas dünyasında kıvrımlı bölüm rotası olarak
   gösterilir; kilit koşulları somut yazılır.
 - Hz. Âdem okuma ekranında üst bar ve okuma yüzeyi aynı genişlikte hizalanır.
@@ -189,11 +191,48 @@ yön **“Masalsı Keşif Atlası”**dır:
   açıklamalardan belirgin biçimde büyük tutulur; içerik grubu yatayda ortalanır.
 - Production rotalarında “Tasarım Önizlemesi” etiketi kullanılmaz. Önizleme
   rotaları tasarım karşılaştırması için ayrı kalabilir.
-- Bu entegrasyonun içerik referansı yalnızca Hz. Âdem'dir. Diğer kitapların
-  mevcut detay, okuma ve final testi düzenleri, içerikleri güncellenene kadar
-  korunur.
+- Bu entegrasyonun içerik referansı yalnızca Hz. Âdem'dir. Önceki Nuh ve Dört
+  Halife demo okuyucuları korunmaz; 21 Temmuz 2026 tarihli Bölüm 3.7 kararıyla
+  ürün rotalarından çıkarılıp katalogda **Hazırlanıyor** durumuna alınmıştır.
 
-### 3.7 Veli ana sayfası bilgi mimarisi (ONAY — 18 Temmuz 2026)
+### 3.7 Keşif Bölgeleri ve kitap kataloğu (ONAY — 21 Temmuz 2026)
+
+Masalsı Keşif Atlası artık tek bir kısa kitap yolundan değil, iki seviyeli bir
+katalogdan oluşur: **Keşif Bölgesi → Kitap Durağı**. Bölge ve kitap sırası
+`KITAP-KATALOGU-VE-URETIM-PLANI.md` belgesindeki 7 bölge / 35 kitap planını
+izler; arayüzün tek veri kaynağı `src/data/atlasCatalog.ts` olur.
+
+- Bölge seçici, çocuğun atlas içinde nerede bulunduğunu açıkça gösterir. Seçilen
+  bölgenin kitapları kıvrımlı bir rota üzerinde görünür; hazırlanan kitap paneli
+  aynı ekranda kitabın adı, kısa tanıtımı ve bölüm sayısını gösterir.
+- Bölge içindeki kitap durakları en fazla üç yatay keşif terasına yerleşir. Altı
+  kitapta sıra **1→2 / 4←3 / 5→6** biçimindeki kesintisiz yılan rotasıdır:
+  2. duraktan 3. durağa sağ kenardan, 4. duraktan 5. durağa sol kenardan aşağı
+  inen ışık yolu kullanılır. Dört kitapta ilk iki teras, beş kitapta üçüncü
+  terasın sol durağı kullanılır. Bağlantı çizgisi kitap adı veya dokunma
+  alanlarının üzerinden geçmez; tamamlanan bölüm sakin yeşil, kalan yol soluk
+  altın, aktif durak çift altın halka ve nefes animasyonuyla gösterilir.
+- **Hazırlanıyor**, ilerleme durumu değil içerik yayımlanma durumudur. Bu
+  durakta ilerleme çubuğu, rozet/madalya sayısı veya eylem butonu gösterilmez;
+  rota açılamaz. Tamamlandı / Devam ediyor / Kilitli dili yalnız yayımlanmış
+  kitaplarda kullanılır.
+- İlk yayındaki nihai referans Hz. Âdem'dir. Hz. Âdem finalinden sonraki kitap
+  geçişini ve tamamlandı/devam ediyor durumlarını sunumda doğrulamak için
+  **Hz. Şît dört bölümlük geçici demo kitap** olarak açılır. Bu metin nihai
+  içerik değildir ve kaynaklı teslim geldiğinde bütünüyle değiştirilir.
+- Önceki demo akışındaki Hz. Nuh, Hz. Ebû Bekir ve Hz. Ömer kitapları ürün
+  rotalarından çıkarılmıştır. Katalogda kendi keşif bölgelerinde yalnız
+  **Hazırlanıyor** olarak görünür; eski okuyucu ve bölüm yapısı kullanılmaz.
+- Atlas ve bölüm rotası masaüstünde aynı 1440px içerik kabuğunu, aynı sağ/sol
+  boşlukları ve viewport'u dengeli dolduran dikey ölçüyü paylaşır. Tablet yatay
+  ve masaüstünde kitap ayrıntıları sağdaki sabit panelde kalır; tablet dikey ve
+  mobilde aynı içerik sağdan açılan drawer içinde gösterilir. Drawer dışına
+  dokunmak veya “Haritaya Dön” eylemi paneli kapatır. Her iki yerleşimde de
+  yayımlanmış kitabın bölüm ilerlemesi, bölüm bölüm kazanılacak/kazanılan
+  rozetleri ve kitap madalyası birlikte görünür; dokunma hedefleri Bölüm 3.5
+  standardını korur.
+
+### 3.8 Veli ana sayfası bilgi mimarisi (ONAY — 18 Temmuz 2026)
 
 Veli panelinin ana sayfası salt profil seçici veya yoğun istatistik panosu
 değildir; çocuk başına **okuma yolculuğu özeti** gösterir:
@@ -216,7 +255,7 @@ değildir; çocuk başına **okuma yolculuğu özeti** gösterir:
   menü daha büyük masaüstünde açılır. İşlevsel etiketler okunabilir boyutta,
   dokunma alanları Bölüm 3.5 standardında kalır.
 
-### 3.8 Veli alt sayfaları görsel tutarlılığı (ONAY — 18 Temmuz 2026)
+### 3.9 Veli alt sayfaları görsel tutarlılığı (ONAY — 18 Temmuz 2026)
 
 Kütüphane, Ödüller ve Gelişim Raporları ana sayfadaki sakin ve geniş kart
 dilini paylaşır; her biri kendi işini yapar, ana sayfayı veya birbirini tekrar
@@ -642,8 +681,9 @@ Kurallar:
 | Kitap | Durum |
 |---|---|
 | Hz. Âdem | ✅ Yeni içerik yazıldı ve **dini doğruluk onayı verildi (Hasan, 15 Tem 2026)** — **8 bölüm + Büyük Final Testi**. **Geçerli tek kaynak dosya: `kitap-icerikleri/KITAP-HZ-ADEM-ICERIK-final.md`** (eski `KITAP-HZ-ADEM-ICERIK.md` geçersizdir). Yeni bölüm akışıyla: iki parçalı hikâye + Seçimini Karşılaştır. Hâbil-Kâbil kıssası **Bölüm 7** olarak dahil — Mâide 5/27-31 merkezli, şiddet ayrıntısı gösterilmeden (kitaba özgü karar, genel kural değil). **4 koşullu "Bugüne Taşı" görevi** (Bölüm 2, 3, 5, 7). **`books.ts`'e + final testine + veli raporuna Faz 6.1'de aktarıldı (birebir).** |
-| Hz. Nuh | Demo içerik (kalite iyi; gerçek kaynak kontrolüyle gözden geçirilecek; yeni bölüm akışına Faz 6.1 sonrası uyarlanacak) |
-| Diğer kitaplar | İçerik yok; fazlar ilerlerken kitap kitap eklenecek |
+| Hz. Şît | **Geçici sunum içeriği:** Hz. Âdem finalinden ikinci kitaba geçişi sınamak için 4 demo bölüm + demo final. Supabase verisine yazılmaz; nihai kaynaklı metin değildir ve içerik tesliminde bütünüyle değiştirilecektir. |
+| Hz. Nuh, Hz. Ebû Bekir, Hz. Ömer | Önceki demo bölüm/okuyucu akışları ürün rotalarından kaldırıldı. Keşif Atlası'nda uygun bölgelerinde yalnız **Hazırlanıyor** görünür. |
+| Diğer kitaplar | `KITAP-KATALOGU-VE-URETIM-PLANI.md` sırasıyla katalogda **Hazırlanıyor**; kaynaklı içerik geldikçe yayımlanacak. |
 
 İçerik yazım kuralları: Bahar Yayıncılık yazım kuralları esas alınır
 (peygamber adlarında "(a.s.)" ilk geçişte; kaynak dışına taşan kesin ifade yok;

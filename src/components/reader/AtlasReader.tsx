@@ -315,6 +315,15 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
     async function kontrolEt() {
       const profileId = window.localStorage.getItem("selected_child_profile_id");
       if (!profileId) return;
+      if (chapter.bookKey === "sit") {
+        const tamamlanan = Number(
+          window.localStorage.getItem(`pkd-demo-sit-progress-${profileId}`) ?? 0,
+        );
+        if (!iptal && tamamlanan >= (chapter.chapterNumber ?? 1)) {
+          setTekrarOkuma(true);
+        }
+        return;
+      }
       const keyword = chapter.bookKey === "adem" ? "adem" : chapter.bookKey ?? "ebubekir";
       const { data: kitaplar } = await supabase.from("books").select("id, isim");
       const kitap = kitaplar?.find((item) =>
