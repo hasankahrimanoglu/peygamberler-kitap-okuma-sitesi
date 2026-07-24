@@ -220,6 +220,8 @@
 .chip_locked, .chip_preparing { color: color-mix(in srgb, var(--atlas-night) 55%, var(--atlas-paper)); background: color-mix(in srgb, var(--atlas-night) 7%, transparent); }
 .bookIdentity h2 { margin-top: 8px; color: var(--atlas-night); font-size: clamp(28px, 2.8vw, 38px); line-height: 1; }
 .bookIdentity p { margin-top: 5px; color: color-mix(in srgb, var(--atlas-night) 66%, var(--atlas-paper)); font-size: 16px; font-weight: 800; line-height: 1.3; }
+/* Keşif açıklaması: alt başlıktan daha sakin, gövde metni ölçüsünde (3.5). */
+.bookIdentity p.bookDescription { margin-top: 8px; color: color-mix(in srgb, var(--atlas-night) 74%, var(--atlas-paper)); font-size: 16px; font-weight: 500; line-height: 1.45; }
 .progressBlock { margin-top: 14px; }
 .progressBlock > div:first-child { display: flex; align-items: center; justify-content: space-between; font-weight: 900; }
 .progressTrack { height: 9px; margin-top: 9px; overflow: hidden; border-radius: 999px; background: color-mix(in srgb, var(--atlas-night) 10%, transparent); }

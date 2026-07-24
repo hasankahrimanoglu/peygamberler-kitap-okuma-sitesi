@@ -1,3 +1,16 @@
+> # ⛔ GEÇERSİZ — ARŞİV (25 Temmuz 2026)
+>
+> **Bu şablon artık kullanılmıyor.** Yerini şu belge aldı:
+> ### → [`YENI-KITAP-ICERIK-URETIM-BRIFI.md`](./YENI-KITAP-ICERIK-URETIM-BRIFI.md)
+>
+> Yeni brif; değişken bölüm sayısını (4–10), kaynak PDF denetimini,
+> `KITAP-KATALOGU-VE-URETIM-PLANI.md` bağlantısını ve zorunlu teslim
+> iskeletini içerir. Bu dosya yeni işte **kullanılmaz ve referans verilmez**;
+> yalnız Hz. Âdem içeriğinin hangi kurallarla yazıldığını anlamak için
+> tarihsel kayıt olarak duruyor.
+
+---
+
 # KİTAP İÇERİK ŞABLONU — Keşif Dünyası (Peygamberler & Dört Büyük Halife)
 
 > Bu doküman, bir kitabın TÜM içeriğini yazarken teslim edilmesi gereken veri

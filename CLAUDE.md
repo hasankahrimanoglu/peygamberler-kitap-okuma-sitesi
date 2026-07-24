@@ -25,22 +25,51 @@ Stack: Next.js + TypeScript + Tailwind + Supabase. Paket yöneticisi: **npm**.
   (renk/token/bileşen), özellik kararları, sayfa haritası, görsel varlık sistemi,
   veri modeli, fazlar. **Bir karar değişecekse önce bu doküman güncellenir, sonra
   kod.** Şüphede kalırsan buraya bak.
+- **KITAP-KATALOGU-VE-URETIM-PLANI.md** — hangi kitabın hangi keşif bölgesinde,
+  kaçıncı sırada ve **kaç bölüm** olacağını belirler (7 bölge · 35 kitap ·
+  216 bölüm) + kaynak hassasiyet sınıfları (K1–K4). `src/data/atlasCatalog.ts`
+  bu belgeyi izler. Kitap ekleme/çıkarma, bölge veya hedef bölüm sayısı
+  değişikliği **Hasan onayı olmadan yapılmaz** (belgenin §12 kuralı).
+- **ROZET-MATRISI.md** — 216 rozetin tekillik sicili ve görsel üretim listesi.
+  Yeni kitap `books.ts`'e aktarılmadan önce rozet adları **buradaki dizinle
+  karşılaştırılır**; çakışma varsa aktarım yapılmaz, önce ad değişikliği sorulur.
+  Aktarım bitince matris güncellenir (§6 akışı).
+- **SOZLUKCE-SICILI.md** — etkileşimli kelimelerin tekillik sicili. Bir terim
+  **set genelinde yalnız bir kez** kutulanır ve **tek tanımı** olur. Aktarımdan
+  önce karşılaştırılır; terim sicilde varsa yeni kitapta `interactive_word`
+  değil düz `text` olarak aktarılır. Aktarım bitince sicil güncellenir.
 - **supabase/schema.sql** — veritabanı şeması.
 
 ### Referans (koda ait DEĞİL)
-- **KITAP-ICERIK-SABLONU.md** — kitap içeriklerinin hangi kurallara göre
-  *yazıldığını* anlatan belgedir. Cümle uzunluğu, sözlükçe, "Sen Olsaydın", veli
-  metni gibi **içerik kurallarını KODLAMAYA ÇALIŞMA.** Sadece bilgi amaçlı.
+- **YENI-KITAP-ICERIK-URETIM-BRIFI.md** — **güncel** içerik üretim brifidir.
+  Kitap içeriğinin hangi kurallara göre *yazıldığını* anlatır: cümle uzunluğu,
+  sözlükçe, "Sen Olsaydın", veli metni, görsel brifleri, teslim iskeleti.
+  Bu **içerik kurallarını KODLAMAYA ÇALIŞMA.** Sadece bilgi amaçlı.
+- **KITAP-ICERIK-SABLONU.md** — ⛔ **GEÇERSİZ / ARŞİV.** Yerini yukarıdaki brif
+  aldı. Yeni işte kullanma, referans verme.
 
 ---
 
 ## İÇERİK & VERİ
-- Tüm kitap içeriği (bölümler, metinler, sorular, rozet adları/anahtarları)
-  **`src/data/books.ts`** içinde statik tutulur. 20 kitaba kadar Supabase'e
-  taşınmaz.
-- Kitap içeriği **ayrı bir içerik oturumunda** `KITAP-ICERIK-SABLONU.md`'ye göre
-  üretilir, sana **doldurulmuş metin** olarak gelir. Senin işin onu `books.ts`
-  formatına **EKLEMEK** — içeriği kendin yazma, değiştirme, kısaltma.
+- **İki ayrı veri dosyası, karıştırma:**
+  - `src/data/books.ts` → bölüm metinleri, "Sen Olsaydın", Ne Öğrendik,
+    Bugüne Taşı görevleri, rozet adları, veli raporu.
+  - `src/data/quizzes.ts` → **Büyük Final Testi soruları.** (Eskiden quiz
+    sayfasının içindeydi; 25 Tem 2026'da ayrıldı.) Yeni kitap eklerken **her iki
+    dosya da** güncellenir; final testini atlamak en kolay yapılan hatadır.
+  - `src/data/atlasCatalog.ts` → kitap adı, alt başlık, keşif açıklaması,
+    bölüm sayısı, yayımlanma durumu. Katalog belgesini izler.
+- Kitap içeriği **`src/data/books.ts`** içinde statik tutulur. Kitap sayısının 20'yi aşması
+  tek başına Supabase'e taşıma gerekçesi değildir; böyle bir taşıma ancak ayrı
+  bir teknik karar ve faz ile yapılır.
+- Kitap içeriği **ayrı bir içerik oturumunda** `YENI-KITAP-ICERIK-URETIM-BRIFI.md`
+  ve `KITAP-KATALOGU-VE-URETIM-PLANI.md`'ye göre üretilir, sana **doldurulmuş
+  metin** olarak gelir. Senin işin onu `books.ts` formatına **EKLEMEK** —
+  içeriği kendin yazma, değiştirme, kısaltma.
+- **Rozet görsel anahtarı `books.ts`'te alan DEĞİLDİR.** `src/lib/derive.ts`
+  içindeki `rozetIconKey(bookKey, no)` ile `{bookKey}-bolum-{no}` olarak türetilir
+  → `public/rozetler/rozet-{bookKey}-bolum-{no}.png`. Bölümlere `rozetIcon`
+  alanı ekleme.
 - Supabase tabloları: `profiles`, `parent_subscriptions`, `books`, `user_progress`.
 - Türetilen kavramlar tablo GEREKTİRMEZ: rozet (`tamamlanan_bölüm >= sıra`),
   madalya (`bitti_mi = true`), unvan (tamamlanan kitap sayısı → eşik tablosu).
@@ -87,9 +116,10 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
 - Klasör/isim sabit: `public/rozetler/rozet-{iconKey}.png`,
   `public/kapaklar/kapak-{bookKey}.png`, `public/madalyalar/`, `public/unvanlar/`,
   `public/avatarlar/`. Dosya adları küçük harf, Türkçe karaktersiz, tireli.
-- **Rozet = bölüm başına özel görsel** (Karar: Seçenek B). `books.ts`'te her bölüme
-  `rozetIcon` anahtarı (`adem-bolum-1` gibi). Tek şablon ailesi; kilitli/kazanılmış
-  durum ayrı görsel değil, CSS ile soluklaştırma.
+- **Rozet = bölüm başına özel görsel** (Karar: Seçenek B). Anahtar veriye yazılmaz,
+  `rozetIconKey(bookKey, no)` ile türetilir (`adem-bolum-1` gibi). Tek şablon
+  ailesi; kilitli/kazanılmış durum ayrı görsel değil, CSS ile soluklaştırma.
+  Rozet adlarının set genelinde tekilliği **ROZET-MATRISI.md** ile yönetilir.
 - **"Sen Olsaydın" salt metindir** (Karar 11 Tem 2026) — seçeneklerde görsel yok.
 
 ---
@@ -102,8 +132,8 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
   Kurallar: seçim hikâyeyi DALLANDIRMAZ; doğru cevap seçim anında AÇIKLANMAZ;
   bölüm sonunda YALNIZCA seçilen şıkkın karşılaştırma metni gösterilir; seçim
   aynı okuma oturumunda tutulur (kalıcı kayıt S5'tir, karıştırma).
-- **"Bugüne Taşı" görevleri KOŞULLUDUR** — her bölümde değil (8 bölümde ~3-4;
-  editoryal hedef, teknik sınır olarak KODLANMAZ). Gönüllüdür: "Görevi Listeme
+- **"Bugüne Taşı" görevleri KOŞULLUDUR** — her bölümde değil (kitabın yaklaşık
+  %40–50'si; editoryal hedef, teknik sınır olarak KODLANMAZ). Gönüllüdür: "Görevi Listeme
   Ekle / Şimdilik Değil". İlerleme/rozet/madalya ŞARTI DEĞİLDİR; göreve ayrı
   ödül/puan YOK. Kalıcı durum (Tamamlandı/Tamamlanmadı) Faz 6.1'de yeni tabloyla
   gelir (`user_progress`'e sıkıştırılmaz). Görev meta alanları: ID, ad, kategori,
@@ -137,11 +167,28 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
 ---
 
 ## YENİ KİTAP EKLERKEN HIZLI KONTROL
+- [ ] **Rozet adları `ROZET-MATRISI.md` §2 diziniyle karşılaştırıldı — çakışma yok**
+      (çakışma varsa aktarım YAPILMAZ, önce ad değişikliği sorulur)
+- [ ] **Etkileşimli kelimeler `SOZLUKCE-SICILI.md` ile karşılaştırıldı**; sicilde
+      olan terim düz `text` olarak aktarıldı, ikinci kez kutulanmadı
+- [ ] Bölüm sayısı `KITAP-KATALOGU-VE-URETIM-PLANI.md`'deki hedefle aynı
 - [ ] Doldurulmuş içerik `src/data/books.ts` formatına eklendi
+- [ ] **Final testi soruları `src/data/quizzes.ts`'e eklendi ve `quizConfig`'e
+      kitap anahtarı tanımlandı** (unutulmaya en açık adım)
 - [ ] Bölüm sayısı = rozet sayısı = final testi soru sayısı
 - [ ] Her bölümde hikâye iki parça (1. Kısım + Devam) ve Sen Olsaydın karar noktasında; her şık için ayrı Seçimini Karşılaştır metni var
 - [ ] Bugüne Taşı YALNIZCA görev tanımlı bölümlerde; meta alanları tam; her bölümde görev ZORUNLU DEĞİL
-- [ ] Her bölümde `rozetIcon` anahtarı var; madalya adı "{Kitap adı} Yolculuk Madalyası"
-- [ ] Rozet adları set genelinde tekil
+- [ ] Madalya adı "{Kitap adı} Yolculuk Madalyası"
+- [ ] `atlasCatalog.ts`'te `availability` ve `description` (keşif açıklaması)
+      güncellendi
 - [ ] Türkçe karakterler doğru render oluyor
 - [ ] İçerik hiçbir yerde peygamber/halife/sahabe yüzü tarif etmiyor
+- [ ] **`ROZET-MATRISI.md` güncellendi** (§2 dizinine adlar, §4 satırları, §5 sayaçlar)
+- [ ] **`SOZLUKCE-SICILI.md` güncellendi** (yeni terimler, çözülen çakışmalar)
+
+## BÖLGE METİNLERİ — TEK KAYNAK
+Keşif bölgelerinin çocuk açıklaması iki yerde yazılıdır:
+`KITAP-KATALOGU-VE-URETIM-PLANI.md` (editoryal kaynak) ve
+`src/data/atlasCatalog.ts` (`AtlasRegion.description`). **İkisi birebir aynı
+tutulur.** Metin değişecekse önce katalog belgesi, sonra kod güncellenir;
+asla tek tarafta değiştirilmez.

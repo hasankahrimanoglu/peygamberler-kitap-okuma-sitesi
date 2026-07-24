@@ -67,7 +67,12 @@ Kurallar:
   derecelendirmek felsefeye aykırı).
 - Unvan **puana değil**, tamamlanan kitap sayısına bağlıdır. Puan sistemi YOK.
 
-### Unvan eşikleri (öneri — içerik büyüdükçe güncellenebilir)
+### Unvan eşikleri (GÜNCELLENDİ — 25 Temmuz 2026, Hasan onayı)
+
+35 kitaplık ilk katalog omurgasına göre uzatıldı. Önceki tablo 15. kitapta
+bitiyordu; katalog 35 kitaba çıkınca son 20 kitap işaretsiz kalıyordu. Puan ve
+seri bilinçli olarak bulunmadığı için unvan, çocuğun tek uzun vadeli
+ilerleme işaretidir.
 
 | Tamamlanan kitap | Unvan |
 |---|---|
@@ -77,6 +82,19 @@ Kurallar:
 | 6 | Yol Arkadaşı |
 | 10 | Bilge Yolcu |
 | 15 | Hikâye Ustası |
+| 20 | Emanet Koruyucusu |
+| 25 | Atlas Bilgini |
+| 30 | Kıssa Rehberi |
+| 35 | Yedi Bölge Kaşifi |
+
+Tek kaynak `src/lib/derive.ts` içindeki `UNVAN_ESIKLERI` tablosudur;
+`unvanFromBookCount()` bu tabloyu okur (eşikler ikinci kez kodlanmaz).
+Görsel dosyası gerekmez: anahtar unvan adından türetilir
+(`unvan-emanet-koruyucusu.png` gibi), dosya yoksa placeholder gösterilir.
+
+> **Not:** Yayına girecek nihai kitap sayısı henüz kesin değildir (20 veya 35
+> olabilir). Sayı netleştiğinde bu tablo yeniden gözden geçirilir; özellikle
+> "Yedi Bölge Kaşifi" adı 35 kitabın = 7 bölgenin tamamlanmasına gönderme yapar.
 
 - "Altın Yol Arkadaşı" ChatGPT görsellerinde üç farklı anlamda kullanılmıştı;
   bizde **kullanılmaz** ya da yalnızca tek bir madalya adı olarak kullanılabilir.
@@ -437,13 +455,17 @@ public/
   yalnızca iç sembol). Gerekirse ara çözüm: bazı bölümler değer havuzundan
   ortak sembol kullanabilir — sistem iconKey sayesinde ikisini de destekler.
 - Dosya adı küçük harf, Türkçe karaktersiz, tire ile ayrılır.
-- **Merkezî Rozet Matrisi:** Tüm serinin rozetleri tek bir tabloda planlanır
-  (kolonlar: kitap · bölüm no · rozet adı · değer · rozetIcon). Bu tablo iki işi
-  birden yönetir: (a) **rozet adları set genelinde tekildir** — aynı değer birden
-  çok kitapta işlenirse her biri farklı ad + farklı nüansla gelir ("Sadakat
-  Rozeti" / "Bekleyen Kalp Rozeti"), (b) 150–200 rozet görselinin üretim listesidir.
-  İçerik şablonundaki "rozet adı" ve buradaki "rozetIcon" aynı satırda buluşur.
-  Yeni kitap eklenirken bu matrise bakılır; matris yaşayan belgedir.
+- **Merkezî Rozet Matrisi — `ROZET-MATRISI.md` (kuruldu: 25 Tem 2026):** Tüm
+  serinin rozetleri tek bir tabloda planlanır (kolonlar: kitap · bölüm no ·
+  rozet adı · değer · rozet anahtarı). Bu tablo iki işi birden yönetir:
+  (a) **rozet adları set genelinde tekildir** — aynı değer birden çok kitapta
+  işlenirse her biri farklı ad + farklı nüansla gelir ("Sadakat Rozeti" /
+  "Bekleyen Kalp Rozeti"), (b) ilk katalogdaki **216** rozet görselinin üretim
+  listesidir. İçerik brifindeki "rozet adı" ve buradaki anahtar aynı satırda
+  buluşur. Yeni kitap eklenirken bu matrise bakılır; matris yaşayan belgedir.
+  **Not:** Rozet anahtarı `books.ts`'e alan olarak yazılmaz; `src/lib/derive.ts`
+  içindeki `rozetIconKey(bookKey, no)` ile `{bookKey}-bolum-{no}` olarak
+  türetilir.
 
 ### 6.2 Teknik özellikler
 
@@ -520,8 +542,14 @@ ileride istenirse eklenmesi kolaydır.)
 - `parent_subscriptions` — Shopier abonelikleri
 - `books` — kitap meta (isim, sıra, toplam bölüm)
 - `user_progress` — profil+kitap başına ilerleme (bölüm sayısı, %, bitti_mi, final skoru)
-- İçerik (bölümler, metinler, sorular, rozet adları) `src/data/books.ts`
-  içinde statik dosyada. **Bu fazlarda taşınmaz.** Kitap sayısının 20'yi aşması
+- İçerik (bölümler, metinler, rozet adları, veli raporu) `src/data/books.ts`
+  içinde statik dosyada.
+- **Büyük Final Testi soruları `src/data/quizzes.ts` içindedir** (25 Tem 2026'da
+  `app/quiz/[bookId]/page.tsx` içinden ayrıldı; sayfa artık yalnız veriyi
+  tüketir). Yeni kitap eklerken `books.ts` ve `quizzes.ts` **birlikte** güncellenir.
+- Kitap kataloğu meta verisi (ad, alt başlık, keşif açıklaması, bölüm sayısı,
+  yayımlanma durumu) `src/data/atlasCatalog.ts` içindedir.
+- **Bu fazlarda Supabase'e taşınmaz.** Kitap sayısının 20'yi aşması
   tek başına Supabase'e taşıma gerekçesi değildir; ancak paket boyutu, bakım ve
   yükleme performansı ölçülüp teknik ihtiyaç doğarsa taşıma ayrı proje olur.
 

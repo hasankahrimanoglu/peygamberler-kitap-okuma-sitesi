@@ -32,7 +32,8 @@ Hedef bölüm sayısı: [KATALOGDAN — 4–10]
 Varsa ek güvenilir kaynaklar: [YOKSA “yalnızca verilen PDF” yaz]
 Özellikle kullanılmaması gereken rivayetler: [LİSTE / YOK]
 Özellikle ele alınması gereken olaylar: [LİSTE / PDF'YE GÖRE]
-Mevcut merkezi rozet listesi: [DOSYA/LİSTE — çakışma kontrolü için]
+Merkezî rozet matrisi: ROZET-MATRISI.md [rozet adı çakışma kontrolü için — ZORUNLU]
+Merkezî sözlükçe sicili: SOZLUKCE-SICILI.md [etkileşimli kelime kontrolü için — ZORUNLU]
 Ek editoryal notlar: [VARSA]
 ```
 
@@ -166,8 +167,8 @@ aralığına dayanmalıdır.
 |---|---|---|
 | Kitap sırası | Keşif durağı | Pozitif tam sayı |
 | Kitap adı | Harita, panel, kütüphane | `Hz. + isim` |
-| Alt başlık | Kitap kartı | 25–45 karakter, tek satıra uygun |
-| Keşif açıklaması | Seçili kitap paneli | 100–180 karakter; ana değerleri merak uyandırarak anlatır |
+| Alt başlık | Kitap kartı | 15–45 karakter, tek satıra sığmalı. Kısa ve net olması iyidir; uzatmak için doldurma yapma |
+| Keşif açıklaması | Seçili kitap paneli | 100–180 karakter; ana değerleri merak uyandırarak anlatır. Kodda `atlasCatalog.ts` → `description` alanına girer |
 | Kitap kapağı brifi | Harita ve veli kütüphanesi | 2:3, yazısız görsel üretim brifi ayrıca verilir |
 | Bölüm sayısı | İlerleme | Katalogdaki hedef; 4–10 |
 | Kitap madalyası adı | Final ve ödül ekranları | `{Kitap adı} Yolculuk Madalyası` |
@@ -208,7 +209,7 @@ Her bölüm için şunların tümü gerekir:
 
 ### 5.5 Veli ekranları
 
-- Kitap adı, alt başlık, tanıtım/keşif açıklaması ve bölüm sayısı
+- Kitap adı, alt başlık, keşif açıklaması ve bölüm sayısı
 - Çocuğun mevcut kitabında görünen bölüm adları ve ilerleme
 - Kazanılan rozet adları ve madalya adı
 - 3 değişken veli özeti (`high`, `mixed`, `low`)
@@ -223,20 +224,24 @@ türetilir; içerik ajanı bunları uydurmaz.
 
 ## 6. KİTAP KİMLİĞİ — ZORUNLU ALANLAR
 
+Bazı alanları kod **kendisi türetir**. Bunlar aşağıda *(doğrulama amaçlı)*
+olarak işaretlendi: yine de teslimde yazılır, ama veri olarak saklanmaz —
+kodun ürettiği değerle eşleşip eşleşmediğini kontrol etmeye yararlar. Eşleşmiyorsa
+aktarım yapılmadan önce sorulur.
+
 | Alan | Kural |
 |---|---|
 | Kitap adı | `Hz. + isim` |
 | `booksTsId` | `books.ts` kimliği; `hz-` önekli, ör. `hz-nuh` |
 | `bookKey` | Küçük harf, Türkçe karaktersiz, boşluksuz; ör. `nuh` |
-| `assetSlug` | Dosya adlarında kullanılır; ör. `hz-nuh` |
-| `routePrefix` | Uygulama rotası; `bookKey` ile aynı, ör. `nuh` |
+| `assetSlug` | *(doğrulama amaçlı)* Dosya adlarında kullanılır; `bookKey`'den türer |
+| `routePrefix` | *(doğrulama amaçlı)* `bookKey` ile aynıdır, ör. `nuh` |
 | `dbKeywords` | Veritabanındaki kitap adını eşleştiren normalize anahtarlar; ör. `nuh` |
 | Seri sırası | Pozitif tam sayı |
-| Alt başlık | 25–45 karakter |
-| Tanıtım paragrafı | 120–200 karakter, 1–2 cümle |
-| Keşif haritası açıklaması | 100–180 karakter |
+| Alt başlık | 15–45 karakter, tek satıra sığmalı |
+| Keşif haritası açıklaması | 100–180 karakter, 1–2 cümle. Kitabın tek tanıtım metnidir; ayrıca "tanıtım paragrafı" yazılmaz |
 | Üst etiket | `{Kitap adı} — Çocuklar İçin` |
-| Madalya adı | `{Kitap adı} Yolculuk Madalyası` |
+| Madalya adı | *(doğrulama amaçlı)* Kod `{Kitap adı} Yolculuk Madalyası` olarak türetir |
 | Madalya sembol fikri | Figürsüz nesne/sembol, 1–3 kelime |
 | Bölüm sayısı | Katalogdaki hedef; 4–10 |
 | Ana değerler | 4–5 değer |
@@ -263,9 +268,11 @@ Her bölümde:
 - **Bölüm özeti:** 60–110 karakter; tek cümle
 - **Ana olay ve değer:** birer kısa ifade
 - **Kaynak sayfaları:** iç kontrol için PDF sayfaları
-- **Rozet adı:** 2–4 kelime, `{değer/kavram} Rozeti`; set genelinde tekil
+- **Rozet adı:** 2–4 kelime, `{değer/kavram} Rozeti`; set genelinde tekil.
+  Tekillik `ROZET-MATRISI.md` §2 diziniyle karşılaştırılarak doğrulanır
 - **Rozet sembolü:** figürsüz 1–3 kelime
-- **Rozet anahtarı:** `{bookKey}-bolum-{no}`
+- **Rozet anahtarı:** *(doğrulama amaçlı)* Kod `{bookKey}-bolum-{no}` olarak
+  türetir; veriye yazılmaz
 - **Ses yolu planı:** `/sesli-anlatim/{assetSlug}/{assetSlug}-bolum-{no}.mp3`
 
 ### 7.2 Hikâye uzunluğu ve dil
@@ -546,6 +553,11 @@ sabırlı”, “imanı güçlendi”, “iyi/kötü çocuk” gibi sonuç cüml
 
 ## 11. STANDART SÖZLÜKÇE
 
+> **Sicil:** Kutulanmış bütün terimlerin güncel kaydı `SOZLUKCE-SICILI.md`
+> belgesindedir. Bir terim **set genelinde yalnız bir kez** kutulanır ve **tek
+> bir tanımı** olur. Etkileşimli kelimeleri yazmadan önce o sicile bak: terim
+> daha önce başka bir kitapta kutulandıysa bu kitapta düz metin kalır.
+
 Bu tanımları değiştirme:
 
 | Terim | Sabit tanım |
@@ -608,7 +620,6 @@ routePrefix:
 dbKeywords:
 Seri sırası:
 Alt başlık:
-Tanıtım paragrafı:
 Keşif haritası açıklaması:
 Üst etiket:
 Madalya adı:
@@ -743,13 +754,15 @@ Ajan, teslim sonunda her maddeyi `tamam / sorun var` olarak raporlamalıdır:
 - [ ] Bugüne Taşı yalnız doğal bölümlerde ve bütün meta alanlarıyla yazıldı.
 - [ ] Tanık kullanıldıysa aynı kişi ve tarihî/kurgu sınırı açık.
 - [ ] Etkileşimli kelimeler yalnız ilk geçişte; tanımlar sabit sözlükçeyle aynı.
+- [ ] Etkileşimli kelimeler `SOZLUKCE-SICILI.md` ile karşılaştırıldı; daha önce
+      başka kitapta kutulanmış terim bu kitapta düz metin bırakıldı.
 - [ ] Her bölümde genellikle 3–4 anlamlı görsel durağı var; gereksiz görsel yok.
 - [ ] Her içerik görselinin 4:3 yatay ve 3:4 dikey brifi var.
 - [ ] Bütün görsel tarifleri figür/tasvir ve anakronizm yasağına uyuyor.
 - [ ] Final soru sayısı bölüm sayısına eşit ve her bölüm bir kez temsil ediliyor.
 - [ ] Veli raporunda 3 özet, 2–3 sohbet sorusu ve 3–6 zor soru bulunuyor.
 - [ ] Hassas konular veli alanında karşılandı ve çocuk metninde yumuşatıldı.
-- [ ] Rozet adları verilen merkezi rozet listesiyle çakışmıyor.
+- [ ] Rozet adları `ROZET-MATRISI.md` §2 diziniyle çakışmıyor.
 - [ ] Uzun alıntı, kaynak dışı olay, kesinleştirilmiş belirsiz rivayet yok.
 - [ ] Açık editör soruları teslimin sonunda ayrıca listelendi.
 
@@ -764,7 +777,8 @@ net sorular sor:
 - Kitap adı, `bookKey`, keşif bölgesi, seri sırası veya hedef bölüm sayısı belirsizse
 - Katalogdaki hedef sayıda sağlam bölüm omurgası kaynakta kurulamıyorsa; içeriği
   doldurmak için tekrar veya zayıf rivayet ekleme
-- Merkezî rozet listesi verilmediği için tekillik doğrulanamıyorsa
+- `ROZET-MATRISI.md` veya `SOZLUKCE-SICILI.md` verilmediği için tekillik
+  doğrulanamıyorsa
 - Tartışmalı bir rivayet kitabın ana olay örgüsünü belirliyorsa
 - Ağır bir olayın çıkarılması kitabın anlamını değiştiriyorsa
 - Kullanıcının kaynak sadakati isteği ile 8–11 yaş güvenliği çatışıyorsa

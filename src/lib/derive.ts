@@ -48,6 +48,9 @@ export function clampProgress(value: number) {
 
 // --- Unvan (PROJE-MODELI.md Bölüm 2 — kitap sayısına bağlı, puan YOK) ---
 
+// Eşikler 35 kitaplık ilk katalog omurgasına göre ayarlandı
+// (KITAP-KATALOGU-VE-URETIM-PLANI.md). Yayına girecek kitap sayısı
+// netleştiğinde tablo yeniden gözden geçirilir. Artan sırada tutulmalıdır.
 export const UNVAN_ESIKLERI: { kitap: number; unvan: string }[] = [
   { kitap: 0, unvan: "Yeni Gezgin" },
   { kitap: 1, unvan: "Yol Kaşifi" },
@@ -55,15 +58,19 @@ export const UNVAN_ESIKLERI: { kitap: number; unvan: string }[] = [
   { kitap: 6, unvan: "Yol Arkadaşı" },
   { kitap: 10, unvan: "Bilge Yolcu" },
   { kitap: 15, unvan: "Hikâye Ustası" },
+  { kitap: 20, unvan: "Emanet Koruyucusu" },
+  { kitap: 25, unvan: "Atlas Bilgini" },
+  { kitap: 30, unvan: "Kıssa Rehberi" },
+  { kitap: 35, unvan: "Yedi Bölge Kaşifi" },
 ];
 
+/** Unvan yalnız UNVAN_ESIKLERI'nden türetilir; eşikler tek kaynaktan yönetilir. */
 export function unvanFromBookCount(completedBookCount: number) {
-  if (completedBookCount >= 15) return "Hikâye Ustası";
-  if (completedBookCount >= 10) return "Bilge Yolcu";
-  if (completedBookCount >= 6) return "Yol Arkadaşı";
-  if (completedBookCount >= 3) return "Değer Toplayıcısı";
-  if (completedBookCount >= 1) return "Yol Kaşifi";
-  return "Yeni Gezgin";
+  let sonuc = UNVAN_ESIKLERI[0].unvan;
+  for (const esik of UNVAN_ESIKLERI) {
+    if (completedBookCount >= esik.kitap) sonuc = esik.unvan;
+  }
+  return sonuc;
 }
 
 export function unvanAnahtari(unvan: string) {
@@ -79,37 +86,20 @@ type KitapAnahtari = {
   booksTsId?: string;
   /** DB kitap adını eşleştirmek için anahtar kelimeler (normalize edilmiş) */
   keywords: string[];
-  /** books.ts içeriği olmayan kitaplar için rozet adı listesi (sıralı) */
-  statikRozetler?: string[];
 };
 
-// Merkezî Rozet Matrisi'nin kod tarafı (PROJE-MODELI.md 6.1). İçeriği olan
-// kitaplarda rozet adları books.ts'ten okunur; olmayanlarda statik listeden.
+// Merkezî Rozet Matrisi'nin kod tarafı (ROZET-MATRISI.md · PROJE-MODELI.md 6.1).
+// Rozet adları YALNIZCA books.ts içeriğinden okunur. Katalogda "Hazırlanıyor"
+// durumundaki kitaplarda rozet listesi boştur (PROJE-MODELI.md 3.7: hazırlanıyor
+// durağında rozet/madalya sayısı gösterilmez). Buradaki girdiler içeriği olmayan
+// kitaplar için de korunur; `keywords` DB kitap eşleştirmesini, `bookKey` ise
+// route ve görsel anahtarını besler.
 export const KITAP_ANAHTARLARI: KitapAnahtari[] = [
   { bookKey: "adem", booksTsId: "hz-adem", keywords: ["adem"] },
-  { bookKey: "nuh", booksTsId: "hz-nuh", keywords: ["nuh"] },
-  {
-    bookKey: "ebubekir",
-    keywords: ["ebu bekir", "ebubekir"],
-    statikRozetler: [
-      "Işık Rozeti",
-      "Gönül Dostu Rozeti",
-      "İlk Güven Rozeti",
-      "Mekke Çarşısı Rozeti",
-      "Habeşistan Yolu Çıkartması",
-      "Doğruluk Rozeti",
-      "Tevekkül Rozeti",
-      "Kardeşlik Rozeti",
-      "Dayanışma Rozeti",
-      "Teselli Rozeti",
-    ],
-  },
-  {
-    bookKey: "omer",
-    keywords: ["omer"],
-    statikRozetler: ["Adalet Rozeti", "Kararlılık Rozeti", "Merhamet Rozeti"],
-  },
-  { bookKey: "osman", keywords: ["osman"], statikRozetler: ["Hayâ Rozeti"] },
+  { bookKey: "nuh", keywords: ["nuh"] },
+  { bookKey: "ebubekir", keywords: ["ebu bekir", "ebubekir"] },
+  { bookKey: "omer", keywords: ["omer"] },
+  { bookKey: "osman", keywords: ["osman"] },
 ];
 
 export function kitapAnahtariBul(isim: string): KitapAnahtari | undefined {
@@ -119,13 +109,14 @@ export function kitapAnahtariBul(isim: string): KitapAnahtari | undefined {
   );
 }
 
-/** Bir kitabın sıralı rozet adları (books.ts önce, yoksa statik liste). */
+/**
+ * Bir kitabın sıralı rozet adları. Tek kaynak books.ts içeriğidir; içeriği
+ * yayımlanmamış kitapta boş dizi döner ve ekranlar rozet listesi göstermez.
+ */
 export function rozetAdlari(anahtar: KitapAnahtari): string[] {
-  if (anahtar.booksTsId) {
-    const def = bookDefs.find((book) => book.id === anahtar.booksTsId);
-    if (def) return def.chapters.map((chapter) => chapter.badgeName);
-  }
-  return anahtar.statikRozetler ?? [];
+  if (!anahtar.booksTsId) return [];
+  const def = bookDefs.find((book) => book.id === anahtar.booksTsId);
+  return def ? def.chapters.map((chapter) => chapter.badgeName) : [];
 }
 
 /** Rozet görsel anahtarı: adem-bolum-1 → /rozetler/rozet-adem-bolum-1.png */

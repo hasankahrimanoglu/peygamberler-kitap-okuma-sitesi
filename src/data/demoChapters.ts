@@ -56,9 +56,11 @@ type GlossaryEntry = { label: string; meaning: string };
 // Eski demo kitapların bölüm verileri kaldırıldı. Bu küçük sözlük yalnız halen
 // paylaşılan eski sayfa bileşenlerinin tip ve tasarım önizleme uyumu içindir.
 export const glossary: Record<string, GlossaryEntry> = {
+  // Tanım SOZLUKCE-SICILI.md'deki kanonik metindir (Hz. Âdem 8. bölüm, onaylı
+  // içerik). Değiştirilecekse önce sicil güncellenir.
   emanet: {
     label: "Emanet",
-    meaning: "Bize güvenilerek verilen ve özenle korumamız gereken şeydir.",
+    meaning: "Korumamız ve özen göstermemiz için bize güvenilerek verilen şeydir.",
   },
 };
 

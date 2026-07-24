@@ -1,3 +1,16 @@
+> # ⛔ GEÇERSİZ — ARŞİV (25 Temmuz 2026)
+>
+> **Bu dosya Hz. Âdem içeriğinin ESKİ sürümüdür ve kullanılmaz.**
+> Geçerli tek kaynak: [`KITAP-HZ-ADEM-ICERIK-final.md`](./KITAP-HZ-ADEM-ICERIK-final.md)
+> (dinî doğruluk onayı verildi — Hasan, 15 Tem 2026; `books.ts`'e birebir aktarılan sürüm).
+>
+> Aradaki fark önemsiz değil: bu eski sürüm **"Hâbil-Kâbil kıssası dahil
+> edilmez"** diyor; onaylı final sürümde Hâbil-Kâbil **Bölüm 7 olarak dahildir**
+> (Mâide 5/27-31 merkezli, şiddet ayrıntısı gösterilmeden). Bu dosyadan
+> yapılacak bir aktarım, onaylanmış içeriği bozar.
+
+---
+
 # KİTAP: Hz. Âdem
 Alt başlık: İlk insan, ilk yolculuk
 Tanıtım: Hz. Âdem'in yaratılışı, öğrenme yolculuğu, tövbesi ve yeryüzündeki ilk adımları.

@@ -5,6 +5,13 @@ export type AtlasCatalogBook = {
   key: string;
   title: string;
   subtitle: string;
+  /**
+   * Keşif açıklaması (100–180 karakter) — seçili kitap panelinde gösterilir.
+   * İçeriği yayımlanmamış kitapta BOŞ bırakılır; metin uydurulmaz. Panel alan
+   * boşsa hiçbir şey render etmez (PROJE-MODELI.md 6.4: boş placeholder yok).
+   * Kaynak: kitabın onaylı içerik dosyasındaki "Tanıtım" satırı.
+   */
+  description?: string;
   chapterCount: number;
   availability: AtlasAvailability;
 };
@@ -24,10 +31,10 @@ export const atlasRegions: AtlasRegion[] = [
     id: "ilk-izler",
     order: 1,
     name: "İlk İzler Vadisi",
-    description: "Yeryüzünün ilk zamanlarında öğrenmenin, sorumluluğun ve umudun izini sür.",
+    description: "Yeryüzünün ilk zamanlarına adım at; insanların yaşamayı, öğrenmeyi, sorumluluk almayı ve yeniden umut etmeyi nasıl keşfettiğini gör.",
     mood: "Başlangıç ve merak",
     books: [
-      { order: 1, key: "adem", title: "Hz. Âdem", subtitle: "İlk insan, ilk yolculuk", chapterCount: 8, availability: "published" },
+      { order: 1, key: "adem", title: "Hz. Âdem", subtitle: "İlk insan, ilk yolculuk", description: "Hz. Âdem'in yaratılışını, bilgiyle değer kazanmasını, tövbesini, ailesindeki ilk büyük sınavı ve yeryüzündeki sorumluluk yolculuğunu anlatan umut dolu bir keşif.", chapterCount: 8, availability: "published" },
       { order: 2, key: "sit", title: "Hz. Şît", subtitle: "Emaneti taşıyan yeni kuşak", chapterCount: 4, availability: "demo" },
       { order: 3, key: "idris", title: "Hz. İdrîs", subtitle: "Bilgi ve doğruluk yolu", chapterCount: 4, availability: "preparing" },
       { order: 4, key: "nuh", title: "Hz. Nûh", subtitle: "Sabır ve güven yolculuğu", chapterCount: 8, availability: "preparing" },
@@ -39,7 +46,7 @@ export const atlasRegions: AtlasRegion[] = [
     id: "bereketli-aile",
     order: 2,
     name: "Bereketli Aile Yolu",
-    description: "Bir ailenin farklı zamanlara uzanan yolunda güveni, sabrı ve bağışlamayı keşfet.",
+    description: "Bir ailenin farklı zamanlara ve ülkelere uzanan yolunda güveni, misafirperverliği, sabrı ve bağışlamayı keşfet.",
     mood: "Aile ve güven",
     books: [
       { order: 7, key: "ibrahim", title: "Hz. İbrahim", subtitle: "Hakikati arayan kalp", chapterCount: 9, availability: "preparing" },
@@ -54,7 +61,7 @@ export const atlasRegions: AtlasRegion[] = [
     id: "sabir-cesaret",
     order: 3,
     name: "Sabır ve Cesaret Geçidi",
-    description: "Zorlu günlerde umudunu koruyan ve haksızlığa karşı doğruyu söyleyenlerle ilerle.",
+    description: "Zorlu günlerde umudunu koruyan, haksızlığa karşı doğruyu söyleyen ve insanları güvenli bir yola çağıran elçilerle ilerle.",
     mood: "Sabır ve cesaret",
     books: [
       { order: 13, key: "eyyub", title: "Hz. Eyyûb", subtitle: "Zorlukta umudu korumak", chapterCount: 5, availability: "preparing" },
@@ -69,7 +76,7 @@ export const atlasRegions: AtlasRegion[] = [
     id: "hikmet-saraylari",
     order: 4,
     name: "Hikmet Sarayları",
-    description: "Güç sahibi olmanın adalet, şükür ve sorumlulukla nasıl güzelleştiğini gör.",
+    description: "Güç sahibi olmanın ne demek olduğunu; adaletle karar veren, şükreden ve canlıların dünyasına dikkatle bakan elçilerle keşfet.",
     mood: "Hikmet ve adalet",
     books: [
       { order: 19, key: "davud", title: "Hz. Dâvûd", subtitle: "Cesaret ve adalet", chapterCount: 6, availability: "preparing" },
@@ -82,7 +89,7 @@ export const atlasRegions: AtlasRegion[] = [
     id: "umut-isiklari",
     order: 5,
     name: "Umut Işıkları Diyarı",
-    description: "Zor anlarda edilen duaların ve yeniden başlamanın ışığını takip et.",
+    description: "Zor anlarda edilen duaların, şefkatli kalplerin ve yeniden başlamanın ışığını takip et.",
     mood: "Umut ve merhamet",
     books: [
       { order: 23, key: "yunus", title: "Hz. Yunus", subtitle: "Duayla yeniden başlamak", chapterCount: 5, availability: "preparing" },
@@ -97,7 +104,7 @@ export const atlasRegions: AtlasRegion[] = [
     order: 6,
     name: "Rahmet Yolculuğu",
     subtitle: "Sevgili Peygamberimiz Hz. Muhammed'in Hayatı",
-    description: "Güvenilirliği, merhameti ve kardeşliği dört büyük yolculukta keşfet.",
+    description: "Güvenilirliği, merhameti, sabrı ve kardeşliğiyle bütün insanlara örnek olan son peygamberin hayatını dört büyük yolculukta keşfet.",
     mood: "Güven ve kardeşlik",
     books: [
       { order: 28, key: "muhammed-ilk-yillar", title: "Hz. Muhammed — İlk Yıllar", subtitle: "Güvenilir bir gençlik", chapterCount: 8, availability: "preparing" },
@@ -111,7 +118,7 @@ export const atlasRegions: AtlasRegion[] = [
     order: 7,
     name: "Emaneti Taşıyan Dört Dost",
     subtitle: "Dört Büyük Halife",
-    description: "Peygamberimizin ardından emaneti taşıyan dört yakın dostun güzel değerlerini keşfet.",
+    description: "Peygamberimizin ardından emaneti taşıyan dört yakın dostun sadakatini, adaletini, cömertliğini ve cesaretini keşfet.",
     mood: "Sadakat ve emanet",
     books: [
       { order: 32, key: "ebubekir", title: "Hz. Ebû Bekir", subtitle: "Sadakat ve güven", chapterCount: 6, availability: "preparing" },
