@@ -30,7 +30,17 @@ export function YedekliGorsel({
   className = "",
 }: YedekliGorselProps) {
   const [kaynak, setKaynak] = useState(src);
+  const [oncekiSrc, setOncekiSrc] = useState(src);
   const ref = useRef<HTMLImageElement>(null);
+
+  // src prop'u değiştiğinde (ör. haritada başka kitap seçilince) state'i render
+  // sırasında sıfırla. useState yalnız ilk render'da çalıştığı için bu olmadan
+  // bileşen önceki kitabın görselini göstermeye devam ediyordu. Effect yerine
+  // render sırasında yapılıyor ki bir kare boyunca eski görsel görünmesin.
+  if (src !== oncekiSrc) {
+    setOncekiSrc(src);
+    setKaynak(src);
+  }
 
   useEffect(() => {
     const img = ref.current;

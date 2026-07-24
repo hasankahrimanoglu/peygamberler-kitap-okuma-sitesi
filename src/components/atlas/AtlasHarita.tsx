@@ -226,11 +226,13 @@ export function AtlasHarita({
                 <span className={`${styles.statusChip} ${styles[`chip_${seciliDurak.durum}`]}`}><Ikon ad={durumIkonu[seciliDurak.durum]} boyut={15} /> {durumMetni(seciliDurak)}</span>
                 <h2 id="selected-book-title">{seciliDurak.ad}</h2>
                 <p>{seciliDurak.altBaslik}</p>
-                {seciliDurak.aciklama ? (
-                  <p className={styles.bookDescription}>{seciliDurak.aciklama}</p>
-                ) : null}
               </div>
             </div>
+            {/* Keşif açıklaması hero'nun ALTINDA, tam genişlikte durur: mobilde
+                metin ve görsel yan yana konmaz (PROJE-MODELI.md 3.5). */}
+            {seciliDurak.aciklama ? (
+              <p className={styles.bookDescription}>{seciliDurak.aciklama}</p>
+            ) : null}
 
             {hazirDegil ? (
               <div className={styles.preparingCard}>
