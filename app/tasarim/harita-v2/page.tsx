@@ -3,38 +3,43 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { atlasRegions } from "../../../src/data/atlasCatalog";
-import { Ikon, YedekliGorsel } from "../../../src/components/ui";
+import { rozetIconKey } from "../../../src/lib/derive";
+import { Ikon, OdulIkonu, YedekliGorsel } from "../../../src/components/ui";
+// Panel/drawer BİREBİR mevcut `/map` yapısıdır: aynı sınıflar, aynı CSS modülü.
+// Burada yalnız sahne (bölge + durak yerleşimi) yeniden ele alınıyor.
+import panel from "../harita-yeni/harita-yeni.module.css";
 import styles from "./harita-v2.module.css";
 
 /**
  * KEŞİF BÖLGESİ — TASARIM ÖNİZLEMESİ (v2)
  *
- * Amaç: `/map` içindeki mevcut durak yerleşiminin üç yapısal sorununu çözmek.
+ * Amaç: `/map` içindeki durak YERLEŞİMİNİN üç yapısal sorununu çözmek.
  *  1. Sabit yol: mevcut rota her bölgede 6 duraklık çiziliyor; 4 kitaplık
  *     bölgede altta boş sarkan çizgi kalıyor. Burada yol duraklardan TÜRETİLİR.
  *  2. Çift işaret: daire + ayrı etiket kartı yerine tek madalyon.
  *  3. Kesilen ad: 144px sabit + nowrap yerine iki satıra saran ad.
  *
- * Bu rota üretim akışına bağlı değildir; `/map` olduğu gibi durur.
+ * Panel, drawer davranışı ve ödül bölümleri DEĞİŞMEZ — mevcut yapı aynen
+ * kullanılır. `/map` bu rotadan etkilenmez.
  */
 
-type Durum = "tamamlandi" | "aktif" | "kilitli" | "hazirlaniyor";
+type Durum = "completed" | "active" | "locked" | "preparing";
 
 type Nokta = { x: number; y: number };
 
-const durumMetni: Record<Durum, string> = {
-  tamamlandi: "Tamamlandı",
-  aktif: "Yolculuğa Başla",
-  kilitli: "Kilitli",
-  hazirlaniyor: "Hazırlanıyor",
-};
-
 const durumIkonu = {
-  tamamlandi: "onay",
-  aktif: "ok-sag",
-  kilitli: "kilit",
-  hazirlaniyor: "saat",
+  completed: "onay",
+  active: "fener",
+  locked: "kilit",
+  preparing: "saat",
 } as const;
+
+function durumMetni(durum: Durum, tamamlananBolum: number) {
+  if (durum === "completed") return "Tamamlandı";
+  if (durum === "preparing") return "Hazırlanıyor";
+  if (durum === "locked") return "Kilitli";
+  return tamamlananBolum > 0 ? "Devam Ediyor" : "Yeni Açıldı";
+}
 
 /**
  * Durak koordinatları. Her SIRA kendi içinde tam genişliğe yayılır; tek sayıda
@@ -48,8 +53,7 @@ function durakKonumlari(adet: number, dar: boolean): Nokta[] {
   const sira = Math.ceil(adet / sutun);
 
   // Alt sınır 72: madalyonun altındaki iki satırlık ad etiketi sahne kenarına
-  // dayanmasın. Tek sıralı bölgelerde duraklar dikeyde ortalanır.
-  // Dar ekranda yan boşluk artar; yoksa kenar duraklarının etiketi taşıyor.
+  // dayanmasın. Dar ekranda yan boşluk artar; yoksa kenar etiketi taşıyor.
   const xBas = dar ? 27 : 16;
   const xSon = dar ? 73 : 84;
   const yBas = sira === 1 ? 46 : 28;
@@ -111,6 +115,8 @@ export default function HaritaV2Page() {
   const [doluOrnek, setDoluOrnek] = useState(false);
   const [seciliSira, setSeciliSira] = useState(1);
   const [dar, setDar] = useState(false);
+  // Tablet dikey ve mobilde panel sağdan açılan drawer'dır (PROJE-MODELI 3.7).
+  const [detayAcik, setDetayAcik] = useState(false);
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 639px)");
@@ -128,17 +134,27 @@ export default function HaritaV2Page() {
       let durum: Durum;
       if (doluOrnek) {
         // Tasarımın dolu hâlini görmek için örnek ilerleme.
-        durum = i < 2 ? "tamamlandi" : i === 2 ? "aktif" : "kilitli";
-      } else if (kitap.availability === "published") durum = "tamamlandi";
-      else if (kitap.availability === "demo") durum = "aktif";
-      else durum = "hazirlaniyor";
-      return { ...kitap, sira: i + 1, durum, nokta: konum[i] };
+        durum = i < 2 ? "completed" : i === 2 ? "active" : "locked";
+      } else if (kitap.availability === "published") durum = "completed";
+      else if (kitap.availability === "demo") durum = "active";
+      else durum = "preparing";
+
+      const tamamlananBolum = durum === "completed" ? kitap.chapterCount : 0;
+      return {
+        ...kitap,
+        sira: i + 1,
+        durum,
+        tamamlananBolum,
+        ilerleme: Math.round((tamamlananBolum / kitap.chapterCount) * 100),
+        madalyaKazanildi: durum === "completed",
+        nokta: konum[i],
+      };
     });
   }, [bolge, doluOrnek, dar]);
 
   const yol = useMemo(() => akiciYol(duraklar.map((d) => d.nokta)), [duraklar]);
 
-  const tamamlanan = duraklar.filter((d) => d.durum === "tamamlandi").length;
+  const tamamlanan = duraklar.filter((d) => d.durum === "completed").length;
   // Tamamlanan kısım ayrı bir yol olarak çizilir. `pathLength` + dasharray
   // burada yanıltıcı olurdu: viewBox `preserveAspectRatio="none"` ile yatayda
   // esnediği için yol uzunluğu oranı görsel orana denk gelmiyor.
@@ -148,15 +164,30 @@ export default function HaritaV2Page() {
   );
 
   const secili = duraklar.find((d) => d.sira === seciliSira) ?? duraklar[0];
+  const hazirDegil = secili.durum === "preparing";
+  const kilitli = secili.durum === "locked";
+  const aksiyon =
+    secili.durum === "completed"
+      ? "Tekrar Oku"
+      : secili.tamamlananBolum > 0
+        ? "Okumaya Devam Et"
+        : "Yolculuğa Başla";
+
+  const bolumRozetleri = Array.from({ length: secili.chapterCount }, (_, index) => ({
+    sira: index + 1,
+    ad: `${index + 1}. Bölüm Rozeti`,
+    iconKey: rozetIconKey(secili.key, index + 1),
+    kazanildi: index < secili.tamamlananBolum,
+  }));
 
   return (
     <main className={`tema-cocuk ${styles.page}`}>
       <header className={styles.topBar}>
         <span className={styles.previewChip}>
-          <Ikon ad="harita" boyut={16} /> Tasarım Önizlemesi · v2
+          <Ikon ad="harita" boyut={16} /> <span>Tasarım Önizlemesi · v2</span>
         </span>
         <Link className={styles.backLink} href="/tasarim">
-          <Ikon ad="geri" boyut={18} /> Tasarım listesine dön
+          <Ikon ad="geri" boyut={18} /> <span>Tasarım listesine dön</span>
         </Link>
         <label className={styles.toggle}>
           <input
@@ -178,6 +209,7 @@ export default function HaritaV2Page() {
             onClick={() => {
               setBolgeIndex(i);
               setSeciliSira(1);
+              setDetayAcik(false);
             }}
           >
             <b>{r.order}</b>
@@ -189,7 +221,9 @@ export default function HaritaV2Page() {
         ))}
       </nav>
 
-      <div className={styles.layout}>
+      {/* Yerleşim kabuğu da mevcut yapıdan: masaüstünde iki sütun, 1023px
+          altında tek sütun + sağdan açılan drawer. */}
+      <div className={panel.workspace}>
         <section className={styles.scene} aria-label={`${bolge.name} keşif rotası`}>
           <div className={styles.sceneHeader}>
             <small>
@@ -225,8 +259,11 @@ export default function HaritaV2Page() {
                       d.sira === seciliSira ? styles.stopSelected : ""
                     }`}
                     aria-pressed={d.sira === seciliSira}
-                    aria-label={`${d.sira}. durak: ${d.title} — ${durumMetni[d.durum]}`}
-                    onClick={() => setSeciliSira(d.sira)}
+                    aria-label={`${d.sira}. durak: ${d.title} — ${durumMetni(d.durum, d.tamamlananBolum)}`}
+                    onClick={() => {
+                      setSeciliSira(d.sira);
+                      setDetayAcik(true);
+                    }}
                   >
                     <span className={styles.medallion}>
                       <YedekliGorsel
@@ -246,7 +283,7 @@ export default function HaritaV2Page() {
                     </span>
                     <span className={styles.stopLabel}>
                       <strong>{d.title}</strong>
-                      <em>{durumMetni[d.durum]}</em>
+                      <em>{durumMetni(d.durum, d.tamamlananBolum)}</em>
                     </span>
                   </button>
                 </li>
@@ -255,48 +292,144 @@ export default function HaritaV2Page() {
           </div>
         </section>
 
-        <aside className={styles.panel} aria-live="polite">
-          <div className={styles.panelTop}>
-            <span>Seçili keşif durağı</span>
-            <strong>
-              {secili.order} / 35
-            </strong>
+        {/* --- Aşağısı `/map` panelinin birebir aynısıdır (AtlasHarita.tsx). --- */}
+        <button
+          type="button"
+          className={`${panel.drawerBackdrop} ${detayAcik ? panel.drawerBackdropOpen : ""}`}
+          aria-label="Kitap detayını kapat"
+          onClick={() => setDetayAcik(false)}
+        />
+
+        <aside
+          className={`${panel.bookPanel} ${detayAcik ? panel.bookPanelOpen : ""}`}
+          aria-labelledby="selected-book-title"
+        >
+          <div className={panel.drawerHeader}>
+            <button type="button" onClick={() => setDetayAcik(false)}>
+              <Ikon ad="geri" boyut={22} /> Haritaya Dön
+            </button>
+            <strong>{secili.order} / 35</strong>
           </div>
-          <div className={styles.panelHero}>
-            <YedekliGorsel
-              src={`/kapaklar/kapak-${secili.key}.png`}
-              yedekSrc="/kapaklar/placeholder.svg"
-              alt={`${secili.title} kitap kapağı`}
-              width={200}
-              height={300}
-              className={styles.panelCover}
-            />
-            <div>
-              <span className={`${styles.chip} ${styles[`chip_${secili.durum}`]}`}>
-                <Ikon ad={durumIkonu[secili.durum]} boyut={14} /> {durumMetni[secili.durum]}
+          <div className={panel.panelTopline}>
+            <span>Seçili keşif durağı</span>
+            <strong>{secili.order} / 35</strong>
+          </div>
+          <div className={panel.bookHero}>
+            <div className={panel.coverFrame}>
+              <YedekliGorsel
+                src={`/kapaklar/kapak-${secili.key}.png`}
+                yedekSrc="/kapaklar/placeholder.svg"
+                alt={`${secili.title} kitap kapağı`}
+                width={597}
+                height={891}
+                className={panel.cover}
+              />
+              {kilitli ? (
+                <span className={panel.coverLock}>
+                  <Ikon ad="kilit" boyut={22} />
+                </span>
+              ) : null}
+            </div>
+            <div className={panel.bookIdentity}>
+              <span className={`${panel.statusChip} ${panel[`chip_${secili.durum}`]}`}>
+                <Ikon ad={durumIkonu[secili.durum]} boyut={15} />{" "}
+                {durumMetni(secili.durum, secili.tamamlananBolum)}
               </span>
-              <h2>{secili.title}</h2>
+              <h2 id="selected-book-title">{secili.title}</h2>
               <p>{secili.subtitle}</p>
             </div>
           </div>
           {secili.description ? (
-            <p className={styles.panelDesc}>{secili.description}</p>
+            <p className={panel.bookDescription}>{secili.description}</p>
           ) : null}
-          <div className={styles.panelMeta}>
-            <span>Bölüm sayısı</span>
-            <strong>{secili.chapterCount}</strong>
-          </div>
-          <div className={styles.panelSpacer} />
-          {secili.durum === "hazirlaniyor" ? (
-            <p className={styles.panelNote}>
-              {secili.chapterCount} bölümlük içerik tamamlandığında bu durak açılacak.
-            </p>
+
+          {hazirDegil ? (
+            <div className={panel.preparingCard}>
+              <span>
+                <Ikon ad="saat" boyut={24} />
+              </span>
+              <div>
+                <strong>Bu yolculuk hazırlanıyor</strong>
+                <p>
+                  {secili.chapterCount} bölümlük içerik tamamlandığında bu durak açılacak.
+                  Şimdilik atlas üzerinde yerini görebilirsin.
+                </p>
+              </div>
+            </div>
           ) : (
-            <button type="button" className={styles.panelAction}>
-              <Ikon ad={secili.durum === "tamamlandi" ? "kitap" : "ok-sag"} boyut={18} />
-              {secili.durum === "tamamlandi" ? "Tekrar Oku" : "Yolculuğa Başla"}
-            </button>
+            <>
+              <div className={panel.progressBlock}>
+                <div>
+                  <span>Bölüm ilerlemesi</span>
+                  <strong>
+                    {secili.tamamlananBolum} / {secili.chapterCount}
+                  </strong>
+                </div>
+                <div
+                  className={panel.progressTrack}
+                  role="progressbar"
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-valuenow={secili.ilerleme}
+                >
+                  <span style={{ width: `${secili.ilerleme}%` }} />
+                </div>
+              </div>
+              <section className={panel.chapterRewards} aria-labelledby="chapter-rewards-title">
+                <div className={panel.rewardHeading}>
+                  <h3 id="chapter-rewards-title">Bölüm Rozetleri</h3>
+                  <strong>
+                    {secili.tamamlananBolum} / {secili.chapterCount}
+                  </strong>
+                </div>
+                <ol>
+                  {bolumRozetleri.map((rozet) => (
+                    <li key={rozet.iconKey} title={rozet.ad}>
+                      <span>
+                        <OdulIkonu
+                          tip="rozet"
+                          anahtar={rozet.iconKey}
+                          kazanildi={rozet.kazanildi}
+                          boyut={48}
+                          alt=""
+                        />
+                        {rozet.kazanildi ? (
+                          <i>
+                            <Ikon ad="onay" boyut={13} />
+                          </i>
+                        ) : null}
+                      </span>
+                      <small>{rozet.sira}. bölüm</small>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+              <section className={panel.medalCard} aria-label="Kitap madalyası">
+                <span>
+                  <OdulIkonu
+                    tip="madalya"
+                    anahtar={secili.key}
+                    kazanildi={secili.madalyaKazanildi}
+                    boyut={52}
+                    alt=""
+                  />
+                </span>
+                <div>
+                  <small>
+                    {secili.madalyaKazanildi ? "Kazanılan Madalya" : "Kazanılacak Madalya"}
+                  </small>
+                  <strong>{secili.title} Yolculuk Madalyası</strong>
+                </div>
+              </section>
+            </>
           )}
+
+          <div className={panel.panelSpacer} />
+          {!hazirDegil && !kilitli ? (
+            <button type="button" className={panel.primaryAction}>
+              <Ikon ad={secili.durum === "completed" ? "kitap" : "ok-sag"} boyut={19} /> {aksiyon}
+            </button>
+          ) : null}
         </aside>
       </div>
     </main>
