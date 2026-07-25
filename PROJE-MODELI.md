@@ -241,6 +241,16 @@ izler; arayüzün tek veri kaynağı `src/data/atlasCatalog.ts` olur.
 - Önceki demo akışındaki Hz. Nuh, Hz. Ebû Bekir ve Hz. Ömer kitapları ürün
   rotalarından çıkarılmıştır. Katalogda kendi keşif bölgelerinde yalnız
   **Hazırlanıyor** olarak görünür; eski okuyucu ve bölüm yapısı kullanılmaz.
+- **Sahne arka planı bölge başınadır (ONAY — 25 Temmuz 2026).** Her keşif
+  bölgesinin kendi sahne görseli vardır: `public/bolgeler/bolge-{regionId}.png`.
+  Görsel bölgenin katalogdaki "Görsel dünya" tarifini izler; figür, yüz, beden
+  ve silüet içermez. Dosya yoksa kod bozulmaz — CSS katmanlı arka planla ortak
+  görsele düşer, Hasan dosyayı aynı adla klasöre atınca kod değişmeden yayına
+  girer (Bölüm 6 üretim akışı).
+  **Kitap başına arka plan KULLANILMAZ:** durak seçilince sahne değişmez.
+  Gerekçe — (a) alanın büyük kısmı madalyon ve etiketlerle örtülü, (b) kitabın
+  kapağı zaten madalyonda ve panelde iki kez görünüyor, (c) bölge bir *yer*
+  olarak kurgulanmıştır; arka plan kitap başına değişirse bölge kimliği erir.
 - Atlas ve bölüm rotası masaüstünde aynı 1440px içerik kabuğunu, aynı sağ/sol
   boşlukları ve viewport'u dengeli dolduran dikey ölçüyü paylaşır. Tablet yatay
   ve masaüstünde kitap ayrıntıları sağdaki sabit panelde kalır; tablet dikey ve
@@ -442,6 +452,7 @@ public/
   rozetler/     rozet-{iconKey}.png       ör. rozet-sabir.png, rozet-bilgi.png
   madalyalar/   madalya-{bookKey}.png     ör. madalya-adem.png
   unvanlar/     unvan-{key}.png           ör. unvan-yol-kasifi.png
+  bolgeler/     bolge-{regionId}.png      keşif bölgesi sahne arka planı (7 adet)
   semboller/    sembol-{key}.png          "Sen Olsaydın" sabit seti (6 adet)
 ```
 

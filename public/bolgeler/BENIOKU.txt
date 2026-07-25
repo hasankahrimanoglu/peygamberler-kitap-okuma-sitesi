@@ -1,0 +1,35 @@
+KEŞİF BÖLGESİ SAHNE GÖRSELLERİ
+==============================
+
+Bu klasöre yalnız aşağıdaki 7 dosya konur. Dosya adları SABİTTİR;
+kod bu adlarla arar. Adı değiştirme.
+
+  bolge-ilk-izler.png          1. İlk İzler Vadisi
+  bolge-bereketli-aile.png     2. Bereketli Aile Yolu
+  bolge-sabir-cesaret.png      3. Sabır ve Cesaret Geçidi
+  bolge-hikmet-saraylari.png   4. Hikmet Sarayları
+  bolge-umut-isiklari.png      5. Umut Işıkları Diyarı
+  bolge-rahmet-yolculugu.png   6. Rahmet Yolculuğu
+  bolge-dort-dost.png          7. Emaneti Taşıyan Dört Dost
+
+DOSYA YOKSA NE OLUR?
+  Hiçbir şey bozulmaz. Kod ortak görsele (kitaplar/kitaplar-ana-ekran.png)
+  düşer. Dosyayı bu adla klasöre atman yeterli; kod değişmeden yayına girer.
+  Eski görseli silmen de gerekmez, üzerine yazman yeterli.
+
+ÖLÇÜ VE KOMPOZİSYON
+  - Önerilen: 1920×1200 px (yatay), PNG veya JPG
+  - Görsel `cover` ile kırpılır: masaüstünde yatay, mobilde dar dikey bir
+    şerit görünür. ÖNEMLİ UNSURLARI ORTAYA topla, kenarlara yayma.
+  - ÜST ÜÇTE BİR metin alanıdır (bölge adı + açıklama). Orası sakin gökyüzü
+    veya boş alan olsun; detay koyma.
+  - ALT YARIDA duraklar var: 6 madalyon + ad etiketleri. Orada da kalabalık
+    detay okunurluğu düşürür.
+  - Üzerine hafif bir karartma katmanı biner; görsel biraz aydınlık olabilir.
+
+İÇERİK KURALLARI (PROJE-MODELI Bölüm 6.4)
+  - Peygamber, halife, sahabe, melek YOK: yüz, beden, el, silüet hiçbiri.
+  - Cami, kubbe, minare gibi dönemle uyumsuz dekor YOK.
+  - Bölgenin görsel dünyası KITAP-KATALOGU-VE-URETIM-PLANI.md'de tarif edilir.
+    Örnek — Bölge 2: çöl yolları, yıldızlı gece, çadır, su kuyusu, ekin,
+    taş temeller, kervan izleri, bereketli vadi.

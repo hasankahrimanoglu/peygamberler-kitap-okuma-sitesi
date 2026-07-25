@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { atlasRegions } from "../../../src/data/atlasCatalog";
 import { rozetIconKey } from "../../../src/lib/derive";
 import { Ikon, OdulIkonu, YedekliGorsel } from "../../../src/components/ui";
@@ -279,9 +279,14 @@ export default function HaritaV2Page() {
         <div className={atlas.workspace}>
           {/* --- sahne kabuğu birebir; İÇİNDEKİ yol ve duraklar YENİ --- */}
           <section
-            className={atlas.mapStage}
+            className={`${atlas.mapStage} ${styles.stageArt}`}
             data-region={bolge.order}
             aria-labelledby="atlas-title"
+            /* Bölgenin kendi sahne görseli. Dosya yoksa CSS katmanlı arka plan
+               ortak görsele düşer; kod değişmeden yeni dosya devreye girer. */
+            style={
+              { "--bolge-arkaplan": `url("/bolgeler/bolge-${bolge.id}.png")` } as CSSProperties
+            }
           >
             <div className={atlas.mapShade} aria-hidden="true" />
             <div className={`${atlas.mapHeading} ${styles.headingRoom}`}>
