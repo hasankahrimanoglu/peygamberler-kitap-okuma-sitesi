@@ -52,12 +52,15 @@ function durakKonumlari(adet: number, dar: boolean): Nokta[] {
   const sutun = Math.min(enCokSutun, adet <= 3 ? adet : Math.ceil(adet / 2));
   const sira = Math.ceil(adet / sutun);
 
-  // Üst sınır 38: sahne başlığının altından başlar. Alt sınır 84: madalyonun
-  // altındaki iki satırlık ad etiketi sahne kenarına dayanmasın.
+  // Duraklar sahne başlığının ALTINDAN başlar. Dar ekranda başlık + bölge
+  // açıklaması çok daha fazla satıra yayıldığı için başlangıç aşağı çekilir;
+  // yoksa ilk sıra madalyonları açıklama metninin üstüne biniyor.
   const xBas = dar ? 27 : 16;
   const xSon = dar ? 73 : 84;
-  const yBas = sira === 1 ? 60 : 38;
-  const ySon = 84;
+  // Dar ekranda alt sınır 78: Keşif İskelesi `sticky` olduğu için sayfanın
+  // altında durur ve daha aşağıdaki durakları örter (ölçüldü).
+  const yBas = sira === 1 ? (dar ? 60 : 60) : dar ? 40 : 38;
+  const ySon = dar ? 72 : 84;
 
   const noktalar: Nokta[] = [];
   for (let s = 0; s < sira; s += 1) {
@@ -281,7 +284,7 @@ export default function HaritaV2Page() {
             aria-labelledby="atlas-title"
           >
             <div className={atlas.mapShade} aria-hidden="true" />
-            <div className={atlas.mapHeading}>
+            <div className={`${atlas.mapHeading} ${styles.headingRoom}`}>
               <p>
                 {bolge.order}. Keşif Bölgesi · {bolge.books.length} kitap
               </p>
@@ -289,9 +292,9 @@ export default function HaritaV2Page() {
               {bolge.subtitle ? <strong>{bolge.subtitle}</strong> : null}
               <span>{bolge.description}</span>
             </div>
-            <div className={atlas.mapMeta}>
-              <Ikon ad="yildiz" boyut={14} /> {bolge.mood}
-            </div>
+            {/* Bölge ruh hâli metni ("Başlangıç ve merak" vb.) kaldırıldı;
+                o köşe bölge sayacına ayrıldı. Sayaç eskiden sağ alttaydı ve
+                son sıradaki kitap etiketinin üstüne biniyordu. */}
 
             <svg
               className={styles.trailSvg}
@@ -348,7 +351,7 @@ export default function HaritaV2Page() {
               ))}
             </ol>
 
-            <div className={atlas.regionPager}>
+            <div className={`${atlas.regionPager} ${styles.pagerTop}`}>
               <button
                 type="button"
                 disabled={bolgeIndex === 0}
