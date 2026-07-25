@@ -279,7 +279,7 @@ export default function HaritaV2Page() {
         <div className={atlas.workspace}>
           {/* --- sahne kabuğu birebir; İÇİNDEKİ yol ve duraklar YENİ --- */}
           <section
-            className={`${atlas.mapStage} ${styles.stageArt}`}
+            className={atlas.mapStage}
             data-region={bolge.order}
             aria-labelledby="atlas-title"
             /* Bölgenin kendi sahne görseli. Dosya yoksa CSS katmanlı arka plan

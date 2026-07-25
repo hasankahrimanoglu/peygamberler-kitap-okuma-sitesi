@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type CSSProperties } from "react";
 import { useRouter } from "next/navigation";
 import { Ikon, OdulIkonu, YedekliGorsel } from "../ui";
 import { books } from "../../data/books";
@@ -160,7 +160,13 @@ export function AtlasHarita({
         </section>
 
         <div className={styles.workspace}>
-          <section className={styles.mapStage} data-region={bolge.sira} aria-labelledby="atlas-title">
+          <section
+            className={styles.mapStage}
+            data-region={bolge.sira}
+            aria-labelledby="atlas-title"
+            /* Bölgenin kendi sahne görseli; dosya yoksa CSS ortak görsele düşer. */
+            style={{ "--bolge-arkaplan": `url("/bolgeler/bolge-${bolge.id}.png")` } as CSSProperties}
+          >
             <div className={styles.mapShade} aria-hidden="true" />
             <div className={styles.mapHeading}>
               <p>{bolge.sira}. Keşif Bölgesi · {bolge.duraklar.length} kitap</p>
