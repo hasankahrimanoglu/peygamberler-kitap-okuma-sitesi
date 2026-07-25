@@ -48,10 +48,10 @@
 .headingRoom.headingRoom { max-width: min(570px, calc(100% - 230px)); }
 
 @media (max-width: 639px) {
-  /* Dar ekranda sağ üstte sayaca yer yok — başlığı kesiyor. Orada paylaşılan
-     varsayılan konuma (sağ alt) dönülür; son durak sırası %72'de bittiği için
-     sahnenin altında sayaca yetecek boşluk kalıyor. */
-  .pagerTop.pagerTop { top: auto; bottom: 12px; }
+  /* Dar ekranda sağ üstte sayaca yer yok — başlığı kesiyor. Orada sahnenin
+     SOL ALT köşesine alınır; son durak sırası %72'de bittiği için altta
+     sayaca yetecek boşluk kalıyor. */
+  .pagerTop.pagerTop { top: auto; right: auto; bottom: 12px; left: 12px; }
   .headingRoom.headingRoom { max-width: 100%; }
 }
 
