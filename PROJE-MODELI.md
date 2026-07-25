@@ -683,7 +683,8 @@ Kurallar:
 
 > **Durum güncellemesi (15 Tem 2026 — akşam):** Hasan onayıyla **Faz 6.1 KOD
 > OLARAK TAMAMLANDI:** (a) `profile_tasks` şeması + RLS (`supabase/
-> migration-profile-tasks.sql` — **Supabase'de manuel çalıştırılması bekliyor**);
+> migration-profile-tasks.sql` — **Supabase'de çalıştırıldı; 25 Tem 2026'da
+> `/gorevlerim` ekranında gerçek görev durumları okunarak doğrulandı**);
 > (b) 8 bölümlük yeni Hz. Âdem içeriği `books.ts`'e + final testi quiz'e + veli
 > raporu aktarıldı (parser ile birebir); (c) reader yeni akışı: karar noktası →
 > Hikâye Devam Ediyor → Seçimini Karşılaştır (yalnız seçilen şık), doğru cevap
