@@ -1,0 +1,222 @@
+.page {
+  --atlas-night: var(--zemin);
+  --atlas-soft: var(--yuzey);
+  --atlas-raised: var(--yuzey-2);
+  --atlas-green: var(--eylem);
+  --atlas-green-dark: var(--eylem-koyu);
+  --atlas-gold: var(--vurgu);
+  --atlas-paper: var(--okuma-yuzey);
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+  padding: 16px;
+  gap: 14px;
+  overflow-x: clip;
+  color: var(--murekkep);
+  background:
+    radial-gradient(circle at 84% 4%, color-mix(in srgb, var(--atlas-gold) 12%, transparent), transparent 30%),
+    linear-gradient(150deg, var(--atlas-night), color-mix(in srgb, var(--atlas-night) 78%, var(--atlas-green-dark)));
+}
+
+/* --- üst bar --- */
+.topBar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.previewChip, .backLink, .toggle {
+  display: inline-flex; align-items: center; min-height: 44px; gap: 7px;
+  padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 900;
+}
+.previewChip { color: var(--atlas-gold); border: 1px solid color-mix(in srgb, var(--atlas-gold) 42%, transparent); background: color-mix(in srgb, var(--atlas-gold) 12%, transparent); }
+.backLink { color: color-mix(in srgb, var(--murekkep) 82%, transparent); text-decoration: none; }
+.backLink:hover { color: var(--murekkep); }
+.toggle { margin-left: auto; cursor: pointer; color: color-mix(in srgb, var(--murekkep) 86%, transparent); border: 1px solid color-mix(in srgb, var(--murekkep) 20%, transparent); }
+.toggle input { width: 18px; height: 18px; accent-color: var(--atlas-green); cursor: pointer; }
+
+/* --- bölge sekmeleri --- */
+.regionTabs {
+  display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--atlas-gold) 40%, transparent) transparent;
+}
+.regionTab, .regionTabActive {
+  display: flex; flex: 0 0 auto; align-items: center; min-height: 56px; gap: 10px;
+  padding: 8px 16px 8px 10px; border: 1px solid transparent; border-radius: 18px;
+  color: color-mix(in srgb, var(--murekkep) 74%, transparent);
+  background: color-mix(in srgb, var(--atlas-soft) 62%, transparent);
+  cursor: pointer; text-align: left;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+.regionTab:hover { color: var(--murekkep); background: color-mix(in srgb, var(--atlas-soft) 88%, transparent); }
+.regionTabActive {
+  color: var(--murekkep);
+  border-color: color-mix(in srgb, var(--atlas-gold) 62%, transparent);
+  background: color-mix(in srgb, var(--atlas-gold) 16%, transparent);
+}
+.regionTab b, .regionTabActive b {
+  display: grid; width: 32px; height: 32px; flex: 0 0 32px; place-items: center;
+  border-radius: 50%; font-size: 14px;
+  color: var(--atlas-night); background: color-mix(in srgb, var(--atlas-gold) 78%, transparent);
+}
+.regionTab span, .regionTabActive span { display: grid; gap: 1px; }
+.regionTab strong, .regionTabActive strong { font-family: var(--font-baloo), Arial, sans-serif; font-size: 15px; line-height: 1.1; white-space: nowrap; }
+.regionTab small, .regionTabActive small { font-size: 11px; font-weight: 800; opacity: .72; }
+
+/* --- yerleşim --- */
+.layout { display: grid; min-height: 0; flex: 1; gap: 14px; grid-template-columns: minmax(0, 1fr) 380px; }
+
+/* --- sahne --- */
+.scene {
+  position: relative; display: flex; min-width: 0; flex-direction: column;
+  overflow: hidden; border: 1px solid color-mix(in srgb, var(--atlas-gold) 26%, transparent);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--atlas-night) 82%, transparent) 0%, transparent 34%, color-mix(in srgb, var(--atlas-night) 30%, transparent) 100%),
+    url("/kitaplar/kitaplar-ana-ekran.png") center / cover no-repeat;
+  box-shadow: inset 0 0 90px color-mix(in srgb, var(--atlas-night) 70%, transparent);
+}
+.sceneHeader { position: relative; z-index: 3; padding: 20px 24px 6px; }
+.sceneHeader small { color: var(--atlas-gold); font-size: 11px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.sceneHeader h1 { margin: 4px 0 0; font-family: var(--font-baloo), Arial, sans-serif; font-size: clamp(26px, 3vw, 38px); line-height: 1.05; }
+.sceneHeader em { display: block; margin-top: 3px; color: color-mix(in srgb, var(--atlas-gold) 88%, var(--murekkep)); font-size: 13px; font-style: normal; font-weight: 800; }
+.sceneHeader p { max-width: 58ch; margin: 7px 0 0; color: color-mix(in srgb, var(--murekkep) 84%, transparent); font-size: 16px; font-weight: 500; line-height: 1.45; }
+
+/* --- yol --- */
+.trailArea { position: relative; min-height: 0; flex: 1; }
+.trailSvg { position: absolute; z-index: 1; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.trailSvg path { fill: none; vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; }
+/* geniş yumuşak zemin şeridi */
+.trailRoad { stroke: color-mix(in srgb, var(--atlas-paper) 16%, transparent); stroke-width: 20; }
+/* kesikli orta çizgi — kalan yol */
+.trailDash { stroke: color-mix(in srgb, var(--atlas-gold) 52%, transparent); stroke-width: 3; stroke-dasharray: 1 9; }
+/* tamamlanan kısım */
+.trailDone { stroke: var(--atlas-green); stroke-width: 5; filter: drop-shadow(0 0 6px color-mix(in srgb, var(--atlas-green) 60%, transparent)); }
+
+/* --- duraklar --- */
+.stops { position: absolute; z-index: 2; margin: 0; padding: 0; inset: 0; list-style: none; }
+.stopItem { position: absolute; transform: translate(-50%, -50%); }
+.stop {
+  display: grid; justify-items: center; gap: 8px; padding: 0;
+  border: 0; background: none; cursor: pointer;
+}
+.medallion {
+  position: relative; display: grid; width: 84px; height: 84px; place-items: center;
+  overflow: visible; border-radius: 50%;
+  transition: transform 180ms ease;
+}
+.medallionArt {
+  width: 78px; height: 78px; border-radius: 50%; object-fit: cover;
+  border: 3px solid color-mix(in srgb, var(--atlas-gold) 60%, transparent);
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--atlas-night) 62%, transparent);
+}
+.stop:hover .medallion { transform: translateY(-3px) scale(1.04); }
+
+.statusDot {
+  position: absolute; right: -2px; bottom: -2px; display: grid;
+  width: 27px; height: 27px; place-items: center;
+  border: 2px solid var(--atlas-night); border-radius: 50%;
+  color: var(--atlas-night); background: var(--atlas-gold); font-style: normal;
+}
+.stopNo {
+  position: absolute; top: -4px; left: -4px; display: grid;
+  width: 25px; height: 25px; place-items: center;
+  border: 2px solid var(--atlas-night); border-radius: 50%;
+  color: var(--atlas-night); background: color-mix(in srgb, var(--atlas-paper) 92%, var(--atlas-gold));
+  font-size: 12px; font-weight: 900;
+}
+
+.stopLabel {
+  display: grid; width: 168px; gap: 2px; padding: 7px 10px; border-radius: 14px;
+  border: 1px solid color-mix(in srgb, var(--murekkep) 16%, transparent);
+  background: color-mix(in srgb, var(--atlas-night) 78%, transparent);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+/* Ad iki satıra sarar — kesilmez. 4 uzun Hz. Muhammed başlığı burada bozulmuyor. */
+.stopLabel strong {
+  font-family: var(--font-baloo), Arial, sans-serif; font-size: 15px; line-height: 1.12;
+  overflow-wrap: break-word;
+}
+.stopLabel em { font-size: 11px; font-style: normal; font-weight: 800; opacity: .82; }
+
+/* durumlar */
+.stop_tamamlandi .medallionArt { border-color: var(--atlas-green); }
+.stop_tamamlandi .statusDot { background: var(--atlas-green); color: var(--atlas-paper); }
+.stop_tamamlandi .stopLabel em { color: color-mix(in srgb, var(--atlas-green) 88%, var(--murekkep)); }
+
+.stop_aktif .medallionArt { border-color: var(--atlas-gold); box-shadow: 0 0 0 6px color-mix(in srgb, var(--atlas-gold) 20%, transparent), 0 12px 26px color-mix(in srgb, var(--atlas-night) 62%, transparent); }
+.stop_aktif .stopLabel { border-color: color-mix(in srgb, var(--atlas-gold) 56%, transparent); }
+.stop_aktif .stopLabel em { color: var(--atlas-gold); }
+
+.stop_kilitli .medallionArt, .stop_hazirlaniyor .medallionArt { filter: grayscale(.75) brightness(.62); border-color: color-mix(in srgb, var(--murekkep) 26%, transparent); }
+.stop_kilitli .statusDot, .stop_hazirlaniyor .statusDot { color: color-mix(in srgb, var(--murekkep) 88%, transparent); background: color-mix(in srgb, var(--atlas-raised) 92%, transparent); }
+.stop_kilitli .stopLabel, .stop_hazirlaniyor .stopLabel { opacity: .78; }
+
+.stopSelected .medallion { transform: translateY(-3px) scale(1.06); }
+.stopSelected .medallionArt { box-shadow: 0 0 0 4px var(--atlas-gold), 0 14px 30px color-mix(in srgb, var(--atlas-night) 66%, transparent); }
+.stopSelected .stopLabel { border-color: var(--atlas-gold); background: color-mix(in srgb, var(--atlas-night) 90%, transparent); }
+
+/* --- sağ panel --- */
+.panel {
+  display: flex; min-height: 0; flex-direction: column; padding: 18px;
+  overflow-y: auto; border-radius: 28px;
+  border: 1px solid color-mix(in srgb, var(--atlas-gold) 32%, transparent);
+  color: color-mix(in srgb, var(--atlas-night) 90%, var(--atlas-green-dark));
+  background: linear-gradient(150deg, var(--atlas-paper), color-mix(in srgb, var(--atlas-paper) 92%, var(--atlas-gold)));
+  box-shadow: 0 18px 42px color-mix(in srgb, var(--atlas-night) 44%, transparent);
+}
+.panelTop { display: flex; justify-content: space-between; font-size: 11px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; opacity: .66; }
+.panelHero { display: flex; align-items: flex-start; gap: 14px; margin-top: 10px; }
+.panelCover { width: 96px; aspect-ratio: 2 / 3; object-fit: cover; border: 2px solid color-mix(in srgb, var(--atlas-gold) 56%, transparent); border-radius: 10px; }
+.panelHero h2 { margin: 8px 0 0; font-family: var(--font-baloo), Arial, sans-serif; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.05; }
+.panelHero > div > p { margin: 4px 0 0; font-size: 16px; font-weight: 800; opacity: .7; }
+.chip { display: inline-flex; align-items: center; min-height: 30px; gap: 5px; padding: 5px 10px; border-radius: 999px; font-size: 12px; font-weight: 900; }
+.chip_tamamlandi { color: var(--atlas-green-dark); background: color-mix(in srgb, var(--atlas-green) 18%, transparent); }
+.chip_aktif { color: color-mix(in srgb, var(--atlas-gold) 60%, var(--atlas-night)); background: color-mix(in srgb, var(--atlas-gold) 22%, transparent); }
+.chip_kilitli, .chip_hazirlaniyor { color: color-mix(in srgb, var(--atlas-night) 62%, transparent); background: color-mix(in srgb, var(--atlas-night) 8%, transparent); }
+.panelDesc { margin: 12px 0 0; font-size: 16px; font-weight: 500; line-height: 1.45; opacity: .84; }
+.panelMeta { display: flex; align-items: center; justify-content: space-between; margin-top: 14px; padding-top: 12px; border-top: 1px solid color-mix(in srgb, var(--atlas-night) 12%, transparent); font-weight: 900; }
+.panelSpacer { flex: 1; min-height: 10px; }
+.panelNote { margin: 12px 0 0; padding: 12px; border-radius: 16px; background: color-mix(in srgb, var(--atlas-gold) 12%, transparent); font-size: 15px; font-weight: 700; }
+.panelAction {
+  position: sticky; bottom: 0; display: flex; min-height: 52px; align-items: center;
+  justify-content: center; gap: 8px; margin-top: 12px; border: 0; border-radius: 14px;
+  color: var(--murekkep); background: var(--atlas-green); font-size: 16px; font-weight: 900; cursor: pointer;
+  box-shadow: 0 12px 24px color-mix(in srgb, var(--atlas-green) 22%, transparent),
+    0 0 0 9px color-mix(in srgb, var(--atlas-paper) 94%, var(--atlas-gold));
+}
+
+/* --- tablet dikey ve altı --- */
+@media (max-width: 1023px) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+  .panel { max-height: none; }
+  .trailArea { min-height: 460px; }
+  .medallion { width: 74px; height: 74px; }
+  .medallionArt { width: 70px; height: 70px; }
+  .stopLabel { width: 148px; }
+}
+
+@media (max-width: 639px) {
+  .page { padding: 12px; gap: 10px; }
+  /* Üst bar tek satırda kalır; harita ekranın üstünde başlasın. */
+  .topBar { flex-wrap: nowrap; gap: 8px; }
+  .previewChip { flex: 0 0 auto; padding: 6px 10px; font-size: 11px; }
+  .previewChip span, .backLink span { display: none; }
+  .backLink { flex: 0 0 auto; padding: 6px 8px; font-size: 0; }
+  .toggle { min-height: 40px; padding: 6px 10px; font-size: 11px; }
+  .regionTab, .regionTabActive { min-height: 48px; padding: 6px 12px 6px 8px; }
+  .regionTab strong, .regionTabActive strong { font-size: 13px; }
+  .sceneHeader { padding: 14px 16px 4px; }
+  .sceneHeader p { font-size: 15px; }
+  .trailArea { min-height: 580px; }
+  .medallion { width: 60px; height: 60px; }
+  .medallionArt { width: 56px; height: 56px; }
+  .statusDot { width: 23px; height: 23px; }
+  .stopNo { width: 21px; height: 21px; font-size: 11px; }
+  .stopLabel { width: 116px; padding: 5px 7px; }
+  .stopLabel strong { font-size: 12.5px; }
+  .stopLabel em { font-size: 10px; }
+  .panelHero { flex-direction: column; }
+  .panelCover { width: 118px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .medallion { transition: none; }
+}
