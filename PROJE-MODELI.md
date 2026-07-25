@@ -223,13 +223,29 @@ izler; arayüzün tek veri kaynağı `src/data/atlasCatalog.ts` olur.
 - Bölge seçici, çocuğun atlas içinde nerede bulunduğunu açıkça gösterir. Seçilen
   bölgenin kitapları kıvrımlı bir rota üzerinde görünür; hazırlanan kitap paneli
   aynı ekranda kitabın adı, kısa tanıtımı ve bölüm sayısını gösterir.
-- Bölge içindeki kitap durakları en fazla üç yatay keşif terasına yerleşir. Altı
-  kitapta sıra **1→2 / 4←3 / 5→6** biçimindeki kesintisiz yılan rotasıdır:
-  2. duraktan 3. durağa sağ kenardan, 4. duraktan 5. durağa sol kenardan aşağı
-  inen ışık yolu kullanılır. Dört kitapta ilk iki teras, beş kitapta üçüncü
-  terasın sol durağı kullanılır. Bağlantı çizgisi kitap adı veya dokunma
-  alanlarının üzerinden geçmez; tamamlanan bölüm sakin yeşil, kalan yol soluk
-  altın, aktif durak çift altın halka ve nefes animasyonuyla gösterilir.
+- **Durak yerleşimi (REVİZE — 25 Temmuz 2026, Hasan onayı).** Önceki kural
+  sabit üç terasa ve elle yazılmış konumlara dayanıyordu; yol her bölgede altı
+  duraklık çizildiği için 4 kitaplık bölgelerde altta sahipsiz bir çizgi
+  kalıyordu. Yeni kural:
+  - **Yol duraklardan türetilir.** Önce durak konumları hesaplanır, sonra
+    noktalardan geçen akıcı eğri çizilir. Yol son durakta biter; sarkan uç
+    oluşmaz ve kitap sayısı için istisna gerekmez.
+  - Duraklar yılan düzeninde akar; her sıra kendi içinde tam genişliğe yayılır,
+    böylece sırada tek kitap kalsa da denge bozulmaz. Geniş ekranda en fazla
+    üç sütun, dar ekranda en fazla iki sütun kullanılır.
+  - **Her durak tek bir işarettir:** daire + ayrı etiket kartı yerine, kitabın
+    kapak görselini taşıyan madalyon + durum rozeti + sıra numarası. Kapak
+    haritada ilk kez burada görünür.
+  - **Kitap adı iki satıra sarar, kesilmez.** Önceki sabit genişlik + tek satır
+    kuralı Rahmet Yolculuğu'nun dört kitabını da "Hz. Muhammed —…" hâline
+    getiriyordu.
+  - Tamamlanan yol sakin yeşil, kalan yol soluk altın kesikli çizgidir; aktif
+    durak altın halkayla, kilitli ve hazırlanan duraklar soluklaştırmayla
+    gösterilir. Bağlantı çizgisi ad etiketlerinin ve dokunma alanlarının
+    üzerinden geçmez.
+  - **Bölge sayacı sahnenin sağ üst köşesindedir** (dar ekranda sol alt).
+    Bölgenin "ruh hâli" metni kaldırılmıştır; o köşede ayrı bir metin alanı
+    kullanılmaz.
 - **Hazırlanıyor**, ilerleme durumu değil içerik yayımlanma durumudur. Bu
   durakta ilerleme çubuğu, rozet/madalya sayısı veya eylem butonu gösterilmez;
   rota açılamaz. Tamamlandı / Devam ediyor / Kilitli dili yalnız yayımlanmış

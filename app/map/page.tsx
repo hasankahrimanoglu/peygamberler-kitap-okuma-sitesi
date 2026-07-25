@@ -121,7 +121,6 @@ export default function MapPage() {
       ad: region.name,
       altBaslik: region.subtitle,
       aciklama: region.description,
-      duygu: region.mood,
       duraklar: region.books.map<AtlasDurak>((book) => {
         if (book.key === "adem") {
           return {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, type CSSProperties } from "react";
+import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { useRouter } from "next/navigation";
 import { Ikon, OdulIkonu, YedekliGorsel } from "../ui";
 import { books } from "../../data/books";
@@ -29,7 +29,6 @@ export type AtlasBolge = {
   ad: string;
   altBaslik?: string;
   aciklama: string;
-  duygu: string;
   duraklar: AtlasDurak[];
 };
 
@@ -50,8 +49,76 @@ const durumIkonu = {
   preparing: "saat",
 } as const;
 
-const atlasRotaYolu =
-  "M24 34 C40 34 60 34 76 34 C82 34 82 46 76 57 C60 57 40 57 24 57 C18 57 18 69 24 80 C40 80 60 80 76 80";
+type Nokta = { x: number; y: number };
+
+/**
+ * Durak koordinatları (PROJE-MODELI 3.7 — REVİZE 25 Tem 2026).
+ * Her SIRA kendi içinde tam genişliğe yayılır; sırada tek kitap kalsa da denge
+ * bozulmaz. Sıralar yılan düzeninde bağlanır. Konumlar hesaplanır — eskiden
+ * 24 ayrı CSS kuralında elle yazılıydı ve kitap sayısına göre istisna isterdi.
+ */
+function durakKonumlari(adet: number, dar: boolean): Nokta[] {
+  // Dar ekranda en fazla 2 sütun: 3 sütunda ad etiketleri yan yana sığmıyor.
+  const enCokSutun = dar ? 2 : 3;
+  const sutun = Math.min(enCokSutun, adet <= 3 ? adet : Math.ceil(adet / 2));
+  const sira = Math.ceil(adet / sutun);
+
+  // Duraklar sahne başlığının ALTINDAN başlar. Dar ekranda başlık ve bölge
+  // açıklaması daha çok satıra yayıldığı için başlangıç aşağı çekilir; alt
+  // sınır da yukarı alınır, çünkü Keşif İskelesi `sticky` olarak altta durur.
+  const xBas = dar ? 27 : 16;
+  const xSon = dar ? 73 : 84;
+  const yBas = sira === 1 ? 60 : dar ? 40 : 38;
+  const ySon = dar ? 72 : 84;
+
+  const noktalar: Nokta[] = [];
+  for (let s = 0; s < sira; s += 1) {
+    const satirAdedi = Math.min(sutun, adet - s * sutun);
+    const y = sira === 1 ? yBas : yBas + ((ySon - yBas) * s) / (sira - 1);
+
+    const xler: number[] = [];
+    for (let i = 0; i < satirAdedi; i += 1) {
+      xler.push(
+        satirAdedi === 1 ? (xBas + xSon) / 2 : xBas + ((xSon - xBas) * i) / (satirAdedi - 1),
+      );
+    }
+    // Tek numaralı sıralar ters akar — yol kesintisiz devam eder.
+    if (s % 2 === 1) xler.reverse();
+    xler.forEach((x) => noktalar.push({ x, y }));
+  }
+  return noktalar.slice(0, adet);
+}
+
+const kelepce = (deger: number, a: number, b: number) =>
+  Math.max(Math.min(a, b), Math.min(Math.max(a, b), deger));
+
+/**
+ * Noktalardan geçen akıcı eğri (Catmull-Rom → kübik Bézier). Yol duraklardan
+ * türetildiği için son duraktan sonra devam etmez; 4 kitaplık bölgede altta
+ * sarkan çizgi kalmaz. Kontrol noktaları parça sınırlarına kelepçelenir; yılan
+ * düzeninde yön ters döndüğünde yol kendi üstüne kıvrılmıyor.
+ */
+function akiciYol(noktalar: Nokta[]): string {
+  if (noktalar.length < 2) return "";
+  const p = noktalar;
+  let d = `M ${p[0].x} ${p[0].y}`;
+  for (let i = 0; i < p.length - 1; i += 1) {
+    const p0 = p[i - 1] ?? p[i];
+    const p1 = p[i];
+    const p2 = p[i + 1];
+    const p3 = p[i + 2] ?? p2;
+    const c1 = {
+      x: kelepce(p1.x + (p2.x - p0.x) / 6, p1.x, p2.x),
+      y: kelepce(p1.y + (p2.y - p0.y) / 6, p1.y, p2.y),
+    };
+    const c2 = {
+      x: kelepce(p2.x - (p3.x - p1.x) / 6, p1.x, p2.x),
+      y: kelepce(p2.y - (p3.y - p1.y) / 6, p1.y, p2.y),
+    };
+    d += ` C ${c1.x} ${c1.y}, ${c2.x} ${c2.y}, ${p2.x} ${p2.y}`;
+  }
+  return d;
+}
 
 function oncelikliDurakId(bolge?: AtlasBolge) {
   return (
@@ -82,6 +149,16 @@ export function AtlasHarita({
   const bolge = bolgeler.find((item) => item.id === bolgeId) ?? bolgeler[0];
   const [durakId, setDurakId] = useState(oncelikliDurakId(bolge));
   const [detayAcik, setDetayAcik] = useState(false);
+  // Dar ekranda durak yerleşimi iki sütuna iner (PROJE-MODELI 3.7).
+  const [dar, setDar] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 639px)");
+    const uygula = () => setDar(mq.matches);
+    uygula();
+    mq.addEventListener("change", uygula);
+    return () => mq.removeEventListener("change", uygula);
+  }, []);
 
   function bolgeSec(yeniBolgeId: string) {
     const yeniBolge = bolgeler.find((item) => item.id === yeniBolgeId);
@@ -93,12 +170,18 @@ export function AtlasHarita({
   const seciliDurak =
     bolge?.duraklar.find((durak) => durak.id === durakId) ?? bolge?.duraklar[0];
 
-  const rotaYuzdesi = useMemo(() => {
-    if (!bolge || bolge.duraklar.length < 2) return 0;
-    const tamamlanan = bolge.duraklar.filter((durak) => durak.durum === "completed").length;
-    const aktifPayi = bolge.duraklar.some((durak) => durak.durum === "active") ? 0.45 : 0;
-    return Math.min(100, ((tamamlanan + aktifPayi) / (bolge.duraklar.length - 1)) * 100);
-  }, [bolge]);
+  const konumlar = useMemo(
+    () => durakKonumlari(bolge?.duraklar.length ?? 0, dar),
+    [bolge, dar],
+  );
+  const yol = useMemo(() => akiciYol(konumlar), [konumlar]);
+  // Tamamlanan kısım AYRI bir yol olarak çizilir. `pathLength` + dasharray
+  // burada yanıltıcı olurdu: viewBox `preserveAspectRatio="none"` ile yatayda
+  // esnediği için yol uzunluğu oranı görsel orana denk gelmiyor.
+  const tamamYol = useMemo(() => {
+    const tamamlanan = bolge?.duraklar.filter((d) => d.durum === "completed").length ?? 0;
+    return tamamlanan > 1 ? akiciYol(konumlar.slice(0, tamamlanan)) : "";
+  }, [bolge, konumlar]);
 
   if (!bolge || !seciliDurak) return null;
 
@@ -174,28 +257,47 @@ export function AtlasHarita({
               {bolge.altBaslik ? <strong>{bolge.altBaslik}</strong> : null}
               <span>{bolge.aciklama}</span>
             </div>
-            <div className={styles.mapMeta}><Ikon ad="yildiz" boyut={14} /> {bolge.duygu}</div>
-
             <svg className={styles.trail} viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-              <path className={styles.trailShadow} d={atlasRotaYolu} />
-              <path className={styles.trailBase} pathLength="100" d={atlasRotaYolu} />
-              <path className={styles.trailCompleted} pathLength="100" style={{ strokeDasharray: `${rotaYuzdesi} ${100 - rotaYuzdesi}` }} d={atlasRotaYolu} />
+              <path className={styles.trailShadow} d={yol} />
+              <path className={styles.trailBase} d={yol} />
+              {tamamYol ? <path className={styles.trailCompleted} d={tamamYol} /> : null}
             </svg>
 
             <ol className={styles.stops} aria-label={`${bolge.ad} kitapları`}>
               {bolge.duraklar.map((durak, index) => (
-                <li className={styles.stopItem} data-stop={index + 1} key={durak.kitapKey}>
+                <li
+                  className={styles.stopItem}
+                  key={durak.kitapKey}
+                  style={{ left: `${konumlar[index]?.x ?? 50}%`, top: `${konumlar[index]?.y ?? 50}%` }}
+                >
                   <button
                     type="button"
                     className={`${styles.stopButton} ${styles[`stop_${durak.durum}`]} ${durak.id === seciliDurak.id ? styles.stopSelected : ""}`}
                     aria-pressed={durak.id === seciliDurak.id}
+                    aria-label={`${index + 1}. durak: ${durak.ad} — ${durumMetni(durak)}`}
                     onClick={() => {
                       setDurakId(durak.id);
                       setDetayAcik(true);
                     }}
                   >
-                    <span className={styles.marker}><span className={styles.markerRing} /><Ikon ad={durumIkonu[durak.durum]} boyut={22} /></span>
-                    <span className={styles.stopLabel}><small>{index + 1}. durak</small><strong>{durak.ad}</strong><em>{durumMetni(durak)}</em></span>
+                    <span className={styles.marker}>
+                      <YedekliGorsel
+                        src={`/kapaklar/kapak-${durak.kitapKey}.png`}
+                        yedekSrc="/kapaklar/placeholder.svg"
+                        alt=""
+                        width={200}
+                        height={300}
+                        className={styles.markerArt}
+                      />
+                      <i className={styles.markerStatus} aria-hidden="true">
+                        <Ikon ad={durumIkonu[durak.durum]} boyut={13} />
+                      </i>
+                      <b className={styles.markerNo} aria-hidden="true">{index + 1}</b>
+                    </span>
+                    <span className={styles.stopLabel}>
+                      <strong>{durak.ad}</strong>
+                      <em>{durumMetni(durak)}</em>
+                    </span>
                   </button>
                 </li>
               ))}
