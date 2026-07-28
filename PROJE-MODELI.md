@@ -323,15 +323,33 @@ yükseklik kuralını** izler:
   bölge şeridine alındı. Görünen bölge sayısı: mobil 1 (künye), tablet dikey 2,
   tablet yatay 3, masaüstü 5 — komşular kenarlardan kesik görünür. Böylece bölge
   adları kesilmez ve sahne başlığı sağa doğru genişleyip satır kazanır.
-- **Kitap açıklaması aç/kapa bölümdür** ("Kitap Açıklaması" butonu). Kapalıyken
-  yer kaplamaz; "Kazanılacak Madalya" ve ana eylem her ekranda kaydırmasız
-  görünür. Metin uzunluğu serbesttir — kısaltma/clamp uygulanmaz.
-- **Bölüm rozetleri tek satırdır** ve rozet sayısından bağımsız olarak panelin
-  iki kenarına hizalanır (kare boyutu adede göre hesaplanır). Rozet altındaki
-  "1. bölüm" yazıları kaldırıldı — numara zaten rozet görselinin üstündedir.
 - **Bölüm rotası üst barı** da tek satırdır: geri · bölüm/rozet sayaçları · menü.
   Kitap adı ve sıra numarası bardan çıkarıldı (orta alandaki başlıkta zaten var);
   logo bu ekranda kullanılmaz.
+
+#### 3.7.2.1 Kitap detay paneli — iki düzen (REVİZE — 29 Temmuz 2026, Hasan)
+
+Panelin sıkıştırılmış hâli **yalnızca tablet yatayda** geçerlidir; orada kısıt
+dikey alandır. Diğer ekranlarda panel uzundur, sıkıştırmaya gerek yoktur.
+Ayrım tek bir sorguyla yapılır: `(min-width: 960px) and (max-height: 860px)`.
+
+| | Mobil · Tablet dikey · Masaüstü | Tablet yatay |
+|---|---|---|
+| Kitap açıklaması | **Düz metin**, doğrudan görünür | **Aç/kapa** ("Kitap Açıklaması" butonu) |
+| Bölüm rozetleri | **4 sütunlu ızgara** (8 bölüm = 2 satır), 52px kare | **Tek satır**, kare adede göre hesaplanır |
+| Rozet altı yazısı | **"1. bölüm" görünür** | Gizli — numara zaten rozetin üstünde |
+
+- Tek satır düzeninde rozetler adede bakılmaksızın panelin **iki kenarına
+  hizalanır**; kalan boşluk `space-between` ile aralara dağıtılır.
+- Buton ve açıklama metni **her zaman DOM'a girer**, hangisinin görüneceğine CSS
+  karar verir. Metin koşullu render edilseydi düz modda hiç görünmezdi.
+- Tablet yatayda madalya ile ana eylem arasındaki ölü alan rozet satırına
+  aktarıldı; ikisi arasında ~25px sabit pay bırakılır.
+- **Sahne başlığı puntoları alan genişliğiyle büyür.** Tablet dikey ve
+  masaüstünde metinler alanın yanında küçük kalıyordu: açıklama 15→17px
+  (tablet dikey) ve 20px'e (masaüstü) çıkar, başlık 34/42px olur. Başlık
+  kutusunun sağ payı da 230px'ten 44px'e indi (o pay kaldırılan sahne
+  sayacı içindi).
 
 ### 3.8 Veli ana sayfası bilgi mimarisi (ONAY — 18 Temmuz 2026)
 

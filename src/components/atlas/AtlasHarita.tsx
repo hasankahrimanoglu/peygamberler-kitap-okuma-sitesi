@@ -415,10 +415,15 @@ export function AtlasHarita({
               </div>
             </div>
             {/*
-              Keşif açıklaması aç/kapa bölümdür (KARAR 28 Tem 2026): kapalıyken
-              yalnız buton kadar yer kaplar, dolayısıyla "Kazanılacak Madalya"
-              ve ana eylem her ekranda kaydırmasız görünür. İç içe modal yerine
-              aynı yerde açılır — panel dar (~340px), modal metni sıkıştırırdı.
+              Açıklama YALNIZCA tablet yatayda aç/kapa bölümdür (KARAR 29 Tem
+              2026 — Hasan): orada dikey alan dar, açıklama kapalıyken
+              "Kazanılacak Madalya" ve ana eylem kaydırmasız görünür. Mobil,
+              tablet dikey ve masaüstünde panel yeterince uzun olduğu için metin
+              doğrudan yazılır.
+
+              Buton ve metin HER ZAMAN DOM'a girer; hangisinin görüneceğine CSS
+              karar verir. Metni koşullu render etseydik düz modda kapalı
+              durumda hiç görünmezdi.
             */}
             {seciliDurak.aciklama ? (
               <div className={styles.aciklamaBolumu}>
@@ -433,11 +438,12 @@ export function AtlasHarita({
                   <span>Kitap Açıklaması</span>
                   <Ikon ad={aciklamaAcik ? "ok-sol" : "ok-sag"} boyut={16} />
                 </button>
-                {aciklamaAcik ? (
-                  <p className={styles.bookDescription} id="kitap-aciklamasi">
-                    {seciliDurak.aciklama}
-                  </p>
-                ) : null}
+                <p
+                  className={`${styles.bookDescription} ${aciklamaAcik ? styles.bookDescriptionAcik : ""}`}
+                  id="kitap-aciklamasi"
+                >
+                  {seciliDurak.aciklama}
+                </p>
               </div>
             ) : null}
 
@@ -458,11 +464,11 @@ export function AtlasHarita({
                     <strong>{seciliDurak.tamamlananBolum} / {seciliDurak.toplamBolum}</strong>
                   </div>
                   {/*
-                    TEK satır, sayıdan bağımsız iki uçtan hizalı. Rozet sayısı
-                    kitaptan kitaba değişiyor (Âdem 8, Şît 4…); `--rozet-adet`
-                    ile kare boyutu hesaplanır, `space-between` de kalan boşluğu
-                    aralara dağıtır. Alt yazılar kaldırıldı — numara zaten
-                    rozetin üstünde (Hasan, 28 Tem 2026).
+                    Varsayılan: 4 sütunlu ızgara, rozetin altında bölüm adı.
+                    YALNIZCA tablet yatayda (kısa ekran) tek satıra iner ve alt
+                    yazılar gizlenir — orada dikey alan dar (KARAR 29 Tem 2026).
+                    Tek satırda kare boyutu `--rozet-adet` ile hesaplanır; rozet
+                    sayısı kitaptan kitaba değişiyor (Âdem 8, Şît 4…).
                   */}
                   <ol style={{ "--rozet-adet": bolumRozetleri.length } as CSSProperties}>
                     {bolumRozetleri.map((rozet) => (
@@ -471,6 +477,7 @@ export function AtlasHarita({
                           <OdulIkonu tip="rozet" anahtar={rozet.iconKey} kazanildi={rozet.kazanildi} boyut={48} alt={`${rozet.sira}. bölüm rozeti`} />
                           {rozet.kazanildi ? <i><Ikon ad="onay" boyut={13} /></i> : null}
                         </span>
+                        <small>{rozet.sira}. bölüm</small>
                       </li>
                     ))}
                   </ol>
