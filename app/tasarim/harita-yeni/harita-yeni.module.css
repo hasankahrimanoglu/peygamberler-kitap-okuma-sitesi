@@ -23,7 +23,14 @@
   display: grid;
   grid-template-rows: auto auto minmax(0, 1fr) auto;
   width: min(100%, 1440px);
-  min-height: 100svh;
+  /*
+    KESİN yükseklik şart: yalnız `min-height` verildiğinde grid'in yüksekliği
+    belirsiz kalıyor ve `1fr` satırı serbest alanı değil İÇERİK boyutunu alıyor
+    (max-content gibi davranıyor) — 1024×768'de sayfa 47px taşıyordu.
+    `min-height` yalnız aşırı kısa ekranlar için taban.
+  */
+  height: 100svh;
+  min-height: 620px;
   margin-inline: auto;
   padding: 12px clamp(12px, 2vw, 24px);
   gap: 12px;
@@ -88,7 +95,20 @@
 }
 .profileCopy { display: grid; min-width: 0; line-height: 1.1; }
 .profileCopy strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.profileCopy small { gap: 4px; margin-top: 4px; color: var(--atlas-gold); font-weight: 800; }
+.profileCopy small {
+  gap: 4px;
+  margin-top: 4px;
+  overflow: hidden;
+  color: var(--atlas-gold);
+  font-weight: 800;
+  /* Uzun unvanlar ("Emanet Koruyucusu") ikinci satıra kırınca üst bar büyüyor
+     ve yükseklik hesapları bozuluyordu. Tek satırda kalır, gerekirse kısalır. */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Etiketin yalnız geniş ekranda görünen uzun kısmı. */
+.statUzun { display: inline; }
 .profileStats { justify-content: flex-end; margin: 0; }
 .profileStats div { min-width: 122px; padding: 4px 12px; border-left: 1px solid color-mix(in srgb, var(--murekkep) 15%, transparent); }
 .profileStats dt { color: var(--murekkep-soluk); font-size: 11px; font-weight: 800; }
@@ -108,6 +128,56 @@
 .regionIntro > span { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 12px; color: var(--atlas-gold); background: color-mix(in srgb, var(--atlas-gold) 12%, transparent); }
 .regionIntro p { font-family: var(--font-baloo), Arial, sans-serif; font-size: 15px; font-weight: 800; }
 .regionIntro small { color: var(--murekkep-soluk); font-size: 11px; font-weight: 700; }
+/*
+  Mobil bölge gezinmesi — yalnız ≤620px'te görünür (aşağıdaki bloğa bak).
+  Sol ok başta, sağ ok en sağda, bölge künyesi ortada ve kendi içinde
+  ortalanmış. Oklar `auto`, künye `1fr` — künye her zaman tam ortada kalır.
+*/
+.regionStepper {
+  display: none;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+}
+.regionStepper button {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--atlas-gold) 35%, transparent);
+  border-radius: 50%;
+  color: var(--murekkep);
+  background: color-mix(in srgb, var(--atlas-raised) 80%, transparent);
+  cursor: pointer;
+}
+.regionStepper button:disabled { opacity: .35; cursor: default; }
+.regionStepperCopy {
+  display: grid;
+  min-width: 0;
+  /* İki satır birbirine yapışmasın. */
+  gap: 4px;
+  justify-items: center;
+  text-align: center;
+}
+.regionStepperCopy small {
+  color: var(--atlas-gold);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .06em;
+}
+.regionStepperCopy strong {
+  max-width: 100%;
+  overflow: hidden;
+  color: var(--murekkep);
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.15;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .regionTabs { display: flex; min-width: 0; gap: 6px; overflow-x: auto; scrollbar-width: thin; scroll-snap-type: x proximity; }
 .regionTabs button {
   display: grid;
@@ -135,16 +205,21 @@
   display: grid;
   grid-template-columns: minmax(0, 1.58fr) minmax(330px, 0.82fr);
   min-width: 0;
-  min-height: 590px;
-  height: calc(100svh - 272px);
-  max-height: 820px;
+  /*
+    Yükseklik BURADA tanımlanmaz. Sabit `min-height`/`height: calc(100svh − X)`
+    kullanıldığında `.atlasShell`'in `minmax(0,1fr)` satırı esnekliğini
+    kaybediyor; kısa ekranda Keşif İskelesi ekran dışına taşıyor, uzun ekranda
+    altta boşluk kalıyordu (27 Tem 2026 raporu). Yükseklik grid satırından gelir.
+  */
+  min-height: 0;
   gap: 14px;
 }
 
 .mapStage {
   position: relative;
   min-width: 0;
-  min-height: 0;
+  /* Grid satırından beslenir; taban yalnız aşırı kısa ekranlar için. */
+  min-height: 360px;
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--atlas-gold) 42%, transparent);
   border-radius: 28px;
@@ -224,6 +299,15 @@
 
 .drawerBackdrop, .drawerHeader { display: none; }
 .bookPanel { display: flex; min-width: 0; min-height: 0; flex-direction: column; padding: 16px; overflow-x: hidden; overflow-y: auto; border: 1px solid color-mix(in srgb, var(--atlas-gold) 34%, transparent); border-radius: 28px; color: color-mix(in srgb, var(--atlas-night) 88%, var(--atlas-green-dark)); background: linear-gradient(145deg, var(--atlas-paper), color-mix(in srgb, var(--atlas-paper) 92%, var(--atlas-gold))); box-shadow: 0 18px 42px color-mix(in srgb, var(--atlas-night) 44%, transparent), inset 0 0 0 8px color-mix(in srgb, var(--atlas-paper) 52%, transparent); scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--atlas-gold) 48%, transparent) transparent; }
+/*
+  Panel bir flex sütundur. `flex-shrink` serbest bırakılırsa içerik taştığında
+  çocuklar sessizce eziliyor — `.bookDescription` (overflow: hidden olduğu için)
+  0 piksele çöküp tamamen görünmez oluyordu. Taşma kaydırmayla çözülür, ezmeyle
+  değil.
+*/
+.bookPanel > * { flex-shrink: 0; }
+.panelSpacer { flex-shrink: 1; }
+
 .panelTopline { display: flex; justify-content: space-between; color: color-mix(in srgb, var(--atlas-night) 58%, var(--atlas-paper)); font-size: 11px; font-weight: 900; letter-spacing: .11em; text-transform: uppercase; }
 .panelTopline strong { color: var(--atlas-green); }
 .bookHero { min-width: 0; align-items: flex-start; gap: 14px; margin-top: 8px; }
@@ -237,7 +321,22 @@
 .bookIdentity h2 { margin-top: 8px; color: var(--atlas-night); font-size: clamp(28px, 2.8vw, 38px); line-height: 1; }
 .bookIdentity p { margin-top: 5px; color: color-mix(in srgb, var(--atlas-night) 66%, var(--atlas-paper)); font-size: 16px; font-weight: 800; line-height: 1.3; }
 /* Keşif açıklaması: hero'nun altında tam genişlikte, gövde metni ölçüsünde (3.5). */
-.bookDescription { margin-top: 10px; color: color-mix(in srgb, var(--atlas-night) 74%, var(--atlas-paper)); font-size: 16px; font-weight: 500; line-height: 1.45; }
+/*
+  Haritadaki panel bir ÖNİZLEMEDİR: açıklama 3 satırda kesilir. Tam metin bölüm
+  rotası ekranında durur (27 Tem 2026 kararı). Kural her kırılımda aynıdır;
+  böylece "Kazanılacak Madalya" ve ana eylem her ekranda kaydırmasız görünür.
+*/
+.bookDescription {
+  display: -webkit-box;
+  overflow: hidden;
+  margin-top: 12px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  color: color-mix(in srgb, var(--atlas-night) 72%, var(--atlas-paper));
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+}
 .progressBlock { margin-top: 14px; }
 .progressBlock > div:first-child { display: flex; align-items: center; justify-content: space-between; font-weight: 900; }
 .progressTrack { height: 9px; margin-top: 9px; overflow: hidden; border-radius: 999px; background: color-mix(in srgb, var(--atlas-night) 10%, transparent); }
@@ -265,13 +364,35 @@
 /* Ana eylem paneldeki kaydırmadan bağımsız olarak DAİMA görünür kalır.
    Kitap açıklaması ve rozet sayısı kitaptan kitaba değiştiği için buton
    akışın sonunda bırakılamaz (25 Tem 2026). */
-.primaryAction { position: sticky; z-index: 2; bottom: 0; min-height: 52px; justify-content: center; gap: 8px; width: 100%; margin-top: 12px; border: 0; border-radius: 14px; color: var(--murekkep); background: var(--atlas-green); box-shadow: 0 12px 24px color-mix(in srgb, var(--atlas-green) 22%, transparent), 0 0 0 9px color-mix(in srgb, var(--atlas-paper) 94%, var(--atlas-gold)); font-weight: 900; cursor: pointer; }
+.primaryAction { position: sticky; z-index: 2; bottom: 0; min-height: 52px; scroll-margin-bottom: 8px; justify-content: center; gap: 8px; width: 100%; margin-top: 12px; border: 0; border-radius: 14px; color: var(--murekkep); background: var(--atlas-green); box-shadow: 0 12px 24px color-mix(in srgb, var(--atlas-green) 22%, transparent); font-weight: 900; cursor: pointer; }
 
-.exploreDock { min-height: 62px; overflow: hidden; border: 1px solid color-mix(in srgb, var(--atlas-gold) 26%, transparent); border-radius: 20px; background: color-mix(in srgb, var(--atlas-soft) 82%, transparent); }
+.exploreDock { position: sticky; z-index: 10; bottom: 0; min-height: 62px; overflow: hidden; border: 1px solid color-mix(in srgb, var(--atlas-gold) 26%, transparent); border-radius: 20px; background: color-mix(in srgb, var(--atlas-soft) 82%, transparent); }
 .exploreDock > span { padding-inline: 20px; color: var(--atlas-gold); font-size: 12px; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
 .exploreDock button { min-height: 62px; flex: 1; justify-content: center; gap: 8px; border: 0; border-left: 1px solid color-mix(in srgb, var(--murekkep) 13%, transparent); color: var(--murekkep); background: transparent; font-weight: 900; cursor: pointer; }
 .exploreDock button:hover { background: color-mix(in srgb, var(--murekkep) 6%, transparent); }
 .notice { position: fixed; z-index: 20; right: 18px; bottom: 18px; max-width: 380px; padding: 12px 16px; border: 1px solid color-mix(in srgb, var(--atlas-gold) 38%, transparent); border-radius: 14px; background: var(--atlas-soft); box-shadow: 0 12px 30px color-mix(in srgb, var(--atlas-night) 42%, transparent); font-weight: 800; }
+
+/*
+  KISA ekran (tablet yatay, 1366×768 dizüstü): panel içeriği 1024×768'de ~200px
+  taşıyordu. Ölçüler kısılır — "Kazanılacak Madalya" ve ana eylem kaydırmasız
+  görünür. Genişlik değil YÜKSEKLİK sorgulanır; asıl kısıt dikey alandır.
+*/
+@media (min-width: 960px) and (max-height: 860px) {
+  .panelTopline { display: none; }
+  .coverFrame { flex: 0 0 76px; }
+  .cover { width: 76px; }
+  .bookIdentity h2 { font-size: 25px; }
+  .bookDescription { -webkit-line-clamp: 2; margin-top: 8px; }
+  /* 8 rozet tek satırda: 4×2 ızgara ~92px fazladan yer kaplıyordu. */
+  .chapterRewards { margin-top: 8px; padding-top: 8px; }
+  .chapterRewards ol { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 4px; margin-top: 7px; }
+  .chapterRewards li > span { width: 40px; height: 40px; border-radius: 11px; }
+  .chapterRewards li small { font-size: 9px; }
+  .medalCard { gap: 9px; margin-top: 8px; padding: 8px; }
+  .medalCard > span { width: 44px; height: 44px; flex: 0 0 44px; }
+  .panelSpacer { min-height: 0; }
+  .primaryAction { margin-top: 8px; }
+}
 
 @media (max-width: 1100px) {
   .workspace { grid-template-columns: minmax(0, 1.48fr) minmax(300px, .82fr); }
@@ -283,16 +404,44 @@
 }
 
 @media (max-width: 959px) {
-  .atlasShell { min-height: 100svh; }
-  .explorerBar { grid-template-columns: 1fr auto; }
-  .profileGroup { justify-self: end; }
-  .profileStats { grid-column: 1 / -1; justify-content: stretch; border-top: 1px solid color-mix(in srgb, var(--murekkep) 12%, transparent); }
-  .profileStats div { flex: 1; padding-top: 8px; border-left: 0; }
-  .profileStats div + div { border-left: 1px solid color-mix(in srgb, var(--murekkep) 12%, transparent); }
+  .atlasShell { height: 100svh; min-height: 620px; }
+  /*
+    İKİ SIKI SATIR (27 Tem 2026). Eskiden istatistikler tam genişlikte ayrı bir
+    satır kaplıyordu; üst bar ~122px'e çıkıyor ve boş görünüyordu. Artık:
+      1. satır → geri + logo   |   rozet/kitap çipleri
+      2. satır → avatar + ad + unvan (tek satır)
+    Ölçülen: ~122px → ~96px.
+  */
+  .explorerBar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "sol istatistik"
+      "profil profil";
+    gap: 8px 12px;
+  }
+  .previewGroup { grid-area: sol; }
+  .profileStats { grid-area: istatistik; }
+  .profileGroup { grid-area: profil; justify-self: start; }
+
+  /* İstatistikler iki küçük hap; etiket ve sayı aynı satırda. */
+  .profileStats { justify-content: flex-end; gap: 6px; }
+  .profileStats div {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    border: 1px solid color-mix(in srgb, var(--atlas-gold) 30%, transparent);
+    border-left: 0;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--atlas-gold) 8%, transparent);
+  }
+  .profileStats dt { font-size: 12px; }
+  .profileStats dd { margin-top: 0; font-size: 16px; }
+  .statUzun { display: none; }
   .regionRail { grid-template-columns: 1fr; }
   .regionIntro { display: none; }
-  .workspace { grid-template-columns: 1fr; height: auto; max-height: none; }
-  .mapStage { min-height: 690px; }
+  .workspace { grid-template-columns: 1fr; }
   .drawerBackdrop { position: fixed; z-index: 40; inset: 0; display: block; border: 0; opacity: 0; visibility: hidden; background: color-mix(in srgb, var(--atlas-night) 64%, transparent); cursor: pointer; transition: opacity 220ms ease, visibility 220ms ease; backdrop-filter: blur(3px); }
   .drawerBackdropOpen { opacity: 1; visibility: visible; }
   .bookPanel { position: fixed; z-index: 50; top: 0; right: 0; bottom: 0; width: min(88vw, 480px); height: 100svh; min-height: 0; padding: 20px; border-radius: 28px 0 0 28px; visibility: hidden; pointer-events: none; transform: translateX(104%); transition: transform 260ms ease, visibility 260ms ease; }
@@ -307,18 +456,44 @@
 
 @media (max-width: 620px) {
   .atlasShell { padding: 10px; gap: 10px; }
-  .explorerBar { grid-template-columns: minmax(0, 1fr) auto; gap: 8px; padding: 9px; border-radius: 18px; }
-  .previewBadge { display: none; }
+  .explorerBar { gap: 8px 10px; padding: 9px; border-radius: 18px; }
+  /* Logo mobilde de durur — "Keşif Dünyası" şimdilik marka işareti. */
   .page .backLink { width: 44px; overflow: hidden; justify-content: center; padding: 0; font-size: 0; white-space: nowrap; }
-  .profileGroup { justify-self: center; }
-  .profileStats { grid-column: 1 / -1; }
-  .profileStats dd { font-size: 17px; }
-  .regionRail { padding: 5px; }
-  .regionTabs button { min-width: 132px; }
-  .mapStage { min-height: 720px; border-radius: 22px; background-position: center; }
+  .previewBadge { padding: 6px 9px; font-size: 12.5px; }
+  .avatar { width: 38px; height: 38px; flex: 0 0 38px; }
+  /*
+    En dar ekranda çipe yalnız İKON + SAYI sığıyor; metin etiketi görsel olarak
+    gizlenir ama ekran okuyucuda kalır. İkonlar her zaman görünür.
+  */
+  .profileStats dt {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .profileStats div { gap: 4px; padding: 5px 11px; }
+  .profileStats dd { font-size: 16px; }
+  .regionRail { grid-template-columns: 1fr; padding: 6px; }
+  .regionTabs { display: none; }
+  .regionStepper { display: grid; }
+  /* Sayaç yukarı taşındı; sahnenin altı kitaplara kalır. */
+  .regionPager { display: none; }
+  .mapStage { border-radius: 22px; background-position: center; }
   .mapHeading { top: 18px; right: 18px; left: 18px; max-width: none; }
-  .mapHeading h1 { max-width: calc(100% - 72px); font-size: 30px; }
+  /* Sayaç sahneden çıktığı için 72px'lik pay gerekmiyor. Punto, en uzun bölge
+     adı ("Emaneti Taşıyan Dört Dost") tek satıra sığacak şekilde küçültüldü. */
+  .mapHeading h1 { max-width: 100%; font-size: 22px; }
   .mapHeading > span { font-size: 13px; }
+  /* Bölge no/ad/kitap sayısı artık üstteki gezinme satırında da var;
+     sahnedeki açıklama iki satırda kesilir, kitaplara yer kalır. */
+  .mapHeading p {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
   /* Ruh hâli metni kaldırıldı; sabit durak konumları da yok — konumlar
      kitap sayısına göre hesaplanıyor (PROJE-MODELI 3.7). */
   .marker { width: 60px; height: 60px; }
@@ -328,16 +503,20 @@
   .stopLabel { width: 116px; padding: 5px 7px; }
   .stopLabel strong { font-size: 12.5px; }
   .stopLabel em { font-size: 10px; }
-  /* Dar ekranda sağ üstte sayaca yer yok — başlığı kesiyor; sol alta iner. */
-  .regionPager { top: auto; right: auto; bottom: 12px; left: 12px; }
   .mapHeading { max-width: 100%; }
-  .regionPager { right: 12px; bottom: 12px; }
+  /*
+    TEK kural. Eskiden iki satır arayla iki kez tanımlanıyordu ve ikisi birlikte
+    hem `left: 12px` hem `right: 12px` üretiyordu; mutlak kutu tam genişliğe
+    esneyip siyah bir şerit oluşuyordu. `left: auto` + `max-content` ile hap
+    yalnız ok ikonları + sayaç kadar genişler.
+  */
+
   .bookPanel { width: calc(100% - 24px); height: 100svh; min-height: 0; padding: 16px; border-radius: 24px 0 0 24px; }
   .coverFrame { flex-basis: 92px; }
   .cover { width: 92px; }
   .bookIdentity h2 { font-size: 28px; }
   .chapterRewards ol { gap: 9px 4px; }
-  .exploreDock { position: sticky; z-index: 10; bottom: 0; display: grid; grid-template-columns: repeat(3, 1fr); min-height: 66px; }
+  .exploreDock { display: grid; grid-template-columns: repeat(3, 1fr); min-height: 66px; }
   .exploreDock > span { display: none; }
   .exploreDock button { min-height: 66px; flex-direction: column; gap: 2px; padding: 4px; border-left: 0; font-size: 11px; }
   .exploreDock button + button { border-left: 1px solid color-mix(in srgb, var(--murekkep) 13%, transparent); }

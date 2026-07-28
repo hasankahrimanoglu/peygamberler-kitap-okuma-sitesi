@@ -4,8 +4,9 @@ import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { useRouter } from "next/navigation";
 import { Ikon, OdulIkonu, YedekliGorsel } from "../ui";
 import { books } from "../../data/books";
-import { rozetIconKey } from "../../lib/derive";
+import { madalyaIconKey, rozetIconKey } from "../../lib/derive";
 import styles from "../../../app/tasarim/harita-yeni/harita-yeni.module.css";
+import { kitapKapagi, YEDEK } from "../../lib/varlikYollari";
 
 export type AtlasDurakDurumu = "completed" | "active" | "locked" | "preparing";
 
@@ -68,8 +69,10 @@ function durakKonumlari(adet: number, dar: boolean): Nokta[] {
   // sınır da yukarı alınır, çünkü Keşif İskelesi `sticky` olarak altta durur.
   const xBas = dar ? 27 : 16;
   const xSon = dar ? 73 : 84;
-  const yBas = sira === 1 ? 60 : dar ? 40 : 38;
-  const ySon = dar ? 72 : 84;
+  // Dar ekranda sıra aralığı GENİŞ tutulur: işaretçi (60px) + iki satırlık ad
+  // etiketi (~38px) bir sonraki işaretçinin üstüne biniyordu (27 Tem 2026).
+  const yBas = sira === 1 ? 60 : dar ? 36 : 38;
+  const ySon = dar ? 84 : 84;
 
   const noktalar: Nokta[] = [];
   for (let s = 0; s < sira; s += 1) {
@@ -135,6 +138,11 @@ function durumMetni(durak: AtlasDurak) {
   return durak.tamamlananBolum > 0 ? "Devam Ediyor" : "Yeni Açıldı";
 }
 
+/** CSS'teki mobil bloğuyla AYNI eşik olmalı (harita-yeni.module.css @620px).
+ *  Eskiden 639px'ti; 621–639px bandında JS dar yerleşim uygularken CSS
+ *  masaüstü ölçülerini kullanıyor ve duraklar üst üste biniyordu. */
+const MOBIL_SORGU = "(max-width: 620px)";
+
 export function AtlasHarita({
   profil,
   toplamRozet,
@@ -153,7 +161,7 @@ export function AtlasHarita({
   const [dar, setDar] = useState(false);
 
   useEffect(() => {
-    const mq = window.matchMedia("(max-width: 639px)");
+    const mq = window.matchMedia(MOBIL_SORGU);
     const uygula = () => setDar(mq.matches);
     uygula();
     mq.addEventListener("change", uygula);
@@ -206,18 +214,25 @@ export function AtlasHarita({
       <div className={styles.atlasShell}>
         <header className={styles.explorerBar}>
           <div className={styles.previewGroup}>
-            <span className={styles.previewBadge}><Ikon ad="harita" boyut={17} /> Keşif Dünyası</span>
             <button className={styles.backLink} type="button" onClick={onProfilSecimineDon}>
               <Ikon ad="geri" boyut={18} /> Profil Seçimine Dön
             </button>
+            <span className={styles.previewBadge}><Ikon ad="harita" boyut={17} /> Keşif Dünyası</span>
           </div>
           <div className={styles.profileGroup}>
             <span className={styles.avatar}><OdulIkonu tip="avatar" anahtar={profil.avatarAnahtari} boyut={42} alt="" /></span>
             <span className={styles.profileCopy}><strong>{profil.ad}</strong><small><Ikon ad="yildiz" boyut={12} /> {profil.unvan}</small></span>
           </div>
           <dl className={styles.profileStats} aria-label="Keşif özeti">
-            <div><dt>Toplam Rozet</dt><dd><Ikon ad="rozet" boyut={19} /> {yukleniyor ? "—" : toplamRozet}</dd></div>
-            <div><dt>Kitap Tamamlandı</dt><dd><Ikon ad="kitap" boyut={19} /> {yukleniyor ? "—" : tamamlananKitap}</dd></div>
+            {/* Dar ekranda etiketler kısalır: "Toplam Rozet" → "Rozet". */}
+            <div>
+              <dt><span className={styles.statUzun}>Toplam </span>Rozet</dt>
+              <dd><Ikon ad="rozet" boyut={19} /> {yukleniyor ? "—" : toplamRozet}</dd>
+            </div>
+            <div>
+              <dt>Kitap<span className={styles.statUzun}> Tamamlandı</span></dt>
+              <dd><Ikon ad="kitap" boyut={19} /> {yukleniyor ? "—" : tamamlananKitap}</dd>
+            </div>
           </dl>
         </header>
 
@@ -226,6 +241,35 @@ export function AtlasHarita({
             <span><Ikon ad="harita" boyut={20} /></span>
             <div><p id="regions-title">Keşif Bölgeleri</p><small>Yeni bir dünya seç</small></div>
           </div>
+          {/*
+            Mobil bölge gezinmesi (27 Tem 2026). Dar ekranda sekmeler bölge
+            adlarını kesiyordu ("Bereketli Ai…"), ayrıca sayaç sahnenin altında
+            durduğu için kitaplara yer kalmıyordu. Oklar buraya alındı: adlar
+            tam görünür, sahnenin altı kitaplara kalır.
+          */}
+          <div className={styles.regionStepper}>
+            <button
+              type="button"
+              aria-label="Önceki keşif bölgesi"
+              disabled={bolgeIndex === 0}
+              onClick={() => bolgeSec(bolgeler[bolgeIndex - 1].id)}
+            >
+              <Ikon ad="ok-sol" boyut={17} />
+            </button>
+            <span className={styles.regionStepperCopy} aria-live="polite">
+              <small>{bolge.sira}. Bölge · {bolge.duraklar.length} Kitap</small>
+              <strong>{bolge.ad}</strong>
+            </span>
+            <button
+              type="button"
+              aria-label="Sonraki keşif bölgesi"
+              disabled={bolgeIndex === bolgeler.length - 1}
+              onClick={() => bolgeSec(bolgeler[bolgeIndex + 1].id)}
+            >
+              <Ikon ad="ok-sag" boyut={17} />
+            </button>
+          </div>
+
           <div className={styles.regionTabs} role="tablist" aria-label="Keşif bölgeleri">
             {bolgeler.map((item) => (
               <button
@@ -282,8 +326,8 @@ export function AtlasHarita({
                   >
                     <span className={styles.marker}>
                       <YedekliGorsel
-                        src={`/kapaklar/kapak-${durak.kitapKey}.png`}
-                        yedekSrc="/kapaklar/placeholder.svg"
+                        src={kitapKapagi(durak.kitapKey)}
+                        yedekSrc={YEDEK.kitapKapagi}
                         alt=""
                         width={200}
                         height={300}
@@ -327,7 +371,7 @@ export function AtlasHarita({
             <div className={styles.panelTopline}><span>Seçili keşif durağı</span><strong>{seciliDurak.id} / 35</strong></div>
             <div className={styles.bookHero}>
               <div className={styles.coverFrame}>
-                <YedekliGorsel src={`/kapaklar/kapak-${seciliDurak.kitapKey}.png`} yedekSrc="/kapaklar/placeholder.svg" alt={`${seciliDurak.ad} kitap kapağı`} width={597} height={891} className={styles.cover} />
+                <YedekliGorsel src={kitapKapagi(seciliDurak.kitapKey)} yedekSrc={YEDEK.kitapKapagi} alt={`${seciliDurak.ad} kitap kapağı`} width={597} height={891} className={styles.cover} />
                 {kilitli ? <span className={styles.coverLock}><Ikon ad="kilit" boyut={22} /></span> : null}
               </div>
               <div className={styles.bookIdentity}>
@@ -371,7 +415,7 @@ export function AtlasHarita({
                   </ol>
                 </section>
                 <section className={styles.medalCard} aria-label="Kitap madalyası">
-                  <span><OdulIkonu tip="madalya" anahtar={seciliDurak.kitapKey} kazanildi={seciliDurak.madalyaKazanildi} boyut={52} alt="" /></span>
+                  <span><OdulIkonu tip="madalya" anahtar={madalyaIconKey(seciliDurak.kitapKey)} kazanildi={seciliDurak.madalyaKazanildi} boyut={52} alt="" /></span>
                   <div>
                     <small>{seciliDurak.madalyaKazanildi ? "Kazanılan Madalya" : "Kazanılacak Madalya"}</small>
                     <strong>{seciliDurak.ad} Yolculuk Madalyası</strong>

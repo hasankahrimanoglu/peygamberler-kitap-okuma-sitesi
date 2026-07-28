@@ -34,9 +34,20 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+/*
+  Harita ekranıyla AYNI yükseklik modeli: kabuk tam viewport yüksekliğinde bir
+  grid, orta bölge `minmax(0,1fr)`. Eskiden düz bloktu ve yükseklik
+  `calc(100svh − 104px)` sabitiyle veriliyordu; sabit, üst barın tek satır
+  kaldığı varsayımına dayandığı için kısa ekranlarda taşıyordu.
+*/
 .atlasShell {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
   width: min(100%, 1440px);
   min-width: 0;
+  /* Kesin yükseklik — `min-height` tek başına `1fr`i içerik boyutuna şişiriyor. */
+  height: 100svh;
+  min-height: 620px;
   margin: 0 auto;
   padding: 12px clamp(12px, 2vw, 24px);
 }
@@ -45,7 +56,8 @@
   position: relative;
   z-index: 10;
   display: grid;
-  grid-template-columns: minmax(290px, auto) minmax(220px, 1fr) auto;
+  /* sol (geri + künye) | orta (logo) | sağ (sayaçlar) */
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   min-height: 66px;
   gap: clamp(14px, 2vw, 28px);
@@ -64,6 +76,7 @@
 .headerStats dd,
 .backLink,
 .previewBadge {
+  justify-self: center;
   display: flex;
   align-items: center;
 }
@@ -186,15 +199,15 @@
   grid-template-columns: minmax(0, 1.68fr) minmax(340px, 0.95fr);
   align-items: stretch;
   min-width: 0;
+  min-height: 0;
   gap: 14px;
   margin-top: 12px;
 }
 
+/* Yükseklik `.workspace` grid satırından gelir; sabit değer kullanılmaz. */
 .mapStage,
 .detailPanel {
-  height: calc(100svh - 104px);
-  min-height: 650px;
-  max-height: 800px;
+  min-height: 0;
 }
 
 .mapStage {
@@ -702,6 +715,13 @@
   line-height: 1.1;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+/* Final Kapısı ikonu dosyadan gelir (public/ikonlar/final-kapisi.svg). */
+.finalIconImage {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
 .finalIcon {
@@ -1296,8 +1316,13 @@
 }
 
 @media (max-width: 959px) {
+  /* Yığın düzende harita + panel alt alta; sayfa doğal olarak kaydırılır. */
+  .atlasShell {
+    display: block;
+  }
+
   .explorerBar {
-    grid-template-columns: minmax(280px, auto) 1fr auto;
+    grid-template-columns: auto minmax(0, 1fr) auto;
   }
 
   .workspace {
@@ -1330,6 +1355,9 @@
 }
 
 @media (max-width: 820px) {
+  /* Bu genişlikten sonra logoya yer kalmıyor; künye ve sayaçlar öncelikli. */
+  .previewBadge { display: none; }
+
   .explorerBar {
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 8px 12px;

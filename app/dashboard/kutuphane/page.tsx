@@ -18,6 +18,7 @@ import {
 } from "../../../src/components/ui";
 import { VeliCocukSecici } from "../../../src/components/dashboard/VeliCocukSecici";
 import { VeliSayfaBasligi } from "../../../src/components/dashboard/VeliSayfaBasligi";
+import { kitapKapagi, YEDEK } from "../../../src/lib/varlikYollari";
 
 type DurumFiltre = "hepsi" | KutuphaneDurum;
 
@@ -194,10 +195,10 @@ export default function KutuphaneSayfasi() {
                       <YedekliGorsel
                         src={
                           kitap.bookKey
-                            ? `/kapaklar/kapak-${kitap.bookKey}.png`
-                            : "/kapaklar/placeholder.svg"
+                            ? kitapKapagi(kitap.bookKey)
+                            : YEDEK.kitapKapagi
                         }
-                        yedekSrc="/kapaklar/placeholder.svg"
+                        yedekSrc={YEDEK.kitapKapagi}
                         alt={`${kitap.book.isim} kitap kapağı`}
                         className="mx-auto h-44 w-auto rounded-kart object-contain shadow-kart sm:mx-0"
                       />

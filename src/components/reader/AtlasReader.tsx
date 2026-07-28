@@ -15,6 +15,7 @@ import {
   type OkumaSayfaModeli,
 } from "./sayfalar";
 import styles from "../../../app/tasarim/okuma-yeni/okuma-yeni.module.css";
+import { kitapKapagi, rozetGorseli, YEDEK } from "../../lib/varlikYollari";
 
 type YaziDuzeyi = 0 | 1 | 2;
 
@@ -136,7 +137,7 @@ function KesifliGorsel({
       <div className={styles.discoveryCanvas}>
         <YedekliGorsel
           src={src}
-          yedekSrc="/icerik/placeholder.svg"
+          yedekSrc={YEDEK.sahne}
           alt={alt}
           width={800}
           height={600}
@@ -268,7 +269,7 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
   );
   const sayfa = sayfalar[Math.min(aktifSayfa, sayfalar.length - 1)];
   const geriYolu = `/kitap/${chapter.bookKey ?? "ebubekir"}`;
-  const rozetAnahtari = `${chapter.bookKey ?? "ebubekir"}-bolum-${chapter.chapterNumber ?? 1}`;
+  const rozetYolu = rozetGorseli(chapter.bookKey ?? "ebubekir", chapter.chapterNumber ?? 1);
   const sonrakiBolumAdi = useMemo(() => sonrakiBolumAdiniBul(chapter), [chapter]);
   const akisId = akisBilgisi(sayfa).id;
   const sonSayfada = aktifSayfa >= sayfalar.length - 1;
@@ -463,8 +464,8 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
               />
             ) : (
               <YedekliGorsel
-                src={kapakGorseli?.src ?? `/kapaklar/kapak-${chapter.bookKey ?? "ebubekir"}.png`}
-                yedekSrc={kapakGorseli ? "/icerik/placeholder.svg" : "/kapaklar/placeholder.svg"}
+                src={kapakGorseli?.src ?? kitapKapagi(chapter.bookKey ?? "ebubekir")}
+                yedekSrc={kapakGorseli ? YEDEK.sahne : YEDEK.kitapKapagi}
                 alt={kapakGorseli?.alt ?? `${chapter.bookName ?? "Kitap"} kapağı`}
                 width={kapakGorseli ? 800 : 238}
                 height={kapakGorseli ? 600 : 356}
@@ -477,7 +478,7 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
             <h1>{temizMetin(chapter.bolumAdi)}</h1>
             <p className={styles.coverSummary}>{chapter.ozet}</p>
             <div className={styles.badgePreview}>
-              <YedekliGorsel src={`/rozetler/rozet-${rozetAnahtari}.png`} yedekSrc="/rozetler/placeholder.svg" alt={`${chapter.badgeName} önizlemesi`} width={62} height={62} className={styles.badgeImage} />
+              <YedekliGorsel src={rozetYolu} yedekSrc={YEDEK.rozet} alt={`${chapter.badgeName} önizlemesi`} width={62} height={62} className={styles.badgeImage} />
               <span><small>Bu bölümün rozeti</small><strong>{chapter.badgeName}</strong></span>
             </div>
           </section>
@@ -531,7 +532,7 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
                   <YedekliGorsel
                     src={icerikGorseli.src}
                     portraitSrc={icerikGorseli.portraitSrc}
-                    yedekSrc="/icerik/placeholder.svg"
+                    yedekSrc={YEDEK.sahne}
                     alt={icerikGorseli.alt}
                     width={800}
                     height={600}
@@ -662,7 +663,7 @@ export function AtlasReader({ chapter, onProgressSync }: AtlasReaderProps) {
         <h1>Rozet Kapısı</h1>
         <p className={styles.rewardIntro}>{tekrarOkuma ? <>Bu rozeti daha önce kazanmıştın.<span>Tekrar okumak, öğrendiklerini kalbinde büyütür.</span></> : sonrakiBolumAdi ? `Şimdi “${sonrakiBolumAdi}” bölümüne geçebilirsin.` : "Kitabın tüm bölümlerini tamamladın; Büyük Final Testi seni bekliyor."}</p>
         <div className={styles.rewardBadge}>
-          <YedekliGorsel src={`/rozetler/rozet-${rozetAnahtari}.png`} yedekSrc="/rozetler/placeholder.svg" alt={chapter.badgeName} width={134} height={134} className={styles.rewardImage} />
+          <YedekliGorsel src={rozetYolu} yedekSrc={YEDEK.rozet} alt={chapter.badgeName} width={134} height={134} className={styles.rewardImage} />
           <strong>{chapter.badgeName}</strong>
         </div>
         <div className={styles.rewardMessage}><Ikon ad="harita" boyut={22} /><p>{tekrarOkuma ? "Rozetin haritanda duruyor; bölüm listesine güvenle dönebilirsin." : chapter.returnMessage}</p></div>

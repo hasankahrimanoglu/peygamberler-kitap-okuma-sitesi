@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Hz. Şît Yolculuk Madalyası">
+  <!-- YER TUTUCU. Her kitabın madalyası farklıdır; aynı adla değiştir. -->
+  <defs>
+    <linearGradient id="kurdele" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2e7d5b"/><stop offset="1" stop-color="#1e4033"/>
+    </linearGradient>
+    <linearGradient id="disk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6dfae"/><stop offset="1" stop-color="#c08f2f"/>
+    </linearGradient>
+  </defs>
+  <path d="M40 6h16l-8 34-16-4Z" fill="url(#kurdele)"/>
+  <path d="M80 6H64l8 34 16-4Z" fill="url(#kurdele)"/>
+  <circle cx="60" cy="76" r="36" fill="url(#disk)"/>
+  <circle cx="60" cy="76" r="27" fill="#1e4033"/>
+  <path d="M60 58 67 74h17l-13 10 5 17-16-11-16 11 5-17-13-10h17Z" fill="#f2ce7b"/>
+</svg>

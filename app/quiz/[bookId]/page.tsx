@@ -9,6 +9,7 @@ import { Konfeti } from "../../../src/components/reader/Konfeti";
 import { Buton, Ikon, OdulIkonu } from "../../../src/components/ui";
 import styles from "./quiz-atlas.module.css";
 import { quizConfig, type QuizConfig, type QuizOption, type QuizQuestion } from "../../../src/data/quizzes";
+import { madalyaIconKey } from "../../../src/lib/derive";
 
 type CompletionResult = {
   madalya: string;
@@ -437,7 +438,7 @@ function AtlasAdemQuiz({
                   <span className={styles.medalFrame}>
                     <OdulIkonu
                       tip="madalya"
-                      anahtar={bookKey}
+                      anahtar={madalyaIconKey(bookKey)}
                       kazanildi={isConfirmedCompletion}
                       boyut={58}
                       alt={`${bookLabel} Yolculuk Madalyası`}
@@ -578,7 +579,7 @@ function AtlasAdemQuiz({
                         <div className={`${styles.resultMedal} ${styles.resultMedalPractice}`}>
                           <OdulIkonu
                             tip="madalya"
-                            anahtar={bookKey}
+                            anahtar={madalyaIconKey(bookKey)}
                             boyut={124}
                             alt={`${bookLabel} Yolculuk Madalyası`}
                             className={styles.resultImage}
@@ -614,7 +615,7 @@ function AtlasAdemQuiz({
                         >
                           <OdulIkonu
                             tip="madalya"
-                            anahtar={bookKey}
+                            anahtar={madalyaIconKey(bookKey)}
                             boyut={124}
                             alt={`${bookLabel} Yolculuk Madalyası`}
                             className={styles.resultImage}

@@ -6,6 +6,7 @@ import { supabase } from "../../../lib/supabase";
 import { books } from "../../../src/data/books";
 import { KitapBolumRotasi, type AtlasBolum } from "../../../src/components/atlas/KitapBolumRotasi";
 import { Buton, Kart } from "../../../src/components/ui";
+import { atlasRegions } from "../../../src/data/atlasCatalog";
 
 type KitapKey = "adem" | "sit";
 
@@ -101,6 +102,11 @@ export default function KitapPage() {
     );
   }
 
+  // Keşif açıklamasının tek kaynağı katalogdur (atlasCatalog.ts).
+  const katalogKitabi = atlasRegions
+    .flatMap((bolge) => bolge.books)
+    .find((kitap) => kitap.key === kitapKey);
+
   return (
     <KitapBolumRotasi
       key={`${kitapKey}-${loading ? "loading" : completed}-${finished}`}
@@ -108,6 +114,7 @@ export default function KitapPage() {
       kitapSira={identity.order}
       kitapAdi={book.title}
       altBaslik={identity.subtitle}
+      kitapAciklamasi={katalogKitabi?.description}
       profilAdi={profileName}
       bolumler={chapters}
       tamamlananBolum={completed}
