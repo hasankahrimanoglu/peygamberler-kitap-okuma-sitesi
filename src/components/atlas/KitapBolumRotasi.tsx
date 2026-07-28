@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Ikon, YedekliGorsel } from "../ui";
 import styles from "../../../app/tasarim/kitap-yeni/kitap-yeni.module.css";
+import { KesifMenusu } from "./KesifMenusu";
 import {
   FINAL_KAPISI_IKONU,
   kitapKapagi,
@@ -32,9 +33,11 @@ type KitapBolumRotasiProps = {
   kitapSira: number;
   kitapAdi: string;
   altBaslik: string;
-  /** Keşif açıklaması (atlasCatalog). Haritada 3 satır özet, burada tam metin. */
-  kitapAciklamasi?: string;
   profilAdi: string;
+  /** Keşif menüsü için profil künyesi ve toplamlar. */
+  menuProfili: { ad: string; avatarAnahtari: string; unvan: string };
+  toplamRozet: number;
+  tamamlananKitap: number;
   bolumler: AtlasBolum[];
   tamamlananBolum: number;
   kitapBitti: boolean;
@@ -72,8 +75,10 @@ export function KitapBolumRotasi({
   kitapSira,
   kitapAdi,
   altBaslik,
-  kitapAciklamasi,
   profilAdi,
+  menuProfili,
+  toplamRozet,
+  tamamlananKitap,
   bolumler,
   tamamlananBolum,
   kitapBitti,
@@ -94,6 +99,7 @@ export function KitapBolumRotasi({
     ? Math.max(0, toplamBolum - 1)
     : Math.min(etkinTamamlananBolum, Math.max(0, toplamBolum - 1));
   const [secim, setSecim] = useState<Secim>(aktifIndex);
+  const [menuAcik, setMenuAcik] = useState(false);
   const [mobilDetayAcik, setMobilDetayAcik] = useState(false);
   const panelKapatRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLElement>(null);
@@ -355,26 +361,30 @@ export function KitapBolumRotasi({
     <main className={`tema-cocuk ${styles.page}`}>
       <div className={styles.atlasShell}>
         <header className={styles.explorerBar}>
-          {/* Sol: geri + kitap künyesi · Orta: logo · Sağ: sayaçlar */}
-          <div className={styles.previewGroup}>
-            <button className={styles.backLink} type="button" onClick={onHaritayaDon}>
-              <Ikon ad="geri" boyut={18} /> Keşif Atlasına Dön
-            </button>
-            <div className={styles.bookIdentity}>
-              <div className={styles.lanternMark} aria-hidden="true"><Ikon ad="fener" boyut={22} /></div>
-              <div>
-                <span>{profilAdi} · Bölüm Yolculuğu</span>
-                <strong>{kitapAdi} · {kitapSira}. Kitap</strong>
-              </div>
-            </div>
-          </div>
-
-          <span className={styles.previewBadge}><Ikon ad="harita" boyut={17} /> Keşif Dünyası</span>
+          {/*
+            TEK satır (28 Tem 2026): geri | sayaçlar | menü. Kitap adı ve sıra
+            numarası kaldırıldı — orta alandaki başlıkta zaten var. Logo da
+            kaldırıldı; iki uç dolu olduğu için ortada üçüncü bir öbek barı
+            kalabalıklaştırıyordu.
+          */}
+          <button className={styles.backLink} type="button" onClick={onHaritayaDon}>
+            <Ikon ad="geri" boyut={18} /> Keşif Atlasına Dön
+          </button>
 
           <dl className={styles.headerStats} aria-label="Kitap ilerlemesi">
             <div><dt>Bölüm</dt><dd>{yukleniyor ? "—" : `${etkinTamamlananBolum} / ${toplamBolum}`}</dd></div>
             <div><dt>Rozet</dt><dd><Ikon ad="rozet" boyut={16} /> {yukleniyor ? "—" : etkinTamamlananBolum}</dd></div>
           </dl>
+
+          <button
+            type="button"
+            className={styles.menuButonu}
+            aria-label="Keşif menüsünü aç"
+            aria-expanded={menuAcik}
+            onClick={() => setMenuAcik(true)}
+          >
+            <Ikon ad="menu" boyut={21} />
+          </button>
         </header>
 
         <div className={styles.workspace}>
@@ -485,11 +495,6 @@ export function KitapBolumRotasi({
                 <div className={styles.bookCopy}>
                     <p>{kitapAdi}</p>
                     <h2>{altBaslik}</h2>
-                    {/* Tam açıklama burada; haritadaki panelde 3 satır özet var.
-                        `.selectedContent` yerine burada duruyor — orada `key` ile
-                        remount + panelIn animasyonu var, her bölüm seçiminde
-                        metin yeniden animasyonla girerdi. */}
-                    {kitapAciklamasi ? <span>{kitapAciklamasi}</span> : null}
                   </div>
               </div>
               <div className={styles.bookProgressBlock}>
@@ -560,6 +565,15 @@ export function KitapBolumRotasi({
           </aside>
         </div>
       </div>
+
+      <KesifMenusu
+        profil={menuProfili}
+        toplamRozet={toplamRozet}
+        tamamlananKitap={tamamlananKitap}
+        yukleniyor={yukleniyor}
+        acik={menuAcik}
+        onKapat={() => setMenuAcik(false)}
+      />
     </main>
   );
 }

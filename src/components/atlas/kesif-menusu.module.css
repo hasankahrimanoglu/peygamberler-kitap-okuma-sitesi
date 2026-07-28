@@ -1,0 +1,233 @@
+/*
+ * Çocuk tarafı keşif menüsü (KARAR 28 Tem 2026).
+ * Üst bardaki sayaçlar ve unvan buraya taşındı; bar tek satıra indi.
+ * Kendi modülü — hem /map hem /kitap/[kitapKey] ekranı kullanır.
+ */
+
+.perde {
+  position: fixed;
+  z-index: 60;
+  inset: 0;
+  display: block;
+  padding: 0;
+  border: 0;
+  visibility: hidden;
+  opacity: 0;
+  background: color-mix(in srgb, var(--zemin) 64%, transparent);
+  cursor: pointer;
+  transition: opacity 220ms ease, visibility 220ms ease;
+  backdrop-filter: blur(3px);
+}
+
+.perdeAcik {
+  visibility: visible;
+  opacity: 1;
+}
+
+.panel {
+  position: fixed;
+  z-index: 70;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  width: min(88vw, 380px);
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  padding: 18px;
+  border-radius: 26px 0 0 26px;
+  color: var(--murekkep);
+  background: var(--yuzey);
+  box-shadow: -18px 0 44px color-mix(in srgb, var(--zemin) 52%, transparent);
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(104%);
+  transition: transform 260ms ease, visibility 260ms ease;
+}
+
+.panelAcik {
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.panel :where(p, dl, dd, dt) {
+  margin: 0;
+}
+
+/* --- Başlık --------------------------------------------------------- */
+
+.baslik {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid color-mix(in srgb, var(--murekkep) 14%, transparent);
+}
+
+.avatar {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--vurgu) 62%, transparent);
+  border-radius: 50%;
+  background: var(--yuzey-2);
+}
+
+.baslik strong {
+  display: block;
+  overflow: hidden;
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.baslik small {
+  color: var(--murekkep-soluk);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.baslik > button {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--murekkep) 16%, transparent);
+  border-radius: 50%;
+  color: var(--murekkep);
+  background: transparent;
+  cursor: pointer;
+}
+
+/* --- Unvan ---------------------------------------------------------- */
+
+.unvanKarti {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 14px;
+  border: 1px solid color-mix(in srgb, var(--vurgu) 38%, transparent);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--vurgu) 10%, transparent);
+}
+
+.unvanIkonu {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--vurgu);
+  background: color-mix(in srgb, var(--vurgu) 16%, transparent);
+}
+
+.unvanKarti small {
+  display: block;
+  color: var(--murekkep-soluk);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.unvanKarti strong {
+  color: var(--vurgu);
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.2;
+}
+
+/* --- Sayaçlar ------------------------------------------------------- */
+
+.sayaclar {
+  display: grid;
+  gap: 10px;
+}
+
+.sayaclar > div {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 12px 14px;
+  border: 1px solid color-mix(in srgb, var(--murekkep) 14%, transparent);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--yuzey-2) 70%, transparent);
+}
+
+.sayacIkonu {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  place-items: center;
+  border-radius: 14px;
+  color: var(--vurgu);
+  background: color-mix(in srgb, var(--vurgu) 12%, transparent);
+}
+
+.sayaclar dt {
+  color: var(--murekkep-soluk);
+  font-size: 12.5px;
+  font-weight: 800;
+}
+
+.sayaclar dd {
+  color: var(--murekkep);
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+/* --- Bağlantılar ---------------------------------------------------- */
+
+.baglantilar {
+  display: grid;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid color-mix(in srgb, var(--murekkep) 14%, transparent);
+}
+
+.baglantilar button {
+  display: grid;
+  min-height: 52px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid color-mix(in srgb, var(--murekkep) 14%, transparent);
+  border-radius: 15px;
+  color: var(--murekkep);
+  background: transparent;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 800;
+  text-align: left;
+}
+
+.baglantilar button:hover {
+  border-color: color-mix(in srgb, var(--vurgu) 55%, transparent);
+  background: color-mix(in srgb, var(--vurgu) 9%, transparent);
+}
+
+.perde:focus-visible,
+.panel button:focus-visible {
+  outline: 3px solid var(--vurgu);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .perde,
+  .panel {
+    transition-duration: 0.01ms;
+  }
+}

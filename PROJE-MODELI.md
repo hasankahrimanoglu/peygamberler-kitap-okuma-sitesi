@@ -307,6 +307,32 @@ yükseklik kuralını** izler:
   ezilmez: panel flex sütununda çocuklara `flex-shrink: 0` verilir — aksi
   hâlde taşma anında öğeler sessizce 0 piksele çöküyordu.
 
+### 3.7.2 Çocuk tarafı üst barı ve keşif menüsü (KARAR — 28 Temmuz 2026, Hasan)
+
+- Üst bar **her ekranda TEK satırdır**: logo (solda, çerçevesiz) · profil künyesi ·
+  menü ikonu. Rozet/madalya sayaçları ve unvan bardan **çıkarıldı**.
+- **Keşif menüsü** sağdan açılan çekmecedir (kitap detayıyla aynı davranış:
+  arka plana dokunma ve Escape kapatır). İçerik: unvan, **Kazanılan Rozet**,
+  **Kazanılan Madalya**, ardından sayfa bağlantıları (**Veli Paneli**, **Çıkış**).
+  Menü ileride büyüyecek bir gezinme alanıdır.
+- **Haritada geri butonu YOKTUR.** Eskiden veli paneline gidiyordu; çocuğun
+  okuma ekranından tek dokunuşla veli paneline düşmesi yanlıştı. O bağlantı
+  artık menünün içindedir. **Faz 7 notu:** çocuk/veli oturum ayrımı olmadığı
+  için bu bağlantı şimdilik korumasızdır, güvenlik fazında PIN arkasına alınır.
+- **Bölge gezinmesi tek yerdedir:** sahnenin üstündeki sayaç kaldırıldı, oklar
+  bölge şeridine alındı. Görünen bölge sayısı: mobil 1 (künye), tablet dikey 2,
+  tablet yatay 3, masaüstü 5 — komşular kenarlardan kesik görünür. Böylece bölge
+  adları kesilmez ve sahne başlığı sağa doğru genişleyip satır kazanır.
+- **Kitap açıklaması aç/kapa bölümdür** ("Kitap Açıklaması" butonu). Kapalıyken
+  yer kaplamaz; "Kazanılacak Madalya" ve ana eylem her ekranda kaydırmasız
+  görünür. Metin uzunluğu serbesttir — kısaltma/clamp uygulanmaz.
+- **Bölüm rozetleri tek satırdır** ve rozet sayısından bağımsız olarak panelin
+  iki kenarına hizalanır (kare boyutu adede göre hesaplanır). Rozet altındaki
+  "1. bölüm" yazıları kaldırıldı — numara zaten rozet görselinin üstündedir.
+- **Bölüm rotası üst barı** da tek satırdır: geri · bölüm/rozet sayaçları · menü.
+  Kitap adı ve sıra numarası bardan çıkarıldı (orta alandaki başlıkta zaten var);
+  logo bu ekranda kullanılmaz.
+
 ### 3.8 Veli ana sayfası bilgi mimarisi (ONAY — 18 Temmuz 2026)
 
 Veli panelinin ana sayfası salt profil seçici veya yoğun istatistik panosu

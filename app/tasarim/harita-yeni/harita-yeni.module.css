@@ -38,8 +38,9 @@
 
 .explorerBar {
   display: grid;
-  grid-template-columns: minmax(300px, auto) 1fr auto;
-  min-height: 66px;
+  /* logo | profil | menü — TEK satır (28 Tem 2026). */
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  min-height: 62px;
   align-items: center;
   gap: 20px;
   padding: 9px 12px;
@@ -50,49 +51,49 @@
   backdrop-filter: blur(16px);
 }
 
-.previewGroup, .backLink, .previewBadge, .profileGroup, .profileCopy small,
-.profileStats, .profileStats dd, .regionIntro, .bookHero, .statusChip,
+.previewBadge, .profileGroup, .profileCopy small,
+.regionIntro, .bookHero, .statusChip,
 .rewardSummary dt, .primaryAction, .exploreDock, .exploreDock button,
-.regionPager, .preparingCard, .lockNote { display: flex; align-items: center; }
+.preparingCard, .lockNote { display: flex; align-items: center; }
 
-.previewGroup { min-width: 0; gap: 8px; }
+/* Logo — çerçevesiz (Hasan, 28 Tem 2026). Gerçek logo gelene kadar yazı. */
 .previewBadge {
   min-height: 36px;
-  gap: 7px;
-  padding: 6px 10px;
-  border: 1px solid color-mix(in srgb, var(--atlas-gold) 52%, transparent);
-  border-radius: 999px;
+  gap: 8px;
   color: var(--atlas-gold);
-  background: color-mix(in srgb, var(--atlas-gold) 10%, transparent);
-  font-size: 13px;
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 16px;
   font-weight: 900;
   white-space: nowrap;
 }
-.backLink {
-  min-height: 44px;
-  gap: 7px;
-  padding: 8px 10px;
-  border: 0;
-  border-radius: 12px;
-  color: var(--murekkep-soluk);
-  background: transparent;
-  font-weight: 800;
-  cursor: pointer;
-}
-.backLink:hover { color: var(--murekkep); background: color-mix(in srgb, var(--murekkep) 7%, transparent); }
 
-.profileGroup { justify-self: center; min-width: 0; gap: 10px; }
+.profileGroup { justify-self: end; min-width: 0; gap: 9px; }
 .avatar {
   display: grid;
-  width: 46px;
-  height: 46px;
-  flex: 0 0 46px;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
   place-items: center;
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--atlas-gold) 65%, transparent);
   border-radius: 50%;
   background: var(--atlas-raised);
 }
+/* Menüyü açan buton — sayaçlar ve unvan artık çekmecede. */
+.menuButonu {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--night-line);
+  border-radius: 50%;
+  color: var(--murekkep);
+  background: color-mix(in srgb, var(--atlas-raised) 70%, transparent);
+  cursor: pointer;
+}
+.menuButonu:hover { border-color: color-mix(in srgb, var(--atlas-gold) 60%, transparent); background: color-mix(in srgb, var(--atlas-gold) 12%, transparent); }
+
 .profileCopy { display: grid; min-width: 0; line-height: 1.1; }
 .profileCopy strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .profileCopy small {
@@ -107,12 +108,6 @@
   white-space: nowrap;
 }
 
-/* Etiketin yalnız geniş ekranda görünen uzun kısmı. */
-.statUzun { display: inline; }
-.profileStats { justify-content: flex-end; margin: 0; }
-.profileStats div { min-width: 122px; padding: 4px 12px; border-left: 1px solid color-mix(in srgb, var(--murekkep) 15%, transparent); }
-.profileStats dt { color: var(--murekkep-soluk); font-size: 11px; font-weight: 800; }
-.profileStats dd { gap: 5px; margin-top: 2px; color: var(--atlas-gold); font-size: 20px; font-weight: 900; }
 
 .regionRail {
   display: grid;
@@ -178,12 +173,45 @@
   white-space: nowrap;
 }
 
-.regionTabs { display: flex; min-width: 0; gap: 6px; overflow-x: auto; scrollbar-width: thin; scroll-snap-type: x proximity; }
+/*
+  Oklar + sekme şeridi (28 Tem 2026). Sahnenin sağ üstündeki sayaç kaldırıldı;
+  bölge gezinmesi tek yerde toplandı. Şerit `scroll-snap` ile aktif sekmeyi
+  ortalar, komşular kenarlardan KESİK görünür — devam ettiği anlaşılsın diye.
+*/
+.regionTabsNav {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.regionNavOk {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--atlas-gold) 35%, transparent);
+  border-radius: 50%;
+  color: var(--murekkep);
+  background: color-mix(in srgb, var(--atlas-raised) 80%, transparent);
+  cursor: pointer;
+}
+.regionNavOk:disabled { opacity: .32; cursor: default; }
+.regionNavOk:hover:not(:disabled) { border-color: var(--atlas-gold); background: color-mix(in srgb, var(--atlas-gold) 14%, transparent); }
+
+.regionTabs { display: flex; min-width: 0; gap: 6px; overflow-x: auto; scrollbar-width: thin; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.regionTabs::-webkit-scrollbar { display: none; }
 .regionTabs button {
   display: grid;
   grid-template-columns: auto 1fr;
-  min-width: 146px;
+  /* Görünen sekme sayısı kırılımda ayarlanır; yüzde payı komşuları kesik
+     gösterir. 3 sütun: %29×3 = %87, kalan %13 iki yandan peek. */
+  flex: 0 0 29%;
+  min-width: 0;
   min-height: 48px;
+  scroll-snap-align: center;
   align-content: center;
   column-gap: 7px;
   padding: 5px 9px;
@@ -286,15 +314,7 @@
 .stopSelected .stopLabel { border-color: var(--atlas-gold); background: color-mix(in srgb, var(--atlas-night) 90%, transparent); }
 /* activePulse kaldırıldı: nefes animasyonu yeni madalyon yapısında yok. */
 
-.regionPager { position: absolute; z-index: 7; right: 18px; bottom: 16px; gap: 8px; padding: 5px; border-radius: 999px; background: color-mix(in srgb, var(--atlas-night) 78%, transparent); backdrop-filter: blur(8px); }
-.regionPager button { display: grid; width: 44px; height: 44px; place-items: center; border: 1px solid color-mix(in srgb, var(--atlas-gold) 35%, transparent); border-radius: 50%; color: var(--murekkep); background: color-mix(in srgb, var(--atlas-soft) 75%, transparent); cursor: pointer; }
-.regionPager button:disabled { opacity: .35; cursor: default; }
-.regionPager span { min-width: 44px; text-align: center; font-weight: 900; }
 
-/* Sayaç sağ ÜST köşede (PROJE-MODELI 3.7). Eskiden sağ alttaydı ve son
-   sıradaki kitap etiketinin üstüne biniyordu. Başlığa sayaç genişliği kadar
-   pay bırakılır; yoksa uzun bölge adlarında metin sayaca değiyor. */
-.regionPager { top: 18px; bottom: auto; }
 .mapHeading { max-width: min(570px, calc(100% - 230px)); }
 
 .drawerBackdrop, .drawerHeader { display: none; }
@@ -322,20 +342,59 @@
 .bookIdentity p { margin-top: 5px; color: color-mix(in srgb, var(--atlas-night) 66%, var(--atlas-paper)); font-size: 16px; font-weight: 800; line-height: 1.3; }
 /* Keşif açıklaması: hero'nun altında tam genişlikte, gövde metni ölçüsünde (3.5). */
 /*
-  Haritadaki panel bir ÖNİZLEMEDİR: açıklama 3 satırda kesilir. Tam metin bölüm
-  rotası ekranında durur (27 Tem 2026 kararı). Kural her kırılımda aynıdır;
-  böylece "Kazanılacak Madalya" ve ana eylem her ekranda kaydırmasız görünür.
+  Açıklama AÇ/KAPA bölümdür (28 Tem 2026). Kapalıyken yalnız buton kadar yer
+  kaplar; "Kazanılacak Madalya" ve ana eylem her ekranda kaydırmasız görünür.
+  Metin uzunluğu serbest — kısaltma/clamp yok.
 */
-.bookDescription {
-  display: -webkit-box;
-  overflow: hidden;
+.aciklamaBolumu {
+  display: grid;
+  gap: 8px;
   margin-top: 12px;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+}
+
+.aciklamaButonu {
+  display: grid;
+  min-height: 44px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 13px;
+  border: 1px solid color-mix(in srgb, var(--atlas-gold) 42%, transparent);
+  border-radius: 13px;
+  color: color-mix(in srgb, var(--atlas-night) 78%, var(--atlas-paper));
+  background: color-mix(in srgb, var(--atlas-gold) 9%, transparent);
+  cursor: pointer;
+  font-size: 14.5px;
+  font-weight: 850;
+  text-align: left;
+}
+
+.aciklamaButonu:hover {
+  border-color: var(--atlas-gold);
+  background: color-mix(in srgb, var(--atlas-gold) 15%, transparent);
+}
+
+.aciklamaButonu svg:last-child {
+  transform: rotate(90deg);
+}
+
+.aciklamaButonu[aria-expanded="true"] svg:last-child {
+  transform: rotate(-90deg);
+}
+
+.bookDescription {
   color: color-mix(in srgb, var(--atlas-night) 72%, var(--atlas-paper));
   font-size: 15px;
   font-weight: 700;
   line-height: 1.5;
+  animation: aciklamaAc 180ms ease-out both;
+}
+
+@keyframes aciklamaAc {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
 }
 .progressBlock { margin-top: 14px; }
 .progressBlock > div:first-child { display: flex; align-items: center; justify-content: space-between; font-weight: 900; }
@@ -345,11 +404,40 @@
 .rewardHeading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .rewardHeading h3, .rewardHeading strong { color: color-mix(in srgb, var(--atlas-night) 70%, var(--atlas-paper)); font-size: 13px; font-weight: 900; letter-spacing: .04em; text-transform: uppercase; }
 .rewardHeading strong { color: var(--atlas-night); letter-spacing: 0; }
-.chapterRewards ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 10px 0 0; padding: 0; gap: 8px 5px; list-style: none; }
-.chapterRewards li { display: grid; min-width: 0; justify-items: center; gap: 2px; }
-.chapterRewards li > span { position: relative; display: grid; width: 52px; height: 52px; place-items: center; border-radius: 14px; background: color-mix(in srgb, var(--atlas-gold) 9%, transparent); }
+/*
+  TEK satır, iki uçtan hizalı. Kare boyutu rozet sayısına göre hesaplanır
+  (`--rozet-adet` JSX'ten gelir); `space-between` kalan boşluğu aralara dağıtır,
+  böylece 8 rozetli Hz. Âdem de 4 rozetli Hz. Şît de soldan sağdan hizalı durur.
+*/
+.chapterRewards ol {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+/*
+  Genişlik `li`ye verilir: yüzde, flex kabının (ol) genişliğine göre çözülür.
+  `li > span`a verilseydi yüzde kendi ebeveynine (içerikle boyutlanan li)
+  göre çözülür ve kare hep alt sınırda kalırdı.
+*/
+.chapterRewards li {
+  display: grid;
+  flex: 0 0 clamp(34px, calc((100% - (var(--rozet-adet, 8) - 1) * 6px) / var(--rozet-adet, 8)), 52px);
+  min-width: 0;
+  justify-items: center;
+}
+/* Kare, sayı arttıkça küçülür; en fazla 52px. */
+.chapterRewards li > span {
+  position: relative;
+  display: grid;
+  width: 100%;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--atlas-gold) 9%, transparent);
+}
 .chapterRewards li i { position: absolute; top: -2px; right: -2px; display: grid; width: 20px; height: 20px; place-items: center; border: 2px solid var(--atlas-paper); border-radius: 50%; color: var(--atlas-paper); background: var(--atlas-green); font-style: normal; }
-.chapterRewards li small { color: color-mix(in srgb, var(--atlas-night) 65%, var(--atlas-paper)); font-size: 10px; font-weight: 900; white-space: nowrap; }
 .medalCard { display: flex; align-items: center; gap: 11px; margin-top: 10px; padding: 10px; border: 1px solid color-mix(in srgb, var(--atlas-gold) 38%, transparent); border-radius: 17px; background: color-mix(in srgb, var(--atlas-gold) 11%, transparent); }
 .medalCard > span { display: grid; width: 56px; height: 56px; flex: 0 0 56px; place-items: center; border-radius: 50%; background: color-mix(in srgb, var(--atlas-gold) 20%, transparent); }
 .medalCard div { display: grid; min-width: 0; gap: 2px; }
@@ -385,19 +473,41 @@
   .bookDescription { -webkit-line-clamp: 2; margin-top: 8px; }
   /* 8 rozet tek satırda: 4×2 ızgara ~92px fazladan yer kaplıyordu. */
   .chapterRewards { margin-top: 8px; padding-top: 8px; }
-  .chapterRewards ol { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 4px; margin-top: 7px; }
-  .chapterRewards li > span { width: 40px; height: 40px; border-radius: 11px; }
-  .chapterRewards li small { font-size: 9px; }
+  .chapterRewards ol { margin-top: 7px; }
+  /*
+    Kısa ekranda sahne 510px'e iniyor; 153px'lik başlık + 3 sıra durak
+    sığmıyordu ve madalyonlar başlık metnine giriyordu (Hasan, 28 Tem 2026).
+    Başlık iki satırda kesilir, duraklar küçülür — hem çakışma biter hem
+    kitaplar arası boşluk azalır.
+  */
+  .mapHeading > span {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .marker { width: 62px; height: 62px; }
+  .markerArt { width: 58px; height: 58px; }
+  .markerStatus { width: 24px; height: 24px; }
+  .markerNo { width: 22px; height: 22px; font-size: 11px; }
+  .stopLabel { width: 132px; padding: 4px 7px; }
+  .stopLabel strong { font-size: 12.5px; }
+  .stopLabel em { font-size: 10px; }
+
   .medalCard { gap: 9px; margin-top: 8px; padding: 8px; }
   .medalCard > span { width: 44px; height: 44px; flex: 0 0 44px; }
   .panelSpacer { min-height: 0; }
   .primaryAction { margin-top: 8px; }
 }
 
+/* Masaüstü: alan geniş, 5 sekme sığar ve adlar hâlâ kesilmez. */
+@media (min-width: 1280px) {
+  .regionTabs button { flex: 0 0 19%; }
+}
+
 @media (max-width: 1100px) {
   .workspace { grid-template-columns: minmax(0, 1.48fr) minmax(300px, .82fr); }
-  .profileStats div { min-width: 108px; }
-  .regionIntro { min-width: 154px; }
+    .regionIntro { min-width: 154px; }
   .marker { width: 74px; height: 74px; }
   .markerArt { width: 70px; height: 70px; }
   .stopLabel { width: 148px; }
@@ -405,40 +515,8 @@
 
 @media (max-width: 959px) {
   .atlasShell { height: 100svh; min-height: 620px; }
-  /*
-    İKİ SIKI SATIR (27 Tem 2026). Eskiden istatistikler tam genişlikte ayrı bir
-    satır kaplıyordu; üst bar ~122px'e çıkıyor ve boş görünüyordu. Artık:
-      1. satır → geri + logo   |   rozet/kitap çipleri
-      2. satır → avatar + ad + unvan (tek satır)
-    Ölçülen: ~122px → ~96px.
-  */
-  .explorerBar {
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-areas:
-      "sol istatistik"
-      "profil profil";
-    gap: 8px 12px;
-  }
-  .previewGroup { grid-area: sol; }
-  .profileStats { grid-area: istatistik; }
-  .profileGroup { grid-area: profil; justify-self: start; }
-
-  /* İstatistikler iki küçük hap; etiket ve sayı aynı satırda. */
-  .profileStats { justify-content: flex-end; gap: 6px; }
-  .profileStats div {
-    display: flex;
-    min-width: 0;
-    align-items: center;
-    gap: 6px;
-    padding: 5px 10px;
-    border: 1px solid color-mix(in srgb, var(--atlas-gold) 30%, transparent);
-    border-left: 0;
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--atlas-gold) 8%, transparent);
-  }
-  .profileStats dt { font-size: 12px; }
-  .profileStats dd { margin-top: 0; font-size: 16px; }
-  .statUzun { display: none; }
+  /* Tablet dikey: ortada 2 sekme, iki yanda kesik komşular. */
+  .regionTabs button { flex: 0 0 42%; }
   .regionRail { grid-template-columns: 1fr; }
   .regionIntro { display: none; }
   .workspace { grid-template-columns: 1fr; }
@@ -456,30 +534,13 @@
 
 @media (max-width: 620px) {
   .atlasShell { padding: 10px; gap: 10px; }
-  .explorerBar { gap: 8px 10px; padding: 9px; border-radius: 18px; }
-  /* Logo mobilde de durur — "Keşif Dünyası" şimdilik marka işareti. */
-  .page .backLink { width: 44px; overflow: hidden; justify-content: center; padding: 0; font-size: 0; white-space: nowrap; }
-  .previewBadge { padding: 6px 9px; font-size: 12.5px; }
-  .avatar { width: 38px; height: 38px; flex: 0 0 38px; }
-  /*
-    En dar ekranda çipe yalnız İKON + SAYI sığıyor; metin etiketi görsel olarak
-    gizlenir ama ekran okuyucuda kalır. İkonlar her zaman görünür.
-  */
-  .profileStats dt {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-  }
-  .profileStats div { gap: 4px; padding: 5px 11px; }
-  .profileStats dd { font-size: 16px; }
+  .explorerBar { gap: 10px; padding: 8px 10px; border-radius: 18px; }
+  .previewBadge { font-size: 14.5px; }
+  .avatar { width: 36px; height: 36px; flex: 0 0 36px; }
+  .profileCopy strong { font-size: 14.5px; }
   .regionRail { grid-template-columns: 1fr; padding: 6px; }
-  .regionTabs { display: none; }
+  .regionTabsNav { display: none; }
   .regionStepper { display: grid; }
-  /* Sayaç yukarı taşındı; sahnenin altı kitaplara kalır. */
-  .regionPager { display: none; }
   .mapStage { border-radius: 22px; background-position: center; }
   .mapHeading { top: 18px; right: 18px; left: 18px; max-width: none; }
   /* Sayaç sahneden çıktığı için 72px'lik pay gerekmiyor. Punto, en uzun bölge

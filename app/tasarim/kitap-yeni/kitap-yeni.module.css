@@ -52,11 +52,29 @@
   padding: 12px clamp(12px, 2vw, 24px);
 }
 
+.menuButonu {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--night-line);
+  border-radius: 50%;
+  color: var(--murekkep);
+  background: color-mix(in srgb, var(--yuzey-2) 70%, transparent);
+  cursor: pointer;
+}
+
+.menuButonu:hover {
+  border-color: color-mix(in srgb, var(--atlas-gold) 60%, transparent);
+  background: color-mix(in srgb, var(--atlas-gold) 12%, transparent);
+}
+
 .explorerBar {
   position: relative;
   z-index: 10;
   display: grid;
-  /* sol (geri + künye) | orta (logo) | sağ (sayaçlar) */
+  /* geri | sayaçlar (sağa yaslı) | menü — TEK satır (28 Tem 2026) */
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   min-height: 66px;
@@ -165,6 +183,7 @@
 }
 
 .headerStats {
+  justify-self: end;
   gap: 7px;
 }
 
@@ -1355,21 +1374,10 @@
 }
 
 @media (max-width: 820px) {
-  /* Bu genişlikten sonra logoya yer kalmıyor; künye ve sayaçlar öncelikli. */
-  .previewBadge { display: none; }
-
+  /* Üç sütun HER genişlikte korunur: geri | sayaçlar | menü. İki sütuna
+     düşürüldüğünde menü butonu ikinci satıra iniyordu (28 Tem 2026). */
   .explorerBar {
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 8px 12px;
-  }
-
-  .previewGroup {
-    grid-column: 1 / -1;
-    justify-content: space-between;
-  }
-
-  .bookIdentity {
-    justify-self: start;
+    gap: 8px 10px;
   }
 
   .headerStats {
@@ -1400,9 +1408,20 @@
     font-size: 11px;
   }
 
+  /* 390px'te geri + sayaçlar + menü tek satıra ancak sığıyor. */
+  .explorerBar {
+    gap: 8px;
+    padding: 8px 9px;
+  }
+
   .backLink {
-    padding-inline: 6px;
-    font-size: 12px;
+    padding-inline: 4px;
+    font-size: 11.5px;
+  }
+
+  .menuButonu {
+    width: 40px;
+    height: 40px;
   }
 
   .lanternMark {
@@ -1420,10 +1439,10 @@
   }
 
   .headerStats div {
-    min-width: 60px;
+    min-width: 54px;
     min-height: 42px;
-    gap: 4px;
-    padding: 4px 6px;
+    gap: 3px;
+    padding: 4px 5px;
   }
 
   .headerStats dt {

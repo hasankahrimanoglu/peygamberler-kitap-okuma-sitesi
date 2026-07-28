@@ -6,7 +6,6 @@ import { supabase } from "../../../lib/supabase";
 import { books } from "../../../src/data/books";
 import { KitapBolumRotasi, type AtlasBolum } from "../../../src/components/atlas/KitapBolumRotasi";
 import { Buton, Kart } from "../../../src/components/ui";
-import { atlasRegions } from "../../../src/data/atlasCatalog";
 
 type KitapKey = "adem" | "sit";
 
@@ -32,6 +31,10 @@ export default function KitapPage() {
   const identity = kitapKimlikleri[kitapKey];
   const book = books.find((item) => item.id === identity?.bookId);
   const [profileName, setProfileName] = useState("Gezgin");
+  // Keşif menüsü için: avatar, unvan ve toplam rozet/madalya sayıları.
+  const [menuProfili, setMenuProfili] = useState({ avatarAnahtari: "avatar-1", unvan: "Yeni Gezgin" });
+  const [toplamRozet, setToplamRozet] = useState(0);
+  const [tamamlananKitap, setTamamlananKitap] = useState(0);
   const [completed, setCompleted] = useState(0);
   const [finished, setFinished] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -74,11 +77,22 @@ export default function KitapPage() {
         return;
       }
 
-      const [dbBooksResult, progressResult] = await Promise.all([
+      const [dbBooksResult, progressResult, profilResult] = await Promise.all([
         supabase.from("books").select("id, isim, toplam_bolum"),
         supabase.from("user_progress").select("book_id, tamamlanan_bolum_sayisi, bitti_mi").eq("profile_id", profileId),
+        supabase.from("profiles").select("avatar_tipi, unvan").eq("id", profileId).maybeSingle(),
       ]);
       if (cancelled) return;
+
+      const tumIlerleme = progressResult.data ?? [];
+      setToplamRozet(tumIlerleme.reduce((toplam, item) => toplam + (item.tamamlanan_bolum_sayisi ?? 0), 0));
+      setTamamlananKitap(tumIlerleme.filter((item) => item.bitti_mi).length);
+      if (profilResult.data) {
+        setMenuProfili({
+          avatarAnahtari: profilResult.data.avatar_tipi ?? "avatar-1",
+          unvan: profilResult.data.unvan ?? "Yeni Gezgin",
+        });
+      }
       const dbBook = (dbBooksResult.data ?? []).find((item) => identity.keywords.some((keyword) => normalize(item.isim ?? "").includes(keyword)));
       const row = dbBook ? (progressResult.data ?? []).find((item) => item.book_id === dbBook.id) : undefined;
       setCompleted(Math.min(chapters.length, Math.max(0, row?.tamamlanan_bolum_sayisi ?? 0)));
@@ -102,11 +116,6 @@ export default function KitapPage() {
     );
   }
 
-  // Keşif açıklamasının tek kaynağı katalogdur (atlasCatalog.ts).
-  const katalogKitabi = atlasRegions
-    .flatMap((bolge) => bolge.books)
-    .find((kitap) => kitap.key === kitapKey);
-
   return (
     <KitapBolumRotasi
       key={`${kitapKey}-${loading ? "loading" : completed}-${finished}`}
@@ -114,8 +123,10 @@ export default function KitapPage() {
       kitapSira={identity.order}
       kitapAdi={book.title}
       altBaslik={identity.subtitle}
-      kitapAciklamasi={katalogKitabi?.description}
       profilAdi={profileName}
+      menuProfili={{ ad: profileName, ...menuProfili }}
+      toplamRozet={toplamRozet}
+      tamamlananKitap={tamamlananKitap}
       bolumler={chapters}
       tamamlananBolum={completed}
       kitapBitti={finished}

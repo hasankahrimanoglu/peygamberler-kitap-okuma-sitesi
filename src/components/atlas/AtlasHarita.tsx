@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useMemo, useState, type CSSProperties } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { useRouter } from "next/navigation";
 import { Ikon, OdulIkonu, YedekliGorsel } from "../ui";
+import { KesifMenusu } from "./KesifMenusu";
 import { books } from "../../data/books";
 import { madalyaIconKey, rozetIconKey } from "../../lib/derive";
 import styles from "../../../app/tasarim/harita-yeni/harita-yeni.module.css";
@@ -40,7 +41,6 @@ type AtlasHaritaProps = {
   bolgeler: AtlasBolge[];
   yukleniyor?: boolean;
   bildirim?: string | null;
-  onProfilSecimineDon: () => void;
 };
 
 const durumIkonu = {
@@ -71,8 +71,11 @@ function durakKonumlari(adet: number, dar: boolean): Nokta[] {
   const xSon = dar ? 73 : 84;
   // Dar ekranda sıra aralığı GENİŞ tutulur: işaretçi (60px) + iki satırlık ad
   // etiketi (~38px) bir sonraki işaretçinin üstüne biniyordu (27 Tem 2026).
-  const yBas = sira === 1 ? 60 : dar ? 36 : 38;
-  const ySon = dar ? 84 : 84;
+  // Geniş ekranda başlangıç aşağı çekildi: Rahmet Yolculuğu ve Emaneti Taşıyan
+  // Dört Dost bölgelerinde başlıkta fazladan bir alt başlık satırı var ve ilk
+  // sıra madalyonları o metnin üstüne biniyordu (28 Tem 2026).
+  const yBas = sira === 1 ? 60 : dar ? 36 : 43;
+  const ySon = dar ? 84 : 86;
 
   const noktalar: Nokta[] = [];
   for (let s = 0; s < sira; s += 1) {
@@ -150,13 +153,15 @@ export function AtlasHarita({
   bolgeler,
   yukleniyor = false,
   bildirim,
-  onProfilSecimineDon,
 }: AtlasHaritaProps) {
   const router = useRouter();
   const [bolgeId, setBolgeId] = useState(bolgeler[0]?.id ?? "");
   const bolge = bolgeler.find((item) => item.id === bolgeId) ?? bolgeler[0];
   const [durakId, setDurakId] = useState(oncelikliDurakId(bolge));
   const [detayAcik, setDetayAcik] = useState(false);
+  const [menuAcik, setMenuAcik] = useState(false);
+  const sekmeSeridiRef = useRef<HTMLDivElement | null>(null);
+  const [aciklamaAcik, setAciklamaAcik] = useState(false);
   // Dar ekranda durak yerleşimi iki sütuna iner (PROJE-MODELI 3.7).
   const [dar, setDar] = useState(false);
 
@@ -168,11 +173,17 @@ export function AtlasHarita({
     return () => mq.removeEventListener("change", uygula);
   }, []);
 
+  useEffect(() => {
+    const aktif = sekmeSeridiRef.current?.querySelector<HTMLElement>('[aria-selected="true"]');
+    aktif?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+  }, [bolgeId]);
+
   function bolgeSec(yeniBolgeId: string) {
     const yeniBolge = bolgeler.find((item) => item.id === yeniBolgeId);
     setBolgeId(yeniBolgeId);
     setDurakId(oncelikliDurakId(yeniBolge));
     setDetayAcik(false);
+    setAciklamaAcik(false);
   }
 
   const seciliDurak =
@@ -212,28 +223,27 @@ export function AtlasHarita({
   return (
     <main className={`tema-cocuk ${styles.page}`}>
       <div className={styles.atlasShell}>
+        {/*
+          Tek satır (KARAR 28 Tem 2026): logo HER ekranda solda. Geri butonu
+          kaldırıldı — veli paneline gidiyordu, çocuk okuma ekranında yanlıştı;
+          o bağlantı artık keşif menüsünün içinde. Rozet/madalya sayaçları ve
+          unvan da menüye taşındı, böylece orta alan kitaplara kaldı.
+        */}
         <header className={styles.explorerBar}>
-          <div className={styles.previewGroup}>
-            <button className={styles.backLink} type="button" onClick={onProfilSecimineDon}>
-              <Ikon ad="geri" boyut={18} /> Profil Seçimine Dön
-            </button>
-            <span className={styles.previewBadge}><Ikon ad="harita" boyut={17} /> Keşif Dünyası</span>
-          </div>
+          <span className={styles.previewBadge}><Ikon ad="harita" boyut={18} /> Keşif Dünyası</span>
           <div className={styles.profileGroup}>
-            <span className={styles.avatar}><OdulIkonu tip="avatar" anahtar={profil.avatarAnahtari} boyut={42} alt="" /></span>
-            <span className={styles.profileCopy}><strong>{profil.ad}</strong><small><Ikon ad="yildiz" boyut={12} /> {profil.unvan}</small></span>
+            <span className={styles.avatar}><OdulIkonu tip="avatar" anahtar={profil.avatarAnahtari} boyut={38} alt="" /></span>
+            <span className={styles.profileCopy}><strong>{profil.ad}</strong></span>
           </div>
-          <dl className={styles.profileStats} aria-label="Keşif özeti">
-            {/* Dar ekranda etiketler kısalır: "Toplam Rozet" → "Rozet". */}
-            <div>
-              <dt><span className={styles.statUzun}>Toplam </span>Rozet</dt>
-              <dd><Ikon ad="rozet" boyut={19} /> {yukleniyor ? "—" : toplamRozet}</dd>
-            </div>
-            <div>
-              <dt>Kitap<span className={styles.statUzun}> Tamamlandı</span></dt>
-              <dd><Ikon ad="kitap" boyut={19} /> {yukleniyor ? "—" : tamamlananKitap}</dd>
-            </div>
-          </dl>
+          <button
+            type="button"
+            className={styles.menuButonu}
+            aria-label="Keşif menüsünü aç"
+            aria-expanded={menuAcik}
+            onClick={() => setMenuAcik(true)}
+          >
+            <Ikon ad="menu" boyut={21} />
+          </button>
         </header>
 
         <section className={styles.regionRail} aria-labelledby="regions-title">
@@ -270,7 +280,23 @@ export function AtlasHarita({
             </button>
           </div>
 
-          <div className={styles.regionTabs} role="tablist" aria-label="Keşif bölgeleri">
+          {/*
+            Tablet ve üstü: oklar + sekme şeridi. Şerit `scroll-snap` ile
+            ortalanır; komşu bölgeler kenarlardan kesik görünür, böylece devam
+            ettiği anlaşılır. Sahnenin sağ üstündeki sayaç KALDIRILDI — başlık
+            metni oraya doğru genişliyor ve satır sayısı düşüyor (28 Tem 2026).
+          */}
+          <div className={styles.regionTabsNav}>
+            <button
+              type="button"
+              className={styles.regionNavOk}
+              aria-label="Önceki keşif bölgesi"
+              disabled={bolgeIndex === 0}
+              onClick={() => bolgeSec(bolgeler[bolgeIndex - 1].id)}
+            >
+              <Ikon ad="ok-sol" boyut={18} />
+            </button>
+            <div className={styles.regionTabs} role="tablist" aria-label="Keşif bölgeleri" ref={sekmeSeridiRef}>
             {bolgeler.map((item) => (
               <button
                 type="button"
@@ -283,6 +309,16 @@ export function AtlasHarita({
                 <span>{item.sira}</span><strong>{item.ad}</strong><small>{item.duraklar.length} kitap</small>
               </button>
             ))}
+            </div>
+            <button
+              type="button"
+              className={styles.regionNavOk}
+              aria-label="Sonraki keşif bölgesi"
+              disabled={bolgeIndex === bolgeler.length - 1}
+              onClick={() => bolgeSec(bolgeler[bolgeIndex + 1].id)}
+            >
+              <Ikon ad="ok-sag" boyut={18} />
+            </button>
           </div>
         </section>
 
@@ -322,6 +358,9 @@ export function AtlasHarita({
                     onClick={() => {
                       setDurakId(durak.id);
                       setDetayAcik(true);
+                      // Başka kitaba geçince açıklama kapanır — panel hep aynı
+                      // yükseklikte açılsın.
+                      setAciklamaAcik(false);
                     }}
                   >
                     <span className={styles.marker}>
@@ -347,12 +386,7 @@ export function AtlasHarita({
               ))}
             </ol>
 
-            <div className={styles.regionPager}>
-              <button type="button" disabled={bolgeIndex === 0} aria-label="Önceki keşif bölgesi" onClick={() => bolgeSec(bolgeler[bolgeIndex - 1].id)}><Ikon ad="ok-sol" boyut={17} /></button>
-              <span>{bolge.sira} / {bolgeler.length}</span>
-              <button type="button" disabled={bolgeIndex === bolgeler.length - 1} aria-label="Sonraki keşif bölgesi" onClick={() => bolgeSec(bolgeler[bolgeIndex + 1].id)}><Ikon ad="ok-sag" boyut={17} /></button>
-            </div>
-          </section>
+              </section>
 
           <button
             type="button"
@@ -380,10 +414,31 @@ export function AtlasHarita({
                 <p>{seciliDurak.altBaslik}</p>
               </div>
             </div>
-            {/* Keşif açıklaması hero'nun ALTINDA, tam genişlikte durur: mobilde
-                metin ve görsel yan yana konmaz (PROJE-MODELI.md 3.5). */}
+            {/*
+              Keşif açıklaması aç/kapa bölümdür (KARAR 28 Tem 2026): kapalıyken
+              yalnız buton kadar yer kaplar, dolayısıyla "Kazanılacak Madalya"
+              ve ana eylem her ekranda kaydırmasız görünür. İç içe modal yerine
+              aynı yerde açılır — panel dar (~340px), modal metni sıkıştırırdı.
+            */}
             {seciliDurak.aciklama ? (
-              <p className={styles.bookDescription}>{seciliDurak.aciklama}</p>
+              <div className={styles.aciklamaBolumu}>
+                <button
+                  type="button"
+                  className={styles.aciklamaButonu}
+                  aria-expanded={aciklamaAcik}
+                  aria-controls="kitap-aciklamasi"
+                  onClick={() => setAciklamaAcik((acik) => !acik)}
+                >
+                  <Ikon ad="kitap" boyut={17} />
+                  <span>Kitap Açıklaması</span>
+                  <Ikon ad={aciklamaAcik ? "ok-sol" : "ok-sag"} boyut={16} />
+                </button>
+                {aciklamaAcik ? (
+                  <p className={styles.bookDescription} id="kitap-aciklamasi">
+                    {seciliDurak.aciklama}
+                  </p>
+                ) : null}
+              </div>
             ) : null}
 
             {hazirDegil ? (
@@ -402,14 +457,20 @@ export function AtlasHarita({
                     <h3 id="chapter-rewards-title">Bölüm Rozetleri</h3>
                     <strong>{seciliDurak.tamamlananBolum} / {seciliDurak.toplamBolum}</strong>
                   </div>
-                  <ol>
+                  {/*
+                    TEK satır, sayıdan bağımsız iki uçtan hizalı. Rozet sayısı
+                    kitaptan kitaba değişiyor (Âdem 8, Şît 4…); `--rozet-adet`
+                    ile kare boyutu hesaplanır, `space-between` de kalan boşluğu
+                    aralara dağıtır. Alt yazılar kaldırıldı — numara zaten
+                    rozetin üstünde (Hasan, 28 Tem 2026).
+                  */}
+                  <ol style={{ "--rozet-adet": bolumRozetleri.length } as CSSProperties}>
                     {bolumRozetleri.map((rozet) => (
-                      <li key={rozet.iconKey} title={rozet.ad}>
+                      <li key={rozet.iconKey} title={`${rozet.sira}. bölüm — ${rozet.ad}`}>
                         <span>
-                          <OdulIkonu tip="rozet" anahtar={rozet.iconKey} kazanildi={rozet.kazanildi} boyut={48} alt="" />
+                          <OdulIkonu tip="rozet" anahtar={rozet.iconKey} kazanildi={rozet.kazanildi} boyut={48} alt={`${rozet.sira}. bölüm rozeti`} />
                           {rozet.kazanildi ? <i><Ikon ad="onay" boyut={13} /></i> : null}
                         </span>
-                        <small>{rozet.sira}. bölüm</small>
                       </li>
                     ))}
                   </ol>
@@ -442,6 +503,15 @@ export function AtlasHarita({
         </nav>
         {bildirim ? <p className={styles.notice} role="status">{bildirim}</p> : null}
       </div>
+
+      <KesifMenusu
+        profil={profil}
+        toplamRozet={toplamRozet}
+        tamamlananKitap={tamamlananKitap}
+        yukleniyor={yukleniyor}
+        acik={menuAcik}
+        onKapat={() => setMenuAcik(false)}
+      />
     </main>
   );
 }
