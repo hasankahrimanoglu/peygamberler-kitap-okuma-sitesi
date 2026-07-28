@@ -268,7 +268,35 @@
 .mapStage[data-region="2"], .mapStage[data-region="5"] { background-position: center, 42% center; }
 .mapStage[data-region="3"], .mapStage[data-region="6"] { background-position: center, 58% center; }
 .mapStage[data-region="4"], .mapStage[data-region="7"] { background-position: center, center bottom; }
-.mapShade { position: absolute; z-index: 0; inset: 0; background: linear-gradient(180deg, color-mix(in srgb, var(--atlas-night) 22%, transparent), color-mix(in srgb, var(--atlas-night) 8%, transparent) 52%, color-mix(in srgb, var(--atlas-night) 28%, transparent)); }
+/*
+  SAHNE KATMANI (REVİZE 29 Tem 2026 — Hasan). Eski değerler (%22 → %8 → %28)
+  görseli neredeyse olduğu gibi bırakıyordu; gün batımı ve su gibi aydınlık
+  bölgelerde madalyonlar ve altın yol okunmuyordu. Katman güçlendirildi ama
+  görsel SİLİNMEDİ: en açık bandı %28 civarındadır, manzara okunmaya devam eder.
+
+  Üç iş birlikte yapılır:
+  1. Dikey kademe — başlığın oturduğu üst şerit ve ad etiketlerinin dizildiği
+     alt şerit daha koyu; ortada görsel serbest bırakılır.
+  2. Vinyet — köşeleri toplar, gözü sahnenin ortasındaki yola çeker.
+  3. `backdrop-filter` ile hafif doygunluk düşüşü — altın yol ve yeşil durum
+     renkleri arka plandaki turuncu/yeşil ile yarışmayı bırakır. Desteklemeyen
+     tarayıcıda sessizce düşer; okunabilirliği asıl sağlayan 1 ve 2'dir.
+*/
+.mapShade {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background:
+    radial-gradient(118% 92% at 50% 46%, transparent 34%, color-mix(in srgb, var(--atlas-night) 34%, transparent) 100%),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--atlas-night) 54%, transparent) 0%,
+      color-mix(in srgb, var(--atlas-night) 28%, transparent) 34%,
+      color-mix(in srgb, var(--atlas-night) 32%, transparent) 62%,
+      color-mix(in srgb, var(--atlas-night) 58%, transparent) 100%
+    );
+  backdrop-filter: saturate(0.8) brightness(0.95);
+}
 .mapStage::after { position: absolute; z-index: 8; inset: 8px; border: 1px solid color-mix(in srgb, var(--atlas-gold) 18%, transparent); border-radius: 21px; content: ""; pointer-events: none; }
 .mapHeading { position: absolute; z-index: 6; top: 18px; left: 22px; max-width: min(570px, 70%); text-shadow: 0 3px 13px color-mix(in srgb, var(--atlas-night) 78%, transparent); }
 /*
@@ -286,21 +314,80 @@
 .trail path { fill: none; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
 /* geniş yumuşak zemin şeridi */
 .trailShadow { stroke: color-mix(in srgb, var(--atlas-paper) 16%, transparent); stroke-width: 20; }
-/* kalan yol — kesikli */
-.trailBase { stroke: color-mix(in srgb, var(--atlas-gold) 52%, transparent); stroke-width: 3; stroke-dasharray: 1 9; }
+/*
+  KALAN YOL — kısa tireler ileri doğru akar (KARAR 29 Tem 2026 — Hasan).
+  `stroke` BURADA TANIMLANMAZ: renk her parçanın kendi solma gradyanından,
+  `stroke` özniteliğiyle gelir. CSS'e yazılsaydı sunum özniteliğini ezerdi ve
+  bütün yol yine tek düz altın olurdu.
+
+  Kayma miktarı desenin tam periyodu kadardır (4 + 9 = 13), böylece döngü başa
+  dönerken sıçrama olmaz. Negatif değer tireleri ilk duraktan son durağa doğru
+  yürütür. Hız bilerek düşük: 13px / 3sn ≈ 4px/sn — yön sezdirir, dikkat çalmaz.
+  Yalnızca HENÜZ OKUNMAMIŞ yol akar; tamamlanan yeşil kısım sabit ve düz kalır.
+*/
+.trailBase {
+  stroke-width: 3;
+  stroke-dasharray: 4 9;
+  animation: yolAkisi 3s linear infinite;
+}
+@keyframes yolAkisi {
+  to { stroke-dashoffset: -13; }
+}
+/* Solma gradyanının renk kaynağı token'dır; opaklık JSX'ten uzaklığa göre gelir. */
+.trailFade stop { stop-color: var(--atlas-gold); }
+
+/*
+  FENER IŞIĞI (KARAR 29 Tem 2026 — Hasan): yalnız SIRADAKİ durağa giden parçada
+  tek bir altın ışık süzülür, sonra ~2 saniye bekler. Hareket tek bir yerde ve
+  tek bir anlamda olur — "şimdi buraya". Yolun tamamına yayılan bir efekt
+  eklenmez; sahne fotoğraf zeminin üzerinde durduğu için her yerde süren
+  hareket göz köşesinde birikir.
+
+  `pathLength="100"` parça uzunluğunu normalize eder: bölgeden bölgeye parça
+  uzunluğu değişse de ışığın boyu ve hızı aynı kalır.
+*/
+.trailBeacon {
+  stroke: var(--atlas-gold);
+  stroke-width: 4;
+  stroke-dasharray: 13 100;
+  filter: drop-shadow(0 0 7px color-mix(in srgb, var(--atlas-gold) 85%, transparent));
+  animation: fenerIsigi 4.2s ease-in-out infinite;
+}
+@keyframes fenerIsigi {
+  0%   { stroke-dashoffset: 13;   opacity: 0; }
+  12%  { opacity: 1; }
+  46%  { stroke-dashoffset: -100; opacity: 1; }
+  56%  { stroke-dashoffset: -100; opacity: 0; }
+  100% { stroke-dashoffset: -100; opacity: 0; }
+}
 /* tamamlanan kısım */
 .trailCompleted { stroke: var(--atlas-green); stroke-width: 5; filter: drop-shadow(0 0 6px color-mix(in srgb, var(--atlas-green) 60%, transparent)); }
 
 /* --- DURAKLAR: tek madalyon + iki satıra saran ad --- */
 .stops { position: absolute; z-index: 5; margin: 0; padding: 0; inset: 0; list-style: none; }
+/*
+  Durak noktası MADALYONUN MERKEZİDİR (KARAR 29 Tem 2026 — Hasan). Eskiden ad
+  etiketi de akıştaydı; `translate(-50%, -50%)` madalyon + etiket bloğunu
+  ortalıyor, madalyonun merkezi noktanın ~30px yukarısında kalıyordu ve yol
+  yuvarlağın altından geçiyordu. Etiket akıştan çıkarıldı: buton kutusu artık
+  yalnız madalyondur, yol madalyonun tam ortasından geçer.
+
+  Yan kazanç: iki satıra saran adlar (Rahmet Yolculuğu kitapları) etiketi
+  uzatıp madalyonu yukarı itmiyor — aynı sıradaki madalyonlar artık gerçekten
+  aynı hizada.
+*/
 .stopItem { position: absolute; transform: translate(-50%, -50%); }
-.stopButton { display: grid; justify-items: center; gap: 8px; padding: 0; border: 0; color: var(--murekkep); background: none; cursor: pointer; }
+.stopButton { position: relative; display: grid; justify-items: center; padding: 0; border: 0; color: var(--murekkep); background: none; cursor: pointer; }
 .marker { position: relative; display: grid; width: 84px; height: 84px; place-items: center; border-radius: 50%; transition: transform 180ms ease; }
-.markerArt { width: 78px; height: 78px; border-radius: 50%; object-fit: cover; border: 3px solid color-mix(in srgb, var(--atlas-gold) 60%, transparent); box-shadow: 0 10px 22px color-mix(in srgb, var(--atlas-night) 62%, transparent); }
+/* Yumuşak koyu hâle: madalyonu aydınlık sahne bölgelerinden (gün batımı, su)
+   ayırır. Sahne katmanının yaptığı işi durak ölçeğinde tamamlar. */
+.markerArt { width: 78px; height: 78px; border-radius: 50%; object-fit: cover; border: 3px solid color-mix(in srgb, var(--atlas-gold) 60%, transparent); box-shadow: 0 0 24px 9px color-mix(in srgb, var(--atlas-night) 55%, transparent), 0 10px 22px color-mix(in srgb, var(--atlas-night) 62%, transparent); }
 .stopButton:hover .marker { transform: translateY(-3px) scale(1.04); }
 .markerStatus { position: absolute; right: -2px; bottom: -2px; display: grid; width: 27px; height: 27px; place-items: center; border: 2px solid var(--atlas-night); border-radius: 50%; color: var(--atlas-night); background: var(--atlas-gold); font-style: normal; }
-.markerNo { position: absolute; top: -4px; left: -4px; display: grid; width: 25px; height: 25px; place-items: center; border: 2px solid var(--atlas-night); border-radius: 50%; color: var(--atlas-night); background: color-mix(in srgb, var(--atlas-paper) 92%, var(--atlas-gold)); font-size: 12px; font-weight: 900; }
-.stopLabel { display: grid; width: 168px; gap: 2px; padding: 7px 10px; border: 1px solid color-mix(in srgb, var(--murekkep) 16%, transparent); border-radius: 14px; background: color-mix(in srgb, var(--atlas-night) 78%, transparent); backdrop-filter: blur(10px); text-align: center; }
+/* Sıra numarası rozeti KALDIRILDI (KARAR 29 Tem 2026 — Hasan): sırayı yolun
+   kendisi anlatıyor, madalyonun üstünde ikinci bir işaret kalabalık yapıyordu.
+   Sıra bilgisi ekran okuyucuda `aria-label` içinde korunur. */
+.stopLabel { position: absolute; top: calc(100% + 8px); left: 50%; display: grid; width: 168px; gap: 2px; padding: 7px 10px; border: 1px solid color-mix(in srgb, var(--murekkep) 16%, transparent); border-radius: 14px; background: color-mix(in srgb, var(--atlas-night) 84%, transparent); backdrop-filter: blur(10px); text-align: center; transform: translateX(-50%); }
 /* Ad iki satıra sarar — kesilmez. Dört uzun Hz. Muhammed başlığı bozulmuyor. */
 .stopLabel strong { font-family: var(--font-baloo), Arial, sans-serif; font-size: 15px; line-height: 1.12; overflow-wrap: break-word; }
 .stopLabel em { font-size: 11px; font-style: normal; font-weight: 800; opacity: .82; }
@@ -409,7 +496,19 @@
 .progressBlock > div:first-child { display: flex; align-items: center; justify-content: space-between; font-weight: 900; }
 .progressTrack { height: 9px; margin-top: 9px; overflow: hidden; border-radius: 999px; background: color-mix(in srgb, var(--atlas-night) 10%, transparent); }
 .progressTrack span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--atlas-green), var(--atlas-gold)); }
-.chapterRewards { margin-top: 12px; padding-top: 10px; border-top: 1px solid color-mix(in srgb, var(--atlas-night) 12%, transparent); }
+.chapterRewards {
+  /*
+    Rozet ölçüsü TEK değişkenden yönetilir (KARAR 29 Tem 2026 — Hasan): kırılım
+    blokları yalnız `--rozet-kare`yi değiştirir, kare/görsel/onay işareti/köşe
+    yarıçapı hep birlikte ölçeklenir. Taban değer mobil ölçüsüdür — mobil düzen
+    onaylandı, dokunulmaz.
+  */
+  --rozet-kare: 52px;
+  --rozet-onay: 20px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid color-mix(in srgb, var(--atlas-night) 12%, transparent);
+}
 .rewardHeading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .rewardHeading h3, .rewardHeading strong { color: color-mix(in srgb, var(--atlas-night) 70%, var(--atlas-paper)); font-size: 13px; font-weight: 900; letter-spacing: .04em; text-transform: uppercase; }
 .rewardHeading strong { color: var(--atlas-night); letter-spacing: 0; }
@@ -435,19 +534,26 @@
 .chapterRewards li > span {
   position: relative;
   display: grid;
-  width: 52px;
-  height: 52px;
+  /* `100%` sütun genişliğidir: dar panelde (960px masaüstü) kare taşmaz. */
+  width: min(var(--rozet-kare), 100%);
+  aspect-ratio: 1;
   place-items: center;
-  border-radius: 14px;
+  border-radius: calc(var(--rozet-kare) * 0.27);
   background: color-mix(in srgb, var(--atlas-gold) 9%, transparent);
 }
+/*
+  Görsel kareyle birlikte büyür. `OdulIkonu`nun `boyut` prop'u yalnız intrinsic
+  ölçüyü (width/height özniteliği) verir; CSS'ten ölçeklenmezse rozet 48px'te
+  sabit kalır ve büyüyen karenin ortasında küçük durur.
+*/
+.chapterRewards li > span img { width: 92%; height: 92%; }
 .chapterRewards li small {
   color: color-mix(in srgb, var(--atlas-night) 65%, var(--atlas-paper));
   font-size: 10px;
   font-weight: 900;
   white-space: nowrap;
 }
-.chapterRewards li i { position: absolute; top: -2px; right: -2px; display: grid; width: 20px; height: 20px; place-items: center; border: 2px solid var(--atlas-paper); border-radius: 50%; color: var(--atlas-paper); background: var(--atlas-green); font-style: normal; }
+.chapterRewards li i { position: absolute; top: -2px; right: -2px; display: grid; width: var(--rozet-onay); height: var(--rozet-onay); place-items: center; border: 2px solid var(--atlas-paper); border-radius: 50%; color: var(--atlas-paper); background: var(--atlas-green); font-style: normal; }
 .medalCard { display: flex; align-items: center; gap: 11px; margin-top: 10px; padding: 10px; border: 1px solid color-mix(in srgb, var(--atlas-gold) 38%, transparent); border-radius: 17px; background: color-mix(in srgb, var(--atlas-gold) 11%, transparent); }
 .medalCard > span { display: grid; width: 56px; height: 56px; flex: 0 0 56px; place-items: center; border-radius: 50%; background: color-mix(in srgb, var(--atlas-gold) 20%, transparent); }
 .medalCard div { display: grid; min-width: 0; gap: 2px; }
@@ -529,7 +635,6 @@
   .marker { width: 62px; height: 62px; }
   .markerArt { width: 58px; height: 58px; }
   .markerStatus { width: 24px; height: 24px; }
-  .markerNo { width: 22px; height: 22px; font-size: 11px; }
   .stopLabel { width: 132px; padding: 4px 7px; }
   .stopLabel strong { font-size: 12.5px; }
   .stopLabel em { font-size: 10px; }
@@ -538,6 +643,38 @@
   .medalCard > span { width: 44px; height: 44px; flex: 0 0 44px; }
   /* Madalya ile ana eylem birbirine yapışmasın; kalan alan yukarıya gider. */
   .panelSpacer { min-height: 12px; }
+  .primaryAction { margin-top: 10px; }
+}
+
+/*
+  MASAÜSTÜ (uzun ekran). Kısa ekran bloğunun tam tersi koşul; tablet yatay bu
+  sorgunun dışında kalır ve orada sıkıştırılmış tek satır düzeni bozulmaz.
+  Panel içeriği burada da ~440px olduğu için ölçüler tablet dikeyle aynıdır
+  (KARAR 29 Tem 2026 — Hasan). 960px'te panel 326px'e kadar daralabildiği için
+  kare `min(..., 100%)` ile sütuna kelepçelidir; taşma olmaz.
+*/
+@media (min-width: 960px) and (min-height: 861px) {
+  .chapterRewards {
+    --rozet-kare: 68px;
+    --rozet-onay: 22px;
+    margin-top: 10px;
+    padding-top: 8px;
+  }
+  .chapterRewards ol { margin-top: 8px; gap: 10px 6px; }
+  .chapterRewards li small { font-size: 11.5px; }
+  .bookDescription { font-size: 17px; }
+  /*
+    Büyüyen rozet + açıklama panelde ~47px fazladan yer istedi. Bu pay hero'dan
+    ve blok aralıklarından geri alınır; yoksa 1440×900'de madalya kartı sabit
+    duran "Tekrar Oku" butonunun altında büsbütün kayboluyordu. Kapak zaten
+    470px'lik panelde küçük bir eşlik görseli, başlık da 38px'te gereğinden
+    iri duruyordu.
+  */
+  .coverFrame { flex: 0 0 84px; }
+  .cover { width: 84px; }
+  .bookIdentity h2 { font-size: clamp(28px, 2.2vw, 34px); }
+  .progressBlock { margin-top: 10px; }
+  .medalCard { margin-top: 8px; }
   .primaryAction { margin-top: 10px; }
 }
 
@@ -584,6 +721,17 @@
   .mapHeading h1 { font-size: 34px; }
   .mapHeading strong { font-size: 15px; }
   .mapHeading > span { font-size: 17px; }
+
+  /*
+    Panel burada 480px'e (içerik ~440px) çıkıyor; 4 sütunlu ızgarada sütun
+    ~106px oluyordu ve 52px'lik rozet alanın ortasında küçük kalıyordu (Hasan,
+    29 Tem 2026). Onaylanan mobil oranı (kare ≈ sütunun %65'i) korunur.
+  */
+  .chapterRewards { --rozet-kare: 68px; --rozet-onay: 22px; }
+  .chapterRewards ol { gap: 12px 6px; }
+  .chapterRewards li small { font-size: 11.5px; }
+  /* Açıklama, panel genişlediği için gövde ölçüsünün üst ucuna çıkar. */
+  .bookDescription { font-size: 17px; }
 }
 
 @media (max-width: 620px) {
@@ -614,7 +762,6 @@
   .marker { width: 60px; height: 60px; }
   .markerArt { width: 56px; height: 56px; }
   .markerStatus { width: 23px; height: 23px; }
-  .markerNo { width: 21px; height: 21px; font-size: 11px; }
   .stopLabel { width: 116px; padding: 5px 7px; }
   .stopLabel strong { font-size: 12.5px; }
   .stopLabel em { font-size: 10px; }
@@ -639,4 +786,9 @@
 
 @media (prefers-reduced-motion: reduce) {
   .marker { transition: none; }
+  /* Hareket duyarlılığı olan kullanıcıda yol akmaz; desen olduğu yerde durur.
+     Fener büsbütün kaldırılır — durdurulsaydı yolun ortasında sabit bir altın
+     çubuk kalırdı. Solma gradyanı kalır: o renk, animasyon değil. */
+  .trailBase { animation: none; }
+  .trailBeacon { display: none; }
 }

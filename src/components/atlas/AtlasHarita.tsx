@@ -74,8 +74,17 @@ function durakKonumlari(adet: number, dar: boolean): Nokta[] {
   // Geniş ekranda başlangıç aşağı çekildi: Rahmet Yolculuğu ve Emaneti Taşıyan
   // Dört Dost bölgelerinde başlıkta fazladan bir alt başlık satırı var ve ilk
   // sıra madalyonları o metnin üstüne biniyordu (28 Tem 2026).
-  const yBas = sira === 1 ? 60 : dar ? 36 : 43;
-  const ySon = dar ? 84 : 86;
+  // Alt sınır 29 Tem 2026'da 86'dan 80'e indi: durak noktası artık madalyon +
+  // etiket bloğunun değil MADALYONUN merkezidir, yani etiketin tamamı noktanın
+  // altına sarkar. Eski değerde 1024×768 tablet yatayda (sahne 510px) alt sıranın
+  // ad etiketi sahnenin dekoratif iç çerçevesine giriyordu. Dar ekranda sahne
+  // uzun olduğu için 84 hâlâ rahat.
+  // Üst sınır da 43'ten 40'a alındı: madalyonlar noktaya göre ~30px aşağı
+  // kaydığı için başlıkla ilk sıra arasındaki boşluk gereğinden çok açılmıştı.
+  // 28 Tem'de eklenen "başlık metnine binmesin" payı bu kaymayla zaten fazlasıyla
+  // karşılanıyor (tablet yatayda ölçülen pay 65px → 50px).
+  const yBas = sira === 1 ? 60 : dar ? 36 : 40;
+  const ySon = dar ? 84 : 80;
 
   const noktalar: Nokta[] = [];
   for (let s = 0; s < sira; s += 1) {
@@ -95,36 +104,89 @@ function durakKonumlari(adet: number, dar: boolean): Nokta[] {
   return noktalar.slice(0, adet);
 }
 
-const kelepce = (deger: number, a: number, b: number) =>
-  Math.max(Math.min(a, b), Math.min(Math.max(a, b), deger));
+/**
+ * İki durağın ortasındaki kavis payı (KARAR 29 Tem 2026 — Hasan). viewBox
+ * 100×100 `preserveAspectRatio="none"` ile esnetildiği için yatay ve dikey pay
+ * AYRI verilir; tek değer kullanılsaydı geniş ekranda yatay yay dikeyin iki
+ * katı görünürdü.
+ *
+ * DURAK KONUMLARI DEĞİŞMEZ — yalnız iki durak arasındaki yol kavis yapar.
+ */
+const KAVIS_Y = 3;
+const KAVIS_X = 5;
 
 /**
- * Noktalardan geçen akıcı eğri (Catmull-Rom → kübik Bézier). Yol duraklardan
- * türetildiği için son duraktan sonra devam etmez; 4 kitaplık bölgede altta
- * sarkan çizgi kalmaz. Kontrol noktaları parça sınırlarına kelepçelenir; yılan
- * düzeninde yön ters döndüğünde yol kendi üstüne kıvrılmıyor.
+ * İki durağın ortasına yerleşen kavis noktası. Kavis KONTROL NOKTASINA değil
+ * GEOMETRİYE eklenir — bu ayrım kritik (DÜZELTME 29 Tem 2026): kontrol noktası
+ * yöntemiyle her parça bağımsız kamburlaşıyor, iki parçanın birleştiği yerde
+ * (yani tam durağın üstünde) teğet kırılıyor ve aşağı bakan bir V çentiği
+ * oluşuyordu. Kavis noktası listeye girince eğri her yerde sürekli olur.
  */
-function akiciYol(noktalar: Nokta[]): string {
-  if (noktalar.length < 2) return "";
-  const p = noktalar;
-  let d = `M ${p[0].x} ${p[0].y}`;
-  for (let i = 0; i < p.length - 1; i += 1) {
-    const p0 = p[i - 1] ?? p[i];
-    const p1 = p[i];
-    const p2 = p[i + 1];
-    const p3 = p[i + 2] ?? p2;
-    const c1 = {
-      x: kelepce(p1.x + (p2.x - p0.x) / 6, p1.x, p2.x),
-      y: kelepce(p1.y + (p2.y - p0.y) / 6, p1.y, p2.y),
-    };
-    const c2 = {
-      x: kelepce(p2.x - (p3.x - p1.x) / 6, p1.x, p2.x),
-      y: kelepce(p2.y - (p3.y - p1.y) / 6, p1.y, p2.y),
-    };
-    d += ` C ${c1.x} ${c1.y}, ${c2.x} ${c2.y}, ${p2.x} ${p2.y}`;
+function kavisNoktasi(p1: Nokta, p2: Nokta): Nokta {
+  const orta = { x: (p1.x + p2.x) / 2, y: (p1.y + p2.y) / 2 };
+  // Sıra içi parça: yukarı doğru yumuşak bir tepe. Aşağı olamaz — ad etiketleri
+  // madalyonun altında durur.
+  if (Math.abs(p2.y - p1.y) < Math.abs(p2.x - p1.x)) {
+    return { x: orta.x, y: orta.y - KAVIS_Y };
   }
-  return d;
+  // Sıra değişimi: dik iniş yerine dışa doğru geniş bir viraj.
+  return { x: orta.x + (orta.x >= 50 ? KAVIS_X : -KAVIS_X), y: orta.y };
 }
+
+/**
+ * İki durak arasındaki her parçayı AYRI bir `d` olarak üretir. Parçaların ayrı
+ * olması kalan yolun durak durak solmasını ve fenerin tek parçada koşmasını
+ * mümkün kılar. Ek parça çizilmez — yol yine son durakta biter.
+ *
+ * Teğetler GENİŞLETİLMİŞ listeden (duraklar + aralarındaki kavis noktaları)
+ * hesaplanır; Catmull-Rom bu listede C1-süreklidir, yani duraklarda ve
+ * virajlarda kırılma olmaz. Kontrol noktası kelepçesi KALDIRILDI: kelepçe
+ * eğriyi parçanın kutusuna hapsedip sıra değişimini keskin köşeye çeviriyordu.
+ * Kendi üstüne kıvrılma riskini kelepçe değil, kavis noktalarının kendisi
+ * önler — yön ters döndüğünde ara nokta virajı dışarı taşır.
+ */
+function yolParcalari(duraklar: Nokta[]): string[] {
+  if (duraklar.length < 2) return [];
+
+  const hepsi: Nokta[] = [];
+  duraklar.forEach((durak, index) => {
+    hepsi.push(durak);
+    if (index < duraklar.length - 1) hepsi.push(kavisNoktasi(durak, duraklar[index + 1]));
+  });
+
+  const kubik = (i: number) => {
+    const p0 = hepsi[i - 1] ?? hepsi[i];
+    const p1 = hepsi[i];
+    const p2 = hepsi[i + 1];
+    const p3 = hepsi[i + 2] ?? p2;
+    const c1 = { x: p1.x + (p2.x - p0.x) / 6, y: p1.y + (p2.y - p0.y) / 6 };
+    const c2 = { x: p2.x - (p3.x - p1.x) / 6, y: p2.y - (p3.y - p1.y) / 6 };
+    return `C ${c1.x} ${c1.y}, ${c2.x} ${c2.y}, ${p2.x} ${p2.y}`;
+  };
+
+  // Her durak parçası iki kübik parçadan oluşur: durak → kavis → durak.
+  return duraklar.slice(0, -1).map((_, parca) => {
+    const bas = parca * 2;
+    return `M ${hepsi[bas].x} ${hepsi[bas].y} ${kubik(bas)} ${kubik(bas + 1)}`;
+  });
+}
+
+/**
+ * Kalan yolun solma eğrisi: sıradaki durağa giden parça en parlak, her parçada
+ * bir kademe soluklaşır (KARAR 29 Tem 2026 — Hasan). Uzak duraklar kendiliğinden
+ * geri plana çekilir; 6 kitaplık bölgede yol tek bir düz altın şerit olmaktan
+ * çıkar.
+ *
+ * Alt sınır 0.40'tır ve pazarlık konusu değildir: daha aşağısında yol, sahnenin
+ * aydınlık (gün batımı, yeşil vadi) bölgelerinde büsbütün kayboluyor ve harita
+ * "yol" olmaktan çıkıp dağınık madalyonlara dönüşüyor — 0.26 ile denendi, alt
+ * sıra tamamen okunmaz oldu. Yakın parça eski tekdüze değerden (%52) belirgin
+ * biçimde parlak, uzak parça ondan bir tık soluktur; sıralama buradan doğar.
+ */
+const solma = (uzaklik: number) => Math.max(0.4, 0.94 * 0.78 ** uzaklik);
+
+/** Sıradaki durağı olmayan bölgede yolun tekdüze opaklığı (bkz. `hedefVar`). */
+const DURGUN_YOL = 0.5;
 
 function oncelikliDurakId(bolge?: AtlasBolge) {
   return (
@@ -193,14 +255,15 @@ export function AtlasHarita({
     () => durakKonumlari(bolge?.duraklar.length ?? 0, dar),
     [bolge, dar],
   );
-  const yol = useMemo(() => akiciYol(konumlar), [konumlar]);
+  const parcalar = useMemo(() => yolParcalari(konumlar), [konumlar]);
+  const yol = useMemo(() => parcalar.join(" "), [parcalar]);
   // Tamamlanan kısım AYRI bir yol olarak çizilir. `pathLength` + dasharray
   // burada yanıltıcı olurdu: viewBox `preserveAspectRatio="none"` ile yatayda
   // esnediği için yol uzunluğu oranı görsel orana denk gelmiyor.
   const tamamYol = useMemo(() => {
     const tamamlanan = bolge?.duraklar.filter((d) => d.durum === "completed").length ?? 0;
-    return tamamlanan > 1 ? akiciYol(konumlar.slice(0, tamamlanan)) : "";
-  }, [bolge, konumlar]);
+    return parcalar.slice(0, Math.max(0, tamamlanan - 1)).join(" ");
+  }, [bolge, parcalar]);
 
   if (!bolge || !seciliDurak) return null;
 
@@ -212,6 +275,28 @@ export function AtlasHarita({
     : seciliDurak.tamamlananBolum > 0
       ? "Okumaya Devam Et"
       : "Yolculuğa Başla";
+  /*
+    Solma ve fener ışığı SIRADAKİ DURAĞA göre konumlanır. Aktif durak yoksa
+    (bölgenin tamamı hazırlanıyor ya da tamamı bitmiş) ne fener çizilir ne de
+    solma sıralaması kurulur: yol baştan sona TEK ve soluk bir değerde kalır.
+    Yoksa hiçbir kitabın açılmadığı bir bölgede ilk parça en parlak görünür ve
+    ortada olmayan bir hedefi işaret ederdi.
+  */
+  const aktifIndex = bolge.duraklar.findIndex((durak) => durak.durum === "active");
+  const hedefVar = aktifIndex >= 0;
+  const cipa = Math.max(0, aktifIndex - 1);
+  const parcaOpakligi = (index: number) => (hedefVar ? solma(Math.max(0, index - cipa)) : DURGUN_YOL);
+  const kalanParcalar = parcalar.map((d, index) => ({
+    d,
+    bas: konumlar[index],
+    son: konumlar[index + 1],
+    basOpaklik: parcaOpakligi(index),
+    sonOpaklik: parcaOpakligi(index + 1),
+    gradyanId: `yol-solma-${bolge.id}-${index}`,
+  }));
+  // Fener YALNIZCA aktif durağa giden parçada koşar; yolun geri kalanı durgundur.
+  const fenerYolu = aktifIndex > 0 ? parcalar[aktifIndex - 1] ?? null : null;
+
   const kitapIcerigi = books.find((kitap) => kitap.routePrefix === seciliDurak.kitapKey);
   const bolumRozetleri = Array.from({ length: seciliDurak.toplamBolum }, (_, index) => ({
     sira: index + 1,
@@ -337,10 +422,42 @@ export function AtlasHarita({
               {bolge.altBaslik ? <strong>{bolge.altBaslik}</strong> : null}
               <span>{bolge.aciklama}</span>
             </div>
+            {/*
+              Yol dört katmandır: yumuşak zemin şeridi → kalan yol (parça parça,
+              her biri kendi solma gradyanıyla) → tamamlanan yeşil yol → fener.
+              Gradyan `userSpaceOnUse` ile parçanın KENDİ iki ucuna bağlanır;
+              tek bir yatay gradyan kullanılsaydı yılan düzeninde sağdan sola
+              akan sırada renk ters dönerdi.
+            */}
             <svg className={styles.trail} viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                {kalanParcalar.map((parca) => (
+                  <linearGradient
+                    key={parca.gradyanId}
+                    id={parca.gradyanId}
+                    className={styles.trailFade}
+                    gradientUnits="userSpaceOnUse"
+                    x1={parca.bas?.x ?? 0}
+                    y1={parca.bas?.y ?? 0}
+                    x2={parca.son?.x ?? 0}
+                    y2={parca.son?.y ?? 0}
+                  >
+                    <stop offset="0" stopOpacity={parca.basOpaklik} />
+                    <stop offset="1" stopOpacity={parca.sonOpaklik} />
+                  </linearGradient>
+                ))}
+              </defs>
               <path className={styles.trailShadow} d={yol} />
-              <path className={styles.trailBase} d={yol} />
+              {kalanParcalar.map((parca) => (
+                <path
+                  key={parca.gradyanId}
+                  className={styles.trailBase}
+                  d={parca.d}
+                  stroke={`url(#${parca.gradyanId})`}
+                />
+              ))}
               {tamamYol ? <path className={styles.trailCompleted} d={tamamYol} /> : null}
+              {fenerYolu ? <path className={styles.trailBeacon} d={fenerYolu} pathLength={100} /> : null}
             </svg>
 
             <ol className={styles.stops} aria-label={`${bolge.ad} kitapları`}>
@@ -375,7 +492,6 @@ export function AtlasHarita({
                       <i className={styles.markerStatus} aria-hidden="true">
                         <Ikon ad={durumIkonu[durak.durum]} boyut={13} />
                       </i>
-                      <b className={styles.markerNo} aria-hidden="true">{index + 1}</b>
                     </span>
                     <span className={styles.stopLabel}>
                       <strong>{durak.ad}</strong>

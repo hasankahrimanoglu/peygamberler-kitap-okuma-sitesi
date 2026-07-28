@@ -247,8 +247,19 @@ izler; arayüzün tek veri kaynağı `src/data/atlasCatalog.ts` olur.
     böylece sırada tek kitap kalsa da denge bozulmaz. Geniş ekranda en fazla
     üç sütun, dar ekranda en fazla iki sütun kullanılır.
   - **Her durak tek bir işarettir:** daire + ayrı etiket kartı yerine, kitabın
-    kapak görselini taşıyan madalyon + durum rozeti + sıra numarası. Kapak
-    haritada ilk kez burada görünür.
+    kapak görselini taşıyan madalyon + durum rozeti. Kapak haritada ilk kez
+    burada görünür. **Sıra numarası rozeti KALDIRILDI (KARAR — 29 Temmuz 2026,
+    Hasan):** sırayı yolun kendisi anlatıyor, madalyonun üstünde ikinci bir
+    işaret kalabalık yapıyordu. Sıra bilgisi ekran okuyucuda `aria-label`
+    içinde korunur.
+  - **Durak noktası MADALYONUN merkezidir (KARAR — 29 Temmuz 2026, Hasan).**
+    Ad etiketi akıştan çıkarılıp madalyonun altına mutlak konumlandırılır.
+    Öncesinde etiket de akıştaydı ve nokta "madalyon + etiket" bloğunu
+    ortalıyordu; madalyonun merkezi noktanın ~30px yukarısında kalıyor, yol
+    yuvarlağın altından geçiyordu. Yan kazanç: iki satıra saran adlar (Rahmet
+    Yolculuğu) artık madalyonu yukarı itmiyor, aynı sıradaki madalyonlar
+    gerçekten aynı hizada. Etiketin tamamı noktanın altına sarktığı için sıra
+    sınırları da yeniden ayarlandı (geniş ekranda %43–86 → %40–80).
   - **Kitap adı iki satıra sarar, kesilmez.** Önceki sabit genişlik + tek satır
     kuralı Rahmet Yolculuğu'nun dört kitabını da "Hz. Muhammed —…" hâline
     getiriyordu.
@@ -256,6 +267,45 @@ izler; arayüzün tek veri kaynağı `src/data/atlasCatalog.ts` olur.
     durak altın halkayla, kilitli ve hazırlanan duraklar soluklaştırmayla
     gösterilir. Bağlantı çizgisi ad etiketlerinin ve dokunma alanlarının
     üzerinden geçmez.
+  - **Yol düz çizgi değil, hafif yay çizer (KARAR — 29 Temmuz 2026, Hasan).**
+    Duraklar aynı sırada aynı `y`de olduğu için yol cetvel gibi düz iniyordu.
+    **Durak konumları DEĞİŞMEZ**; yalnız iki durak arasındaki yol kavis yapar:
+    sıra içinde yukarı doğru yumuşak bir tepe, sıra değişiminde dışa doğru bir
+    viraj. Yay YUKARI doğrudur — ad etiketleri madalyonun altında durur, aşağı
+    yay onların üstünden geçerdi. viewBox esnetildiği için yatay ve dikey pay
+    ayrı sabittir (`KAVIS_Y` / `KAVIS_X`).
+  - **Kalan yol solarak sıralanır + akar + sıradaki parçada fener yanar
+    (KARAR — 29 Temmuz 2026, Hasan).** Üç katman birlikte çalışır:
+    1. **Solma (renk).** Kalan yol tek düz altın değildir: sıradaki durağa giden
+       parça en parlak, her parçada bir kademe soluklaşır. Yol parça parça
+       çizilir, her parça kendi `linearGradient`ini taşır ve gradyan parçanın
+       kendi iki ucuna bağlanır — tek yatay gradyan kullanılsaydı yılan
+       düzeninde sağdan sola akan sırada renk ters dönerdi. Alt sınır 0.40:
+       aşağısında yol aydınlık sahne bölgelerinde büsbütün kayboluyor.
+    2. **Akış (hareket).** Kısa tireler ilk duraktan son durağa doğru kayar.
+       Kayma desenin tam periyodu kadardır, döngüde sıçrama olmaz. Hız bilerek
+       düşük (≈4px/sn).
+    3. **Fener ışığı (vurgu).** YALNIZCA aktif durağa giden parçada tek bir
+       altın ışık süzülür, sonra ~2 saniye bekler. Yolun tamamına yayılan
+       "koşan ışık" veya nabız efekti EKLENMEZ; sahne fotoğraf zeminin
+       üzerinde durduğu için her yerde süren hareket göz köşesinde birikir.
+    **Tamamlanan yeşil kısım animasyonsuz ve tek renktir** — akan yol
+    "gidilecek yol", duran yeşil "gidilmiş yol" demektir. Bölgede aktif durak
+    yoksa (tamamı hazırlanıyor) fener çizilmez ve solma sıralaması kurulmaz;
+    yol baştan sona tek ve soluk bir değerde kalır. `prefers-reduced-motion`
+    açık kullanıcıda akış durur, fener büsbütün kaldırılır (durdurulsaydı yolun
+    ortasında sabit bir altın çubuk kalırdı); solma kalır, o renk animasyon
+    değildir.
+  - **Sahne görselinin üzerinde okunabilirlik katmanı vardır (KARAR — 29 Temmuz
+    2026, Hasan).** Manzara görseli gün batımı ve su gibi aydınlık bölgelerde
+    madalyonları ve altın yolu yutuyordu. Katman üç iş yapar: dikey kademe
+    (başlığın oturduğu üst şerit ve ad etiketlerinin dizildiği alt şerit daha
+    koyu, orta serbest), vinyet (köşeleri toplar, gözü sahnenin ortasındaki
+    yola çeker) ve hafif doygunluk düşüşü (`backdrop-filter`; altın yol ile
+    arka plandaki turuncu yarışmayı bırakır). **Görsel silinmez** — en açık
+    bant %28 civarındadır, manzara okunmaya devam eder. Madalyon ölçeğinde
+    aynı işi yumuşak koyu bir hâle tamamlar. Doygunluk düşüşünü desteklemeyen
+    tarayıcıda sessizce düşer; okunabilirliği asıl sağlayan kademe ve vinyettir.
   - **Bölge sayacı sahnenin sağ üst köşesindedir** (dar ekranda sol alt).
     Bölgenin "ruh hâli" metni kaldırılmıştır; o köşede ayrı bir metin alanı
     kullanılmaz.
@@ -336,7 +386,7 @@ Ayrım tek bir sorguyla yapılır: `(min-width: 960px) and (max-height: 860px)`.
 | | Mobil · Tablet dikey · Masaüstü | Tablet yatay |
 |---|---|---|
 | Kitap açıklaması | **Düz metin**, doğrudan görünür | **Aç/kapa** ("Kitap Açıklaması" butonu) |
-| Bölüm rozetleri | **4 sütunlu ızgara** (8 bölüm = 2 satır), 52px kare | **Tek satır**, kare adede göre hesaplanır |
+| Bölüm rozetleri | **4 sütunlu ızgara** (8 bölüm = 2 satır) | **Tek satır**, kare adede göre hesaplanır |
 | Rozet altı yazısı | **"1. bölüm" görünür** | Gizli — numara zaten rozetin üstünde |
 
 - Tek satır düzeninde rozetler adede bakılmaksızın panelin **iki kenarına
@@ -350,6 +400,23 @@ Ayrım tek bir sorguyla yapılır: `(min-width: 960px) and (max-height: 860px)`.
   (tablet dikey) ve 20px'e (masaüstü) çıkar, başlık 34/42px olur. Başlık
   kutusunun sağ payı da 230px'ten 44px'e indi (o pay kaldırılan sahne
   sayacı içindi).
+- **Rozet karesi panelin genişliğine göre ölçeklenir (KARAR — 29 Temmuz 2026,
+  Hasan).** Sabit 52px, panel 480px'e çıktığında (tablet dikey ve masaüstü)
+  ızgaranın içinde küçük kalıyordu. Ölçü tek bir CSS değişkeninden
+  (`--rozet-kare`) yönetilir: **mobilde 52px, tablet dikey ve masaüstünde
+  68px.** Onaylanan oran korunur — kare, sütun genişliğinin ~%65'i kadardır.
+  Kare sütuna kelepçelidir (`min(…, 100%)`); 960px'lik dar masaüstünde panel
+  326px'e indiğinde taşma olmaz. Rozet görselinin kendisi kareyle birlikte
+  büyür: `OdulIkonu`nun `boyut` prop'u yalnız intrinsic ölçüdür, ölçekleme
+  CSS'ten yapılır.
+- **Kitap açıklaması metni de aynı iki ekranda 15→17px olur.** Mobil 15px'te
+  kalır (onaylanmış düzen).
+- Büyüyen rozet + metin masaüstü panelinde ~47px fazladan yer istiyor; bu pay
+  kapak (96→84px), kitap başlığı (38→34px üst sınır) ve blok aralıklarından
+  geri alınır. **Buna rağmen 900px yüksekliğindeki masaüstünde panel ~70px
+  kayar** ve madalya kartı sabit "Tekrar Oku" butonunun altında kalır; ~970px
+  ve üzeri yükseklikte her şey kaydırmasız sığar. Panel zaten kaydırılabilir
+  bir yüzeydir, ana eylem `sticky` olduğu için her zaman erişilebilir kalır.
 
 ### 3.8 Veli ana sayfası bilgi mimarisi (ONAY — 18 Temmuz 2026)
 
