@@ -113,11 +113,29 @@ Görsel dosyası gerekmez: anahtar unvan adından türetilir
 - Başlık: sıcak kahve (#4A3426 civarı)
 - Altın: rozet/madalya vurgularında (#C9A227 civarı)
 
-**Çocuk tarafı (macera, gece gökyüzü):**
+**Çocuk tarafı (macera):**
 - Zemin: koyu lacivert (#0E1A34 civarı) + yıldız dokusu
 - Kart zemini: lacivertin bir ton açığı, altın konturlu
 - Okuma yüzeyi: krem (#FBF6E9) — uzun metin daima açık zemin üzerinde
 - Vurgu: altın (#E8B84B) ve yeşil (#34A06B)
+
+**KOYU ÇERÇEVE / AYDINLIK SAHNE (REVİZE — 29 Temmuz 2026, Hasan).** Çocuk
+tarafı baştan sona koyu DEĞİLDİR. Keşif haritasında ayrım şudur:
+- **Çerçeve koyu kalır:** üst bar, bölge şeridi, Keşif İskelesi. Haritayı
+  çerçeveler, kontrast verir, gece-yıldız kimliğini taşır.
+- **Sahne aydınlıktır:** bölge manzarası gündüz, canlı yeşil/mavi bir
+  illüstrasyondur. 8–11 yaş için baştan sona karanlık bir harita davetkâr
+  değil.
+- **Sahne KARARTILMAZ.** Yalnız bölge başlığının oturduğu üst şerit korunur;
+  gerisi serbest bırakılır. Okunabilirlik yükünü öğelerin kendisi taşır:
+  ad kartı krem zemin, madalyonun altında hâle ve yere oturma gölgesi, yolun
+  kendi koyu dış hattı. Doygunluk düşüren genel filtre KULLANILMAZ — aydınlık
+  illüstrasyonun en değerli yanını (canlı renk) alıp götürür.
+- **Harita ad kartları krem zemin + koyu lacivert yazıdır**, kart genişliği
+  ada göre daralır. Koyu kart aydınlık manzarada ya çamurlaşıyor ya da ağır
+  duruyordu; krem kart hem manzarayla uyumlu hem de "okunacak metin daima
+  krem zeminde" kuralıyla aynı dilde.
+- Okuma ekranı bu karardan ETKİLENMEZ; orası krem kalır.
 
 Kesin renk değerleri Faz 1'de `chatgpt-tasarim/` görsellerinden örneklenip
 Tailwind config'e token olarak yazılır. Renkler tek kaynaktan yönetilir;
@@ -243,9 +261,32 @@ izler; arayüzün tek veri kaynağı `src/data/atlasCatalog.ts` olur.
   - **Yol duraklardan türetilir.** Önce durak konumları hesaplanır, sonra
     noktalardan geçen akıcı eğri çizilir. Yol son durakta biter; sarkan uç
     oluşmaz ve kitap sayısı için istisna gerekmez.
-  - Duraklar yılan düzeninde akar; her sıra kendi içinde tam genişliğe yayılır,
-    böylece sırada tek kitap kalsa da denge bozulmaz. Geniş ekranda en fazla
-    üç sütun, dar ekranda en fazla iki sütun kullanılır.
+  - **IZGARA KALDIRILDI — duraklar dalga üzerinde iner (REVİZE — 29 Temmuz
+    2026, Hasan).** Önceki kural sıra/sütun ızgarasıydı: bir sıradaki 2–3 kitap
+    tam aynı yükseklikteydi. Bu haritaya tablo görüntüsü veriyor, sıra
+    sonlarında keskin dönüş üretiyor ve aynı bölge geniş ekranda 3 sütun, dar
+    ekranda 2 sütun olduğu için cihazdan cihaza başka bir şekle bürünüyordu.
+    Yeni kural:
+    - Kitaplar **dikeyde eşit aralıkla iner**, yatayda bir dalga üzerinde
+      salınır. **Hiçbir iki durak aynı hizada değildir.**
+    - Dalga geniş ekranda **dört duraklıktır** (sağ → orta → sol → orta), dar
+      ekranda **iki duraklık** (sol ↔ sağ). Gerekçe farklıdır: geniş ekranda
+      dört duraklık dalga bir ayağın yatay yolunu yarıya indirip eğimi
+      dengeler; dar ekranda ise dikey adım ~65px'e düştüğü için komşu ad
+      kartlarını ancak **yatay** mesafe ayırabilir ve iki duraklık dalga bu
+      mesafeyi iki katına çıkarır.
+    - **Son kitap 4, 5 ve 6 kitaplık bölgelerin hepsinde SAĞDA biter** —
+      eşleştirme sondan kurulur. Tek yan etki: 5 kitaplık bölge soldan değil
+      sağdan başlar.
+    - **Kaydırma gerekmez.** Dikeyde çakışma riski komşu duraklar arasında
+      değil, **aynı x'teki** duraklar arasındadır; komşular yatayda zaten
+      ayrıdır. Bu yüzden dikey adım bir kartın tam boyu kadar değil **yarısı**
+      kadar olmak zorundadır ve 6 kitap her kırılımda tek ekrana sığar. 35
+      durağı yedi bölgeye bölme kararı (25 Tem 2026) böylece korunur.
+    - Dikey aralık en dar iki duruma göre kalibre edilir: üst sınır **alt
+      başlığı olan** bölgelere, alt sınır **adı iki satıra saran** kitaplara.
+      Alt başlık, sahnenin 510–610px'e indiği kırılımlarda (tablet yatay ve
+      mobil) gizlenir.
   - **Her durak tek bir işarettir:** daire + ayrı etiket kartı yerine, kitabın
     kapak görselini taşıyan madalyon + durum rozeti. Kapak haritada ilk kez
     burada görünür. **Sıra numarası rozeti KALDIRILDI (KARAR — 29 Temmuz 2026,
@@ -257,31 +298,69 @@ izler; arayüzün tek veri kaynağı `src/data/atlasCatalog.ts` olur.
     Öncesinde etiket de akıştaydı ve nokta "madalyon + etiket" bloğunu
     ortalıyordu; madalyonun merkezi noktanın ~30px yukarısında kalıyor, yol
     yuvarlağın altından geçiyordu. Yan kazanç: iki satıra saran adlar (Rahmet
-    Yolculuğu) artık madalyonu yukarı itmiyor, aynı sıradaki madalyonlar
-    gerçekten aynı hizada. Etiketin tamamı noktanın altına sarktığı için sıra
-    sınırları da yeniden ayarlandı (geniş ekranda %43–86 → %40–80).
+    Yolculuğu) artık madalyonu yukarı itmiyor. Etiketin tamamı noktanın altına
+    sarktığı için dikey sınırlar da yeniden ayarlandı.
+    Madalyonun altında **yumuşak bir yere oturma gölgesi** vardır: işaretçi
+    havada asılı durmaktan çıkıp yolun üstüne oturur.
+  - **Aktif durak nefes alır (KARAR — 29 Temmuz 2026, Hasan).** Madalyonun
+    ÇEVRESİNDE bir altın halka yavaşça açılıp solar (~2,8sn). 27 Tem'de
+    kaldırılan `activePulse`ın geri dönüşü değildir: o, madalyonun kendisini
+    büyütüp küçültüyor ve komşu etiketleri itiyordu; bu halka yerleşime hiç
+    dokunmaz. **Halka madalyonun sözde-öğesidir**, durak butonunun değil:
+    durak seçildiğinde madalyon 3px kalkıp %6 büyüdüğü için, halka butona
+    bağlıyken eş merkezli olmaktan çıkıyor ve alttaki boşluk üstündekinden
+    büyük görünüyordu. Aynı öğeye bağlı olunca dönüşümü paylaşırlar. Vurgu **aktif** duraktadır, seçili durakta değil — vurgulanan
+    şey "tıkladığın kitap" değil **"şimdi okunacak kitap"**. Fener ışığı da
+    aynı durağa koştuğu için ikisi tek cümle kurar: yol buraya gidiyor.
+    `prefers-reduced-motion` açıkken halka kalır, yalnız nefesi durur — halka
+    bir durum göstergesidir, animasyon süsü değil.
   - **Kitap adı iki satıra sarar, kesilmez.** Önceki sabit genişlik + tek satır
     kuralı Rahmet Yolculuğu'nun dört kitabını da "Hz. Muhammed —…" hâline
-    getiriyordu.
-  - Tamamlanan yol sakin yeşil, kalan yol soluk altın kesikli çizgidir; aktif
-    durak altın halkayla, kilitli ve hazırlanan duraklar soluklaştırmayla
-    gösterilir. Bağlantı çizgisi ad etiketlerinin ve dokunma alanlarının
-    üzerinden geçmez.
-  - **Yol düz çizgi değil, hafif yay çizer (KARAR — 29 Temmuz 2026, Hasan).**
-    Duraklar aynı sırada aynı `y`de olduğu için yol cetvel gibi düz iniyordu.
-    **Durak konumları DEĞİŞMEZ**; yalnız iki durak arasındaki yol kavis yapar:
-    sıra içinde yukarı doğru yumuşak bir tepe, sıra değişiminde dışa doğru bir
-    viraj. Yay YUKARI doğrudur — ad etiketleri madalyonun altında durur, aşağı
-    yay onların üstünden geçerdi. viewBox esnetildiği için yatay ve dikey pay
-    ayrı sabittir (`KAVIS_Y` / `KAVIS_X`).
+    getiriyordu. Kart genişliği ADA GÖRE daralır (üst sınır korunur): sabit
+    genişlikte "Hz. Şît" kocaman bir kutunun ortasında kalıyordu.
+  - **Haritadaki kartta YALNIZ AD vardır (KARAR — 29 Temmuz 2026, Hasan).**
+    Durum metni ("Tamamlandı / Yeni Açıldı / Hazırlanıyor") kaldırıldı: aynı
+    bilgiyi madalyonun üstündeki durum rozeti gösteriyor, kitap paneli de
+    tekrar ediyordu. Harita ferahladı, kartın dikey payı ~17px azaldı ve o pay
+    madalyon büyütmesine gitti. Durum bilgisi ekran okuyucuda `aria-label`
+    içinde korunur; Bölüm 3.4'ün durum dili panelde aynen geçerlidir.
+  - **Yol bir ÇİZGİ değil, PATİKADIR (KARAR — 29 Temmuz 2026, Hasan).** İnce
+    kesik çizgi yerine geniş kum rengi bir şerit + koyu dış hat + üstünde
+    beyaza yakın kesikli orta çizgi. Asıl "yol" hissini veren şey budur; yön
+    karmaşası da bununla kaybolur, çünkü göz çizgiyi değil yolu takip eder.
+    Gövde **tek parça** çizilir (parçalara bölünse yarı saydam uçlar birleşme
+    yerlerinde koyu ek izi bırakırdı); uzaklığa göre solma orta çizgide yaşar.
+    **Yol genişliği madalyona göre ayarlanır** — hedef oran madalyon : yol
+    ≈ 3,3. Şerit kalınlaşırsa madalyonu ezer; madalyonu büyütmek çözüm
+    değildir, çünkü yerleşim payı masaüstünde ve tablet yatayda birkaç
+    piksele inmiştir ve büyüme doğrudan çakışmaya gider.
+    Tamamlanan kısım ayrı bir çizgi değil, **yolun yeşile boyanmış hâlidir**.
+    Aktif durak altın halkayla, kilitli ve hazırlanan duraklar
+    soluklaştırmayla gösterilir. Yol ad etiketlerinin üzerinden geçmez.
+  - **Yol düz çizgi değil, hafif yay çizer.** Kavis, kontrol noktasına değil
+    **geometriye** eklenir: iki durağın ortasına ayağın dikine bir kavis
+    noktası girer ve eğri o noktadan geçer. Kontrol noktası yöntemi denendi ve
+    bırakıldı — her ayak bağımsız kamburlaştığı için durakların tam üstünde
+    teğet kırılıyor, aşağı bakan bir **V çentiği** oluşuyordu. Kavis daima
+    yukarıdır; ad kartları madalyonun altında durur, aşağı kavis onların
+    üstünden geçerdi.
+  - **Yol SVG'si sahnenin birebir piksel ölçüsünde çizilir.** Önceki 100×100
+    viewBox `preserveAspectRatio="none"` ile esniyordu ve bunun iki bedeli
+    vardı: kavis payı yatay ve dikeyde farklı görünüyor, `pathLength` ile
+    `non-scaling-stroke` birlikte çalışmadığı için **fener ışığı tek ışık
+    yerine yol boyunca tekrarlayan lekelere bölünüyordu**. Ölçü `ResizeObserver`
+    ile okunur; callback ref kullanılır, çünkü bölge verisi eşzamansız gelir ve
+    boş bağımlılıklı bir effect ilk render'da sahneyi DOM'da bulamaz.
   - **Kalan yol solarak sıralanır + akar + sıradaki parçada fener yanar
     (KARAR — 29 Temmuz 2026, Hasan).** Üç katman birlikte çalışır:
-    1. **Solma (renk).** Kalan yol tek düz altın değildir: sıradaki durağa giden
-       parça en parlak, her parçada bir kademe soluklaşır. Yol parça parça
-       çizilir, her parça kendi `linearGradient`ini taşır ve gradyan parçanın
-       kendi iki ucuna bağlanır — tek yatay gradyan kullanılsaydı yılan
-       düzeninde sağdan sola akan sırada renk ters dönerdi. Alt sınır 0.40:
-       aşağısında yol aydınlık sahne bölgelerinde büsbütün kayboluyor.
+    1. **Solma (renk).** Orta çizgi tek düz renk değildir: sıradaki durağa giden
+       parça en parlak, her parçada bir kademe soluklaşır. Orta çizgi parça
+       parça çizilir, her parça kendi `linearGradient`ini taşır ve gradyan
+       parçanın kendi iki ucuna bağlanır — tek yatay gradyan kullanılsaydı
+       dalganın sağdan sola akan ayaklarında renk ters dönerdi. Alt sınır 0.40:
+       aşağısında çizgi aydınlık sahne bölgelerinde büsbütün kayboluyor.
+       **Yol gövdesi solmaz** — zemin gibi hep durur, yön bilgisini üstündeki
+       çizgi taşır.
     2. **Akış (hareket).** Kısa tireler ilk duraktan son durağa doğru kayar.
        Kayma desenin tam periyodu kadardır, döngüde sıçrama olmaz. Hız bilerek
        düşük (≈4px/sn).

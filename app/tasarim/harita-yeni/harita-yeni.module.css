@@ -6,6 +6,11 @@
   --atlas-green-dark: var(--eylem-koyu);
   --atlas-gold: var(--vurgu);
   --atlas-paper: var(--okuma-yuzey);
+  /* Yol zemini: kum/patika rengi. Altın vurgudan ayrı bir token, çünkü bu bir
+     vurgu değil YÜZEY — altın rozet ve buton renginden bağımsız ayarlanmalı
+     (KARAR 29 Tem 2026 — Hasan, örnek haritadaki kum rengi yol). */
+  --atlas-road: #e6d4a6;
+  --atlas-road-kenar: #a8905c;
   min-height: 100svh;
   overflow-x: clip;
   color: var(--murekkep);
@@ -251,51 +256,76 @@
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--atlas-gold) 42%, transparent);
   border-radius: 28px;
-  /* İki katmanlı arka plan (ONAY 25 Tem 2026 — PROJE-MODELI 3.7):
-     üstte bölgenin kendi görseli, altta ortak görsel. Bölge dosyası yoksa
-     üst katman sessizce yüklenmez ve alttaki görünür — eksik dosya ekranı
-     bozmaz, JS kontrolü gerekmez. Dosya eklenince kod değişmeden girer. */
-  background-image: var(--bolge-arkaplan, none), url("/kitaplar/kitaplar-ana-ekran.png");
+  /*
+    Arka plan (REVİZE 30 Tem 2026 — PROJE-MODELI 3.7). Sahne görseli TEK
+    katmandır; hangi kadrajın kullanılacağına `--bolge-sahne` değişkeni karar
+    verir, `background-image` bir kez yazılır.
+
+    Bu tekilleştirme bir israfı bitirdi: iki ayrı `background-image` bildirimi
+    (biri medya sorgusunda) yazıldığında tarayıcı EZİLEN bildirimin görselini
+    de indiriyordu — her açılışta hiç görünmeyen ikinci bir kadraj iniyordu.
+
+    Alt katman artık ortak fotoğraf değil, gradyan. Ortak fotoğraf da her
+    açılışta iniyor (382 KB) ama üstündeki kadraj onu tamamen örttüğü için
+    hiç görünmüyordu. Dosya eksikse artık sakin bir gradyan kalır — ekran
+    yine bozulmaz, JS kontrolü yine gerekmez.
+  */
+  --bolge-sahne: var(--bolge-arkaplan-dikey, none);
+  background-image:
+    var(--bolge-sahne),
+    linear-gradient(165deg, color-mix(in srgb, var(--atlas-night) 82%, var(--atlas-green-dark)), var(--atlas-night));
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center, center;
-  box-shadow: inset 0 0 70px color-mix(in srgb, var(--atlas-night) 52%, transparent), 0 18px 42px color-mix(in srgb, var(--atlas-night) 44%, transparent);
+  background-position: center;
+  /* İçe vuran gölge 70px/%52 idi; aydınlık görselde sahnenin dört kenarını
+     çamurlaştırıyordu. Artık yalnız kenarı yumuşatacak kadar (29 Tem 2026). */
+  box-shadow: inset 0 0 34px color-mix(in srgb, var(--atlas-night) 22%, transparent), 0 18px 42px color-mix(in srgb, var(--atlas-night) 44%, transparent);
   isolation: isolate;
 }
-/* Kadraj kaydırması YALNIZ yedek katmana uygulanır: ortak görsel tek olduğu
-   için bölgeden bölgeye farklı yerinden kırpılıyordu. Bölgenin kendi görseli
-   o bölge için üretildiğinden hep merkezlenir. */
-.mapStage[data-region="2"], .mapStage[data-region="5"] { background-position: center, 42% center; }
-.mapStage[data-region="3"], .mapStage[data-region="6"] { background-position: center, 58% center; }
-.mapStage[data-region="4"], .mapStage[data-region="7"] { background-position: center, center bottom; }
 /*
-  SAHNE KATMANI (REVİZE 29 Tem 2026 — Hasan). Eski değerler (%22 → %8 → %28)
-  görseli neredeyse olduğu gibi bırakıyordu; gün batımı ve su gibi aydınlık
-  bölgelerde madalyonlar ve altın yol okunmuyordu. Katman güçlendirildi ama
-  görsel SİLİNMEDİ: en açık bandı %28 civarındadır, manzara okunmaya devam eder.
+  Bölgeye özel kadraj kaydırması KALDIRILDI (30 Tem 2026): o kurallar tek bir
+  ortak fotoğrafın bölgeden bölgeye farklı yerinden kırpılması içindi. Artık
+  her bölgenin kendi görseli var, hepsi merkezlenir.
 
-  Üç iş birlikte yapılır:
-  1. Dikey kademe — başlığın oturduğu üst şerit ve ad etiketlerinin dizildiği
-     alt şerit daha koyu; ortada görsel serbest bırakılır.
-  2. Vinyet — köşeleri toplar, gözü sahnenin ortasındaki yola çeker.
-  3. `backdrop-filter` ile hafif doygunluk düşüşü — altın yol ve yeşil durum
-     renkleri arka plandaki turuncu/yeşil ile yarışmayı bırakır. Desteklemeyen
-     tarayıcıda sessizce düşer; okunabilirliği asıl sağlayan 1 ve 2'dir.
+  Geniş ekranda kadraj YATAY dosyaya geçer. Sahne oranı burada 1,2–1,6
+  arasındadır; dikey kadraj bu oranda soldan sağdan çok kırpılıyor. Eşik,
+  panelin sütundan çekmeceye döndüğü 960px ile aynı tutulur. Değişen yalnız
+  değişkendir — `background-image` tek bildirim olarak kalır ki ezilen
+  bildirimin görseli boşuna inmesin.
+*/
+@media (min-width: 960px) {
+  .mapStage { --bolge-sahne: var(--bolge-arkaplan-yatay, none); }
+}
+/*
+  SAHNE KATMANI (REVİZE 29 Tem 2026 — Hasan, aydınlık sahne görselleri geldi).
+  Önceki sürüm bütün sahneyi karartıyordu; o değerler KARANLIK fotoğraf
+  zeminine göre kalibre edilmişti. Aydınlık illüstrasyonlarda aynı katman
+  görseli boğuyor, yeşilleri çamurlaştırıyordu.
+
+  Yeni ilke: **sahne karartılmaz, yalnız metnin oturduğu yer korunur.**
+  - Üst şerit — bölge adı ve açıklaması oraya yazılıyor; beyaz metin aydınlık
+    gökyüzünde okunmaz. Şerit sahnenin ilk üçte birinde söner, gerisi serbest.
+  - Çok hafif bir vinyet — sahneyi çerçeveler, kenarda kalan detayı geri plana
+    çeker. Karartma değil, toparlama.
+  - `backdrop-filter` KALDIRILDI: doygunluk düşürmek aydınlık illüstrasyonun
+    en değerli yanını (canlı renk) alıp götürüyordu.
+
+  Diğer okunabilirlik yükünü kendi öğeleri taşır: ad kartları koyu lacivert,
+  madalyonların altında hâle ve yere oturma gölgesi, yol kendi koyu dış hattı.
 */
 .mapShade {
   position: absolute;
   z-index: 0;
   inset: 0;
   background:
-    radial-gradient(118% 92% at 50% 46%, transparent 34%, color-mix(in srgb, var(--atlas-night) 34%, transparent) 100%),
+    radial-gradient(125% 100% at 50% 42%, transparent 55%, color-mix(in srgb, var(--atlas-night) 20%, transparent) 100%),
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--atlas-night) 54%, transparent) 0%,
-      color-mix(in srgb, var(--atlas-night) 28%, transparent) 34%,
-      color-mix(in srgb, var(--atlas-night) 32%, transparent) 62%,
-      color-mix(in srgb, var(--atlas-night) 58%, transparent) 100%
+      color-mix(in srgb, var(--atlas-night) 62%, transparent) 0%,
+      color-mix(in srgb, var(--atlas-night) 44%, transparent) 14%,
+      color-mix(in srgb, var(--atlas-night) 22%, transparent) 27%,
+      transparent 42%
     );
-  backdrop-filter: saturate(0.8) brightness(0.95);
 }
 .mapStage::after { position: absolute; z-index: 8; inset: 8px; border: 1px solid color-mix(in srgb, var(--atlas-gold) 18%, transparent); border-radius: 21px; content: ""; pointer-events: none; }
 .mapHeading { position: absolute; z-index: 6; top: 18px; left: 22px; max-width: min(570px, 70%); text-shadow: 0 3px 13px color-mix(in srgb, var(--atlas-night) 78%, transparent); }
@@ -311,30 +341,52 @@
 
 /* --- YOL: duraklardan türetilir, son durakta biter (PROJE-MODELI 3.7) --- */
 .trail { position: absolute; z-index: 4; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
-.trail path { fill: none; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
-/* geniş yumuşak zemin şeridi */
-.trailShadow { stroke: color-mix(in srgb, var(--atlas-paper) 16%, transparent); stroke-width: 20; }
+/* `vector-effect: non-scaling-stroke` KALDIRILDI: viewBox artık sahnenin
+   birebir piksel ölçüsünde, yani kullanıcı birimi zaten ekran pikseli. Kalsaydı
+   `pathLength` ile birlikte çalışmadığı için fener ışığı tek ışık yerine yol
+   boyunca tekrarlayan lekelere bölünüyordu. */
+.trail path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
 /*
-  KALAN YOL — kısa tireler ileri doğru akar (KARAR 29 Tem 2026 — Hasan).
+  YOL GÖVDESİ (KARAR 29 Tem 2026 — Hasan): ince kesik çizgi yerine örnekteki
+  gibi geniş kum rengi bir patika. Asıl "yol" hissini veren şey budur; yön
+  karmaşası da bununla kayboluyor, çünkü göz çizgiyi değil yolu takip ediyor.
+
+  Gövde TEK PARÇA çizilir, parçalara bölünmez: yarı saydam uçlar birleşme
+  yerlerinde koyu ek izi bırakırdı. Uzaklığa göre solma orta çizgide yaşar —
+  yol zemin gibi hep durur, yön bilgisini üstündeki çizgi taşır.
+
+  `--yol-*` değişkenleri kırılım bloklarından değiştirilir: 30px'lik patika
+  mobilde sahnenin %8'ini kaplıyordu.
+*/
+/*
+  Yol genişliği madalyona GÖRE ayarlanır (KARAR 29 Tem 2026 — Hasan): 26px'te
+  şerit madalyonu eziyordu. Madalyonu büyütmek seçenek değildi — yerleşim payı
+  masaüstünde 5px, tablet yatayda 3px; büyüme doğrudan çakışmaya gider. Hedef
+  oran madalyon : yol ≈ 3,3.
+*/
+.trail { --yol-genislik: 23px; --yol-kenar: 29px; --yol-cizgi: 3px; }
+.trailEdge { stroke: color-mix(in srgb, var(--atlas-road-kenar) 62%, transparent); stroke-width: var(--yol-kenar); }
+.trailRoad { stroke: color-mix(in srgb, var(--atlas-road) 90%, transparent); stroke-width: var(--yol-genislik); }
+/*
+  ORTA ÇİZGİ — kısa tireler ileri doğru akar (KARAR 29 Tem 2026 — Hasan).
   `stroke` BURADA TANIMLANMAZ: renk her parçanın kendi solma gradyanından,
   `stroke` özniteliğiyle gelir. CSS'e yazılsaydı sunum özniteliğini ezerdi ve
-  bütün yol yine tek düz altın olurdu.
+  bütün çizgi tek düz renk olurdu.
 
-  Kayma miktarı desenin tam periyodu kadardır (4 + 9 = 13), böylece döngü başa
+  Kayma miktarı desenin tam periyodu kadardır (5 + 8 = 13), böylece döngü başa
   dönerken sıçrama olmaz. Negatif değer tireleri ilk duraktan son durağa doğru
   yürütür. Hız bilerek düşük: 13px / 3sn ≈ 4px/sn — yön sezdirir, dikkat çalmaz.
-  Yalnızca HENÜZ OKUNMAMIŞ yol akar; tamamlanan yeşil kısım sabit ve düz kalır.
 */
 .trailBase {
-  stroke-width: 3;
-  stroke-dasharray: 4 9;
+  stroke-width: var(--yol-cizgi);
+  stroke-dasharray: 5 8;
   animation: yolAkisi 3s linear infinite;
 }
 @keyframes yolAkisi {
   to { stroke-dashoffset: -13; }
 }
-/* Solma gradyanının renk kaynağı token'dır; opaklık JSX'ten uzaklığa göre gelir. */
-.trailFade stop { stop-color: var(--atlas-gold); }
+/* Orta çizgi kum zeminin üstünde beyaza yakın okunur; solma opaklıkla gelir. */
+.trailFade stop { stop-color: var(--atlas-paper); }
 
 /*
   FENER IŞIĞI (KARAR 29 Tem 2026 — Hasan): yalnız SIRADAKİ durağa giden parçada
@@ -348,9 +400,9 @@
 */
 .trailBeacon {
   stroke: var(--atlas-gold);
-  stroke-width: 4;
+  stroke-width: calc(var(--yol-genislik) - 8px);
   stroke-dasharray: 13 100;
-  filter: drop-shadow(0 0 7px color-mix(in srgb, var(--atlas-gold) 85%, transparent));
+  filter: drop-shadow(0 0 9px color-mix(in srgb, var(--atlas-gold) 85%, transparent));
   animation: fenerIsigi 4.2s ease-in-out infinite;
 }
 @keyframes fenerIsigi {
@@ -361,7 +413,10 @@
   100% { stroke-dashoffset: -100; opacity: 0; }
 }
 /* tamamlanan kısım */
-.trailCompleted { stroke: var(--atlas-green); stroke-width: 5; filter: drop-shadow(0 0 6px color-mix(in srgb, var(--atlas-green) 60%, transparent)); }
+/* Tamamlanan kısım ayrı bir çizgi değil, yolun YEŞİLE BOYANMIŞ hâlidir:
+   patika metaforu bozulmadan "burası gidildi" der. Gövdenin üstüne, orta
+   çizginin altına girer. */
+.trailCompleted { stroke: color-mix(in srgb, var(--atlas-green) 74%, var(--atlas-road)); stroke-width: var(--yol-genislik); }
 
 /* --- DURAKLAR: tek madalyon + iki satıra saran ad --- */
 .stops { position: absolute; z-index: 5; margin: 0; padding: 0; inset: 0; list-style: none; }
@@ -378,33 +433,122 @@
 */
 .stopItem { position: absolute; transform: translate(-50%, -50%); }
 .stopButton { position: relative; display: grid; justify-items: center; padding: 0; border: 0; color: var(--murekkep); background: none; cursor: pointer; }
-.marker { position: relative; display: grid; width: 84px; height: 84px; place-items: center; border-radius: 50%; transition: transform 180ms ease; }
-/* Yumuşak koyu hâle: madalyonu aydınlık sahne bölgelerinden (gün batımı, su)
-   ayırır. Sahne katmanının yaptığı işi durak ölçeğinde tamamlar. */
-.markerArt { width: 78px; height: 78px; border-radius: 50%; object-fit: cover; border: 3px solid color-mix(in srgb, var(--atlas-gold) 60%, transparent); box-shadow: 0 0 24px 9px color-mix(in srgb, var(--atlas-night) 55%, transparent), 0 10px 22px color-mix(in srgb, var(--atlas-night) 62%, transparent); }
+/*
+  YERE OTURMA GÖLGESİ (KARAR 29 Tem 2026 — Hasan, örnek haritadaki kaide).
+  Madalyonun altında yumuşak bir elips; işaretçi havada asılı durmaktan çıkıp
+  yolun üstüne oturuyor. `.marker`ın kendi `::after`'ı OLAMAZ: orası boyama
+  sırasında görselin üstünde kalır. Butona `z-index: -1` ile verilir; `.stopItem`
+  zaten `transform` yüzünden kendi yığın bağlamını kurduğu için gölge sahnenin
+  arkasına kaçmaz, yalnız durak içeriğinin altına girer.
+*/
+.stopButton::after {
+  position: absolute;
+  z-index: -1;
+  bottom: -7px;
+  left: 50%;
+  width: 68%;
+  height: 14px;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--atlas-night) 68%, transparent), transparent);
+  content: "";
+  transform: translateX(-50%);
+}
+/* Madalyon ölçüsü yerleşimin sıkışma payını belirler: aynı x'teki iki durak
+   arasındaki dikey mesafe, madalyon + ad kartından küçük olamaz. Ad kartından
+   durum satırı kalkıp kart 17px kısalınca (29 Tem 2026) doğan pay buraya
+   verildi: 70 → 76px. */
+.marker { position: relative; display: grid; width: 76px; height: 76px; place-items: center; border-radius: 50%; transition: transform 180ms ease; }
+/* Yumuşak koyu hâle: madalyonu aydınlık zeminden ayırır. Sahne katmanı artık
+   karartmadığı için bu iş durak ölçeğine kaldı — ama hâle çok koyu olursa
+   aydınlık çimenin üstünde leke gibi durur; %55'ten %34'e indirildi
+   (29 Tem 2026). Ayrımı asıl kalın altın çerçeve yapar. */
+.markerArt { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 3px solid color-mix(in srgb, var(--atlas-gold) 72%, transparent); box-shadow: 0 0 18px 6px color-mix(in srgb, var(--atlas-night) 34%, transparent), 0 8px 18px color-mix(in srgb, var(--atlas-night) 46%, transparent); }
 .stopButton:hover .marker { transform: translateY(-3px) scale(1.04); }
 .markerStatus { position: absolute; right: -2px; bottom: -2px; display: grid; width: 27px; height: 27px; place-items: center; border: 2px solid var(--atlas-night); border-radius: 50%; color: var(--atlas-night); background: var(--atlas-gold); font-style: normal; }
 /* Sıra numarası rozeti KALDIRILDI (KARAR 29 Tem 2026 — Hasan): sırayı yolun
    kendisi anlatıyor, madalyonun üstünde ikinci bir işaret kalabalık yapıyordu.
    Sıra bilgisi ekran okuyucuda `aria-label` içinde korunur. */
-.stopLabel { position: absolute; top: calc(100% + 8px); left: 50%; display: grid; width: 168px; gap: 2px; padding: 7px 10px; border: 1px solid color-mix(in srgb, var(--murekkep) 16%, transparent); border-radius: 14px; background: color-mix(in srgb, var(--atlas-night) 84%, transparent); backdrop-filter: blur(10px); text-align: center; transform: translateX(-50%); }
+/*
+  AD KARTI — KREM ZEMİN (KARAR 29 Tem 2026 — Hasan). Koyu lacivert kart
+  aydınlık sahnede iki yönden sorunluydu: yarı saydamken altındaki çimen
+  yeşili karta vurup zeytin lekesine dönüştürüyordu, opak yapıldığında ise
+  canlı manzaranın üstünde ağır duruyordu. Krem kart hem manzarayla uyumlu
+  hem de projenin "okunacak metin daima krem zeminde" kuralıyla aynı dilde.
+
+  GENİŞLİK ADA GÖRE (`max-content`): sabit 168px'te "Hz. Şît" gibi kısa adlar
+  kocaman bir kutunun ortasında kalıyordu. Üst sınır korunur ki iki satıra
+  saran uzun adlar (Rahmet Yolculuğu) taşmasın. Kartların dar olması ayrıca
+  yerleşimin yatay çakışma payını genişletir.
+*/
+.stopLabel {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  display: grid;
+  width: max-content;
+  max-width: 172px;
+  gap: 1px;
+  padding: 6px 13px;
+  border: 2px solid color-mix(in srgb, var(--atlas-gold) 48%, transparent);
+  border-radius: 13px;
+  background: color-mix(in srgb, var(--atlas-paper) 95%, var(--atlas-gold));
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--atlas-night) 34%, transparent);
+  text-align: center;
+  transform: translateX(-50%);
+}
 /* Ad iki satıra sarar — kesilmez. Dört uzun Hz. Muhammed başlığı bozulmuyor. */
-.stopLabel strong { font-family: var(--font-baloo), Arial, sans-serif; font-size: 15px; line-height: 1.12; overflow-wrap: break-word; }
-.stopLabel em { font-size: 11px; font-style: normal; font-weight: 800; opacity: .82; }
+/* Krem zeminde renkler açıkça yeniden verilir: buton `--murekkep` (açık) rengi
+   miras bırakıyor, kart artık koyu değil. */
+.stopLabel strong { color: var(--atlas-night); font-family: var(--font-baloo), Arial, sans-serif; font-size: 16.5px; line-height: 1.12; overflow-wrap: break-word; }
 
 .stop_completed .markerArt { border-color: var(--atlas-green); }
 .stop_completed .markerStatus { color: var(--atlas-paper); background: var(--atlas-green); }
-.stop_completed .stopLabel em { color: color-mix(in srgb, var(--atlas-green) 88%, var(--murekkep)); }
+.stop_completed .stopLabel { border-color: color-mix(in srgb, var(--atlas-green) 62%, transparent); }
 .stop_active .markerArt { border-color: var(--atlas-gold); box-shadow: 0 0 0 6px color-mix(in srgb, var(--atlas-gold) 20%, transparent), 0 12px 26px color-mix(in srgb, var(--atlas-night) 62%, transparent); }
-.stop_active .stopLabel { border-color: color-mix(in srgb, var(--atlas-gold) 56%, transparent); }
-.stop_active .stopLabel em { color: var(--atlas-gold); }
+.stop_active .stopLabel { border-color: var(--atlas-gold); }
 .stop_locked .markerArt, .stop_preparing .markerArt { filter: grayscale(.75) brightness(.62); border-color: color-mix(in srgb, var(--murekkep) 26%, transparent); }
 .stop_locked .markerStatus, .stop_preparing .markerStatus { color: color-mix(in srgb, var(--murekkep) 88%, transparent); background: color-mix(in srgb, var(--atlas-raised) 92%, transparent); }
-.stop_locked .stopLabel, .stop_preparing .stopLabel { opacity: .78; }
+/* Kartın KENDİSİ soluklaşmaz — aydınlık zeminde saydamlaşıp çamurlaşıyor.
+   Solgunluk yalnız ada verilir; "hazırlanıyor" mesajını asıl griye çekilmiş
+   madalyon ve üstündeki saat rozeti taşır (29 Tem 2026). */
+.stop_locked .stopLabel strong, .stop_preparing .stopLabel strong { opacity: .68; }
 .stopSelected .marker { transform: translateY(-3px) scale(1.06); }
 .stopSelected .markerArt { box-shadow: 0 0 0 4px var(--atlas-gold), 0 14px 30px color-mix(in srgb, var(--atlas-night) 66%, transparent); }
-.stopSelected .stopLabel { border-color: var(--atlas-gold); background: color-mix(in srgb, var(--atlas-night) 90%, transparent); }
-/* activePulse kaldırıldı: nefes animasyonu yeni madalyon yapısında yok. */
+/* Seçili kart krem kalır, yalnız altın çerçevesi kalınlaşıp zemini ısınır. */
+.stopSelected .stopLabel { border-color: var(--atlas-gold); background: color-mix(in srgb, var(--atlas-paper) 86%, var(--atlas-gold)); }
+
+/*
+  AKTİF DURAK NEFES ALIR (KARAR 29 Tem 2026 — Hasan). Bu, 27 Tem'de kaldırılan
+  `activePulse`ın geri dönüşü DEĞİL: o madalyonun kendisini büyütüp küçültüyordu
+  ve komşu etiketleri itiyordu. Bunun yerine madalyonun ARKASINDA, düzene hiç
+  dokunmayan bir altın halka açılıp soluyor.
+
+  `--durum` seçicisi ile bağlanır, `.stopSelected` ile değil: vurgulanan şey
+  "şu an tıkladığın kitap" değil, **"şimdi okunacak kitap"**. Fener ışığı da
+  aynı durağa koştuğu için ikisi tek bir cümle kurar: yol buraya gidiyor,
+  hedef burası.
+
+  Halka BUTONA değil MADALYONA bağlanır (DÜZELTME 29 Tem 2026 — Hasan).
+  Butondayken, durak seçildiğinde `.stopSelected .marker` 3px yukarı kalkıp
+  %6 büyüyor ama halka yerinde kalıyordu; ikisi eş merkezli olmaktan çıkıp
+  halkanın altındaki boşluk üstündekinden büyük görünüyordu. Madalyonun
+  sözde-öğesi olunca aynı dönüşümü paylaşır ve her durumda eş merkezli kalır.
+
+  Halka madalyonun dışında (inset -9px) durduğu için `z-index` gerekmez —
+  görselle hiç kesişmez. `::after` yere oturma gölgesinde kullanıldı, bu
+  yüzden `::before`.
+*/
+.stop_active .marker::before {
+  position: absolute;
+  border: 3px solid var(--atlas-gold);
+  border-radius: 50%;
+  content: "";
+  inset: -9px;
+  animation: aktifNefes 2.8s ease-in-out infinite;
+}
+@keyframes aktifNefes {
+  0%, 100% { opacity: .8; transform: scale(1); }
+  50% { opacity: .18; transform: scale(1.16); }
+}
 
 
 /*
@@ -632,12 +776,16 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
   }
-  .marker { width: 62px; height: 62px; }
-  .markerArt { width: 58px; height: 58px; }
-  .markerStatus { width: 24px; height: 24px; }
-  .stopLabel { width: 132px; padding: 4px 7px; }
-  .stopLabel strong { font-size: 12.5px; }
-  .stopLabel em { font-size: 10px; }
+  /*
+    Bölge alt başlığı (yalnız Rahmet Yolculuğu ve Emaneti Taşıyan Dört Dost'ta
+    var) kısa ekranda gizlenir: başlık bloğunu bir satır uzatıyor ve 510px'lik
+    sahnede ilk madalyon metnin üstüne biniyordu. Bilgi kaybı sınırlı — alt
+    başlık bağlam cümlesidir, bölge adı ve açıklaması yerinde duruyor.
+  */
+  .mapHeading strong { display: none; }
+  /* Madalyon ve ad kartı ölçüleri bu blokta DEĞİL, `max-width: 1100px`
+     bloğundan SONRA gelen kısa ekran bloğunda verilir — 1024×768'de ikisi de
+     eşleşiyor ve kaynak sırası gereği buradaki değerler eziliyordu. */
 
   .medalCard { gap: 9px; margin-top: 12px; padding: 9px; }
   .medalCard > span { width: 44px; height: 44px; flex: 0 0 44px; }
@@ -686,9 +834,26 @@
 @media (max-width: 1100px) {
   .workspace { grid-template-columns: minmax(0, 1.48fr) minmax(300px, .82fr); }
     .regionIntro { min-width: 154px; }
-  .marker { width: 74px; height: 74px; }
-  .markerArt { width: 70px; height: 70px; }
-  .stopLabel { width: 148px; }
+  /* Madalyon ölçüsü artık taban kuralla aynı; burada yalnız ad kartının
+     ÜST SINIRI daralır — genişlik ada göre kendi hesaplanır. */
+  .stopLabel { max-width: 152px; }
+}
+
+/*
+  KISA EKRAN (tablet yatay) durak ölçüleri. Kasıtlı olarak `max-width: 1100px`
+  bloğundan SONRA duruyor: 1024×768'de ikisi de eşleşiyor ve kaynak sırası
+  gereği önce yazılan eziliyor. Yerleşimin en sıkışık kırılımı burasıdır —
+  sahne ~510px ve altı kitap yılan düzeninde ancak bu ölçülerle kaydırmasız
+  sığar (29 Tem 2026).
+*/
+@media (min-width: 960px) and (max-height: 860px) {
+  .marker { width: 58px; height: 58px; }
+  .markerArt { width: 54px; height: 54px; }
+  .markerStatus { width: 22px; height: 22px; }
+  /* Oran korunsun diye yol da madalyonla birlikte ölçeklenir. */
+  .trail { --yol-genislik: 18px; --yol-kenar: 23px; --yol-cizgi: 2.5px; }
+  .stopLabel { max-width: 138px; padding: 4px 11px; }
+  .stopLabel strong { font-size: 14px; }
 }
 
 @media (max-width: 959px) {
@@ -757,14 +922,18 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
   }
+  /* Kısa ekranla aynı gerekçe: alt başlık, başlık bloğunu bir satır uzatıp
+     ilk madalyonun altına giriyor. Tablet dikeyde yer var, orada duruyor. */
+  .mapHeading strong { display: none; }
   /* Ruh hâli metni kaldırıldı; sabit durak konumları da yok — konumlar
      kitap sayısına göre hesaplanıyor (PROJE-MODELI 3.7). */
-  .marker { width: 60px; height: 60px; }
-  .markerArt { width: 56px; height: 56px; }
+  /* Patika 350px'lik sahnenin %7,5'ini kaplıyordu; oran korunsun. */
+  .trail { --yol-genislik: 19px; --yol-kenar: 24px; --yol-cizgi: 2.5px; }
+  .marker { width: 64px; height: 64px; }
+  .markerArt { width: 60px; height: 60px; }
   .markerStatus { width: 23px; height: 23px; }
-  .stopLabel { width: 116px; padding: 5px 7px; }
-  .stopLabel strong { font-size: 12.5px; }
-  .stopLabel em { font-size: 10px; }
+  .stopLabel { max-width: 126px; padding: 5px 11px; }
+  .stopLabel strong { font-size: 14px; }
   .mapHeading { max-width: 100%; }
   /*
     TEK kural. Eskiden iki satır arayla iki kez tanımlanıyordu ve ikisi birlikte
@@ -791,4 +960,7 @@
      çubuk kalırdı. Solma gradyanı kalır: o renk, animasyon değil. */
   .trailBase { animation: none; }
   .trailBeacon { display: none; }
+  /* Aktif durağın halkası KALIR, yalnız nefesi durur: halka bir durum
+     göstergesi, animasyon süsü değil. */
+  .stop_active .marker::before { animation: none; opacity: .8; }
 }

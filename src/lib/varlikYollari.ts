@@ -7,6 +7,7 @@
  *
  * Klasör düzeni (KARAR 27 Temmuz 2026 — Hasan):
  *
+ *   public/bolgeler/bolge-{bolgeId}-{dikey|yatay}.jpg  ← keşif bölgesi sahnesi
  *   public/kitaplar/hz-{bookKey}/kapak.png             ← kitap kapağı
  *   public/kitaplar/hz-{bookKey}/bolum-{n}/kapak.jpg   ← bölüm açılış sahnesi (16:9)
  *   public/kitaplar/hz-{bookKey}/bolum-{n}/{ad}.jpg    ← bölüm içi sahneler (16:9)
@@ -19,6 +20,20 @@
  * Kural: dosya yoksa kod BOZULMAZ — `YedekliGorsel` yedeğe düşer. Hasan gerçek
  * dosyayı aynı adla klasöre atınca kod değişmeden yayına girer.
  */
+
+/**
+ * Keşif bölgesinin sahne görseli — CSS `background-image` değeri olarak döner.
+ *
+ * Sahne oranı cihazdan cihaza 0,61 ile 1,6 arasında değişiyor; tek görsel bu
+ * aralığın iki ucunda ya çok kırpılıyor ya da boş kalıyordu. Bu yüzden iki
+ * kadraj vardır: dar/uzun ekranlar için `-dikey`, geniş ekranlar için `-yatay`.
+ *
+ * Biçim JPG'dir (KARAR 30 Tem 2026 — Hasan). Manzara illüstrasyonlarında
+ * şeffaflık gerekmiyor; PNG'de 14 dosya 32 MB tutuyordu, JPG'de 6 MB.
+ */
+export function bolgeArkaplani(bolgeId: string, yon: "dikey" | "yatay") {
+  return `url("/bolgeler/bolge-${bolgeId}-${yon}.jpg")`;
+}
 
 /** Kitap klasörü adı. `sesli-anlatim/hz-adem` ile aynı kalıbı izler. */
 export function kitapKlasoru(bookKey: string) {

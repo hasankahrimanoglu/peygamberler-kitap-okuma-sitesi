@@ -1,35 +1,107 @@
 KEŞİF BÖLGESİ SAHNE GÖRSELLERİ
 ==============================
+(Güncellendi: 29 Temmuz 2026 — iki kadraj düzenine geçildi)
 
-Bu klasöre yalnız aşağıdaki 7 dosya konur. Dosya adları SABİTTİR;
-kod bu adlarla arar. Adı değiştirme.
+Her bölgenin İKİ dosyası vardır: dar/uzun ekranlar için DİKEY, geniş
+ekranlar için YATAY kadraj. Dosya adları SABİTTİR; kod bu adlarla arar.
 
-  bolge-ilk-izler.png          1. İlk İzler Vadisi
-  bolge-bereketli-aile.png     2. Bereketli Aile Yolu
-  bolge-sabir-cesaret.png      3. Sabır ve Cesaret Geçidi
-  bolge-hikmet-saraylari.png   4. Hikmet Sarayları
-  bolge-umut-isiklari.png      5. Umut Işıkları Diyarı
-  bolge-rahmet-yolculugu.png   6. Rahmet Yolculuğu
-  bolge-dort-dost.png          7. Emaneti Taşıyan Dört Dost
+  bolge-ilk-izler-dikey.jpg          bolge-ilk-izler-yatay.jpg
+  bolge-bereketli-aile-dikey.jpg     bolge-bereketli-aile-yatay.jpg
+  bolge-sabir-cesaret-dikey.jpg      bolge-sabir-cesaret-yatay.jpg
+  bolge-hikmet-saraylari-dikey.jpg   bolge-hikmet-saraylari-yatay.jpg
+  bolge-umut-isiklari-dikey.jpg      bolge-umut-isiklari-yatay.jpg
+  bolge-rahmet-yolculugu-dikey.jpg   bolge-rahmet-yolculugu-yatay.jpg
+  bolge-dort-dost-dikey.jpg          bolge-dort-dost-yatay.jpg
+
+ÖLÇÜLER VE BİÇİM
+  DİKEY  1800 × 2400 px   (3:4)   — mobil ve tablet dikey
+  YATAY  2400 × 1700 px   (~7:5)  — tablet yatay ve masaüstü
+  JPG, kalite ~80. Dosya başına 800 KB altı (30 Tem 2026 dönüşümünde
+  ortalama 440 KB çıktı). Manzarada şeffaflık gerekmiyor; PNG'de aynı 14
+  dosya 32 MB tutuyordu, JPG'de 6 MB.
+
+  Oranlar keyfî değil: sahnenin en-boy oranı cihazdan cihaza dikeyde
+  0,59–0,96, yatayda 1,22–1,60 arasında değişiyor. Yukarıdaki iki oran o
+  aralıkların ortasıdır, yani kırpma her cihazda mümkün olan en az seviyede
+  kalır.
+
+  ÇÖZÜNÜRLÜK NOTU: eldeki dosyalar 1086×1448 ve ~1490×1055. Oranlar doğru
+  ama çözünürlük önerilenin altında; retina ekranda hafif yumuşak görünür.
+  Yeniden üretirsen yukarıdaki ölçüleri hedefle.
 
 DOSYA YOKSA NE OLUR?
-  Hiçbir şey bozulmaz. Kod ortak görsele (kitaplar/kitaplar-ana-ekran.png)
-  düşer. Dosyayı bu adla klasöre atman yeterli; kod değişmeden yayına girer.
-  Eski görseli silmen de gerekmez, üzerine yazman yeterli.
+  Hiçbir şey bozulmaz. Kod iki katmanı sırayla dener:
+    1. yöne özel dosya  (bolge-{id}-dikey.jpg / -yatay.jpg)
+    2. sakin bir gradyan (görsel değil, istek üretmez)
+  Dosyayı bu adla klasöre atman yeterli; kod değişmeden yayına girer.
 
-ÖLÇÜ VE KOMPOZİSYON
-  - Önerilen: 1920×1200 px (yatay), PNG veya JPG
-  - Görsel `cover` ile kırpılır: masaüstünde yatay, mobilde dar dikey bir
-    şerit görünür. ÖNEMLİ UNSURLARI ORTAYA topla, kenarlara yayma.
-  - ÜST ÜÇTE BİR metin alanıdır (bölge adı + açıklama). Orası sakin gökyüzü
-    veya boş alan olsun; detay koyma.
-  - ALT YARIDA duraklar var: 6 madalyon + ad etiketleri. Orada da kalabalık
-    detay okunurluğu düşürür.
-  - Üzerine hafif bir karartma katmanı biner; görsel biraz aydınlık olabilir.
+  NOT: eskiden araya "yönsüz eski dosya" ve "ortak fotoğraf" katmanları da
+  giriyordu. Kaldırıldılar — on dört kadraj da üretildikten sonra her
+  açılışta hiç görünmeyen 2,4 MB'lık boşa istek üretiyorlardı.
 
-İÇERİK KURALLARI (PROJE-MODELI Bölüm 6.4)
+KOMPOZİSYON — EN ÖNEMLİ BÖLÜM
+  1. YOL ÇİZME. Patika, yol, köprü, basamak, taş döşeme yolu — hiçbiri.
+     Yolu kod çiziyor (kum rengi şerit + beyaz kesikli orta çizgi) ve
+     ekran ölçüsüne göre yeniden hesaplıyor. Görsele çizilen yol asla
+     tutmaz.
+  2. KENARDAN %12 KIRPILIR. Görsel `cover` ile kırpılıyor; hangi kenarın
+     kırpılacağı cihaza göre değişir. Kritik hiçbir unsur kenardaki %12'lik
+     çerçevenin içinde olmasın.
+  3. ORTA ALAN SAKİN OLSUN. Görselin orta %85'inde kitap madalyonları ve ad
+     kartları duruyor. Orada yüksek kontrastlı, kalabalık, ince detaylı
+     doku olmasın: geniş çimen, düz toprak, sakin su, yumuşak tepe. Detayı
+     (çiçek, taş, ağaç kümesi, çalı) kenarlara topla.
+  4. ÜST %20 METİN ALANI. Bölge adı ve açıklaması oraya yazılıyor. Sakin
+     gökyüzü veya düz alan olsun; parlak leke, güneş topu, keskin bulut
+     kenarı koyma.
+  5. NEHİR/DERE VARSA yolun geçmeyeceği kenardan aksın; ortadan dikey
+     geçmesin (yol onunla kesişir, köprü çizilemez).
+  6. SAF BEYAZ VE SAF SİYAH ALAN OLMASIN. Kum rengi yol ve koyu lacivert
+     ad kartları kontrastını bozuyor.
+  7. Üzerine hafif bir karartma + doygunluk katmanı biner; görsel biraz
+     aydınlık ve canlı olabilir.
+
+İÇERİK KURALLARI (PROJE-MODELI Bölüm 6.4 — pazarlık edilmez)
   - Peygamber, halife, sahabe, melek YOK: yüz, beden, el, silüet hiçbiri.
-  - Cami, kubbe, minare gibi dönemle uyumsuz dekor YOK.
-  - Bölgenin görsel dünyası KITAP-KATALOGU-VE-URETIM-PLANI.md'de tarif edilir.
-    Örnek — Bölge 2: çöl yolları, yıldızlı gece, çadır, su kuyusu, ekin,
-    taş temeller, kervan izleri, bereketli vadi.
+    Genel olarak İNSAN FİGÜRÜ hiç olmasın.
+  - Cami, kubbe, minare YOK — dönemle uyumsuz.
+  - Yazı, harf, rakam, sembol YOK.
+  - Modern unsur YOK: bina, direk, araç, tel, tabela.
+  - Tarz yedi bölgede AYNI, palet farklı: düz vektör / çocuk kitabı
+    illüstrasyonu, gündüz, canlı ama göz yormayan orta tonlar.
+
+BÖLGE BÖLGE SAHNE
+  1  İlk İzler Vadisi ................ Başlangıç ve merak
+     Dokunulmamış yemyeşil vadi, sabahın ilk ışığı. Geniş çimen, kır
+     çiçekleri, genç bir dere (kenardan), uzakta yumuşak yuvarlak tepeler,
+     birkaç geniş yapraklı ağaç. Dünya yeni kurulmuş hissi.
+
+  2  Bereketli Aile Yolu ............. Aile ve güven
+     Ilık ova. Hurma ve zeytin kümeleri, taş bilezikli su kuyusu, olgun
+     ekin tarlaları, uzakta çadır siluetleri (insansız), akşamüstü altın
+     ışık. Konukseverlik ve bereket duygusu.
+
+  3  Sabır ve Cesaret Geçidi ......... Sabır ve cesaret
+     Kayalık dağ geçidi. Sarp duvarlar, dayanıklı bodur çalılar, dar bir
+     gökyüzü şeridi, uzakta geçidin ucundan sızan sıcak ışık. Ciddi ama
+     korkutucu değil: fırtına, karanlık, yıldırım YOK.
+
+  4  Hikmet Sarayları ................ Hikmet ve adalet
+     Antik taş avlu ve bahçe. Zamanla aşınmış oymalı taş teraslar,
+     sütunlar, süs havuzları, servi ve nar ağaçları, kuşlar. Mimari
+     Yakın Doğu antik taş işçiliği olsun — kubbe ve minare KESİNLİKLE yok.
+
+  5  Umut Işıkları Diyarı ............ Umut ve merhamet
+     Şafakta göl/deniz kıyısı. Durgun su, ince sis, ufukta açılan yumuşak
+     ışık, sazlıklar, zeytin ağaçları, kıyıya çekilmiş boş bir kayık.
+     Karanlıktan aydınlığa geçiş hissi.
+
+  6  Rahmet Yolculuğu ................ Güven ve kardeşlik
+     Çıplak dağlar arasında çöl vadisi. Kum ve kaya, seyrek akasya,
+     uzakta hurmalı bir vaha, ikindi göğü. Sıcak toprak tonları.
+     Kâbe, cami, kubbe, minare tasviri YOK — yalnız manzara.
+
+  7  Emaneti Taşıyan Dört Dost ....... Sadakat ve emanet
+     Vaha kasabasının eteği, hafif yükseltiden görünüm. Uzakta alçak
+     kerpiç duvarlar (detaysız), hurma bahçeleri, kuyular, sulanmış
+     tarlalar, akşam ışığı. Yerleşmiş, huzurlu, düzenli bir dünya.
