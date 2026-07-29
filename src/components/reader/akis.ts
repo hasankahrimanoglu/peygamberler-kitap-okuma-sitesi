@@ -4,10 +4,10 @@ import type { ChapterData } from "../../data/demoChapters";
 /**
  * Kaydırmalı okuma akışının segment modeli (KARAR 26 Tem 2026 — Faz 6.2).
  *
- * `sayfalar.ts`'ten farkı: karakter bütçesi YOKTUR. Bölüm sayfalara bölünmez;
- * her segment ekranda kendi yüzeyiyle görünen bir "durak"tır ve hepsi tek bir
- * kaydırma akışında alt alta durur. `sayfalar.ts` sayfalı okuyucu (`AtlasReader`)
- * ve `/tasarim/okuma-yeni` önizlemesi için yerinde bırakılmıştır.
+ * Karakter bütçesi YOKTUR. Bölüm sayfalara bölünmez; her segment ekranda kendi
+ * yüzeyiyle görünen bir "durak"tır ve hepsi tek bir kaydırma akışında alt alta
+ * durur. Sayfa bütçesini hesaplayan eski `sayfalar.ts` ve onu kullanan sayfalı
+ * okuyucu 30 Tem 2026'da silindi; sayfa metaforu geri getirilmeyecek.
  */
 export type OkumaAkisBolumu =
   | { key: "kapak"; type: "kapak" }

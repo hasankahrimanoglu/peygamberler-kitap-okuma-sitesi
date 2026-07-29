@@ -3,9 +3,8 @@
 import { useMemo } from "react";
 import { notFound, useParams } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
-// Kaydırmalı okuyucu (Faz 6.2) 28 Tem 2026'da Hasan onayıyla üretime alındı.
-// Sayfalı `AtlasReader` şimdilik dosyada duruyor; ayrı bir temizlik turunda
-// kaldırılacak (bkz. PROJE-MODELI Faz 6.2).
+// Kaydırmalı okuyucu (Faz 6.2) 28 Tem 2026'da Hasan onayıyla üretime alındı;
+// sayfalı okuyucu 30 Tem 2026'da tamamen kaldırıldı. Tek okuyucu budur.
 import { AtlasScrollReader } from "../../../src/components/reader/AtlasScrollReader";
 import {
   adaptDataChapter,

@@ -16,7 +16,6 @@ export type BookContentBlock =
       portraitSrc?: string;
       alt: string;
       caption?: string;
-      discovery?: BookDiscovery;
     }
   | {
       type: "interactive_word";
@@ -36,30 +35,12 @@ export type BookContentBlock =
       isFictional: boolean;
     };
 
-export type BookDiscoveryPoint = {
-  id: string;
-  /** Görselin solundan yüzde konum. */
-  x: number;
-  /** Görselin üstünden yüzde konum. */
-  y: number;
-  title: string;
-  description: string;
-};
-
-export type BookDiscovery = {
-  prompt: string;
-  completionText: string;
-  points: BookDiscoveryPoint[];
-};
-
 export type BookIllustration = {
   src: string;
   /** Tablet dikey ve mobil için aynı sahnenin 3:4 uyarlaması. */
   portraitSrc?: string;
   alt: string;
   caption?: string;
-  /** İsteğe bağlı, puansız ve ilerleme şartı olmayan görsel keşif noktaları. */
-  discovery?: BookDiscovery;
 };
 
 export type BookQuestionOption = {

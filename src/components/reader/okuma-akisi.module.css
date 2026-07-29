@@ -1,11 +1,11 @@
 /*
  * Kaydırmalı okuma akışı (KARAR 26 Tem 2026 — Faz 6.2).
  *
- * `app/tasarim/okuma-yeni/okuma-yeni.module.css` yeniden kullanılamadı: o modülün
- * kabuğu `height: 100svh; overflow: hidden` + üç satırlı grid üzerine kurulu,
- * yani doğrudan sayfa metaforuna bağlı. Burada kabuk sıfırdan kurulur; tipografi
- * ve yüzey sözlüğü (kâğıt, altın, dropCap, keySentence, sözlükçe, defter, karar,
- * rozet) oradan taşınmıştır.
+ * Kabuk sıfırdan kurulmuştur. Sayfalı okuyucunun modülü yeniden kullanılamadı:
+ * kabuğu `height: 100svh; overflow: hidden` + üç satırlı grid üzerine kuruluydu,
+ * yani doğrudan sayfa metaforuna bağlıydı. Tipografi ve yüzey sözlüğü (kâğıt,
+ * altın, dropCap, keySentence, sözlükçe, defter, karar, rozet) oradan taşındı;
+ * kaynak modül 30 Tem 2026'da silindi.
  *
  * Renkler yalnız semantik token'lardan türetilir; sayfaya gömülü hex yoktur.
  */

@@ -152,8 +152,11 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
   konumu okunan yerin güvenilir göstergesi değil; çocuk metni okumadan sayfayı
   kaydırıp çıkabiliyor. Bölüm her açılışta baştan başlar. Yeniden ÖNERME.
   Üretim rotası `/reader/[chapterId]` **28 Tem 2026'da AtlasScrollReader'a
-  geçti**; sayfalı `AtlasReader` + `sayfalar.ts` henüz silinmedi (ayrı temizlik
-  turu).
+  geçti**; sayfalı okuyucu (`AtlasReader`, `sayfalar.ts`, sayfa bileşenleri ve
+  `/tasarim/okuma-yeni` · `/tasarim/okuma-kaydirmali` önizlemeleri)
+  **30 Tem 2026'da silindi**. `src/components/reader/` içinde artık yalnız
+  `AtlasScrollReader` + `akis.ts` + `Konfeti` vardır; sayfa metaforuna dönüş
+  ÖNERİLMEZ.
 - **"Bugüne Taşı" görevleri KOŞULLUDUR** — her bölümde değil (kitabın yaklaşık
   %40–50'si; editoryal hedef, teknik sınır olarak KODLANMAZ). Gönüllüdür: "Görevi Listeme
   Ekle / Şimdilik Değil". İlerleme/rozet/madalya ŞARTI DEĞİLDİR; göreve ayrı
