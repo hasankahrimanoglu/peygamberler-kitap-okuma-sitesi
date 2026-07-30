@@ -3,6 +3,14 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Ikon, YedekliGorsel } from "../ui";
 import styles from "../../../app/tasarim/kitap-yeni/kitap-yeni.module.css";
+import { KesifMenusu } from "./KesifMenusu";
+import {
+  FINAL_KAPISI_IKONU,
+  kitapKapagi,
+  madalyaGorseli,
+  rozetGorseli,
+  YEDEK,
+} from "../../lib/varlikYollari";
 
 type BolumDurumu = "tamamlandi" | "aktif" | "kilitli";
 type Secim = number | "final";
@@ -26,6 +34,10 @@ type KitapBolumRotasiProps = {
   kitapAdi: string;
   altBaslik: string;
   profilAdi: string;
+  /** Keşif menüsü için profil künyesi ve toplamlar. */
+  menuProfili: { ad: string; avatarAnahtari: string; unvan: string };
+  toplamRozet: number;
+  tamamlananKitap: number;
   bolumler: AtlasBolum[];
   tamamlananBolum: number;
   kitapBitti: boolean;
@@ -64,6 +76,9 @@ export function KitapBolumRotasi({
   kitapAdi,
   altBaslik,
   profilAdi,
+  menuProfili,
+  toplamRozet,
+  tamamlananKitap,
   bolumler,
   tamamlananBolum,
   kitapBitti,
@@ -84,6 +99,7 @@ export function KitapBolumRotasi({
     ? Math.max(0, toplamBolum - 1)
     : Math.min(etkinTamamlananBolum, Math.max(0, toplamBolum - 1));
   const [secim, setSecim] = useState<Secim>(aktifIndex);
+  const [menuAcik, setMenuAcik] = useState(false);
   const [mobilDetayAcik, setMobilDetayAcik] = useState(false);
   const panelKapatRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLElement>(null);
@@ -345,24 +361,30 @@ export function KitapBolumRotasi({
     <main className={`tema-cocuk ${styles.page}`}>
       <div className={styles.atlasShell}>
         <header className={styles.explorerBar}>
-          <div className={styles.previewGroup}>
-            <button className={styles.backLink} type="button" onClick={onHaritayaDon}>
-              <Ikon ad="geri" boyut={18} /> Keşif Atlasına Dön
-            </button>
-          </div>
-
-          <div className={styles.bookIdentity}>
-            <div className={styles.lanternMark} aria-hidden="true"><Ikon ad="fener" boyut={22} /></div>
-            <div>
-              <span>{profilAdi} · Bölüm Yolculuğu</span>
-              <strong>{kitapAdi} · {kitapSira}. Kitap</strong>
-            </div>
-          </div>
+          {/*
+            TEK satır (28 Tem 2026): geri | sayaçlar | menü. Kitap adı ve sıra
+            numarası kaldırıldı — orta alandaki başlıkta zaten var. Logo da
+            kaldırıldı; iki uç dolu olduğu için ortada üçüncü bir öbek barı
+            kalabalıklaştırıyordu.
+          */}
+          <button className={styles.backLink} type="button" onClick={onHaritayaDon}>
+            <Ikon ad="geri" boyut={18} /> Keşif Atlasına Dön
+          </button>
 
           <dl className={styles.headerStats} aria-label="Kitap ilerlemesi">
             <div><dt>Bölüm</dt><dd>{yukleniyor ? "—" : `${etkinTamamlananBolum} / ${toplamBolum}`}</dd></div>
             <div><dt>Rozet</dt><dd><Ikon ad="rozet" boyut={16} /> {yukleniyor ? "—" : etkinTamamlananBolum}</dd></div>
           </dl>
+
+          <button
+            type="button"
+            className={styles.menuButonu}
+            aria-label="Keşif menüsünü aç"
+            aria-expanded={menuAcik}
+            onClick={() => setMenuAcik(true)}
+          >
+            <Ikon ad="menu" boyut={21} />
+          </button>
         </header>
 
         <div className={styles.workspace}>
@@ -421,7 +443,15 @@ export function KitapBolumRotasi({
 
               <button type="button" className={`${styles.finalGate} ${styles[kitapBitti ? "tamamlandi" : finalAcik ? "aktif" : "kilitli"]} ${finalSecili ? styles.finalSelected : ""}`} aria-pressed={finalSecili} aria-label={`Büyük Final Testi, ${DURUM_METINLERI[kitapBitti ? "tamamlandi" : finalAcik ? "aktif" : "kilitli"]}`} onClick={(olay) => secimYap("final", olay.currentTarget)}>
                 <span className={styles.finalIcon}>
-                  <Ikon ad="madalya" boyut={24} />
+                  {/* Final Kapısı ikonu: public/ikonlar/final-kapisi.svg — aynı adla değiştirilebilir. */}
+                  <YedekliGorsel
+                    src={FINAL_KAPISI_IKONU}
+                    yedekSrc={YEDEK.madalya}
+                    alt=""
+                    width={24}
+                    height={24}
+                    className={styles.finalIconImage}
+                  />
                   <span className={styles.finalStatusIcon}><Ikon ad={kitapBitti ? "onay" : finalAcik ? "fener" : "kilit"} boyut={12} /></span>
                 </span>
                 <span><small>Final kapısı</small><strong>Büyük Final Testi</strong></span>
@@ -460,9 +490,12 @@ export function KitapBolumRotasi({
               </div>
               <div className={styles.bookSummary}>
                 <div className={styles.coverFrame}>
-                  <YedekliGorsel src={`/kapaklar/kapak-${kitapKey}.png`} yedekSrc="/kapaklar/placeholder.svg" alt={`${kitapAdi} kitap kapağı`} width={112} height={168} className={styles.cover} />
+                  <YedekliGorsel src={kitapKapagi(kitapKey)} yedekSrc={YEDEK.kitapKapagi} alt={`${kitapAdi} kitap kapağı`} width={112} height={168} className={styles.cover} />
                 </div>
-                <div className={styles.bookCopy}><p>{kitapAdi}</p><h2>{altBaslik}</h2></div>
+                <div className={styles.bookCopy}>
+                    <p>{kitapAdi}</p>
+                    <h2>{altBaslik}</h2>
+                  </div>
               </div>
               <div className={styles.bookProgressBlock}>
                 <div className={styles.bookProgressLabel}>
@@ -491,7 +524,7 @@ export function KitapBolumRotasi({
                       <span className={`${styles.statusChip} ${styles[seciliDurum]}`}><Ikon ad={DURUM_IKONLARI[seciliDurum]} boyut={15} /> {DURUM_METINLERI[seciliDurum]}</span>
                     </div>
                     <div className={styles.rewardHero}>
-                      <YedekliGorsel src={`/madalyalar/madalya-${kitapKey}.png`} yedekSrc="/madalyalar/placeholder.svg" alt={`${kitapAdi} Yolculuk Madalyası`} width={82} height={82} className={`${styles.rewardImage} ${kitapBitti ? "" : styles.rewardPending}`} />
+                      <YedekliGorsel src={madalyaGorseli(kitapKey)} yedekSrc={YEDEK.madalya} alt={`${kitapAdi} Yolculuk Madalyası`} width={82} height={82} className={`${styles.rewardImage} ${kitapBitti ? "" : styles.rewardPending}`} />
                       <div><p>Yolculuk sonu</p><h3 id={panelBaslikId}>Büyük Final Testi</h3></div>
                     </div>
                     <p id={panelAciklamaId} className={styles.summaryText}>{kitapBitti ? "Bilgilerini tazele; ilk final sonucun ve kazandığın madalya değişmez." : `Bölümlerde keşfettiğin değerleri hatırla ve ${kitapAdi} yolculuğunu tamamla.`}</p>
@@ -509,7 +542,7 @@ export function KitapBolumRotasi({
                     </div>
                     <p id={panelAciklamaId} className={styles.summaryText}>{seciliBolum.ozet}</p>
                     <div className={styles.rewardRow}>
-                      <YedekliGorsel src={`/rozetler/rozet-${kitapKey}-bolum-${seciliSira}.png`} yedekSrc="/rozetler/placeholder.svg" alt={`${seciliBolum.badgeName} görseli`} width={58} height={58} className={`${styles.rewardImage} ${seciliDurum === "tamamlandi" ? "" : styles.rewardPending}`} />
+                      <YedekliGorsel src={rozetGorseli(kitapKey, seciliSira)} yedekSrc={YEDEK.rozet} alt={`${seciliBolum.badgeName} görseli`} width={58} height={58} className={`${styles.rewardImage} ${seciliDurum === "tamamlandi" ? "" : styles.rewardPending}`} />
                       <span><small>{seciliDurum === "tamamlandi" ? "Kazanılan rozet" : "Kazanılacak rozet"}</small><strong>{seciliBolum.badgeName}</strong></span>
                     </div>
                     {seciliBolum.gorev ? <div className={styles.taskNote}><span className={styles.taskIcon}><Ikon ad="dusunce" boyut={19} /></span><div><small>Bu bölümde Bugüne Taşı var</small><strong>{seciliBolum.gorev.ad}</strong><p>{seciliBolum.gorev.kategori} · {seciliBolum.gorev.sure}</p></div></div> : null}
@@ -532,6 +565,15 @@ export function KitapBolumRotasi({
           </aside>
         </div>
       </div>
+
+      <KesifMenusu
+        profil={menuProfili}
+        toplamRozet={toplamRozet}
+        tamamlananKitap={tamamlananKitap}
+        yukleniyor={yukleniyor}
+        acik={menuAcik}
+        onKapat={() => setMenuAcik(false)}
+      />
     </main>
   );
 }

@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect, useMemo, useState, type CSSProperties } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { useRouter } from "next/navigation";
 import { Ikon, OdulIkonu, YedekliGorsel } from "../ui";
+import { KesifMenusu } from "./KesifMenusu";
 import { books } from "../../data/books";
-import { rozetIconKey } from "../../lib/derive";
+import { madalyaIconKey, rozetIconKey } from "../../lib/derive";
 import styles from "../../../app/tasarim/harita-yeni/harita-yeni.module.css";
+import { bolgeArkaplani, kitapKapagi, YEDEK } from "../../lib/varlikYollari";
 
 export type AtlasDurakDurumu = "completed" | "active" | "locked" | "preparing";
 
@@ -39,7 +41,6 @@ type AtlasHaritaProps = {
   bolgeler: AtlasBolge[];
   yukleniyor?: boolean;
   bildirim?: string | null;
-  onProfilSecimineDon: () => void;
 };
 
 const durumIkonu = {
@@ -52,73 +53,160 @@ const durumIkonu = {
 type Nokta = { x: number; y: number };
 
 /**
- * Durak koordinatları (PROJE-MODELI 3.7 — REVİZE 25 Tem 2026).
- * Her SIRA kendi içinde tam genişliğe yayılır; sırada tek kitap kalsa da denge
- * bozulmaz. Sıralar yılan düzeninde bağlanır. Konumlar hesaplanır — eskiden
- * 24 ayrı CSS kuralında elle yazılıydı ve kitap sayısına göre istisna isterdi.
+ * Durak koordinatları (PROJE-MODELI 3.7 — REVİZE 29 Temmuz 2026, Hasan).
+ *
+ * IZGARA KALDIRILDI. Önceki düzende bir sıradaki 2–3 kitap TAM AYNI
+ * yükseklikteydi; bu haritaya tablo görüntüsü veriyor, sıra sonlarında keskin
+ * dönüş üretiyor ve aynı bölge geniş ekranda 3 sütun, dar ekranda 2 sütun
+ * olduğu için cihazdan cihaza başka bir şekle bürünüyordu.
+ *
+ * Yeni kural: kitaplar **sola-sağa dönüşümlü**, her biri bir öncekinden biraz
+ * daha aşağıda. Hiçbir iki durak aynı hizada değildir, yol kesintisiz akar ve
+ * bölge her cihazda aynı şekli korur — yalnız oranları değişir.
+ *
+ * SIĞMA HESABI (kaydırma neden gerekmiyor): dikey çakışma riski KOMŞU duraklar
+ * arasında değil, AYNI TARAFTAKİ duraklar arasındadır — komşular yatayda zaten
+ * ayrılmıştır. Bu yüzden dikey adım bir kartın tam boyu kadar değil YARISI
+ * kadar olmak zorundadır. 6 kitap her kırılımda kaydırmasız sığar; 35 durağı
+ * yedi bölgeye bölme kararı (25 Tem 2026) böylece korunur.
+ *
+ * BİTİŞ: eşleştirme SONDAN kurulur, yani son kitap 4, 5 ve 6 kitaplık
+ * bölgelerin hepsinde SAĞDA biter. Tek yan etki, 5 kitaplık bölgenin soldan
+ * değil sağdan başlamasıdır.
  */
 function durakKonumlari(adet: number, dar: boolean): Nokta[] {
-  // Dar ekranda en fazla 2 sütun: 3 sütunda ad etiketleri yan yana sığmıyor.
-  const enCokSutun = dar ? 2 : 3;
-  const sutun = Math.min(enCokSutun, adet <= 3 ? adet : Math.ceil(adet / 2));
-  const sira = Math.ceil(adet / sutun);
+  if (adet < 1) return [];
 
-  // Duraklar sahne başlığının ALTINDAN başlar. Dar ekranda başlık ve bölge
-  // açıklaması daha çok satıra yayıldığı için başlangıç aşağı çekilir; alt
-  // sınır da yukarı alınır, çünkü Keşif İskelesi `sticky` olarak altta durur.
-  const xBas = dar ? 27 : 16;
-  const xSon = dar ? 73 : 84;
-  const yBas = sira === 1 ? 60 : dar ? 40 : 38;
-  const ySon = dar ? 72 : 84;
+  /*
+    Yatay salınım GENİŞ ekranda dört duraklıktır: sağ → orta → sol → orta.
+    Sadece sol-sağ dalga denendi ve bırakıldı: her ayak sahnenin tamamını kat
+    ettiği için ayaklar birbirine paralel geçiyor, yol yerine üst üste binmiş
+    şeritler gibi görünüyordu. Dört duraklık dalgada bir ayağın yatay yolu
+    yarıya iner, eğim dengelenir.
 
-  const noktalar: Nokta[] = [];
-  for (let s = 0; s < sira; s += 1) {
-    const satirAdedi = Math.min(sutun, adet - s * sutun);
-    const y = sira === 1 ? yBas : yBas + ((ySon - yBas) * s) / (sira - 1);
+    DAR ekranda tam tersi gerekir. Orada dikey adım ~67px'e iniyor, yani komşu
+    durakların ad kartları dikeyde kaçınılmaz olarak üst üste geliyor; onları
+    ayıran tek şey YATAY mesafe. Dört duraklık dalgada komşu iki durak yalnız
+    bir genlik kadar ayrılıyor ve kartlar çakışıyordu. İki duraklık dalgada
+    ayrım iki katına çıkar (2 × genlik) ve çakışma biter.
+  */
+  const salinim = dar ? [1, -1] : [1, 0, -1, 0];
+  // Genlik dar ekranda daha içeride: ad kartı (116px) sahnenin dışına taşmamalı.
+  const genlik = dar ? 24 : 33;
+  /*
+    Dikey aralık. Üst sınır sahne başlığının ALTINDAN başlar (madalyonun yarısı
+    da hesaba katılır), alt sınır ad kartının tamamına yer bırakır — durak
+    noktası madalyonun merkezidir, kart tamamen noktanın altına sarkar.
 
-    const xler: number[] = [];
-    for (let i = 0; i < satirAdedi; i += 1) {
-      xler.push(
-        satirAdedi === 1 ? (xBas + xSon) / 2 : xBas + ((xSon - xBas) * i) / (satirAdedi - 1),
-      );
-    }
-    // Tek numaralı sıralar ters akar — yol kesintisiz devam eder.
-    if (s % 2 === 1) xler.reverse();
-    xler.forEach((x) => noktalar.push({ x, y }));
-  }
-  return noktalar.slice(0, adet);
+    Aralık, "aynı x'teki iki durak en az bir kart boyu kadar ayrı olmalı"
+    kuralının izin verdiği kadar GENİŞ tutulur: dikey adım büyüdükçe ayakların
+    eğimi artar ve yol daha az yatık görünür. En sıkışık kırılım tablet
+    yataydır (sahne ~510px); madalyon ölçüleri oraya göre kısılmıştır.
+  */
+  // Geniş ekran sınırları en dar iki duruma göre kalibre edilmiştir:
+  // üst sınır ALT BAŞLIĞI olan bölgelere (Rahmet Yolculuğu, Emaneti Taşıyan
+  // Dört Dost — başlık bir satır uzun), alt sınır ADI İKİ SATIRA SARAN
+  // kitaplara (aynı bölgeler — ad kartı bir satır uzun).
+  const yBas = dar ? 27 : 32;
+  const ySon = dar ? 82 : 83;
+
+  return Array.from({ length: adet }, (_, index) => ({
+    // Dalga SONDAN sayılır — son durak daima sağda biter.
+    x: 50 + genlik * salinim[(adet - 1 - index) % salinim.length],
+    y: adet === 1 ? (yBas + ySon) / 2 : yBas + ((ySon - yBas) * index) / (adet - 1),
+  }));
 }
-
-const kelepce = (deger: number, a: number, b: number) =>
-  Math.max(Math.min(a, b), Math.min(Math.max(a, b), deger));
 
 /**
- * Noktalardan geçen akıcı eğri (Catmull-Rom → kübik Bézier). Yol duraklardan
- * türetildiği için son duraktan sonra devam etmez; 4 kitaplık bölgede altta
- * sarkan çizgi kalmaz. Kontrol noktaları parça sınırlarına kelepçelenir; yılan
- * düzeninde yön ters döndüğünde yol kendi üstüne kıvrılmıyor.
+ * İki durağın ortasındaki kavis payı — PİKSEL (KARAR 29 Tem 2026 — Hasan).
+ * Yol SVG'si sahnenin birebir piksel ölçüsünde çizildiği için tek değer
+ * yeter; eskiden viewBox `preserveAspectRatio="none"` ile esnetildiğinden
+ * yatay ve dikey pay ayrı ayrı verilmek zorundaydı.
+ *
+ * DURAK KONUMLARI DEĞİŞMEZ — yalnız iki durak arasındaki yol kavis yapar.
  */
-function akiciYol(noktalar: Nokta[]): string {
-  if (noktalar.length < 2) return "";
-  const p = noktalar;
-  let d = `M ${p[0].x} ${p[0].y}`;
-  for (let i = 0; i < p.length - 1; i += 1) {
-    const p0 = p[i - 1] ?? p[i];
-    const p1 = p[i];
-    const p2 = p[i + 1];
-    const p3 = p[i + 2] ?? p2;
-    const c1 = {
-      x: kelepce(p1.x + (p2.x - p0.x) / 6, p1.x, p2.x),
-      y: kelepce(p1.y + (p2.y - p0.y) / 6, p1.y, p2.y),
-    };
-    const c2 = {
-      x: kelepce(p2.x - (p3.x - p1.x) / 6, p1.x, p2.x),
-      y: kelepce(p2.y - (p3.y - p1.y) / 6, p1.y, p2.y),
-    };
-    d += ` C ${c1.x} ${c1.y}, ${c2.x} ${c2.y}, ${p2.x} ${p2.y}`;
+const KAVIS = 26;
+
+/**
+ * İki durağın ortasına yerleşen kavis noktası. Kavis KONTROL NOKTASINA değil
+ * GEOMETRİYE eklenir — bu ayrım kritik (DÜZELTME 29 Tem 2026): kontrol noktası
+ * yöntemiyle her parça bağımsız kamburlaşıyor, iki parçanın birleştiği yerde
+ * (yani tam durağın üstünde) teğet kırılıyor ve aşağı bakan bir V çentiği
+ * oluşuyordu. Kavis noktası listeye girince eğri her yerde sürekli olur.
+ *
+ * Pay ayağın DİKİNE eklenir; yönü daima yukarıdır, çünkü ad kartları
+ * madalyonun altında durur ve aşağı kavis onların üstünden geçerdi.
+ */
+function kavisNoktasi(p1: Nokta, p2: Nokta): Nokta {
+  const dx = p2.x - p1.x;
+  const dy = p2.y - p1.y;
+  const uzunluk = Math.hypot(dx, dy) || 1;
+  let dikX = -dy / uzunluk;
+  let dikY = dx / uzunluk;
+  if (dikY > 0) {
+    dikX = -dikX;
+    dikY = -dikY;
   }
-  return d;
+  return {
+    x: (p1.x + p2.x) / 2 + dikX * KAVIS,
+    y: (p1.y + p2.y) / 2 + dikY * KAVIS,
+  };
 }
+
+/**
+ * İki durak arasındaki her parçayı AYRI bir `d` olarak üretir. Parçaların ayrı
+ * olması kalan yolun durak durak solmasını ve fenerin tek parçada koşmasını
+ * mümkün kılar. Ek parça çizilmez — yol yine son durakta biter.
+ *
+ * Teğetler GENİŞLETİLMİŞ listeden (duraklar + aralarındaki kavis noktaları)
+ * hesaplanır; Catmull-Rom bu listede C1-süreklidir, yani duraklarda ve
+ * virajlarda kırılma olmaz. Kontrol noktası kelepçesi KALDIRILDI: kelepçe
+ * eğriyi parçanın kutusuna hapsedip sıra değişimini keskin köşeye çeviriyordu.
+ * Kendi üstüne kıvrılma riskini kelepçe değil, kavis noktalarının kendisi
+ * önler — yön ters döndüğünde ara nokta virajı dışarı taşır.
+ */
+function yolParcalari(duraklar: Nokta[]): string[] {
+  if (duraklar.length < 2) return [];
+
+  const hepsi: Nokta[] = [];
+  duraklar.forEach((durak, index) => {
+    hepsi.push(durak);
+    if (index < duraklar.length - 1) hepsi.push(kavisNoktasi(durak, duraklar[index + 1]));
+  });
+
+  const kubik = (i: number) => {
+    const p0 = hepsi[i - 1] ?? hepsi[i];
+    const p1 = hepsi[i];
+    const p2 = hepsi[i + 1];
+    const p3 = hepsi[i + 2] ?? p2;
+    const c1 = { x: p1.x + (p2.x - p0.x) / 6, y: p1.y + (p2.y - p0.y) / 6 };
+    const c2 = { x: p2.x - (p3.x - p1.x) / 6, y: p2.y - (p3.y - p1.y) / 6 };
+    return `C ${c1.x} ${c1.y}, ${c2.x} ${c2.y}, ${p2.x} ${p2.y}`;
+  };
+
+  // Her durak parçası iki kübik parçadan oluşur: durak → kavis → durak.
+  return duraklar.slice(0, -1).map((_, parca) => {
+    const bas = parca * 2;
+    return `M ${hepsi[bas].x} ${hepsi[bas].y} ${kubik(bas)} ${kubik(bas + 1)}`;
+  });
+}
+
+/**
+ * Kalan yolun solma eğrisi: sıradaki durağa giden parça en parlak, her parçada
+ * bir kademe soluklaşır (KARAR 29 Tem 2026 — Hasan). Uzak duraklar kendiliğinden
+ * geri plana çekilir; 6 kitaplık bölgede yol tek bir düz altın şerit olmaktan
+ * çıkar.
+ *
+ * Alt sınır 0.40'tır ve pazarlık konusu değildir: daha aşağısında yol, sahnenin
+ * aydınlık (gün batımı, yeşil vadi) bölgelerinde büsbütün kayboluyor ve harita
+ * "yol" olmaktan çıkıp dağınık madalyonlara dönüşüyor — 0.26 ile denendi, alt
+ * sıra tamamen okunmaz oldu. Yakın parça eski tekdüze değerden (%52) belirgin
+ * biçimde parlak, uzak parça ondan bir tık soluktur; sıralama buradan doğar.
+ */
+const solma = (uzaklik: number) => Math.max(0.4, 0.94 * 0.78 ** uzaklik);
+
+/** Sıradaki durağı olmayan bölgede yolun tekdüze opaklığı (bkz. `hedefVar`). */
+const DURGUN_YOL = 0.5;
 
 function oncelikliDurakId(bolge?: AtlasBolge) {
   return (
@@ -135,6 +223,11 @@ function durumMetni(durak: AtlasDurak) {
   return durak.tamamlananBolum > 0 ? "Devam Ediyor" : "Yeni Açıldı";
 }
 
+/** CSS'teki mobil bloğuyla AYNI eşik olmalı (harita-yeni.module.css @620px).
+ *  Eskiden 639px'ti; 621–639px bandında JS dar yerleşim uygularken CSS
+ *  masaüstü ölçülerini kullanıyor ve duraklar üst üste biniyordu. */
+const MOBIL_SORGU = "(max-width: 620px)";
+
 export function AtlasHarita({
   profil,
   toplamRozet,
@@ -142,46 +235,91 @@ export function AtlasHarita({
   bolgeler,
   yukleniyor = false,
   bildirim,
-  onProfilSecimineDon,
 }: AtlasHaritaProps) {
   const router = useRouter();
   const [bolgeId, setBolgeId] = useState(bolgeler[0]?.id ?? "");
   const bolge = bolgeler.find((item) => item.id === bolgeId) ?? bolgeler[0];
   const [durakId, setDurakId] = useState(oncelikliDurakId(bolge));
   const [detayAcik, setDetayAcik] = useState(false);
-  // Dar ekranda durak yerleşimi iki sütuna iner (PROJE-MODELI 3.7).
+  const [menuAcik, setMenuAcik] = useState(false);
+  const sekmeSeridiRef = useRef<HTMLDivElement | null>(null);
+  const [aciklamaAcik, setAciklamaAcik] = useState(false);
+  // Dar ekranda salınım genliği daralır (PROJE-MODELI 3.7).
   const [dar, setDar] = useState(false);
+  /*
+    Yol SVG'si sahnenin BİREBİR piksel ölçüsünde çizilir (KARAR 29 Tem 2026).
+    Eskiden viewBox 100×100 idi ve `preserveAspectRatio="none"` ile esniyordu;
+    bunun iki bedeli vardı: kavis payı yatay ve dikeyde farklı görünüyor,
+    `pathLength` + `non-scaling-stroke` birlikte çalışmadığı için fener ışığı
+    tek bir ışık yerine yol boyunca tekrarlayan lekelere bölünüyordu. Birebir
+    ölçüde kullanıcı birimi = ekran pikseli, ikisi de kendiliğinden düzelir.
+  */
+  const gozlemciRef = useRef<ResizeObserver | null>(null);
+  const [sahneOlcu, setSahneOlcu] = useState({ g: 0, y: 0 });
+  /*
+    Callback ref, `useRef` + `useEffect([])` DEĞİL: bölge verisi eşzamansız
+    geliyor, ilk render'da sahne henüz DOM'da yok. Boş bağımlılıklı bir effect
+    o anda null ref görüp bir daha çalışmıyor ve yol hiç çizilmiyordu.
+  */
+  const sahneRef = useCallback((el: HTMLElement | null) => {
+    gozlemciRef.current?.disconnect();
+    gozlemciRef.current = null;
+    if (!el) return;
+    const gozlemci = new ResizeObserver(([kayit]) => {
+      const { width, height } = kayit.contentRect;
+      setSahneOlcu((onceki) =>
+        Math.abs(onceki.g - width) < 1 && Math.abs(onceki.y - height) < 1
+          ? onceki
+          : { g: width, y: height },
+      );
+    });
+    gozlemci.observe(el);
+    gozlemciRef.current = gozlemci;
+  }, []);
 
   useEffect(() => {
-    const mq = window.matchMedia("(max-width: 639px)");
+    const mq = window.matchMedia(MOBIL_SORGU);
     const uygula = () => setDar(mq.matches);
     uygula();
     mq.addEventListener("change", uygula);
     return () => mq.removeEventListener("change", uygula);
   }, []);
 
+  useEffect(() => {
+    const aktif = sekmeSeridiRef.current?.querySelector<HTMLElement>('[aria-selected="true"]');
+    aktif?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+  }, [bolgeId]);
+
   function bolgeSec(yeniBolgeId: string) {
     const yeniBolge = bolgeler.find((item) => item.id === yeniBolgeId);
     setBolgeId(yeniBolgeId);
     setDurakId(oncelikliDurakId(yeniBolge));
     setDetayAcik(false);
+    setAciklamaAcik(false);
   }
 
   const seciliDurak =
     bolge?.duraklar.find((durak) => durak.id === durakId) ?? bolge?.duraklar[0];
 
+  // Konumlar yüzde olarak hesaplanır (durak işaretçileri de yüzdeyle
+  // konumlanır), yol çizimi için sahnenin pikseline çevrilir.
   const konumlar = useMemo(
     () => durakKonumlari(bolge?.duraklar.length ?? 0, dar),
     [bolge, dar],
   );
-  const yol = useMemo(() => akiciYol(konumlar), [konumlar]);
-  // Tamamlanan kısım AYRI bir yol olarak çizilir. `pathLength` + dasharray
-  // burada yanıltıcı olurdu: viewBox `preserveAspectRatio="none"` ile yatayda
-  // esnediği için yol uzunluğu oranı görsel orana denk gelmiyor.
+  const konumlarPx = useMemo(
+    () => konumlar.map((n) => ({ x: (n.x / 100) * sahneOlcu.g, y: (n.y / 100) * sahneOlcu.y })),
+    [konumlar, sahneOlcu],
+  );
+  const parcalar = useMemo(
+    () => (sahneOlcu.g > 0 ? yolParcalari(konumlarPx) : []),
+    [konumlarPx, sahneOlcu],
+  );
+  const yol = useMemo(() => parcalar.join(" "), [parcalar]);
   const tamamYol = useMemo(() => {
     const tamamlanan = bolge?.duraklar.filter((d) => d.durum === "completed").length ?? 0;
-    return tamamlanan > 1 ? akiciYol(konumlar.slice(0, tamamlanan)) : "";
-  }, [bolge, konumlar]);
+    return parcalar.slice(0, Math.max(0, tamamlanan - 1)).join(" ");
+  }, [bolge, parcalar]);
 
   if (!bolge || !seciliDurak) return null;
 
@@ -193,6 +331,28 @@ export function AtlasHarita({
     : seciliDurak.tamamlananBolum > 0
       ? "Okumaya Devam Et"
       : "Yolculuğa Başla";
+  /*
+    Solma ve fener ışığı SIRADAKİ DURAĞA göre konumlanır. Aktif durak yoksa
+    (bölgenin tamamı hazırlanıyor ya da tamamı bitmiş) ne fener çizilir ne de
+    solma sıralaması kurulur: yol baştan sona TEK ve soluk bir değerde kalır.
+    Yoksa hiçbir kitabın açılmadığı bir bölgede ilk parça en parlak görünür ve
+    ortada olmayan bir hedefi işaret ederdi.
+  */
+  const aktifIndex = bolge.duraklar.findIndex((durak) => durak.durum === "active");
+  const hedefVar = aktifIndex >= 0;
+  const cipa = Math.max(0, aktifIndex - 1);
+  const parcaOpakligi = (index: number) => (hedefVar ? solma(Math.max(0, index - cipa)) : DURGUN_YOL);
+  const kalanParcalar = parcalar.map((d, index) => ({
+    d,
+    bas: konumlarPx[index],
+    son: konumlarPx[index + 1],
+    basOpaklik: parcaOpakligi(index),
+    sonOpaklik: parcaOpakligi(index + 1),
+    gradyanId: `yol-solma-${bolge.id}-${index}`,
+  }));
+  // Fener YALNIZCA aktif durağa giden parçada koşar; yolun geri kalanı durgundur.
+  const fenerYolu = aktifIndex > 0 ? parcalar[aktifIndex - 1] ?? null : null;
+
   const kitapIcerigi = books.find((kitap) => kitap.routePrefix === seciliDurak.kitapKey);
   const bolumRozetleri = Array.from({ length: seciliDurak.toplamBolum }, (_, index) => ({
     sira: index + 1,
@@ -204,21 +364,27 @@ export function AtlasHarita({
   return (
     <main className={`tema-cocuk ${styles.page}`}>
       <div className={styles.atlasShell}>
+        {/*
+          Tek satır (KARAR 28 Tem 2026): logo HER ekranda solda. Geri butonu
+          kaldırıldı — veli paneline gidiyordu, çocuk okuma ekranında yanlıştı;
+          o bağlantı artık keşif menüsünün içinde. Rozet/madalya sayaçları ve
+          unvan da menüye taşındı, böylece orta alan kitaplara kaldı.
+        */}
         <header className={styles.explorerBar}>
-          <div className={styles.previewGroup}>
-            <span className={styles.previewBadge}><Ikon ad="harita" boyut={17} /> Keşif Dünyası</span>
-            <button className={styles.backLink} type="button" onClick={onProfilSecimineDon}>
-              <Ikon ad="geri" boyut={18} /> Profil Seçimine Dön
-            </button>
-          </div>
+          <span className={styles.previewBadge}><Ikon ad="harita" boyut={18} /> Keşif Dünyası</span>
           <div className={styles.profileGroup}>
-            <span className={styles.avatar}><OdulIkonu tip="avatar" anahtar={profil.avatarAnahtari} boyut={42} alt="" /></span>
-            <span className={styles.profileCopy}><strong>{profil.ad}</strong><small><Ikon ad="yildiz" boyut={12} /> {profil.unvan}</small></span>
+            <span className={styles.avatar}><OdulIkonu tip="avatar" anahtar={profil.avatarAnahtari} boyut={38} alt="" /></span>
+            <span className={styles.profileCopy}><strong>{profil.ad}</strong></span>
           </div>
-          <dl className={styles.profileStats} aria-label="Keşif özeti">
-            <div><dt>Toplam Rozet</dt><dd><Ikon ad="rozet" boyut={19} /> {yukleniyor ? "—" : toplamRozet}</dd></div>
-            <div><dt>Kitap Tamamlandı</dt><dd><Ikon ad="kitap" boyut={19} /> {yukleniyor ? "—" : tamamlananKitap}</dd></div>
-          </dl>
+          <button
+            type="button"
+            className={styles.menuButonu}
+            aria-label="Keşif menüsünü aç"
+            aria-expanded={menuAcik}
+            onClick={() => setMenuAcik(true)}
+          >
+            <Ikon ad="menu" boyut={21} />
+          </button>
         </header>
 
         <section className={styles.regionRail} aria-labelledby="regions-title">
@@ -226,7 +392,52 @@ export function AtlasHarita({
             <span><Ikon ad="harita" boyut={20} /></span>
             <div><p id="regions-title">Keşif Bölgeleri</p><small>Yeni bir dünya seç</small></div>
           </div>
-          <div className={styles.regionTabs} role="tablist" aria-label="Keşif bölgeleri">
+          {/*
+            Mobil bölge gezinmesi (27 Tem 2026). Dar ekranda sekmeler bölge
+            adlarını kesiyordu ("Bereketli Ai…"), ayrıca sayaç sahnenin altında
+            durduğu için kitaplara yer kalmıyordu. Oklar buraya alındı: adlar
+            tam görünür, sahnenin altı kitaplara kalır.
+          */}
+          <div className={styles.regionStepper}>
+            <button
+              type="button"
+              aria-label="Önceki keşif bölgesi"
+              disabled={bolgeIndex === 0}
+              onClick={() => bolgeSec(bolgeler[bolgeIndex - 1].id)}
+            >
+              <Ikon ad="ok-sol" boyut={17} />
+            </button>
+            <span className={styles.regionStepperCopy} aria-live="polite">
+              <small>{bolge.sira}. Bölge · {bolge.duraklar.length} Kitap</small>
+              <strong>{bolge.ad}</strong>
+            </span>
+            <button
+              type="button"
+              aria-label="Sonraki keşif bölgesi"
+              disabled={bolgeIndex === bolgeler.length - 1}
+              onClick={() => bolgeSec(bolgeler[bolgeIndex + 1].id)}
+            >
+              <Ikon ad="ok-sag" boyut={17} />
+            </button>
+          </div>
+
+          {/*
+            Tablet ve üstü: oklar + sekme şeridi. Şerit `scroll-snap` ile
+            ortalanır; komşu bölgeler kenarlardan kesik görünür, böylece devam
+            ettiği anlaşılır. Sahnenin sağ üstündeki sayaç KALDIRILDI — başlık
+            metni oraya doğru genişliyor ve satır sayısı düşüyor (28 Tem 2026).
+          */}
+          <div className={styles.regionTabsNav}>
+            <button
+              type="button"
+              className={styles.regionNavOk}
+              aria-label="Önceki keşif bölgesi"
+              disabled={bolgeIndex === 0}
+              onClick={() => bolgeSec(bolgeler[bolgeIndex - 1].id)}
+            >
+              <Ikon ad="ok-sol" boyut={18} />
+            </button>
+            <div className={styles.regionTabs} role="tablist" aria-label="Keşif bölgeleri" ref={sekmeSeridiRef}>
             {bolgeler.map((item) => (
               <button
                 type="button"
@@ -239,6 +450,16 @@ export function AtlasHarita({
                 <span>{item.sira}</span><strong>{item.ad}</strong><small>{item.duraklar.length} kitap</small>
               </button>
             ))}
+            </div>
+            <button
+              type="button"
+              className={styles.regionNavOk}
+              aria-label="Sonraki keşif bölgesi"
+              disabled={bolgeIndex === bolgeler.length - 1}
+              onClick={() => bolgeSec(bolgeler[bolgeIndex + 1].id)}
+            >
+              <Ikon ad="ok-sag" boyut={18} />
+            </button>
           </div>
         </section>
 
@@ -247,8 +468,20 @@ export function AtlasHarita({
             className={styles.mapStage}
             data-region={bolge.sira}
             aria-labelledby="atlas-title"
-            /* Bölgenin kendi sahne görseli; dosya yoksa CSS ortak görsele düşer. */
-            style={{ "--bolge-arkaplan": `url("/bolgeler/bolge-${bolge.id}.png")` } as CSSProperties}
+            ref={sahneRef}
+            /*
+              Sahne görseli iki katmandır, CSS'te üstten alta denenir: ekran
+              yönüne özel dosya → ortak yedek. Yüklenemeyen katman sessizce boş
+              kalır ve alttaki görünür; eksik dosya ekranı bozmaz, JS kontrolü
+              gerekmez (PROJE-MODELI 6.1). Aradaki "bölgenin yönsüz dosyası"
+              katmanı 30 Tem 2026'da kaldırıldı: on dört kadraj da üretildikten
+              sonra bölge başına boşa giden bir istek üretmekten başka iş
+              yapmıyordu.
+            */
+            style={{
+              "--bolge-arkaplan-dikey": bolgeArkaplani(bolge.id, "dikey"),
+              "--bolge-arkaplan-yatay": bolgeArkaplani(bolge.id, "yatay"),
+            } as CSSProperties}
           >
             <div className={styles.mapShade} aria-hidden="true" />
             <div className={styles.mapHeading}>
@@ -257,10 +490,54 @@ export function AtlasHarita({
               {bolge.altBaslik ? <strong>{bolge.altBaslik}</strong> : null}
               <span>{bolge.aciklama}</span>
             </div>
-            <svg className={styles.trail} viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-              <path className={styles.trailShadow} d={yol} />
-              <path className={styles.trailBase} d={yol} />
+            {/*
+              Yol beş katmandır, sırası önemli:
+                1. kenar   — patikanın koyu dış hattı
+                2. gövde   — kum rengi yol yüzeyi (TEK parça: bkz. CSS notu)
+                3. tamamlanan — gövdenin yeşile boyanmış kısmı
+                4. orta çizgi — parça parça, her biri kendi solma gradyanıyla
+                5. fener   — yalnız sıradaki durağa giden parçada
+              Orta çizgi tamamlanan katmanın ÜSTÜNDE kalır; altında kalsaydı
+              yeşil boyanan kısımda akış görünmez olurdu.
+
+              Gradyan `userSpaceOnUse` ile parçanın KENDİ iki ucuna bağlanır;
+              tek bir yatay gradyan kullanılsaydı yılan düzeninde sağdan sola
+              akan ayaklarda renk ters dönerdi.
+            */}
+            <svg
+              className={styles.trail}
+              viewBox={`0 0 ${sahneOlcu.g || 1} ${sahneOlcu.y || 1}`}
+              aria-hidden="true"
+            >
+              <defs>
+                {kalanParcalar.map((parca) => (
+                  <linearGradient
+                    key={parca.gradyanId}
+                    id={parca.gradyanId}
+                    className={styles.trailFade}
+                    gradientUnits="userSpaceOnUse"
+                    x1={parca.bas?.x ?? 0}
+                    y1={parca.bas?.y ?? 0}
+                    x2={parca.son?.x ?? 0}
+                    y2={parca.son?.y ?? 0}
+                  >
+                    <stop offset="0" stopOpacity={parca.basOpaklik} />
+                    <stop offset="1" stopOpacity={parca.sonOpaklik} />
+                  </linearGradient>
+                ))}
+              </defs>
+              <path className={styles.trailEdge} d={yol} />
+              <path className={styles.trailRoad} d={yol} />
               {tamamYol ? <path className={styles.trailCompleted} d={tamamYol} /> : null}
+              {kalanParcalar.map((parca) => (
+                <path
+                  key={parca.gradyanId}
+                  className={styles.trailBase}
+                  d={parca.d}
+                  stroke={`url(#${parca.gradyanId})`}
+                />
+              ))}
+              {fenerYolu ? <path className={styles.trailBeacon} d={fenerYolu} pathLength={100} /> : null}
             </svg>
 
             <ol className={styles.stops} aria-label={`${bolge.ad} kitapları`}>
@@ -278,12 +555,15 @@ export function AtlasHarita({
                     onClick={() => {
                       setDurakId(durak.id);
                       setDetayAcik(true);
+                      // Başka kitaba geçince açıklama kapanır — panel hep aynı
+                      // yükseklikte açılsın.
+                      setAciklamaAcik(false);
                     }}
                   >
                     <span className={styles.marker}>
                       <YedekliGorsel
-                        src={`/kapaklar/kapak-${durak.kitapKey}.png`}
-                        yedekSrc="/kapaklar/placeholder.svg"
+                        src={kitapKapagi(durak.kitapKey)}
+                        yedekSrc={YEDEK.kitapKapagi}
                         alt=""
                         width={200}
                         height={300}
@@ -292,23 +572,24 @@ export function AtlasHarita({
                       <i className={styles.markerStatus} aria-hidden="true">
                         <Ikon ad={durumIkonu[durak.durum]} boyut={13} />
                       </i>
-                      <b className={styles.markerNo} aria-hidden="true">{index + 1}</b>
                     </span>
+                    {/*
+                      Kartta YALNIZ ad var (KARAR 29 Tem 2026 — Hasan). Durum
+                      metni ("Tamamlandı" / "Yeni Açıldı" / "Hazırlanıyor")
+                      kaldırıldı: aynı bilgiyi madalyonun üstündeki durum
+                      rozeti zaten gösteriyor, kitap paneli de tekrar ediyordu.
+                      Harita ferahladı, kartın dikey payı ~13px azaldı.
+                      Durum bilgisi ekran okuyucuda `aria-label` içinde durur.
+                    */}
                     <span className={styles.stopLabel}>
                       <strong>{durak.ad}</strong>
-                      <em>{durumMetni(durak)}</em>
                     </span>
                   </button>
                 </li>
               ))}
             </ol>
 
-            <div className={styles.regionPager}>
-              <button type="button" disabled={bolgeIndex === 0} aria-label="Önceki keşif bölgesi" onClick={() => bolgeSec(bolgeler[bolgeIndex - 1].id)}><Ikon ad="ok-sol" boyut={17} /></button>
-              <span>{bolge.sira} / {bolgeler.length}</span>
-              <button type="button" disabled={bolgeIndex === bolgeler.length - 1} aria-label="Sonraki keşif bölgesi" onClick={() => bolgeSec(bolgeler[bolgeIndex + 1].id)}><Ikon ad="ok-sag" boyut={17} /></button>
-            </div>
-          </section>
+              </section>
 
           <button
             type="button"
@@ -327,7 +608,7 @@ export function AtlasHarita({
             <div className={styles.panelTopline}><span>Seçili keşif durağı</span><strong>{seciliDurak.id} / 35</strong></div>
             <div className={styles.bookHero}>
               <div className={styles.coverFrame}>
-                <YedekliGorsel src={`/kapaklar/kapak-${seciliDurak.kitapKey}.png`} yedekSrc="/kapaklar/placeholder.svg" alt={`${seciliDurak.ad} kitap kapağı`} width={597} height={891} className={styles.cover} />
+                <YedekliGorsel src={kitapKapagi(seciliDurak.kitapKey)} yedekSrc={YEDEK.kitapKapagi} alt={`${seciliDurak.ad} kitap kapağı`} width={597} height={891} className={styles.cover} />
                 {kilitli ? <span className={styles.coverLock}><Ikon ad="kilit" boyut={22} /></span> : null}
               </div>
               <div className={styles.bookIdentity}>
@@ -336,10 +617,37 @@ export function AtlasHarita({
                 <p>{seciliDurak.altBaslik}</p>
               </div>
             </div>
-            {/* Keşif açıklaması hero'nun ALTINDA, tam genişlikte durur: mobilde
-                metin ve görsel yan yana konmaz (PROJE-MODELI.md 3.5). */}
+            {/*
+              Açıklama YALNIZCA tablet yatayda aç/kapa bölümdür (KARAR 29 Tem
+              2026 — Hasan): orada dikey alan dar, açıklama kapalıyken
+              "Kazanılacak Madalya" ve ana eylem kaydırmasız görünür. Mobil,
+              tablet dikey ve masaüstünde panel yeterince uzun olduğu için metin
+              doğrudan yazılır.
+
+              Buton ve metin HER ZAMAN DOM'a girer; hangisinin görüneceğine CSS
+              karar verir. Metni koşullu render etseydik düz modda kapalı
+              durumda hiç görünmezdi.
+            */}
             {seciliDurak.aciklama ? (
-              <p className={styles.bookDescription}>{seciliDurak.aciklama}</p>
+              <div className={styles.aciklamaBolumu}>
+                <button
+                  type="button"
+                  className={styles.aciklamaButonu}
+                  aria-expanded={aciklamaAcik}
+                  aria-controls="kitap-aciklamasi"
+                  onClick={() => setAciklamaAcik((acik) => !acik)}
+                >
+                  <Ikon ad="kitap" boyut={17} />
+                  <span>Kitap Açıklaması</span>
+                  <Ikon ad={aciklamaAcik ? "ok-sol" : "ok-sag"} boyut={16} />
+                </button>
+                <p
+                  className={`${styles.bookDescription} ${aciklamaAcik ? styles.bookDescriptionAcik : ""}`}
+                  id="kitap-aciklamasi"
+                >
+                  {seciliDurak.aciklama}
+                </p>
+              </div>
             ) : null}
 
             {hazirDegil ? (
@@ -358,11 +666,18 @@ export function AtlasHarita({
                     <h3 id="chapter-rewards-title">Bölüm Rozetleri</h3>
                     <strong>{seciliDurak.tamamlananBolum} / {seciliDurak.toplamBolum}</strong>
                   </div>
-                  <ol>
+                  {/*
+                    Varsayılan: 4 sütunlu ızgara, rozetin altında bölüm adı.
+                    YALNIZCA tablet yatayda (kısa ekran) tek satıra iner ve alt
+                    yazılar gizlenir — orada dikey alan dar (KARAR 29 Tem 2026).
+                    Tek satırda kare boyutu `--rozet-adet` ile hesaplanır; rozet
+                    sayısı kitaptan kitaba değişiyor (Âdem 8, Şît 4…).
+                  */}
+                  <ol style={{ "--rozet-adet": bolumRozetleri.length } as CSSProperties}>
                     {bolumRozetleri.map((rozet) => (
-                      <li key={rozet.iconKey} title={rozet.ad}>
+                      <li key={rozet.iconKey} title={`${rozet.sira}. bölüm — ${rozet.ad}`}>
                         <span>
-                          <OdulIkonu tip="rozet" anahtar={rozet.iconKey} kazanildi={rozet.kazanildi} boyut={48} alt="" />
+                          <OdulIkonu tip="rozet" anahtar={rozet.iconKey} kazanildi={rozet.kazanildi} boyut={48} alt={`${rozet.sira}. bölüm rozeti`} />
                           {rozet.kazanildi ? <i><Ikon ad="onay" boyut={13} /></i> : null}
                         </span>
                         <small>{rozet.sira}. bölüm</small>
@@ -371,7 +686,7 @@ export function AtlasHarita({
                   </ol>
                 </section>
                 <section className={styles.medalCard} aria-label="Kitap madalyası">
-                  <span><OdulIkonu tip="madalya" anahtar={seciliDurak.kitapKey} kazanildi={seciliDurak.madalyaKazanildi} boyut={52} alt="" /></span>
+                  <span><OdulIkonu tip="madalya" anahtar={madalyaIconKey(seciliDurak.kitapKey)} kazanildi={seciliDurak.madalyaKazanildi} boyut={52} alt="" /></span>
                   <div>
                     <small>{seciliDurak.madalyaKazanildi ? "Kazanılan Madalya" : "Kazanılacak Madalya"}</small>
                     <strong>{seciliDurak.ad} Yolculuk Madalyası</strong>
@@ -398,6 +713,15 @@ export function AtlasHarita({
         </nav>
         {bildirim ? <p className={styles.notice} role="status">{bildirim}</p> : null}
       </div>
+
+      <KesifMenusu
+        profil={profil}
+        toplamRozet={toplamRozet}
+        tamamlananKitap={tamamlananKitap}
+        yukleniyor={yukleniyor}
+        acik={menuAcik}
+        onKapat={() => setMenuAcik(false)}
+      />
     </main>
   );
 }

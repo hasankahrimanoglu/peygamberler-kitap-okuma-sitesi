@@ -284,7 +284,7 @@ denetiminde dört sağlam bölüm kurulamıyorsa ajan metin üretmez; bulgusunu 
 3. Bu dosya: `KITAP-KATALOGU-VE-URETIM-PLANI.md`
 4. Güncel merkezî rozet matrisi: `ROZET-MATRISI.md`
 5. Güncel merkezî sözlükçe sicili: `SOZLUKCE-SICILI.md`
-5. Varsa ek güvenilir kaynaklar ve özellikle çıkarılacak rivayet listesi
+6. Varsa ek güvenilir kaynaklar ve özellikle çıkarılacak rivayet listesi
 
 Ajana ayrıca şu kısa komut verilmelidir:
 

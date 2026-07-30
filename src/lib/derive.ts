@@ -119,9 +119,17 @@ export function rozetAdlari(anahtar: KitapAnahtari): string[] {
   return def ? def.chapters.map((chapter) => chapter.badgeName) : [];
 }
 
-/** Rozet görsel anahtarı: adem-bolum-1 → /rozetler/rozet-adem-bolum-1.png */
+/**
+ * Rozet dosya anahtarı: ("adem", 1) → "hz-adem/bolum-1"
+ * → /rozetler/hz-adem/bolum-1.svg (PROJE-MODELI 6.1, 27 Tem 2026 klasör düzeni).
+ */
 export function rozetIconKey(bookKey: string, chapterNo: number) {
-  return `${bookKey}-bolum-${chapterNo}`;
+  return `hz-${bookKey}/bolum-${chapterNo}`;
+}
+
+/** Madalya dosya anahtarı: "adem" → "hz-adem" → /madalyalar/hz-adem.svg */
+export function madalyaIconKey(bookKey: string) {
+  return `hz-${bookKey}`;
 }
 
 /** Belirli bir bölümün "Bugüne Taşı" görevi (yalnız books.ts içeriği olanlarda). */
@@ -219,7 +227,7 @@ export function madalyaVitrini(
       // Ad her zaman katalogdan türetilir; Supabase final_title/final_badge
       // eski sürümden kalan adları ("Altın Yol Arkadaşı" gibi) taşıyabilir.
       ad: `${book.isim} Yolculuk Madalyası`,
-      iconKey: anahtar.bookKey,
+      iconKey: madalyaIconKey(anahtar.bookKey),
       kazanildi: Boolean(progress?.bitti_mi),
     });
   }

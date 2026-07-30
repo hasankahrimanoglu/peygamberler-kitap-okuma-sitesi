@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Büyük Final Testi">
+  <!-- Bölüm rotasındaki "Final Kapısı" durağının ikonu. Aynı adla değiştir. -->
+  <path d="M24 4 40 12v14c0 11-7 17-16 20-9-3-16-9-16-20V12Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M24 16l3.2 7h7.3l-5.9 4.6 2.3 7.4L24 30.6 17.1 35l2.3-7.4L13.5 23h7.3Z" fill="currentColor"/>
+</svg>

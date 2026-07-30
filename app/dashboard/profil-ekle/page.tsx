@@ -17,11 +17,15 @@ const profileSelectWithChildLogin =
 const profileSelectBase =
   "id, isim, avatar_tipi, unvan, profile_limit, created_at";
 
-const avatarOptions = [
-  { value: "lantern", label: "Kandil" },
-  { value: "book", label: "Kitap" },
-  { value: "star", label: "Yıldız" },
-];
+// 10 avatar; görseller public/avatarlar/avatar-{n}.jpg. Hasan dosyaları aynı
+// adla değiştirdiğinde kod değişmeden yayına girer (PROJE-MODELI 6.1).
+const avatarOptions = Array.from({ length: 10 }, (_, i) => ({
+  value: `avatar-${i + 1}`,
+  label: `${i + 1}. Avatar`,
+}));
+
+/** Aynı anda görünen avatar sayısı; kalanlara oklarla kaydırılır. */
+const GORUNEN_AVATAR = 3;
 
 export default function ProfilEkleSayfasi() {
   const router = useRouter();
@@ -31,7 +35,8 @@ export default function ProfilEkleSayfasi() {
   const [childName, setChildName] = useState("");
   const [childUsername, setChildUsername] = useState("");
   const [childPassword, setChildPassword] = useState("");
-  const [avatarType, setAvatarType] = useState("lantern");
+  const [avatarType, setAvatarType] = useState(avatarOptions[0].value);
+  const [avatarBaslangic, setAvatarBaslangic] = useState(0);
   const [isAdding, setIsAdding] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
 
@@ -199,31 +204,70 @@ export default function ProfilEkleSayfasi() {
             </div>
 
             <div>
-              <span className="mb-2 block text-base font-semibold text-murekkep">
-                Avatar Seç
-              </span>
-              <div className="grid grid-cols-3 gap-3">
-                {avatarOptions.map((avatar) => {
-                  const secili = avatarType === avatar.value;
-                  return (
-                    <button
-                      key={avatar.value}
-                      type="button"
-                      onClick={() => setAvatarType(avatar.value)}
-                      aria-pressed={secili}
-                      className={`flex min-h-[112px] flex-col items-center justify-center gap-2 rounded-kart border-2 p-3 transition-colors ${
-                        secili
-                          ? "border-eylem bg-eylem-yumusak"
-                          : "border-cizgi bg-yuzey-2 hover:border-vurgu"
-                      }`}
-                    >
-                      <OdulIkonu tip="avatar" anahtar={avatar.value} boyut={48} alt={avatar.label} />
-                      <span className="text-sm font-semibold text-murekkep">
-                        {avatar.label}
-                      </span>
-                    </button>
-                  );
-                })}
+              <div className="mb-2 flex items-center justify-between gap-3">
+                <span className="text-base font-semibold text-murekkep">Avatar Seç</span>
+                <span className="text-sm font-medium text-murekkep-soluk">
+                  {avatarBaslangic + 1}–{Math.min(avatarBaslangic + GORUNEN_AVATAR, avatarOptions.length)} / {avatarOptions.length}
+                </span>
+              </div>
+              {/* 10 avatar alt alta uzamasın diye üçlü pencere + oklarla kaydırma. */}
+              <div className="flex items-stretch gap-2">
+                <button
+                  type="button"
+                  aria-label="Önceki avatarlar"
+                  disabled={avatarBaslangic === 0}
+                  onClick={() => setAvatarBaslangic((b) => Math.max(0, b - GORUNEN_AVATAR))}
+                  className="flex h-auto min-h-[44px] w-11 shrink-0 items-center justify-center rounded-buton border border-cizgi bg-yuzey-2 text-murekkep transition hover:border-vurgu disabled:opacity-40"
+                >
+                  <Ikon ad="ok-sol" boyut={20} />
+                </button>
+
+                <ul className="grid flex-1 grid-cols-3 gap-3">
+                  {avatarOptions
+                    .slice(avatarBaslangic, avatarBaslangic + GORUNEN_AVATAR)
+                    .map((avatar) => {
+                      const secili = avatarType === avatar.value;
+                      return (
+                        <li key={avatar.value}>
+                          <button
+                            type="button"
+                            onClick={() => setAvatarType(avatar.value)}
+                            aria-pressed={secili}
+                            className={`flex min-h-[112px] w-full flex-col items-center justify-center gap-2 rounded-kart border-2 p-3 transition-colors ${
+                              secili
+                                ? "border-eylem bg-eylem-yumusak"
+                                : "border-cizgi bg-yuzey-2 hover:border-vurgu"
+                            }`}
+                          >
+                            <OdulIkonu
+                              tip="avatar"
+                              anahtar={avatar.value}
+                              boyut={48}
+                              alt={avatar.label}
+                              className="rounded-full"
+                            />
+                            <span className="text-sm font-semibold text-murekkep">
+                              {avatar.label}
+                            </span>
+                          </button>
+                        </li>
+                      );
+                    })}
+                </ul>
+
+                <button
+                  type="button"
+                  aria-label="Sonraki avatarlar"
+                  disabled={avatarBaslangic + GORUNEN_AVATAR >= avatarOptions.length}
+                  onClick={() =>
+                    setAvatarBaslangic((b) =>
+                      Math.min(avatarOptions.length - GORUNEN_AVATAR, b + GORUNEN_AVATAR),
+                    )
+                  }
+                  className="flex h-auto min-h-[44px] w-11 shrink-0 items-center justify-center rounded-buton border border-cizgi bg-yuzey-2 text-murekkep transition hover:border-vurgu disabled:opacity-40"
+                >
+                  <Ikon ad="ok-sag" boyut={20} />
+                </button>
               </div>
             </div>
 

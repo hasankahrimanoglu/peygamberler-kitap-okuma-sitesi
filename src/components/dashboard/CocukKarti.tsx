@@ -11,6 +11,7 @@ import {
 import type { CocukOzeti } from "../../lib/derive";
 import { goreliZaman } from "../../lib/zaman";
 import type { ChildProfile } from "../../lib/parent/ParentDataProvider";
+import { kitapKapagi, YEDEK } from "../../lib/varlikYollari";
 
 type GuncelGorev = {
   ad: string;
@@ -80,8 +81,8 @@ export function CocukKarti({
             <div className="mt-3 flex flex-col gap-4 sm:flex-row sm:items-center">
               {ozet.aktifKitapKey ? (
                 <YedekliGorsel
-                  src={`/kapaklar/kapak-${ozet.aktifKitapKey}.png`}
-                  yedekSrc="/kapaklar/placeholder.svg"
+                  src={kitapKapagi(ozet.aktifKitapKey)}
+                  yedekSrc={YEDEK.kitapKapagi}
                   alt={`${ozet.aktifKitapAdi} kapağı`}
                   width={72}
                   height={108}

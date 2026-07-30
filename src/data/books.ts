@@ -16,7 +16,6 @@ export type BookContentBlock =
       portraitSrc?: string;
       alt: string;
       caption?: string;
-      discovery?: BookDiscovery;
     }
   | {
       type: "interactive_word";
@@ -36,30 +35,12 @@ export type BookContentBlock =
       isFictional: boolean;
     };
 
-export type BookDiscoveryPoint = {
-  id: string;
-  /** Görselin solundan yüzde konum. */
-  x: number;
-  /** Görselin üstünden yüzde konum. */
-  y: number;
-  title: string;
-  description: string;
-};
-
-export type BookDiscovery = {
-  prompt: string;
-  completionText: string;
-  points: BookDiscoveryPoint[];
-};
-
 export type BookIllustration = {
   src: string;
   /** Tablet dikey ve mobil için aynı sahnenin 3:4 uyarlaması. */
   portraitSrc?: string;
   alt: string;
   caption?: string;
-  /** İsteğe bağlı, puansız ve ilerleme şartı olmayan görsel keşif noktaları. */
-  discovery?: BookDiscovery;
 };
 
 export type BookQuestionOption = {
@@ -235,35 +216,8 @@ export const books: BookDefinition[] = [
         audioUrl: "/sesli-anlatim/hz-adem/hz-adem-sesli-anlatim.mp3",
         badgeName: "İlk Adım Rozeti",
         coverIllustration: {
-          src: "/icerik/adem-bolum-1-acilis.png",
+          src: "/kitaplar/hz-adem/bolum-1/kapak.jpg",
           alt: "Dağlar, nehir ve yıldızlı gökyüzüyle insanı bekleyen yeryüzü",
-          discovery: {
-            prompt: "Görseldeki 3 keşif izine dokun",
-            completionText: "Yeryüzü bütün güzellikleriyle önemli bir misafiri bekliyordu.",
-            points: [
-              {
-                id: "yildizlar",
-                x: 72,
-                y: 18,
-                title: "Yıldızlar",
-                description: "Yıldızlar parlıyordu; fakat onları merakla izleyecek insan henüz yoktu.",
-              },
-              {
-                id: "nehir",
-                x: 63,
-                y: 61,
-                title: "Nehir",
-                description: "Nehir akıyordu; fakat suyunu inceleyecek ve koruyacak insan henüz yoktu.",
-              },
-              {
-                id: "toprak",
-                x: 31,
-                y: 82,
-                title: "Toprak",
-                description: "Toprak yağmurla ıslanıyor, yeni bir yaratılışa hazırlanıyordu.",
-              },
-            ],
-          },
         },
         illustrationMode: "sparse",
         paragraphs: [
@@ -280,8 +234,7 @@ export const books: BookDefinition[] = [
           { type: "text", text: "Sorumluluk işte bu seçimlerin içinde saklıydı. Aynı el bir fidan dikebilir veya bir dalı gereksiz yere kırabilirdi. Aynı dil bir kalbi sevindirebilir veya incitebilirdi. İnsana yalnızca imkân değil, doğru olanı seçme görevi de verilecekti.", emphasis: ["doğru olanı seçme görevi"] },
           {
             type: "image",
-            src: "/icerik/adem-bolum-1-secim-sorumluluk-yatay.png",
-            portraitSrc: "/icerik/adem-bolum-1-secim-sorumluluk-dikey.png",
+            src: "/kitaplar/hz-adem/bolum-1/secim-sorumluluk.jpg",
             alt: "İki doğal yola ayrılan vadide, su ve taşların arasında büyüyen genç bir fidan",
           },
           {
@@ -295,8 +248,7 @@ export const books: BookDefinition[] = [
           { type: "text", text: "Kur'an, Hz. Âdem'in yaratılışını anlatırken toprağın farklı hâllerinden söz eder. Toprak suyla birleşir, çamura dönüşür ve Allah'ın dilemesiyle yepyeni bir yaratılışa hazırlanır. Bu aşamaların ne kadar sürdüğünü bilmiyoruz. Bildiğimiz, insanın Allah'ın kudretiyle ve özel bir yaratılışla var olduğudur." },
           {
             type: "image",
-            src: "/icerik/adem-bolum-1-toprak-isik-yatay.png",
-            portraitSrc: "/icerik/adem-bolum-1-toprak-isik-dikey.png",
+            src: "/kitaplar/hz-adem/bolum-1/toprak-isik.jpg",
             alt: "Yağmurla ıslanmış toprak, doğal çamur katmanları, küçük bir filiz ve sabah ışığı",
           },
           { type: "text", text: "Hz. Âdem'e hayat verildiğinde önünde öğrenilecek büyük bir âlem vardı. Toprak ayaklarının altında, gökyüzü üzerinde uzanıyordu. İnsan artık görecek, işitecek, düşünecek ve seçim yapacaktı. Bu yeteneklerin her biri aynı zamanda bir sorumluluk taşıyordu.", emphasis: ["görecek, işitecek, düşünecek ve seçim yapacaktı"] },
@@ -304,14 +256,18 @@ export const books: BookDefinition[] = [
           { type: "text", text: "Fakat önemli bir görev verilmek, her şeyi önceden bilmek demek değildi. Hz. Âdem'in öğreneceği çok şey vardı. Melekler de Allah'ın insan için hazırladığı armağanın ne olduğunu henüz bilmiyordu.", emphasis: ["öğreneceği çok şey vardı"] },
           {
             type: "image",
-            src: "/icerik/adem-bolum-1-ogrenme-alemi-yatay.png",
-            portraitSrc: "/icerik/adem-bolum-1-ogrenme-alemi-dikey.png",
+            src: "/kitaplar/hz-adem/bolum-1/ogrenme-alemi.jpg",
             alt: "Yıldızların yansıdığı sığ suyun yanında farklı taşlar, yaprak, tohum ve küçük bir filiz",
           },
         ],
         continuationParagraphs: [
           { type: "text", text: "Yüce Allah, Hz. Âdem'i bilgisiz ve yardımsız bırakmadı. Ona öğrenme yeteneği verdi. İnsanın yolculuğu, her şeyi bildiğini düşünerek değil, kendisine öğretilenleri dikkatle öğrenerek başlayacaktı.", emphasis: ["öğrenme yeteneği verdi"] },
           { type: "text", text: "Bu nedenle ilk insanın en büyük armağanlarından biri güç değil, bilgiydi. Hz. Âdem çevresindeki varlıkları tanıyacak, onların isimlerini öğrenecek ve öğrendiklerini kullanabilecekti.", keySentence: true },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-1/isimlerin-izi.jpg",
+            alt: "Sığ suyun kenarına dizilmiş farklı taşlar, yapraklar ve tohumlar; her birinin yanında ince bir ışık izi",
+          },
           { type: "text", text: "Yeryüzünün beklediği misafir artık gelmişti. Fakat bu misafirin neden bu kadar değerli olduğu, bir sonraki olayda daha açık görülecekti." },
         ],
         has_question: true,
@@ -350,11 +306,20 @@ export const books: BookDefinition[] = [
         ozet: "Allah'ın öğrettiği isimler, insanın öğrenme ve bilgiyi kullanma değerini gösterir.",
         audioUrl: "",
         badgeName: "Meraklı Zihin Rozeti",
+        coverIllustration: {
+          src: "/kitaplar/hz-adem/bolum-2/kapak.jpg",
+          alt: "Şafak ışığında farklı bitki, taş ve su damlalarının bir arada göründüğü geniş vadi",
+        },
         paragraphs: [
           { type: "text", text: "Hz. Âdem (a.s.) gözlerini yepyeni bir dünyaya açmıştı. Çevresinde farklı şekiller, renkler ve varlıklar bulunuyordu. Allah ona bütün bunları tanıyabilme, aralarındaki farkları anlayabilme ve isimlerini öğrenebilme yeteneği verdi." },
           { type: "text", text: "Bir şeyi tanımak, yalnızca ona bakmak değildi. Su ile taşı, aydınlık ile gölgeyi, yakın ile uzağı ayırmak gerekiyordu. Bir varlığın adını bilmek ise onu düşünmeyi ve başkasına anlatmayı kolaylaştırıyordu." },
           { type: "text", text: "İsimler sayesinde bilgi tek bir anda kaybolup gitmeyecekti. İnsan gördüğünü hatırlayacak, anlatacak ve sonraki öğrendikleriyle birleştirecekti. Bir çocuk “su” dediğinde başkası neyi kastettiğini anlayacaktı. Böylece ortak bilgi ve iletişim başlayacaktı." },
           { type: "text", text: "Yüce Allah, Hz. Âdem'e isimleri öğretti. Bu öğretme yalnızca birkaç kelimeyi ezberlemek değildi. İnsan, öğrendiği isimler sayesinde düşünecek, anlatacak, soru soracak ve bilgisini başkalarıyla paylaşacaktı." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-2/isimlerin-ogretilmesi.jpg",
+            alt: "Yan yana dizilmiş yaprak, tüy, kabuk ve taşların üzerine düşen sabah ışığı",
+          },
           { type: "text", text: "Öğrenme armağanı insana büyük imkânlar açıyordu. Fakat her armağan gibi bunun da doğru kullanılması gerekiyordu. Bilgiyle övünmek yerine şükretmek, bilmediğinde dürüst olmak ve öğrendiğini yararlı işler için kullanmak önemliydi." },
           { type: "text", text: "Hz. Âdem'in bilgisi kendiliğinden ortaya çıkmamıştı. Onu öğreten Allah'tı. Bu nedenle insan ne kadar çok öğrenirse öğrensin, bilgisinin kaynağını ve sınırlarını unutmamalıydı. Bilmediği şeyler her zaman bildiklerinden daha fazla olabilirdi." },
           { type: "text", text: "Sonra Allah, bazı varlıkları meleklere gösterdi ve isimlerini söylemelerini istedi. Melekler bilmedikleri konuda tahminde bulunmadılar. Dürüstçe cevap verdiler:" },
@@ -370,6 +335,11 @@ export const books: BookDefinition[] = [
           { type: "text", text: "Allah meleklere Hz. Âdem'e secde etmelerini emretti. Meleklerin hepsi bu emre uydu. Onların davranışı, Allah'ın emrine teslim olduklarını ve insana verilen değeri kabul ettiklerini gösteriyordu." },
           { type: "text", text: "Secde emrinin anlamı Hz. Âdem'e ibadet etmek değildi. İbadet yalnızca Allah'a yapılır. Melekler, Allah'ın buyruğuna uyarak Hz. Âdem'e verilen değeri kabul ediyordu. Bilginin yanında taşıdığı sorumluluk da böylece görünür hâle gelmişti." },
           { type: "text", text: "Melekler kendi değerlerinin azaldığını düşünmedi. Başka bir varlığa armağan verilmesi onları kıskançlığa sürüklemedi. Allah'ın bildiğine güvendiler ve emrini yerine getirdiler." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-2/egilen-dallar.jpg",
+            alt: "Rüzgârda aynı yöne eğilmiş uzun otlar ve dalların oluşturduğu sakin sahne",
+          },
           { type: "text", text: "Fakat orada bulunan İblis aynı yolu seçmedi. Kendini Hz. Âdem'den üstün gördü. Ateşten yaratılmış olmasını övünme sebebi yaptı, toprağı ise küçümsedi." },
           { type: "text", text: "İblis yalnızca iki yaratılış maddesini karşılaştırıyordu. Ateşin topraktan üstün olduğuna kendi başına karar vermişti. Oysa değeri belirleyen, bir maddenin parlak veya güçlü görünmesi değildi. Asıl değer, Allah'ın emrine uymakta ve verilen görevi doğru taşımaktaydı." },
           { type: "text", text: "Kibir, insanın gözünün önündeki gerçeği saklayan koyu bir perdeye benzer. Kişi yalnızca kendi özelliğine bakar ve başkasındaki güzelliği göremez. İblis'in başına gelen de buydu." },
@@ -377,8 +347,18 @@ export const books: BookDefinition[] = [
         continuationParagraphs: [
           { type: "text", text: "Melekler, Hz. Âdem'e verilen bilgi karşısında kıskançlık göstermedi. Bilmediklerini kabul ettiler ve Allah'ın emrine uydular. İblis ise kendi özelliğini üstünlük sebebi saydı. Başkasına verilen değeri kabul etmek istemedi." },
           { type: "text", text: "Yüce Allah ona neden secde etmediğini sorduğunda İblis, kendisinin ateşten, Hz. Âdem'in topraktan yaratıldığını söyledi. Böylece asıl problemi ortaya çıktı: İblis'in yanlışı yalnızca secde etmemek değildi. Kendi düşüncesini Allah'ın emrinden üstün tutmuştu." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-2/atesin-golgesi.jpg",
+            alt: "Sönmeye yüz tutmuş bir ateşin közleri ve hemen yanındaki nemli koyu toprak",
+          },
           { type: "text", text: "Kibir, onun gerçeği görmesini engelledi. Özür dilemek yerine yanlışında ısrar etti. Allah'ın rahmetinden uzaklaştırıldı. Ardından insanları doğru yoldan ayırmaya çalışacağını söyledi." },
           { type: "text", text: "Hz. Âdem'in yolculuğunda iki ayrı davranış yan yana görünmüştü. Melekler bilmediklerini kabul etmiş, öğrenmeye ve emre açık durmuştu. İblis ise kendini büyük görmüş, hatasında direnmişti." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-2/iki-yol.jpg",
+            alt: "Bir tepenin üzerinde ikiye ayrılan; biri aydınlığa, diğeri gölgeye giden patika",
+          },
           { type: "text", text: "İnsan için önemli soru artık şuydu: Bir hata yapınca hangi yolu seçecekti? Kibrin yolunu mu, yoksa öğrenip düzelmenin yolunu mu?" },
         ],
         has_question: true,
@@ -425,12 +405,21 @@ export const books: BookDefinition[] = [
         ozet: "Cennetin nimetleri içindeki tek sınır, güven ve sorumluluğun değerini öğretir.",
         audioUrl: "",
         badgeName: "Sözü Koruma Rozeti",
+        coverIllustration: {
+          src: "/kitaplar/hz-adem/bolum-3/kapak.jpg",
+          alt: "Gölgeli ağaçlar, berrak dereler ve olgun meyvelerle dolu geniş bir bahçe",
+        },
         paragraphs: [
           { type: "text", text: "Yüce Allah, Hz. Âdem'i (a.s.) cennete yerleştirdi ve ona bir eş yarattı. Kur'an, eşinin adını söylemez. İslâm geleneğinde ona Hz. Havva denir. İkisi aynı insanlık ailesinin ilk anne ve babasıydı." },
           { type: "text", text: "İnsan yalnızca öğrenen değil, sevgi ve yakınlık kuran bir varlıktı. Bir sevinci paylaşmak onu çoğaltır, bir güçlüğü paylaşmak yükü hafifletirdi. Hz. Âdem ile eşi, cennet nimetlerini birlikte tanıyacak ve kendilerine verilen uyarıyı birlikte taşıyacaktı." },
           { type: "text", text: "Bu birliktelik üstünlük yarışı değildi. İkisi de Allah'ın kuluydu ve ikisi de kendi seçiminden sorumluydu. Sonraki olayları anlatırken birini yalnızca güçlü, diğerini yalnızca zayıf göstermek doğru olmazdı." },
           { type: "text", text: "Cennet huzur ve nimetlerle doluydu. Orada açlık, susuzluk, çıplaklık ve yakıcı sıcaklık yoktu. Bahçeler, gölgeler ve türlü güzellikler Allah'ın ikramını hatırlatıyordu." },
           { type: "text", text: "Sular berrakça akıyor, yeşillikler gözün uzanabildiği yere kadar yayılıyordu. Her köşe insana Allah'ın cömertliğini hatırlatan başka bir güzellik taşıyordu. Korkuyla saklanmaları veya bir nimete yetişmek için yarışmaları gerekmiyordu." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-3/cennet-bahcesi.jpg",
+            alt: "Berrak suyun aktığı, yeşilliklerin gözün alabildiğine uzandığı bahçe",
+          },
           { type: "text", text: "Bu bolluğun içinde şükretmek kolay görünüyordu. Fakat gerçek güven, yalnızca nimetlerden yararlanırken değil, bir sınırla karşılaşınca da ortaya çıkardı. Allah'ın verdiği yüzlerce serbestliğin yanında tek bir uyarı bulunuyordu." },
           { type: "text", text: "Hz. Âdem ile eşi için cennet yalnızca güzel bir bahçe değildi. Allah'ın ikramını ve korumasını hissettikleri güvenli bir yurttu. Oradaki huzurun kaynağı, diledikleri her şeyi yapmak değil, Allah'ın kendileri için çizdiği doğru yolun içinde yaşamaktı." },
           { type: "text", text: "İnsan bazen sahip olduğu yüz nimeti çabuk unutur. Ulaşamadığı tek şeye bakınca kendisini eksik hissedebilir. Şükür ise dikkati yeniden verilen güzelliklere çevirir. Böylece küçük bir eksiklik gibi görünen sınır, bütün mutluluğun önüne geçmez." },
@@ -443,6 +432,11 @@ export const books: BookDefinition[] = [
           },
           { type: "text", text: "Yüce Allah, Hz. Âdem ile eşine cennette diledikleri yerden yiyebileceklerini bildirdi. Yalnızca belirli bir ağaca yaklaşmamalarını istedi. Bu uyarı açık ve anlaşılırdı." },
           { type: "text", text: "Uyarı “meyvesinden biraz yemeyin” şeklinde bile değildi. Ağaca yaklaşmamaları istenmişti. Çünkü bazen yanlıştan korunmanın en güvenli yolu, ona ne kadar yaklaşabileceğimizi denememektir." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-3/sinir-cizgisi.jpg",
+            alt: "Geniş bir bahçenin içinde tek bir ağaca uzanan, taşlarla belirginleşmiş ince patika",
+          },
           { type: "text", text: "Bir sınır, bütün özgürlüğü ortadan kaldırmaz. Geniş bir bahçedeki tek kapalı yol, diğer bütün yolların değerini azaltmaz. Fakat insan yalnızca kapalı yola bakarsa önündeki güzellikleri unutabilir." },
           { type: "text", text: "Kur'an, bu ağacın türünü açıklamaz. Bu nedenle onun elma, buğday veya başka bir bitki olduğunu söyleyemeyiz. Önemli olan meyvenin adı değil, Allah'ın koyduğu sınıra güvenmekti." },
           { type: "text", text: "Hz. Âdem ile eşi cennette huzur içinde yaşamaya devam etti. Fakat artık İblis onların açık bir düşmanıydı. Kibirle başladığı yanlışını büyütmek ve insanları da doğru yoldan uzaklaştırmak istiyordu." },
@@ -453,7 +447,17 @@ export const books: BookDefinition[] = [
         continuationParagraphs: [
           { type: "text", text: "İblis, Hz. Âdem ile eşine doğrudan “Bu emre karşı gelin” demedi. Yanlışı güzel bir düşünce gibi göstermeye çalıştı. Yasak ağacın onları sonsuza kadar cennette tutacağını söyledi." },
           { type: "text", text: "Oysa cennette önlerinde sayısız nimet vardı. İblis, onların dikkatini bütün güzelliklerden uzaklaştırıp tek bir ağaca çevirmek istiyordu. Böylece sınır, birdenbire kaybedilmiş bir fırsat gibi görünecekti." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-3/sayisiz-nimet.jpg",
+            alt: "Dalları meyveyle dolu ağaçların arasından süzülen ışık",
+          },
           { type: "text", text: "Güven bazen tam da böyle zamanlarda sınanır. İnsan her sebebi bilmeyebilir. Fakat kendisine iyilik eden ve doğru yolu gösteren Allah'ın uyarısına güvenebilir." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-3/guvenin-sinavi.jpg",
+            alt: "Akşam alacasında tek bir ağacın gölgesinin uzadığı sessiz bahçe köşesi",
+          },
           { type: "text", text: "İblis'in fısıltısı giderek yaklaşırken önemli bir karar anı doğuyordu. Hz. Âdem ile eşi bu söze karşı nasıl davranacaktı?" },
         ],
         has_question: true,
@@ -500,9 +504,18 @@ export const books: BookDefinition[] = [
         ozet: "Şeytanın güzel gösterdiği yanlış, verilen sözü ve dikkatli seçimi sınar.",
         audioUrl: "",
         badgeName: "Dikkatli Kalp Rozeti",
+        coverIllustration: {
+          src: "/kitaplar/hz-adem/bolum-4/kapak.jpg",
+          alt: "Alacakaranlıkta yaprakların arasından süzülen ince bir sis",
+        },
         paragraphs: [
           { type: "text", text: "İblis, Hz. Âdem (a.s.) ile eşinin açık düşmanıydı. Fakat yanlarına bir düşman gibi yaklaşmadı. Onlara iyilik isteyen bir öğütçü gibi görünmeye çalıştı." },
           { type: "text", text: "Kötü bir teklif her zaman sert ve ürkütücü görünmeyebilir. Bazen çok yumuşak sözlerle gelir. İnsanın sevdiği bir şeyi vaat eder ve taşıdığı tehlikeyi saklar. Bu nedenle yalnızca sözün güzel olmasına değil, doğru olup olmadığına bakmak gerekir." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-4/tatli-fisilti.jpg",
+            alt: "Rüzgârla kıpırdayan yaprakların arasında dağılan ince bir sis",
+          },
           { type: "text", text: "Hz. Âdem ile eşi, İblis'in kendilerine düşman olduğu konusunda daha önce uyarılmıştı. Buna rağmen tekrar edilen sözler dikkatlerini dağıtabilirdi. Vesvese kapıyı zorla açmaz; fakat insanı kapının önünde uzun süre tutmaya çalışır." },
           { type: "text", text: "— Rabbiniz bu ağacı, melek olursunuz veya sonsuza kadar kalırsınız diye yasakladı, dedi." },
           { type: "text", text: "Sonra doğru söylediğine dair yemin etti. Böylece yalanını daha güvenilir göstermeye çalıştı. Sözleri güzel bir vaat taşıyordu: Hiç bitmeyen bir hayat ve sona ermeyen bir güç." },
@@ -517,6 +530,11 @@ export const books: BookDefinition[] = [
           },
           { type: "text", text: "İblis aynı düşünceyi tekrar ettikçe yasak ağaç daha dikkat çekici görünmeye başladı. Hz. Âdem ile eşi, Allah'ın verdiği sayısız nimetin ortasındaydı. Buna rağmen fısıltı, sanki mutlulukları o tek ağaca bağlıymış gibi hissettirmeye çalışıyordu." },
           { type: "text", text: "İnsan aynı düşünceyi çok kez duyduğunda onu doğru sanabilir. Tekrar, bir sözün doğruluğunu kanıtlamaz; yalnızca kulağa daha tanıdık gelmesini sağlar. Bu nedenle duyduğumuz bir sözü, onu kimin söylediği ve doğru ölçüye uyup uymadığıyla değerlendirmeliyiz." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-4/tekrarin-izi.jpg",
+            alt: "Durgun suya düşen tek bir damlanın giderek genişleyen halkaları",
+          },
           { type: "text", text: "Hz. Âdem ile eşinin önündeki doğru ölçü açıktı. Allah ağaca yaklaşmamalarını söylemiş, İblis'in düşmanları olduğunu bildirmişti. İblis'in yemini bu açık uyarıdan daha güvenilir değildi." },
           { type: "text", text: "Burada önemli bir ayrıntı vardı: Şeytan yalnızca Hz. Havva'yı kandırmadı. Kur'an, ikisinin birlikte aldatıldığını anlatır. Sorumlulukları da pişmanlıkları da ortaktı." },
           { type: "text", text: "Sonraki bazı anlatılar bütün suçu Hz. Havva'ya yüklemiştir. Kur'an'ın dili böyle değildir. Ayetler ikisine birlikte seslenir, ikisinin birlikte aldandığını ve birlikte tövbe ettiğini bildirir." },
@@ -528,9 +546,19 @@ export const books: BookDefinition[] = [
           { type: "text", text: "Kur'an bu anı uzun ve korkutucu ayrıntılarla anlatmaz. Ağacın türünü, meyvenin rengini veya kaç tane yediklerini söylemez. Çünkü ders bu ayrıntılarda değildir. Asıl konu, güvenilir uyarı yerine aldatıcı söze yönelmeleridir." },
           { type: "text", text: "İnsan yanlış bir seçimden hemen önce sonucunu göremeyebilir. Merak, o an bütün dikkatini kaplayabilir. Fakat seçim yapıldıktan sonra daha önce duyduğu uyarılar yeniden hatırına gelir. Hz. Âdem ile eşinin yaşadığı pişmanlık da böyle başladı." },
           { type: "text", text: "O anda yaptıklarının yanlışlığını fark ettiler. Üzerlerini cennet yapraklarıyla örtmeye başladılar. Biraz önce güzel görünen vaat kaybolmuş, yerini derin bir pişmanlığa bırakmıştı." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-4/yapraklarin-golgesi.jpg",
+            alt: "Üst üste savrulmuş geniş bahçe yaprakları ve aralarından sızan solgun ışık",
+          },
           { type: "text", text: "Yanlışlarını fark etmeleri kalplerinin bütünüyle kararmadığını gösteriyordu. Rahatsızlık duymaları, doğruyla yanlış arasındaki farkı hâlâ bildiklerinin işaretiydi. Şimdi bu farkındalığı dürüst bir davranışa dönüştürmeleri gerekiyordu." },
           { type: "text", text: "Hata iki türlü büyüyebilirdi: Önce yanlış seçimle, sonra onu saklamak için söylenen bahanelerle. Hz. Âdem ile eşinin önündeki yeni sınav, bu ikinci kapıyı açıp açmayacaklarıydı." },
           { type: "text", text: "İblis onlara sonsuzluk sözü vermişti. Fakat geriye güveni zedeleyen bir seçim kalmıştı. Yanlışın güzel görünmesi, sonucunu güzel yapmamıştı." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-4/solan-vaat.jpg",
+            alt: "Bir dalın ucunda kurumaya başlamış tek bir yaprak",
+          },
           { type: "text", text: "Yüce Allah onlara yasak ağacı ve şeytanın açık düşmanları olduğunu hatırlattı. Artık önlerinde başka bir karar vardı: Yanlışlarını saklayacaklar mıydı, birbirlerini mi suçlayacaklardı, yoksa gerçeği kabul mü edeceklerdi?" },
           { type: "text", text: "Hikâyenin asıl dönüm noktası ağacın yanında değil, işte bu sorunun karşısında başlayacaktı." },
         ],
@@ -570,17 +598,31 @@ export const books: BookDefinition[] = [
         ozet: "Hz. Âdem ile Hz. Havva, hatalarını kabul ederek Allah'ın rahmetine yönelir.",
         audioUrl: "",
         badgeName: "Tövbe Rozeti",
+        coverIllustration: {
+          src: "/kitaplar/hz-adem/bolum-5/kapak.jpg",
+          alt: "Şafak sökerken bulutların aralanmasıyla yeryüzüne inen ışık huzmesi",
+        },
         paragraphs: [
           { type: "text", text: "Hz. Âdem (a.s.) ile Hz. Havva yaptıklarının yanlış olduğunu anlamıştı. İblis onları kandırmıştı; fakat bu durum kendi seçimlerini yok etmiyordu. Şimdi verecekleri cevap, hatalarının kendisinden daha önemli olacaktı." },
           { type: "text", text: "Cennetin güzellikleri hâlâ çevrelerindeydi; fakat onların dikkati artık kendi davranışlarındaydı. Uyarıyı hatırlıyor ve neden daha dikkatli olmadıklarını anlıyorlardı. Pişmanlık, geçmişteki anı tekrar tekrar düşündüren ağır bir yük gibi hissedilebilirdi." },
           { type: "text", text: "Bu yükten kurtulmanın yolu hatayı yok saymak değildi. Gerçeğe dönüp bakmak, sorumluluğu kabul etmek ve bağışlanma istemek gerekiyordu. İşte tövbenin kapısı böyle açılırdı." },
           { type: "text", text: "İblis de bir yanlış yapmıştı. O, kibrine sarılmış ve kendisini haklı göstermeye çalışmıştı. Hz. Âdem ile eşinin önünde ise başka bir yol vardı: Gerçeği kabul etmek ve Allah'tan bağışlanma istemek." },
           { type: "text", text: "İki yol arasındaki fark çok büyüktü. İblis “Ben üstünüm,” diyerek yanlışında direnmişti. Hz. Âdem ile eşi ise kendilerini kusursuz göstermeye çalışmadı. Hatalarını görmek değerlerini yok etmiyordu; aksine doğruya dönmelerini mümkün kılıyordu." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-5/iki-yol-ayrimi.jpg",
+            alt: "Biri sarp kayalığa, diğeri yumuşak toprağa uzanan iki ayrı patika",
+          },
           { type: "text", text: "İnsan bazen özür dilerse küçüleceğini sanabilir. Oysa içten bir özür, kibrin duvarını yıkar. Kişi gerçeği kabul edince hem başkasının hakkını görebilir hem de düzeltmek için harekete geçebilir." },
           { type: "text", text: "İnsan hata yaptığında çoğu zaman kendini korumak ister. Bir bahane bulmak kolay görünebilir. “Benim yüzümden olmadı,” demek insanı kısa süre rahatlatabilir. Fakat hata yerinde durmaya devam eder." },
           { type: "text", text: "Hz. Âdem ile Hz. Havva birbirlerini suçlamadı. “Bizi İblis kandırdı, bizim hiçbir sorumluluğumuz yok,” da demediler. Önce kendi yaptıklarına baktılar." },
           { type: "text", text: "Yüce Allah, Hz. Âdem'e bağışlanma dileyeceği sözleri öğretti. Bu da Allah'ın onları yalnız bırakmadığını gösteriyordu. Hata yapmışlardı; fakat dönüş yolu kapanmamıştı." },
           { type: "text", text: "Allah'ın sözleri onlara yalnızca ne söyleyeceklerini öğretmiyordu. Nasıl bir kalple dönmeleri gerektiğini de gösteriyordu. Dua, hatayı küçültmüyor; insanın acizliğini ve Allah'ın merhametine olan ihtiyacını kabul ediyordu." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-5/donus-sozleri.jpg",
+            alt: "Sabah çiyiyle ıslanmış toprakta yeni açılmış küçük bir su yolu",
+          },
           { type: "text", text: "Tövbe yalnızca dilde kalan birkaç söz değildir. İnsan yaptığına pişman olur, yanlışı bırakır ve mümkünse verdiği zararı düzeltir. Böylece kalbin dönüşü davranışta da görünür hâle gelir." },
           {
             type: "interactive_word",
@@ -596,8 +638,18 @@ export const books: BookDefinition[] = [
           { type: "text", text: "— Rabbimiz! Biz kendimize haksızlık ettik. Bizi bağışlamaz ve bize merhamet etmezsen kaybedenlerden oluruz." },
           { type: "text", text: "Bu duada bahane yoktu. Başkasını suçlamak yoktu. Pişmanlık, sorumluluk ve Allah'ın merhametine duyulan umut vardı." },
           { type: "text", text: "Yüce Allah tövbelerini kabul etti. Onları hatalarıyla baş başa bırakmadı. Hz. Âdem'i seçti, bağışladı ve ona doğru yolu gösterdi." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-5/acilan-kapi.jpg",
+            alt: "Kayaların arasından aydınlığa açılan geniş bir geçit",
+          },
           { type: "text", text: "Bağışlanmak, yaşanan olaydan hiçbir ders çıkarmamak demek değildi. Hz. Âdem ile Hz. Havva artık İblis'in güzel sözler ardına sakladığı tehlikeyi tanıyordu. Aynı tuzağın nasıl kurulduğunu öğrenmişlerdi." },
           { type: "text", text: "Allah'ın merhameti, umutsuzluğun önündeki kapıyı kapatıyordu. Hatasını anlayan insan “Artık benim için iyilik kalmadı,” demez. Yanlışını bırakır, Allah'a yönelir ve yeniden güzel işler yapmaya başlar." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-5/umudun-isigi.jpg",
+            alt: "Yağmur sonrası bulutların aralanmasıyla ıslak toprağa vuran ilk ışık",
+          },
           { type: "text", text: "İslâm'da Hz. Âdem'in hatası çocuklarına geçen bir günah sayılmaz. Her insan kendi seçiminden sorumludur. Bu nedenle hiçbir çocuk dünyaya başkasının günahını taşıyarak gelmez." },
           { type: "text", text: "Hz. Âdem ile Hz. Havva'nın yeryüzündeki hayatı başlayacaktı. Bu, Allah'ın onları bağışlamadığı anlamına gelmiyordu. Yeryüzü zaten insanın sorumluluk taşıyacağı yer olarak bildirilmişti." },
           { type: "text", text: "Tövbe geçmişi değiştirmedi; fakat geleceğe açılan yeni bir kapı oldu. O kapının ardında emek, öğrenme, aile ve rehberlik vardı." },
@@ -646,15 +698,29 @@ export const books: BookDefinition[] = [
         ozet: "Yeryüzündeki hayat, emek ve ilahî rehberlikle yeni bir başlangıca dönüşür.",
         audioUrl: "",
         badgeName: "Yeni Başlangıç Rozeti",
+        coverIllustration: {
+          src: "/kitaplar/hz-adem/bolum-6/kapak.jpg",
+          alt: "Uçsuz bucaksız bir ova; uzakta dağ sırası, önde yeni sürülmüş toprak",
+        },
         paragraphs: [
           { type: "text", text: "Hz. Âdem (a.s.) ile Hz. Havva için yeryüzünde yeni bir dönem başladı. Kur'an onların yeryüzünün hangi bölgesine indirildiğini açıklamaz. Bu yüzden Serendib, Cidde veya başka bir yeri kesin olarak söyleyemeyiz." },
           { type: "text", text: "Yeryüzü cennetten farklıydı. Gün ışığı çekilince gece geliyor, hava bazen ısınıyor, bazen serinliyordu. İnsan yoruluyor, acıkıyor ve dinlenmeye ihtiyaç duyuyordu. Bu değişikliklerin her biri yeni hayatın bir parçasıydı." },
           { type: "text", text: "Fakat yeryüzü yalnızca güçlüklerden oluşmuyordu. Yağmur kuru toprağı canlandırıyor, tohumlar yeşeriyor ve su canlılara hayat veriyordu. İnsan çalışacak, sonuç için sabredecek ve elde ettiği nimetlere şükredecekti." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-6/yagmurdan-sonra.jpg",
+            alt: "Yağmurdan sonra canlanan toprakta filizlenen taze tohumlar",
+          },
           { type: "text", text: "Bildiklerimiz bundan daha anlamlıydı: İnsan yeryüzünde yaşayacak, orada sorumluluk taşıyacak ve Allah'ın rehberliğiyle yolunu bulacaktı." },
           { type: "text", text: "Hz. Âdem'in yaratılışından önce verilen haber şimdi daha iyi anlaşılıyordu. İnsan yeryüzünde sorumluluk taşıyacaktı. Cennette yaşanan hata bu görevi ortadan kaldırmamıştı. Tövbe, yolculuğun yeniden doğrulmasına yardım etmişti." },
           { type: "text", text: "Önlerinde hazır bir şehir veya kurulmuş bir düzen yoktu. Fakat insan öğrenme armağanına sahipti. Gördüklerini anlayabilir, tecrübelerinden yararlanabilir ve bildiklerini ailesiyle paylaşabilirdi." },
           { type: "text", text: "Cennette açlık, susuzluk ve yakıcı sıcaklık yoktu. Yeryüzündeki hayat ise emek istiyordu. İnsan yiyeceğini hazırlayacak, suyu bulacak, sıcaktan ve soğuktan korunacaktı. Her yeni gün, öğrenilecek başka bir şey getirecekti." },
           { type: "text", text: "Sabah ışığı yeryüzünü aydınlatırken aynı toprak artık farklı görünüyordu. Hz. Âdem o topraktan yaratılmıştı. Şimdi insanlık bu toprağın üzerinde yaşayacak ve onu bir emanet olarak koruyacaktı." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-6/ilk-sabah.jpg",
+            alt: "Gün doğarken sisin çekildiği geniş ova ve ufuktaki dağ sırası",
+          },
           { type: "text", text: "Kur'an, Hz. Âdem'in ilk tarlayı nerede açtığını, ilk ateşi nasıl yaktığını veya hangi aletleri kullandığını anlatmaz. Bunları bilmiyoruz. Fakat yeryüzündeki hayatın çalışma, sabır ve öğrenme gerektirdiğini biliyoruz." },
           { type: "text", text: "Allah, insanları yeryüzüne gönderirken onları rehbersiz bırakmayacağını bildirdi. Kendilerine yol gösteren mesajlar gelecekti. Bu rehberliğe uyanlar, doğru yönü bulabilecekti." },
           { type: "text", text: "Bir yolcu karanlıkta yönünü kaybedebilir. Fakat güvenilir bir işaret gördüğünde adımlarını yeniden düzenler. Allah'ın rehberliği de insana nereden gelip nereye yönelmesi gerektiğini hatırlatırdı." },
@@ -673,8 +739,18 @@ export const books: BookDefinition[] = [
           { type: "text", text: "Hz. Âdem, yeryüzündeki hayatın yalnızca yiyecek bulmak ve barınmak olmadığını öğretti. İnsan Allah'ı tanıyacak, iyiliği seçecek, haksızlıktan kaçınacak ve kendisine verilen emaneti koruyacaktı." },
           { type: "text", text: "Zorluklar bir anda ortadan kalkmadı. Fakat her zorluğun yanında öğrenme imkânı vardı. İnsan yorulduğunda dinlenebilir, bilmediğinde öğrenebilir ve yanıldığında doğruya dönebilirdi." },
           { type: "text", text: "Bir günün ardından başka bir gün geliyor, mevsimler birbirini izliyordu. İnsan attığı adımın sonucunu hemen görmeyebilirdi. Toprağa bırakılan bir tohum gibi bazı emeklerin karşılığı da zamanla ortaya çıkardı." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-6/mevsimlerin-donusu.jpg",
+            alt: "Aynı ağacın farklı mevsimlerdeki hâllerini andıran, ayrı renklerde dalların bir arada göründüğü sahne",
+          },
           { type: "text", text: "Sabır, hiçbir şey yapmadan beklemek değildi. Doğru olanı yapmaya devam etmek ve sonucu Allah'a bırakmaktı. Yeryüzündeki yeni başlangıcın içinde bu sabra sık sık ihtiyaç duyulacaktı." },
           { type: "text", text: "Yeryüzü artık yalnız ve sessiz değildi. İlk aileyle birlikte sevgi, paylaşma ve öğretme de başlamıştı. Küçük bir filiz gibi başlayan insanlık ailesi zamanla büyüyecekti." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-6/ilk-ocak.jpg",
+            alt: "Taşlarla çevrilmiş küçük bir ocak, yanında toprak kaplar ve kurumuş otlar",
+          },
           { type: "text", text: "Kur'an, bütün insanların aynı insanlık ailesinden geldiğini bildirir. İnsanların dilleri, renkleri ve yaşadıkları yerler zamanla farklılaşsa da hiçbiri yaratılışı sebebiyle diğerinden daha değerli değildi. Ortak köklerini hatırlamak, birbirlerinin hakkını koruma sorumluluğunu da hatırlatacaktı." },
           { type: "text", text: "Fakat aile büyüdükçe başka bir sorumluluk doğacaktı: Allah'tan gelen rehberliği yeni nesillere ulaştırmak." },
         ],
@@ -714,11 +790,20 @@ export const books: BookDefinition[] = [
         ozet: "Âdem'in iki oğlu üzerinden kıskançlık, öfke, seçim ve geri dönüşü olmayan davranışların sonuçları anlatılır.",
         audioUrl: "",
         badgeName: "Sakin Güç Rozeti",
+        coverIllustration: {
+          src: "/kitaplar/hz-adem/bolum-7/kapak.jpg",
+          alt: "Bir tepede ikiye ayrılan patika; biri ekili tarlaya, diğeri taşlık yamaca gider",
+        },
         paragraphs: [
           { type: "text", text: "Bir insanı asıl tanıtan şey, her şey istediği gibi giderken yaptıkları mıdır? Yoksa istediği sonuçla karşılaşamadığında seçtiği yol mu?" },
           { type: "text", text: "İblîs, yaptığı yanlış kendisine gösterildiğinde kibirlenmiş ve suçunu kabul etmemişti. Hz. Âdem (a.s.) ise yanıldığında hatasını kabul etmiş, Rabbine yönelerek tövbe etmişti." },
           { type: "text", text: "Şimdi Hz. Âdem'in ailesinde yaşanan başka bir olay, zor bir sonuç karşısında verilen kararların ne kadar önemli olduğunu gösterecekti." },
           { type: "text", text: "Yıllar geçmiş, Hz. Âdem ile Hz. Havva'nın ailesi büyümüştü. Hz. Âdem, Allah'tan öğrendiklerini ailesine öğretiyordu. Fakat doğru yolu bilmekle o yolu seçmek aynı şey değildi. Her insan kendi davranışından sorumluydu." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-7/buyuyen-yurt.jpg",
+            alt: "Ekili tarlalar, otlaklar ve bir akarsuyla çevrili geniş yerleşim vadisi",
+          },
           { type: "text", text: "Kur'an-ı Kerim, Hz. Âdem'in iki oğlu arasında yaşanan üzücü ve düşündürücü bir olaydan söz eder. Kur'an'da bu iki kardeşin isimleri açıklanmaz. İslâmî kaynaklarda ve anlatılarda onlar **Hâbil** ve **Kābil** isimleriyle tanınmıştır. Biz de anlatımı kolaylaştırmak için bu isimleri kullanacağız." },
           { type: "text", text: "Bir gün iki kardeş Allah'a birer kurban sundu." },
           {
@@ -731,6 +816,11 @@ export const books: BookDefinition[] = [
           { type: "text", text: "Kardeşlerden birinin kurbanı kabul edildi, diğerininki ise kabul edilmedi. Kur'an, onların ne sunduklarını veya kabul edildiğinin nasıl anlaşıldığını anlatmaz. Bu nedenle kurbanların ne olduğu hakkında kesin bir şey söyleyemeyiz." },
           { type: "text", text: "İslâmî anlatılarda kurbanı kabul edilen kardeş Hâbil, kabul edilmeyen kardeş ise Kābil olarak tanınır." },
           { type: "text", text: "Kābil, karşılaştığı sonuçtan dolayı üzülmüş olabilirdi. Üzülmek veya hayal kırıklığına uğramak insanın yaşayabileceği doğal duygulardı. Ancak Kābil, bu duygularını doğru biçimde yönetemedi. Kendisini kardeşiyle karşılaştırdı ve öfkesini Hâbil'e yöneltti." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-7/duran-yol.jpg",
+            alt: "Bir kavşakta duran patika; bir kolu aydınlık ovaya, diğeri gölgeli kayalığa uzanır",
+          },
           { type: "text", text: "Oysa Hâbil, kardeşinin kurbanının kabul edilmemesine sebep olmamıştı." },
           { type: "text", text: "Kābil'in önünde hâlâ iki yol vardı. Durabilir, sakinleşebilir ve kendi davranışını gözden geçirebilirdi. Ya da kardeşini suçlayarak içindeki öfkenin büyümesine izin verebilirdi." },
         ],
@@ -748,6 +838,11 @@ export const books: BookDefinition[] = [
           { type: "text", text: "Kardeşinin bedenine ne yapacağını bilmiyordu. Bunun üzerine Allah, toprağı eşeleyen bir karga gönderdi. Kābil, kargayı dikkatle izledi ve kardeşinin bedenini toprağa nasıl örtebileceğini anladı." },
           { type: "text", text: "\"Yazıklar olsun bana!\" dedi. \"Şu karga kadar olup da kardeşimin bedenini örtmekten bile aciz miyim?\"" },
           { type: "text", text: "Kābil yaptığı şeyden dolayı pişmanlık duydu. Fakat pişmanlığı, Hâbil'i geri getirmedi. Bazı yanlışların sonucu, \"Keşke yapmasaydım,\" demekle ortadan kalkmazdı." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-7/karganin-ogrettigi.jpg",
+            alt: "Toprağı eşeleyen bir karga ve yanında yeni açılmış küçük bir çukur",
+          },
           { type: "text", text: "Hz. Âdem topraktan yaratılmıştı. Şimdi toprağı eşeleyen küçücük bir karga, onun oğluna ne yapması gerektiğini gösteriyordu. Fakat asıl önemli ders, bundan önce verilmişti: İnsan, öfkesi büyümeden durmalıydı." },
           { type: "text", text: "Kur'an, Hz. Âdem ile Hz. Havva'nın bu olay karşısında neler söylediğini anlatmaz. Bu yüzden onlara ait konuşmalar uyduramayız. Fakat bir evlatlarını kaybetmenin, diğer evlatlarının da böyle büyük bir yanlış yapmasının onlar için çok ağır bir üzüntü olduğunu düşünebiliriz." },
           { type: "text", text: "Hz. Âdem ailesine doğru yolu öğretmişti. Fakat bir peygamberin evladı olmak, insanı kendi seçimlerinin sorumluluğundan kurtarmıyordu. Her insan doğru ile yanlış arasında kendi kararını vermeliydi." },
@@ -755,6 +850,11 @@ export const books: BookDefinition[] = [
           { type: "text", text: "Üçü de bir seçim yapmıştı. Hz. Âdem hatasını kabul edip Allah'a yönelerek doğruya dönmeyi seçmişti. Kābil ise pişmanlık duysa da yaptığı büyük yanlışın sonucunu geri alamadı." },
           { type: "text", text: "Kıskançlık ve öfke kalbimize gelebilir. Bu duyguları hissetmemiz bizi kötü bir insan yapmaz. Ancak hiçbir duygu bize başkasına zarar verme hakkı vermez." },
           { type: "text", text: "Öfke yükseldiğinde yapılabilecek en doğru şey durmak, oradan uzaklaşmak ve güvendiğimiz bir yetişkinden yardım istemektir." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-7/ofkenin-dindigi-yer.jpg",
+            alt: "Fırtınadan sonra durulmuş bir gölün yüzeyi ve kıyıdaki sakin otlar",
+          },
           { type: "text", text: "Birisi bizi tehdit ederse de tehlikeli yerde kalmamalıyız. Kötülüğe kötülükle karşılık vermeden oradan uzaklaşmalı ve hemen güvendiğimiz bir yetişkine haber vermeliyiz." },
           { type: "text", text: "Gerçek güç, başkasına zarar vermek değil; öfkelendiğimiz anda kendimizi yanlış bir davranıştan koruyabilmektir." },
         ],
@@ -803,14 +903,28 @@ export const books: BookDefinition[] = [
         ozet: "Hz. Âdem'in dünya yolculuğu sona ererken bıraktığı değerler yaşamaya devam eder.",
         audioUrl: "",
         badgeName: "Huzurlu Miras Rozeti",
+        coverIllustration: {
+          src: "/kitaplar/hz-adem/bolum-8/kapak.jpg",
+          alt: "Ufka doğru uzanan uzun bir yol ve iki yanında olgunlaşmış başaklar",
+        },
         paragraphs: [
           { type: "text", text: "Hz. Âdem'in (a.s.) yeryüzündeki hayatı uzun bir yolculuktu. Topraktan yaratılmış, bilgiyle değer kazanmış, cennette yaşamış, aldanmış, tövbe etmiş ve Allah'ın rehberliğiyle yeni bir başlangıç yapmıştı." },
           { type: "text", text: "Yolculuğun her durağında başka bir değer öne çıkmıştı. Yaratılış sorumluluğu, isimler bilgiyi, secde alçak gönüllülüğü hatırlatmıştı. Yasak ağaç güveni, tövbe ise umudu öğretmişti." },
           { type: "text", text: "Başlangıçta yeryüzü bir misafiri bekliyordu. Şimdi o misafirin ailesi büyümüş ve dünya insan sesleriyle tanışmıştı. Fakat ilk görev değişmemişti: Emaneti korumak ve Allah'ın rehberliğine uymak." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-8/uzun-yol.jpg",
+            alt: "Tepelerin arasından kıvrılarak ufka uzanan uzun bir patika",
+          },
           { type: "text", text: "Bu yolculuğun kaç yıl sürdüğünü kesin olarak bilmiyoruz. Kaynaklarda farklı sayılar anlatılır. Kur'an ise Hz. Âdem'in yaşından veya kabrinin yerinden söz etmez. Bu nedenle bilmediğimiz ayrıntıları gerçekmiş gibi anlatmayız." },
           { type: "text", text: "Bildiklerimiz, bir ömrü anlamak için yeterliydi. Hz. Âdem insanlara Allah'ı tanıttı. Öğrenmenin, sorumluluğun ve hatadan dönüşün değerini kendi hayatıyla gösterdi." },
           { type: "text", text: "Bazı insanlar geride çok eşya bırakabilir. Fakat eşyalar zamanla kaybolur veya başkasının olur. Doğru bilgi ve güzel davranış ise öğrenen insanların hayatında yeniden görünür." },
           { type: "text", text: "Hz. Âdem'in tövbesi de böyle bir mirastı. Onun kıssasını duyan biri, hatasının ardından umutsuzluğa kapılmaması gerektiğini öğrenebilirdi. Yanlışta ısrar etmek yerine dönüş yolunu arayabilirdi." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-8/birakilan-miras.jpg",
+            alt: "Toprağa bırakılmış bir avuç tohum ve yanında filizlenmeye başlamış olanlar",
+          },
           {
             type: "interactive_word",
             before: "İnsanın özlediği yere veya sevdiğine kavuşmasına ",
@@ -827,10 +941,20 @@ export const books: BookDefinition[] = [
         continuationParagraphs: [
           { type: "text", text: "Hz. Âdem'in öğrettikleri onun vefatıyla kaybolmadı. Ailesi, Allah'a kulluk etmenin ve yeryüzünde sorumlulukla yaşamanın önemini sonraki nesillere aktardı." },
           { type: "text", text: "Bu aktarımın doğru yapılması önemliydi. Bir söz eklenip çıkarıldığında zamanla ilk anlamından uzaklaşabilirdi. Bu nedenle güvenilir bilgiyi korumak, bilmediğimiz ayrıntılarda dürüst olmak ve gerçeği süslemek için uydurmamak gerekirdi." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-8/emanetin-aktarimi.jpg",
+            alt: "Birbirine bağlanarak uzayan ince su yollarının oluşturduğu ağ",
+          },
           { type: "text", text: "Hz. Âdem'in hayatını anlatırken de aynı emaneti taşıyoruz. Kur'an'ın bildirdiğini güvenle anlatıyor, kesin olmayan rivayetleri gerçek gibi sunmuyoruz. Çünkü peygamberleri sevmek, onlar hakkında doğru bilgiye özen göstermeyi de gerektirir." },
           { type: "text", text: "İslâmî kaynaklarda Hz. Âdem'in ardından oğlu Hz. Şît'in insanlara rehberlik ettiği anlatılır. Hz. Şît'in adı Kur'an'da geçmez; onunla ilgili bilgiler İslâm tarih ve kıssa kaynaklarında yer alır. Bu nedenle onun yolculuğu, kendi kitabında kaynak dereceleri belirtilerek anlatılacaktır." },
           { type: "text", text: "Hz. Âdem'in hikâyesi insanın yalnızca nasıl yaratıldığını anlatmaz. Nasıl öğrenmesi, nasıl seçim yapması ve yanıldığında nasıl dönmesi gerektiğini de gösterir." },
           { type: "text", text: "Toprakta başlayan yolculuk yeniden toprağa ulaştı. Fakat ekilen değerler sessizce filizlenmeye devam etti: Bilgi, alçak gönüllülük, tövbe, umut ve sorumluluk." },
+          {
+            type: "image",
+            src: "/kitaplar/hz-adem/bolum-8/filizlenen-emanet.jpg",
+            alt: "Karanlık toprağın içinden yükselen tek bir taze filiz ve üzerine düşen ışık",
+          },
           { type: "text", text: "Şimdi bu yolculuğun emaneti, onu okuyan her çocuğun düşüncesinde küçük bir filiz gibi büyüyebilirdi." },
         ],
         has_question: true,

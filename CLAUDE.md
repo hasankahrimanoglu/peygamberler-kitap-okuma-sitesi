@@ -67,9 +67,9 @@ Stack: Next.js + TypeScript + Tailwind + Supabase. Paket yöneticisi: **npm**.
   metin** olarak gelir. Senin işin onu `books.ts` formatına **EKLEMEK** —
   içeriği kendin yazma, değiştirme, kısaltma.
 - **Rozet görsel anahtarı `books.ts`'te alan DEĞİLDİR.** `src/lib/derive.ts`
-  içindeki `rozetIconKey(bookKey, no)` ile `{bookKey}-bolum-{no}` olarak türetilir
-  → `public/rozetler/rozet-{bookKey}-bolum-{no}.png`. Bölümlere `rozetIcon`
-  alanı ekleme.
+  içindeki `rozetIconKey(bookKey, no)` ile `hz-{bookKey}/bolum-{no}` olarak
+  türetilir → `public/rozetler/hz-{bookKey}/bolum-{no}.svg`. Bölümlere
+  `rozetIcon` alanı ekleme.
 - Supabase tabloları: `profiles`, `parent_subscriptions`, `books`, `user_progress`.
 - Türetilen kavramlar tablo GEREKTİRMEZ: rozet (`tamamlanan_bölüm >= sıra`),
   madalya (`bitti_mi = true`), unvan (tamamlanan kitap sayısı → eşik tablosu).
@@ -113,11 +113,18 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
 ## GÖRSEL VARLIKLAR (Bölüm 6)
 - Kod görseli **iconKey üzerinden** bulur; placeholder'la yazılır, Hasan aynı
   isimle gerçek dosyayı klasöre atınca kod değişmeden yayına girer.
-- Klasör/isim sabit: `public/rozetler/rozet-{iconKey}.png`,
-  `public/kapaklar/kapak-{bookKey}.png`, `public/madalyalar/`, `public/unvanlar/`,
-  `public/avatarlar/`. Dosya adları küçük harf, Türkçe karaktersiz, tireli.
+- **Klasör düzeni (REVİZE 27 Tem 2026 — PROJE-MODELI 6.1):** kitap → bölüm
+  hiyerarşisi klasöre taşındı. Yol üretimi **yalnız `src/lib/varlikYollari.ts`**
+  üzerinden yapılır; ekranlar kendi içinde yol string'i KURMAZ.
+  `public/kitaplar/hz-{bookKey}/kapak.png` · `.../bolum-{n}/kapak.jpg` ·
+  `.../bolum-{n}/{kisa-ad}.jpg` · `public/rozetler/hz-{bookKey}/bolum-{n}.svg` ·
+  `public/madalyalar/hz-{bookKey}.svg` · `public/unvanlar/{anahtar}.svg` ·
+  `public/avatarlar/avatar-{1..10}.jpg` · `public/ikonlar/final-kapisi.svg`.
+  **Okuma sayfası görselleri 16:9 ve `.jpg`** (sabit). Rozet/madalya/unvan SVG.
+  Dosya adları küçük harf, Türkçe karaktersiz, tireli. İçerik görsellerinin
+  sicili: `ICERIK-GORSEL-SICILI.md`.
 - **Rozet = bölüm başına özel görsel** (Karar: Seçenek B). Anahtar veriye yazılmaz,
-  `rozetIconKey(bookKey, no)` ile türetilir (`adem-bolum-1` gibi). Tek şablon
+  `rozetIconKey(bookKey, no)` ile türetilir (`hz-adem/bolum-1` gibi). Tek şablon
   ailesi; kilitli/kazanılmış durum ayrı görsel değil, CSS ile soluklaştırma.
   Rozet adlarının set genelinde tekilliği **ROZET-MATRISI.md** ile yönetilir.
 - **"Sen Olsaydın" salt metindir** (Karar 11 Tem 2026) — seçeneklerde görsel yok.
@@ -126,12 +133,30 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
 
 ## YENİ DAVRANIŞSAL ÖZELLİKLER (kitap metninden ayrı, ayrı prompt gelir)
 - **Hedef yaş: 8–11.** Tüm içerik ve arayüz dili bu aralığa göre.
-- **Bölüm içi akış (KARAR 15 Tem 2026 — Faz 6.1'de uygulanacak, onaysız başlama):**
+- **Bölüm içi akış (KARAR 15 Tem 2026 — Faz 6.1'de uygulandı):**
   Hikâye — 1. Kısım → Sen Olsaydın → Hikâye Devam Ediyor → Seçimini Karşılaştır →
-  Ne Öğrendik (3 madde) → (varsa) Bugüne Taşı → İllüstrasyon → Rozet Kapısı.
+  Ne Öğrendik (3 madde) → (varsa) Bugüne Taşı → Rozet Kapısı.
   Kurallar: seçim hikâyeyi DALLANDIRMAZ; doğru cevap seçim anında AÇIKLANMAZ;
   bölüm sonunda YALNIZCA seçilen şıkkın karşılaştırma metni gösterilir; seçim
   aynı okuma oturumunda tutulur (kalıcı kayıt S5'tir, karıştırma).
+- **Bölüm TEK SAYFADA KAYDIRILIR (KARAR 26 Tem 2026 — Faz 6.2):** sayfa yok,
+  **durak** var. Sayfa bölme / sayfa çevirme / iç kaydırma alanı KULLANILMAZ;
+  alt gezinme çubuğu ve "Sayfa 3 / 12" göstergesi KALDIRILDI. Yerine üstte
+  daralan sabit başlık + ince altın ilerleme çubuğu + aktif durak adı gelir
+  (bu gösterge opsiyonel değil, sayfa metaforunun zorunlu telafisidir).
+  İllüstrasyon ayrı bir adım DEĞİLDİR — hikâye akışının içine, ait olduğu
+  sahnenin geldiği yere serpiştirilir; metin ve görsel hiçbir kırılımda yan yana
+  konmaz. "Sen Olsaydın" bir **kapıdır**: onaylanmadan sonrası **render edilmez**
+  (bulanıklaştırma/kilit ile gizleme değil — DOM'da hiç bulunmaz).
+  **"Kaldığın yer" özelliği YOK (KARAR 28 Tem 2026 — kaldırıldı):** kaydırma
+  konumu okunan yerin güvenilir göstergesi değil; çocuk metni okumadan sayfayı
+  kaydırıp çıkabiliyor. Bölüm her açılışta baştan başlar. Yeniden ÖNERME.
+  Üretim rotası `/reader/[chapterId]` **28 Tem 2026'da AtlasScrollReader'a
+  geçti**; sayfalı okuyucu (`AtlasReader`, `sayfalar.ts`, sayfa bileşenleri ve
+  `/tasarim/okuma-yeni` · `/tasarim/okuma-kaydirmali` önizlemeleri)
+  **30 Tem 2026'da silindi**. `src/components/reader/` içinde artık yalnız
+  `AtlasScrollReader` + `akis.ts` + `Konfeti` vardır; sayfa metaforuna dönüş
+  ÖNERİLMEZ.
 - **"Bugüne Taşı" görevleri KOŞULLUDUR** — her bölümde değil (kitabın yaklaşık
   %40–50'si; editoryal hedef, teknik sınır olarak KODLANMAZ). Gönüllüdür: "Görevi Listeme
   Ekle / Şimdilik Değil". İlerleme/rozet/madalya ŞARTI DEĞİLDİR; göreve ayrı

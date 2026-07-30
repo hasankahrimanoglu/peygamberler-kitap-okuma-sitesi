@@ -113,11 +113,29 @@ Görsel dosyası gerekmez: anahtar unvan adından türetilir
 - Başlık: sıcak kahve (#4A3426 civarı)
 - Altın: rozet/madalya vurgularında (#C9A227 civarı)
 
-**Çocuk tarafı (macera, gece gökyüzü):**
+**Çocuk tarafı (macera):**
 - Zemin: koyu lacivert (#0E1A34 civarı) + yıldız dokusu
 - Kart zemini: lacivertin bir ton açığı, altın konturlu
 - Okuma yüzeyi: krem (#FBF6E9) — uzun metin daima açık zemin üzerinde
 - Vurgu: altın (#E8B84B) ve yeşil (#34A06B)
+
+**KOYU ÇERÇEVE / AYDINLIK SAHNE (REVİZE — 29 Temmuz 2026, Hasan).** Çocuk
+tarafı baştan sona koyu DEĞİLDİR. Keşif haritasında ayrım şudur:
+- **Çerçeve koyu kalır:** üst bar, bölge şeridi, Keşif İskelesi. Haritayı
+  çerçeveler, kontrast verir, gece-yıldız kimliğini taşır.
+- **Sahne aydınlıktır:** bölge manzarası gündüz, canlı yeşil/mavi bir
+  illüstrasyondur. 8–11 yaş için baştan sona karanlık bir harita davetkâr
+  değil.
+- **Sahne KARARTILMAZ.** Yalnız bölge başlığının oturduğu üst şerit korunur;
+  gerisi serbest bırakılır. Okunabilirlik yükünü öğelerin kendisi taşır:
+  ad kartı krem zemin, madalyonun altında hâle ve yere oturma gölgesi, yolun
+  kendi koyu dış hattı. Doygunluk düşüren genel filtre KULLANILMAZ — aydınlık
+  illüstrasyonun en değerli yanını (canlı renk) alıp götürür.
+- **Harita ad kartları krem zemin + koyu lacivert yazıdır**, kart genişliği
+  ada göre daralır. Koyu kart aydınlık manzarada ya çamurlaşıyor ya da ağır
+  duruyordu; krem kart hem manzarayla uyumlu hem de "okunacak metin daima
+  krem zeminde" kuralıyla aynı dilde.
+- Okuma ekranı bu karardan ETKİLENMEZ; orası krem kalır.
 
 Kesin renk değerleri Faz 1'de `chatgpt-tasarim/` görsellerinden örneklenip
 Tailwind config'e token olarak yazılır. Renkler tek kaynaktan yönetilir;
@@ -175,27 +193,40 @@ yön **“Masalsı Keşif Atlası”**dır:
 - Kitap detayında bölümler, aynı atlas dünyasında kıvrımlı bölüm rotası olarak
   gösterilir; kilit koşulları somut yazılır.
 - Hz. Âdem okuma ekranında üst bar ve okuma yüzeyi aynı genişlikte hizalanır.
-  Özel illüstrasyon tanımlanan sayfalarda tablet yatay/masaüstünde metin ve
-  illüstrasyon yan yana; dikey cihazlarda illüstrasyon üstte, metin alttadır.
-  Özel illüstrasyonu olmayan sayfada boş görsel alanı/placeholder gösterilmez;
-  metin, sayfanın türüne uygun tam genişlikte atlas düzenine geçer.
-- Hikâye sayfası başlığı her sayfada aynı üst başlangıç çizgisinde sabit kalır;
-  metnin kısa veya uzun olması başlık konumunu değiştirmez. Hikâye metni,
-  başlığın altındaki kalan okuma alanında dengelenir. Normal hikâye
-  sayfalarında yinelenen “Hikâye · 1. Kısım” üst etiketi kullanılmaz. Başlık
-  düzeni yalnızca **bölüm adı + kitap adı ve bölüm numarası** bilgisini taşır.
+  **Kaydırmalı akışta metin tek sütundur (REVİZE — 26 Temmuz 2026):** illüstrasyon
+  metnin yanına değil, akışın içine, ait olduğu sahnenin geldiği yere yerleşir.
+  Geniş ekranda görsel metin sütunundan taşabilir; dar ekranda kullanılabilir
+  genişliği doldurur. Metin ve görsel hiçbir kırılımda yan yana konmaz.
+- Bölüm başlığı akışın en üstünde bir kez görünür; kaydırma başlayınca üst barda
+  daralmış hâlde (bölüm adı + aktif durak) sabit kalır. Yinelenen
+  “Hikâye · 1. Kısım” üst etiketi kullanılmaz. Başlık düzeni yalnızca
+  **bölüm adı + kitap adı ve bölüm numarası** bilgisini taşır.
 - Uzun hikâye metninde yüksek okunabilirlikli edebî serif yazı ailesi kullanılır.
-  Hedef gövde ölçüsü mobilde yaklaşık 19px, tablet dikeyde 21–22px, tablet
-  yatayda 22–23px, masaüstünde 23–24px'tir; satır uzunluğu geniş ekranlarda
-  yaklaşık 60–64 karakterle sınırlandırılır. Kısa hikâye sayfaları kullanılabilir
-  alan varsa bir kademe büyüyebilir; uzun sayfalar temel ölçünün altına inmez.
+  Hedef gövde ölçüsü **mobilde yaklaşık 17,5px (REVİZE — 27 Temmuz 2026)**, tablet
+  dikeyde 21–22px, tablet yatayda 22–23px, masaüstünde 23–24px'tir; satır uzunluğu
+  geniş ekranlarda yaklaşık 60–64 karakterle sınırlandırılır. Kısa hikâye sayfaları
+  kullanılabilir alan varsa bir kademe büyüyebilir; uzun sayfalar temel ölçünün
+  altına inmez.
+  *Mobil revizyonun gerekçesi:* 19px'te satıra yalnız 3-4 kelime sığıyor, satır
+  başına ~26 karakter düşüyordu; okuma sürekli bölünüyordu. 17,5px ve daraltılmış
+  kenar boşluklarıyla satır başına ~33 karaktere çıkıldı. Değer, Bölüm 3.5'teki
+  **16px gövde metni tabanının** üstünde kalır.
 - Hikâye içindeki önemli kelime ve kısa ifadeler renk değiştirilerek veya altı
   çizilerek vurgulanmaz; metin doğal tipografik akışını korur. Anahtar cümle,
   editoryal olarak gerekli olduğunda ince altın sol çizgili sakin bir kutuyla
   paragraf düzeyinde ayrıştırılabilir.
-- Sayfalama, metnin okuma yüzeyinin ve alt gezinmenin arkasına taşmasını
-  önleyecek yoğunlukta yapılır. İç kaydırma gerektiğinde içerik açıkça
-  kaydırılabilir kalır; metin alt kısımda maske ile görünmez hâle getirilmez.
+- **Bölüm tek sayfada kesintisiz kaydırılır (REVİZE — 26 Temmuz 2026, Hasan onayı;
+  bkz. 5.1 "Bölüm içi akış" ve Faz 6.2).** Önceki kural bölümü karakter bütçesine
+  göre sayfalara bölüyordu; ~4.000 karakterlik bir bölüm 9–12 okuma sayfasına
+  çıkıyor, akış sayfalarıyla birlikte bölüm başına 14–17 kez ileri basma
+  gerekiyordu. 8–11 yaş için bu, okuma akışını sürekli kesiyordu. Yeni kural:
+  bölümün tamamı tek bir kaydırma akışıdır; sayfa bölme, sayfa çevirme ve iç
+  kaydırma alanı kullanılmaz. Metin alt kısımda maske ile görünmez hâle
+  getirilmez.
+- Kaydırmalı akışta **ilerleme geri bildirimi zorunludur.** Sayfa göstergesinin
+  ("Sayfa 3 / 12") kaldırılması çocukta "ne kadar kaldı" belirsizliği yaratır; bu
+  boşluk üstteki ince ilerleme çubuğu ve aktif durak adıyla kapatılır. İlerleme
+  göstergesi süs değil, sayfa metaforunun kaldırılmasının telafisidir.
 - Hz. Âdem Büyük Final Testi de aynı atlas dünyasında gösterilir: ortak keşif
   üst barı, katmanlı gece/doğa zemini ve krem soru yüzeyi kullanılır. Seçenekler
   tek sütunda kalır; onay/devam eylemleri yeşil, sonucu görme ve ilk madalya
@@ -230,19 +261,130 @@ izler; arayüzün tek veri kaynağı `src/data/atlasCatalog.ts` olur.
   - **Yol duraklardan türetilir.** Önce durak konumları hesaplanır, sonra
     noktalardan geçen akıcı eğri çizilir. Yol son durakta biter; sarkan uç
     oluşmaz ve kitap sayısı için istisna gerekmez.
-  - Duraklar yılan düzeninde akar; her sıra kendi içinde tam genişliğe yayılır,
-    böylece sırada tek kitap kalsa da denge bozulmaz. Geniş ekranda en fazla
-    üç sütun, dar ekranda en fazla iki sütun kullanılır.
+  - **IZGARA KALDIRILDI — duraklar dalga üzerinde iner (REVİZE — 29 Temmuz
+    2026, Hasan).** Önceki kural sıra/sütun ızgarasıydı: bir sıradaki 2–3 kitap
+    tam aynı yükseklikteydi. Bu haritaya tablo görüntüsü veriyor, sıra
+    sonlarında keskin dönüş üretiyor ve aynı bölge geniş ekranda 3 sütun, dar
+    ekranda 2 sütun olduğu için cihazdan cihaza başka bir şekle bürünüyordu.
+    Yeni kural:
+    - Kitaplar **dikeyde eşit aralıkla iner**, yatayda bir dalga üzerinde
+      salınır. **Hiçbir iki durak aynı hizada değildir.**
+    - Dalga geniş ekranda **dört duraklıktır** (sağ → orta → sol → orta), dar
+      ekranda **iki duraklık** (sol ↔ sağ). Gerekçe farklıdır: geniş ekranda
+      dört duraklık dalga bir ayağın yatay yolunu yarıya indirip eğimi
+      dengeler; dar ekranda ise dikey adım ~65px'e düştüğü için komşu ad
+      kartlarını ancak **yatay** mesafe ayırabilir ve iki duraklık dalga bu
+      mesafeyi iki katına çıkarır.
+    - **Son kitap 4, 5 ve 6 kitaplık bölgelerin hepsinde SAĞDA biter** —
+      eşleştirme sondan kurulur. Tek yan etki: 5 kitaplık bölge soldan değil
+      sağdan başlar.
+    - **Kaydırma gerekmez.** Dikeyde çakışma riski komşu duraklar arasında
+      değil, **aynı x'teki** duraklar arasındadır; komşular yatayda zaten
+      ayrıdır. Bu yüzden dikey adım bir kartın tam boyu kadar değil **yarısı**
+      kadar olmak zorundadır ve 6 kitap her kırılımda tek ekrana sığar. 35
+      durağı yedi bölgeye bölme kararı (25 Tem 2026) böylece korunur.
+    - Dikey aralık en dar iki duruma göre kalibre edilir: üst sınır **alt
+      başlığı olan** bölgelere, alt sınır **adı iki satıra saran** kitaplara.
+      Alt başlık, sahnenin 510–610px'e indiği kırılımlarda (tablet yatay ve
+      mobil) gizlenir.
   - **Her durak tek bir işarettir:** daire + ayrı etiket kartı yerine, kitabın
-    kapak görselini taşıyan madalyon + durum rozeti + sıra numarası. Kapak
-    haritada ilk kez burada görünür.
+    kapak görselini taşıyan madalyon + durum rozeti. Kapak haritada ilk kez
+    burada görünür. **Sıra numarası rozeti KALDIRILDI (KARAR — 29 Temmuz 2026,
+    Hasan):** sırayı yolun kendisi anlatıyor, madalyonun üstünde ikinci bir
+    işaret kalabalık yapıyordu. Sıra bilgisi ekran okuyucuda `aria-label`
+    içinde korunur.
+  - **Durak noktası MADALYONUN merkezidir (KARAR — 29 Temmuz 2026, Hasan).**
+    Ad etiketi akıştan çıkarılıp madalyonun altına mutlak konumlandırılır.
+    Öncesinde etiket de akıştaydı ve nokta "madalyon + etiket" bloğunu
+    ortalıyordu; madalyonun merkezi noktanın ~30px yukarısında kalıyor, yol
+    yuvarlağın altından geçiyordu. Yan kazanç: iki satıra saran adlar (Rahmet
+    Yolculuğu) artık madalyonu yukarı itmiyor. Etiketin tamamı noktanın altına
+    sarktığı için dikey sınırlar da yeniden ayarlandı.
+    Madalyonun altında **yumuşak bir yere oturma gölgesi** vardır: işaretçi
+    havada asılı durmaktan çıkıp yolun üstüne oturur.
+  - **Aktif durak nefes alır (KARAR — 29 Temmuz 2026, Hasan).** Madalyonun
+    ÇEVRESİNDE bir altın halka yavaşça açılıp solar (~2,8sn). 27 Tem'de
+    kaldırılan `activePulse`ın geri dönüşü değildir: o, madalyonun kendisini
+    büyütüp küçültüyor ve komşu etiketleri itiyordu; bu halka yerleşime hiç
+    dokunmaz. **Halka madalyonun sözde-öğesidir**, durak butonunun değil:
+    durak seçildiğinde madalyon 3px kalkıp %6 büyüdüğü için, halka butona
+    bağlıyken eş merkezli olmaktan çıkıyor ve alttaki boşluk üstündekinden
+    büyük görünüyordu. Aynı öğeye bağlı olunca dönüşümü paylaşırlar. Vurgu **aktif** duraktadır, seçili durakta değil — vurgulanan
+    şey "tıkladığın kitap" değil **"şimdi okunacak kitap"**. Fener ışığı da
+    aynı durağa koştuğu için ikisi tek cümle kurar: yol buraya gidiyor.
+    `prefers-reduced-motion` açıkken halka kalır, yalnız nefesi durur — halka
+    bir durum göstergesidir, animasyon süsü değil.
   - **Kitap adı iki satıra sarar, kesilmez.** Önceki sabit genişlik + tek satır
     kuralı Rahmet Yolculuğu'nun dört kitabını da "Hz. Muhammed —…" hâline
-    getiriyordu.
-  - Tamamlanan yol sakin yeşil, kalan yol soluk altın kesikli çizgidir; aktif
-    durak altın halkayla, kilitli ve hazırlanan duraklar soluklaştırmayla
-    gösterilir. Bağlantı çizgisi ad etiketlerinin ve dokunma alanlarının
-    üzerinden geçmez.
+    getiriyordu. Kart genişliği ADA GÖRE daralır (üst sınır korunur): sabit
+    genişlikte "Hz. Şît" kocaman bir kutunun ortasında kalıyordu.
+  - **Haritadaki kartta YALNIZ AD vardır (KARAR — 29 Temmuz 2026, Hasan).**
+    Durum metni ("Tamamlandı / Yeni Açıldı / Hazırlanıyor") kaldırıldı: aynı
+    bilgiyi madalyonun üstündeki durum rozeti gösteriyor, kitap paneli de
+    tekrar ediyordu. Harita ferahladı, kartın dikey payı ~17px azaldı ve o pay
+    madalyon büyütmesine gitti. Durum bilgisi ekran okuyucuda `aria-label`
+    içinde korunur; Bölüm 3.4'ün durum dili panelde aynen geçerlidir.
+  - **Yol bir ÇİZGİ değil, PATİKADIR (KARAR — 29 Temmuz 2026, Hasan).** İnce
+    kesik çizgi yerine geniş kum rengi bir şerit + koyu dış hat + üstünde
+    beyaza yakın kesikli orta çizgi. Asıl "yol" hissini veren şey budur; yön
+    karmaşası da bununla kaybolur, çünkü göz çizgiyi değil yolu takip eder.
+    Gövde **tek parça** çizilir (parçalara bölünse yarı saydam uçlar birleşme
+    yerlerinde koyu ek izi bırakırdı); uzaklığa göre solma orta çizgide yaşar.
+    **Yol genişliği madalyona göre ayarlanır** — hedef oran madalyon : yol
+    ≈ 3,3. Şerit kalınlaşırsa madalyonu ezer; madalyonu büyütmek çözüm
+    değildir, çünkü yerleşim payı masaüstünde ve tablet yatayda birkaç
+    piksele inmiştir ve büyüme doğrudan çakışmaya gider.
+    Tamamlanan kısım ayrı bir çizgi değil, **yolun yeşile boyanmış hâlidir**.
+    Aktif durak altın halkayla, kilitli ve hazırlanan duraklar
+    soluklaştırmayla gösterilir. Yol ad etiketlerinin üzerinden geçmez.
+  - **Yol düz çizgi değil, hafif yay çizer.** Kavis, kontrol noktasına değil
+    **geometriye** eklenir: iki durağın ortasına ayağın dikine bir kavis
+    noktası girer ve eğri o noktadan geçer. Kontrol noktası yöntemi denendi ve
+    bırakıldı — her ayak bağımsız kamburlaştığı için durakların tam üstünde
+    teğet kırılıyor, aşağı bakan bir **V çentiği** oluşuyordu. Kavis daima
+    yukarıdır; ad kartları madalyonun altında durur, aşağı kavis onların
+    üstünden geçerdi.
+  - **Yol SVG'si sahnenin birebir piksel ölçüsünde çizilir.** Önceki 100×100
+    viewBox `preserveAspectRatio="none"` ile esniyordu ve bunun iki bedeli
+    vardı: kavis payı yatay ve dikeyde farklı görünüyor, `pathLength` ile
+    `non-scaling-stroke` birlikte çalışmadığı için **fener ışığı tek ışık
+    yerine yol boyunca tekrarlayan lekelere bölünüyordu**. Ölçü `ResizeObserver`
+    ile okunur; callback ref kullanılır, çünkü bölge verisi eşzamansız gelir ve
+    boş bağımlılıklı bir effect ilk render'da sahneyi DOM'da bulamaz.
+  - **Kalan yol solarak sıralanır + akar + sıradaki parçada fener yanar
+    (KARAR — 29 Temmuz 2026, Hasan).** Üç katman birlikte çalışır:
+    1. **Solma (renk).** Orta çizgi tek düz renk değildir: sıradaki durağa giden
+       parça en parlak, her parçada bir kademe soluklaşır. Orta çizgi parça
+       parça çizilir, her parça kendi `linearGradient`ini taşır ve gradyan
+       parçanın kendi iki ucuna bağlanır — tek yatay gradyan kullanılsaydı
+       dalganın sağdan sola akan ayaklarında renk ters dönerdi. Alt sınır 0.40:
+       aşağısında çizgi aydınlık sahne bölgelerinde büsbütün kayboluyor.
+       **Yol gövdesi solmaz** — zemin gibi hep durur, yön bilgisini üstündeki
+       çizgi taşır.
+    2. **Akış (hareket).** Kısa tireler ilk duraktan son durağa doğru kayar.
+       Kayma desenin tam periyodu kadardır, döngüde sıçrama olmaz. Hız bilerek
+       düşük (≈4px/sn).
+    3. **Fener ışığı (vurgu).** YALNIZCA aktif durağa giden parçada tek bir
+       altın ışık süzülür, sonra ~2 saniye bekler. Yolun tamamına yayılan
+       "koşan ışık" veya nabız efekti EKLENMEZ; sahne fotoğraf zeminin
+       üzerinde durduğu için her yerde süren hareket göz köşesinde birikir.
+    **Tamamlanan yeşil kısım animasyonsuz ve tek renktir** — akan yol
+    "gidilecek yol", duran yeşil "gidilmiş yol" demektir. Bölgede aktif durak
+    yoksa (tamamı hazırlanıyor) fener çizilmez ve solma sıralaması kurulmaz;
+    yol baştan sona tek ve soluk bir değerde kalır. `prefers-reduced-motion`
+    açık kullanıcıda akış durur, fener büsbütün kaldırılır (durdurulsaydı yolun
+    ortasında sabit bir altın çubuk kalırdı); solma kalır, o renk animasyon
+    değildir.
+  - **Sahne görselinin üzerinde okunabilirlik katmanı vardır (KARAR — 29 Temmuz
+    2026, Hasan).** Manzara görseli gün batımı ve su gibi aydınlık bölgelerde
+    madalyonları ve altın yolu yutuyordu. Katman üç iş yapar: dikey kademe
+    (başlığın oturduğu üst şerit ve ad etiketlerinin dizildiği alt şerit daha
+    koyu, orta serbest), vinyet (köşeleri toplar, gözü sahnenin ortasındaki
+    yola çeker) ve hafif doygunluk düşüşü (`backdrop-filter`; altın yol ile
+    arka plandaki turuncu yarışmayı bırakır). **Görsel silinmez** — en açık
+    bant %28 civarındadır, manzara okunmaya devam eder. Madalyon ölçeğinde
+    aynı işi yumuşak koyu bir hâle tamamlar. Doygunluk düşüşünü desteklemeyen
+    tarayıcıda sessizce düşer; okunabilirliği asıl sağlayan kademe ve vinyettir.
   - **Bölge sayacı sahnenin sağ üst köşesindedir** (dar ekranda sol alt).
     Bölgenin "ruh hâli" metni kaldırılmıştır; o köşede ayrı bir metin alanı
     kullanılmaz.
@@ -275,6 +417,85 @@ izler; arayüzün tek veri kaynağı `src/data/atlasCatalog.ts` olur.
   yayımlanmış kitabın bölüm ilerlemesi, bölüm bölüm kazanılacak/kazanılan
   rozetleri ve kitap madalyası birlikte görünür; dokunma hedefleri Bölüm 3.5
   standardını korur.
+
+### 3.7.1 Yükseklik modeli (KARAR — 28 Temmuz 2026, Hasan)
+
+Çocuk tarafındaki tam ekran atlas ekranları (`/map`, `/kitap/[bookId]`) **tek bir
+yükseklik kuralını** izler:
+
+- Kabuk **kesin yükseklikte** bir grid'dir: `height: 100svh` +
+  `grid-template-rows: auto … minmax(0, 1fr) auto`. Yalnız `min-height`
+  verilirse yükseklik belirsiz kalır ve `1fr` satırı serbest alanı değil
+  **içerik boyutunu** alır; 1024×768'de sayfa taşıyordu.
+- **Üst bar ve alt bar sabit kalır; orta bölge kalan yüksekliği alır.** Orta
+  bölgeye sabit `height` / `min-height` / `max-height` **yazılmaz** —
+  `calc(100svh − X)` gibi sihirli sabitler üst barın tek satır kaldığı
+  varsayımına dayanır ve o varsayım her zaman doğru değildir.
+- Keşif İskelesi (alt bar) **her genişlikte** `position: sticky; bottom: 0`.
+- Dikey alan yetmediğinde ölçüler kısılır (yükseklik sorgusuyla), içerik
+  ezilmez: panel flex sütununda çocuklara `flex-shrink: 0` verilir — aksi
+  hâlde taşma anında öğeler sessizce 0 piksele çöküyordu.
+
+### 3.7.2 Çocuk tarafı üst barı ve keşif menüsü (KARAR — 28 Temmuz 2026, Hasan)
+
+- Üst bar **her ekranda TEK satırdır**: logo (solda, çerçevesiz) · profil künyesi ·
+  menü ikonu. Rozet/madalya sayaçları ve unvan bardan **çıkarıldı**.
+- **Keşif menüsü** sağdan açılan çekmecedir (kitap detayıyla aynı davranış:
+  arka plana dokunma ve Escape kapatır). İçerik: unvan, **Kazanılan Rozet**,
+  **Kazanılan Madalya**, ardından sayfa bağlantıları (**Veli Paneli**, **Çıkış**).
+  Menü ileride büyüyecek bir gezinme alanıdır.
+- **Haritada geri butonu YOKTUR.** Eskiden veli paneline gidiyordu; çocuğun
+  okuma ekranından tek dokunuşla veli paneline düşmesi yanlıştı. O bağlantı
+  artık menünün içindedir. **Faz 7 notu:** çocuk/veli oturum ayrımı olmadığı
+  için bu bağlantı şimdilik korumasızdır, güvenlik fazında PIN arkasına alınır.
+- **Bölge gezinmesi tek yerdedir:** sahnenin üstündeki sayaç kaldırıldı, oklar
+  bölge şeridine alındı. Görünen bölge sayısı: mobil 1 (künye), tablet dikey 2,
+  tablet yatay 3, masaüstü 5 — komşular kenarlardan kesik görünür. Böylece bölge
+  adları kesilmez ve sahne başlığı sağa doğru genişleyip satır kazanır.
+- **Bölüm rotası üst barı** da tek satırdır: geri · bölüm/rozet sayaçları · menü.
+  Kitap adı ve sıra numarası bardan çıkarıldı (orta alandaki başlıkta zaten var);
+  logo bu ekranda kullanılmaz.
+
+#### 3.7.2.1 Kitap detay paneli — iki düzen (REVİZE — 29 Temmuz 2026, Hasan)
+
+Panelin sıkıştırılmış hâli **yalnızca tablet yatayda** geçerlidir; orada kısıt
+dikey alandır. Diğer ekranlarda panel uzundur, sıkıştırmaya gerek yoktur.
+Ayrım tek bir sorguyla yapılır: `(min-width: 960px) and (max-height: 860px)`.
+
+| | Mobil · Tablet dikey · Masaüstü | Tablet yatay |
+|---|---|---|
+| Kitap açıklaması | **Düz metin**, doğrudan görünür | **Aç/kapa** ("Kitap Açıklaması" butonu) |
+| Bölüm rozetleri | **4 sütunlu ızgara** (8 bölüm = 2 satır) | **Tek satır**, kare adede göre hesaplanır |
+| Rozet altı yazısı | **"1. bölüm" görünür** | Gizli — numara zaten rozetin üstünde |
+
+- Tek satır düzeninde rozetler adede bakılmaksızın panelin **iki kenarına
+  hizalanır**; kalan boşluk `space-between` ile aralara dağıtılır.
+- Buton ve açıklama metni **her zaman DOM'a girer**, hangisinin görüneceğine CSS
+  karar verir. Metin koşullu render edilseydi düz modda hiç görünmezdi.
+- Tablet yatayda madalya ile ana eylem arasındaki ölü alan rozet satırına
+  aktarıldı; ikisi arasında ~25px sabit pay bırakılır.
+- **Sahne başlığı puntoları alan genişliğiyle büyür.** Tablet dikey ve
+  masaüstünde metinler alanın yanında küçük kalıyordu: açıklama 15→17px
+  (tablet dikey) ve 20px'e (masaüstü) çıkar, başlık 34/42px olur. Başlık
+  kutusunun sağ payı da 230px'ten 44px'e indi (o pay kaldırılan sahne
+  sayacı içindi).
+- **Rozet karesi panelin genişliğine göre ölçeklenir (KARAR — 29 Temmuz 2026,
+  Hasan).** Sabit 52px, panel 480px'e çıktığında (tablet dikey ve masaüstü)
+  ızgaranın içinde küçük kalıyordu. Ölçü tek bir CSS değişkeninden
+  (`--rozet-kare`) yönetilir: **mobilde 52px, tablet dikey ve masaüstünde
+  68px.** Onaylanan oran korunur — kare, sütun genişliğinin ~%65'i kadardır.
+  Kare sütuna kelepçelidir (`min(…, 100%)`); 960px'lik dar masaüstünde panel
+  326px'e indiğinde taşma olmaz. Rozet görselinin kendisi kareyle birlikte
+  büyür: `OdulIkonu`nun `boyut` prop'u yalnız intrinsic ölçüdür, ölçekleme
+  CSS'ten yapılır.
+- **Kitap açıklaması metni de aynı iki ekranda 15→17px olur.** Mobil 15px'te
+  kalır (onaylanmış düzen).
+- Büyüyen rozet + metin masaüstü panelinde ~47px fazladan yer istiyor; bu pay
+  kapak (96→84px), kitap başlığı (38→34px üst sınır) ve blok aralıklarından
+  geri alınır. **Buna rağmen 900px yüksekliğindeki masaüstünde panel ~70px
+  kayar** ve madalya kartı sabit "Tekrar Oku" butonunun altında kalır; ~970px
+  ve üzeri yükseklikte her şey kaydırmasız sığar. Panel zaten kaydırılabilir
+  bir yüzeydir, ana eylem `sticky` olduğu için her zaman erişilebilir kalır.
 
 ### 3.8 Veli ana sayfası bilgi mimarisi (ONAY — 18 Temmuz 2026)
 
@@ -391,7 +612,7 @@ etmez:
 |---|---|---|
 | `/map` | Keşif Dünyası (harita) | Masaüstü/tablet: hafif zikzak dikey yol; mobil: düz dikey yol. Aktif kitap en büyük kart |
 | `/kitap/[bookId]` | Kitap Yolculuğu (detay) | YENİ — modal yerine tam sayfa. Bölüm listesi + final testi kartı |
-| `/reader/[chapterId]` | Okuma akışı | Mevcut rota korunur. Sayfa tipleri: hikâye (**1. Kısım + Hikâye Devam Ediyor**), **Tanık Sayfası**, Sen Olsaydın, **Seçimini Karşılaştır**, Ne Öğrendik, Bugüne Taşı (**varsa**), Rozet Kapısı. Bölüm içi sıra için aşağıdaki "Bölüm içi akış" kararına bak |
+| `/reader/[chapterId]` | Okuma akışı | Mevcut rota korunur. **Bölüm tek sayfada kaydırılır (REVİZE — 26 Tem 2026, Faz 6.2); sayfa yoktur, "durak" vardır.** Duraklar: hikâye (**1. Kısım + Hikâye Devam Ediyor**), **Tanık Sayfası**, Sen Olsaydın, **Seçimini Karşılaştır**, Ne Öğrendik, Bugüne Taşı (**varsa**), Rozet Kapısı. Bölüm içi sıra için aşağıdaki "Bölüm içi akış" kararına bak |
 | `/quiz/[bookId]` | Büyük Final Testi | Mevcut rota korunur |
 | `/kazanimlarim` | Kazanımlarım (çocuk) | YENİ — çocuğun topladığı rozetler, madalyalar ve ünvanı gördüğü vitrin ekranı. Koleksiyon/başarı hissi verir; veri türetilir (yeni tablo yok) |
 | `/kelime-defterim` | Kelime Defterim (çocuk) | YENİ — çocuğun okuduğu kitaplardaki Kelime Kutusu kelimeleri, anlamlarıyla, aranabilir liste. Kelimeler `books.ts`'te zaten var; çocuğun gördükleri toplanıp gösterilir |
@@ -404,24 +625,45 @@ etmez:
 4. **Seçimini Karşılaştır** (yalnızca çocuğun seçtiği şıkka ait metin gösterilir)
 5. **Ne Öğrendik** (üç kısa madde)
 6. **Bugüne Taşı** (yalnızca görev tanımlanan bölümlerde)
-7. **İllüstrasyon** (yalnız seçilen hikâye sayfalarında) ve **Rozet Kapısı**
+7. **Rozet Kapısı** (akışın sonu)
+
+**İllüstrasyon ayrı bir adım değildir (REVİZE — 26 Tem 2026):** görseller 1. Kısım
+ve Devam bölümlerinin içine, ait oldukları sahnenin geldiği yere serpiştirilir.
 
 Kuralları: seçim hikâyeyi DALLANDIRMAZ; doğru cevap seçim anında AÇIKLANMAZ;
 seçim aynı okuma oturumunda tutulur (kalıcı kayıt S5'tir). **Sayfa yenilenirse
 seçim korunur (KARAR 15 Tem 2026 — `sessionStorage`; tablo gerektirmez),** bölüm
 ilerlemesinin yenilemede korunması davranışıyla tutarlı olması için. Tanık
-Sayfası, kullanılan kitaplarda hikâye sayfalarının içinde kalmaya devam eder.
+Sayfası, kullanılan kitaplarda hikâye akışının içinde kalmaya devam eder.
 
-Okuma ekranı düzeni:
-- **Tablet yatay:** özel illüstrasyonlu sayfada metin ve görsel yan yana; görselsiz
-  sayfada metin tam genişlikte; üstte ses çubuğu; altta Önceki/Sonraki.
-- **Tablet dikey / mobil:** özel illüstrasyonlu sayfada görsel üstte, metin altta;
-  görselsiz sayfada görsel için boşluk ayrılmaz; kelime kutusu metnin altında;
-  ses çubuğu üstte kompakt sabit.
-- Sayfa göstergesi tek formatta: **"Sayfa 3 / 12"**. Ses süresi ayrı: "01:18 / 06:45".
-- Alt navigasyonda yalnızca Önceki/Sonraki; "Sayfayı Çevir" tekrarı kaldırılır.
-  Ortadaki büyük buton yalnızca özel anlarda: Maceraya Başla / Kararını Onayla /
-  Bölümü Bitir / Final Testine Geç.
+Okuma ekranı düzeni (**REVİZE — 26 Temmuz 2026, Hasan onayı; Faz 6.2**):
+- **Tüm cihazlarda tek sütun, kesintisiz kaydırma.** Masaüstünde fare tekerleği,
+  tablet ve telefonda parmakla doğal kaydırma. Sayfa çevirme, sayfa bölme ve iç
+  kaydırma alanı yoktur.
+- **İllüstrasyon akışın içindedir** — ait olduğu sahnenin geldiği yerde görünür.
+  Geniş ekranda metin sütunundan taşabilir; dar ekranda kullanılabilir genişliği
+  doldurur. Metin ve görsel hiçbir kırılımda yan yana konmaz.
+- Kelime Sandığı ayrı kutu değildir: kelime metnin içinde işaretlidir, dokununca
+  anlamı **kelimenin altında** açılır.
+- **Alt gezinme çubuğu kaldırılmıştır.** Yerine üstte daralan sabit başlık + ince
+  altın ilerleme çubuğu + aktif durak adı gelir. "Sayfa 3 / 12" göstergesi
+  kullanılmaz. Ses süresi ayrı kalır: "01:18 / 06:45".
+- **Büyük butonlar akışın içinde, geldiği yerde durur:** Maceraya Başla (kapağın
+  altında, kaydırmayı başlatan animasyonlu ipucu) / Kararını Onayla (karar
+  kartında) / Görevi Listeme Ekle — Şimdilik Değil (görev kartında) / Bölümü
+  Tamamla (Rozet Kapısı'nda, akışın sonunda).
+- **"Sen Olsaydın" bir kapıdır:** karar onaylanmadan sonrasındaki içerik
+  **render edilmez** (DOM'da da bulunmaz; bulanıklaştırma veya kilit görseliyle
+  gizlenmez). Onaylandığında devamı açılır ve akış yeni içeriğin başına yumuşakça
+  kaydırılır.
+- **"Kaldığın yer" özelliği KALDIRILDI (KARAR — 28 Temmuz 2026, Hasan).**
+  26 Temmuz'da eklenen otomatik okuma konumu kaydı üretime alınmadan geri
+  çekildi. Gerekçe: **kaydırma konumu, okunan yerin güvenilir göstergesi
+  değildir.** Çocuk bölümün yarısına gelip metni okumadan yukarı/aşağı
+  kaydırabilir, sonra sayfadan çıkabilir; sistem gerçekte nerede kaldığını
+  bilemez ve yanlış yere götürür. Yanlış "kaldığın yer" hiç olmamasından kötüdür.
+  Bölüm her açılışta baştan başlar; ilerleme göstergesi ve durak göstergesi
+  çocuğun nerede olduğunu zaten canlı gösterir.
 - **Tanık Sayfası:** okuma akışına giren özel bir sayfa tipi; olayları hikâyedeki
   bir çocuk/genç karakterin günlüğünden anlatır (el yazısı font + defter görünümü).
   **Tamamen opsiyoneldir** — kullanılan kitaplarda 2-3 kez, bölümün doruk
@@ -429,8 +671,8 @@ Okuma ekranı düzeni:
   `witnessLabel`, `body`, `isFictional` (kurgusal karakterde sayfa altına "Bu
   sayfadaki çocuk hayalîdir; anlattığı olaylar gerçektir." notu gösterilir).
 - **Sesli anlatım (KARAR — Model A):** Play'e basıldığında **bölümün tamamı**
-  baştan sona kesintisiz çalar; ses, sayfa kaydırmasına bağlı DEĞİLDİR (çocuk
-  dinlerken sayfaları kendi takip eder veya sadece dinler). Bu, "telefon =
+  baştan sona kesintisiz çalar; ses, metin kaydırmasına bağlı DEĞİLDİR (çocuk
+  dinlerken metni kendi takip eder veya sadece dinler). Bu, "telefon =
   dinleyerek devam etme cihazı" kararıyla (Bölüm 1) uyumludur. "Kaldığı yerden
   devam" (ses pozisyonu kaydı) S2'de eklenir; Model A bu özellikle anlamlı çalışır.
 
@@ -459,40 +701,64 @@ Navigasyon:
 
 ## 6. Görsel Varlık Sistemi
 
-### 6.1 Klasör ve isimlendirme (SABİT)
+### 6.1 Klasör ve isimlendirme (REVİZE — 27 Temmuz 2026, Hasan onayı)
+
+Önceki düzen tüm görselleri tek klasörde, adın içine gömülmüş anahtarlarla
+tutuyordu (`rozet-adem-bolum-1.png`). Yüzlerce dosya aynı klasörde biriktiği
+için Hasan'ın bir bölümün görsellerini bulup değiştirmesi zorlaşıyordu. Yeni
+düzen **kitap → bölüm** hiyerarşisini klasör yapısına taşır:
 
 ```
 public/
-  avatarlar/    avatar-{key}.png          ör. avatar-erkek-1.png, avatar-kiz-2.png
-  kapaklar/     kapak-{bookKey}.png       ör. kapak-adem.png, kapak-nuh.png
-  rozetler/     rozet-{iconKey}.png       ör. rozet-sabir.png, rozet-bilgi.png
-  madalyalar/   madalya-{bookKey}.png     ör. madalya-adem.png
-  unvanlar/     unvan-{key}.png           ör. unvan-yol-kasifi.png
-  bolgeler/     bolge-{regionId}.png      keşif bölgesi sahne arka planı (7 adet)
-  semboller/    sembol-{key}.png          "Sen Olsaydın" sabit seti (6 adet)
+  kitaplar/
+    placeholder-sahne.jpg              sahne yedeği (16:9)
+    placeholder-kapak.svg              kitap kapağı yedeği
+    hz-{bookKey}/
+      kapak.png                        kitap kapağı (dikey; harita, kütüphane)
+      bolum-{n}/
+        kapak.jpg                      bölüm açılış sahnesi (16:9)
+        {kisa-ad}.jpg                  bölüm içi sahneler (16:9)
+  rozetler/
+    hz-{bookKey}/bolum-{n}.svg         bölüm başına bir rozet
+  madalyalar/
+    hz-{bookKey}.svg                   kitap başına bir madalya (her kitap farklı)
+  unvanlar/
+    {unvan-anahtari}.svg               ör. bilge-yolcu.svg
+  avatarlar/
+    avatar-{1..10}.jpg                 10 avatar
+  ikonlar/
+    final-kapisi.svg                   Büyük Final Testi durağının ikonu
+  bolgeler/     bolge-{regionId}.png   keşif bölgesi sahne arka planı (7 adet)
+  sesli-anlatim/hz-{bookKey}/          (değişmedi)
 ```
 
-- Kod, görseli **iconKey üzerinden** bulur. `books.ts` içindeki her bölüme
-  `rozetIcon` anahtarı eklenir.
-- **KARAR (11 Temmuz 2026): Seçenek B** — her bölüme özel rozet görseli.
-  iconKey bölüme özel yazılır: `adem-bolum-1`, `nuh-bolum-3` gibi.
-  İlk katalog hedefi: 35 kitap ve toplam **216 bölüm/rozet**. Katalog
-  büyüdüğünde sayı artabilir.
-  Hepsi aynı şablon ailesinde üretilir (aynı çerçeve, aynı palet, değişen
-  yalnızca iç sembol). Gerekirse ara çözüm: bazı bölümler değer havuzundan
-  ortak sembol kullanabilir — sistem iconKey sayesinde ikisini de destekler.
+- **Yol üretimi tek kaynaktan yapılır: `src/lib/varlikYollari.ts`.** Hiçbir
+  ekran kendi içinde yol string'i kurmaz. Klasör düzeni yeniden değişirse
+  yalnız bu dosya güncellenir.
+- **Okuma sayfası görselleri 16:9'dur (KARAR 27 Tem 2026)** ve uzantı
+  **`.jpg`'de sabittir** — sahneler fotoğrafiktir, JPEG aynı kalitede PNG'nin
+  onda biri yer kaplar. Kitap kapağı dikey olduğu için bu orana tabi değildir.
+- Rozet, madalya ve unvan **SVG**'dir; Hasan bunları vektör olarak hazırlar.
 - Dosya adı küçük harf, Türkçe karaktersiz, tire ile ayrılır.
-- **Merkezî Rozet Matrisi — `ROZET-MATRISI.md` (kuruldu: 25 Tem 2026):** Tüm
-  serinin rozetleri tek bir tabloda planlanır (kolonlar: kitap · bölüm no ·
-  rozet adı · değer · rozet anahtarı). Bu tablo iki işi birden yönetir:
-  (a) **rozet adları set genelinde tekildir** — aynı değer birden çok kitapta
-  işlenirse her biri farklı ad + farklı nüansla gelir ("Sadakat Rozeti" /
-  "Bekleyen Kalp Rozeti"), (b) ilk katalogdaki **216** rozet görselinin üretim
-  listesidir. İçerik brifindeki "rozet adı" ve buradaki anahtar aynı satırda
-  buluşur. Yeni kitap eklenirken bu matrise bakılır; matris yaşayan belgedir.
-  **Not:** Rozet anahtarı `books.ts`'e alan olarak yazılmaz; `src/lib/derive.ts`
-  içindeki `rozetIconKey(bookKey, no)` ile `{bookKey}-bolum-{no}` olarak
+- **Değiştirme akışı:** Hasan eski dosyayı silip yenisini **aynı adla** klasöre
+  atar; kod değişmeden yayına girer. Dosya yoksa kod BOZULMAZ — `YedekliGorsel`
+  ilgili yedeğe düşer.
+- **KARAR (11 Temmuz 2026, korunur): Seçenek B** — her bölüme özel rozet.
+  İlk katalog hedefi: 35 kitap ve toplam **216 bölüm/rozet**. Hepsi aynı şablon
+  ailesinde üretilir (aynı çerçeve, aynı palet, değişen yalnızca iç sembol).
+- **Merkezî Rozet Matrisi — `ROZET-MATRISI.md`:** Tüm serinin rozetleri tek
+  tabloda planlanır (kitap · bölüm no · rozet adı · değer · anahtar). İki işi
+  birden yönetir: (a) **rozet adları set genelinde tekildir**, (b) 216 rozet
+  görselinin üretim listesidir. Yeni kitap eklenirken bu matrise bakılır.
+  **Not:** Rozet anahtarı `books.ts`'e alan olarak YAZILMAZ; `src/lib/derive.ts`
+  içindeki `rozetIconKey(bookKey, no)` ile `hz-{bookKey}/bolum-{n}` olarak
   türetilir.
+- **İçerik görsellerinin sicili — `ICERIK-GORSEL-SICILI.md`:** hangi dosyanın
+  hangi bölümde, akışın neresinde durduğu ve ne çizileceği orada tutulur.
+- **Kademeli kurulum:** klasör iskeleti önce **İlk İzler Vadisi'nin 6 kitabı**
+  için kuruldu (27 Tem 2026). Diğer bölgeler içerik geldikçe açılır. İçeriği
+  yazılmamış kitaplarda yalnız `bolum-{n}/kapak.jpg` bulunur; sahne dosyaları
+  metin gelince **gerçek adlarıyla** eklenir (uydurma ad üretilmez).
 
 ### 6.2 Teknik özellikler
 
@@ -553,11 +819,14 @@ ileride istenirse eklenmesi kolaydır.)
   âlem” olmak üzere dört görsel durak kullanılır. Görseller peygamber, melek,
   insan bedeni, yüzü, eli veya silüeti göstermeden doğa ve nesne metaforlarıyla
   anlatımı destekler; aradaki sayfalar metin odaklı kalır.
-- **Dokun ve Keşfet prototipi (18 Temmuz 2026):** Hz. Âdem 1. bölüm açılışındaki
-  tek güçlü sahne üzerinde görünür keşif noktaları denenir. Noktalar kısa gözlem
-  metinleri açar; gizli nesne aratmaz, doğru/yanlış veya puan üretmez, ilerleme ve
-  rozet şartı değildir. Etkileşim görsel verisinde tanımlanır ve ortak bileşenle
-  çalışır; uygun görülürse diğer kitaplara aynı veri modeliyle taşınır.
+- **Dokun ve Keşfet prototipi — KAPATILDI (KARAR 27 Temmuz 2026, Hasan).**
+  18 Temmuz 2026'da Hz. Âdem 1. bölüm açılışındaki sahne üzerinde numaralı keşif
+  noktaları denendi (kısa gözlem metinleri açan, puansız, ilerleme şartı olmayan
+  etkileşim). Deneme sonucu **benimsenmedi:** bölüm kapısında gereksiz bir iş
+  yaratıyor, çocuğu okumaya başlamadan önce oyalıyor ve açılış sahnesinin sakin
+  etkisini bozuyordu. Keşif noktaları **hiçbir kitapta kullanılmaz**; diğer
+  kitaplara taşınmaz. Bölüm kapısı bunun yerine tek güçlü sahne + bölüm kimliği +
+  rozet önizlemesi + tek çağrı ("Maceraya Başla") ile kurulur.
 
 ---
 
@@ -647,6 +916,7 @@ ileride istenirse eklenmesi kolaydır.)
 | **5** | Veli paneli: ana sayfa (+ çocuğun güncel Bugüne Taşı görevi), Kütüphane, Ödüller, Gelişim Raporu (tam sayfa) + mobil alt navigasyon | Veli deneyimi tamam |
 | **6** | Unvan hesaplama + son aktivite; istenirse `activity_events` | Küçük veri eklemeleri |
 | **6.1** | **İçerik ve Etkileşim Revizyonu (PLANLANDI — Hasan onayı olmadan BAŞLAMAZ):** (a) okuma akışı revizyonu: iki parçalı hikâye + karar noktasında "Sen Olsaydın" + "Seçimini Karşılaştır" + seçimin oturum içinde tutulması (4.1/16); (b) koşullu "Bugüne Taşı" + "Görevi Listeme Ekle / Şimdilik Değil" eylemleri; (c) görev veri altyapısı: `profile_tasks` tablosu + migration + RLS (7.3) — **ekrandan önce altyapı**; (d) çocuk "Görevlerim" ekranı (5.1); (e) veli ana sayfadaki güncel görev alanının yeni görev durumundan beslenmesi; (f) 8 bölümlük yeni Hz. Âdem içeriğinin `books.ts`'e aktarımı | Yeni bölüm akışı + kalıcı görev takibi çalışıyor |
+| **6.2** | **Kaydırmalı Okuma Akışı (ONAY — 26 Temmuz 2026):** (a) karakter bütçesiz akış modeli (`src/components/reader/akis.ts`); (b) `AtlasScrollReader` — tek sayfa kaydırma, satır içi görsel/sözlükçe, "Sen Olsaydın" kapısı, akış içi butonlar; (c) alt gezinme çubuğunun yerine üst ilerleme çubuğu + durak göstergesi (scroll-spy); (d) ~~otomatik "kaldığın yer"~~ — **28 Tem 2026'da kaldırıldı** (kaydırma konumu okunan yeri güvenilir biçimde göstermiyor); (e) Hz. Âdem B1–B8 için görsel yerlerinin açılması + `ICERIK-GORSEL-SICILI.md`. Sayfalı okuyucu (`AtlasReader` + `sayfalar.ts` + sayfa bileşenleri + iki tasarım önizlemesi) yenisi üretimde bir hafta çalıştıktan sonra, **30 Tem 2026'da silindi**; `BookDiscovery` tipleri de hiç kullanılmadığı için kaldırıldı | Bölüm kesintisiz kaydırılarak okunuyor |
 | **7** | Güvenlik/hesap akışı (Bölüm 8) | Aktivasyon bağlantısı + PIN |
 | **8** | Landing page'in gerçek özelliklerle güncellenmesi | Pazarlama yüzü güncel |
 
@@ -731,6 +1001,28 @@ Kurallar:
 - [x] Veli, çocuğun görev takibini **Gelişim Raporu → Görevler sekmesinden**
       görür (12.4'te açık bırakılan karar; salt görüntüleme). Ana Sayfa kartı
       yalnız güncel görevi durum çipiyle gösterir (madde 18).
+
+### 26 Temmuz 2026 (okuma deneyimi revizyonu — Hasan onayı)
+
+- [x] **Bölüm sayfa-sayfa değil, tek sayfada kaydırılarak okunur.** Gerekçe:
+      `SAYFA_BUTCESI = 420` karakter, ~4.000 karakterlik bir bölümü 9–12 okuma
+      sayfasına bölüyordu; akış sayfalarıyla birlikte bölüm başına 14–17 kez ileri
+      basma gerekiyordu. 8–11 yaş için okuma akışı sürekli kesiliyordu.
+- [x] **Alt gezinme çubuğu kaldırıldı.** Yerine üstte daralan sabit başlık + ince
+      altın ilerleme çubuğu + aktif durak adı. "Sayfa 3 / 12" göstergesi
+      kullanılmaz. İlerleme göstergesi opsiyonel değildir — sayfa metaforunun
+      kaldırılmasının zorunlu telafisidir.
+- [x] ~~Kaldığın yer otomatik kaydedilir~~ — **28 Temmuz 2026'da KALDIRILDI.**
+      Kaydırma konumu okunan yerin güvenilir göstergesi değil: çocuk metni
+      okumadan sayfayı kaydırıp çıkabiliyor, sistem yanlış yere götürüyordu.
+      Bölüm her açılışta baştan başlar.
+- [x] **Görsel yoğunluğu: bölüm başına 1 açılış + 4 içerik görseli** (~800
+      karakterde bir sahne). Gerekçe: `type: "image"` bloğu bugün yalnız Hz. Âdem
+      Bölüm 1'de var; tek sütun kaydırmada görselsiz bölüm metin duvarına döner.
+      Yerler `books.ts`'e placeholder olarak açılır, dosya adları
+      `ICERIK-GORSEL-SICILI.md`'de tutulur (Bölüm 6 üretim akışı).
+- [x] Yeni okuyucu **önce önizleme rotasında** teslim edilir; `/reader` ancak
+      Hasan onayından sonra bağlanır. Sayfalı okuyucu o ana kadar bozulmaz.
 
 ## 11. İçerik Durumu
 

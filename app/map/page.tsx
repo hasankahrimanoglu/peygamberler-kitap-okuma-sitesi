@@ -181,7 +181,6 @@ export default function MapPage() {
       bolgeler={bolgeler}
       yukleniyor={loading}
       bildirim={notification}
-      onProfilSecimineDon={() => router.push("/dashboard")}
     />
   );
 }

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Kıssa Rehberi unvanı">
+  <!-- YER TUTUCU. Aynı adla değiştir. -->
+  <defs>
+    <linearGradient id="kalkan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f2ce7b"/><stop offset="1" stop-color="#c08f2f"/>
+    </linearGradient>
+  </defs>
+  <path d="M60 8 104 24v40c0 26-19 41-44 48-25-7-44-22-44-48V24Z" fill="url(#kalkan)"/>
+  <path d="M60 18 95 31v33c0 21-15 33-35 39-20-6-35-18-35-39V31Z" fill="#13223e"/>
+  <circle cx="60" cy="56" r="15" fill="none" stroke="#f2ce7b" stroke-width="3"/>
+  <path d="M60 44v24M48 56h24" stroke="#f2ce7b" stroke-width="3" stroke-linecap="round"/>
+</svg>

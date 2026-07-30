@@ -3,7 +3,9 @@
 import { useMemo } from "react";
 import { notFound, useParams } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
-import { AtlasReader } from "../../../src/components/reader/AtlasReader";
+// Kaydırmalı okuyucu (Faz 6.2) 28 Tem 2026'da Hasan onayıyla üretime alındı;
+// sayfalı okuyucu 30 Tem 2026'da tamamen kaldırıldı. Tek okuyucu budur.
+import { AtlasScrollReader } from "../../../src/components/reader/AtlasScrollReader";
 import {
   adaptDataChapter,
   type ChapterData,
@@ -161,7 +163,7 @@ export default function ReaderPage() {
   if (chapter.bookKey !== "adem" && chapter.bookKey !== "sit") notFound();
 
   return (
-    <AtlasReader
+    <AtlasScrollReader
       key={chapter.id}
       chapter={chapter}
       onProgressSync={() => syncChapterProgress(chapter)}
