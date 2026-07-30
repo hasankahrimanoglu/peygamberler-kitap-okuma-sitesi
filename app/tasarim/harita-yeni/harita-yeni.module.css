@@ -900,7 +900,15 @@
 }
 
 @media (max-width: 620px) {
-  .atlasShell { padding: 10px; gap: 10px; }
+  /*
+    Dar ekranda kabuk KESİN yükseklikten çıkar (KARAR 31 Tem 2026 — Hasan).
+    Yukarıdaki `height: 100svh` gerekçesi masaüstü içindir: orada `1fr` satırı
+    belirsiz yükseklikte içerik boyuna düşüyordu. Mobilde tam tersi lazım —
+    sahne `--durak-taban` ile kendi tabanını dayattığında kabuk buna uymalı,
+    yoksa sahne satırını taşıp alttaki keşif iskelesinin üstüne biner.
+    Ekran yetiyorsa `min-height` yine ekranı doldurur; yetmiyorsa sayfa kayar.
+  */
+  .atlasShell { height: auto; min-height: 100svh; padding: 10px; gap: 10px; }
   .explorerBar { gap: 10px; padding: 8px 10px; border-radius: 18px; }
   .previewBadge { font-size: 14.5px; }
   .avatar { width: 36px; height: 36px; flex: 0 0 36px; }
@@ -908,20 +916,32 @@
   .regionRail { grid-template-columns: 1fr; padding: 6px; }
   .regionTabsNav { display: none; }
   .regionStepper { display: grid; }
-  .mapStage { border-radius: 22px; background-position: center; }
-  .mapHeading { top: 18px; right: 18px; left: 18px; max-width: none; }
-  /* Sayaç sahneden çıktığı için 72px'lik pay gerekmiyor. Punto, en uzun bölge
-     adı ("Emaneti Taşıyan Dört Dost") tek satıra sığacak şekilde küçültüldü. */
-  .mapHeading h1 { max-width: 100%; font-size: 22px; }
-  .mapHeading > span { font-size: 13px; }
-  /* Bölge no/ad/kitap sayısı artık üstteki gezinme satırında da var;
-     sahnedeki açıklama iki satırda kesilir, kitaplara yer kalır. */
-  .mapHeading p {
-    display: -webkit-box;
+  /* Taban AtlasHarita.tsx'te kitap sayısına göre hesaplanır; değişken
+     yoksa (ilk kare, ölçüler gelmeden) eski 360px tabanı geçerlidir. */
+  .mapStage { min-height: var(--durak-taban, 360px); border-radius: 22px; background-position: center; }
+  .mapHeading { top: 14px; right: 16px; left: 16px; max-width: none; }
+  /*
+    BÖLGE NO VE ADI SAHNEDEN ÇIKAR (KARAR 31 Tem 2026 — Hasan). İkisi de
+    sahnenin hemen üstündeki gezinme çubuğunda zaten yazılı ("1. Bölge · 6
+    Kitap" / "İlk İzler Vadisi"); sahnede ikinci kez yazılınca 373px'lik
+    sahnenin dörtte biri tekrar bilgiye gidiyor, patika kalan dar banda
+    sıkışıyordu. Sahnede yalnız keşif açıklaması kalır — çocuğa bölgeyi
+    tanıtan asıl metin odur.
+
+    Başlık DOM'dan silinmez, yalnız görünmez olur: `.mapStage` ona
+    `aria-labelledby` ile bağlı ve sayfanın tek `h1`'i budur. `display: none`
+    kullanılmaz — o, başlığı erişilebilirlik ağacından da düşürür.
+  */
+  .mapHeading p { display: none; }
+  .mapHeading h1 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
     overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
+  .mapHeading > span { font-size: 13px; }
   /* Kısa ekranla aynı gerekçe: alt başlık, başlık bloğunu bir satır uzatıp
      ilk madalyonun altına giriyor. Tablet dikeyde yer var, orada duruyor. */
   .mapHeading strong { display: none; }
@@ -929,12 +949,25 @@
      kitap sayısına göre hesaplanıyor (PROJE-MODELI 3.7). */
   /* Patika 350px'lik sahnenin %7,5'ini kaplıyordu; oran korunsun. */
   .trail { --yol-genislik: 19px; --yol-kenar: 24px; --yol-cizgi: 2.5px; }
-  .marker { width: 64px; height: 64px; }
-  .markerArt { width: 60px; height: 60px; }
-  .markerStatus { width: 23px; height: 23px; }
-  .stopLabel { max-width: 126px; padding: 5px 11px; }
-  .stopLabel strong { font-size: 14px; }
-  .mapHeading { max-width: 100%; }
+  /*
+    Madalyon ve ad kartı ölçüsü — AtlasHarita.tsx'teki DAR_UST_PAY / DAR_ALT_PAY
+    ile birlikte değişir. Oradaki hesap bu üç sayıya dayanır:
+      üst pay = 52 / 2 = 26
+      alt pay = 26 + 5 (kart boşluğu) + 44 (iki satıra saran kart) = 75
+  */
+  .marker { width: 52px; height: 52px; }
+  .markerArt { width: 48px; height: 48px; }
+  .markerStatus { width: 20px; height: 20px; }
+  /*
+    Kart GENİŞ tutulur, dar değil. Sezgiye ters ama yerleşimi belirleyen sınır
+    mobilde yatay değil DİKEY: sol ve sağ duraklar merkezleri ~%48 (≈162px)
+    ayrık, kartlar oraya rahat sığıyor. Kart daraltılınca uzun adlar
+    ("Hz. Muhammed — Mekke Yılları") üç satıra sarıyor, kart 70px'e çıkıyor ve
+    madalyondan büyük hâle geliyordu; asıl sıkışma oradan doğuyor. 148px'te
+    aynı ad iki satırda kalır, kart 48px'e iner.
+  */
+  .stopLabel { top: calc(100% + 5px); max-width: 148px; padding: 4px 10px; }
+  .stopLabel strong { font-size: 13px; }
   /*
     TEK kural. Eskiden iki satır arayla iki kez tanımlanıyordu ve ikisi birlikte
     hem `left: 12px` hem `right: 12px` üretiyordu; mutlak kutu tam genişliğe

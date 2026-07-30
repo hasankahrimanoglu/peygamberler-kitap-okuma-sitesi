@@ -52,6 +52,29 @@ const durumIkonu = {
 
 type Nokta = { x: number; y: number };
 
+/** Durakların yerleşeceği dikey bant — sahne yüksekliğinin yüzdesi. */
+type DurakSinir = { bas: number; son: number };
+
+/**
+ * Dar ekranda durağın MADALYON MERKEZİNE göre üst ve alt payı — piksel.
+ * CSS'teki mobil bloğuyla (harita-yeni.module.css @620px) AYNI olmak zorunda:
+ *   üst  = madalyonun yarısı (52 / 2)
+ *   alt  = madalyonun yarısı + kart boşluğu (5) + iki satıra saran ad kartı (44)
+ * İki dosya ayrı olduğu için değişiklik ikisine birlikte yazılır — MOBIL_SORGU
+ * ile aynı disiplin.
+ */
+const DAR_UST_PAY = 26;
+/** Madalyonun altı ile ad kartının arası — CSS'te `.stopLabel { top }`. */
+const DAR_KART_BOSLUK = 5;
+/** Ad kartı ölçülemediği ilk karede kullanılan yedek alt pay (iki satırlık kart). */
+const DAR_ALT_PAY = 75;
+/** Başlıkla ilk madalyon ve son ad kartıyla sahne kenarı arasındaki nefes payı. */
+const DAR_NEFES = 10;
+/** Aynı taraftaki iki durağın birbirine değmemesi için bırakılan ayrım payı. */
+const DAR_AYRIK = 3;
+/** Bandın altına düşemeyeceği yüzde: altında yerleşim hesabı anlamını yitirir. */
+const EN_DAR_BANT = 12;
+
 /**
  * Durak koordinatları (PROJE-MODELI 3.7 — REVİZE 29 Temmuz 2026, Hasan).
  *
@@ -74,7 +97,7 @@ type Nokta = { x: number; y: number };
  * bölgelerin hepsinde SAĞDA biter. Tek yan etki, 5 kitaplık bölgenin soldan
  * değil sağdan başlamasıdır.
  */
-function durakKonumlari(adet: number, dar: boolean): Nokta[] {
+function durakKonumlari(adet: number, dar: boolean, sinir?: DurakSinir): Nokta[] {
   if (adet < 1) return [];
 
   /*
@@ -107,8 +130,14 @@ function durakKonumlari(adet: number, dar: boolean): Nokta[] {
   // üst sınır ALT BAŞLIĞI olan bölgelere (Rahmet Yolculuğu, Emaneti Taşıyan
   // Dört Dost — başlık bir satır uzun), alt sınır ADI İKİ SATIRA SARAN
   // kitaplara (aynı bölgeler — ad kartı bir satır uzun).
-  const yBas = dar ? 27 : 32;
-  const ySon = dar ? 82 : 83;
+  //
+  // Dar ekranda sınır SABİT DEĞİL, ölçülerek gelir (bkz. `darSinir`). Sabit
+  // yüzde orada çalışmıyordu: başlık bloğu piksel cinsinden sabit yükseklikte,
+  // duraklar ise sahne yüksekliğinin yüzdesi. Ekran kısaldıkça (Safari'de adres
+  // çubuğu açıkken sahne 616px'ten 464px'e iniyor) duraklar yukarı kayıp
+  // başlığın altına giriyordu — 700px'lik ekranda çakışma 31px ölçüldü.
+  const yBas = sinir?.bas ?? (dar ? 27 : 32);
+  const ySon = sinir?.son ?? (dar ? 82 : 83);
 
   return Array.from({ length: adet }, (_, index) => ({
     // Dalga SONDAN sayılır — son durak daima sağda biter.
@@ -277,6 +306,48 @@ export function AtlasHarita({
     gozlemciRef.current = gozlemci;
   }, []);
 
+  /*
+    Başlık bloğunun sahne içindeki ALT KENARI. Duraklar dar ekranda buradan
+    aşağıda başlar. Yükseklik bölgeden bölgeye değişiyor (keşif açıklaması 2–4
+    satır sürüyor), bu yüzden sabit sayı yazılamaz — ölçülür.
+  */
+  const baslikGozlemciRef = useRef<ResizeObserver | null>(null);
+  const [baslikAlt, setBaslikAlt] = useState(0);
+  const baslikRef = useCallback((el: HTMLElement | null) => {
+    baslikGozlemciRef.current?.disconnect();
+    baslikGozlemciRef.current = null;
+    if (!el) return;
+    const gozlemci = new ResizeObserver(([kayit]) => {
+      const hedef = kayit.target as HTMLElement;
+      // `offsetTop` CSS'teki `top` payını da katar; blok sahneye göre mutlak.
+      const alt = hedef.offsetTop + hedef.offsetHeight;
+      setBaslikAlt((onceki) => (Math.abs(onceki - alt) < 1 ? onceki : alt));
+    });
+    gozlemci.observe(el);
+    baslikGozlemciRef.current = gozlemci;
+  }, []);
+
+  /*
+    Ad kartı yükseklikleri. Kart metne göre bir ya da iki satır sürüyor;
+    yerleşimin alt payı buna bağlı. Render sonrası okunur — kartın yüksekliği
+    konumdan değil yalnız metinden ve kart genişliğinden geliyor, o yüzden
+    ölçüm ile yerleşim arasında geri besleme oluşmaz.
+  */
+  const stopsRef = useRef<HTMLOListElement | null>(null);
+  const [kartOlcu, setKartOlcu] = useState<number[]>([]);
+  useEffect(() => {
+    const liste = stopsRef.current;
+    if (!liste) return;
+    const kartlar = Array.from(
+      liste.querySelectorAll<HTMLElement>(`.${styles.stopLabel}`),
+    ).map((kart) => kart.offsetHeight);
+    setKartOlcu((onceki) =>
+      onceki.length === kartlar.length && onceki.every((v, i) => Math.abs(v - kartlar[i]) < 1)
+        ? onceki
+        : kartlar,
+    );
+  }, [bolgeId, dar, sahneOlcu.g]);
+
   useEffect(() => {
     const mq = window.matchMedia(MOBIL_SORGU);
     const uygula = () => setDar(mq.matches);
@@ -303,9 +374,68 @@ export function AtlasHarita({
 
   // Konumlar yüzde olarak hesaplanır (durak işaretçileri de yüzdeyle
   // konumlanır), yol çizimi için sahnenin pikseline çevrilir.
+  /*
+    Bölgenin EN UZUN ad kartı. Alt pay bununla hesaplanır; sabit sayı yazmak
+    her bölgeye iki satırlık kart payı ayırıyordu ve adları tek satıra sığan
+    bölgelerde (çoğu) sahne boşuna uzuyordu. Kart yüksekliği yalnız metne ve
+    kart genişliğine bağlı, konuma değil — bu yüzden ölçüm yerleşimi
+    beslerken döngü kurmaz.
+  */
+  const enBuyukKart = useMemo(() => {
+    if (kartOlcu.length === 0) return 0;
+    return Math.max(...kartOlcu);
+  }, [kartOlcu]);
+  const darAltPay = enBuyukKart > 0
+    ? DAR_UST_PAY + DAR_KART_BOSLUK + enBuyukKart
+    : DAR_ALT_PAY;
+  /*
+    Aynı taraftaki iki durak (i ve i+2) arasında gereken en küçük dikey adım.
+    Dalga dar ekranda iki duraklık olduğu için çakışma riski komşuda değil bir
+    atlamalı duraktadır; aradaki mesafe adımın İKİ katıdır, dolayısıyla tek
+    adıma düşen alt sınır payların yarısı kadardır.
+
+    Payların TAM yarısı yetmiyor: o değerde kart ile bir alttaki madalyon
+    matematiksel olarak birbirine değiyor ve yuvarlama 1px'lik temas
+    üretiyordu. `DAR_AYRIK` iki durağı görünür biçimde ayrı tutar.
+  */
+  const darEnKucukAdim = (DAR_UST_PAY + darAltPay) / 2 + DAR_AYRIK;
+
+  /*
+    Dar ekranın durak bandı ÖLÇÜLEREK kurulur (KARAR 31 Tem 2026 — Hasan).
+    Üst sınır başlığın gerçek altından, alt sınır sahnenin gerçek dibinden
+    gelir; ikisi de piksel, sonuç yüzdeye çevrilir. Böylece bant ekran
+    yüksekliğiyle birlikte daralıp genişler ve çakışma her kırılımda kapanır.
+
+    Ölçüler henüz gelmediyse (ilk render) `undefined` döner ve sabit değerler
+    kullanılır — yerleşim bir kare sonra yerine oturur.
+  */
+  const darSinir = useMemo<DurakSinir | undefined>(() => {
+    if (!dar || sahneOlcu.y <= 0 || baslikAlt <= 0) return undefined;
+    const bas = ((baslikAlt + DAR_NEFES + DAR_UST_PAY) / sahneOlcu.y) * 100;
+    const son = ((sahneOlcu.y - darAltPay - DAR_NEFES) / sahneOlcu.y) * 100;
+    // Aşırı kısa ekranda hesap ters dönebilir; o zaman sabit banda geri dönülür.
+    return son - bas < EN_DAR_BANT ? undefined : { bas, son };
+  }, [dar, sahneOlcu.y, baslikAlt, darAltPay]);
+
+  /*
+    Sahnenin dar ekrandaki taban boyu: başlık + iki nefes payı + üst/alt pay +
+    duraklar arasındaki en küçük adımların toplamı. Sahne yüksekliğine DEĞİL,
+    yalnız başlık yüksekliğine ve kitap sayısına bağlıdır — bu yüzden `--durak-
+    taban` sahneyi büyütünce hesap yeniden tetiklenmez, döngü kurulmaz.
+  */
+  const darTaban = useMemo(() => {
+    if (!dar || baslikAlt <= 0) return 0;
+    const adet = bolge?.duraklar.length ?? 0;
+    if (adet < 2) return 0;
+    return Math.round(
+      baslikAlt + 2 * DAR_NEFES + DAR_UST_PAY + darAltPay
+        + (adet - 1) * darEnKucukAdim,
+    );
+  }, [dar, baslikAlt, bolge, darAltPay, darEnKucukAdim]);
+
   const konumlar = useMemo(
-    () => durakKonumlari(bolge?.duraklar.length ?? 0, dar),
-    [bolge, dar],
+    () => durakKonumlari(bolge?.duraklar.length ?? 0, dar, darSinir),
+    [bolge, dar, darSinir],
   );
   const konumlarPx = useMemo(
     () => konumlar.map((n) => ({ x: (n.x / 100) * sahneOlcu.g, y: (n.y / 100) * sahneOlcu.y })),
@@ -481,10 +611,19 @@ export function AtlasHarita({
             style={{
               "--bolge-arkaplan-dikey": bolgeArkaplani(bolge.id, "dikey"),
               "--bolge-arkaplan-yatay": bolgeArkaplani(bolge.id, "yatay"),
+              /*
+                Dar ekranda sahne, duraklarına gereken boyu KENDİ zorlar.
+                Ekran çok kısaldığında (iPhone SE, adres çubuğu açık Safari)
+                bant altı kitaplık bölgeyi taşıyamıyor ve aynı taraftaki ad
+                kartı bir alttaki madalyona biniyordu. Sahne o noktada
+                kısalmayı bırakır; sayfa birkaç piksel kayar — çakışmaya
+                tercih edilir.
+              */
+              "--durak-taban": darTaban ? `${darTaban}px` : undefined,
             } as CSSProperties}
           >
             <div className={styles.mapShade} aria-hidden="true" />
-            <div className={styles.mapHeading}>
+            <div className={styles.mapHeading} ref={baslikRef}>
               <p>{bolge.sira}. Keşif Bölgesi · {bolge.duraklar.length} kitap</p>
               <h1 id="atlas-title">{bolge.ad}</h1>
               {bolge.altBaslik ? <strong>{bolge.altBaslik}</strong> : null}
@@ -540,7 +679,7 @@ export function AtlasHarita({
               {fenerYolu ? <path className={styles.trailBeacon} d={fenerYolu} pathLength={100} /> : null}
             </svg>
 
-            <ol className={styles.stops} aria-label={`${bolge.ad} kitapları`}>
+            <ol className={styles.stops} aria-label={`${bolge.ad} kitapları`} ref={stopsRef}>
               {bolge.duraklar.map((durak, index) => (
                 <li
                   className={styles.stopItem}

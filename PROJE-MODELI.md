@@ -436,6 +436,30 @@ yükseklik kuralını** izler:
   ezilmez: panel flex sütununda çocuklara `flex-shrink: 0` verilir — aksi
   hâlde taşma anında öğeler sessizce 0 piksele çöküyordu.
 
+**MOBİL İSTİSNASI (REVİZE — 31 Temmuz 2026, Hasan).** Yukarıdaki "kesin
+yükseklik" kuralı **≤620px'de geçerli değildir**; orada kabuk `height: auto` +
+`min-height: 100svh` olur ve sahne kendi tabanını dayatabilir. Gerekçe: kesin
+yükseklikte sahne, ekran kısaldıkça küçülüyor ama durak yerleşimi sahnenin
+YÜZDESİ olduğu için duraklar yukarı kayıyordu. 393×700'de ölçülen sonuç, ilk
+madalyonun bölge açıklamasının **31px üstüne binmesi** ve dikey adımın 64px'lik
+madalyonun altına, 51px'e inmesiydi. Kural:
+
+- Dar ekranda durak bandının üst sınırı **başlığın ölçülen alt kenarından**,
+  alt sınırı sahnenin dibinden hesaplanır — sabit yüzde kullanılmaz.
+- Bant altı kitaplık bölgeyi taşıyamıyorsa **sahne kısalmayı bırakır**
+  (`min-height: var(--durak-taban)`), sayfa birkaç piksel kayar. Madalyonların
+  çakışmasına tercih edilir.
+- Ad kartının yüksekliği **ölçülür**, sabit varsayılmaz: kart bir ya da iki
+  satır sürüyor ve alt pay buna bağlı.
+- Bu istisna yalnız mobildir. Tablet ve masaüstünde kesin yükseklik ve el ile
+  kalibre edilmiş sabit bant (%32–83) aynen korunur.
+
+**Sahnedeki başlık mobilde yalnız keşif açıklamasıdır.** Bölge numarası ve adı
+sahnenin hemen üstündeki gezinme çubuğunda zaten yazılı; sahnede ikinci kez
+yazılınca 373px'lik sahnenin dörtte biri tekrar bilgiye gidiyordu. `h1` DOM'dan
+silinmez, görsel olarak gizlenir — sayfanın tek `h1`'i odur ve `.mapStage` ona
+`aria-labelledby` ile bağlıdır.
+
 ### 3.7.2 Çocuk tarafı üst barı ve keşif menüsü (KARAR — 28 Temmuz 2026, Hasan)
 
 - Üst bar **her ekranda TEK satırdır**: logo (solda, çerçevesiz) · profil künyesi ·
