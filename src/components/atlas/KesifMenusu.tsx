@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
 import { Ikon, OdulIkonu } from "../ui";
 import styles from "./kesif-menusu.module.css";
+import { ISKELE_BAGLANTILARI } from "./iskeleBaglantilari";
 
 type KesifMenusuProps = {
   profil: { ad: string; avatarAnahtari: string; unvan: string };
@@ -34,6 +35,7 @@ export function KesifMenusu({
   onKapat,
 }: KesifMenusuProps) {
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!acik) return;
@@ -117,6 +119,25 @@ export function KesifMenusu({
           korumasızdır, güvenlik fazında PIN arkasına alınacak (PROJE-MODELI 8).
         */}
         <nav className={styles.baglantilar} aria-label="Sayfalar">
+          {/*
+            Keşif İskelesi bağlantıları (6 Ağu 2026). Üst bardaki şerit yalnız
+            ≥960px'te görünüyor; dar ekranda bu üçüne ulaşmanın TEK yolu burası.
+            Atlas'ta alttaki iskele hâlâ duruyor ama kitap rotasında ve menü
+            sayfalarında o da yok — bağlantılar buraya eklenmeden dar ekranda
+            erişilemez kalıyorlardı.
+          */}
+          {ISKELE_BAGLANTILARI.map((baglanti) => (
+            <button
+              type="button"
+              key={baglanti.yol}
+              aria-current={pathname === baglanti.yol ? "page" : undefined}
+              onClick={() => router.push(baglanti.yol)}
+            >
+              <Ikon ad={baglanti.ikon} boyut={20} />
+              <span>{baglanti.ad}</span>
+              <Ikon ad="ok-sag" boyut={17} />
+            </button>
+          ))}
           <button type="button" onClick={() => router.push("/dashboard")}>
             <Ikon ad="hesap" boyut={20} />
             <span>Veli Paneli</span>

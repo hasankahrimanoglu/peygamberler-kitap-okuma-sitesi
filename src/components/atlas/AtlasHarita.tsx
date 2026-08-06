@@ -4,6 +4,8 @@ import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties }
 import { useRouter } from "next/navigation";
 import { Ikon, OdulIkonu, YedekliGorsel } from "../ui";
 import { KesifMenusu } from "./KesifMenusu";
+import { KesifIskelesi } from "./KesifIskelesi";
+import { ISKELE_BAGLANTILARI } from "./iskeleBaglantilari";
 import { books } from "../../data/books";
 import { madalyaIconKey, rozetIconKey } from "../../lib/derive";
 import styles from "../../../app/tasarim/harita-yeni/harita-yeni.module.css";
@@ -502,6 +504,15 @@ export function AtlasHarita({
         */}
         <header className={styles.explorerBar}>
           <span className={styles.previewBadge}><Ikon ad="harita" boyut={18} /> Keşif Dünyası</span>
+          {/*
+            Keşif İskelesi — MASAÜSTÜ kopyası (KARAR 6 Ağu 2026 — Hasan).
+            Üst barın orta sütunu boştu; alttaki iskele satırı ise ~74px
+            (62px + gap) yiyordu. Bağlantılar buraya alınınca o satır masaüstünde
+            kalkar ve kazanılan yükseklik doğrudan haritaya + kitap paneline
+            gider (rozet ızgarası oraya sığmıyordu). ≤959px'te bu şerit gizlenir,
+            alttaki iskele geri gelir.
+          */}
+          <KesifIskelesi />
           <div className={styles.profileGroup}>
             <span className={styles.avatar}><OdulIkonu tip="avatar" anahtar={profil.avatarAnahtari} boyut={38} alt="" /></span>
             <span className={styles.profileCopy}><strong>{profil.ad}</strong></span>
@@ -844,11 +855,14 @@ export function AtlasHarita({
           </aside>
         </div>
 
+        {/* Keşif İskelesi — MOBİL/TABLET kopyası; ≥960px'te üst bara taşınır. */}
         <nav className={styles.exploreDock} aria-label="Keşif menüsü">
           <span>Keşif İskelesi</span>
-          <button type="button" onClick={() => router.push("/kazanimlarim")}><Ikon ad="rozet" boyut={21} /> Kazanımlarım</button>
-          <button type="button" onClick={() => router.push("/kelime-defterim")}><Ikon ad="kitap" boyut={21} /> Kelime Defterim</button>
-          <button type="button" onClick={() => router.push("/gorevlerim")}><Ikon ad="fener" boyut={21} /> Görevlerim</button>
+          {ISKELE_BAGLANTILARI.map((baglanti) => (
+            <button type="button" key={baglanti.yol} onClick={() => router.push(baglanti.yol)}>
+              <Ikon ad={baglanti.ikon} boyut={21} /> {baglanti.ad}
+            </button>
+          ))}
         </nav>
         {bildirim ? <p className={styles.notice} role="status">{bildirim}</p> : null}
       </div>

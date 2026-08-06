@@ -3,8 +3,9 @@
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useSelectedChild } from "../../src/lib/child/useSelectedChild";
-import { kelimeDefteri, normalizeBookName } from "../../src/lib/derive";
+import { cocukOzeti, kelimeDefteri, normalizeBookName } from "../../src/lib/derive";
 import { Buton, Ikon, Kart } from "../../src/components/ui";
+import { KesifSayfaKabugu } from "../../src/components/atlas/KesifSayfaKabugu";
 
 export default function KelimeDefterimSayfasi() {
   const router = useRouter();
@@ -34,25 +35,19 @@ export default function KelimeDefterimSayfasi() {
     );
   }, [kelimeler, arama]);
 
-  return (
-    <main className="tema-cocuk zemin-yildizli relative min-h-screen text-murekkep">
-      <div className="relative mx-auto max-w-4xl px-4 py-6 sm:px-8">
-        {/* Üst bar */}
-        <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-          <Buton varyant="cerceve" boyut="kucuk" onClick={() => router.push("/map")}>
-            <Ikon ad="geri" boyut={16} />
-            Haritaya Dön
-          </Buton>
-          <Buton
-            varyant="cerceve"
-            boyut="kucuk"
-            onClick={() => router.push("/kazanimlarim")}
-          >
-            <Ikon ad="rozet" boyut={16} />
-            Kazanımlarım
-          </Buton>
-        </div>
+  const ozet = useMemo(() => cocukOzeti(progress, books), [progress, books]);
 
+  return (
+    <KesifSayfaKabugu
+      profil={{
+        ad: child?.name ?? "Gezgin",
+        avatarAnahtari: child?.avatarType ?? "lantern",
+        unvan: child?.title ?? ozet.unvan,
+      }}
+      toplamRozet={ozet.kazanilanRozet}
+      tamamlananKitap={ozet.tamamlananKitap}
+      yukleniyor={isLoading}
+    >
         <header className="mb-6">
           <p className="font-govde text-sm text-murekkep-soluk">
             {child?.name ? `${child.name} için` : "Senin için"}
@@ -103,7 +98,9 @@ export default function KelimeDefterimSayfasi() {
                 Bu aramaya uygun kelime bulunamadı.
               </Kart>
             ) : (
-              <ul className="grid gap-3 sm:grid-cols-2">
+              /* 1440px kabukta üç sütun (Hasan, 6 Ağu 2026): iki sütunda kart
+                 metni gereğinden uzun satırlara düşüyordu. */
+              <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {gorunen.map((kelime) => (
                   <li key={`${kelime.bookKey}-${kelime.bolumNo}-${kelime.word}`}>
                     <Kart className="h-full">
@@ -128,7 +125,6 @@ export default function KelimeDefterimSayfasi() {
             )}
           </>
         )}
-      </div>
-    </main>
+    </KesifSayfaKabugu>
   );
 }

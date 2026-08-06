@@ -87,6 +87,20 @@
   backdrop-filter: blur(16px);
 }
 
+/* Keşif İskelesi şeridi ortak modüldedir: `src/components/atlas/kesif-iskele.module.css`. */
+
+/*
+  ≥960px: bar dört sütuna geçer — geri | iskele | sayaçlar | menü.
+  Orta sütun eskiden boştu. Sütun aralığı da kısılır: `clamp(14px, 2vw, 28px)`
+  dört öbekte 84px'e kadar çıkıyor ve iskeleye yer bırakmıyordu.
+*/
+@media (min-width: 960px) {
+  .explorerBar {
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    gap: clamp(10px, 1.2vw, 18px);
+  }
+}
+
 .previewGroup,
 .bookIdentity,
 .headerStats,

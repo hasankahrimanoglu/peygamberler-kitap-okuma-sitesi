@@ -1,0 +1,71 @@
+/*
+ * Keşif İskelesi şeridi — ORTAK STİL (KARAR 6 Ağu 2026 — Hasan).
+ *
+ * Üç ekran birden kullanır: atlas haritası, kitap bölüm rotası ve menü
+ * sayfalarının kabuğu. Stil önce atlas ve kitap modüllerine ayrı ayrı
+ * yazılmıştı; üçüncü kopya çıkmadan tek dosyada toplandı.
+ *
+ * Renkler `--vurgu` / `--murekkep` gibi GENEL token'lardan gelir, ekranların
+ * kendi `--atlas-*` takma adlarından değil: o adlar ilgili modülün `.page`
+ * kapsamında tanımlı ve burada görünmezler.
+ */
+
+.serit {
+  display: flex;
+  min-width: 0;
+  justify-content: center;
+  gap: 4px;
+}
+
+/* Şerit yalnız masaüstünde görünür; dar ekranda yerini menü çekmecesine bırakır. */
+@media (max-width: 959px) {
+  .serit {
+    display: none;
+  }
+}
+
+.serit button {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  color: var(--murekkep);
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.serit button:hover {
+  border-color: color-mix(in srgb, var(--vurgu) 45%, transparent);
+  background: color-mix(in srgb, var(--vurgu) 12%, transparent);
+}
+
+/*
+  Bulunduğun sayfa. Şerit menü sayfalarında ASIL gezinme aracı olduğu için
+  aktif durum şart: hangi ekranda olduğun yalnız sayfa başlığından anlaşılmasın.
+  Atlas ve kitap rotasında hiçbir bağlantı aktif değildir; kural orada
+  kendiliğinden devre dışı kalır.
+*/
+.serit button[aria-current="page"] {
+  border-color: color-mix(in srgb, var(--vurgu) 60%, transparent);
+  color: var(--vurgu);
+  background: color-mix(in srgb, var(--vurgu) 14%, transparent);
+}
+
+/* Dar masaüstü / tablet yatay: bar sıkışık, buton payları kısılır. */
+@media (min-width: 960px) and (max-width: 1199px) {
+  .serit {
+    gap: 0;
+  }
+
+  .serit button {
+    gap: 6px;
+    padding: 0 8px;
+  }
+}

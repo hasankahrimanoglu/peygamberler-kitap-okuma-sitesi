@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { useSelectedChild } from "../../src/lib/child/useSelectedChild";
 import {
@@ -9,10 +8,10 @@ import {
   madalyaVitrini,
   rozetVitrini,
   unvanVitrini,
-  unvanAnahtari,
   type RozetOgesi,
 } from "../../src/lib/derive";
-import { Buton, Ikon, Kart, OdulIkonu } from "../../src/components/ui";
+import { Ikon, Kart, OdulIkonu } from "../../src/components/ui";
+import { KesifSayfaKabugu } from "../../src/components/atlas/KesifSayfaKabugu";
 
 type Sekme = "rozetler" | "madalyalar" | "unvanlar";
 
@@ -23,7 +22,6 @@ const sekmeler: { deger: Sekme; etiket: string }[] = [
 ];
 
 export default function KazanimlarimSayfasi() {
-  const router = useRouter();
   const { isLoading, child, books, progress } = useSelectedChild();
   const [sekme, setSekme] = useState<Sekme>("rozetler");
   const [secilenRozet, setSecilenRozet] = useState<RozetOgesi | null>(null);
@@ -44,24 +42,16 @@ export default function KazanimlarimSayfasi() {
   }, [progress, books]);
 
   return (
-    <main className="tema-cocuk zemin-yildizli relative min-h-screen text-murekkep">
-      <div className="relative mx-auto max-w-5xl px-4 py-6 sm:px-8">
-        {/* Üst bar */}
-        <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-          <Buton varyant="cerceve" boyut="kucuk" onClick={() => router.push("/map")}>
-            <Ikon ad="geri" boyut={16} />
-            Haritaya Dön
-          </Buton>
-          <Buton
-            varyant="cerceve"
-            boyut="kucuk"
-            onClick={() => router.push("/kelime-defterim")}
-          >
-            <Ikon ad="kitap" boyut={16} />
-            Kelime Defterim
-          </Buton>
-        </div>
-
+    <KesifSayfaKabugu
+      profil={{
+        ad: child?.name ?? "Gezgin",
+        avatarAnahtari: child?.avatarType ?? "lantern",
+        unvan: child?.title ?? veriler.ozet.unvan,
+      }}
+      toplamRozet={veriler.ozet.kazanilanRozet}
+      tamamlananKitap={veriler.ozet.tamamlananKitap}
+      yukleniyor={isLoading}
+    >
         {/* Hero */}
         <header className="mb-8">
           <Kart parlak className="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
@@ -139,7 +129,9 @@ export default function KazanimlarimSayfasi() {
                   İlk rozetini ilk bölümü bitirince kazanacaksın!
                 </Kart>
               ) : (
-                <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
+                /* 1440px kabukta ızgara komple yayılır (Hasan, 6 Ağu 2026):
+                   216 rozetlik sette satır sayısı belirgin biçimde düşüyor. */
+                <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10">
                   {veriler.rozetler.map((rozet) => (
                     <button
                       key={`${rozet.bookKey}-${rozet.bolumNo}`}
@@ -173,7 +165,7 @@ export default function KazanimlarimSayfasi() {
                   Bir kitabı sonuna kadar bitirince ilk madalyan gelecek!
                 </Kart>
               ) : (
-                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                   {veriler.madalyalar.map((madalya) => (
                     <Kart
                       key={madalya.bookKey}
@@ -202,7 +194,7 @@ export default function KazanimlarimSayfasi() {
             ) : null}
 
             {sekme === "unvanlar" ? (
-              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {veriler.unvanlar.map((unvan) => (
                   <Kart
                     key={unvan.unvan}
@@ -239,7 +231,6 @@ export default function KazanimlarimSayfasi() {
             ) : null}
           </>
         )}
-      </div>
 
       {/* Rozet detay */}
       <AnimatePresence>
@@ -294,6 +285,6 @@ export default function KazanimlarimSayfasi() {
           </motion.div>
         ) : null}
       </AnimatePresence>
-    </main>
+    </KesifSayfaKabugu>
   );
 }

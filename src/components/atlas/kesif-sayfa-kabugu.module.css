@@ -1,0 +1,147 @@
+/*
+ * Menü sayfalarının ortak kabuğu (KARAR 6 Ağu 2026 — Hasan).
+ *
+ * Kazanımlarım · Kelime Defterim · Görevlerim, atlas ve kitap rotasıyla aynı
+ * genişlikte ve aynı üst barla açılır. Önce üçü de kendi `max-w-*` sarmalayıcısı
+ * ve iki butonluk mini barıyla, iskeletin dışında duruyordu.
+ *
+ * Atlas'tan AYRILAN yer kaydırmadır: orada kabuk `height: 100svh` grid'dir ve
+ * içerik kendi içinde kayar. Burada bar `sticky`, sayfanın kendisi kayar —
+ * bu ekranlar uzun liste ekranıdır, iç kaydırma alanı mobilde adres çubuğuyla
+ * birlikte sorun çıkarıyor.
+ */
+
+.sayfa {
+  min-height: 100svh;
+  color: var(--murekkep);
+}
+
+.kabuk {
+  width: min(100%, 1440px);
+  /* Atlas ve kitap rotasındaki `.atlasShell` ile AYNI değerler. */
+  margin-inline: auto;
+  /*
+    Üst pay `.bar`'ın margin'inden DEĞİL buradan gelir. Bar'a üst margin
+    verildiğinde margin çakışması (collapse) onu `main`'in dışına taşıyor,
+    sayfayı 12px aşağı itip üstte krem `body` zeminini açıkta bırakıyor ve
+    sayfaya 12px'lik gereksiz bir kaydırma ekliyordu.
+  */
+  padding: 12px clamp(12px, 2vw, 24px) 32px;
+}
+
+/*
+  Üst bar. `position: sticky` çalışsın diye kabuk ya da ata elemanlarda
+  `overflow` KISITI OLMAMALI — atlas modülündeki `overflow-x: clip` burada
+  kasıtlı olarak yok.
+*/
+.bar {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  display: grid;
+  /* geri | iskele | profil | menü */
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  min-height: 66px;
+  align-items: center;
+  gap: clamp(10px, 1.2vw, 18px);
+  margin-bottom: 20px;
+  padding: 9px 12px;
+  border: 1px solid color-mix(in srgb, var(--murekkep) 16%, transparent);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--yuzey) 88%, transparent);
+  box-shadow: 0 14px 36px rgb(0 0 0 / 34%);
+  backdrop-filter: blur(16px);
+}
+
+.geri {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 9px;
+  border: 0;
+  border-radius: 12px;
+  color: var(--murekkep-soluk);
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 160ms ease, background-color 160ms ease;
+}
+
+.geri:hover {
+  color: var(--murekkep);
+  background: color-mix(in srgb, var(--murekkep) 7%, transparent);
+}
+
+.profil {
+  display: flex;
+  min-width: 0;
+  /* Atlas'taki `.profileGroup` ile aynı gerekçe: `auto` track max-content ister,
+     uzun bir çocuk adı iskele sütununu ezip butonların üstüne bindirir. */
+  max-width: 210px;
+  align-items: center;
+  justify-self: end;
+  gap: 9px;
+}
+
+.avatar {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--vurgu) 65%, transparent);
+  border-radius: 50%;
+  background: var(--yuzey-2);
+}
+
+.profilAd {
+  overflow: hidden;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.menuButonu {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--murekkep) 16%, transparent);
+  border-radius: 50%;
+  color: var(--murekkep);
+  background: color-mix(in srgb, var(--yuzey-2) 70%, transparent);
+  cursor: pointer;
+}
+
+.menuButonu:hover {
+  border-color: color-mix(in srgb, var(--vurgu) 60%, transparent);
+  background: color-mix(in srgb, var(--vurgu) 12%, transparent);
+}
+
+/*
+  Dar ekran: iskele şeridi zaten gizli (ortak modül), bar üç öbeğe iner.
+  Profil adı da düşer — 375px'te geri butonu, avatar ve menü ancak sığıyor.
+*/
+@media (max-width: 959px) {
+  .bar {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .bar {
+    min-height: 58px;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .profilAd {
+    display: none;
+  }
+}

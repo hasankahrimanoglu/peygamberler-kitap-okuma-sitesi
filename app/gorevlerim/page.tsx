@@ -6,10 +6,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import { supabase } from "../../lib/supabase";
 import { useSelectedChild } from "../../src/lib/child/useSelectedChild";
 import {
+  cocukOzeti,
   gorevTanimiBul,
   type GorevTanimiDetay,
 } from "../../src/lib/derive";
 import { Buton, Ikon, Kart } from "../../src/components/ui";
+import { KesifSayfaKabugu } from "../../src/components/atlas/KesifSayfaKabugu";
 
 type GorevDurumRow = {
   task_id: string;
@@ -30,7 +32,7 @@ type GorevOgesi = GorevTanimiDetay & {
  */
 export default function GorevlerimSayfasi() {
   const router = useRouter();
-  const { isLoading: cocukYukleniyor, child } = useSelectedChild();
+  const { isLoading: cocukYukleniyor, child, books, progress } = useSelectedChild();
   const [rows, setRows] = useState<GorevDurumRow[]>([]);
   const [yukleniyor, setYukleniyor] = useState(true);
   const [acikGorev, setAcikGorev] = useState<string | null>(null);
@@ -194,26 +196,21 @@ export default function GorevlerimSayfasi() {
   }
 
   const yukleniyorMu = cocukYukleniyor || yukleniyor;
+  /* Üst bardaki menü çekmecesinin sayaçları için — bu sayfanın kendi
+     içeriğinde kullanılmaz. */
+  const ozet = cocukOzeti(progress, books);
 
   return (
-    <main className="tema-cocuk zemin-yildizli relative min-h-screen text-murekkep">
-      <div className="relative mx-auto max-w-3xl px-4 py-6 sm:px-8">
-        {/* Üst bar */}
-        <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-          <Buton varyant="cerceve" boyut="kucuk" onClick={() => router.push("/map")}>
-            <Ikon ad="geri" boyut={16} />
-            Haritaya Dön
-          </Buton>
-          <Buton
-            varyant="cerceve"
-            boyut="kucuk"
-            onClick={() => router.push("/kazanimlarim")}
-          >
-            <Ikon ad="rozet" boyut={16} />
-            Kazanımlarım
-          </Buton>
-        </div>
-
+    <KesifSayfaKabugu
+      profil={{
+        ad: child?.name ?? "Gezgin",
+        avatarAnahtari: child?.avatarType ?? "lantern",
+        unvan: child?.title ?? ozet.unvan,
+      }}
+      toplamRozet={ozet.kazanilanRozet}
+      tamamlananKitap={ozet.tamamlananKitap}
+      yukleniyor={yukleniyorMu}
+    >
         <header className="mb-6">
           <p className="font-govde text-sm text-murekkep-soluk">
             {child?.name ? `${child.name} için` : "Senin için"}
@@ -259,7 +256,13 @@ export default function GorevlerimSayfasi() {
             </div>
           </Kart>
         ) : (
-          <div className="space-y-6">
+          /*
+            İki sütun (Hasan, 6 Ağu 2026): sol Seni Bekleyenler, sağ
+            Tamamladıkların. `items-start` şart — sütunlar eşit yükseklikte
+            gerilirse kısa olan taraf boşuna uzuyor. Dar ekranda tek sütuna
+            iner ve eski sıralama (önce bekleyenler) korunur.
+          */
+          <div className="grid items-start gap-6 lg:grid-cols-2 lg:gap-8">
             {bekleyenler.length > 0 ? (
               <section>
                 <h2 className="mb-3 font-baslik text-lg font-bold">
@@ -274,7 +277,11 @@ export default function GorevlerimSayfasi() {
             ) : null}
 
             {tamamlananlar.length > 0 ? (
-              <section>
+              /*
+                Bekleyen yokken tamamlananlar sol sütunda kalmasın: sağ sütuna
+                sabitlenir ki başlıklar her durumda aynı yerde dursun.
+              */
+              <section className={bekleyenler.length === 0 ? "lg:col-start-2" : undefined}>
                 <h2 className="mb-3 font-baslik text-lg font-bold">
                   Tamamladıkların ({tamamlananlar.length})
                 </h2>
@@ -287,7 +294,6 @@ export default function GorevlerimSayfasi() {
             ) : null}
           </div>
         )}
-      </div>
-    </main>
+    </KesifSayfaKabugu>
   );
 }

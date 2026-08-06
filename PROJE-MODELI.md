@@ -464,6 +464,7 @@ silinmez, görsel olarak gizlenir — sayfanın tek `h1`'i odur ve `.mapStage` o
 
 - Üst bar **her ekranda TEK satırdır**: logo (solda, çerçevesiz) · profil künyesi ·
   menü ikonu. Rozet/madalya sayaçları ve unvan bardan **çıkarıldı**.
+  *(Masaüstünde araya Keşif İskelesi şeridi girer — bkz. 3.7.2.2.)*
 - **Keşif menüsü** sağdan açılan çekmecedir (kitap detayıyla aynı davranış:
   arka plana dokunma ve Escape kapatır). İçerik: unvan, **Kazanılan Rozet**,
   **Kazanılan Madalya**, ardından sayfa bağlantıları (**Veli Paneli**, **Çıkış**).
@@ -478,7 +479,8 @@ silinmez, görsel olarak gizlenir — sayfanın tek `h1`'i odur ve `.mapStage` o
   adları kesilmez ve sahne başlığı sağa doğru genişleyip satır kazanır.
 - **Bölüm rotası üst barı** da tek satırdır: geri · bölüm/rozet sayaçları · menü.
   Kitap adı ve sıra numarası bardan çıkarıldı (orta alandaki başlıkta zaten var);
-  logo bu ekranda kullanılmaz.
+  logo bu ekranda kullanılmaz. *(Masaüstünde araya Keşif İskelesi şeridi girer —
+  bkz. 3.7.2.2.)*
 
 #### 3.7.2.1 Kitap detay paneli — iki düzen (REVİZE — 29 Temmuz 2026, Hasan)
 
@@ -520,6 +522,52 @@ Ayrım tek bir sorguyla yapılır: `(min-width: 960px) and (max-height: 860px)`.
   kayar** ve madalya kartı sabit "Tekrar Oku" butonunun altında kalır; ~970px
   ve üzeri yükseklikte her şey kaydırmasız sığar. Panel zaten kaydırılabilir
   bir yüzeydir, ana eylem `sticky` olduğu için her zaman erişilebilir kalır.
+
+#### 3.7.2.2 Keşif İskelesi ve menü sayfaları (KARAR — 6 Ağustos 2026, Hasan)
+
+**Sorun.** Üst barın orta sütunu boştu (logo solda, profil sağda), buna karşılık
+atlas haritasında alttaki Keşif İskelesi satırı ~74px yer yiyordu ve kitap detay
+panelindeki rozet ızgarası ekrana sığmıyordu. Üç menü ekranı (Kazanımlarım ·
+Kelime Defterim · Görevlerim) ise iskeletin tamamen dışındaydı: 896–1024px
+genişlik, iki butonluk kendi mini barı, sayfayla birlikte kayan başlık.
+
+**Karar — Keşif İskelesi şeridi.** Üç bağlantı **≥960px'te üst barın orta
+sütununda** durur; bar dört sütuna geçer (sol · iskele · sağ öbek · menü).
+Atlas'ta alttaki iskele satırı masaüstünde **kaldırılır**, kazanılan ~68px
+doğrudan haritaya ve kitap paneline gider. `<960px`'te şerit gizlenir.
+
+- Şerit **tek kaynaktan** gelir: `KesifIskelesi` bileşeni + `kesif-iskele.module.css`.
+  Atlas, bölüm rotası ve menü kabuğu üçü de onu kullanır; ekran modüllerinde
+  kopya stil **bırakılmaz**.
+- Bulunduğun sayfa `aria-current="page"` ile işaretlenir. Menü sayfalarında şerit
+  asıl gezinme aracıdır, aktif durum orada zorunludur.
+- **Menü çekmecesine** (`KesifMenusu`) aynı üç bağlantı eklendi. Şerit dar ekranda
+  gizlendiği ve bölüm rotası ile menü sayfalarında alt iskele bulunmadığı için,
+  çekmece o kırılımda bu sayfalara ulaşmanın **tek yoludur**.
+- Profil künyesi sütununa `max-width` konur. `auto` track max-content ister; uzun
+  bir çocuk adı sütunu şişirip şeridi ezerek butonların üstüne bindiriyordu.
+
+**Karar — menü sayfası kabuğu.** Üç menü ekranı ortak `KesifSayfaKabugu`
+bileşeniyle açılır: atlas ve bölüm rotasıyla **aynı 1440px genişlik**, aynı üst
+bar (geri · iskele · profil · menü) ve `KesifMenusu`.
+
+- Kaydırma modeli atlastan **ayrılır**: orada kabuk `height: 100svh` grid'dir ve
+  içerik kendi içinde kayar; burada bar `sticky`, sayfanın kendisi kayar. Bunlar
+  liste ekranıdır, iç kaydırma alanı mobilde adres çubuğuyla sorun çıkarıyor.
+  Üst pay **kabuğun padding'inden** verilir, bar'ın margin'inden değil — margin
+  çakışması onu `main`'in dışına taşıyıp sayfayı aşağı itiyordu.
+- İçerik 1440px'i **kullanır**, ortada dar bırakılmaz:
+
+  | Ekran | Masaüstü düzeni |
+  |---|---|
+  | Kazanımlarım | rozet ızgarası 10 sütuna kadar; madalya ve unvan 4 sütun |
+  | Kelime Defterim | 3 sütun |
+  | Görevlerim | 2 sütun — solda **Seni Bekleyenler**, sağda **Tamamladıkların** |
+
+- Sayfaların kendi çapraz gezinme butonları ("Kelime Defterim ↔ Kazanımlarım")
+  **kaldırıldı**; şerit üçünü birden veriyor.
+- Profil verisi kabuğa **props ile** geçer. Kabuk kendi `useSelectedChild`'ını
+  çağırsaydı her açılışta ikinci bir Supabase isteği çıkardı.
 
 ### 3.8 Veli ana sayfası bilgi mimarisi (ONAY — 18 Temmuz 2026)
 
@@ -641,6 +689,11 @@ etmez:
 | `/kazanimlarim` | Kazanımlarım (çocuk) | YENİ — çocuğun topladığı rozetler, madalyalar ve ünvanı gördüğü vitrin ekranı. Koleksiyon/başarı hissi verir; veri türetilir (yeni tablo yok) |
 | `/kelime-defterim` | Kelime Defterim (çocuk) | YENİ — çocuğun okuduğu kitaplardaki Kelime Kutusu kelimeleri, anlamlarıyla, aranabilir liste. Kelimeler `books.ts`'te zaten var; çocuğun gördükleri toplanıp gösterilir |
 | `/gorevlerim` | Görevlerim (çocuk) | PLANLANDI (Faz 6.1 — onaysız başlamaz) — çocuğun profiline eklediği "Bugüne Taşı" görevleri: görev adı, geldiği kitap+bölüm, Tamamlandı/Tamamlanmadı durumu, "Görevi Tamamladım" eylemi, görev ayrıntısı (varsa güvenlik notu görünür). **Rota adı ve giriş noktası ONAYLANDI (15 Tem 2026):** rota `/gorevlerim`; giriş, haritadaki Kazanımlarım / Kelime Defterim buton grubuna eklenen üçüncü buton |
+
+**Bu üç ekranın kabuğu (6 Ağu 2026):** `/kazanimlarim`, `/kelime-defterim` ve
+`/gorevlerim` ortak `KesifSayfaKabugu` ile açılır — atlas ve bölüm rotasıyla aynı
+genişlik ve aynı üst bar. Giriş noktaları: masaüstünde üst bardaki Keşif İskelesi
+şeridi, dar ekranda atlasın alt iskelesi ve menü çekmecesi. Ayrıntı: **3.7.2.2**.
 
 **Bölüm içi akış (KARAR 15 Tem 2026):** Her bölüm şu sırayla okunur:
 1. **Hikâye — 1. Kısım** (karar/gerilim noktasında biter)

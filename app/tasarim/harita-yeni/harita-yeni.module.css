@@ -72,6 +72,8 @@
   white-space: nowrap;
 }
 
+/* Keşif İskelesi şeridi ortak modüldedir: `src/components/atlas/kesif-iskele.module.css`. */
+
 .profileGroup { justify-self: end; min-width: 0; gap: 9px; }
 .avatar {
   display: grid;
@@ -295,7 +297,28 @@
 */
 @media (min-width: 960px) {
   .mapStage { --bolge-sahne: var(--bolge-arkaplan-yatay, none); }
+
+  /*
+    Keşif İskelesi üst bara taşınır (KARAR 6 Ağu 2026 — Hasan).
+    Kabuk DÖRT değil ÜÇ satır olur; dördüncü satır boş bırakılsa bile grid
+    aradaki 12px'lik gap'i yine ayırır — track sayısını azaltmak şart.
+    Kazanılan yükseklik (~62px dock + 12px gap) `minmax(0, 1fr)` satırına,
+    yani harita + kitap paneline gider.
+  */
+  .atlasShell { grid-template-rows: auto auto minmax(0, 1fr); }
+  .exploreDock { display: none; }
+  /* logo | iskele | profil | menü. Orta sütun eskiden boş duruyordu. */
+  .explorerBar { grid-template-columns: auto minmax(0, 1fr) auto auto; gap: 14px; }
+  /*
+    Profil sütununa ÜST SINIR şart. `auto` track max-content ister; uzun bir
+    çocuk adında ("Abdurrahman Mustafa") sütun sınırsız büyüyor, ortadaki
+    `minmax(0,1fr)` iskele sütunu altına iniyor ve butonlar profilin üstüne
+    biniyordu (960px'te 4px çakışma ölçüldü). Sınırla birlikte ad kendi
+    ellipsis'ine düşer, menü yerinde kalır.
+  */
+  .profileGroup { max-width: 210px; }
 }
+
 /*
   SAHNE KATMANI (REVİZE 29 Tem 2026 — Hasan, aydınlık sahne görselleri geldi).
   Önceki sürüm bütün sahneyi karartıyordu; o değerler KARANLIK fotoğraf

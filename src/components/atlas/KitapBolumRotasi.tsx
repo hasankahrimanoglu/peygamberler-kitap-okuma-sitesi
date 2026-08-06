@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Ikon, YedekliGorsel } from "../ui";
 import styles from "../../../app/tasarim/kitap-yeni/kitap-yeni.module.css";
 import { KesifMenusu } from "./KesifMenusu";
+import { KesifIskelesi } from "./KesifIskelesi";
 import {
   FINAL_KAPISI_IKONU,
   kitapKapagi,
@@ -370,6 +371,15 @@ export function KitapBolumRotasi({
           <button className={styles.backLink} type="button" onClick={onHaritayaDon}>
             <Ikon ad="geri" boyut={18} /> Keşif Atlasına Dön
           </button>
+
+          {/*
+            Keşif İskelesi — atlastaki şeridin AYNISI (KARAR 6 Ağu 2026 — Hasan).
+            İki ekranda aynı yerde durması kasıtlı: çocuk menüyü tek bir yerde
+            arar. Barın ortası burada da boştu (geri solda, sayaçlar sağda).
+            Yalnız ≥960px'te görünür; dar ekranda bağlantılar menü çekmecesinden
+            (`KesifMenusu`) açılır.
+          */}
+          <KesifIskelesi />
 
           <dl className={styles.headerStats} aria-label="Kitap ilerlemesi">
             <div><dt>Bölüm</dt><dd>{yukleniyor ? "—" : `${etkinTamamlananBolum} / ${toplamBolum}`}</dd></div>
