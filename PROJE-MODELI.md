@@ -114,10 +114,48 @@ Görsel dosyası gerekmez: anahtar unvan adından türetilir
 - Altın: rozet/madalya vurgularında (#C9A227 civarı)
 
 **Çocuk tarafı (macera):**
-- Zemin: koyu lacivert (#0E1A34 civarı) + yıldız dokusu
-- Kart zemini: lacivertin bir ton açığı, altın konturlu
+- Zemin: gece indigosu (#17275C) + yıldız dokusu
+- Kart zemini: indigonun bir ton açığı, altın konturlu
 - Okuma yüzeyi: krem (#FBF6E9) — uzun metin daima açık zemin üzerinde
-- Vurgu: altın (#E8B84B) ve yeşil (#34A06B)
+- Vurgu: altın (#F5C65A) ve yeşil (#34A06B)
+
+**GECE İNDİGOSU / KATMAN AYRIMI (REVİZE — 6 Ağustos 2026, Hasan).** Çocuk
+tarafının koyu zemini `#0E1A34`'ten (uygulamada `#0a1428`) **`#17275C` gece
+indigosuna** taşındı. Gerekçe üç maddedir:
+- **Kroma.** Eski değerin mavisi algılanmıyordu; ekranda siyaha yakın, "koyu
+  tema panel" tonundaydı. 8–11 yaş için gece gökyüzü, siyah değil **indigo**
+  olmalı — renk çeşidi çocuk arayüzünde canlılığın asıl kaynağıdır, parlaklık
+  değil.
+- **Katman ayrımı.** `zemin → yüzey → yüzey-2` arasındaki açıklık farkı 5–6
+  puandı ve bar'lar %78–82 opaklıkla bindiği için fark iyice kapanıyordu; üst
+  bar, bölge şeridi ve sayfa tek düz kütle gibi okunuyordu. Ağırlık hissinin
+  kaynağı karanlık değil **bu düzlüktü.** Yeni palette katmanlar arası fark
+  belirgin açılır.
+- **Sönük ikincil metin.** `--murekkep-soluk` gri-maviydi (#9FACC7); üst bar
+  menü etiketleri "ayarlar menüsü" tonunda kalıyordu. Yeni değer okunur.
+
+Bu revizyon **KOYU ÇERÇEVE / AYDINLIK SAHNE kararını değiştirmez** — çerçeve
+hâlâ koyudur, sahne hâlâ aydınlıktır. Yalnız çerçevenin tonu kalibre edilmiştir.
+
+**Kilitli durum RENGİ ÖLDÜRMEZ (aynı karar).** Kilitli/hazırlanıyor durakların
+kapak görseli `grayscale` ile griye çevrilMEZ; koyu zeminde kapaklar siyah
+deliğe dönüşüyordu ve bir bölgede duraklarının çoğu kilitli olduğu için harita
+ölü görünüyordu. Yerine **hafif doygunluk düşürme + parlaklık koruma +
+saydamlık** kullanılır: öğe geri çekilir ama rengini korur. Durumun asıl
+anlatıcısı kilit ikonu ve açılma şartı metnidir, renksizlik değil.
+
+**Yıldız dokusu görünür olmalıdır.** `.zemin-yildizli` dokusu 520px döşemede 8
+noktaydı — %100 yakınlıkta ekrana pratikte hiç çıkmıyordu, yani "gece gökyüzü"
+kimliği yalnız belgede vardı. Doku 21 yıldıza çıkarılır ve üç farklı döşeme
+ölçüsüne (340 / 520 / 780px) dağıtılır; ölçüler birbirine tam bölünmediği için
+tekrar örüntüsü gözle yakalanmaz.
+
+**Yıldız PARILDAMAZ — bilinçli karar.** Parıltı ilk planda vardı, uygulanmadı:
+tek yolu ya tam ekran arka planı her karede yeniden boyamak (hedef cihaz tablet;
+sürekli repaint pahalı) ya da `.zemin-yildizli`'ye pseudo-element katmanı eklemek
+— ki bu utility dört ayrı sayfada farklı konumlandırma bağlamlarında kullanılıyor
+ve yığılma sırası kırılgan olurdu. Kazanç (ince bir hareket) maliyeti karşılamaz.
+Yeniden ÖNERİLMEZ; istenirse ayrı bir kararla ele alınır.
 
 **KOYU ÇERÇEVE / AYDINLIK SAHNE (REVİZE — 29 Temmuz 2026, Hasan).** Çocuk
 tarafı baştan sona koyu DEĞİLDİR. Keşif haritasında ayrım şudur:

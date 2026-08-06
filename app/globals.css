@@ -27,19 +27,29 @@
   --okuma-yuzey: #fffdf8;
 }
 
+/*
+  Gece indigosu — REVİZE 6 Ağu 2026 (PROJE-MODELI 3.1).
+  Eski palet (#0a1428 zemin) ekranda siyaha yakındı ve katmanlar arası açıklık
+  farkı 5–6 puandı; bar'lar %78–82 opaklıkla bindiği için üst bar / bölge şeridi
+  / sayfa tek düz kütle okunuyordu. Değerler kromayı ve katman ayrımını birlikte
+  açar. Krem metin kontrastı 12,5:1, altın 8,9:1 — ikisi de AA sınırının çok
+  üstünde.
+*/
 .tema-cocuk {
-  --zemin: #0a1428;
-  --yuzey: #13223e;
-  --yuzey-2: #1b2d4f;
-  --cizgi: #2a3c63;
-  --murekkep: #f4efe3;
-  --murekkep-soluk: #9facc7;
-  --vurgu: #e8b84b;
-  --vurgu-yumusak: #33301f;
-  --eylem: #34a06b;
+  --zemin: #17275c;
+  --yuzey: #24376f;
+  --yuzey-2: #32478a;
+  --cizgi: #4a63ad;
+  --murekkep: #f7f2e7;
+  --murekkep-soluk: #c3cdec;
+  --vurgu: #f5c65a;
+  /* Açılan zeminde eski koyu zeytin (#33301f) kirli duruyordu; altının indigo
+     üzerinde kendi ailesinden yumuşak zemini. */
+  --vurgu-yumusak: #3d3f2c;
+  --eylem: #3bbd82;
   --eylem-koyu: #2c8a5c;
   --eylem-metin: #ffffff;
-  --eylem-yumusak: #16324a;
+  --eylem-yumusak: #1d3f6b;
   --okuma-yuzey: #fbf6e9;
 }
 
@@ -80,28 +90,51 @@ select {
     display: none;
   }
 
-  /* Çocuk tarafı gece gökyüzü: CSS ile yıldız dokusu (görsel dosyası gerekmez) */
+  /*
+    Çocuk tarafı gece gökyüzü: CSS ile yıldız dokusu (görsel dosyası gerekmez).
+
+    REVİZE 6 Ağu 2026 — eski doku 520px'lik TEK döşemede 8 noktaydı; %100
+    yakınlıkta ekrana pratikte hiç çıkmıyordu, "gece gökyüzü" kimliği yalnız
+    belgede kalıyordu. Şimdi 21 yıldız var ve üç FARKLI döşeme ölçüsüne (340 /
+    520 / 780px) dağıtılmış: ölçüler birbirine tam bölünmediği için tekrar
+    örüntüsü gözle yakalanmaz, doku da derinlik kazanır (yakın-uzak yıldız).
+    Zemin indigoya açıldığı için yıldız alfa değerleri de yükseltildi — eski
+    değerler yeni zeminde kayboluyordu.
+  */
   .zemin-yildizli {
     background-color: var(--zemin);
     background-image:
-      radial-gradient(1px 1px at 12% 22%, rgba(244, 239, 227, 0.55) 50%, transparent 51%),
-      radial-gradient(1.5px 1.5px at 32% 68%, rgba(244, 239, 227, 0.35) 50%, transparent 51%),
-      radial-gradient(1px 1px at 48% 12%, rgba(232, 184, 75, 0.5) 50%, transparent 51%),
-      radial-gradient(1.5px 1.5px at 64% 42%, rgba(244, 239, 227, 0.4) 50%, transparent 51%),
-      radial-gradient(1px 1px at 78% 78%, rgba(244, 239, 227, 0.5) 50%, transparent 51%),
-      radial-gradient(1px 1px at 88% 28%, rgba(232, 184, 75, 0.4) 50%, transparent 51%),
-      radial-gradient(1.5px 1.5px at 8% 84%, rgba(244, 239, 227, 0.3) 50%, transparent 51%),
-      radial-gradient(1px 1px at 55% 90%, rgba(244, 239, 227, 0.45) 50%, transparent 51%),
-      linear-gradient(180deg, #0a1428 0%, #0e1a34 55%, #122142 100%);
+      /* Yakın kat — küçük ve parlak (340px döşeme) */
+      radial-gradient(1px 1px at 7% 14%, rgba(247, 242, 231, 0.8) 50%, transparent 51%),
+      radial-gradient(1px 1px at 23% 61%, rgba(247, 242, 231, 0.55) 50%, transparent 51%),
+      radial-gradient(1.2px 1.2px at 41% 9%, rgba(247, 242, 231, 0.7) 50%, transparent 51%),
+      radial-gradient(1px 1px at 58% 37%, rgba(247, 242, 231, 0.5) 50%, transparent 51%),
+      radial-gradient(1px 1px at 71% 82%, rgba(247, 242, 231, 0.75) 50%, transparent 51%),
+      radial-gradient(1.2px 1.2px at 86% 21%, rgba(247, 242, 231, 0.6) 50%, transparent 51%),
+      radial-gradient(1px 1px at 94% 55%, rgba(247, 242, 231, 0.5) 50%, transparent 51%),
+      radial-gradient(1px 1px at 15% 88%, rgba(247, 242, 231, 0.65) 50%, transparent 51%),
+      /* Orta kat (520px döşeme) */
+      radial-gradient(1.6px 1.6px at 12% 22%, rgba(247, 242, 231, 0.7) 50%, transparent 51%),
+      radial-gradient(1.4px 1.4px at 32% 68%, rgba(247, 242, 231, 0.5) 50%, transparent 51%),
+      radial-gradient(1.6px 1.6px at 48% 12%, rgba(247, 242, 231, 0.6) 50%, transparent 51%),
+      radial-gradient(1.4px 1.4px at 64% 42%, rgba(247, 242, 231, 0.55) 50%, transparent 51%),
+      radial-gradient(1.6px 1.6px at 78% 78%, rgba(247, 242, 231, 0.65) 50%, transparent 51%),
+      radial-gradient(1.4px 1.4px at 88% 28%, rgba(247, 242, 231, 0.45) 50%, transparent 51%),
+      radial-gradient(1.6px 1.6px at 8% 84%, rgba(247, 242, 231, 0.5) 50%, transparent 51%),
+      radial-gradient(1.4px 1.4px at 55% 90%, rgba(247, 242, 231, 0.6) 50%, transparent 51%),
+      /* Uzak kat — altın kırıntılar, seyrek (780px döşeme) */
+      radial-gradient(1.8px 1.8px at 19% 31%, rgba(245, 198, 90, 0.7) 50%, transparent 51%),
+      radial-gradient(1.6px 1.6px at 44% 74%, rgba(245, 198, 90, 0.5) 50%, transparent 51%),
+      radial-gradient(1.8px 1.8px at 67% 17%, rgba(245, 198, 90, 0.65) 50%, transparent 51%),
+      radial-gradient(1.6px 1.6px at 83% 63%, rgba(245, 198, 90, 0.45) 50%, transparent 51%),
+      radial-gradient(1.8px 1.8px at 29% 95%, rgba(245, 198, 90, 0.55) 50%, transparent 51%),
+      linear-gradient(180deg, #142250 0%, #17275c 55%, #1e3070 100%);
     background-size:
-      520px 520px,
-      520px 520px,
-      520px 520px,
-      520px 520px,
-      520px 520px,
-      520px 520px,
-      520px 520px,
-      520px 520px,
+      340px 340px, 340px 340px, 340px 340px, 340px 340px,
+      340px 340px, 340px 340px, 340px 340px, 340px 340px,
+      520px 520px, 520px 520px, 520px 520px, 520px 520px,
+      520px 520px, 520px 520px, 520px 520px, 520px 520px,
+      780px 780px, 780px 780px, 780px 780px, 780px 780px, 780px 780px,
       100% 100%;
   }
 }

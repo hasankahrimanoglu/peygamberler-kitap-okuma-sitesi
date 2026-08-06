@@ -528,7 +528,13 @@
 .stop_completed .stopLabel { border-color: color-mix(in srgb, var(--atlas-green) 62%, transparent); }
 .stop_active .markerArt { border-color: var(--atlas-gold); box-shadow: 0 0 0 6px color-mix(in srgb, var(--atlas-gold) 20%, transparent), 0 12px 26px color-mix(in srgb, var(--atlas-night) 62%, transparent); }
 .stop_active .stopLabel { border-color: var(--atlas-gold); }
-.stop_locked .markerArt, .stop_preparing .markerArt { filter: grayscale(.75) brightness(.62); border-color: color-mix(in srgb, var(--murekkep) 26%, transparent); }
+/* Kilitli/hazırlanıyor kapak RENGİNİ KAYBETMEZ (6 Ağu 2026 — PROJE-MODELI 3.1).
+   Eski `grayscale(.75) brightness(.62)` kapağı koyu zeminde siyah deliğe
+   çeviriyordu; bir bölgede durakların çoğu kilitli olduğu için harita ölü
+   görünüyordu. Öğe artık rengini koruyup GERİ ÇEKİLİR. Durumu anlatan asıl
+   işaret kilit/saat rozeti ile panelin somut açılma şartı metnidir — renksizlik
+   değil. */
+.stop_locked .markerArt, .stop_preparing .markerArt { filter: saturate(.7) brightness(.9); opacity: .66; border-color: color-mix(in srgb, var(--murekkep) 34%, transparent); }
 .stop_locked .markerStatus, .stop_preparing .markerStatus { color: color-mix(in srgb, var(--murekkep) 88%, transparent); background: color-mix(in srgb, var(--atlas-raised) 92%, transparent); }
 /* Kartın KENDİSİ soluklaşmaz — aydınlık zeminde saydamlaşıp çamurlaşıyor.
    Solgunluk yalnız ada verilir; "hazırlanıyor" mesajını asıl griye çekilmiş
