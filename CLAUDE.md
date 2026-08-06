@@ -117,10 +117,13 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
   hiyerarşisi klasöre taşındı. Yol üretimi **yalnız `src/lib/varlikYollari.ts`**
   üzerinden yapılır; ekranlar kendi içinde yol string'i KURMAZ.
   `public/kitaplar/hz-{bookKey}/kapak.png` · `.../bolum-{n}/kapak.jpg` ·
-  `.../bolum-{n}/{kisa-ad}.jpg` · `public/rozetler/hz-{bookKey}/bolum-{n}.svg` ·
-  `public/madalyalar/hz-{bookKey}.svg` · `public/unvanlar/{anahtar}.svg` ·
+  `.../bolum-{n}/{kisa-ad}.jpg` · `public/rozetler/hz-{bookKey}/bolum-{n}.png` ·
+  `public/madalyalar/hz-{bookKey}.png` · `public/unvanlar/{anahtar}.png` ·
   `public/avatarlar/avatar-{1..10}.jpg` · `public/ikonlar/final-kapisi.svg`.
-  **Okuma sayfası görselleri 16:9 ve `.jpg`** (sabit). Rozet/madalya/unvan SVG.
+  **Okuma sayfası görselleri 16:9 ve `.jpg`** (sabit). **Rozet/madalya/unvan
+  512×512 şeffaf PNG** (REVİZE 7 Ağu 2026 — eskiden SVG'ydi; ekranda en fazla
+  72px çizildikleri için vektör avantajı karşılıksızdı, brifler ise gradyan ve
+  doku istiyor). Yedek placeholder'lar ve `final-kapisi.svg` SVG kalır.
   Dosya adları küçük harf, Türkçe karaktersiz, tireli. İçerik görsellerinin
   sicili: `ICERIK-GORSEL-SICILI.md`.
 - **Rozet = bölüm başına özel görsel** (Karar: Seçenek B). Anahtar veriye yazılmaz,

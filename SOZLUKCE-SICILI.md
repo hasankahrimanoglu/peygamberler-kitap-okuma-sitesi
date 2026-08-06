@@ -28,6 +28,15 @@ tanımlarını yönetmesidir.
 - **Bir terim = bir kutu.** Terim, set genelinde ilk geçtiği bölümde
   etkileşimli olur; sonraki bölümlerde ve sonraki kitaplarda **düz metin**
   kalır (`YENI-KITAP-ICERIK-URETIM-BRIFI.md` §7.4).
+- **Kutulama yeri okuma sırasına göre belirlenir — "ilk geçtiği yerde
+  kutulanır" (KARAR 7 Ağu 2026, Hasan).** Bir terim, kitap sırasında hangi
+  kitapta ilk kez geçiyorsa orada kutulanır. Terimin başka bir kitapta daha
+  merkezî olması kutuyu oraya taşımaz. Gerekçe: çocuk kitapları sırayla okur;
+  terimi "daha uygun" bir kitaba saklamak, çocuğun o kelimeyi aylarca tanımsız
+  görmesi demektir. Sonraki kitap terimi kutu olmadan da derinlemesine
+  işleyebilir — kutu bir sözlük girdisidir, konunun sahipliği değil.
+  *Örnek: `Kâbe` ve `put` Hz. İbrâhim kıssasında daha merkezîdir; ancak set
+  sırasında ilk kez Hz. Şît'te geçtikleri için orada kutulanır.*
 - **Sabit sözlükçe değiştirilemez.** Brif §11'deki 11 terimin tanımı harfiyen
   kullanılır.
 - Tanım tek cümle, kısa ve **8–11 yaşa uygun** olmalıdır.
@@ -116,10 +125,11 @@ sicil, sonra `demoChapters.ts` güncellenir.
 
 ## 6. AÇIK UYARILAR
 
-- **Sabit sözlükçedeki 11 terimin hiçbiri henüz kutulanmadı.** Hz. Muhammed ve
-  Dört Büyük Halife kitapları geldiğinde *hicret · vahiy · halife · sahabe ·
-  müşrik · Kâbe* terimlerinin **hangi kitapta ilk kez** kutulanacağına önceden
-  karar verilmelidir; yoksa aynı terim dört ayrı kitapta kutulanmaya çalışılır.
+- **Sabit sözlükçedeki 11 terimin hiçbiri henüz kutulanmadı.** ~~Hangi kitapta
+  ilk kez kutulanacağına önceden karar verilmelidir.~~ **KAPANDI (7 Ağu 2026)** —
+  §1'deki "ilk geçtiği yerde kutulanır" kuralı bu soruyu kalıcı olarak çözer.
+  Ayrıca bir karar gerekmez: *hicret · vahiy · halife · sahabe · müşrik · Kâbe*
+  dahil her terim, set sırasında ilk geçtiği kitapta kutulanır.
 - Hz. Şît'in etkileşimli kelimesi kaldırıldığı için o geçici demo kitapta şu an
   hiç kutulanmış kelime yoktur. Nihai kaynaklı içerik geldiğinde bu yeniden
   değerlendirilecektir.

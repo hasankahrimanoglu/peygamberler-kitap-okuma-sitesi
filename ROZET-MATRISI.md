@@ -36,15 +36,20 @@ daima bu dosyanın güncel hâli verilir.
 
 ### 1.2 Rozet görsel anahtarı — türetilir, yazılmaz
 
-Anahtar `books.ts`'te alan olarak tutulmaz. Kod `src/lib/derive.ts:132`
+Anahtar `books.ts`'te alan olarak tutulmaz. Kod `src/lib/derive.ts:126`
 üzerinden türetir:
 
 ```
-rozetIconKey(bookKey, bölümNo)  →  {bookKey}-bolum-{no}
-dosya                           →  public/rozetler/rozet-{bookKey}-bolum-{no}.png
+rozetIconKey(bookKey, bölümNo)  →  hz-{bookKey}/bolum-{no}
+dosya                           →  public/rozetler/hz-{bookKey}/bolum-{no}.png
 ```
 
-Örnek: `adem-bolum-1` → `public/rozetler/rozet-adem-bolum-1.png`
+Örnek: `hz-adem/bolum-1` → `public/rozetler/hz-adem/bolum-1.png`
+
+> **Düzeltme (7 Ağu 2026).** Bu bölüm 27 Tem 2026 klasör revizyonunda
+> güncellenmemişti ve düz dosya adı (`rozet-adem-bolum-1.png`) tarif ediyordu.
+> Doğrusu yukarıdaki **kitap → bölüm klasör** düzenidir; tek kaynak
+> `src/lib/varlikYollari.ts`.
 
 Sonuç: rozet görsel adı **kitabın `bookKey`'i ve bölüm numarasıyla otomatik
 belirlidir.** İçerik ajanının ayrıca anahtar üretmesine gerek yoktur; brifte
@@ -52,7 +57,9 @@ istenen "rozet anahtarı" alanı bu türetmenin doğrulanması içindir.
 
 ### 1.3 Görsel
 
-- 512×512, PNG şeffaf, tek şablon ailesi (aynı çerçeve, aynı palet; değişen
+- **512×512, şeffaf PNG** (KARAR 7 Ağu 2026 — PROJE-MODELI 6.1). Ödül görselleri
+  ekranda en fazla 72px çizildiği için vektöre gerek yoktur; brifler ise gradyan,
+  doku ve ışık istiyor. Tek şablon ailesi (aynı çerçeve, aynı palet; değişen
   yalnız iç sembol).
 - Kilitli/kazanılmış için **ayrı dosya üretilmez** — CSS ile soluklaştırılır.
 - Dosya adı küçük harf, Türkçe karaktersiz, tireli.

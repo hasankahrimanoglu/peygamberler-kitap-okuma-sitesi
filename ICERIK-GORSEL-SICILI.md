@@ -177,16 +177,20 @@ Değişirse `books.ts` ve bu sicil **birlikte** güncellenir.
 
 ## 7. Diğer görsel klasörleri (27 Temmuz 2026 kurulumu)
 
-Aşağıdakiler **SVG**'dir; Hasan vektör olarak hazırlar. Hepsi yer tutucudur —
-eskisini silip aynı adla yenisini atmak yeterlidir.
+**Ödül görselleri 512×512 şeffaf PNG'dir** (REVİZE 7 Ağu 2026 — PROJE-MODELI
+6.1; eskiden SVG'ydi). Eskisini silip aynı adla yenisini atmak yeterlidir.
 
 | Klasör | Kalıp | Kurulan | Not |
 |---|---|---|---|
-| `public/rozetler/hz-{bookKey}/` | `bolum-{n}.svg` | **34** | İlk İzler Vadisi 6 kitabı: âdem 8, şît 4, idrîs 4, nûh 8, hûd 5, sâlih 5 |
-| `public/madalyalar/` | `hz-{bookKey}.svg` | **6** | Kitap başına bir madalya; her kitabınki farklıdır |
-| `public/unvanlar/` | `{unvan-anahtari}.svg` | **10** | `yeni-gezgin`, `yol-kasifi`, `deger-toplayicisi`, `yol-arkadasi`, `bilge-yolcu`, `hikaye-ustasi`, `emanet-koruyucusu`, `atlas-bilgini`, `kissa-rehberi`, `yedi-bolge-kasifi` |
+| `public/rozetler/hz-{bookKey}/` | `bolum-{n}.png` | **0** | Hedef 34 (İlk İzler Vadisi): âdem 8, şît 4, idrîs 4, nûh 8, hûd 5, sâlih 5. Eski SVG yer tutucular klasörde duruyor ama artık **yüklenmiyor** |
+| `public/madalyalar/` | `hz-{bookKey}.png` | **0** | Hedef 6. Kitap başına bir madalya; her kitabınki farklıdır |
+| `public/unvanlar/` | `{unvan-anahtari}.png` | **0** | Hedef 10: `yeni-gezgin`, `yol-kasifi`, `deger-toplayicisi`, `yol-arkadasi`, `bilge-yolcu`, `hikaye-ustasi`, `emanet-koruyucusu`, `atlas-bilgini`, `kissa-rehberi`, `yedi-bolge-kasifi` |
 | `public/avatarlar/` | `avatar-{1..10}.jpg` | **10** | Veli panelinde üçerli pencerede oklarla gezilir |
-| `public/ikonlar/` | `final-kapisi.svg` | **1** | Bölüm rotasındaki **Büyük Final Testi** durağının ikonu |
+| `public/ikonlar/` | `final-kapisi.svg` | **1** | Bölüm rotasındaki **Büyük Final Testi** durağının ikonu — arayüz ikonu olduğu için SVG kalır |
+
+> PNG geçişi yapıldığı için 50 eski SVG yer tutucu (34 rozet + 6 madalya + 10
+> unvan) artık çözülmüyor; ekranlar tipin genel yedeğine düşüyor
+> (`placeholder.svg`). Gerçek PNG'ler aynı ada atıldıkça tek tek yerine oturur.
 
 **Büyük Final Testi ikonunun yolu:** `public/ikonlar/final-kapisi.svg`
 Bölüm rotasında "Final Kapısı" durağında görünür; `currentColor` kullandığı için

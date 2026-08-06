@@ -11,14 +11,22 @@
  *   public/kitaplar/hz-{bookKey}/kapak.png             ← kitap kapağı
  *   public/kitaplar/hz-{bookKey}/bolum-{n}/kapak.jpg   ← bölüm açılış sahnesi (16:9)
  *   public/kitaplar/hz-{bookKey}/bolum-{n}/{ad}.jpg    ← bölüm içi sahneler (16:9)
- *   public/rozetler/hz-{bookKey}/bolum-{n}.svg
- *   public/madalyalar/hz-{bookKey}.svg
- *   public/unvanlar/{unvan-anahtari}.svg
+ *   public/rozetler/hz-{bookKey}/bolum-{n}.png
+ *   public/madalyalar/hz-{bookKey}.png
+ *   public/unvanlar/{unvan-anahtari}.png
  *   public/avatarlar/avatar-{1..10}.jpg
  *   public/ikonlar/final-kapisi.svg
  *
  * Kural: dosya yoksa kod BOZULMAZ — `YedekliGorsel` yedeğe düşer. Hasan gerçek
  * dosyayı aynı adla klasöre atınca kod değişmeden yayına girer.
+ *
+ * ÖDÜL GÖRSELLERİ PNG'DİR (KARAR 7 Ağu 2026 — Hasan). Rozet, madalya ve unvan
+ * SVG'den PNG'ye alındı. Gerekçe: bu görseller ekranda en fazla 72px çiziliyor
+ * (`OdulIkonu` çağrıları 13–72px), yani vektörün ölçeklenme avantajı fiilen
+ * karşılıksız. Buna karşılık briflerdeki gradyan/doku/ışık tarifleri vektörle
+ * zor, raster üretimle doğal; 216 rozetin vektörleştirilmesi hem üretim yükü
+ * hem kalite kaybı demekti. Yedek (placeholder) dosyalar SVG kalır — onlar
+ * ayrı dosyalardır ve her zaman çözülür.
  */
 
 /**
@@ -61,17 +69,32 @@ export function bolumGorseli(bookKey: string, bolumNo: number, ad: string) {
 
 /** Rozet — bölüm başına bir dosya (PROJE-MODELI 6.1, Seçenek B). */
 export function rozetGorseli(bookKey: string, bolumNo: number) {
-  return `/rozetler/hz-${bookKey}/bolum-${bolumNo}.svg`;
+  return `/rozetler/hz-${bookKey}/bolum-${bolumNo}.png`;
+}
+
+/**
+ * Rozet yolu, hazır `bookKey/bolum-n` anahtarından.
+ *
+ * `derive.ts:rozetIconKey()` bu biçimde bir anahtar üretiyor ve `OdulIkonu`
+ * onu alıyor; ikisi arasında yolu yeniden kurmak yerine tek kapı bu.
+ */
+export function rozetGorseliAnahtardan(anahtar: string) {
+  return `/rozetler/${anahtar}.png`;
 }
 
 /** Madalya — kitap başına bir dosya; her kitabın madalyası farklıdır. */
 export function madalyaGorseli(bookKey: string) {
-  return `/madalyalar/hz-${bookKey}.svg`;
+  return `/madalyalar/hz-${bookKey}.png`;
+}
+
+/** Madalya yolu, hazır `hz-{bookKey}` anahtarından (`derive.ts:madalyaIconKey`). */
+export function madalyaGorseliAnahtardan(anahtar: string) {
+  return `/madalyalar/${anahtar}.png`;
 }
 
 /** Unvan — `unvanAnahtari()` çıktısıyla eşleşir (ör. "bilge-yolcu"). */
 export function unvanGorseli(anahtar: string) {
-  return `/unvanlar/${anahtar}.svg`;
+  return `/unvanlar/${anahtar}.png`;
 }
 
 /** Avatar — `avatar-1` … `avatar-10`. */

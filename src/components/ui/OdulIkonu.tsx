@@ -1,7 +1,13 @@
 "use client";
 
 import { YedekliGorsel } from "./YedekliGorsel";
-import { avatarGorseli, unvanGorseli, YEDEK } from "../../lib/varlikYollari";
+import {
+  avatarGorseli,
+  madalyaGorseliAnahtardan,
+  rozetGorseliAnahtardan,
+  unvanGorseli,
+  YEDEK,
+} from "../../lib/varlikYollari";
 
 type OdulTipi = "rozet" | "madalya" | "unvan" | "avatar";
 
@@ -20,8 +26,8 @@ type OdulIkonuProps = {
 // Gerçek görsel yoksa otomatik olarak tipin yedeğine düşer; Hasan görseli aynı
 // adla klasöre atınca kod değişmeden gerçek görsel görünür.
 const yolUreticileri: Record<OdulTipi, (anahtar: string) => string> = {
-  rozet: (a) => `/rozetler/${a}.svg`,
-  madalya: (a) => `/madalyalar/${a}.svg`,
+  rozet: rozetGorseliAnahtardan,
+  madalya: madalyaGorseliAnahtardan,
   unvan: unvanGorseli,
   avatar: avatarGorseli,
 };

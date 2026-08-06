@@ -834,11 +834,11 @@ public/
         kapak.jpg                      bölüm açılış sahnesi (16:9)
         {kisa-ad}.jpg                  bölüm içi sahneler (16:9)
   rozetler/
-    hz-{bookKey}/bolum-{n}.svg         bölüm başına bir rozet
+    hz-{bookKey}/bolum-{n}.png         bölüm başına bir rozet
   madalyalar/
-    hz-{bookKey}.svg                   kitap başına bir madalya (her kitap farklı)
+    hz-{bookKey}.png                   kitap başına bir madalya (her kitap farklı)
   unvanlar/
-    {unvan-anahtari}.svg               ör. bilge-yolcu.svg
+    {unvan-anahtari}.png               ör. bilge-yolcu.png
   avatarlar/
     avatar-{1..10}.jpg                 10 avatar
   ikonlar/
@@ -853,7 +853,22 @@ public/
 - **Okuma sayfası görselleri 16:9'dur (KARAR 27 Tem 2026)** ve uzantı
   **`.jpg`'de sabittir** — sahneler fotoğrafiktir, JPEG aynı kalitede PNG'nin
   onda biri yer kaplar. Kitap kapağı dikey olduğu için bu orana tabi değildir.
-- Rozet, madalya ve unvan **SVG**'dir; Hasan bunları vektör olarak hazırlar.
+- **Rozet, madalya ve unvan PNG'dir — 512×512, şeffaf zemin (REVİZE 7 Ağustos
+  2026, Hasan).** Önceki karar SVG'ydi; üç gerekçeyle değiştirildi:
+  - **Ölçek avantajı karşılıksız.** Bu görseller ekranda en fazla **72px**
+    çiziliyor (`OdulIkonu` çağrıları 13–72px arası). 3x ekranda bile 216px
+    gerekir; 512×512 PNG bunun iki katından fazlasını verir. Vektörün "sonsuz
+    ölçeklenme" faydası bu projede fiilen kullanılmıyor.
+  - **Üretim biçimiyle uyum.** Rozet brifleri gradyan, doku, parlama ve ışık
+    huzmesi tarif ediyor. Bunlar raster üretimin doğal alanı; vektörde ya
+    karşılanamıyor ya da elle çizim yükü doğuruyor. 216 rozetin vektörleştirilmesi
+    hem üretim maliyeti hem kalite kaybı demekti.
+  - **Tek kural.** Rozet PNG, madalya SVG gibi karışık bir düzen ileride "hangi
+    ödül hangi uzantıda?" tuzağı üretirdi; üç ödül tipi birlikte taşındı.
+
+  Dosya boyutu tek dezavantajdır ve sıkıştırmayla karşılanır. Yedek
+  (placeholder) dosyalar SVG kalır — onlar ayrı dosyalardır, her zaman çözülür.
+  Final Kapısı ikonu da SVG kalır; o bir arayüz ikonudur, ödül görseli değildir.
 - Dosya adı küçük harf, Türkçe karaktersiz, tire ile ayrılır.
 - **Değiştirme akışı:** Hasan eski dosyayı silip yenisini **aynı adla** klasöre
   atar; kod değişmeden yayına girer. Dosya yoksa kod BOZULMAZ — `YedekliGorsel`

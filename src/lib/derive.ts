@@ -121,13 +121,14 @@ export function rozetAdlari(anahtar: KitapAnahtari): string[] {
 
 /**
  * Rozet dosya anahtarı: ("adem", 1) → "hz-adem/bolum-1"
- * → /rozetler/hz-adem/bolum-1.svg (PROJE-MODELI 6.1, 27 Tem 2026 klasör düzeni).
+ * → /rozetler/hz-adem/bolum-1.png (PROJE-MODELI 6.1, 27 Tem 2026 klasör düzeni;
+ * uzantı 7 Ağu 2026'da PNG'ye alındı).
  */
 export function rozetIconKey(bookKey: string, chapterNo: number) {
   return `hz-${bookKey}/bolum-${chapterNo}`;
 }
 
-/** Madalya dosya anahtarı: "adem" → "hz-adem" → /madalyalar/hz-adem.svg */
+/** Madalya dosya anahtarı: "adem" → "hz-adem" → /madalyalar/hz-adem.png */
 export function madalyaIconKey(bookKey: string) {
   return `hz-${bookKey}`;
 }
