@@ -12,8 +12,12 @@
 >
 > **Son güncelleme: 31 Temmuz 2026** — Bölüm 8 (görsel paketi) koddaki gerçek
 > klasör düzeni ve formatlarla eşitlendi: dikey (3:4) varyant kaldırıldı,
-> içerik görselleri 16:9 `.jpg`, rozet ve madalya `.svg`, "Dokun ve Keşfet"
-> kapatıldı. Görsel dosya adlarının tek kaynağı `ICERIK-GORSEL-SICILI.md`'dir.
+> içerik görselleri 16:9 `.jpg`, "Dokun ve Keşfet" kapatıldı. Görsel dosya
+> adlarının tek kaynağı `ICERIK-GORSEL-SICILI.md`'dir.
+>
+> **7 Ağustos 2026** — rozet, madalya ve unvan `.svg`'den **`.png`**'ye alındı
+> (PROJE-MODELI 6.1). Ekranda en fazla 72px çizildikleri için vektöre gerek
+> yok; brifler ise gradyan, doku ve ışık istiyor.
 
 ---
 
@@ -430,8 +434,8 @@ belirt.
 | Varlık | Boyut/oran | Dosya planı | Teslim edilecek bilgi |
 |---|---|---|---|
 | Kitap kapağı | 600×900, 2:3, `.png` | `public/kitaplar/hz-{bookKey}/kapak.png` | Ana kompozisyon ve üretim promptu |
-| Kitap madalyası | 512×512 şeffaf, **`.svg`** | `public/madalyalar/hz-{bookKey}.svg` | Sembol, çerçeve, renk ve prompt |
-| Bölüm rozeti | 512×512 şeffaf, **`.svg`** | `public/rozetler/hz-{bookKey}/bolum-{n}.svg` | Bölüme özel sembol ve prompt |
+| Kitap madalyası | 512×512 şeffaf, **`.png`** | `public/madalyalar/hz-{bookKey}.png` | Sembol, çerçeve, renk ve prompt |
+| Bölüm rozeti | 512×512 şeffaf, **`.png`** | `public/rozetler/hz-{bookKey}/bolum-{n}.png` | Bölüme özel sembol ve prompt |
 
 **Kapak, haritada daire olarak kırpılır.** Keşif haritasındaki durak madalyonu
 mobilde 48px'dir ve 2:3 kapağı yuvarlak keser. Ana sembol **merkezde** olmalı ve
@@ -718,7 +722,7 @@ Kaynak dışı bilgi var mı?:
 ### G3. İsim ve özel kelime telaffuz notları
 
 ## H. GÖRSEL DOSYA ENVANTERİ
-[Kapak (.png) + madalya (.svg) + N rozet (.svg) + tüm 16:9 içerik görselleri
+[Kapak (.png) + madalya (.png) + N rozet (.png) + tüm 16:9 içerik görselleri
 (.jpg). Bölge sahnesi bu envantere GİRMEZ — kitap başına değil bölge başına
 üretilir ve yedisi de hazırdır.]
 
@@ -760,7 +764,7 @@ Ajan, teslim sonunda her maddeyi `tamam / sorun var` olarak raporlamalıdır:
 - [ ] Her bölümde genellikle 3–4 anlamlı görsel durağı var; gereksiz görsel yok.
 - [ ] Her içerik görselinin TEK 16:9 brifi var (dikey varyant üretilmez).
 - [ ] Görsel dosya adları `ICERIK-GORSEL-SICILI.md` düzenine uyuyor
-      (`bolum-{n}/{kisa-ad}.jpg`); rozet ve madalya `.svg`.
+      (`bolum-{n}/{kisa-ad}.jpg`); rozet ve madalya 512×512 şeffaf `.png`.
 - [ ] Bütün görsel tarifleri figür/tasvir ve anakronizm yasağına uyuyor.
 - [ ] Final soru sayısı bölüm sayısına eşit ve her bölüm bir kez temsil ediliyor.
 - [ ] Veli raporunda 3 özet, 2–3 sohbet sorusu ve 3–6 zor soru bulunuyor.
