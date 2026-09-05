@@ -83,21 +83,21 @@ where not exists (
 );
 
 insert into public.books (isim, aciklama, sira, toplam_bolum)
-select 'Hz. Ebû Bekir', 'Sadakat ve cömertlik durağı', 3, 10
+select 'Hz. Ebû Bekir', 'Sadakat ve cömertlik durağı', 32, 10
 where not exists (
   select 1 from public.books
   where lower(isim) like '%bekir%'
 );
 
 insert into public.books (isim, aciklama, sira, toplam_bolum)
-select 'Hz. Ömer', 'Adalet kapısı', 4, 3
+select 'Hz. Ömer', 'Adalet kapısı', 33, 3
 where not exists (
   select 1 from public.books
   where lower(isim) like '%ömer%' or lower(isim) like '%omer%'
 );
 
 insert into public.books (isim, aciklama, sira, toplam_bolum)
-select 'Hz. Osman', 'Hayâ ve iyilik bahçesi', 5, 1
+select 'Hz. Osman', 'Hayâ ve iyilik bahçesi', 34, 1
 where not exists (
   select 1 from public.books
   where lower(isim) like '%osman%'
@@ -115,16 +115,24 @@ update public.books
 set toplam_bolum = 5, sira = 4
 where lower(isim) like '%nuh%';
 
+-- Dört Büyük Halife kitaplarının sırası KATALOGU izler (atlasCatalog.ts:
+-- Dört Dost Meydanı bölgesi → Ebû Bekir 32, Ömer 33, Osman 34, Ali 35).
+-- Bu satırlar eskiden 3-4-5'ti; peygamber kitapları eklendikçe İdrîs (3) ve
+-- Nûh (4) ile ÇAKIŞTI. `sira` yalnız bir görüntüleme alanı değildir:
+-- `derive.ts:kutuphaneListesi` bu alana göre sıralayıp zincirleme kilidi
+-- kurar (her kitap bir öncekinin finali bitmeden açılmaz). Eşit `sira`
+-- değerlerinde sıralama Postgres'in döndürdüğü satır sırasına kalır, yani
+-- kütüphanedeki kitap sırası ve kilit zinciri sorgudan sorguya değişebilir.
 update public.books
-set toplam_bolum = 10, sira = 3
+set toplam_bolum = 10, sira = 32
 where lower(isim) like '%bekir%';
 
 update public.books
-set toplam_bolum = 3, sira = 4
+set toplam_bolum = 3, sira = 33
 where lower(isim) like '%ömer%' or lower(isim) like '%omer%';
 
 update public.books
-set toplam_bolum = 1, sira = 5
+set toplam_bolum = 1, sira = 34
 where lower(isim) like '%osman%';
 
 create table if not exists public.user_progress (
