@@ -3,6 +3,7 @@ export { Kart } from "./Kart";
 export { IlerlemeCubugu } from "./IlerlemeCubugu";
 export { DurumCipi } from "./DurumCipi";
 export { OdulIkonu } from "./OdulIkonu";
+export { CocukAvatari } from "./CocukAvatari";
 export { YedekliGorsel } from "./YedekliGorsel";
 export { Ikon } from "./Ikon";
 export type { IkonAdi } from "./Ikon";

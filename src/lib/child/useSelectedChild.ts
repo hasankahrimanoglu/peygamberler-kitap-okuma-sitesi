@@ -3,12 +3,15 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
+import { profilAvatarliOku } from "../profilFotografi";
 import type { DeriveBookRow, DeriveProgressRow } from "../derive";
 
 export type SelectedChild = {
   id: string;
   name: string;
   avatarType: string;
+  /** Veli yüklediyse fotoğrafın public URL'i; boşsa hazır avatar geçerli */
+  avatarUrl: string | null;
   title: string | null;
 };
 
@@ -48,15 +51,16 @@ export function useSelectedChild(): SelectedChildData {
         id: selectedProfileId,
         name: selectedProfileName || "Gezgin",
         avatarType: "lantern",
+        avatarUrl: null,
         title: null,
       });
 
       const [profileResult, booksResult, progressResult] = await Promise.all([
-        supabase
-          .from("profiles")
-          .select("isim, avatar_tipi, unvan")
-          .eq("id", selectedProfileId)
-          .maybeSingle(),
+        profilAvatarliOku<{
+          isim: string | null;
+          avatar_tipi: string | null;
+          unvan: string | null;
+        }>(selectedProfileId, "isim, avatar_tipi, unvan"),
         supabase.from("books").select("id, isim, toplam_bolum, sira"),
         supabase
           .from("user_progress")
@@ -71,6 +75,7 @@ export function useSelectedChild(): SelectedChildData {
           id: selectedProfileId,
           name: profileResult.data.isim ?? selectedProfileName ?? "Gezgin",
           avatarType: profileResult.data.avatar_tipi ?? "lantern",
+          avatarUrl: profileResult.data.avatar_url ?? null,
           title: profileResult.data.unvan ?? null,
         });
       }

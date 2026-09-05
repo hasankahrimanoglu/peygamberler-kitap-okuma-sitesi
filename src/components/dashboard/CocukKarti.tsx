@@ -2,6 +2,7 @@
 
 import {
   Buton,
+  CocukAvatari,
   Ikon,
   IlerlemeCubugu,
   Kart,
@@ -45,9 +46,9 @@ export function CocukKarti({
       <div className="flex flex-col items-start gap-4 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5 lg:p-6">
         <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
           <span className="grid h-16 w-16 shrink-0 place-items-center overflow-hidden rounded-buton border border-cizgi bg-yuzey-2">
-            <OdulIkonu
-              tip="avatar"
-              anahtar={profile.avatar_tipi}
+            <CocukAvatari
+              avatarTipi={profile.avatar_tipi}
+              fotografUrl={profile.avatar_url}
               boyut={58}
               alt={profile.isim}
             />

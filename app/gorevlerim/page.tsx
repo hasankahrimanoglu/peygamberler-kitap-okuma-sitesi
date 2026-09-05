@@ -205,6 +205,7 @@ export default function GorevlerimSayfasi() {
       profil={{
         ad: child?.name ?? "Gezgin",
         avatarAnahtari: child?.avatarType ?? "lantern",
+        avatarFotografi: child?.avatarUrl,
         unvan: child?.title ?? ozet.unvan,
       }}
       toplamRozet={ozet.kazanilanRozet}

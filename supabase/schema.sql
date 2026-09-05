@@ -18,6 +18,12 @@ add column if not exists child_username text;
 alter table public.profiles
 add column if not exists child_password text;
 
+-- Veli panelinden yüklenen çocuk fotoğrafının public URL'i. Boşsa ekranlar
+-- `avatar_tipi`ndeki hazır avatara düşer. Depolama kovası ve politikaları
+-- migration-profil-fotografi.sql içindedir.
+alter table public.profiles
+add column if not exists avatar_url text;
+
 create unique index if not exists profiles_child_username_unique
 on public.profiles (child_username)
 where child_username is not null;
@@ -49,8 +55,28 @@ where not exists (
   where lower(isim) like '%adem%'
 );
 
+-- Hz. Şît kaynaklı içerikle yayına girdi (10 Ağu 2026); sırası katalogdaki
+-- İlk İzler Vadisi düzenini izler (Âdem 1 → Şît 2 → İdrîs 3 → Nûh 4 …).
 insert into public.books (isim, aciklama, sira, toplam_bolum)
-select 'Hz. Nuh', 'Sabır ve güven gemisi', 2, 5
+select 'Hz. Şît', 'Emaneti büyüterek taşımak', 2, 4
+where not exists (
+  select 1 from public.books
+  where lower(isim) like '%şît%' or lower(isim) like '%şit%' or lower(isim) like '%sit%'
+);
+
+-- Hz. İdrîs kaynaklı içerikle yayına girdi (12 Ağu 2026); bölge sırası 3.
+-- Uygulama tarafı kitabı adından bulur (`normalizeBookName(isim).includes("idris")`),
+-- bu yüzden `isim` alanı "Hz. İdrîs" olmak zorundadır. Satır yoksa okuma
+-- ilerlemesi ve final madalyası KAYDEDİLEMEZ.
+insert into public.books (isim, aciklama, sira, toplam_bolum)
+select 'Hz. İdrîs', 'Öğrenen ve öğreten bir ömür', 3, 4
+where not exists (
+  select 1 from public.books
+  where lower(isim) like '%idrîs%' or lower(isim) like '%idris%' or lower(isim) like '%i̇drîs%'
+);
+
+insert into public.books (isim, aciklama, sira, toplam_bolum)
+select 'Hz. Nuh', 'Sabır ve güven gemisi', 4, 5
 where not exists (
   select 1 from public.books
   where lower(isim) like '%nuh%'
@@ -82,7 +108,11 @@ set toplam_bolum = 8, sira = 1
 where lower(isim) like '%adem%';
 
 update public.books
-set toplam_bolum = 5, sira = 2
+set toplam_bolum = 4, sira = 2, aciklama = 'Emaneti büyüterek taşımak'
+where lower(isim) like '%şît%' or lower(isim) like '%şit%' or lower(isim) like '%sit%';
+
+update public.books
+set toplam_bolum = 5, sira = 4
 where lower(isim) like '%nuh%';
 
 update public.books

@@ -48,9 +48,24 @@ export function kitapKlasoru(bookKey: string) {
   return `/kitaplar/hz-${bookKey}`;
 }
 
-/** Kitap kapağı — haritada, kütüphanede, bölüm rotasında ve veli kartında. */
+/** Kitap kapağı — kütüphanede, bölüm rotasında, kitap panelinde ve veli kartında. */
 export function kitapKapagi(bookKey: string) {
   return `${kitapKlasoru(bookKey)}/kapak.png`;
+}
+
+/**
+ * Haritadaki yuvarlak durak görseli (KARAR 8 Ağu 2026 — Hasan).
+ *
+ * Daha önce burada da `kapak.png` kullanılıyordu; dikey kapak 70px'lik daireye
+ * `object-fit: cover` ile sığdırılınca kompozisyonun üstü ve altı kesiliyor,
+ * kitap adı okunmuyordu. Durak madalyonu artık AYRI bir görseldir: kare
+ * kadrajlı, dairede tam görünecek biçimde hazırlanır.
+ *
+ * Biçim JPG'dir — daire maskesini CSS çiziyor, şeffaflık gerekmiyor.
+ * Dosya yoksa ekran `YEDEK.kitapKapagi`na düşer, kod bozulmaz.
+ */
+export function haritaDuragiGorseli(bookKey: string) {
+  return `${kitapKlasoru(bookKey)}/harita-kapak.jpg`;
 }
 
 export function bolumKlasoru(bookKey: string, bolumNo: number) {
@@ -102,6 +117,25 @@ export function avatarGorseli(anahtar: string) {
   return `/avatarlar/${anahtar}.jpg`;
 }
 
+/**
+ * Veli panelinden yüklenen çocuk fotoğrafının DEPOLAMA kovası (KARAR 8 Ağu 2026).
+ *
+ * Bu dosyalar `public/` altında DEĞİLDİR — veliye ait kullanıcı verisidir ve
+ * Supabase Storage'da durur. Yol üretimi yine tek kaynaktan yapılsın diye kova
+ * adı ve anahtar kalıbı burada tutulur; yükleme/silme mantığı
+ * `src/lib/profilFotografi.ts` içindedir.
+ */
+export const PROFIL_FOTOGRAFI_KOVASI = "profil-fotograflari";
+
+/**
+ * Fotoğrafın kova içindeki anahtarı: `{veliId}/{profilId}.jpg`.
+ * İlk klasör velinin auth id'sidir — depolama politikaları yazma yetkisini
+ * bu klasöre göre verir (migration-profil-fotografi.sql).
+ */
+export function profilFotografiAnahtari(veliId: string, profilId: string) {
+  return `${veliId}/${profilId}.jpg`;
+}
+
 /** Büyük Final Testi durağının ikonu. Hasan aynı adla değiştirebilir. */
 export const FINAL_KAPISI_IKONU = "/ikonlar/final-kapisi.svg";
 
@@ -109,7 +143,7 @@ export const FINAL_KAPISI_IKONU = "/ikonlar/final-kapisi.svg";
 export const YEDEK = {
   /** Bölüm içi sahne ve bölüm kapağı (16:9). */
   sahne: "/kitaplar/placeholder-sahne.jpg",
-  /** Kitap kapağı (dikey). */
+  /** Kitap kapağı (dikey) — harita durağı görseli de buna düşer. */
   kitapKapagi: "/kitaplar/placeholder-kapak.svg",
   rozet: "/rozetler/placeholder.svg",
   madalya: "/madalyalar/placeholder.svg",

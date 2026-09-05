@@ -89,8 +89,10 @@ ilerleme işaretidir.
 
 Tek kaynak `src/lib/derive.ts` içindeki `UNVAN_ESIKLERI` tablosudur;
 `unvanFromBookCount()` bu tabloyu okur (eşikler ikinci kez kodlanmaz).
-Görsel dosyası gerekmez: anahtar unvan adından türetilir
-(`unvan-emanet-koruyucusu.png` gibi), dosya yoksa placeholder gösterilir.
+Görsel dosyası gerekmez: anahtar unvan adından türetilir ve yol
+`varlikYollari.ts:unvanGorseli()` ile kurulur —
+`public/unvanlar/{anahtar}.png` (ör. `unvanlar/emanet-koruyucusu.png`;
+**`unvan-` öneki yoktur**). Dosya yoksa `unvanlar/placeholder.svg` gösterilir.
 
 > **Not:** Yayına girecek nihai kitap sayısı henüz kesin değildir (20 veya 35
 > olabilir). Sayı netleştiğinde bu tablo yeniden gözden geçirilir; özellikle
@@ -430,10 +432,11 @@ izler; arayüzün tek veri kaynağı `src/data/atlasCatalog.ts` olur.
   durakta ilerleme çubuğu, rozet/madalya sayısı veya eylem butonu gösterilmez;
   rota açılamaz. Tamamlandı / Devam ediyor / Kilitli dili yalnız yayımlanmış
   kitaplarda kullanılır.
-- İlk yayındaki nihai referans Hz. Âdem'dir. Hz. Âdem finalinden sonraki kitap
-  geçişini ve tamamlandı/devam ediyor durumlarını sunumda doğrulamak için
-  **Hz. Şît dört bölümlük geçici demo kitap** olarak açılır. Bu metin nihai
-  içerik değildir ve kaynaklı teslim geldiğinde bütünüyle değiştirilir.
+- İlk yayındaki nihai referans Hz. Âdem'dir. **Hz. Şît 10 Ağustos 2026'da
+  kaynaklı nihai içerikle yayına girdi** (4 bölüm + Büyük Final Testi); geçici
+  demo metni ve ona ait tarayıcı içi (`localStorage`) ilerleme altyapısı
+  kaldırıldı. İlerleme artık Hz. Âdem'le aynı yoldan Supabase'e yazılır.
+  Kitap, Hz. Âdem finali bitmeden açılmaz.
 - Önceki demo akışındaki Hz. Nuh, Hz. Ebû Bekir ve Hz. Ömer kitapları ürün
   rotalarından çıkarılmıştır. Katalogda kendi keşif bölgelerinde yalnız
   **Hazırlanıyor** olarak görünür; eski okuyucu ve bölüm yapısı kullanılmaz.
@@ -800,6 +803,13 @@ Okuma ekranı düzeni (**REVİZE — 26 Temmuz 2026, Hasan onayı; Faz 6.2**):
 | `/dashboard/oduller` | Ödüller | Rozetler / Madalyalar / Unvanlar sekmeleri |
 | `/dashboard/rapor/[profileId]` | Gelişim Raporu | Tam sayfa, sekmeli: Genel Bakış · Kitaplar · Ödüller · **Görevler** · Sohbet Önerileri |
 
+**Profili Düzenle penceresi (`/dashboard` çocuk kartı → Profili Düzenle):**
+çocuğun **ismi**, çocuk kullanıcı adı ve şifresi, **profil fotoğrafı** ve profil
+silme tek pencerede toplanır (GENİŞLETİLDİ — 8 Ağustos 2026, Hasan). Önceden
+yalnız kullanıcı adı ve şifre değiştirilebiliyordu; isim yanlış girildiğinde
+profili silip yeniden kurmak gerekiyordu. Kaydet tek işlemdir: fotoğraf da isim
+de aynı anda yazılır, Vazgeç hiçbir şeyi değiştirmez.
+
 Navigasyon:
 - **Masaüstü/tablet yatay:** sol dikey menü (tablette daraltılabilir).
 - **Mobil:** alt sabit navigasyon, en fazla 5 sekme: Ana Sayfa, Kütüphane,
@@ -829,7 +839,8 @@ public/
     placeholder-sahne.jpg              sahne yedeği (16:9)
     placeholder-kapak.svg              kitap kapağı yedeği
     hz-{bookKey}/
-      kapak.png                        kitap kapağı (dikey; harita, kütüphane)
+      kapak.png                        kitap kapağı (dikey; kütüphane, kitap paneli)
+      harita-kapak.jpg                 harita durağının yuvarlak görseli (kare)
       bolum-{n}/
         kapak.jpg                      bölüm açılış sahnesi (16:9)
         {kisa-ad}.jpg                  bölüm içi sahneler (16:9)
@@ -853,6 +864,14 @@ public/
 - **Okuma sayfası görselleri 16:9'dur (KARAR 27 Tem 2026)** ve uzantı
   **`.jpg`'de sabittir** — sahneler fotoğrafiktir, JPEG aynı kalitede PNG'nin
   onda biri yer kaplar. Kitap kapağı dikey olduğu için bu orana tabi değildir.
+- **Harita durağı görseli kapaktan AYRIDIR (KARAR 8 Ağustos 2026, Hasan).**
+  Atlas haritasındaki yuvarlak madalyon `harita-kapak.jpg` dosyasını kullanır;
+  dikey kapak 70px'lik daireye `object-fit: cover` ile sığdırılınca kompozisyonun
+  üstü ve altı kesiliyor, kitap adı okunmuyordu. Bu görsel **kare** hazırlanır
+  (512×512 veya üstü) ve **JPG**'dir — daire maskesini CSS çizdiği için
+  şeffaflık gerekmez. Dosya yoksa ekran kitap kapağı yedeğine düşer, kod
+  bozulmaz. Kapak (`kapak.png`) kütüphanede, kitap panelinde, bölüm rotasında
+  ve veli kartında kullanılmaya devam eder.
 - **Rozet, madalya ve unvan PNG'dir — 512×512, şeffaf zemin (REVİZE 7 Ağustos
   2026, Hasan).** Önceki karar SVG'ydi; üç gerekçeyle değiştirildi:
   - **Ölçek avantajı karşılıksız.** Bu görseller ekranda en fazla **72px**
@@ -869,6 +888,21 @@ public/
   Dosya boyutu tek dezavantajdır ve sıkıştırmayla karşılanır. Yedek
   (placeholder) dosyalar SVG kalır — onlar ayrı dosyalardır, her zaman çözülür.
   Final Kapısı ikonu da SVG kalır; o bir arayüz ikonudur, ödül görseli değildir.
+- **Çocuk profili fotoğrafı `public/` altında DEĞİLDİR (KARAR 8 Ağustos 2026,
+  Hasan).** Hazır avatar seti (`public/avatarlar/avatar-{1..10}.jpg`) yerinde
+  kalır; veli isterse üzerine kendi fotoğrafını yükler. Fotoğraf kullanıcı
+  verisidir, projeye ait bir varlık değildir — bu yüzden Supabase Storage'ta
+  `profil-fotograflari` kovasında, `{veli_id}/{profil_id}.jpg` anahtarıyla
+  durur ve URL'i `profiles.avatar_url`e yazılır. Kova adı ve anahtar kalıbı
+  yine `varlikYollari.ts`tedir; yükleme/silme `src/lib/profilFotografi.ts`.
+  - Fotoğraf **tarayıcıda 512×512 kare JPEG'e küçültülüp** gönderilir; telefon
+    fotoğrafı 3–8 MB gelir, ekranda en fazla 64px çizilir.
+  - Ekranlarda tek kapı `CocukAvatari`dir: `avatar_url` doluysa fotoğraf,
+    boşsa `avatar_tipi`ndeki hazır avatar. İkisi birbirini silmez — veli
+    fotoğrafı kaldırınca eski avatar geri gelir.
+  - Kova **public**tir: çocuk tarafı ekranları Supabase auth oturumu olmadan
+    çalıştığı için imzalı URL üretemez. Yazma yetkisi velinin kendi klasörüyle
+    sınırlıdır (bkz. `supabase/migration-profil-fotografi.sql`).
 - Dosya adı küçük harf, Türkçe karaktersiz, tire ile ayrılır.
 - **Değiştirme akışı:** Hasan eski dosyayı silip yenisini **aynı adla** klasöre
   atar; kod değişmeden yayına girer. Dosya yoksa kod BOZULMAZ — `YedekliGorsel`
@@ -964,7 +998,10 @@ ileride istenirse eklenmesi kolaydır.)
 
 ### 7.1 Mevcut yapı (değişmiyor)
 
-- `profiles` — çocuk profilleri (veli_id, isim, avatar_tipi, unvan, child_username/password, profile_limit)
+- `profiles` — çocuk profilleri (veli_id, isim, avatar_tipi, **avatar_url**,
+  unvan, child_username/password, profile_limit). `avatar_url` 8 Ağu 2026'da
+  eklendi: veli panelinden yüklenen fotoğrafın public URL'i, boşsa hazır avatar
+  geçerlidir (bkz. 6.1 ve `supabase/migration-profil-fotografi.sql`).
 - `parent_subscriptions` — Shopier abonelikleri
 - `books` — kitap meta (isim, sıra, toplam bölüm)
 - `user_progress` — profil+kitap başına ilerleme (bölüm sayısı, %, bitti_mi, final skoru)
@@ -1159,7 +1196,7 @@ Kurallar:
 | Kitap | Durum |
 |---|---|
 | Hz. Âdem | ✅ Yeni içerik yazıldı ve **dini doğruluk onayı verildi (Hasan, 15 Tem 2026)** — **8 bölüm + Büyük Final Testi**. **Geçerli tek kaynak dosya: `kitap-icerikleri/KITAP-HZ-ADEM-ICERIK-final.md`** (eski `KITAP-HZ-ADEM-ICERIK.md` geçersizdir). Yeni bölüm akışıyla: iki parçalı hikâye + Seçimini Karşılaştır. Hâbil-Kâbil kıssası **Bölüm 7** olarak dahil — Mâide 5/27-31 merkezli, şiddet ayrıntısı gösterilmeden (kitaba özgü karar, genel kural değil). **4 koşullu "Bugüne Taşı" görevi** (Bölüm 2, 3, 5, 7). **`books.ts`'e + final testine + veli raporuna Faz 6.1'de aktarıldı (birebir).** |
-| Hz. Şît | **Geçici sunum içeriği:** Hz. Âdem finalinden ikinci kitaba geçişi sınamak için 4 demo bölüm + demo final. Supabase verisine yazılmaz; nihai kaynaklı metin değildir ve içerik tesliminde bütünüyle değiştirilecektir. |
+| Hz. Şît | ✅ Kaynaklı içerik yazıldı ve **`books.ts` + `quizzes.ts` + veli raporuna aktarıldı (10 Ağu 2026)** — **4 bölüm + Büyük Final Testi (4 soru)**. **Geçerli tek kaynak dosya: `kitap-icerikleri/KITAP-HZ-SIT-FINAL.md`.** Kaynak sınıfı **K3** (adı Kur'an'da geçmez): rivayetler "anlatılanlara göre" çerçevesinde verilir; ömür/yaş/sahife rakamı ve defin yeri metinde hiç geçmez. **2 koşullu "Bugüne Taşı" görevi** (Bölüm 2, 3). Tanık Sayfası kullanılmadı (0). Geçici demo içeriği ve `localStorage` ilerleme altyapısı kaldırıldı; ilerleme Supabase'e yazılır. |
 | Hz. Nuh, Hz. Ebû Bekir, Hz. Ömer | Önceki demo bölüm/okuyucu akışları ürün rotalarından kaldırıldı. Keşif Atlası'nda uygun bölgelerinde yalnız **Hazırlanıyor** görünür. |
 | Diğer kitaplar | `KITAP-KATALOGU-VE-URETIM-PLANI.md` sırasıyla katalogda **Hazırlanıyor**; kaynaklı içerik geldikçe yayımlanacak. |
 

@@ -42,6 +42,7 @@ export default function KelimeDefterimSayfasi() {
       profil={{
         ad: child?.name ?? "Gezgin",
         avatarAnahtari: child?.avatarType ?? "lantern",
+        avatarFotografi: child?.avatarUrl,
         unvan: child?.title ?? ozet.unvan,
       }}
       toplamRozet={ozet.kazanilanRozet}

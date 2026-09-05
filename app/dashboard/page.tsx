@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { ChangeEvent, FormEvent, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
@@ -11,12 +11,18 @@ import {
   type ChildProfile,
 } from "../../src/lib/parent/ParentDataProvider";
 import { cocukOzeti, gorevTanimiBul } from "../../src/lib/derive";
+import {
+  FOTOGRAF_KABUL_EDILEN,
+  profilFotografiSil,
+  profilFotografiYukle,
+} from "../../src/lib/profilFotografi";
 import { CocukKarti } from "../../src/components/dashboard/CocukKarti";
-import { Buton, Ikon, Kart } from "../../src/components/ui";
+import { Buton, CocukAvatari, Ikon, Kart } from "../../src/components/ui";
 
 export default function VeliAnaSayfa() {
   const router = useRouter();
   const {
+    parentId,
     profiles,
     setProfiles,
     profileLimit,
@@ -29,11 +35,34 @@ export default function VeliAnaSayfa() {
   } = useParentData();
 
   const [editingProfile, setEditingProfile] = useState<ChildProfile | null>(null);
+  const [editName, setEditName] = useState("");
   const [editChildUsername, setEditChildUsername] = useState("");
   const [editChildPassword, setEditChildPassword] = useState("");
   const [isUpdatingChildLogin, setIsUpdatingChildLogin] = useState(false);
   const [isDeleteConfirmOpen, setIsDeleteConfirmOpen] = useState(false);
   const [isDeletingProfile, setIsDeletingProfile] = useState(false);
+
+  // Fotoğraf seçimi kaydedilene kadar yalnızca önizlemedir; yükleme "Kaydet"
+  // ile birlikte yapılır, böylece vazgeçen veli hiçbir şey değiştirmemiş olur.
+  const [secilenFotograf, setSecilenFotograf] = useState<File | null>(null);
+  const [fotografOnizleme, setFotografOnizleme] = useState<string | null>(null);
+  const [fotografKaldirildi, setFotografKaldirildi] = useState(false);
+  const fotografGirdisiRef = useRef<HTMLInputElement>(null);
+
+  // Önizleme object URL'leri seçim/temizleme anında bırakılır; effect'e
+  // bağlanırsa her açılışta gereksiz bir render turu doğuyor.
+  function onizlemeyiBirak() {
+    setFotografOnizleme((onceki) => {
+      if (onceki) URL.revokeObjectURL(onceki);
+      return null;
+    });
+  }
+
+  const gosterilecekFotograf = fotografOnizleme
+    ? fotografOnizleme
+    : fotografKaldirildi
+      ? null
+      : (editingProfile?.avatar_url ?? null);
 
   const canAddProfile = profiles.length < profileLimit;
 
@@ -70,40 +99,122 @@ export default function VeliAnaSayfa() {
     router.push("/map");
   }
 
-  function openEditProfile(profile: ChildProfile) {
-    setEditingProfile(profile);
-    setEditChildUsername(profile.child_username ?? "");
-    setEditChildPassword(profile.child_password ?? "");
+  function closeEditProfile() {
+    setEditingProfile(null);
+    setSecilenFotograf(null);
+    onizlemeyiBirak();
+    setFotografKaldirildi(false);
     setIsDeleteConfirmOpen(false);
   }
 
-  async function handleChildLoginUpdate(event: FormEvent<HTMLFormElement>) {
+  function openEditProfile(profile: ChildProfile) {
+    setEditingProfile(profile);
+    setEditName(profile.isim);
+    setEditChildUsername(profile.child_username ?? "");
+    setEditChildPassword(profile.child_password ?? "");
+    setSecilenFotograf(null);
+    onizlemeyiBirak();
+    setFotografKaldirildi(false);
+    setIsDeleteConfirmOpen(false);
+  }
+
+  function handleFotografSecimi(event: ChangeEvent<HTMLInputElement>) {
+    const dosya = event.target.files?.[0] ?? null;
+    // Aynı dosya ikinci kez seçilebilsin diye girdiyi sıfırlıyoruz.
+    event.target.value = "";
+    if (!dosya) return;
+    setError(null);
+    onizlemeyiBirak();
+    setSecilenFotograf(dosya);
+    setFotografOnizleme(URL.createObjectURL(dosya));
+    setFotografKaldirildi(false);
+  }
+
+  function handleFotografKaldir() {
+    setSecilenFotograf(null);
+    onizlemeyiBirak();
+    setFotografKaldirildi(true);
+  }
+
+  async function handleProfileUpdate(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setError(null);
     setNotice(null);
 
     if (!editingProfile) return;
 
+    const trimmedName = editName.trim();
     const trimmedUsername = editChildUsername.trim();
     const trimmedPassword = editChildPassword.trim();
 
+    if (!trimmedName) {
+      setError("Çocuğun ismi boş bırakılamaz.");
+      return;
+    }
     if (!trimmedUsername || !trimmedPassword) {
       setError("Çocuk kullanıcı adı ve şifresi boş bırakılamaz.");
       return;
     }
 
     setIsUpdatingChildLogin(true);
-    const { error: updateError } = await supabase
+
+    // Fotoğraf işi önce biter: yükleme başarısızsa satırı hiç ellemiyoruz,
+    // aksi hâlde veritabanı olmayan bir dosyayı işaret ederdi.
+    let avatarUrl = editingProfile.avatar_url ?? null;
+    if (secilenFotograf) {
+      if (!parentId) {
+        setIsUpdatingChildLogin(false);
+        setError("Oturum bilgisi okunamadı. Sayfayı yenileyip tekrar dene.");
+        return;
+      }
+      const sonuc = await profilFotografiYukle(
+        parentId,
+        editingProfile.id,
+        secilenFotograf,
+      );
+      if (!sonuc.tamam) {
+        setIsUpdatingChildLogin(false);
+        setError(sonuc.hata);
+        return;
+      }
+      avatarUrl = sonuc.url;
+    } else if (fotografKaldirildi) {
+      if (parentId) await profilFotografiSil(parentId, editingProfile.id);
+      avatarUrl = null;
+    }
+
+    const temelAlanlar = {
+      isim: trimmedName,
+      child_username: trimmedUsername,
+      child_password: trimmedPassword,
+    };
+
+    let { error: updateError } = await supabase
       .from("profiles")
-      .update({ child_username: trimmedUsername, child_password: trimmedPassword })
+      .update({ ...temelAlanlar, avatar_url: avatarUrl })
       .eq("id", editingProfile.id);
+
+    // avatar_url sütunu henüz yoksa isim ve giriş bilgileri yine de kaydedilsin.
+    let fotografKaydedilemedi = false;
+    if (updateError && isMissingChildLoginColumn(updateError.message)) {
+      const tekrar = await supabase
+        .from("profiles")
+        .update(temelAlanlar)
+        .eq("id", editingProfile.id);
+      updateError = tekrar.error;
+      if (!tekrar.error) {
+        fotografKaydedilemedi = secilenFotograf !== null || fotografKaldirildi;
+        avatarUrl = editingProfile.avatar_url ?? null;
+      }
+    }
+
     setIsUpdatingChildLogin(false);
 
     if (updateError) {
       setError(
         isMissingChildLoginColumn(updateError.message)
-          ? "Çocuk giriş bilgilerini kaydetmek için Supabase profiles tablosuna child_username ve child_password sütunlarını eklemelisin."
-          : "Çocuk giriş bilgileri güncellenemedi. Lütfen tekrar dene.",
+          ? "Profili kaydetmek için Supabase profiles tablosuna child_username ve child_password sütunlarını eklemelisin."
+          : "Profil güncellenemedi. Lütfen tekrar dene.",
       );
       return;
     }
@@ -111,12 +222,32 @@ export default function VeliAnaSayfa() {
     setProfiles((current) =>
       current.map((profile) =>
         profile.id === editingProfile.id
-          ? { ...profile, child_username: trimmedUsername, child_password: trimmedPassword }
+          ? {
+              ...profile,
+              isim: trimmedName,
+              avatar_url: avatarUrl,
+              child_username: trimmedUsername,
+              child_password: trimmedPassword,
+            }
           : profile,
       ),
     );
-    setNotice(`${editingProfile.isim} için çocuk girişi güncellendi.`);
-    setEditingProfile(null);
+
+    // Çocuk tarafı ekranları ismi localStorage'dan okuyor; seçili profil bu
+    // profilse orayı da güncellemezsek harita eski ismi göstermeye devam eder.
+    if (
+      window.localStorage.getItem("selected_child_profile_id") === editingProfile.id
+    ) {
+      window.localStorage.setItem("selected_child_profile_name", trimmedName);
+      window.localStorage.setItem("selected_child_name", trimmedName);
+    }
+
+    setNotice(
+      fotografKaydedilemedi
+        ? `${trimmedName} profili güncellendi. Fotoğraf için Supabase'e avatar_url sütununu eklemelisin.`
+        : `${trimmedName} profili güncellendi.`,
+    );
+    closeEditProfile();
   }
 
   async function handleDeleteProfile() {
@@ -130,12 +261,17 @@ export default function VeliAnaSayfa() {
       .from("profiles")
       .delete()
       .eq("id", editingProfile.id);
-    setIsDeletingProfile(false);
 
     if (deleteError) {
+      setIsDeletingProfile(false);
       setError("Profil silinemedi. Lütfen tekrar dene.");
       return;
     }
+
+    // Profil gidince fotoğrafı depoda bırakmıyoruz (satır silinince kimse
+    // ulaşamaz ama veli verisi olduğu gibi durmamalı).
+    if (parentId) await profilFotografiSil(parentId, editingProfile.id);
+    setIsDeletingProfile(false);
 
     setProfiles((current) =>
       current.filter((profile) => profile.id !== editingProfile.id),
@@ -150,8 +286,7 @@ export default function VeliAnaSayfa() {
     }
 
     setNotice(`${editingProfile.isim} profili silindi.`);
-    setEditingProfile(null);
-    setIsDeleteConfirmOpen(false);
+    closeEditProfile();
   }
 
   return (
@@ -237,8 +372,8 @@ export default function VeliAnaSayfa() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 grid place-items-center bg-gece-950/45 px-5 py-6 backdrop-blur-sm"
-            onClick={() => setEditingProfile(null)}
+            className="fixed inset-0 z-50 grid place-items-center overflow-y-auto bg-gece-950/45 px-5 py-6 backdrop-blur-sm"
+            onClick={closeEditProfile}
           >
             <motion.form
               initial={{ opacity: 0, y: 20, scale: 0.96 }}
@@ -246,13 +381,13 @@ export default function VeliAnaSayfa() {
               exit={{ opacity: 0, y: 14, scale: 0.97 }}
               transition={{ duration: 0.24 }}
               onClick={(event) => event.stopPropagation()}
-              onSubmit={handleChildLoginUpdate}
-              className="w-full max-w-md rounded-kart border border-cizgi bg-yuzey p-6 shadow-kart"
+              onSubmit={handleProfileUpdate}
+              className="my-auto w-full max-w-md rounded-kart border border-cizgi bg-yuzey p-6 shadow-kart"
             >
               <div className="mb-4 flex items-start justify-between gap-3">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wide text-vurgu">
-                    Çocuk Girişi
+                    Profili Düzenle
                   </p>
                   <h2 className="mt-1 font-baslik text-2xl font-bold text-murekkep">
                     {editingProfile.isim}
@@ -260,7 +395,7 @@ export default function VeliAnaSayfa() {
                 </div>
                 <button
                   type="button"
-                  onClick={() => setEditingProfile(null)}
+                  onClick={closeEditProfile}
                   aria-label="Pencereyi kapat"
                   className="grid h-10 w-10 place-items-center rounded-full border border-cizgi text-murekkep-soluk transition-colors hover:bg-yuzey-2"
                 >
@@ -268,7 +403,76 @@ export default function VeliAnaSayfa() {
                 </button>
               </div>
 
-              <label className="block">
+              {/* Profil fotoğrafı — yükleme "Kaydet"e basılınca yapılır. */}
+              <div className="flex flex-col items-start gap-4 rounded-kart border border-cizgi bg-yuzey-2 p-4 sm:flex-row sm:items-center">
+                <span className="grid h-20 w-20 shrink-0 place-items-center overflow-hidden rounded-full border border-cizgi bg-yuzey">
+                  <CocukAvatari
+                    avatarTipi={editingProfile.avatar_tipi}
+                    fotografUrl={gosterilecekFotograf}
+                    boyut={78}
+                    alt={editingProfile.isim}
+                  />
+                </span>
+
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm font-semibold text-murekkep">
+                    Profil Fotoğrafı
+                  </p>
+                  <p className="mt-1 text-sm font-medium leading-6 text-murekkep-soluk">
+                    {gosterilecekFotograf
+                      ? "Fotoğraf kare kırpılıp küçültülerek kaydedilir."
+                      : "Fotoğraf yüklemezsen seçili avatar görünmeye devam eder."}
+                  </p>
+
+                  <input
+                    ref={fotografGirdisiRef}
+                    type="file"
+                    accept={FOTOGRAF_KABUL_EDILEN}
+                    onChange={handleFotografSecimi}
+                    className="hidden"
+                  />
+
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    <Buton
+                      type="button"
+                      varyant="cerceve"
+                      boyut="kucuk"
+                      className="min-h-[44px]"
+                      onClick={() => fotografGirdisiRef.current?.click()}
+                    >
+                      <Ikon ad="fotograf" boyut={17} />
+                      {gosterilecekFotograf ? "Fotoğrafı Değiştir" : "Fotoğraf Yükle"}
+                    </Buton>
+                    {gosterilecekFotograf ? (
+                      <Buton
+                        type="button"
+                        varyant="cerceve"
+                        boyut="kucuk"
+                        className="min-h-[44px] !border-tehlike/40 !text-tehlike"
+                        onClick={handleFotografKaldir}
+                      >
+                        Kaldır
+                      </Buton>
+                    ) : null}
+                  </div>
+                </div>
+              </div>
+
+              <label className="mt-4 block">
+                <span className="mb-2 block text-sm font-semibold text-murekkep">
+                  Çocuğun İsmi
+                </span>
+                <input
+                  value={editName}
+                  onChange={(event) => setEditName(event.target.value)}
+                  autoComplete="off"
+                  className="h-12 w-full rounded-buton border border-cizgi bg-yuzey-2 px-4 text-base font-medium text-murekkep outline-none transition focus:border-eylem focus:bg-yuzey focus:ring-2 focus:ring-eylem/30"
+                  placeholder="Örn. Ahmet"
+                  required
+                />
+              </label>
+
+              <label className="mt-4 block">
                 <span className="mb-2 block text-sm font-semibold text-murekkep">
                   Kullanıcı Adı
                 </span>
@@ -302,7 +506,7 @@ export default function VeliAnaSayfa() {
                   type="button"
                   varyant="cerceve"
                   tamGenislik
-                  onClick={() => setEditingProfile(null)}
+                  onClick={closeEditProfile}
                 >
                   Vazgeç
                 </Buton>

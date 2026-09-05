@@ -5,6 +5,7 @@ import { Ikon, YedekliGorsel } from "../ui";
 import styles from "../../../app/tasarim/kitap-yeni/kitap-yeni.module.css";
 import { KesifMenusu } from "./KesifMenusu";
 import { KesifIskelesi } from "./KesifIskelesi";
+import type { KesifProfili } from "./kesifProfili";
 import {
   FINAL_KAPISI_IKONU,
   kitapKapagi,
@@ -36,7 +37,7 @@ type KitapBolumRotasiProps = {
   altBaslik: string;
   profilAdi: string;
   /** Keşif menüsü için profil künyesi ve toplamlar. */
-  menuProfili: { ad: string; avatarAnahtari: string; unvan: string };
+  menuProfili: KesifProfili;
   toplamRozet: number;
   tamamlananKitap: number;
   bolumler: AtlasBolum[];

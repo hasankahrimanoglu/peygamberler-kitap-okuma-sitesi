@@ -4,10 +4,11 @@ import { useEffect, useMemo, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
 import { books } from "../../../src/data/books";
+import { profilAvatarliOku } from "../../../src/lib/profilFotografi";
 import { KitapBolumRotasi, type AtlasBolum } from "../../../src/components/atlas/KitapBolumRotasi";
 import { Buton, Kart } from "../../../src/components/ui";
 
-type KitapKey = "adem" | "sit";
+type KitapKey = "adem" | "sit" | "idris";
 
 const kitapKimlikleri: Record<KitapKey, {
   bookId: string;
@@ -17,7 +18,14 @@ const kitapKimlikleri: Record<KitapKey, {
   quizPath: string;
 }> = {
   adem: { bookId: "hz-adem", order: 1, subtitle: "İlk insan, ilk yolculuk", keywords: ["adem"], quizPath: "/quiz/adem" },
-  sit: { bookId: "hz-sit", order: 2, subtitle: "Emaneti taşıyan yeni kuşak", keywords: ["sit", "şit"], quizPath: "/quiz/sit" },
+  sit: { bookId: "hz-sit", order: 2, subtitle: "Emaneti büyüterek taşımak", keywords: ["sit"], quizPath: "/quiz/sit" },
+  idris: { bookId: "hz-idris", order: 3, subtitle: "Öğrenen ve öğreten bir ömür", keywords: ["idris"], quizPath: "/quiz/idris" },
+};
+
+/** Kitabın açılması için finalinin bitmiş olması gereken önceki kitap (PROJE-MODELI 3.4). */
+const onKosulKitabi: Partial<Record<KitapKey, { keyword: string }>> = {
+  sit: { keyword: "adem" },
+  idris: { keyword: "sit" },
 };
 
 function normalize(value: string) {
@@ -32,7 +40,11 @@ export default function KitapPage() {
   const book = books.find((item) => item.id === identity?.bookId);
   const [profileName, setProfileName] = useState("Gezgin");
   // Keşif menüsü için: avatar, unvan ve toplam rozet/madalya sayıları.
-  const [menuProfili, setMenuProfili] = useState({ avatarAnahtari: "avatar-1", unvan: "Yeni Gezgin" });
+  const [menuProfili, setMenuProfili] = useState<{
+    avatarAnahtari: string;
+    avatarFotografi: string | null;
+    unvan: string;
+  }>({ avatarAnahtari: "avatar-1", avatarFotografi: null, unvan: "Yeni Gezgin" });
   const [toplamRozet, setToplamRozet] = useState(0);
   const [tamamlananKitap, setTamamlananKitap] = useState(0);
   const [completed, setCompleted] = useState(0);
@@ -60,36 +72,39 @@ export default function KitapPage() {
         return;
       }
 
-      if (kitapKey === "sit") {
-        const { data: dbBooks } = await supabase.from("books").select("id, isim");
-        const ademBook = dbBooks?.find((item) => normalize(item.isim ?? "").includes("adem"));
-        const { data: ademProgress } = ademBook
-          ? await supabase.from("user_progress").select("bitti_mi").eq("profile_id", profileId).eq("book_id", ademBook.id).maybeSingle()
-          : { data: null };
-        if (cancelled) return;
-        if (!ademProgress?.bitti_mi) {
-          router.replace("/map");
-          return;
-        }
-        setCompleted(Math.min(4, Math.max(0, Number(window.localStorage.getItem(`pkd-demo-sit-progress-${profileId}`) ?? 0))));
-        setFinished(window.localStorage.getItem(`pkd-demo-sit-finished-${profileId}`) === "true");
-        setLoading(false);
-        return;
-      }
-
       const [dbBooksResult, progressResult, profilResult] = await Promise.all([
         supabase.from("books").select("id, isim, toplam_bolum"),
         supabase.from("user_progress").select("book_id, tamamlanan_bolum_sayisi, bitti_mi").eq("profile_id", profileId),
-        supabase.from("profiles").select("avatar_tipi, unvan").eq("id", profileId).maybeSingle(),
+        profilAvatarliOku<{ avatar_tipi: string | null; unvan: string | null }>(
+          profileId,
+          "avatar_tipi, unvan",
+        ),
       ]);
       if (cancelled) return;
 
       const tumIlerleme = progressResult.data ?? [];
+      const dbKitaplar = dbBooksResult.data ?? [];
+
+      // Açılma şartı: her kitap, kendinden önceki kitabın finali bitmeden açılmaz
+      // (PROJE-MODELI 3.4). Hz. Şît → Hz. Âdem, Hz. İdrîs → Hz. Şît.
+      const onKosul = onKosulKitabi[kitapKey];
+      if (onKosul) {
+        const oncekiKitap = dbKitaplar.find((item) => normalize(item.isim ?? "").includes(onKosul.keyword));
+        const oncekiIlerleme = oncekiKitap
+          ? tumIlerleme.find((item) => item.book_id === oncekiKitap.id)
+          : undefined;
+        if (!oncekiIlerleme?.bitti_mi) {
+          router.replace("/map");
+          return;
+        }
+      }
+
       setToplamRozet(tumIlerleme.reduce((toplam, item) => toplam + (item.tamamlanan_bolum_sayisi ?? 0), 0));
       setTamamlananKitap(tumIlerleme.filter((item) => item.bitti_mi).length);
       if (profilResult.data) {
         setMenuProfili({
           avatarAnahtari: profilResult.data.avatar_tipi ?? "avatar-1",
+          avatarFotografi: profilResult.data.avatar_url ?? null,
           unvan: profilResult.data.unvan ?? "Yeni Gezgin",
         });
       }

@@ -36,7 +36,8 @@ function normalizeBookName(value: string) {
     .replaceAll("ç", "c");
 }
 
-async function eslesenAdemKitabiniBul(): Promise<{
+/** Kitabın Supabase satırını `books.ts` anahtarından bulur ("adem", "sit"…). */
+async function eslesenKitabiBul(bookKey: string): Promise<{
   hata: boolean;
   kitap: EslesenKitap | null;
 }> {
@@ -48,7 +49,7 @@ async function eslesenAdemKitabiniBul(): Promise<{
 
   const kitap =
     kitaplar?.find((item) =>
-      normalizeBookName(item.isim ?? "").includes("adem"),
+      normalizeBookName(item.isim ?? "").includes(bookKey),
     ) ?? null;
 
   return { hata: false, kitap };
@@ -68,20 +69,9 @@ async function syncChapterProgress(
     };
   }
 
-  // Hz. Şît yalnız kitap geçişi sunumu içindir. Güvenlik şeması veya Supabase
-  // verisi değiştirilmeden seçili profile özel tarayıcı durumunda tutulur.
-  if (chapter.bookKey === "sit") {
-    const anahtar = `pkd-demo-sit-progress-${profileId}`;
-    const mevcut = Number(window.localStorage.getItem(anahtar) ?? 0);
-    window.localStorage.setItem(
-      anahtar,
-      String(Math.min(totalChapters, Math.max(mevcut, chapterNumber))),
-    );
-    window.dispatchEvent(new Event("pkd-demo-progress"));
-    return { ok: true };
-  }
-
-  const { hata: kitapHatasi, kitap } = await eslesenAdemKitabiniBul();
+  const { hata: kitapHatasi, kitap } = await eslesenKitabiBul(
+    chapter.bookKey ?? "adem",
+  );
 
   if (kitapHatasi) {
     return {
@@ -93,7 +83,7 @@ async function syncChapterProgress(
   if (!kitap) {
     return {
       ok: false,
-      message: "Hz. Âdem kitap kaydı bulunamadı. Lütfen yöneticiye bildir.",
+      message: `${chapter.bookName ?? "Kitap"} kaydı bulunamadı. Lütfen yöneticiye bildir.`,
     };
   }
 
@@ -160,7 +150,7 @@ export default function ReaderPage() {
   );
 
   if (!chapter) notFound();
-  if (chapter.bookKey !== "adem" && chapter.bookKey !== "sit") notFound();
+  if (chapter.bookKey !== "adem" && chapter.bookKey !== "sit" && chapter.bookKey !== "idris") notFound();
 
   return (
     <AtlasScrollReader

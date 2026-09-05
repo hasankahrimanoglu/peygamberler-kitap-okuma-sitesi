@@ -46,6 +46,7 @@ export default function KazanimlarimSayfasi() {
       profil={{
         ad: child?.name ?? "Gezgin",
         avatarAnahtari: child?.avatarType ?? "lantern",
+        avatarFotografi: child?.avatarUrl,
         unvan: child?.title ?? veriler.ozet.unvan,
       }}
       toplamRozet={veriler.ozet.kazanilanRozet}

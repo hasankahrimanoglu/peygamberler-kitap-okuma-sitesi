@@ -10,6 +10,7 @@ import {
   type DecisionOption,
 } from "../../data/demoChapters";
 import { Ikon, YedekliGorsel, type IkonAdi } from "../ui";
+import { normalizeBookName } from "../../lib/derive";
 import {
   durakId,
   okumaAkisiniOlustur,
@@ -220,17 +221,13 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
     async function kontrolEt() {
       const profileId = window.localStorage.getItem("selected_child_profile_id");
       if (!profileId) return;
-      if (chapter.bookKey === "sit") {
-        const tamamlanan = Number(
-          window.localStorage.getItem(`pkd-demo-sit-progress-${profileId}`) ?? 0,
-        );
-        if (!iptal && tamamlanan >= (chapter.chapterNumber ?? 1)) setTekrarOkuma(true);
-        return;
-      }
-      const keyword = chapter.bookKey === "adem" ? "adem" : chapter.bookKey ?? "ebubekir";
+      // Kitap satırı `books.ts` anahtarıyla eşleşir. Eşleştirme derive.ts'teki
+      // ortak normalizasyondan geçer; yerel "yalnız â" sadeleştirmesi "Hz. Şît"
+      // gibi î/ş içeren adları bulamıyordu.
+      const keyword = chapter.bookKey ?? "adem";
       const { data: kitaplar } = await supabase.from("books").select("id, isim");
       const kitap = kitaplar?.find((item) =>
-        (item.isim ?? "").toLocaleLowerCase("tr-TR").replaceAll("â", "a").includes(keyword),
+        normalizeBookName(item.isim ?? "").includes(keyword),
       );
       if (!kitap || iptal) return;
       const { data: progress } = await supabase

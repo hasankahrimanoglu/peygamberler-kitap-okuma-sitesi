@@ -103,11 +103,6 @@ async function getSavedCompletionState(
   profileId: string,
   activeQuiz: QuizConfig,
 ): Promise<Exclude<SavedCompletionState, "loading">> {
-  if (activeQuiz.localOnly) {
-    return window.localStorage.getItem(`pkd-demo-sit-finished-${profileId}`) === "true"
-      ? "completed"
-      : "incomplete";
-  }
   const { data: books, error: booksError } = await supabase
     .from("books")
     .select("id, isim");
@@ -152,15 +147,6 @@ async function saveQuizCompletionToSupabase({
   score: number;
   totalQuestions: number;
 }): Promise<FinalSaveResult> {
-  if (activeQuiz.localOnly) {
-    const completed = Number(
-      window.localStorage.getItem(`pkd-demo-sit-progress-${profileId}`) ?? 0,
-    );
-    if (completed < totalQuestions) return "incomplete-journey";
-    window.localStorage.setItem(`pkd-demo-sit-finished-${profileId}`, "true");
-    window.dispatchEvent(new Event("pkd-demo-progress"));
-    return "saved";
-  }
   // PROJE-MODELI #13: Testi tamamlamak madalyayı kazandırır; doğru sayısı şart
   // DEĞİLDİR. Bu yüzden eski %90 skor eşiği kaldırıldı — bütün bölümlerin
   // tamamlandığı doğrulanınca testin bitmesi "bitti" durumunu ve madalyayı yazar.
@@ -787,7 +773,7 @@ export default function QuizPage() {
   const params = useParams<{ bookId: string }>();
   const bookId = params.bookId as keyof typeof quizConfig;
   if (!quizConfig[bookId]) notFound();
-  const isAdemAtlas = bookId === "adem" || bookId === "sit";
+  const isAdemAtlas = bookId === "adem" || bookId === "sit" || bookId === "idris";
   const activeQuiz = quizConfig[bookId];
   const questions = activeQuiz.questions;
   const [savedCompletionState, setSavedCompletionState] =

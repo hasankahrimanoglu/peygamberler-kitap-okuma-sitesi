@@ -2,14 +2,15 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { useRouter } from "next/navigation";
-import { Ikon, OdulIkonu, YedekliGorsel } from "../ui";
+import { CocukAvatari, Ikon, OdulIkonu, YedekliGorsel } from "../ui";
 import { KesifMenusu } from "./KesifMenusu";
 import { KesifIskelesi } from "./KesifIskelesi";
 import { ISKELE_BAGLANTILARI } from "./iskeleBaglantilari";
+import type { KesifProfili } from "./kesifProfili";
 import { books } from "../../data/books";
 import { madalyaIconKey, rozetIconKey } from "../../lib/derive";
 import styles from "../../../app/tasarim/harita-yeni/harita-yeni.module.css";
-import { bolgeArkaplani, kitapKapagi, YEDEK } from "../../lib/varlikYollari";
+import { bolgeArkaplani, haritaDuragiGorseli, kitapKapagi, YEDEK } from "../../lib/varlikYollari";
 
 export type AtlasDurakDurumu = "completed" | "active" | "locked" | "preparing";
 
@@ -21,6 +22,12 @@ export type AtlasDurak = {
   /** Keşif açıklaması — yalnız içeriği yayımlanmış kitaplarda dolu olur. */
   aciklama?: string;
   durum: AtlasDurakDurumu;
+  /**
+   * Kilitli durakta gösterilen SOMUT açılma şartı (PROJE-MODELI 3.4).
+   * "önceki görevleri bekliyor" gibi soyut ifade yazılmaz; hangi kitabın
+   * finalinin bitmesi gerektiği açıkça belirtilir.
+   */
+  acilmaSarti?: string;
   tamamlananBolum: number;
   toplamBolum: number;
   ilerleme: number;
@@ -37,7 +44,7 @@ export type AtlasBolge = {
 };
 
 type AtlasHaritaProps = {
-  profil: { ad: string; avatarAnahtari: string; unvan: string };
+  profil: KesifProfili;
   toplamRozet: number;
   tamamlananKitap: number;
   bolgeler: AtlasBolge[];
@@ -514,7 +521,7 @@ export function AtlasHarita({
           */}
           <KesifIskelesi />
           <div className={styles.profileGroup}>
-            <span className={styles.avatar}><OdulIkonu tip="avatar" anahtar={profil.avatarAnahtari} boyut={38} alt="" /></span>
+            <span className={styles.avatar}><CocukAvatari avatarTipi={profil.avatarAnahtari} fotografUrl={profil.avatarFotografi} boyut={38} alt="" /></span>
             <span className={styles.profileCopy}><strong>{profil.ad}</strong></span>
           </div>
           <button
@@ -712,11 +719,11 @@ export function AtlasHarita({
                   >
                     <span className={styles.marker}>
                       <YedekliGorsel
-                        src={kitapKapagi(durak.kitapKey)}
+                        src={haritaDuragiGorseli(durak.kitapKey)}
                         yedekSrc={YEDEK.kitapKapagi}
                         alt=""
                         width={200}
-                        height={300}
+                        height={200}
                         className={styles.markerArt}
                       />
                       <i className={styles.markerStatus} aria-hidden="true">
@@ -842,7 +849,7 @@ export function AtlasHarita({
                     <strong>{seciliDurak.ad} Yolculuk Madalyası</strong>
                   </div>
                 </section>
-                {kilitli ? <div className={styles.lockNote}><Ikon ad="kilit" boyut={20} /><p>Hz. Şît yolculuğu, Hz. Âdem kitabının finalini tamamladığında açılacak.</p></div> : null}
+                {kilitli && seciliDurak.acilmaSarti ? <div className={styles.lockNote}><Ikon ad="kilit" boyut={20} /><p>{seciliDurak.acilmaSarti}</p></div> : null}
               </>
             )}
 

@@ -2,15 +2,16 @@
 
 import { useState, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
-import { Ikon, OdulIkonu } from "../ui";
+import { CocukAvatari, Ikon } from "../ui";
 import { KesifIskelesi } from "./KesifIskelesi";
 import { KesifMenusu } from "./KesifMenusu";
 import styles from "./kesif-sayfa-kabugu.module.css";
+import type { KesifProfili } from "./kesifProfili";
 
 type KesifSayfaKabuguProps = {
   /** Sayfanın kendi içeriği — kabuk yalnız zemin, genişlik ve barı verir. */
   children: ReactNode;
-  profil: { ad: string; avatarAnahtari: string; unvan: string };
+  profil: KesifProfili;
   toplamRozet: number;
   tamamlananKitap: number;
   yukleniyor?: boolean;
@@ -50,7 +51,12 @@ export function KesifSayfaKabugu({
 
           <div className={styles.profil}>
             <span className={styles.avatar}>
-              <OdulIkonu tip="avatar" anahtar={profil.avatarAnahtari} boyut={38} alt="" />
+              <CocukAvatari
+                avatarTipi={profil.avatarAnahtari}
+                fotografUrl={profil.avatarFotografi}
+                boyut={38}
+                alt=""
+              />
             </span>
             <span className={styles.profilAd}>{profil.ad}</span>
           </div>

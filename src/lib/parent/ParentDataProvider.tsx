@@ -17,6 +17,8 @@ export type ChildProfile = {
   id: string;
   isim: string;
   avatar_tipi: string;
+  /** Veli yüklediyse çocuk fotoğrafının public URL'i; boşsa hazır avatar geçerli */
+  avatar_url?: string | null;
   unvan: string | null;
   child_username?: string | null;
   child_password?: string | null;
@@ -24,6 +26,11 @@ export type ChildProfile = {
   created_at: string;
 };
 
+// Sütun merdiveni: en zengin select ile başlanır, "sütun yok" hatasında bir
+// basamak inilir. Böylece migration'lardan biri çalıştırılmamışsa panel komple
+// düşmez, yalnız o özellik eksik kalır.
+export const profileSelectTam =
+  "id, isim, avatar_tipi, avatar_url, unvan, child_username, child_password, profile_limit, created_at";
 const profileSelectWithChildLogin =
   "id, isim, avatar_tipi, unvan, child_username, child_password, profile_limit, created_at";
 const profileSelectBase =
@@ -36,6 +43,7 @@ export function isMissingChildLoginColumn(message?: string) {
   return (
     normalized.includes("child_username") ||
     normalized.includes("child_password") ||
+    normalized.includes("avatar_url") ||
     normalized.includes("column")
   );
 }
@@ -113,7 +121,7 @@ export function ParentDataProvider({ children }: { children: ReactNode }) {
     const [profileResult, subscriptionResult, booksResult] = await Promise.all([
       supabase
         .from("profiles")
-        .select(profileSelectWithChildLogin)
+        .select(profileSelectTam)
         .eq("veli_id", user.id)
         .order("created_at", { ascending: true }),
       supabase
@@ -128,6 +136,25 @@ export function ParentDataProvider({ children }: { children: ReactNode }) {
     let profileRows = profileResult.data as ChildProfile[] | null;
     let profilesError = profileResult.error;
 
+    // 1. basamak: fotoğraf sütunu yoksa fotoğrafsız (ama girişli) select'e in.
+    if (profilesError && isMissingChildLoginColumn(profilesError.message)) {
+      const fotografsiz = await supabase
+        .from("profiles")
+        .select(profileSelectWithChildLogin)
+        .eq("veli_id", user.id)
+        .order("created_at", { ascending: true });
+
+      profileRows = fotografsiz.data as ChildProfile[] | null;
+      profilesError = fotografsiz.error;
+
+      if (!fotografsiz.error) {
+        setNotice(
+          "Profil fotoğrafı için Supabase'e avatar_url sütununu eklemelisin (supabase/migration-profil-fotografi.sql).",
+        );
+      }
+    }
+
+    // 2. basamak: çocuk giriş sütunları da yoksa en sade select'e in.
     if (profilesError && isMissingChildLoginColumn(profilesError.message)) {
       const fallback = await supabase
         .from("profiles")

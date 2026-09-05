@@ -3,12 +3,13 @@
 import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
-import { Ikon, OdulIkonu } from "../ui";
+import { CocukAvatari, Ikon } from "../ui";
 import styles from "./kesif-menusu.module.css";
 import { ISKELE_BAGLANTILARI } from "./iskeleBaglantilari";
+import type { KesifProfili } from "./kesifProfili";
 
 type KesifMenusuProps = {
-  profil: { ad: string; avatarAnahtari: string; unvan: string };
+  profil: KesifProfili;
   toplamRozet: number;
   tamamlananKitap: number;
   yukleniyor?: boolean;
@@ -72,7 +73,12 @@ export function KesifMenusu({
       >
         <header className={styles.baslik}>
           <span className={styles.avatar}>
-            <OdulIkonu tip="avatar" anahtar={profil.avatarAnahtari} boyut={44} alt="" />
+            <CocukAvatari
+              avatarTipi={profil.avatarAnahtari}
+              fotografUrl={profil.avatarFotografi}
+              boyut={44}
+              alt=""
+            />
           </span>
           <div>
             <strong>{profil.ad}</strong>

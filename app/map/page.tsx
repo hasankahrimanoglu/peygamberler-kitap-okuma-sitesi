@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../lib/supabase";
+import { profilAvatarliOku } from "../../src/lib/profilFotografi";
 import { atlasRegions } from "../../src/data/atlasCatalog";
 import { unvanFromBookCount } from "../../src/lib/derive";
 import {
@@ -15,10 +16,12 @@ type ProfileState = {
   id: string;
   name: string;
   avatar: string;
+  /** Veli fotoğraf yüklediyse public URL; boşsa hazır avatar geçerli */
+  avatarUrl: string | null;
   title: string;
 };
 
-type AdemProgress = {
+type KitapIlerlemesi = {
   completed: number;
   total: number;
   finished: boolean;
@@ -28,6 +31,7 @@ const emptyProfile: ProfileState = {
   id: "",
   name: "Gezgin",
   avatar: "lantern",
+  avatarUrl: null,
   title: "Yeni Gezgin",
 };
 
@@ -48,9 +52,9 @@ function normalize(value: string) {
 export default function MapPage() {
   const router = useRouter();
   const [profile, setProfile] = useState(emptyProfile);
-  const [adem, setAdem] = useState<AdemProgress>({ completed: 0, total: 8, finished: false });
-  const [sitProgress, setSitProgress] = useState(0);
-  const [sitFinished, setSitFinished] = useState(false);
+  const [adem, setAdem] = useState<KitapIlerlemesi>({ completed: 0, total: 8, finished: false });
+  const [sit, setSit] = useState<KitapIlerlemesi>({ completed: 0, total: 4, finished: false });
+  const [idris, setIdris] = useState<KitapIlerlemesi>({ completed: 0, total: 4, finished: false });
   const [loading, setLoading] = useState(true);
   const [warning, setWarning] = useState<string | null>(null);
   const [finalBook, setFinalBook] = useState<string | null>(null);
@@ -66,21 +70,17 @@ export default function MapPage() {
     }
     const activeProfileId = profileId;
 
-    const readLocalDemo = () => {
-      setSitProgress(Math.min(4, Math.max(0, Number(window.localStorage.getItem(`pkd-demo-sit-progress-${activeProfileId}`) ?? 0))));
-      setSitFinished(window.localStorage.getItem(`pkd-demo-sit-finished-${activeProfileId}`) === "true");
-    };
-
-    window.addEventListener("pkd-demo-progress", readLocalDemo);
     queueMicrotask(() => {
       if (cancelled) return;
       setFinalBook(new URLSearchParams(window.location.search).get("final"));
-      readLocalDemo();
     });
 
     async function load() {
       const [profileResult, booksResult, progressResult] = await Promise.all([
-        supabase.from("profiles").select("isim, avatar_tipi, unvan").eq("id", activeProfileId).maybeSingle(),
+        profilAvatarliOku<{ isim: string | null; avatar_tipi: string | null; unvan: string | null }>(
+          activeProfileId,
+          "isim, avatar_tipi, unvan",
+        ),
         supabase.from("books").select("id, isim, toplam_bolum"),
         supabase.from("user_progress").select("book_id, tamamlanan_bolum_sayisi, bitti_mi").eq("profile_id", activeProfileId),
       ]);
@@ -90,27 +90,43 @@ export default function MapPage() {
         setWarning("İlerleme bilgileri tam olarak yüklenemedi; atlas geçici değerlerle gösteriliyor.");
       }
 
-      const ademBook = (booksResult.data ?? []).find((book) => normalize(book.isim ?? "").includes("adem"));
-      const ademRow = ademBook
-        ? (progressResult.data ?? []).find((row) => row.book_id === ademBook.id)
-        : undefined;
-      const total = Math.max(8, ademBook?.toplam_bolum ?? 8);
-      const completed = Math.min(total, Math.max(0, ademRow?.tamamlanan_bolum_sayisi ?? 0));
+      const dbKitaplar = booksResult.data ?? [];
+      const ilerlemeler = progressResult.data ?? [];
+
+      /** Kitabın Supabase satırını ve ilerlemesini `books.ts` anahtarından okur. */
+      const kitapIlerlemesi = (anahtar: string, varsayilanBolum: number): KitapIlerlemesi => {
+        const dbBook = dbKitaplar.find((book) => normalize(book.isim ?? "").includes(anahtar));
+        const row = dbBook ? ilerlemeler.find((item) => item.book_id === dbBook.id) : undefined;
+        const total = Math.max(varsayilanBolum, dbBook?.toplam_bolum ?? varsayilanBolum);
+        return {
+          completed: Math.min(total, Math.max(0, row?.tamamlanan_bolum_sayisi ?? 0)),
+          total,
+          finished: Boolean(row?.bitti_mi),
+        };
+      };
+
+      const ademDurumu = kitapIlerlemesi("adem", 8);
+      const sitDurumu = kitapIlerlemesi("sit", 4);
+      const idrisDurumu = kitapIlerlemesi("idris", 4);
+      const bitenKitapSayisi =
+        (ademDurumu.finished ? 1 : 0) + (sitDurumu.finished ? 1 : 0) + (idrisDurumu.finished ? 1 : 0);
 
       setProfile({
         id: activeProfileId,
         name: profileResult.data?.isim ?? profileName ?? "Gezgin",
         avatar: profileResult.data?.avatar_tipi ?? "lantern",
-        title: profileResult.data?.unvan ?? unvanFromBookCount(ademRow?.bitti_mi ? 1 : 0),
+        avatarUrl: profileResult.data?.avatar_url ?? null,
+        title: profileResult.data?.unvan ?? unvanFromBookCount(bitenKitapSayisi),
       });
-      setAdem({ completed, total, finished: Boolean(ademRow?.bitti_mi) });
+      setAdem(ademDurumu);
+      setSit(sitDurumu);
+      setIdris(idrisDurumu);
       setLoading(false);
     }
 
     void load();
     return () => {
       cancelled = true;
-      window.removeEventListener("pkd-demo-progress", readLocalDemo);
     };
   }, [router]);
 
@@ -144,11 +160,28 @@ export default function MapPage() {
             ad: book.title,
             altBaslik: book.subtitle,
             aciklama: book.description,
-            durum: sitFinished ? "completed" : unlocked ? "active" : "locked",
-            tamamlananBolum: sitProgress,
+            durum: sit.finished ? "completed" : unlocked ? "active" : "locked",
+            acilmaSarti: "Hz. Şît yolculuğu, Hz. Âdem kitabının finalini tamamladığında açılacak.",
+            tamamlananBolum: sit.completed,
             toplamBolum: book.chapterCount,
-            ilerleme: Math.round((sitProgress / book.chapterCount) * 100),
-            madalyaKazanildi: sitFinished,
+            ilerleme: Math.round((sit.completed / book.chapterCount) * 100),
+            madalyaKazanildi: sit.finished,
+          };
+        }
+        if (book.key === "idris") {
+          const unlocked = sit.finished;
+          return {
+            id: book.order,
+            kitapKey: book.key,
+            ad: book.title,
+            altBaslik: book.subtitle,
+            aciklama: book.description,
+            durum: idris.finished ? "completed" : unlocked ? "active" : "locked",
+            acilmaSarti: "Hz. İdrîs yolculuğu, Hz. Şît kitabının finalini tamamladığında açılacak.",
+            tamamlananBolum: idris.completed,
+            toplamBolum: book.chapterCount,
+            ilerleme: Math.round((idris.completed / book.chapterCount) * 100),
+            madalyaKazanildi: idris.finished,
           };
         }
         return {
@@ -165,19 +198,26 @@ export default function MapPage() {
         };
       }),
     }));
-  }, [adem, sitFinished, sitProgress]);
+  }, [adem, sit, idris]);
 
   const notification = finalBook === "adem"
     ? "Hz. Âdem Yolculuk Madalyası kazanıldı. Hz. Şît yolculuğu açıldı!"
     : finalBook === "sit"
-      ? "Geçici Hz. Şît sunum yolculuğunu tamamladın."
-      : warning;
+      ? "Hz. Şît Yolculuk Madalyası kazanıldı. Hz. İdrîs yolculuğu açıldı!"
+      : finalBook === "idris"
+        ? "Hz. İdrîs Yolculuk Madalyası kazanıldı. Öğrenmenin izini sürdün!"
+        : warning;
 
   return (
     <AtlasHarita
-      profil={{ ad: profile.name, avatarAnahtari: profile.avatar, unvan: profile.title }}
-      toplamRozet={adem.completed + sitProgress}
-      tamamlananKitap={(adem.finished ? 1 : 0) + (sitFinished ? 1 : 0)}
+      profil={{
+        ad: profile.name,
+        avatarAnahtari: profile.avatar,
+        avatarFotografi: profile.avatarUrl,
+        unvan: profile.title,
+      }}
+      toplamRozet={adem.completed + sit.completed + idris.completed}
+      tamamlananKitap={(adem.finished ? 1 : 0) + (sit.finished ? 1 : 0) + (idris.finished ? 1 : 0)}
       bolgeler={bolgeler}
       yukleniyor={loading}
       bildirim={notification}
