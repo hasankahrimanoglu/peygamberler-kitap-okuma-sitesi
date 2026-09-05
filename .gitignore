@@ -1,5 +1,7 @@
 node_modules
 .next
+# Paralel dev sunucusunun derleme klasörü (NEXT_DIST_DIR — bkz. next.config.ts)
+.next-alt
 out
 dist
 build
@@ -10,3 +12,6 @@ yarn-error.log*
 .DS_Store
 *.tsbuildinfo
 .vercel
+
+# Yerel yedek görseller (ör. kapak-eski.png) repoya girmez.
+public/**/*-eski.*

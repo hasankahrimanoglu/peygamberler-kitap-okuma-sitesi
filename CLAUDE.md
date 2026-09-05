@@ -213,6 +213,11 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
 - [ ] İçerik hiçbir yerde peygamber/halife/sahabe yüzü tarif etmiyor
 - [ ] **`ROZET-MATRISI.md` güncellendi** (§2 dizinine adlar, §4 satırları, §5 sayaçlar)
 - [ ] **`SOZLUKCE-SICILI.md` güncellendi** (yeni terimler, çözülen çakışmalar)
+- [ ] **Görsel yer tutucuları açıldı:** `npm run gorsel-yertutucu -- {bookKey}`
+      (KARAR 11 Ağu 2026 — Hasan). Bölümdeki her sahne AYRI `.jpg`, rozet ve
+      madalya AYRI adlarla 512×512 şeffaf `.png`. Hasan gerçek görseli aynı adla
+      üzerine yazar. Ayrıntı: `ICERIK-GORSEL-SICILI.md` §6.1
+- [ ] `ICERIK-GORSEL-SICILI.md`'ye kitabın görsel tablosu ve sayaçları eklendi
 
 ## BÖLGE METİNLERİ — TEK KAYNAK
 Keşif bölgelerinin çocuk açıklaması iki yerde yazılıdır:

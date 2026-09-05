@@ -8,6 +8,8 @@ const config = [
     ignores: [
       "node_modules/**",
       ".next/**",
+      // Paralel dev sunucusunun derleme klasörü (NEXT_DIST_DIR — next.config.ts).
+      ".next-alt/**",
       "out/**",
       "next-env.d.ts",
       // Statik HTML mockup arşivi — üretim koduna dahil değil.
