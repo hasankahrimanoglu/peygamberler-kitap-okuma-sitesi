@@ -27,7 +27,6 @@ export type QuizConfig = {
   questions: QuizQuestion[];
   storagePrefix: string;
   keywords: string[];
-  localOnly?: boolean;
 };
 
 const ademQuizQuestions: QuizQuestion[] = [
@@ -113,6 +112,96 @@ const ademQuizQuestions: QuizQuestion[] = [
   },
 ];
 
+// Hz. Şît — KITAP-HZ-SIT-FINAL.md §E. Dört bölümün her birinden bir soru;
+// doğru harf dağılımı A=2 · B=1 · C=1.
+const sitQuizQuestions: QuizQuestion[] = [
+  {
+    id: 1,
+    question: "Hz. Âdem'in kurduğu duvarın her sarsıntıda dağılmasının sebebi neydi?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "Duvar çok yüksek yapılmıştı." },
+      { id: "b", text: "Taşları birbirine tutturan hiçbir şey yoktu." },
+      { id: "c", text: "Kullanılan taşlar çok küçüktü." },
+    ],
+  },
+  {
+    id: 2,
+    question: "Hazura, Şît hakkında anlatılanların doğru olup olmadığını nasıl öğrendi?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Gidip kendi gözüyle baktı." },
+      { id: "b", text: "Anlatanlara olduğu gibi inandı." },
+      { id: "c", text: "Daha çok kişiye sorup oyladı." },
+    ],
+  },
+  {
+    id: 3,
+    question: "Şît, taşları birbirine tutturan çözümü nereden ilham alarak buldu?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Uzaktan gelen bir yolcunun anlattıklarından." },
+      { id: "b", text: "Çocukken duyduğu bir masaldan." },
+      { id: "c", text: "Kuruyan toprakla kaynayan kayalardan ve kırlangıç yuvalarından." },
+    ],
+  },
+  {
+    id: 4,
+    question: "İnsanlar Kâbe'nin taşlarına dokunmak istemeyince Hz. Şît ne yaptı?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Kimseyi zorlamadı; isteğini anlattı ve bekledi." },
+      { id: "b", text: "Herkese kızdı ve köyden ayrıldı." },
+      { id: "c", text: "Kimseye söylemeden, geceleri tek başına yaptı." },
+    ],
+  },
+];
+
+// Hz. İdrîs — KITAP-HZ-IDRIS-ICERIK-FAZ2-taslak.md §E. Dört bölümün her birinden
+// bir soru; doğru harf dağılımı A=2 · B=1 · C=1.
+const idrisQuizQuestions: QuizQuestion[] = [
+  {
+    id: 1,
+    question: "İdrîs, yapraktan yaptığı gölgeliği neden hemen herkese anlatmak istemedi?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Mişke anlatmasını istemediği için" },
+      { id: "b", text: "Yapraklar çok ağır olduğu için" },
+      { id: "c", text: "Herkes koparınca ağaçların tükeneceğini düşündüğü için" },
+    ],
+  },
+  {
+    id: 2,
+    question: "Öğrencilerinden biri konuyu anlamayınca İdrîs ne yaptı?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Aynı şeyi başka bir yoldan yeniden anlattı" },
+      { id: "b", text: "Diğerleri sıkılmasın diye konuyu geçti" },
+      { id: "c", text: "Öğrenciyi dersten çıkardı" },
+    ],
+  },
+  {
+    id: 3,
+    question: "Altı ayın sonunda İdrîs'in elinde ne vardı?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "Hiçbir şey yoktu" },
+      { id: "b", text: "Bir karış büyüklüğünde bir bez" },
+      { id: "c", text: "Bir sandık dolusu bez" },
+    ],
+  },
+  {
+    id: 4,
+    question: "Halk, İdrîs “sabredin” deyince neden ona çabucak güvendi?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Çünkü İdrîs asla yalan söylemezdi" },
+      { id: "b", text: "Çünkü kalabalık onu zorlamıştı" },
+      { id: "c", text: "Çünkü başka çareleri kalmamıştı" },
+    ],
+  },
+];
+
 export const quizConfig: Record<string, QuizConfig> = {
   adem: {
     label: "Hz. Âdem",
@@ -122,14 +211,14 @@ export const quizConfig: Record<string, QuizConfig> = {
   },
   sit: {
     label: "Hz. Şît",
+    questions: sitQuizQuestions,
     storagePrefix: "sit",
-    keywords: ["sit", "şit"],
-    localOnly: true,
-    questions: [
-      { id: 1, question: "Emanet neyi anlatır?", correctOption: "b", options: [{ id: "a", text: "Yalnızca bize ait bir eşyayı" }, { id: "b", text: "Güvenilerek verilen ve korunması gereken şeyi" }, { id: "c", text: "Unutulması gereken bir sözü" }] },
-      { id: 2, question: "Doğruluğundan emin olmadığımız bir haberi ne yapmalıyız?", correctOption: "c", options: [{ id: "a", text: "Hemen yaymalıyız" }, { id: "b", text: "Daha ilginç hâle getirmeliyiz" }, { id: "c", text: "Güvenilir kaynaktan doğrulamalıyız" }] },
-      { id: 3, question: "Dayanışma nasıl büyür?", correctOption: "a", options: [{ id: "a", text: "Herkes yapabildiği katkıyı sunduğunda" }, { id: "b", text: "Bütün işi tek kişi yaptığında" }, { id: "c", text: "Kimse birbirini dinlemediğinde" }] },
-      { id: 4, question: "Güzel bir davranış ne zaman değerlidir?", correctOption: "b", options: [{ id: "a", text: "Yalnız herkes bizi izlediğinde" }, { id: "b", text: "Kimse görmese de doğru olduğu için yapıldığında" }, { id: "c", text: "Sadece bir ödül kazandırdığında" }] },
-    ],
+    keywords: ["sit"],
+  },
+  idris: {
+    label: "Hz. İdrîs",
+    questions: idrisQuizQuestions,
+    storagePrefix: "idris",
+    keywords: ["idris"],
   },
 };

@@ -56,14 +56,14 @@ Bu 11 terimin tanımı projenin standardıdır. Bir kitapta geçtiğinde bu tan�
 |---|---|---|
 | Hicret | Bir yerden başka bir yere göç etmek demektir. | Henüz yok |
 | Müşrik | Bir olan Allah'a inanmayıp putlara tapan kimse demektir. | Henüz yok |
-| Vahiy | Allah'ın, peygamberlerine melek aracılığıyla gönderdiği mesajlardır. | Henüz yok |
+| Vahiy | Allah'ın, peygamberlerine melek aracılığıyla gönderdiği mesajlardır. | Hz. Şît · 4 |
 | Halife | Peygamberimizden sonra Müslümanların başına geçen yöneticiye denir. | Henüz yok |
 | Sahabe | Peygamberimizi görmüş ve ona inanmış kimselere denir. | Henüz yok |
 | Peygamber | Allah'ın, mesajlarını insanlara ulaştırmak için seçtiği elçidir. | Henüz yok |
-| Kâbe | Mekke'de bulunan, Müslümanların namazda yöneldiği kutsal yapıdır. | Henüz yok |
-| Put | İnsanların kendi elleriyle yapıp taptıkları heykellerdir. | Henüz yok |
+| Kâbe | Mekke'de bulunan, Müslümanların namazda yöneldiği kutsal yapıdır. | Hz. Şît · 1 |
+| Put | İnsanların kendi elleriyle yapıp taptıkları heykellerdir. | Hz. Şît · 4 |
 | Tevekkül | Elinden geleni yaptıktan sonra sonucu Allah'a bırakmaktır. | Henüz yok |
-| Mucize | Allah'ın izniyle peygamberlerin gösterdiği olağanüstü olaylardır. | Henüz yok |
+| Mucize | Allah'ın izniyle peygamberlerin gösterdiği olağanüstü olaylardır. | Hz. İdrîs · 4 |
 | Zekât | Zenginlerin, mallarının bir kısmını ihtiyaç sahipleriyle paylaşmasıdır. | Henüz yok |
 
 > "Kutulandı mı?" sütunu, terimin hangi kitap/bölümde etkileşimli hâle
@@ -87,8 +87,23 @@ listeyle karşılaştırılır.**
 | 6 | rehberlik | Doğru yolu bulabilmesi için birine yol göstermek ve yardımcı olmaktır. | Hz. Âdem · 6 | Kanonik |
 | 7 | kurban | Allah'a yakınlaşmak amacıyla sunulan şey veya yapılan ibadettir. | Hz. Âdem · 7 | Kanonik |
 | 8 | sıla | İnsanın özlediği yere veya sevdiklerine kavuşmasıdır. | Hz. Âdem · 8 | Kanonik |
+| 9 | Kâbe | Mekke'de bulunan, Müslümanların namazda yöneldiği kutsal yapıdır. | Hz. Şît · 1 | Sabit sözlükçe (§2) |
+| 10 | tedbir | Bir tehlike gelmeden önce alınan önlem ve yapılan hazırlıktır. | Hz. Şît · 2 | Yeni terim — **onaylandı** (Hasan, 10 Ağu 2026) |
+| 11 | harç | Yapı taşlarını birbirine tutturmak için hazırlanan, kuruyunca sertleşen karışımdır. | Hz. Şît · 3 | Yeni terim — **onaylandı** (Hasan, 10 Ağu 2026) |
+| 12 | vahiy | Allah'ın, peygamberlerine melek aracılığıyla gönderdiği mesajlardır. | Hz. Şît · 4 | Sabit sözlükçe (§2) |
+| 13 | put | İnsanların kendi elleriyle yapıp taptıkları heykellerdir. | Hz. Şît · 4 | Sabit sözlükçe (§2) |
+| 14 | basiret | Bir işin sonunu önceden görebilmek ve ona göre davranmaktır. | Hz. İdrîs · 1 | Yeni terim — **onaylandı** (Hasan, 12 Ağu 2026) |
+| 15 | kılavuz | Yolu bilmeyenlere doğru yönü gösteren kişi ya da işarettir. | Hz. İdrîs · 2 | Yeni terim — **onaylandı** (Hasan, 12 Ağu 2026) |
+| 16 | dokuma | İplikleri alt alta ve üst üste geçirerek kumaş yapmaktır. | Hz. İdrîs · 3 | Yeni terim — **onaylandı** (Hasan, 12 Ağu 2026) |
+| 17 | mucize | Allah'ın izniyle peygamberlerin gösterdiği olağanüstü olaylardır. | Hz. İdrîs · 4 | Sabit sözlükçe (§2) |
 
 **Kanonik** = onaylı Hz. Âdem içeriğinden gelir, değiştirilmez.
+
+> **12 Ağu 2026 — Hz. İdrîs'te dört kutu var.** *basiret* (1), *kılavuz* (2),
+> *dokuma* (3) ve *mucize* (4). *tedbir* sicilde Hz. Şît · 2'de kutulu olduğu
+> için bu kitapta kullanılmadı; yerine *basiret* geçti. *peygamber, emanet,
+> nimet, sabır* ve *rehberlik* metinde geçiyor ama §1 gereği ikinci kez
+> kutulanmadı, düz `text` olarak aktarıldı.
 
 ### 3.1 Kod tarafındaki ikinci kopya
 
@@ -104,6 +119,7 @@ sicil, sonra `demoChapters.ts` güncellenir.
 | Tarih | Terim | Sorun | Çözüm |
 |---|---|---|---|
 | 25 Tem 2026 | emanet | Üç yerde, iki farklı tanım: Hz. Âdem (onaylı), Hz. Şît demo, `demoChapters.ts`. Çocuk Kelime Defterim'de aynı kelimeyi iki anlamla görüyordu. | Hz. Âdem'in tanımı kanonik kabul edildi. `demoChapters.ts` eşitlendi. Hz. Şît'teki ikinci kutu **düz metne** çevrildi (cümle korundu). |
+| 10 Ağu 2026 | emanet | Nihai Hz. Şît içeriğinde terim yine geçiyor (Bölüm 4, birkaç kez). | Sicil §3 gereği ikinci kez kutulanmadı; düz `text` olarak aktarıldı. Çakışma oluşmadı. |
 | 25 Tem 2026 | tevekkül | Eski Hz. Nuh demo verisindeki tanım brif §11'deki sabit tanımdan farklıydı. | Ölü demo verisi `books.ts`'ten silindi; sapma ortadan kalktı. Terim henüz hiçbir yayımlanmış kitapta kutulanmıyor. |
 
 ---
@@ -125,11 +141,23 @@ sicil, sonra `demoChapters.ts` güncellenir.
 
 ## 6. AÇIK UYARILAR
 
-- **Sabit sözlükçedeki 11 terimin hiçbiri henüz kutulanmadı.** ~~Hangi kitapta
-  ilk kez kutulanacağına önceden karar verilmelidir.~~ **KAPANDI (7 Ağu 2026)** —
-  §1'deki "ilk geçtiği yerde kutulanır" kuralı bu soruyu kalıcı olarak çözer.
-  Ayrıca bir karar gerekmez: *hicret · vahiy · halife · sahabe · müşrik · Kâbe*
-  dahil her terim, set sırasında ilk geçtiği kitapta kutulanır.
-- Hz. Şît'in etkileşimli kelimesi kaldırıldığı için o geçici demo kitapta şu an
-  hiç kutulanmış kelime yoktur. Nihai kaynaklı içerik geldiğinde bu yeniden
-  değerlendirilecektir.
+- ~~**Sabit sözlükçedeki 11 terimin hiçbiri henüz kutulanmadı.**~~ **KAPANDI
+  (7 Ağu 2026)** — §1'deki "ilk geçtiği yerde kutulanır" kuralı bu soruyu kalıcı
+  olarak çözer. Ayrıca bir karar gerekmez: *hicret · vahiy · halife · sahabe ·
+  müşrik · Kâbe* dahil her terim, set sırasında ilk geçtiği kitapta kutulanır.
+  10 Ağu 2026'da Hz. Şît içeriğiyle **Kâbe · vahiy · put** kutulandı,
+  12 Ağu 2026'da Hz. İdrîs içeriğiyle **mucize** kutulandı; sabit sözlükçeden
+  geriye *hicret · müşrik · halife · sahabe · peygamber · tevekkül · zekât*
+  kaldı.
+- ~~Hz. Şît'in etkileşimli kelimesi kaldırıldığı için o geçici demo kitapta
+  hiç kutulanmış kelime yoktur.~~ **KAPANDI (10 Ağu 2026)** — nihai içerik
+  aktarıldı; kitapta beş kutu var: Kâbe (1), tedbir (2), harç (3), vahiy ve
+  put (4). `emanet` sicilde zaten kanonik olduğu için düz metin bırakıldı.
+- ~~⚠️ **"Peygamber" terimi hâlâ kutulanmadı.**~~ **KARARA BAĞLANDI
+  (12 Ağu 2026 — Hasan):** kutu **Hz. Âdem'e geriye dönük eklenecektir**;
+  §1'deki "ilk geçtiği yerde kutulanır" kuralı Hz. Âdem'i işaret ediyor.
+  Hz. İdrîs kitabında terim bu yüzden düz `text` olarak aktarıldı.
+  ⏳ **Uygulama bekliyor:** geriye dönük kutu `books.ts`'teki Hz. Âdem
+  içeriğine henüz EKLENMEDİ — bu ayrı bir görevdir, Hz. İdrîs aktarımına
+  dahil değildi. Kutu eklendiğinde §2'deki "Peygamber" satırının
+  "Kutulandı mı?" sütunu ve §3 dizini güncellenir.

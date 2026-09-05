@@ -85,14 +85,34 @@ ad ikinci kez kullanılamaz.
 | 6 | Yeni Başlangıç Rozeti | Hz. Âdem | 6 | Nihai |
 | 7 | Sakin Güç Rozeti | Hz. Âdem | 7 | Nihai |
 | 8 | Huzurlu Miras Rozeti | Hz. Âdem | 8 | Nihai |
-| 9 | Emanet Rozeti | Hz. Şît | 1 | **Geçici demo** |
-| 10 | Doğru Söz Rozeti | Hz. Şît | 2 | **Geçici demo** |
-| 11 | Dayanışma Rozeti | Hz. Şît | 3 | **Geçici demo** |
-| 12 | Güzel İz Rozeti | Hz. Şît | 4 | **Geçici demo** |
+| 9 | Gelen Umut Rozeti | Hz. Şît | 1 | Nihai |
+| 10 | Doğruyu Arama Rozeti | Hz. Şît | 2 | Nihai |
+| 11 | Yılmayan Emek Rozeti | Hz. Şît | 3 | Nihai |
+| 12 | Devralınan Emanet Rozeti | Hz. Şît | 4 | Nihai |
+| 13 | Ölçülü Buluş Rozeti | Hz. İdrîs | 1 | Nihai |
+| 14 | Öğreten Sabır Rozeti | Hz. İdrîs | 2 | Nihai |
+| 15 | Vazgeçmeyen El Rozeti | Hz. İdrîs | 3 | Nihai |
+| 16 | Güvenilen Söz Rozeti | Hz. İdrîs | 4 | Nihai |
 
 **Nihai** = dinî doğruluk onayı verilmiş, kalıcı ad. Değiştirilmez.
-**Geçici demo** = kaynaklı içerik geldiğinde bütünüyle değişecek. Ad rezerve
-sayılmaz; ancak nihai Hz. Şît içeriği gelene kadar başka kitapta da kullanılmaz.
+
+> **12 Ağustos 2026 — Hz. İdrîs nihai içerikle eklendi.** Dört ad da §2'deki
+> önceki 12 adla ve §2.1'deki serbest adlarla çakışmıyor. Nüans ayrışmaları:
+> *Meraklı Zihin* (Âdem 2) merak edip **öğrenmeyi**, *Ölçülü Buluş* ise
+> öğrendiğini **yaymadan önce sonucunu tartmayı** anlatır. *Sakin Güç* (Âdem 7)
+> öfkeyi tutmayı, *Öğreten Sabır* **tekrar tekrar anlatma** sabrını anlatır
+> (§3'teki "sabır" ayrışmasının bu kitaba düşen nüansı). *Yılmayan Emek*
+> (Şît 3) **toplulukça** sürdürülen emeği, *Vazgeçmeyen El* ise **tek başına ve
+> sonucu çok küçük kalan** emeği anlatır. *Sözü Koruma* (Âdem 3) verilen sözü
+> **korumayı**, *Güvenilen Söz* ise **başkalarının sana güvenmesini** anlatır.
+
+> **10 Ağustos 2026 — Hz. Şît nihai içerikle güncellendi.** Kitabın dört geçici
+> demo adı (*Emanet · Doğru Söz · Dayanışma · Güzel İz Rozeti*) artık hiçbir
+> yerde kullanılmıyor ve §2.1'e serbest bırakıldı. Nüans ayrışması: *Huzurlu
+> Miras* (Hz. Âdem 8) emaneti **bırakan** tarafı, *Devralınan Emanet* ise
+> **devralan** tarafı anlatır — "miras" kelimesi Hz. Şît'te hiç kullanılmadı.
+> *Yeni Başlangıç* (Hz. Âdem 6) tövbe sonrası yeniden kurulan hayattır,
+> *Gelen Umut* ise kayıptan sonra gelen tesellidir.
 
 ### 2.1 Serbest bırakılmış adlar (kullanılabilir)
 
@@ -101,6 +121,9 @@ artık hiçbir yerde tanımlı değildir ve yeni içerikte kullanılabilir:
 
 **Eski Hz. Nuh demo akışı** (`books.ts`'ten silindi): Sabır Başlangıç Rozeti ·
 Emek Rozeti · Güven Rozeti · Tevekkül Rozeti · Yeni Başlangıç Rozeti
+
+**Eski Hz. Şît demo akışı** (10 Ağu 2026'da nihai içerikle değiştirildi):
+Emanet Rozeti · Doğru Söz Rozeti · Güzel İz Rozeti · Dayanışma Rozeti
 
 **Eski statik listeler** (`derive.ts` `KITAP_ANAHTARLARI`'ndan silindi):
 - *Ebû Bekir:* Işık Rozeti · Gönül Dostu Rozeti · İlk Güven Rozeti ·
@@ -117,8 +140,9 @@ Bu listeler üç ayrı kuralı çiğniyordu ve bu yüzden kaldırıldı:
 | Çakışma | *"Yeni Başlangıç Rozeti"* Hz. Âdem 6. bölümle, *"Dayanışma Rozeti"* Hz. Şît 3. bölümle aynıydı |
 | Katalog uyumsuzluğu | Ebû Bekir 10, Ömer 3, Osman 1 rozet; katalog hedefi **6 / 7 / 6** |
 
-> ⚠️ **"Yeni Başlangıç Rozeti" ve "Dayanışma Rozeti" istisnadır** — bunlar §2'de
-> Hz. Âdem ve Hz. Şît'e kayıtlıdır, serbest değildir.
+> ⚠️ **"Yeni Başlangıç Rozeti" istisnadır** — §2'de Hz. Âdem'e kayıtlıdır,
+> serbest değildir. *"Dayanışma Rozeti"* ise 10 Ağu 2026'da serbest kaldı:
+> Hz. Şît'in nihai içeriği bu adı kullanmıyor.
 >
 > Rozet adı artık **yalnızca `books.ts` içeriğinden** gelir. Katalogda
 > "Hazırlanıyor" durumundaki kitapta rozet listesi boştur (PROJE-MODELI 3.7).
@@ -157,16 +181,16 @@ Bölüm sayıları ve değerler `KITAP-KATALOGU-VE-URETIM-PLANI.md`'den alınmı
 üretmez.
 
 **Görsel durumu kısaltmaları:** `—` üretilmedi · `✓` teslim edildi.
-Şu an `public/rozetler/` içinde yalnız `placeholder.svg` bulunuyor; **216
-rozet görselinin tamamı üretilmeyi bekliyor.**
+**11 Ağustos 2026 itibarıyla 12 rozet görseli teslim edildi** (Hz. Âdem 8 ·
+Hz. Şît 4); hepsi 512×512 şeffaf PNG. Kalan 204 rozet görseli bekliyor.
 
 ### Bölge 1 — İlk İzler Vadisi (6 kitap · 34 rozet)
 
 | Kitap | bookKey | Böl. | Anahtar aralığı | Ana değerler | İçerik | Görsel |
 |---|---|---:|---|---|---|---|
-| Hz. Âdem | `adem` | 8 | `adem-bolum-1…8` | öğrenme, sorumluluk, tövbe, umut | ✅ Nihai (§2) | — |
-| Hz. Şît | `sit` | 4 | `sit-bolum-1…4` | emanet, devamlılık, aile, doğruluk | ⚠️ Geçici demo | — |
-| Hz. İdrîs | `idris` | 4 | `idris-bolum-1…4` | bilgi, doğruluk, sabır, emek | Bekliyor (K2) | — |
+| Hz. Âdem | `adem` | 8 | `adem-bolum-1…8` | öğrenme, sorumluluk, tövbe, umut | ✅ Nihai (§2) | ✓ 8/8 |
+| Hz. Şît | `sit` | 4 | `sit-bolum-1…4` | emanet, devamlılık, aile, doğruluk | ✅ Nihai (§2) | ✓ 4/4 |
+| Hz. İdrîs | `idris` | 4 | `idris-bolum-1…4` | bilgi, doğruluk, sabır, emek | ✅ Nihai (§2) | — 0/4 |
 | Hz. Nûh | `nuh` | 8 | `nuh-bolum-1…8` | sabır, güven, tedbir, umut | Bekliyor (K1) | — |
 | Hz. Hûd | `hud` | 5 | `hud-bolum-1…5` | tevazu, cesaret, doğruluk, sorumluluk | Bekliyor (K1) | — |
 | Hz. Sâlih | `salih` | 5 | `salih-bolum-1…5` | emanet, ölçülülük, sözünde durma, saygı | Bekliyor (K1) | — |
@@ -243,10 +267,21 @@ rozet görselinin tamamı üretilmeyi bekliyor.**
 | | Sayı |
 |---|---:|
 | Planlanan rozet (216 bölüm) | 216 |
-| Nihai rozet adı kayıtlı | 8 |
-| Geçici demo adı kayıtlı | 4 |
-| Ad bekleyen | 204 |
-| Üretilmiş rozet görseli | 0 |
+| Nihai rozet adı kayıtlı | 16 |
+| Geçici demo adı kayıtlı | 0 |
+| Ad bekleyen | 200 |
+| Üretilmiş rozet görseli | 12 |
+| Rozet görseli bekleyen | 204 |
+
+Üretilmiş 12 görsel: `rozetler/hz-adem/bolum-1…8.png` ve
+`rozetler/hz-sit/bolum-1…4.png` (11 Ağu 2026, 512×512 şeffaf PNG).
+Madalya görselleri bu matriste izlenmez; sicilleri `ICERIK-GORSEL-SICILI.md`
+§7'dedir (`madalyalar/hz-adem.png` ve `hz-sit.png` teslim edildi).
+
+> **12 Ağu 2026 — Hz. İdrîs:** dört rozet **adı** nihai olarak kaydedildi
+> (12 → 16), ama **görselleri henüz üretilmedi.** `rozetler/hz-idris/bolum-1…4.png`
+> ve `madalyalar/hz-idris.png` şu an yer tutucudur; bu yüzden görsel sayaçları
+> 12/204 olarak DEĞİŞMEDİ. Brifler teslimin §H'sindedir.
 
 ---
 
@@ -270,12 +305,15 @@ rozet görselinin tamamı üretilmeyi bekliyor.**
 
 ## 7. AÇIK UYARILAR
 
-- **`public/rozetler/` boş.** 216 görselin hiçbiri üretilmedi; şu an bütün
-  rozetler `placeholder.svg` ile gösteriliyor. Görsel üretimi, içerik
-  üretiminden bağımsız ilerleyebilir — anahtarlar §1.2'deki kuralla zaten
-  belirli olduğu için Hz. Âdem'in 8 rozeti bugün üretilebilir.
+- ~~**`public/rozetler/` boş.**~~ **KAPANDI (11 Ağu 2026)** — içeriği yazılmış
+  iki kitabın 12 rozetinin tamamı teslim edildi. Kalan 204 rozet, ait olduğu
+  kitabın içeriği geldikçe üretilecek. Görsel üretimi içerikten bağımsız
+  ilerleyebilir; anahtarlar §1.2'deki kuralla önceden bellidir.
 - **Eski Hz. Nuh demo verisi `books.ts`'te duruyor** ve Hz. Âdem'le çakışan bir
   rozet adı içeriyor (§2.1). Üründe görünmüyor, ama nihai Hz. Nûh içeriği
   yazılırken hata kaynağı olabilir.
-- **Hz. Şît'in dört rozeti geçicidir.** Kaynaklı içerik geldiğinde adlar
-  büyük olasılıkla değişecek; §2 dizininde "Nihai" sayılmazlar.
+- ~~**Hz. Şît'in dört rozeti geçicidir.**~~ **KAPANDI (10 Ağu 2026)** — kaynaklı
+  içerik `books.ts`'e aktarıldı; dört ad da §2'de "Nihai" olarak kayıtlı.
+  Rozet görselleri de **11 Ağu 2026'da teslim edildi**
+  (`public/rozetler/hz-sit/bolum-1…4.png`); eski `.svg` dosyaları klasörde
+  kalmadı, kod artık yedeğe düşmüyor.

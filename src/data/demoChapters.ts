@@ -19,7 +19,7 @@ export type DecisionOption = {
 
 export type ChapterData = {
   id: string;
-  bookKey?: "adem" | "sit";
+  bookKey?: "adem" | "sit" | "idris";
   bookName?: string;
   chapterNumber?: number;
   totalChapters?: number;
@@ -78,7 +78,7 @@ export function adaptDataChapter(routeId: string): ChapterData | null {
   if (!result) return null;
 
   const { book, chapter } = result;
-  if (book.routePrefix !== "adem" && book.routePrefix !== "sit") return null;
+  if (book.routePrefix !== "adem" && book.routePrefix !== "sit" && book.routePrefix !== "idris") return null;
 
   return {
     id: routeId,

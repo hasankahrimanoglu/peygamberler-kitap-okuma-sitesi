@@ -35,8 +35,8 @@ export const atlasRegions: AtlasRegion[] = [
     mood: "Başlangıç ve merak",
     books: [
       { order: 1, key: "adem", title: "Hz. Âdem", subtitle: "İlk insan, ilk yolculuk", description: "Hz. Âdem'in yaratılışını, bilgiyle değer kazanmasını, tövbesini, ailesindeki ilk büyük sınavı ve yeryüzündeki sorumluluk yolculuğunu anlatan umut dolu bir keşif.", chapterCount: 8, availability: "published" },
-      { order: 2, key: "sit", title: "Hz. Şît", subtitle: "Emaneti taşıyan yeni kuşak", chapterCount: 4, availability: "demo" },
-      { order: 3, key: "idris", title: "Hz. İdrîs", subtitle: "Bilgi ve doğruluk yolu", chapterCount: 4, availability: "preparing" },
+      { order: 2, key: "sit", title: "Hz. Şît", subtitle: "Emaneti büyüterek taşımak", description: "Bir kaybın ardından gelen armağan, yıllar süren sabırlı bir emek ve babasından devraldığı emanet. Hz. Şît'in taş üstüne taş koyan yolculuğunu keşfet.", chapterCount: 4, availability: "published" },
+      { order: 3, key: "idris", title: "Hz. İdrîs", subtitle: "Öğrenen ve öğreten bir ömür", description: "Yıldızları, taşları ve iplikleri merak eden bir peygamberin izini sür; öğrenmenin, sabrın ve vazgeçmeyen emeğin ne demek olduğunu keşfet.", chapterCount: 4, availability: "published" },
       { order: 4, key: "nuh", title: "Hz. Nûh", subtitle: "Sabır ve güven yolculuğu", chapterCount: 8, availability: "preparing" },
       { order: 5, key: "hud", title: "Hz. Hûd", subtitle: "Gücün karşısında doğru söz", chapterCount: 5, availability: "preparing" },
       { order: 6, key: "salih", title: "Hz. Sâlih", subtitle: "Emaneti koruyanlar", chapterCount: 5, availability: "preparing" },
