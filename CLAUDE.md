@@ -99,11 +99,17 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
 - **Durum dili (3.4):** Tamamlandı→Tekrar Oku, Devam ediyor→Devam Et, Yeni
   açıldı→Yolculuğa Başla, Kilitli→buton yok + açılma şartı SOMUT yazılır
   ("Hz. Nuh, Hz. Âdem finalini bitirince açılacak" — "önceki görevleri bekliyor"
-  gibi soyut ifade yasak).
+  gibi soyut ifade yasak). **REVİZE 12 Eki 2026 (3.10.2, Faz C):** kitap kilidi
+  kalkıyor; kilit yalnız bölümlerde ve Büyük Final Testi'nde kalır.
 - **Ölçü standartları (3.5):** buton ≥48px, dokunma alanı ≥44×44px, gövde metni
   ≥16px. Mobilde metin+görsel yan yana KONMAZ (tek sütun).
-- **Tasvir yasağı:** peygamber/halife/sahabe yüzü/bedeni hiçbir görselde çizilmez
-  (silüet bile değil). Cami-kubbe-minare gibi dönemle uyumsuz dekor da kullanılmaz.
+- **Tasvir kuralı (REVİZE 12 Eki 2026 — PROJE-MODELI 6.4):** **yüz hiçbir görselde
+  gösterilmez** (göz/ağız/yüz hattı yok; ışık, gölge, arkadan kadraj veya uzak plan
+  yüzü tamamen örter). Peygamberler (Hz. Muhammed hariç) yüzü görünmeyen figür
+  olarak gösterilebilir: silüet, ışıkla örtülmüş beden, el. **Hz. Muhammed (s.a.v.),
+  ailesi, sahabe ve halifeler hiçbir biçimde gösterilmez** (silüet ve el dahil).
+  Melek tasviri yok. Eski "silüet bile değil" kuralı geçersiz. Cami-kubbe-minare
+  gibi dönemle uyumsuz dekor da kullanılmaz.
 - **Türkçe karakterler** (ş, ğ, ı, İ, ç, ö, ü, â) — font, veri, UI'da test et.
 - **Rapor dili gözlem bildirir**, kesin hüküm vermez ("...temaları öne çıktı"),
   çocuğu derecelendirmez.
@@ -119,7 +125,8 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
   `public/kitaplar/hz-{bookKey}/kapak.png` · `.../bolum-{n}/kapak.jpg` ·
   `.../bolum-{n}/{kisa-ad}.jpg` · `public/rozetler/hz-{bookKey}/bolum-{n}.png` ·
   `public/madalyalar/hz-{bookKey}.png` · `public/unvanlar/{anahtar}.png` ·
-  `public/avatarlar/avatar-{1..10}.jpg` · `public/ikonlar/final-kapisi.svg`.
+  `public/avatarlar/avatar-{1..10}.jpg` · `public/ikonlar/final-kapisi.svg` ·
+  `public/sesli-anlatim/hz-{bookKey}/hz-{bookKey}-bolum-{n}.mp3`.
   **Okuma sayfası görselleri 16:9 ve `.jpg`** (sabit). **Rozet/madalya/unvan
   512×512 şeffaf PNG** (REVİZE 7 Ağu 2026 — eskiden SVG'ydi; ekranda en fazla
   72px çizildikleri için vektör avantajı karşılıksızdı, brifler ise gradyan ve
@@ -131,8 +138,25 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
   ailesi; kilitli/kazanılmış durum ayrı görsel değil, CSS ile soluklaştırma.
   Rozet adlarının set genelinde tekilliği **ROZET-MATRISI.md** ile yönetilir.
 - **"Sen Olsaydın" salt metindir** (Karar 11 Tem 2026) — seçeneklerde görsel yok.
+- **Sesli anlatım her bölümde vardır (KARAR 12 Eki 2026 — PROJE-MODELI 6.5).** Yol
+  `varlikYollari.ts:sesliAnlatim()` ile türetilir; `books.ts`'te ses alanı YOKTUR
+  (rozet anahtarı gibi). Kayıt gelene kadar `public/sesli-anlatim/placeholder-ses.mp3`
+  kopyası durur; Hasan aynı adla üzerine yazar. Yer tutucu başka bölümün anlatımıdır —
+  yer tutucusu kalmış bölüm yayına çıkmaz.
 
 ---
+
+## ÇOCUK ARAYÜZÜ SADELEŞTİRME (KARAR 11–12 Eki 2026 — PROJE-MODELI 3.10)
+Faz A uygulandı; **Faz B (okuma ekranı) ve Faz C (ana ekran/rota) bekliyor.** Özet:
+keşif bölgeleri arayüzden kalkar, kitaplar katalog sırasıyla **tek dikey rotada**;
+yayında olmayan kitap görünmez (sonda tek "Yakında" kartı); sonradan yayınlanan kitap
+kendi yerine girer + "Yeni" etiketi; **kitap kilidi kalkar, bölüm kilidi kalır**;
+ana ekranda "Sıradaki bölümün" kartı ("Kaldığın yer" DEĞİL — tamamlanan bölüm
+sayısından); okuma ekranı tamamen açık zemin, adım çubuğu, rozetten sonra doğrudan
+sıradaki bölüm; mekân metaforları (İskele/Rota/Kapı/Durak/Atlas) arayüz metninden
+çıkar, "Kazanımlarım → Ödüllerim"; rehber karakter **Işıl** (ateşböceği, yalnız
+metin balonu, hikâyede ve dinî yorumda asla). Velinin okuma sırası ayarı YAPILMAZ.
+Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
 
 ## YENİ DAVRANIŞSAL ÖZELLİKLER (kitap metninden ayrı, ayrı prompt gelir)
 - **Hedef yaş: 8–11.** Tüm içerik ve arayüz dili bu aralığa göre.
@@ -213,13 +237,18 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
 - [ ] İçerik hiçbir yerde peygamber/halife/sahabe yüzü tarif etmiyor
 - [ ] **`ROZET-MATRISI.md` güncellendi** (§2 dizinine adlar, §4 satırları, §5 sayaçlar)
 - [ ] **`SOZLUKCE-SICILI.md` güncellendi** (yeni terimler, çözülen çakışmalar)
-- [ ] **Görsel yer tutucuları açıldı:** `npm run gorsel-yertutucu -- {bookKey}`
-      (KARAR 11 Ağu 2026 — Hasan). Bölümdeki her sahne AYRI `.jpg`, rozet ve
-      madalya AYRI adlarla 512×512 şeffaf `.png`. Hasan gerçek görseli aynı adla
-      üzerine yazar. Ayrıntı: `ICERIK-GORSEL-SICILI.md` §6.1
+- [ ] **Görsel ve ses yer tutucuları açıldı:** `npm run gorsel-yertutucu -- {bookKey}`
+      (KARAR 11 Ağu 2026 — Hasan; ses 12 Eki 2026). Bölümdeki her sahne AYRI
+      `.jpg`, rozet ve madalya AYRI adlarla 512×512 şeffaf `.png`, her bölüme bir
+      `hz-{bookKey}-bolum-{n}.mp3`. Hasan gerçek dosyayı aynı adla üzerine yazar.
+      Ayrıntı: `ICERIK-GORSEL-SICILI.md` §6.1, PROJE-MODELI 6.5
 - [ ] `ICERIK-GORSEL-SICILI.md`'ye kitabın görsel tablosu ve sayaçları eklendi
 
 ## BÖLGE METİNLERİ — TEK KAYNAK
+> **Faz C'ye kadar geçerli (12 Eki 2026):** bölgeler arayüzden kalkıyor
+> (PROJE-MODELI 3.10.1). Faz C bitince bölge açıklamaları arayüzde kullanılmaz;
+> bölgeler yalnız katalog belgesinde editoryal gruplama olarak kalır.
+
 Keşif bölgelerinin çocuk açıklaması iki yerde yazılıdır:
 `KITAP-KATALOGU-VE-URETIM-PLANI.md` (editoryal kaynak) ve
 `src/data/atlasCatalog.ts` (`AtlasRegion.description`). **İkisi birebir aynı

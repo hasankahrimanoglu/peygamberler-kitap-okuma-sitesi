@@ -85,6 +85,16 @@ Ana atlas ekranında “kategori” veya “dönem” yerine **Keşif Bölgesi**
 kullanılır. Yedinci bölgenin alt başlığında **Dört Büyük Halife** ifadesi açıkça
 yer alır; çocuk bunun peygamberler dizisinin devamı olduğunu düşünmemelidir.
 
+> **Arayüz kararı (12 Ekim 2026, Hasan — PROJE-MODELI 3.10):** Keşif bölgeleri ve
+> bölge adları uygulamada artık **gösterilmez** (Faz C ile). Bölgeler bu belgede
+> **editoryal gruplama ve üretim dalgası** olarak kalır; kitap sırası, bölüm
+> hedefleri ve kaynak sınıfları değişmez. Uygulamada kitaplar tek dikey rotada,
+> **bu belgedeki sırayla** dizilir; yayında olmayan kitap görünmez. Sonradan
+> yayınlanan kitap rotanın sonuna değil, buradaki sırasına girer. Kitaplar
+> arasında kilit yoktur; çocuk yayındaki her kitabı açabilir. Halifeler
+> kitaplarının peygamber dizisinden ayrı olduğu, bölge adı yerine kitap alt
+> başlığında ("Dört Büyük Halife") belirtilir.
+
 ---
 
 ## 3. BÖLGE 1 — İLK İZLER VADİSİ
@@ -276,6 +286,13 @@ Bu sınıflar bir kişinin değerini veya önemini derecelendirmez; yalnız içe
 
 Hz. Âdem tamamlandığı için ilk yeni içerik **Hz. Şît** kitabıdır. Ancak K3 kaynak
 denetiminde dört sağlam bölüm kurulamıyorsa ajan metin üretmez; bulgusunu bildirir.
+
+**Lansman (KARAR 12 Ekim 2026, Hasan):** Uygulama **10 kitapla** yayına çıkar;
+hangi 10 kitap olacağı Hasan'ın seçimidir ve yukarıdaki dalga sırasına bağlı
+değildir. Kitaplar arasında kilit olmadığı için yayın sırası katalog sırasından
+bağımsızdır; uygulama kitapları daima bu belgedeki sırayla gösterir. Üretim
+süresini kısaltmak için lansmanda bölüm başına kapak + 2 sahne görseli
+(seyrek mod) yeterlidir; sesli anlatım her bölümde olur (PROJE-MODELI 6.5).
 
 ### 11.2 Her içerik üretim oturumuna verilecek dosyalar
 

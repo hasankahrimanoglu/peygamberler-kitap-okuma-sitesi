@@ -94,8 +94,11 @@ iskeletinde ver; yazılım ekibi bu dosyayı `books.ts` yapısına aktaracaktır
   açıklanmaz.
 - “Bugüne Taşı” gönüllüdür; bölüm ilerlemesinin, rozetin veya madalyanın şartı
   değildir ve ayrı ödül üretmez.
-- Peygamber, halife ve sahabe yüzü veya bedeni hiçbir görselde tasvir edilmez;
-  silüet ve arkadan insan figürü de kullanılmaz.
+- **Yüz hiçbir görselde gösterilmez** (REVİZE 12 Ekim 2026 — PROJE-MODELI 6.4).
+  Peygamberler (Hz. Muhammed hariç) yüzü görünmeyen figür olarak
+  gösterilebilir: arkadan silüet, ışıkla örtülmüş beden, el, uzak plan. Hz.
+  Muhammed (s.a.v.), ailesi, sahabe ve halifeler hiçbir biçimde gösterilmez
+  (silüet ve el dahil). Melek tasviri yapılmaz.
 - Cami, kubbe, minare veya olay dönemine uymayan dekor kullanılmaz.
 - “Sen Olsaydın?” seçeneklerinde görsel kullanılmaz.
 - Önemli kelime ve kısa ifadeleri renkli/altı çizili gösterecek işaretleme
@@ -420,8 +423,12 @@ belirt.
 - Görseller masalsı çocuk kitabı illüstrasyonu niteliğinde olmalı, fotoğraf gibi
   sert veya korkutucu olmamalıdır.
 - Görselin içinde yazı, logo, arayüz, rozet etiketi veya filigran bulunmaz.
-- Peygamber, halife, sahabe, melek, yüz, beden, el veya insan silüeti gösterme.
-- Olayı doğa, mekân, eşya, iz, ışık ve sembollerle anlat.
+- Yüz gösterme. Peygamber figürü (Hz. Muhammed hariç) yalnız yüzü görünmeyecek
+  biçimde (arkadan silüet, ışıkla örtülmüş beden, el, uzak plan) ve sakin, saygılı
+  bir atmosferde kullanılabilir. Hz. Muhammed, ailesi, sahabe, halifeler ve melekler
+  hiçbir biçimde gösterilmez.
+- Olayı öncelikle doğa, mekân, eşya, iz, ışık ve sembollerle anlat; figür yalnız
+  sahne gerçekten gerektiriyorsa kullanılır.
 - İsimsiz kalabalık ancak tarihî ve editoryal olarak gerçekten gerekliyse,
   merkezî kutsal kişileri temsil etmeyecek şekilde kullanılabilir.
 

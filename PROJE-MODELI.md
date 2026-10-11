@@ -83,9 +83,16 @@ ilerleme işaretidir.
 | 10 | Bilge Yolcu |
 | 15 | Hikâye Ustası |
 | 20 | Emanet Koruyucusu |
-| 25 | Atlas Bilgini |
+| 25 | Işık Taşıyıcısı |
 | 30 | Kıssa Rehberi |
-| 35 | Yedi Bölge Kaşifi |
+| 35 | Büyük Yolculuk Kaşifi |
+
+> **Ad değişikliği (12 Ekim 2026, Hasan):** 25. eşik "Atlas Bilgini" →
+> **"Işık Taşıyıcısı"**, 35. eşik "Yedi Bölge Kaşifi" → **"Büyük Yolculuk
+> Kaşifi"**. Gerekçe: keşif bölgeleri ve atlas metaforu arayüzden kalktı
+> (3.10). "Işık Taşıyıcısı" rehber karakter Işıl ile bağ kurar; "Büyük Yolculuk
+> Kaşifi", 1. eşikteki "Yol Kaşifi" ile yolculuğun başını ve sonunu eşler.
+> Eşik sayıları değişmedi.
 
 Tek kaynak `src/lib/derive.ts` içindeki `UNVAN_ESIKLERI` tablosudur;
 `unvanFromBookCount()` bu tabloyu okur (eşikler ikinci kez kodlanmaz).
@@ -96,7 +103,7 @@ Görsel dosyası gerekmez: anahtar unvan adından türetilir ve yol
 
 > **Not:** Yayına girecek nihai kitap sayısı henüz kesin değildir (20 veya 35
 > olabilir). Sayı netleştiğinde bu tablo yeniden gözden geçirilir; özellikle
-> "Yedi Bölge Kaşifi" adı 35 kitabın = 7 bölgenin tamamlanmasına gönderme yapar.
+> son eşik "Büyük Yolculuk Kaşifi" bütün kataloğun tamamlanmasına gönderme yapar.
 
 - "Altın Yol Arkadaşı" ChatGPT görsellerinde üç farklı anlamda kullanılmıştı;
   bizde **kullanılmaz** ya da yalnızca tek bir madalya adı olarak kullanılabilir.
@@ -212,6 +219,13 @@ sayfa içine gömülü hex değeri bırakılmaz.
 Kilit açıklaması somut olur: *"Hz. Nuh yolculuğu, Hz. Âdem kitabının finalini
 tamamladığında açılacak."* ("Önceki görevleri bekliyor" gibi soyut ifade yasak.)
 
+> **REVİZE — 12 Ekim 2026 (bkz. 3.10.2):** Kitap düzeyindeki "Kilitli" durumu
+> kalkıyor; yayındaki bütün kitaplar açıktır. Kilit yalnız **bölümler** (bölüm N,
+> N−1 bitmeden açılmaz) ve **Büyük Final Testi** için kullanılır; somut açılma
+> şartı kuralı orada aynen geçerlidir ("2. bölüm, 1. bölümü bitirince açılacak").
+> Yayında olmayan kitap kilitli değil **yakındadır** ve rotada tek kartta
+> toplanır. Uygulama Faz C'dedir; o zamana kadar kod eski kuralı izler.
+
 ### 3.5 Dokunma ve ölçü standartları
 
 - Buton yüksekliği ≥ 48px, dokunma alanı ≥ 44×44px
@@ -219,6 +233,13 @@ tamamladığında açılacak."* ("Önceki görevleri bekliyor" gibi soyut ifade 
 - Mobilde metin ve görsel yan yana KONMAZ; tek sütun.
 
 ### 3.6 Masalsı Keşif Atlası yönü (ONAY — 16 Temmuz 2026)
+
+> **REVİZE — 12 Ekim 2026 (bkz. 3.10):** Okuma ekranında koyu çerçeve, tam
+> ekran bölüm kapağı, ince ilerleme çizgisi, durak üst etiketleri ve "Okuma
+> Araçları" menüsü değişiyor (3.10.3, Faz B); harita ve bölüm rotası tek dikey
+> rotaya dönüyor (3.10.1, Faz C). Aşağıdaki maddeler o fazlar uygulanana kadar
+> mevcut kodu tarif eder. Krem okuma yüzeyi, serif hikâye metni ve ölçüleri,
+> tek sütun kaydırma ve "Sen Olsaydın" kapısı **değişmez.**
 
 Çocuk tarafının harita, bölüm rotası ve Hz. Âdem okuma ekranında ortak görsel
 yön **“Masalsı Keşif Atlası”**dır:
@@ -285,6 +306,12 @@ yön **“Masalsı Keşif Atlası”**dır:
   ürün rotalarından çıkarılıp katalogda **Hazırlanıyor** durumuna alınmıştır.
 
 ### 3.7 Keşif Bölgeleri ve kitap kataloğu (ONAY — 21 Temmuz 2026)
+
+> **REVİZE — 12 Ekim 2026 (bkz. 3.10.1):** Keşif bölgeleri ve bölge adları
+> arayüzden **kalkıyor**; kitaplar tek dikey rotada katalog sırasıyla dizilir,
+> yayında olmayan kitap görünmez. Bölgeler yalnız editoryal gruplama ve üretim
+> dalgası olarak katalog belgesinde kalır. 3.7, 3.7.1, 3.7.2 ve alt bölümleri
+> **Faz C uygulanana kadar** mevcut kodu tarif eder; Faz C bitince arşive alınır.
 
 Masalsı Keşif Atlası artık tek bir kısa kitap yolundan değil, iki seviyeli bir
 katalogdan oluşur: **Keşif Bölgesi → Kitap Durağı**. Bölge ve kitap sırası
@@ -657,6 +684,155 @@ etmez:
   korur. Rapor metinleri gözlem bildirir; başarı puanı veya kesin çocuk
   değerlendirmesi üretmez.
 
+### 3.10 Çocuk arayüzü sadeleştirme (KARAR — 11–12 Ekim 2026, Hasan)
+
+Kaynak: 11 Ekim 2026 çocuk arayüzü analizi
+(https://claude.ai/artifact/PDS9XqJ4YaKGdcFiaCaWbM). Bu bölüm 3.4, 3.6, 3.7 ve
+alt bölümlerindeki bazı kararları değiştirir; değişen eski bölümlerin başında
+"REVİZE — bkz. 3.10" notu vardır. Uygulama sırası Bölüm 9'daki **Faz A–D**'dir.
+
+**Gerekçe (ölçüm, 11 Ekim 2026):** Haritadan hikâyenin ilk cümlesine mobilde
+5 dokunuş gerekiyordu. Mobil bölüm sayfasının %42'si hikâye dışıydı (8.209 px'in
+3.470 px'i; üç maddelik "Ne Öğrendik" tek başına 710 px). Çocuk ekranlarında 15
+ayrı yer/kavram adı geçiyordu (İskele, Rota, Kapı, Durak, Atlas…). 10 kitaplık
+lansmanda 7 keşif bölgesinin 5'i tamamen "Hazırlanıyor" görünecekti. Çocuk
+testi henüz yapılmadı; kararlar gözlem ve ölçüme dayanır.
+
+#### 3.10.1 Ana ekran: tek dikey rota
+
+- Keşif bölgesi seçicisi ve bölge adları arayüzden **kalkar.** Bölgeler
+  kaydırmasız eski düzenin çözümüydü. Kitaplar **tek dikey rotada** dizilir.
+  Bölgeler yalnız editoryal gruplama ve üretim dalgası olarak katalog
+  belgesinde yaşar.
+- Rota **dikeydir:** telefonda ve tablette doğal hareket budur. Yatay kaydırma
+  masaüstünde fare tekerleğiyle çalışmaz, iPhone'da kenardan kaydırma "geri"
+  hareketiyle çakışır.
+- **Yayında olmayan kitap rotada görünmez.** Rotanın sonunda tek bir "Yakında"
+  kartı durur (kaç kitabın hazırlandığı + birkaç tanınmış ad). Gri durak dizisi
+  kullanılmaz.
+- **Önerilen sıra katalog sırasıdır, yayın sırası değil.** Sonradan yayınlanan
+  kitap (ör. Hz. Sâlih, 5. kitap) rotanın sonuna değil kendi yerine girer.
+  Gerekçe: yayın sırası bir üretim tesadüfüdür; bütün kitaplar yayınlandığında
+  sonradan katılan aileler kronolojik sırayı görür.
+- Duraklarda **sıra numarası gösterilmez.** Yayında olmayanlar gizli olduğu için
+  numaralar atlardı (1, 2, 3, 4, 6…).
+- **Yeni kitap duyurusu:** durakta "Yeni" etiketi (çocuk kitabı açana kadar, en
+  fazla 30 gün) + ana ekranda Işıl'ın **tek seferlik** cümlesi ("Yeni bir kitap
+  geldi: Hz. Sâlih!" · **Göster** → rota o durağa kayar, durak kısa süre parlar).
+  Kapatılabilir; bir daha görünmez. Telefon bildirimi YOKTUR (Bölüm 1).
+- En üstte **"Sıradaki bölümün" kartı** ve tek büyük **"Okumaya Devam Et"**
+  (yeşil) düğmesi: çocuğu doğrudan bölüm metnine götürür (1 dokunuş). Seçim
+  kuralı: yarım bırakılan kitap varsa onun ilk bitmemiş bölümü; yoksa önerilen
+  sıradaki ilk bitmemiş kitabın ilk bölümü. **Bu, kaldırılan "Kaldığın yer"
+  değildir:** kaydırma konumuna değil tamamlanan bölüm sayısına bakar ve bölümü
+  daima baştan açar.
+- Kitap durağına dokunmak kitap panelini açmaya devam eder; ana yol artık
+  oradan geçmez. Kitap paneli ile bölüm paneli arasındaki tekrar (kapak,
+  ilerleme, rozet) Faz C'de birleştirilir; bölüm listesi sıralı ve boşluksuz
+  dikey listeye döner.
+- **Yolun ucu:** yayındaki bütün kitapları bitiren çocuk için sakin bir son
+  durum — Işıl'ın tek cümlesi + Tekrar Oku · Görevlerim · Kelimelerim. Baskı ve
+  bildirim yok.
+- Bölge illüstrasyonlarının (14 görsel) isimsiz dekoratif arka plan olarak
+  kullanılıp kullanılmayacağı Faz C'de kararlaştırılır.
+
+#### 3.10.2 Kitap kilidi kalkar
+
+- **Yayındaki bütün kitaplar baştan açıktır;** çocuk istediği kitaptan
+  başlayabilir.
+- **Bölüm sırası kalır:** kitap içinde bölüm N, bölüm N−1 bitmeden açılmaz.
+  Büyük Final Testi yine bütün bölümler bitince açılır; madalya kuralı (4.1/13)
+  aynen geçerlidir.
+- Gerekçe: sıralı kilitte Hz. Muhammed'in ilk kitabına ulaşmak 27 kitap / 154
+  bölüm gerektiriyordu; veli ve çocuk istedikleri kitaplara aylarca
+  ulaşamıyordu. Rozet, madalya ve unvan sıraya bağlı değildir (unvan tamamlanan
+  kitap **sayısına** bakar); kilit kalkınca ödül sisteminde hiçbir şey bozulmaz.
+  Katalog kuralı (her kitap kendi içeriğini taşır, önceki kitaplara yalnız kısa
+  köprü kurar) kitapları zaten tek başına okunur kılar.
+- Velinin **okuma sırası ayarı YAPILMAZ.** Kitaplar açık olduğu için yalnız
+  gösterimi değiştirirdi ve çocuk uymayabilirdi. Velinin aracı çocukla
+  konuşmaktır; ilk bölümü birlikte okurlarsa "Sıradaki bölümün" kartı o kitabı
+  önermeye devam eder. Veliler isterse ileride hafif bir "Sıradaki kitabı öner"
+  düşünülür.
+- **"Sonraya bırak"** (velinin bir kitabı ertelemesi) yalnız Faz 7 PIN'i ile ve
+  veli talebi olursa yapılır. PIN olmadan çocuk veli paneline korumasız
+  girebildiği için anlamsızdır.
+
+#### 3.10.3 Okuma ekranı
+
+- Zemin baştan sona **açık (krem).** Koyu çerçeve ve "kart içinde kart" kalkar.
+  Okuma sırasında gece mavisi **yalnız rozet kutlamasında** görünür. Harita ve
+  diğer ekranlardaki koyu çerçeve kararı (3.1) aynen geçerlidir.
+- Tam ekran bölüm kapağı kalkar: bölüm görseli + başlık + "Bu bölümün rozeti"
+  tek blokta durur; hikâye ilk ekranda başlar. "Maceraya Başla" ve "Okumak için
+  aşağı kaydır" kalkar.
+- İnce ilerleme çizgisinin yerine **adım çubuğu:** Oku · Seç · Oku · Öğren ·
+  (Görev) · Rozet. Mobil ve tablet dikeyde üstte yatay; tablet yatayda solda
+  sabit adım sütunu + kazanılacak rozet. Geçilmiş adıma dokunulabilir;
+  "Sen Olsaydın" kapısı atlanamaz.
+- Durak kartlarının dört katmanlı başlığı (ikon dairesi + büyük harfli üst
+  etiket + başlık + açıklama) tek başlığa iner. Büyük harfli küçük etiketler
+  kullanılmaz. Hedef: mobilde hikâye dışı alan %42'den yaklaşık %25'e.
+- "Okuma Araçları" menüsü **"Aa"** (yazı boyutu) düğmesine iner.
+- **Rozet anı:** tam genişlik gece mavisi kutlama. Önce altın **"Rozetimi Al"**
+  (kayıt), ardından yeşil **"Sıradaki Bölüme Geç"** + ghost **"Bölümlere dön"**.
+  Kitabın son bölümünde yeşil düğmenin yerini altın **"Büyük Final Testine
+  Geç"** alır. Bugünkü "Bölümü Tamamla → bölüm rotasına dönüş" kalkar.
+- Sesli anlatım: bkz. 6.5.
+
+#### 3.10.4 Arayüz dili
+
+Çocuğun bilmesi gereken kavram sayısı 6'ya iner: **Harita, Kitap, Bölüm,
+Rozet/Madalya/Unvan, Görev, Kelime.** İskele, rota, kapı, durak, atlas gibi
+mekân metaforları arayüz metninden çıkar; görsel dünyada kalabilir. Arayüz
+metni 10 kelimeyi geçmez, "sen" diye konuşur, doğru/yanlış çağrışımı yapmaz.
+
+| Bugün | Yeni | Durum |
+|---|---|---|
+| Kalbine en yakın seçeneği düşün. Doğru cevap şimdi açıklanmayacak. | Sen olsan ne yapardın? Seçimine hikâyenin sonunda birlikte bakacağız. | ✅ Faz A |
+| Kararını Onayla | Seçimim bu | ✅ Faz A |
+| Şıklar 1-2-3, karşılaştırmada "B" | Şıklar her yerde A-B-C | ✅ Faz A |
+| Kararını onayladığında hikâyenin devamı açılacak. | Seçimini yapınca hikâye devam edecek. | ✅ Faz A |
+| Bölüm Rotasına Dön | ← Bölümler | Faz B |
+| Keşif Atlasına Dön | ← Harita | Faz C |
+| Bölüm Kapısı · Hikâye · 1. Kısım (durak adları) | (kalkar; adım çubuğu) | Faz B |
+| Okuma Araçları | Aa | Faz B |
+| Düşünme Durağı · Seçimini Karşılaştır | Senin seçimin | Faz B |
+| Yolculuk Defteri · Ne Öğrendik? | Ne öğrendik? | Faz B |
+| Hayata Açılan Kapı · Bugüne Taşı | Bugüne Taşı | Faz B |
+| Bölüm Tamamlandı · Rozet Kapısı · Bölümü Tamamla | Rozetimi Al → "{Rozet adı} senin!" | Faz B |
+| {Rozet} haritana işleniyor… | Bu rozet Ödüllerim'e eklendi. | Faz B |
+| Keşif İskelesi · Kazanımlarım · Kelime Defterim · Görevlerim | Alt menü: Harita · Ödüllerim · Kelimelerim · Görevlerim | Faz C |
+| Hazırlanıyor (her durakta) | Tek "Yakında" kartı | Faz C |
+
+**Değişmeyen sabit adlar:** Rozet, Madalya, Unvan, Sen Olsaydın, Ne Öğrendik,
+Bugüne Taşı, Büyük Final Testi. "Kazanımlarım → Ödüllerim" gerekçesi:
+"kazanım" bir müfredat terimidir; veli tarafında aynı ekranın adı zaten
+"Ödüller"dir.
+
+#### 3.10.5 Rehber karakter: Işıl
+
+- Bir **ateşböceği**; adı **Işıl.** Gece mavisi ve altın kimliğinden doğar,
+  ışık taşıyan bir yol arkadaşıdır; 24 px'te bile okunur. Baykuş Türkçede
+  uğursuzlukla anıldığı için seçilmedi. Kıssalarda geçen hayvanlar (karga,
+  hüdhüd, karınca, balık, deve, güvercin) hikâyedeki hayvanla karışmasın diye
+  bilinçli olarak dışarıda bırakıldı.
+- **Metinle konuşur (konuşma balonu); seslendirme ilk sürümde YOKTUR**
+  (12 Ekim 2026). Gerekçe: tarayıcılar kullanıcı dokunmadan sesi çalmaz
+  (karşılama cümlesi otomatik çalınamaz); bölüm sesli anlatımıyla üst üste
+  biner; her yeni cümle yeni kayıt ister. Satırlar kısa ve az olduğu için
+  okumanın parçasıdır. İleride balona isteğe bağlı küçük bir "dinle" düğmesi
+  eklenebilir.
+- **Yalnız şu anlarda görünür:** ilk giriş (bir kez), ilk sözlük kelimesi (bir
+  kez), "Sen Olsaydın" girişi, rozet ve madalya anı (konuşmaz, rozetin yanında
+  uçar), yeni kitap duyurusu (bir kez), yolun ucu, boş ekranlar. Cümle en fazla
+  12 kelimedir.
+- **Kesin sınırlar:** hikâye metninin içinde görünmez; peygamberler ve dinî
+  konular hakkında yorum yapmaz; doğru/yanlış söylemez; çocuğu övmez veya
+  derecelendirmez; okuma sırasında ekranda durmaz.
+- Çizim Hasan'dadır: en az üç poz (duruş, konuşma, kutlama uçuşu), 512×512
+  şeffaf PNG. Klasör adı Faz D'de `varlikYollari.ts`'e yazılır.
+
 ---
 
 ## 4. Özellik Kararları
@@ -677,8 +853,8 @@ etmez:
 | 10 | Unvan sistemi | Bölüm 2'deki eşik tablosu; `profiles.unvan` alanı zaten mevcut | Çok düşük |
 | 11 | Sistem değerlendirme dili | Rapor metinleri kesin hüküm değil gözlem bildirir ("...temaları öne çıktı") | Yok (metin) |
 | 12 | Final testi dili | Çocuk ekranında pozitif dil ("5 sorunun 5'ini doğru cevapladın"); veli ekranında sayısal (5 Doğru / 0 Yanlış) | Yok |
-| 13 | Final testi geçme ve tekrar mantığı | **Testi ilk kez tamamlamak** madalyayı kazandırır; doğru sayısı şartı YOK. Test bir engel değil, hatırlama+kutlama anıdır. Çocuk kaç doğru yaparsa yapsın testi bitirince madalyayı alır ve sonraki kitap açılır. Doğru sayısı yalnızca veli panelinde sayısal görünür; çocuk ekranında yanlışlar utandırıcı vurgulanmaz. İlk tamamlanma kaydı son sorunun bitirilmesiyle başlar; sonuç ekranındaki dönüş eylemi kayıt başlatmaz. Kayıt anında kitabın bütün bölümlerinin tamamlandığı doğrulanır; doğrudan quiz URL'sine gitmek eksik bölüm ilerlemesini `%100` veya `bitti_mi = true` yapmaz. Madalya kutlaması ve yeni kitabın açıldığı mesajı yalnız kalıcı kayıt başarıyla kesinleştikten sonra gösterilir. Kayıt sürerken bekleme durumu, hata hâlinde aynı cevaplar korunarak **Tekrar Dene** gösterilir; başarı olmadan haritadaki final kutlamasına geçilmez. Yazma idempotenttir: `bitti_mi = true` olan kaydın ilk final sonucu, madalyası ve `updated_at` alanı yeniden yazılmaz. Tamamlanan final yeniden açılabilir; bu giriş açıkça **Alıştırma** olarak gösterilir ve `user_progress`, kayıtlı final sonucu, madalya veya `updated_at` alanlarını değiştirmez. Alıştırma modu yalnız kayıtlı `bitti_mi = true` durumundan türetilir; URL parametresi tek başına alıştırma yetkisi vermez. ("Derecelendirmeme" felsefesinin gereği.) | Yok |
-| 14 | Kazanımlarım ekranı (çocuk) | Çocuğun kendi rozet/madalya/ünvan koleksiyonunu gördüğü vitrin (`/kazanimlarim`). Oyunlaştırmanın çocuk tarafındaki karşılığı; başarı görünür olur | Yok — türetilir |
+| 13 | Final testi geçme ve tekrar mantığı | **Testi ilk kez tamamlamak** madalyayı kazandırır; doğru sayısı şartı YOK. Test bir engel değil, hatırlama+kutlama anıdır. Çocuk kaç doğru yaparsa yapsın testi bitirince madalyayı alır ve sonraki kitap açılır. *(REVİZE — 12 Eki 2026, 3.10.2: kitap kilidi kalktığı için "sonraki kitap açılır" ve "yeni kitabın açıldığı mesajı" ifadeleri Faz C'de "sıradaki kitap önerisi"ne döner; madalya ve kayıt kuralları aynen geçerlidir.)* Doğru sayısı yalnızca veli panelinde sayısal görünür; çocuk ekranında yanlışlar utandırıcı vurgulanmaz. İlk tamamlanma kaydı son sorunun bitirilmesiyle başlar; sonuç ekranındaki dönüş eylemi kayıt başlatmaz. Kayıt anında kitabın bütün bölümlerinin tamamlandığı doğrulanır; doğrudan quiz URL'sine gitmek eksik bölüm ilerlemesini `%100` veya `bitti_mi = true` yapmaz. Madalya kutlaması ve yeni kitabın açıldığı mesajı yalnız kalıcı kayıt başarıyla kesinleştikten sonra gösterilir. Kayıt sürerken bekleme durumu, hata hâlinde aynı cevaplar korunarak **Tekrar Dene** gösterilir; başarı olmadan haritadaki final kutlamasına geçilmez. Yazma idempotenttir: `bitti_mi = true` olan kaydın ilk final sonucu, madalyası ve `updated_at` alanı yeniden yazılmaz. Tamamlanan final yeniden açılabilir; bu giriş açıkça **Alıştırma** olarak gösterilir ve `user_progress`, kayıtlı final sonucu, madalya veya `updated_at` alanlarını değiştirmez. Alıştırma modu yalnız kayıtlı `bitti_mi = true` durumundan türetilir; URL parametresi tek başına alıştırma yetkisi vermez. ("Derecelendirmeme" felsefesinin gereği.) | Yok |
+| 14 | Kazanımlarım ekranı (çocuk) | Çocuğun kendi rozet/madalya/ünvan koleksiyonunu gördüğü vitrin (`/kazanimlarim`). *(Ekran adı Faz C'de **Ödüllerim** olur — 3.10.4.)* Oyunlaştırmanın çocuk tarafındaki karşılığı; başarı görünür olur | Yok — türetilir |
 | 15 | Kelime Defterim ekranı (çocuk) | Çocuğun okuduğu kitaplardaki Kelime Kutusu kelimeleri, anlamlarıyla, aranabilir liste (`/kelime-defterim`). Öğrenilen kelimeler tek yerde birikir | Yok — books.ts'ten türetilir |
 | 16 | Bölüm içi karar akışı (KARAR 15 Tem 2026) | "Sen Olsaydın" bağımsız bir bölüm sonu sorusu DEĞİLDİR; hikâyenin karar/doruk noktasına yerleşir. Akış: **Hikâye — 1. Kısım → Sen Olsaydın → Hikâye Devam Ediyor → Seçimini Karşılaştır**. Seçim hikâyeyi DALLANDIRMAZ (tek hikâye); doğru cevap seçim anında AÇIKLANMAZ; hikâye devamı bittikten sonra yalnızca **seçilen şıkkın** karşılaştırma metni gösterilir (her şık için ayrı metin içerikte hazır). Seçim aynı okuma oturumu içinde tutulur (kalıcı kayıt ayrı iştir — bkz. S5) | Yok — books.ts + oturum içi state |
 | 17 | "Bugüne Taşı" görev takibi (KARAR 15 Tem 2026) | Görev KOŞULLUDUR (her bölümde değil; kitabın yaklaşık %40–50'sinde görev bulunması editoryal hedeftir, teknik sınır olarak kodlanmaz) ve GÖNÜLLÜDÜR. Çocuk görevde "Görevi Listeme Ekle / Şimdilik Değil" seçer; eklediği görevleri "Görevlerim" ekranında görür, "Görevi Tamamladım" ile işaretler; Tamamlandı/Tamamlanmadı durumu KALICI saklanır (öz bildirim yeterli, kanıt istenmez). Görev; bölüm rozetinin, madalyanın, sonraki kitabın veya ilerlemenin ŞARTI DEĞİLDİR. Son tarih, ceza, seri YOK | Yeni tablo (bkz. 7.3 — Faz 6.1) |
@@ -723,7 +899,7 @@ etmez:
 
 | Rota | Ekran | Not |
 |---|---|---|
-| `/map` | Keşif Dünyası (harita) | Masaüstü/tablet: hafif zikzak dikey yol; mobil: düz dikey yol. Aktif kitap en büyük kart |
+| `/map` | Keşif Dünyası (harita) | Masaüstü/tablet: hafif zikzak dikey yol; mobil: düz dikey yol. Aktif kitap en büyük kart. **REVİZE — 12 Eki 2026 (3.10.1, Faz C):** bölgesiz tek dikey rota, üstte "Sıradaki bölümün" kartı, yayında olmayan kitap görünmez |
 | `/kitap/[bookId]` | Kitap Yolculuğu (detay) | YENİ — modal yerine tam sayfa. Bölüm listesi + final testi kartı |
 | `/reader/[chapterId]` | Okuma akışı | Mevcut rota korunur. **Bölüm tek sayfada kaydırılır (REVİZE — 26 Tem 2026, Faz 6.2); sayfa yoktur, "durak" vardır.** Duraklar: hikâye (**1. Kısım + Hikâye Devam Ediyor**), **Tanık Sayfası**, Sen Olsaydın, **Seçimini Karşılaştır**, Ne Öğrendik, Bugüne Taşı (**varsa**), Rozet Kapısı. Bölüm içi sıra için aşağıdaki "Bölüm içi akış" kararına bak |
 | `/quiz/[bookId]` | Büyük Final Testi | Mevcut rota korunur |
@@ -855,7 +1031,9 @@ public/
   ikonlar/
     final-kapisi.svg                   Büyük Final Testi durağının ikonu
   bolgeler/     bolge-{regionId}.png   keşif bölgesi sahne arka planı (7 adet)
-  sesli-anlatim/hz-{bookKey}/          (değişmedi)
+  sesli-anlatim/
+    placeholder-ses.mp3                ses yer tutucusu (6.5)
+    hz-{bookKey}/hz-{bookKey}-bolum-{n}.mp3   bölüm başına bir anlatım (12 Eki 2026)
 ```
 
 - **Yol üretimi tek kaynaktan yapılır: `src/lib/varlikYollari.ts`.** Hiçbir
@@ -953,7 +1131,22 @@ ileride istenirse eklenmesi kolaydır.)
 ### 6.4 İçerik görselleri (okuma sayfası illüstrasyonları)
 
 - Kitap içeriğiyle birlikte, kitap kitap üretilir; bu dokümanın kapsamı dışında.
-- Kural: peygamber yüzü/bedeni tasvir edilmez; saygılı atmosfer.
+- **Tasvir kuralı (REVİZE — 12 Ekim 2026, Hasan):**
+  - **Yüz hiçbir görselde gösterilmez.** Göz, ağız ve yüz hatları çizilmez; yüz
+    ışıkla, gölgeyle, arkadan kadrajla veya uzak planla tamamen örtülür. Kural
+    hikâyedeki bütün insanlar için geçerlidir.
+  - **Peygamberler (Hz. Muhammed hariç)** yüzü görünmeyen figür olarak
+    gösterilebilir: arkadan silüet, ışıkla örtülmüş beden, el, uzak plan.
+    Atmosfer saygılı ve sakindir; figür kahramanlaştırılmaz, ürkütücü veya
+    alaycı biçimde çizilmez. Gerekçe (Hasan): yüzü ışıkla örtülmüş figür,
+    peygamberleri anlatan yaygın görsel içeriklerde kabul gören bir yöntemdir.
+  - **Hz. Muhammed (s.a.v.), ailesi, sahabe ve Dört Büyük Halife hiçbir
+    biçimde gösterilmez** (silüet, ışık figürü ve el dahil). Katalog belgesindeki
+    bu kural, Hasan ayrıca karar verene kadar aynen geçerlidir.
+  - Melek tasviri yapılmaz (değişmedi).
+  - Temmuz 2026'daki "silüet bile değil" kuralı bu tarihle geçersizdir. Hz. Âdem
+    1. bölümdeki figürlü üç görsel (`toprak-isik`, `isimlerin-izi`,
+    `secim-sorumluluk`) yeni kurala uygundur.
 - Her kitabın kendi görsel dünyası olur (Âdem: tabiat/bahçe/ışık; Nuh:
   gemi/yağmur/dağ; İbrahim: çöl/yıldızlı gök...). Cami-kubbe-minare gibi
   dönemle uyumsuz genel dini dekor kullanılmaz.
@@ -981,7 +1174,8 @@ ileride istenirse eklenmesi kolaydır.)
 - İlk referans uygulama Hz. Âdem 1. bölümdür: bölüm kapağındaki “bekleyen
   yeryüzü”, “seçim ve sorumluluk”, “toprak, su ve ışık” ve “öğrenilecek büyük
   âlem” olmak üzere dört görsel durak kullanılır. Görseller peygamber, melek,
-  insan bedeni, yüzü, eli veya silüeti göstermeden doğa ve nesne metaforlarıyla
+  insan bedeni, yüzü, eli veya silüeti göstermeden (o tarihteki kural; 12 Eki 2026
+  revizyonu yukarıda) doğa ve nesne metaforlarıyla
   anlatımı destekler; aradaki sayfalar metin odaklı kalır.
 - **Dokun ve Keşfet prototipi — KAPATILDI (KARAR 27 Temmuz 2026, Hasan).**
   18 Temmuz 2026'da Hz. Âdem 1. bölüm açılışındaki sahne üzerinde numaralı keşif
@@ -991,6 +1185,28 @@ ileride istenirse eklenmesi kolaydır.)
   etkisini bozuyordu. Keşif noktaları **hiçbir kitapta kullanılmaz**; diğer
   kitaplara taşınmaz. Bölüm kapısı bunun yerine tek güçlü sahne + bölüm kimliği +
   rozet önizlemesi + tek çağrı ("Maceraya Başla") ile kurulur.
+  *(REVİZE — 12 Eki 2026: tam ekran bölüm kapısı ve "Maceraya Başla" Faz B'de
+  kalkar; bkz. 3.10.3.)*
+
+### 6.5 Sesli anlatım dosyaları (KARAR — 12 Ekim 2026, Hasan)
+
+- **Her bölümün sesli anlatımı vardır.** Ses kontrolü bütün bölümlerde görünür.
+- Dosya: `public/sesli-anlatim/hz-{bookKey}/hz-{bookKey}-bolum-{n}.mp3`
+  (ör. `sesli-anlatim/hz-idris/hz-idris-bolum-2.mp3`). Kitap adı dosya adında da
+  geçer; dosya klasörünün dışına çıksa da hangi bölüme ait olduğu okunur.
+- Yol yalnız `src/lib/varlikYollari.ts:sesliAnlatim()` ile üretilir. `books.ts`'te
+  ses alanı **yoktur**; rozet anahtarı gibi kitap anahtarı ve bölüm numarasından
+  türetilir. Yeni kitap aktarılırken ses için veri yazılmaz.
+- **Yer tutucu:** gerçek kayıt gelene kadar her bölümde
+  `public/sesli-anlatim/placeholder-ses.mp3` kopyası durur (Hz. Âdem 1. bölüm
+  kaydının kopyası). Hasan gerçek kaydı **aynı adla** üzerine yazınca kod
+  değişmeden yayına girer. Yeni kitapta `npm run gorsel-yertutucu -- {bookKey}`
+  ses yer tutucularını da açar.
+- **Yayın öncesi uyarı:** yer tutucu ses başka bir bölümün anlatımıdır. Yer
+  tutucusu değiştirilmemiş bölüm yayında çocuğa yanlış anlatımı dinletir;
+  lansmandan önce bütün yer tutucular gerçek kayıtla değiştirilmiş olmalıdır.
+- Dosya bulunamazsa ses kontrolü hiç çizilmez; ekran bozulmaz.
+- Çalma davranışı 5.1'deki **Model A** ile aynıdır (bölümün tamamı baştan sona).
 
 ---
 
@@ -1086,6 +1302,17 @@ ileride istenirse eklenmesi kolaydır.)
 | **6.2** | **Kaydırmalı Okuma Akışı (ONAY — 26 Temmuz 2026):** (a) karakter bütçesiz akış modeli (`src/components/reader/akis.ts`); (b) `AtlasScrollReader` — tek sayfa kaydırma, satır içi görsel/sözlükçe, "Sen Olsaydın" kapısı, akış içi butonlar; (c) alt gezinme çubuğunun yerine üst ilerleme çubuğu + durak göstergesi (scroll-spy); (d) ~~otomatik "kaldığın yer"~~ — **28 Tem 2026'da kaldırıldı** (kaydırma konumu okunan yeri güvenilir biçimde göstermiyor); (e) Hz. Âdem B1–B8 için görsel yerlerinin açılması + `ICERIK-GORSEL-SICILI.md`. Sayfalı okuyucu (`AtlasReader` + `sayfalar.ts` + sayfa bileşenleri + iki tasarım önizlemesi) yenisi üretimde bir hafta çalıştıktan sonra, **30 Tem 2026'da silindi**; `BookDiscovery` tipleri de hiç kullanılmadığı için kaldırıldı | Bölüm kesintisiz kaydırılarak okunuyor |
 | **7** | Güvenlik/hesap akışı (Bölüm 8) | Aktivasyon bağlantısı + PIN |
 | **8** | Landing page'in gerçek özelliklerle güncellenmesi | Pazarlama yüzü güncel |
+
+**Çocuk arayüzü sadeleştirme fazları (Ekim 2026 — bkz. 3.10).** Harfler 11 Ekim
+2026 analiz raporundaki adlandırmadır; her faz kendi başına yayına alınabilir.
+
+| Faz | Kapsam | Durum |
+|---|---|---|
+| **A** | Hızlı düzeltmeler: sözlük kelimesinin ekinden ayrılması ("emanet ti"), "Sen Olsaydın" metinleri + şıkların her yerde A-B-C olması, kilide benzeyen "devam ediyor" ikonu, her bölüme sesli anlatım + yer tutucu ses (6.5), iki unvanın yeni adı (Bölüm 2) | ✅ 12 Eki 2026 |
+| **B** | Okuma ekranı yeni düzeni (3.10.3): açık zemin, kapak ekranının kalkması, adım çubuğu/sütunu, tek başlıklı duraklar, "Aa", rozet kutlaması + "Sıradaki Bölüme Geç", okuma ekranı metinleri (3.10.4) | Bekliyor |
+| **C** | Ana ekran ve rota (3.10.1–3.10.2): "Sıradaki bölümün" kartı, bölgesiz tek dikey rota (yayındaki kitaplar `atlasCatalog.ts`'ten çizilir, kod elle yazılmaz), kitap kilidinin kalkması, "Yeni" etiketi + duyuru, "Yakında" kartı, yolun ucu, bölüm listesinin sadeleşmesi, alt menü ve ekran adları (3.10.4) | Bekliyor |
+| **D** | Rehber karakter Işıl (3.10.5): çizimler Hasan'da, entegrasyon yalnız tanımlı anlarda | Bekliyor |
+| **Test** | Faz B'den sonra 5 çocukla 30'ar dakikalık gözlem: "Kaldığın kitaptan okumaya başla", "Yeşil bir kelimenin anlamını bul", "Rozetini al ve sonraki bölüme geç". Ses efekti ve ek kutlama kararları bu testten sonra verilir | Bekliyor |
 
 Kurallar:
 - Her faz kendi içinde mobil + tablet + masaüstü ile birlikte biter
@@ -1191,6 +1418,35 @@ Kurallar:
 - [x] Yeni okuyucu **önce önizleme rotasında** teslim edilir; `/reader` ancak
       Hasan onayından sonra bağlanır. Sayfalı okuyucu o ana kadar bozulmaz.
 
+### 11–12 Ekim 2026 (çocuk arayüzü sadeleştirme — Hasan onayı, bkz. 3.10)
+
+- [x] Keşif bölgesi seçicisi ve bölge adları arayüzden kalkar; kitaplar **tek
+      dikey rotada**, yatay değil (3.10.1).
+- [x] Yayında olmayan kitap rotada görünmez; sonda tek "Yakında" kartı.
+      **Önerilen sıra katalog sırasıdır;** sonradan yayınlanan kitap kendi yerine
+      girer, "Yeni" etiketi + Işıl'ın tek seferlik duyurusuyla bildirilir.
+      Duraklarda sıra numarası yok (3.10.1).
+- [x] Ana ekranda **"Sıradaki bölümün"** kartı; tek dokunuşla bölüm metni
+      ("Kaldığın yer" değildir) (3.10.1).
+- [x] **Kitap kilidi kalkar;** bölüm sırası ve final kuralı kalır (3.10.2).
+- [x] Velinin okuma sırası ayarı **yapılmaz;** "Sonraya bırak" yalnız Faz 7 PIN'i
+      ile ve talep olursa (3.10.2).
+- [x] Okuma ekranı tamamen açık zemin; gece mavisi okuma sırasında yalnız rozet
+      kutlamasında; rozetten sonra doğrudan sıradaki bölüm (3.10.3).
+- [x] Arayüz terimleri sadeleşir; "Kazanımlarım → Ödüllerim" (3.10.4).
+- [x] Rehber karakter **Işıl (ateşböceği)**; metinle konuşur, seslendirme ilk
+      sürümde yok (3.10.5).
+- [x] Unvan adları: 25 → **Işık Taşıyıcısı**, 35 → **Büyük Yolculuk Kaşifi**
+      (Bölüm 2).
+- [x] **Tasvir kuralı revize edildi:** yüz hiçbir görselde gösterilmez;
+      peygamberler (Hz. Muhammed hariç) yüzü görünmeyen figür olarak
+      gösterilebilir. Hz. Muhammed, ailesi, sahabe ve halifeler hiçbir biçimde
+      gösterilmez (6.4).
+- [x] **Her bölümün sesli anlatımı olur;** yer tutucu ses ve tek kaynaktan
+      türetilen dosya yolu (6.5).
+- [x] Lansman 10 kitapla yapılır; hangi 10 kitap olduğu Hasan'ın seçimidir.
+      Uygulama kitapları her zaman katalog sırasıyla gösterir.
+
 ## 11. İçerik Durumu
 
 | Kitap | Durum |
@@ -1202,7 +1458,7 @@ Kurallar:
 
 İçerik yazım kuralları: Bahar Yayıncılık yazım kuralları esas alınır
 (peygamber adlarında "(a.s.)" ilk geçişte; kaynak dışına taşan kesin ifade yok;
-abartısız, sıcak, 8-11 yaş dili; peygamber tasviri yok).
+abartısız, sıcak, 8-11 yaş dili; görsellerde yüz gösterilmez — tasvir kuralı 6.4).
 Kitaba özgü kıssa/rivayet kararları (hangi rivayet kullanılmaz, hassas kıssa
 nasıl çerçevelenir) genel kural DEĞİLDİR; her kitabın kimliğindeki "Kitaba özgü
 kararlar" alanında tutulur. Örnek: Hz. Âdem'de Hâbil-Kâbil'in Mâide merkezli,

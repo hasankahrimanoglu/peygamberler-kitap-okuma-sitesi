@@ -43,8 +43,11 @@ bir bant olarak durur. Bölüm başına **tek dosya** vardır.
 
 ## 2. Görsel içeriği — değişmez sınırlar
 
-- **Tasvir yasağı:** peygamber, halife veya sahabe **yüzü, bedeni ya da silüeti
-  hiçbir görselde çizilmez.** İnsan figürü kullanılmaz.
+- **Tasvir kuralı (REVİZE 12 Ekim 2026 — PROJE-MODELI 6.4):** **yüz hiçbir
+  görselde gösterilmez.** Peygamberler (Hz. Muhammed hariç) yüzü görünmeyen figür
+  olarak gösterilebilir: arkadan silüet, ışıkla örtülmüş beden, el, uzak plan. Hz.
+  Muhammed (s.a.v.), ailesi, sahabe ve halifeler hiçbir biçimde gösterilmez.
+  Melek tasviri yapılmaz.
 - Dönemle uyumsuz dekor kullanılmaz (cami, kubbe, minare vb.).
 - Kur'an'ın **bildirmediği ayrıntı görselleştirilmez.** Örnek: yasak ağacın türü
   belirsizdir (elma/buğday çizilmez); Hâbil ile Kābil'in **ne sunduğu**
@@ -355,7 +358,7 @@ npm run gorsel-yertutucu -- unvanlar
 |---|---|---|---|
 | `public/rozetler/hz-{bookKey}/` | `bolum-{n}.png` | **16** | âdem 8 + şît 4 **gerçek** (11 Ağu 2026) · idrîs 4 **yer tutucu** (12 Ağu 2026). Hedef 34 (İlk İzler Vadisi): + nûh 8, hûd 5, sâlih 5 — bu üçünün klasörü **henüz yok**, içerikleri `books.ts`'e aktarılınca betik açacak |
 | `public/madalyalar/` | `hz-{bookKey}.png` | **3** | âdem + şît **gerçek** (11 Ağu 2026) · idrîs **yer tutucu** (12 Ağu 2026). Hedef 6 |
-| `public/unvanlar/` | `{unvan-anahtari}.png` | **10** | Hepsi yer tutucu: `yeni-gezgin`, `yol-kasifi`, `deger-toplayicisi`, `yol-arkadasi`, `bilge-yolcu`, `hikaye-ustasi`, `emanet-koruyucusu`, `atlas-bilgini`, `kissa-rehberi`, `yedi-bolge-kasifi`. Anahtarlar `derive.ts:UNVAN_ESIKLERI` + `unvanAnahtari()` türetimidir; eşik tablosu değişirse `npm run gorsel-yertutucu -- unvanlar` yeniden çalıştırılır |
+| `public/unvanlar/` | `{unvan-anahtari}.png` | **10** | Hepsi yer tutucu: `yeni-gezgin`, `yol-kasifi`, `deger-toplayicisi`, `yol-arkadasi`, `bilge-yolcu`, `hikaye-ustasi`, `emanet-koruyucusu`, `isik-tasiyicisi`, `kissa-rehberi`, `buyuk-yolculuk-kasifi` (12 Eki 2026'da `atlas-bilgini` ve `yedi-bolge-kasifi` yerine). Anahtarlar `derive.ts:UNVAN_ESIKLERI` + `unvanAnahtari()` türetimidir; eşik tablosu değişirse `npm run gorsel-yertutucu -- unvanlar` yeniden çalıştırılır |
 | `public/avatarlar/` | `avatar-{1..10}.jpg` | **10** | Veli panelinde üçerli pencerede oklarla gezilir |
 | `public/ikonlar/` | `final-kapisi.svg` | **1** | Bölüm rotasındaki **Büyük Final Testi** durağının ikonu — arayüz ikonu olduğu için SVG kalır |
 
