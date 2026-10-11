@@ -726,15 +726,33 @@ testi henüz yapılmadı; kararlar gözlem ve ölçüme dayanır.
   sıradaki ilk bitmemiş kitabın ilk bölümü. **Bu, kaldırılan "Kaldığın yer"
   değildir:** kaydırma konumuna değil tamamlanan bölüm sayısına bakar ve bölümü
   daima baştan açar.
-- Kitap durağına dokunmak kitap panelini açmaya devam eder; ana yol artık
-  oradan geçmez. Kitap paneli ile bölüm paneli arasındaki tekrar (kapak,
-  ilerleme, rozet) Faz C'de birleştirilir; bölüm listesi sıralı ve boşluksuz
-  dikey listeye döner.
+- Kitap durağına dokunmak o kitabın bölümlerini açar (3.10.7); ana yol artık
+  oradan geçmez.
 - **Yolun ucu:** yayındaki bütün kitapları bitiren çocuk için sakin bir son
   durum — Işıl'ın tek cümlesi + Tekrar Oku · Görevlerim · Kelimelerim. Baskı ve
   bildirim yok.
-- Bölge illüstrasyonlarının (14 görsel) isimsiz dekoratif arka plan olarak
-  kullanılıp kullanılmayacağı Faz C'de kararlaştırılır.
+- **Durak tasarımı (KARAR — 12 Ekim 2026, Hasan):** durağın halkası kitabın
+  **ilerleme çubuğudur**; okudukça altınla dolar. Biten kitapta halka tam altın,
+  köşede **o kitabın madalyası** durur. Okunan kitap daha büyüktür (mobil 96 px,
+  diğerleri 72 px; masaüstü 112 / 86 px) ve hafifçe nabız atar. Yeni kitapta
+  altın "Yeni" etiketi. Her durağın altında krem ad levhası ve tek satır durum:
+  "Tamamlandı", "4 bölümün 1'i", "8 bölüm".
+- **Işık izi (KARAR — 12 Ekim 2026, Hasan):** okunan yol **altın ışıkla**
+  parlar, okunmamış yol krem kalır (eskiden okunan yol yeşildi). Ekranın imzası
+  budur: çocuk ne kadar yol aldığını sayıya bakmadan görür; Işıl ve "Işık
+  Taşıyıcısı" unvanıyla aynı hikâyeyi anlatır. Yolculuk ilerlemesi (durak
+  halkası, ilerleme çubukları, okunan yol) altındır; **yeşil düğme anlamı
+  (devam/onayla, 3.3) değişmez.**
+- **Işıl "Buradasın" (KARAR — 12 Ekim 2026, Hasan):** ana ekranda çocuğun
+  okuduğu kitabın yanında Işıl ve "Buradasın" balonu durur (3.10.5).
+- **Rota arka planı (KARAR — 12 Ekim 2026, Hasan):** bölge görselleri yerine
+  **tek, kesintisiz dikey tekrarlanan boyalı bir çayır görseli.** Üretim
+  Hasan'dadır. Görsel kuralları: gökyüzü yok (yukarıdan bakan 3/4 açı), üst ve
+  alt kenar birebir eşleşir (dikişsiz tekrar), orta %50 sütun sakin ve az
+  ayrıntılı (durakların ve yolun alanı), canlı renk korunur, figür yok; önerilen
+  ölçü **1600 × 2400 px JPG**, dosya `public/harita/rota-arkaplan.jpg`. Mobil ve
+  masaüstü aynı görseli dikey tekrar ederek kullanır. Görsel gelene kadar mevcut
+  bölge görselleri vekil olarak kullanılabilir.
 
 #### 3.10.2 Kitap kilidi kalkar
 
@@ -825,13 +843,52 @@ Bugüne Taşı, Büyük Final Testi. "Kazanımlarım → Ödüllerim" gerekçesi
   eklenebilir.
 - **Yalnız şu anlarda görünür:** ilk giriş (bir kez), ilk sözlük kelimesi (bir
   kez), "Sen Olsaydın" girişi, rozet ve madalya anı (konuşmaz, rozetin yanında
-  uçar), yeni kitap duyurusu (bir kez), yolun ucu, boş ekranlar. Cümle en fazla
+  uçar), yeni kitap duyurusu (bir kez), yolun ucu, boş ekranlar ve **ana ekranda
+  çocuğun okuduğu kitabın yanında "Buradasın"** (12 Eki 2026). Cümle en fazla
   12 kelimedir.
 - **Kesin sınırlar:** hikâye metninin içinde görünmez; peygamberler ve dinî
   konular hakkında yorum yapmaz; doğru/yanlış söylemez; çocuğu övmez veya
   derecelendirmez; okuma sırasında ekranda durmaz.
 - Çizim Hasan'dadır: en az üç poz (duruş, konuşma, kutlama uçuşu), 512×512
   şeffaf PNG. Klasör adı Faz D'de `varlikYollari.ts`'e yazılır.
+
+#### 3.10.6 Menü ve profil kartı (KARAR — 12 Ekim 2026, Hasan)
+
+- **Hamburger menü (`KesifMenusu` çekmecesi) kalkar.** Çocuk adına ve
+  fotoğrafına dokununca **profil kartı** açılır (mobilde alttan, masaüstünde
+  profilin altında): unvan görseli + unvan + bir sonraki unvana kalan kitap
+  ("1 kitap daha okuyunca: Değer Toplayıcısı"), rozet ve madalya sayısı,
+  **Veli Paneli** ("Annen ya da baban için"), **Çıkış Yap.** Sayfa bağlantıları
+  kartta tekrar edilmez.
+- Sayfalar: mobil ve tablet dikeyde **alttaki 4 sekme** (Harita · Ödüllerim ·
+  Kelimelerim · Görevlerim); tablet yatay ve masaüstünde **üst bardaki sekmeler**
+  (logo · sekmeler · profil). Bölge şeridi yoktur.
+- Veli Paneli bağlantısı Faz 7'de PIN arkasına alınır.
+
+#### 3.10.7 Kitap ve bölümleri (KARAR — 12 Ekim 2026, Hasan)
+
+- **Ayrı bölüm rotası sayfası (`/kitap/[kitapKey]`, kıvrımlı bölüm yolu) kalkar.**
+  Kitap durağına dokununca mobil ve tablet dikeyde **alttan açılan sayfa**,
+  tablet yatay ve masaüstünde **sağ panel** o kitabı gösterir. Bugünkü kitap
+  paneli ile bölüm paneli tek yüzeyde birleşir.
+- Sağ panel açılışta **çocuğun okuduğu kitabı** gösterir ("Sıradaki bölümün");
+  başka durağa dokununca o kitaba geçer. (Bugünkü panel açılışta ilk kitabı
+  gösteriyor ve biten kitapta "Tekrar Oku"ya yönlendiriyordu.) "Seçili keşif
+  durağı · 1 / 35" sayacı kalkar.
+- İçerik sırası: kapak + ad + alt başlık + ilerleme çubuğu, iki satırlık açıklama
+  ("Devamı" ile açılır), **Bölümler** listesi, sabit ana düğme ("2. Bölümü Oku").
+- **Bölüm listesi küçük bir dikey yoldur:** solda rozet, ortada "N. bölüm" +
+  bölüm adı + durum satırı, sağda tek eylem. Okunan bölümlerin arasındaki çizgi
+  altınla parlar (ışık izi).
+  - Tamamlandı: rozet tam renk + yeşil onay, "{Rozet adı} senin", **Tekrar oku**.
+  - Sıradaki: satır altın vurgulu, "N. bölüm · Sıradaki", yeşil ▶ düğmesi.
+  - Kilitli: rozet soluk ama renkli, somut şart ("2. bölümü bitirince açılır"),
+    kilit simgesi.
+  - Görevli bölümde "Görev var" etiketi.
+  - Son satır **Büyük Final Testi:** madalya görseli + açılma şartı ya da
+    altın "Başla".
+- Okuma ekranındaki "← Bölümler" düğmesi haritaya, o kitabın sayfası açık
+  hâlde döner.
 
 ---
 
@@ -1310,7 +1367,7 @@ ileride istenirse eklenmesi kolaydır.)
 |---|---|---|
 | **A** | Hızlı düzeltmeler: sözlük kelimesinin ekinden ayrılması ("emanet ti"), "Sen Olsaydın" metinleri + şıkların her yerde A-B-C olması, kilide benzeyen "devam ediyor" ikonu, her bölüme sesli anlatım + yer tutucu ses (6.5), iki unvanın yeni adı (Bölüm 2) | ✅ 12 Eki 2026 |
 | **B** | Okuma ekranı yeni düzeni (3.10.3): açık zemin, kapak ekranının kalkması, adım çubuğu/sütunu, tek başlıklı duraklar, "Aa", rozet kutlaması + "Sıradaki Bölüme Geç", okuma ekranı metinleri (3.10.4) | Bekliyor |
-| **C** | Ana ekran ve rota (3.10.1–3.10.2): "Sıradaki bölümün" kartı, bölgesiz tek dikey rota (yayındaki kitaplar `atlasCatalog.ts`'ten çizilir, kod elle yazılmaz), kitap kilidinin kalkması, "Yeni" etiketi + duyuru, "Yakında" kartı, yolun ucu, bölüm listesinin sadeleşmesi, alt menü ve ekran adları (3.10.4) | Bekliyor |
+| **C** | Ana ekran ve rota (3.10.1–3.10.2, 3.10.6–3.10.7): "Sıradaki bölümün" kartı, bölgesiz tek dikey rota (yayındaki kitaplar `atlasCatalog.ts`'ten çizilir, kod elle yazılmaz), ilerleme halkalı duraklar + altın ışık izi, kitap kilidinin kalkması, "Yeni" etiketi + duyuru, "Yakında" kartı, yolun ucu, profil kartı (hamburger menü kalkar), kitap ve bölümler için alttan sayfa / sağ panel (bölüm rotası sayfası kalkar), alt menü ve ekran adları (3.10.4) | Bekliyor |
 | **D** | Rehber karakter Işıl (3.10.5): çizimler Hasan'da, entegrasyon yalnız tanımlı anlarda | Bekliyor |
 | **Test** | Faz B'den sonra 5 çocukla 30'ar dakikalık gözlem: "Kaldığın kitaptan okumaya başla", "Yeşil bir kelimenin anlamını bul", "Rozetini al ve sonraki bölüme geç". Ses efekti ve ek kutlama kararları bu testten sonra verilir | Bekliyor |
 
@@ -1444,6 +1501,11 @@ Kurallar:
       gösterilmez (6.4).
 - [x] **Her bölümün sesli anlatımı olur;** yer tutucu ses ve tek kaynaktan
       türetilen dosya yolu (6.5).
+- [x] Ana ekran tasarımı (raporun D1–D4 taslakları): hamburger menü yerine
+      profil kartı; bölüm rotası sayfası yerine alttan sayfa / sağ panel; rota
+      arka planı tek kesintisiz dikey görsel; Işıl ana ekranda "Buradasın";
+      okunan yol altın ışık izi, durak halkası = kitap ilerlemesi
+      (3.10.1, 3.10.6, 3.10.7).
 - [x] Lansman 10 kitapla yapılır; hangi 10 kitap olduğu Hasan'ın seçimidir.
       Uygulama kitapları her zaman katalog sırasıyla gösterir.
 

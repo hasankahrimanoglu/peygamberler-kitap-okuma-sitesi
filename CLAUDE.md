@@ -155,7 +155,10 @@ ana ekranda "Sıradaki bölümün" kartı ("Kaldığın yer" DEĞİL — tamamla
 sayısından); okuma ekranı tamamen açık zemin, adım çubuğu, rozetten sonra doğrudan
 sıradaki bölüm; mekân metaforları (İskele/Rota/Kapı/Durak/Atlas) arayüz metninden
 çıkar, "Kazanımlarım → Ödüllerim"; rehber karakter **Işıl** (ateşböceği, yalnız
-metin balonu, hikâyede ve dinî yorumda asla). Velinin okuma sırası ayarı YAPILMAZ.
+metin balonu, hikâyede ve dinî yorumda asla; ana ekranda okunan kitabın yanında
+"Buradasın"). Hamburger menü yerine profil kartı; ayrı bölüm rotası sayfası yerine
+alttan sayfa / sağ panel; okunan yol altın ışık izi, durak halkası = kitap ilerlemesi;
+rota arka planı tek kesintisiz dikey görsel. Velinin okuma sırası ayarı YAPILMAZ.
 Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
 
 ## YENİ DAVRANIŞSAL ÖZELLİKLER (kitap metninden ayrı, ayrı prompt gelir)
