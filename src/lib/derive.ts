@@ -440,9 +440,10 @@ export type KutuphaneKitap = {
 };
 
 /**
- * Kütüphane için sıralı kitap listesi + durum + kilit mantığı.
- * Kilit: ilk kitap hep açık; sonrakiler bir önceki kitabın finali bitmedikçe
- * (ve kendisi başlanmadıkça) kilitlidir. PROJE-MODELI 3.4.
+ * Kütüphane için sıralı kitap listesi + durum.
+ * REVİZE 12 Eki 2026 (PROJE-MODELI 3.10.2): kitaplar arasında kilit YOKTUR;
+ * yayındaki her kitap açıktır. "kilitli" durumu tipte duruyor ama artık
+ * üretilmiyor — kilit yalnız kitap içindeki bölümlerde ve finalde.
  */
 export function kutuphaneListesi(
   bookRows: DeriveBookRow[],
@@ -456,17 +457,13 @@ export function kutuphaneListesi(
   });
 
   const sonuc: KutuphaneKitap[] = [];
-  let oncekiBitti = true; // ilk kitabın "öncesi" tamamlanmış sayılır → açık
-  let oncekiKitapAdi: string | null = null;
 
   for (const book of sirali) {
     const durum = kitapDurumu(book, progressByBookId.get(book.id));
     const baslandi = durum.tamamlanan > 0 || durum.yuzde > 0;
-    const acik = sonuc.length === 0 || oncekiBitti || baslandi;
 
     let durumEtiketi: KutuphaneDurum;
     if (durum.bitti) durumEtiketi = "tamamlandi";
-    else if (!acik) durumEtiketi = "kilitli";
     else if (baslandi) durumEtiketi = "devam";
     else durumEtiketi = "yeni";
 
@@ -477,11 +474,8 @@ export function kutuphaneListesi(
       tamamlanan: durum.tamamlanan,
       toplam: durum.toplam,
       yuzde: durum.yuzde,
-      oncekiKitapAdi: durumEtiketi === "kilitli" ? oncekiKitapAdi : null,
+      oncekiKitapAdi: null,
     });
-
-    oncekiBitti = durum.bitti;
-    oncekiKitapAdi = book.isim;
   }
 
   return sonuc;

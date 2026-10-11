@@ -1,155 +1,16 @@
-"use client";
+import { redirect } from "next/navigation";
 
-import { useEffect, useMemo, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
-import { supabase } from "../../../lib/supabase";
-import { books } from "../../../src/data/books";
-import { profilAvatarliOku } from "../../../src/lib/profilFotografi";
-import { KitapBolumRotasi, type AtlasBolum } from "../../../src/components/atlas/KitapBolumRotasi";
-import { Buton, Kart } from "../../../src/components/ui";
-
-type KitapKey = "adem" | "sit" | "idris";
-
-const kitapKimlikleri: Record<KitapKey, {
-  bookId: string;
-  order: number;
-  subtitle: string;
-  keywords: string[];
-  quizPath: string;
-}> = {
-  adem: { bookId: "hz-adem", order: 1, subtitle: "İlk insan, ilk yolculuk", keywords: ["adem"], quizPath: "/quiz/adem" },
-  sit: { bookId: "hz-sit", order: 2, subtitle: "Emaneti büyüterek taşımak", keywords: ["sit"], quizPath: "/quiz/sit" },
-  idris: { bookId: "hz-idris", order: 3, subtitle: "Öğrenen ve öğreten bir ömür", keywords: ["idris"], quizPath: "/quiz/idris" },
-};
-
-/** Kitabın açılması için finalinin bitmiş olması gereken önceki kitap (PROJE-MODELI 3.4). */
-const onKosulKitabi: Partial<Record<KitapKey, { keyword: string }>> = {
-  sit: { keyword: "adem" },
-  idris: { keyword: "sit" },
-};
-
-function normalize(value: string) {
-  return value.toLocaleLowerCase("tr-TR").replaceAll("â", "a").replaceAll("î", "i").replaceAll("û", "u").replaceAll("ü", "u").replaceAll("ö", "o").replaceAll("ı", "i").replaceAll("ş", "s").replaceAll("ğ", "g").replaceAll("ç", "c");
-}
-
-export default function KitapPage() {
-  const router = useRouter();
-  const params = useParams<{ kitapKey: string }>();
-  const kitapKey = params.kitapKey as KitapKey;
-  const identity = kitapKimlikleri[kitapKey];
-  const book = books.find((item) => item.id === identity?.bookId);
-  const [profileName, setProfileName] = useState("Gezgin");
-  // Keşif menüsü için: avatar, unvan ve toplam rozet/madalya sayıları.
-  const [menuProfili, setMenuProfili] = useState<{
-    avatarAnahtari: string;
-    avatarFotografi: string | null;
-    unvan: string;
-  }>({ avatarAnahtari: "avatar-1", avatarFotografi: null, unvan: "Yeni Gezgin" });
-  const [toplamRozet, setToplamRozet] = useState(0);
-  const [tamamlananKitap, setTamamlananKitap] = useState(0);
-  const [completed, setCompleted] = useState(0);
-  const [finished, setFinished] = useState(false);
-  const [loading, setLoading] = useState(true);
-
-  const chapters = useMemo<AtlasBolum[]>(() => book?.chapters.map((chapter) => ({
-    id: chapter.id,
-    title: chapter.title,
-    ozet: chapter.ozet,
-    badgeName: chapter.badgeName,
-    okumaYolu: `/reader/${book.routePrefix}-${chapter.id}`,
-    gorev: chapter.gorev ? { ad: chapter.gorev.ad, kategori: chapter.gorev.kategori, sure: chapter.gorev.sure } : undefined,
-  })) ?? [], [book]);
-
-  useEffect(() => {
-    if (!identity || !book) return;
-    let cancelled = false;
-
-    async function load() {
-      const profileId = window.localStorage.getItem("selected_child_profile_id");
-      setProfileName(window.localStorage.getItem("selected_child_profile_name") || "Gezgin");
-      if (!profileId) {
-        router.replace("/dashboard");
-        return;
-      }
-
-      const [dbBooksResult, progressResult, profilResult] = await Promise.all([
-        supabase.from("books").select("id, isim, toplam_bolum"),
-        supabase.from("user_progress").select("book_id, tamamlanan_bolum_sayisi, bitti_mi").eq("profile_id", profileId),
-        profilAvatarliOku<{ avatar_tipi: string | null; unvan: string | null }>(
-          profileId,
-          "avatar_tipi, unvan",
-        ),
-      ]);
-      if (cancelled) return;
-
-      const tumIlerleme = progressResult.data ?? [];
-      const dbKitaplar = dbBooksResult.data ?? [];
-
-      // Açılma şartı: her kitap, kendinden önceki kitabın finali bitmeden açılmaz
-      // (PROJE-MODELI 3.4). Hz. Şît → Hz. Âdem, Hz. İdrîs → Hz. Şît.
-      const onKosul = onKosulKitabi[kitapKey];
-      if (onKosul) {
-        const oncekiKitap = dbKitaplar.find((item) => normalize(item.isim ?? "").includes(onKosul.keyword));
-        const oncekiIlerleme = oncekiKitap
-          ? tumIlerleme.find((item) => item.book_id === oncekiKitap.id)
-          : undefined;
-        if (!oncekiIlerleme?.bitti_mi) {
-          router.replace("/map");
-          return;
-        }
-      }
-
-      setToplamRozet(tumIlerleme.reduce((toplam, item) => toplam + (item.tamamlanan_bolum_sayisi ?? 0), 0));
-      setTamamlananKitap(tumIlerleme.filter((item) => item.bitti_mi).length);
-      if (profilResult.data) {
-        setMenuProfili({
-          avatarAnahtari: profilResult.data.avatar_tipi ?? "avatar-1",
-          avatarFotografi: profilResult.data.avatar_url ?? null,
-          unvan: profilResult.data.unvan ?? "Yeni Gezgin",
-        });
-      }
-      const dbBook = (dbBooksResult.data ?? []).find((item) => identity.keywords.some((keyword) => normalize(item.isim ?? "").includes(keyword)));
-      const row = dbBook ? (progressResult.data ?? []).find((item) => item.book_id === dbBook.id) : undefined;
-      setCompleted(Math.min(chapters.length, Math.max(0, row?.tamamlanan_bolum_sayisi ?? 0)));
-      setFinished(Boolean(row?.bitti_mi));
-      setLoading(false);
-    }
-
-    void load();
-    return () => { cancelled = true; };
-  }, [book, chapters.length, identity, kitapKey, router]);
-
-  if (!identity || !book) {
-    return (
-      <main className="tema-cocuk zemin-yildizli grid min-h-screen place-items-center p-6">
-        <Kart dolgu="genis" className="max-w-md text-center">
-          <h1 className="font-baslik text-2xl font-bold">Bu yolculuk hazırlanıyor</h1>
-          <p className="mt-2 font-govde text-murekkep-soluk">Kitabı Keşif Bölgesi&apos;nde görebilir, içeriği tamamlandığında yolculuğa başlayabilirsin.</p>
-          <Buton className="mt-5" varyant="cerceve" onClick={() => router.push("/map")}>Haritaya Dön</Buton>
-        </Kart>
-      </main>
-    );
-  }
-
-  return (
-    <KitapBolumRotasi
-      key={`${kitapKey}-${loading ? "loading" : completed}-${finished}`}
-      kitapKey={kitapKey}
-      kitapSira={identity.order}
-      kitapAdi={book.title}
-      altBaslik={identity.subtitle}
-      profilAdi={profileName}
-      menuProfili={{ ad: profileName, ...menuProfili }}
-      toplamRozet={toplamRozet}
-      tamamlananKitap={tamamlananKitap}
-      bolumler={chapters}
-      tamamlananBolum={completed}
-      kitapBitti={finished}
-      yukleniyor={loading}
-      quizYolu={identity.quizPath}
-      onHaritayaDon={() => router.push("/map")}
-      onBolumAc={(path) => router.push(path)}
-      onFinalAc={(path) => router.push(path)}
-    />
-  );
+/**
+ * Ayrı bölüm rotası sayfası kaldırıldı (KARAR 12 Eki 2026 — PROJE-MODELI
+ * 3.10.7). Kitap ve bölümleri artık ana ekranda açılır: mobilde alttan sayfa,
+ * geniş ekranda sağ panel. Eski bağlantılar (quiz dönüşü, veli kütüphanesi)
+ * kırılmasın diye bu rota haritaya, kitabı açık hâlde yönlendirir.
+ */
+export default async function KitapYonlendirme({
+  params,
+}: {
+  params: Promise<{ kitapKey: string }>;
+}) {
+  const { kitapKey } = await params;
+  redirect(`/map?kitap=${encodeURIComponent(kitapKey)}`);
 }

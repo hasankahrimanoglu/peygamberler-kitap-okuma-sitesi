@@ -53,7 +53,7 @@ export default function KelimeDefterimSayfasi() {
           <p className="font-govde text-sm text-murekkep-soluk">
             {child?.name ? `${child.name} için` : "Senin için"}
           </p>
-          <h1 className="font-baslik text-3xl font-bold sm:text-4xl">Kelime Defterim</h1>
+          <h1 className="font-baslik text-3xl font-bold sm:text-4xl">Kelimelerim</h1>
           <p className="mt-1 font-govde text-sm text-murekkep-soluk">
             Okuduğun bölümlerde öğrendiğin kelimeler burada birikiyor.
           </p>

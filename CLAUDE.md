@@ -234,8 +234,10 @@ Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
 - [ ] Her bölümde hikâye iki parça (1. Kısım + Devam) ve Sen Olsaydın karar noktasında; her şık için ayrı Seçimini Karşılaştır metni var
 - [ ] Bugüne Taşı YALNIZCA görev tanımlı bölümlerde; meta alanları tam; her bölümde görev ZORUNLU DEĞİL
 - [ ] Madalya adı "{Kitap adı} Yolculuk Madalyası"
-- [ ] `atlasCatalog.ts`'te `availability` ve `description` (keşif açıklaması)
-      güncellendi
+- [ ] `atlasCatalog.ts`'te `availability`, `description` (keşif açıklaması) ve
+      **`yayinTarihi`** (YYYY-AA-GG) güncellendi. Kitap bu alanlarla ana ekrandaki
+      rotaya kendiliğinden girer; harita kodu elle değiştirilmez (3.10.1). Yayın
+      tarihi "Yeni" etiketini ve tek seferlik duyuruyu açar
 - [ ] Türkçe karakterler doğru render oluyor
 - [ ] İçerik hiçbir yerde peygamber/halife/sahabe yüzü tarif etmiyor
 - [ ] **`ROZET-MATRISI.md` güncellendi** (§2 dizinine adlar, §4 satırları, §5 sayaçlar)

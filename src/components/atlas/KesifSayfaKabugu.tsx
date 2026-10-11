@@ -1,15 +1,13 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
-import { useRouter } from "next/navigation";
-import { CocukAvatari, Ikon } from "../ui";
-import { KesifIskelesi } from "./KesifIskelesi";
-import { KesifMenusu } from "./KesifMenusu";
+import type { ReactNode } from "react";
+import { unvanBilgisi } from "../../lib/child/yolculuk";
+import { CocukKabugu } from "../cocuk/CocukKabugu";
 import styles from "./kesif-sayfa-kabugu.module.css";
 import type { KesifProfili } from "./kesifProfili";
 
 type KesifSayfaKabuguProps = {
-  /** Sayfanın kendi içeriği — kabuk yalnız zemin, genişlik ve barı verir. */
+  /** Sayfanın kendi içeriği — kabuk yalnız zemin, genişlik ve gezinmeyi verir. */
   children: ReactNode;
   profil: KesifProfili;
   toplamRozet: number;
@@ -18,71 +16,34 @@ type KesifSayfaKabuguProps = {
 };
 
 /**
- * Menü sayfalarının kabuğu (KARAR 6 Ağu 2026 — Hasan).
+ * Ödüllerim · Kelimelerim · Görevlerim sayfalarının kabuğu.
  *
- * Kazanımlarım · Kelime Defterim · Görevlerim bu kabukla açılır; böylece üçü de
- * atlas ve kitap rotasıyla AYNI genişlikte (1440px) ve AYNI üst barla görünür.
- * Önce her biri kendi `max-w-*` sarmalayıcısını ve iki butonluk mini barını
- * taşıyordu — ekranlar iskeletin dışında kalıyordu.
+ * 12 Eki 2026'dan beri ana ekranla AYNI kabuğu (`CocukKabugu`) kullanır:
+ * üstte çocuğun adı ve profil kartı, mobilde alt sekmeler, geniş ekranda üst
+ * bardaki sekmeler (PROJE-MODELI 3.10.6). Hamburger menü ve "Haritaya Dön"
+ * düğmesi kalktı; harita sekmelerden birisi.
  *
- * Profil verisi PROPS ile gelir, kabuk kendi `useSelectedChild`'ını çağırmaz:
- * sayfalar o veriyi zaten çekiyor, kabuk da çekseydi her açılışta ikinci bir
- * Supabase isteği çıkardı.
+ * Unvan `profil.unvan`'dan değil biten kitap sayısından türetilir: veritabanında
+ * kalmış eski unvan, sayıyla çelişen unvan gösteriyordu (Bölüm 2).
  */
-export function KesifSayfaKabugu({
-  children,
-  profil,
-  toplamRozet,
-  tamamlananKitap,
-  yukleniyor = false,
-}: KesifSayfaKabuguProps) {
-  const router = useRouter();
-  const [menuAcik, setMenuAcik] = useState(false);
+export function KesifSayfaKabugu({ children, profil, toplamRozet, tamamlananKitap }: KesifSayfaKabuguProps) {
+  const unvan = unvanBilgisi(tamamlananKitap);
 
   return (
-    <main className={`tema-cocuk zemin-yildizli relative ${styles.sayfa}`}>
-      <div className={styles.kabuk}>
-        <header className={styles.bar}>
-          <button type="button" className={styles.geri} onClick={() => router.push("/map")}>
-            <Ikon ad="geri" boyut={18} /> Haritaya Dön
-          </button>
-
-          <KesifIskelesi />
-
-          <div className={styles.profil}>
-            <span className={styles.avatar}>
-              <CocukAvatari
-                avatarTipi={profil.avatarAnahtari}
-                fotografUrl={profil.avatarFotografi}
-                boyut={38}
-                alt=""
-              />
-            </span>
-            <span className={styles.profilAd}>{profil.ad}</span>
-          </div>
-
-          <button
-            type="button"
-            className={styles.menuButonu}
-            aria-label="Keşif menüsünü aç"
-            aria-expanded={menuAcik}
-            onClick={() => setMenuAcik(true)}
-          >
-            <Ikon ad="menu" boyut={21} />
-          </button>
-        </header>
-
-        {children}
-      </div>
-
-      <KesifMenusu
-        profil={profil}
-        toplamRozet={toplamRozet}
-        tamamlananKitap={tamamlananKitap}
-        yukleniyor={yukleniyor}
-        acik={menuAcik}
-        onKapat={() => setMenuAcik(false)}
-      />
-    </main>
+    <CocukKabugu
+      profil={{
+        ad: profil.ad,
+        avatarAnahtari: profil.avatarAnahtari,
+        avatarFotografi: profil.avatarFotografi,
+      }}
+      ozet={{
+        unvan: unvan.unvan,
+        sonrakiUnvan: unvan.sonraki,
+        rozet: toplamRozet,
+        madalya: tamamlananKitap,
+      }}
+    >
+      <div className={styles.icerik}>{children}</div>
+    </CocukKabugu>
   );
 }

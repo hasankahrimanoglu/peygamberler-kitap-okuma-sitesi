@@ -14,6 +14,19 @@ export type AtlasCatalogBook = {
   description?: string;
   chapterCount: number;
   availability: AtlasAvailability;
+  /**
+   * Yayına giriş günü (YYYY-AA-GG). Ana ekrandaki "Yeni" etiketi ve tek
+   * seferlik duyuru buna bakar: yayından sonraki 30 gün içinde ve çocuk kitabı
+   * henüz açmamışsa kitap "yeni"dir (PROJE-MODELI 3.10.1). Kitap yayına
+   * alınırken bu alan da doldurulur.
+   */
+  yayinTarihi?: string;
+  /**
+   * Ana ekrandaki "Yolun devamı hazırlanıyor" kartında adı gösterilen tanınmış
+   * kitap. Yalnız yayında olmayan kitaplarda anlamlıdır; merak uyandırmak için
+   * seçilir, tarih vaat etmez (PROJE-MODELI 3.10.1).
+   */
+  vitrin?: boolean;
 };
 
 export type AtlasRegion = {
@@ -34,9 +47,9 @@ export const atlasRegions: AtlasRegion[] = [
     description: "Yeryüzünün ilk zamanlarına adım at; insanların yaşamayı, öğrenmeyi, sorumluluk almayı ve yeniden umut etmeyi nasıl keşfettiğini gör.",
     mood: "Başlangıç ve merak",
     books: [
-      { order: 1, key: "adem", title: "Hz. Âdem", subtitle: "İlk insan, ilk yolculuk", description: "Hz. Âdem'in yaratılışını, bilgiyle değer kazanmasını, tövbesini, ailesindeki ilk büyük sınavı ve yeryüzündeki sorumluluk yolculuğunu anlatan umut dolu bir keşif.", chapterCount: 8, availability: "published" },
-      { order: 2, key: "sit", title: "Hz. Şît", subtitle: "Emaneti büyüterek taşımak", description: "Bir kaybın ardından gelen armağan, yıllar süren sabırlı bir emek ve babasından devraldığı emanet. Hz. Şît'in taş üstüne taş koyan yolculuğunu keşfet.", chapterCount: 4, availability: "published" },
-      { order: 3, key: "idris", title: "Hz. İdrîs", subtitle: "Öğrenen ve öğreten bir ömür", description: "Yıldızları, taşları ve iplikleri merak eden bir peygamberin izini sür; öğrenmenin, sabrın ve vazgeçmeyen emeğin ne demek olduğunu keşfet.", chapterCount: 4, availability: "published" },
+      { order: 1, key: "adem", title: "Hz. Âdem", subtitle: "İlk insan, ilk yolculuk", description: "Hz. Âdem'in yaratılışını, bilgiyle değer kazanmasını, tövbesini, ailesindeki ilk büyük sınavı ve yeryüzündeki sorumluluk yolculuğunu anlatan umut dolu bir keşif.", chapterCount: 8, availability: "published", yayinTarihi: "2026-07-15" },
+      { order: 2, key: "sit", title: "Hz. Şît", subtitle: "Emaneti büyüterek taşımak", description: "Bir kaybın ardından gelen armağan, yıllar süren sabırlı bir emek ve babasından devraldığı emanet. Hz. Şît'in taş üstüne taş koyan yolculuğunu keşfet.", chapterCount: 4, availability: "published", yayinTarihi: "2026-09-05" },
+      { order: 3, key: "idris", title: "Hz. İdrîs", subtitle: "Öğrenen ve öğreten bir ömür", description: "Yıldızları, taşları ve iplikleri merak eden bir peygamberin izini sür; öğrenmenin, sabrın ve vazgeçmeyen emeğin ne demek olduğunu keşfet.", chapterCount: 4, availability: "published", yayinTarihi: "2026-09-05" },
       { order: 4, key: "nuh", title: "Hz. Nûh", subtitle: "Sabır ve güven yolculuğu", chapterCount: 8, availability: "preparing" },
       { order: 5, key: "hud", title: "Hz. Hûd", subtitle: "Gücün karşısında doğru söz", chapterCount: 5, availability: "preparing" },
       { order: 6, key: "salih", title: "Hz. Sâlih", subtitle: "Emaneti koruyanlar", chapterCount: 5, availability: "preparing" },
@@ -54,7 +67,7 @@ export const atlasRegions: AtlasRegion[] = [
       { order: 9, key: "ismail", title: "Hz. İsmail", subtitle: "Sözünde duran yol arkadaşı", chapterCount: 6, availability: "preparing" },
       { order: 10, key: "ishak", title: "Hz. İshak", subtitle: "Bereketli bir emanet", chapterCount: 4, availability: "preparing" },
       { order: 11, key: "yakup", title: "Hz. Yakup", subtitle: "Umudu koruyan baba", chapterCount: 5, availability: "preparing" },
-      { order: 12, key: "yusuf", title: "Hz. Yusuf", subtitle: "Sabırdan bağışlamaya", chapterCount: 10, availability: "preparing" },
+      { order: 12, key: "yusuf", title: "Hz. Yusuf", subtitle: "Sabırdan bağışlamaya", chapterCount: 10, availability: "preparing", vitrin: true },
     ],
   },
   {
@@ -67,7 +80,7 @@ export const atlasRegions: AtlasRegion[] = [
       { order: 13, key: "eyyub", title: "Hz. Eyyûb", subtitle: "Zorlukta umudu korumak", chapterCount: 5, availability: "preparing" },
       { order: 14, key: "suayb", title: "Hz. Şuayb", subtitle: "Ölçüde ve sözde doğruluk", chapterCount: 5, availability: "preparing" },
       { order: 15, key: "zulkifl", title: "Hz. Zülkifl", subtitle: "Sözünü koruyan yolcu", chapterCount: 4, availability: "preparing" },
-      { order: 16, key: "musa", title: "Hz. Musa", subtitle: "Özgürlüğe uzanan yol", chapterCount: 10, availability: "preparing" },
+      { order: 16, key: "musa", title: "Hz. Musa", subtitle: "Özgürlüğe uzanan yol", chapterCount: 10, availability: "preparing", vitrin: true },
       { order: 17, key: "harun", title: "Hz. Hârûn", subtitle: "Kardeşine destek olan elçi", chapterCount: 5, availability: "preparing" },
       { order: 18, key: "yusa", title: "Hz. Yûşa", subtitle: "Devralınan büyük emanet", chapterCount: 4, availability: "preparing" },
     ],
@@ -80,7 +93,7 @@ export const atlasRegions: AtlasRegion[] = [
     mood: "Hikmet ve adalet",
     books: [
       { order: 19, key: "davud", title: "Hz. Dâvûd", subtitle: "Cesaret ve adalet", chapterCount: 6, availability: "preparing" },
-      { order: 20, key: "suleyman", title: "Hz. Süleyman", subtitle: "Şükürle büyüyen hikmet", chapterCount: 7, availability: "preparing" },
+      { order: 20, key: "suleyman", title: "Hz. Süleyman", subtitle: "Şükürle büyüyen hikmet", chapterCount: 7, availability: "preparing", vitrin: true },
       { order: 21, key: "ilyas", title: "Hz. İlyas", subtitle: "Doğru sözü korumak", chapterCount: 5, availability: "preparing" },
       { order: 22, key: "elyesa", title: "Hz. Elyesa", subtitle: "İyilik yolunu sürdürmek", chapterCount: 4, availability: "preparing" },
     ],
@@ -96,7 +109,7 @@ export const atlasRegions: AtlasRegion[] = [
       { order: 24, key: "saya", title: "Hz. Şa‘yâ", subtitle: "Zor zamanda umut taşımak", chapterCount: 4, availability: "preparing" },
       { order: 25, key: "zekeriyya", title: "Hz. Zekeriyyâ", subtitle: "Sabırla edilen dua", chapterCount: 5, availability: "preparing" },
       { order: 26, key: "yahya", title: "Hz. Yahyâ", subtitle: "Temiz kalp ve hikmet", chapterCount: 4, availability: "preparing" },
-      { order: 27, key: "isa", title: "Hz. Îsâ", subtitle: "Merhamet ve umut", chapterCount: 8, availability: "preparing" },
+      { order: 27, key: "isa", title: "Hz. Îsâ", subtitle: "Merhamet ve umut", chapterCount: 8, availability: "preparing", vitrin: true },
     ],
   },
   {
@@ -107,7 +120,7 @@ export const atlasRegions: AtlasRegion[] = [
     description: "Güvenilirliği, merhameti, sabrı ve kardeşliğiyle bütün insanlara örnek olan son peygamberin hayatını dört büyük yolculukta keşfet.",
     mood: "Güven ve kardeşlik",
     books: [
-      { order: 28, key: "muhammed-ilk-yillar", title: "Hz. Muhammed — İlk Yıllar", subtitle: "Güvenilir bir gençlik", chapterCount: 8, availability: "preparing" },
+      { order: 28, key: "muhammed-ilk-yillar", title: "Hz. Muhammed — İlk Yıllar", subtitle: "Güvenilir bir gençlik", chapterCount: 8, availability: "preparing", vitrin: true },
       { order: 29, key: "muhammed-mekke", title: "Hz. Muhammed — Mekke Yılları", subtitle: "Sabırla sürdürülen çağrı", chapterCount: 10, availability: "preparing" },
       { order: 30, key: "muhammed-medine", title: "Hz. Muhammed — Medine Yılları", subtitle: "Kardeşlikle kurulan yeni hayat", chapterCount: 10, availability: "preparing" },
       { order: 31, key: "muhammed-veda", title: "Hz. Muhammed — Veda ve Emanet", subtitle: "Bırakılan güzel emanet", chapterCount: 8, availability: "preparing" },

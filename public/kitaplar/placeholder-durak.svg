@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Kitap görseli hazırlanıyor">
+  <defs>
+    <radialGradient id="z" cx="40%" cy="35%" r="70%">
+      <stop offset="0" stop-color="#fff8e3"/>
+      <stop offset="1" stop-color="#ecd9ad"/>
+    </radialGradient>
+  </defs>
+  <rect width="120" height="120" fill="url(#z)"/>
+  <path d="M60 44c-6-4.6-14-5.4-24-4.8v38c10-.6 18 .2 24 4.8 6-4.6 14-5.4 24-4.8v-38c-10-.6-18 .2-24 4.8Z M60 44v38" fill="none" stroke="#a77d2c" stroke-width="4" stroke-linejoin="round"/>
+</svg>

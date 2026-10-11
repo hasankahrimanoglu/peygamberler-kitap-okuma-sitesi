@@ -65,7 +65,7 @@ export default function KazanimlarimSayfasi() {
               />
             </div>
             <div className="flex-1">
-              <p className="font-govde text-sm text-murekkep-soluk">Kazanımlarım</p>
+              <p className="font-govde text-sm text-murekkep-soluk">Ödüllerim</p>
               <h1 className="font-baslik text-3xl font-bold">
                 {child?.name ?? "Gezgin"}
               </h1>

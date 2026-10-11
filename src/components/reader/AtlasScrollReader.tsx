@@ -10,7 +10,7 @@ import {
   type DecisionOption,
 } from "../../data/demoChapters";
 import { Ikon, YedekliGorsel, type IkonAdi } from "../ui";
-import { normalizeBookName } from "../../lib/derive";
+import { dbKitabiBul } from "../../lib/child/yolculuk";
 import {
   durakId,
   okumaAkisiniOlustur,
@@ -180,7 +180,8 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
   const secimAnahtari = `sen-olsaydin-${chapter.bookKey ?? "ebubekir"}-${chapter.id}`;
   const sonucAcik = !chapter.decision || kararOnayli;
   const akis = useMemo(() => okumaAkisiniOlustur(chapter, sonucAcik), [chapter, sonucAcik]);
-  const geriYolu = `/kitap/${chapter.bookKey ?? "ebubekir"}`;
+  // Ayrı bölüm rotası sayfası kalktı (3.10.7): geri dönüş haritaya, kitap açık hâlde.
+  const geriYolu = `/map?kitap=${chapter.bookKey ?? ""}`;
   const rozetYolu = rozetGorseli(chapter.bookKey ?? "ebubekir", chapter.chapterNumber ?? 1);
   const sonrakiBolumAdi = useMemo(() => sonrakiBolumAdiniBul(chapter), [chapter]);
   const sesHazir = Boolean(chapter.audioUrl) && !sesBulunamadi;
@@ -226,11 +227,8 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
       // Kitap satırı `books.ts` anahtarıyla eşleşir. Eşleştirme derive.ts'teki
       // ortak normalizasyondan geçer; yerel "yalnız â" sadeleştirmesi "Hz. Şît"
       // gibi î/ş içeren adları bulamıyordu.
-      const keyword = chapter.bookKey ?? "adem";
       const { data: kitaplar } = await supabase.from("books").select("id, isim");
-      const kitap = kitaplar?.find((item) =>
-        normalizeBookName(item.isim ?? "").includes(keyword),
-      );
+      const kitap = dbKitabiBul(kitaplar ?? [], chapter.bookName ?? "", chapter.bookKey);
       if (!kitap || iptal) return;
       const { data: progress } = await supabase
         .from("user_progress")
@@ -768,7 +766,7 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
             onClick={() => router.push(geriYolu)}
           >
             <Ikon ad="geri" boyut={18} />
-            <span>Bölüm Rotasına Dön</span>
+            <span>Bölümler</span>
           </button>
           <div className={styles.bolumKimligi}>
             <strong>{temizMetin(chapter.bolumAdi)}</strong>

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
 import { profilAvatarliOku } from "../profilFotografi";
 import type { DeriveBookRow, DeriveProgressRow } from "../derive";
+import { yayindakiDbKitaplari } from "./yolculuk";
 
 export type SelectedChild = {
   id: string;
@@ -80,7 +81,8 @@ export function useSelectedChild(): SelectedChildData {
         });
       }
 
-      setBooks((booksResult.data as DeriveBookRow[] | null) ?? []);
+      // Yalnız yayındaki kitaplar: eski demo kayıtları madalya ve unvanı şişiriyordu.
+      setBooks(yayindakiDbKitaplari((booksResult.data as DeriveBookRow[] | null) ?? []));
       setProgress((progressResult.data as DeriveProgressRow[] | null) ?? []);
       setIsLoading(false);
     }

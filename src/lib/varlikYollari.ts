@@ -151,6 +151,32 @@ export function sesliAnlatim(bookKey: string, bolumNo: number) {
   return `/sesli-anlatim/hz-${bookKey}/hz-${bookKey}-bolum-${bolumNo}.mp3`;
 }
 
+/**
+ * Ana ekran rotasının arka planı (KARAR 12 Eki 2026 — PROJE-MODELI 3.10.1).
+ *
+ * Tek, kesintisiz dikey tekrarlanan boyalı çayır görseli; yol uzadıkça dikey
+ * tekrar eder. Hasan üretir (önerilen 1600×2400 JPG, gökyüzü yok, üst ve alt
+ * kenar dikişsiz). Dosya gelene kadar CSS, ilk bölge görseline ve çayır
+ * renginde bir degradeye düşer — ekran bozulmaz.
+ */
+export const ROTA_ARKAPLANI = "/harita/rota-arkaplan.jpg";
+
+/** Rota arka planı hazır değilken kullanılan vekil sahne (dar / geniş kadraj). */
+export function rotaVekilSahnesi(yon: "dikey" | "yatay") {
+  return `/bolgeler/bolge-ilk-izler-${yon}.jpg`;
+}
+
+/**
+ * Rehber karakter Işıl'ın pozları (PROJE-MODELI 3.10.5). Çizim Hasan'dadır:
+ * `public/isil/isil-{poz}.png`, 512×512 şeffaf. Dosya yokken `YEDEK.isil`
+ * (konsept eskiz) görünür.
+ */
+export type IsilPozu = "durus" | "konusma" | "kutlama";
+
+export function isilGorseli(poz: IsilPozu) {
+  return `/isil/isil-${poz}.png`;
+}
+
 /** Büyük Final Testi durağının ikonu. Hasan aynı adla değiştirebilir. */
 export const FINAL_KAPISI_IKONU = "/ikonlar/final-kapisi.svg";
 
@@ -164,6 +190,10 @@ export const YEDEK = {
   madalya: "/madalyalar/placeholder.svg",
   unvan: "/unvanlar/placeholder.svg",
   avatar: "/avatarlar/placeholder.svg",
+  /** Harita durağının yuvarlak görseli henüz yokken. */
+  durak: "/kitaplar/placeholder-durak.svg",
+  /** Işıl'ın çizimi gelene kadar konsept eskiz. */
+  isil: "/isil/placeholder.svg",
   /**
    * Sesli anlatım yer tutucusu — Hz. Âdem 1. bölüm kaydının kopyası (Hasan'ın
    * isteği, 12 Eki 2026). Kodda çalınmaz; `gorsel-yertutucu` betiği her bölüme

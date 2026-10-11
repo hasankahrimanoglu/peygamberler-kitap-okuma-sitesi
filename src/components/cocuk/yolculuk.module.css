@@ -1,0 +1,1195 @@
+/*
+ * Çocuk ana ekranı — tek dikey rota, kitap paneli (KARAR 11–12 Eki 2026,
+ * PROJE-MODELI 3.10). Çerçeve gece mavisi, rota gündüz manzarası, okuma
+ * yüzeyleri krem. Renkler yalnız tema token'larından türer.
+ */
+
+.anaEkran {
+  --krem: var(--okuma-yuzey);
+  --murekkep-koyu: var(--zemin);
+  --murekkep-soluk-krem: color-mix(in srgb, var(--zemin) 58%, var(--okuma-yuzey));
+  --krem-cizgi: color-mix(in srgb, var(--zemin) 12%, var(--okuma-yuzey));
+  --krem-2: color-mix(in srgb, var(--zemin) 6%, var(--okuma-yuzey));
+  --altin-zemin: color-mix(in srgb, var(--vurgu) 24%, var(--okuma-yuzey));
+  --altin-golge: color-mix(in srgb, var(--vurgu) 68%, black);
+  --altin-metin: color-mix(in srgb, var(--vurgu) 22%, black);
+  --yesil-golge: color-mix(in srgb, var(--eylem) 64%, black);
+  --yesil-zemin: color-mix(in srgb, var(--eylem) 14%, var(--okuma-yuzey));
+  --yesil-metin: color-mix(in srgb, var(--eylem) 70%, black);
+  /* Rota arka planı gelmeden önce manzaranın altını sürdüren çayır rengi. */
+  --cayir: color-mix(in srgb, color-mix(in srgb, var(--eylem) 50%, var(--vurgu)) 78%, var(--okuma-yuzey));
+  --cayir-koyu: color-mix(in srgb, color-mix(in srgb, var(--eylem) 56%, var(--vurgu)) 82%, black);
+}
+
+.anaEkran :where(button) {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.uyari {
+  margin: 0 12px 12px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  color: var(--murekkep);
+  background: var(--yuzey);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.yukleniyor {
+  padding: 40px 16px;
+  color: var(--murekkep-soluk);
+  font-weight: 800;
+  text-align: center;
+}
+
+/* ------------------------------------------------------ SIRADAKİ KARTI */
+
+.siradakiKart {
+  display: grid;
+  gap: 12px;
+  margin: 2px 12px 14px;
+  padding: 14px;
+  border-radius: 24px;
+  color: var(--murekkep-koyu);
+  background: var(--krem);
+  box-shadow: 0 6px 0 rgb(0 0 0 / 22%);
+}
+
+.siradakiEtiketi {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--yesil-metin);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.siradakiEtiketi::before {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--eylem);
+  content: "";
+}
+
+.siradakiGovde {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.siradakiKapak {
+  width: 60px;
+  height: 84px;
+  flex: none;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 3px 8px rgb(0 0 0 / 20%);
+}
+
+.siradakiGovde > div {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  gap: 4px;
+}
+
+.siradakiKitap {
+  color: var(--murekkep-soluk-krem);
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+.siradakiBolum {
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.ilerleme {
+  height: 8px;
+  overflow: hidden;
+  margin-top: 4px;
+  border-radius: 8px;
+  background: var(--krem-cizgi);
+}
+
+/* Yolculuk ilerlemesi altındır (ışık izi ile aynı dil — 3.10.1). */
+.ilerleme span {
+  display: block;
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--altin-golge), var(--vurgu));
+}
+
+.ilerlemeMetni {
+  color: var(--murekkep-soluk-krem);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.yolunUcu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.yolunUcu b {
+  display: block;
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 17px;
+}
+
+/* ------------------------------------------------------------ DÜĞMELER */
+
+.buyukDugme {
+  display: flex;
+  width: 100%;
+  min-height: 56px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 18px;
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.buyukDugme:active {
+  transform: translateY(3px);
+}
+
+.buyukDugme_yesil {
+  color: var(--eylem-metin);
+  background: var(--eylem);
+  box-shadow: 0 4px 0 var(--yesil-golge);
+}
+
+.buyukDugme_altin {
+  color: var(--altin-metin);
+  background: var(--vurgu);
+  box-shadow: 0 4px 0 var(--altin-golge);
+}
+
+.buyukDugme_ikincil {
+  color: var(--murekkep);
+  background: var(--zemin);
+  box-shadow: 0 4px 0 color-mix(in srgb, var(--zemin) 70%, black);
+}
+
+.buyukDugme:active.buyukDugme_yesil,
+.buyukDugme:active.buyukDugme_altin,
+.buyukDugme:active.buyukDugme_ikincil {
+  box-shadow: 0 1px 0 rgb(0 0 0 / 30%);
+}
+
+/* -------------------------------------------------------------- DUYURU */
+
+.duyuru {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 12px 12px;
+  padding: 6px 6px 6px 4px;
+  border: 1.5px solid var(--cizgi);
+  border-radius: 18px;
+  color: var(--murekkep);
+  background: var(--yuzey);
+}
+
+.duyuruIsil,
+.duyuruMadalyasi {
+  width: 46px;
+  height: 46px;
+  flex: none;
+  object-fit: contain;
+}
+
+.duyuru p {
+  min-width: 0;
+  flex: 1;
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.duyuru b {
+  color: var(--vurgu);
+  white-space: nowrap;
+}
+
+.duyuruGoster {
+  display: grid;
+  min-height: 44px;
+  flex: none;
+  place-items: center;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 12px;
+  color: var(--altin-metin);
+  background: var(--vurgu);
+  box-shadow: 0 3px 0 var(--altin-golge);
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.duyuruKapat {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: var(--murekkep-soluk);
+  background: transparent;
+}
+
+.duyuruKutlama {
+  border-color: var(--vurgu);
+  background: color-mix(in srgb, var(--vurgu) 16%, var(--yuzey));
+}
+
+/* ---------------------------------------------------------------- ROTA */
+
+.rotaCercevesi {
+  position: relative;
+}
+
+/*
+ * Rota arka planı: tek, dikişsiz dikey tekrar eden boyalı çayır (3.10.1).
+ * Görsel gelene kadar ilk bölge sahnesi + çayır degradesi vekildir. Katmanlar
+ * sırayla denenir: dosya yoksa üstteki katman çizilmez, alttaki görünür.
+ */
+.rota {
+  position: relative;
+  background:
+    url("/harita/rota-arkaplan.jpg") center top / 100% auto repeat-y,
+    url("/bolgeler/bolge-ilk-izler-dikey.jpg") center top / 100% auto no-repeat,
+    linear-gradient(var(--cayir) 0, var(--cayir-koyu) 100%);
+}
+
+/* Üstteki gece çerçevesinden manzaraya yumuşak geçiş. */
+.rota::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0 0 auto;
+  height: 70px;
+  background: linear-gradient(var(--zemin), color-mix(in srgb, var(--zemin) 0%, transparent));
+  content: "";
+  pointer-events: none;
+}
+
+.yol {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  overflow: visible;
+}
+
+.yol path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.yolGolgesi {
+  stroke: var(--zemin);
+  stroke-opacity: 0.18;
+  stroke-width: 21px;
+}
+
+.yolZemini {
+  stroke: var(--krem);
+  stroke-width: 15px;
+}
+
+.yolCizgisi {
+  stroke: color-mix(in srgb, var(--vurgu) 45%, var(--murekkep-soluk-krem));
+  stroke-dasharray: 3 11;
+  stroke-width: 2.5px;
+}
+
+/* Işık izi — okunan yol altınla parlar (KARAR 12 Eki 2026). */
+.isikHalesi {
+  stroke: var(--vurgu);
+  stroke-opacity: 0.6;
+  stroke-width: 26px;
+}
+
+.isikCekirdegi {
+  stroke: var(--vurgu);
+  stroke-width: 12px;
+}
+
+.isikKivilcimi {
+  stroke: color-mix(in srgb, var(--vurgu) 30%, white);
+  stroke-dasharray: 1 13;
+  stroke-width: 3px;
+}
+
+/* -------------------------------------------------------------- DURAK */
+
+.durak {
+  --jeton: 72px;
+  --doluluk: 0%;
+
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  transform: translate(-50%, calc(var(--jeton) / -2));
+}
+
+.halka {
+  position: relative;
+  width: var(--jeton);
+  height: var(--jeton);
+  padding: 5px;
+  border-radius: 50%;
+  background: conic-gradient(var(--vurgu) var(--doluluk), var(--krem) 0);
+  box-shadow:
+    0 5px 0 color-mix(in srgb, var(--zemin) 30%, transparent),
+    0 0 0 1.5px color-mix(in srgb, var(--zemin) 16%, transparent);
+  transition: transform 150ms ease;
+}
+
+.durak:hover .halka {
+  transform: translateY(-2px);
+}
+
+.durakGorseli {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 2.5px solid var(--krem);
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--krem);
+}
+
+.madalyaRozeti {
+  position: absolute;
+  right: -9px;
+  bottom: -6px;
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--krem);
+  box-shadow: 0 2px 0 color-mix(in srgb, var(--zemin) 28%, transparent);
+}
+
+.madalyaRozeti img {
+  width: 29px;
+  height: 29px;
+  object-fit: contain;
+}
+
+.yeniEtiketi {
+  position: absolute;
+  top: -9px;
+  right: -16px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  color: var(--altin-metin);
+  background: var(--vurgu);
+  box-shadow: 0 2px 0 var(--altin-golge);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.levha {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  padding: 5px 11px;
+  border-radius: 12px;
+  color: var(--murekkep-koyu);
+  background: var(--krem);
+  box-shadow: 0 3px 0 color-mix(in srgb, var(--zemin) 22%, transparent);
+}
+
+.levha strong {
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.levha small {
+  color: var(--murekkep-soluk-krem);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.durakSimdi .halka {
+  padding: 6px;
+  animation: nabiz 2.4s ease-out infinite;
+}
+
+.durakSimdi .levha {
+  background: var(--vurgu);
+  box-shadow: 0 3px 0 var(--altin-golge);
+}
+
+.durakSimdi .levha small {
+  color: var(--altin-metin);
+}
+
+@keyframes nabiz {
+  0% {
+    box-shadow:
+      0 5px 0 color-mix(in srgb, var(--zemin) 30%, transparent),
+      0 0 0 0 color-mix(in srgb, var(--vurgu) 70%, transparent);
+  }
+
+  80%,
+  100% {
+    box-shadow:
+      0 5px 0 color-mix(in srgb, var(--zemin) 30%, transparent),
+      0 0 0 20px color-mix(in srgb, var(--vurgu) 0%, transparent);
+  }
+}
+
+/* "Göster" ile bulunan yeni kitap kısa süre parlar. */
+.durakVurgulu .halka {
+  animation: nabiz 0.9s ease-out 3;
+}
+
+.durak:focus-visible {
+  outline: none;
+}
+
+.durak:focus-visible .halka {
+  outline: 3px solid var(--krem);
+  outline-offset: 3px;
+}
+
+.isilIsareti {
+  --yaricap: 48px;
+
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  transform: translate(calc(var(--yaricap) + 4px), calc(var(--yaricap) * -1 - 6px));
+  animation: suzul 4.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Sağdaki durakta Işıl sol tarafta durur. */
+.isilSolda {
+  flex-direction: row-reverse;
+  transform: translate(calc(-100% - var(--yaricap) - 4px), calc(var(--yaricap) * -1 - 6px));
+}
+
+.isilGorseli {
+  width: 54px;
+  height: 54px;
+  flex: none;
+}
+
+.isilIsareti span {
+  padding: 7px 10px;
+  border-radius: 12px 12px 12px 3px;
+  color: var(--vurgu);
+  background: var(--zemin);
+  box-shadow: 0 3px 0 rgb(0 0 0 / 25%);
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.isilSolda span {
+  border-radius: 12px 12px 3px;
+}
+
+@keyframes suzul {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -6px;
+  }
+}
+
+/* ------------------------------------------------------- YOLUN DEVAMI */
+
+.yolunDevami {
+  display: grid;
+  gap: 10px;
+  margin: 14px 12px 18px;
+  padding: 14px;
+  border: 1.5px dashed var(--cizgi);
+  border-radius: 20px;
+  color: var(--murekkep);
+  background: var(--yuzey);
+}
+
+.yolunDevamiBasi {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--vurgu);
+}
+
+.yolunDevamiBasi > div {
+  display: grid;
+  gap: 2px;
+  color: var(--murekkep);
+}
+
+.yolunDevamiBasi strong {
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.15;
+}
+
+.yolunDevamiBasi span {
+  color: var(--murekkep-soluk);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.yolunDevami ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.yolunDevami li {
+  padding: 6px 9px;
+  border: 1px solid var(--cizgi);
+  border-radius: 999px;
+  color: var(--murekkep-soluk);
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* -------------------------------------------------------- KİTAP PANELİ */
+
+.panel {
+  display: none;
+}
+
+.kitapPaneli {
+  display: flex;
+  min-height: 0;
+  height: 100%;
+  flex-direction: column;
+  color: var(--murekkep-koyu);
+}
+
+.panelKaydir {
+  min-height: 0;
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 4px 16px 14px;
+}
+
+.panelEtiketi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: var(--yesil-metin);
+  font-size: 13.5px;
+  font-weight: 800;
+}
+
+.panelEtiketi > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.panelEtiketi > span::before {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--eylem);
+  content: "";
+}
+
+.panelEtiketi button {
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  color: var(--murekkep-soluk-krem);
+  background: transparent;
+  font-size: 13.5px;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.kitapBasi {
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 12px;
+}
+
+.kitapKapagi {
+  width: 62px;
+  height: 88px;
+  border-radius: 9px;
+  object-fit: cover;
+  box-shadow: 0 3px 8px rgb(0 0 0 / 18%);
+}
+
+.kitapBasi h2 {
+  margin: 2px 0 4px;
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.kitapBasi p {
+  margin: 0 0 8px;
+  color: var(--murekkep-soluk-krem);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.kitapBasi .ilerlemeMetni {
+  display: block;
+  margin-top: 5px;
+}
+
+.kapatDugmesi {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: var(--murekkep-koyu);
+  background: var(--krem-cizgi);
+}
+
+.aciklamaKutusu {
+  margin-top: 12px;
+}
+
+.aciklama {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: color-mix(in srgb, var(--zemin) 78%, var(--okuma-yuzey));
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.aciklamaAcik {
+  display: block;
+}
+
+.aciklamaKutusu button {
+  min-height: 36px;
+  padding: 0;
+  border: 0;
+  color: var(--yesil-metin);
+  background: transparent;
+  font-size: 14.5px;
+  font-weight: 800;
+}
+
+.bolumlerBasligi {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 18px 0 8px;
+}
+
+.bolumlerBasligi h3 {
+  margin: 0;
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.bolumlerBasligi small {
+  color: var(--murekkep-soluk-krem);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+/* Bölüm listesi küçük bir dikey yoldur; okunan kısım ışıkla parlar (3.10.7). */
+.bolumler {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bolum {
+  position: relative;
+  display: grid;
+  min-height: 72px;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 8px 8px 4px;
+  border-radius: 18px;
+}
+
+.bolum::before {
+  position: absolute;
+  top: -6px;
+  bottom: -6px;
+  left: 30px;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--krem-cizgi);
+  content: "";
+}
+
+.bolum:first-child::before {
+  top: 50%;
+}
+
+.bolum:last-child::before {
+  bottom: 50%;
+}
+
+.bolum_tamamlandi::before {
+  background: var(--vurgu);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--vurgu) 80%, transparent);
+}
+
+.bolumRozeti {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 52px;
+  height: 52px;
+  justify-self: center;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--krem);
+}
+
+.bolumRozeti img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* Kilit rengi öldürmez: soluklaşır ama rengini korur (PROJE-MODELI 3.1). */
+.bolum_sirada .bolumRozeti img,
+.bolum_kilitli .bolumRozeti img {
+  opacity: 0.5;
+  filter: saturate(0.65);
+}
+
+.bolum_sirada .bolumRozeti {
+  box-shadow: 0 0 0 3px var(--vurgu);
+}
+
+.tik {
+  position: absolute;
+  right: -4px;
+  bottom: -3px;
+  display: grid;
+  width: 21px;
+  height: 21px;
+  place-items: center;
+  border: 2px solid var(--krem);
+  border-radius: 50%;
+  color: var(--eylem-metin);
+  background: var(--eylem);
+}
+
+.bolumMetni {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.bolumMetni small {
+  color: var(--murekkep-soluk-krem);
+  font-size: 12.5px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.bolumMetni strong {
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 16.5px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.bolumMetni > span {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  color: var(--murekkep-soluk-krem);
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.bolum_sirada {
+  background: var(--altin-zemin);
+  box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--vurgu) 70%, var(--okuma-yuzey));
+}
+
+.bolum_sirada .bolumMetni small {
+  color: var(--altin-metin);
+}
+
+.bolum_kilitli .bolumMetni strong {
+  color: var(--murekkep-soluk-krem);
+}
+
+.gorevEtiketi {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  color: var(--yesil-metin);
+  background: var(--yesil-zemin);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.okuDugmesi {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  padding: 0 0 0 3px;
+  border: 0;
+  border-radius: 50%;
+  color: var(--eylem-metin);
+  background: var(--eylem);
+  box-shadow: 0 3px 0 var(--yesil-golge);
+}
+
+.okuDugmesiAltin {
+  color: var(--altin-metin);
+  background: var(--vurgu);
+  box-shadow: 0 3px 0 var(--altin-golge);
+}
+
+.tekrarDugmesi {
+  display: grid;
+  min-height: 44px;
+  place-items: center;
+  padding: 0 12px;
+  border: 2px solid color-mix(in srgb, var(--eylem) 35%, var(--okuma-yuzey));
+  border-radius: 999px;
+  color: var(--yesil-metin);
+  background: transparent;
+  font-size: 13.5px;
+  font-weight: 800;
+}
+
+.kilitSimgesi {
+  display: grid;
+  width: 44px;
+  place-items: center;
+  color: var(--murekkep-soluk-krem);
+}
+
+.panelEylemi {
+  flex: none;
+  padding: 10px 16px calc(14px + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid var(--krem-cizgi);
+  background: var(--krem);
+}
+
+/* ---------------------------------------------- ALTTAN AÇILAN SAYFA */
+
+.altSayfaKatmani {
+  position: fixed;
+  z-index: 50;
+  inset: 0;
+}
+
+.altSayfaOrtusu {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: color-mix(in srgb, var(--zemin) 55%, black);
+  opacity: 0.72;
+  cursor: default;
+}
+
+.altSayfa {
+  position: absolute;
+  top: max(48px, env(safe-area-inset-top, 0px));
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  border-radius: 26px 26px 0 0;
+  background: var(--krem);
+  box-shadow: 0 -10px 30px rgb(0 0 0 / 30%);
+  animation: alttanAc 240ms ease-out both;
+}
+
+@keyframes alttanAc {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+}
+
+.tutamac {
+  width: 44px;
+  height: 5px;
+  flex: none;
+  margin: 8px auto 6px;
+  border-radius: 5px;
+  background: var(--krem-cizgi);
+}
+
+/* --------------------------------------------------------- ODAK HALKASI */
+
+.buyukDugme:focus-visible,
+.duyuruGoster:focus-visible,
+.duyuruKapat:focus-visible,
+.okuDugmesi:focus-visible,
+.tekrarDugmesi:focus-visible,
+.kapatDugmesi:focus-visible,
+.panelEtiketi button:focus-visible,
+.aciklamaKutusu button:focus-visible {
+  outline: 3px solid var(--vurgu);
+  outline-offset: 2px;
+}
+
+/* ----------------------------------------------------------- TABLET DİKEY */
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .siradakiKart,
+  .duyuru,
+  .yolunDevami,
+  .uyari {
+    width: min(100% - 32px, 640px);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .altSayfa {
+    right: 50%;
+    left: auto;
+    width: min(100%, 640px);
+    transform: translateX(50%);
+    animation: none;
+  }
+
+  .levha strong {
+    font-size: 16.5px;
+  }
+
+  .levha small {
+    font-size: 13px;
+  }
+}
+
+/* ---------------------------------------------------- GENİŞ EKRAN ≥1024 */
+
+@media (min-width: 1024px) {
+  .anaEkran {
+    display: flex;
+    width: min(100%, 1440px);
+    height: 100%;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 2px 40px 30px;
+  }
+
+  .uyari {
+    margin: 0 0 12px;
+  }
+
+  /* Sağ panel bu işi görür. */
+  .siradakiKart,
+  .altSayfaKatmani {
+    display: none;
+  }
+
+  .duyuruKutlama {
+    margin: 0 0 14px;
+  }
+
+  .izgara {
+    display: grid;
+    min-height: 0;
+    flex: 1;
+    grid-template-columns: minmax(0, 1fr) 470px;
+    gap: 26px;
+  }
+
+  .rotaCercevesi {
+    min-height: 0;
+    overflow: hidden;
+    border-radius: 30px;
+    background: var(--cayir-koyu);
+  }
+
+  .rotaCercevesi > .duyuru {
+    position: absolute;
+    z-index: 5;
+    top: 18px;
+    left: 18px;
+    width: min(470px, calc(100% - 36px));
+    margin: 0;
+    background: color-mix(in srgb, var(--yuzey) 94%, transparent);
+    box-shadow: 0 8px 20px rgb(0 0 0 / 25%);
+  }
+
+  /* Rota kısa olduğunda bile kartı doldurur; altındaki kart çayırın üstünde durur. */
+  .rotaKaydir {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    background: var(--cayir-koyu);
+  }
+
+  .rota {
+    flex: 1 0 auto;
+  }
+
+  .rota {
+    background:
+      url("/harita/rota-arkaplan.jpg") center top / 100% auto repeat-y,
+      url("/bolgeler/bolge-ilk-izler-yatay.jpg") center top / 100% auto no-repeat,
+      linear-gradient(var(--cayir) 0, var(--cayir-koyu) 100%);
+  }
+
+  .rota::before {
+    display: none;
+  }
+
+  .yolGolgesi {
+    stroke-width: 24px;
+  }
+
+  .yolZemini {
+    stroke-width: 18px;
+  }
+
+  .isikHalesi {
+    stroke-width: 32px;
+  }
+
+  .isikCekirdegi {
+    stroke-width: 14px;
+  }
+
+  .levha strong {
+    font-size: 16.5px;
+  }
+
+  .levha small {
+    font-size: 13px;
+  }
+
+  .yolunDevami {
+    margin: 0 24px 24px;
+  }
+
+  /* Sağ panelde açık olan kitap (dar ekranda panel yok, halka da yok). */
+  .durakSecili .halka {
+    outline: 3px solid var(--krem);
+    outline-offset: 3px;
+  }
+
+  .panel {
+    display: flex;
+    min-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    border-radius: 30px;
+    background: var(--krem);
+  }
+
+  .panelKaydir {
+    padding: 22px 24px 14px;
+  }
+
+  .kitapBasi {
+    grid-template-columns: 84px minmax(0, 1fr);
+  }
+
+  .kitapKapagi {
+    width: 84px;
+    height: 118px;
+  }
+
+  .kitapBasi h2 {
+    margin-top: 6px;
+    font-size: 32px;
+  }
+
+  .kitapBasi p {
+    font-size: 15.5px;
+  }
+
+  .panelEylemi {
+    padding: 14px 24px 22px;
+  }
+
+  .buyukDugme {
+    min-height: 58px;
+    font-size: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .durakSimdi .halka,
+  .durakVurgulu .halka,
+  .isilIsareti,
+  .altSayfa {
+    animation: none;
+  }
+
+  .halka,
+  .buyukDugme {
+    transition: none;
+  }
+}

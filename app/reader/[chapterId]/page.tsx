@@ -6,6 +6,7 @@ import { supabase } from "../../../lib/supabase";
 // Kaydırmalı okuyucu (Faz 6.2) 28 Tem 2026'da Hasan onayıyla üretime alındı;
 // sayfalı okuyucu 30 Tem 2026'da tamamen kaldırıldı. Tek okuyucu budur.
 import { AtlasScrollReader } from "../../../src/components/reader/AtlasScrollReader";
+import { dbKitabiBul } from "../../../src/lib/child/yolculuk";
 import {
   adaptDataChapter,
   type ChapterData,
@@ -22,22 +23,11 @@ type EslesenKitap = {
   toplam_bolum: number | null;
 };
 
-function normalizeBookName(value: string) {
-  return value
-    .toLocaleLowerCase("tr-TR")
-    .replaceAll("â", "a")
-    .replaceAll("î", "i")
-    .replaceAll("û", "u")
-    .replaceAll("ü", "u")
-    .replaceAll("ö", "o")
-    .replaceAll("ı", "i")
-    .replaceAll("ş", "s")
-    .replaceAll("ğ", "g")
-    .replaceAll("ç", "c");
-}
-
-/** Kitabın Supabase satırını `books.ts` anahtarından bulur ("adem", "sit"…). */
-async function eslesenKitabiBul(bookKey: string): Promise<{
+/**
+ * Kitabın Supabase satırını bulur. Kelime kümesiyle eşleşir (`dbKitabiBul`):
+ * anahtarla alt dize araması "ali"yi "Hz. Sâlih" içinde de bulurdu.
+ */
+async function eslesenKitabiBul(chapter: ChapterData): Promise<{
   hata: boolean;
   kitap: EslesenKitap | null;
 }> {
@@ -47,11 +37,7 @@ async function eslesenKitabiBul(bookKey: string): Promise<{
 
   if (error) return { hata: true, kitap: null };
 
-  const kitap =
-    kitaplar?.find((item) =>
-      normalizeBookName(item.isim ?? "").includes(bookKey),
-    ) ?? null;
-
+  const kitap = dbKitabiBul(kitaplar ?? [], chapter.bookName ?? "", chapter.bookKey) ?? null;
   return { hata: false, kitap };
 }
 
@@ -69,9 +55,7 @@ async function syncChapterProgress(
     };
   }
 
-  const { hata: kitapHatasi, kitap } = await eslesenKitabiBul(
-    chapter.bookKey ?? "adem",
-  );
+  const { hata: kitapHatasi, kitap } = await eslesenKitabiBul(chapter);
 
   if (kitapHatasi) {
     return {
