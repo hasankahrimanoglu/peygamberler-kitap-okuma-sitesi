@@ -14,5 +14,5 @@
 export const ISKELE_BAGLANTILARI = [
   { yol: "/kazanimlarim", ikon: "rozet", ad: "Kazanımlarım" },
   { yol: "/kelime-defterim", ikon: "kitap", ad: "Kelime Defterim" },
-  { yol: "/gorevlerim", ikon: "fener", ad: "Görevlerim" },
+  { yol: "/gorevlerim", ikon: "gorev", ad: "Görevlerim" },
 ] as const;

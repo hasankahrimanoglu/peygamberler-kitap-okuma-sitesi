@@ -59,9 +59,9 @@ export const UNVAN_ESIKLERI: { kitap: number; unvan: string }[] = [
   { kitap: 10, unvan: "Bilge Yolcu" },
   { kitap: 15, unvan: "Hikâye Ustası" },
   { kitap: 20, unvan: "Emanet Koruyucusu" },
-  { kitap: 25, unvan: "Atlas Bilgini" },
+  { kitap: 25, unvan: "Işık Taşıyıcısı" },
   { kitap: 30, unvan: "Kıssa Rehberi" },
-  { kitap: 35, unvan: "Yedi Bölge Kaşifi" },
+  { kitap: 35, unvan: "Büyük Yolculuk Kaşifi" },
 ];
 
 /** Unvan yalnız UNVAN_ESIKLERI'nden türetilir; eşikler tek kaynaktan yönetilir. */

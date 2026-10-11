@@ -52,9 +52,11 @@ type AtlasHaritaProps = {
   bildirim?: string | null;
 };
 
+// "Devam ediyor" için fener kullanılmıyor: 16px'te asma kilitten ayırt
+// edilmiyordu (11 Eki 2026 analizi, H5). Oynat üçgeni "devam et" diye okunur.
 const durumIkonu = {
   completed: "onay",
-  active: "fener",
+  active: "oynat",
   locked: "kilit",
   preparing: "saat",
 } as const;

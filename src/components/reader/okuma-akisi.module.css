@@ -848,12 +848,17 @@
 
 /*
  * Dokunma alanı ≥44px (PROJE-MODELI 3.5). Dolgu satır kutusunu itmesin diye
- * dikeyde negatif kenar boşluğuyla dengelenir; kelime metnin akışında kalır.
+ * negatif kenar boşluğuyla dengelenir; kelime metnin akışında kalır.
+ * Yatay dolgu da eşit negatif boşlukla sıfırlanır: aksi hâlde kelime ekinden
+ * ayrılıyordu ("emanet ti" — 11 Eki 2026 analizi, K2). Arka plan iki yana
+ * 2px taşar ama harfler arasında boşluk açılmaz.
  */
 .sozlukKelimesi {
   display: inline;
-  margin: -6px 0;
-  padding: 6px 6px;
+  margin: -6px -2px;
+  padding: 6px 2px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
   border: 0;
   border-radius: 6px;
   color: var(--eylem-koyu);

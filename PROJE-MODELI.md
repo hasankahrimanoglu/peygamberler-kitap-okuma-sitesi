@@ -789,7 +789,7 @@ metni 10 kelimeyi geçmez, "sen" diye konuşur, doğru/yanlış çağrışımı 
 
 | Bugün | Yeni | Durum |
 |---|---|---|
-| Kalbine en yakın seçeneği düşün. Doğru cevap şimdi açıklanmayacak. | Sen olsan ne yapardın? Seçimine hikâyenin sonunda birlikte bakacağız. | ✅ Faz A |
+| Kalbine en yakın seçeneği düşün. Doğru cevap şimdi açıklanmayacak. | Seçimine hikâyenin sonunda birlikte bakacağız. *(Soru zaten "Ne yapardın?" diye bittiği için tekrar eden ilk cümle atıldı.)* | ✅ Faz A |
 | Kararını Onayla | Seçimim bu | ✅ Faz A |
 | Şıklar 1-2-3, karşılaştırmada "B" | Şıklar her yerde A-B-C | ✅ Faz A |
 | Kararını onayladığında hikâyenin devamı açılacak. | Seçimini yapınca hikâye devam edecek. | ✅ Faz A |

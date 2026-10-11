@@ -56,9 +56,10 @@ const DURUM_METINLERI: Record<BolumDurumu, string> = {
   kilitli: "Kilitli",
 };
 
+// Fener 12–16px'te kilide benziyordu (11 Eki 2026 analizi, H5).
 const DURUM_IKONLARI = {
   tamamlandi: "onay",
-  aktif: "fener",
+  aktif: "oynat",
   kilitli: "kilit",
 } as const;
 
@@ -463,7 +464,7 @@ export function KitapBolumRotasi({
                     height={24}
                     className={styles.finalIconImage}
                   />
-                  <span className={styles.finalStatusIcon}><Ikon ad={kitapBitti ? "onay" : finalAcik ? "fener" : "kilit"} boyut={12} /></span>
+                  <span className={styles.finalStatusIcon}><Ikon ad={kitapBitti ? "onay" : finalAcik ? "oynat" : "kilit"} boyut={12} /></span>
                 </span>
                 <span><small>Final kapısı</small><strong>Büyük Final Testi</strong></span>
               </button>

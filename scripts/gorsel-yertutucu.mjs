@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /**
- * GÖRSEL YER TUTUCU ÜRETİCİ
+ * GÖRSEL VE SES YER TUTUCU ÜRETİCİ
  *
- * Yeni bir kitap `books.ts`'e aktarıldığında, o kitabın bütün görsel
- * dosyalarını doğru adlarla ve doğru biçimde klasöre açar. Hasan gerçek
- * görseli **aynı adla** üzerine yazar; kod hiç değişmez
- * (PROJE-MODELI.md 6.1 üretim akışı).
+ * Yeni bir kitap `books.ts`'e aktarıldığında, o kitabın bütün görsel ve
+ * sesli anlatım dosyalarını doğru adlarla ve doğru biçimde klasöre açar.
+ * Hasan gerçek dosyayı **aynı adla** üzerine yazar; kod hiç değişmez
+ * (PROJE-MODELI.md 6.1 ve 6.5 üretim akışı).
  *
  * Kullanım:
  *   node scripts/gorsel-yertutucu.mjs <bookKey>
@@ -18,6 +18,9 @@
  *     `coverIllustration` yolu için **.jpg** (placeholder-sahne.jpg kopyası)
  *   - Rozetler         → `public/rozetler/hz-{key}/bolum-{n}.png` · 512×512 şeffaf
  *   - Madalya          → `public/madalyalar/hz-{key}.png` · 512×512 şeffaf
+ *   - Sesli anlatım    → `public/sesli-anlatim/hz-{key}/hz-{key}-bolum-{n}.mp3`
+ *     (placeholder-ses.mp3 kopyası — KARAR 12 Eki 2026). Yer tutucu başka bir
+ *     bölümün anlatımıdır; yayından önce gerçek kayıtla değiştirilmelidir.
  *   - Unvanlar         → `public/unvanlar/{anahtar}.png` · 512×512 şeffaf
  *     (`unvanlar` modu; anahtarlar `derive.ts:UNVAN_ESIKLERI`'nden türetilir)
  *
@@ -39,6 +42,7 @@ import { tmpdir } from "node:os";
 
 const KOK = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SAHNE_YEDEGI = join(KOK, "public/kitaplar/placeholder-sahne.jpg");
+const SES_YEDEGI = join(KOK, "public/sesli-anlatim/placeholder-ses.mp3");
 
 const [, , bookKey, ...bayraklar] = process.argv;
 const kuruCalisma = bayraklar.includes("--kuru");
@@ -197,7 +201,15 @@ if (UNVAN_MODU) {
   yaz(`/madalyalar/hz-${bookKey}.png`, (hedef) =>
     odulPngYaz(hedef, `hz-${bookKey} yolculuk madalyası`, "madalya", null),
   );
+
+  // Yol `varlikYollari.ts:sesliAnlatim()` ile birebir aynı kalıptır.
+  console.log("\nSesli anlatım (.mp3, bölüm başına bir kayıt):");
+  for (let n = 1; n <= bolumSayisi; n++) {
+    yaz(`/sesli-anlatim/hz-${bookKey}/hz-${bookKey}-bolum-${n}.mp3`, (hedef) =>
+      copyFileSync(SES_YEDEGI, hedef),
+    );
+  }
 }
 
 console.log(`\n${kuruCalisma ? "Üretilecek" : "Üretilen"}: ${yazilan} · Korunan: ${korunan}`);
-console.log("Gerçek görseli AYNI ADLA üzerine yaz — kod değişmez.\n");
+console.log("Gerçek görseli/sesi AYNI ADLA üzerine yaz — kod değişmez.\n");

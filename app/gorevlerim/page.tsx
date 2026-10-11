@@ -114,7 +114,7 @@ export default function GorevlerimSayfasi() {
               tamamlandi ? "bg-eylem text-eylem-metin" : "bg-vurgu-yumusak text-vurgu"
             }`}
           >
-            <Ikon ad={tamamlandi ? "onay" : "fener"} boyut={22} />
+            <Ikon ad={tamamlandi ? "onay" : "gorev"} boyut={22} />
           </span>
           <span className="min-w-0 flex-1">
             <span className="block truncate font-baslik text-base font-bold sm:text-lg">

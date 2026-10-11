@@ -4,6 +4,7 @@ import type {
   GorevTanimi,
 } from "./books";
 import { books, getBookChapterByRouteId } from "./books";
+import { sesliAnlatim } from "../lib/varlikYollari";
 
 export type ReadingSection = {
   title: string;
@@ -90,10 +91,9 @@ export function adaptDataChapter(routeId: string): ChapterData | null {
     title: `${chapter.id}. Bölüm - ${chapter.title}`,
     bolumAdi: chapter.title,
     ozet: chapter.ozet,
-    audioTitle: chapter.audioUrl
-      ? `${book.title} sesli anlatım`
-      : `${book.title} Bölüm ${chapter.id} Sesli Anlatım`,
-    audioUrl: chapter.audioUrl || undefined,
+    audioTitle: `${book.title} ${chapter.id}. bölüm sesli anlatım`,
+    // Her bölümün kaydı vardır; yol tek kaynaktan türetilir (PROJE-MODELI 6.5).
+    audioUrl: sesliAnlatim(book.routePrefix, Number(chapter.id)),
     decisionTitle: chapter.question?.title ?? chapter.title,
     badgeName: chapter.badgeName,
     coverIllustration: chapter.coverIllustration,

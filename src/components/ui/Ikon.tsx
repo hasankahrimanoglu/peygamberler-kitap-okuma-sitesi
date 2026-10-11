@@ -29,6 +29,7 @@ export type IkonAdi =
   | "odul"
   | "liste-ekle"
   | "fotograf"
+  | "gorev"
   | "saat";
 
 type IkonProps = {
@@ -219,6 +220,15 @@ const ikonlar: Record<IkonAdi, ReactNode> = {
         d="M3.5 8.5h3.2l1.4-2.3h6.8l1.4 2.3h3.2a1 1 0 0 1 1 1v8.5a1 1 0 0 1-1 1H3.5a1 1 0 0 1-1-1V9.5a1 1 0 0 1 1-1Z"
       />
       <circle {...cizgi} cx="12" cy="13.5" r="3.4" />
+    </>
+  ),
+  // Görev listesi: iki tamamlanmış, bir bekleyen satır. Görevlerim için fener
+  // kullanılıyordu; küçük boyda kilitle karışıyordu (11 Eki 2026 analizi, H5).
+  gorev: (
+    <>
+      <path {...cizgi} d="M10.5 6.5H20M10.5 12H20M10.5 17.5H20" />
+      <path {...cizgi} d="m3.8 6.6 1.4 1.4 2.4-2.6M3.8 12.1l1.4 1.4 2.4-2.6" />
+      <circle {...cizgi} cx="5.6" cy="17.5" r="1.6" />
     </>
   ),
   saat: (

@@ -16,6 +16,7 @@
  *   public/unvanlar/{unvan-anahtari}.png
  *   public/avatarlar/avatar-{1..10}.jpg
  *   public/ikonlar/final-kapisi.svg
+ *   public/sesli-anlatim/hz-{bookKey}/hz-{bookKey}-bolum-{n}.mp3  ← bölüm anlatımı
  *
  * Kural: dosya yoksa kod BOZULMAZ — `YedekliGorsel` yedeğe düşer. Hasan gerçek
  * dosyayı aynı adla klasöre atınca kod değişmeden yayına girer.
@@ -136,6 +137,20 @@ export function profilFotografiAnahtari(veliId: string, profilId: string) {
   return `${veliId}/${profilId}.jpg`;
 }
 
+/**
+ * Bölümün sesli anlatımı (KARAR 12 Eki 2026 — PROJE-MODELI 6.5).
+ *
+ * Her bölümün bir kaydı vardır; `books.ts`'te ses alanı yoktur, yol rozet gibi
+ * kitap anahtarı ve bölüm numarasından türetilir. Gerçek kayıt gelene kadar
+ * dosya `YEDEK.ses` kopyasıdır; Hasan aynı adla üzerine yazınca kod değişmeden
+ * yayına girer. Kitap adı dosya adında da geçer: dosya klasöründen çıkarılsa
+ * da hangi bölüme ait olduğu okunur. Dosya bulunamazsa okuyucu ses kontrolünü
+ * hiç çizmez.
+ */
+export function sesliAnlatim(bookKey: string, bolumNo: number) {
+  return `/sesli-anlatim/hz-${bookKey}/hz-${bookKey}-bolum-${bolumNo}.mp3`;
+}
+
 /** Büyük Final Testi durağının ikonu. Hasan aynı adla değiştirebilir. */
 export const FINAL_KAPISI_IKONU = "/ikonlar/final-kapisi.svg";
 
@@ -149,4 +164,11 @@ export const YEDEK = {
   madalya: "/madalyalar/placeholder.svg",
   unvan: "/unvanlar/placeholder.svg",
   avatar: "/avatarlar/placeholder.svg",
+  /**
+   * Sesli anlatım yer tutucusu — Hz. Âdem 1. bölüm kaydının kopyası (Hasan'ın
+   * isteği, 12 Eki 2026). Kodda çalınmaz; `gorsel-yertutucu` betiği her bölüme
+   * bunu kopyalar. Başka bölümün anlatımı olduğu için yayından önce bütün
+   * kopyalar gerçek kayıtla değiştirilmelidir.
+   */
+  ses: "/sesli-anlatim/placeholder-ses.mp3",
 } as const;

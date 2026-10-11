@@ -90,7 +90,8 @@ export type BookChapter = {
   title: string;
   /** Bölüm listelerinde başlığın altında görünen kısa açıklama */
   ozet?: string;
-  audioUrl: string;
+  // Sesli anlatım alanı YOK (KARAR 12 Eki 2026 — PROJE-MODELI 6.5): dosya yolu
+  // `varlikYollari.ts:sesliAnlatim(bookKey, bolumNo)` ile türetilir.
   badgeName: string;
   /** Bölüm açılışındaki tek güçlü kapak sahnesi; her bölümde zorunlu değildir. */
   coverIllustration?: BookIllustration;
@@ -299,7 +300,6 @@ export const books: BookDefinition[] = [
         id: "1",
         title: "Beklenen   Misafir",
         ozet: "Yeryüzü, Allah'ın kendisine sorumluluk vereceği ilk insanla tanışmaya hazırlanır.",
-        audioUrl: "/sesli-anlatim/hz-adem/hz-adem-sesli-anlatim.mp3",
         badgeName: "İlk Adım Rozeti",
         coverIllustration: {
           src: "/kitaplar/hz-adem/bolum-1/kapak.jpg",
@@ -390,7 +390,6 @@ export const books: BookDefinition[] = [
         id: "2",
         title: "Bilginin Armağanı",
         ozet: "Allah'ın öğrettiği isimler, insanın öğrenme ve bilgiyi kullanma değerini gösterir.",
-        audioUrl: "",
         badgeName: "Meraklı Zihin Rozeti",
         coverIllustration: {
           src: "/kitaplar/hz-adem/bolum-2/kapak.jpg",
@@ -489,7 +488,6 @@ export const books: BookDefinition[] = [
         id: "3",
         title: "Cennetteki Uyarı",
         ozet: "Cennetin nimetleri içindeki tek sınır, güven ve sorumluluğun değerini öğretir.",
-        audioUrl: "",
         badgeName: "Sözü Koruma Rozeti",
         coverIllustration: {
           src: "/kitaplar/hz-adem/bolum-3/kapak.jpg",
@@ -588,7 +586,6 @@ export const books: BookDefinition[] = [
         id: "4",
         title: "Tatlı Fısıltı",
         ozet: "Şeytanın güzel gösterdiği yanlış, verilen sözü ve dikkatli seçimi sınar.",
-        audioUrl: "",
         badgeName: "Dikkatli Kalp Rozeti",
         coverIllustration: {
           src: "/kitaplar/hz-adem/bolum-4/kapak.jpg",
@@ -682,7 +679,6 @@ export const books: BookDefinition[] = [
         id: "5",
         title: "Tövbenin Kapısı",
         ozet: "Hz. Âdem ile Hz. Havva, hatalarını kabul ederek Allah'ın rahmetine yönelir.",
-        audioUrl: "",
         badgeName: "Tövbe Rozeti",
         coverIllustration: {
           src: "/kitaplar/hz-adem/bolum-5/kapak.jpg",
@@ -782,7 +778,6 @@ export const books: BookDefinition[] = [
         id: "6",
         title: "Yeni Bir Yurt",
         ozet: "Yeryüzündeki hayat, emek ve ilahî rehberlikle yeni bir başlangıca dönüşür.",
-        audioUrl: "",
         badgeName: "Yeni Başlangıç Rozeti",
         coverIllustration: {
           src: "/kitaplar/hz-adem/bolum-6/kapak.jpg",
@@ -874,7 +869,6 @@ export const books: BookDefinition[] = [
         id: "7",
         title: "İki Kardeşin Sınavı",
         ozet: "Âdem'in iki oğlu üzerinden kıskançlık, öfke, seçim ve geri dönüşü olmayan davranışların sonuçları anlatılır.",
-        audioUrl: "",
         badgeName: "Sakin Güç Rozeti",
         coverIllustration: {
           src: "/kitaplar/hz-adem/bolum-7/kapak.jpg",
@@ -987,7 +981,6 @@ export const books: BookDefinition[] = [
         id: "8",
         title: "Sılaya Uzanan Yol",
         ozet: "Hz. Âdem'in dünya yolculuğu sona ererken bıraktığı değerler yaşamaya devam eder.",
-        audioUrl: "",
         badgeName: "Huzurlu Miras Rozeti",
         coverIllustration: {
           src: "/kitaplar/hz-adem/bolum-8/kapak.jpg",
@@ -1089,7 +1082,6 @@ export const books: BookDefinition[] = [
         id: "1",
         title: "Beklenen Armağan",
         ozet: "Bir kaybın acısını taşıyan ailenin gönlü, bahar sabahında doğan bir çocukla ısınır.",
-        audioUrl: "",
         badgeName: "Gelen Umut Rozeti",
         coverIllustration: {
           src: "/kitaplar/hz-sit/bolum-1/kapak.jpg",
@@ -1183,7 +1175,6 @@ export const books: BookDefinition[] = [
         id: "2",
         title: "Duyulmayan Uyarı",
         ozet: "Ufuktaki fırtınayı ilk fark eden Şît uyarır; kimse dinlemez, sonra hakkında konuşulur.",
-        audioUrl: "",
         badgeName: "Doğruyu Arama Rozeti",
         coverIllustration: {
           src: "/kitaplar/hz-sit/bolum-2/kapak.jpg",
@@ -1288,7 +1279,6 @@ export const books: BookDefinition[] = [
         id: "3",
         title: "Taşları Birleştiren Sır",
         ozet: "Yıllarca deneyip yıkılan Şît, sonunda taşları tutan harcı bulur ve köy birlikte kurulur.",
-        audioUrl: "",
         badgeName: "Yılmayan Emek Rozeti",
         coverIllustration: {
           src: "/kitaplar/hz-sit/bolum-3/kapak.jpg",
@@ -1388,7 +1378,6 @@ export const books: BookDefinition[] = [
         id: "4",
         title: "Devralınan Emanet",
         ozet: "Babasından devraldığı sorumluluğu taşıyan Şît, öğrendiklerini emanete ve oğluna bırakır.",
-        audioUrl: "",
         badgeName: "Devralınan Emanet Rozeti",
         coverIllustration: {
           src: "/kitaplar/hz-sit/bolum-4/kapak.jpg",
@@ -1501,7 +1490,6 @@ export const books: BookDefinition[] = [
         id: "1",
         title: "Bir Yaprak Gölgesi",
         ozet: "İdrîs güneşten korunmanın yolunu bulur; ama buluşunu yaymadan önce onun ne sonuç doğuracağını düşünür.",
-        audioUrl: "",
         badgeName: "Ölçülü Buluş Rozeti",
         coverIllustration: {
           src: "/kitaplar/hz-idris/bolum-1/kapak.jpg",
@@ -1601,7 +1589,6 @@ export const books: BookDefinition[] = [
         id: "2",
         title: "Öğretmeyi Öğrenmek",
         ozet: "Bildiklerini gençlere anlatmaya başlar; kimi çabuk kavrar, kimi gecikir, o ise tekrar tekrar anlatır.",
-        audioUrl: "",
         badgeName: "Öğreten Sabır Rozeti",
         coverIllustration: {
           src: "/kitaplar/hz-idris/bolum-2/kapak.jpg",
@@ -1711,7 +1698,6 @@ export const books: BookDefinition[] = [
         id: "3",
         title: "Bir Karış Bez",
         ozet: "Bir örümcek ağından yola çıkar; aylarca uğraşır ve sonunda elinde yalnızca bir karış bez kalır.",
-        audioUrl: "",
         badgeName: "Vazgeçmeyen El Rozeti",
         coverIllustration: {
           src: "/kitaplar/hz-idris/bolum-3/kapak.jpg",
@@ -1817,7 +1803,6 @@ export const books: BookDefinition[] = [
         id: "4",
         title: "Yüce Bir Mertebeye",
         ozet: "Uzaktan gelen tanınmayan bir sürü halkı şüphelendirir; sözüne güvenilen İdrîs sabır ister ve haklı çıkar.",
-        audioUrl: "",
         badgeName: "Güvenilen Söz Rozeti",
         coverIllustration: {
           src: "/kitaplar/hz-idris/bolum-4/kapak.jpg",

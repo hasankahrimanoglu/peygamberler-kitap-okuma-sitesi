@@ -163,6 +163,8 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
   const [yaziDuzeyi, setYaziDuzeyi] = useState<YaziDuzeyi>(1);
   const [araclarAcik, setAraclarAcik] = useState(false);
   const [sesCaliyor, setSesCaliyor] = useState(false);
+  // Ses dosyası bulunamazsa kontrol hiç çizilmez (PROJE-MODELI 6.5).
+  const [sesBulunamadi, setSesBulunamadi] = useState(false);
   const [gecenSure, setGecenSure] = useState(0);
   const [toplamSure, setToplamSure] = useState(0);
   const [tekrarOkuma, setTekrarOkuma] = useState(false);
@@ -181,7 +183,7 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
   const geriYolu = `/kitap/${chapter.bookKey ?? "ebubekir"}`;
   const rozetYolu = rozetGorseli(chapter.bookKey ?? "ebubekir", chapter.chapterNumber ?? 1);
   const sonrakiBolumAdi = useMemo(() => sonrakiBolumAdiniBul(chapter), [chapter]);
-  const sesHazir = Boolean(chapter.audioUrl);
+  const sesHazir = Boolean(chapter.audioUrl) && !sesBulunamadi;
 
   const duraklar = useMemo(() => {
     const gorulen = new Set<AkisDurakId>();
@@ -340,7 +342,7 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
     window.sessionStorage.setItem(secimAnahtari, secilen);
     kararKaydirmaRef.current = true;
     setKararOnayli(true);
-    setDuyuru("Kararın kaydedildi. Doğru veya yanlış açıklanmadı; hikâye devam ediyor.");
+    setDuyuru("Seçimin kaydedildi; hikâye devam ediyor.");
   }
 
   function sesOynatDurdur() {
@@ -517,11 +519,14 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
             <p className={styles.ustEtiket}>Sen Olsaydın?</p>
             <h1>{chapter.decision.question}</h1>
             <p className={styles.odakAciklamasi}>
-              Kalbine en yakın seçeneği düşün. Doğru cevap şimdi açıklanmayacak.
+              Seçimine hikâyenin sonunda birlikte bakacağız.
             </p>
             <div className={styles.secenekler} role="radiogroup" aria-label="Karar seçenekleri">
-              {chapter.decision.options.map((option, index) => {
+              {chapter.decision.options.map((option) => {
                 const secili = secilen === option.id;
+                // Şıklar her yerde A-B-C: "Senin seçimin" bölümü de aynı harfi
+                // gösterir (PROJE-MODELI 3.10.4). Eskiden burada 1-2-3 vardı.
+                const harf = option.id.toLocaleUpperCase("tr-TR");
                 return (
                   <button
                     key={option.id}
@@ -532,7 +537,7 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
                     disabled={kararOnayli}
                     onClick={() => setSecilen(option.id)}
                   >
-                    <span>{secili && kararOnayli ? <Ikon ad="onay" boyut={19} /> : index + 1}</span>
+                    <span>{secili && kararOnayli ? <Ikon ad="onay" boyut={19} /> : harf}</span>
                     <strong>{option.text}</strong>
                   </button>
                 );
@@ -551,14 +556,14 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
                 onClick={karariOnayla}
               >
                 <Ikon ad="onay" boyut={18} />
-                Kararını Onayla
+                Seçimim bu
               </button>
             )}
           </section>
           {kararOnayli ? null : (
             <p className={styles.kapiSeridi}>
               <Ikon ad="kilit" boyut={18} />
-              Kararını onayladığında hikâyenin devamı açılacak.
+              Seçimini yapınca hikâye devam edecek.
             </p>
           )}
         </>
@@ -773,12 +778,16 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
             </span>
           </div>
           <div className={styles.ustBarEylemler}>
-            <div className={styles.sesKutusu}>
-              {chapter.audioUrl ? (
+            {sesHazir ? (
+              <div className={styles.sesKutusu}>
                 <audio
                   ref={audioRef}
                   src={chapter.audioUrl}
                   preload="metadata"
+                  onError={() => {
+                    setSesCaliyor(false);
+                    setSesBulunamadi(true);
+                  }}
                   onLoadedMetadata={(event) => setToplamSure(event.currentTarget.duration)}
                   onTimeUpdate={(event) => setGecenSure(event.currentTarget.currentTime)}
                   onPlay={() => setSesCaliyor(true)}
@@ -789,45 +798,35 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
                     if (audioRef.current) audioRef.current.currentTime = 0;
                   }}
                 />
-              ) : null}
-              <button
-                type="button"
-                className={styles.sesButonu}
-                aria-label={
-                  sesHazir
-                    ? sesCaliyor
-                      ? "Sesli anlatımı duraklat"
-                      : "Sesli anlatımı oynat"
-                    : "Sesli anlatım kaydı daha sonra eklenecek"
-                }
-                aria-pressed={sesHazir ? sesCaliyor : undefined}
-                disabled={!sesHazir}
-                onClick={sesOynatDurdur}
-              >
-                <Ikon ad={sesCaliyor ? "duraklat" : "oynat"} boyut={16} />
-              </button>
-              <div className={styles.sesMetni}>
-                <div>
-                  <strong>Sesli anlatım</strong>
-                  <span>
-                    {sureBicimle(gecenSure)} / {sureBicimle(toplamSure)}
-                  </span>
+                <button
+                  type="button"
+                  className={styles.sesButonu}
+                  aria-label={sesCaliyor ? "Sesli anlatımı duraklat" : "Sesli anlatımı oynat"}
+                  aria-pressed={sesCaliyor}
+                  onClick={sesOynatDurdur}
+                >
+                  <Ikon ad={sesCaliyor ? "duraklat" : "oynat"} boyut={16} />
+                </button>
+                <div className={styles.sesMetni}>
+                  <div>
+                    <strong>Sesli anlatım</strong>
+                    <span>
+                      {sureBicimle(gecenSure)} / {sureBicimle(toplamSure)}
+                    </span>
+                  </div>
+                  <input
+                    className={styles.sesCubugu}
+                    type="range"
+                    min={0}
+                    max={Math.max(1, toplamSure)}
+                    step={0.1}
+                    value={Math.min(gecenSure, Math.max(1, toplamSure))}
+                    aria-label="Sesli anlatım konumu"
+                    onChange={(event) => sesiSar(Number(event.target.value))}
+                  />
                 </div>
-                <input
-                  className={styles.sesCubugu}
-                  type="range"
-                  min={0}
-                  max={Math.max(1, toplamSure)}
-                  step={0.1}
-                  value={Math.min(gecenSure, Math.max(1, toplamSure))}
-                  aria-label={
-                    sesHazir ? "Sesli anlatım konumu" : "Sesli anlatım kaydı daha sonra eklenecek"
-                  }
-                  disabled={!sesHazir}
-                  onChange={(event) => sesiSar(Number(event.target.value))}
-                />
               </div>
-            </div>
+            ) : null}
             <button
               type="button"
               className={styles.araclarButonu}
