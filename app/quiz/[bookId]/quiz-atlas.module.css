@@ -788,6 +788,13 @@
     0 20px 42px color-mix(in srgb, var(--quiz-ink) 18%, transparent);
 }
 
+.resultIsil {
+  position: absolute;
+  z-index: 2;
+  top: -30px;
+  right: -46px;
+}
+
 .resultMedalPractice {
   border-color: color-mix(in srgb, var(--eylem) 50%, var(--quiz-line));
   background: color-mix(in srgb, var(--eylem) 10%, var(--quiz-paper));

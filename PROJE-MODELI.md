@@ -953,8 +953,34 @@ Bugüne Taşı, Büyük Final Testi. "Kazanımlarım → Ödüllerim" gerekçesi
 - **Kesin sınırlar:** hikâye metninin içinde görünmez; peygamberler ve dinî
   konular hakkında yorum yapmaz; doğru/yanlış söylemez; çocuğu övmez veya
   derecelendirmez; okuma sırasında ekranda durmaz.
-- Çizim Hasan'dadır: en az üç poz (duruş, konuşma, kutlama uçuşu), 512×512
-  şeffaf PNG. Klasör adı Faz D'de `varlikYollari.ts`'e yazılır.
+- ~~Çizim Hasan'dadır: en az üç poz, 512×512 şeffaf PNG.~~ **REVİZE — 12 Ekim
+  2026 (Faz D, Hasan: "bu Işıl karakterini çok güzel yapalım ve
+  animasyonlaştıralım"):** Işıl görsel dosya değildir; **kodla çizilir ve
+  canlandırılır** (`src/components/cocuk/Isil.tsx`, katmanlı SVG). Gerekçe: PNG
+  hareket edemez; kodla çizilen karakter her boyutta keskin kalır ve tema
+  renklerinden türer. Karakter sayfası: `/tasarim/isil` (giriş gerektirmez; üç
+  poz, üç zemin, 24–128 px boyut merdiveni).
+  - **Görünüş:** büyük yuvarlak gece mavisi baş (sol üstten ışık alan degrade,
+    ince ışık kenarı), kocaman parlak gözler, pembe yanaklar, uçlarında küçük
+    ışıklar olan iki anten, saydam iki çift kanat, karnında altın **fener**
+    (ateşböceğinin kendi ışığı, çenesine de vurur) ve **yeşil yol atkısı**
+    (yol arkadaşı kimliği; uçları dalgalanır). Renkler `.tema-cocuk`
+    token'larından türer; yalnız çocuk ekranlarında kullanılır.
+  - **Pozlar:** `durus` (havada süzülür — Buradasın, boş ekranlar), `konusma`
+    (el sallar, ağzı birkaç kez açılıp kapanır, başını eğer — balon cümleleri),
+    `kutlama` (zıplayıp tam tur döner, kollar havada, gözler gülümser,
+    çevresinde parıltılar — rozet, madalya, yolun ucu; konuşmaz).
+  - **Sürekli hareket:** kanat çırpma, fenerin nefes alır gibi parlaması, ara
+    ara göz kırpma, anten ve atkı salınımı. Yalnız transform/opacity;
+    "hareketi azalt"ta hepsi durur, Işıl duruş pozunda kalır. Dekoratiftir,
+    ekran okuyucudan gizlenir; söylediği cümle yanındaki metindedir.
+  - **Yerleştiği anlar (12 Eki 2026):** ana ekranda ilk giriş (bir kez, her
+    çocuk profili için: "Merhaba, ben Işıl! Bu yolculukta yolunu
+    aydınlatacağım." · düğme **Merhaba!**), yeni kitap duyurusu, Buradasın,
+    yolun ucu; okumada ilk sözlük kelimesi ve "Sen olsaydın?" girişi
+    (konuşma), rozet anı (kutlama, rozetin yanında uçar); Büyük Final Testi'nde
+    madalyanın ilk kazanıldığı an (kutlama; alıştırmada yok); Görevlerim ve
+    Kelimelerim boş ekranları (duruş).
 
 #### 3.10.6 Menü ve profil kartı (KARAR — 12 Ekim 2026, Hasan)
 
@@ -1199,8 +1225,6 @@ public/
   bolgeler/     bolge-{regionId}.png   keşif bölgesi sahne arka planı (7 adet)
   harita/
     rota-cayir.svg                     ana ekran rotasının kodla çizilmiş arka planı (3.10.1)
-  isil/
-    placeholder.svg                    Işıl konsept eskizi; çizim gelince isil-{poz}.png (3.10.5)
   sesli-anlatim/
     placeholder-ses.mp3                ses yer tutucusu (6.5)
     hz-{bookKey}/hz-{bookKey}-bolum-{n}.mp3   bölüm başına bir anlatım (12 Eki 2026)
@@ -1481,7 +1505,7 @@ ileride istenirse eklenmesi kolaydır.)
 | **A** | Hızlı düzeltmeler: sözlük kelimesinin ekinden ayrılması ("emanet ti"), "Sen Olsaydın" metinleri + şıkların her yerde A-B-C olması, kilide benzeyen "devam ediyor" ikonu, her bölüme sesli anlatım + yer tutucu ses (6.5), iki unvanın yeni adı (Bölüm 2) | ✅ 12 Eki 2026 |
 | **B** | Okuma ekranı yeni düzeni (3.10.3): açık zemin, kapak ekranının kalkması, adım çubuğu/sütunu, tek başlıklı duraklar, "Aa", rozet kutlaması + "Sıradaki Bölüme Geç", okuma ekranı metinleri (3.10.4) | ✅ 12 Eki 2026. Önizleme: `/tasarim/okuma?bolum=adem-2` (giriş gerektirmez; `&tekrar=1`, `&hata=1`, `?bolum=idris-4`). Uygulama ayrıntıları ve ölçüm 3.10.3 sonunda. Işıl şimdilik konsept eskiz |
 | **C** | Ana ekran ve rota (3.10.1–3.10.2, 3.10.6–3.10.7): "Sıradaki bölümün" kartı, bölgesiz tek dikey rota (yayındaki kitaplar `atlasCatalog.ts`'ten çizilir, kod elle yazılmaz), ilerleme halkalı duraklar + altın ışık izi, kitap kilidinin kalkması, "Yeni" etiketi + duyuru, "Yakında" kartı, yolun ucu, profil kartı (hamburger menü kalkar), kitap ve bölümler için alttan sayfa / sağ panel (bölüm rotası sayfası kalkar), alt menü ve ekran adları (3.10.4) | ✅ 12 Eki 2026. Önizleme: `/tasarim/ana-ekran` (giriş gerektirmez; `?durum=yeni` yeni başlayan çocuk). Rota arka planı kodla çizilmiş hareketli çayır; Işıl şimdilik konsept eskiz. Eski harita bileşenleri ve `/tasarim/harita-yeni`, `/tasarim/kitap-yeni` önizlemeleri silindi. Eski demo kitapların `user_progress` kayıtları silindi (`supabase/temizlik-eski-demo-ilerleme-*.sql`) |
-| **D** | Rehber karakter Işıl (3.10.5): çizimler Hasan'da, entegrasyon yalnız tanımlı anlarda | Bekliyor |
+| **D** | Rehber karakter Işıl (3.10.5): çizimler Hasan'da, entegrasyon yalnız tanımlı anlarda | ✅ 12 Eki 2026. Işıl kodla çizildi ve canlandırıldı (`Isil.tsx`, üç poz); PNG çizim gerekmedi. Karakter sayfası `/tasarim/isil`. İlk giriş tanışması, boş ekranlar ve final madalya anı eklendi. Final testi sayfasındaki eski "bölüm rotası / kilidi açıldı" metinleri de düzeltildi |
 | **Test** | Faz B'den sonra 5 çocukla 30'ar dakikalık gözlem: "Kaldığın kitaptan okumaya başla", "Yeşil bir kelimenin anlamını bul", "Rozetini al ve sonraki bölüme geç". Ses efekti ve ek kutlama kararları bu testten sonra verilir | Bekliyor |
 
 Kurallar:
@@ -1630,6 +1654,9 @@ Kurallar:
       okuma sütununda tek ekrana sığan gece mavisi kart; dönen ışık huzmeleri,
       konfeti yerine ışık patlaması + ışık yağmuru, rozette nabız ve parıltı
       (3.10.3).
+- [x] **Faz D (12 Ekim 2026, Hasan):** Işıl görsel dosya yerine kodla çizilen,
+      canlandırılmış bir karakter oldu (üç poz, yeşil yol atkısı); tanımlı
+      bütün anlara yerleştirildi (3.10.5).
 
 ## 11. İçerik Durumu
 

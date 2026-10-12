@@ -741,11 +741,8 @@
 }
 
 .isilResmi {
-  width: 48px;
-  height: 48px;
   flex: none;
-  object-fit: contain;
-  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--altin) 55%, transparent));
+  margin-bottom: -4px;
 }
 
 .isilBalonu p {
@@ -1738,13 +1735,9 @@
 .kutlamaIsil {
   position: absolute;
   z-index: 3;
-  top: 0;
-  right: -22px;
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  filter: drop-shadow(0 0 14px color-mix(in srgb, var(--altin) 70%, transparent));
-  animation: isilUcus 3.6s ease-in-out 400ms infinite both;
+  top: -10px;
+  right: -40px;
+  animation: isilUcus 3.6s ease-in-out 1s infinite both;
 }
 
 /* ---- Sıradaki adım */

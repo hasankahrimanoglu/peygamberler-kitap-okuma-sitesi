@@ -147,10 +147,13 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
 ---
 
 ## ÇOCUK ARAYÜZÜ SADELEŞTİRME (KARAR 11–12 Eki 2026 — PROJE-MODELI 3.10)
-Faz A, **Faz B (okuma ekranı)** ve **Faz C (ana ekran) uygulandı;** Faz D (Işıl
-çizimleri) bekliyor. Ana ekran bileşenleri `src/components/cocuk/`, veri modeli
-`src/lib/child/yolculuk.ts`, girişsiz önizlemeler `/tasarim/ana-ekran` ve
-`/tasarim/okuma?bolum=adem-2` (rozet kaydı Supabase'e gitmez). Özet:
+Faz A, B (okuma ekranı), C (ana ekran) ve **D (Işıl) uygulandı;** sırada 5 çocukla
+gözlem testi var. Ana ekran bileşenleri `src/components/cocuk/`, veri modeli
+`src/lib/child/yolculuk.ts`, girişsiz önizlemeler `/tasarim/ana-ekran`,
+`/tasarim/okuma?bolum=adem-2` (rozet kaydı Supabase'e gitmez) ve `/tasarim/isil`.
+**Işıl görsel dosya DEĞİLDİR:** kodla çizilmiş, canlandırılmış SVG karakter
+(`src/components/cocuk/Isil.tsx`, pozlar `durus` · `konusma` · `kutlama`); PNG
+isteme, `public/isil/` klasörü yok. Özet:
 keşif bölgeleri arayüzden kalkar, kitaplar katalog sırasıyla **tek dikey rotada**;
 yayında olmayan kitap görünmez (sonda tek "Yakında" kartı); sonradan yayınlanan kitap
 kendi yerine girer + "Yeni" etiketi; **kitap kilidi kalkar, bölüm kilidi kalır**;

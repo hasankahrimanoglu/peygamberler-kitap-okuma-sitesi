@@ -10,7 +10,7 @@ import {
 import { belirtmeEki } from "../../lib/child/sayiEki";
 import { kitapKapagi, madalyaGorseli, YEDEK } from "../../lib/varlikYollari";
 import { Ikon, YedekliGorsel } from "../ui";
-import { IsilGorseli } from "./IsilGorseli";
+import { Isil } from "./Isil";
 import { KitapPaneli } from "./KitapPaneli";
 import { YolculukRotasi } from "./YolculukRotasi";
 import styles from "./yolculuk.module.css";
@@ -26,6 +26,11 @@ const GENIS_EKRAN = "(min-width: 1024px)";
 
 function duyuruAnahtari(profilId: string, kitapKey: string) {
   return `yeni-kitap-duyurusu:${profilId}:${kitapKey}`;
+}
+
+/** Işıl'ın tanışma cümlesi her çocuğa bir kez görünür (3.10.5). */
+function karsilamaAnahtari(profilId: string) {
+  return `isil-karsilama:${profilId}`;
 }
 
 function okunduMu(anahtar: string) {
@@ -57,6 +62,7 @@ export function AnaEkran({
   const [vurguluKey, setVurguluKey] = useState<string | null>(null);
   const [finalKey, setFinalKey] = useState<string | null>(null);
   const [kapatilanDuyurular, setKapatilanDuyurular] = useState<string[]>([]);
+  const [karsilama, setKarsilama] = useState(false);
 
   const siradaki = useMemo(() => siradakiAdim(kitaplar), [kitaplar]);
   const devami = useMemo(() => yolunDevami(kitaplar), [kitaplar]);
@@ -105,6 +111,21 @@ export function AnaEkran({
       ) ?? null
     );
   }, [kapatilanDuyurular, kitaplar, profilId]);
+
+  // Tanışma: depo yalnız tarayıcıda okunur (sunucu çizimiyle çakışmasın).
+  useEffect(() => {
+    if (!profilId) return;
+    queueMicrotask(() => setKarsilama(!okunduMu(karsilamaAnahtari(profilId))));
+  }, [profilId]);
+
+  function karsilamayiKapat() {
+    try {
+      window.localStorage.setItem(karsilamaAnahtari(profilId), "1");
+    } catch {
+      // Depolama kapalıysa tanışma bu oturumda kapanır.
+    }
+    setKarsilama(false);
+  }
 
   // Dar ekranda alttan sayfa açıkken arkadaki sayfa kaymasın.
   useEffect(() => {
@@ -256,7 +277,7 @@ export function AnaEkran({
           </>
         ) : !yukleniyor ? (
           <div className={styles.yolunUcu}>
-            <IsilGorseli poz="kutlama" boyut={56} />
+            <Isil poz="kutlama" boyut={64} />
             <p>
               <b>Yayındaki bütün kitapları bitirdin.</b> Yol yakında uzayacak; o
               zamana kadar sevdiğin bölümleri tekrar okuyabilirsin.
@@ -269,13 +290,19 @@ export function AnaEkran({
 
       <div className={styles.izgara}>
         <div className={styles.rotaCercevesi}>
-          {duyuruKitabi ? (
+          {karsilama ? (
+            <div className={`${styles.duyuru} ${styles.karsilama}`} role="status">
+              <Isil poz="konusma" boyut={60} className={styles.duyuruIsil} />
+              <p>
+                <b>Merhaba, ben Işıl!</b> Bu yolculukta yolunu aydınlatacağım.
+              </p>
+              <button type="button" className={styles.duyuruGoster} onClick={karsilamayiKapat}>
+                Merhaba!
+              </button>
+            </div>
+          ) : duyuruKitabi ? (
             <div className={styles.duyuru} role="status">
-              <IsilGorseli
-                poz="konusma"
-                boyut={46}
-                className={styles.duyuruIsil}
-              />
+              <Isil poz="konusma" boyut={52} className={styles.duyuruIsil} />
               <p>
                 Yeni bir kitap geldi: <b>{duyuruKitabi.ad}!</b>
               </p>

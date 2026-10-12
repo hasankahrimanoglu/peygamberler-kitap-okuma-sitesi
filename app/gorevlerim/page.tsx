@@ -12,6 +12,7 @@ import {
 } from "../../src/lib/derive";
 import { Buton, Ikon, Kart } from "../../src/components/ui";
 import { KesifSayfaKabugu } from "../../src/components/atlas/KesifSayfaKabugu";
+import { Isil } from "../../src/components/cocuk/Isil";
 
 type GorevDurumRow = {
   task_id: string;
@@ -245,6 +246,8 @@ export default function GorevlerimSayfasi() {
           </Kart>
         ) : gorevler.length === 0 ? (
           <Kart dolgu="genis" className="text-center">
+            {/* Boş ekranlarda Işıl görünür (3.10.5). */}
+            <Isil boyut={88} className="mx-auto mb-2" />
             <p className="font-baslik text-lg font-bold">Listen henüz boş</p>
             <p className="mt-2 font-govde text-sm text-murekkep-soluk">
               Okurken karşına çıkan &quot;Bugüne Taşı&quot; görevlerinde

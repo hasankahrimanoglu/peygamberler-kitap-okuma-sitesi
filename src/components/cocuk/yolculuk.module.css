@@ -204,7 +204,11 @@
   background: var(--yuzey);
 }
 
-.duyuruIsil,
+.duyuruIsil {
+  flex: none;
+  margin: -6px -2px -6px 0;
+}
+
 .duyuruMadalyasi {
   width: 46px;
   height: 46px;
@@ -251,6 +255,17 @@
   border-radius: 50%;
   color: var(--murekkep-soluk);
   background: transparent;
+}
+
+.karsilama {
+  border-color: color-mix(in srgb, var(--vurgu) 60%, var(--cizgi));
+  background: color-mix(in srgb, var(--vurgu) 10%, var(--yuzey));
+}
+
+.karsilama b {
+  display: block;
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 16px;
 }
 
 .duyuruKutlama {
@@ -502,8 +517,6 @@
 }
 
 .isilGorseli {
-  width: 54px;
-  height: 54px;
   flex: none;
 }
 

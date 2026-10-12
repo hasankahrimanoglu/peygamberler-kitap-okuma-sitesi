@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "../../../lib/supabase";
 import { Konfeti } from "../../../src/components/reader/Konfeti";
+import { Isil } from "../../../src/components/cocuk/Isil";
 import { Buton, Ikon, OdulIkonu } from "../../../src/components/ui";
 import styles from "./quiz-atlas.module.css";
 import { quizConfig, type QuizConfig, type QuizOption, type QuizQuestion } from "../../../src/data/quizzes";
@@ -70,7 +71,7 @@ function getCompletionResult(
     headline: "Madalyanı Kazandın!",
     message: hepsiDogru
       ? `Bu yolculuğu tamamladın ve her soruyu tek tek hatırladın. ${madalya} artık senin!`
-      : `Bu yolculuğu tamamladın ve ${madalya}'nı kazandın. Haritada yeni bir kitabın kilidi açıldı.`,
+      : `Bu yolculuğu tamamladın ve ${madalya}'nı kazandın.`,
     className: "border-amber-300/60 bg-amber-300/15 text-amber-100",
   };
 }
@@ -347,7 +348,7 @@ function AtlasAdemQuiz({
       : saveState === "already-completed"
         ? "Bu yolculuk zaten kayıtlı. İlk final sonucun değişmedi."
         : isMissingProfile
-          ? "Çocuk profili bulunamadı. Bölüm rotasına dönebilirsin."
+          ? "Çocuk profili bulunamadı. Bölümlere dönebilirsin."
           : isIncompleteJourney
             ? "Final kaydı için önce bütün bölümleri tamamlamalısın."
           : isRetryableError
@@ -369,12 +370,12 @@ function AtlasAdemQuiz({
           <button
             type="button"
             className={styles.backLink}
-            aria-label={`${bookLabel} bölüm rotasına dön`}
+            aria-label={`${bookLabel} bölümlerine dön`}
             disabled={isSaving || isRetryableError}
             onClick={onBack}
           >
             <Ikon ad="geri" boyut={18} />
-            <span className={styles.backLabel}>Bölüm Rotasına Dön</span>
+            <span className={styles.backLabel}>Bölümlere Dön</span>
           </button>
 
           <div className={styles.bookIdentity}>
@@ -446,10 +447,10 @@ function AtlasAdemQuiz({
                         </>
                       )
                     : saveState === "saved"
-                      ? "Final sonucun kaydedildi; madalyan artık keşif haritanda."
+                      ? "Final sonucun kaydedildi; madalyan artık haritanda."
                     : "Her soruda bir değeri hatırla. Doğru sayısı madalyanın şartı değildir."}
                 </p>
-                <p className={styles.routeHeading}>Final rotası</p>
+                <p className={styles.routeHeading}>Sorular</p>
                 <ol className={styles.routeSteps} aria-hidden="true">
                   {questions.map((question, index) => {
                     const routeState = isFinished || index < questionIndex
@@ -512,7 +513,7 @@ function AtlasAdemQuiz({
                           {isMissingProfile
                             ? "Çocuk profili gerekli"
                             : isIncompleteJourney
-                              ? "Bölüm rotası tamamlanmalı"
+                              ? "Bölümler tamamlanmalı"
                               : "Kayıt tamamlanamadı"}
                         </p>
                         <h2 id="final-result-title" className={styles.resultTitle}>
@@ -524,9 +525,9 @@ function AtlasAdemQuiz({
                         </h2>
                         <p className={styles.resultMessage}>
                           {isMissingProfile
-                            ? "Cevapların bu ekranda duruyor; ilerlemeyi kaydetmek için bölüm rotasına dönüp çocuk profilini yeniden seçebilirsin."
+                            ? "Cevapların bu ekranda duruyor; ilerlemeyi kaydetmek için bölümlere dönüp çocuk profilini yeniden seçebilirsin."
                             : isIncompleteJourney
-                              ? "Madalya, kitabın bütün bölümleri ve Büyük Final Testi tamamlandığında kazanılır. Bölüm rotasına dönüp kalan durakları tamamlayabilirsin."
+                              ? "Madalya, kitabın bütün bölümleri ve Büyük Final Testi tamamlandığında kazanılır. Bölümlere dönüp kalan bölümleri okuyabilirsin."
                             : "Cevapların ve sonucun burada duruyor. İnternet bağlantını kontrol edip yeniden deneyebilirsin."}
                         </p>
                         {saveError ? (
@@ -544,7 +545,7 @@ function AtlasAdemQuiz({
                             onClick={onReturn}
                           >
                             {isMissingProfile || isIncompleteJourney
-                              ? "Bölüm Rotasına Dön"
+                              ? "Bölümlere Dön"
                               : "Tekrar Dene"}
                             <Ikon ad="ok-sag" boyut={18} />
                           </Buton>
@@ -555,7 +556,7 @@ function AtlasAdemQuiz({
                               boyut="normal"
                               onClick={onReturnToBook}
                             >
-                              Bölüm Rotasına Dön
+                              Bölümlere Dön
                             </Buton>
                           ) : null}
                         </div>
@@ -588,7 +589,7 @@ function AtlasAdemQuiz({
                           className={styles.resultAction}
                           onClick={onReturn}
                         >
-                          Bölüm Rotasına Dön <Ikon ad="ok-sag" boyut={18} />
+                          Bölümlere Dön <Ikon ad="ok-sag" boyut={18} />
                         </Buton>
                       </div>
                     ) : (
@@ -606,6 +607,10 @@ function AtlasAdemQuiz({
                             alt={`${bookLabel} Yolculuk Madalyası`}
                             className={styles.resultImage}
                           />
+                          {/* Madalya anında Işıl yanında kutlar; konuşmaz (3.10.5). */}
+                          {isFirstCompletionSaved ? (
+                            <Isil poz="kutlama" boyut={68} className={styles.resultIsil} />
+                          ) : null}
                         </motion.div>
                         <p className={styles.resultKicker}>{completion.headline}</p>
                         <h2 id="final-result-title" className={styles.resultTitle}>
@@ -618,7 +623,7 @@ function AtlasAdemQuiz({
                         <p className={styles.resultNote}>
                           {practiceMode
                             ? "İlk final sonucun ve kazandığın madalya aynı kaldı."
-                            : `Bu madalya keşif haritanda ${bookLabel} kitabının üzerinde parlayacak.`}
+                            : `Bu madalya haritada ${bookLabel} kitabının yanında parlayacak.`}
                         </p>
                         <Buton
                           type="button"
@@ -627,7 +632,7 @@ function AtlasAdemQuiz({
                           className={styles.resultAction}
                           onClick={onReturn}
                         >
-                          {practiceMode ? "Bölüm Rotasına Dön" : "Haritaya Dön"}
+                          {practiceMode ? "Bölümlere Dön" : "Haritaya Dön"}
                           <Ikon ad="ok-sag" boyut={18} />
                         </Buton>
                       </div>
@@ -883,7 +888,7 @@ export default function QuizPage() {
     if (!profileId) {
       setSaveState("missing-profile");
       setSaveError(
-        "İlerlemeni kaydedebilmek için çocuk profili bulunamadı. Bölüm rotasına dönüp yeniden deneyebilirsin.",
+        "İlerlemeni kaydedebilmek için çocuk profili bulunamadı. Bölümlere dönüp yeniden deneyebilirsin.",
       );
       return;
     }
@@ -1071,7 +1076,7 @@ export default function QuizPage() {
                         : saveState === "missing-profile"
                           ? "Çocuk profili gerekli"
                           : saveState === "incomplete-journey"
-                            ? "Bölüm rotası tamamlanmalı"
+                            ? "Bölümler tamamlanmalı"
                           : "Kayıt tamamlanamadı"}
                   </p>
                   <h2 className="mt-3 text-3xl font-black text-white">
@@ -1091,9 +1096,9 @@ export default function QuizPage() {
                       : saveState === "already-completed"
                         ? "Bu tur ilk final sonucunu ve yolculuk kaydını değiştirmedi."
                         : saveState === "missing-profile"
-                          ? "İlerlemeyi kaydetmek için bölüm rotasına dönüp çocuk profilini yeniden seçebilirsin."
+                          ? "İlerlemeyi kaydetmek için bölümlere dönüp çocuk profilini yeniden seçebilirsin."
                           : saveState === "incomplete-journey"
-                            ? "Madalya için bölüm rotasındaki bütün durakları tamamlamalısın."
+                            ? "Madalya için kitabın bütün bölümlerini bitirmelisin."
                           : "Cevapların burada duruyor. İnternet bağlantını kontrol edip yeniden deneyebilirsin."}
                   </p>
                   {saveError ? (
@@ -1116,7 +1121,7 @@ export default function QuizPage() {
                         ? "Kaydediliyor…"
                         : saveState === "retryable-error"
                           ? "Tekrar Dene"
-                          : "Bölüm Rotasına Dön"}
+                          : "Bölümlere Dön"}
                     </button>
                     {saveState === "retryable-error" ? (
                       <button
@@ -1124,7 +1129,7 @@ export default function QuizPage() {
                         onClick={returnToBookRoute}
                         className="rounded-full border border-slate-600 px-6 py-3 text-base font-black text-slate-200 transition hover:bg-slate-800"
                       >
-                        Bölüm Rotasına Dön
+                        Bölümlere Dön
                       </button>
                     ) : null}
                   </div>
@@ -1186,7 +1191,7 @@ export default function QuizPage() {
                     onClick={returnFromResult}
                     className="relative mt-8 rounded-full bg-yellow-300 px-7 py-4 text-lg font-black text-slate-950 shadow-lg shadow-yellow-950/25 transition hover:bg-yellow-200 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-offset-2 focus:ring-offset-slate-950"
                   >
-                    {practiceMode ? "Bölüm Rotasına Dön" : "Haritaya Dön"}
+                    {practiceMode ? "Bölümlere Dön" : "Haritaya Dön"}
                   </button>
                 </>
               )}
@@ -1319,7 +1324,7 @@ export default function QuizPage() {
             : saveState === "already-completed"
               ? "Bu yolculuk zaten kayıtlı. İlk final sonucun değişmedi."
               : saveState === "missing-profile"
-                ? "Çocuk profili bulunamadı. Bölüm rotasına dönebilirsin."
+                ? "Çocuk profili bulunamadı. Bölümlere dönebilirsin."
                 : saveState === "incomplete-journey"
                   ? "Final kaydı için önce bütün bölümleri tamamlamalısın."
                 : saveState === "retryable-error"

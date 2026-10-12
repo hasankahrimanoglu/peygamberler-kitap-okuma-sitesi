@@ -17,7 +17,7 @@ import {
   YEDEK,
 } from "../../lib/varlikYollari";
 import { YedekliGorsel } from "../ui";
-import { IsilGorseli } from "./IsilGorseli";
+import { Isil } from "./Isil";
 import { RotaCanliligi } from "./RotaCanliligi";
 import styles from "./yolculuk.module.css";
 
@@ -258,7 +258,7 @@ export function YolculukRotasi({
                 }
                 aria-hidden="true"
               >
-                <IsilGorseli boyut={54} className={styles.isilGorseli} />
+                <Isil boyut={58} className={styles.isilGorseli} />
                 <span>Buradasın</span>
               </div>
             ) : null}

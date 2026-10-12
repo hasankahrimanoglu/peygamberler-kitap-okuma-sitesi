@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, type CSSProperties } from "react";
 import type { SonrakiBolum } from "../../data/demoChapters";
 import { madalyaGorseli, rozetGorseli, YEDEK } from "../../lib/varlikYollari";
-import { IsilGorseli } from "../cocuk/IsilGorseli";
+import { Isil } from "../cocuk/Isil";
 import { Ikon, YedekliGorsel } from "../ui";
 import styles from "./okuma-akisi.module.css";
 
@@ -172,7 +172,7 @@ export function RozetKutlamasi({
             {kazanildi ? <span className={styles.rozetParlamasi} aria-hidden="true" /> : null}
           </span>
           {durum === "alindi" ? (
-            <IsilGorseli poz="kutlama" boyut={60} className={styles.kutlamaIsil} />
+            <Isil poz="kutlama" boyut={72} className={styles.kutlamaIsil} />
           ) : null}
         </div>
 

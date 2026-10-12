@@ -7,7 +7,7 @@ import type { BookContentBlock } from "../../data/books";
 import { sonrakiBolumuBul, type ChapterData, type DecisionOption } from "../../data/demoChapters";
 import { quizConfig } from "../../data/quizzes";
 import { Ikon, YedekliGorsel } from "../ui";
-import { IsilGorseli } from "../cocuk/IsilGorseli";
+import { Isil } from "../cocuk/Isil";
 import { dbKitabiBul } from "../../lib/child/yolculuk";
 import { adimIdsi, okumaAdimlari, okumaAkisiniOlustur, type AdimId, type OkumaAkisBolumu } from "./akis";
 import { AdimCubugu } from "./AdimCubugu";
@@ -125,7 +125,7 @@ function AkisBlogu({
       <div className={styles.kelimeBlogu} data-glossary-root>
         {ipucu ? (
           <aside className={styles.isilBalonu}>
-            <IsilGorseli boyut={44} className={styles.isilResmi} />
+            <Isil poz="konusma" boyut={52} className={styles.isilResmi} />
             <p>Yeşil kelimelere dokun, anlamını öğren.</p>
           </aside>
         ) : null}
@@ -585,7 +585,7 @@ export function AtlasScrollReader({ chapter, onProgressSync, tekrarOkumaOnizleme
         <>
           <section className={styles.karar} aria-labelledby="karar-basligi">
             <aside className={styles.isilBalonu}>
-              <IsilGorseli poz="konusma" boyut={48} className={styles.isilResmi} />
+              <Isil poz="konusma" boyut={56} className={styles.isilResmi} />
               <p>Seçimine hikâyenin sonunda birlikte bakacağız.</p>
             </aside>
             <h2 id="karar-basligi" className={styles.bolumBasligi}>

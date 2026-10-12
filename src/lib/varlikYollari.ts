@@ -144,16 +144,10 @@ export function sesliAnlatim(bookKey: string, bolumNo: number) {
  */
 export const ROTA_ARKAPLANI = "/harita/rota-cayir.svg";
 
-/**
- * Rehber karakter Işıl'ın pozları (PROJE-MODELI 3.10.5). Çizim Hasan'dadır:
- * `public/isil/isil-{poz}.png`, 512×512 şeffaf. Dosya yokken `YEDEK.isil`
- * (konsept eskiz) görünür.
+/*
+ * Rehber karakter Işıl görsel dosya DEĞİLDİR: Faz D'de (12 Eki 2026) kodla
+ * çizilip canlandırıldı — `src/components/cocuk/Isil.tsx` (PROJE-MODELI 3.10.5).
  */
-export type IsilPozu = "durus" | "konusma" | "kutlama";
-
-export function isilGorseli(poz: IsilPozu) {
-  return `/isil/isil-${poz}.png`;
-}
 
 /** Gerçek dosya yokken gösterilen yedekler. */
 export const YEDEK = {
@@ -167,8 +161,6 @@ export const YEDEK = {
   avatar: "/avatarlar/placeholder.svg",
   /** Harita durağının yuvarlak görseli henüz yokken. */
   durak: "/kitaplar/placeholder-durak.svg",
-  /** Işıl'ın çizimi gelene kadar konsept eskiz. */
-  isil: "/isil/placeholder.svg",
   /**
    * Sesli anlatım yer tutucusu — Hz. Âdem 1. bölüm kaydının kopyası (Hasan'ın
    * isteği, 12 Eki 2026). Kodda çalınmaz; `gorsel-yertutucu` betiği her bölüme

@@ -1,0 +1,484 @@
+/*
+ * Işıl — kodla çizilmiş, canlandırılmış rehber karakter (Faz D, 12 Eki 2026;
+ * PROJE-MODELI 3.10.5). Renkler çocuk temasının token'larından türer; yalnız
+ * transform ve opacity canlandırılır. "Hareketi azalt"ta bütün hareket durur,
+ * karakter duruş pozunda kalır.
+ */
+
+.isil {
+  --isil-isik: var(--vurgu);
+  --isil-cekirdek: color-mix(in srgb, var(--vurgu) 22%, white);
+  --isil-kehribar: color-mix(in srgb, var(--vurgu) 72%, var(--tehlike));
+  --isil-bas-acik: color-mix(in srgb, var(--cizgi) 62%, white);
+  --isil-bas: var(--yuzey-2);
+  --isil-bas-koyu: var(--zemin);
+  --isil-murekkep: color-mix(in srgb, var(--zemin) 72%, black);
+  --isil-kanat-dip: color-mix(in srgb, var(--cizgi) 30%, white);
+  --isil-kanat-uc: white;
+  --isil-kanat-cizgi: color-mix(in srgb, var(--cizgi) 55%, white);
+  --isil-yanak: color-mix(in srgb, var(--tehlike) 42%, white);
+  --isil-goz: color-mix(in srgb, white 88%, var(--okuma-yuzey));
+  --isil-agiz: color-mix(in srgb, var(--tehlike) 45%, var(--zemin));
+  --isil-atki: var(--eylem-koyu);
+  --isil-atki-acik: color-mix(in srgb, var(--eylem) 80%, white);
+  --isil-kenar: color-mix(in srgb, var(--cizgi) 50%, white);
+
+  display: inline-block;
+  flex: none;
+  overflow: visible;
+}
+
+.isil :where(g, path, circle, ellipse) {
+  transform-box: fill-box;
+}
+
+/* Aynalama grupları özniteliğe göre görünüm kutusundan döner. */
+.isil .ayna {
+  transform-box: view-box;
+  transform-origin: 0 0;
+}
+
+/* ---------------------------------------------------------------- RENKLER */
+
+.renkIsik {
+  stop-color: var(--isil-isik);
+}
+
+.renkCekirdek {
+  stop-color: var(--isil-cekirdek);
+}
+
+.renkKehribar {
+  stop-color: var(--isil-kehribar);
+}
+
+.renkBasAcik {
+  stop-color: var(--isil-bas-acik);
+}
+
+.renkBas {
+  stop-color: var(--isil-bas);
+}
+
+.renkBasKoyu {
+  stop-color: var(--isil-bas-koyu);
+}
+
+.renkAtki {
+  stop-color: var(--isil-atki);
+}
+
+.renkAtkiAcik {
+  stop-color: var(--isil-atki-acik);
+}
+
+.atkiCizgi {
+  fill: none;
+  stroke: var(--isil-atki-acik);
+  stroke-linecap: round;
+  stroke-width: 1;
+  opacity: 0.7;
+}
+
+.atkiDugum {
+  fill: var(--isil-atki);
+  stroke: var(--isil-atki-acik);
+  stroke-width: 0.8;
+}
+
+/* Koyu zeminde başın çizgisi kaybolmasın: ince ışık kenarı. */
+.basKenar {
+  fill: none;
+  stroke: var(--isil-kenar);
+  stroke-width: 1.2;
+  opacity: 0.45;
+}
+
+.renkKanatDip {
+  stop-color: var(--isil-kanat-dip);
+}
+
+.renkKanatUc {
+  stop-color: var(--isil-kanat-uc);
+}
+
+.kanatCizgi {
+  stroke: var(--isil-kanat-cizgi);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+}
+
+.damar {
+  fill: none;
+  stroke: var(--isil-kanat-cizgi);
+  stroke-linecap: round;
+  stroke-width: 1;
+  opacity: 0.8;
+}
+
+.kolCizgi {
+  fill: none;
+  stroke: var(--isil-bas-koyu);
+  stroke-linecap: round;
+  stroke-width: 4.6;
+}
+
+.el {
+  fill: var(--isil-bas);
+  stroke: var(--isil-bas-koyu);
+  stroke-width: 1.4;
+}
+
+.halka {
+  fill: none;
+  stroke: var(--isil-kehribar);
+  stroke-linecap: round;
+  stroke-width: 1.5;
+  opacity: 0.5;
+}
+
+.fenerParlak {
+  fill: white;
+  opacity: 0.75;
+}
+
+.fenerNabiz {
+  fill: white;
+  opacity: 0;
+}
+
+/* Antenler orta ton: krem zeminde de gece zemininde de seçilir. */
+.antenCizgi {
+  fill: none;
+  stroke: var(--cizgi);
+  stroke-linecap: round;
+  stroke-width: 2.8;
+}
+
+.antenHale {
+  fill: var(--isil-isik);
+  opacity: 0.35;
+}
+
+.antenUcu {
+  fill: var(--isil-isik);
+}
+
+.basParlak {
+  fill: white;
+  opacity: 0.35;
+}
+
+.yanak {
+  fill: var(--isil-yanak);
+  opacity: 0.75;
+}
+
+.gozBeyaz {
+  fill: var(--isil-goz);
+}
+
+.gozBebek {
+  fill: var(--isil-murekkep);
+}
+
+.gozIsik {
+  fill: white;
+}
+
+.gulumseme {
+  fill: none;
+  stroke: var(--isil-murekkep);
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+
+.gulenGoz {
+  fill: none;
+  stroke: var(--isil-murekkep);
+  stroke-linecap: round;
+  stroke-width: 3.2;
+}
+
+.agizIc {
+  fill: var(--isil-agiz);
+}
+
+.dil {
+  fill: var(--isil-yanak);
+}
+
+.parlak {
+  fill: color-mix(in srgb, var(--isil-isik) 70%, white);
+}
+
+/* ---------------------------------------------------------------- HAREKET */
+
+/* Havada süzülme: bütün gövde. */
+.govde {
+  transform-origin: 50% 60%;
+  animation: suzul 2.8s ease-in-out infinite;
+}
+
+@keyframes suzul {
+  0%,
+  100% {
+    transform: translateY(1.5px);
+  }
+  50% {
+    transform: translateY(-2.5px);
+  }
+}
+
+/* Kanat çırpma: omuzdan döner. Alt kanat yarım tur geriden gelir. */
+.kanat {
+  transform-origin: 100% 85%;
+  animation: cirp 0.26s ease-in-out infinite alternate;
+}
+
+.kanatAlt {
+  transform-origin: 100% 40%;
+  animation-delay: -0.13s;
+}
+
+@keyframes cirp {
+  from {
+    transform: rotate(7deg) scaleY(1);
+  }
+  to {
+    transform: rotate(-15deg) scaleY(0.86);
+  }
+}
+
+/* Fener nefes alır gibi parlar. */
+.hale {
+  transform-origin: 50% 50%;
+  animation: haleNefes 2.6s ease-in-out infinite;
+}
+
+@keyframes haleNefes {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+.fenerNabiz {
+  animation: fenerNabiz 2.6s ease-in-out infinite;
+}
+
+@keyframes fenerNabiz {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.32;
+  }
+}
+
+.antenUcu,
+.antenHale {
+  transform-origin: 50% 50%;
+  animation: antenIsigi 2.6s ease-in-out infinite;
+}
+
+@keyframes antenIsigi {
+  0%,
+  100% {
+    transform: scale(0.85);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+/* Antenler hafifçe sallanır (dipten). */
+.anten {
+  transform-origin: 100% 100%;
+  animation: antenSalla 3.2s ease-in-out infinite;
+}
+
+@keyframes antenSalla {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+}
+
+/* Atkının uçları düğümden dalgalanır. */
+.atkiUclari {
+  transform-origin: 10% 0%;
+  animation: atkiDalga 1.8s ease-in-out infinite;
+}
+
+@keyframes atkiDalga {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-9deg);
+  }
+}
+
+.kutlama .atkiUclari {
+  animation-duration: 0.7s;
+}
+
+/* Göz kırpma: ara ara, kısa. */
+.gozler {
+  transform-origin: 50% 55%;
+  animation: kirp 4.8s ease-in-out infinite;
+}
+
+@keyframes kirp {
+  0%,
+  91%,
+  100% {
+    transform: scaleY(1);
+  }
+  94% {
+    transform: scaleY(0.08);
+  }
+  97% {
+    transform: scaleY(1);
+  }
+}
+
+/* ---- Konuşma: baş eğilir, sağ el sallanır, ağız birkaç kez açılıp kapanır */
+
+.konusma .bas {
+  transform-origin: 50% 100%;
+  animation: basEg 3.4s ease-in-out infinite;
+}
+
+@keyframes basEg {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+}
+
+.konusma .kolSag {
+  transform-origin: 0% 100%;
+  animation: elSalla 0.42s ease-in-out 6 alternate both;
+}
+
+@keyframes elSalla {
+  from {
+    transform: rotate(14deg);
+  }
+  to {
+    transform: rotate(-12deg);
+  }
+}
+
+.konusanAgiz {
+  transform-origin: 50% 30%;
+  animation: konus 0.24s ease-in-out 10 alternate both;
+}
+
+@keyframes konus {
+  from {
+    transform: scaleY(0.32);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* ---- Kutlama: zıplayıp döner, sonra hızlı kanatlarla sevinçle süzülür */
+
+.kutlama .govde {
+  animation:
+    zipla 1s cubic-bezier(0.3, 0.7, 0.35, 1) both,
+    suzul 1.4s ease-in-out 1s infinite;
+}
+
+@keyframes zipla {
+  0% {
+    transform: translateY(8px) scale(0.86) rotate(0deg);
+  }
+  35% {
+    transform: translateY(-12px) scale(1.04) rotate(-200deg);
+  }
+  65% {
+    transform: translateY(-6px) scale(1) rotate(-360deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-360deg);
+  }
+}
+
+.kutlama .kanat {
+  animation-duration: 0.17s;
+}
+
+.kutlama .hale,
+.kutlama .fenerNabiz,
+.kutlama .antenUcu,
+.kutlama .antenHale {
+  animation-duration: 1.3s;
+}
+
+.kutlama .kol {
+  animation: kolCoskun 0.36s ease-in-out infinite alternate;
+}
+
+.kutlama .kolSol {
+  transform-origin: 100% 100%;
+}
+
+.kutlama .kolSag {
+  transform-origin: 0% 100%;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes kolCoskun {
+  from {
+    transform: rotate(-9deg);
+  }
+  to {
+    transform: rotate(9deg);
+  }
+}
+
+.parlak {
+  transform-origin: 50% 50%;
+  animation: parilda 1.4s ease-in-out infinite both;
+}
+
+@keyframes parilda {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.3) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(45deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .isil,
+  .isil * {
+    animation: none !important;
+  }
+
+  .parlak {
+    opacity: 1;
+  }
+}

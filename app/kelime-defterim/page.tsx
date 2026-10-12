@@ -6,6 +6,7 @@ import { useSelectedChild } from "../../src/lib/child/useSelectedChild";
 import { cocukOzeti, kelimeDefteri, normalizeBookName } from "../../src/lib/derive";
 import { Buton, Ikon, Kart } from "../../src/components/ui";
 import { KesifSayfaKabugu } from "../../src/components/atlas/KesifSayfaKabugu";
+import { Isil } from "../../src/components/cocuk/Isil";
 
 export default function KelimeDefterimSayfasi() {
   const router = useRouter();
@@ -65,6 +66,8 @@ export default function KelimeDefterimSayfasi() {
           </Kart>
         ) : kelimeler.length === 0 ? (
           <Kart dolgu="genis" className="text-center">
+            {/* Boş ekranlarda Işıl görünür (3.10.5). */}
+            <Isil boyut={88} className="mx-auto mb-2" />
             <p className="font-baslik text-lg font-bold">Defterin henüz boş</p>
             <p className="mt-2 font-govde text-sm text-murekkep-soluk">
               Bir bölüm okudukça oradaki yeni kelimeler burada anlamlarıyla birikecek.
