@@ -157,7 +157,7 @@ const sitQuizQuestions: QuizQuestion[] = [
   },
 ];
 
-// Hz. İdrîs — KITAP-HZ-IDRIS-ICERIK-FAZ2-taslak.md §E. Dört bölümün her birinden
+// Hz. İdrîs — KITAP-HZ-IDRIS-ICERIK-final.md §E. Dört bölümün her birinden
 // bir soru; doğru harf dağılımı A=2 · B=1 · C=1.
 const idrisQuizQuestions: QuizQuestion[] = [
   {

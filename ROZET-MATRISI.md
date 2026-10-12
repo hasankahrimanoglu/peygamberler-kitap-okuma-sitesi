@@ -36,7 +36,7 @@ daima bu dosyanın güncel hâli verilir.
 
 ### 1.2 Rozet görsel anahtarı — türetilir, yazılmaz
 
-Anahtar `books.ts`'te alan olarak tutulmaz. Kod `src/lib/derive.ts:126`
+Anahtar `books.ts`'te alan olarak tutulmaz. Kod `src/lib/derive.ts:129`
 üzerinden türetir:
 
 ```
@@ -188,62 +188,62 @@ Hz. Şît 4); hepsi 512×512 şeffaf PNG. Kalan 204 rozet görseli bekliyor.
 
 | Kitap | bookKey | Böl. | Anahtar aralığı | Ana değerler | İçerik | Görsel |
 |---|---|---:|---|---|---|---|
-| Hz. Âdem | `adem` | 8 | `adem-bolum-1…8` | öğrenme, sorumluluk, tövbe, umut | ✅ Nihai (§2) | ✓ 8/8 |
-| Hz. Şît | `sit` | 4 | `sit-bolum-1…4` | emanet, devamlılık, aile, doğruluk | ✅ Nihai (§2) | ✓ 4/4 |
-| Hz. İdrîs | `idris` | 4 | `idris-bolum-1…4` | bilgi, doğruluk, sabır, emek | ✅ Nihai (§2) | — 0/4 |
-| Hz. Nûh | `nuh` | 8 | `nuh-bolum-1…8` | sabır, güven, tedbir, umut | Bekliyor (K1) | — |
-| Hz. Hûd | `hud` | 5 | `hud-bolum-1…5` | tevazu, cesaret, doğruluk, sorumluluk | Bekliyor (K1) | — |
-| Hz. Sâlih | `salih` | 5 | `salih-bolum-1…5` | emanet, ölçülülük, sözünde durma, saygı | Bekliyor (K1) | — |
+| Hz. Âdem | `adem` | 8 | `hz-adem/bolum-1…8` | öğrenme, sorumluluk, tövbe, umut | ✅ Nihai (§2) | ✓ 8/8 |
+| Hz. Şît | `sit` | 4 | `hz-sit/bolum-1…4` | emanet, devamlılık, aile, doğruluk | ✅ Nihai (§2) | ✓ 4/4 |
+| Hz. İdrîs | `idris` | 4 | `hz-idris/bolum-1…4` | bilgi, doğruluk, sabır, emek | ✅ Nihai (§2) | — 0/4 |
+| Hz. Nûh | `nuh` | 8 | `hz-nuh/bolum-1…8` | sabır, güven, tedbir, umut | Bekliyor (K1) | — |
+| Hz. Hûd | `hud` | 5 | `hz-hud/bolum-1…5` | tevazu, cesaret, doğruluk, sorumluluk | Bekliyor (K1) | — |
+| Hz. Sâlih | `salih` | 5 | `hz-salih/bolum-1…5` | emanet, ölçülülük, sözünde durma, saygı | Bekliyor (K1) | — |
 
 ### Bölge 2 — Bereketli Aile Yolu (6 kitap · 39 rozet)
 
 | Kitap | bookKey | Böl. | Anahtar aralığı | Ana değerler | İçerik | Görsel |
 |---|---|---:|---|---|---|---|
-| Hz. İbrahim | `ibrahim` | 9 | `ibrahim-bolum-1…9` | tevhid, cesaret, teslimiyet, misafirperverlik | Bekliyor (K1) | — |
-| Hz. Lût | `lut` | 5 | `lut-bolum-1…5` | ahlâk, cesaret, koruma, doğruluk | Bekliyor (K1) | — |
-| Hz. İsmail | `ismail` | 6 | `ismail-bolum-1…6` | teslimiyet, çalışma, aile, sözünde durma | Bekliyor (K1) | — |
-| Hz. İshak | `ishak` | 4 | `ishak-bolum-1…4` | şükür, aile, sabır, devamlılık | Bekliyor (K2) | — |
-| Hz. Yakup | `yakup` | 5 | `yakup-bolum-1…5` | sabır, sevgi, umut, bağışlama | Bekliyor (K1) | — |
-| Hz. Yusuf | `yusuf` | 10 | `yusuf-bolum-1…10` | sabır, iffet, güvenilirlik, bağışlama | Bekliyor (K1) | — |
+| Hz. İbrahim | `ibrahim` | 9 | `hz-ibrahim/bolum-1…9` | tevhid, cesaret, teslimiyet, misafirperverlik | Bekliyor (K1) | — |
+| Hz. Lût | `lut` | 5 | `hz-lut/bolum-1…5` | ahlâk, cesaret, koruma, doğruluk | Bekliyor (K1) | — |
+| Hz. İsmail | `ismail` | 6 | `hz-ismail/bolum-1…6` | teslimiyet, çalışma, aile, sözünde durma | Bekliyor (K1) | — |
+| Hz. İshak | `ishak` | 4 | `hz-ishak/bolum-1…4` | şükür, aile, sabır, devamlılık | Bekliyor (K2) | — |
+| Hz. Yakup | `yakup` | 5 | `hz-yakup/bolum-1…5` | sabır, sevgi, umut, bağışlama | Bekliyor (K1) | — |
+| Hz. Yusuf | `yusuf` | 10 | `hz-yusuf/bolum-1…10` | sabır, iffet, güvenilirlik, bağışlama | Bekliyor (K1) | — |
 
 ### Bölge 3 — Sabır ve Cesaret Geçidi (6 kitap · 33 rozet)
 
 | Kitap | bookKey | Böl. | Anahtar aralığı | Ana değerler | İçerik | Görsel |
 |---|---|---:|---|---|---|---|
-| Hz. Eyyûb | `eyyub` | 5 | `eyyub-bolum-1…5` | sabır, şükür, umut, dayanıklılık | Bekliyor (K1) | — |
-| Hz. Şuayb | `suayb` | 5 | `suayb-bolum-1…5` | dürüstlük, adalet, ölçülülük, cesaret | Bekliyor (K1) | — |
-| Hz. Zülkifl | `zulkifl` | 4 | `zulkifl-bolum-1…4` | sabır, emanet, sözünde durma, düzen | Bekliyor (K2) | — |
-| Hz. Musa | `musa` | 10 | `musa-bolum-1…10` | cesaret, özgürlük, adalet, güven | Bekliyor (K1) | — |
-| Hz. Hârûn | `harun` | 5 | `harun-bolum-1…5` | kardeşlik, destek, iletişim, sorumluluk | Bekliyor (K1) | — |
-| Hz. Yûşa | `yusa` | 4 | `yusa-bolum-1…4` | sadakat, cesaret, emanet, kararlılık | Bekliyor (**K3**) | — |
+| Hz. Eyyûb | `eyyub` | 5 | `hz-eyyub/bolum-1…5` | sabır, şükür, umut, dayanıklılık | Bekliyor (K1) | — |
+| Hz. Şuayb | `suayb` | 5 | `hz-suayb/bolum-1…5` | dürüstlük, adalet, ölçülülük, cesaret | Bekliyor (K1) | — |
+| Hz. Zülkifl | `zulkifl` | 4 | `hz-zulkifl/bolum-1…4` | sabır, emanet, sözünde durma, düzen | Bekliyor (K2) | — |
+| Hz. Musa | `musa` | 10 | `hz-musa/bolum-1…10` | cesaret, özgürlük, adalet, güven | Bekliyor (K1) | — |
+| Hz. Hârûn | `harun` | 5 | `hz-harun/bolum-1…5` | kardeşlik, destek, iletişim, sorumluluk | Bekliyor (K1) | — |
+| Hz. Yûşa | `yusa` | 4 | `hz-yusa/bolum-1…4` | sadakat, cesaret, emanet, kararlılık | Bekliyor (**K3**) | — |
 
 ### Bölge 4 — Hikmet Sarayları (4 kitap · 22 rozet)
 
 | Kitap | bookKey | Böl. | Anahtar aralığı | Ana değerler | İçerik | Görsel |
 |---|---|---:|---|---|---|---|
-| Hz. Dâvûd | `davud` | 6 | `davud-bolum-1…6` | cesaret, adalet, emek, şükür | Bekliyor (K1) | — |
-| Hz. Süleyman | `suleyman` | 7 | `suleyman-bolum-1…7` | hikmet, şükür, merhamet, adalet | Bekliyor (K1) | — |
-| Hz. İlyas | `ilyas` | 5 | `ilyas-bolum-1…5` | tevhid, cesaret, sabır, doğruluk | Bekliyor (K2) | — |
-| Hz. Elyesa | `elyesa` | 4 | `elyesa-bolum-1…4` | emanet, devamlılık, iyilik, sabır | Bekliyor (K2) | — |
+| Hz. Dâvûd | `davud` | 6 | `hz-davud/bolum-1…6` | cesaret, adalet, emek, şükür | Bekliyor (K1) | — |
+| Hz. Süleyman | `suleyman` | 7 | `hz-suleyman/bolum-1…7` | hikmet, şükür, merhamet, adalet | Bekliyor (K1) | — |
+| Hz. İlyas | `ilyas` | 5 | `hz-ilyas/bolum-1…5` | tevhid, cesaret, sabır, doğruluk | Bekliyor (K2) | — |
+| Hz. Elyesa | `elyesa` | 4 | `hz-elyesa/bolum-1…4` | emanet, devamlılık, iyilik, sabır | Bekliyor (K2) | — |
 
 ### Bölge 5 — Umut Işıkları Diyarı (5 kitap · 26 rozet)
 
 | Kitap | bookKey | Böl. | Anahtar aralığı | Ana değerler | İçerik | Görsel |
 |---|---|---:|---|---|---|---|
-| Hz. Yunus | `yunus` | 5 | `yunus-bolum-1…5` | tövbe, umut, sorumluluk, sabır | Bekliyor (K1) | — |
-| Hz. Şa‘yâ | `saya` | 4 | `saya-bolum-1…4` | doğruluk, umut, cesaret, emanet | Bekliyor (**K3**) | — |
-| Hz. Zekeriyyâ | `zekeriyya` | 5 | `zekeriyya-bolum-1…5` | dua, hizmet, umut, güven | Bekliyor (K1) | — |
-| Hz. Yahyâ | `yahya` | 4 | `yahya-bolum-1…4` | hikmet, merhamet, doğruluk, sadelik | Bekliyor (K2) | — |
-| Hz. Îsâ | `isa` | 8 | `isa-bolum-1…8` | merhamet, tevhid, umut, yardım, doğruluk | Bekliyor (K1) | — |
+| Hz. Yunus | `yunus` | 5 | `hz-yunus/bolum-1…5` | tövbe, umut, sorumluluk, sabır | Bekliyor (K1) | — |
+| Hz. Şa‘yâ | `saya` | 4 | `hz-saya/bolum-1…4` | doğruluk, umut, cesaret, emanet | Bekliyor (**K3**) | — |
+| Hz. Zekeriyyâ | `zekeriyya` | 5 | `hz-zekeriyya/bolum-1…5` | dua, hizmet, umut, güven | Bekliyor (K1) | — |
+| Hz. Yahyâ | `yahya` | 4 | `hz-yahya/bolum-1…4` | hikmet, merhamet, doğruluk, sadelik | Bekliyor (K2) | — |
+| Hz. Îsâ | `isa` | 8 | `hz-isa/bolum-1…8` | merhamet, tevhid, umut, yardım, doğruluk | Bekliyor (K1) | — |
 
 ### Bölge 6 — Rahmet Yolculuğu (4 kitap · 36 rozet)
 
 | Kitap | bookKey | Böl. | Anahtar aralığı | Ana değerler | İçerik | Görsel |
 |---|---|---:|---|---|---|---|
-| Hz. Muhammed — İlk Yıllar | `muhammed-ilk-yillar` | 8 | `muhammed-ilk-yillar-bolum-1…8` | güvenilirlik, merhamet, emek, adalet | Bekliyor (K4) | — |
-| Hz. Muhammed — Mekke Yılları | `muhammed-mekke` | 10 | `muhammed-mekke-bolum-1…10` | sabır, cesaret, tevhid, dayanışma | Bekliyor (K4) | — |
-| Hz. Muhammed — Medine Yılları | `muhammed-medine` | 10 | `muhammed-medine-bolum-1…10` | kardeşlik, adalet, barış, sorumluluk | Bekliyor (K4) | — |
-| Hz. Muhammed — Veda ve Emanet | `muhammed-veda` | 8 | `muhammed-veda-bolum-1…8` | merhamet, eşitlik, emanet, vefa | Bekliyor (K4) | — |
+| Hz. Muhammed — İlk Yıllar | `muhammed-ilk-yillar` | 8 | `hz-muhammed-ilk-yillar/bolum-1…8` | güvenilirlik, merhamet, emek, adalet | Bekliyor (K4) | — |
+| Hz. Muhammed — Mekke Yılları | `muhammed-mekke` | 10 | `hz-muhammed-mekke/bolum-1…10` | sabır, cesaret, tevhid, dayanışma | Bekliyor (K4) | — |
+| Hz. Muhammed — Medine Yılları | `muhammed-medine` | 10 | `hz-muhammed-medine/bolum-1…10` | kardeşlik, adalet, barış, sorumluluk | Bekliyor (K4) | — |
+| Hz. Muhammed — Veda ve Emanet | `muhammed-veda` | 8 | `hz-muhammed-veda/bolum-1…8` | merhamet, eşitlik, emanet, vefa | Bekliyor (K4) | — |
 
 > Bu dört kitabın rozet adları **birlikte** planlanır. Dördü tek hayatın
 > yolculuklarıdır; aynı değerin dört kez tekrarlanması riski en yüksek burada.
@@ -252,10 +252,10 @@ Hz. Şît 4); hepsi 512×512 şeffaf PNG. Kalan 204 rozet görseli bekliyor.
 
 | Kitap | bookKey | Böl. | Anahtar aralığı | Ana değerler | İçerik | Görsel |
 |---|---|---:|---|---|---|---|
-| Hz. Ebû Bekir | `ebubekir` | 6 | `ebubekir-bolum-1…6` | sadakat, güven, cömertlik, vefa | Bekliyor (K4) | — |
-| Hz. Ömer | `omer` | 7 | `omer-bolum-1…7` | adalet, cesaret, tevazu, sorumluluk | Bekliyor (K4) | — |
-| Hz. Osman | `osman` | 6 | `osman-bolum-1…6` | hayâ, cömertlik, sabır, hizmet | Bekliyor (K4) | — |
-| Hz. Ali | `ali` | 7 | `ali-bolum-1…7` | ilim, cesaret, sadakat, adalet | Bekliyor (K4) | — |
+| Hz. Ebû Bekir | `ebubekir` | 6 | `hz-ebubekir/bolum-1…6` | sadakat, güven, cömertlik, vefa | Bekliyor (K4) | — |
+| Hz. Ömer | `omer` | 7 | `hz-omer/bolum-1…7` | adalet, cesaret, tevazu, sorumluluk | Bekliyor (K4) | — |
+| Hz. Osman | `osman` | 6 | `hz-osman/bolum-1…6` | hayâ, cömertlik, sabır, hizmet | Bekliyor (K4) | — |
+| Hz. Ali | `ali` | 7 | `hz-ali/bolum-1…7` | ilim, cesaret, sadakat, adalet | Bekliyor (K4) | — |
 
 > Halife kitaplarında rozet adı `(a.s.)` içermez ve peygamberlik çağrıştıran
 > ifade kullanmaz.
@@ -309,9 +309,10 @@ Madalya görselleri bu matriste izlenmez; sicilleri `ICERIK-GORSEL-SICILI.md`
   iki kitabın 12 rozetinin tamamı teslim edildi. Kalan 204 rozet, ait olduğu
   kitabın içeriği geldikçe üretilecek. Görsel üretimi içerikten bağımsız
   ilerleyebilir; anahtarlar §1.2'deki kuralla önceden bellidir.
-- **Eski Hz. Nuh demo verisi `books.ts`'te duruyor** ve Hz. Âdem'le çakışan bir
-  rozet adı içeriyor (§2.1). Üründe görünmüyor, ama nihai Hz. Nûh içeriği
-  yazılırken hata kaynağı olabilir.
+- ~~**Eski Hz. Nuh demo verisi `books.ts`'te duruyor.**~~ **KAPANDI (25 Tem
+  2026)** — demo verisi koddan silindi (§2.1). O akıştaki beş rozet adı serbesttir;
+  nihai Hz. Nûh içeriği bunları yeniden kullanabilir, ama §2 dizinindeki güncel
+  adlarla yine karşılaştırılır.
 - ~~**Hz. Şît'in dört rozeti geçicidir.**~~ **KAPANDI (10 Ağu 2026)** — kaynaklı
   içerik `books.ts`'e aktarıldı; dört ad da §2'de "Nihai" olarak kayıtlı.
   Rozet görselleri de **11 Ağu 2026'da teslim edildi**

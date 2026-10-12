@@ -15,3 +15,6 @@ yarn-error.log*
 
 # Yerel yedek görseller (ör. kapak-eski.png) repoya girmez.
 public/**/*-eski.*
+
+# Kaynak kitap PDF'leri (telifli, büyük) — içerik oturumu okur, repoya girmez.
+kaynak-pdfler/

@@ -1437,21 +1437,28 @@ ileride istenirse eklenmesi kolaydır.)
 - Her kitabın kendi görsel dünyası olur (Âdem: tabiat/bahçe/ışık; Nuh:
   gemi/yağmur/dağ; İbrahim: çöl/yıldızlı gök...). Cami-kubbe-minare gibi
   dönemle uyumsuz genel dini dekor kullanılmaz.
-- **KARAR (19 Temmuz 2026): Her okuma sayfasına özel illüstrasyon üretilmez.**
-  Editoryal hedef, bölümün uzunluğuna ve sahnelerine göre genellikle 3–4 güçlü
-  görsel duraktır; teknik bir zorunluluk veya sabit sayı değildir. İllüstrasyon
-  yalnız hikâyede anlamlı bir görsel durak oluşturduğu içerik bloğuna bağlanır.
-  Sayfa numarasına bağlanmaz; tipografi veya sayfalama değiştiğinde hikâyedeki
-  doğru anla birlikte kalır.
-- Aynı sahne için bağımsız iki farklı kompozisyon üretilmez. Önce yüksek
-  çözünürlüklü ana sahne hazırlanır; tablet yatay/masaüstü için 4:3 yatay ve
-  tablet dikey/mobil için 3:4 dikey sürüm aynı nesne, ışık, renk ve resim dili
-  korunarak türetilir. Kod uygun kaynağı responsive görsel seçimiyle kullanır.
-  Seçilen görsel ayrılan illüstrasyon alanını tamamen doldurur; boş çerçeve veya
-  letterbox bırakılmaz. Oran farkı gerektiğinde kontrollü `cover` kırpmasıyla
-  çözülür. Bölüm açılışındaki etkileşimli “Dokun ve Keşfet” görseli de mobil ve
-  tablet dikeyde üst görsel alanının tam genişliğini kullanır; küçük bir kart
-  gibi ortada yüzmez.
+- **KARAR (REVİZE 12 Ekim 2026, Hasan): bölüm başına hedef 6 görsel** —
+  1 açılış sahnesi (`kapak.jpg`) + 5 içerik sahnesi. Gerekçe: çocuk kitabıdır;
+  okuma tek sütunda kaydırılır ve görsel, metin duvarını bölen asıl moladır.
+  Önceki hedefler: 19 Tem 2026'da "3–4 görsel durak", 26 Tem 2026'da "1 açılış
+  + 4 sahne". Lansman için önerilen "seyrek mod" (kapak + 2 sahne) aynı gün
+  **iptal edildi**.
+  - Alt sınır 5 görseldir (açılış + 4). Bu sınıra yalnız kısa bölümde (~2.800
+    karakterin altı) veya kaynakta gösterilecek ayrı bir an yoksa, gerekçesi
+    yazılarak inilir. Sayıyı doldurmak için anlamsız manzara üretilmez.
+  - Dağılım: Hikâye — 1. Kısım ve Hikâye Devam Ediyor'da en az 2'şer sahne.
+    Sen Olsaydın, Seçimini Karşılaştır, Ne Öğrendik ve Bugüne Taşı alanlarına
+    görsel konmaz. İki görsel art arda gelmez (arada en az bir paragraf).
+  - Teknik bir sınır değildir: okuyucu ve `gorsel-yertutucu` betiği `books.ts`'te
+    kaç `type: "image"` bloğu varsa onu kullanır.
+  - Yayındaki kitaplar (Âdem, Şît, İdrîs: 1 + 4) için geriye dönük ekleme
+    zorunlu değildir; ayrı bir karar konusudur.
+- İllüstrasyon, hikâyede anlamlı bir görsel durak oluşturduğu içerik bloğuna
+  bağlanır. Sayfa numarasına bağlanmaz.
+- **Her sahne tek dosyadır: 16:9 `.jpg` (KARAR 27 Tem 2026).** Eski 4:3 yatay +
+  3:4 dikey sürüm ikilisi sayfalı okuma düzeni içindi ve kaldırıldı; kod
+  `portraitSrc` alanını okuma akışında kullanmaz. Görsel ayrılan alanı tamamen
+  doldurur; boş çerçeve veya letterbox bırakılmaz. "Dokun ve Keşfet" kapatıldı.
 - Özel illüstrasyonu olmayan hikâye sayfasında genel placeholder veya boş görsel
   sütunu gösterilmez. Sayfa; diyalog, etkileşimli kelime, kısa geçiş ya da düz
   okuma içeriğine göre kodla oluşturulan tam genişlikte atlas düzenini kullanır.
@@ -1698,7 +1705,7 @@ Kurallar:
       okumadan sayfayı kaydırıp çıkabiliyor, sistem yanlış yere götürüyordu.
       Bölüm her açılışta baştan başlar.
 - [x] **Görsel yoğunluğu: bölüm başına 1 açılış + 4 içerik görseli** (~800
-      karakterde bir sahne). Gerekçe: `type: "image"` bloğu bugün yalnız Hz. Âdem
+      karakterde bir sahne). *(12 Eki 2026'da 1 açılış + 5 sahneye çıkarıldı — 6.4.)* Gerekçe: `type: "image"` bloğu bugün yalnız Hz. Âdem
       Bölüm 1'de var; tek sütun kaydırmada görselsiz bölüm metin duvarına döner.
       Yerler `books.ts`'e placeholder olarak açılır, dosya adları
       `ICERIK-GORSEL-SICILI.md`'de tutulur (Bölüm 6 üretim akışı).
@@ -1738,6 +1745,10 @@ Kurallar:
       (3.10.1, 3.10.6, 3.10.7).
 - [x] Lansman 10 kitapla yapılır; hangi 10 kitap olduğu Hasan'ın seçimidir.
       Uygulama kitapları her zaman katalog sırasıyla gösterir.
+- [x] **Görsel yoğunluğu artırıldı (12 Ekim 2026, Hasan: "çocuk kitabı olduğu
+      için bol görselli olması daha iyi"):** bölüm başına 1 açılış + 5 sahne =
+      6 görsel; alt sınır 5. Lansman "seyrek modu" (kapak + 2 sahne) iptal
+      edildi (6.4). İçerik brifi, katalog ve görsel sicili hizalandı.
 - [x] **Faz B uygulandı (12 Ekim 2026):** okuma ekranı krem zeminde açılış
       bloğu, adım çubuğu / adım sütunu, tek başlıklı bölümler, "Aa", "Dinle"
       + ses şeridi, gece mavisi rozet anı ve "Sıradaki Bölüme Geç". Ayrıntı
@@ -1778,8 +1789,9 @@ Kurallar:
 
 | Kitap | Durum |
 |---|---|
-| Hz. Âdem | ✅ Yeni içerik yazıldı ve **dini doğruluk onayı verildi (Hasan, 15 Tem 2026)** — **8 bölüm + Büyük Final Testi**. **Geçerli tek kaynak dosya: `kitap-icerikleri/KITAP-HZ-ADEM-ICERIK-final.md`** (eski `KITAP-HZ-ADEM-ICERIK.md` geçersizdir). Yeni bölüm akışıyla: iki parçalı hikâye + Seçimini Karşılaştır. Hâbil-Kâbil kıssası **Bölüm 7** olarak dahil — Mâide 5/27-31 merkezli, şiddet ayrıntısı gösterilmeden (kitaba özgü karar, genel kural değil). **4 koşullu "Bugüne Taşı" görevi** (Bölüm 2, 3, 5, 7). **`books.ts`'e + final testine + veli raporuna Faz 6.1'de aktarıldı (birebir).** |
+| Hz. Âdem | ✅ Yeni içerik yazıldı ve **dini doğruluk onayı verildi (Hasan, 15 Tem 2026)** — **8 bölüm + Büyük Final Testi**. **Geçerli tek kaynak dosya: `kitap-icerikleri/KITAP-HZ-ADEM-ICERIK-final.md`** (eski `KITAP-HZ-ADEM-ICERIK.md` 12 Eki 2026'da silindi). Yeni bölüm akışıyla: iki parçalı hikâye + Seçimini Karşılaştır. Hâbil-Kâbil kıssası **Bölüm 7** olarak dahil — Mâide 5/27-31 merkezli, şiddet ayrıntısı gösterilmeden (kitaba özgü karar, genel kural değil). **4 koşullu "Bugüne Taşı" görevi** (Bölüm 2, 3, 5, 7). **`books.ts`'e + final testine + veli raporuna Faz 6.1'de aktarıldı (birebir).** |
 | Hz. Şît | ✅ Kaynaklı içerik yazıldı ve **`books.ts` + `quizzes.ts` + veli raporuna aktarıldı (10 Ağu 2026)** — **4 bölüm + Büyük Final Testi (4 soru)**. **Geçerli tek kaynak dosya: `kitap-icerikleri/KITAP-HZ-SIT-FINAL.md`.** Kaynak sınıfı **K3** (adı Kur'an'da geçmez): rivayetler "anlatılanlara göre" çerçevesinde verilir; ömür/yaş/sahife rakamı ve defin yeri metinde hiç geçmez. **2 koşullu "Bugüne Taşı" görevi** (Bölüm 2, 3). Tanık Sayfası kullanılmadı (0). Geçici demo içeriği ve `localStorage` ilerleme altyapısı kaldırıldı; ilerleme Supabase'e yazılır. |
+| Hz. İdrîs | ✅ Kaynaklı içerik yazıldı, **`books.ts` + `quizzes.ts` + veli raporuna aktarıldı (5 Eyl 2026)**; **dinî doğruluk ve editoryal onay verildi (Hasan, 12 Eki 2026)** — **4 bölüm + Büyük Final Testi (4 soru)**. **Geçerli tek kaynak dosya: `kitap-icerikleri/KITAP-HZ-IDRIS-ICERIK-final.md`**; kaynak denetimi (Faz 1) `KITAP-HZ-IDRIS-KAYNAK-DENETIMI.md`. Kaynak sınıfı **K2**: icat rivayetleri "İslam inancına ve tarihî rivayetlere göre" kalıbıyla verilir; yaş, yıl, ömür ve sahife sayısı metinde geçmez. **2 koşullu "Bugüne Taşı" görevi** (Bölüm 2, 3). Tanık Sayfası kullanılmadı (0). |
 | Hz. Nuh, Hz. Ebû Bekir, Hz. Ömer | Önceki demo bölüm/okuyucu akışları ürün rotalarından kaldırıldı. Keşif Atlası'nda uygun bölgelerinde yalnız **Hazırlanıyor** görünür. |
 | Diğer kitaplar | `KITAP-KATALOGU-VE-URETIM-PLANI.md` sırasıyla katalogda **Hazırlanıyor**; kaynaklı içerik geldikçe yayımlanacak. |
 

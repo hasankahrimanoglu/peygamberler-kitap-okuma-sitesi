@@ -12,6 +12,10 @@ girer (PROJE-MODELI.md Bölüm 6.1 üretim akışı).
 > her sayfa küçük olduğu için görselsizlik gizleniyordu; tek sütun kaydırmada
 > görselsiz bölüm metin duvarına döner. Bu yüzden Hz. Âdem'in **her bölümüne
 > 1 açılış + 4 içerik sahnesi** yeri açıldı (Hasan onayı, 26 Tem 2026).
+>
+> **REVİZE 12 Ekim 2026 (Hasan):** yeni kitaplarda bölüm başına **1 açılış +
+> 5 içerik sahnesi = 6 görsel** (alt sınır 5; PROJE-MODELI 6.4). Yayındaki
+> Âdem, Şît ve İdrîs 1 + 4 düzeninde kalır; geriye dönük ekleme ayrı karardır.
 
 ---
 
@@ -23,7 +27,9 @@ girer (PROJE-MODELI.md Bölüm 6.1 üretim akışı).
 | Bölüm klasörü | `public/kitaplar/hz-{bookKey}/bolum-{n}/` |
 | Bölüm açılış sahnesi | `bolum-{n}/kapak.jpg` |
 | Bölüm içi sahne | `bolum-{n}/{kisa-ad}.jpg` |
-| Kitap kapağı | `hz-{bookKey}/kapak.png` (dikey; harita ve kütüphanede) |
+| Bölüm başına sayı | 1 açılış + 5 sahne = **6** (alt sınır 5) — 12 Eki 2026 |
+| Kitap kapağı | `hz-{bookKey}/kapak.png` (dikey; kütüphane, kitap paneli, veli kartı) |
+| Harita durağı görseli | `hz-{bookKey}/harita-kapak.jpg` (kare; ana ekran rotasındaki yuvarlak durak) |
 | **Oran** | Okuma sayfası görselleri **16:9** (öneri: 1920×1080) |
 | **Uzantı** | **`.jpg`** — sabit. Sahneler fotoğrafiktir; JPEG aynı kalitede PNG'nin onda biri yer kaplar |
 | Ad biçimi | Küçük harf, Türkçe karaktersiz, tireli |
@@ -72,6 +78,7 @@ Hepsinin aynı anda üretilmesi gerekmez; eksik olanlar placeholder ile görün�
 `bolum-1/kapak.jpg` 1200×896 (4:3) geldiği için tek açık kalem odur. Bölüm 1'in
 diğer dört sahnesi 1376×768 (1.792) — 16:9'a %0.8 sapma, gözle fark edilmiyor,
 yeniden üretim gerektirmez. Bölüm 2–8 tamamı 1920×1080.
+Tam üretim promptları: `kitap-icerikleri/HZ-ADEM-GORSEL-PROMPTLARI.md`.
 
 ### Bölüm 1 — Beklenen Misafir
 
@@ -217,7 +224,7 @@ kaydeder; uzun prompt metni tekrarlanmaz.
 **Durum (12 Ağu 2026):** 20 slot açıldı · **4 gerçek görsel var, 16 yer tutucu
 bekliyor.** Dört bölüm kapağı (`bolum-1…4/kapak.jpg`) içerik aktarımından önce
 diske konmuştu ve `npm run gorsel-yertutucu -- idris` bunları korudu. Briflerin
-tamamı `kitap-icerikleri/KITAP-HZ-IDRIS-ICERIK-FAZ2-taslak.md` §H'dedir (ana
+tamamı `kitap-icerikleri/KITAP-HZ-IDRIS-ICERIK-final.md` §H'dedir (ana
 üretim promptu ve negatif prompt dahil); aşağıdaki tablo yalnız dosya adı,
 akıştaki yer ve `alt` metnini kaydeder.
 

@@ -18,6 +18,13 @@
 > **7 Ağustos 2026** — rozet, madalya ve unvan `.svg`'den **`.png`**'ye alındı
 > (PROJE-MODELI 6.1). Ekranda en fazla 72px çizildikleri için vektöre gerek
 > yok; brifler ise gradyan, doku ve ışık istiyor.
+>
+> **12 Ekim 2026** — görsel yoğunluğu artırıldı: bölüm başına **6 görsel**
+> (1 açılış + 5 içerik sahnesi; PROJE-MODELI 6.4). Lansman için önerilen
+> "seyrek mod" iptal edildi. Tasvir kuralı revize edildi (yüz hiçbir görselde
+> yok; peygamberler yüzü görünmeyen figür olabilir). Harita durağı görseli
+> (`harita-kapak.jpg`) kapaktan ayrı yazıldı. Kod türettiği için "Üst etiket"
+> alanı ve kaldırılmış "Bölüm rotası arka planı" brifi teslimden çıkarıldı.
 
 ---
 
@@ -43,6 +50,7 @@ Varsa ek güvenilir kaynaklar: [YOKSA “yalnızca verilen PDF” yaz]
 Özellikle ele alınması gereken olaylar: [LİSTE / PDF'YE GÖRE]
 Merkezî rozet matrisi: ROZET-MATRISI.md [rozet adı çakışma kontrolü için — ZORUNLU]
 Merkezî sözlükçe sicili: SOZLUKCE-SICILI.md [etkileşimli kelime kontrolü için — ZORUNLU]
+Hazır görseller: [kapak.png var/yok · harita-kapak.jpg var/yok]
 Ek editoryal notlar: [VARSA]
 ```
 
@@ -173,33 +181,38 @@ aralığına dayanmalıdır.
 
 ## 5. SİTENİN TÜM EKRANLARINDA GEREKEN ALANLAR
 
-### 5.1 Ana çocuk keşif haritası
+### 5.1 Ana ekran (kitap rotası)
+
+Kitaplar ana ekranda katalog sırasıyla tek dikey rotada dizilir; keşif bölgeleri
+arayüzde gösterilmez (PROJE-MODELI 3.10.1). Bölge bilgisi yalnız editoryal
+gruplama olarak katalogda kalır.
 
 | Alan | Kullanım | Kural |
 |---|---|---|
-| Kitap sırası | Keşif durağı | Pozitif tam sayı |
-| Kitap adı | Harita, panel, kütüphane | `Hz. + isim` |
+| Kitap sırası | Rotadaki yeri | Katalogdaki sıra; pozitif tam sayı |
+| Kitap adı | Rota, panel, kütüphane | `Hz. + isim` |
 | Alt başlık | Kitap kartı | 15–45 karakter, tek satıra sığmalı. Kısa ve net olması iyidir; uzatmak için doldurma yapma |
 | Keşif açıklaması | Seçili kitap paneli | 100–180 karakter; ana değerleri merak uyandırarak anlatır. Kodda `atlasCatalog.ts` → `description` alanına girer |
-| Kitap kapağı brifi | Harita ve veli kütüphanesi | 2:3, yazısız görsel üretim brifi ayrıca verilir |
+| Kitap kapağı brifi | Kütüphane, kitap paneli, veli kartı | 2:3 dikey, yazısız. **Klasörde zaten varsa yazılmaz** |
+| Harita durağı görseli brifi | Rotadaki yuvarlak durak | Kare, yazısız, ana sembol merkezde. **Klasörde zaten varsa yazılmaz** |
 | Bölüm sayısı | İlerleme | Katalogdaki hedef; 4–10 |
 | Kitap madalyası adı | Final ve ödül ekranları | `{Kitap adı} Yolculuk Madalyası` |
 
-Kilit/açık/tamamlandı metinleri sistem tarafından üretilir; içerik dosyasında
-ayrıca yazılmaz.
+Durum metinleri ("Tekrar Oku", "Devam Et", "Yeni" etiketi vb.) sistem tarafından
+üretilir; içerik dosyasında ayrıca yazılmaz.
 
-### 5.2 Kitap bölüm rotası
+### 5.2 Bölüm listesi
 
 Her bölüm için şunlar gerekir: bölüm numarası, bölüm adı, bölüm özeti, rozet adı,
-rozet sembolü, rozet dosya anahtarı ve varsa Bugüne Taşı görev özeti. Bölüm adı
-harita durağında tek satıra sığmalıdır.
+rozet sembolü ve varsa Bugüne Taşı görev özeti. Bölüm adı listede tek satıra
+sığmalıdır.
 
 ### 5.3 Okuma ekranı
 
 Her bölüm için şunların tümü gerekir:
 
-- bölüm kimliği ve ses dosyası planı
-- bölüm açılış illüstrasyonu (uygunsa)
+- bölüm kimliği ve ses dosyası planı (sesli anlatım her bölümde vardır)
+- bölüm açılış sahnesi (zorunlu)
 - Hikâye — 1. Kısım
 - etkileşimli kelimeler
 - isteğe bağlı Tanık Sayfası
@@ -208,7 +221,7 @@ Her bölüm için şunların tümü gerekir:
 - her seçenek için Seçimini Karşılaştır metni
 - Ne Öğrendik (3 madde)
 - varsa Bugüne Taşı görevi
-- 3–4 güçlü görsel durak için 16:9 sahne brifi (tek kadraj)
+- 5 içerik sahnesi için 16:9 sahne brifi (tek kadraj; açılışla birlikte 6 görsel)
 - rozet kapısı metaverisi
 
 ### 5.4 Çocuk ek ekranları
@@ -252,7 +265,6 @@ aktarım yapılmadan önce sorulur.
 | Seri sırası | Pozitif tam sayı |
 | Alt başlık | 15–45 karakter, tek satıra sığmalı |
 | Keşif haritası açıklaması | 100–180 karakter, 1–2 cümle. Kitabın tek tanıtım metnidir; ayrıca "tanıtım paragrafı" yazılmaz |
-| Üst etiket | `{Kitap adı} — Çocuklar İçin` |
 | Madalya adı | *(doğrulama amaçlı)* Kod `{Kitap adı} Yolculuk Madalyası` olarak türetir |
 | Madalya sembol fikri | Figürsüz nesne/sembol, 1–3 kelime |
 | Bölüm sayısı | Katalogdaki hedef; 4–10 |
@@ -283,8 +295,8 @@ Her bölümde:
 - **Rozet adı:** 2–4 kelime, `{değer/kavram} Rozeti`; set genelinde tekil.
   Tekillik `ROZET-MATRISI.md` §2 diziniyle karşılaştırılarak doğrulanır
 - **Rozet sembolü:** figürsüz 1–3 kelime
-- **Rozet anahtarı:** *(doğrulama amaçlı)* Kod `{bookKey}-bolum-{no}` olarak
-  türetir; veriye yazılmaz
+- **Rozet anahtarı:** *(doğrulama amaçlı)* Kod `hz-{bookKey}/bolum-{no}` olarak
+  türetir → `public/rozetler/hz-{bookKey}/bolum-{no}.png`; veriye yazılmaz
 - **Ses yolu planı:** `/sesli-anlatim/{assetSlug}/{assetSlug}-bolum-{no}.mp3`
 
 ### 7.2 Hikâye uzunluğu ve dil
@@ -441,36 +453,49 @@ belirt.
 | Varlık | Boyut/oran | Dosya planı | Teslim edilecek bilgi |
 |---|---|---|---|
 | Kitap kapağı | 600×900, 2:3, `.png` | `public/kitaplar/hz-{bookKey}/kapak.png` | Ana kompozisyon ve üretim promptu |
+| Harita durağı görseli | Kare, 512×512 veya üstü, `.jpg` | `public/kitaplar/hz-{bookKey}/harita-kapak.jpg` | Merkezdeki tek sembol ve prompt |
 | Kitap madalyası | 512×512 şeffaf, **`.png`** | `public/madalyalar/hz-{bookKey}.png` | Sembol, çerçeve, renk ve prompt |
 | Bölüm rozeti | 512×512 şeffaf, **`.png`** | `public/rozetler/hz-{bookKey}/bolum-{n}.png` | Bölüme özel sembol ve prompt |
 
-**Kapak, haritada daire olarak kırpılır.** Keşif haritasındaki durak madalyonu
-mobilde 48px'dir ve 2:3 kapağı yuvarlak keser. Ana sembol **merkezde** olmalı ve
-o ölçüde tanınmalıdır; kenarlara yerleşen detaylar haritada tamamen kaybolur.
-Aynı dosya kitap panelinde ve veli kütüphanesinde tam boy görünür — kompozisyon
-her iki kullanımda da çalışmalıdır.
+**Kapak ve harita durağı görseli iki ayrı dosyadır** (KARAR 8 Ağustos 2026).
+Dikey kapak kütüphanede, kitap panelinde ve veli kartında tam boy görünür. Ana
+ekran rotasındaki yuvarlak durak ise `harita-kapak.jpg` kullanır: kare hazırlanır,
+daireyi CSS çizer, ekranda yaklaşık 70px görünür. Bu yüzden durak görselinde
+**tek ve merkezde duran bir sembol** olmalı; kenardaki ayrıntı kaybolur.
 
-**"Bölüm rotası arka planı" artık kitap paketinde DEĞİLDİR.** Sahne görselleri
-27 Temmuz 2026'da kitap başına değil **keşif bölgesi başına** üretilmeye geçti
-(`public/bolgeler/bolge-{bolgeId}-{dikey|yatay}.jpg`). Yedi bölgenin sahneleri
-bir kez üretilmiştir; yeni kitap eklerken yeniden istenmez.
+**Kapak veya durak görseli klasörde zaten varsa brifi yazılmaz.** Kullanıcı
+§1'de belirtir; belirtmediyse ajan sorar.
+
+**Kitap paketinde bölge sahnesi ve bölüm rotası arka planı YOKTUR.** Ana ekran
+rotasının arka planı kodla çizilir; bölge sahneleri ise kitap başına değil bölge
+başına üretilir ve hazırdır.
 
 ### 8.3 Bölüm içi illüstrasyonlar
 
-- Editoryal hedef bölüm başına genellikle **3–4 güçlü görsel duraktır**; her
-  okuma sayfasına görsel üretme.
+**Bölüm başına hedef 6 görsel (KARAR 12 Ekim 2026 — PROJE-MODELI 6.4):**
+1 açılış sahnesi (`kapak.jpg`) + **5 içerik sahnesi.** Çocuk kitabıdır; okuma tek
+sütunda kaydırılır ve görsel, metin duvarını bölen asıl moladır.
+
+- **Alt sınır 5 görseldir (açılış + 4 sahne).** Bu sınıra yalnız bölüm kısaysa
+  (yaklaşık 2.800 karakterin altı) ya da kaynakta gösterilecek ayrı bir an
+  gerçekten yoksa inilir. Gerekçe, bölümün iç kalite özetine yazılır.
+- **Dağılım:** Hikâye — 1. Kısım'da en az 2, Hikâye Devam Ediyor'da en az 2
+  içerik sahnesi olur. Görseller hikâye bölümlerinin içindedir. Sen Olsaydın,
+  Seçimini Karşılaştır, Ne Öğrendik ve Bugüne Taşı alanlarına görsel konmaz.
+- **Ritim:** İki görsel art arda gelmez; aralarında en az bir paragraf bulunur.
+  Ölçü olarak yaklaşık her 2–3 paragrafta bir görsel düşer.
+- **Her görsel ayrı bir an gösterir.** Aynı kompozisyonu tekrarlama: uzak plan,
+  yakın nesne, mekân, ışık değişimi ve iz gibi kadrajları dönüşümlü kullan.
+  Sayıyı doldurmak için anlamsız manzara üretme. Gösterilecek ayrı an yoksa alt
+  sınır kuralını uygula.
 - Her görsel, metindeki anlamlı bir paragrafın hemen ardından konumlandırılır.
 - Sayfa numarası verme; bunun yerine “Şu paragraftan sonra” şeklinde kesin metin
   çapası belirt.
-- Her sahne **tek dosyadır: 16:9, önerilen 1920×1080, `.jpg`.**
+- Her sahne **tek dosyadır: 16:9, önerilen 1920×1080, `.jpg`.** Dikey varyant
+  üretilmez; okuma tek sütunda aktığı için 16:9 sahne her cihazda tam genişlikte
+  durur.
 - Görsel ayrılan alanı tamamen doldurabilecek kompozisyonda olmalı; kenarlarda
   boş şerit/letterbox tasarlama.
-
-**Dikey (3:4) varyant ÜRETİLMEZ — kaldırıldı.** Eski 4:3 + 3:4 ikilisi, görselin
-metnin yanındaki dar panele sığdırıldığı **sayfalı** okuma düzeni içindi. Okuma
-26 Temmuz 2026'da tek sütun kaydırmalı akışa geçti; 16:9 sahne her cihazda tam
-genişlikte bir bant olarak durur. Sahne başına iki dosya istenirse emeğin yarısı
-boşa gider — kod `portraitSrc` alanını okuma akışında bilerek kullanmaz.
 
 Dosya planı:
 
@@ -495,11 +520,10 @@ Kadraj notu: ...
 Negatif prompt/kesin yasaklar: ...
 ```
 
-### 8.4 Dokun ve Keşfet — ⛔ KAPATILDI (27 Temmuz 2026)
+### 8.4 Görsel üzerinde etkileşim yoktur
 
-Prototip kapatıldı (PROJE-MODELI 6.4). Bölüm kapısındaki sahnenin üstünde
-**etkileşim yoktur.** Yeni kitap için keşif noktası, koordinat ya da keşif
-komutu **yazma** — karşılığı olan bir ekran bulunmuyor.
+"Dokun ve Keşfet" kapatıldı (27 Temmuz 2026). Keşif noktası, koordinat veya
+keşif komutu yazma.
 
 ---
 
@@ -634,7 +658,6 @@ dbKeywords:
 Seri sırası:
 Alt başlık:
 Keşif haritası açıklaması:
-Üst etiket:
 Madalya adı:
 Madalya sembolü:
 Bölüm sayısı: [KATALOGDAKİ HEDEF]
@@ -649,8 +672,8 @@ Bugüne Taşı dağılımı:
 Tanık kararı:
 
 ## C. GÖRSEL VARLIK ANA BRİFLERİ
-### C1. Kitap kapağı
-### C2. Bölüm rotası arka planı
+### C1. Kitap kapağı [klasörde varsa “Hazır — üretilmeyecek” yaz]
+### C2. Harita durağı görseli [klasörde varsa “Hazır — üretilmeyecek” yaz]
 ### C3. Kitap madalyası
 
 ## D. BÖLÜMLER
@@ -699,7 +722,8 @@ C)
 [Yoksa “Bu bölümde yok.”]
 
 #### BÖLÜM İLLÜSTRASYONLARI
-[3–4 güçlü görsel durağı; her biri TEK 16:9 brif.]
+[1 açılış (`kapak.jpg`) + 5 içerik sahnesi = 6 görsel; her biri TEK 16:9 brif.
+1. Kısım'da en az 2, Devam'da en az 2 sahne. 5'e inildiyse gerekçesini yaz.]
 
 #### BÖLÜM İÇ KALİTE ÖZETİ
 Toplam hikâye karakteri:
@@ -707,7 +731,7 @@ Paragraf sayısı:
 Tahmini diyalog oranı:
 18 kelimeyi aşan cümle var mı?:
 Etkileşimli kelimeler:
-Görsel durağı sayısı:
+Görsel sayısı (açılış + sahne; 1. Kısım / Devam dağılımı):
 Kaynak dışı bilgi var mı?:
 
 ### D2. BÖLÜM 2: ...
@@ -729,9 +753,9 @@ Kaynak dışı bilgi var mı?:
 ### G3. İsim ve özel kelime telaffuz notları
 
 ## H. GÖRSEL DOSYA ENVANTERİ
-[Kapak (.png) + madalya (.png) + N rozet (.png) + tüm 16:9 içerik görselleri
-(.jpg). Bölge sahnesi bu envantere GİRMEZ — kitap başına değil bölge başına
-üretilir ve yedisi de hazırdır.]
+[Kapak (.png) ve harita durağı (.jpg) — hazır değilse + madalya (.png) + N rozet
+(.png) + tüm 16:9 sahne görselleri (.jpg; bölüm başına 6). Her satırda dosya yolu
+ve alt metin. Bölge sahnesi bu envantere GİRMEZ.]
 
 ## I. SON KALİTE RAPORU
 ### I1. Bölüm ve uzunluk tablosu
@@ -768,7 +792,9 @@ Ajan, teslim sonunda her maddeyi `tamam / sorun var` olarak raporlamalıdır:
 - [ ] Etkileşimli kelimeler yalnız ilk geçişte; tanımlar sabit sözlükçeyle aynı.
 - [ ] Etkileşimli kelimeler `SOZLUKCE-SICILI.md` ile karşılaştırıldı; daha önce
       başka kitapta kutulanmış terim bu kitapta düz metin bırakıldı.
-- [ ] Her bölümde genellikle 3–4 anlamlı görsel durağı var; gereksiz görsel yok.
+- [ ] Her bölümde 6 görsel var (1 açılış + 5 sahne); 5'e inilen bölümün
+      gerekçesi yazılı. 1. Kısım ve Devam'da en az 2'şer sahne; art arda iki
+      görsel yok; aynı kompozisyon tekrar etmiyor.
 - [ ] Her içerik görselinin TEK 16:9 brifi var (dikey varyant üretilmez).
 - [ ] Görsel dosya adları `ICERIK-GORSEL-SICILI.md` düzenine uyuyor
       (`bolum-{n}/{kisa-ad}.jpg`); rozet ve madalya 512×512 şeffaf `.png`.

@@ -1,5 +1,11 @@
 # HZ. ÂDEM — GÖRSEL ÜRETİM PROMPTLARI (40 görsel)
 
+> **Durum (12 Ekim 2026):** 40 görselin 40'ı üretildi; dosya arşiv niteliğindedir.
+> Tek açık kalem `bolum-1/kapak.jpg` (4:3 geldi, 16:9 yeniden üretilecek). Promptu
+> aşağıdadır. Bu dosya 11 Ağustos'taki **eski, daha katı tasvir kuralıyla**
+> yazıldı ("insan/silüet/el yok"). Yeni kitaplar için örnek alınmaz; güncel kural
+> `YENI-KITAP-ICERIK-URETIM-BRIFI.md` §8'dedir. (Kök dizinden buraya taşındı.)
+
 Dosya adları `public/kitaplar/hz-adem/` altındaki mevcut yer tutucularla **birebir aynıdır**.
 Üretilen görsel aynı ada kaydedilir, kod değişmez.
 

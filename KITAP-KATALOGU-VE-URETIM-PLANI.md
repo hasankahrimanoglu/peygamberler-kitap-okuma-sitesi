@@ -290,9 +290,11 @@ denetiminde dört sağlam bölüm kurulamıyorsa ajan metin üretmez; bulgusunu 
 **Lansman (KARAR 12 Ekim 2026, Hasan):** Uygulama **10 kitapla** yayına çıkar;
 hangi 10 kitap olacağı Hasan'ın seçimidir ve yukarıdaki dalga sırasına bağlı
 değildir. Kitaplar arasında kilit olmadığı için yayın sırası katalog sırasından
-bağımsızdır; uygulama kitapları daima bu belgedeki sırayla gösterir. Üretim
-süresini kısaltmak için lansmanda bölüm başına kapak + 2 sahne görseli
-(seyrek mod) yeterlidir; sesli anlatım her bölümde olur (PROJE-MODELI 6.5).
+bağımsızdır; uygulama kitapları daima bu belgedeki sırayla gösterir. Sesli
+anlatım her bölümde olur (PROJE-MODELI 6.5). **Görsel yoğunluğu lansmanda da
+düşürülmez (REVİZE 12 Ekim 2026, Hasan):** bölüm başına 1 açılış + 5 sahne =
+6 görsel (PROJE-MODELI 6.4). Daha önce önerilen "seyrek mod" (kapak + 2 sahne)
+iptal edildi.
 
 ### 11.2 Her içerik üretim oturumuna verilecek dosyalar
 
@@ -301,32 +303,64 @@ süresini kısaltmak için lansmanda bölüm başına kapak + 2 sahne görseli
 3. Bu dosya: `KITAP-KATALOGU-VE-URETIM-PLANI.md`
 4. Güncel merkezî rozet matrisi: `ROZET-MATRISI.md`
 5. Güncel merkezî sözlükçe sicili: `SOZLUKCE-SICILI.md`
-6. Varsa ek güvenilir kaynaklar ve özellikle çıkarılacak rivayet listesi
+6. Önerilir: `ICERIK-GORSEL-SICILI.md` (görsel dosya adlarının tek kaynağı)
+7. Önerilir: biçim örneği olarak yayımlanmış son kitabın içerik dosyası
+   (ör. `kitap-icerikleri/KITAP-HZ-IDRIS-ICERIK-final.md`)
+8. Varsa ek güvenilir kaynaklar ve özellikle çıkarılacak rivayet listesi
+
+Verilmez: `PROJE-MODELI.md` ve kod dosyaları.
+
+**Çalışma yeri:** İçerik, proje klasöründe açılan **ayrı bir Claude Code
+oturumunda** üretilir. Ajan kuralları diskten güncel hâliyle okur ve teslimi
+`kitap-icerikleri/`'ne yazar. Kaynak PDF `kaynak-pdfler/` klasörüne konur
+(git'e girmez). Oturum kuralları CLAUDE.md'deki "İçerik oturumu istisnası"ndadır.
+
+**Üretim iki fazda yapılır** (Hz. İdrîs'te uygulanan düzen):
+
+1. **Faz 1 — kaynak denetimi ve bölüm planı.** Brifin A bölümü (künye, olay
+   envanteri, rivayet tablosu, bölüm kaynak haritası, kullanılmayanlar) + bölüm
+   adları ve özetleri + rozet adı önerileri + yeni terim önerileri + açık editör
+   soruları. Hikâye yazılmaz. Dosya: `KITAP-HZ-{ANAHTAR}-ICERIK-taslak.md`.
+2. **Hasan onayı.** Bölüm planı, rozet adları, yeni terimler, dışarıda kalan
+   olaylar ve hassas konuların çerçevesi onaylanır.
+3. **Faz 2 — tam içerik paketi.** Brifin §13 iskeleti eksiksiz doldurulur.
+   Dosya: `KITAP-HZ-{ANAHTAR}-ICERIK-FAZ2-taslak.md`.
+4. **Aktarım.** Kod oturumunda `books.ts`, `quizzes.ts`, `atlasCatalog.ts` ve
+   üç sicil güncellenir; `npm run gorsel-yertutucu -- {bookKey}` çalıştırılır.
 
 Ajana ayrıca şu kısa komut verilmelidir:
 
 ```text
 Katalog belgesindeki [KİTAP ADI] satırını esas al. Yalnız bu dijital kitabın
 kapsamını üret. Hedef bölüm sayısını değiştirme; kaynak bunu taşımıyorsa metni
-doldurma ve önce gerekçeli karar sorusu sor. Teslimini
+doldurma ve önce gerekçeli karar sorusu sor. Önce yalnız FAZ 1'i teslim et
+(kaynak denetimi + bölüm planı + rozet adı ve yeni terim önerileri); onayımdan
+önce hikâye yazma. Onaydan sonra FAZ 2'yi
 YENI-KITAP-ICERIK-URETIM-BRIFI.md iskeletinde tek Markdown dosyası olarak ver.
 ```
 
 ### 11.3 Dosya adı standardı
 
 ```text
-kitap-icerikleri/KITAP-{BUYUK-HARF-ANAHTAR}-ICERIK-taslak.md
-kitap-icerikleri/KITAP-{BUYUK-HARF-ANAHTAR}-ICERIK-final.md
+Üretim sırasında:
+kitap-icerikleri/KITAP-{BUYUK-HARF-ANAHTAR}-ICERIK-taslak.md        ← Faz 1
+kitap-icerikleri/KITAP-{BUYUK-HARF-ANAHTAR}-ICERIK-FAZ2-taslak.md   ← Faz 2
+
+Onaydan sonra:
+kitap-icerikleri/KITAP-{BUYUK-HARF-ANAHTAR}-ICERIK-final.md         ← Faz 2 paketi
+kitap-icerikleri/KITAP-{BUYUK-HARF-ANAHTAR}-KAYNAK-DENETIMI.md      ← Faz 1 kaydı
 ```
 
-Örnek:
+Örnek (Hz. İdrîs, onay 12 Ekim 2026):
 
 ```text
-kitap-icerikleri/KITAP-HZ-SIT-ICERIK-taslak.md
-kitap-icerikleri/KITAP-HZ-SIT-ICERIK-final.md
+kitap-icerikleri/KITAP-HZ-IDRIS-ICERIK-final.md
+kitap-icerikleri/KITAP-HZ-IDRIS-KAYNAK-DENETIMI.md
 ```
 
-Yalnız dinî doğruluk ve editoryal onaydan geçen dosya `final` adını alır.
+Yalnız dinî doğruluk ve editoryal onaydan geçen dosya `final` adını alır. Faz 1
+dosyası silinmez: hangi bilginin neden alınıp alınmadığının kaydıdır.
+(Hz. Şît'in dosyası `KITAP-HZ-SIT-FINAL.md` bu standarttan önce adlandırıldı.)
 
 ---
 

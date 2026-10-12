@@ -45,8 +45,7 @@ Stack: Next.js + TypeScript + Tailwind + Supabase. Paket yöneticisi: **npm**.
   Kitap içeriğinin hangi kurallara göre *yazıldığını* anlatır: cümle uzunluğu,
   sözlükçe, "Sen Olsaydın", veli metni, görsel brifleri, teslim iskeleti.
   Bu **içerik kurallarını KODLAMAYA ÇALIŞMA.** Sadece bilgi amaçlı.
-- **KITAP-ICERIK-SABLONU.md** — ⛔ **GEÇERSİZ / ARŞİV.** Yerini yukarıdaki brif
-  aldı. Yeni işte kullanma, referans verme.
+  (Eski `KITAP-ICERIK-SABLONU.md` 12 Eki 2026'da silindi; yerine bu brif geçti.)
 
 ---
 
@@ -66,9 +65,21 @@ Stack: Next.js + TypeScript + Tailwind + Supabase. Paket yöneticisi: **npm**.
   ve `KITAP-KATALOGU-VE-URETIM-PLANI.md`'ye göre üretilir, sana **doldurulmuş
   metin** olarak gelir. Senin işin onu `books.ts` formatına **EKLEMEK** —
   içeriği kendin yazma, değiştirme, kısaltma.
+- **İÇERİK OTURUMU İSTİSNASI.** Oturum açıkça "içerik oturumu" olarak
+  başlatıldıysa (Hasan, kaynak PDF ile bir kitabın Faz 1 / Faz 2 içeriğini
+  istediyse) yukarıdaki "içeriği kendin yazma" kuralı **uygulanmaz**; o oturumun
+  işi içeriği yazmaktır. Kurallar:
+  - Tek kural kaynağı `YENI-KITAP-ICERIK-URETIM-BRIFI.md`; akış ve dosya listesi
+    katalog belgesinin §11.2'sinde.
+  - Yalnız `kitap-icerikleri/` altına yazılır. `src/`, `app/`, `public/`,
+    `supabase/` ve sicillere (`ROZET-MATRISI.md`, `SOZLUKCE-SICILI.md`,
+    `ICERIK-GORSEL-SICILI.md`) **dokunulmaz**; siciller okunur, güncellemesi
+    aktarım oturumunun işidir.
+  - Kaynak PDF'ler `kaynak-pdfler/` klasöründedir (git'e girmez, telifli).
+  - Faz 1 onaylanmadan Faz 2 yazılmaz. Commit atılmaz.
 - **Rozet görsel anahtarı `books.ts`'te alan DEĞİLDİR.** `src/lib/derive.ts`
   içindeki `rozetIconKey(bookKey, no)` ile `hz-{bookKey}/bolum-{no}` olarak
-  türetilir → `public/rozetler/hz-{bookKey}/bolum-{no}.svg`. Bölümlere
+  türetilir → `public/rozetler/hz-{bookKey}/bolum-{no}.png`. Bölümlere
   `rozetIcon` alanı ekleme.
 - Supabase tabloları: `profiles`, `parent_subscriptions`, `books`, `user_progress`.
 - Türetilen kavramlar tablo GEREKTİRMEZ: rozet (`tamamlanan_bölüm >= sıra`),

@@ -1,5 +1,25 @@
 # KİTAP: HZ. İDRÎS (a.s.) — FAZ 2 İÇERİK PAKETİ
 
+> ⚠️ **BU DOSYAYI ÖRNEK OLARAK KULLANAN AJANA NOT (12 Ekim 2026):** Bu paket
+> 5 Eylül 2026'daki kurallarla üretildi ve o hâliyle yayındadır. Biçim örneği
+> olarak geçerlidir: yapı, ton, ölçüm ve kalite raporu. Ancak aşağıdaki
+> noktalarda **güncel brif (`YENI-KITAP-ICERIK-URETIM-BRIFI.md`) geçerlidir;**
+> bu dosyadan kopyalama:
+>
+> 1. **Görsel sayısı:** burada bölüm başına 1 açılış + 4 sahne var. Güncel
+>    hedef **1 açılış + 5 sahne = 6** (brif §8.3).
+> 2. **Tasvir:** burada "insan figürü, yüz, el, silüet yok" kuralı uygulandı.
+>    Güncel kural: yüz hiçbir görselde yok; peygamber (Hz. Muhammed hariç)
+>    yüzü görünmeyen figür olarak gösterilebilir (brif §3, §8.1). Negatif
+>    promptlardaki "el, beden, silüet" yasağı artık otomatik değildir.
+> 3. **"Üst etiket" alanı** teslimden çıkarıldı; yazılmaz.
+> 4. **C2:** "Bölüm rotası arka planı" yerine **"Harita durağı görseli"**
+>    (`harita-kapak.jpg`) gelir.
+> 5. **Rozet anahtarı** biçimi `idris-bolum-1` değil, `hz-idris/bolum-1`.
+> 6. **Alt başlık** yayında `atlasCatalog.ts`'teki biçimiyle durur ("Öğrenen ve
+>    öğreten bir ömür" — yalnız ilk harf büyük); buradaki büyük harfli yazım
+>    esas alınmaz.
+
 > **Kaynak:** Ahmet Cemil Akıncı, *Hz. İdris (a.s.) – Hz. Nuh (a.s.)*, Bahar
 > Yayınları, Ekim 2025 — yalnız **s. 9–120** arası (Hz. İdrîs bölümü).
 > Başka hiçbir kaynak kullanılmamıştır.
@@ -18,7 +38,7 @@
 
 Kaynak denetiminin tamamı (A1 künye, A2 olay envanteri, A3 rivayet tablosu,
 A4 bölüm kaynak haritası, A5 kullanılmayan içerikler) **Faz 1 teslimindedir:**
-`KITAP-HZ-IDRIS-ICERIK-taslak.md`. Faz 2'de o denetimde değişiklik olmamıştır.
+`KITAP-HZ-IDRIS-KAYNAK-DENETIMI.md`. Faz 2'de o denetimde değişiklik olmamıştır.
 
 Özet hatırlatma:
 
