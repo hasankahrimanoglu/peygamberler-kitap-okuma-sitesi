@@ -814,7 +814,9 @@ testi henüz yapılmadı; kararlar gözlem ve ölçüme dayanır.
   etiket + başlık + açıklama) tek başlığa iner. Büyük harfli küçük etiketler
   kullanılmaz. Hedef: mobilde hikâye dışı alan %42'den yaklaşık %25'e.
 - "Okuma Araçları" menüsü **"Aa"** (yazı boyutu) düğmesine iner.
-- **Rozet anı:** tam genişlik gece mavisi kutlama. Önce altın **"Rozetimi Al"**
+- **Rozet anı:** gece mavisi kutlama sahnesi *(REVİZE — 12 Eki 2026, Hasan: tam
+  genişlik değil, okuma sütununun içinde tek ekrana sığan kart; ayrıntı aşağıda)*.
+  Önce altın **"Rozetimi Al"**
   (kayıt), ardından yeşil **"Sıradaki Bölüme Geç"** + ghost **"Bölümlere dön"**.
   Kitabın son bölümünde yeşil düğmenin yerini altın **"Büyük Final Testine
   Geç"** alır. Bugünkü "Bölümü Tamamla → bölüm rotasına dönüş" kalkar.
@@ -857,20 +859,39 @@ kazanılmış bölüm, `&hata=1` kayıt hatası, `?bolum=idris-4` son bölüm). 
   ilk sözlük kelimesinin üstünde durur; çocuk herhangi bir kelimeye bir kez
   dokununca bu cihazda bir daha görünmez.
 - **Ne öğrendik?** üç kart yerine tek sütunlu sıkı liste (telefonda 710 → 325 px).
-- **Rozet anı:** tam genişlik gece mavisi sahne, üst kenarı kubbe gibi kıvrılır
-  (kremden geceye ufuk çizgisi). Önce "Bölümün sonuna geldin!" + "{Rozet} seni
-  bekliyor." + altın **Rozetimi Al**; kayıttan sonra konfeti, rozet parlar,
+- **Rozet anı (REVİZE — 12 Eki 2026, Hasan'ın geri bildirimi):** ilk sürüm
+  tam genişlik, üst kenarı kubbe gibi kıvrılan bir sahneydi. Hasan tablet
+  yatayda sol sütun sabit kalırken rozetin de hikâye gibi sağda çıkmasını,
+  sürecin sonda kaydırmadan tek ekranda çözülmesini istedi; ovali sevmedi,
+  arka planın daha hareketli olmasını istedi. Geçerli düzen: sahne **okuma
+  sütununun içinde gece mavisi bir karttır** (köşeleri yuvarlak, kubbe yok);
+  yüksekliği ekrandan üst bar çıkınca kalan alana sığar (en çok 680 px), sayfa
+  sonu kartın altına oturur ve tablet yatayda adım sütunu yanında durur.
+  Kayıttan sonra sahne kendiliğinden tam görünür hâle kayar. Tablet ve
+  masaüstünde iki düğme yan yanadır.
+  **Hareket:** sahneye gelince arkada altın ışık huzmeleri açılır ve yavaşça
+  döner, rozet aşağıdan yükselir; kenarlarda yıldızlar yanıp söner, alttan
+  ateşböcekleri yükselir. **Rozetimi Al** ile konfeti yerine **ışık patlaması**:
+  rozetten iki ışık halkası yayılır, altın/krem/yeşil kıvılcımlar ve yıldızlar
+  dışa saçılır, ardından yukarıdan ışık yağmuru dökülür. Kazanılan rozet nabız
+  gibi büyüyüp küçülür, üstünden çapraz bir parıltı geçer (maske rozet
+  görselinin kendisidir), Işıl yanında uçar. Patlama ve ışık yağmuru yalnız
+  kazanma anındadır; tekrar okumada huzmeler ve nabız vardır, patlama yoktur.
+  Yalnız transform/opacity; "hareketi azalt"ta hepsi durur. Rozet alınınca adım
+  çubuğundaki son adım da onaylanır.
+  Önce "Bölümün sonuna geldin!" + "{Rozet} seni
+  bekliyor." + altın **Rozetimi Al**; kayıttan sonra rozet parlar,
   Işıl yanında uçar, "{Rozet} senin!" + "Bu rozet Ödüllerim'e eklendi." +
   sıradaki bölüm kartı (sahne görseli + ad) + yeşil **Sıradaki Bölüme Geç** +
   **Bölümlere dön**. Son bölümde kart Büyük Final Testi + madalya adını
   gösterir, düğme altın **Büyük Final Testine Geç**. Kayıt hatasında aynı yerde
   hata metni + **Tekrar Dene**. Rozeti önceden kazanılmış bölümde "Rozetimi Al"
-  ve kutlama yoktur: "{Rozet} senin!" + "Bu rozeti daha önce kazanmıştın."
-- **Ölçüm (telefon 390 px, Hz. Âdem 2. bölüm, seçim sonrası):** sayfa 8.205 px,
-  hikâye 5.012 px; hikâye dışı alan %42 → **%39**, tam ekran rozet sahnesi
-  hariç **%33**. Hedeflenen ~%25'e ulaşılmadı: kalan alanın çoğu kabuk değil
+  ve patlama yoktur: "{Rozet} senin!" + "Bu rozeti daha önce kazanmıştın."
+- **Ölçüm (telefon 390 px, Hz. Âdem 2. bölüm, seçim sonrası):** sayfa 8.159 px,
+  hikâye 5.012 px; hikâye dışı alan %42 → **%39**, rozet sahnesi hariç
+  **%33**. Hedeflenen ~%25'e ulaşılmadı: kalan alanın çoğu kabuk değil
   içeriktir (Sen olsaydın, Senin seçimin, Ne öğrendik, Bugüne Taşı) ve rozet
-  anı bilinçli olarak tam ekrandır. Hikâye metni 17,5 → 18 px büyüdü.
+  anı bilinçli olarak ekran boyudur. Hikâye metni 17,5 → 18 px büyüdü.
 
 #### 3.10.4 Arayüz dili
 
@@ -1605,6 +1626,10 @@ Kurallar:
       + ses şeridi, gece mavisi rozet anı ve "Sıradaki Bölüme Geç". Ayrıntı
       kararları (adım eşlemesi, yazı boyutunun cihazda hatırlanması, Işıl'ın
       sözlük ipucunun ilk dokunuşta kapanması) 3.10.3 sonunda.
+- [x] **Rozet anı revize (12 Ekim 2026, Hasan):** tam genişlik kubbe yerine
+      okuma sütununda tek ekrana sığan gece mavisi kart; dönen ışık huzmeleri,
+      konfeti yerine ışık patlaması + ışık yağmuru, rozette nabız ve parıltı
+      (3.10.3).
 
 ## 11. İçerik Durumu
 

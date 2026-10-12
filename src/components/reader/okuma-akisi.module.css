@@ -23,6 +23,7 @@
   --altin-yumusak: color-mix(in srgb, var(--vurgu) 20%, var(--okuma-yuzey));
   --altin-metin: color-mix(in srgb, var(--vurgu) 48%, black);
   --altin-golge: color-mix(in srgb, var(--vurgu) 68%, black);
+  --altin-acik: color-mix(in srgb, var(--vurgu) 55%, white);
   --yesil-yumusak: color-mix(in srgb, var(--eylem) 12%, var(--okuma-yuzey));
   --yesil-metin: color-mix(in srgb, var(--eylem) 55%, black);
   --yesil-golge: color-mix(in srgb, var(--eylem) 64%, black);
@@ -465,7 +466,7 @@
   width: min(100%, var(--sutun));
   gap: 32px;
   margin: 0 auto;
-  padding: 16px 16px 56px;
+  padding: 16px 16px 24px;
 }
 
 .bolum {
@@ -1341,48 +1342,159 @@
 /* ------------------------------------------------------------ ROZET ANI */
 
 /*
- * Okuma ekranında gece mavisinin göründüğü tek yer. Üst kenarı kubbe gibi
- * kıvrılır: kremden geceye geçiş bir ufuk çizgisi gibi okunur.
+ * Okuma ekranında gece mavisinin göründüğü tek yer. Okuma sütununun içinde,
+ * tek ekrana sığan bir sahne kartıdır: tablet yatayda sol sütun yanında sabit
+ * kalır, çocuk rozetini kaydırmadan alır ve sıradaki bölüme geçer (Hasan,
+ * 12 Eki 2026). Önceki tam genişlik kubbe kaldırıldı.
  */
 .kutlama {
   position: relative;
   display: grid;
-  min-height: 86svh;
+  min-height: min(680px, calc(100svh - var(--ust-yukseklik, 112px) - 32px));
   place-items: center;
   overflow: hidden;
-  padding: 64px 20px calc(64px + env(safe-area-inset-bottom, 0px));
-  border-radius: 50% 50% 0 0 / 44px 44px 0 0;
+  padding: 32px 20px 28px;
+  border-radius: 28px;
   color: var(--murekkep);
+  box-shadow: 0 24px 50px var(--golge);
   text-align: center;
+  isolation: isolate;
+  scroll-margin: calc(var(--ust-yukseklik, 112px) + 16px) 0 16px;
+}
+
+/* Derinlik: üstten altın ışık, alttan koyulaşan gece. */
+.kutlama::before,
+.kutlama::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  pointer-events: none;
 }
 
 .kutlama::before {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: min(140vw, 900px);
-  aspect-ratio: 1;
-  border-radius: 50%;
   background: radial-gradient(
-    circle,
-    color-mix(in srgb, var(--altin) 26%, transparent),
-    transparent 62%
+    ellipse 70% 55% at 50% 30%,
+    color-mix(in srgb, var(--altin) 24%, transparent),
+    transparent 70%
   );
-  content: "";
-  pointer-events: none;
-  transform: translate(-50%, -22%);
 }
+
+.kutlama::after {
+  background: linear-gradient(
+    180deg,
+    transparent 45%,
+    color-mix(in srgb, var(--zemin) 60%, black) 100%
+  );
+  opacity: 0.55;
+}
+
+/* ---- Sürekli hareket katmanı: parıltılar ve ateşböcekleri */
+
+.kutlamaKatmani {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.parilti {
+  position: absolute;
+  width: var(--boy, 12px);
+  height: var(--boy, 12px);
+  background: color-mix(in srgb, var(--altin) 70%, white);
+  clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+  opacity: 0.2;
+  animation: parildan var(--sure, 3s) ease-in-out var(--gecikme, 0s) infinite;
+}
+
+@keyframes parildan {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.45) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(45deg);
+  }
+}
+
+.kutlamaAtesi {
+  position: absolute;
+  bottom: -12px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--altin) 80%, white);
+  box-shadow:
+    0 0 8px 2px color-mix(in srgb, var(--altin) 70%, transparent),
+    0 0 18px 6px color-mix(in srgb, var(--altin) 25%, transparent);
+  opacity: 0;
+  animation: atesYuksel var(--sure, 7s) ease-in-out var(--gecikme, 0s) infinite;
+}
+
+@keyframes atesYuksel {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  20% {
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 0.7;
+    transform: translate(var(--kayma, 10px), -180px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(var(--kayma, 10px) * -0.6), -320px);
+  }
+}
+
+/* Kazanma anının ardından dökülen ışık yağmuru (tek seferlik). */
+.isikYagmuru {
+  position: absolute;
+  top: -16px;
+  width: var(--boy, 8px);
+  height: var(--boy, 8px);
+  background: color-mix(in srgb, var(--altin) 75%, white);
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+  opacity: 0;
+  animation: isikDokul var(--sure, 2.6s) cubic-bezier(0.3, 0.2, 0.5, 1) var(--gecikme, 0.4s) both;
+}
+
+@keyframes isikDokul {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(0deg);
+  }
+  12% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--kayma, 0px), 520px) rotate(220deg);
+  }
+}
+
+/* ---- İçerik */
 
 .kutlamaIc {
   position: relative;
+  z-index: 1;
   display: grid;
   width: min(100%, 440px);
   justify-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .kutlamaIc h2 {
-  font-size: clamp(28px, 7vw, 38px);
+  font-size: clamp(27px, 6.6vw, 34px);
   line-height: 1.1;
   text-wrap: balance;
 }
@@ -1393,67 +1505,256 @@
   font-weight: 700;
 }
 
+/* ---- Rozet ve arkasındaki ışık */
+
 .kutlamaRozeti {
   position: relative;
   display: grid;
-  width: 188px;
-  height: 188px;
-  margin-bottom: 4px;
+  width: 176px;
+  height: 176px;
+  margin-bottom: 6px;
   place-items: center;
 }
 
-.kutlamaRozeti::before {
+/* Dönen ışık huzmeleri: sahneye gelince açılır, sonra yavaşça döner. */
+.isinKutusu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 460px;
+  height: 460px;
+  margin: -230px 0 0 -230px;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.55);
+}
+
+.kutlamaYaklasti .isinKutusu {
+  animation: isinAcil 1100ms cubic-bezier(0.2, 0.8, 0.3, 1) both;
+}
+
+.isinlar {
   position: absolute;
   inset: 0;
   border-radius: 50%;
+  background: repeating-conic-gradient(
+    from 0deg,
+    color-mix(in srgb, var(--altin) 30%, transparent) 0deg 6deg,
+    transparent 6deg 20deg
+  );
+  opacity: 0.45;
+  -webkit-mask-image: radial-gradient(circle, black 16%, transparent 66%);
+  mask-image: radial-gradient(circle, black 16%, transparent 66%);
+  transition: opacity 700ms ease;
+  animation: isinDon 60s linear infinite;
+}
+
+.kutlamaKazanildi .isinlar {
+  opacity: 1;
+}
+
+@keyframes isinAcil {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes isinDon {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rozetHalesi {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
   background: radial-gradient(
     circle,
-    color-mix(in srgb, var(--altin) 42%, transparent),
+    color-mix(in srgb, var(--altin) 48%, transparent),
     transparent 66%
   );
-  content: "";
-  animation: rozetNefes 3.8s ease-in-out infinite;
+  animation: rozetNefes 3.4s ease-in-out infinite;
+}
+
+/* Nabız: kazanılan rozet büyüyüp küçülür; beklerken hafifçe süzülür. */
+.rozetGovdesi {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 148px;
+  height: 148px;
+  place-items: center;
+  animation: rozetSuzul 4.2s ease-in-out infinite;
+}
+
+.kutlamaKazanildi .rozetGovdesi {
+  animation: rozetNabiz 2.6s ease-in-out infinite;
 }
 
 .kutlamaRozetResmi {
-  position: relative;
-  width: 148px;
-  height: 148px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  /* Henüz alınmadı: soluk durur; "Rozetimi Al" ile parlar. */
+  /* Henüz alınmadı: soluk; "Rozetimi Al" ile parlar. */
   opacity: 0.55;
   filter: saturate(0.6);
-  transition: opacity 400ms ease, filter 400ms ease;
+  transition: opacity 500ms ease, filter 500ms ease;
 }
 
 .kutlamaYaklasti .kutlamaRozetResmi {
-  animation: rozetBelir 760ms cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+  animation: rozetBelir 800ms cubic-bezier(0.2, 0.9, 0.3, 1.2) 150ms both;
 }
 
 .kutlamaKazanildi .kutlamaRozetResmi {
   opacity: 1;
-  filter: drop-shadow(0 10px 24px color-mix(in srgb, var(--altin) 45%, transparent));
-  animation: rozetKazanildi 880ms cubic-bezier(0.2, 0.9, 0.3, 1.25) both;
+  filter: drop-shadow(0 10px 26px color-mix(in srgb, var(--altin) 55%, transparent));
+}
+
+.kutlamaAlindi .kutlamaRozetResmi {
+  animation: rozetKazanildi 900ms cubic-bezier(0.2, 0.9, 0.3, 1.25) both;
+}
+
+/*
+ * Parlama: rozetin üstünden çapraz bir ışık geçer. Maske rozet görselinin
+ * kendisidir; ışık rozetin şeklinin dışına taşmaz. Görsel bulunamazsa maske
+ * boş kalır ve parlama görünmez.
+ */
+.rozetParlamasi {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  -webkit-mask: var(--rozet-maske) center / contain no-repeat;
+  mask: var(--rozet-maske) center / contain no-repeat;
+  pointer-events: none;
+}
+
+.rozetParlamasi::after {
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: 0;
+  width: 45%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    color-mix(in srgb, white 75%, transparent),
+    transparent
+  );
+  content: "";
+  transform: translateX(-160%) skewX(-12deg);
+  animation: parlamaGec 3.8s ease-in-out 1s infinite;
+}
+
+@keyframes parlamaGec {
+  0% {
+    transform: translateX(-160%) skewX(-12deg);
+  }
+  45%,
+  100% {
+    transform: translateX(330%) skewX(-12deg);
+  }
+}
+
+/* ---- Kazanma anı: ışık halkası + kıvılcım patlaması */
+
+.patlama {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.isikHalkasi {
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 160px;
+  height: 160px;
+  border: 3px solid var(--altin);
+  border-radius: 50%;
+  box-shadow: 0 0 24px color-mix(in srgb, var(--altin) 60%, transparent);
+  opacity: 0;
+  animation: halkaYayil 1000ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+
+.isikHalkasiIki {
+  border-width: 2px;
+  border-color: var(--murekkep);
+  animation-delay: 180ms;
+}
+
+@keyframes halkaYayil {
+  0% {
+    opacity: 0.95;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.8);
+  }
+}
+
+.kivilcim {
+  position: absolute;
+  top: calc(var(--boy, 8px) / -2);
+  left: calc(var(--boy, 8px) / -2);
+  width: var(--boy, 8px);
+  height: var(--boy, 8px);
+  border-radius: 50%;
+  background: var(--renk, var(--altin));
+  box-shadow: 0 0 10px var(--renk, var(--altin));
+  opacity: 0;
+  animation: kivilcimSac 1200ms cubic-bezier(0.12, 0.75, 0.3, 1) var(--gecikme, 0ms) both;
+}
+
+.kivilcimYildiz {
+  width: calc(var(--boy, 8px) * 2);
+  height: calc(var(--boy, 8px) * 2);
+  border-radius: 0;
+  box-shadow: none;
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+}
+
+@keyframes kivilcimSac {
+  0% {
+    opacity: 1;
+    transform: rotate(var(--aci, 0deg)) translateX(20px) scale(0.3);
+  }
+  65% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(var(--aci, 0deg)) translateX(var(--mesafe, 150px)) scale(1);
+  }
 }
 
 /* Işıl rozetin yanında uçar; konuşmaz (3.10.5). */
 .kutlamaIsil {
   position: absolute;
-  top: 6px;
-  right: -18px;
+  z-index: 3;
+  top: 0;
+  right: -22px;
   width: 60px;
   height: 60px;
   object-fit: contain;
   filter: drop-shadow(0 0 14px color-mix(in srgb, var(--altin) 70%, transparent));
-  animation: isilUcus 3.6s ease-in-out infinite;
+  animation: isilUcus 3.6s ease-in-out 400ms infinite both;
 }
+
+/* ---- Sıradaki adım */
 
 .siradakiKart {
   display: flex;
   width: 100%;
   align-items: center;
   gap: 14px;
-  margin-top: 8px;
+  margin-top: 4px;
   padding: 10px 16px 10px 10px;
   border: 1px solid var(--yuzey-2);
   border-radius: 20px;
@@ -1507,7 +1808,7 @@
   display: grid;
   width: 100%;
   gap: 12px;
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 .geceHayaletDugme {
@@ -1535,27 +1836,47 @@
   0%,
   100% {
     opacity: 0.55;
-    transform: scale(0.94);
+    transform: scale(0.92);
   }
   50% {
     opacity: 1;
-    transform: scale(1.06);
+    transform: scale(1.08);
+  }
+}
+
+@keyframes rozetSuzul {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes rozetNabiz {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.07);
   }
 }
 
 @keyframes rozetBelir {
   from {
     opacity: 0;
-    transform: translateY(16px) scale(0.86);
+    transform: translateY(24px) scale(0.8);
   }
 }
 
 @keyframes rozetKazanildi {
   0% {
-    transform: scale(0.72) rotate(-9deg);
+    transform: scale(0.7) rotate(-10deg);
   }
-  60% {
-    transform: scale(1.1) rotate(3deg);
+  55% {
+    transform: scale(1.18) rotate(4deg);
   }
   100% {
     transform: scale(1) rotate(0);
@@ -1568,7 +1889,7 @@
     transform: translate(0, 0) rotate(-6deg);
   }
   50% {
-    transform: translate(-6px, -12px) rotate(6deg);
+    transform: translate(-8px, -14px) rotate(6deg);
   }
 }
 
@@ -1639,7 +1960,7 @@
 
   .akis {
     gap: 52px;
-    padding: 24px 24px 72px;
+    padding: 24px 24px 32px;
   }
 
   .karar {
@@ -1681,17 +2002,31 @@
   }
 
   .kutlama {
-    border-radius: 50% 50% 0 0 / 64px 64px 0 0;
+    padding: 36px 32px 32px;
+  }
+
+  .kutlamaIc {
+    width: min(100%, 560px);
   }
 
   .kutlamaRozeti {
-    width: 208px;
-    height: 208px;
+    width: 196px;
+    height: 196px;
   }
 
-  .kutlamaRozetResmi {
+  .rozetGovdesi {
     width: 164px;
     height: 164px;
+  }
+
+  /* İki düğme yan yana: sahne tek ekrana sığsın. */
+  .kutlamaEylemleri {
+    grid-template-columns: 1.4fr 1fr;
+  }
+
+  .tekEylem {
+    grid-template-columns: minmax(0, 360px);
+    justify-content: center;
   }
 }
 
@@ -1791,7 +2126,7 @@
     width: auto;
     gap: 60px;
     margin: 0;
-    padding: 36px 0 96px;
+    padding: 36px 0 40px;
   }
 
   /* Rozet yan sütunda; açılışta tekrar edilmez. */

@@ -224,6 +224,8 @@ export function AtlasScrollReader({ chapter, onProgressSync, tekrarOkumaOnizleme
   const bolumAdi = temizMetin(chapter.bolumAdi);
   const kunye = `${chapter.bookName ?? "Kitap"} · ${bolumNo}. bölüm`;
   const kutlamaDurumu: RozetDurumu = tekrarOkuma && rozetDurumu === "bekliyor" ? "onceden" : rozetDurumu;
+  // Rozet alınınca son adım da onaylanır: çubukta bütün adımlar tamam görünür.
+  const adimlarBitti = rozetDurumu === "alindi";
 
   // Işıl'ın sözlük ipucu bölümün İLK etkileşimli kelimesinde durur.
   const ilkKelimeAnahtari = useMemo(() => {
@@ -757,11 +759,26 @@ export function AtlasScrollReader({ chapter, onProgressSync, tekrarOkumaOnizleme
       );
     }
 
+    if (bolum.type === "rozet") {
+      return (
+        <RozetKutlamasi
+          bookKey={bookKey}
+          bolumNo={bolumNo}
+          rozetAdi={chapter.badgeName}
+          durum={kutlamaDurumu}
+          hata={kayitHatasi}
+          yaklasti={rozetYaklasti}
+          sonraki={sonraki}
+          finalYolu={finalYolu}
+          madalyaAdi={`${chapter.bookName ?? "Kitap"} Yolculuk Madalyası`}
+          geriYolu={geriYolu}
+          onRozetiAl={rozetiAl}
+        />
+      );
+    }
+
     return null;
   }
-
-  const govdeBolumleri = akis.filter((bolum) => bolum.type !== "rozet");
-  const rozetVar = akis.some((bolum) => bolum.type === "rozet");
 
   return (
     <main
@@ -839,7 +856,7 @@ export function AtlasScrollReader({ chapter, onProgressSync, tekrarOkumaOnizleme
 
         <AdimCubugu
           adimlar={adimlar}
-          aktif={aktifAdim}
+          aktif={adimlarBitti ? adimlar.length : aktifAdim}
           dolu={adimDolulugu}
           enIleri={enIleriAdim}
           kapiAcik={sonucAcik}
@@ -912,7 +929,7 @@ export function AtlasScrollReader({ chapter, onProgressSync, tekrarOkumaOnizleme
         <aside className={styles.yanSutun}>
           <AdimCubugu
             adimlar={adimlar}
-            aktif={aktifAdim}
+            aktif={adimlarBitti ? adimlar.length : aktifAdim}
             dolu={adimDolulugu}
             enIleri={enIleriAdim}
             kapiAcik={sonucAcik}
@@ -927,7 +944,7 @@ export function AtlasScrollReader({ chapter, onProgressSync, tekrarOkumaOnizleme
         </aside>
 
         <div className={styles.akis}>
-          {govdeBolumleri.map((bolum) => (
+          {akis.map((bolum) => (
             <div
               key={bolum.key}
               className={styles.bolum}
@@ -940,24 +957,6 @@ export function AtlasScrollReader({ chapter, onProgressSync, tekrarOkumaOnizleme
           ))}
         </div>
       </div>
-
-      {rozetVar ? (
-        <div className={styles.bolum} data-bolum-key="rozet" data-adim="rozet" data-tur="rozet">
-          <RozetKutlamasi
-            bookKey={bookKey}
-            bolumNo={bolumNo}
-            rozetAdi={chapter.badgeName}
-            durum={kutlamaDurumu}
-            hata={kayitHatasi}
-            yaklasti={rozetYaklasti}
-            sonraki={sonraki}
-            finalYolu={finalYolu}
-            madalyaAdi={`${chapter.bookName ?? "Kitap"} Yolculuk Madalyası`}
-            geriYolu={geriYolu}
-            onRozetiAl={rozetiAl}
-          />
-        </div>
-      ) : null}
 
       <p className={styles.srOnly} aria-live="polite">
         {duyuru}
