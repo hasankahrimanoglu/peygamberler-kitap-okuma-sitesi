@@ -44,17 +44,25 @@ type CocukKabuguProps = {
    */
   ekranaSabit?: boolean;
   /**
-   * Dar ekranda (telefon, tablet dikey) rota manzarası sayfanın en üstüne kadar
-   * uzanır; profil satırı ve "Sıradaki bölümün" kartı onun üstünde durur.
-   * Lacivert bir üst bant kalmaz (Hasan, 12 Eki 2026). Geniş ekranda çerçeve
-   * yine gece mavisidir.
+   * Dar ekranda (telefon, tablet dikey) rota manzarası üst bandın altından
+   * başlar ve sayfanın zeminidir. Geniş ekranda çerçeve gece mavisidir.
    */
   rotaArkaplani?: boolean;
+  /**
+   * İçerik alanı açık krem zemin olur (Ödüllerim · Kelimelerim · Görevlerim —
+   * REVİZE 12 Eki 2026, PROJE-MODELI 3.10.8). Menü bantları gece mavisi kalır.
+   */
+  acikZemin?: boolean;
 };
 
 /**
  * Çocuk tarafının ortak kabuğu (KARAR 12 Eki 2026 — PROJE-MODELI 3.10.6).
  * Hamburger menü yoktur: çocuk kendi adına dokununca profil kartı açılır.
+ *
+ * Üst satır her genişlikte düz gece mavisi bir banttır: solda logo, sağda
+ * profil; genişte ortada sekmeler. Alt menü de aynı renktedir; ikisi içerikten
+ * ayrışan çerçevedir (REVİZE 12 Eki 2026, Hasan — eski "ana ekranda lacivert
+ * üst bant olmasın" kararının yerine).
  */
 export function CocukKabugu({
   profil,
@@ -62,6 +70,7 @@ export function CocukKabugu({
   children,
   ekranaSabit = false,
   rotaArkaplani = false,
+  acikZemin = false,
 }: CocukKabuguProps) {
   const yol = usePathname();
   const [profilAcik, setProfilAcik] = useState(false);
@@ -70,55 +79,54 @@ export function CocukKabugu({
     <div
       className={`tema-cocuk zemin-yildizli ${styles.kabuk} ${ekranaSabit ? styles.ekranaSabit : ""} ${
         rotaArkaplani ? styles.kabukRota : ""
-      }`}
+      } ${acikZemin ? styles.kabukAcik : ""}`}
       style={
         rotaArkaplani ? ({ "--rota-arkaplan": `url("${ROTA_ARKAPLANI}")` } as CSSProperties) : undefined
       }
     >
-      <header className={styles.ustBar}>
-        <Link href="/map" className={styles.logo}>
-          <Ikon ad="harita" boyut={26} />
-          Keşif Dünyası
-        </Link>
+      <header className={styles.ustBant}>
+        <div className={styles.ustBar}>
+          <Link href="/map" className={styles.logo}>
+            <Ikon ad="harita" boyut={24} />
+            Keşif Dünyası
+          </Link>
 
-        <nav className={styles.sekmeler} aria-label="Sayfalar">
-          {SEKMELER.map((sekme) => (
-            <Link
-              key={sekme.yol}
-              href={sekme.yol}
-              className={styles.sekme}
-              aria-current={yol === sekme.yol ? "page" : undefined}
-            >
-              <Ikon ad={sekme.ikon} boyut={21} />
-              {sekme.ad}
-            </Link>
-          ))}
-        </nav>
+          <nav className={styles.sekmeler} aria-label="Sayfalar">
+            {SEKMELER.map((sekme) => (
+              <Link
+                key={sekme.yol}
+                href={sekme.yol}
+                className={styles.sekme}
+                aria-current={yol === sekme.yol ? "page" : undefined}
+              >
+                <Ikon ad={sekme.ikon} boyut={21} />
+                {sekme.ad}
+              </Link>
+            ))}
+          </nav>
 
-        <button
-          type="button"
-          className={styles.profilButonu}
-          aria-haspopup="dialog"
-          aria-expanded={profilAcik}
-          onClick={() => setProfilAcik(true)}
-        >
-          <span className={styles.avatar}>
-            <CocukAvatari
-              avatarTipi={profil.avatarAnahtari}
-              fotografUrl={profil.avatarFotografi}
-              boyut={40}
-              alt=""
-            />
-          </span>
-          <span className={styles.selam}>
-            <b>
-              <span className={styles.yalnizDar}>Merhaba, </span>
-              {profil.ad}
-            </b>
-            <small>{ozet.unvan}</small>
-          </span>
-          <Ikon ad="asagi" boyut={18} className={styles.profilOku} />
-        </button>
+          <button
+            type="button"
+            className={styles.profilButonu}
+            aria-haspopup="dialog"
+            aria-expanded={profilAcik}
+            onClick={() => setProfilAcik(true)}
+          >
+            <span className={styles.avatar}>
+              <CocukAvatari
+                avatarTipi={profil.avatarAnahtari}
+                fotografUrl={profil.avatarFotografi}
+                boyut={40}
+                alt=""
+              />
+            </span>
+            <span className={styles.selam}>
+              <b>{profil.ad}</b>
+              <small>{ozet.unvan}</small>
+            </span>
+            <Ikon ad="asagi" boyut={18} className={styles.profilOku} />
+          </button>
+        </div>
       </header>
 
       <div className={styles.icerik}>{children}</div>

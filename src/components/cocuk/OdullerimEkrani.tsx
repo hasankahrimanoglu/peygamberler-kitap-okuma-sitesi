@@ -8,18 +8,12 @@ import { iyelikEki } from "../../lib/child/sayiEki";
 import { kitapKapagi, madalyaGorseli, rozetGorseli, unvanGorseli, YEDEK } from "../../lib/varlikYollari";
 import { KutlamaSahnesi } from "../reader/KutlamaSahnesi";
 import okuma from "../reader/okuma-akisi.module.css";
-import { CocukAvatari, Ikon, YedekliGorsel } from "../ui";
+import { Ikon, YedekliGorsel, type IkonAdi } from "../ui";
 import { BosEkran } from "./BosEkran";
 import { SayfaBasligi } from "./SayfaBasligi";
 import { UnvanYolu } from "./UnvanYolu";
 import ortak from "./cocuk-sayfalari.module.css";
 import styles from "./odullerim.module.css";
-
-export type OdulProfili = {
-  ad: string;
-  avatarAnahtari: string;
-  avatarFotografi?: string | null;
-};
 
 type SecilenRozet = { kitap: YolculukKitabi; no: number };
 
@@ -29,22 +23,45 @@ function kacinda(toplam: number, sayi: number, tamlayan: string) {
 }
 
 /**
+ * Albüm karosunda rozet adı "Rozeti" eki olmadan yazılır ("İlk Adım"): bölüm
+ * başlığı zaten "Rozet albümü", ek karoyu iki satıra itiyordu. Tam ad ekran
+ * okuyucuda ve ayrıntı penceresinde kalır.
+ */
+function kisaRozetAdi(ad: string) {
+  return ad.replace(/\s+Rozeti$/u, "");
+}
+
+/**
+ * Albüm satırı tek satırda biter (Hasan, 12 Eki 2026): geniş ekranda 8 rozete
+ * kadar hepsi yan yana, 9–10 rozet iki dengeli satır (5+4, 5+5). Tablet
+ * dikeyde eşik 6'dır. Katalogda bir kitap 4–10 bölümdür.
+ */
+function rozetSutunlari(toplam: number) {
+  const ikiSatir = Math.ceil(toplam / 2);
+  return {
+    "--sutun-orta": toplam <= 6 ? toplam : ikiSatir,
+    "--sutun-genis": toplam <= 8 ? toplam : ikiSatir,
+  } as CSSProperties;
+}
+
+/**
  * Ödüllerim — tek sayfa vitrin (KARAR 12 Eki 2026, Hasan; PROJE-MODELI 3.10.8).
  * Sekmeler kalktı; çocuk bütün ödüllerini tek bakışta görür:
- *  1. Unvan kartı: unvan görseli, bir sonraki unvana kalan kitap, sayaçlar.
+ *  1. Unvan kartı (gece mavisi, sayfanın odağı): unvan görseli, bir sonraki
+ *     unvana kalan kitap, Rozet · Madalya · Biten kitap sayaçları.
  *  2. Madalya rafı: yayındaki her kitabın madalyası ve somut durumu.
- *  3. Rozet albümü: kitap kitap; rozete dokununca ayrıntı penceresi.
- *  4. Unvan yolu: on unvan, ışık izi şu anki unvana kadar dolar.
+ *  3. Rozet albümü: kitap kitap, "6 / 8 rozet" + rozet başına bir nokta;
+ *     rozete dokununca ayrıntı penceresi.
+ *  4. Unvan yolu: on unvan kart ızgarasında (5×2, telefonda 2 sütun).
  *
- * Zemin gece mavisi, kartlar krem (3.1). Unvan biten kitap sayısından
- * türetilir; veritabanındaki eski `unvan` alanı okunmaz (Bölüm 2).
+ * Zemin açık krem, kartlar beyaza yakın (REVİZE 12 Eki 2026). Çocuğun adı ve
+ * fotoğrafı burada yoktur: üst bantta zaten durur. Unvan biten kitap
+ * sayısından türetilir; veritabanındaki eski `unvan` alanı okunmaz (Bölüm 2).
  */
 export function OdullerimEkrani({
-  profil,
   kitaplar,
   yukleniyor,
 }: {
-  profil: OdulProfili;
   kitaplar: YolculukKitabi[];
   yukleniyor: boolean;
 }) {
@@ -67,7 +84,7 @@ export function OdullerimEkrani({
         />
       ) : (
         <>
-          <UnvanKarti profil={profil} biten={biten} rozetSayisi={rozetSayisi} unvan={unvan} />
+          <UnvanKarti biten={biten} rozetSayisi={rozetSayisi} unvan={unvan} />
 
           <section aria-labelledby="madalyalar-basligi">
             <div className={ortak.bolumBasligi}>
@@ -105,19 +122,17 @@ export function OdullerimEkrani({
 }
 
 function UnvanKarti({
-  profil,
   biten,
   rozetSayisi,
   unvan,
 }: {
-  profil: OdulProfili;
   biten: number;
   rozetSayisi: number;
   unvan: ReturnType<typeof unvanBilgisi>;
 }) {
   const sonraki = unvan.sonraki;
   return (
-    <section className={`${ortak.kart} ${styles.unvanKarti}`} aria-labelledby="unvan-basligi">
+    <section className={`zemin-yildizli ${styles.unvanKarti}`} aria-labelledby="unvan-basligi">
       <div className={styles.unvanGorseli} aria-hidden="true">
         <span className={styles.unvanIsini} />
         <YedekliGorsel
@@ -130,22 +145,11 @@ function UnvanKarti({
       </div>
 
       <div className={styles.unvanMetni}>
-        <p className={styles.sahip}>
-          <span className={styles.sahipAvatari}>
-            <CocukAvatari
-              avatarTipi={profil.avatarAnahtari}
-              fotografUrl={profil.avatarFotografi}
-              boyut={36}
-              alt=""
-            />
-          </span>
-          {profil.ad}
-        </p>
         <small>Unvanın</small>
         <h2 id="unvan-basligi">{unvan.unvan}</h2>
         {sonraki ? (
           <div className={styles.sonrakiUnvan}>
-            <div className={ortak.cubuk}>
+            <div className={`${ortak.cubuk} ${styles.geceCubugu}`}>
               <span style={{ "--dolu": unvanIlerlemesi(biten) } as CSSProperties} />
             </div>
             <p>
@@ -158,29 +162,43 @@ function UnvanKarti({
       </div>
 
       <dl className={styles.sayaclar}>
-        <div>
-          <dt>Rozet</dt>
-          <dd>
-            <Ikon ad="rozet" boyut={20} />
-            {rozetSayisi}
-          </dd>
-        </div>
-        <div>
-          <dt>Madalya</dt>
-          <dd>
-            <Ikon ad="madalya" boyut={20} />
-            {biten}
-          </dd>
-        </div>
-        <div>
-          <dt>Biten kitap</dt>
-          <dd>
-            <Ikon ad="kitap" boyut={20} />
-            {biten}
-          </dd>
-        </div>
+        <Sayac ikon="rozet" sayi={rozetSayisi} etiket="Rozet" />
+        <Sayac ikon="madalya" sayi={biten} etiket="Madalya" />
+        <Sayac ikon="kitap" sayi={biten} etiket="Biten kitap" />
       </dl>
     </section>
+  );
+}
+
+function Sayac({ ikon, sayi, etiket }: { ikon: IkonAdi; sayi: number; etiket: string }) {
+  return (
+    <div className={styles.sayac}>
+      <dt>{etiket}</dt>
+      <dd>
+        <span className={styles.sayacIkonu} aria-hidden="true">
+          <Ikon ad={ikon} boyut={22} />
+        </span>
+        <b>{sayi}</b>
+      </dd>
+    </div>
+  );
+}
+
+/**
+ * Rozet başına bir nokta: kazanılan altın dolu, sıradaki altın çerçeveli,
+ * kilitli boş. Sayı her zaman yanında yazılıdır ("6 / 8 rozet"); noktalar
+ * yalnız görsel tekrardır.
+ */
+function RozetNoktalari({ toplam, dolu }: { toplam: number; dolu: number }) {
+  return (
+    <span className={styles.noktalar} aria-hidden="true">
+      {Array.from({ length: toplam }, (_, sira) => (
+        <span
+          key={sira}
+          className={sira < dolu ? styles.noktaDolu : sira === dolu ? styles.noktaSirada : undefined}
+        />
+      ))}
+    </span>
   );
 }
 
@@ -217,9 +235,7 @@ function MadalyaKarti({ kitap }: { kitap: YolculukKitabi }) {
         </Link>
       ) : (
         <div className={styles.madalyaIlerleme}>
-          <div className={ortak.cubuk}>
-            <span style={{ "--dolu": kitap.tamamlanan / Math.max(1, toplam) } as CSSProperties} />
-          </div>
+          <RozetNoktalari toplam={toplam} dolu={kitap.tamamlanan} />
           <p>
             {kitap.tamamlanan > 0 ? kacinda(toplam, kitap.tamamlanan, "bölümün") : `${toplam} bölüm`} · sonra
             final testi
@@ -233,6 +249,7 @@ function MadalyaKarti({ kitap }: { kitap: YolculukKitabi }) {
 function RozetAlbumu({ kitap, onSec }: { kitap: YolculukKitabi; onSec: (no: number) => void }) {
   const toplam = kitap.bolumler.length;
   const k = kitap.tamamlanan;
+  const siradaki = kitap.bolumler[k];
 
   return (
     <article className={`${ortak.kart} ${styles.album} ${k === 0 ? styles.albumBos : ""}`}>
@@ -245,22 +262,25 @@ function RozetAlbumu({ kitap, onSec }: { kitap: YolculukKitabi; onSec: (no: numb
           height={66}
           className={styles.albumKapagi}
         />
-        <div>
+        <div className={styles.albumAdi}>
           <h3>{kitap.ad}</h3>
           <p>
-            {k === toplam
+            {k >= toplam
               ? "Bütün rozetler senin"
-              : k === 0
+              : k === 0 || !siradaki
                 ? `${toplam} rozet seni bekliyor`
-                : kacinda(toplam, k, "rozetin")}
+                : `Sıradaki: ${siradaki.rozetAdi}`}
           </p>
         </div>
-        <div className={`${ortak.cubuk} ${styles.albumCubugu}`}>
-          <span style={{ "--dolu": k / Math.max(1, toplam) } as CSSProperties} />
+        <div className={styles.albumSayaci}>
+          <p>
+            <b>{k}</b> / {toplam} rozet
+          </p>
+          <RozetNoktalari toplam={toplam} dolu={k} />
         </div>
       </header>
 
-      <ul className={styles.rozetler}>
+      <ul className={styles.rozetler} style={rozetSutunlari(toplam)}>
         {kitap.bolumler.map((bolum) => {
           const durum = bolumDurumu(kitap, bolum.no);
           return (
@@ -279,8 +299,11 @@ function RozetAlbumu({ kitap, onSec }: { kitap: YolculukKitabi; onSec: (no: numb
                     height={76}
                   />
                 </span>
-                <span className={styles.rozetAdi}>{bolum.rozetAdi}</span>
+                <span className={styles.rozetAdi} aria-hidden="true">
+                  {kisaRozetAdi(bolum.rozetAdi)}
+                </span>
                 <span className={ortak.srOnly}>
+                  {bolum.rozetAdi}
                   {durum === "tamamlandi"
                     ? ", kazandın"
                     : durum === "sirada"

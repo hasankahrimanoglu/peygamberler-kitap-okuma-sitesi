@@ -1,35 +1,51 @@
 /*
  * Ödüllerim — tek sayfa vitrin (PROJE-MODELI 3.10.8). Değişkenler
  * `cocuk-sayfalari.module.css`'teki `.sayfa`'dan miras alınır.
+ *
+ * REVİZE 12 Eki 2026 (Hasan): zemin açık krem; sayfanın tek gece mavisi
+ * yüzeyi unvan kartıdır (altın unvan gece zemininde parlar). Sayaçlar büyüdü,
+ * albüm çubuğu "6 / 8 rozet" + noktalara döndü, rozetler geniş ekranda tek
+ * satır, unvan yolu kart ızgarası.
  */
 
 .yukleniyor {
-  color: var(--murekkep-soluk);
+  color: var(--kmetin-soluk);
   font-size: 16px;
   font-weight: 700;
 }
 
 /* ------------------------------------------------------------ UNVAN KARTI */
 
+/* Zemin global `zemin-yildizli` sınıfından gelir (yıldızlı gece). */
 .unvanKarti {
+  --isik-x: 50%;
+
   position: relative;
   display: grid;
+  grid-template-areas:
+    "gorsel"
+    "metin"
+    "sayac";
   justify-items: center;
-  gap: 16px;
+  gap: 18px;
   overflow: hidden;
-  padding: 26px 20px 22px;
+  padding: 26px 16px 18px;
+  border: 1px solid color-mix(in srgb, var(--cizgi) 55%, transparent);
+  border-radius: 28px;
+  color: var(--murekkep);
   text-align: center;
+  box-shadow: 0 18px 40px color-mix(in srgb, var(--zemin) 26%, transparent);
   isolation: isolate;
 }
 
-/* Kartın üstüne düşen sıcak altın ışık. */
+/* Unvanın üstüne düşen sıcak altın ışık. */
 .unvanKarti::before {
   position: absolute;
   z-index: -1;
   inset: 0;
   background: radial-gradient(
-    ellipse 60% 70% at 50% 0%,
-    color-mix(in srgb, var(--vurgu) 26%, transparent),
+    ellipse 55% 75% at var(--isik-x) 0%,
+    color-mix(in srgb, var(--vurgu) 24%, transparent),
     transparent 70%
   );
   content: "";
@@ -40,6 +56,7 @@
   display: grid;
   width: 150px;
   height: 150px;
+  grid-area: gorsel;
   place-items: center;
 }
 
@@ -48,7 +65,7 @@
   width: 132px;
   height: 132px;
   object-fit: contain;
-  filter: drop-shadow(0 10px 20px color-mix(in srgb, var(--vurgu) 40%, transparent));
+  filter: drop-shadow(0 10px 22px color-mix(in srgb, var(--vurgu) 45%, transparent));
   animation: unvanSuzul 4.4s ease-in-out infinite;
 }
 
@@ -59,7 +76,7 @@
   border-radius: 50%;
   background: repeating-conic-gradient(
     from 0deg,
-    color-mix(in srgb, var(--vurgu) 34%, transparent) 0deg 7deg,
+    color-mix(in srgb, var(--vurgu) 30%, transparent) 0deg 7deg,
     transparent 7deg 22deg
   );
   -webkit-mask-image: radial-gradient(circle, black 20%, transparent 68%);
@@ -85,99 +102,99 @@
 
 .unvanMetni {
   display: grid;
+  width: min(100%, 460px);
+  grid-area: metin;
   justify-items: center;
   gap: 4px;
-  width: min(100%, 420px);
-}
-
-.sahip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 4px;
-  font-family: var(--font-baloo), Arial, sans-serif;
-  font-size: 17px;
-  font-weight: 800;
-}
-
-.sahipAvatari {
-  display: grid;
-  width: 40px;
-  height: 40px;
-  place-items: center;
-  overflow: hidden;
-  border: 2px solid var(--vurgu);
-  border-radius: 50%;
-  background: var(--krem-2);
 }
 
 .unvanMetni small {
-  color: var(--kmetin-soluk);
-  font-size: 14px;
+  color: var(--murekkep-soluk);
+  font-size: 15px;
   font-weight: 750;
 }
 
 .unvanMetni h2 {
-  color: var(--altin-metin);
+  color: var(--vurgu);
   font-family: var(--font-baloo), Arial, sans-serif;
-  font-size: clamp(28px, 6vw, 36px);
+  font-size: clamp(30px, 7vw, 42px);
   font-weight: 800;
   line-height: 1.05;
+  text-wrap: balance;
 }
 
 .sonrakiUnvan {
   display: grid;
   width: 100%;
   gap: 8px;
-  margin-top: 8px;
-  color: var(--kmetin-soluk);
-  font-size: 15.5px;
+  margin-top: 10px;
+  color: var(--murekkep-soluk);
+  font-size: 16px;
   font-weight: 700;
 }
 
 .sonrakiUnvan b {
-  color: var(--kmetin);
+  color: var(--murekkep);
 }
+
+.geceCubugu {
+  background: color-mix(in srgb, var(--murekkep) 16%, transparent);
+}
+
+/* ---------------------------------------------------------------- SAYAÇLAR */
 
 .sayaclar {
   display: grid;
-  width: min(100%, 420px);
+  width: 100%;
+  grid-area: sayac;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
+  gap: 10px;
   margin: 0;
 }
 
-.sayaclar div {
+.sayac {
   display: grid;
-  gap: 2px;
-  padding: 10px 6px;
-  border: 1px solid var(--krem-cizgi);
-  border-radius: 16px;
-  background: var(--krem-acik);
+  justify-items: center;
+  align-content: center;
+  gap: 4px;
+  padding: 14px 6px 12px;
+  border: 1px solid color-mix(in srgb, var(--murekkep) 14%, transparent);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--yuzey) 72%, transparent);
 }
 
-.sayaclar dt {
+.sayac dt {
   order: 2;
-  color: var(--kmetin-soluk);
-  font-size: 13px;
+  color: var(--murekkep-soluk);
+  font-size: 14.5px;
   font-weight: 750;
+  line-height: 1.2;
 }
 
-.sayaclar dd {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.sayac dd {
+  display: grid;
+  justify-items: center;
   gap: 6px;
   margin: 0;
-  color: var(--kmetin);
-  font-family: var(--font-baloo), Arial, sans-serif;
-  font-size: 26px;
-  font-weight: 800;
-  line-height: 1.1;
 }
 
-.sayaclar dd svg {
-  color: var(--altin-metin);
+.sayacIkonu {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--vurgu) 38%, transparent);
+  border-radius: 50%;
+  color: var(--vurgu);
+  background: color-mix(in srgb, var(--vurgu) 16%, transparent);
+}
+
+.sayac b {
+  color: var(--murekkep);
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1;
 }
 
 /* ------------------------------------------------------------ MADALYA RAFI */
@@ -290,7 +307,8 @@
 .madalyaIlerleme {
   display: grid;
   width: 100%;
-  gap: 6px;
+  justify-items: start;
+  gap: 8px;
 }
 
 .madalyaIlerleme p {
@@ -316,47 +334,102 @@
 
 .album {
   display: grid;
-  gap: 14px;
+  gap: 16px;
   padding: 16px;
 }
 
 .albumBasi {
   display: grid;
+  grid-template-areas:
+    "kapak ad"
+    "kapak sayac";
   grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
-  gap: 4px 14px;
+  gap: 6px 14px;
 }
 
 .albumKapagi {
   width: 48px;
   height: 66px;
-  grid-row: span 2;
+  grid-area: kapak;
   border-radius: 8px;
   object-fit: cover;
   box-shadow: 0 4px 10px color-mix(in srgb, black 20%, transparent);
 }
 
-.albumBasi h3 {
+.albumAdi {
+  display: grid;
+  min-width: 0;
+  grid-area: ad;
+  gap: 2px;
+}
+
+.albumAdi h3 {
   font-family: var(--font-baloo), Arial, sans-serif;
   font-size: 20px;
   font-weight: 800;
   line-height: 1.15;
 }
 
-.albumBasi p {
+.albumAdi p {
   color: var(--kmetin-soluk);
-  font-size: 14.5px;
+  font-size: 15px;
   font-weight: 700;
 }
 
-.albumCubugu {
-  grid-column: 2;
+/* "6 / 8 rozet" + rozet başına bir nokta. */
+.albumSayaci {
+  display: flex;
+  flex-wrap: wrap;
+  grid-area: sayac;
+  align-items: center;
+  gap: 6px 12px;
 }
 
+.albumSayaci p {
+  color: var(--kmetin-soluk);
+  font-size: 15px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.albumSayaci b {
+  color: var(--kmetin);
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.noktalar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.noktalar > span {
+  width: 12px;
+  height: 12px;
+  flex: none;
+  border: 2px solid var(--krem-cizgi-guclu);
+  border-radius: 50%;
+}
+
+.noktalar > .noktaDolu {
+  border-color: var(--altin-cizgi);
+  background: var(--vurgu);
+}
+
+.noktalar > .noktaSirada {
+  border-color: var(--altin-cizgi);
+}
+
+/* Telefonda karolar kendiliğinden 3'lü; tablette ve genişte sütun sayısı
+   kitabın bölüm sayısından gelir (`rozetSutunlari`). */
 .rozetler {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
   gap: 10px;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -399,9 +472,9 @@
 }
 
 .rozetAdi {
-  font-size: 12.5px;
-  font-weight: 750;
-  line-height: 1.25;
+  font-size: 13.5px;
+  font-weight: 800;
+  line-height: 1.2;
 }
 
 /* Kazanılmış: altın hale. */
@@ -446,103 +519,135 @@
 
 /* -------------------------------------------------------------- UNVAN YOLU */
 
-.unvanYolu {
-  padding: 8px 16px;
-}
-
-.unvanYolu ol {
+.unvanIzgarasi {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.unvanYolu li {
+/* Eşit boylu kart; ad ortada, durum satırı hep altta hizalı. */
+.unvanBasamak {
   position: relative;
   display: grid;
-  min-height: 78px;
-  grid-template-columns: 64px minmax(0, 1fr);
-  align-items: center;
-  gap: 14px;
-  padding: 7px 0;
+  grid-template-rows: auto 1fr auto;
+  justify-items: center;
+  gap: 6px;
+  padding: 16px 8px 14px;
+  border: 1.5px solid var(--krem-cizgi);
+  border-radius: 20px;
+  background: var(--krem);
+  box-shadow: var(--kart-golge);
+  text-align: center;
 }
 
-/* Bir sonraki unvana uzanan yol; kazanılan aralık altınla parlar. */
-.unvanYolu li:not(:last-child)::after {
-  position: absolute;
-  z-index: 0;
-  top: calc(50% + 30px);
-  bottom: calc(-50% + 30px);
-  left: 30.5px;
-  width: 3px;
-  border-radius: 3px;
-  background: var(--krem-cizgi-guclu);
-  content: "";
+.unvanBasamak strong {
+  align-self: center;
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.15;
+  text-wrap: balance;
 }
 
-.unvanYolu li.izDolu::after {
-  background: var(--vurgu);
-  box-shadow: 0 0 8px color-mix(in srgb, var(--vurgu) 60%, transparent);
+.unvanBasamak small {
+  color: var(--kmetin-soluk);
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.3;
 }
 
-.unvanNoktasi {
+.unvanRozeti {
   position: relative;
-  z-index: 1;
   display: grid;
   width: 64px;
   height: 64px;
   place-items: center;
-  border-radius: 50%;
 }
 
-.unvanNoktasi img {
+.unvanRozeti img {
+  position: relative;
   width: 60px;
   height: 60px;
   object-fit: contain;
 }
 
-.unvanYazisi {
+.unvanOnay {
+  position: absolute;
+  right: -4px;
+  bottom: 0;
   display: grid;
-  gap: 1px;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 2px solid var(--krem);
+  border-radius: 50%;
+  color: var(--eylem-metin);
+  background: var(--eylem);
 }
 
-.unvanYazisi strong {
-  font-family: var(--font-baloo), Arial, sans-serif;
-  font-size: 17px;
-  font-weight: 800;
-  line-height: 1.2;
+/* Kazanılan: altın yumuşak zemin. */
+.unvan_kazanildi {
+  border-color: color-mix(in srgb, var(--vurgu) 38%, var(--krem-cizgi));
+  background: var(--altin-yumusak);
 }
 
-.unvanYazisi small {
-  color: var(--kmetin-soluk);
-  font-size: 13.5px;
-  font-weight: 750;
+/* Şu an: altın çerçeve + hale, büyük görsel. */
+.unvan_simdi {
+  border: 2px solid var(--altin-cizgi);
+  background: var(--altin-yumusak);
+  box-shadow:
+    0 0 0 5px color-mix(in srgb, var(--vurgu) 22%, transparent),
+    var(--kart-golge);
 }
 
-.unvanIleride .unvanNoktasi img {
-  opacity: 0.45;
-  filter: grayscale(0.6);
+.unvan_simdi .unvanRozeti {
+  width: 80px;
+  height: 80px;
 }
 
-.unvanIleride .unvanYazisi strong {
-  color: var(--kmetin-soluk);
+.unvan_simdi .unvanRozeti::before {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--vurgu) 48%, transparent), transparent 68%);
+  content: "";
 }
 
-.unvanSimdi .unvanNoktasi {
-  background: radial-gradient(circle, color-mix(in srgb, var(--vurgu) 45%, transparent), transparent 70%);
+.unvan_simdi .unvanRozeti img {
+  width: 76px;
+  height: 76px;
 }
 
-.unvanSimdi .unvanNoktasi img {
-  width: 64px;
-  height: 64px;
-}
-
-.unvanSimdi .unvanYazisi small {
-  justify-self: start;
-  padding: 2px 10px;
+.unvan_simdi small {
+  padding: 2px 12px;
   border-radius: 999px;
   color: var(--altin-metin);
   background: var(--vurgu);
+  font-weight: 800;
+}
+
+/* Sıradaki: kesik çizgili davet, kalan kitap. */
+.unvan_sirada {
+  border: 2px dashed var(--altin-cizgi);
+  background: var(--krem-acik);
+}
+
+.unvan_sirada small {
+  color: var(--altin-metin);
+  font-weight: 800;
+}
+
+.unvan_sirada img,
+.unvan_ileride img {
+  opacity: 0.5;
+  filter: grayscale(0.55);
+}
+
+.unvan_ileride strong {
+  color: var(--kmetin-soluk);
 }
 
 /* ------------------------------------------------------- ROZET AYRINTISI */
@@ -593,6 +698,11 @@
   background: color-mix(in srgb, var(--zemin) 70%, transparent);
 }
 
+/* Pencere gece sahnesidir: odak halkası açık zemindeki koyu altın değil, altın. */
+.ayrintiKutusu :focus-visible {
+  outline-color: var(--vurgu);
+}
+
 .ayrintiDurumu {
   color: var(--murekkep);
   font-size: 17px;
@@ -631,6 +741,10 @@
     justify-self: center;
   }
 
+  .madalyaIlerleme {
+    justify-items: center;
+  }
+
   .madalyaGorseli {
     width: 104px;
     height: 104px;
@@ -640,29 +754,27 @@
     width: 96px;
     height: 96px;
   }
-}
 
-@media (min-width: 768px) {
+  /* Tablette unvan kartı iki satır: üstte görsel + unvan, altta sayaçlar.
+     Eski üç sütunda unvan adı sayaç kutularının üstüne taşıyordu. */
   .unvanKarti {
-    grid-template-columns: auto minmax(0, 1fr) auto;
+    --isik-x: 14%;
+
+    grid-template-areas:
+      "gorsel metin"
+      "sayac sayac";
+    grid-template-columns: auto minmax(0, 1fr);
     justify-items: start;
     align-items: center;
-    gap: 28px;
-    padding: 26px 32px;
+    gap: 22px 26px;
+    padding: 26px 28px 24px;
     text-align: left;
   }
 
   .unvanMetni {
+    width: 100%;
+    max-width: 520px;
     justify-items: start;
-  }
-
-  .sayaclar {
-    width: auto;
-    grid-template-columns: repeat(3, 104px);
-  }
-
-  .sayaclar div {
-    text-align: center;
   }
 
   .album {
@@ -670,21 +782,31 @@
   }
 
   .albumBasi {
-    grid-template-columns: auto minmax(0, 1fr) minmax(160px, 240px);
+    grid-template-areas: "kapak ad sayac";
+    grid-template-columns: auto minmax(0, 1fr) auto;
   }
 
-  .albumKapagi {
-    grid-row: auto;
+  .albumSayaci {
+    display: grid;
+    justify-items: end;
+    gap: 6px;
   }
 
-  .albumCubugu {
-    grid-column: 3;
+  .noktalar {
+    justify-content: flex-end;
   }
 
   .rozetler {
-    grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+    grid-template-columns: repeat(var(--sutun-orta, 4), minmax(0, 168px));
   }
 
+  .unvanIzgarasi {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (min-width: 768px) {
   .ayrintiKatmani {
     align-items: center;
     justify-items: center;
@@ -702,40 +824,43 @@
   }
 }
 
-/* Geniş ekranda unvan yolu yatay: on unvan yan yana, iz soldan sağa dolar. */
 @media (min-width: 1024px) {
-  .unvanYolu {
-    padding: 22px 18px 18px;
+  .rozetler {
+    grid-template-columns: repeat(var(--sutun-genis, 8), minmax(0, 168px));
   }
 
-  .unvanYolu ol {
-    grid-template-columns: repeat(10, minmax(0, 1fr));
+  .unvanBasamak {
+    padding: 18px 10px 16px;
   }
 
-  .unvanYolu li {
-    min-height: 0;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    gap: 8px;
-    padding: 0 4px;
-    text-align: center;
+  .unvanBasamak strong {
+    font-size: 17px;
+  }
+}
+
+/* Genişte unvan kartı tek satır: görsel | unvan | büyük sayaçlar. */
+@media (min-width: 1180px) {
+  .unvanKarti {
+    --isik-x: 10%;
+
+    grid-template-areas: "gorsel metin sayac";
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 32px;
+    padding: 28px 32px;
   }
 
-  .unvanYolu li:not(:last-child)::after {
-    top: 31px;
-    right: calc(-50% + 34px);
-    bottom: auto;
-    left: calc(50% + 34px);
+  .sayaclar {
     width: auto;
-    height: 3px;
+    grid-template-columns: repeat(3, 148px);
+    gap: 12px;
   }
 
-  .unvanYazisi strong {
-    font-size: 15px;
+  .sayac {
+    min-height: 150px;
   }
 
-  .unvanSimdi .unvanYazisi small {
-    justify-self: center;
+  .sayac b {
+    font-size: 40px;
   }
 }
 
@@ -745,5 +870,9 @@
   .parlama::after,
   .ayrintiKutusu {
     animation: none;
+  }
+
+  .rozet {
+    transition: none;
   }
 }

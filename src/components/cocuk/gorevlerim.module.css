@@ -1,10 +1,10 @@
 /*
  * Görevlerim (PROJE-MODELI 3.10.8). Değişkenler `cocuk-sayfalari.module.css`
- * `.sayfa`'dan gelir. Görev açıklaması okuma metnidir: krem kartta (3.1).
+ * `.sayfa`'dan gelir. Zemin açık krem; görev açıklaması okuma metnidir (3.1).
  */
 
 .yukleniyor {
-  color: var(--murekkep-soluk);
+  color: var(--kmetin-soluk);
   font-size: 16px;
   font-weight: 700;
 }
@@ -160,7 +160,7 @@
 /* -------------------------------------------------------- TAMAMLANANLAR */
 
 .bosNot {
-  color: var(--murekkep-soluk);
+  color: var(--kmetin-soluk);
   font-size: 15.5px;
   font-weight: 700;
 }

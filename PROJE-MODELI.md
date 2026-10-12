@@ -993,6 +993,17 @@ Bugüne Taşı, Büyük Final Testi. "Kazanımlarım → Ödüllerim" gerekçesi
 - Sayfalar: mobil ve tablet dikeyde **alttaki 4 sekme** (Harita · Ödüllerim ·
   Kelimelerim · Görevlerim); tablet yatay ve masaüstünde **üst bardaki sekmeler**
   (logo · sekmeler · profil). Bölge şeridi yoktur.
+- **REVİZE 12 Ekim 2026 (Hasan) — menü bantları:**
+  - Üst satır her genişlikte **düz gece mavisi bir banttır**; alt menü de aynı
+    renktedir. İkisi içerikten ayrışan çerçevedir.
+  - Telefon ve tablet dikeyde de **logo solda, profil sağda** durur (avatar + ad
+    + unvan; "Merhaba," kalktı, 360 px altında yalnız avatar).
+  - Ana ekranda çayır bu bandın altından başlar. Eski "ana ekranda lacivert üst
+    bant olmasın" kararının yerine geçer.
+  - **1024–1279 px sıkı düzendir:** sekmeler daralır, profilde yalnız avatar
+    görünür. Eskiden bu aralıkta logo iki satıra düşüyor, sekmeler ve profil
+    birbirine giriyordu.
+  - ≥1280 px tam düzendir.
 - Veli Paneli bağlantısı Faz 7'de PIN arkasına alınır.
 
 #### 3.10.7 Kitap ve bölümleri (KARAR — 12 Ekim 2026, Hasan)
@@ -1025,6 +1036,31 @@ Bugüne Taşı, Büyük Final Testi. "Kazanımlarım → Ödüllerim" gerekçesi
 Hasan: "daha profesyonel, daha görsel bir tasarıma geçirebiliriz." Üç karar:
 **gece çerçeve + krem kartlar**, **Ödüllerim tek sayfa vitrin** (sekmeler
 kalkar), **Kelimelerim'e yeni özellik yok** (yalnız tasarım).
+
+> **REVİZE 12 Ekim 2026 (Hasan, cihaz kalıplarında baktıktan sonra):** gece
+> mavisi zemin geniş ekranda fazla kontrast veriyordu ve menü içerikten
+> ayrışmıyordu. Kararlar:
+>
+> - **Açık zemin, gece menü:** içerik alanı okuma ekranı gibi açık kremdir;
+>   gece mavisi yalnız menü bantlarında (3.10.6) ve Ödüllerim'deki **unvan
+>   kartında** kalır. Kartlar beyaza yakın, ince çizgili, az gölgelidir.
+> - **Unvan kartı:** çocuğun fotoğrafı ve adı kalktı (üst bantta zaten var).
+>   Rozet · Madalya · Biten kitap sayaçları büyüdü (ikon diski, büyük sayı).
+>   Telefonda alt alta; tablette üstte görsel + unvan, altta sayaçlar (eski üç
+>   sütunda unvan adı sayaçların üstüne taşıyordu); ≥1180 px tek satır.
+> - **Albüm sayacı:** anlaşılmayan çubuğun yerine "6 / 8 rozet" + rozet başına
+>   bir nokta. Kazanılan nokta altın dolu, sıradaki çerçeveli. Alt satır
+>   "Sıradaki: {rozet adı}". Madalya kartındaki çubuk da noktalara döndü.
+> - **Rozetler tek satır:** genişte 8 rozete kadar yan yana, 9–10 rozet iki
+>   dengeli satır; tablet dikeyde eşik 6. Karo adı "Rozeti" eki olmadan
+>   yazılır ("İlk Adım"); tam ad ekran okuyucuda ve ayrıntı penceresinde.
+> - **Unvan yolu kart ızgarası:** telefonda 2 sütun, 640 px'ten itibaren 5×2.
+>   Kazanılan altın + onay, şu anki altın çerçeve + "Şu an", sıradaki kesik
+>   çizgili + "N kitap daha", ilerdekiler soluk. Dikey liste ve yatay 10'lu
+>   satır kalktı.
+>
+> Aşağıdaki maddelerde bunlarla çelişen ayrıntı varsa geçerli olan bu
+> revizyondur.
 
 - **Ortak dil:** zemin harita gibi gece mavisidir (3.1 korunur). İçerik
   kartları okuma ekranındaki gibi kremdir. Okunacak metin (kelime anlamı, görev
@@ -1728,6 +1764,12 @@ Kurallar:
       (unvan kartı, madalya rafı, kitap kitap rozet albümü, unvan yolu);
       Kelimelerim kitap kitap ve bölüme dönüşlü; Görevlerim'de boş sütun yok
       (3.10.8).
+- [x] **Ödüllerim revizyonu + açık zemin + menü bantları (12 Ekim 2026,
+      Hasan):** içerik açık krem, menü bantları gece mavisi; ana ekranda da
+      düz üst bant + logo (önceki "lacivert üst bant olmasın" kararı
+      değişti). 1024–1279 px sıkı menü. Unvan kartı gece mavisi, fotoğrafsız,
+      büyük sayaçlı; albümde "6 / 8 rozet" + noktalar; rozetler genişte tek
+      satır; unvan yolu kart ızgarası (3.10.6, 3.10.8).
 - [x] **Faz D (12 Ekim 2026, Hasan):** Işıl görsel dosya yerine kodla çizilen,
       canlandırılmış bir karakter oldu (üç poz, yeşil yol atkısı); tanımlı
       bütün anlara yerleştirildi (3.10.5).

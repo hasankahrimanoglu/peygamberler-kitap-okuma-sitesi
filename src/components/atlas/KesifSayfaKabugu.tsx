@@ -23,6 +23,9 @@ type KesifSayfaKabuguProps = {
  * bardaki sekmeler (PROJE-MODELI 3.10.6). Hamburger menü ve "Haritaya Dön"
  * düğmesi kalktı; harita sekmelerden birisi.
  *
+ * İçerik açık krem zemindedir, menü bantları gece mavisi (REVİZE 12 Eki 2026,
+ * Hasan — PROJE-MODELI 3.10.8).
+ *
  * Unvan `profil.unvan`'dan değil biten kitap sayısından türetilir: veritabanında
  * kalmış eski unvan, sayıyla çelişen unvan gösteriyordu (Bölüm 2).
  */
@@ -31,6 +34,7 @@ export function KesifSayfaKabugu({ children, profil, toplamRozet, tamamlananKita
 
   return (
     <CocukKabugu
+      acikZemin
       profil={{
         ad: profil.ad,
         avatarAnahtari: profil.avatarAnahtari,

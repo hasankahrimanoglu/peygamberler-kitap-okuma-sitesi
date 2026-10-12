@@ -25,7 +25,7 @@ export default function OdullerimSayfasi() {
 
   return (
     <KesifSayfaKabugu profil={profil} toplamRozet={rozet} tamamlananKitap={biten} yukleniyor={isLoading}>
-      <OdullerimEkrani profil={profil} kitaplar={kitaplar} yukleniyor={isLoading} />
+      <OdullerimEkrani kitaplar={kitaplar} yukleniyor={isLoading} />
     </KesifSayfaKabugu>
   );
 }

@@ -20,7 +20,7 @@ export default function OdullerOnizleme() {
 
   return (
     <KesifSayfaKabugu profil={ORNEK_PROFIL} toplamRozet={rozet} tamamlananKitap={biten}>
-      <OdullerimEkrani profil={ORNEK_PROFIL} kitaplar={kitaplar} yukleniyor={false} />
+      <OdullerimEkrani kitaplar={kitaplar} yukleniyor={false} />
     </KesifSayfaKabugu>
   );
 }

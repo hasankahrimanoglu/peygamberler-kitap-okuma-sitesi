@@ -1,11 +1,11 @@
 /*
  * Kelimelerim (PROJE-MODELI 3.10.8). Değişkenler `cocuk-sayfalari.module.css`
- * `.sayfa`'dan gelir. Kelime anlamı okuma metnidir: krem kartta, hikâye
- * yazısıyla (3.1).
+ * `.sayfa`'dan gelir. Zemin açık krem, kartlar beyaza yakın. Kelime anlamı
+ * okuma metnidir: hikâye yazısıyla (3.1).
  */
 
 .yukleniyor {
-  color: var(--murekkep-soluk);
+  color: var(--kmetin-soluk);
   font-size: 16px;
   font-weight: 700;
 }
@@ -23,7 +23,7 @@
   align-items: center;
   gap: 10px;
   padding: 0 16px;
-  border: 2px solid transparent;
+  border: 2px solid var(--krem-cizgi);
   border-radius: 18px;
   color: var(--kmetin-soluk);
   background: var(--krem);
@@ -31,7 +31,7 @@
 }
 
 .arama:focus-within {
-  border-color: var(--vurgu);
+  border-color: var(--altin-cizgi);
 }
 
 .arama input {
@@ -63,28 +63,29 @@
   align-items: center;
   gap: 8px;
   padding: 0 16px;
-  border: 1.5px solid color-mix(in srgb, var(--murekkep) 18%, transparent);
+  border: 1.5px solid var(--krem-cizgi-guclu);
   border-radius: 999px;
-  color: var(--murekkep);
-  background: color-mix(in srgb, var(--murekkep) 6%, transparent);
+  color: var(--kmetin);
+  background: var(--krem);
   font-size: 15px;
   font-weight: 800;
 }
 
 .filtreler button b {
-  color: var(--vurgu);
+  color: var(--altin-metin);
   font-family: var(--font-baloo), Arial, sans-serif;
   font-weight: 800;
 }
 
+/* Seçili çip gece mavisi: menünün renginde, açık zeminde net seçilir. */
 .filtreler button[aria-pressed="true"] {
-  border-color: var(--krem);
-  color: var(--kmetin);
-  background: var(--krem);
+  border-color: var(--zemin);
+  color: var(--murekkep);
+  background: var(--zemin);
 }
 
 .filtreler button[aria-pressed="true"] b {
-  color: var(--altin-metin);
+  color: var(--vurgu);
 }
 
 /* ------------------------------------------------------------ GRUP BAŞI */
@@ -102,17 +103,17 @@
   flex: none;
   border-radius: 7px;
   object-fit: cover;
-  box-shadow: 0 4px 10px color-mix(in srgb, black 30%, transparent);
+  box-shadow: 0 4px 10px color-mix(in srgb, black 22%, transparent);
 }
 
 .grupBasi h2 {
-  color: var(--murekkep);
+  color: var(--kmetin);
   font-size: 23px;
   line-height: 1.15;
 }
 
 .grupBasi span {
-  color: var(--murekkep-soluk);
+  color: var(--kmetin-soluk);
   font-size: 14.5px;
   font-weight: 700;
 }
@@ -196,7 +197,7 @@
 
 .sonucSayisi {
   margin-bottom: 12px;
-  color: var(--murekkep-soluk);
+  color: var(--kmetin-soluk);
   font-size: 15px;
   font-weight: 700;
 }

@@ -1,15 +1,18 @@
 /*
  * Ödüllerim · Kelimelerim · Görevlerim ortak dili (KARAR 12 Eki 2026, Hasan —
- * PROJE-MODELI 3.10.8). Zemin harita gibi gece mavisi kalır (3.1); içerik
- * kartları okuma ekranındaki gibi KREM. Okunacak metin (kelime anlamı, görev
- * açıklaması) her zaman krem zemindedir. Renkler yalnız tema token'larından
- * türer; sayfaya gömülü renk yoktur.
+ * PROJE-MODELI 3.10.8). REVİZE (aynı gün, Hasan): gece mavisi zemin geniş
+ * ekranda fazla kontrast veriyordu. İçerik alanı artık okuma ekranı gibi AÇIK
+ * KREM; gece mavisi yalnız menü bantlarında (`CocukKabugu`) ve sayfanın odak
+ * kartında (Ödüllerim'deki unvan kartı) kalır. Kartlar beyaza yakın, ince
+ * çizgili, az gölgeli. Renkler yalnız tema token'larından türer; sayfaya
+ * gömülü renk yoktur.
  */
 
 .sayfa {
-  --krem: var(--okuma-yuzey);
-  --krem-acik: color-mix(in srgb, white 55%, var(--okuma-yuzey));
-  --krem-2: color-mix(in srgb, var(--zemin) 6%, var(--okuma-yuzey));
+  /* Kart yüzeyi; sayfa zemini (`CocukKabugu .kabukAcik`) bundan bir ton koyu. */
+  --krem: color-mix(in srgb, white 62%, var(--okuma-yuzey));
+  --krem-acik: color-mix(in srgb, white 85%, var(--okuma-yuzey));
+  --krem-2: color-mix(in srgb, var(--zemin) 5%, var(--okuma-yuzey));
   --krem-cizgi: color-mix(in srgb, var(--zemin) 13%, var(--okuma-yuzey));
   --krem-cizgi-guclu: color-mix(in srgb, var(--zemin) 24%, var(--okuma-yuzey));
   --kmetin: color-mix(in srgb, var(--zemin) 85%, black);
@@ -21,7 +24,11 @@
   --yesil-yumusak: color-mix(in srgb, var(--eylem) 12%, var(--okuma-yuzey));
   --yesil-metin: color-mix(in srgb, var(--eylem) 55%, black);
   --yesil-golge: color-mix(in srgb, var(--eylem) 64%, black);
-  --kart-golge: 0 14px 34px color-mix(in srgb, black 28%, transparent);
+  --kart-golge:
+    0 1px 2px color-mix(in srgb, var(--zemin) 8%, transparent),
+    0 8px 24px color-mix(in srgb, var(--zemin) 8%, transparent);
+  /* Açık zeminde altın vurgu çizgisi biraz koyulaşır; saf altın kremde solar. */
+  --altin-cizgi: color-mix(in srgb, var(--vurgu) 82%, var(--altin-metin));
   /* Okuma ekranının ödül sahnesi (`KutlamaSahnesi`) bu adları kullanır;
      rozet ayrıntısı penceresinde de aynı sahne çizilir. */
   --altin: var(--vurgu);
@@ -31,7 +38,7 @@
 
   display: grid;
   gap: 28px;
-  padding-top: 8px;
+  color: var(--kmetin);
 }
 
 .sayfa :where(h1, h2, h3, p, ol, ul, dl, dd) {
@@ -69,7 +76,7 @@
 }
 
 .baslik h1 {
-  color: var(--murekkep);
+  color: var(--kmetin);
   font-family: var(--font-baloo), Arial, sans-serif;
   font-size: clamp(30px, 6vw, 40px);
   font-weight: 800;
@@ -78,7 +85,7 @@
 
 .baslik p {
   max-width: 60ch;
-  color: var(--murekkep-soluk);
+  color: var(--kmetin-soluk);
   font-size: 16px;
   font-weight: 650;
   line-height: 1.45;
@@ -96,23 +103,24 @@
   align-items: center;
   gap: 7px;
   padding: 0 14px;
-  border: 1px solid color-mix(in srgb, var(--murekkep) 14%, transparent);
+  border: 1px solid var(--krem-cizgi);
   border-radius: 999px;
-  color: var(--murekkep);
-  background: color-mix(in srgb, var(--murekkep) 7%, transparent);
+  color: var(--kmetin);
+  background: var(--krem);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--zemin) 6%, transparent);
   font-size: 14.5px;
   font-weight: 750;
   white-space: nowrap;
 }
 
 .cip b {
-  color: var(--vurgu);
+  color: var(--altin-metin);
   font-family: var(--font-baloo), Arial, sans-serif;
   font-size: 18px;
   font-weight: 800;
 }
 
-/* ---------------------------------------------------- GECE ÜSTÜ BÖLÜM BAŞLIĞI */
+/* -------------------------------------------------------- BÖLÜM BAŞLIĞI */
 
 .bolumBasligi {
   display: flex;
@@ -126,7 +134,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--murekkep);
+  color: var(--kmetin);
   font-family: var(--font-baloo), Arial, sans-serif;
   font-size: 23px;
   font-weight: 800;
@@ -140,12 +148,12 @@
   height: 22px;
   flex: none;
   border-radius: 4px;
-  background: var(--vurgu);
+  background: var(--altin-cizgi);
   content: "";
 }
 
 .bolumBasligi span {
-  color: var(--murekkep-soluk);
+  color: var(--kmetin-soluk);
   font-size: 14.5px;
   font-weight: 700;
 }
@@ -266,7 +274,7 @@
 /* ------------------------------------------------------------ ODAK HALKASI */
 
 .sayfa :where(button, a, input):focus-visible {
-  outline: 3px solid var(--vurgu);
+  outline: 3px solid var(--altin-golge);
   outline-offset: 3px;
 }
 
@@ -282,6 +290,5 @@
 @media (min-width: 1024px) {
   .sayfa {
     gap: 36px;
-    padding-top: 12px;
   }
 }
