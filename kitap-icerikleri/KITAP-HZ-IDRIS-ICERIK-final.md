@@ -19,6 +19,9 @@
 > 6. **Alt başlık** yayında `atlasCatalog.ts`'teki biçimiyle durur ("Öğrenen ve
 >    öğreten bir ömür" — yalnız ilk harf büyük); buradaki büyük harfli yazım
 >    esas alınmaz.
+> 7. **Promptlar:** burada yalnız Türkçe. Güncel kural: her sahne, rozet ve
+>    madalyada **Türkçe + İngilizce** prompt; kitap kimliğinde İngilizce ortak
+>    stil bloğu, ortak negatif prompt ve rozet çerçeve bloğu (brif §6, §8.3).
 
 > **Kaynak:** Ahmet Cemil Akıncı, *Hz. İdris (a.s.) – Hz. Nuh (a.s.)*, Bahar
 > Yayınları, Ekim 2025 — yalnız **s. 9–120** arası (Hz. İdrîs bölümü).
