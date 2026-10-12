@@ -464,6 +464,8 @@
 .akis {
   display: grid;
   width: min(100%, var(--sutun));
+  /* Yan sütun daha uzunsa satırlar esnemesin. */
+  align-content: start;
   gap: 32px;
   margin: 0 auto;
   padding: 16px 16px 24px;
@@ -882,8 +884,9 @@
   background: var(--eylem);
 }
 
-/* Onaydan sonra seçilmeyen şıklar geri çekilir; seçilen öne çıkar. */
-.secenek:disabled:not(.secenekSecili) {
+/* Onaydan sonra öne çıkmayan şıklar geri çekilir (karar: seçilmeyenler;
+   final testi: ne doğru ne çocuğun seçimi olanlar). */
+.secenekGeri {
   opacity: 0.55;
   box-shadow: none;
 }

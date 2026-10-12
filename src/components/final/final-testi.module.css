@@ -1,0 +1,240 @@
+/*
+ * Büyük Final Testi — yalnız bu ekrana özgü parçalar (12 Eki 2026).
+ *
+ * Kabuk, üst bar, adım çubuğu, şıklar, düğmeler ve ödül sahnesi okuma
+ * ekranının modülünden gelir (`okuma-akisi.module.css`): iki ekran aynı dili
+ * konuşsun, renk değişkenleri (`--metin`, `--altin`, `--kagit`…) oradaki
+ * `.sayfa`'dan miras alınır. Sayfaya gömülü renk yoktur.
+ */
+
+.yukleniyor {
+  display: grid;
+  place-items: center;
+}
+
+.yukleniyor p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--metin-soluk);
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.yukleniyor svg {
+  color: var(--altin-metin);
+}
+
+.alistirmaCipi {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  border: 1.5px solid color-mix(in srgb, var(--eylem) 45%, var(--cizgi));
+  border-radius: 999px;
+  color: var(--yesil-metin);
+  background: var(--yesil-yumusak);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.yanNot {
+  color: var(--metin-soluk);
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.45;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------- SORU */
+
+.soruBolumu {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+}
+
+/* Telefon ve tablet dikeyde ilk soruda; geniş ekranda yan sütun söyler. */
+.giris {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px 8px 8px;
+  border: 1px solid color-mix(in srgb, var(--altin) 40%, var(--cizgi));
+  border-radius: 20px;
+  background: var(--altin-yumusak);
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.giris img {
+  width: 48px;
+  height: 48px;
+  flex: none;
+  object-fit: contain;
+}
+
+.giris b {
+  display: block;
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.soru {
+  font-family: var(--font-literata), Georgia, serif;
+  font-size: calc(var(--story-size) + 5px);
+  font-weight: 650;
+  line-height: 1.38;
+  text-wrap: pretty;
+}
+
+.secenekMetni {
+  display: grid;
+  gap: 2px;
+}
+
+.secenekMetni small {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* Cevap kontrol edilince: doğru şık yeşil + onay; çocuğun farklı seçimi
+   nötr kalır (kırmızı yok — yanlışlar utandırıcı vurgulanmaz, 4.1/13). */
+.secenekDogru {
+  border-color: var(--eylem);
+  background: var(--yesil-yumusak);
+  box-shadow: 0 3px 0 var(--yesil-golge);
+}
+
+.secenekDogru .secenekMetni small {
+  color: var(--yesil-metin);
+}
+
+.secenekDogru > span:first-child {
+  color: var(--eylem-metin);
+  background: var(--eylem);
+}
+
+.secenekSenin {
+  border-color: color-mix(in srgb, var(--altin) 70%, var(--cizgi-guclu));
+  background: var(--altin-yumusak);
+}
+
+.secenekSenin .secenekMetni small {
+  color: var(--altin-metin);
+}
+
+.geriBildirim {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 16px;
+  border: 1.5px solid color-mix(in srgb, var(--altin) 50%, var(--cizgi));
+  border-radius: 18px;
+  background: var(--altin-yumusak);
+  font-size: 16.5px;
+  font-weight: 750;
+  line-height: 1.45;
+  animation: geriBildirimAc 220ms ease-out both;
+}
+
+.geriBildirim svg {
+  flex: none;
+  margin-top: 2px;
+  color: var(--altin-metin);
+}
+
+.geriBildirimDogru {
+  border-color: color-mix(in srgb, var(--eylem) 50%, var(--cizgi));
+  background: var(--yesil-yumusak);
+}
+
+.geriBildirimDogru svg {
+  color: var(--yesil-metin);
+}
+
+@keyframes geriBildirimAc {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+/* -------------------------------------------------------------- SONUÇ */
+
+.sonucSatiri {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  color: var(--murekkep);
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.sonucNoktalari {
+  display: flex;
+  gap: 8px;
+}
+
+.noktaDogru,
+.noktaBos {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.noktaDogru {
+  color: var(--altin-metin);
+  background: var(--altin);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--altin) 55%, transparent);
+}
+
+.noktaBos {
+  border: 2px solid color-mix(in srgb, var(--murekkep) 30%, transparent);
+}
+
+.haritaNotu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid var(--yuzey-2);
+  border-radius: 16px;
+  color: var(--murekkep-soluk);
+  background: color-mix(in srgb, var(--yuzey) 82%, transparent);
+  font-size: 14.5px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.haritaNotu svg {
+  flex: none;
+  color: var(--altin);
+}
+
+@media (min-width: 640px) {
+  .soru {
+    font-size: calc(var(--story-size) + 6px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .giris {
+    display: none;
+  }
+
+  .soruBolumu {
+    gap: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .geriBildirim {
+    animation: none;
+  }
+}

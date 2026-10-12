@@ -602,7 +602,9 @@ export function AtlasScrollReader({ chapter, onProgressSync, tekrarOkumaOnizleme
                   <button
                     key={option.id}
                     type="button"
-                    className={`${styles.secenek} ${secili ? styles.secenekSecili : ""}`}
+                    className={`${styles.secenek} ${secili ? styles.secenekSecili : ""} ${
+                      kararOnayli && !secili ? styles.secenekGeri : ""
+                    }`}
                     role="radio"
                     aria-checked={secili}
                     disabled={kararOnayli}

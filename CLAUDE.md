@@ -150,7 +150,10 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
 Faz A, B (okuma ekranı), C (ana ekran) ve **D (Işıl) uygulandı;** sırada 5 çocukla
 gözlem testi var. Ana ekran bileşenleri `src/components/cocuk/`, veri modeli
 `src/lib/child/yolculuk.ts`, girişsiz önizlemeler `/tasarim/ana-ekran`,
-`/tasarim/okuma?bolum=adem-2` (rozet kaydı Supabase'e gitmez) ve `/tasarim/isil`.
+`/tasarim/okuma?bolum=adem-2` (rozet kaydı Supabase'e gitmez), `/tasarim/final?kitap=idris`
+(Büyük Final Testi; kayıt yok) ve `/tasarim/isil`. Final testi görünümü
+`src/components/final/FinalTesti.tsx`; okuma ekranının modülünü ve rozet anıyla ortak
+`KutlamaSahnesi`'ni kullanır.
 **Işıl görsel dosya DEĞİLDİR:** kodla çizilmiş, canlandırılmış SVG karakter
 (`src/components/cocuk/Isil.tsx`, pozlar `durus` · `konusma` · `kutlama`); PNG
 isteme, `public/isil/` klasörü yok. Özet:

@@ -1,9 +1,17 @@
 import type { CSSProperties } from "react";
 import { Ikon } from "../ui";
-import type { AdimId, OkumaAdimi } from "./akis";
 import styles from "./okuma-akisi.module.css";
 
 type AdimDurumu = "gecildi" | "simdi" | "sirada" | "kilitli";
+
+/** Okuma ekranının adımları (`OkumaAdimi`) ve final testinin soruları bu biçimde gelir. */
+export type CubukAdimi<T extends string> = {
+  id: T;
+  kisa: string;
+  uzun: string;
+  /** "Sen Olsaydın" kapısının arkasında mı (seçim onaylanmadan açılmaz). */
+  kapiArkasinda: boolean;
+};
 
 const DURUM_METNI: Record<AdimDurumu, string> = {
   gecildi: "tamamlandı",
@@ -24,9 +32,10 @@ const DURUM_METNI: Record<AdimDurumu, string> = {
  *
  * Yalnız geçilmiş adımlara (ve bulunulan adıma) dokunulabilir; "Sen Olsaydın"
  * kapısının arkasındaki adımlar seçim yapılmadan kilitlidir, içerikleri DOM'da
- * yoktur.
+ * yoktur. Büyük Final Testi aynı çubuğu soru sırası için kullanır; orada geri
+ * dönülmez (`dokunulur={false}`).
  */
-export function AdimCubugu({
+export function AdimCubugu<T extends string>({
   adimlar,
   aktif,
   dolu,
@@ -34,8 +43,10 @@ export function AdimCubugu({
   kapiAcik,
   yon,
   onSec,
+  dokunulur = true,
+  etiket = "Bölümün adımları",
 }: {
-  adimlar: OkumaAdimi[];
+  adimlar: CubukAdimi<T>[];
   /** Etkin adımın sırası. */
   aktif: number;
   /** Etkin adımın ne kadarının okunduğu (0–1). */
@@ -44,14 +55,17 @@ export function AdimCubugu({
   enIleri: number;
   kapiAcik: boolean;
   yon: "yatay" | "dikey";
-  onSec: (id: AdimId) => void;
+  onSec?: (id: T) => void;
+  /** false: adımlar yalnız gösterilir, dokunulmaz. */
+  dokunulur?: boolean;
+  etiket?: string;
 }) {
   const yatay = yon === "yatay";
 
   return (
     <nav
       className={yatay ? styles.yatayAdimlar : styles.dikeyAdimlar}
-      aria-label="Bölümün adımları"
+      aria-label={etiket}
     >
       <ol>
         {adimlar.map((adim, sira) => {
@@ -63,7 +77,7 @@ export function AdimCubugu({
               : sira === aktif
                 ? "simdi"
                 : "sirada";
-          const dokunulur = !kilitli && sira <= Math.max(enIleri, aktif);
+          const tiklanir = dokunulur && !kilitli && sira <= Math.max(enIleri, aktif);
           // Yatayda her adımın kendi çizgisi; dikeyde iz, adımdan bir
           // sonrakine uzanan yoldur.
           const doluluk = sira < aktif ? 1 : sira === aktif ? dolu : 0;
@@ -73,9 +87,9 @@ export function AdimCubugu({
               <button
                 type="button"
                 className={yatay ? styles.yatayAdim : styles.dikeyAdim}
-                disabled={!dokunulur}
+                disabled={!tiklanir}
                 aria-current={durum === "simdi" ? "step" : undefined}
-                onClick={() => onSec(adim.id)}
+                onClick={() => onSec?.(adim.id)}
               >
                 {yatay ? (
                   <span className={styles.adimIzi} aria-hidden="true">
