@@ -1020,6 +1020,63 @@ Bugüne Taşı, Büyük Final Testi. "Kazanımlarım → Ödüllerim" gerekçesi
 - Okuma ekranındaki "← Bölümler" düğmesi haritaya, o kitabın sayfası açık
   hâlde döner.
 
+#### 3.10.8 Ödüllerim, Kelimelerim, Görevlerim (KARAR — 12 Ekim 2026, Hasan)
+
+Hasan: "daha profesyonel, daha görsel bir tasarıma geçirebiliriz." Üç karar:
+**gece çerçeve + krem kartlar**, **Ödüllerim tek sayfa vitrin** (sekmeler
+kalkar), **Kelimelerim'e yeni özellik yok** (yalnız tasarım).
+
+- **Ortak dil:** zemin harita gibi gece mavisidir (3.1 korunur). İçerik
+  kartları okuma ekranındaki gibi kremdir. Okunacak metin (kelime anlamı, görev
+  açıklaması) her zaman krem zemindedir. Başlık + tek satır açıklama + sağda
+  özet çipleri (`SayfaBasligi`). Boş ekranlar krem kartta Işıl ile gösterilir
+  (`BosEkran`). Düğmeler ana ekranın dilindedir.
+- **Ödüllerim** (`/kazanimlarim`), yukarıdan aşağı:
+  1. **Unvan kartı:** unvan görseli dönen ışık huzmeleriyle, çocuğun fotoğrafı,
+     "Unvanın", bir sonraki unvana ilerleme çubuğu ("Değer Toplayıcısı için 2
+     kitap daha"), Rozet · Madalya · Biten kitap sayaçları.
+  2. **Madalya rafı:** yayındaki her kitap. Kazanılan madalya parlar, yanında
+     "Madalya senin" yazar. Bölümleri biten ama final testi kalan kitapta altın
+     **Final Testine Başla** çıkar. Diğerlerinde ilerleme yazar ("4 bölümün
+     1'i · sonra final testi"). Telefonda kart yatay satırdır.
+  3. **Rozet albümü:** kitap kitap (kapak, ad, "4 rozetin 1'i", çubuk). Rozet
+     durumları: kazanılan altın haleli, sıradaki kesik çizgili, kilitli soluk.
+     Rozete dokununca **ayrıntı penceresi** açılır (telefonda alttan, genişte
+     ortada). Pencere ödül sahnesinin kompakt hâlidir (`KutlamaSahnesi
+     kompakt`) ve kitap · bölüm adını gösterir. Kazanılmışsa "Bu rozet senin" +
+     Tekrar Oku, sıradaysa "Bu bölümü bitirince senin" + Bölümü Oku, kilitliyse
+     "N. bölümü bitirince açılır".
+  4. **Unvan yolu:** 10 unvan; telefonda dikey, genişte yatay. Altın iz şu anki
+     unvana kadar dolar, şu anki unvanda "Şu an" etiketi durur.
+- **Kelimelerim** (`/kelime-defterim`):
+  - Arama kutusu ve kitap çipleri (Tümü · Hz. Âdem 8 · Hz. Şît 1).
+  - Arama yokken kitap kitap gruplanır (kapak + ad + sayı), bölüm sırasıyla.
+  - Kelime kartında kelime okuma ekranındaki sözlük kelimesi gibi işaretlidir
+    (yeşil vurgu, noktalı çizgi); anlamı hikâye yazısıyla yazılır.
+  - Kartın altında "2. bölüm · Bilginin Armağanı" ve **Bölümü oku** bağlantısı
+    bulunur.
+  - Aramada düz sonuç listesi çıkar; sonuç yoksa "Aramayı temizle".
+- **Görevlerim** (`/gorevlerim`):
+  - Çipler "N seni bekliyor · M tamamladın" der.
+  - Bekleyen görevler açık krem kartlarda durur (okuma ekranındaki Bugüne Taşı
+    kartının dili): kategori, kitap · bölüm, açıklama, Süre / "Ne zaman bitti
+    sayılır?", güvenlik notu ve yeşil **Görevi Tamamladım**.
+  - Bekleyen yoksa yerinde Işıl'lı sakin bir kart ("Şu an bekleyen görevin
+    yok"); eskiden sol sütun boş kalıyordu.
+  - Tamamlananlar kompakt satırlarda (yeşil onay, kitap · bölüm, tarih);
+    dokununca ayrıntı açılır.
+  - Tamamlama anı yalnız bir onay bandı ve satırın kısa parıltısıdır (4.3:
+    göreve ödül yok).
+- **Veri:** Kitap ve bölüm adları katalogdan gelir (`yolculukKitaplari`).
+  Veritabanının aksansız adı ("Hz. Adem") gösterilmez. Unvan biten kitap
+  sayısından türetilir; eski `profiles.unvan` okunmaz. `derive.ts`'teki ortak
+  fonksiyonlar (veli paneli de kullanır) değişmedi.
+- **Kod:** görünüm `src/components/cocuk/` (`OdullerimEkrani`,
+  `KelimelerimEkrani`, `GorevlerimEkrani`, `UnvanYolu`, `SayfaBasligi`,
+  `BosEkran`); sayfalar yalnız veri çeker. Girişsiz önizleme:
+  `/tasarim/oduller`, `/tasarim/kelimeler`, `/tasarim/gorevler` (`?durum=bos`;
+  görevlerde `?durum=bekleyen`).
+
 ---
 
 ## 4. Özellik Kararları
@@ -1666,6 +1723,11 @@ Kurallar:
       `/tasarim/final?kitap=idris` (`&durum=alistirma`, `&durum=hata`).
       Kitap eşleştirmesi `dbKitabiBul`'a geçti (eski alt dize araması "ali"yi
       "Sâlih" içinde bulurdu). Kullanılmayan eski yedek tasarım silindi.
+- [x] **Ödüllerim, Kelimelerim, Görevlerim yeni tasarıma geçti (12 Ekim 2026,
+      Hasan):** gece çerçeve + krem kartlar; Ödüllerim tek sayfa vitrin
+      (unvan kartı, madalya rafı, kitap kitap rozet albümü, unvan yolu);
+      Kelimelerim kitap kitap ve bölüme dönüşlü; Görevlerim'de boş sütun yok
+      (3.10.8).
 - [x] **Faz D (12 Ekim 2026, Hasan):** Işıl görsel dosya yerine kodla çizilen,
       canlandırılmış bir karakter oldu (üç poz, yeşil yol atkısı); tanımlı
       bütün anlara yerleştirildi (3.10.5).

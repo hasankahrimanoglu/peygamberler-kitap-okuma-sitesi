@@ -1,0 +1,287 @@
+/*
+ * Ödüllerim · Kelimelerim · Görevlerim ortak dili (KARAR 12 Eki 2026, Hasan —
+ * PROJE-MODELI 3.10.8). Zemin harita gibi gece mavisi kalır (3.1); içerik
+ * kartları okuma ekranındaki gibi KREM. Okunacak metin (kelime anlamı, görev
+ * açıklaması) her zaman krem zemindedir. Renkler yalnız tema token'larından
+ * türer; sayfaya gömülü renk yoktur.
+ */
+
+.sayfa {
+  --krem: var(--okuma-yuzey);
+  --krem-acik: color-mix(in srgb, white 55%, var(--okuma-yuzey));
+  --krem-2: color-mix(in srgb, var(--zemin) 6%, var(--okuma-yuzey));
+  --krem-cizgi: color-mix(in srgb, var(--zemin) 13%, var(--okuma-yuzey));
+  --krem-cizgi-guclu: color-mix(in srgb, var(--zemin) 24%, var(--okuma-yuzey));
+  --kmetin: color-mix(in srgb, var(--zemin) 85%, black);
+  /* Krem üstünde ≈5:1 (AA). */
+  --kmetin-soluk: color-mix(in srgb, var(--zemin) 68%, var(--okuma-yuzey));
+  --altin-yumusak: color-mix(in srgb, var(--vurgu) 20%, var(--okuma-yuzey));
+  --altin-metin: color-mix(in srgb, var(--vurgu) 48%, black);
+  --altin-golge: color-mix(in srgb, var(--vurgu) 68%, black);
+  --yesil-yumusak: color-mix(in srgb, var(--eylem) 12%, var(--okuma-yuzey));
+  --yesil-metin: color-mix(in srgb, var(--eylem) 55%, black);
+  --yesil-golge: color-mix(in srgb, var(--eylem) 64%, black);
+  --kart-golge: 0 14px 34px color-mix(in srgb, black 28%, transparent);
+  /* Okuma ekranının ödül sahnesi (`KutlamaSahnesi`) bu adları kullanır;
+     rozet ayrıntısı penceresinde de aynı sahne çizilir. */
+  --altin: var(--vurgu);
+  --altin-acik: color-mix(in srgb, var(--vurgu) 55%, white);
+  --golge: color-mix(in srgb, var(--zemin) 14%, transparent);
+  --indigo-golge: color-mix(in srgb, var(--zemin) 70%, black);
+
+  display: grid;
+  gap: 28px;
+  padding-top: 8px;
+}
+
+.sayfa :where(h1, h2, h3, p, ol, ul, dl, dd) {
+  margin: 0;
+}
+
+.sayfa :where(h1, h2, h3) {
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-weight: 800;
+}
+
+.sayfa :where(button) {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.sayfa :where(button:disabled) {
+  cursor: default;
+}
+
+/* ---------------------------------------------------------- SAYFA BAŞLIĞI */
+
+.baslik {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px 24px;
+}
+
+.baslikMetni {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.baslik h1 {
+  color: var(--murekkep);
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: clamp(30px, 6vw, 40px);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.baslik p {
+  max-width: 60ch;
+  color: var(--murekkep-soluk);
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.cipler {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cip {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 14px;
+  border: 1px solid color-mix(in srgb, var(--murekkep) 14%, transparent);
+  border-radius: 999px;
+  color: var(--murekkep);
+  background: color-mix(in srgb, var(--murekkep) 7%, transparent);
+  font-size: 14.5px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.cip b {
+  color: var(--vurgu);
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+/* ---------------------------------------------------- GECE ÜSTÜ BÖLÜM BAŞLIĞI */
+
+.bolumBasligi {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.bolumBasligi h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--murekkep);
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+/* Kısa altın çizgi: ana ekrandaki ışık izinin küçük yankısı. */
+.bolumBasligi h2::before {
+  display: block;
+  width: 6px;
+  height: 22px;
+  flex: none;
+  border-radius: 4px;
+  background: var(--vurgu);
+  content: "";
+}
+
+.bolumBasligi span {
+  color: var(--murekkep-soluk);
+  font-size: 14.5px;
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------- KART */
+
+.kart {
+  border: 1px solid var(--krem-cizgi);
+  border-radius: 24px;
+  color: var(--kmetin);
+  background: var(--krem);
+  box-shadow: var(--kart-golge);
+}
+
+/* ------------------------------------------------------- İLERLEME ÇUBUĞU */
+
+.cubuk {
+  position: relative;
+  height: 8px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--krem-cizgi);
+}
+
+.cubuk > span {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--vurgu) 70%, white), var(--vurgu));
+  transform: scaleX(var(--dolu, 0));
+  transform-origin: left center;
+}
+
+/* --------------------------------------------------------------- DÜĞMELER */
+
+/* Ana ekrandaki düğme dili: Baloo, alt gölge = düğmenin kalınlığı. */
+.dugme {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 16px;
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.dugme:not(:disabled):active {
+  transform: translateY(3px);
+}
+
+.dugmeYesil {
+  color: var(--eylem-metin);
+  background: var(--eylem);
+  box-shadow: 0 4px 0 var(--yesil-golge);
+}
+
+.dugmeAltin {
+  color: var(--altin-metin);
+  background: var(--vurgu);
+  box-shadow: 0 4px 0 var(--altin-golge);
+}
+
+.dugmeYesil:not(:disabled):active,
+.dugmeAltin:not(:disabled):active {
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--zemin) 70%, black);
+}
+
+.dugmeHayalet {
+  min-height: 44px;
+  border: 2px solid var(--krem-cizgi-guclu);
+  color: var(--kmetin);
+  background: transparent;
+  font-size: 15.5px;
+}
+
+.dugmeHayalet:hover {
+  background: var(--krem-2);
+}
+
+.dugme:disabled {
+  opacity: 0.6;
+}
+
+/* ------------------------------------------------------------- BOŞ EKRAN */
+
+.bosEkran {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding: 28px 22px 26px;
+  text-align: center;
+}
+
+.bosEkran h2 {
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.bosEkran p {
+  max-width: 42ch;
+  color: var(--kmetin-soluk);
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.bosEkran .dugme {
+  margin-top: 6px;
+}
+
+/* ------------------------------------------------------------ ODAK HALKASI */
+
+.sayfa :where(button, a, input):focus-visible {
+  outline: 3px solid var(--vurgu);
+  outline-offset: 3px;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+  .sayfa {
+    gap: 36px;
+    padding-top: 12px;
+  }
+}

@@ -10,5 +10,9 @@ export type KesifProfili = {
   ad: string;
   avatarAnahtari: string;
   avatarFotografi?: string | null;
-  unvan: string;
+  /**
+   * Kullanılmıyor: unvan her yerde biten kitap sayısından türetilir (Bölüm 2).
+   * Veritabanındaki eski `unvan` alanı sayıyla çelişebildiği için okunmaz.
+   */
+  unvan?: string;
 };

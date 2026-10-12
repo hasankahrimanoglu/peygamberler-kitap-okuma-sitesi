@@ -1,0 +1,749 @@
+/*
+ * Ödüllerim — tek sayfa vitrin (PROJE-MODELI 3.10.8). Değişkenler
+ * `cocuk-sayfalari.module.css`'teki `.sayfa`'dan miras alınır.
+ */
+
+.yukleniyor {
+  color: var(--murekkep-soluk);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------ UNVAN KARTI */
+
+.unvanKarti {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+  overflow: hidden;
+  padding: 26px 20px 22px;
+  text-align: center;
+  isolation: isolate;
+}
+
+/* Kartın üstüne düşen sıcak altın ışık. */
+.unvanKarti::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 60% 70% at 50% 0%,
+    color-mix(in srgb, var(--vurgu) 26%, transparent),
+    transparent 70%
+  );
+  content: "";
+}
+
+.unvanGorseli {
+  position: relative;
+  display: grid;
+  width: 150px;
+  height: 150px;
+  place-items: center;
+}
+
+.unvanGorseli img {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px color-mix(in srgb, var(--vurgu) 40%, transparent));
+  animation: unvanSuzul 4.4s ease-in-out infinite;
+}
+
+/* Unvanın arkasında yavaşça dönen ışık huzmeleri. */
+.unvanIsini {
+  position: absolute;
+  inset: -40px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    from 0deg,
+    color-mix(in srgb, var(--vurgu) 34%, transparent) 0deg 7deg,
+    transparent 7deg 22deg
+  );
+  -webkit-mask-image: radial-gradient(circle, black 20%, transparent 68%);
+  mask-image: radial-gradient(circle, black 20%, transparent 68%);
+  animation: unvanDon 70s linear infinite;
+}
+
+@keyframes unvanDon {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes unvanSuzul {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.unvanMetni {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  width: min(100%, 420px);
+}
+
+.sahip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.sahipAvatari {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  overflow: hidden;
+  border: 2px solid var(--vurgu);
+  border-radius: 50%;
+  background: var(--krem-2);
+}
+
+.unvanMetni small {
+  color: var(--kmetin-soluk);
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.unvanMetni h2 {
+  color: var(--altin-metin);
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: clamp(28px, 6vw, 36px);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.sonrakiUnvan {
+  display: grid;
+  width: 100%;
+  gap: 8px;
+  margin-top: 8px;
+  color: var(--kmetin-soluk);
+  font-size: 15.5px;
+  font-weight: 700;
+}
+
+.sonrakiUnvan b {
+  color: var(--kmetin);
+}
+
+.sayaclar {
+  display: grid;
+  width: min(100%, 420px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+
+.sayaclar div {
+  display: grid;
+  gap: 2px;
+  padding: 10px 6px;
+  border: 1px solid var(--krem-cizgi);
+  border-radius: 16px;
+  background: var(--krem-acik);
+}
+
+.sayaclar dt {
+  order: 2;
+  color: var(--kmetin-soluk);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.sayaclar dd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 0;
+  color: var(--kmetin);
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.sayaclar dd svg {
+  color: var(--altin-metin);
+}
+
+/* ------------------------------------------------------------ MADALYA RAFI */
+
+.madalyaRafi {
+  display: grid;
+  gap: 10px;
+}
+
+/* Telefonda madalya kartı yatay satırdır: görsel solda, ad ve durum sağda. */
+.madalyaKarti {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  align-items: center;
+  column-gap: 14px;
+  row-gap: 6px;
+  padding: 12px 16px 12px 10px;
+}
+
+.madalyaKarti > .madalyaGorseli {
+  grid-row: span 2;
+}
+
+.madalyaKarti > :not(.madalyaGorseli) {
+  justify-self: start;
+}
+
+.madalyaGorseli {
+  position: relative;
+  display: grid;
+  width: 84px;
+  height: 84px;
+  place-items: center;
+}
+
+.madalyaGorseli img {
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
+  opacity: 0.55;
+  filter: saturate(0.55);
+}
+
+.kazanildi .madalyaGorseli img {
+  opacity: 1;
+  filter: drop-shadow(0 8px 16px color-mix(in srgb, var(--vurgu) 45%, transparent));
+}
+
+.kazanildi .madalyaGorseli::before {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--vurgu) 38%, transparent), transparent 68%);
+  content: "";
+}
+
+/* Madalyanın üstünden geçen parıltı; maske madalya görselinin kendisidir. */
+.parlama {
+  position: absolute;
+  inset: 4px;
+  overflow: hidden;
+  -webkit-mask: var(--maske) center / contain no-repeat;
+  mask: var(--maske) center / contain no-repeat;
+  pointer-events: none;
+}
+
+.parlama::after {
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: 0;
+  width: 45%;
+  background: linear-gradient(100deg, transparent, color-mix(in srgb, white 75%, transparent), transparent);
+  content: "";
+  transform: translateX(-160%) skewX(-12deg);
+  animation: parlamaGec 4.2s ease-in-out 1s infinite;
+}
+
+@keyframes parlamaGec {
+  0% {
+    transform: translateX(-160%) skewX(-12deg);
+  }
+  45%,
+  100% {
+    transform: translateX(330%) skewX(-12deg);
+  }
+}
+
+.madalyaKarti h3 {
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.madalyaDurumu {
+  display: inline-flex;
+  white-space: nowrap;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  color: var(--yesil-metin);
+  background: var(--yesil-yumusak);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.madalyaIlerleme {
+  display: grid;
+  width: 100%;
+  gap: 6px;
+}
+
+.madalyaIlerleme p {
+  color: var(--kmetin-soluk);
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.finalDugmesi {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 10px;
+  font-size: 15.5px;
+}
+
+/* ------------------------------------------------------------ ROZET ALBÜMÜ */
+
+.albumler {
+  display: grid;
+  gap: 14px;
+}
+
+.album {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+}
+
+.albumBasi {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 4px 14px;
+}
+
+.albumKapagi {
+  width: 48px;
+  height: 66px;
+  grid-row: span 2;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px color-mix(in srgb, black 20%, transparent);
+}
+
+.albumBasi h3 {
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.albumBasi p {
+  color: var(--kmetin-soluk);
+  font-size: 14.5px;
+  font-weight: 700;
+}
+
+.albumCubugu {
+  grid-column: 2;
+}
+
+.rozetler {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.rozet {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  min-height: 124px;
+  justify-items: center;
+  align-content: start;
+  gap: 6px;
+  padding: 10px 6px;
+  border: 1.5px solid transparent;
+  border-radius: 18px;
+  color: var(--kmetin);
+  background: var(--krem-2);
+  text-align: center;
+  transition: transform 140ms ease, border-color 140ms ease;
+}
+
+.rozet:hover {
+  border-color: var(--krem-cizgi-guclu);
+  transform: translateY(-2px);
+}
+
+.rozetGorseli {
+  position: relative;
+  display: grid;
+  width: 76px;
+  height: 76px;
+  place-items: center;
+}
+
+.rozetGorseli img {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.rozetAdi {
+  font-size: 12.5px;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+/* Kazanılmış: altın hale. */
+.rozet_tamamlandi {
+  background: var(--altin-yumusak);
+}
+
+.rozet_tamamlandi .rozetGorseli::before {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--vurgu) 42%, transparent), transparent 68%);
+  content: "";
+}
+
+/* Sıradaki: kesik çizgili davet. */
+.rozet_sirada {
+  border: 1.5px dashed color-mix(in srgb, var(--vurgu) 70%, var(--krem-cizgi-guclu));
+  background: var(--krem-acik);
+}
+
+.rozet_sirada img,
+.rozet_kilitli img {
+  opacity: 0.55;
+  filter: saturate(0.6);
+}
+
+.rozet_kilitli {
+  color: var(--kmetin-soluk);
+}
+
+/* Başlanmamış kitabın albümü daha sakin. */
+.albumBos .rozet {
+  min-height: 108px;
+}
+
+.albumBos .rozetGorseli,
+.albumBos .rozetGorseli img {
+  width: 60px;
+  height: 60px;
+}
+
+/* -------------------------------------------------------------- UNVAN YOLU */
+
+.unvanYolu {
+  padding: 8px 16px;
+}
+
+.unvanYolu ol {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.unvanYolu li {
+  position: relative;
+  display: grid;
+  min-height: 78px;
+  grid-template-columns: 64px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  padding: 7px 0;
+}
+
+/* Bir sonraki unvana uzanan yol; kazanılan aralık altınla parlar. */
+.unvanYolu li:not(:last-child)::after {
+  position: absolute;
+  z-index: 0;
+  top: calc(50% + 30px);
+  bottom: calc(-50% + 30px);
+  left: 30.5px;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--krem-cizgi-guclu);
+  content: "";
+}
+
+.unvanYolu li.izDolu::after {
+  background: var(--vurgu);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--vurgu) 60%, transparent);
+}
+
+.unvanNoktasi {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 64px;
+  height: 64px;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.unvanNoktasi img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.unvanYazisi {
+  display: grid;
+  gap: 1px;
+}
+
+.unvanYazisi strong {
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.unvanYazisi small {
+  color: var(--kmetin-soluk);
+  font-size: 13.5px;
+  font-weight: 750;
+}
+
+.unvanIleride .unvanNoktasi img {
+  opacity: 0.45;
+  filter: grayscale(0.6);
+}
+
+.unvanIleride .unvanYazisi strong {
+  color: var(--kmetin-soluk);
+}
+
+.unvanSimdi .unvanNoktasi {
+  background: radial-gradient(circle, color-mix(in srgb, var(--vurgu) 45%, transparent), transparent 70%);
+}
+
+.unvanSimdi .unvanNoktasi img {
+  width: 64px;
+  height: 64px;
+}
+
+.unvanSimdi .unvanYazisi small {
+  justify-self: start;
+  padding: 2px 10px;
+  border-radius: 999px;
+  color: var(--altin-metin);
+  background: var(--vurgu);
+}
+
+/* ------------------------------------------------------- ROZET AYRINTISI */
+
+.ayrintiKatmani {
+  position: fixed;
+  z-index: 70;
+  inset: 0;
+  display: grid;
+  align-items: end;
+}
+
+.ayrintiOrtusu {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: color-mix(in srgb, var(--zemin) 60%, black);
+  opacity: 0.75;
+  cursor: default;
+}
+
+.ayrintiKutusu {
+  position: relative;
+  max-height: 92svh;
+  overflow: auto;
+  border-radius: 28px 28px 0 0;
+  box-shadow: 0 -12px 40px color-mix(in srgb, black 40%, transparent);
+  animation: ayrintiAc 220ms ease-out both;
+}
+
+.ayrintiKutusu > section {
+  border-radius: 28px 28px 0 0;
+  padding-bottom: calc(26px + env(safe-area-inset-bottom, 0px));
+}
+
+.ayrintiKapat {
+  position: absolute;
+  z-index: 5;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--murekkep) 25%, transparent);
+  border-radius: 50%;
+  color: var(--murekkep);
+  background: color-mix(in srgb, var(--zemin) 70%, transparent);
+}
+
+.ayrintiDurumu {
+  color: var(--murekkep);
+  font-size: 17px;
+  font-weight: 750;
+}
+
+@keyframes ayrintiAc {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+/* ------------------------------------------------------------- RESPONSIVE */
+
+@media (min-width: 640px) {
+  .madalyaRafi {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+  }
+
+  .madalyaKarti {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-content: start;
+    gap: 8px;
+    padding: 18px 14px 16px;
+    text-align: center;
+  }
+
+  .madalyaKarti > .madalyaGorseli {
+    grid-row: auto;
+  }
+
+  .madalyaKarti > :not(.madalyaGorseli) {
+    justify-self: center;
+  }
+
+  .madalyaGorseli {
+    width: 104px;
+    height: 104px;
+  }
+
+  .madalyaGorseli img {
+    width: 96px;
+    height: 96px;
+  }
+}
+
+@media (min-width: 768px) {
+  .unvanKarti {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    justify-items: start;
+    align-items: center;
+    gap: 28px;
+    padding: 26px 32px;
+    text-align: left;
+  }
+
+  .unvanMetni {
+    justify-items: start;
+  }
+
+  .sayaclar {
+    width: auto;
+    grid-template-columns: repeat(3, 104px);
+  }
+
+  .sayaclar div {
+    text-align: center;
+  }
+
+  .album {
+    padding: 18px 20px 20px;
+  }
+
+  .albumBasi {
+    grid-template-columns: auto minmax(0, 1fr) minmax(160px, 240px);
+  }
+
+  .albumKapagi {
+    grid-row: auto;
+  }
+
+  .albumCubugu {
+    grid-column: 3;
+  }
+
+  .rozetler {
+    grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+  }
+
+  .ayrintiKatmani {
+    align-items: center;
+    justify-items: center;
+    padding: 24px;
+  }
+
+  .ayrintiKutusu {
+    width: min(100%, 460px);
+    border-radius: 28px;
+  }
+
+  .ayrintiKutusu > section {
+    border-radius: 28px;
+    padding-bottom: 28px;
+  }
+}
+
+/* Geniş ekranda unvan yolu yatay: on unvan yan yana, iz soldan sağa dolar. */
+@media (min-width: 1024px) {
+  .unvanYolu {
+    padding: 22px 18px 18px;
+  }
+
+  .unvanYolu ol {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+
+  .unvanYolu li {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 8px;
+    padding: 0 4px;
+    text-align: center;
+  }
+
+  .unvanYolu li:not(:last-child)::after {
+    top: 31px;
+    right: calc(-50% + 34px);
+    bottom: auto;
+    left: calc(50% + 34px);
+    width: auto;
+    height: 3px;
+  }
+
+  .unvanYazisi strong {
+    font-size: 15px;
+  }
+
+  .unvanSimdi .unvanYazisi small {
+    justify-self: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .unvanIsini,
+  .unvanGorseli img,
+  .parlama::after,
+  .ayrintiKutusu {
+    animation: none;
+  }
+}

@@ -73,9 +73,15 @@ export function KutlamaSahnesi({
   kazanildi,
   patlama,
   baslikId,
+  kompakt = false,
   children,
 }: {
   ref?: Ref<HTMLElement>;
+  /**
+   * Ekran boyu değil içerik boyu sahne (Ödüllerim'deki rozet ayrıntısı gibi
+   * pencere içi kullanımlar). Okuma ekranı ve final testi tam boy kullanır.
+   */
+  kompakt?: boolean;
   gorsel: string;
   yedekGorsel: string;
   gorselAdi: string;
@@ -97,6 +103,7 @@ export function KutlamaSahnesi({
         yaklasti ? styles.kutlamaYaklasti : "",
         kazanildi ? styles.kutlamaKazanildi : "",
         patlama ? styles.kutlamaAlindi : "",
+        kompakt ? styles.kutlamaKompakt : "",
       ].join(" ")}
       style={{ "--rozet-maske": `url("${gorsel}")` } as CSSProperties}
       aria-labelledby={baslikId}

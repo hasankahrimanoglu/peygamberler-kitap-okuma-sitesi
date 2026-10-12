@@ -1362,6 +1362,13 @@
   scroll-margin: calc(var(--ust-yukseklik, 112px) + 16px) 0 16px;
 }
 
+/* Pencere içi kullanım (Ödüllerim rozet ayrıntısı): içerik boyu. */
+.kutlamaKompakt {
+  min-height: 0;
+  padding: 30px 20px 24px;
+  box-shadow: none;
+}
+
 /* Derinlik: üstten altın ışık, alttan koyulaşan gece. */
 .kutlama::before,
 .kutlama::after {

@@ -1,0 +1,222 @@
+/*
+ * Kelimelerim (PROJE-MODELI 3.10.8). Değişkenler `cocuk-sayfalari.module.css`
+ * `.sayfa`'dan gelir. Kelime anlamı okuma metnidir: krem kartta, hikâye
+ * yazısıyla (3.1).
+ */
+
+.yukleniyor {
+  color: var(--murekkep-soluk);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------- ARAMA + FİLTRE */
+
+.araclar {
+  display: grid;
+  gap: 12px;
+}
+
+.arama {
+  display: flex;
+  min-height: 54px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  border: 2px solid transparent;
+  border-radius: 18px;
+  color: var(--kmetin-soluk);
+  background: var(--krem);
+  box-shadow: var(--kart-golge);
+}
+
+.arama:focus-within {
+  border-color: var(--vurgu);
+}
+
+.arama input {
+  width: 100%;
+  min-width: 0;
+  height: 50px;
+  border: 0;
+  outline: none;
+  color: var(--kmetin);
+  background: transparent;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 650;
+}
+
+.arama input::placeholder {
+  color: var(--kmetin-soluk);
+}
+
+.filtreler {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filtreler button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  border: 1.5px solid color-mix(in srgb, var(--murekkep) 18%, transparent);
+  border-radius: 999px;
+  color: var(--murekkep);
+  background: color-mix(in srgb, var(--murekkep) 6%, transparent);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.filtreler button b {
+  color: var(--vurgu);
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-weight: 800;
+}
+
+.filtreler button[aria-pressed="true"] {
+  border-color: var(--krem);
+  color: var(--kmetin);
+  background: var(--krem);
+}
+
+.filtreler button[aria-pressed="true"] b {
+  color: var(--altin-metin);
+}
+
+/* ------------------------------------------------------------ GRUP BAŞI */
+
+.grupBasi {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.grupKapagi {
+  width: 40px;
+  height: 56px;
+  flex: none;
+  border-radius: 7px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px color-mix(in srgb, black 30%, transparent);
+}
+
+.grupBasi h2 {
+  color: var(--murekkep);
+  font-size: 23px;
+  line-height: 1.15;
+}
+
+.grupBasi span {
+  color: var(--murekkep-soluk);
+  font-size: 14.5px;
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------- KELİME KARTI */
+
+.kartlar {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.kelimeKarti {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 8px;
+  padding: 18px 18px 14px;
+}
+
+.kelimeKarti h3 {
+  font-size: 23px;
+  line-height: 1.2;
+}
+
+/* Okuma ekranındaki sözlük kelimesiyle aynı işaret: yeşil vurgu + noktalı alt çizgi. */
+.kelime {
+  padding: 0 6px 2px;
+  border-radius: 8px;
+  color: var(--yesil-metin);
+  background: var(--yesil-yumusak);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--eylem) 60%, transparent);
+  text-decoration-style: dotted;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+.anlam {
+  font-family: var(--font-literata), Georgia, serif;
+  font-size: 17.5px;
+  font-weight: 550;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+/* Bölüm adları uzun; bağlantı her kartta aynı yerde, alt satırda durur. */
+.kartAlti {
+  display: grid;
+  justify-items: start;
+  gap: 4px;
+  padding-top: 10px;
+  border-top: 1px solid var(--krem-cizgi);
+  color: var(--kmetin-soluk);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.bolumeGit {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 4px;
+  /* Dokunma alanı 44px; yazı soldaki bölüm satırıyla hizalı kalır. */
+  margin: -6px 0 -10px -8px;
+  padding: 0 8px;
+  border-radius: 12px;
+  color: var(--yesil-metin);
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.bolumeGit:hover {
+  background: var(--yesil-yumusak);
+}
+
+/* --------------------------------------------------------------- ARAMA SONUCU */
+
+.sonucSayisi {
+  margin-bottom: 12px;
+  color: var(--murekkep-soluk);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.sonucYok {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  padding: 24px 18px;
+  text-align: center;
+}
+
+.sonucYok p {
+  font-size: 17px;
+  font-weight: 750;
+}
+
+@media (min-width: 1024px) {
+  .araclar {
+    grid-template-columns: minmax(280px, 460px) minmax(0, 1fr);
+    align-items: center;
+  }
+}
