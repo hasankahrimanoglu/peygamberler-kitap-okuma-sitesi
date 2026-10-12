@@ -7,7 +7,6 @@
  *
  * Klasör düzeni (KARAR 27 Temmuz 2026 — Hasan):
  *
- *   public/bolgeler/bolge-{bolgeId}-{dikey|yatay}.jpg  ← keşif bölgesi sahnesi
  *   public/kitaplar/hz-{bookKey}/kapak.png             ← kitap kapağı
  *   public/kitaplar/hz-{bookKey}/bolum-{n}/kapak.jpg   ← bölüm açılış sahnesi (16:9)
  *   public/kitaplar/hz-{bookKey}/bolum-{n}/{ad}.jpg    ← bölüm içi sahneler (16:9)
@@ -15,7 +14,6 @@
  *   public/madalyalar/hz-{bookKey}.png
  *   public/unvanlar/{unvan-anahtari}.png
  *   public/avatarlar/avatar-{1..10}.jpg
- *   public/ikonlar/final-kapisi.svg
  *   public/sesli-anlatim/hz-{bookKey}/hz-{bookKey}-bolum-{n}.mp3  ← bölüm anlatımı
  *
  * Kural: dosya yoksa kod BOZULMAZ — `YedekliGorsel` yedeğe düşer. Hasan gerçek
@@ -29,20 +27,6 @@
  * hem kalite kaybı demekti. Yedek (placeholder) dosyalar SVG kalır — onlar
  * ayrı dosyalardır ve her zaman çözülür.
  */
-
-/**
- * Keşif bölgesinin sahne görseli — CSS `background-image` değeri olarak döner.
- *
- * Sahne oranı cihazdan cihaza 0,61 ile 1,6 arasında değişiyor; tek görsel bu
- * aralığın iki ucunda ya çok kırpılıyor ya da boş kalıyordu. Bu yüzden iki
- * kadraj vardır: dar/uzun ekranlar için `-dikey`, geniş ekranlar için `-yatay`.
- *
- * Biçim JPG'dir (KARAR 30 Tem 2026 — Hasan). Manzara illüstrasyonlarında
- * şeffaflık gerekmiyor; PNG'de 14 dosya 32 MB tutuyordu, JPG'de 6 MB.
- */
-export function bolgeArkaplani(bolgeId: string, yon: "dikey" | "yatay") {
-  return `url("/bolgeler/bolge-${bolgeId}-${yon}.jpg")`;
-}
 
 /** Kitap klasörü adı. `sesli-anlatim/hz-adem` ile aynı kalıbı izler. */
 export function kitapKlasoru(bookKey: string) {
@@ -154,17 +138,11 @@ export function sesliAnlatim(bookKey: string, bolumNo: number) {
 /**
  * Ana ekran rotasının arka planı (KARAR 12 Eki 2026 — PROJE-MODELI 3.10.1).
  *
- * Tek, kesintisiz dikey tekrarlanan boyalı çayır görseli; yol uzadıkça dikey
- * tekrar eder. Hasan üretir (önerilen 1600×2400 JPG, gökyüzü yok, üst ve alt
- * kenar dikişsiz). Dosya gelene kadar CSS, ilk bölge görseline ve çayır
- * renginde bir degradeye düşer — ekran bozulmaz.
+ * Kodla çizilmiş, dikey olarak dikişsiz tekrar eden çayır (SVG). Yol uzadıkça
+ * tekrar eder; hareket ayrı katmandadır (`RotaCanliligi`). İleride boyalı bir
+ * görselle değiştirilecekse yalnız bu yol değişir.
  */
-export const ROTA_ARKAPLANI = "/harita/rota-arkaplan.jpg";
-
-/** Rota arka planı hazır değilken kullanılan vekil sahne (dar / geniş kadraj). */
-export function rotaVekilSahnesi(yon: "dikey" | "yatay") {
-  return `/bolgeler/bolge-ilk-izler-${yon}.jpg`;
-}
+export const ROTA_ARKAPLANI = "/harita/rota-cayir.svg";
 
 /**
  * Rehber karakter Işıl'ın pozları (PROJE-MODELI 3.10.5). Çizim Hasan'dadır:
@@ -176,9 +154,6 @@ export type IsilPozu = "durus" | "konusma" | "kutlama";
 export function isilGorseli(poz: IsilPozu) {
   return `/isil/isil-${poz}.png`;
 }
-
-/** Büyük Final Testi durağının ikonu. Hasan aynı adla değiştirebilir. */
-export const FINAL_KAPISI_IKONU = "/ikonlar/final-kapisi.svg";
 
 /** Gerçek dosya yokken gösterilen yedekler. */
 export const YEDEK = {

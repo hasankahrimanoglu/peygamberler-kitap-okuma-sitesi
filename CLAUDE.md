@@ -147,7 +147,9 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
 ---
 
 ## ÇOCUK ARAYÜZÜ SADELEŞTİRME (KARAR 11–12 Eki 2026 — PROJE-MODELI 3.10)
-Faz A uygulandı; **Faz B (okuma ekranı) ve Faz C (ana ekran/rota) bekliyor.** Özet:
+Faz A ve **Faz C (ana ekran) uygulandı;** **Faz B (okuma ekranı) bekliyor.** Ana ekran
+bileşenleri `src/components/cocuk/`, veri modeli `src/lib/child/yolculuk.ts`, girişsiz
+önizleme `/tasarim/ana-ekran`. Özet:
 keşif bölgeleri arayüzden kalkar, kitaplar katalog sırasıyla **tek dikey rotada**;
 yayında olmayan kitap görünmez (sonda tek "Yakında" kartı); sonradan yayınlanan kitap
 kendi yerine girer + "Yeni" etiketi; **kitap kilidi kalkar, bölüm kilidi kalır**;
@@ -158,7 +160,8 @@ sıradaki bölüm; mekân metaforları (İskele/Rota/Kapı/Durak/Atlas) arayüz 
 metin balonu, hikâyede ve dinî yorumda asla; ana ekranda okunan kitabın yanında
 "Buradasın"). Hamburger menü yerine profil kartı; ayrı bölüm rotası sayfası yerine
 alttan sayfa / sağ panel; okunan yol altın ışık izi, durak halkası = kitap ilerlemesi;
-rota arka planı tek kesintisiz dikey görsel. Velinin okuma sırası ayarı YAPILMAZ.
+rota arka planı kodla çizilmiş, dikişsiz tekrar eden hareketli çayır. Velinin okuma
+sırası ayarı YAPILMAZ.
 Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
 
 ## YENİ DAVRANIŞSAL ÖZELLİKLER (kitap metninden ayrı, ayrı prompt gelir)
@@ -250,9 +253,10 @@ Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
 - [ ] `ICERIK-GORSEL-SICILI.md`'ye kitabın görsel tablosu ve sayaçları eklendi
 
 ## BÖLGE METİNLERİ — TEK KAYNAK
-> **Faz C'ye kadar geçerli (12 Eki 2026):** bölgeler arayüzden kalkıyor
-> (PROJE-MODELI 3.10.1). Faz C bitince bölge açıklamaları arayüzde kullanılmaz;
-> bölgeler yalnız katalog belgesinde editoryal gruplama olarak kalır.
+> **Arayüzde artık kullanılmıyor (Faz C, 12 Eki 2026):** bölgeler ve bölge
+> açıklamaları ekranda gösterilmez (PROJE-MODELI 3.10.1). Bölgeler yalnız katalog
+> belgesinde editoryal gruplama olarak kalır; aşağıdaki kural yalnız katalog ile
+> `atlasCatalog.ts` verisinin tutarlılığı içindir.
 
 Keşif bölgelerinin çocuk açıklaması iki yerde yazılıdır:
 `KITAP-KATALOGU-VE-URETIM-PLANI.md` (editoryal kaynak) ve

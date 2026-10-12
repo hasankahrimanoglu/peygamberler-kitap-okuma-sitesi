@@ -310,8 +310,10 @@ yön **“Masalsı Keşif Atlası”**dır:
 > **REVİZE — 12 Ekim 2026 (bkz. 3.10.1):** Keşif bölgeleri ve bölge adları
 > arayüzden **kalkıyor**; kitaplar tek dikey rotada katalog sırasıyla dizilir,
 > yayında olmayan kitap görünmez. Bölgeler yalnız editoryal gruplama ve üretim
-> dalgası olarak katalog belgesinde kalır. 3.7, 3.7.1, 3.7.2 ve alt bölümleri
-> **Faz C uygulanana kadar** mevcut kodu tarif eder; Faz C bitince arşive alınır.
+> dalgası olarak katalog belgesinde kalır. **Faz C 12 Ekim 2026'da uygulandı:**
+> 3.7, 3.7.1, 3.7.2 ve alt bölümleri artık **tarihsel kayıttır**; tarif ettikleri
+> bileşenler (`AtlasHarita`, `KitapBolumRotasi`, `KesifMenusu`, `KesifIskelesi`)
+> silindi. Geçerli ana ekran 3.10'dadır.
 
 Masalsı Keşif Atlası artık tek bir kısa kitap yolundan değil, iki seviyeli bir
 katalogdan oluşur: **Keşif Bölgesi → Kitap Durağı**. Bölge ve kitap sırası
@@ -746,13 +748,16 @@ testi henüz yapılmadı; kararlar gözlem ve ölçüme dayanır.
 - **Işıl "Buradasın" (KARAR — 12 Ekim 2026, Hasan):** ana ekranda çocuğun
   okuduğu kitabın yanında Işıl ve "Buradasın" balonu durur (3.10.5).
 - **Rota arka planı (KARAR — 12 Ekim 2026, Hasan):** bölge görselleri yerine
-  **tek, kesintisiz dikey tekrarlanan boyalı bir çayır görseli.** Üretim
-  Hasan'dadır. Görsel kuralları: gökyüzü yok (yukarıdan bakan 3/4 açı), üst ve
-  alt kenar birebir eşleşir (dikişsiz tekrar), orta %50 sütun sakin ve az
-  ayrıntılı (durakların ve yolun alanı), canlı renk korunur, figür yok; önerilen
-  ölçü **1600 × 2400 px JPG**, dosya `public/harita/rota-arkaplan.jpg`. Mobil ve
-  masaüstü aynı görseli dikey tekrar ederek kullanır. Görsel gelene kadar mevcut
-  bölge görselleri vekil olarak kullanılabilir.
+  **kodla çizilmiş, dikey olarak dikişsiz tekrar eden bir çayır**
+  (`public/harita/rota-cayir.svg`, yol `varlikYollari.ts:ROTA_ARKAPLANI`).
+  Süsler (ağaç, tepe, dere, çiçek, taş) iki kenardadır; orta sütun durakların ve
+  yolun alanıdır, sakin bırakılır. Üstünde ince bir **hareket katmanı** vardır
+  (`RotaCanliligi`): rota boyunca süzülüp parlayan ateşböcekleri, çayırın
+  üstünden ağır geçen bulut gölgeleri ve ışık izinde akan kıvılcımlar. Yalnız
+  `transform` / `opacity` canlandırılır; "hareketi azalt" tercihinde hepsi durur.
+  İleride boyalı bir görsel istenirse yalnız `ROTA_ARKAPLANI` değişir (kurallar:
+  gökyüzü yok, üst ve alt kenar dikişsiz, orta sütun sakin, figür yok). Bölge
+  görselleri (`public/bolgeler/`) artık kullanılmıyor.
 
 #### 3.10.2 Kitap kilidi kalkar
 
@@ -1088,6 +1093,10 @@ public/
   ikonlar/
     final-kapisi.svg                   Büyük Final Testi durağının ikonu
   bolgeler/     bolge-{regionId}.png   keşif bölgesi sahne arka planı (7 adet)
+  harita/
+    rota-cayir.svg                     ana ekran rotasının kodla çizilmiş arka planı (3.10.1)
+  isil/
+    placeholder.svg                    Işıl konsept eskizi; çizim gelince isil-{poz}.png (3.10.5)
   sesli-anlatim/
     placeholder-ses.mp3                ses yer tutucusu (6.5)
     hz-{bookKey}/hz-{bookKey}-bolum-{n}.mp3   bölüm başına bir anlatım (12 Eki 2026)
@@ -1367,7 +1376,7 @@ ileride istenirse eklenmesi kolaydır.)
 |---|---|---|
 | **A** | Hızlı düzeltmeler: sözlük kelimesinin ekinden ayrılması ("emanet ti"), "Sen Olsaydın" metinleri + şıkların her yerde A-B-C olması, kilide benzeyen "devam ediyor" ikonu, her bölüme sesli anlatım + yer tutucu ses (6.5), iki unvanın yeni adı (Bölüm 2) | ✅ 12 Eki 2026 |
 | **B** | Okuma ekranı yeni düzeni (3.10.3): açık zemin, kapak ekranının kalkması, adım çubuğu/sütunu, tek başlıklı duraklar, "Aa", rozet kutlaması + "Sıradaki Bölüme Geç", okuma ekranı metinleri (3.10.4) | Bekliyor |
-| **C** | Ana ekran ve rota (3.10.1–3.10.2, 3.10.6–3.10.7): "Sıradaki bölümün" kartı, bölgesiz tek dikey rota (yayındaki kitaplar `atlasCatalog.ts`'ten çizilir, kod elle yazılmaz), ilerleme halkalı duraklar + altın ışık izi, kitap kilidinin kalkması, "Yeni" etiketi + duyuru, "Yakında" kartı, yolun ucu, profil kartı (hamburger menü kalkar), kitap ve bölümler için alttan sayfa / sağ panel (bölüm rotası sayfası kalkar), alt menü ve ekran adları (3.10.4) | ✅ Kod 12 Eki 2026 — Hasan'ın görsel onayı bekleniyor. Önizleme: `/tasarim/ana-ekran` (giriş gerektirmez; `?durum=yeni` yeni başlayan çocuk). Eski `AtlasHarita`, `KitapBolumRotasi`, `KesifMenusu`, `KesifIskelesi` onaydan sonra silinir. Rota arka planı (`public/harita/rota-arkaplan.jpg`) ve Işıl çizimleri gelene kadar yer tutucular çalışır |
+| **C** | Ana ekran ve rota (3.10.1–3.10.2, 3.10.6–3.10.7): "Sıradaki bölümün" kartı, bölgesiz tek dikey rota (yayındaki kitaplar `atlasCatalog.ts`'ten çizilir, kod elle yazılmaz), ilerleme halkalı duraklar + altın ışık izi, kitap kilidinin kalkması, "Yeni" etiketi + duyuru, "Yakında" kartı, yolun ucu, profil kartı (hamburger menü kalkar), kitap ve bölümler için alttan sayfa / sağ panel (bölüm rotası sayfası kalkar), alt menü ve ekran adları (3.10.4) | ✅ 12 Eki 2026. Önizleme: `/tasarim/ana-ekran` (giriş gerektirmez; `?durum=yeni` yeni başlayan çocuk). Rota arka planı kodla çizilmiş hareketli çayır; Işıl şimdilik konsept eskiz. Eski harita bileşenleri ve `/tasarim/harita-yeni`, `/tasarim/kitap-yeni` önizlemeleri silindi. Eski demo kitapların `user_progress` kayıtları silindi (`supabase/temizlik-eski-demo-ilerleme-*.sql`) |
 | **D** | Rehber karakter Işıl (3.10.5): çizimler Hasan'da, entegrasyon yalnız tanımlı anlarda | Bekliyor |
 | **Test** | Faz B'den sonra 5 çocukla 30'ar dakikalık gözlem: "Kaldığın kitaptan okumaya başla", "Yeşil bir kelimenin anlamını bul", "Rozetini al ve sonraki bölüme geç". Ses efekti ve ek kutlama kararları bu testten sonra verilir | Bekliyor |
 

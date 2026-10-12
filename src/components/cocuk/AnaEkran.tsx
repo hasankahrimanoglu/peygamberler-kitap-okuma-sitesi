@@ -45,7 +45,12 @@ function okunduMu(anahtar: string) {
  * gösteren panel. Seçili kitap adres çubuğunda `?kitap=` olarak durur; okuma
  * ekranındaki "Bölümler" düğmesi buraya o kitap açık hâlde döner.
  */
-export function AnaEkran({ profilId, kitaplar, yukleniyor, uyari }: AnaEkranProps) {
+export function AnaEkran({
+  profilId,
+  kitaplar,
+  yukleniyor,
+  uyari,
+}: AnaEkranProps) {
   const router = useRouter();
   const rotaKaydirRef = useRef<HTMLDivElement>(null);
   const [seciliKey, setSeciliKey] = useState<string | null>(null);
@@ -55,7 +60,10 @@ export function AnaEkran({ profilId, kitaplar, yukleniyor, uyari }: AnaEkranProp
 
   const siradaki = useMemo(() => siradakiAdim(kitaplar), [kitaplar]);
   const devami = useMemo(() => yolunDevami(kitaplar), [kitaplar]);
-  const kitapBul = useCallback((key: string | null) => kitaplar.find((kitap) => kitap.key === key) ?? null, [kitaplar]);
+  const kitapBul = useCallback(
+    (key: string | null) => kitaplar.find((kitap) => kitap.key === key) ?? null,
+    [kitaplar],
+  );
 
   // Adres çubuğundan açılış durumu: ?kitap=idris · ?final=adem (quiz dönüşü).
   useEffect(() => {
@@ -68,7 +76,11 @@ export function AnaEkran({ profilId, kitaplar, yukleniyor, uyari }: AnaEkranProp
 
   const adresiGuncelle = useCallback((key: string | null) => {
     const yol = window.location.pathname;
-    window.history.replaceState(null, "", key ? `${yol}?kitap=${encodeURIComponent(key)}` : yol);
+    window.history.replaceState(
+      null,
+      "",
+      key ? `${yol}?kitap=${encodeURIComponent(key)}` : yol,
+    );
   }, []);
 
   const kitapSec = useCallback(
@@ -111,9 +123,12 @@ export function AnaEkran({ profilId, kitaplar, yukleniyor, uyari }: AnaEkranProp
 
   // Geniş ekranda rota, açılışta okunan kitabı ortalar (rota kendi içinde kayar).
   useEffect(() => {
-    if (yukleniyor || !siradaki || !window.matchMedia(GENIS_EKRAN).matches) return;
+    if (yukleniyor || !siradaki || !window.matchMedia(GENIS_EKRAN).matches)
+      return;
     const kap = rotaKaydirRef.current;
-    const durak = kap?.querySelector<HTMLElement>(`[data-kitap="${siradaki.kitap.key}"]`);
+    const durak = kap?.querySelector<HTMLElement>(
+      `[data-kitap="${siradaki.kitap.key}"]`,
+    );
     if (!kap || !durak) return;
     const hedef = durak.offsetTop - kap.clientHeight / 2;
     kap.scrollTo({ top: Math.max(0, hedef), behavior: "auto" });
@@ -142,14 +157,21 @@ export function AnaEkran({ profilId, kitaplar, yukleniyor, uyari }: AnaEkranProp
   }
 
   const git = (yol: string) => router.push(yol);
-  const siradakiYolu = siradaki ? (siradaki.tur === "bolum" ? siradaki.bolum.okumaYolu : siradaki.yol) : null;
+  const siradakiYolu = siradaki
+    ? siradaki.tur === "bolum"
+      ? siradaki.bolum.okumaYolu
+      : siradaki.yol
+    : null;
 
   return (
     <div className={styles.anaEkran}>
       {uyari ? <p className={styles.uyari}>{uyari}</p> : null}
 
       {finalKitabi?.bitti ? (
-        <div className={`${styles.duyuru} ${styles.duyuruKutlama}`} role="status">
+        <div
+          className={`${styles.duyuru} ${styles.duyuruKutlama}`}
+          role="status"
+        >
           <YedekliGorsel
             src={madalyaGorseli(finalKitabi.key)}
             yedekSrc={YEDEK.madalya}
@@ -161,7 +183,12 @@ export function AnaEkran({ profilId, kitaplar, yukleniyor, uyari }: AnaEkranProp
           <p>
             <b>{finalKitabi.madalyaAdi}</b> senin!
           </p>
-          <button type="button" className={styles.duyuruKapat} aria-label="Kapat" onClick={finaliKapat}>
+          <button
+            type="button"
+            className={styles.duyuruKapat}
+            aria-label="Kapat"
+            onClick={finaliKapat}
+          >
             <Ikon ad="kapat" boyut={18} />
           </button>
         </div>
@@ -171,7 +198,9 @@ export function AnaEkran({ profilId, kitaplar, yukleniyor, uyari }: AnaEkranProp
         {siradaki ? (
           <>
             <span className={styles.siradakiEtiketi}>
-              {siradaki.tur === "final" ? "Sıradaki adımın" : "Sıradaki bölümün"}
+              {siradaki.tur === "final"
+                ? "Sıradaki adımın"
+                : "Sıradaki bölümün"}
             </span>
             <div className={styles.siradakiGovde}>
               <YedekliGorsel
@@ -185,10 +214,14 @@ export function AnaEkran({ profilId, kitaplar, yukleniyor, uyari }: AnaEkranProp
               <div>
                 <span className={styles.siradakiKitap}>
                   {siradaki.kitap.ad}
-                  {siradaki.tur === "bolum" ? ` · ${siradaki.bolum.no}. bölüm` : ""}
+                  {siradaki.tur === "bolum"
+                    ? ` · ${siradaki.bolum.no}. bölüm`
+                    : ""}
                 </span>
                 <strong className={styles.siradakiBolum}>
-                  {siradaki.tur === "bolum" ? siradaki.bolum.ad : "Büyük Final Testi"}
+                  {siradaki.tur === "bolum"
+                    ? siradaki.bolum.ad
+                    : "Büyük Final Testi"}
                 </strong>
                 <div className={styles.ilerleme}>
                   <span
@@ -207,7 +240,9 @@ export function AnaEkran({ profilId, kitaplar, yukleniyor, uyari }: AnaEkranProp
             <button
               type="button"
               className={`${styles.buyukDugme} ${
-                siradaki.tur === "final" || !siradaki.kitap.basladi ? styles.buyukDugme_altin : styles.buyukDugme_yesil
+                siradaki.tur === "final" || !siradaki.kitap.basladi
+                  ? styles.buyukDugme_altin
+                  : styles.buyukDugme_yesil
               }`}
               onClick={() => siradakiYolu && git(siradakiYolu)}
             >
@@ -223,8 +258,8 @@ export function AnaEkran({ profilId, kitaplar, yukleniyor, uyari }: AnaEkranProp
           <div className={styles.yolunUcu}>
             <IsilGorseli poz="kutlama" boyut={56} />
             <p>
-              <b>Yayındaki bütün kitapları bitirdin.</b> Yol yakında uzayacak; o zamana kadar
-              sevdiğin bölümleri tekrar okuyabilirsin.
+              <b>Yayındaki bütün kitapları bitirdin.</b> Yol yakında uzayacak; o
+              zamana kadar sevdiğin bölümleri tekrar okuyabilirsin.
             </p>
           </div>
         ) : (
@@ -236,11 +271,19 @@ export function AnaEkran({ profilId, kitaplar, yukleniyor, uyari }: AnaEkranProp
         <div className={styles.rotaCercevesi}>
           {duyuruKitabi ? (
             <div className={styles.duyuru} role="status">
-              <IsilGorseli poz="konusma" boyut={46} className={styles.duyuruIsil} />
+              <IsilGorseli
+                poz="konusma"
+                boyut={46}
+                className={styles.duyuruIsil}
+              />
               <p>
                 Yeni bir kitap geldi: <b>{duyuruKitabi.ad}!</b>
               </p>
-              <button type="button" className={styles.duyuruGoster} onClick={() => yeniKitabiGoster(duyuruKitabi.key)}>
+              <button
+                type="button"
+                className={styles.duyuruGoster}
+                onClick={() => yeniKitabiGoster(duyuruKitabi.key)}
+              >
                 Göster
               </button>
               <button
@@ -264,33 +307,41 @@ export function AnaEkran({ profilId, kitaplar, yukleniyor, uyari }: AnaEkranProp
                 seciliKey={panelKitabi?.key ?? null}
                 vurguluKey={vurguluKey}
                 onSec={kitapSec}
-              />
-            )}
-
-            {devami.sayi > 0 ? (
-              <section className={styles.yolunDevami} aria-label="Yolun devamı">
-                <div className={styles.yolunDevamiBasi}>
-                  <Ikon ad="kitap" boyut={30} />
-                  <div>
-                    <strong>Yolun devamı hazırlanıyor</strong>
-                    <span>{devami.sayi} kitap daha yolda.</span>
-                  </div>
-                </div>
-                {devami.vitrin.length > 0 ? (
-                  <ul>
-                    {devami.vitrin.map((ad) => (
-                      <li key={ad}>{ad}</li>
-                    ))}
-                    {devami.digerSayi > 0 ? <li>+{devami.digerSayi}</li> : null}
-                  </ul>
+              >
+                {devami.sayi > 0 ? (
+                  <section
+                    className={styles.yolunDevami}
+                    aria-label="Yolun devamı"
+                  >
+                    <div className={styles.yolunDevamiBasi}>
+                      <Ikon ad="kitap" boyut={30} />
+                      <div>
+                        <strong>Yolun devamı hazırlanıyor</strong>
+                        <span>{devami.sayi} kitap daha yolda.</span>
+                      </div>
+                    </div>
+                    {devami.vitrin.length > 0 ? (
+                      <ul>
+                        {devami.vitrin.map((ad) => (
+                          <li key={ad}>{ad}</li>
+                        ))}
+                        {devami.digerSayi > 0 ? (
+                          <li>+{devami.digerSayi}</li>
+                        ) : null}
+                      </ul>
+                    ) : null}
+                  </section>
                 ) : null}
-              </section>
-            ) : null}
+              </YolculukRotasi>
+            )}
           </div>
         </div>
 
         {panelKitabi ? (
-          <aside className={styles.panel} aria-label={`${panelKitabi.ad} ve bölümleri`}>
+          <aside
+            className={styles.panel}
+            aria-label={`${panelKitabi.ad} ve bölümleri`}
+          >
             <KitapPaneli
               key={panelKitabi.key}
               kitap={panelKitabi}
@@ -299,7 +350,9 @@ export function AnaEkran({ profilId, kitaplar, yukleniyor, uyari }: AnaEkranProp
                   ? { metin: "Sıradaki bölümün" }
                   : {
                       metin: "Seçtiğin kitap",
-                      siradakiyeDon: siradaki ? () => kitapSec(null) : undefined,
+                      siradakiyeDon: siradaki
+                        ? () => kitapSec(null)
+                        : undefined,
                     }
               }
               onGit={git}
@@ -310,10 +363,25 @@ export function AnaEkran({ profilId, kitaplar, yukleniyor, uyari }: AnaEkranProp
 
       {seciliKitap ? (
         <div className={styles.altSayfaKatmani}>
-          <button type="button" className={styles.altSayfaOrtusu} aria-label="Kapat" onClick={() => kitapSec(null)} />
-          <div className={styles.altSayfa} role="dialog" aria-modal="true" aria-label={`${seciliKitap.ad} ve bölümleri`}>
+          <button
+            type="button"
+            className={styles.altSayfaOrtusu}
+            aria-label="Kapat"
+            onClick={() => kitapSec(null)}
+          />
+          <div
+            className={styles.altSayfa}
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${seciliKitap.ad} ve bölümleri`}
+          >
             <span className={styles.tutamac} aria-hidden="true" />
-            <KitapPaneli key={seciliKitap.key} kitap={seciliKitap} onKapat={() => kitapSec(null)} onGit={git} />
+            <KitapPaneli
+              key={seciliKitap.key}
+              kitap={seciliKitap}
+              onKapat={() => kitapSec(null)}
+              onGit={git}
+            />
           </div>
         </div>
       ) : null}

@@ -1,11 +1,24 @@
 "use client";
 
-import { useId, useLayoutEffect, useRef, useState, type CSSProperties } from "react";
+import {
+  useId,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type ReactNode,
+} from "react";
 import type { YolculukKitabi } from "../../lib/child/yolculuk";
 import { iyelikEki } from "../../lib/child/sayiEki";
-import { haritaDuragiGorseli, madalyaGorseli, YEDEK } from "../../lib/varlikYollari";
+import {
+  haritaDuragiGorseli,
+  madalyaGorseli,
+  ROTA_ARKAPLANI,
+  YEDEK,
+} from "../../lib/varlikYollari";
 import { YedekliGorsel } from "../ui";
 import { IsilGorseli } from "./IsilGorseli";
+import { RotaCanliligi } from "./RotaCanliligi";
 import styles from "./yolculuk.module.css";
 
 type YolculukRotasiProps = {
@@ -17,13 +30,33 @@ type YolculukRotasiProps = {
   /** "Göster" ile bulunan yeni kitap kısa süre parlar. */
   vurguluKey: string | null;
   onSec: (key: string) => void;
+  /** Rotanın altında, aynı çayırın üstünde duran içerik ("Yolun devamı"). */
+  children?: ReactNode;
 };
 
 /** Rota ölçüleri. Geniş rota tablet yatay ve masaüstündeki sol sütundur. */
 function olculer(genislik: number) {
   return genislik >= 640
-    ? { jeton: 86, simdi: 112, adim: 152, ust: 150, alt: 120, sol: 0.29, sag: 0.71, bulanik: 8 }
-    : { jeton: 72, simdi: 96, adim: 134, ust: 96, alt: 104, sol: 0.3, sag: 0.7, bulanik: 6 };
+    ? {
+        jeton: 86,
+        simdi: 112,
+        adim: 152,
+        ust: 150,
+        alt: 120,
+        sol: 0.29,
+        sag: 0.71,
+        bulanik: 8,
+      }
+    : {
+        jeton: 72,
+        simdi: 96,
+        adim: 134,
+        ust: 96,
+        alt: 104,
+        sol: 0.3,
+        sag: 0.7,
+        bulanik: 6,
+      };
 }
 
 export function durakDurumMetni(kitap: YolculukKitabi) {
@@ -53,6 +86,7 @@ export function YolculukRotasi({
   seciliKey,
   vurguluKey,
   onSec,
+  children,
 }: YolculukRotasiProps) {
   const kokRef = useRef<HTMLDivElement>(null);
   const [genislik, setGenislik] = useState(0);
@@ -76,7 +110,10 @@ export function YolculukRotasi({
   }));
   const yukseklik = o.ust + Math.max(0, kitaplar.length - 1) * o.adim + o.alt;
 
-  const egri = (bas: { x: number; y: number }, son: { x: number; y: number }) => {
+  const egri = (
+    bas: { x: number; y: number },
+    son: { x: number; y: number },
+  ) => {
     const kol = o.adim * 0.5;
     return `C ${bas.x} ${bas.y + kol} ${son.x} ${son.y - kol} ${son.x} ${son.y}`;
   };
@@ -89,7 +126,8 @@ export function YolculukRotasi({
       const sonraki = noktalar[sira + 1];
       if (sonraki) {
         tumYol += ` ${egri(nokta, sonraki)}`;
-        if (kitaplar[sira].bitti) isikYolu += ` M ${nokta.x} ${nokta.y} ${egri(nokta, sonraki)}`;
+        if (kitaplar[sira].bitti)
+          isikYolu += ` M ${nokta.x} ${nokta.y} ${egri(nokta, sonraki)}`;
       }
     });
     const son = noktalar[noktalar.length - 1];
@@ -99,113 +137,135 @@ export function YolculukRotasi({
   const siradakiSira = kitaplar.findIndex((kitap) => kitap.key === siradakiKey);
 
   return (
-    <div ref={kokRef} className={styles.rota} style={{ height: yukseklik }}>
-      {genislik > 0 ? (
-        <>
-          <svg
-            className={styles.yol}
-            width={genislik}
-            height={yukseklik}
-            viewBox={`0 0 ${genislik} ${yukseklik}`}
-            aria-hidden="true"
-          >
-            <defs>
-              <filter id={filtreId} x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation={o.bulanik} />
-              </filter>
-            </defs>
-            <path d={tumYol} className={styles.yolGolgesi} />
-            <path d={tumYol} className={styles.yolZemini} />
-            <path d={tumYol} className={styles.yolCizgisi} />
-            {isikYolu ? (
-              <>
-                <path d={isikYolu} className={styles.isikHalesi} filter={`url(#${filtreId})`} />
-                <path d={isikYolu} className={styles.isikCekirdegi} />
-                <path d={isikYolu} className={styles.isikKivilcimi} />
-              </>
-            ) : null}
-          </svg>
-
-          {kitaplar.map((kitap, sira) => {
-            const nokta = noktalar[sira];
-            const simdi = kitap.key === siradakiKey;
-            const doluluk = kitap.bitti
-              ? 100
-              : Math.round((kitap.tamamlanan / Math.max(1, kitap.bolumler.length)) * 100);
-            const durum = durakDurumMetni(kitap);
-            const siniflar = [
-              styles.durak,
-              simdi ? styles.durakSimdi : "",
-              kitap.bitti ? styles.durakBitti : "",
-              seciliKey === kitap.key ? styles.durakSecili : "",
-              vurguluKey === kitap.key ? styles.durakVurgulu : "",
-            ].join(" ");
-            return (
-              <button
-                key={kitap.key}
-                type="button"
-                data-kitap={kitap.key}
-                className={siniflar}
-                style={
-                  {
-                    left: nokta.x,
-                    top: nokta.y,
-                    "--jeton": `${simdi ? o.simdi : o.jeton}px`,
-                    "--doluluk": `${doluluk}%`,
-                  } as CSSProperties
-                }
-                aria-label={`${kitap.ad}: ${durum}${kitap.yeni ? ", yeni kitap" : ""}`}
-                aria-pressed={seciliKey === kitap.key}
-                onClick={() => onSec(kitap.key)}
-              >
-                <span className={styles.halka}>
-                  <YedekliGorsel
-                    src={haritaDuragiGorseli(kitap.key)}
-                    yedekSrc={YEDEK.durak}
-                    alt=""
-                    width={120}
-                    height={120}
-                    className={styles.durakGorseli}
-                  />
-                  {kitap.bitti ? (
-                    <span className={styles.madalyaRozeti}>
-                      <YedekliGorsel
-                        src={madalyaGorseli(kitap.key)}
-                        yedekSrc={YEDEK.madalya}
-                        alt=""
-                        width={30}
-                        height={30}
-                      />
-                    </span>
-                  ) : null}
-                  {kitap.yeni ? <span className={styles.yeniEtiketi}>Yeni</span> : null}
-                </span>
-                <span className={styles.levha}>
-                  <strong>{kitap.ad}</strong>
-                  <small>{durum}</small>
-                </span>
-              </button>
-            );
-          })}
-
-          {siradakiSira >= 0 ? (
-            <div
-              className={`${styles.isilIsareti} ${siradakiSira % 2 === 1 ? styles.isilSolda : ""}`}
-              style={
-                {
-                  left: noktalar[siradakiSira].x,
-                  top: noktalar[siradakiSira].y,
-                  "--yaricap": `${o.simdi / 2}px`,
-                } as CSSProperties
-              }
+    <div
+      className={styles.rotaZemini}
+      style={{ backgroundImage: `url("${ROTA_ARKAPLANI}")` }}
+    >
+      <RotaCanliligi kitapSayisi={kitaplar.length} />
+      <div ref={kokRef} className={styles.rota} style={{ height: yukseklik }}>
+        {genislik > 0 ? (
+          <>
+            <svg
+              className={styles.yol}
+              width={genislik}
+              height={yukseklik}
+              viewBox={`0 0 ${genislik} ${yukseklik}`}
               aria-hidden="true"
             >
-              <IsilGorseli boyut={54} className={styles.isilGorseli} />
-              <span>Buradasın</span>
-            </div>
-          ) : null}
-        </>
-      ) : null}
+              <defs>
+                <filter
+                  id={filtreId}
+                  x="-20%"
+                  y="-20%"
+                  width="140%"
+                  height="140%"
+                >
+                  <feGaussianBlur stdDeviation={o.bulanik} />
+                </filter>
+              </defs>
+              <path d={tumYol} className={styles.yolGolgesi} />
+              <path d={tumYol} className={styles.yolZemini} />
+              <path d={tumYol} className={styles.yolCizgisi} />
+              {isikYolu ? (
+                <>
+                  <path
+                    d={isikYolu}
+                    className={styles.isikHalesi}
+                    filter={`url(#${filtreId})`}
+                  />
+                  <path d={isikYolu} className={styles.isikCekirdegi} />
+                  <path d={isikYolu} className={styles.isikKivilcimi} />
+                </>
+              ) : null}
+            </svg>
+
+            {kitaplar.map((kitap, sira) => {
+              const nokta = noktalar[sira];
+              const simdi = kitap.key === siradakiKey;
+              const doluluk = kitap.bitti
+                ? 100
+                : Math.round(
+                    (kitap.tamamlanan / Math.max(1, kitap.bolumler.length)) *
+                      100,
+                  );
+              const durum = durakDurumMetni(kitap);
+              const siniflar = [
+                styles.durak,
+                simdi ? styles.durakSimdi : "",
+                kitap.bitti ? styles.durakBitti : "",
+                seciliKey === kitap.key ? styles.durakSecili : "",
+                vurguluKey === kitap.key ? styles.durakVurgulu : "",
+              ].join(" ");
+              return (
+                <button
+                  key={kitap.key}
+                  type="button"
+                  data-kitap={kitap.key}
+                  className={siniflar}
+                  style={
+                    {
+                      left: nokta.x,
+                      top: nokta.y,
+                      "--jeton": `${simdi ? o.simdi : o.jeton}px`,
+                      "--doluluk": `${doluluk}%`,
+                    } as CSSProperties
+                  }
+                  aria-label={`${kitap.ad}: ${durum}${kitap.yeni ? ", yeni kitap" : ""}`}
+                  aria-pressed={seciliKey === kitap.key}
+                  onClick={() => onSec(kitap.key)}
+                >
+                  <span className={styles.halka}>
+                    <YedekliGorsel
+                      src={haritaDuragiGorseli(kitap.key)}
+                      yedekSrc={YEDEK.durak}
+                      alt=""
+                      width={120}
+                      height={120}
+                      className={styles.durakGorseli}
+                    />
+                    {kitap.bitti ? (
+                      <span className={styles.madalyaRozeti}>
+                        <YedekliGorsel
+                          src={madalyaGorseli(kitap.key)}
+                          yedekSrc={YEDEK.madalya}
+                          alt=""
+                          width={30}
+                          height={30}
+                        />
+                      </span>
+                    ) : null}
+                    {kitap.yeni ? (
+                      <span className={styles.yeniEtiketi}>Yeni</span>
+                    ) : null}
+                  </span>
+                  <span className={styles.levha}>
+                    <strong>{kitap.ad}</strong>
+                    <small>{durum}</small>
+                  </span>
+                </button>
+              );
+            })}
+
+            {siradakiSira >= 0 ? (
+              <div
+                className={`${styles.isilIsareti} ${siradakiSira % 2 === 1 ? styles.isilSolda : ""}`}
+                style={
+                  {
+                    left: noktalar[siradakiSira].x,
+                    top: noktalar[siradakiSira].y,
+                    "--yaricap": `${o.simdi / 2}px`,
+                  } as CSSProperties
+                }
+                aria-hidden="true"
+              >
+                <IsilGorseli boyut={54} className={styles.isilGorseli} />
+                <span>Buradasın</span>
+              </div>
+            ) : null}
+          </>
+        ) : null}
+      </div>
+      {children}
     </div>
   );
 }

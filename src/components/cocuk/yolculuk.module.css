@@ -265,20 +265,28 @@
 }
 
 /*
- * Rota arka planı: tek, dikişsiz dikey tekrar eden boyalı çayır (3.10.1).
- * Görsel gelene kadar ilk bölge sahnesi + çayır degradesi vekildir. Katmanlar
- * sırayla denenir: dosya yoksa üstteki katman çizilmez, alttaki görünür.
+ * Rota arka planı: kodla çizilmiş, dikey olarak dikişsiz tekrar eden çayır
+ * (3.10.1). Görsel yolu `varlikYollari.ts:ROTA_ARKAPLANI`'dan satır içi gelir;
+ * burada yalnız yerleşimi tanımlanır. "Yolun devamı" kartı da aynı çayırın
+ * üstünde durur.
  */
+.rotaZemini {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 2px;
+  background-color: var(--cayir);
+  background-position: center top;
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+}
+
 .rota {
   position: relative;
-  background:
-    url("/harita/rota-arkaplan.jpg") center top / 100% auto repeat-y,
-    url("/bolgeler/bolge-ilk-izler-dikey.jpg") center top / 100% auto no-repeat,
-    linear-gradient(var(--cayir) 0, var(--cayir-koyu) 100%);
+  z-index: 1;
 }
 
 /* Üstteki gece çerçevesinden manzaraya yumuşak geçiş. */
-.rota::before {
+.rotaZemini::before {
   position: absolute;
   z-index: 0;
   inset: 0 0 auto;
@@ -531,6 +539,97 @@
 
   50% {
     translate: 0 -6px;
+  }
+}
+
+/* ------------------------------------------------- HAREKET KATMANI */
+
+.canlilik {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Bulut gölgeleri: çayırın üstünden ağır ağır geçer. */
+.bulutGolgesi {
+  position: absolute;
+  left: 0;
+  width: 75%;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in srgb, var(--zemin) 14%, transparent),
+    color-mix(in srgb, var(--zemin) 0%, transparent)
+  );
+  transform: translateX(-110%);
+  animation: bulutGec 58s linear infinite;
+  will-change: transform;
+}
+
+.bulutBir {
+  top: 18%;
+}
+
+.bulutIki {
+  top: 62%;
+  width: 60%;
+  animation-duration: 74s;
+  animation-delay: -30s;
+}
+
+@keyframes bulutGec {
+  to {
+    transform: translateX(190%);
+  }
+}
+
+/* Ateşböcekleri: Işıl'ın akrabaları; yavaşça süzülüp parlar. */
+.atesbocegi {
+  --boy: 7px;
+  --sure: 7s;
+  --gecikme: 0s;
+  --dx: 8px;
+
+  position: absolute;
+  width: var(--boy);
+  height: var(--boy);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--vurgu) 25%, white) 0 30%,
+    var(--vurgu) 55%,
+    color-mix(in srgb, var(--vurgu) 0%, transparent) 72%
+  );
+  box-shadow: 0 0 10px 3px color-mix(in srgb, var(--vurgu) 55%, transparent);
+  opacity: 0.25;
+  animation: atesSuzul var(--sure) ease-in-out var(--gecikme) infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes atesSuzul {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: translate(0, 0) scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(var(--dx), -22px) scale(1.1);
+  }
+}
+
+/* Işık izinde kıvılcımlar yol boyunca akar. */
+.isikKivilcimi {
+  animation: kivilcimAkisi 1.8s linear infinite;
+}
+
+@keyframes kivilcimAkisi {
+  to {
+    stroke-dashoffset: -28;
   }
 }
 
@@ -1079,29 +1178,25 @@
     box-shadow: 0 8px 20px rgb(0 0 0 / 25%);
   }
 
-  /* Rota kısa olduğunda bile kartı doldurur; altındaki kart çayırın üstünde durur. */
   .rotaKaydir {
-    display: flex;
     height: 100%;
-    flex-direction: column;
     overflow-y: auto;
     overscroll-behavior: contain;
     scrollbar-width: thin;
-    background: var(--cayir-koyu);
   }
 
-  .rota {
-    flex: 1 0 auto;
+  /* Rota kısa olduğunda bile kartı doldurur; "Yolun devamı" alta oturur. */
+  .rotaZemini {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
   }
 
-  .rota {
-    background:
-      url("/harita/rota-arkaplan.jpg") center top / 100% auto repeat-y,
-      url("/bolgeler/bolge-ilk-izler-yatay.jpg") center top / 100% auto no-repeat,
-      linear-gradient(var(--cayir) 0, var(--cayir-koyu) 100%);
+  .rotaZemini > .yolunDevami {
+    margin-top: auto;
   }
 
-  .rota::before {
+  .rotaZemini::before {
     display: none;
   }
 
@@ -1181,6 +1276,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .canlilik {
+    display: none;
+  }
+
+  .isikKivilcimi,
   .durakSimdi .halka,
   .durakVurgulu .halka,
   .isilIsareti,
