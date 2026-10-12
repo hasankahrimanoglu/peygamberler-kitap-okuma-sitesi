@@ -327,6 +327,11 @@ oturumunda** üretilir. Ajan kuralları diskten güncel hâliyle okur ve teslimi
    Dosya: `KITAP-HZ-{ANAHTAR}-ICERIK-FAZ2-taslak.md`.
 4. **Aktarım.** Kod oturumunda `books.ts`, `quizzes.ts`, `atlasCatalog.ts` ve
    üç sicil güncellenir; `npm run gorsel-yertutucu -- {bookKey}` çalıştırılır.
+   Hasan'ın onayıyla dosyalar §11.3'teki `-final` / `-KAYNAK-DENETIMI` adlarını
+   alır.
+5. **Görsel üretimi.** Ayrı bir Claude Code oturumunda Magnific bağlantısıyla;
+   liste görsel sicilinden, promptlar `-final` dosyasından okunur. Akış ve
+   kurallar: `ICERIK-GORSEL-SICILI.md` §6.2.
 
 Ajana ayrıca şu kısa komut verilmelidir:
 

@@ -25,6 +25,9 @@
 > yok; peygamberler yüzü görünmeyen figür olabilir). Harita durağı görseli
 > (`harita-kapak.jpg`) kapaktan ayrı yazıldı. Kod türettiği için "Üst etiket"
 > alanı ve kaldırılmış "Bölüm rotası arka planı" brifi teslimden çıkarıldı.
+> Görseller artık Claude oturumunda Magnific bağlantısıyla üretildiği için her
+> prompt **Türkçe + İngilizce** yazılır; kitap başına İngilizce ortak stil
+> bloğu, ortak negatif prompt ve rozet çerçeve bloğu eklenir (§6, §8.3).
 
 ---
 
@@ -270,6 +273,8 @@ aktarım yapılmadan önce sorulur.
 | Bölüm sayısı | Katalogdaki hedef; 4–10 |
 | Ana değerler | 4–5 değer |
 | Görsel dünya | Mekân, nesne, ışık, atmosfer ve renk dili |
+| Ortak stil bloğu (EN) | Kitabın bütün sahne promptlarının sonuna **aynen** eklenecek tek paragraf İngilizce stil cümlesi: resim tekniği, ışık, palet, doku, ton, 16:9 yatay kadraj. 48 görselin aynı kitaptan çıkmış gibi görünmesini bu blok sağlar |
+| Ortak negatif prompt (EN) | Bütün sahnelerde geçerli İngilizce yasak listesi: yüz, melek, cami/kubbe/minare, yazı/harf/logo/filigran, şiddet, letterbox vb. Peygamber figürü hiç kullanılmayacaksa "human figure, silhouette, hands" da eklenir |
 | Kaynak ilkeleri | Kullanılan kaynaklar, rivayet yaklaşımı, kesin bilinmeyenler |
 | Kitaba özgü yasaklar | Kullanılmayacak ayrıntı ve tasvirler |
 | Duygusal yay | Hedef bölümlerin tamamında merak/zorluk/umut/huzur dengesi |
@@ -515,10 +520,26 @@ Sahnenin amacı: ...
 Dosya: bolum-{n}/{kisa-sahne}.jpg
 Alt metin: ...
 Altyazı: [yalnız gerekiyorsa]
-Ana üretim promptu: ...
+Ana üretim promptu: ... [Türkçe — editör okuması için]
+Ana üretim promptu (EN): ... [görsel modeline gidecek metin; Türkçe promptun
+  birebir karşılığı, yalnız sahneyi anlatır — ortak stil bloğunu TEKRARLAMA]
 Kadraj notu: ...
-Negatif prompt/kesin yasaklar: ...
+Figür: yok / [varsa: kim, nasıl — yüz görünmez; arkadan, uzak plan, ışıkla örtülü]
+Negatif prompt/kesin yasaklar: ... [ortak negatif prompta EK olarak bu sahneye
+  özgü yasaklar, İngilizce]
 ```
+
+Görsel üretim oturumu her sahnenin promptunu şöyle kurar:
+`Ana üretim promptu (EN)` + `Ortak stil bloğu (EN)`; negatif:
+`Ortak negatif prompt (EN)` + sahneye özgü yasaklar. Bu yüzden İngilizce alanlar
+çeviri gerektirmeyecek kadar eksiksiz yazılır.
+
+Rozet ve madalya brifleri de aynı biçimde **Türkçe + İngilizce** prompt taşır.
+Rozetler tek şablon ailesidir (aynı çerçeve, aynı palet; değişen yalnız iç
+sembol — ROZET-MATRISI §1.3). Bu yüzden kitabın rozetleri için ortak bir
+**rozet çerçeve bloğu (EN)** yazılır, her rozette yalnız iç sembol değişir.
+Rozet ve madalya promptu sade, tek renkli bir zemin ister (arka planı sonra
+kaldırılacak); figür içermez.
 
 ### 8.4 Görsel üzerinde etkileşim yoktur
 
@@ -663,6 +684,9 @@ Madalya sembolü:
 Bölüm sayısı: [KATALOGDAKİ HEDEF]
 Ana değerler:
 Görsel dünya:
+Ortak stil bloğu (EN):
+Ortak negatif prompt (EN):
+Rozet çerçeve bloğu (EN):
 Kaynak ilkeleri:
 Kitaba özgü yasaklar:
 Duygusal yay:
@@ -796,6 +820,8 @@ Ajan, teslim sonunda her maddeyi `tamam / sorun var` olarak raporlamalıdır:
       gerekçesi yazılı. 1. Kısım ve Devam'da en az 2'şer sahne; art arda iki
       görsel yok; aynı kompozisyon tekrar etmiyor.
 - [ ] Her içerik görselinin TEK 16:9 brifi var (dikey varyant üretilmez).
+- [ ] Ortak stil bloğu, ortak negatif prompt ve rozet çerçeve bloğu İngilizce
+      yazıldı; her sahne, rozet ve madalyada Türkçe + İngilizce prompt var.
 - [ ] Görsel dosya adları `ICERIK-GORSEL-SICILI.md` düzenine uyuyor
       (`bolum-{n}/{kisa-ad}.jpg`); rozet ve madalya 512×512 şeffaf `.png`.
 - [ ] Bütün görsel tarifleri figür/tasvir ve anakronizm yasağına uyuyor.

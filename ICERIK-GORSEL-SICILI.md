@@ -311,8 +311,10 @@ akıştaki yer ve `alt` metnini kaydeder.
 
 1. Sahne yeri `src/data/books.ts` içinde `type: "image"` bloğu olarak açılır
    (yalnız `src` + `alt`; `portraitSrc` yazılmaz).
-2. Dosya adı **bu sicile** eklenir: bölüm, akıştaki yer, öncelik, brif.
-3. Hasan görseli üretir ve **aynı adla** klasöre atar.
+2. Dosya adı **bu sicile** eklenir: bölüm, akıştaki yer, öncelik, brif. Kitap
+   bölümünün başına prompt kaynağı yazılır:
+   `kitap-icerikleri/KITAP-HZ-{ANAHTAR}-ICERIK-final.md`.
+3. Görsel üretilir (§6.2) ve **aynı adla** klasöre yazılır.
 4. Sicildeki durum `⬜ Bekliyor` → `✅ Hazır` yapılır. **Kod değişmez.**
 
 `alt` metinleri kod tarafında yazılmıştır; editoryal revizyon Hasan'ın kararıdır.
@@ -353,6 +355,53 @@ npm run gorsel-yertutucu -- unvanlar
 > Neden dosyalar önceden açılıyor: klasörde adları hazır durunca hem üretim
 > listesi görünür oluyor, hem de gerçek görsel geldiğinde "hangi ada
 > kaydedecektim?" sorusu ortadan kalkıyor.
+
+### 6.2 Görsel üretim oturumu — Magnific (KARAR 12 Ekim 2026 — Hasan)
+
+Görseller, proje klasöründe açılan **ayrı bir Claude Code oturumunda** Magnific
+bağlantısıyla üretilir. **Sıra değişmez:** Faz 2 onayı → aktarım + §6.1 yer
+tutucuları → görsel üretimi. Aktarımdan önce üretim yapılmaz: dosya adları
+aktarımda kesinleşir.
+
+**İki kaynak, iki ayrı rol:**
+
+| Dosya | Ne için |
+|---|---|
+| **Bu sicil** (kitabın bölümü) | **Hangi dosya, hangi yol, durumu ne.** Üretilecek liste buradaki `⬜ Bekliyor` satırlarıdır |
+| `kitap-icerikleri/KITAP-HZ-{ANAHTAR}-ICERIK-final.md` | **Ne çizilecek.** B bölümünde ortak stil bloğu, ortak negatif prompt, rozet çerçeve bloğu; D bölümünde her sahnenin İngilizce promptu; C3 ve rozet brifleri |
+
+İkisi çelişirse (ör. dosya adı farklıysa) **dosya adında sicil, içerikte final
+MD geçerlidir**; oturum durur ve Hasan'a sorar.
+
+**Prompt kurulumu:**
+- Sahne: `Ana üretim promptu (EN)` + `Ortak stil bloğu (EN)`. Negatif:
+  `Ortak negatif prompt (EN)` + sahneye özgü yasaklar.
+- Rozet: `Rozet çerçeve bloğu (EN)` + rozetin iç sembolü. Madalya: kendi promptu.
+- Promptun anlamı değiştirilmez. Bir sahne tutmuyorsa yeniden denenir; içerik
+  değişikliği gerekiyorsa Hasan'a sorulur.
+
+**Akış:**
+1. **Pilot:** önce 1. bölümün açılışı + bir sahnesi ile bir rozet üretilir,
+   Hasan'a gösterilir. Stil, model ve ayarlar onaylanmadan seri üretime
+   geçilmez (Magnific kredisi boşa gitmesin). Seçilen model ve ayarlar kitap
+   boyunca sabit tutulur.
+2. **Bölüm bölüm ilerlenir;** her bölüm bitince Hasan'a gösterilir.
+3. **Sahne teknik işlemi:** gerekirse büyütme → 16:9 kırpma → **1920×1080
+   `.jpg`** → yer tutucunun **üzerine aynı adla** yazma → boyut doğrulama
+   (`sips -g pixelWidth -g pixelHeight`).
+4. **Rozet/madalya teknik işlemi:** sade zeminde üretim → arka plan kaldırma →
+   **512×512 şeffaf `.png`** (sembol ortada, kenarda nefes payı). Rozetler aynı
+   çerçeve ailesinden olmalı; yayındaki kitapların rozetleri referans alınır.
+5. **Tasvir kontrolü — her görselde, otomatiğe bırakılmaz:** yüz, göz, ağız
+   veya yüz hattı görünüyorsa görsel **reddedilir** ve yeniden üretilir. Melek,
+   cami/kubbe/minare, yazı, harf, filigran görünüyorsa aynı. Hz. Muhammed,
+   ailesi, sahabe ve halifeler hiçbir biçimde görünmez. Son onay Hasan'ındır.
+6. Teslim edilen her görselin sicildeki durumu `✅ Hazır` yapılır; §5 sayaçları
+   güncellenir. Rozetler bitince `ROZET-MATRISI.md` §4 "Görsel" sütunu da
+   güncellenir.
+
+**Oturum yapmaz:** `books.ts` ve diğer kod dosyalarına dokunmaz, dosya adını
+değiştirmez, yeni görsel yeri açmaz (o aktarımın işidir), commit atmaz.
 
 ---
 

@@ -154,6 +154,12 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
   (rozet anahtarı gibi). Kayıt gelene kadar `public/sesli-anlatim/placeholder-ses.mp3`
   kopyası durur; Hasan aynı adla üzerine yazar. Yer tutucu başka bölümün anlatımıdır —
   yer tutucusu kalmış bölüm yayına çıkmaz.
+- **Görsel üretim oturumu (KARAR 12 Eki 2026):** kitap görselleri ayrı bir oturumda
+  Magnific bağlantısıyla, **yalnız aktarımdan ve yer tutucular açıldıktan sonra**
+  üretilir. Liste `ICERIK-GORSEL-SICILI.md`'den, promptlar
+  `kitap-icerikleri/KITAP-HZ-{ANAHTAR}-ICERIK-final.md`'den okunur. Kurallar ve
+  akış sicilin §6.2'sinde. O oturum yalnız `public/` altındaki yer tutucuların
+  üzerine aynı adla yazar ve sicil durumlarını günceller; koda dokunmaz.
 
 ---
 
