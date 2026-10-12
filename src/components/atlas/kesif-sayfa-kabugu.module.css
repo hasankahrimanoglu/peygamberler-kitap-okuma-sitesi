@@ -1,22 +1,17 @@
 /*
  * Ödüllerim · Kelimelerim · Görevlerim içerik alanı. Gezinme `CocukKabugu`'ndadır
- * (PROJE-MODELI 3.10.6); burada yalnız ana ekranla aynı genişlik ve kenar payı.
+ * (PROJE-MODELI 3.10.6); burada yalnız ana ekranla aynı genişlik ve kenar payı
+ * (kabuktaki `--icerik-genisligi` ve `--kenar-boslugu`; üst menüyle hizalı).
  * Bu ekranlar uzun liste ekranıdır: sayfanın kendisi kayar, iç kaydırma yoktur.
  */
 .icerik {
-  width: min(100%, 1440px);
+  width: min(100%, calc(var(--icerik-genisligi, 1360px) + 2 * var(--kenar-boslugu, 40px)));
   margin-inline: auto;
   padding: 22px 16px 36px;
 }
 
 @media (min-width: 1024px) {
   .icerik {
-    padding: 30px 24px 56px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .icerik {
-    padding-inline: 40px;
+    padding: 30px var(--kenar-boslugu, 40px) 56px;
   }
 }
