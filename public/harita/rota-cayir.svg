@@ -1,172 +1,217 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 2000" width="1000" height="2000" preserveAspectRatio="xMidYMin slice">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 2000" width="1000" height="2000">
   <!--
-    Rota arka planı — kodla çizilmiş çayır (12 Eki 2026). Dikey olarak dikişsiz
-    tekrar eder: hiçbir öğe üst ve alt kenara değmez, zemin düz renktir.
-    Süsler iki kenardadır (x 0–230 ve 770–1000); orta sütun durakların ve
-    yolun alanıdır, sakin bırakılmıştır. Hareket bu dosyada DEĞİL, üstteki
-    `RotaCanliligi` katmanındadır (dosya bir kez çizilip önbelleğe alınır).
+    Rota arka planı — "akşamüstü çayırı" (12 Eki 2026, ikinci sürüm).
+    Dikey olarak dikişsiz tekrar eder: hiçbir öğe üst ve alt kenara değmez,
+    zemin ve doku her satırda aynıdır. Süsler iki kenardadır (zeytin ağaçları,
+    sazlıklı dere, gece çiçekleri, taşlar); orta sütun durakların ve yolun
+    alanıdır, üstüne sıcak bir ışık havuzu düşer. Hareket bu dosyada değil,
+    `RotaCanliligi` katmanındadır.
   -->
   <defs>
+    <!-- Çimen dokusu: kısa, çok tonlu darbeler -->
+    <!-- 125: 1000 ve 2000'i tam böler; doku tekrar dikişinde kopmaz. -->
+    <pattern id="cimen" width="125" height="125" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke-linecap="round" stroke-width="2.4">
+        <path d="M12 30 q2 -9 6 -14" stroke="#4b8a5c" opacity="0.55" />
+        <path d="M18 31 q-1 -8 -5 -12" stroke="#2f6446" opacity="0.6" />
+        <path d="M60 18 q3 -10 8 -13" stroke="#56966a" opacity="0.45" />
+        <path d="M95 52 q2 -9 6 -13" stroke="#2c5f43" opacity="0.6" />
+        <path d="M101 53 q-2 -8 -6 -11" stroke="#4b8a5c" opacity="0.5" />
+        <path d="M30 82 q2 -9 7 -13" stroke="#56966a" opacity="0.45" />
+        <path d="M74 98 q-1 -9 -6 -13" stroke="#2f6446" opacity="0.55" />
+        <path d="M108 112 q2 -8 6 -12" stroke="#4b8a5c" opacity="0.5" />
+        <path d="M45 118 q3 -9 8 -12" stroke="#2c5f43" opacity="0.55" />
+        <path d="M116 22 q-2 -8 -5 -11" stroke="#56966a" opacity="0.4" />
+      </g>
+    </pattern>
     <filter id="doku" x="0" y="0" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" seed="7" />
-      <feColorMatrix values="0 0 0 0 0.25  0 0 0 0 0.4  0 0 0 0 0.15  0 0 0 0.07 0" />
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="3" stitchTiles="stitch" seed="11" />
+      <feColorMatrix values="0 0 0 0 0.04  0 0 0 0 0.2  0 0 0 0 0.1  0 0 0 0.4 -0.1" />
     </filter>
-    <radialGradient id="leke-acik" cx="50%" cy="50%" r="50%">
-      <stop offset="0" stop-color="#d6ecac" stop-opacity="0.9" />
-      <stop offset="1" stop-color="#d6ecac" stop-opacity="0" />
-    </radialGradient>
-    <radialGradient id="leke-koyu" cx="50%" cy="50%" r="50%">
-      <stop offset="0" stop-color="#a9d47c" stop-opacity="0.55" />
-      <stop offset="1" stop-color="#a9d47c" stop-opacity="0" />
-    </radialGradient>
-    <!-- Tepeler aşağıda zemin rengine erir: kenarda kesik çizgi kalmaz. -->
-    <linearGradient id="tepe" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#a2d473" />
-      <stop offset="0.55" stop-color="#9acd6c" />
-      <stop offset="1" stop-color="#c5e396" />
+    <!-- Kenarlar koyulaşır: orta sütun ve duraklar öne çıkar -->
+    <linearGradient id="kenar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0d2a22" stop-opacity="0.55" />
+      <stop offset="0.24" stop-color="#0d2a22" stop-opacity="0" />
+      <stop offset="0.76" stop-color="#0d2a22" stop-opacity="0" />
+      <stop offset="1" stop-color="#0d2a22" stop-opacity="0.55" />
     </linearGradient>
-    <linearGradient id="tepe-koyu" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#8fc766" />
-      <stop offset="0.55" stop-color="#8cc363" />
-      <stop offset="1" stop-color="#c5e396" />
+    <radialGradient id="sicak-havuz" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#f5d27a" stop-opacity="0.26" />
+      <stop offset="0.6" stop-color="#f5d27a" stop-opacity="0.09" />
+      <stop offset="1" stop-color="#f5d27a" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="ay-havuzu" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#a8e0cf" stop-opacity="0.16" />
+      <stop offset="1" stop-color="#a8e0cf" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="uzak-tepe" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3f8a5a" />
+      <stop offset="1" stop-color="#3f8a5a" stop-opacity="0" />
     </linearGradient>
+    <radialGradient id="zeytin-tac" cx="35%" cy="30%" r="75%">
+      <stop offset="0" stop-color="#8fb98a" />
+      <stop offset="0.45" stop-color="#5d8f63" />
+      <stop offset="1" stop-color="#2d5a42" />
+    </radialGradient>
+    <radialGradient id="cali-tac" cx="35%" cy="30%" r="75%">
+      <stop offset="0" stop-color="#5fa36d" />
+      <stop offset="1" stop-color="#22503a" />
+    </radialGradient>
+    <radialGradient id="koyu-cali" cx="40%" cy="30%" r="75%">
+      <stop offset="0" stop-color="#2f6a4a" />
+      <stop offset="1" stop-color="#143829" />
+    </radialGradient>
     <linearGradient id="su" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#9ad8ec" />
-      <stop offset="1" stop-color="#6fbfdc" />
+      <stop offset="0" stop-color="#2f7fa3" />
+      <stop offset="1" stop-color="#1c5a7c" />
     </linearGradient>
-    <radialGradient id="tac" cx="40%" cy="35%" r="70%">
-      <stop offset="0" stop-color="#8fca63" />
-      <stop offset="1" stop-color="#4f8f3c" />
-    </radialGradient>
-    <radialGradient id="cali-renk" cx="40%" cy="35%" r="70%">
-      <stop offset="0" stop-color="#9dd16f" />
-      <stop offset="1" stop-color="#5f9c44" />
+    <radialGradient id="cicek-isik" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#fff9e6" stop-opacity="0.75" />
+      <stop offset="1" stop-color="#fff9e6" stop-opacity="0" />
     </radialGradient>
 
-    <g id="agac">
-      <ellipse cx="0" cy="62" rx="58" ry="14" fill="#3d6b2a" opacity="0.22" />
-      <rect x="-7" y="18" width="14" height="44" rx="5" fill="#8a6a45" />
-      <circle cx="-26" cy="4" r="34" fill="url(#tac)" />
-      <circle cx="24" cy="0" r="38" fill="url(#tac)" />
-      <circle cx="-2" cy="-26" r="40" fill="url(#tac)" />
-      <circle cx="-12" cy="-38" r="13" fill="#a7d97a" opacity="0.55" />
-      <circle cx="18" cy="-18" r="7" fill="#a7d97a" opacity="0.45" />
+    <!-- Zeytin ağacı: kıvrık gövde, gümüşi yeşil, sol üstten ışık -->
+    <g id="zeytin">
+      <ellipse cx="6" cy="78" rx="78" ry="17" fill="#0b2219" opacity="0.4" />
+      <path d="M-4 78 C -10 52, 6 40, -2 18 C -6 6, 4 -4, 10 -10 M2 40 C 14 30, 22 22, 30 6"
+            fill="none" stroke="#5b4630" stroke-width="12" stroke-linecap="round" />
+      <path d="M-4 78 C -10 52, 6 40, -2 18" fill="none" stroke="#7a6043" stroke-width="4" stroke-linecap="round" opacity="0.7" />
+      <ellipse cx="-34" cy="-6" rx="40" ry="26" fill="url(#zeytin-tac)" />
+      <ellipse cx="30" cy="-14" rx="44" ry="28" fill="url(#zeytin-tac)" />
+      <ellipse cx="-4" cy="-38" rx="46" ry="30" fill="url(#zeytin-tac)" />
+      <ellipse cx="44" cy="-46" rx="30" ry="20" fill="url(#zeytin-tac)" />
+      <ellipse cx="-44" cy="-36" rx="26" ry="18" fill="url(#zeytin-tac)" />
+      <g fill="#b9dcb0" opacity="0.35">
+        <ellipse cx="-18" cy="-54" rx="16" ry="7" />
+        <ellipse cx="-50" cy="-44" rx="10" ry="5" />
+        <ellipse cx="22" cy="-30" rx="12" ry="5" />
+      </g>
+      <g fill="#1d3f2f" opacity="0.35">
+        <ellipse cx="10" cy="4" rx="34" ry="10" />
+        <ellipse cx="-30" cy="10" rx="20" ry="7" />
+      </g>
     </g>
     <g id="cali">
-      <ellipse cx="0" cy="22" rx="44" ry="10" fill="#3d6b2a" opacity="0.18" />
-      <circle cx="-22" cy="6" r="22" fill="url(#cali-renk)" />
-      <circle cx="18" cy="6" r="24" fill="url(#cali-renk)" />
-      <circle cx="-2" cy="-10" r="24" fill="url(#cali-renk)" />
-      <circle cx="-8" cy="-18" r="8" fill="#b2de86" opacity="0.6" />
+      <ellipse cx="0" cy="26" rx="52" ry="12" fill="#0b2219" opacity="0.35" />
+      <circle cx="-26" cy="6" r="26" fill="url(#cali-tac)" />
+      <circle cx="22" cy="8" r="28" fill="url(#cali-tac)" />
+      <circle cx="-2" cy="-14" r="28" fill="url(#cali-tac)" />
+      <path d="M-26 -20 a26 26 0 0 1 22 -20" fill="none" stroke="#9fd6a4" stroke-width="3" stroke-linecap="round" opacity="0.45" />
     </g>
-    <g id="cicek">
-      <circle cx="0" cy="-6" r="5.2" fill="currentColor" />
-      <circle cx="5.7" cy="-1.9" r="5.2" fill="currentColor" />
-      <circle cx="3.5" cy="4.9" r="5.2" fill="currentColor" />
-      <circle cx="-3.5" cy="4.9" r="5.2" fill="currentColor" />
-      <circle cx="-5.7" cy="-1.9" r="5.2" fill="currentColor" />
-      <circle cx="0" cy="0" r="3.4" fill="#f2b636" />
+    <g id="on-cali">
+      <ellipse cx="0" cy="22" rx="60" ry="12" fill="#081a13" opacity="0.4" />
+      <circle cx="-30" cy="4" r="30" fill="url(#koyu-cali)" />
+      <circle cx="26" cy="6" r="32" fill="url(#koyu-cali)" />
+      <circle cx="0" cy="-18" r="30" fill="url(#koyu-cali)" />
+      <path d="M-30 -22 a30 30 0 0 1 26 -24" fill="none" stroke="#5fa36d" stroke-width="3" stroke-linecap="round" opacity="0.5" />
     </g>
-    <g id="tutam" fill="none" stroke="#7eb85a" stroke-width="3" stroke-linecap="round">
-      <path d="M0 0 Q-4 -12 -10 -18" />
-      <path d="M0 0 Q1 -14 2 -22" />
-      <path d="M0 0 Q5 -10 12 -15" />
+    <g id="sazlik" fill="none" stroke-linecap="round">
+      <path d="M0 40 C 2 10, 0 -10, -6 -34" stroke="#4f8d5d" stroke-width="3" />
+      <path d="M8 40 C 10 12, 14 -8, 20 -26" stroke="#3c7a4f" stroke-width="3" />
+      <path d="M-8 40 C -10 18, -16 0, -24 -14" stroke="#4f8d5d" stroke-width="3" />
+      <path d="M16 40 C 18 22, 24 10, 34 2" stroke="#3c7a4f" stroke-width="2.6" />
+      <path d="M-6 -34 l-2 -14" stroke="#6b4f2f" stroke-width="6" />
+      <path d="M20 -26 l3 -13" stroke="#6b4f2f" stroke-width="6" />
+    </g>
+    <g id="uzun-ot" fill="none" stroke-linecap="round" stroke-width="3">
+      <path d="M0 0 C -2 -16, -8 -26, -16 -32" stroke="#3f8052" />
+      <path d="M0 0 C 0 -18, 2 -30, 4 -40" stroke="#58a066" />
+      <path d="M0 0 C 4 -14, 10 -22, 18 -26" stroke="#3f8052" />
+      <path d="M-6 0 C -8 -10, -14 -16, -20 -18" stroke="#2f6a46" />
     </g>
     <g id="tas">
-      <ellipse cx="0" cy="8" rx="24" ry="6" fill="#3d6b2a" opacity="0.16" />
-      <ellipse cx="0" cy="0" rx="22" ry="14" fill="#cfc6b0" />
-      <ellipse cx="-6" cy="-5" rx="9" ry="4.5" fill="#e7e0cf" />
+      <ellipse cx="0" cy="9" rx="26" ry="7" fill="#081a13" opacity="0.35" />
+      <ellipse cx="0" cy="0" rx="24" ry="15" fill="#5f7a7f" />
+      <ellipse cx="-7" cy="-5" rx="11" ry="5" fill="#9db5b8" opacity="0.8" />
+    </g>
+    <g id="gece-cicegi">
+      <circle r="13" fill="url(#cicek-isik)" />
+      <circle cx="0" cy="-4" r="3.2" fill="#fffaf0" />
+      <circle cx="3.8" cy="-1.2" r="3.2" fill="#fffaf0" />
+      <circle cx="2.4" cy="3.2" r="3.2" fill="#fffaf0" />
+      <circle cx="-2.4" cy="3.2" r="3.2" fill="#fffaf0" />
+      <circle cx="-3.8" cy="-1.2" r="3.2" fill="#fffaf0" />
+      <circle r="2" fill="#f5c65a" />
+    </g>
+    <g id="renkli-cicek">
+      <circle r="12" fill="url(#cicek-isik)" opacity="0.7" />
+      <circle cx="0" cy="-4" r="3.4" fill="currentColor" />
+      <circle cx="3.8" cy="-1.2" r="3.4" fill="currentColor" />
+      <circle cx="2.4" cy="3.2" r="3.4" fill="currentColor" />
+      <circle cx="-2.4" cy="3.2" r="3.4" fill="currentColor" />
+      <circle cx="-3.8" cy="-1.2" r="3.4" fill="currentColor" />
+      <circle r="2" fill="#fff3c4" />
     </g>
     <g id="cicek-obegi">
-      <use href="#tutam" x="-26" y="10" />
-      <use href="#tutam" x="22" y="14" />
-      <use href="#cicek" x="-14" y="0" style="color:#fffaf0" />
-      <use href="#cicek" x="10" y="-8" style="color:#f6d55a" />
-      <use href="#cicek" x="2" y="12" style="color:#f4a9bd" />
-      <use href="#cicek" x="28" y="4" style="color:#fffaf0" />
-      <use href="#cicek" x="-34" y="-6" style="color:#c3b1ee" />
+      <use href="#uzun-ot" x="-30" y="18" />
+      <use href="#uzun-ot" x="26" y="20" />
+      <use href="#gece-cicegi" x="-14" y="0" />
+      <use href="#renkli-cicek" x="12" y="-10" style="color:#f4a9c4" />
+      <use href="#gece-cicegi" x="4" y="12" />
+      <use href="#renkli-cicek" x="30" y="2" style="color:#c9b3f5" />
+      <use href="#renkli-cicek" x="-34" y="-6" style="color:#f6d461" />
     </g>
   </defs>
 
-  <!-- Zemin: düz renk (dikişsiz tekrar için) + hafif doku -->
-  <rect width="1000" height="2000" fill="#c5e396" />
+  <!-- Zemin + çimen dokusu + bulutsu renk dalgası (hepsi dikişsiz) -->
+  <rect width="1000" height="2000" fill="#2f7a4c" />
+  <rect width="1000" height="2000" fill="url(#cimen)" />
   <rect width="1000" height="2000" filter="url(#doku)" />
 
-  <!-- Orta sütunda çok hafif ışık lekeleri: zemin düz görünmesin -->
-  <ellipse cx="520" cy="360" rx="260" ry="150" fill="url(#leke-acik)" />
-  <ellipse cx="430" cy="980" rx="300" ry="170" fill="url(#leke-koyu)" />
-  <ellipse cx="560" cy="1560" rx="280" ry="160" fill="url(#leke-acik)" />
-
-  <!-- Orta sütundaki seyrek otlar -->
-  <g opacity="0.55">
-    <use href="#tutam" x="420" y="210" />
-    <use href="#tutam" x="610" y="520" />
-    <use href="#tutam" x="360" y="760" />
-    <use href="#tutam" x="660" y="1120" />
-    <use href="#tutam" x="450" y="1380" />
-    <use href="#tutam" x="590" y="1720" />
-    <use href="#tutam" x="380" y="1880" />
-  </g>
-  <g opacity="0.7">
-    <use href="#cicek" x="470" y="640" style="color:#fffaf0" transform="translate(470 640) scale(0.7) translate(-470 -640)" />
-    <use href="#cicek" x="560" y="1280" style="color:#f6d55a" transform="translate(560 1280) scale(0.7) translate(-560 -1280)" />
-    <use href="#cicek" x="400" y="1660" style="color:#f4a9bd" transform="translate(400 1660) scale(0.7) translate(-400 -1660)" />
-  </g>
+  <!-- Orta sütuna düşen ışık: sıcak havuzlar ve ay ışığı lekeleri -->
+  <ellipse cx="500" cy="380" rx="330" ry="210" fill="url(#sicak-havuz)" />
+  <ellipse cx="470" cy="1040" rx="300" ry="200" fill="url(#ay-havuzu)" />
+  <ellipse cx="530" cy="1660" rx="330" ry="210" fill="url(#sicak-havuz)" />
 
   <!-- ===================== SOL KENAR ===================== -->
-  <!-- Tepe 1 -->
-  <path d="M-60 330 C 0 215, 170 190, 252 300 C 290 352, 280 430, 200 470 C 120 500, -60 490, -60 430 Z" fill="url(#tepe)" />
-  <path d="M-40 330 C 20 230, 140 215, 210 280" fill="none" stroke="#c4e79c" stroke-width="6" stroke-linecap="round" opacity="0.7" />
-  <use href="#agac" x="110" y="250" />
-  <use href="#cicek-obegi" x="190" y="405" />
+  <path d="M-80 120 C 40 90, 210 140, 250 260 C 285 360, 240 470, 120 500 C 30 520, -80 500, -80 430 Z" fill="url(#uzak-tepe)" opacity="0.9" />
+  <use href="#zeytin" x="105" y="250" />
+  <use href="#cicek-obegi" x="190" y="430" />
+  <use href="#tas" x="56" y="600" />
+  <use href="#tas" x="100" y="626" transform="translate(100 626) scale(0.65) translate(-100 -626)" />
+  <use href="#cali" x="160" y="740" />
+  <use href="#uzun-ot" x="40" y="820" />
 
-  <use href="#tas" x="60" y="560" />
-  <use href="#tas" x="104" y="588" transform="translate(104 588) scale(0.7) translate(-104 -588)" />
-  <use href="#cali" x="150" y="700" />
-  <use href="#cicek-obegi" x="60" y="790" />
+  <path d="M-80 880 C 60 850, 230 900, 255 1010 C 275 1110, 210 1190, 100 1200 C 10 1205, -80 1190, -80 1130 Z" fill="url(#uzak-tepe)" opacity="0.85" />
+  <use href="#zeytin" x="95" y="1010" transform="translate(95 1010) scale(1.25) translate(-95 -1010)" />
+  <use href="#cicek-obegi" x="200" y="1150" />
 
-  <!-- Büyük ağaç -->
-  <use href="#agac" x="95" y="980" transform="translate(95 980) scale(1.25) translate(-95 -980)" />
-  <use href="#tutam" x="190" y="1060" />
-  <use href="#tutam" x="30" y="1090" />
-
-  <!-- Tepe 2 -->
-  <path d="M-60 1330 C 30 1228, 200 1238, 244 1340 C 268 1395, 230 1460, 160 1480 C 80 1495, -60 1490, -60 1440 Z" fill="url(#tepe-koyu)" />
-  <path d="M-30 1320 C 50 1250, 170 1255, 215 1320" fill="none" stroke="#b6e08c" stroke-width="6" stroke-linecap="round" opacity="0.6" />
-  <use href="#agac" x="70" y="1290" transform="translate(70 1290) scale(0.85) translate(-70 -1290)" />
-  <use href="#cali" x="175" y="1330" transform="translate(175 1330) scale(0.8) translate(-175 -1330)" />
-
-  <use href="#cicek-obegi" x="120" y="1560" />
-  <use href="#tas" x="50" y="1680" />
-  <use href="#cali" x="110" y="1840" />
-  <use href="#tutam" x="200" y="1900" />
+  <use href="#on-cali" x="60" y="1330" />
+  <use href="#gece-cicegi" x="150" y="1300" />
+  <use href="#uzun-ot" x="170" y="1390" />
+  <use href="#zeytin" x="130" y="1580" transform="translate(130 1580) scale(0.9) translate(-130 -1580)" />
+  <use href="#tas" x="40" y="1700" />
+  <use href="#cicek-obegi" x="70" y="1800" />
+  <use href="#on-cali" x="180" y="1890" transform="translate(180 1890) scale(0.85) translate(-180 -1890)" />
 
   <!-- ===================== SAĞ KENAR ===================== -->
-  <!-- Dere 1: sağ kenardan girer, kıvrılıp yine sağdan çıkar -->
-  <path d="M1040 170 C 900 230, 830 330, 880 430 C 930 530, 830 620, 860 720 C 880 790, 960 820, 1040 830"
-        fill="none" stroke="#a6cf83" stroke-width="58" stroke-linecap="round" />
-  <path d="M1040 170 C 900 230, 830 330, 880 430 C 930 530, 830 620, 860 720 C 880 790, 960 820, 1040 830"
-        fill="none" stroke="url(#su)" stroke-width="40" stroke-linecap="round" />
-  <path d="M1000 205 C 905 250, 850 330, 893 420 C 935 510, 850 600, 872 690"
-        fill="none" stroke="#d6f1fa" stroke-width="5" stroke-linecap="round" stroke-dasharray="26 34" opacity="0.85" />
-  <use href="#tas" x="800" y="300" />
-  <use href="#cicek-obegi" x="790" y="540" />
-  <use href="#tas" x="935" y="690" transform="translate(935 690) scale(0.75) translate(-935 -690)" />
+  <!-- Dere 1: kenardan girer, kıvrılıp kenardan çıkar -->
+  <path d="M1060 150 C 900 210, 820 320, 870 430 C 920 540, 820 630, 850 730 C 870 800, 960 830, 1060 840"
+        fill="none" stroke="#1f4a37" stroke-width="72" stroke-linecap="round" />
+  <path d="M1060 150 C 900 210, 820 320, 870 430 C 920 540, 820 630, 850 730 C 870 800, 960 830, 1060 840"
+        fill="none" stroke="url(#su)" stroke-width="48" stroke-linecap="round" />
+  <path d="M1010 185 C 905 235, 845 320, 884 418 C 922 512, 846 600, 862 690"
+        fill="none" stroke="#bfe6f2" stroke-width="4" stroke-linecap="round" stroke-dasharray="18 40" opacity="0.7" />
+  <use href="#sazlik" x="820" y="300" />
+  <use href="#sazlik" x="800" y="640" transform="translate(800 640) scale(0.85) translate(-800 -640)" />
+  <use href="#tas" x="930" y="560" />
+  <use href="#gece-cicegi" x="780" y="470" />
 
-  <!-- Tepe 3 + ağaç -->
-  <path d="M1060 1040 C 970 935, 820 940, 768 1030 C 742 1085, 770 1150, 850 1170 C 930 1185, 1060 1180, 1060 1130 Z" fill="url(#tepe)" />
-  <path d="M1030 1020 C 950 960, 850 960, 800 1020" fill="none" stroke="#c4e79c" stroke-width="6" stroke-linecap="round" opacity="0.7" />
-  <use href="#agac" x="900" y="975" />
-  <use href="#cali" x="800" y="1220" transform="translate(800 1220) scale(0.85) translate(-800 -1220)" />
-  <use href="#cicek-obegi" x="900" y="1300" />
+  <path d="M1080 930 C 950 900, 790 950, 760 1050 C 740 1130, 800 1190, 900 1200 C 980 1205, 1080 1195, 1080 1140 Z" fill="url(#uzak-tepe)" opacity="0.85" />
+  <use href="#zeytin" x="895" y="1020" />
+  <use href="#cali" x="790" y="1250" transform="translate(790 1250) scale(0.85) translate(-790 -1250)" />
+  <use href="#cicek-obegi" x="900" y="1320" />
 
   <!-- Dere 2 -->
-  <path d="M1040 1440 C 930 1480, 860 1550, 900 1630 C 935 1700, 990 1730, 1040 1740"
-        fill="none" stroke="#a6cf83" stroke-width="52" stroke-linecap="round" />
-  <path d="M1040 1440 C 930 1480, 860 1550, 900 1630 C 935 1700, 990 1730, 1040 1740"
-        fill="none" stroke="url(#su)" stroke-width="34" stroke-linecap="round" />
-  <path d="M1010 1462 C 930 1500, 880 1560, 912 1622" fill="none" stroke="#d6f1fa" stroke-width="5" stroke-linecap="round" stroke-dasharray="22 30" opacity="0.85" />
-  <use href="#cicek-obegi" x="810" y="1520" />
-  <use href="#tas" x="830" y="1700" />
-  <use href="#agac" x="880" y="1880" transform="translate(880 1880) scale(0.8) translate(-880 -1880)" />
+  <path d="M1060 1440 C 920 1480, 850 1560, 895 1640 C 930 1710, 990 1740, 1060 1750"
+        fill="none" stroke="#1f4a37" stroke-width="64" stroke-linecap="round" />
+  <path d="M1060 1440 C 920 1480, 850 1560, 895 1640 C 930 1710, 990 1740, 1060 1750"
+        fill="none" stroke="url(#su)" stroke-width="42" stroke-linecap="round" />
+  <path d="M1015 1465 C 925 1500, 875 1565, 908 1630" fill="none" stroke="#bfe6f2" stroke-width="4" stroke-linecap="round" stroke-dasharray="16 36" opacity="0.7" />
+  <use href="#sazlik" x="830" y="1560" />
+  <use href="#tas" x="820" y="1720" />
+  <use href="#on-cali" x="900" y="1885" transform="translate(900 1885) scale(0.85) translate(-900 -1885)" />
+
+  <!-- Kenar gölgesi en üstte: süsleri de sahnenin içine çeker -->
+  <rect width="1000" height="2000" fill="url(#kenar)" />
 </svg>

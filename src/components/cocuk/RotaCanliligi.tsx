@@ -5,13 +5,13 @@ import styles from "./yolculuk.module.css";
  * Rotanın hareket katmanı (12 Eki 2026). Arka plan görseli durağandır ve bir
  * kez çizilir; canlılık bu ince katmandan gelir:
  *  - ateşböcekleri: Işıl'ın akrabaları, rota boyunca yavaşça süzülüp parlar;
- *  - bulut gölgeleri: çayırın üstünden ağır ağır geçer.
+ *  - akşam sisi: çayırın üstünden ağır ağır geçen açık bir pus.
  * Yalnız `transform` ve `opacity` canlandırılır (tablette tam ekran yeniden
  * boyama olmasın — PROJE-MODELI 3.1'deki yıldız parıltısı kararının gerekçesi).
  * "Hareketi azalt" tercihinde hepsi durur.
  */
 export function RotaCanliligi({ kitapSayisi }: { kitapSayisi: number }) {
-  const sayi = Math.min(28, 8 + kitapSayisi * 2);
+  const sayi = Math.min(36, 12 + kitapSayisi * 3);
   // Sabit tohumlu sözde rastgele dağılım: her açılışta aynı yerleşim, sunucu
   // ve tarayıcı çizimi birebir aynı.
   const ateslar = Array.from({ length: sayi }, (_, sira) => {

@@ -26,6 +26,7 @@ export default function MapPage() {
   return (
     <CocukKabugu
       ekranaSabit
+      rotaArkaplani
       profil={{
         ad: child?.name ?? "Gezgin",
         avatarAnahtari: child?.avatarType ?? "avatar-1",

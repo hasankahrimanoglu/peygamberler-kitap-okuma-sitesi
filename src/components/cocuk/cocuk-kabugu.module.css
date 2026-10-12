@@ -31,6 +31,24 @@
   cursor: pointer;
 }
 
+/*
+ * Ana ekranda dar ekran: manzara sayfanın tepesinden başlar. İki sınıf
+ * (`.kabuk.kabukRota`) global yıldız dokusundan önce gelsin diye.
+ */
+@media (max-width: 1023px) {
+  .kabuk.kabukRota {
+    background-color: color-mix(in srgb, var(--eylem) 38%, var(--zemin));
+    background-image: var(--rota-arkaplan);
+    background-position: center top;
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+  }
+
+  .kabukRota .selam b {
+    text-shadow: 0 1px 6px rgb(0 0 0 / 35%);
+  }
+}
+
 /* --------------------------------------------------------------- ÜST BAR */
 
 .ustBar {

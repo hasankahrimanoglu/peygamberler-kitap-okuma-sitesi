@@ -17,8 +17,8 @@
   --yesil-zemin: color-mix(in srgb, var(--eylem) 14%, var(--okuma-yuzey));
   --yesil-metin: color-mix(in srgb, var(--eylem) 70%, black);
   /* Rota arka planı gelmeden önce manzaranın altını sürdüren çayır rengi. */
-  --cayir: color-mix(in srgb, color-mix(in srgb, var(--eylem) 50%, var(--vurgu)) 78%, var(--okuma-yuzey));
-  --cayir-koyu: color-mix(in srgb, color-mix(in srgb, var(--eylem) 56%, var(--vurgu)) 82%, black);
+  /* Akşamüstü çayırı — rota görseli yüklenemezse görünen zemin rengi. */
+  --cayir: color-mix(in srgb, var(--eylem) 38%, var(--zemin));
 }
 
 .anaEkran :where(button) {
@@ -270,14 +270,15 @@
  * burada yalnız yerleşimi tanımlanır. "Yolun devamı" kartı da aynı çayırın
  * üstünde durur.
  */
+/*
+ * Dar ekranda manzara sayfanın kendisidir (CocukKabugu `rotaArkaplani`); rota
+ * şeffaftır ve kesintisiz devam eder. Geniş ekranda rota kendi kartında
+ * olduğu için görseli burada çizer.
+ */
 .rotaZemini {
   position: relative;
   overflow: hidden;
   padding-bottom: 2px;
-  background-color: var(--cayir);
-  background-position: center top;
-  background-repeat: repeat-y;
-  background-size: 100% auto;
 }
 
 .rota {
@@ -285,16 +286,6 @@
   z-index: 1;
 }
 
-/* Üstteki gece çerçevesinden manzaraya yumuşak geçiş. */
-.rotaZemini::before {
-  position: absolute;
-  z-index: 0;
-  inset: 0 0 auto;
-  height: 70px;
-  background: linear-gradient(var(--zemin), color-mix(in srgb, var(--zemin) 0%, transparent));
-  content: "";
-  pointer-events: none;
-}
 
 .yol {
   position: absolute;
@@ -552,7 +543,7 @@
   pointer-events: none;
 }
 
-/* Bulut gölgeleri: çayırın üstünden ağır ağır geçer. */
+/* Akşam sisi: çayırın üstünden ağır ağır geçen açık bir pus. */
 .bulutGolgesi {
   position: absolute;
   left: 0;
@@ -561,8 +552,8 @@
   border-radius: 50%;
   background: radial-gradient(
     closest-side,
-    color-mix(in srgb, var(--zemin) 14%, transparent),
-    color-mix(in srgb, var(--zemin) 0%, transparent)
+    color-mix(in srgb, var(--okuma-yuzey) 9%, transparent),
+    color-mix(in srgb, var(--okuma-yuzey) 0%, transparent)
   );
   transform: translateX(-110%);
   animation: bulutGec 58s linear infinite;
@@ -1164,7 +1155,7 @@
     min-height: 0;
     overflow: hidden;
     border-radius: 30px;
-    background: var(--cayir-koyu);
+    background: var(--cayir);
   }
 
   .rotaCercevesi > .duyuru {
@@ -1190,14 +1181,15 @@
     display: flex;
     min-height: 100%;
     flex-direction: column;
+    background-color: var(--cayir);
+    background-image: var(--rota-arkaplan);
+    background-position: center top;
+    background-repeat: repeat-y;
+    background-size: 100% auto;
   }
 
   .rotaZemini > .yolunDevami {
     margin-top: auto;
-  }
-
-  .rotaZemini::before {
-    display: none;
   }
 
   .yolGolgesi {

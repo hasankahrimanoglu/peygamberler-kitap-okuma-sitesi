@@ -139,7 +139,7 @@ export function YolculukRotasi({
   return (
     <div
       className={styles.rotaZemini}
-      style={{ backgroundImage: `url("${ROTA_ARKAPLANI}")` }}
+      style={{ "--rota-arkaplan": `url("${ROTA_ARKAPLANI}")` } as CSSProperties}
     >
       <RotaCanliligi kitapSayisi={kitaplar.length} />
       <div ref={kokRef} className={styles.rota} style={{ height: yukseklik }}>

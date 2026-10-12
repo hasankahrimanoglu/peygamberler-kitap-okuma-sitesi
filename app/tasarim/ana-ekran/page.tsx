@@ -48,6 +48,7 @@ export default function AnaEkranOnizleme() {
   return (
     <CocukKabugu
       ekranaSabit
+      rotaArkaplani
       profil={{ ad: "Elif", avatarAnahtari: "avatar-3" }}
       ozet={{
         unvan: unvan.unvan,

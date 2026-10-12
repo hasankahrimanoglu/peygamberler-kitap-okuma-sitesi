@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useState, type CSSProperties, type ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ROTA_ARKAPLANI } from "../../lib/varlikYollari";
 import { CocukAvatari, Ikon, type IkonAdi } from "../ui";
 import { ProfilKarti } from "./ProfilKarti";
 import styles from "./cocuk-kabugu.module.css";
@@ -42,18 +43,38 @@ type CocukKabuguProps = {
    * kayar (harita). Liste sayfalarında sayfanın kendisi kayar.
    */
   ekranaSabit?: boolean;
+  /**
+   * Dar ekranda (telefon, tablet dikey) rota manzarası sayfanın en üstüne kadar
+   * uzanır; profil satırı ve "Sıradaki bölümün" kartı onun üstünde durur.
+   * Lacivert bir üst bant kalmaz (Hasan, 12 Eki 2026). Geniş ekranda çerçeve
+   * yine gece mavisidir.
+   */
+  rotaArkaplani?: boolean;
 };
 
 /**
  * Çocuk tarafının ortak kabuğu (KARAR 12 Eki 2026 — PROJE-MODELI 3.10.6).
  * Hamburger menü yoktur: çocuk kendi adına dokununca profil kartı açılır.
  */
-export function CocukKabugu({ profil, ozet, children, ekranaSabit = false }: CocukKabuguProps) {
+export function CocukKabugu({
+  profil,
+  ozet,
+  children,
+  ekranaSabit = false,
+  rotaArkaplani = false,
+}: CocukKabuguProps) {
   const yol = usePathname();
   const [profilAcik, setProfilAcik] = useState(false);
 
   return (
-    <div className={`tema-cocuk zemin-yildizli ${styles.kabuk} ${ekranaSabit ? styles.ekranaSabit : ""}`}>
+    <div
+      className={`tema-cocuk zemin-yildizli ${styles.kabuk} ${ekranaSabit ? styles.ekranaSabit : ""} ${
+        rotaArkaplani ? styles.kabukRota : ""
+      }`}
+      style={
+        rotaArkaplani ? ({ "--rota-arkaplan": `url("${ROTA_ARKAPLANI}")` } as CSSProperties) : undefined
+      }
+    >
       <header className={styles.ustBar}>
         <Link href="/map" className={styles.logo}>
           <Ikon ad="harita" boyut={26} />

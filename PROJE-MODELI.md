@@ -166,6 +166,11 @@ sürekli repaint pahalı) ya da `.zemin-yildizli`'ye pseudo-element katmanı ekl
 ve yığılma sırası kırılgan olurdu. Kazanç (ince bir hareket) maliyeti karşılamaz.
 Yeniden ÖNERİLMEZ; istenirse ayrı bir kararla ele alınır.
 
+> **REVİZE — 12 Ekim 2026 (bkz. 3.10.1):** Ana ekran sahnesi artık parlak
+> gündüz değil, derin yeşil bir "akşamüstü çayırı"dır (Hasan: koyu zeminde kitap
+> yuvarlakları daha güzel duruyor). Sahne yine karanlık/siyah değildir; renkli,
+> sıcak ışıklı ve okunaklıdır. Okuma ekranı krem kalır.
+
 **KOYU ÇERÇEVE / AYDINLIK SAHNE (REVİZE — 29 Temmuz 2026, Hasan).** Çocuk
 tarafı baştan sona koyu DEĞİLDİR. Keşif haritasında ayrım şudur:
 - **Çerçeve koyu kalır:** üst bar, bölge şeridi, Keşif İskelesi. Haritayı
@@ -747,8 +752,18 @@ testi henüz yapılmadı; kararlar gözlem ve ölçüme dayanır.
   (devam/onayla, 3.3) değişmez.**
 - **Işıl "Buradasın" (KARAR — 12 Ekim 2026, Hasan):** ana ekranda çocuğun
   okuduğu kitabın yanında Işıl ve "Buradasın" balonu durur (3.10.5).
-- **Rota arka planı (KARAR — 12 Ekim 2026, Hasan):** bölge görselleri yerine
-  **kodla çizilmiş, dikey olarak dikişsiz tekrar eden bir çayır**
+- **Rota arka planı (KARAR — 12 Ekim 2026, Hasan; aynı gün revize):** bölge
+  görselleri yerine **kodla çizilmiş, dikey olarak dikişsiz tekrar eden bir
+  "akşamüstü çayırı"**. İlk sürüm açık pastel yeşildi; Hasan basit ve soluk
+  buldu, koyu zeminde kitap yuvarlaklarının daha güzel durduğunu söyledi.
+  Geçerli sürüm derin yeşil zemin, çimen dokusu, kenarlarda koyulaşma, orta
+  sütuna düşen sıcak ışık havuzları; kenarlarda **zeytin ağaçları**, sazlıklı
+  dere, gece çiçekleri ve taşlar (bu topraklara özgü). Altın halkalar, krem
+  levhalar, ışık izi ve ateşböcekleri bu zeminde parlar.
+  **Dar ekranda (telefon, tablet dikey) manzara sayfanın en üstünden başlar:**
+  profil satırı ve "Sıradaki bölümün" kartı onun üstünde durur, lacivert üst
+  bant kalmaz (`CocukKabugu rotaArkaplani`). Geniş ekranda çerçeve gece mavisi,
+  rota kendi kartındadır. Ayrıntı:
   (`public/harita/rota-cayir.svg`, yol `varlikYollari.ts:ROTA_ARKAPLANI`).
   Süsler (ağaç, tepe, dere, çiçek, taş) iki kenardadır; orta sütun durakların ve
   yolun alanıdır, sakin bırakılır. Üstünde ince bir **hareket katmanı** vardır
