@@ -3,7 +3,7 @@
 import { useState, type CSSProperties, type ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ROTA_ARKAPLANI } from "../../lib/varlikYollari";
+import { ROTA_ARKAPLANI, SITE_ARKAPLANI } from "../../lib/varlikYollari";
 import { CocukAvatari, Ikon, type IkonAdi } from "../ui";
 import { ProfilKarti } from "./ProfilKarti";
 import styles from "./cocuk-kabugu.module.css";
@@ -81,7 +81,12 @@ export function CocukKabugu({
         rotaArkaplani ? styles.kabukRota : ""
       } ${acikZemin ? styles.kabukAcik : ""}`}
       style={
-        rotaArkaplani ? ({ "--rota-arkaplan": `url("${ROTA_ARKAPLANI}")` } as CSSProperties) : undefined
+        rotaArkaplani
+          ? ({
+              "--rota-arkaplan": `url("${ROTA_ARKAPLANI}")`,
+              "--site-arkaplan": `url("${SITE_ARKAPLANI}")`,
+            } as CSSProperties)
+          : undefined
       }
     >
       <header className={styles.ustBant}>

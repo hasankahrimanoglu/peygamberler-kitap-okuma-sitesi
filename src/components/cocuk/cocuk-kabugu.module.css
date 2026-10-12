@@ -19,6 +19,15 @@
   /* Üst bant ve alt menü aynı çerçeve rengidir. */
   --cerceve: color-mix(in srgb, var(--zemin) 92%, black);
   --alt-menu-yuksekligi: 68px;
+  /*
+   * Geniş ekranda üst menü, rota ve kitap paneli aynı köşe yarıçapını ve aynı
+   * kenar boşluğunu paylaşır (REVİZE 12 Eki 2026, Hasan). Ana ekranın kartları
+   * (yolculuk.module.css) bu değişkenleri kabuktan miras alır.
+   */
+  --kart-yaricap: 28px;
+  --kart-boslugu: 24px;
+  --kenar-boslugu: 40px;
+  --icerik-genisligi: 1360px;
 
   min-height: 100svh;
   color: var(--murekkep);
@@ -430,11 +439,41 @@
 /* ---------------------------------------------------------- GENİŞ EKRAN */
 
 @media (min-width: 1024px) {
+  /*
+   * Ana ekran: yıldızlı gece manzarası zemindir; menü ve kartlar üstünde ayrı
+   * durur (REVİZE 12 Eki 2026, Hasan).
+   */
+  .kabuk.kabukRota {
+    background-color: var(--zemin);
+    background-image: var(--site-arkaplan);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /*
+   * Üst menü kenardan kenara bant değil, içerik genişliğinde yuvarlak köşeli
+   * bir karttır; altındaki kartlarla arasında boşluk vardır.
+   */
+  .ustBant {
+    padding: var(--kart-boslugu) var(--kenar-boslugu) 0;
+    border-bottom: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
   .ustBar {
     display: grid;
-    height: 84px;
+    width: min(100%, var(--icerik-genisligi));
+    height: 76px;
     grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-    padding: 0 24px;
+    padding: 0 14px 0 24px;
+    border: 1px solid color-mix(in srgb, var(--murekkep) 14%, transparent);
+    border-radius: var(--kart-yaricap);
+    background: color-mix(in srgb, var(--cerceve) 88%, transparent);
+    box-shadow: 0 14px 34px rgb(0 0 0 / 28%);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
   }
 
   .logo {
@@ -505,8 +544,8 @@
   }
 
   .profilKarti {
-    top: 84px;
-    right: 24px;
+    top: calc(var(--kart-boslugu) + 76px + 10px);
+    right: var(--kenar-boslugu);
     bottom: auto;
     left: auto;
     width: 390px;
@@ -525,7 +564,7 @@
 /* Tam geniş düzen: sekmeler ve profil adı rahatça sığar. */
 @media (min-width: 1280px) {
   .ustBar {
-    padding: 0 40px;
+    padding: 0 16px 0 32px;
   }
 
   .logo {
@@ -542,7 +581,7 @@
   }
 
   .profilKarti {
-    right: max(40px, calc((100vw - 1440px) / 2 + 40px));
+    right: max(var(--kenar-boslugu), calc((100vw - var(--icerik-genisligi)) / 2));
   }
 }
 

@@ -87,6 +87,7 @@ function AkisBlogu({
   acikKelime,
   onKelime,
   ipucu,
+  gorselSirasi = 0,
 }: {
   block: BookContentBlock;
   blokAnahtari: string;
@@ -94,27 +95,40 @@ function AkisBlogu({
   onKelime: (id: string | null) => void;
   /** Bölümün ilk sözlük kelimesinde Işıl'ın tek seferlik ipucu. */
   ipucu: boolean;
+  /** Bölüm içindeki sahne görseli sırası; süslemenin yönünü seçer. */
+  gorselSirasi?: number;
 }) {
   if (block.type === "witness") return null;
 
   if (block.type === "image") {
+    /*
+     * Albüm fotoğrafı (KARAR 12 Eki 2026, Hasan — PROJE-MODELI 3.10.3): iki
+     * köşesinden bantla yapıştırılmış düz fotoğraf. Bölüm içindeki sıraya göre
+     * süsleme yatayda aynalanır (bant renkleri ve açıları yer değiştirir);
+     * görselin kendisi çevrilmez. Görsel yine 16:9 .jpg üretilir.
+     */
+    const yon = gorselSirasi % 2 === 0 ? "sol" : "sag";
     return (
-      <figure className={styles.sahne}>
-        {/*
-          `portraitSrc` BİLEREK kullanılmaz. 3:4 dikey kırpımlar, görselin metnin
-          yanındaki dar panele sığdırıldığı sayfalı düzen için üretilmişti. Tek
-          sütun kaydırmada görsel akışın tam genişliğinde yatay bir bant olarak
-          durur.
-        */}
-        <YedekliGorsel
-          src={block.src}
-          yedekSrc={YEDEK.sahne}
-          alt={block.alt}
-          width={800}
-          height={450}
-          className={styles.sahneResmi}
-        />
-        {block.caption ? <figcaption>{block.caption}</figcaption> : null}
+      <figure className={styles.sahne} data-yon={yon}>
+        <span className={`${styles.bant} ${styles.bantSol}`} aria-hidden="true" />
+        <span className={`${styles.bant} ${styles.bantSag}`} aria-hidden="true" />
+        <div className={styles.fotoKagidi}>
+          {/*
+            `portraitSrc` BİLEREK kullanılmaz. 3:4 dikey kırpımlar, görselin metnin
+            yanındaki dar panele sığdırıldığı sayfalı düzen için üretilmişti. Tek
+            sütun kaydırmada görsel akışın tam genişliğinde yatay bir bant olarak
+            durur.
+          */}
+          <YedekliGorsel
+            src={block.src}
+            yedekSrc={YEDEK.sahne}
+            alt={block.alt}
+            width={800}
+            height={450}
+            className={styles.sahneResmi}
+          />
+          {block.caption ? <figcaption>{block.caption}</figcaption> : null}
+        </div>
       </figure>
     );
   }
@@ -143,9 +157,20 @@ function AkisBlogu({
           {block.after}
         </p>
         {acik ? (
+          /*
+           * Anlamı Işıl getirir (REVİZE 12 Eki 2026, Hasan — PROJE-MODELI
+           * 3.10.5): kelimeye dokununca uçarak kartın köşesine konar. Tanım
+           * içerik verisinden gelir; Işıl kendi cümlesini eklemez.
+           */
           <div className={styles.kelimeAnlami} id={`${blokAnahtari}-aciklama`} role="status">
-            <Ikon ad="kitap" boyut={20} />
-            <p>
+            <span className={styles.kelimeIsil}>
+              <Isil poz="konusma" boyut={92} className={styles.kelimeIsilSvg} />
+            </span>
+            <p className={styles.kelimeEtiketi}>
+              <Ikon ad="kitap" boyut={16} />
+              Kelimenin anlamı
+            </p>
+            <p className={styles.kelimeTanimi}>
               <strong>{block.word}</strong>
               {block.meaning}
             </p>
@@ -174,7 +199,11 @@ function AkisBlogu({
  * açılış bloğu gelir, hikâye ilk ekranda başlar. İlerleme adım çubuğundadır
  * (telefon / tablet dikey: üstte yatay; tablet yatay / masaüstü: solda sütun).
  */
-export function AtlasScrollReader({ chapter, onProgressSync, tekrarOkumaOnizleme }: AtlasScrollReaderProps) {
+export function AtlasScrollReader({
+  chapter,
+  onProgressSync,
+  tekrarOkumaOnizleme,
+}: AtlasScrollReaderProps) {
   const router = useRouter();
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const sayfaRef = useRef<HTMLElement | null>(null);
@@ -235,6 +264,18 @@ export function AtlasScrollReader({ chapter, onProgressSync, tekrarOkumaOnizleme
       if (sira >= 0) return `${bolum.key}-${sira}`;
     }
     return null;
+  }, [akis]);
+
+  // Sahne görsellerinin bölüm içindeki sırası (süsleme sırayla aynalansın diye).
+  const gorselSiralari = useMemo(() => {
+    const sira = new Map<string, number>();
+    for (const bolum of akis) {
+      if (bolum.type !== "hikaye") continue;
+      bolum.bloklar.forEach((block, index) => {
+        if (block.type === "image") sira.set(`${bolum.key}-${index}`, sira.size);
+      });
+    }
+    return sira;
   }, [akis]);
 
   const adimaGit = useCallback(
@@ -519,26 +560,26 @@ export function AtlasScrollReader({ chapter, onProgressSync, tekrarOkumaOnizleme
     if (bolum.type === "acilis") {
       const kapak = chapter.coverIllustration;
       return (
-        <header className={styles.acilis}>
-          <YedekliGorsel
-            src={kapak?.src ?? kitapKapagi(bookKey)}
-            yedekSrc={kapak ? YEDEK.sahne : YEDEK.kitapKapagi}
-            alt={kapak?.alt ?? `${chapter.bookName ?? "Kitap"} kapağı`}
-            width={1200}
-            height={675}
-            className={styles.acilisResmi}
-          />
-          <div className={styles.acilisMetni}>
-            <p className={styles.kunye}>{kunye}</p>
-            <h1>{bolumAdi}</h1>
-          </div>
-          {/* Tablet yatay ve masaüstünde rozet yan sütunda durur. */}
-          <div className={`${styles.acilisRozeti} ${tekrarOkuma ? styles.rozetKazanilmis : ""}`}>
-            <YedekliGorsel src={rozetYolu} yedekSrc={YEDEK.rozet} alt="" width={52} height={52} />
-            <span>
-              <small>{tekrarOkuma ? "Bu rozeti kazandın" : "Bu bölümün rozeti"}</small>
-              <strong>{chapter.badgeName}</strong>
-            </span>
+        <header className={styles.kapakAcilis}>
+          <div className={styles.kapakCerceve}>
+            <YedekliGorsel
+              src={kapak?.src ?? kitapKapagi(bookKey)}
+              yedekSrc={kapak ? YEDEK.sahne : YEDEK.kitapKapagi}
+              alt={kapak?.alt ?? `${chapter.bookName ?? "Kitap"} kapağı`}
+              width={1200}
+              height={675}
+              className={styles.acilisResmi}
+            />
+            <div className={styles.kapakYazisi}>
+              <p className={styles.kapakKunye}>{kunye}</p>
+              <h1>{bolumAdi}</h1>
+              {/* Tablet yatay ve masaüstünde rozet yan sütunda durur. */}
+              <div className={`${styles.kapakRozeti} ${tekrarOkuma ? styles.rozetKazanilmis : ""}`}>
+                <YedekliGorsel src={rozetYolu} yedekSrc={YEDEK.rozet} alt="" width={88} height={88} />
+                <small>{tekrarOkuma ? "Bu rozeti kazandın" : "Bu bölümün rozeti"}</small>
+                <strong>{chapter.badgeName}</strong>
+              </div>
+            </div>
           </div>
         </header>
       );
@@ -557,6 +598,7 @@ export function AtlasScrollReader({ chapter, onProgressSync, tekrarOkumaOnizleme
                 acikKelime={acikKelime}
                 onKelime={kelimeAc}
                 ipucu={sozlukIpucu && anahtar === ilkKelimeAnahtari}
+                gorselSirasi={gorselSiralari.get(anahtar)}
               />
             );
           })}

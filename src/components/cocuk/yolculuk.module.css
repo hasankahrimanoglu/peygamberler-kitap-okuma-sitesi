@@ -1136,11 +1136,12 @@
 @media (min-width: 1024px) {
   .anaEkran {
     display: flex;
-    width: min(100%, 1440px);
+    width: min(100%, calc(var(--icerik-genisligi, 1360px) + 2 * var(--kenar-boslugu, 40px)));
     height: 100%;
     flex-direction: column;
     margin: 0 auto;
-    padding: 2px 40px 30px;
+    /* Üst menüyle arasında ve altta aynı boşluk (REVİZE 12 Eki 2026, Hasan). */
+    padding: var(--kart-boslugu, 24px) var(--kenar-boslugu, 40px);
   }
 
   .uyari {
@@ -1162,14 +1163,16 @@
     min-height: 0;
     flex: 1;
     grid-template-columns: minmax(0, 1fr) 470px;
-    gap: 26px;
+    gap: var(--kart-boslugu, 24px);
   }
 
   .rotaCercevesi {
     min-height: 0;
     overflow: hidden;
-    border-radius: 30px;
+    border: 1.5px solid color-mix(in srgb, var(--murekkep) 22%, transparent);
+    border-radius: var(--kart-yaricap, 28px);
     background: var(--cayir);
+    box-shadow: 0 18px 40px rgb(0 0 0 / 30%);
   }
 
   .rotaCercevesi > .duyuru {
@@ -1245,8 +1248,9 @@
     min-height: 0;
     overflow: hidden;
     flex-direction: column;
-    border-radius: 30px;
+    border-radius: var(--kart-yaricap, 28px);
     background: var(--krem);
+    box-shadow: 0 18px 40px rgb(0 0 0 / 30%);
   }
 
   .panelKaydir {

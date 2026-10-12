@@ -136,13 +136,21 @@ export function sesliAnlatim(bookKey: string, bolumNo: number) {
 }
 
 /**
- * Ana ekran rotasının arka planı (KARAR 12 Eki 2026 — PROJE-MODELI 3.10.1).
+ * Ana ekran rotasının arka planı (KARAR 12 Eki 2026 — PROJE-MODELI 3.10.1;
+ * REVİZE 12 Eki 2026, Hasan: kodla çizilmiş SVG çayırın yerine boyalı görsel).
  *
- * Kodla çizilmiş, dikey olarak dikişsiz tekrar eden çayır (SVG). Yol uzadıkça
- * tekrar eder; hareket ayrı katmandadır (`RotaCanliligi`). İleride boyalı bir
- * görselle değiştirilecekse yalnız bu yol değişir.
+ * 1122×2804 .jpg; alt ve üst kenarı dikişsiz birleşir. Yol uzadıkça CSS onu
+ * aralıksız alt alta tekrar eder (`repeat-y`); hareket ayrı katmandadır
+ * (`RotaCanliligi`).
  */
-export const ROTA_ARKAPLANI = "/harita/rota-cayir.svg";
+export const ROTA_ARKAPLANI = "/harita/rota-harita-arkaplan.jpg";
+
+/**
+ * Çocuk ana ekranının geniş ekran (≥ 1024 px) zemini: yıldızlı gece manzarası
+ * (KARAR 12 Eki 2026, Hasan). Üst menü ile rota ve kitap paneli bu zeminin
+ * üstünde ayrı kartlar olarak durur. Dar ekranda görünmez.
+ */
+export const SITE_ARKAPLANI = "/site-genel-arkaplan.jpg";
 
 /*
  * Rehber karakter Işıl görsel dosya DEĞİLDİR: Faz D'de (12 Eki 2026) kodla

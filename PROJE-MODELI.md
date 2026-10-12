@@ -754,6 +754,15 @@ testi henüz yapılmadı; kararlar gözlem ve ölçüme dayanır.
   (devam/onayla, 3.3) değişmez.**
 - **Işıl "Buradasın" (KARAR — 12 Ekim 2026, Hasan):** ana ekranda çocuğun
   okuduğu kitabın yanında Işıl ve "Buradasın" balonu durur (3.10.5).
+- **Rota arka planı — boyalı görsel (REVİZE — 12 Ekim 2026, Hasan):** kodla
+  çizilmiş çayırın yerine Hasan'ın ürettiği boyalı çayır görseli geçer:
+  `public/harita/rota-harita-arkaplan.jpg` (1122×2804, alt ve üst kenarı
+  dikişsiz birleşir; yol `varlikYollari.ts:ROTA_ARKAPLANI`). Kartın/sayfanın
+  genişliğine oturur ve yol uzadıkça **aralıksız alt alta tekrar eder**
+  (`repeat-y`); rota uzatılırken yeni görsel üretmek gerekmez. Hareket katmanı
+  (`RotaCanliligi`) aynen kalır. Dosya çözünürlüğü korunarak sıkıştırıldı
+  (2,4 MB → 712 KB). Eski `rota-cayir.svg` artık kullanılmıyor.
+  Aşağıdaki ilk karar metni tarihçe için durur.
 - **Rota arka planı (KARAR — 12 Ekim 2026, Hasan; aynı gün revize):** bölge
   görselleri yerine **kodla çizilmiş, dikey olarak dikişsiz tekrar eden bir
   "akşamüstü çayırı"**. İlk sürüm açık pastel yeşildi; Hasan basit ve soluk
@@ -839,10 +848,21 @@ kazanılmış bölüm, `&hata=1` kayıt hatası, `?bolum=idris-4` son bölüm). 
   Ayrı ilerleme çubuğu yoktur. Kırılım: < 1024 px yatay çubuk üst barın altında,
   ≥ 1024 px solda yapışkan adım sütunu + kazanılacak rozet kartı (açılıştaki
   rozet satırı bu genişlikte tekrar edilmez).
-- **Açılış bloğu:** 16:9 bölüm sahnesi + "Hz. Âdem · 2. bölüm" künyesi + bölüm
-  adı + "Bu bölümün rozeti" satırı. Telefonda 351 px (eskiden 600 px kapak);
-  bölüm özeti (`ozet`) açılışta gösterilmez. Rozeti önceden kazanılmış bölümde
-  satır "Bu rozeti kazandın" der ve rozet tam renklidir.
+- ~~**Açılış bloğu:** 16:9 bölüm sahnesi + "Hz. Âdem · 2. bölüm" künyesi +
+  bölüm adı + "Bu bölümün rozeti" satırı (sahnenin altında, sola yaslı).~~
+  **REVİZE — 12 Ekim 2026 (Hasan: "kapak görseli boş kalıyor, alttaki sola
+  yaslı bilgiler estetik durmuyor"):** künye ve bölüm adı **kapak görselinin
+  tam ortasına** yazılır. Telefon ve tablet dikeyde rozet de kapağın içindedir
+  (künye → bölüm adı → rozet görseli → "Bu bölümün rozeti" → rozet adı, hepsi
+  ortalı); ≥ 1024 px'te rozet sol sütunda kalır, kapakta yalnız yazılar durur.
+  Görsel olduğu gibi kalır; okunurluk için yalnız yazının arkasına kenarlara
+  doğru sönen yumuşak bir gece mavisi ışık ve yazı gölgesi verilir (tam
+  karartma yok). Telefonda (< 640 px) kapak **4:3** kırpılır ki rozet ve adı
+  küçülmeden sığsın; ≥ 640 px'te 16:9. Uzun bölüm adı iki satıra inerse kapak
+  taşmaz, uzar. Kapak görsellerinde orta alan yazıya ayrılır; sahnenin önemli
+  kısmı tam ortaya ya da (telefon kırpımı yüzünden) en kenara konmaz. Bölüm
+  özeti (`ozet`) açılışta gösterilmez. Rozeti önceden kazanılmış bölümde
+  "Bu rozeti kazandın" yazar ve rozet tam renklidir.
 - **Üst bar:** ← Bölümler (telefonda yalnız ok) · bölüm adı + künye · **Dinle**
   (lacivert, ikincil eylem) · **Aa**. "Dinle"ye basınca üst barın altında ses
   şeridi açılır (oynat/duraklat, süre, konum, kapat); ses dosyası yoksa hiçbir
@@ -858,6 +878,28 @@ kazanılmış bölüm, `&hata=1` kayıt hatası, `?bolum=idris-4` son bölüm). 
 - **Işıl'ın sözlük ipucu** ("Yeşil kelimelere dokun, anlamını öğren.") bölümün
   ilk sözlük kelimesinin üstünde durur; çocuk herhangi bir kelimeye bir kez
   dokununca bu cihazda bir daha görünmez.
+- **Sahne görselleri: albüm fotoğrafı (KARAR — 12 Ekim 2026, Hasan: "düz,
+  köşeleri oval görsel istemiyorum"; beş seçenekten B+ seçildi, ardından
+  sadeleştirildi).** Hikâyenin içindeki her sahne, sayfaya iki üst
+  köşesinden bantla yapıştırılmış bir fotoğraf gibi durur: sıcak beyaz kağıt
+  (dört kenarda eşit pay), alt köşelerde kalkan kağıt gölgesi. **Tek tasarım
+  vardır;** bölüm içindeki sıraya göre süsleme yatayda aynalanır (1. görsel
+  altın bant solda / yeşil sağda, 2. görsel tersi…; görselin kendisi
+  çevrilmez). Fotoğraf **düz ve ortalıdır** (eğim, köşelik, tek bant ve alt
+  şeritteki yıldız kalktı). Bantlar telefonda küçüktür (64×20 px), ≥ 640 px'te
+  116×32 px. Kaydırınca fotoğraf **eğik başlar, dönerek düz yerine oturur**
+  (yalnız `animation-timeline` destekleyen tarayıcıda; "hareketi azalt"ta
+  yok). Alt yazı (`caption`) varsa görselin altına el yazısıyla yazılır.
+  **Görsel üretimi değişmez:** dosya yine 16:9 `.jpg`.
+- **Sözlük kelimesi ve anlam kartı (REVİZE — 12 Ekim 2026, Hasan: kutu ve
+  dokununca koyu yeşil olan kelime beğenilmedi; anlamı Işıl göstersin):**
+  kelime yeşil ve kalındır, altında satırın alt yarısını boyayan yumuşak bir
+  fosforlu kalem izi vardır (dolu kutu ve noktalı çizgi kalktı). Açıkken iz
+  kelimenin tamamını sarar, rengi değişmez. Anlam, paragrafın altında
+  krem-beyaz, ince altın kenarlı bir kartta açılır: "Kelimenin anlamı" etiketi,
+  büyük yeşil kelime, tanım. **Işıl sağ üstten uçarak kartın sol üst köşesine
+  konar** (konuşma pozu), feneri kartın köşesini aydınlatır. Tanım içerik
+  verisinden (`meaning`) gelir; Işıl kendi cümlesini eklemez.
 - **Ne öğrendik?** üç kart yerine tek sütunlu sıkı liste (telefonda 710 → 325 px).
 - **Rozet anı (REVİZE — 12 Eki 2026, Hasan'ın geri bildirimi):** ilk sürüm
   tam genişlik, üst kenarı kubbe gibi kıvrılan bir sahneydi. Hasan tablet
@@ -946,11 +988,14 @@ Bugüne Taşı, Büyük Final Testi. "Kazanımlarım → Ödüllerim" gerekçesi
   okumanın parçasıdır. İleride balona isteğe bağlı küçük bir "dinle" düğmesi
   eklenebilir.
 - **Yalnız şu anlarda görünür:** ilk giriş (bir kez), ilk sözlük kelimesi (bir
-  kez), "Sen Olsaydın" girişi, rozet ve madalya anı (konuşmaz, rozetin yanında
+  kez), **sözlük kelimesinin anlam kartı (her açılışta, kart kapanınca
+  gider — REVİZE 12 Eki 2026, Hasan)**, "Sen Olsaydın" girişi, rozet ve madalya anı (konuşmaz, rozetin yanında
   uçar), yeni kitap duyurusu (bir kez), yolun ucu, boş ekranlar ve **ana ekranda
   çocuğun okuduğu kitabın yanında "Buradasın"** (12 Eki 2026). Cümle en fazla
   12 kelimedir.
-- **Kesin sınırlar:** hikâye metninin içinde görünmez; peygamberler ve dinî
+- **Kesin sınırlar:** hikâye metninin içinde görünmez (anlam kartı hikâye
+  metninin dışında ayrı bir yüzeydir; Işıl kartı getirir, tanımı kendisi
+  söylemez — tanım içerik verisidir); peygamberler ve dinî
   konular hakkında yorum yapmaz; doğru/yanlış söylemez; çocuğu övmez veya
   derecelendirmez; okuma sırasında ekranda durmaz.
 - ~~Çizim Hasan'dadır: en az üç poz, 512×512 şeffaf PNG.~~ **REVİZE — 12 Ekim
@@ -1004,6 +1049,18 @@ Bugüne Taşı, Büyük Final Testi. "Kazanımlarım → Ödüllerim" gerekçesi
     görünür. Eskiden bu aralıkta logo iki satıra düşüyor, sekmeler ve profil
     birbirine giriyordu.
   - ≥1280 px tam düzendir.
+- **REVİZE 12 Ekim 2026 (Hasan) — geniş ekran (≥ 1024 px) kart düzeni:** üst
+  menü kenardan kenara bant değildir; **içerik genişliğinde (en çok 1360 px),
+  yuvarlak köşeli, yarı saydam gece mavisi bir karttır.** Menü ile altındaki
+  kartlar (rota, kitap paneli) arasında ve sayfanın altında aynı boşluk
+  (24 px) vardır; yan boşluk 40 px. **Üç kartın köşe yarıçapı eşittir
+  (28 px)**; değerler `cocuk-kabugu.module.css` içindeki `--kart-yaricap`,
+  `--kart-boslugu`, `--kenar-boslugu`, `--icerik-genisligi` değişkenlerinden
+  gelir, ana ekran bunları miras alır. Ana ekranın zemini yıldızlı gece
+  manzarasıdır (`public/site-genel-arkaplan.jpg`, `varlikYollari.ts:SITE_ARKAPLANI`;
+  kapla, alttan hizalı). Ödüllerim · Kelimelerim · Görevlerim'de zemin açık
+  krem kalır, menü aynı kart biçimindedir. Telefon ve tablet dikey değişmez
+  (yalnız rota görseli yenilendi).
 - Veli Paneli bağlantısı Faz 7'de PIN arkasına alınır.
 
 #### 3.10.7 Kitap ve bölümleri (KARAR — 12 Ekim 2026, Hasan)
@@ -1317,7 +1374,9 @@ public/
     final-kapisi.svg                   Büyük Final Testi durağının ikonu
   bolgeler/     bolge-{regionId}.png   keşif bölgesi sahne arka planı (7 adet)
   harita/
-    rota-cayir.svg                     ana ekran rotasının kodla çizilmiş arka planı (3.10.1)
+    rota-harita-arkaplan.jpg           ana ekran rotasının boyalı, dikişsiz tekrar eden arka planı (3.10.1)
+    rota-cayir.svg                     (kullanılmıyor — eski kodla çizilmiş çayır)
+  site-genel-arkaplan.jpg              çocuk ana ekranının geniş ekran gece zemini (3.10.6)
   sesli-anlatim/
     placeholder-ses.mp3                ses yer tutucusu (6.5)
     hz-{bookKey}/hz-{bookKey}-bolum-{n}.mp3   bölüm başına bir anlatım (12 Eki 2026)

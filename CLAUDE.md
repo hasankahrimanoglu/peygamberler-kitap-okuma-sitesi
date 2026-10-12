@@ -184,9 +184,13 @@ sayısından); okuma ekranı tamamen açık zemin, adım çubuğu, rozetten sonr
 sıradaki bölüm; mekân metaforları (İskele/Rota/Kapı/Durak/Atlas) arayüz metninden
 çıkar, "Kazanımlarım → Ödüllerim"; rehber karakter **Işıl** (ateşböceği, yalnız
 metin balonu, hikâyede ve dinî yorumda asla; ana ekranda okunan kitabın yanında
-"Buradasın"). Hamburger menü yerine profil kartı; ayrı bölüm rotası sayfası yerine
+"Buradasın"; sözlük kelimesine dokununca anlam kartını uçarak getirir — tanımı
+kendisi söylemez, tanım içerik verisidir). Okuma açılışında künye, bölüm adı ve
+(< 1024 px) rozet kapak görselinin ortasındadır (REVİZE 12 Eki 2026). Hamburger menü yerine profil kartı; ayrı bölüm rotası sayfası yerine
 alttan sayfa / sağ panel; okunan yol altın ışık izi, durak halkası = kitap ilerlemesi;
-rota arka planı kodla çizilmiş, dikişsiz tekrar eden hareketli çayır. Velinin okuma
+rota arka planı boyalı, dikişsiz alt alta tekrar eden çayır görseli
+(`ROTA_ARKAPLANI`) + hareket katmanı; geniş ekranda gece manzarası zemin,
+üst menü ve kartlar eşit köşeli, aralarında boşluklu (REVİZE 12 Eki 2026). Velinin okuma
 sırası ayarı YAPILMAZ.
 Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
 
