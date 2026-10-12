@@ -4,19 +4,14 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
 import type { BookContentBlock } from "../../data/books";
-import {
-  sonrakiBolumAdiniBul,
-  type ChapterData,
-  type DecisionOption,
-} from "../../data/demoChapters";
-import { Ikon, YedekliGorsel, type IkonAdi } from "../ui";
+import { sonrakiBolumuBul, type ChapterData, type DecisionOption } from "../../data/demoChapters";
+import { quizConfig } from "../../data/quizzes";
+import { Ikon, YedekliGorsel } from "../ui";
+import { IsilGorseli } from "../cocuk/IsilGorseli";
 import { dbKitabiBul } from "../../lib/child/yolculuk";
-import {
-  durakId,
-  okumaAkisiniOlustur,
-  type AkisDurakId,
-  type OkumaAkisBolumu,
-} from "./akis";
+import { adimIdsi, okumaAdimlari, okumaAkisiniOlustur, type AdimId, type OkumaAkisBolumu } from "./akis";
+import { AdimCubugu } from "./AdimCubugu";
+import { RozetKutlamasi, type RozetDurumu } from "./RozetKutlamasi";
 import styles from "./okuma-akisi.module.css";
 import { kitapKapagi, rozetGorseli, YEDEK } from "../../lib/varlikYollari";
 
@@ -30,32 +25,31 @@ type ProgressSyncResult = {
 type AtlasScrollReaderProps = {
   chapter: ChapterData;
   onProgressSync: () => Promise<ProgressSyncResult>;
+  /**
+   * Yalnız tasarım önizlemesi için (`/tasarim/okuma`): verilirse rozetin daha
+   * önce kazanılıp kazanılmadığı Supabase'den sorulmaz.
+   */
+  tekrarOkumaOnizleme?: boolean;
 };
 
 const YAZI_SINIFLARI = [styles.yaziKucuk, styles.yaziNormal, styles.yaziBuyuk] as const;
 const YAZI_ADLARI = ["Küçük", "Normal", "Büyük"] as const;
+const YAZI_ORNEKLERI = [styles.yaziOrnekKucuk, styles.yaziOrnekNormal, styles.yaziOrnekBuyuk] as const;
 
-const DURAK_BILGISI: Record<AkisDurakId, { etiket: string; ikon: IkonAdi }> = {
-  kapak: { etiket: "Bölüm Kapısı", ikon: "kitap" },
-  hikaye: { etiket: "Hikâye · 1. Kısım", ikon: "fener" },
-  tanik: { etiket: "Tanık Sayfası", ikon: "kitap" },
-  karar: { etiket: "Sen Olsaydın?", ikon: "dusunce" },
-  devam: { etiket: "Hikâye Devam Ediyor", ikon: "ok-sag" },
-  karsilastirma: { etiket: "Seçimini Karşılaştır", ikon: "kalp" },
-  ogrendik: { etiket: "Ne Öğrendik?", ikon: "fidan" },
-  gorev: { etiket: "Bugüne Taşı", ikon: "fidan" },
-  rozet: { etiket: "Rozet Kapısı", ikon: "rozet" },
-};
+/** Çocuğun seçtiği yazı boyutu bölümden bölüme taşınır (yalnız bu cihazda). */
+const YAZI_ANAHTARI = "okuma-yazi-boyutu";
+/** Işıl'ın sözlük ipucu, çocuk bir kelimeye dokunana kadar görünür (3.10.5). */
+const SOZLUK_IPUCU_ANAHTARI = "isil-sozluk-ipucu-goruldu";
 
 function temizMetin(value: string) {
   return value.replace(/\s+/g, " ").trim();
 }
 
 function sureBicimle(saniye: number) {
-  if (!Number.isFinite(saniye) || saniye < 0) return "00:00";
+  if (!Number.isFinite(saniye) || saniye < 0) return "0:00";
   const dakika = Math.floor(saniye / 60);
   const kalan = Math.floor(saniye % 60);
-  return `${dakika.toString().padStart(2, "0")}:${kalan.toString().padStart(2, "0")}`;
+  return `${dakika}:${kalan.toString().padStart(2, "0")}`;
 }
 
 /**
@@ -67,20 +61,39 @@ function kaydirmaDavranisi(): ScrollBehavior {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
 }
 
+function depodanOku(anahtar: string) {
+  try {
+    return window.localStorage.getItem(anahtar);
+  } catch {
+    return null;
+  }
+}
+
+function depoyaYaz(anahtar: string, deger: string) {
+  try {
+    window.localStorage.setItem(anahtar, deger);
+  } catch {
+    // Gizli pencere vb.: tercih yalnız bu açılışta geçerli kalır.
+  }
+}
+
 /**
- * Tek bir içerik bloğunu çizer. Sayfalı okuyucudan farkı: `image` bloğu
- * gizlenmez, metnin arasında geldiği yerde çizilir (Faz 6.2).
+ * Tek bir içerik bloğunu çizer. `image` bloğu gizlenmez, metnin arasında
+ * geldiği yerde çizilir (Faz 6.2).
  */
 function AkisBlogu({
   block,
   blokAnahtari,
   acikKelime,
   onKelime,
+  ipucu,
 }: {
   block: BookContentBlock;
   blokAnahtari: string;
   acikKelime: string | null;
   onKelime: (id: string | null) => void;
+  /** Bölümün ilk sözlük kelimesinde Işıl'ın tek seferlik ipucu. */
+  ipucu: boolean;
 }) {
   if (block.type === "witness") return null;
 
@@ -91,14 +104,14 @@ function AkisBlogu({
           `portraitSrc` BİLEREK kullanılmaz. 3:4 dikey kırpımlar, görselin metnin
           yanındaki dar panele sığdırıldığı sayfalı düzen için üretilmişti. Tek
           sütun kaydırmada görsel akışın tam genişliğinde yatay bir bant olarak
-          durur; dikey kırpımı 4:3 kutuya sokmak sahneyi gereksiz yere kesiyordu.
+          durur.
         */}
         <YedekliGorsel
           src={block.src}
           yedekSrc={YEDEK.sahne}
           alt={block.alt}
           width={800}
-          height={600}
+          height={450}
           className={styles.sahneResmi}
         />
         {block.caption ? <figcaption>{block.caption}</figcaption> : null}
@@ -110,6 +123,12 @@ function AkisBlogu({
     const acik = acikKelime === blokAnahtari;
     return (
       <div className={styles.kelimeBlogu} data-glossary-root>
+        {ipucu ? (
+          <aside className={styles.isilBalonu}>
+            <IsilGorseli boyut={44} className={styles.isilResmi} />
+            <p>Yeşil kelimelere dokun, anlamını öğren.</p>
+          </aside>
+        ) : null}
         <p className={styles.storyParagraph}>
           {block.before}
           <button
@@ -125,9 +144,7 @@ function AkisBlogu({
         </p>
         {acik ? (
           <div className={styles.kelimeAnlami} id={`${blokAnahtari}-aciklama`} role="status">
-            <span>
-              <Ikon ad="kitap" boyut={18} />
-            </span>
+            <Ikon ad="kitap" boyut={20} />
             <p>
               <strong>{block.word}</strong>
               {block.meaning}
@@ -140,7 +157,6 @@ function AkisBlogu({
 
   return (
     <p
-     
       className={`${styles.storyParagraph} ${
         block.text.trimStart().startsWith("—") ? styles.dialogue : ""
       } ${block.keySentence ? styles.keySentence : ""} ${block.dropCap ? styles.dropCap : ""}`}
@@ -150,62 +166,110 @@ function AkisBlogu({
   );
 }
 
-export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReaderProps) {
+/**
+ * Okuma ekranı (Faz B — KARAR 12 Eki 2026, PROJE-MODELI 3.10.3).
+ *
+ * Zemin baştan sona krem; koyu çerçeve ve "kart içinde kart" yoktur. Gece
+ * mavisi yalnız rozet anında görünür. Tam ekran bölüm kapağı yerine kısa bir
+ * açılış bloğu gelir, hikâye ilk ekranda başlar. İlerleme adım çubuğundadır
+ * (telefon / tablet dikey: üstte yatay; tablet yatay / masaüstü: solda sütun).
+ */
+export function AtlasScrollReader({ chapter, onProgressSync, tekrarOkumaOnizleme }: AtlasScrollReaderProps) {
   const router = useRouter();
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const akisRef = useRef<HTMLDivElement | null>(null);
+  const sayfaRef = useRef<HTMLElement | null>(null);
+  const ustBarRef = useRef<HTMLElement | null>(null);
+  const aaDugmesiRef = useRef<HTMLButtonElement | null>(null);
+  const aaPaneliRef = useRef<HTMLDivElement | null>(null);
   const cerceveRef = useRef<number | null>(null);
   const kararKaydirmaRef = useRef(false);
 
   const [secilen, setSecilen] = useState<DecisionOption["id"] | null>(null);
   const [kararOnayli, setKararOnayli] = useState(false);
   const [acikKelime, setAcikKelime] = useState<string | null>(null);
+  const [sozlukIpucu, setSozlukIpucu] = useState(false);
   const [yaziDuzeyi, setYaziDuzeyi] = useState<YaziDuzeyi>(1);
-  const [araclarAcik, setAraclarAcik] = useState(false);
+  const [aaAcik, setAaAcik] = useState(false);
   const [sesCaliyor, setSesCaliyor] = useState(false);
-  // Ses dosyası bulunamazsa kontrol hiç çizilmez (PROJE-MODELI 6.5).
+  // Şerit, çocuk "Dinle"ye bir kez basınca açılır; kapatılana kadar kalır.
+  const [sesSeridiAcik, setSesSeridiAcik] = useState(false);
+  // Ses dosyası bulunamazsa hiçbir ses kontrolü çizilmez (PROJE-MODELI 6.5).
   const [sesBulunamadi, setSesBulunamadi] = useState(false);
   const [gecenSure, setGecenSure] = useState(0);
   const [toplamSure, setToplamSure] = useState(0);
-  const [tekrarOkuma, setTekrarOkuma] = useState(false);
-  const [kaydediliyor, setKaydediliyor] = useState(false);
+  const [tekrarOkuma, setTekrarOkuma] = useState(Boolean(tekrarOkumaOnizleme));
+  const [rozetDurumu, setRozetDurumu] = useState<RozetDurumu>("bekliyor");
   const [kayitHatasi, setKayitHatasi] = useState<string | null>(null);
   const [gorevEkleniyor, setGorevEkleniyor] = useState(false);
   const [gorevDurumu, setGorevDurumu] = useState<"acik" | "eklendi" | "ertelendi">("acik");
   const [duyuru, setDuyuru] = useState("");
-  const [ilerleme, setIlerleme] = useState(0);
-  const [aktifDurak, setAktifDurak] = useState<AkisDurakId>("kapak");
+  const [aktifAdim, setAktifAdim] = useState(0);
+  const [adimDolulugu, setAdimDolulugu] = useState(0);
+  const [enIleriAdim, setEnIleriAdim] = useState(0);
   const [rozetYaklasti, setRozetYaklasti] = useState(false);
 
-  const secimAnahtari = `sen-olsaydin-${chapter.bookKey ?? "ebubekir"}-${chapter.id}`;
-  const sonucAcik = !chapter.decision || kararOnayli;
+  const bookKey = chapter.bookKey ?? "ebubekir";
+  const bolumNo = chapter.chapterNumber ?? 1;
+  const kararVar = Boolean(chapter.decision);
+  const secimAnahtari = `sen-olsaydin-${bookKey}-${chapter.id}`;
+  const sonucAcik = !kararVar || kararOnayli;
   const akis = useMemo(() => okumaAkisiniOlustur(chapter, sonucAcik), [chapter, sonucAcik]);
+  const adimlar = useMemo(() => okumaAdimlari(chapter), [chapter]);
   // Ayrı bölüm rotası sayfası kalktı (3.10.7): geri dönüş haritaya, kitap açık hâlde.
-  const geriYolu = `/map?kitap=${chapter.bookKey ?? ""}`;
-  const rozetYolu = rozetGorseli(chapter.bookKey ?? "ebubekir", chapter.chapterNumber ?? 1);
-  const sonrakiBolumAdi = useMemo(() => sonrakiBolumAdiniBul(chapter), [chapter]);
+  const geriYolu = `/map?kitap=${bookKey}`;
+  const rozetYolu = rozetGorseli(bookKey, bolumNo);
+  const sonraki = useMemo(() => sonrakiBolumuBul(chapter), [chapter]);
+  const finalYolu = quizConfig[bookKey] ? `/quiz/${bookKey}` : null;
   const sesHazir = Boolean(chapter.audioUrl) && !sesBulunamadi;
+  const bolumAdi = temizMetin(chapter.bolumAdi);
+  const kunye = `${chapter.bookName ?? "Kitap"} · ${bolumNo}. bölüm`;
+  const kutlamaDurumu: RozetDurumu = tekrarOkuma && rozetDurumu === "bekliyor" ? "onceden" : rozetDurumu;
 
-  const duraklar = useMemo(() => {
-    const gorulen = new Set<AkisDurakId>();
-    return akis.reduce<{ id: AkisDurakId; etiket: string; ikon: IkonAdi; key: string }[]>(
-      (liste, bolum) => {
-        const id = durakId(bolum);
-        if (gorulen.has(id)) return liste;
-        gorulen.add(id);
-        liste.push({ id, key: bolum.key, ...DURAK_BILGISI[id] });
-        return liste;
-      },
-      [],
-    );
+  // Işıl'ın sözlük ipucu bölümün İLK etkileşimli kelimesinde durur.
+  const ilkKelimeAnahtari = useMemo(() => {
+    for (const bolum of akis) {
+      if (bolum.type !== "hikaye") continue;
+      const sira = bolum.bloklar.findIndex((block) => block.type === "interactive_word");
+      if (sira >= 0) return `${bolum.key}-${sira}`;
+    }
+    return null;
   }, [akis]);
 
-  const bolumeKaydir = useCallback((key: string) => {
-    const hedef = akisRef.current?.querySelector<HTMLElement>(`[data-bolum-key="${key}"]`);
-    if (!hedef) return false;
-    hedef.scrollIntoView({ behavior: kaydirmaDavranisi(), block: "start" });
-    return true;
+  const adimaGit = useCallback(
+    (id: AdimId) => {
+      const ilk = akis.find((bolum) => adimIdsi(bolum, kararVar) === id);
+      const hedef = ilk
+        ? sayfaRef.current?.querySelector<HTMLElement>(`[data-bolum-key="${ilk.key}"]`)
+        : null;
+      hedef?.scrollIntoView({ behavior: kaydirmaDavranisi(), block: "start" });
+    },
+    [akis, kararVar],
+  );
+
+  // --- Kalıcı tercihler: yazı boyutu, sözlük ipucu -------------------------
+  useEffect(() => {
+    const zamanlayici = window.setTimeout(() => {
+      const kayitli = depodanOku(YAZI_ANAHTARI);
+      if (kayitli === "0" || kayitli === "1" || kayitli === "2") {
+        setYaziDuzeyi(Number(kayitli) as YaziDuzeyi);
+      }
+      setSozlukIpucu(depodanOku(SOZLUK_IPUCU_ANAHTARI) !== "1");
+    }, 0);
+    return () => window.clearTimeout(zamanlayici);
   }, []);
+
+  function yaziDuzeyiSec(duzey: YaziDuzeyi) {
+    setYaziDuzeyi(duzey);
+    depoyaYaz(YAZI_ANAHTARI, String(duzey));
+  }
+
+  function kelimeAc(anahtar: string | null) {
+    setAcikKelime(anahtar);
+    if (anahtar && sozlukIpucu) {
+      setSozlukIpucu(false);
+      depoyaYaz(SOZLUK_IPUCU_ANAHTARI, "1");
+    }
+  }
 
   // --- Sen Olsaydın seçimi: sayfa yenilenince korunur (sessionStorage) -------
   useEffect(() => {
@@ -220,13 +284,13 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
 
   // --- Bu bölüm daha önce tamamlandı mı? ------------------------------------
   useEffect(() => {
+    if (tekrarOkumaOnizleme !== undefined) return;
     let iptal = false;
     async function kontrolEt() {
       const profileId = window.localStorage.getItem("selected_child_profile_id");
       if (!profileId) return;
-      // Kitap satırı `books.ts` anahtarıyla eşleşir. Eşleştirme derive.ts'teki
-      // ortak normalizasyondan geçer; yerel "yalnız â" sadeleştirmesi "Hz. Şît"
-      // gibi î/ş içeren adları bulamıyordu.
+      // Kitap satırı `books.ts` anahtarıyla kelime kümesi üzerinden eşleşir
+      // (`dbKitabiBul`): alt dize araması "ali"yi "Hz. Sâlih" içinde de bulurdu.
       const { data: kitaplar } = await supabase.from("books").select("id, isim");
       const kitap = dbKitabiBul(kitaplar ?? [], chapter.bookName ?? "", chapter.bookKey);
       if (!kitap || iptal) return;
@@ -236,7 +300,7 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
         .eq("profile_id", profileId)
         .eq("book_id", kitap.id)
         .maybeSingle();
-      if (!iptal && (progress?.tamamlanan_bolum_sayisi ?? 0) >= (chapter.chapterNumber ?? 1)) {
+      if (!iptal && (progress?.tamamlanan_bolum_sayisi ?? 0) >= bolumNo) {
         setTekrarOkuma(true);
       }
     }
@@ -244,7 +308,7 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
     return () => {
       iptal = true;
     };
-  }, [chapter]);
+  }, [chapter, bolumNo, tekrarOkumaOnizleme]);
 
   // --- Sözlükçe dışına dokununca kapan --------------------------------------
   useEffect(() => {
@@ -257,50 +321,87 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
     return () => document.removeEventListener("pointerdown", disariTiklandi);
   }, []);
 
-  useEffect(() => {
-    function tuslaGezin(event: KeyboardEvent) {
-      if (event.key === "Escape") setAraclarAcik(false);
-    }
-    window.addEventListener("keydown", tuslaGezin);
-    return () => window.removeEventListener("keydown", tuslaGezin);
+  // --- "Aa" paneli: Escape kapatır, odak düğmeye döner -----------------------
+  const aaKapat = useCallback(() => {
+    setAaAcik(false);
+    aaDugmesiRef.current?.focus({ preventScroll: true });
   }, []);
+
+  useEffect(() => {
+    if (!aaAcik) return;
+    aaPaneliRef.current?.querySelector<HTMLButtonElement>('[aria-pressed="true"]')?.focus();
+    function tuslaKapat(event: KeyboardEvent) {
+      if (event.key === "Escape") aaKapat();
+    }
+    window.addEventListener("keydown", tuslaKapat);
+    return () => window.removeEventListener("keydown", tuslaKapat);
+  }, [aaAcik, aaKapat]);
 
   useEffect(() => () => audioRef.current?.pause(), []);
 
+  // --- Üst barın yüksekliği: kaydırma payı ve yan sütunun yapışma çizgisi ---
+  useEffect(() => {
+    const bar = ustBarRef.current;
+    const sayfa = sayfaRef.current;
+    if (!bar || !sayfa) return;
+    const gozlemci = new ResizeObserver(() => {
+      sayfa.style.setProperty("--ust-yukseklik", `${bar.offsetHeight}px`);
+    });
+    gozlemci.observe(bar);
+    return () => gozlemci.disconnect();
+  }, []);
+
   /**
-   * Tek bir rAF geçişinde üç şey hesaplanır: ilerleme yüzdesi, aktif durak ve
-   * okunan blok çıpası. Ayrı IntersectionObserver'lar yerine tek geçiş
-   * kullanılır; akış dizisi karar kapısı açılınca değiştiği için observer
-   * yeniden kurmak gereksiz iş çıkarıyordu.
+   * Tek bir rAF geçişinde etkin adım, adımın okunan payı ve rozet yaklaşımı
+   * hesaplanır. Okuma çizgisi üst barın hemen altıdır: bir adımın başı bu
+   * çizgiyi geçince adım etkinleşir, sonu geçince dolar.
    */
   useEffect(() => {
-    const esik = 160;
-
     function olc() {
       cerceveRef.current = null;
-      const belge = document.documentElement;
-      const kaydirilabilir = belge.scrollHeight - window.innerHeight;
-      const yuzde = kaydirilabilir > 0 ? (window.scrollY / kaydirilabilir) * 100 : 0;
-      setIlerleme(Math.min(100, Math.max(0, yuzde)));
-
-      const kok = akisRef.current;
+      const kok = sayfaRef.current;
       if (!kok) return;
+      const cizgi = (ustBarRef.current?.offsetHeight ?? 0) + 24;
 
-      const bolumler = kok.querySelectorAll<HTMLElement>("[data-durak-id]");
-      let sonDurak: AkisDurakId | null = null;
-      bolumler.forEach((bolum) => {
-        if (bolum.getBoundingClientRect().top <= esik) {
-          sonDurak = bolum.dataset.durakId as AkisDurakId;
-        }
+      const sinirlar = new Map<string, { ust: number; alt: number }>();
+      kok.querySelectorAll<HTMLElement>("[data-adim]").forEach((eleman) => {
+        const kutu = eleman.getBoundingClientRect();
+        const id = eleman.dataset.adim ?? "";
+        const sinir = sinirlar.get(id);
+        if (sinir) sinir.alt = kutu.bottom;
+        else sinirlar.set(id, { ust: kutu.top, alt: kutu.bottom });
       });
-      if (sonDurak) setAktifDurak(sonDurak);
 
-      // Kazanım hareketi TEK SEFERLİKTİR: eşiğin etrafında kaydırırken sürekli
-      // yeniden oynamasın diye bir kez açıldıktan sonra kapanmaz.
-      const rozet = kok.querySelector<HTMLElement>('[data-durak-id="rozet"]');
-      if (rozet && rozet.getBoundingClientRect().top < window.innerHeight * 1.1) {
-        setRozetYaklasti(true);
+      let aktif = 0;
+      let sonVarolan = 0;
+      adimlar.forEach((adim, sira) => {
+        const sinir = sinirlar.get(adim.id);
+        if (!sinir) return;
+        sonVarolan = sira;
+        if (sinir.ust <= cizgi) aktif = sira;
+      });
+
+      let dolu = 0;
+      const belge = document.documentElement;
+      const sonaGeldi = window.scrollY + window.innerHeight >= belge.scrollHeight - 4;
+      if (sonaGeldi && window.scrollY > 0) {
+        aktif = sonVarolan;
+        dolu = 1;
+      } else {
+        const sinir = sinirlar.get(adimlar[aktif]?.id ?? "");
+        if (sinir && sinir.alt > sinir.ust) {
+          dolu = Math.min(1, Math.max(0, (cizgi - sinir.ust) / (sinir.alt - sinir.ust)));
+        }
       }
+
+      setAktifAdim(aktif);
+      setAdimDolulugu(Math.round(dolu * 100) / 100);
+      setEnIleriAdim((onceki) => Math.max(onceki, aktif));
+
+      // Rozetin beliriş hareketi TEK SEFERLİKTİR: eşiğin etrafında kaydırırken
+      // yeniden oynamasın diye bir kez açıldıktan sonra kapanmaz.
+      const rozet = sinirlar.get("rozet");
+      if (rozet && rozet.ust < window.innerHeight * 0.9) setRozetYaklasti(true);
     }
 
     function olcumIste() {
@@ -313,9 +414,9 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
     window.addEventListener("resize", olcumIste);
 
     // Görseller geç yüklendiğinde akışın yüksekliği değişir; yalnız scroll'u
-    // dinlemek ilerleme çubuğunu ve durak göstergesini bayat bırakıyordu.
+    // dinlemek adım çubuğunu bayat bırakıyordu.
     const gozlemci = new ResizeObserver(olcumIste);
-    if (akisRef.current) gozlemci.observe(akisRef.current);
+    if (sayfaRef.current) gozlemci.observe(sayfaRef.current);
 
     return () => {
       window.removeEventListener("scroll", olcumIste);
@@ -323,17 +424,23 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
       gozlemci.disconnect();
       if (cerceveRef.current !== null) window.cancelAnimationFrame(cerceveRef.current);
     };
-  }, [chapter.id, akis]);
+  }, [chapter.id, akis, adimlar]);
 
   // Karar onaylanınca açılan içeriğin başına yumuşakça in.
   useEffect(() => {
     if (!kararKaydirmaRef.current) return;
     kararKaydirmaRef.current = false;
-    const hedef = akis.find((bolum) => durakId(bolum) === "devam") ?? akis.find((b) => b.type === "ogrendik");
+    const hedef =
+      akis.find((bolum) => adimIdsi(bolum, kararVar) === "devam") ??
+      akis.find((bolum) => bolum.type === "ogrendik");
     if (!hedef) return;
-    const zamanlayici = window.setTimeout(() => bolumeKaydir(hedef.key), 60);
+    const zamanlayici = window.setTimeout(() => {
+      sayfaRef.current
+        ?.querySelector<HTMLElement>(`[data-bolum-key="${hedef.key}"]`)
+        ?.scrollIntoView({ behavior: kaydirmaDavranisi(), block: "start" });
+    }, 60);
     return () => window.clearTimeout(zamanlayici);
-  }, [akis, bolumeKaydir]);
+  }, [akis, kararVar]);
 
   function karariOnayla() {
     if (!secilen) return;
@@ -344,11 +451,19 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
   }
 
   function sesOynatDurdur() {
-    if (!sesHazir) return;
     const ses = audioRef.current;
-    if (!ses) return;
-    if (sesCaliyor) ses.pause();
-    else void ses.play().catch(() => setDuyuru("Sesli anlatım bu tarayıcıda başlatılamadı."));
+    if (!sesHazir || !ses) return;
+    if (sesCaliyor) {
+      ses.pause();
+      return;
+    }
+    setSesSeridiAcik(true);
+    void ses.play().catch(() => setDuyuru("Sesli anlatım bu tarayıcıda başlatılamadı."));
+  }
+
+  function sesSeridiniKapat() {
+    audioRef.current?.pause();
+    setSesSeridiAcik(false);
   }
 
   function sesiSar(value: number) {
@@ -372,21 +487,17 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
     setDuyuru("Görev listene eklendi.");
   }
 
-  async function bolumuBitir() {
-    if (tekrarOkuma) {
-      router.push(geriYolu);
-      return;
-    }
+  async function rozetiAl() {
     setKayitHatasi(null);
-    setKaydediliyor(true);
+    setRozetDurumu("kaydediliyor");
     const sonuc = await onProgressSync();
     if (!sonuc.ok) {
-      setKaydediliyor(false);
+      setRozetDurumu("hata");
       setKayitHatasi(sonuc.message ?? "Rozet kaydedilemedi. Lütfen tekrar dene.");
       return;
     }
-    setDuyuru(`${chapter.badgeName} haritana işlendi.`);
-    window.setTimeout(() => router.push(geriYolu), 1200);
+    setRozetDurumu("alindi");
+    setDuyuru(`${chapter.badgeName} senin! Bu rozet Ödüllerim'e eklendi.`);
   }
 
   function bolumuBastanAc() {
@@ -394,114 +505,74 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
     setSecilen(null);
     setKararOnayli(false);
     setGorevDurumu("acik");
-    setAraclarAcik(false);
+    setEnIleriAdim(0);
+    // Bu açılışta alınan rozet artık kazanılmış sayılır.
+    if (rozetDurumu === "alindi") setTekrarOkuma(true);
+    setRozetDurumu("bekliyor");
+    setAaAcik(false);
     window.scrollTo({ top: 0, behavior: "auto" });
   }
 
   function bolumuCiz(bolum: OkumaAkisBolumu) {
-    if (bolum.type === "kapak") {
-      const kapakGorseli = chapter.coverIllustration;
-      const ilkHikaye = akis.find((item) => item.type === "hikaye");
+    if (bolum.type === "acilis") {
+      const kapak = chapter.coverIllustration;
       return (
-        <section className={styles.kapak}>
-          {/*
-            Bölüm kapısı TEK bir alandır: bölüm kimliği, rozet sözü ve çağrı
-            sahnenin İÇİNDE durur (üstte kimlik + rozet, altta buton). Sahnenin
-            üstünde etkileşim YOKTUR — Dokun ve Keşfet prototipi 27 Tem 2026'da
-            kapatıldı (PROJE-MODELI 6.4).
-          */}
-          <div className={styles.kapakSahne}>
-            <YedekliGorsel
-              src={kapakGorseli?.src ?? kitapKapagi(chapter.bookKey ?? "ebubekir")}
-              yedekSrc={kapakGorseli ? YEDEK.sahne : YEDEK.kitapKapagi}
-              alt={kapakGorseli?.alt ?? `${chapter.bookName ?? "Kitap"} kapağı`}
-              width={1200}
-              height={900}
-              className={styles.kapakResmi}
-            />
-            <span className={styles.kapakPerdesi} aria-hidden="true" />
-
-            <div className={styles.kapakUst}>
-              <p className={styles.bolumNisani}>
-                <span aria-hidden="true" />
-                {chapter.chapterNumber ?? 1}. Bölüm
-                <span aria-hidden="true" />
-              </p>
-              <h1>{temizMetin(chapter.bolumAdi)}</h1>
-              {chapter.ozet ? <p className={styles.kapakOzeti}>{chapter.ozet}</p> : null}
-            </div>
-
-            {/* Rozet sahnenin ortasında durur: kimlik üstte, çağrı altta. */}
-            <div className={styles.kapakOrta}>
-              <div className={styles.rozetOnizleme}>
-                <span className={styles.rozetOnizlemeCercevesi}>
-                  <YedekliGorsel
-                    src={rozetYolu}
-                    yedekSrc={YEDEK.rozet}
-                    alt=""
-                    width={96}
-                    height={96}
-                    className={styles.rozetOnizlemeGorseli}
-                  />
-                </span>
-                <small>Kazanılacak rozet</small>
-                <strong>{chapter.badgeName}</strong>
-              </div>
-            </div>
-
-            <div className={styles.kapakAlt}>
-              <button
-                type="button"
-                className={styles.kaydirmaIpucu}
-                onClick={() => (ilkHikaye ? bolumeKaydir(ilkHikaye.key) : undefined)}
-              >
-                Maceraya Başla
-                <span className={styles.asagiOk} aria-hidden="true">
-                  <Ikon ad="ok-sag" boyut={19} />
-                </span>
-              </button>
-              <p className={styles.kaydirmaNotu}>Okumak için aşağı kaydır.</p>
-            </div>
+        <header className={styles.acilis}>
+          <YedekliGorsel
+            src={kapak?.src ?? kitapKapagi(bookKey)}
+            yedekSrc={kapak ? YEDEK.sahne : YEDEK.kitapKapagi}
+            alt={kapak?.alt ?? `${chapter.bookName ?? "Kitap"} kapağı`}
+            width={1200}
+            height={675}
+            className={styles.acilisResmi}
+          />
+          <div className={styles.acilisMetni}>
+            <p className={styles.kunye}>{kunye}</p>
+            <h1>{bolumAdi}</h1>
           </div>
-        </section>
+          {/* Tablet yatay ve masaüstünde rozet yan sütunda durur. */}
+          <div className={`${styles.acilisRozeti} ${tekrarOkuma ? styles.rozetKazanilmis : ""}`}>
+            <YedekliGorsel src={rozetYolu} yedekSrc={YEDEK.rozet} alt="" width={52} height={52} />
+            <span>
+              <small>{tekrarOkuma ? "Bu rozeti kazandın" : "Bu bölümün rozeti"}</small>
+              <strong>{chapter.badgeName}</strong>
+            </span>
+          </div>
+        </header>
       );
     }
 
     if (bolum.type === "hikaye") {
       return (
-        <article className={styles.kagit}>
-          <p className={styles.hikayeEtiketi}>
-            {bolum.kisim === "devam" ? "Hikâye Devam Ediyor" : temizMetin(chapter.bolumAdi)}
-          </p>
-          <div className={styles.metinSutunu}>
-            {bolum.bloklar.map((block, index) => (
+        <div className={styles.hikaye}>
+          {bolum.bloklar.map((block, index) => {
+            const anahtar = `${bolum.key}-${index}`;
+            return (
               <AkisBlogu
-                key={`${bolum.key}-${index}`}
+                key={anahtar}
                 block={block}
-                blokAnahtari={`${bolum.key}-${index}`}
+                blokAnahtari={anahtar}
                 acikKelime={acikKelime}
-                onKelime={setAcikKelime}
+                onKelime={kelimeAc}
+                ipucu={sozlukIpucu && anahtar === ilkKelimeAnahtari}
               />
-            ))}
-          </div>
-        </article>
+            );
+          })}
+        </div>
       );
     }
 
     if (bolum.type === "tanik") {
       return (
-        <section className={styles.odakKagidi}>
-          <p className={styles.ustEtiket}>Tanık Sayfası</p>
+        <section className={styles.tanik} aria-label="Tanık Sayfası">
+          <p className={styles.tanikEtiketi}>Tanık Sayfası</p>
           <article className={styles.tanikKagidi}>
-            <h1>{bolum.witnessLabel}</h1>
+            <h2>{bolum.witnessLabel}</h2>
             <p>{bolum.body}</p>
             <strong>— {bolum.witnessName}</strong>
           </article>
           {bolum.isFictional ? (
-            <div className={styles.notKutusu}>
-              <Ikon ad="dusunce" boyut={17} />
-              <p>Bu sayfadaki çocuk hayalîdir; anlattığı olaylar gerçektir.</p>
-            </div>
+            <p className={styles.tanikNotu}>Bu sayfadaki çocuk hayalîdir; anlattığı olaylar gerçektir.</p>
           ) : null}
         </section>
       );
@@ -510,57 +581,61 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
     if (bolum.type === "karar" && chapter.decision) {
       return (
         <>
-          <section className={styles.odakKagidi}>
-            <span className={styles.odakIkonu}>
-              <Ikon ad="dusunce" boyut={29} />
-            </span>
-            <p className={styles.ustEtiket}>Sen Olsaydın?</p>
-            <h1>{chapter.decision.question}</h1>
-            <p className={styles.odakAciklamasi}>
-              Seçimine hikâyenin sonunda birlikte bakacağız.
-            </p>
-            <div className={styles.secenekler} role="radiogroup" aria-label="Karar seçenekleri">
+          <section className={styles.karar} aria-labelledby="karar-basligi">
+            <aside className={styles.isilBalonu}>
+              <IsilGorseli poz="konusma" boyut={48} className={styles.isilResmi} />
+              <p>Seçimine hikâyenin sonunda birlikte bakacağız.</p>
+            </aside>
+            <h2 id="karar-basligi" className={styles.bolumBasligi}>
+              Sen olsaydın?
+            </h2>
+            <p className={styles.kararSorusu}>{chapter.decision.question}</p>
+            <div className={styles.secenekler} role="radiogroup" aria-labelledby="karar-basligi">
               {chapter.decision.options.map((option) => {
                 const secili = secilen === option.id;
                 // Şıklar her yerde A-B-C: "Senin seçimin" bölümü de aynı harfi
-                // gösterir (PROJE-MODELI 3.10.4). Eskiden burada 1-2-3 vardı.
+                // gösterir (PROJE-MODELI 3.10.4).
                 const harf = option.id.toLocaleUpperCase("tr-TR");
                 return (
                   <button
                     key={option.id}
                     type="button"
-                    className={`${styles.secenekButonu} ${secili ? styles.secenekSecili : ""}`}
+                    className={`${styles.secenek} ${secili ? styles.secenekSecili : ""}`}
                     role="radio"
                     aria-checked={secili}
                     disabled={kararOnayli}
                     onClick={() => setSecilen(option.id)}
                   >
-                    <span>{secili && kararOnayli ? <Ikon ad="onay" boyut={19} /> : harf}</span>
-                    <strong>{option.text}</strong>
+                    <span className={styles.secenekHarfi}>
+                      {secili && kararOnayli ? <Ikon ad="onay" boyut={20} /> : harf}
+                    </span>
+                    <span>{option.text}</span>
                   </button>
                 );
               })}
             </div>
             {kararOnayli ? (
-              <div className={styles.notKutusu} aria-live="polite">
-                <Ikon ad="fener" boyut={21} />
-                <p>{chapter.decision.afterChoiceNote}</p>
-              </div>
+              chapter.decision.afterChoiceNote ? (
+                <p className={styles.kararNotu} aria-live="polite">
+                  <Ikon ad="fener" boyut={20} />
+                  {chapter.decision.afterChoiceNote}
+                </p>
+              ) : null
             ) : (
               <button
                 type="button"
-                className={`${styles.anaEylem} ${styles.yesilEylem}`}
+                className={`${styles.buyukDugme} ${secilen ? styles.yesilDugme : styles.bekleyenDugme}`}
                 disabled={!secilen}
                 onClick={karariOnayla}
               >
-                <Ikon ad="onay" boyut={18} />
-                Seçimim bu
+                {secilen ? <Ikon ad="onay" boyut={20} /> : null}
+                {secilen ? "Seçimim bu" : "Bir seçenek seç"}
               </button>
             )}
           </section>
           {kararOnayli ? null : (
             <p className={styles.kapiSeridi}>
-              <Ikon ad="kilit" boyut={18} />
+              <Ikon ad="kilit" boyut={17} />
               Seçimini yapınca hikâye devam edecek.
             </p>
           )}
@@ -571,28 +646,17 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
     if (bolum.type === "karsilastirma") {
       const secenek = chapter.decision?.options.find((option) => option.id === secilen);
       return (
-        <section className={styles.odakKagidi}>
-          <span className={styles.odakIkonu}>
-            <Ikon ad="kalp" boyut={29} />
-          </span>
-          <p className={styles.ustEtiket}>Düşünme Durağı</p>
-          <h1>Seçimini Karşılaştır</h1>
-          <p className={styles.odakAciklamasi}>
-            Hikâyenin devamını okudun. Şimdi yalnızca kendi seçimine bakalım.
-          </p>
+        <section className={styles.odak} aria-labelledby="karsilastirma-basligi">
+          <h2 id="karsilastirma-basligi" className={styles.bolumBasligi}>
+            Senin seçimin
+          </h2>
           {secenek && secilen ? (
             <>
-              <div className={styles.secilenCevap}>
-                <small>Senin seçimin</small>
-                <p>
-                  <span>{secilen.toLocaleUpperCase("tr-TR")}</span>
-                  <strong>{secenek.text}</strong>
-                </p>
-              </div>
-              <div className={styles.karsilastirmaMetni}>
-                <Ikon ad="fidan" boyut={24} />
-                <p>{secenek.comparison}</p>
-              </div>
+              <p className={styles.secimOzeti}>
+                <span className={styles.secenekHarfi}>{secilen.toLocaleUpperCase("tr-TR")}</span>
+                <span>{secenek.text}</span>
+              </p>
+              <p className={styles.karsilastirmaMetni}>{secenek.comparison}</p>
               <p className={styles.dipNot}>Önemli olan, hikâyenin sana düşündürdükleri.</p>
             </>
           ) : null}
@@ -602,17 +666,14 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
 
     if (bolum.type === "ogrendik") {
       return (
-        <section className={styles.odakKagidi}>
-          <span className={styles.odakIkonu}>
-            <Ikon ad="fidan" boyut={30} />
-          </span>
-          <p className={styles.ustEtiket}>Yolculuk Defteri</p>
-          <h1>Ne Öğrendik?</h1>
-          <p className={styles.odakAciklamasi}>Bu bölümden yanında götüreceğin üç düşünce.</p>
+        <section className={styles.odak} aria-labelledby="ogrendik-basligi">
+          <h2 id="ogrendik-basligi" className={styles.bolumBasligi}>
+            Ne öğrendik?
+          </h2>
           <ol className={styles.ogrendikListesi}>
             {chapter.learned.map((madde, index) => (
               <li key={madde}>
-                <span>{index + 1}</span>
+                <span aria-hidden="true">{index + 1}</span>
                 <p>{madde}</p>
               </li>
             ))}
@@ -624,47 +685,49 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
     if (bolum.type === "gorev") {
       const gorev = chapter.gorev;
       return (
-        <section className={styles.odakKagidi}>
-          <span className={styles.odakIkonu}>
-            <Ikon ad="fidan" boyut={30} />
-          </span>
-          <p className={styles.ustEtiket}>Hayata Açılan Kapı</p>
-          <h1>Bugüne Taşı</h1>
+        <section className={styles.odak} aria-labelledby="gorev-basligi">
+          <h2 id="gorev-basligi" className={styles.bolumBasligi}>
+            Bugüne Taşı
+          </h2>
           {gorevDurumu === "acik" ? (
             <>
-              <p className={styles.odakAciklamasi}>
-                Bu görev tamamen gönüllü; eklemesen de rozetin ve yolculuğun aynen devam eder.
-              </p>
+              <p className={styles.odakNotu}>Bu görev gönüllü; eklemesen de rozetini alırsın.</p>
               <div className={styles.gorevKarti}>
-                <div>
-                  <h2>{gorev?.ad ?? "Bugünün küçük adımı"}</h2>
+                <div className={styles.gorevBasi}>
+                  <h3>{gorev?.ad ?? "Bugünün küçük adımı"}</h3>
                   {gorev ? <span>{gorev.kategori}</span> : null}
                 </div>
-                <p>{gorev?.aciklama ?? chapter.buguneTasi}</p>
+                <p className={styles.gorevAciklamasi}>{gorev?.aciklama ?? chapter.buguneTasi}</p>
                 {gorev ? (
-                  <dl>
+                  <dl className={styles.gorevBilgisi}>
                     <div>
-                      <dt>Tahmini süre</dt>
+                      <dt>
+                        <Ikon ad="saat" boyut={17} />
+                        Süre
+                      </dt>
                       <dd>{gorev.sure}</dd>
                     </div>
                     <div>
-                      <dt>Tamamlanma ölçütü</dt>
+                      <dt>
+                        <Ikon ad="onay" boyut={17} />
+                        Ne zaman bitti sayılır?
+                      </dt>
                       <dd>{gorev.olcut}</dd>
                     </div>
                   </dl>
                 ) : null}
                 {gorev?.guvenlikNotu ? (
-                  <aside>
+                  <p className={styles.guvenlikNotu}>
                     <Ikon ad="kalp" boyut={17} />
                     {gorev.guvenlikNotu}
-                  </aside>
+                  </p>
                 ) : null}
               </div>
               <div className={styles.gorevEylemleri}>
                 {gorev ? (
                   <button
                     type="button"
-                    className={`${styles.anaEylem} ${styles.yesilEylem}`}
+                    className={`${styles.buyukDugme} ${styles.yesilDugme}`}
                     disabled={gorevEkleniyor}
                     onClick={goreviListeyeEkle}
                   >
@@ -674,264 +737,227 @@ export function AtlasScrollReader({ chapter, onProgressSync }: AtlasScrollReader
                 ) : null}
                 <button
                   type="button"
-                  className={`${styles.anaEylem} ${styles.hayaletEylem}`}
+                  className={`${styles.buyukDugme} ${styles.hayaletDugme}`}
                   disabled={gorevEkleniyor}
                   onClick={() => setGorevDurumu(gorev ? "ertelendi" : "eklendi")}
                 >
-                  <Ikon ad={gorev ? "ok-sag" : "onay"} boyut={19} />
                   {gorev ? "Şimdilik Değil" : "Görevi Anladım"}
                 </button>
               </div>
             </>
           ) : (
-            <div className={styles.gorevOzeti}>
+            <p className={styles.gorevOzeti}>
               <Ikon ad={gorevDurumu === "eklendi" ? "onay" : "saat"} boyut={20} />
-              <span>
-                {gorevDurumu === "eklendi"
-                  ? `“${gorev?.ad ?? "Görev"}” listene eklendi. Görevlerim ekranından takip edebilirsin.`
-                  : `“${gorev?.ad ?? "Görev"}” şimdilik eklenmedi. Yolculuğun aynen devam ediyor.`}
-              </span>
-            </div>
+              {gorevDurumu === "eklendi"
+                ? `“${gorev?.ad ?? "Görev"}” listene eklendi. Görevlerim'de seni bekliyor.`
+                : `“${gorev?.ad ?? "Görev"}” şimdilik eklenmedi. Rozetin seni bekliyor.`}
+            </p>
           )}
         </section>
       );
     }
 
-    return (
-      <section
-        className={`${styles.odakKagidi} ${styles.rozetKapisi} ${
-          rozetYaklasti ? styles.rozetYaklasti : ""
-        }`}
-      >
-        <span className={styles.rozetIsigi} aria-hidden="true" />
-        <p className={styles.ustEtiket}>Bölüm Tamamlandı</p>
-        <h1>Rozet Kapısı</h1>
-        <p className={styles.odakAciklamasi}>
-          {tekrarOkuma
-            ? "Bu rozeti daha önce kazanmıştın. Tekrar okumak, öğrendiklerini kalbinde büyütür."
-            : sonrakiBolumAdi
-              ? `Şimdi “${sonrakiBolumAdi}” bölümüne geçebilirsin.`
-              : "Kitabın tüm bölümlerini tamamladın; Büyük Final Testi seni bekliyor."}
-        </p>
-        <div className={styles.rozetGovdesi}>
-          <span className={styles.rozetHalesi}>
-            <YedekliGorsel
-              src={rozetYolu}
-              yedekSrc={YEDEK.rozet}
-              alt={chapter.badgeName}
-              width={120}
-              height={120}
-              className={styles.rozetResmi}
-            />
-          </span>
-          <strong>{chapter.badgeName}</strong>
-        </div>
-        <div className={styles.rozetMesaji}>
-          <Ikon ad="harita" boyut={22} />
-          <p>
-            {tekrarOkuma
-              ? "Rozetin haritanda duruyor; bölüm listesine güvenle dönebilirsin."
-              : chapter.returnMessage}
-          </p>
-        </div>
-        {kayitHatasi ? (
-          <p className={styles.hataMesaji} aria-live="polite">
-            {kayitHatasi}
-          </p>
-        ) : null}
-        <button
-          type="button"
-          className={`${styles.anaEylem} ${styles.yesilEylem}`}
-          disabled={kaydediliyor}
-          onClick={bolumuBitir}
-        >
-          <Ikon ad="rozet" boyut={18} />
-          {tekrarOkuma
-            ? "Bölüm Listesine Dön"
-            : kaydediliyor
-              ? "Rozet Kaydediliyor..."
-              : "Bölümü Tamamla"}
-        </button>
-      </section>
-    );
+    return null;
   }
 
+  const govdeBolumleri = akis.filter((bolum) => bolum.type !== "rozet");
+  const rozetVar = akis.some((bolum) => bolum.type === "rozet");
+
   return (
-    <main className={`tema-cocuk ${styles.sayfa} ${YAZI_SINIFLARI[yaziDuzeyi]}`}>
-      <header className={styles.ustBar}>
-        <div className={styles.ustBarIc}>
-          <button
-            type="button"
-            className={styles.geriBaglantisi}
-            onClick={() => router.push(geriYolu)}
-          >
-            <Ikon ad="geri" boyut={18} />
-            <span>Bölümler</span>
+    <main
+      ref={sayfaRef}
+      className={`tema-cocuk ${styles.sayfa} ${YAZI_SINIFLARI[yaziDuzeyi]}`}
+    >
+      <header className={styles.ustBar} ref={ustBarRef}>
+        <div className={styles.ustSatir}>
+          <button type="button" className={styles.geriDugmesi} onClick={() => router.push(geriYolu)}>
+            <Ikon ad="geri" boyut={20} />
+            <span className={styles.geriMetni}>Bölümler</span>
           </button>
-          <div className={styles.bolumKimligi}>
-            <strong>{temizMetin(chapter.bolumAdi)}</strong>
-            <span className={styles.aktifDurak}>
-              <Ikon ad={DURAK_BILGISI[aktifDurak].ikon} boyut={14} />
-              {DURAK_BILGISI[aktifDurak].etiket}
-            </span>
+          <div className={styles.kimlik}>
+            <strong>{bolumAdi}</strong>
+            <span>{kunye}</span>
           </div>
-          <div className={styles.ustBarEylemler}>
+          <div className={styles.ustEylemler}>
             {sesHazir ? (
-              <div className={styles.sesKutusu}>
-                <audio
-                  ref={audioRef}
-                  src={chapter.audioUrl}
-                  preload="metadata"
-                  onError={() => {
-                    setSesCaliyor(false);
-                    setSesBulunamadi(true);
-                  }}
-                  onLoadedMetadata={(event) => setToplamSure(event.currentTarget.duration)}
-                  onTimeUpdate={(event) => setGecenSure(event.currentTarget.currentTime)}
-                  onPlay={() => setSesCaliyor(true)}
-                  onPause={() => setSesCaliyor(false)}
-                  onEnded={() => {
-                    setSesCaliyor(false);
-                    setGecenSure(0);
-                    if (audioRef.current) audioRef.current.currentTime = 0;
-                  }}
-                />
-                <button
-                  type="button"
-                  className={styles.sesButonu}
-                  aria-label={sesCaliyor ? "Sesli anlatımı duraklat" : "Sesli anlatımı oynat"}
-                  aria-pressed={sesCaliyor}
-                  onClick={sesOynatDurdur}
-                >
-                  <Ikon ad={sesCaliyor ? "duraklat" : "oynat"} boyut={16} />
-                </button>
-                <div className={styles.sesMetni}>
-                  <div>
-                    <strong>Sesli anlatım</strong>
-                    <span>
-                      {sureBicimle(gecenSure)} / {sureBicimle(toplamSure)}
-                    </span>
-                  </div>
-                  <input
-                    className={styles.sesCubugu}
-                    type="range"
-                    min={0}
-                    max={Math.max(1, toplamSure)}
-                    step={0.1}
-                    value={Math.min(gecenSure, Math.max(1, toplamSure))}
-                    aria-label="Sesli anlatım konumu"
-                    onChange={(event) => sesiSar(Number(event.target.value))}
-                  />
-                </div>
-              </div>
+              <button
+                type="button"
+                className={styles.dinleDugmesi}
+                aria-pressed={sesCaliyor}
+                onClick={sesOynatDurdur}
+              >
+                <Ikon ad={sesCaliyor ? "duraklat" : "oynat"} boyut={17} />
+                <span>{sesCaliyor ? "Duraklat" : "Dinle"}</span>
+              </button>
             ) : null}
             <button
+              ref={aaDugmesiRef}
               type="button"
-              className={styles.araclarButonu}
-              aria-expanded={araclarAcik}
-              aria-controls="okuma-araclari"
-              onClick={() => setAraclarAcik((acik) => !acik)}
+              className={styles.aaDugmesi}
+              aria-expanded={aaAcik}
+              aria-controls="yazi-boyutu"
+              onClick={() => (aaAcik ? aaKapat() : setAaAcik(true))}
             >
-              <Ikon ad="menu" boyut={19} />
-              <span>Okuma Araçları</span>
+              <span aria-hidden="true">Aa</span>
+              <span className={styles.srOnly}>Yazı boyutu</span>
             </button>
           </div>
         </div>
-        <div className={styles.ilerlemeYolu}>
-          <div
-            className={styles.ilerlemeDolgusu}
-            style={{ width: `${ilerleme}%` }}
-            role="progressbar"
-            aria-label="Bölüm okuma ilerlemesi"
-            aria-valuemin={0}
-            aria-valuemax={100}
-            aria-valuenow={Math.round(ilerleme)}
-          />
-        </div>
-      </header>
 
-      {araclarAcik ? (
-        <aside className={styles.araclarPaneli} id="okuma-araclari" aria-label="Okuma araçları">
-          <div className={styles.araclarBasligi}>
-            <div>
-              <p>Okuma Deneyimi</p>
-              <h2>Okuma Araçları</h2>
-            </div>
+        {sesHazir && sesSeridiAcik ? (
+          <div className={styles.sesSeridi}>
             <button
               type="button"
-              aria-label="Okuma araçlarını kapat"
-              onClick={() => setAraclarAcik(false)}
+              className={styles.sesSeridiDugmesi}
+              aria-label={sesCaliyor ? "Sesli anlatımı duraklat" : "Sesli anlatımı sürdür"}
+              onClick={sesOynatDurdur}
             >
-              <Ikon ad="kapat" boyut={20} />
+              <Ikon ad={sesCaliyor ? "duraklat" : "oynat"} boyut={16} />
+            </button>
+            <span className={styles.sesSuresi}>{sureBicimle(gecenSure)}</span>
+            <input
+              className={styles.sesCubugu}
+              type="range"
+              min={0}
+              max={Math.max(1, toplamSure)}
+              step={0.1}
+              value={Math.min(gecenSure, Math.max(1, toplamSure))}
+              aria-label="Sesli anlatım konumu"
+              onChange={(event) => sesiSar(Number(event.target.value))}
+            />
+            <span className={styles.sesSuresi}>{sureBicimle(toplamSure)}</span>
+            <button
+              type="button"
+              className={styles.sesSeridiKapat}
+              aria-label="Sesli anlatımı kapat"
+              onClick={sesSeridiniKapat}
+            >
+              <Ikon ad="kapat" boyut={17} />
             </button>
           </div>
-          <section className={styles.yaziAraclari} aria-label="Yazı büyüklüğü">
-            <div>
-              <strong>Yazı büyüklüğü</strong>
-              <span>{YAZI_ADLARI[yaziDuzeyi]}</span>
-            </div>
-            <div>
-              <button
-                type="button"
-                aria-label="Yazıyı küçült"
-                disabled={yaziDuzeyi === 0}
-                onClick={() => setYaziDuzeyi((deger) => Math.max(0, deger - 1) as YaziDuzeyi)}
-              >
-                A−
-              </button>
-              <button
-                type="button"
-                aria-label="Yazıyı büyüt"
-                disabled={yaziDuzeyi === 2}
-                onClick={() => setYaziDuzeyi((deger) => Math.min(2, deger + 1) as YaziDuzeyi)}
-              >
-                A+
-              </button>
-            </div>
-          </section>
-          <nav className={styles.durakNav} aria-label="Bölüm içi akış">
-            <p>Bölüm içi akış</p>
-            <ol>
-              {duraklar.map((durak, index) => (
-                <li key={durak.id}>
-                  <button
-                    type="button"
-                    className={aktifDurak === durak.id ? styles.durakAktif : ""}
-                    aria-current={aktifDurak === durak.id ? "step" : undefined}
-                    onClick={() => {
-                      bolumeKaydir(durak.key);
-                      setAraclarAcik(false);
-                    }}
-                  >
-                    <span>{index + 1}</span>
-                    <Ikon ad={durak.ikon} boyut={18} />
-                    <strong>{durak.etiket}</strong>
-                  </button>
-                </li>
-              ))}
-            </ol>
-          </nav>
-          <button type="button" className={styles.sifirlaButonu} onClick={bolumuBastanAc}>
-            Bölümü Baştan Aç
-          </button>
-          <p className={styles.araclarNotu}>
-            Yazı büyüklüğü yalnızca bu okuma ekranının görünümünü değiştirir.
-          </p>
-        </aside>
+        ) : null}
+
+        <AdimCubugu
+          adimlar={adimlar}
+          aktif={aktifAdim}
+          dolu={adimDolulugu}
+          enIleri={enIleriAdim}
+          kapiAcik={sonucAcik}
+          yon="yatay"
+          onSec={adimaGit}
+        />
+      </header>
+
+      {sesHazir ? (
+        <audio
+          ref={audioRef}
+          src={chapter.audioUrl}
+          preload="metadata"
+          onError={() => {
+            setSesCaliyor(false);
+            setSesBulunamadi(true);
+          }}
+          onLoadedMetadata={(event) => setToplamSure(event.currentTarget.duration)}
+          onTimeUpdate={(event) => setGecenSure(event.currentTarget.currentTime)}
+          onPlay={() => setSesCaliyor(true)}
+          onPause={() => setSesCaliyor(false)}
+          onEnded={() => {
+            setSesCaliyor(false);
+            setGecenSure(0);
+            if (audioRef.current) audioRef.current.currentTime = 0;
+          }}
+        />
       ) : null}
 
-      <div className={styles.akis} ref={akisRef}>
-        {akis.map((bolum) => (
+      {aaAcik ? (
+        <>
+          <button
+            type="button"
+            className={styles.aaOrtusu}
+            tabIndex={-1}
+            aria-label="Yazı boyutunu kapat"
+            onClick={aaKapat}
+          />
           <div
-            key={bolum.key}
-            className={styles.bolum}
-            data-bolum-key={bolum.key}
-            data-durak-id={durakId(bolum)}
+            ref={aaPaneliRef}
+            className={styles.aaPaneli}
+            id="yazi-boyutu"
+            role="dialog"
+            aria-label="Yazı boyutu"
           >
-            {bolumuCiz(bolum)}
+            <p className={styles.aaBasligi}>Yazı boyutu</p>
+            <div className={styles.yaziSecici} role="group" aria-label="Yazı boyutu">
+              {([0, 1, 2] as const).map((duzey) => (
+                <button
+                  key={duzey}
+                  type="button"
+                  aria-pressed={yaziDuzeyi === duzey}
+                  onClick={() => yaziDuzeyiSec(duzey)}
+                >
+                  <span className={YAZI_ORNEKLERI[duzey]} aria-hidden="true">
+                    A
+                  </span>
+                  <small>{YAZI_ADLARI[duzey]}</small>
+                </button>
+              ))}
+            </div>
+            <button type="button" className={styles.bastanDugmesi} onClick={bolumuBastanAc}>
+              Bölümü baştan başlat
+            </button>
           </div>
-        ))}
+        </>
+      ) : null}
+
+      <div className={styles.govde}>
+        <aside className={styles.yanSutun}>
+          <AdimCubugu
+            adimlar={adimlar}
+            aktif={aktifAdim}
+            dolu={adimDolulugu}
+            enIleri={enIleriAdim}
+            kapiAcik={sonucAcik}
+            yon="dikey"
+            onSec={adimaGit}
+          />
+          <div className={`${styles.yanRozet} ${tekrarOkuma || rozetDurumu === "alindi" ? styles.rozetKazanilmis : ""}`}>
+            <YedekliGorsel src={rozetYolu} yedekSrc={YEDEK.rozet} alt="" width={104} height={104} />
+            <small>{tekrarOkuma || rozetDurumu === "alindi" ? "Bu rozeti kazandın" : "Bu bölümün rozeti"}</small>
+            <strong>{chapter.badgeName}</strong>
+          </div>
+        </aside>
+
+        <div className={styles.akis}>
+          {govdeBolumleri.map((bolum) => (
+            <div
+              key={bolum.key}
+              className={styles.bolum}
+              data-bolum-key={bolum.key}
+              data-adim={adimIdsi(bolum, kararVar)}
+              data-tur={bolum.type}
+            >
+              {bolumuCiz(bolum)}
+            </div>
+          ))}
+        </div>
       </div>
+
+      {rozetVar ? (
+        <div className={styles.bolum} data-bolum-key="rozet" data-adim="rozet" data-tur="rozet">
+          <RozetKutlamasi
+            bookKey={bookKey}
+            bolumNo={bolumNo}
+            rozetAdi={chapter.badgeName}
+            durum={kutlamaDurumu}
+            hata={kayitHatasi}
+            yaklasti={rozetYaklasti}
+            sonraki={sonraki}
+            finalYolu={finalYolu}
+            madalyaAdi={`${chapter.bookName ?? "Kitap"} Yolculuk Madalyası`}
+            geriYolu={geriYolu}
+            onRozetiAl={rozetiAl}
+          />
+        </div>
+      ) : null}
 
       <p className={styles.srOnly} aria-live="polite">
         {duyuru}

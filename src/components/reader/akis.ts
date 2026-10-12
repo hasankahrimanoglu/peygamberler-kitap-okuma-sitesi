@@ -4,23 +4,30 @@ import type { ChapterData } from "../../data/demoChapters";
 /**
  * Kaydırmalı okuma akışının segment modeli (KARAR 26 Tem 2026 — Faz 6.2).
  *
- * Karakter bütçesi YOKTUR. Bölüm sayfalara bölünmez; her segment ekranda kendi
- * yüzeyiyle görünen bir "durak"tır ve hepsi tek bir kaydırma akışında alt alta
- * durur. Sayfa bütçesini hesaplayan eski `sayfalar.ts` ve onu kullanan sayfalı
- * okuyucu 30 Tem 2026'da silindi; sayfa metaforu geri getirilmeyecek.
+ * Karakter bütçesi YOKTUR. Bölüm sayfalara bölünmez; segmentler tek bir
+ * kaydırma akışında alt alta durur. Sayfa bütçesini hesaplayan eski
+ * `sayfalar.ts` ve onu kullanan sayfalı okuyucu 30 Tem 2026'da silindi; sayfa
+ * metaforu geri getirilmeyecek.
+ *
+ * Faz B (12 Eki 2026, PROJE-MODELI 3.10.3): tam ekran bölüm kapağı yerine kısa
+ * bir açılış bloğu gelir; segmentler çocuğa "durak" adıyla gösterilmez, adım
+ * çubuğundaki altı adımdan birine bağlanır (`okumaAdimlari`).
  */
+type Kisim = "birinci" | "devam";
+
 export type OkumaAkisBolumu =
-  | { key: "kapak"; type: "kapak" }
+  | { key: "acilis"; type: "acilis" }
   | {
       key: string;
       type: "hikaye";
-      /** Karar noktasının öncesi mi sonrası mı — üst etiket ve scroll-spy için. */
-      kisim: "birinci" | "devam";
+      /** Karar noktasının öncesi mi sonrası mı — adım çubuğu için. */
+      kisim: Kisim;
       bloklar: BookContentBlock[];
     }
   | {
       key: string;
       type: "tanik";
+      kisim: Kisim;
       witnessName: string;
       witnessLabel: string;
       body: string;
@@ -32,26 +39,12 @@ export type OkumaAkisBolumu =
   | { key: "gorev"; type: "gorev" }
   | { key: "rozet"; type: "rozet" };
 
-export type AkisDurakId =
-  | "kapak"
-  | "hikaye"
-  | "tanik"
-  | "karar"
-  | "devam"
-  | "karsilastirma"
-  | "ogrendik"
-  | "gorev"
-  | "rozet";
-
 /**
  * Blok dizisini hikâye segmentlerine çevirir. Metin ve görsel blokları
  * BÖLÜNMEDEN tek segmentte akar; yalnızca Tanık Sayfası akışı keser, çünkü
  * kendi defter yüzeyinde tam genişlikte durur.
  */
-function hikayeSegmentleri(
-  blocks: BookContentBlock[],
-  kisim: "birinci" | "devam",
-): OkumaAkisBolumu[] {
+function hikayeSegmentleri(blocks: BookContentBlock[], kisim: Kisim): OkumaAkisBolumu[] {
   const segmentler: OkumaAkisBolumu[] = [];
   let bekleyen: BookContentBlock[] = [];
 
@@ -72,6 +65,7 @@ function hikayeSegmentleri(
       segmentler.push({
         key: `${kisim}-tanik-${segmentler.length}`,
         type: "tanik",
+        kisim,
         witnessName: block.witnessName,
         witnessLabel: block.witnessLabel,
         body: block.body,
@@ -95,15 +89,12 @@ function hikayeSegmentleri(
  * devam metni, karşılaştırma ve rozet DOM'da hiç bulunmaz. Bulanıklaştırma veya
  * kilit görseliyle gizleme yapılmaz; içerik gerçekten yoktur (spoiler sızmaz).
  *
- * Akış: kapak → Hikâye 1. Kısım → Sen Olsaydın → [seçim yapılınca] Hikâye Devam
- * Ediyor → Seçimini Karşılaştır → Ne Öğrendik → (görev varsa) Bugüne Taşı →
- * Rozet Kapısı. `sonucAcik` "seçim yapıldı" demektir — doğru şart DEĞİL.
+ * Akış: açılış → Hikâye 1. Kısım → Sen Olsaydın → [seçim yapılınca] Hikâyenin
+ * devamı → Senin seçimin → Ne öğrendik? → (görev varsa) Bugüne Taşı → Rozet.
+ * `sonucAcik` "seçim yapıldı" demektir — doğru şart DEĞİL.
  */
-export function okumaAkisiniOlustur(
-  chapter: ChapterData,
-  sonucAcik: boolean,
-): OkumaAkisBolumu[] {
-  const akis: OkumaAkisBolumu[] = [{ key: "kapak", type: "kapak" }];
+export function okumaAkisiniOlustur(chapter: ChapterData, sonucAcik: boolean): OkumaAkisBolumu[] {
+  const akis: OkumaAkisBolumu[] = [{ key: "acilis", type: "acilis" }];
 
   if (chapter.contentBlocks?.length) {
     akis.push(...hikayeSegmentleri(chapter.contentBlocks, "birinci"));
@@ -117,7 +108,7 @@ export function okumaAkisiniOlustur(
 
   if (chapter.continuationBlocks?.length) {
     akis.push(...hikayeSegmentleri(chapter.continuationBlocks, "devam"));
-    akis.push({ key: "karsilastirma", type: "karsilastirma" });
+    if (chapter.decision) akis.push({ key: "karsilastirma", type: "karsilastirma" });
   }
 
   akis.push({ key: "ogrendik", type: "ogrendik" });
@@ -131,8 +122,66 @@ export function okumaAkisiniOlustur(
   return akis;
 }
 
-/** Segmenti scroll-spy / durak göstergesindeki kimliğine çevirir. */
-export function durakId(bolum: OkumaAkisBolumu): AkisDurakId {
-  if (bolum.type === "hikaye") return bolum.kisim === "devam" ? "devam" : "hikaye";
-  return bolum.type;
+/* ------------------------------------------------------------ ADIM ÇUBUĞU */
+
+export type AdimId = "oku" | "sec" | "devam" | "ogren" | "gorev" | "rozet";
+
+export type OkumaAdimi = {
+  id: AdimId;
+  /** Telefon ve tablet dikeydeki yatay çubuk: "Oku · Seç · Oku · Öğren · Görev · Rozet". */
+  kisa: string;
+  /** Tablet yatay ve masaüstündeki adım sütunu. */
+  uzun: string;
+  /** "Sen Olsaydın" kapısının arkasında mı (seçim onaylanmadan açılmaz). */
+  kapiArkasinda: boolean;
+};
+
+/**
+ * Bölümün adımları (PROJE-MODELI 3.10.3). Akıştan değil bölümün yapısından
+ * türetilir: kapının arkasındaki adımlar seçim yapılmadan da çubukta görünür
+ * (kilitli), ama içerikleri DOM'a girmez.
+ */
+export function okumaAdimlari(chapter: ChapterData): OkumaAdimi[] {
+  const kararVar = Boolean(chapter.decision);
+  const adimlar: OkumaAdimi[] = [{ id: "oku", kisa: "Oku", uzun: "Hikâye", kapiArkasinda: false }];
+
+  if (kararVar) {
+    adimlar.push({ id: "sec", kisa: "Seç", uzun: "Sen olsaydın?", kapiArkasinda: false });
+    if (chapter.continuationBlocks?.length) {
+      adimlar.push({ id: "devam", kisa: "Oku", uzun: "Hikâyenin devamı", kapiArkasinda: true });
+    }
+  }
+
+  adimlar.push({ id: "ogren", kisa: "Öğren", uzun: "Ne öğrendik?", kapiArkasinda: kararVar });
+
+  if (chapter.gorev || chapter.buguneTasi) {
+    adimlar.push({ id: "gorev", kisa: "Görev", uzun: "Bugüne Taşı", kapiArkasinda: kararVar });
+  }
+
+  adimlar.push({ id: "rozet", kisa: "Rozet", uzun: "Rozet", kapiArkasinda: kararVar });
+  return adimlar;
+}
+
+/**
+ * Segmentin bağlı olduğu adım. "Senin seçimin" Öğren adımındadır: kaydırma
+ * sırasında etkin adım geri sıçramasın diye (Seç → Oku → Seç olmasın).
+ * Karar yoksa devam metni ilk okuma adımının parçasıdır.
+ */
+export function adimIdsi(bolum: OkumaAkisBolumu, kararVar: boolean): AdimId {
+  switch (bolum.type) {
+    case "acilis":
+      return "oku";
+    case "hikaye":
+    case "tanik":
+      return bolum.kisim === "devam" && kararVar ? "devam" : "oku";
+    case "karar":
+      return "sec";
+    case "karsilastirma":
+    case "ogrendik":
+      return "ogren";
+    case "gorev":
+      return "gorev";
+    case "rozet":
+      return "rozet";
+  }
 }

@@ -147,9 +147,10 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
 ---
 
 ## ÇOCUK ARAYÜZÜ SADELEŞTİRME (KARAR 11–12 Eki 2026 — PROJE-MODELI 3.10)
-Faz A ve **Faz C (ana ekran) uygulandı;** **Faz B (okuma ekranı) bekliyor.** Ana ekran
-bileşenleri `src/components/cocuk/`, veri modeli `src/lib/child/yolculuk.ts`, girişsiz
-önizleme `/tasarim/ana-ekran`. Özet:
+Faz A, **Faz B (okuma ekranı)** ve **Faz C (ana ekran) uygulandı;** Faz D (Işıl
+çizimleri) bekliyor. Ana ekran bileşenleri `src/components/cocuk/`, veri modeli
+`src/lib/child/yolculuk.ts`, girişsiz önizlemeler `/tasarim/ana-ekran` ve
+`/tasarim/okuma?bolum=adem-2` (rozet kaydı Supabase'e gitmez). Özet:
 keşif bölgeleri arayüzden kalkar, kitaplar katalog sırasıyla **tek dikey rotada**;
 yayında olmayan kitap görünmez (sonda tek "Yakında" kartı); sonradan yayınlanan kitap
 kendi yerine girer + "Yeni" etiketi; **kitap kilidi kalkar, bölüm kilidi kalır**;
@@ -174,9 +175,10 @@ Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
   aynı okuma oturumunda tutulur (kalıcı kayıt S5'tir, karıştırma).
 - **Bölüm TEK SAYFADA KAYDIRILIR (KARAR 26 Tem 2026 — Faz 6.2):** sayfa yok,
   **durak** var. Sayfa bölme / sayfa çevirme / iç kaydırma alanı KULLANILMAZ;
-  alt gezinme çubuğu ve "Sayfa 3 / 12" göstergesi KALDIRILDI. Yerine üstte
-  daralan sabit başlık + ince altın ilerleme çubuğu + aktif durak adı gelir
-  (bu gösterge opsiyonel değil, sayfa metaforunun zorunlu telafisidir).
+  alt gezinme çubuğu ve "Sayfa 3 / 12" göstergesi KALDIRILDI. Yerine **adım
+  çubuğu** gelir (Faz B, 12 Eki 2026: Oku · Seç · Oku · Öğren · (Görev) · Rozet;
+  her adımın çizgisi okundukça altınla dolar; ≥1024 px solda adım sütunu). Bu
+  gösterge opsiyonel değil, sayfa metaforunun zorunlu telafisidir.
   İllüstrasyon ayrı bir adım DEĞİLDİR — hikâye akışının içine, ait olduğu
   sahnenin geldiği yere serpiştirilir; metin ve görsel hiçbir kırılımda yan yana
   konmaz. "Sen Olsaydın" bir **kapıdır**: onaylanmadan sonrası **render edilmez**
@@ -188,8 +190,8 @@ Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
   geçti**; sayfalı okuyucu (`AtlasReader`, `sayfalar.ts`, sayfa bileşenleri ve
   `/tasarim/okuma-yeni` · `/tasarim/okuma-kaydirmali` önizlemeleri)
   **30 Tem 2026'da silindi**. `src/components/reader/` içinde artık yalnız
-  `AtlasScrollReader` + `akis.ts` + `Konfeti` vardır; sayfa metaforuna dönüş
-  ÖNERİLMEZ.
+  `AtlasScrollReader` + `AdimCubugu` + `RozetKutlamasi` + `akis.ts` + `Konfeti`
+  vardır; sayfa metaforuna dönüş ÖNERİLMEZ.
 - **"Bugüne Taşı" görevleri KOŞULLUDUR** — her bölümde değil (kitabın yaklaşık
   %40–50'si; editoryal hedef, teknik sınır olarak KODLANMAZ). Gönüllüdür: "Görevi Listeme
   Ekle / Şimdilik Değil". İlerleme/rozet/madalya ŞARTI DEĞİLDİR; göreve ayrı

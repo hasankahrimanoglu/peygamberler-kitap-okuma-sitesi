@@ -118,11 +118,28 @@ export function adaptDataChapter(routeId: string): ChapterData | null {
   };
 }
 
-export function sonrakiBolumAdiniBul(chapter: ChapterData): string | null {
+export type SonrakiBolum = {
+  no: number;
+  ad: string;
+  /** Bölümün kapak sahnesi; yoksa ekran kitap kapağına düşer. */
+  kapak?: string;
+  okumaYolu: string;
+};
+
+/** Rozet anındaki "Sıradaki Bölüme Geç" için bir sonraki bölüm (3.10.3). */
+export function sonrakiBolumuBul(chapter: ChapterData): SonrakiBolum | null {
   const chapterNumber = chapter.chapterNumber ?? 1;
   const totalChapters = chapter.totalChapters ?? 1;
   if (chapterNumber >= totalChapters) return null;
 
   const book = books.find((item) => item.routePrefix === chapter.bookKey);
-  return book?.chapters[chapterNumber]?.title ?? null;
+  const sonraki = book?.chapters[chapterNumber];
+  if (!book || !sonraki) return null;
+
+  return {
+    no: Number(sonraki.id),
+    ad: sonraki.title,
+    kapak: sonraki.coverIllustration?.src,
+    okumaYolu: `/reader/${book.routePrefix}-${sonraki.id}`,
+  };
 }

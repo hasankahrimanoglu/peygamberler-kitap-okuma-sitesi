@@ -4,6 +4,9 @@
 
 :root {
   color-scheme: light;
+  /* Hata/silme rengi; Tailwind'deki `tehlike` ile aynı değer, birlikte değişir.
+     İki temada da aynıdır. CSS modülleri (okuma ekranı) bu değişkeni kullanır. */
+  --tehlike: #c0392b;
 }
 
 /*

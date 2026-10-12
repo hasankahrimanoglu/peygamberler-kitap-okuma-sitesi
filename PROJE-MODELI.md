@@ -241,10 +241,10 @@ tamamladığında açılacak."* ("Önceki görevleri bekliyor" gibi soyut ifade 
 
 > **REVİZE — 12 Ekim 2026 (bkz. 3.10):** Okuma ekranında koyu çerçeve, tam
 > ekran bölüm kapağı, ince ilerleme çizgisi, durak üst etiketleri ve "Okuma
-> Araçları" menüsü değişiyor (3.10.3, Faz B); harita ve bölüm rotası tek dikey
-> rotaya dönüyor (3.10.1, Faz C). Aşağıdaki maddeler o fazlar uygulanana kadar
-> mevcut kodu tarif eder. Krem okuma yüzeyi, serif hikâye metni ve ölçüleri,
-> tek sütun kaydırma ve "Sen Olsaydın" kapısı **değişmez.**
+> Araçları" menüsü değişti (3.10.3, **Faz B uygulandı**); harita ve bölüm rotası
+> tek dikey rotaya döndü (3.10.1, **Faz C uygulandı**). Aşağıdaki maddelerin
+> bunlarla çelişen kısmı tarihsel kayıttır. Krem okuma yüzeyi, serif hikâye
+> metni, tek sütun kaydırma ve "Sen Olsaydın" kapısı **değişmedi.**
 
 Çocuk tarafının harita, bölüm rotası ve Hz. Âdem okuma ekranında ortak görsel
 yön **“Masalsı Keşif Atlası”**dır:
@@ -293,6 +293,8 @@ yön **“Masalsı Keşif Atlası”**dır:
   ("Sayfa 3 / 12") kaldırılması çocukta "ne kadar kaldı" belirsizliği yaratır; bu
   boşluk üstteki ince ilerleme çubuğu ve aktif durak adıyla kapatılır. İlerleme
   göstergesi süs değil, sayfa metaforunun kaldırılmasının telafisidir.
+  *(REVİZE — 12 Eki 2026, Faz B: ince çubuk ve durak adının yerini adım çubuğu
+  / adım sütunu aldı; telafi kuralı aynen geçerli — bkz. 3.10.3.)*
 - Hz. Âdem Büyük Final Testi de aynı atlas dünyasında gösterilir: ortak keşif
   üst barı, katmanlı gece/doğa zemini ve krem soru yüzeyi kullanılır. Seçenekler
   tek sütunda kalır; onay/devam eylemleri yeşil, sonucu görme ve ilk madalya
@@ -818,6 +820,58 @@ testi henüz yapılmadı; kararlar gözlem ve ölçüme dayanır.
   Geç"** alır. Bugünkü "Bölümü Tamamla → bölüm rotasına dönüş" kalkar.
 - Sesli anlatım: bkz. 6.5.
 
+**Uygulandı — 12 Ekim 2026 (Faz B).** Önizleme: `/tasarim/okuma?bolum=adem-2`
+(giriş gerektirmez, rozet kaydı Supabase'e gitmez; `&tekrar=1` rozeti önceden
+kazanılmış bölüm, `&hata=1` kayıt hatası, `?bolum=idris-4` son bölüm). Kod:
+`src/components/reader/` (`AtlasScrollReader`, `AdimCubugu`, `RozetKutlamasi`,
+`akis.ts`). Uygulamada verilen ayrıntı kararları:
+
+- **Adımlar bölümün yapısından türer** (`okumaAdimlari`): karar yoksa "Seç" ve
+  ikinci "Oku" çıkmaz, görev yoksa "Görev" çıkmaz. "Senin seçimin" **Öğren**
+  adımındadır; kaydırırken etkin adım geri sıçramasın diye (Seç → Oku → Seç
+  olmasın). Kapının arkasındaki adımlar seçimden önce kilit simgesiyle görünür
+  ama içerikleri DOM'da yoktur. Yalnız geçilmiş adıma ve bulunulan adıma
+  dokunulur.
+- **Adım çubuğu ilerlemeyi de taşır:** her adımın çizgisi okundukça soldan
+  altınla dolar (yatay); sütunda adımdan bir sonrakine uzanan yol dolar (dikey).
+  Ayrı ilerleme çubuğu yoktur. Kırılım: < 1024 px yatay çubuk üst barın altında,
+  ≥ 1024 px solda yapışkan adım sütunu + kazanılacak rozet kartı (açılıştaki
+  rozet satırı bu genişlikte tekrar edilmez).
+- **Açılış bloğu:** 16:9 bölüm sahnesi + "Hz. Âdem · 2. bölüm" künyesi + bölüm
+  adı + "Bu bölümün rozeti" satırı. Telefonda 351 px (eskiden 600 px kapak);
+  bölüm özeti (`ozet`) açılışta gösterilmez. Rozeti önceden kazanılmış bölümde
+  satır "Bu rozeti kazandın" der ve rozet tam renklidir.
+- **Üst bar:** ← Bölümler (telefonda yalnız ok) · bölüm adı + künye · **Dinle**
+  (lacivert, ikincil eylem) · **Aa**. "Dinle"ye basınca üst barın altında ses
+  şeridi açılır (oynat/duraklat, süre, konum, kapat); ses dosyası yoksa hiçbir
+  ses kontrolü çizilmez (6.5).
+- **"Aa":** üç büyüklük (Küçük · Normal · Büyük) ve altta sakin "Bölümü baştan
+  başlat" (seçimi sıfırlar). Telefonda alttan sayfa, daha genişte düğmenin
+  altında küçük panel. Seçilen büyüklük bu cihazda hatırlanır ve bölümden
+  bölüme taşınır (`localStorage`, yalnız görünüm tercihi).
+- **Sen olsaydın?** açık altın bantta (telefonda kenardan kenara). Işıl balonu
+  "Seçimine hikâyenin sonunda birlikte bakacağız." der. Şıklar alt gölgeli
+  basılabilir düğme; seçim yapılmadan onay düğmesi kesik çizgili ve nötrdür,
+  "Bir seçenek seç" yazar (eski soluk yeşil devre dışı düğme bozuk görünüyordu).
+- **Işıl'ın sözlük ipucu** ("Yeşil kelimelere dokun, anlamını öğren.") bölümün
+  ilk sözlük kelimesinin üstünde durur; çocuk herhangi bir kelimeye bir kez
+  dokununca bu cihazda bir daha görünmez.
+- **Ne öğrendik?** üç kart yerine tek sütunlu sıkı liste (telefonda 710 → 325 px).
+- **Rozet anı:** tam genişlik gece mavisi sahne, üst kenarı kubbe gibi kıvrılır
+  (kremden geceye ufuk çizgisi). Önce "Bölümün sonuna geldin!" + "{Rozet} seni
+  bekliyor." + altın **Rozetimi Al**; kayıttan sonra konfeti, rozet parlar,
+  Işıl yanında uçar, "{Rozet} senin!" + "Bu rozet Ödüllerim'e eklendi." +
+  sıradaki bölüm kartı (sahne görseli + ad) + yeşil **Sıradaki Bölüme Geç** +
+  **Bölümlere dön**. Son bölümde kart Büyük Final Testi + madalya adını
+  gösterir, düğme altın **Büyük Final Testine Geç**. Kayıt hatasında aynı yerde
+  hata metni + **Tekrar Dene**. Rozeti önceden kazanılmış bölümde "Rozetimi Al"
+  ve kutlama yoktur: "{Rozet} senin!" + "Bu rozeti daha önce kazanmıştın."
+- **Ölçüm (telefon 390 px, Hz. Âdem 2. bölüm, seçim sonrası):** sayfa 8.205 px,
+  hikâye 5.012 px; hikâye dışı alan %42 → **%39**, tam ekran rozet sahnesi
+  hariç **%33**. Hedeflenen ~%25'e ulaşılmadı: kalan alanın çoğu kabuk değil
+  içeriktir (Sen olsaydın, Senin seçimin, Ne öğrendik, Bugüne Taşı) ve rozet
+  anı bilinçli olarak tam ekrandır. Hikâye metni 17,5 → 18 px büyüdü.
+
 #### 3.10.4 Arayüz dili
 
 Çocuğun bilmesi gereken kavram sayısı 6'ya iner: **Harita, Kitap, Bölüm,
@@ -831,15 +885,24 @@ metni 10 kelimeyi geçmez, "sen" diye konuşur, doğru/yanlış çağrışımı 
 | Kararını Onayla | Seçimim bu | ✅ Faz A |
 | Şıklar 1-2-3, karşılaştırmada "B" | Şıklar her yerde A-B-C | ✅ Faz A |
 | Kararını onayladığında hikâyenin devamı açılacak. | Seçimini yapınca hikâye devam edecek. | ✅ Faz A |
-| Bölüm Rotasına Dön | ← Bölümler | Faz B |
+| Bölüm Rotasına Dön | ← Bölümler | ✅ Faz B |
 | Keşif Atlasına Dön | ← Harita | Faz C |
-| Bölüm Kapısı · Hikâye · 1. Kısım (durak adları) | (kalkar; adım çubuğu) | Faz B |
-| Okuma Araçları | Aa | Faz B |
-| Düşünme Durağı · Seçimini Karşılaştır | Senin seçimin | Faz B |
-| Yolculuk Defteri · Ne Öğrendik? | Ne öğrendik? | Faz B |
-| Hayata Açılan Kapı · Bugüne Taşı | Bugüne Taşı | Faz B |
-| Bölüm Tamamlandı · Rozet Kapısı · Bölümü Tamamla | Rozetimi Al → "{Rozet adı} senin!" | Faz B |
-| {Rozet} haritana işleniyor… | Bu rozet Ödüllerim'e eklendi. | Faz B |
+| Bölüm Kapısı · Hikâye · 1. Kısım (durak adları) | (kalkar; adım çubuğu) | ✅ Faz B |
+| Okuma Araçları | Aa | ✅ Faz B |
+| Düşünme Durağı · Seçimini Karşılaştır | Senin seçimin | ✅ Faz B |
+| Yolculuk Defteri · Ne Öğrendik? | Ne öğrendik? | ✅ Faz B |
+| Hayata Açılan Kapı · Bugüne Taşı | Bugüne Taşı | ✅ Faz B |
+| Bölüm Tamamlandı · Rozet Kapısı · Bölümü Tamamla | Rozetimi Al → "{Rozet adı} senin!" | ✅ Faz B |
+| {Rozet} haritana işleniyor… | Bu rozet Ödüllerim'e eklendi. | ✅ Faz B |
+| Maceraya Başla · Okumak için aşağı kaydır. | (kalkar; hikâye ilk ekranda başlar) | ✅ Faz B |
+| Kazanılacak rozet | Bu bölümün rozeti · (kazanılmışsa) Bu rozeti kazandın | ✅ Faz B |
+| Kararını Onayla (seçim yapılmadan, soluk) | Bir seçenek seç | ✅ Faz B |
+| Bu görev tamamen gönüllü; eklemesen de rozetin ve yolculuğun aynen devam eder. | Bu görev gönüllü; eklemesen de rozetini alırsın. | ✅ Faz B |
+| Tahmini süre · Tamamlanma ölçütü | Süre · Ne zaman bitti sayılır? | ✅ Faz B |
+| Hikâyenin devamını okudun. Şimdi yalnızca kendi seçimine bakalım. · Bu bölümden yanında götüreceğin üç düşünce. | (kalkar; tek başlık) | ✅ Faz B |
+| Rozet Kapısı (rozet alınmadan) | Bölümün sonuna geldin! · {Rozet adı} seni bekliyor. | ✅ Faz B |
+| Bölüm Listesine Dön · Rozetin haritanda duruyor… | Bu rozeti daha önce kazanmıştın. · Sıradaki Bölüme Geç · Bölümlere dön | ✅ Faz B |
+| Bölümü Baştan Aç | Bölümü baştan başlat (Aa panelinde) | ✅ Faz B |
 | Keşif İskelesi · Kazanımlarım · Kelime Defterim · Görevlerim | Alt menü: Harita · Ödüllerim · Kelimelerim · Görevlerim | Faz C |
 | Hazırlanıyor (her durakta) | Tek "Yakında" kartı | Faz C |
 
@@ -1019,10 +1082,15 @@ Okuma ekranı düzeni (**REVİZE — 26 Temmuz 2026, Hasan onayı; Faz 6.2**):
 - **Alt gezinme çubuğu kaldırılmıştır.** Yerine üstte daralan sabit başlık + ince
   altın ilerleme çubuğu + aktif durak adı gelir. "Sayfa 3 / 12" göstergesi
   kullanılmaz. Ses süresi ayrı kalır: "01:18 / 06:45".
+  *(REVİZE — 12 Eki 2026, Faz B: ince çubuk ve durak adı yerine adım çubuğu /
+  adım sütunu; ses süresi "Dinle"ye basınca açılan ses şeridinde — 3.10.3.)*
 - **Büyük butonlar akışın içinde, geldiği yerde durur:** Maceraya Başla (kapağın
   altında, kaydırmayı başlatan animasyonlu ipucu) / Kararını Onayla (karar
   kartında) / Görevi Listeme Ekle — Şimdilik Değil (görev kartında) / Bölümü
   Tamamla (Rozet Kapısı'nda, akışın sonunda).
+  *(REVİZE — 12 Eki 2026, Faz B: Maceraya Başla kalktı; "Seçimim bu" /
+  Görevi Listeme Ekle — Şimdilik Değil / Rozetimi Al → Sıradaki Bölüme Geç
+  (son bölümde Büyük Final Testine Geç) + Bölümlere dön — 3.10.3.)*
 - **"Sen Olsaydın" bir kapıdır:** karar onaylanmadan sonrasındaki içerik
   **render edilmez** (DOM'da da bulunmaz; bulanıklaştırma veya kilit görseliyle
   gizlenmez). Onaylandığında devamı açılır ve akış yeni içeriğin başına yumuşakça
@@ -1267,7 +1335,7 @@ ileride istenirse eklenmesi kolaydır.)
   kitaplara taşınmaz. Bölüm kapısı bunun yerine tek güçlü sahne + bölüm kimliği +
   rozet önizlemesi + tek çağrı ("Maceraya Başla") ile kurulur.
   *(REVİZE — 12 Eki 2026: tam ekran bölüm kapısı ve "Maceraya Başla" Faz B'de
-  kalkar; bkz. 3.10.3.)*
+  kalktı; bkz. 3.10.3.)*
 
 ### 6.5 Sesli anlatım dosyaları (KARAR — 12 Ekim 2026, Hasan)
 
@@ -1390,7 +1458,7 @@ ileride istenirse eklenmesi kolaydır.)
 | Faz | Kapsam | Durum |
 |---|---|---|
 | **A** | Hızlı düzeltmeler: sözlük kelimesinin ekinden ayrılması ("emanet ti"), "Sen Olsaydın" metinleri + şıkların her yerde A-B-C olması, kilide benzeyen "devam ediyor" ikonu, her bölüme sesli anlatım + yer tutucu ses (6.5), iki unvanın yeni adı (Bölüm 2) | ✅ 12 Eki 2026 |
-| **B** | Okuma ekranı yeni düzeni (3.10.3): açık zemin, kapak ekranının kalkması, adım çubuğu/sütunu, tek başlıklı duraklar, "Aa", rozet kutlaması + "Sıradaki Bölüme Geç", okuma ekranı metinleri (3.10.4) | Bekliyor |
+| **B** | Okuma ekranı yeni düzeni (3.10.3): açık zemin, kapak ekranının kalkması, adım çubuğu/sütunu, tek başlıklı duraklar, "Aa", rozet kutlaması + "Sıradaki Bölüme Geç", okuma ekranı metinleri (3.10.4) | ✅ 12 Eki 2026. Önizleme: `/tasarim/okuma?bolum=adem-2` (giriş gerektirmez; `&tekrar=1`, `&hata=1`, `?bolum=idris-4`). Uygulama ayrıntıları ve ölçüm 3.10.3 sonunda. Işıl şimdilik konsept eskiz |
 | **C** | Ana ekran ve rota (3.10.1–3.10.2, 3.10.6–3.10.7): "Sıradaki bölümün" kartı, bölgesiz tek dikey rota (yayındaki kitaplar `atlasCatalog.ts`'ten çizilir, kod elle yazılmaz), ilerleme halkalı duraklar + altın ışık izi, kitap kilidinin kalkması, "Yeni" etiketi + duyuru, "Yakında" kartı, yolun ucu, profil kartı (hamburger menü kalkar), kitap ve bölümler için alttan sayfa / sağ panel (bölüm rotası sayfası kalkar), alt menü ve ekran adları (3.10.4) | ✅ 12 Eki 2026. Önizleme: `/tasarim/ana-ekran` (giriş gerektirmez; `?durum=yeni` yeni başlayan çocuk). Rota arka planı kodla çizilmiş hareketli çayır; Işıl şimdilik konsept eskiz. Eski harita bileşenleri ve `/tasarim/harita-yeni`, `/tasarim/kitap-yeni` önizlemeleri silindi. Eski demo kitapların `user_progress` kayıtları silindi (`supabase/temizlik-eski-demo-ilerleme-*.sql`) |
 | **D** | Rehber karakter Işıl (3.10.5): çizimler Hasan'da, entegrasyon yalnız tanımlı anlarda | Bekliyor |
 | **Test** | Faz B'den sonra 5 çocukla 30'ar dakikalık gözlem: "Kaldığın kitaptan okumaya başla", "Yeşil bir kelimenin anlamını bul", "Rozetini al ve sonraki bölüme geç". Ses efekti ve ek kutlama kararları bu testten sonra verilir | Bekliyor |
@@ -1532,6 +1600,11 @@ Kurallar:
       (3.10.1, 3.10.6, 3.10.7).
 - [x] Lansman 10 kitapla yapılır; hangi 10 kitap olduğu Hasan'ın seçimidir.
       Uygulama kitapları her zaman katalog sırasıyla gösterir.
+- [x] **Faz B uygulandı (12 Ekim 2026):** okuma ekranı krem zeminde açılış
+      bloğu, adım çubuğu / adım sütunu, tek başlıklı bölümler, "Aa", "Dinle"
+      + ses şeridi, gece mavisi rozet anı ve "Sıradaki Bölüme Geç". Ayrıntı
+      kararları (adım eşlemesi, yazı boyutunun cihazda hatırlanması, Işıl'ın
+      sözlük ipucunun ilk dokunuşta kapanması) 3.10.3 sonunda.
 
 ## 11. İçerik Durumu
 
