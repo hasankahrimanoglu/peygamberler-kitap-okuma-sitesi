@@ -7,6 +7,7 @@ import { supabase } from "../../../lib/supabase";
 // sayfalı okuyucu 30 Tem 2026'da tamamen kaldırıldı. Tek okuyucu budur.
 import { AtlasScrollReader } from "../../../src/components/reader/AtlasScrollReader";
 import { dbKitabiBul } from "../../../src/lib/child/yolculuk";
+import { atlasBookByKey } from "../../../src/data/atlasCatalog";
 import {
   adaptDataChapter,
   type ChapterData,
@@ -134,7 +135,8 @@ export default function ReaderPage() {
   );
 
   if (!chapter) notFound();
-  if (chapter.bookKey !== "adem" && chapter.bookKey !== "sit" && chapter.bookKey !== "idris") notFound();
+  // Yayın durumu tek kaynaktan: katalogda `published` olmayan kitabın bölümü açılmaz.
+  if (atlasBookByKey.get(chapter.bookKey ?? "")?.availability !== "published") notFound();
 
   return (
     <AtlasScrollReader

@@ -56,6 +56,25 @@
   --okuma-yuzey: #fbf6e9;
 }
 
+/*
+  Tanıtım sayfası (landing) — KARAR 15 Eki 2026.
+  Sayfa ürünün iki dünyasını sırayla gösterir: gece (çocuğun dünyası,
+  .tema-cocuk) ve krem (velinin paneli, .tema-veli). Aradaki şafak geçişinin
+  ara renkleri ve cihaz çerçevesi yalnız burada tanımlıdır; uçlar iki temanın
+  zemin renkleriyle aynıdır.
+*/
+:root {
+  --safak-1: #1e3070;
+  --safak-2: #2b3577;
+  --safak-3: #5d4f88;
+  --safak-4: #b88595;
+  --safak-5: #efc6a0;
+  --safak-6: #faf6ed;
+  --safak-gunes: #fff1d6;
+  --cihaz-cerceve: #0b1022;
+  --cihaz-kenar: #2a3454;
+}
+
 * {
   box-sizing: border-box;
 }

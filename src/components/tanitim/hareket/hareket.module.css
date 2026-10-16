@@ -1,0 +1,672 @@
+/*
+ * Tanıtım sayfasının hareket katmanı (KARAR 16 Eki 2026 — Hasan: sayfa
+ * temasını bozmadan canlandırılır).
+ *
+ * İlkeler:
+ *  - Yalnız transform ve opacity canlandırılır (GPU dostu, yerleşim kaymaz).
+ *  - Ritim yumuşak: girişler 0,6–1 sn, döngüler 2 sn ve üstü.
+ *  - Üzerine gelme tepkileri yalnız fareli cihazda (`hover: hover`); dokunmatikte
+ *    yalnız basma geri bildirimi vardır.
+ *  - "Hareketi azalt" açıksa dosyanın sonundaki kurallar bütün süsleri durdurur.
+ *
+ * Renkler tema değişkenlerinden gelir (.tema-cocuk / .tema-veli, globals.css).
+ */
+
+/* ------------------------------------------------------------ Hero başlığı */
+
+.kelime {
+  display: inline-block;
+  animation: kelimeYuksel 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(120ms + var(--sira, 0) * 95ms);
+}
+
+@keyframes kelimeYuksel {
+  from {
+    opacity: 0;
+    transform: translateY(0.45em) rotate(2deg);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+
+/* ------------------------------------------------- Işıl'ın ışık tozu ve parıltılar */
+
+.kuyrukParcasi {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 999px;
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--vurgu) 25%, white) 0%,
+    var(--vurgu) 42%,
+    transparent 72%
+  );
+  will-change: transform, opacity;
+}
+
+.parilti {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 9px;
+  height: 9px;
+  margin: -4.5px 0 0 -4.5px;
+  border-radius: 999px;
+  pointer-events: none;
+  background: radial-gradient(circle, color-mix(in srgb, var(--vurgu) 20%, white) 0 35%, var(--vurgu) 60%, transparent 75%);
+  box-shadow: 0 0 10px 2px color-mix(in srgb, var(--vurgu) 55%, transparent);
+}
+
+/* Dört köşeli yıldız parıltısı */
+.yildizParilti {
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 0;
+  box-shadow: none;
+  background: color-mix(in srgb, var(--vurgu) 55%, white);
+  clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%);
+  filter: drop-shadow(0 0 6px var(--vurgu));
+}
+
+.yesilParilti {
+  background: radial-gradient(circle, white 0 30%, var(--eylem) 60%, transparent 75%);
+  box-shadow: 0 0 10px 2px color-mix(in srgb, var(--eylem) 50%, transparent);
+}
+
+/* ------------------------------------------------------------ Ateşböcekleri */
+
+.atesBocegi {
+  position: absolute;
+  width: var(--boyut);
+  height: var(--boyut);
+  border-radius: 999px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--vurgu) 20%, white) 0 30%, var(--vurgu) 58%, transparent 74%);
+  box-shadow: 0 0 12px 3px color-mix(in srgb, var(--vurgu) 50%, transparent);
+  animation:
+    atesSuzul var(--sure) ease-in-out var(--gecikme) infinite alternate,
+    atesParilda calc(var(--sure) / 3) ease-in-out var(--gecikme) infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes atesSuzul {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(var(--yol-x), calc(var(--yol-y) * -1));
+  }
+  100% {
+    transform: translate(calc(var(--yol-x) * -0.7), var(--yol-y));
+  }
+}
+
+@keyframes atesParilda {
+  0%,
+  100% {
+    opacity: 0.12;
+  }
+  45% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.55;
+  }
+}
+
+/* -------------------------------------------------------------------- Şafak */
+
+.gunes {
+  position: absolute;
+  inset-inline: 18%;
+  bottom: -55%;
+  aspect-ratio: 2 / 1;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(closest-side, var(--safak-gunes), color-mix(in srgb, var(--safak-gunes) 45%, transparent) 55%, transparent);
+  will-change: transform;
+}
+
+.sonYildizlar {
+  position: absolute;
+  inset: 0 0 45% 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1.4px 1.4px at 12% 22%, color-mix(in srgb, var(--safak-6) 85%, transparent) 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 27% 58%, color-mix(in srgb, var(--safak-6) 70%, transparent) 50%, transparent 51%),
+    radial-gradient(1.6px 1.6px at 46% 16%, color-mix(in srgb, var(--safak-6) 80%, transparent) 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 64% 40%, color-mix(in srgb, var(--safak-6) 65%, transparent) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 81% 20%, color-mix(in srgb, var(--safak-6) 80%, transparent) 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 92% 62%, color-mix(in srgb, var(--safak-6) 60%, transparent) 50%, transparent 51%);
+}
+
+/* --------------------------------------------------------------- Altın yol */
+
+.adimIsareti {
+  background: var(--zemin);
+  color: var(--vurgu);
+  transition:
+    background-color 500ms ease,
+    color 500ms ease,
+    transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.adimYandi {
+  background: var(--vurgu);
+  color: var(--zemin);
+  animation: adimYan 900ms ease-out both;
+}
+
+@keyframes adimYan {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.16);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ----------------------------------------------------------- Sözlük ipucu */
+
+/* Yeşil kelimenin üstünde uçuşan küçük parıltı: kelime açılınca kaybolur. */
+.kelimeParilti {
+  position: absolute;
+  right: -0.55em;
+  top: -0.75em;
+  width: 13px;
+  height: 13px;
+  pointer-events: none;
+  background: color-mix(in srgb, var(--vurgu) 60%, white);
+  clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%);
+  filter: drop-shadow(0 0 5px var(--vurgu));
+  animation: parildaUc 2.4s ease-in-out infinite;
+}
+
+@keyframes parildaUc {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(0.7) rotate(0deg);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translate(3px, -6px) scale(1.1) rotate(45deg);
+    opacity: 1;
+  }
+}
+
+.ipucuIsil {
+  animation: ipucuSuzul 3.2s ease-in-out infinite;
+}
+
+@keyframes ipucuSuzul {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(-3deg);
+  }
+  50% {
+    transform: translate(4px, -7px) rotate(4deg);
+  }
+}
+
+/* ---------------------------------------------------------- Sesli anlatım */
+
+.oynatDugmesi {
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) {
+  .oynatDugmesi:hover {
+    transform: scale(1.06);
+  }
+}
+
+.oynatDugmesi:active {
+  transform: scale(0.96);
+}
+
+/* Bekleyen düğmenin çevresinde genişleyen iki halka */
+.oynatBekliyor::before,
+.oynatBekliyor::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid color-mix(in srgb, var(--vurgu) 70%, transparent);
+  animation: halkaYayil 2.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  pointer-events: none;
+}
+
+.oynatBekliyor::after {
+  animation-delay: 1.4s;
+}
+
+@keyframes halkaYayil {
+  from {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  to {
+    transform: scale(1.75);
+    opacity: 0;
+  }
+}
+
+.dalgaCubugu {
+  height: 100%;
+  transform: scaleY(var(--olcek, 0.5));
+  transform-origin: center;
+  animation: dalgaNefes 2.6s ease-in-out infinite;
+  animation-delay: calc(var(--sira, 0) * -95ms);
+  will-change: transform;
+}
+
+@keyframes dalgaNefes {
+  0%,
+  100% {
+    transform: scaleY(var(--olcek, 0.5));
+  }
+  50% {
+    transform: scaleY(calc(var(--olcek, 0.5) * 0.68));
+  }
+}
+
+/* Çalarken ölçeği JavaScript sesin şiddetine göre verir; animasyon durur. */
+.dalgaCaliyor .dalgaCubugu {
+  animation: none;
+  transition: transform 90ms linear;
+}
+
+.dinleyenIsil {
+  display: block;
+  animation: ipucuSuzul 3.6s ease-in-out infinite;
+}
+
+.dinleyenFener {
+  position: absolute;
+  left: 50%;
+  top: 62%;
+  width: 46px;
+  height: 46px;
+  margin: -23px 0 0 -23px;
+  border-radius: 999px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--vurgu) 55%, transparent), transparent 70%);
+  transform: scale(0.85);
+  transition: transform 120ms linear;
+}
+
+/* -------------------------------------------------------------- Düğmeler */
+
+.dugme {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition:
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 320ms ease,
+    background-color 200ms ease;
+}
+
+@media (hover: hover) {
+  .dugme:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px -14px var(--dugme-golgesi, rgb(0 0 0 / 0.4));
+  }
+}
+
+.dugme:active {
+  transform: translateY(0) scale(0.98);
+  transition-duration: 120ms;
+}
+
+/* Altın düğmenin üzerinden geçen ışık */
+.dugmeAltin {
+  --dugme-golgesi: color-mix(in srgb, var(--vurgu) 75%, transparent);
+}
+
+.dugmeAltin::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(110deg, transparent 32%, rgb(255 255 255 / 0.55) 48%, transparent 64%);
+  transform: translateX(-130%);
+  transition: transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .dugmeAltin:hover::after {
+    transform: translateX(130%);
+  }
+}
+
+.dugmeYesil {
+  --dugme-golgesi: color-mix(in srgb, var(--eylem) 65%, transparent);
+}
+
+/* Ana düğmenin köşesinde ara sıra parlayan küçük yıldız (Işıl'ın ipucu) */
+.dugmeYildizi {
+  position: absolute;
+  right: 9px;
+  top: 7px;
+  width: 9px;
+  height: 9px;
+  background: white;
+  clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%);
+  opacity: 0;
+  animation: yildizGoz 4.5s ease-in-out 2.5s infinite;
+  pointer-events: none;
+}
+
+@keyframes yildizGoz {
+  0%,
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(0.4) rotate(0deg);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1.15) rotate(45deg);
+  }
+  90% {
+    opacity: 0.4;
+    transform: scale(0.8) rotate(90deg);
+  }
+}
+
+/* ------------------------------------------------------------- Döngü ışığı */
+
+/* Daireleri birleştiren noktalı izin üzerinde gezinen ışık (yalnız geniş ekran) */
+.donguYolu {
+  position: absolute;
+  top: 27px;
+  left: 28px;
+  right: calc((100% - 6rem) / 4 - 28px);
+  height: 0;
+  pointer-events: none;
+}
+
+.donguIsigi {
+  position: absolute;
+  inset: 0;
+  animation: donguGez 7s cubic-bezier(0.45, 0, 0.55, 1) 1.6s infinite;
+  opacity: 0;
+}
+
+.donguIsigi::after {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: -6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: radial-gradient(circle, white 0 25%, var(--vurgu) 55%, transparent 72%);
+  box-shadow: 0 0 14px 4px color-mix(in srgb, var(--vurgu) 55%, transparent);
+}
+
+@keyframes donguGez {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  72% {
+    opacity: 1;
+  }
+  80%,
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* ----------------------------------------------------------- Ödül kartları */
+
+.odulKarti {
+  transition:
+    transform 450ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 300ms ease,
+    box-shadow 450ms ease;
+}
+
+.odulGorseli {
+  position: relative;
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Rozetin yalnız kendi şeklinde gezinen ışık: görselin kendisi maske olur. */
+.parlama {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  -webkit-mask: var(--maske) center / contain no-repeat;
+  mask: var(--maske) center / contain no-repeat;
+  background: linear-gradient(115deg, transparent 38%, rgb(255 255 255 / 0.75) 50%, transparent 62%) no-repeat;
+  background-size: 260% 100%;
+  background-position: 130% 0;
+  mix-blend-mode: soft-light;
+  transition: background-position 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sallan {
+  transform-origin: 50% 8%;
+  animation: sallan 6s ease-in-out infinite;
+  animation-delay: var(--gecikme, 0s);
+}
+
+@keyframes sallan {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.unvanBasamagi {
+  transition: transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition-delay: var(--gecikme, 0ms);
+}
+
+@media (hover: hover) {
+  .odulKarti:hover {
+    transform: translateY(-8px);
+    border-color: color-mix(in srgb, var(--vurgu) 45%, transparent);
+    box-shadow: 0 30px 60px -30px rgb(0 0 0 / 0.65);
+  }
+
+  .odulKarti:hover .odulGorseli {
+    transform: scale(1.05) rotate(-2deg);
+  }
+
+  .odulKarti:hover .parlama {
+    background-position: -30% 0;
+  }
+
+  .odulKarti:hover .unvanBasamagi {
+    transform: translateY(var(--yukselis, -6px));
+  }
+}
+
+/* ------------------------------------------------------------ Kitap rafı */
+
+.kitap {
+  perspective: 900px;
+}
+
+.kitapKapagi {
+  transform-origin: 0% 50%;
+  transition:
+    transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 550ms ease;
+}
+
+@media (hover: hover) {
+  .kitap:hover .kitapKapagi {
+    transform: translateY(-10px) rotateY(-14deg);
+    box-shadow: 22px 24px 34px -18px color-mix(in srgb, var(--murekkep) 55%, transparent);
+  }
+}
+
+/* --------------------------------------------------- Veli paneli kartları */
+
+.yukselenKart {
+  transition:
+    transform 450ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 450ms ease;
+}
+
+@media (hover: hover) {
+  .yukselenKart:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 44px -24px color-mix(in srgb, var(--murekkep) 45%, transparent);
+  }
+}
+
+/* ------------------------------------------------------------ Sık sorulanlar */
+
+/* Destekleyen tarayıcılarda (Chrome 131+, Safari 18.4+) cevap yumuşak açılır;
+   diğerlerinde anında açılır. */
+.soru {
+  interpolate-size: allow-keywords;
+}
+
+.soru::details-content {
+  block-size: 0;
+  overflow-y: clip;
+  transition:
+    block-size 480ms cubic-bezier(0.22, 1, 0.36, 1),
+    content-visibility 480ms allow-discrete;
+}
+
+.soru[open]::details-content {
+  block-size: auto;
+}
+
+.soru[open] .soruCevabi {
+  animation: cevapGel 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes cevapGel {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (hover: hover) {
+  .soru summary:hover .soruBasligi {
+    color: var(--eylem);
+  }
+}
+
+.soruBasligi {
+  transition: color 200ms ease;
+}
+
+/* -------------------------------------------------------------- Üst menü */
+
+.ustMenu {
+  transition:
+    background-color 400ms ease,
+    box-shadow 400ms ease;
+}
+
+.ustMenuKaydi {
+  box-shadow: 0 12px 30px -18px rgb(0 0 0 / 0.7);
+}
+
+.menuBaglantisi {
+  position: relative;
+}
+
+.menuBaglantisi::after {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 6px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--vurgu);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.menuAktif {
+  color: var(--murekkep);
+}
+
+.menuAktif::after {
+  transform: scaleX(1);
+}
+
+@media (hover: hover) {
+  .menuBaglantisi:hover::after {
+    transform: scaleX(0.6);
+  }
+
+  .menuAktif:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+/* ---------------------------------------------------------- Hareketi azalt */
+
+@media (prefers-reduced-motion: reduce) {
+  .kelime,
+  .atesBocegi,
+  .kelimeParilti,
+  .ipucuIsil,
+  .oynatBekliyor::before,
+  .oynatBekliyor::after,
+  .dalgaCubugu,
+  .dinleyenIsil,
+  .dugmeYildizi,
+  .donguIsigi,
+  .sallan,
+  .adimYandi,
+  .soru[open] .soruCevabi {
+    animation: none;
+  }
+
+  .atesBocegi {
+    opacity: 0.6;
+  }
+
+  .dugme,
+  .odulKarti,
+  .odulGorseli,
+  .parlama,
+  .unvanBasamagi,
+  .kitapKapagi,
+  .yukselenKart,
+  .soru::details-content {
+    transition: none;
+  }
+
+  .dugmeAltin::after,
+  .donguIsigi,
+  .dugmeYildizi {
+    display: none;
+  }
+}

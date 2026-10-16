@@ -16,6 +16,10 @@
  * Ne üretir:
  *   - Bölüm sahneleri  → `books.ts`'teki her `type: "image"` ve
  *     `coverIllustration` yolu için **.jpg** (placeholder-sahne.jpg kopyası)
+ *   - Kitap kapağı     → `public/kitaplar/hz-{key}/kapak.png` · 600×900
+ *     (placeholder-kapak.png kopyası — placeholder-kapak.svg yedeğinin rasteri)
+ *   - Harita durağı    → `public/kitaplar/hz-{key}/harita-kapak.jpg` · 512×512
+ *     (placeholder-durak.jpg kopyası — placeholder-durak.svg yedeğinin rasteri)
  *   - Rozetler         → `public/rozetler/hz-{key}/bolum-{n}.png` · 512×512 şeffaf
  *   - Madalya          → `public/madalyalar/hz-{key}.png` · 512×512 şeffaf
  *   - Sesli anlatım    → `public/sesli-anlatim/hz-{key}/hz-{key}-bolum-{n}.mp3`
@@ -42,6 +46,8 @@ import { tmpdir } from "node:os";
 
 const KOK = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SAHNE_YEDEGI = join(KOK, "public/kitaplar/placeholder-sahne.jpg");
+const KAPAK_YEDEGI = join(KOK, "public/kitaplar/placeholder-kapak.png");
+const DURAK_YEDEGI = join(KOK, "public/kitaplar/placeholder-durak.jpg");
 const SES_YEDEGI = join(KOK, "public/sesli-anlatim/placeholder-ses.mp3");
 
 const [, , bookKey, ...bayraklar] = process.argv;
@@ -185,7 +191,14 @@ if (UNVAN_MODU) {
   console.log(`\nKitap: hz-${bookKey} · ${bolumSayisi} bölüm · ${sahneYollari.length} sahne görseli`);
   console.log(kuruCalisma ? "(--kuru: hiçbir dosya yazılmayacak)\n" : "");
 
-  console.log("Bölüm sahneleri (.jpg, 16:9):");
+  // Yollar `varlikYollari.ts:kitapKapagi()` ve `haritaDuragiGorseli()` ile
+  // birebir aynı kalıptır. Hz. Musa'dan (13 Eki 2026) önce bu iki dosya betikle
+  // açılmıyordu; kitap kapağı Hasan üretene kadar hiç yoktu.
+  console.log("Kitap kapağı ve harita durağı:");
+  yaz(`/kitaplar/hz-${bookKey}/kapak.png`, (hedef) => copyFileSync(KAPAK_YEDEGI, hedef));
+  yaz(`/kitaplar/hz-${bookKey}/harita-kapak.jpg`, (hedef) => copyFileSync(DURAK_YEDEGI, hedef));
+
+  console.log("\nBölüm sahneleri (.jpg, 16:9):");
   for (const yol of sahneYollari) {
     yaz(yol, (hedef) => copyFileSync(SAHNE_YEDEGI, hedef));
   }

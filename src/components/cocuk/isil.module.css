@@ -230,15 +230,17 @@
   }
 }
 
-/* Kanat çırpma: omuzdan döner. Alt kanat yarım tur geriden gelir. */
+/* Kanat çırpma: omuzdan döner. Alt kanat yarım tur geriden gelir.
+   Süre değişkenle ayarlanabilir (tanıtım sayfası hızlı kaydırmada ve uçuşta
+   kanatları hızlandırır); değişken tanımlı değilse uygulamadaki süre aynıdır. */
 .kanat {
   transform-origin: 100% 85%;
-  animation: cirp 0.26s ease-in-out infinite alternate;
+  animation: cirp var(--isil-kanat-suresi, 0.26s) ease-in-out infinite alternate;
 }
 
 .kanatAlt {
   transform-origin: 100% 40%;
-  animation-delay: -0.13s;
+  animation-delay: calc(var(--isil-kanat-suresi, 0.26s) / -2);
 }
 
 @keyframes cirp {
@@ -423,7 +425,7 @@
 }
 
 .kutlama .kanat {
-  animation-duration: 0.17s;
+  animation-duration: var(--isil-kanat-suresi-kutlama, 0.17s);
 }
 
 .kutlama .hale,

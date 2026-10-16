@@ -49,19 +49,33 @@ Dosya bitince **`icerik-denetcisi` ajanını çağır** (Agent aracı,
 `subagent_type: icerik-denetcisi`). İstemde ver: bookKey, Faz 2 dosyasının yolu,
 Faz 1 dosyasının yolu, kaynak PDF'in yolu. Ajan salt okur, metni düzeltmez.
 
-Ajanın raporunu **hiçbir bulguyu atlamadan, önem sırasıyla ve sade dille**
-Hasan'a sun:
-- **Kritik** (tasvir, kaynakta olmayan iddia, sicil çakışması) önce,
-- sonra **Önemli**, sonra **Küçük**.
+Bulguları ikiye ayır (KARAR 16 Ekim 2026 — Hasan):
 
-Bulguları kendiliğinden düzeltme. Hasan hangilerinin düzeltileceğini söyler;
-düzeltmeler yine yalnız Faz 2 dosyasına yazılır. Kritik bulgu düzeltildiyse
-ajanı bir kez daha çalıştırıp sonucu bildir.
+**a) Mekanik bulgular — kendiliğinden düzelt.** Anlamı, olayı, kaynak kararını
+değiştirmeyen biçim sorunları: 18 kelimeyi aşan cümle, karakter/paragraf
+sınırı, bölüm adı ve özet uzunluğu, yazım ve Türkçe karakter, eksik zorunlu
+alan, A/B/C doğru şık dağılımı, iskelet biçimi, sicildeki ad/terimle yazım
+farkı. Düzeltmeyi yalnız Faz 2 dosyasına yaz; cümleyi bölerken anlamı ve
+kaynak sınırını koru.
+
+**b) Karar gerektiren bulgular — düzeltme, Hasan'a sor.** Tasvir, kaynakta
+olmayan iddia, hassas konu dili, rivayet çerçevesi, Faz 1 kararından sapma,
+sicil çakışması, değer veya olay değişikliği gerektiren her şey. Emin
+değilsen bu gruba koy.
+
+Hasan'a raporu **hiçbir bulguyu atlamadan, önem sırasıyla ve sade dille** sun:
+1. **Karar bekleyenler** — Kritik önce, sonra Önemli, sonra Küçük.
+2. **Kendiliğinden düzeltilenler** — kısa liste: bulgu · nerede · ne yapıldı.
+   Hasan istediğini geri aldırabilir.
+
+Kritik bulgu düzeltildiyse ya da mekanik düzeltme sayısı yüksekse ajanı bir kez
+daha çalıştırıp sonucu bildir.
 
 ## 5. Teslim ve dur
 
 Kısa özet: dosya yolu, brif §14 tablosunun "sorun var" satırları, denetçi
-bulgularının sayısı (kritik/önemli/küçük), açık editör soruları.
+bulgularının sayısı (kritik/önemli/küçük; kaçı kendiliğinden düzeltildi), açık
+editör soruları.
 
 Sıradaki adım: Hasan Faz 2'yi onaylar, ardından **ayrı bir kod oturumunda**
 `/aktarim $ARGUMENTS` çalıştırılır. Bu oturum `src/`'ye ve sicillere dokunmaz.

@@ -37,6 +37,21 @@ tanımlarını yönetmesidir.
   işleyebilir — kutu bir sözlük girdisidir, konunun sahipliği değil.
   *Örnek: `Kâbe` ve `put` Hz. İbrâhim kıssasında daha merkezîdir; ancak set
   sırasında ilk kez Hz. Şît'te geçtikleri için orada kutulanır.*
+- **Kitaplar katalog sırasıyla yazılmadığında kutu, terimin ilk geçtiği
+  yayımlanmış kitapta kalır (KARAR 10b, 13 Eki 2026 — Hasan).** Sonradan yazılan
+  ve katalogda daha önce gelen kitaplar o terimi **düz metin** kullanır; kutu
+  geriye taşınmaz. Yukarıdaki "ilk geçtiği yerde" kuralı, yayımlanma sırası
+  katalog sırasıyla aynı olduğu sürece aynen geçerlidir.
+  *Örnek: Hz. Musa (#16), Hz. Hûd, Hz. Sâlih ve Hz. İbrâhim'den önce aktarıldı;
+  zulüm, iman, ibret ve hikmet o kitaplarda da geçecek ama kutu Hz. Musa'da kalır.*
+- **Hiç kutulanmamış bir terim, onu merkeze alan kitapta kutulanabilir (KARAR 6a,
+  13 Eki 2026 — Hasan).** Bir terim daha önce yayımlanmış kitaplarda yalnız
+  **kutusuz** geçtiyse ve hiçbir yerde kutulanmadıysa, kutu terimi merkeze alan
+  kitapta açılabilir. Yayımlanmış kitaplar değişmez; kutusuz geçişler düz metin
+  kalır. Bu istisna **daha önce kutulanmış** bir terimi taşımaz (KARAR 10b ve "bir
+  terim = bir kutu" aynen geçerli).
+  *Örnek: Hz. Eyyûb'da sabır (Âdem, Şît, İdrîs, Nûh ve Musa'da kutusuz), musibet
+  (İdrîs 4'te kutusuz) ve cömert (Âdem 3'te "cömertliğini", kutusuz).*
 - **Sabit sözlükçe değiştirilemez.** Brif §11'deki 11 terimin tanımı harfiyen
   kullanılır.
 - Tanım tek cümle, kısa ve **8–11 yaşa uygun** olmalıdır.
@@ -55,14 +70,14 @@ Bu 11 terimin tanımı projenin standardıdır. Bir kitapta geçtiğinde bu tan�
 | Terim | Sabit tanım | Kutulandı mı? |
 |---|---|---|
 | Hicret | Bir yerden başka bir yere göç etmek demektir. | Henüz yok |
-| Müşrik | Bir olan Allah'a inanmayıp putlara tapan kimse demektir. | Henüz yok |
+| Müşrik | Bir olan Allah'a inanmayıp putlara tapan kimse demektir. | Hz. Nûh · 1 |
 | Vahiy | Allah'ın, peygamberlerine melek aracılığıyla gönderdiği mesajlardır. | Hz. Şît · 4 |
 | Halife | Peygamberimizden sonra Müslümanların başına geçen yöneticiye denir. | Henüz yok |
 | Sahabe | Peygamberimizi görmüş ve ona inanmış kimselere denir. | Henüz yok |
 | Peygamber | Allah'ın, mesajlarını insanlara ulaştırmak için seçtiği elçidir. | Henüz yok |
 | Kâbe | Mekke'de bulunan, Müslümanların namazda yöneldiği kutsal yapıdır. | Hz. Şît · 1 |
 | Put | İnsanların kendi elleriyle yapıp taptıkları heykellerdir. | Hz. Şît · 4 |
-| Tevekkül | Elinden geleni yaptıktan sonra sonucu Allah'a bırakmaktır. | Henüz yok |
+| Tevekkül | Elinden geleni yaptıktan sonra sonucu Allah'a bırakmaktır. | Hz. Nûh · 6 |
 | Mucize | Allah'ın izniyle peygamberlerin gösterdiği olağanüstü olaylardır. | Hz. İdrîs · 4 |
 | Zekât | Zenginlerin, mallarının bir kısmını ihtiyaç sahipleriyle paylaşmasıdır. | Henüz yok |
 
@@ -96,14 +111,72 @@ listeyle karşılaştırılır.**
 | 15 | kılavuz | Yolu bilmeyenlere doğru yönü gösteren kişi ya da işarettir. | Hz. İdrîs · 2 | Yeni terim — **onaylandı** (Hasan, 12 Ağu 2026) |
 | 16 | dokuma | İplikleri alt alta ve üst üste geçirerek kumaş yapmaktır. | Hz. İdrîs · 3 | Yeni terim — **onaylandı** (Hasan, 12 Ağu 2026) |
 | 17 | mucize | Allah'ın izniyle peygamberlerin gösterdiği olağanüstü olaylardır. | Hz. İdrîs · 4 | Sabit sözlükçe (§2) |
+| 18 | müşrik | Bir olan Allah'a inanmayıp putlara tapan kimse demektir. | Hz. Nûh · 1 | Sabit sözlükçe (§2) |
+| 19 | kavim | Aynı soydan gelen ve bir arada yaşayan insan topluluğudur. | Hz. Nûh · 2 | Yeni terim — **onaylandı** (Hasan, 12 Eki 2026) |
+| 20 | kibir | Kendini başkalarından üstün görüp onları küçümsemektir. | Hz. Nûh · 3 | Yeni terim — **onaylandı** (Hasan, 12 Eki 2026) |
+| 21 | nesil | Aşağı yukarı aynı yıllarda doğup büyüyen insanların hepsidir. | Hz. Nûh · 4 | Yeni terim — **onaylandı** (Hasan, 12 Eki 2026) |
+| 22 | alay | Birini küçük düşürmek için onunla eğlenmektir. | Hz. Nûh · 5 | Yeni terim — **onaylandı** (Hasan, 12 Eki 2026) |
+| 23 | tevekkül | Elinden geleni yaptıktan sonra sonucu Allah'a bırakmaktır. | Hz. Nûh · 6 | Sabit sözlükçe (§2) |
+| 24 | tufan | Her yeri sular altında bırakan çok büyük su baskınıdır. | Hz. Nûh · 6 | Yeni terim — **onaylandı** (Hasan, 12 Eki 2026) |
+| 25 | şefkat | Birini çok sevip ona iyilik ve koruma göstermektir. | Hz. Nûh · 7 | Yeni terim — **onaylandı** (Hasan, 12 Eki 2026) |
+| 26 | şükür | Allah'ın verdiği nimetler için teşekkür etmek ve bunu davranışla göstermektir. | Hz. Nûh · 8 | Yeni terim — **onaylandı** (Hasan, 12 Eki 2026) |
+| 27 | zulüm | Birine haksızlık edip ona acı ve zarar vermektir. | Hz. Musa · 1 | Yeni terim — **onaylandı** (Hasan, 13 Eki 2026) |
+| 28 | sütanne | Bir bebeği kendi annesinin yerine emziren kadındır. | Hz. Musa · 2 | Yeni terim — **onaylandı** (Hasan, 13 Eki 2026) |
+| 29 | hikmet | Bilgiyi doğru yerde ve doğru biçimde kullanabilmektir. | Hz. Musa · 3 | Yeni terim — **onaylandı** (Hasan, 13 Eki 2026) |
+| 30 | sözleşme | İki kişinin bir iş için anlaşıp uymaya söz verdiği karardır. | Hz. Musa · 4 | Yeni terim — **onaylandı** (Hasan, 13 Eki 2026) |
+| 31 | asa | Yürürken dayanmak için kullanılan uzun değnektir. | Hz. Musa · 5 | Yeni terim — **onaylandı** (Hasan, 13 Eki 2026) |
+| 32 | sihir | Gözleri aldatarak bir şeyi olduğundan farklı gösterme işidir. | Hz. Musa · 6 | Yeni terim — **onaylandı** (Hasan, 13 Eki 2026) |
+| 33 | iman | Allah'a ve O'nun bildirdiklerine yürekten inanmaktır. | Hz. Musa · 7 | Yeni terim — **onaylandı** (Hasan, 13 Eki 2026) |
+| 34 | ibret | Yaşanan bir olaydan ders çıkarmaktır. | Hz. Musa · 8 | Yeni terim — **onaylandı** (Hasan, 13 Eki 2026) |
+| 35 | özgürlük | İnsanın baskı altında kalmadan kendi seçimini yapabilmesidir. | Hz. Musa · 9 | Yeni terim — **onaylandı** (Hasan, 13 Eki 2026) |
+| 36 | ilim | Araştırıp öğrenerek edinilen bilgidir. | Hz. Musa · 10 | Yeni terim — **onaylandı** (Hasan, 13 Eki 2026) |
+| 37 | cömert | Sahip olduklarını başkalarıyla seve seve paylaşan kimsedir. | Hz. Eyyûb · 1 | Yeni terim — **onaylandı** (Hasan, 13 Eki 2026; KARAR 6a) |
+| 38 | musibet | İnsanın başına gelen büyük sıkıntı ve acıdır. | Hz. Eyyûb · 2 | Yeni terim — **onaylandı** (Hasan, 13 Eki 2026; KARAR 6a) |
+| 39 | sabır | Zor bir durumda umudunu kaybetmeden dayanabilmektir. | Hz. Eyyûb · 2 | Yeni terim — **onaylandı** (Hasan, 13 Eki 2026; KARAR 6a) |
+| 40 | vefa | Zor günde de sevdiklerini bırakmayıp onlara bağlı kalmaktır. | Hz. Eyyûb · 3 | Yeni terim — **onaylandı** (Hasan, 13 Eki 2026) |
+| 41 | imtihan | Allah'ın insanı iyi ve zor günlerle denemesidir. | Hz. Eyyûb · 4 | Yeni terim — **onaylandı** (Hasan, 13 Eki 2026) |
+| 42 | şifa | Bir hastalıktan kurtulup iyileşmektir. | Hz. Eyyûb · 5 | Yeni terim — **onaylandı** (Hasan, 13 Eki 2026) |
 
 **Kanonik** = onaylı Hz. Âdem içeriğinden gelir, değiştirilmez.
 
 > **12 Ağu 2026 — Hz. İdrîs'te dört kutu var.** *basiret* (1), *kılavuz* (2),
 > *dokuma* (3) ve *mucize* (4). *tedbir* sicilde Hz. Şît · 2'de kutulu olduğu
 > için bu kitapta kullanılmadı; yerine *basiret* geçti. *peygamber, emanet,
-> nimet, sabır* ve *rehberlik* metinde geçiyor ama §1 gereği ikinci kez
-> kutulanmadı, düz `text` olarak aktarıldı.
+> nimet* ve *rehberlik* metinde geçiyor ama §1 gereği ikinci kez kutulanmadı,
+> düz `text` olarak aktarıldı. *sabır* ve *musibet* de metinde kutusuz geçiyor.
+> **Düzeltme (15 Eki 2026):** bu not eskiden *sabır*'ı "ikinci kez kutulanmadı"
+> diye sayıyordu; terim o tarihte hiçbir yerde kutulu değildi (`books.ts` ile
+> doğrulandı). Kutusu Hz. Eyyûb · 2'de açıldı (§1 KARAR 6a).
+
+> **12 Eki 2026 — Hz. Nûh'ta dokuz kutu var.** Sabit sözlükçeden *müşrik* (1) ve
+> *tevekkül* (6) ilk kez kutulandı; tanımlar §2 ile harfiyen aynı. Yeni terimler:
+> *kavim* (2), *kibir* (3), *nesil* (4), *alay* (5), *tufan* (6), *şefkat* (7),
+> *şükür* (8). *peygamber, put, tedbir* ve *nimet* metinde geçiyor ama §1 gereği
+> ikinci kez kutulanmadı, düz `text` olarak aktarıldı. *şefkat* kutusunda iyelik
+> eki kutunun dışındadır ("şefkat" + "i vardı").
+
+> **13 Eki 2026 — Hz. Musa'da on kutu var.** Hepsi yeni terim ve Faz 1'de Hasan
+> tarafından onaylandı: *zulüm* (1), *sütanne* (2), *hikmet* (3), *sözleşme* (4),
+> *asa* (5), *sihir* (6), *iman* (7), *ibret* (8), *özgürlük* (9), *ilim* (10).
+> Sabit sözlükçeden kutulanan yok: *peygamber* (Âdem'e geriye dönük karar) düz
+> metin; *hicret* bilinçli olarak kullanılmadı (kutusu Hz. Muhammed kitaplarına
+> kalır). *emanet, nimet, secde, kavim, alay, şükür* ve *tedbir* metinde geçiyor
+> ama §1 gereği ikinci kez kutulanmadı, düz `text` olarak aktarıldı. Hz. Musa
+> katalog sırasından önce aktarıldığı için §1'deki KARAR 10b ilk kez burada
+> uygulandı.
+
+> **15 Eki 2026 — Hz. Eyyûb'da altı kutu var.** Hepsi yeni terim ve Faz 1'de Hasan
+> tarafından onaylandı: *cömert* (1), *musibet* (2), *sabır* (2), *vefa* (3),
+> *imtihan* (4), *şifa* (5). *cömert, musibet* ve *sabır* daha önce yayımlanmış
+> kitaplarda yalnız kutusuz geçtiği için §1'deki **KARAR 6a** istisnası ilk kez
+> burada uygulandı; yayımlanmış kitaplar değişmedi. Sabit sözlükçeden kutulanan
+> yok: *peygamber* ve *put* düz metin. *nimet, şükür* ve *put* metinde geçiyor
+> ama §1 gereği ikinci kez kutulanmadı, düz `text` olarak aktarıldı. *hikmet*
+> metinden çıkarıldı (kitap rotada Hz. Musa'dan önce okunduğu için açıklamasız
+> kalıyordu); *ibret* yerine "öğüt" kullanıldı. *musibet* ve *vefa* kutularında
+> ek kutunun dışındadır ("musibet" + "lerin", "vefa" + "yla"). Konuşma satırı
+> içeren paragraflarda kutu yalnız terimin geçtiği satırdadır; öbür satırlar ayrı
+> `text` bloğudur (Hz. Nûh'taki *alay* ve *şefkat* gibi).
 
 ### 3.1 Kod tarafındaki ikinci kopya
 
@@ -146,9 +219,9 @@ sicil, sonra `demoChapters.ts` güncellenir.
   olarak çözer. Ayrıca bir karar gerekmez: *hicret · vahiy · halife · sahabe ·
   müşrik · Kâbe* dahil her terim, set sırasında ilk geçtiği kitapta kutulanır.
   10 Ağu 2026'da Hz. Şît içeriğiyle **Kâbe · vahiy · put** kutulandı,
-  12 Ağu 2026'da Hz. İdrîs içeriğiyle **mucize** kutulandı; sabit sözlükçeden
-  geriye *hicret · müşrik · halife · sahabe · peygamber · tevekkül · zekât*
-  kaldı.
+  12 Ağu 2026'da Hz. İdrîs içeriğiyle **mucize**, 12 Eki 2026'da Hz. Nûh
+  içeriğiyle **müşrik · tevekkül** kutulandı; sabit sözlükçeden geriye
+  *hicret · halife · sahabe · peygamber · zekât* kaldı.
 - ~~Hz. Şît'in etkileşimli kelimesi kaldırıldığı için o geçici demo kitapta
   hiç kutulanmış kelime yoktur.~~ **KAPANDI (10 Ağu 2026)** — nihai içerik
   aktarıldı; kitapta beş kutu var: Kâbe (1), tedbir (2), harç (3), vahiy ve

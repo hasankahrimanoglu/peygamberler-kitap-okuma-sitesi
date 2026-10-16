@@ -152,6 +152,26 @@ export const ROTA_ARKAPLANI = "/harita/rota-harita-arkaplan.jpg";
  */
 export const SITE_ARKAPLANI = "/site-genel-arkaplan.jpg";
 
+/**
+ * Tanıtım (landing) sayfasındaki ürün ekran görüntüleri (KARAR 15 Eki 2026).
+ *
+ * Elle hazırlanmaz: `npm run tanitim-gorselleri` girişsiz `/tasarim/*`
+ * önizlemelerinden çeker ve `public/tanitim/{ad}.webp` olarak yazar. Arayüz
+ * değişince komut yeniden çalıştırılır, tanıtım kodu değişmez.
+ */
+export type TanitimGorseli =
+  | "ana-ekran"
+  | "okuma-tablet"
+  | "okuma-telefon"
+  | "sen-olsaydin"
+  | "sozluk"
+  | "oduller"
+  | "final";
+
+export function tanitimGorseli(ad: TanitimGorseli) {
+  return `/tanitim/${ad}.webp`;
+}
+
 /*
  * Rehber karakter Işıl görsel dosya DEĞİLDİR: Faz D'de (12 Eki 2026) kodla
  * çizilip canlandırıldı — `src/components/cocuk/Isil.tsx` (PROJE-MODELI 3.10.5).

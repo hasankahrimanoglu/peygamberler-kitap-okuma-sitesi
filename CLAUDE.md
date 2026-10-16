@@ -114,14 +114,23 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
   kalkıyor; kilit yalnız bölümlerde ve Büyük Final Testi'nde kalır.
 - **Ölçü standartları (3.5):** buton ≥48px, dokunma alanı ≥44×44px, gövde metni
   ≥16px. Mobilde metin+görsel yan yana KONMAZ (tek sütun).
-- **Tasvir kuralı (REVİZE 12 Eki 2026 — PROJE-MODELI 6.4):** **yüz hiçbir görselde
-  gösterilmez** (göz/ağız/yüz hattı yok; ışık, gölge, arkadan kadraj veya uzak plan
-  yüzü tamamen örter). Peygamberler (Hz. Muhammed hariç) yüzü görünmeyen figür
-  olarak gösterilebilir: silüet, ışıkla örtülmüş beden, el. **Hz. Muhammed (s.a.v.),
-  ailesi, sahabe ve halifeler hiçbir biçimde gösterilmez** (silüet ve el dahil).
-  Melek tasviri yok. Eski "silüet bile değil" kuralı geçersiz. Cami-kubbe-minare
-  gibi dönemle uyumsuz dekor da kullanılmaz.
+- **Tasvir kuralı (REVİZE 16 Eki 2026 — Hasan; PROJE-MODELI 6.4):** görsel
+  hikâyeyi anlatır; **olayın öznesi insansa sahne figürlüdür.** Üç katman:
+  **1)** peygamberler (Hz. Muhammed hariç), yakın akrabaları (inançlı/inkârcı fark
+  etmez) ve saygın müminler (Âsiye, Hızır vb.) — **yüz hiç görünmez** (arkadan,
+  uzak plan, doğal sebep; önden gerekiyorsa yüz bölgesi yaygın ışıkla tamamen
+  örtülü; boş yüz yok). **2)** kötü karakterler ve çevreleri (Firavun,
+  saraydakiler, büyücüler) ve **3)** sıradan halk — yüz gösterilebilir; korkutucu
+  ve karikatür değil. **Hz. Muhammed (s.a.v.), ailesi, sahabe ve halifeler hiçbir
+  biçimde gösterilmez** (silüet ve el dahil); o dönemdeki isimsiz halk için karar
+  henüz yok. Melek tasviri yok. Şiddette darbe anı, kan, yara yok. Cami-kubbe-minare
+  gibi dönemle uyumsuz dekor da kullanılmaz. Önceki kitapların "figür yok" kayıtları
+  o günkü uygulamadır; yeni kural sonraki üretimlerde geçerlidir.
 - **Türkçe karakterler** (ş, ğ, ı, İ, ç, ö, ü, â) — font, veri, UI'da test et.
+- **Animasyon kütüphanesi tektir: Motion** (`framer-motion` paketi; `HareketAyari`
+  azaltılmış hareket ayarını yönetir). GSAP, HyperFrames, Lottie gibi ikinci bir
+  animasyon kütüphanesi EKLENMEZ; global GSAP/HyperFrames skill'leri bu projede
+  kullanılmaz.
 - **Rapor dili gözlem bildirir**, kesin hüküm vermez ("...temaları öne çıktı"),
   çocuğu derecelendirmez.
 
@@ -152,8 +161,9 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
 - **Sesli anlatım her bölümde vardır (KARAR 12 Eki 2026 — PROJE-MODELI 6.5).** Yol
   `varlikYollari.ts:sesliAnlatim()` ile türetilir; `books.ts`'te ses alanı YOKTUR
   (rozet anahtarı gibi). Kayıt gelene kadar `public/sesli-anlatim/placeholder-ses.mp3`
-  kopyası durur; Hasan aynı adla üzerine yazar. Yer tutucu başka bölümün anlatımıdır —
-  yer tutucusu kalmış bölüm yayına çıkmaz.
+  kopyası durur; Hasan aynı adla üzerine yazar. Yer tutucu başka bölümün anlatımıdır.
+  Kitap yer tutucularla yayına alınabilir; gerçek görsel ve ses aktarımdan sonraki
+  üretim turunda aynı adla üzerine yazılır (KARAR 13 Eki 2026 — Hasan).
 - **Görsel üretim oturumu (KARAR 12 Eki 2026):** kitap görselleri ayrı bir oturumda
   Magnific bağlantısıyla, **yalnız aktarımdan ve yer tutucular açıldıktan sonra**
   üretilir. Liste `ICERIK-GORSEL-SICILI.md`'den, promptlar
@@ -272,6 +282,11 @@ Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
       **`yayinTarihi`** (YYYY-AA-GG) güncellendi. Kitap bu alanlarla ana ekrandaki
       rotaya kendiliğinden girer; harita kodu elle değiştirilmez (3.10.1). Yayın
       tarihi "Yeni" etiketini ve tek seferlik duyuruyu açar
+- [ ] **Supabase `books` satırı eklendi** — `supabase/schema.sql`'e insert yazıldı
+      VE canlı veritabanında çalıştırıldı (`isim` katalog başlığıyla eşleşir,
+      `toplam_bolum` = bölüm sayısı). Satır yoksa okuma ekranı "kaydı bulunamadı"
+      der; rozet ve madalya kaydedilmez. `/tasarim/*` önizlemeleri Supabase'e
+      yazmadığı için bu eksik orada GÖRÜNMEZ (Hz. Musa, 15 Eki 2026)
 - [ ] Türkçe karakterler doğru render oluyor
 - [ ] İçerik hiçbir yerde peygamber/halife/sahabe yüzü tarif etmiyor
 - [ ] **`ROZET-MATRISI.md` güncellendi** (§2 dizinine adlar, §4 satırları, §5 sayaçlar)

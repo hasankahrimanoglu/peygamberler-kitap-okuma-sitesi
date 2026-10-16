@@ -202,6 +202,249 @@ const idrisQuizQuestions: QuizQuestion[] = [
   },
 ];
 
+// Hz. Nûh — KITAP-HZ-NUH-ICERIK-final.md §E. Sekiz bölümün her birinden
+// bir soru; doğru harf dağılımı A=3 · B=2 · C=3.
+const nuhQuizQuestions: QuizQuestion[] = [
+  {
+    id: 1,
+    question: "Komşuları Nûh'tan bir put yapmasını isteyince Nûh ne yaptı?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Hemen en güzel putu yapıp onlara verdi" },
+      { id: "b", text: "Komşularına kızıp onları evinden çıkardı" },
+      { id: "c", text: "Ellerini tapılacak bir şey yapmak için kullanmayacağını söyledi" },
+    ],
+  },
+  {
+    id: 2,
+    question: "Hz. Nûh yolcuya neden “Sen kömürün içinde kalmış bir elmas gibisin” dedi?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "Yolcunun çok zengin olduğunu düşündüğü için" },
+      { id: "b", text: "Ona, Allah'ın yarattığı değerli bir insan olduğunu hatırlatmak için" },
+      { id: "c", text: "Yolcudan değerli bir taş satın almak istediği için" },
+    ],
+  },
+  {
+    id: 3,
+    question: "Şehrin ileri gelenleri Hz. Nûh'tan ne istedi?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Ona inanan yoksulları yanından kovmasını" },
+      { id: "b", text: "Evlerine yeni kapılar yapmasını" },
+      { id: "c", text: "Şehirden uzaklara gitmesini" },
+    ],
+  },
+  {
+    id: 4,
+    question: "Çoğu insan onu dinlemediği hâlde Hz. Nûh ne yaptı?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Çağırmayı bıraktı ve evine çekildi" },
+      { id: "b", text: "Yalnızca zenginlerle konuşmaya başladı" },
+      { id: "c", text: "Yıllarca gece gündüz çağırmayı sürdürdü" },
+    ],
+  },
+  {
+    id: 5,
+    question: "Hz. Nûh gemiyi neyle yaptı?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Yıllardır büyüyen ağaçtan biçilen tahtalar ve çivilerle" },
+      { id: "b", text: "Taşlarla ve kerpiçle" },
+      { id: "c", text: "Hayvan derileri ve iplerle" },
+    ],
+  },
+  {
+    id: 6,
+    question: "Hz. Nûh herkesi gemiye çağırırken ne dedi?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "“En hızlı koşan önce binsin.”" },
+      { id: "b", text: "“Bu geminin akışı da duruşu da Allah'ın adıyladır.”" },
+      { id: "c", text: "“Bu gemiyi ben yaptım, bana güvenin.”" },
+    ],
+  },
+  {
+    id: 7,
+    question: "Hz. Nûh oğluna “Bizimle bin” diye seslendiğinde oğlu ne cevap verdi?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "“Hemen geliyorum babacığım.”" },
+      { id: "b", text: "“Beni bekleyin, eşyalarımı alayım.”" },
+      { id: "c", text: "“Yüksek bir dağa çıkarım, o beni sudan korur.”" },
+    ],
+  },
+  {
+    id: 8,
+    question: "Gemi dağa oturunca Hz. Nûh'un ilk işi ne oldu?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Kendilerini kurtaran Allah'a hamd edip şükretti" },
+      { id: "b", text: "Gemiyi söküp tahtalarından ev yaptı" },
+      { id: "c", text: "Hemen yeni bir yolculuğa çıktı" },
+    ],
+  },
+];
+
+// Hz. Musa — KITAP-HZ-MUSA-ICERIK-final.md §E. On bölümün her birinden
+// bir soru; doğru harf dağılımı A=4 · B=3 · C=3.
+const eyyubQuizQuestions: QuizQuestion[] = [
+  {
+    id: 1,
+    question: "Hz. Eyyûb, kapısına gelen konuklara ve açlara nasıl davranırdı?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Onları başka bir köye gönderirdi" },
+      { id: "b", text: "Yalnızca tanıdıklarını sofrasına alırdı" },
+      { id: "c", text: "Kimseyi geri çevirmez, sofrasını onlarla paylaşırdı" },
+    ],
+  },
+  {
+    id: 2,
+    question: "İlk kötü haber geldiğinde Hz. Eyyûb'un “Mülk Allah'ındır” demesi bize ne anlatır?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "Sürülerini kaybettiğine hiç üzülmediğini" },
+      { id: "b", text: "Zor bir haber karşısında ilk anda bile Allah'a güvendiğini" },
+      { id: "c", text: "Kaybettiklerini hemen geri almak istediğini" },
+    ],
+  },
+  {
+    id: 3,
+    question: "Hz. Eyyûb hastalanıp “Sen de git, kendini yorma” dediğinde eşi ne yaptı?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Yanından ayrılmadı; her gün su taşıyıp yemeğini hazırladı" },
+      { id: "b", text: "Köye dönüp onu bir daha görmeye gelmedi" },
+      { id: "c", text: "Hekim bulmak için uzak bir şehre gitti" },
+    ],
+  },
+  {
+    id: 4,
+    question: "Genç dostun, Hz. Eyyûb'u suçlayan arkadaşlarına verdiği cevaptan ne öğreniriz?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Hasta birini hiç ziyaret etmemek gerektiğini" },
+      { id: "b", text: "Kırıcı bir sözü herkesin önünde tekrar etmek gerektiğini" },
+      { id: "c", text: "Zor durumdaki birini suçlamak yerine onun yanında durmak gerektiğini" },
+    ],
+  },
+  {
+    id: 5,
+    question: "Hz. Eyyûb ayağını yere vurunca ne oldu?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "Gökyüzünden yağmur yağmaya başladı" },
+      { id: "b", text: "Serin bir pınar kaynadı; o da yıkanıp içti ve iyileşti" },
+      { id: "c", text: "Köydeki herkes onu görmek için koşup geldi" },
+    ],
+  },
+];
+
+const musaQuizQuestions: QuizQuestion[] = [
+  {
+    id: 1,
+    question: "Hz. Musa'nın annesi bebeğini neden bir sandıkla nehre bıraktı?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Bebeğin nehirde yüzmeyi öğrenmesini istediği için" },
+      { id: "b", text: "Sandığı uzaktaki bir şehre göndermek istediği için" },
+      { id: "c", text: "Bebeğini korumak istediği ve Allah'ın vaadine güvendiği için" },
+    ],
+  },
+  {
+    id: 2,
+    question: "Hz. Musa'nın ablasının sarayda yaptığından ne öğreniriz?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Doğru sözü sakin bir dille ve doğru zamanda söylemenin işe yaradığını" },
+      { id: "b", text: "Zor bir durumda hiç konuşmadan beklemek gerektiğini" },
+      { id: "c", text: "Yardım etmek için her şeyi bir anda anlatmak gerektiğini" },
+    ],
+  },
+  {
+    id: 3,
+    question: "Hz. Musa, kavgada istemeden bir adamın ölümüne yol açtıktan sonra ne yaptı?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "Olanları hiç düşünmeden unutup gitti" },
+      { id: "b", text: "Pişman olup Allah'tan bağışlanma diledi" },
+      { id: "c", text: "Kavgayı sürdürmek için başkalarını çağırdı" },
+    ],
+  },
+  {
+    id: 4,
+    question: "Hz. Musa'nın Medyen'deki kuyunun başında yaptığı iyilik bize ne anlatır?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Yorgun olsak bile karşılık beklemeden yardım etmenin değerini" },
+      { id: "b", text: "Yardım ettikten sonra mutlaka karşılık istemek gerektiğini" },
+      { id: "c", text: "Yorgunken kimseye yardım etmemek gerektiğini" },
+    ],
+  },
+  {
+    id: 5,
+    question: "Hz. Musa vadideki duasında Allah'tan ne istedi?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Çok zengin ve güçlü bir hükümdar olmayı" },
+      { id: "b", text: "Mısır'a bir daha hiç dönmemeyi" },
+      { id: "c", text: "Dilindeki düğümün çözülmesini ve kardeşi Hz. Hârûn'un yardımcı olmasını" },
+    ],
+  },
+  {
+    id: 6,
+    question: "Hz. Musa ile Hz. Hârûn korktukları hâlde Firavun'un sarayına neden gittiler?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "Firavun'dan bir ödül almak istedikleri için" },
+      { id: "b", text: "Allah'ın “Korkmayın, ben sizinle beraberim” sözüne güvendikleri için" },
+      { id: "c", text: "Sarayda büyüdükleri odaları yeniden görmek istedikleri için" },
+    ],
+  },
+  {
+    id: 7,
+    question: "Ziynet Günü'nde Hz. Musa asasını atınca ne oldu?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Asa, sihirbazların uydurduklarını yakalayıp yuttu" },
+      { id: "b", text: "Asa havaya yükselip gözden kayboldu" },
+      { id: "c", text: "Sihirbazların ipleri daha da çoğaldı" },
+    ],
+  },
+  {
+    id: 8,
+    question: "Firavun'un tutulmayan sözleri bize söz vermek hakkında ne düşündürür?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Sıkıntı geçince sözü unutmanın bir zararı olmadığını" },
+      { id: "b", text: "Hiçbir zaman kimseye söz vermemek gerektiğini" },
+      { id: "c", text: "Verilen sözü sıkıntı geçtikten sonra da tutmak gerektiğini" },
+    ],
+  },
+  {
+    id: 9,
+    question: "Firavun'un ordusu yetişince Hz. Musa korkan insanlara ne dedi?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "“Hemen geri dönüp teslim olalım.”" },
+      { id: "b", text: "“Asla, Rabbim benimle beraberdir; O bana bir çıkış yolu gösterecektir.”" },
+      { id: "c", text: "“Herkes kendi başının çaresine baksın.”" },
+    ],
+  },
+  {
+    id: 10,
+    question: "Hz. Musa'nın Hızır'la yolculuğu bize ne anlatır?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Bilmediğimiz şeyler karşısında sabredip öğrenmeye açık olmanın önemini" },
+      { id: "b", text: "Çok şey bilen birinin artık öğrenmesine gerek olmadığını" },
+      { id: "c", text: "Sebebini bilmediğimiz her şeye hemen kızmamız gerektiğini" },
+    ],
+  },
+];
+
 export const quizConfig: Record<string, QuizConfig> = {
   adem: {
     label: "Hz. Âdem",
@@ -220,5 +463,23 @@ export const quizConfig: Record<string, QuizConfig> = {
     questions: idrisQuizQuestions,
     storagePrefix: "idris",
     keywords: ["idris"],
+  },
+  nuh: {
+    label: "Hz. Nûh",
+    questions: nuhQuizQuestions,
+    storagePrefix: "nuh",
+    keywords: ["nuh"],
+  },
+  eyyub: {
+    label: "Hz. Eyyûb",
+    questions: eyyubQuizQuestions,
+    storagePrefix: "eyyub",
+    keywords: ["eyyub"],
+  },
+  musa: {
+    label: "Hz. Musa",
+    questions: musaQuizQuestions,
+    storagePrefix: "musa",
+    keywords: ["musa"],
   },
 };

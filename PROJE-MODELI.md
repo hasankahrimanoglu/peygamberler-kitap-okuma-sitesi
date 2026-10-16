@@ -1477,22 +1477,52 @@ ileride istenirse eklenmesi kolaydır.)
 ### 6.4 İçerik görselleri (okuma sayfası illüstrasyonları)
 
 - Kitap içeriğiyle birlikte, kitap kitap üretilir; bu dokümanın kapsamı dışında.
-- **Tasvir kuralı (REVİZE — 12 Ekim 2026, Hasan):**
-  - **Yüz hiçbir görselde gösterilmez.** Göz, ağız ve yüz hatları çizilmez; yüz
-    ışıkla, gölgeyle, arkadan kadrajla veya uzak planla tamamen örtülür. Kural
-    hikâyedeki bütün insanlar için geçerlidir.
-  - **Peygamberler (Hz. Muhammed hariç)** yüzü görünmeyen figür olarak
-    gösterilebilir: arkadan silüet, ışıkla örtülmüş beden, el, uzak plan.
-    Atmosfer saygılı ve sakindir; figür kahramanlaştırılmaz, ürkütücü veya
-    alaycı biçimde çizilmez. Gerekçe (Hasan): yüzü ışıkla örtülmüş figür,
-    peygamberleri anlatan yaygın görsel içeriklerde kabul gören bir yöntemdir.
+- **Tasvir kuralı (REVİZE 16 Ekim 2026 — Hasan; önceki sürüm 12 Ekim 2026):**
+  Görsel hikâyeyi anlatır. **Olayın öznesi insansa sahnede insan figürü olur**
+  (ör. Hz. Musa'nın gördüğü kavga, kavga eden iki adamla gösterilir; dökülmüş bir
+  sepetle değil). Kişiler üç katmanda ele alınır:
+  - **Katman 1 — yüz hiç görünmez:** peygamberler (Hz. Muhammed hariç), onların
+    yakın akrabaları (anne, baba, kardeş, eş, çocuk; inançlı veya inkârcı fark
+    etmez — ör. Musa'nın annesi ve ablası, Nûh'un oğlu, Âzer, Lût'un karısı,
+    Yusuf'un kardeşleri) ve peygamber akrabası olmayan saygın müminler (ör.
+    Âsiye, Hızır, Firavun ailesinden iman eden adam). Figür olarak görselde
+    yer alabilirler. Yüz arkadan kadrajla, uzak planla veya doğal bir sebeple
+    (gölge, başörtüsü, kontra ışık) görünmez. Sahne önden açı gerektiriyorsa yüz
+    bölgesi **yaygın bir ışıkla tamamen örtülür**; göz, ağız ve yüz hattı
+    seçilmez. Atmosfer saygılı ve sakindir; figür kahramanlaştırılmaz, ürkütücü
+    veya alaycı çizilmez.
+  - **Katman 2 — yüz gösterilebilir:** adı anılan kötü karakterler (Firavun,
+    Nemrut, Kârûn vb.) ve çevreleri (saraydakiler, yardımcılar, büyücüler).
+    Korkutucu veya karikatür gibi çizilmez; görünüm tarihî kaynaklardaki
+    anlatıma uygun ve sakindir.
+  - **Katman 3 — yüz gösterilebilir:** hikâyedeki sıradan halk (kavga edenler,
+    çobanlar, pazardakiler, kalabalık).
   - **Hz. Muhammed (s.a.v.), ailesi, sahabe ve Dört Büyük Halife hiçbir
-    biçimde gösterilmez** (silüet, ışık figürü ve el dahil). Katalog belgesindeki
-    bu kural, Hasan ayrıca karar verene kadar aynen geçerlidir.
+    biçimde gösterilmez** (silüet, ışık figürü ve el dahil; değişmedi). Bu
+    dönemde geçen sahnelerde isimsiz halkın gösterilip gösterilmeyeceği
+    **henüz karara bağlanmadı**; o kitapların Faz 1'inde Hasan'a sorulur.
   - Melek tasviri yapılmaz (değişmedi).
-  - Temmuz 2026'daki "silüet bile değil" kuralı bu tarihle geçersizdir. Hz. Âdem
-    1. bölümdeki figürlü üç görsel (`toprak-isik`, `isimlerin-izi`,
-    `secim-sorumluluk`) yeni kurala uygundur.
+  - Şiddet sahnelerinde darbe anı değil gerginlik gösterilir; kan, yara ve
+    silah darbesi yoktur.
+  - **Karma sahne:** aynı karede Katman 1 ile Katman 2/3 varsa Katman 1 figürü
+    promptta açıkça arkadan veya ışıkla örtülü yüzle tarif edilir; görsel
+    modeli yüz yasağını kişi kişi uygulayamadığı için her karma sahne elle
+    kontrol edilir (`ICERIK-GORSEL-SICILI.md` §6.2).
+  - Kitaba özgü daha sıkı karar (ör. bir kitapta belirli bir kişinin hiç
+    gösterilmemesi) o kitabın Faz 1 kararıyla verilebilir ve geçerlidir.
+  - **Geçiş:** kural 16 Ekim 2026'dan sonraki üretimlerde (yeni kitaplar ve
+    sonradan seçilerek yeniden üretilen görseller) geçerlidir. Yayındaki
+    kitaplarda toptan yeniden üretim yapılmaz; olayı anlatamayan görseller
+    ayrı bir işte seçilerek yenilenebilir. Sicildeki kitap kayıtları (ör.
+    Musa ve Eyyûb'da "diğer sahnelerde insan figürü yok") o günkü uygulamayı
+    kaydeder; kitaba özgü ek yasaklar (bebek, ordu vb.) yeniden üretimde de
+    geçerli kalır.
+  - *Önceki sürüm (12 Ekim 2026):* yüz hiçbir görselde gösterilmezdi;
+    peygamberler yüzü görünmeyen figür olabiliyordu, sıradan insan için
+    "figür yalnız gerçekten gerekiyorsa" yorumu uygulamada figürsüz görsele
+    yol açtı. Temmuz 2026'daki "silüet bile değil" kuralı 12 Ekim'den beri
+    geçersizdir; Hz. Âdem 1. bölümdeki figürlü üç görsel (`toprak-isik`,
+    `isimlerin-izi`, `secim-sorumluluk`) uygundur.
 - Her kitabın kendi görsel dünyası olur (Âdem: tabiat/bahçe/ışık; Nuh:
   gemi/yağmur/dağ; İbrahim: çöl/yıldızlı gök...). Cami-kubbe-minare gibi
   dönemle uyumsuz genel dini dekor kullanılmaz.
@@ -1654,7 +1684,7 @@ ileride istenirse eklenmesi kolaydır.)
 | **6.1** | **İçerik ve Etkileşim Revizyonu (PLANLANDI — Hasan onayı olmadan BAŞLAMAZ):** (a) okuma akışı revizyonu: iki parçalı hikâye + karar noktasında "Sen Olsaydın" + "Seçimini Karşılaştır" + seçimin oturum içinde tutulması (4.1/16); (b) koşullu "Bugüne Taşı" + "Görevi Listeme Ekle / Şimdilik Değil" eylemleri; (c) görev veri altyapısı: `profile_tasks` tablosu + migration + RLS (7.3) — **ekrandan önce altyapı**; (d) çocuk "Görevlerim" ekranı (5.1); (e) veli ana sayfadaki güncel görev alanının yeni görev durumundan beslenmesi; (f) 8 bölümlük yeni Hz. Âdem içeriğinin `books.ts`'e aktarımı | Yeni bölüm akışı + kalıcı görev takibi çalışıyor |
 | **6.2** | **Kaydırmalı Okuma Akışı (ONAY — 26 Temmuz 2026):** (a) karakter bütçesiz akış modeli (`src/components/reader/akis.ts`); (b) `AtlasScrollReader` — tek sayfa kaydırma, satır içi görsel/sözlükçe, "Sen Olsaydın" kapısı, akış içi butonlar; (c) alt gezinme çubuğunun yerine üst ilerleme çubuğu + durak göstergesi (scroll-spy); (d) ~~otomatik "kaldığın yer"~~ — **28 Tem 2026'da kaldırıldı** (kaydırma konumu okunan yeri güvenilir biçimde göstermiyor); (e) Hz. Âdem B1–B8 için görsel yerlerinin açılması + `ICERIK-GORSEL-SICILI.md`. Sayfalı okuyucu (`AtlasReader` + `sayfalar.ts` + sayfa bileşenleri + iki tasarım önizlemesi) yenisi üretimde bir hafta çalıştıktan sonra, **30 Tem 2026'da silindi**; `BookDiscovery` tipleri de hiç kullanılmadığı için kaldırıldı | Bölüm kesintisiz kaydırılarak okunuyor |
 | **7** | Güvenlik/hesap akışı (Bölüm 8) | Aktivasyon bağlantısı + PIN |
-| **8** | Landing page'in gerçek özelliklerle güncellenmesi | Pazarlama yüzü güncel |
+| **8** | Landing page'in gerçek özelliklerle güncellenmesi. **Başladı (15 Eki 2026):** eski sayfa silindi, yenisi `app/(tanitim)/` altında (bileşenler `src/components/tanitim/`). **KARAR (Hasan):** site bütün kitaplar ve sesli anlatımlar bitmeden yayına açılmayacağı için tanıtım sitenin TAM hâlini anlatır — kitap/bölüm sayıları yayın durumuna bakmadan katalogdan (`src/data/katalogSayilari.ts`), sesli anlatım öne çıkan özelliktir. Ürün Bahar Yayıncılık'ın değil, bağımsız bir ürün olarak sunulur. Marka adı ve logo geçicidir (`src/data/marka.ts`, `src/components/marka/Logo.tsx`). Paket modeli öneridir (tek ödeme, süre sınırı yok; 1 / 3 / 5 profil — `src/data/paketler.ts`). Yasal sayfalar (KVKK, gizlilik, çerez, kullanım, ön bilgilendirme, mesafeli satış, iptal-iade, iletişim) taslaktır; satıcı bilgileri `src/data/yasal/satici.ts`'te yer tutucudur. Ürün ekran görüntüleri `npm run tanitim-gorselleri` ile `/tasarim/*` önizlemelerinden üretilir. **Hareket katmanı (KARAR 16 Eki 2026 — Hasan):** yalnız Motion + CSS (`src/components/tanitim/hareket/`); Işıl bölüm bölüm tek karakter gibi rehberlik eder (hero'da uçarak gelir → altın yolda kaydırmayı izler → şafakta dinlenmeye gider → kapanışta döner), dinî içeriğin (İlkeler, Hz. Muhammed / halife listesi) yanında Işıl yoktur; fiyat kartlarına yalnız giriş ve düğme tepkisi eklenir; ses efekti yok; "hareketi azalt"ta süsler durur | Pazarlama yüzü güncel |
 
 **Çocuk arayüzü sadeleştirme fazları (Ekim 2026 — bkz. 3.10).** Harfler 11 Ekim
 2026 analiz raporundaki adlandırmadır; her faz kendi başına yayına alınabilir.
@@ -1795,6 +1825,12 @@ Kurallar:
       peygamberler (Hz. Muhammed hariç) yüzü görünmeyen figür olarak
       gösterilebilir. Hz. Muhammed, ailesi, sahabe ve halifeler hiçbir biçimde
       gösterilmez (6.4).
+- [x] **Tasvir kuralı yeniden revize edildi (16 Ekim 2026, Hasan):** olayın
+      öznesi insansa sahne figürlüdür. Peygamberler, akrabaları ve saygın
+      müminlerin yüzü hiç görünmez (arkadan, uzak plan, doğal sebep; önden
+      gerekiyorsa yaygın ışık). Kötü karakterler, çevreleri ve sıradan halkın
+      yüzü gösterilebilir; korkutucu ve karikatür değil. Hz. Muhammed, ailesi,
+      sahabe ve halifeler değişmedi (6.4).
 - [x] **Her bölümün sesli anlatımı olur;** yer tutucu ses ve tek kaynaktan
       türetilen dosya yolu (6.5).
 - [x] Ana ekran tasarımı (raporun D1–D4 taslakları): hamburger menü yerine
@@ -1804,6 +1840,10 @@ Kurallar:
       (3.10.1, 3.10.6, 3.10.7).
 - [x] Lansman 10 kitapla yapılır; hangi 10 kitap olduğu Hasan'ın seçimidir.
       Uygulama kitapları her zaman katalog sırasıyla gösterir.
+      **REVİZE 16 Ekim 2026 (Hasan):** lansman 12 kitap — Âdem, Şît, İdrîs,
+      Nûh, Eyyûb, Musa (yayında) + İbrahim, Yusuf, Yunus, Süleyman, İsmail,
+      Îsâ. Ardından Hz. Muhammed — İlk Yıllar. Liste ve yazım düzeni:
+      katalog §11.1.
 - [x] **Görsel yoğunluğu artırıldı (12 Ekim 2026, Hasan: "çocuk kitabı olduğu
       için bol görselli olması daha iyi"):** bölüm başına 1 açılış + 5 sahne =
       6 görsel; alt sınır 5. Lansman "seyrek modu" (kapak + 2 sahne) iptal
@@ -1856,7 +1896,8 @@ Kurallar:
 
 İçerik yazım kuralları: Bahar Yayıncılık yazım kuralları esas alınır
 (peygamber adlarında "(a.s.)" ilk geçişte; kaynak dışına taşan kesin ifade yok;
-abartısız, sıcak, 8-11 yaş dili; görsellerde yüz gösterilmez — tasvir kuralı 6.4).
+abartısız, sıcak, 8-11 yaş dili; görsellerde peygamber, yakınları ve saygın
+müminlerin yüzü gösterilmez — tasvir kuralı 6.4, REVİZE 16 Ekim 2026).
 Kitaba özgü kıssa/rivayet kararları (hangi rivayet kullanılmaz, hassas kıssa
 nasıl çerçevelenir) genel kural DEĞİLDİR; her kitabın kimliğindeki "Kitaba özgü
 kararlar" alanında tutulur. Örnek: Hz. Âdem'de Hâbil-Kâbil'in Mâide merkezli,

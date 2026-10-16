@@ -50,6 +50,8 @@ const config: Config = {
         baslik: ["var(--font-baloo)", "Arial", "sans-serif"],
         govde: ["var(--font-nunito)", "Arial", "sans-serif"],
         story: ["var(--font-lora)", "Georgia", "serif"],
+        // Okuma ekranının hikâye yazısı; tanıtım sayfasında başlık yazısı olarak da kullanılır.
+        edebi: ["var(--font-literata)", "Georgia", "serif"],
         elyazi: ["var(--font-elyazi)", "cursive"],
       },
       borderRadius: {

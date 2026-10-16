@@ -76,10 +76,30 @@ where not exists (
 );
 
 insert into public.books (isim, aciklama, sira, toplam_bolum)
-select 'Hz. Nuh', 'Sabır ve güven gemisi', 4, 5
+select 'Hz. Nuh', 'Sabır ve güven gemisi', 4, 8
 where not exists (
   select 1 from public.books
   where lower(isim) like '%nuh%'
+);
+
+-- Hz. Eyyûb aktarıldı (15 Eki 2026); katalog sırası 13, 5 bölüm. Uygulama
+-- kitabı adından bulur (`normalizeBookName(isim)` → "eyyub"); `isim` bu yüzden
+-- "Hz. Eyyûb" olmalıdır ("Eyüp" yazımı eşleşmez).
+insert into public.books (isim, aciklama, sira, toplam_bolum)
+select 'Hz. Eyyûb', 'Zorlukta umudu korumak', 13, 5
+where not exists (
+  select 1 from public.books
+  where lower(isim) like '%eyyûb%' or lower(isim) like '%eyyub%'
+);
+
+-- Hz. Musa yayına girdi (13 Eki 2026); katalog sırası 16, 10 bölüm.
+-- Satır yoksa okuma ekranı "kaydı bulunamadı" der; rozet ve final madalyası
+-- KAYDEDİLEMEZ. Yeni kitap yayına alınırken bu satır da eklenmelidir.
+insert into public.books (isim, aciklama, sira, toplam_bolum)
+select 'Hz. Musa', 'Özgürlüğe uzanan yol', 16, 10
+where not exists (
+  select 1 from public.books
+  where lower(isim) like '%musa%' or lower(isim) like '%mûsâ%'
 );
 
 insert into public.books (isim, aciklama, sira, toplam_bolum)
@@ -111,8 +131,10 @@ update public.books
 set toplam_bolum = 4, sira = 2, aciklama = 'Emaneti büyüterek taşımak'
 where lower(isim) like '%şît%' or lower(isim) like '%şit%' or lower(isim) like '%sit%';
 
+-- Nûh kaynaklı içerikle 8 bölüm (12 Eki 2026). Final testi kaydı bu sayıyı
+-- tamamlanan bölüm olarak yazar; 5 kalırsa final sonrası ilerleme 5/8'e düşer.
 update public.books
-set toplam_bolum = 5, sira = 4
+set toplam_bolum = 8, sira = 4
 where lower(isim) like '%nuh%';
 
 -- Dört Büyük Halife kitaplarının sırası KATALOGU izler (atlasCatalog.ts:

@@ -1,0 +1,335 @@
+/*
+ * Tanıtım sayfası (landing) — KARAR 15 Eki 2026.
+ *
+ * Tasarım fikri: "Gece masalından sabaha". Sayfa çocuğun gece mavisi
+ * dünyasında açılır (yıldızlar, altın ışık, Işıl), bir şafak geçişiyle
+ * velinin sakin krem dünyasına uyanır. Ürünün iki yüzü sayfanın akışında
+ * anlatılır.
+ *
+ * Hatırlanacak öğe: "Bir bölüm nasıl ilerler?" bölümündeki altın yol. Okuma
+ * ekranındaki adım çubuğunun büyütülmüş hâlidir; sayfa kaydıkça altınla dolar
+ * ve ucunda Işıl ilerler (`AltinYol.tsx`).
+ *
+ * Bu dosya yerleşim ve görünüşü taşır; hareketlerin çoğu
+ * `hareket/hareket.module.css` ve Motion bileşenlerindedir.
+ *
+ * Renkler yalnız tema değişkenlerinden ve globals.css'teki --safak-* /
+ * --cihaz-* değişkenlerinden gelir.
+ */
+
+/* ---------- Giriş sahnesi ---------- */
+
+.giris {
+  animation: yukselis 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(var(--sira, 0) * 120ms);
+}
+
+@keyframes yukselis {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Gece zemini ---------- */
+
+.heroUfku {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(55% 45% at 72% 38%, color-mix(in srgb, var(--vurgu) 16%, transparent), transparent 70%),
+    radial-gradient(40% 30% at 12% 8%, color-mix(in srgb, var(--cizgi) 28%, transparent), transparent 70%);
+}
+
+.heroManzarasi {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 62%;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to top, black 30%, transparent 100%);
+  mask-image: linear-gradient(to top, black 30%, transparent 100%);
+  opacity: 0.78;
+}
+
+.yuzer {
+  animation: yuzer 6s ease-in-out infinite;
+}
+
+.yuzerGecikmeli {
+  animation: yuzer 7s ease-in-out 1.2s infinite;
+}
+
+@keyframes yuzer {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--egim, 0deg));
+  }
+  50% {
+    transform: translateY(-10px) rotate(var(--egim, 0deg));
+  }
+}
+
+.altinHale {
+  filter: drop-shadow(0 0 22px color-mix(in srgb, var(--vurgu) 55%, transparent));
+}
+
+/* ---------- Cihaz çerçeveleri ---------- */
+
+.tablet {
+  border-radius: clamp(18px, 2.6vw, 30px);
+  padding: clamp(7px, 1vw, 12px);
+  background: linear-gradient(150deg, var(--cihaz-kenar), var(--cihaz-cerceve) 55%);
+  box-shadow:
+    0 50px 90px -40px rgb(0 0 0 / 0.75),
+    0 0 0 1px color-mix(in srgb, var(--murekkep) 12%, transparent),
+    inset 0 1px 0 color-mix(in srgb, var(--murekkep) 14%, transparent);
+}
+
+.telefon {
+  border-radius: clamp(26px, 3.4vw, 42px);
+  padding: clamp(5px, 0.7vw, 9px);
+  background: linear-gradient(150deg, var(--cihaz-kenar), var(--cihaz-cerceve) 55%);
+  box-shadow:
+    0 40px 70px -30px rgb(0 0 0 / 0.7),
+    0 0 0 1px color-mix(in srgb, var(--murekkep) 12%, transparent);
+}
+
+.tabletEkrani,
+.telefonEkrani {
+  position: relative;
+  overflow: hidden;
+  background: var(--okuma-yuzey);
+}
+
+.tabletEkrani {
+  border-radius: clamp(12px, 1.7vw, 19px);
+  aspect-ratio: 1180 / 820;
+}
+
+.telefonEkrani {
+  border-radius: clamp(21px, 2.8vw, 33px);
+  aspect-ratio: 390 / 844;
+}
+
+/* Açık zemindeki çerçeveler: gölge daha sıcak ve kısa. */
+.acikZemin {
+  box-shadow:
+    0 40px 70px -40px color-mix(in srgb, var(--murekkep) 45%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--murekkep) 8%, transparent);
+}
+
+/* ---------- Döngü ---------- */
+
+/* Daireden bir sonraki daireye uzanan noktalı iz (yalnız geniş ekranda). */
+.donguBaglantisi {
+  position: absolute;
+  top: 27px;
+  left: 72px;
+  right: -16px;
+  border-top: 2px dotted color-mix(in srgb, var(--vurgu) 70%, transparent);
+}
+
+/* ---------- Altın yol ---------- */
+
+.yol {
+  position: relative;
+}
+
+.yolRayi {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 26px;
+  width: 4px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--cizgi) 75%, transparent);
+}
+
+@media (min-width: 1024px) {
+  .yolRayi {
+    left: calc(50% - 2px);
+  }
+}
+
+.yolDolgusu {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  transform-origin: top;
+  background: linear-gradient(to bottom, var(--vurgu), color-mix(in srgb, var(--vurgu) 70%, white));
+  box-shadow: 0 0 16px color-mix(in srgb, var(--vurgu) 60%, transparent);
+}
+
+/* Işıl ve ışık tozu katmanı: rayla aynı çizgide, adım dairelerinin üstünde. */
+.yolIsilKatmani {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 28px;
+  width: 0;
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .yolIsilKatmani {
+    left: 50%;
+  }
+}
+
+.adimIsareti {
+  box-shadow:
+    0 0 0 6px var(--zemin),
+    0 0 24px color-mix(in srgb, var(--vurgu) 45%, transparent);
+}
+
+/* ---------- Sözlük örneği ---------- */
+
+/* Okuma ekranındaki `.sozlukKelimesi` ile aynı: satır içinde kalır, dolgu
+   negatif kenar boşluğuyla dengelenir — ek kelimeden ayrılmaz ("emanetti"). */
+.ornekKelime {
+  display: inline;
+  margin: -6px -3px;
+  padding: 6px 3px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  border: 0;
+  border-radius: 8px;
+  color: var(--eylem-koyu);
+  background-color: transparent;
+  background-image: linear-gradient(
+    to top,
+    transparent 14%,
+    color-mix(in srgb, var(--eylem) 22%, transparent) 14%,
+    color-mix(in srgb, var(--eylem) 22%, transparent) 46%,
+    transparent 46%
+  );
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color 180ms ease;
+}
+
+.ornekKelime:hover,
+.ornekKelime[aria-expanded="true"] {
+  background-color: color-mix(in srgb, var(--eylem) 14%, transparent);
+}
+
+.dokunIpucu {
+  animation: nabiz 2.2s ease-in-out infinite;
+}
+
+@keyframes nabiz {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--eylem) 45%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 8px color-mix(in srgb, var(--eylem) 0%, transparent);
+  }
+}
+
+/* ---------- Sesli anlatım ---------- */
+
+.sesHalkalari {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-radial-gradient(
+    circle at 78% 50%,
+    color-mix(in srgb, var(--vurgu) 9%, transparent) 0 1px,
+    transparent 1px 46px
+  );
+  -webkit-mask-image: radial-gradient(circle at 78% 50%, black, transparent 62%);
+  mask-image: radial-gradient(circle at 78% 50%, black, transparent 62%);
+}
+
+.dalgaCubugu {
+  width: 100%;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--murekkep) 22%, transparent);
+  transition: background-color 200ms ease;
+}
+
+.dalgaCubuguCalindi {
+  background: var(--vurgu);
+}
+
+/* ---------- Şafak geçişi ---------- */
+
+.safak {
+  background:
+    radial-gradient(48% 42% at 50% 100%, var(--safak-gunes), transparent 72%),
+    linear-gradient(
+      to bottom,
+      var(--safak-1) 0%,
+      var(--safak-2) 20%,
+      var(--safak-3) 42%,
+      var(--safak-4) 64%,
+      var(--safak-5) 82%,
+      var(--safak-6) 100%
+    );
+}
+
+/* Kapanıştaki akşam: krem zemin yıldızlı gecenin üstünde yavaşça çekilir;
+   yıldızlar alacakaranlıkta belirmeye başlar. */
+.aksam {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 100%;
+  max-height: 320px;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    var(--safak-6) 0%,
+    var(--safak-5) 18%,
+    color-mix(in srgb, var(--safak-4) 85%, transparent) 40%,
+    color-mix(in srgb, var(--safak-3) 55%, transparent) 64%,
+    color-mix(in srgb, var(--safak-2) 22%, transparent) 84%,
+    transparent 100%
+  );
+}
+
+/* ---------- Kütüphane rafı ---------- */
+
+.raf {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.raf > * {
+  scroll-snap-align: start;
+}
+
+/* ---------- Sık sorulanlar ---------- */
+
+.soru summary {
+  list-style: none;
+}
+
+.soru summary::-webkit-details-marker {
+  display: none;
+}
+
+.soruIsareti {
+  transition: transform 220ms ease;
+}
+
+.soru[open] .soruIsareti {
+  transform: rotate(45deg);
+}
+
+/* ---------- Hareketi azalt ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .giris,
+  .yuzer,
+  .yuzerGecikmeli,
+  .dokunIpucu {
+    animation: none;
+  }
+}

@@ -98,7 +98,7 @@ export const KITAP_ANAHTARLARI: KitapAnahtari[] = [
   { bookKey: "adem", booksTsId: "hz-adem", keywords: ["adem"] },
   { bookKey: "sit", booksTsId: "hz-sit", keywords: ["sit"] },
   { bookKey: "idris", booksTsId: "hz-idris", keywords: ["idris"] },
-  { bookKey: "nuh", keywords: ["nuh"] },
+  { bookKey: "nuh", booksTsId: "hz-nuh", keywords: ["nuh"] },
   { bookKey: "ebubekir", keywords: ["ebu bekir", "ebubekir"] },
   { bookKey: "omer", keywords: ["omer"] },
   { bookKey: "osman", keywords: ["osman"] },

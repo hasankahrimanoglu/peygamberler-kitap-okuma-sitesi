@@ -36,9 +36,10 @@ Faz 2 yazılmaz" kuralı bu oturumun da sınırıdır.
   **üzerine yazma**; Hasan'a ne yapılacağını sor (yeniden mi, düzeltme mi).
 - `kaynak-pdfler/` içinde bu kitabın PDF'ini bul. Yoksa veya birden fazla aday
   varsa Hasan'a sor. PDF'i baştan sona oku; sayfa aralıklarını kaydet.
-- §11.2'nin 2–8. maddelerindeki dosyaları oku (brif, katalog, rozet matrisi,
+- §11.2'nin 2–9. maddelerindeki dosyaları oku (brif, katalog, rozet matrisi,
   sözlükçe sicili, görsel sicili, biçim örneği olarak son yayımlanmış kitabın
-  içerik dosyası). `PROJE-MODELI.md` ve kod dosyaları bu oturuma girdi değildir.
+  içerik dosyası, peygamber kitaplarında kitap haritası). `PROJE-MODELI.md` ve kod
+  dosyaları bu oturuma girdi değildir.
 - `YENI-KITAP-ICERIK-URETIM-BRIFI.md` §1 alanlarından eksik olan kritik bilgi
   varsa tahmin yürütme, sor.
 
@@ -49,6 +50,9 @@ Faz 2 yazılmaz" kuralı bu oturumun da sınırıdır.
 A bölümü). Rozet adlarını `ROZET-MATRISI.md` §2–§3'e, yeni terimleri
 `SOZLUKCE-SICILI.md` §2–§3'e karşı kontrol ederek öner.
 
+Brif **§16 yerleşik kararlarını** uygula: o konuları yeniden soru olarak sorma,
+uyguladığın her kararı olay bazında kaydet. Emsal kitaba uymuyorsa soru aç.
+
 Brif §15'teki durma durumlarından biri oluşursa metni doldurma; bulguyu ve
 1–3 karar sorusunu yaz.
 
@@ -57,12 +61,15 @@ Dosya: `kitap-icerikleri/KITAP-HZ-{BÜYÜK HARF bookKey}-ICERIK-taslak.md`
 
 ## 5. Teslim ve dur
 
-Hasan'a kısa, sade bir özet ver:
-- bölüm planı (bölüm adı + bir cümle),
-- önerilen rozet adları ve matrisle çakışma durumu,
-- yeni terim önerileri,
-- dışarıda bırakılan olaylar ve hassas konuların önerilen çerçevesi,
-- açık editör soruları (önce bunlar).
+Hasan'a kısa, sade bir özet ver (brif §16 madde 21 düzeni):
+1. **Karar soruları** — yalnız bu kitaba özgü 3–6 soru, önce bunlar.
+2. **Yerleşik kararlara göre uygulananlar** — tablo: olay · §16 maddesi · ne
+   yapıldı. Bu kitabın kendi olaylarıyla yaz; Hasan buradan itiraz edebilmeli.
+3. **Onay listesi** (itiraz edilmezse geçerli): bölüm planı (bölüm adı + bir
+   cümle), rozet adları ve matrisle çakışma durumu, yeni terimler, Bugüne Taşı
+   dağılımı, Tanık önerisi.
+4. **Dışarıda bırakılan olaylar** — her biri için kaynakta ne anlatılıyor +
+   neden çıktı, kısaca.
 
 Sonra **dur.** Faz 2'ye kendiliğinden geçme. Sıradaki adım: Hasan Faz 1'i onaylar,
 ardından yeni bir oturumda `/icerik-faz2 $ARGUMENTS` çalıştırılır.

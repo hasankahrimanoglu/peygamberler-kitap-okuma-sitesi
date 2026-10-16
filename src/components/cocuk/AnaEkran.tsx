@@ -1,6 +1,13 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { useRouter } from "next/navigation";
 import {
   siradakiAdim,
@@ -58,6 +65,8 @@ export function AnaEkran({
 }: AnaEkranProps) {
   const router = useRouter();
   const rotaKaydirRef = useRef<HTMLDivElement>(null);
+  const ortalanacakRef = useRef(true);
+  const [rotaKuyrugu, setRotaKuyrugu] = useState(0);
   const [seciliKey, setSeciliKey] = useState<string | null>(null);
   const [vurguluKey, setVurguluKey] = useState<string | null>(null);
   const [finalKey, setFinalKey] = useState<string | null>(null);
@@ -142,18 +151,50 @@ export function AnaEkran({
     };
   }, [kitapSec, seciliKitap]);
 
-  // Geniş ekranda rota, açılışta okunan kitabı ortalar (rota kendi içinde kayar).
+  // Geniş ekranda rota kendi içinde kayar. Açılışta ve tablet yatay konuma
+  // döndüğünde sağ paneldeki kitap (adres çubuğundaki `?kitap=`, yoksa okunan
+  // kitap) rotanın ortasına gelir. Duraklar rota genişliği ölçülünce çizildiği
+  // için ortalama YolculukRotasi'nin `onYerlesti` haberini bekler.
   useEffect(() => {
-    if (yukleniyor || !siradaki || !window.matchMedia(GENIS_EKRAN).matches)
-      return;
+    const genis = window.matchMedia(GENIS_EKRAN);
+    function degisti() {
+      if (genis.matches) ortalanacakRef.current = true;
+    }
+    genis.addEventListener("change", degisti);
+    return () => genis.removeEventListener("change", degisti);
+  }, []);
+
+  // Rota kuyruğu: geniş ekranda görünür yüksekliğin yarısı, dar ekranda yok.
+  // Boyamadan önce ölçülür ki açılışta rota önce üstte görünüp sonra kaymasın.
+  useLayoutEffect(() => {
     const kap = rotaKaydirRef.current;
-    const durak = kap?.querySelector<HTMLElement>(
-      `[data-kitap="${siradaki.kitap.key}"]`,
-    );
-    if (!kap || !durak) return;
-    const hedef = durak.offsetTop - kap.clientHeight / 2;
-    kap.scrollTo({ top: Math.max(0, hedef), behavior: "auto" });
-  }, [siradaki, yukleniyor]);
+    if (!kap) return;
+    const genis = window.matchMedia(GENIS_EKRAN);
+    const olc = () =>
+      setRotaKuyrugu(genis.matches ? Math.round(kap.clientHeight / 2) : 0);
+    olc();
+    const gozlemci = new ResizeObserver(olc);
+    gozlemci.observe(kap);
+    return () => gozlemci.disconnect();
+  }, []);
+
+  const rotaYerlesti = useCallback(() => {
+    const kap = rotaKaydirRef.current;
+    // Kuyruk 0 ise dar ekrandayız ya da ölçüm henüz gelmedi; ortalama bekler.
+    if (!ortalanacakRef.current || !kap || rotaKuyrugu === 0) return;
+    ortalanacakRef.current = false;
+    const adrestekiKey = new URLSearchParams(window.location.search).get("kitap");
+    const hedef = kitapBul(adrestekiKey) ?? siradaki?.kitap ?? kitaplar.at(-1);
+    const durak = hedef
+      ? kap.querySelector<HTMLElement>(`[data-kitap="${hedef.key}"]`)
+      : null;
+    if (!durak) return;
+    const kutu = kap.getBoundingClientRect();
+    const durakKutusu = durak.getBoundingClientRect();
+    const fark =
+      durakKutusu.top + durakKutusu.height / 2 - (kutu.top + kap.clientHeight / 2);
+    kap.scrollTo({ top: Math.max(0, kap.scrollTop + fark), behavior: "auto" });
+  }, [kitapBul, kitaplar, rotaKuyrugu, siradaki]);
 
   function duyuruyuKapat(key: string) {
     try {
@@ -334,6 +375,8 @@ export function AnaEkran({
                 seciliKey={panelKitabi?.key ?? null}
                 vurguluKey={vurguluKey}
                 onSec={kitapSec}
+                onYerlesti={rotaYerlesti}
+                enAzKuyruk={rotaKuyrugu}
               >
                 {devami.sayi > 0 ? (
                   <section

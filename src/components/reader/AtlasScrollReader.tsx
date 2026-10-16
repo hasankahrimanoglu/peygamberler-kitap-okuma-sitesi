@@ -613,7 +613,8 @@ export function AtlasScrollReader({
           <article className={styles.tanikKagidi}>
             <h2>{bolum.witnessLabel}</h2>
             <p>{bolum.body}</p>
-            <strong>— {bolum.witnessName}</strong>
+            {/* İsimsiz kurgusal tanıkta (witnessName boş) imza satırı çizilmez. */}
+            {bolum.witnessName ? <strong>— {bolum.witnessName}</strong> : null}
           </article>
           {bolum.isFictional ? (
             <p className={styles.tanikNotu}>Bu sayfadaki çocuk hayalîdir; anlattığı olaylar gerçektir.</p>

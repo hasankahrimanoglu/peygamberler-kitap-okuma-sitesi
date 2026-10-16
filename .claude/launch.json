@@ -15,6 +15,10 @@
       ],
       "port": 3100,
       "autoPort": true
+    },
+    {
+      "name": "dev-mevcut",
+      "url": "http://localhost:3100"
     }
   ]
 }

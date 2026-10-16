@@ -61,6 +61,10 @@ istenen "rozet anahtarı" alanı bu türetmenin doğrulanması içindir.
   ekranda en fazla 72px çizildiği için vektöre gerek yoktur; brifler ise gradyan,
   doku ve ışık istiyor. Tek şablon ailesi (aynı çerçeve, aynı palet; değişen
   yalnız iç sembol).
+- **Çerçeve üretimde çizilmez (KARAR 13 Eki 2026 — Hasan):** görsel oturumu
+  sembolü çerçevesiz kare olarak teslim eder; çerçeveyi Hasan Photoshop'ta tek
+  ortak şablonla ekler ve aynı adla kaydeder. Ayrıntı: ICERIK-GORSEL-SICILI
+  §6.2 "Rozet ve madalya — çerçevesiz kare".
 - Kilitli/kazanılmış için **ayrı dosya üretilmez** — CSS ile soluklaştırılır.
 - Dosya adı küçük harf, Türkçe karaktersiz, tireli.
 - Figür yasağı: peygamber/halife/sahabe yüzü, bedeni, eli veya silüeti yok.
@@ -93,8 +97,76 @@ ad ikinci kez kullanılamaz.
 | 14 | Öğreten Sabır Rozeti | Hz. İdrîs | 2 | Nihai |
 | 15 | Vazgeçmeyen El Rozeti | Hz. İdrîs | 3 | Nihai |
 | 16 | Güvenilen Söz Rozeti | Hz. İdrîs | 4 | Nihai |
+| 17 | Dimdik Duruş Rozeti | Hz. Nûh | 1 | Nihai |
+| 18 | Yumuşak Cesaret Rozeti | Hz. Nûh | 2 | Nihai |
+| 19 | Açık Kapı Rozeti | Hz. Nûh | 3 | Nihai |
+| 20 | Asırlık Sabır Rozeti | Hz. Nûh | 4 | Nihai |
+| 21 | Vaktinde Hazırlık Rozeti | Hz. Nûh | 5 | Nihai |
+| 22 | Dalgada Güven Rozeti | Hz. Nûh | 6 | Nihai |
+| 23 | Şefkatli Çağrı Rozeti | Hz. Nûh | 7 | Nihai |
+| 24 | Bereketli İniş Rozeti | Hz. Nûh | 8 | Nihai |
+| 25 | Vaade Güven Rozeti | Hz. Musa | 1 | Nihai |
+| 26 | Göz Aydınlığı Rozeti | Hz. Musa | 2 | Nihai |
+| 27 | Doğru Taraf Rozeti | Hz. Musa | 3 | Nihai |
+| 28 | Karşılıksız İyilik Rozeti | Hz. Musa | 4 | Nihai |
+| 29 | Çözülen Düğüm Rozeti | Hz. Musa | 5 | Nihai |
+| 30 | Korkuyu Aşan Adım Rozeti | Hz. Musa | 6 | Nihai |
+| 31 | Gerçeği Kabul Rozeti | Hz. Musa | 7 | Nihai |
+| 32 | İbret Alan Göz Rozeti | Hz. Musa | 8 | Nihai |
+| 33 | Açılan Yol Rozeti | Hz. Musa | 9 | Nihai |
+| 34 | Öğrenen Yolcu Rozeti | Hz. Musa | 10 | Nihai |
+| 35 | Paylaşılan Nimet Rozeti | Hz. Eyyûb | 1 | Nihai |
+| 36 | İlk Andaki Sabır Rozeti | Hz. Eyyûb | 2 | Nihai |
+| 37 | Zor Günde Vefa Rozeti | Hz. Eyyûb | 3 | Nihai |
+| 38 | Merhamete Sığınma Rozeti | Hz. Eyyûb | 4 | Nihai |
+| 39 | Sabrın Pınarı Rozeti | Hz. Eyyûb | 5 | Nihai |
 
 **Nihai** = dinî doğruluk onayı verilmiş, kalıcı ad. Değiştirilmez.
+
+> **15 Ekim 2026 — Hz. Eyyûb nihai içerikle eklendi.** Beş ad da §2'deki önceki
+> 34 adla ve §2.1'deki serbest adlarla çakışmıyor (gerekçeler
+> `KITAP-HZ-EYYUB-KAYNAK-DENETIMI.md` §C1, Hasan onayı). Nüans ayrışmaları:
+> *Karşılıksız İyilik* (Musa 4) yabancıya karşılık beklemeden yardımdır,
+> *Paylaşılan Nimet* **bolluğu şükürle paylaşmaktır**. *Öğreten Sabır* (İdrîs 2)
+> tekrar tekrar anlatma, *Asırlık Sabır* (Nûh 4) sonucu görmeden çok uzun
+> sürdürme sabrıdır; *İlk Andaki Sabır* **kötü haberin ilk anındaki** sabırdır,
+> *Sabrın Pınarı* ise **sabrın sonundaki rahmettir** (kitapta iki sabır adı, iki
+> ayrı uç). *Şefkatli Çağrı* (Nûh 7) insana şefkattir; *Merhamete Sığınma* derdi
+> **Allah'ın merhametine açmaktır** (Enbiyâ 83). *Zor Günde Vefa* setteki ilk
+> "vefa" adıdır; Muhammed — Veda ve Emanet ile Ebû Bekir kitaplarına dostluğa ve
+> söze vefa nüansı kalır. §2.1'deki serbest *Sabır Başlangıç Rozeti* anlamca
+> *İlk Andaki Sabır*'a yakın olduğu için ileride kullanılmamalıdır. *Güzel Sabır*
+> bilinçli olarak kullanılmadı (Hz. Yakup kitabına kalır).
+
+> **13 Ekim 2026 — Hz. Musa nihai içerikle eklendi.** On ad da §2'deki önceki
+> 24 adla ve §2.1'deki serbest adlarla çakışmıyor (gerekçeler
+> `KITAP-HZ-MUSA-KAYNAK-DENETIMI.md` §C1, Hasan onayı). Nüans ayrışmaları:
+> *Dalgada Güven* (Nûh 6) hazırlıktan sonra sonucu Allah'a bırakmaktır;
+> *Vaade Güven* Allah'ın sözüne güvenip **en sevdiğini bırakabilmek**, *Açılan
+> Yol* ise **hiçbir çıkış görünmezken** güvenmektir. *Gelen Umut* (Şît 1) kayıptan
+> sonra teselli, *Göz Aydınlığı* **ayrılıktan sonra kavuşmadır**. *Yumuşak
+> Cesaret* (Nûh 2) doğruyu nazik dille söylemektir; *Korkuyu Aşan Adım* bilinçli
+> olarak **korkuya rağmen gitme** nüansına kaydırıldı (§3 cesaret stratejisi).
+> *Doğruyu Arama* (Şît 2) aramak, *Gerçeği Kabul* **gördüğün gerçeği herkesin
+> önünde kabul etmektir**. *İbret Alan Göz* uyarıdan ders çıkarmaktır; *Sözü
+> Koruma* (Âdem 3) ve *Güvenilen Söz* (İdrîs 4) var olduğu için adda "söz"
+> kullanılmadı. *Meraklı Zihin* (Âdem 2) merak edip öğrenmek, *Öğrenen Yolcu*
+> **bilgili olduğu hâlde öğrenmek için yola çıkıp sabretmektir**. *Doğru Taraf*
+> (haksızın yanında durmamak), *Karşılıksız İyilik* ve *Çözülen Düğüm*
+> (yardım istemek) sette benzersizdir.
+
+> **12 Ekim 2026 — Hz. Nûh nihai içerikle eklendi.** Sekiz ad da §2'deki
+> önceki 16 adla ve §2.1'deki serbest adlarla çakışmıyor (gerekçeler
+> `KITAP-HZ-NUH-KAYNAK-DENETIMI.md` §C1, Hasan onayı). Nüans ayrışmaları:
+> *Dikkatli Kalp* (Âdem 4) içten gelen fısıltıya karşı **kendini korumayı**,
+> *Dimdik Duruş* **kalabalığın baskısına** rağmen doğruda kalmayı anlatır.
+> *Öğreten Sabır* (İdrîs 2) **tekrar tekrar anlatma**, *Asırlık Sabır* **sonucu
+> görmeden çok uzun süre sürdürme** sabrıdır. *Ölçülü Buluş* (İdrîs 1) sonucu
+> **tartmayı**, *Vaktinde Hazırlık* tehlike gelmeden **hazırlanmayı** anlatır.
+> *Dalgada Güven* yalın "Güven" yerine kitaba özgü nüansı taşır; §2.1'deki
+> serbest *Güven Rozeti* ileriki kitaplar için açık kalır. *Yeni Başlangıç*
+> (Âdem 6) tövbe sonrası kurulan hayat, *Gelen Umut* (Şît 1) kayıptan sonra
+> teselli, *Bereketli İniş* ise **kurtuluştan sonra şükürle** başlamaktır.
 
 > **12 Ağustos 2026 — Hz. İdrîs nihai içerikle eklendi.** Dört ad da §2'deki
 > önceki 12 adla ve §2.1'deki serbest adlarla çakışmıyor. Nüans ayrışmaları:
@@ -180,9 +252,12 @@ Bölüm sayıları ve değerler `KITAP-KATALOGU-VE-URETIM-PLANI.md`'den alınmı
 İçeriği yazılmamış kitaplarda rozet adı satırı **boş bırakılır** — bu belge ad
 üretmez.
 
-**Görsel durumu kısaltmaları:** `—` üretilmedi · `✓` teslim edildi.
-**11 Ağustos 2026 itibarıyla 12 rozet görseli teslim edildi** (Hz. Âdem 8 ·
-Hz. Şît 4); hepsi 512×512 şeffaf PNG. Kalan 204 rozet görseli bekliyor.
+**Görsel durumu kısaltmaları:** `—` üretilmedi · `□` kare teslim edildi,
+çerçeve bekliyor (13 Eki 2026'dan itibaren üretim böyle teslim eder —
+ICERIK-GORSEL-SICILI §6.2) · `✓` çerçeveli son dosya yerinde.
+**15 Ekim 2026 itibarıyla 35 rozet görseli teslim edildi** (Hz. Âdem 8 ·
+Hz. Şît 4 · Hz. Nûh 8 — 512×512 şeffaf PNG, çerçeveli; Hz. Musa 10 · Hz. Eyyûb 5
+— 512×512 kare PNG, çerçeve bekliyor). Kalan 181 rozet görseli bekliyor.
 
 ### Bölge 1 — İlk İzler Vadisi (6 kitap · 34 rozet)
 
@@ -191,7 +266,7 @@ Hz. Şît 4); hepsi 512×512 şeffaf PNG. Kalan 204 rozet görseli bekliyor.
 | Hz. Âdem | `adem` | 8 | `hz-adem/bolum-1…8` | öğrenme, sorumluluk, tövbe, umut | ✅ Nihai (§2) | ✓ 8/8 |
 | Hz. Şît | `sit` | 4 | `hz-sit/bolum-1…4` | emanet, devamlılık, aile, doğruluk | ✅ Nihai (§2) | ✓ 4/4 |
 | Hz. İdrîs | `idris` | 4 | `hz-idris/bolum-1…4` | bilgi, doğruluk, sabır, emek | ✅ Nihai (§2) | — 0/4 |
-| Hz. Nûh | `nuh` | 8 | `hz-nuh/bolum-1…8` | sabır, güven, tedbir, umut | Bekliyor (K1) | — |
+| Hz. Nûh | `nuh` | 8 | `hz-nuh/bolum-1…8` | sabır, güven, tedbir, umut | ✅ Nihai (§2) | ✓ 8/8 |
 | Hz. Hûd | `hud` | 5 | `hz-hud/bolum-1…5` | tevazu, cesaret, doğruluk, sorumluluk | Bekliyor (K1) | — |
 | Hz. Sâlih | `salih` | 5 | `hz-salih/bolum-1…5` | emanet, ölçülülük, sözünde durma, saygı | Bekliyor (K1) | — |
 
@@ -210,10 +285,10 @@ Hz. Şît 4); hepsi 512×512 şeffaf PNG. Kalan 204 rozet görseli bekliyor.
 
 | Kitap | bookKey | Böl. | Anahtar aralığı | Ana değerler | İçerik | Görsel |
 |---|---|---:|---|---|---|---|
-| Hz. Eyyûb | `eyyub` | 5 | `hz-eyyub/bolum-1…5` | sabır, şükür, umut, dayanıklılık | Bekliyor (K1) | — |
+| Hz. Eyyûb | `eyyub` | 5 | `hz-eyyub/bolum-1…5` | sabır, şükür, umut, dayanıklılık | ✅ Nihai (§2) | □ 5/5 |
 | Hz. Şuayb | `suayb` | 5 | `hz-suayb/bolum-1…5` | dürüstlük, adalet, ölçülülük, cesaret | Bekliyor (K1) | — |
 | Hz. Zülkifl | `zulkifl` | 4 | `hz-zulkifl/bolum-1…4` | sabır, emanet, sözünde durma, düzen | Bekliyor (K2) | — |
-| Hz. Musa | `musa` | 10 | `hz-musa/bolum-1…10` | cesaret, özgürlük, adalet, güven | Bekliyor (K1) | — |
+| Hz. Musa | `musa` | 10 | `hz-musa/bolum-1…10` | cesaret, özgürlük, adalet, güven | ✅ Nihai (§2) | □ 10/10 |
 | Hz. Hârûn | `harun` | 5 | `hz-harun/bolum-1…5` | kardeşlik, destek, iletişim, sorumluluk | Bekliyor (K1) | — |
 | Hz. Yûşa | `yusa` | 4 | `hz-yusa/bolum-1…4` | sadakat, cesaret, emanet, kararlılık | Bekliyor (**K3**) | — |
 
@@ -267,21 +342,54 @@ Hz. Şît 4); hepsi 512×512 şeffaf PNG. Kalan 204 rozet görseli bekliyor.
 | | Sayı |
 |---|---:|
 | Planlanan rozet (216 bölüm) | 216 |
-| Nihai rozet adı kayıtlı | 16 |
+| Nihai rozet adı kayıtlı | 39 |
 | Geçici demo adı kayıtlı | 0 |
-| Ad bekleyen | 200 |
-| Üretilmiş rozet görseli | 12 |
-| Rozet görseli bekleyen | 204 |
+| Ad bekleyen | 177 |
+| Üretilmiş rozet görseli | 35 |
+| Rozet görseli bekleyen | 181 |
 
-Üretilmiş 12 görsel: `rozetler/hz-adem/bolum-1…8.png` ve
-`rozetler/hz-sit/bolum-1…4.png` (11 Ağu 2026, 512×512 şeffaf PNG).
+Üretilmiş 35 görsel: `rozetler/hz-adem/bolum-1…8.png` ve
+`rozetler/hz-sit/bolum-1…4.png` (11 Ağu 2026), `rozetler/hz-nuh/bolum-1…8.png`
+(13 Eki 2026) — 512×512 şeffaf PNG; `rozetler/hz-musa/bolum-1…10.png`
+(13 Eki 2026) ve `rozetler/hz-eyyub/bolum-1…5.png` (15 Eki 2026) — 512×512
+kare, çerçevesiz (`□`).
 Madalya görselleri bu matriste izlenmez; sicilleri `ICERIK-GORSEL-SICILI.md`
-§7'dedir (`madalyalar/hz-adem.png` ve `hz-sit.png` teslim edildi).
+§5'tedir (`madalyalar/hz-adem.png`, `hz-sit.png` ve `hz-nuh.png` teslim edildi;
+`hz-musa.png` ve `hz-eyyub.png` kare teslim edildi, çerçeve bekliyor).
 
 > **12 Ağu 2026 — Hz. İdrîs:** dört rozet **adı** nihai olarak kaydedildi
 > (12 → 16), ama **görselleri henüz üretilmedi.** `rozetler/hz-idris/bolum-1…4.png`
 > ve `madalyalar/hz-idris.png` şu an yer tutucudur; bu yüzden görsel sayaçları
 > 12/204 olarak DEĞİŞMEDİ. Brifler teslimin §H'sindedir.
+
+> **12 Eki 2026 — Hz. Nûh:** sekiz rozet **adı** nihai olarak kaydedildi
+> (16 → 24); görselleri henüz üretilmedi. `rozetler/hz-nuh/bolum-1…8.png` ve
+> `madalyalar/hz-nuh.png` yer tutucudur, görsel sayaçları 12/204 olarak kaldı.
+> Brifler `KITAP-HZ-NUH-ICERIK-final.md` §H'sindedir.
+>
+> **13 Eki 2026 — Hz. Nûh görselleri teslim edildi** (`/gorsel-uretim nuh`):
+> sekiz rozet ve kitap madalyası gerçek 512×512 şeffaf PNG; görsel sayaçları
+> 12 → 20 / 204 → 196.
+
+> **13 Eki 2026 — Hz. Musa:** on rozet **adı** nihai olarak kaydedildi
+> (24 → 34); görselleri henüz üretilmedi. `rozetler/hz-musa/bolum-1…10.png` ve
+> `madalyalar/hz-musa.png` yer tutucudur, görsel sayaçları 20/196 olarak kaldı.
+> Brifler `KITAP-HZ-MUSA-ICERIK-final.md` §H'sindedir.
+>
+> **13 Eki 2026 — Hz. Musa görselleri teslim edildi** (`/gorsel-uretim musa`):
+> on rozet ve kitap madalyası **çerçevesiz kare** (§6.2 kuralı) 512×512 PNG;
+> 2K ana dosyalar `gorsel-kaynaklari/` altında. Görsel sütunu `□` — çerçeveyi
+> Hasan ekleyince `✓` olur. Görsel sayaçları 20 → 30 / 196 → 186.
+
+> **15 Eki 2026 — Hz. Eyyûb:** beş rozet **adı** nihai olarak kaydedildi
+> (34 → 39); görselleri henüz üretilmedi. `rozetler/hz-eyyub/bolum-1…5.png` ve
+> `madalyalar/hz-eyyub.png` yer tutucudur, görsel sayaçları 30/186 olarak kaldı.
+> Brifler `KITAP-HZ-EYYUB-ICERIK-final.md` §H'sindedir.
+>
+> **15 Eki 2026 — Hz. Eyyûb görselleri teslim edildi** (`/gorsel-uretim eyyub`):
+> beş rozet ve kitap madalyası **çerçevesiz kare** (§6.2 kuralı) 512×512 PNG;
+> 2K ana dosyalar `gorsel-kaynaklari/` altında. Görsel sütunu `□` — çerçeveyi
+> Hasan ekleyince `✓` olur. Görsel sayaçları 30 → 35 / 186 → 181.
 
 ---
 
@@ -297,7 +405,8 @@ Madalya görselleri bu matriste izlenmez; sicilleri `ICERIK-GORSEL-SICILI.md`
      biçiminde: bölüm no · rozet adı · değer · anahtar).
    - Adlar §2 dizinine eklenir, durumu **Nihai** yazılır.
    - §5 sayaçları güncellenir.
-4. Görsel üretimi bittiğinde §4'teki "Görsel" sütunu `✓` yapılır.
+4. Görsel üretimi bittiğinde §4'teki "Görsel" sütunu `□` yapılır (kare,
+   çerçevesiz). Hasan çerçeveli dosyayı aynı adla kaydedince `✓` olur.
 5. Bölüm sayısı değişmesi gerekiyorsa önce `KITAP-KATALOGU-VE-URETIM-PLANI.md`
    §12 onay kuralı işletilir; matris kendi başına bölüm sayısı değiştirmez.
 

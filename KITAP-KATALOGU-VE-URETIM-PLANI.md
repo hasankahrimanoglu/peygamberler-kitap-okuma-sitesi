@@ -296,6 +296,29 @@ düşürülmez (REVİZE 12 Ekim 2026, Hasan):** bölüm başına 1 açılış + 
 6 görsel (PROJE-MODELI 6.4). Daha önce önerilen "seyrek mod" (kapak + 2 sahne)
 iptal edildi.
 
+**Lansman listesi ve üretim önceliği (KARAR 16 Ekim 2026, Hasan).** Hasan'ın
+"ilk 10"u ile yayındaki Hz. Şît ve Hz. İdrîs birlikte lansman **12 kitap**tır.
+Yukarıdaki dalga sırası bu kitaplar bitene kadar beklemeye alınır.
+
+| Durum | Kitaplar | Bölüm |
+|---|---|---:|
+| Yayında | Hz. Âdem · Hz. Şît · Hz. İdrîs · Hz. Nûh · Hz. Eyyûb · Hz. Musa | 39 |
+| Üretilecek | **Hz. İbrahim · Hz. Yusuf · Hz. Yunus · Hz. Süleyman · Hz. İsmail · Hz. Îsâ** | 45 |
+| Lansmandan sonra ilk kitap | Hz. Muhammed — İlk Yıllar (K4; ayrı kaynak seti) | 8 |
+
+- **Paralel yazım:** İbrahim, Yusuf, Yunus, Süleyman ve Îsâ'nın Faz 1'i aynı
+  anda yazılabilir; kaynak olayları birbirine taşmaz. **İsmail, İbrahim'in
+  Faz 1'i onaylandıktan sonra** başlar (Kâbe ve kurban ortak; §1.5 bölüşümü
+  İbrahim'de kurulur).
+- Paralel yazılan Faz 1 taslakları birbirinin rozet adını ve sözlük terimini
+  göremez. Taslaklar Hasan'a sunulmadan önce **rozet adları ve yeni terimler
+  bütün açık taslaklar arasında karşılaştırılır**; çakışma varsa öneri
+  değiştirilir ya da soru olarak eklenir.
+- Hz. Îsâ en hassas kitaptır (Hz. Meryem kıssası 11. ciltte, Zekeriyyâ
+  kısmında; inanç farkları polemiğe girmeden Kur'an çizgisinde anlatılır).
+- Bu sıra yalnız **yazım sırasıdır.** Rota sırası, bölge ve bölüm sayıları
+  değişmez (§12).
+
 ### 11.2 Her içerik üretim oturumuna verilecek dosyalar
 
 1. İlgili kaynak PDF veya OCR metni
@@ -307,6 +330,26 @@ iptal edildi.
 7. Önerilir: biçim örneği olarak yayımlanmış son kitabın içerik dosyası
    (ör. `kitap-icerikleri/KITAP-HZ-IDRIS-ICERIK-final.md`)
 8. Varsa ek güvenilir kaynaklar ve özellikle çıkarılacak rivayet listesi
+9. Peygamber kitaplarında: kaynak cildin **kitap haritası** —
+   `kaynak-pdfler/haritalar/` (önce `README.md`, sonra ilgili cilt dosyası).
+   Kullanım kuralları aşağıda.
+
+**Kitap haritaları (KARAR 16 Eki 2026 — Hasan).** Akıncı / Bahar Yayınları
+*Peygamberler Tarihi*'nin 12 cildi için 15 Ekim 2026'da BAHAR CLAUDE'daki reels
+çalışmasında çıkarıldı. Her peygamber için sayfa numaralı olay dizini, Kur'an'da
+olmayan ayrıntıların ilk değerlendirmesi, kullanılmaması gereken pasajlar ve
+kitap içi tutarsızlıklar var. Halifeler ve Hz. Muhammed kitaplarını kapsamaz.
+- **Dizindir, kaynak değildir.** PDF yine baştan sona okunur; metne giren her
+  olay PDF'teki sayfasından yazılır. Haritadan hikâye yazılmaz.
+- **Yalnız şu bölümler kullanılır:** 1 bölümler, 2 olay dizini, 3 Kur'an'da
+  olmayan ayrıntılar, README'deki "Kıssa başka ciltte" tablosu ve "Cilt geneli
+  uyarılar". 4 reels sahneleri ve 6 eski özetle karşılaştırma video için
+  yazıldı; bu projede yok sayılır.
+- **Haritanın yorumu karar değildir.** "Belirsiz / kurgu / İsrâiliyat"
+  notları Faz 1'de soru açmak içindir; kullanma kararını Hasan verir.
+- **Harita ile PDF çelişirse PDF esastır**; çelişki Faz 1 raporunda yazılır.
+- Haritalardaki PDF yolu ve dosya adları BAHAR CLAUDE'a aittir; bu projede
+  PDF `kaynak-pdfler/` içindedir, adı farklı olabilir.
 
 Verilmez: `PROJE-MODELI.md` ve kod dosyaları.
 

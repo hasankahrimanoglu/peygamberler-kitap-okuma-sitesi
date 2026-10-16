@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  useEffect,
   useId,
   useLayoutEffect,
   useRef,
@@ -30,6 +31,13 @@ type YolculukRotasiProps = {
   /** "Göster" ile bulunan yeni kitap kısa süre parlar. */
   vurguluKey: string | null;
   onSec: (key: string) => void;
+  /** Duraklar ölçülen genişliğe göre her yerleştiğinde çağrılır (ana ekran ortalaması). */
+  onYerlesti?: () => void;
+  /**
+   * Son duraktan rotanın sonuna en az bu kadar yol kalır. Geniş ekranda ana
+   * ekran görünür yüksekliğin yarısını verir ki son kitap da ortalanabilsin.
+   */
+  enAzKuyruk?: number;
   /** Rotanın altında, aynı çayırın üstünde duran içerik ("Yolun devamı"). */
   children?: ReactNode;
 };
@@ -86,6 +94,8 @@ export function YolculukRotasi({
   seciliKey,
   vurguluKey,
   onSec,
+  onYerlesti,
+  enAzKuyruk = 0,
   children,
 }: YolculukRotasiProps) {
   const kokRef = useRef<HTMLDivElement>(null);
@@ -108,7 +118,15 @@ export function YolculukRotasi({
     x: Math.round((sira % 2 === 0 ? o.sol : o.sag) * (genislik || 360)),
     y: o.ust + sira * o.adim,
   }));
-  const yukseklik = o.ust + Math.max(0, kitaplar.length - 1) * o.adim + o.alt;
+  const yukseklik =
+    o.ust +
+    Math.max(0, kitaplar.length - 1) * o.adim +
+    Math.max(o.alt, enAzKuyruk);
+
+  // Duraklar ancak genişlik ölçüldükten sonra çizilir; haber bu commit'ten sonra gider.
+  useEffect(() => {
+    if (genislik > 0) onYerlesti?.();
+  }, [genislik, yukseklik, onYerlesti]);
 
   const egri = (
     bas: { x: number; y: number },
