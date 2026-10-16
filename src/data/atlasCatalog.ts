@@ -62,7 +62,7 @@ export const atlasRegions: AtlasRegion[] = [
     description: "Bir ailenin farklı zamanlara ve ülkelere uzanan yolunda güveni, misafirperverliği, sabrı ve bağışlamayı keşfet.",
     mood: "Aile ve güven",
     books: [
-      { order: 7, key: "ibrahim", title: "Hz. İbrahim", subtitle: "Hakikati arayan kalp", description: "Batan yıldızlardan hiç batmayan Rabbe, ateşin ortasındaki esenlikten misafire açılan kapıya uzanan yolculukta Hz. İbrahim'in güvenini keşfet.", chapterCount: 9, availability: "preparing" },
+      { order: 7, key: "ibrahim", title: "Hz. İbrahim", subtitle: "Hakikati arayan kalp", description: "Batan yıldızlardan hiç batmayan Rabbe, ateşin ortasındaki esenlikten misafire açılan kapıya uzanan yolculukta Hz. İbrahim'in güvenini keşfet.", chapterCount: 9, availability: "published", yayinTarihi: "2026-10-17" },
       { order: 8, key: "lut", title: "Hz. Lût", subtitle: "Zor zamanda doğruyu korumak", chapterCount: 5, availability: "preparing" },
       { order: 9, key: "ismail", title: "Hz. İsmail", subtitle: "Sözüne sadık, sabırlı oğul", description: "Issız bir vadide kaynayan sudan Allah'ın evinin taşlarına uzanan yolculukta Hz. İsmail'in sabrını, el birliğini ve sözüne sadakatini keşfet.", chapterCount: 6, availability: "preparing" },
       { order: 10, key: "ishak", title: "Hz. İshak", subtitle: "Bereketli bir emanet", chapterCount: 4, availability: "preparing" },

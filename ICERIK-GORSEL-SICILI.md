@@ -681,9 +681,10 @@ metnini kaydeder. Bölüm başına 1 açılış + 5 sahne (1. Kısım 2 / Devam 
 
 ## 4g. Hz. İbrahim (`bookKey: ibrahim`) — 54 görsel
 
-**Durum (16 Eki 2026):** aktarıldı, katalogda **"preparing"** (yayında değil).
-54 sahne slotunun hepsi **yer tutucu** (`npm run gorsel-yertutucu -- ibrahim`);
-kitap kapağı, harita durağı, 9 rozet ve madalya da yer tutucudur. Briflerin
+**Durum (17 Eki 2026):** aktarıldı ve **yayında** (katalogda "published", `yayinTarihi:
+2026-10-17`). 54 sahne slotunun **54'ü de gerçek görsel** (`/gorsel-uretim ibrahim`); kitap kapağı,
+harita durağı, 9 rozet ve madalya da teslim edildi. Rozet ve madalya **çerçevesiz
+kare**dir (§6.2), çerçeveyi Hasan ekler. Sesli anlatım hâlâ yer tutucudur. Briflerin
 tamamı `kitap-icerikleri/KITAP-HZ-IBRAHIM-ICERIK-final.md` §B, §C, §D ve §H'dedir
 (İngilizce ana üretim promptu, ortak stil bloğu, ortak negatif, **karakter
 blokları (EN)** ve rozet sembol stili bloğu dahil); aşağıdaki tablo dosya adı,
@@ -721,111 +722,156 @@ sahne (1. Kısım 2 / Devam 3).
 > B1–B6 nehir kıyısında kerpiç şehir, B7 ve B9 zeytinli yeşil tepeler ve keçi kılı
 > çadırlar, B8 koyu tepeler arasında taşlı, kurak vadi (final MD §B).
 
+> **Üretim kararları (17 Eki 2026, `/gorsel-uretim ibrahim`):** §6.2 set geneli
+> standardı uygulandı (Seedream 5 Pro · 2K · `stil-referans-gorsel.jpg`). Figürlü
+> sahnelerde ikişer-üçer varyant üretildi; seçilen her Katman 1 başı büyütülerek
+> kontrol edildi. Kitaba özgü notlar:
+> - **Ad prompta girmez** (Hz. Yunus emsali): "Ibrahim", "Azer", "Lut", "Sara", "Hajar"
+>   modele "a tall young man / an older craftsman / a slender woman seen from behind"
+>   olarak verildi; karakter blokları adsız eklendi.
+> - **Karakter referansları:** Hz. İbrahim (genç) için onaylanan pilot
+>   `bolum-1/batan-gunes`, (yetişkin) için `bolum-7/baba-evi`; Âzer için
+>   `bolum-2/atolye-kapisi`; Hz. Lût için `bolum-3/iki-arkadas`; Hâcer için
+>   `bolum-8/issiz-vadi` sonraki sahnelere ikinci referans verildi. Model yetişkin
+>   Hz. İbrahim'e B7–B9'da düz bir değnek, `tepeden-bakis`'te başörtüsüne ince bir bağ
+>   (agal benzeri) ekledi; Yunus emsaliyle bırakıldı.
+> - **Yüz hattı ve sakal sızması:** `acik-kapi`'nin ilk üç adayında Âzer'in başlığının
+>   kenarından sakal ucu görünüyordu, reddedildi; başlığın boynu ve çene yanlarını
+>   örttüğü yazılarak yeniden üretildi. `besik`'te Hâcer'in örtüsünün ön kenarında belli
+>   belirsiz bir yüz hattı vardı; yalnız o bölge maskelenip örtü kıvrımıyla rötuşlandı.
+> - **Bebek yüzü:** `issiz-vadi`'de model altı denemenin altısında da bebeğin başını
+>   Hâcer'in omzundan gösterdi (birinde yüz açık). Hâcer'in tam arkadan göründüğü aday
+>   seçildi, bebeğin başı ve örtünün kenarı maskelenip şal kıvrımıyla rötuşlandı. İlk
+>   rötuş "bebeği örtüyle sar" denince yüzü belirginleştirdi, reddedildi; ikinci rötuş
+>   promptunda bebekten hiç söz edilmedi. Bebek bu sahnede görünmez, şalın içindedir.
+> - **Kubbe sızması:** şehir sahnelerine pozitifte "every roof is flat", negatifte
+>   `domes, domed roofs, rounded roofs, cupolas` eklendi. `parlak-yildiz`'in seçilen
+>   adayında uzak kasabada küçük bir kubbe vardı; o bölge iki rötuşla düz damlı evlere
+>   çevrildi.
+> - **Figür boyu:** `parlak-yildiz` ve `tepeden-bakis` brifte "kadrajın onda birinden
+>   küçük"tür; ilk denemelerde figür üçte bir boyuttaydı. "tiny distant figure" ile
+>   yeniden üretildi; seçilenlerde figür küçük ama onda birin biraz üstünde.
+> - **Reddedilen diğerleri:** `dogan-gunes`'in ilk iki adayında direk/tel benzeri
+>   modern çizgiler ve kemerli su yolu vardı; `besik`'in bir adayında hilal vardı;
+>   `uzaklasan-yol`'un bir adayında mezara benzeyen taş oda vardı; `cadir-ve-kuyu`'da
+>   çobanlardan biri klasik "İsa tasviri"ni andırdığı için öbür aday seçildi.
+> - **Rozet ikinci referansı:** onaylanan pilot `rozetler/hz-ibrahim/bolum-1.png`.
+>   B3 rozetinin ilk adayları mezar taşına benziyordu ve yol eksikti; B7'de değnek
+>   karenin köşelerine taşıyordu; ikisi yeniden üretildi. B4 rozetinde ışık şeridi
+>   brif gereği soru işaretini çağrıştırır; seçilen aday ince bir ışık kıvrımı ve
+>   ayrı bir noktadır, yazı karakteri gibi kalın değildir — Hasan'ın onayına bırakıldı.
+>   B5 ve B7 rozetlerinde yol karenin alt kenarına iner; çerçevede alt uç kırpılabilir,
+>   sembol yine okunur.
+> - **Kapak ve harita durağı:** yayındaki `hz-yunus/kapak.png` ve
+>   `hz-yunus/harita-kapak.jpg` görsel referans verilerek aynı aileden üretildi. Kapak
+>   **yazısız**dır; "Hz. İbrahim" başlığı tasarımda eklenecek. Harita durağında alevin
+>   ucu madalyon çerçevesinin üst kenarına hafifçe taşar.
+
 ### Kitap kapağı ve harita durağı
 
 | Dosya | Biçim | Durum | Görsel brifi |
 |---|---|---|---|
-| `hz-ibrahim/kapak.png` | 600×900, 2:3 dikey | ⬜ Bekliyor | Lacivert deri dokulu kapakta altın yıldız çerçeveli madalyon; içinde sabah yıldızı ve serinlemiş korlardan yükselen yeşil bir dal. **Yazısız** üretilir; "Hz. İbrahim" yazısı tasarım aşamasında eklenir (final MD §C1) |
-| `hz-ibrahim/harita-kapak.jpg` | Kare, 512×512 veya üstü | ⬜ Bekliyor | Hardal zemin üzerinde altın çerçeveli madalyonda, alevlerin ortasında açan serin yeşil yapraklar (B6 rozetiyle aynı imge) |
+| `hz-ibrahim/kapak.png` | 600×900, 2:3 dikey | ✅ Hazır | Lacivert deri dokulu kapakta altın yıldız çerçeveli madalyon; içinde sabah yıldızı ve serinlemiş korlardan yükselen yeşil bir dal. **Yazısız** üretilir; "Hz. İbrahim" yazısı tasarım aşamasında eklenir (final MD §C1) |
+| `hz-ibrahim/harita-kapak.jpg` | Kare, 512×512 veya üstü | ✅ Hazır | Hardal zemin üzerinde altın çerçeveli madalyonda, alevlerin ortasında açan serin yeşil yapraklar (B6 rozetiyle aynı imge) |
 
 ### Bölüm 1 — Batmayan Işığı Arayan
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-ibrahim/bolum-1/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Alacakaranlıkta geniş bir nehrin kıyısında düz damlı kerpiç evler, hurma ağaçları ve gökte beliren ilk yıldızlar |
-| `hz-ibrahim/bolum-1/parlak-yildiz.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; yalnız arkadan, uzak plan, başı örtülü; yüz ve profil görünmez. Karakter bloğu: Hz. İbrahim (genç). | ⬜ Bekliyor | Gece, alçak bir tepenin üstünde arkası dönük oturan genç Hz. İbrahim ve tam karşısında, lacivert gökte diğerlerinden parlak tek bir yıldız |
-| `hz-ibrahim/bolum-1/batan-ay.jpg` | 1. Kısım | A | — | ⬜ Bekliyor | Şafaktan hemen önce, nehrin ve hurma ağaçlarının ardındaki ufka yavaşça inen solgun dolunay |
-| `hz-ibrahim/bolum-1/batan-gunes.jpg` | Devam | B | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Hz. İbrahim (genç). Şehir halkı — Katman 3; uzakta, küçük ve ayrıntısız. Karma sahne: Hz. İbrahim promptta "seen from behind" ile yazıldı. | ⬜ Bekliyor | Gün batımında kızıl güneş ufka iniyor; ön planda düz bir damda arkası dönük duran Hz. İbrahim, uzaktaki damlarda güneşe dönmüş küçük insan toplulukları |
-| `hz-ibrahim/bolum-1/yildizli-gok.jpg` | Devam | B | — | ⬜ Bekliyor | Uçsuz bucaksız yıldızlı bir gece göğü; altında karanlık ova, ince bir nehir şeridi ve uzakta birkaç küçük ışık |
-| `hz-ibrahim/bolum-1/safak-yolu.jpg` | Devam | B | — | ⬜ Bekliyor | Şafakta nehir boyunca kerpiç şehrin kapısına uzanan toprak bir yol; gökte sönmeye yüz tutmuş tek bir parlak yıldız |
+| `hz-ibrahim/bolum-1/kapak.jpg` | Açılış | A | — | ✅ Hazır | Alacakaranlıkta geniş bir nehrin kıyısında düz damlı kerpiç evler, hurma ağaçları ve gökte beliren ilk yıldızlar |
+| `hz-ibrahim/bolum-1/parlak-yildiz.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; yalnız arkadan, uzak plan, başı örtülü; yüz ve profil görünmez. Karakter bloğu: Hz. İbrahim (genç). | ✅ Hazır | Gece, alçak bir tepenin üstünde arkası dönük oturan genç Hz. İbrahim ve tam karşısında, lacivert gökte diğerlerinden parlak tek bir yıldız |
+| `hz-ibrahim/bolum-1/batan-ay.jpg` | 1. Kısım | A | — | ✅ Hazır | Şafaktan hemen önce, nehrin ve hurma ağaçlarının ardındaki ufka yavaşça inen solgun dolunay |
+| `hz-ibrahim/bolum-1/batan-gunes.jpg` | Devam | B | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Hz. İbrahim (genç). Şehir halkı — Katman 3; uzakta, küçük ve ayrıntısız. Karma sahne: Hz. İbrahim promptta "seen from behind" ile yazıldı. | ✅ Hazır | Gün batımında kızıl güneş ufka iniyor; ön planda düz bir damda arkası dönük duran Hz. İbrahim, uzaktaki damlarda güneşe dönmüş küçük insan toplulukları |
+| `hz-ibrahim/bolum-1/yildizli-gok.jpg` | Devam | B | — | ✅ Hazır | Uçsuz bucaksız yıldızlı bir gece göğü; altında karanlık ova, ince bir nehir şeridi ve uzakta birkaç küçük ışık |
+| `hz-ibrahim/bolum-1/safak-yolu.jpg` | Devam | B | — | ✅ Hazır | Şafakta nehir boyunca kerpiç şehrin kapısına uzanan toprak bir yol; gökte sönmeye yüz tutmuş tek bir parlak yıldız |
 
 ### Bölüm 2 — Ey Babacığım
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-ibrahim/bolum-2/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Sabah ışığında üst üste yükselen kerpiç evler, dar sokaklar, damlarda kuruyan hasırlar ve arkada basamaklı bir kerpiç yapı |
-| `hz-ibrahim/bolum-2/atolye-kapisi.jpg` | 1. Kısım | A | Âzer — Katman 1 (yakın akraba); tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Âzer. | ⬜ Bekliyor | Dar bir kerpiç sokakta kapısı açık bir atölye; içeride sırtı dönük, raflara yeni bir biçim yerleştiren Âzer ve raflarda gölgede duran küçük, yüzsüz biçimler |
-| `hz-ibrahim/bolum-2/atolye-tezgahi.jpg` | 1. Kısım | A | — | ⬜ Bekliyor | Atölyede ahşap bir tezgâh; üzerinde keskiler, tokmak, talaşlar ve kaba yontulmuş taş bir blok; pencereden giren ışıkta uçuşan taş tozu |
-| `hz-ibrahim/bolum-2/acik-kapi.jpg` | Devam | B | Âzer ve Hz. İbrahim — ikisi de Katman 1; tamamen arkadan ve kontra ışıkta, yüz ve profil görünmez. Karakter blokları: Âzer; Hz. İbrahim (genç). | ⬜ Bekliyor | Atölyenin içinden kapıya bakış; kapıdan dolan sabah ışığında arkası dönük iki figür: tezgâhın başında oturan Âzer ve yanında ayakta duran genç Hz. İbrahim |
-| `hz-ibrahim/bolum-2/pencerede-kandil.jpg` | Devam | B | — | ⬜ Bekliyor | Akşam karanlığında kerpiç bir evin küçük penceresinde yanan tek bir kil kandil; dışarıda lacivert gökte ilk yıldızlar |
-| `hz-ibrahim/bolum-2/nehir-boyu.jpg` | Devam | B | — | ⬜ Bekliyor | Sabah ışığında nehrin kıyısından şehrin meydanına çıkan taş basamaklar; kenarda toprak küpler ve sazlıklar |
+| `hz-ibrahim/bolum-2/kapak.jpg` | Açılış | A | — | ✅ Hazır | Sabah ışığında üst üste yükselen kerpiç evler, dar sokaklar, damlarda kuruyan hasırlar ve arkada basamaklı bir kerpiç yapı |
+| `hz-ibrahim/bolum-2/atolye-kapisi.jpg` | 1. Kısım | A | Âzer — Katman 1 (yakın akraba); tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Âzer. | ✅ Hazır | Dar bir kerpiç sokakta kapısı açık bir atölye; içeride sırtı dönük, raflara yeni bir biçim yerleştiren Âzer ve raflarda gölgede duran küçük, yüzsüz biçimler |
+| `hz-ibrahim/bolum-2/atolye-tezgahi.jpg` | 1. Kısım | A | — | ✅ Hazır | Atölyede ahşap bir tezgâh; üzerinde keskiler, tokmak, talaşlar ve kaba yontulmuş taş bir blok; pencereden giren ışıkta uçuşan taş tozu |
+| `hz-ibrahim/bolum-2/acik-kapi.jpg` | Devam | B | Âzer ve Hz. İbrahim — ikisi de Katman 1; tamamen arkadan ve kontra ışıkta, yüz ve profil görünmez. Karakter blokları: Âzer; Hz. İbrahim (genç). | ✅ Hazır | Atölyenin içinden kapıya bakış; kapıdan dolan sabah ışığında arkası dönük iki figür: tezgâhın başında oturan Âzer ve yanında ayakta duran genç Hz. İbrahim |
+| `hz-ibrahim/bolum-2/pencerede-kandil.jpg` | Devam | B | — | ✅ Hazır | Akşam karanlığında kerpiç bir evin küçük penceresinde yanan tek bir kil kandil; dışarıda lacivert gökte ilk yıldızlar |
+| `hz-ibrahim/bolum-2/nehir-boyu.jpg` | Devam | B | — | ✅ Hazır | Sabah ışığında nehrin kıyısından şehrin meydanına çıkan taş basamaklar; kenarda toprak küpler ve sazlıklar |
 
 ### Bölüm 3 — Sizi Duyuyorlar mı?
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-ibrahim/bolum-3/kapak.jpg` | Açılış | A | Pazardakiler — Katman 3 (sıradan halk); yüz gösterilebilir, doğal ve sakin. Peygamber ya da akrabası bu sahnede yok. | ⬜ Bekliyor | Öğle ışığında nehir kıyısında kurulmuş bir pazar yeri; hasır gölgelikler altında hurma, tahıl ve küp satan, alışveriş yapan insanlar |
-| `hz-ibrahim/bolum-3/meydan.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Hz. İbrahim (genç). Halk — Katman 3; yüz gösterilebilir, sakin. Karma sahne: Hz. İbrahim promptta "seen from behind" ile yazıldı. | ⬜ Bekliyor | Kerpiç evlerle çevrili meydanda yaşlı bir hurma ağacının gölgesinde toplanmış insanlar; ön planda onlara dönük, arkası izleyiciye bakan Hz. İbrahim |
-| `hz-ibrahim/bolum-3/bos-meydan.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; arkadan, uzak plan, yüz ve profil görünmez. Karakter bloğu: Hz. İbrahim (genç). Başka insan yok. | ⬜ Bekliyor | Akşam ışığında boşalmış meydan; hurma ağacının uzun gölgesi ve meydanın ortasında arkası dönük, tek başına duran Hz. İbrahim |
-| `hz-ibrahim/bolum-3/ekmek-ve-testi.jpg` | Devam | B | — | ⬜ Bekliyor | Hasır üzerinde yuvarlak bir ekmek, bir avuç hurma ve ağzına kadar su dolu toprak bir testi; üstlerine sabah ışığı düşüyor |
-| `hz-ibrahim/bolum-3/iki-arkadas.jpg` | Devam | B | Hz. İbrahim ve Hz. Lût — ikisi de Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter blokları: Hz. İbrahim (genç), Hz. Lût. | ⬜ Bekliyor | Akşam ışığında boşalan meydanda, hurma ağacının yanında yan yana duran Hz. İbrahim ve Hz. Lût, arkadan; yakındaki duvar oyuğunda yanan bir kandil |
-| `hz-ibrahim/bolum-3/yol-isareti.jpg` | Devam | B | — | ⬜ Bekliyor | Şehrin dışında bir yol ayrımı; ortada yarısı sabah güneşiyle aydınlanmış, yarısı gölgede kalmış dikilmiş bir yol taşı |
+| `hz-ibrahim/bolum-3/kapak.jpg` | Açılış | A | Pazardakiler — Katman 3 (sıradan halk); yüz gösterilebilir, doğal ve sakin. Peygamber ya da akrabası bu sahnede yok. | ✅ Hazır | Öğle ışığında nehir kıyısında kurulmuş bir pazar yeri; hasır gölgelikler altında hurma, tahıl ve küp satan, alışveriş yapan insanlar |
+| `hz-ibrahim/bolum-3/meydan.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Hz. İbrahim (genç). Halk — Katman 3; yüz gösterilebilir, sakin. Karma sahne: Hz. İbrahim promptta "seen from behind" ile yazıldı. | ✅ Hazır | Kerpiç evlerle çevrili meydanda yaşlı bir hurma ağacının gölgesinde toplanmış insanlar; ön planda onlara dönük, arkası izleyiciye bakan Hz. İbrahim |
+| `hz-ibrahim/bolum-3/bos-meydan.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; arkadan, uzak plan, yüz ve profil görünmez. Karakter bloğu: Hz. İbrahim (genç). Başka insan yok. | ✅ Hazır | Akşam ışığında boşalmış meydan; hurma ağacının uzun gölgesi ve meydanın ortasında arkası dönük, tek başına duran Hz. İbrahim |
+| `hz-ibrahim/bolum-3/ekmek-ve-testi.jpg` | Devam | B | — | ✅ Hazır | Hasır üzerinde yuvarlak bir ekmek, bir avuç hurma ve ağzına kadar su dolu toprak bir testi; üstlerine sabah ışığı düşüyor |
+| `hz-ibrahim/bolum-3/iki-arkadas.jpg` | Devam | B | Hz. İbrahim ve Hz. Lût — ikisi de Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter blokları: Hz. İbrahim (genç), Hz. Lût. | ✅ Hazır | Akşam ışığında boşalan meydanda, hurma ağacının yanında yan yana duran Hz. İbrahim ve Hz. Lût, arkadan; yakındaki duvar oyuğunda yanan bir kandil |
+| `hz-ibrahim/bolum-3/yol-isareti.jpg` | Devam | B | — | ✅ Hazır | Şehrin dışında bir yol ayrımı; ortada yarısı sabah güneşiyle aydınlanmış, yarısı gölgede kalmış dikilmiş bir yol taşı |
 
 ### Bölüm 4 — Kırık Putlar, Büyük Soru
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-ibrahim/bolum-4/kapak.jpg` | Açılış | A | Şehir halkı — Katman 3; yüz gösterilebilir, neşeli ve sakin. Hz. İbrahim bu sahnede yok. | ⬜ Bekliyor | Sabah ışığında kerpiç şehrin kapısından ovaya doğru neşeyle yürüyen, bayramlık giysili insanlar; yol kenarındaki hurma dallarında renkli kumaş şeritler |
-| `hz-ibrahim/bolum-4/bos-sokak.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez; elinde bir şey yok. Karakter bloğu: Hz. İbrahim (genç). | ⬜ Bekliyor | Bomboş, dar bir kerpiç sokak; sokağın sonunda basamaklı tapınağın gölgeli girişi ve oraya varmak üzere olan, arkası dönük Hz. İbrahim |
-| `hz-ibrahim/bolum-4/dokunulmamis-yemekler.jpg` | 1. Kısım | A | — | ⬜ Bekliyor | Loş tapınakta yere dizilmiş, hiç dokunulmamış yemek tabakları; arkada gölgede kırık, yüzsüz taş parçaları |
-| `hz-ibrahim/bolum-4/buyuk-put.jpg` | Devam | B | — | ⬜ Bekliyor | Loş tapınakta, arkadan görünen iri ve yüzsüz bir taş kütle; boynuna iple asılmış bir balta ve önünde boş bir zemin |
-| `hz-ibrahim/bolum-4/tapinak-kapisi.jpg` | Devam | B | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Hz. İbrahim (genç). Şehir halkı — Katman 3; yüz gösterilebilir, sessiz ve düşünceli, öfkeli değil. Karma sahne: Hz. İbrahim promptta "seen from behind" ile yazıldı. | ⬜ Bekliyor | Akşam ışığında basamaklı tapınağın kapı eşiği; basamaklarda başları önüne eğik, sessizce duran insanlar ve ön planda onlara dönük, arkası izleyiciye bakan Hz. İbrahim |
-| `hz-ibrahim/bolum-4/saray-yolu.jpg` | Devam | B | — | ⬜ Bekliyor | Gece, şehrin en yüksek yerinde, yüksek kerpiç duvarlı bir saraya çıkan geniş basamaklar; kapının iki yanında yanan meşaleler ve yıldızlı gök |
+| `hz-ibrahim/bolum-4/kapak.jpg` | Açılış | A | Şehir halkı — Katman 3; yüz gösterilebilir, neşeli ve sakin. Hz. İbrahim bu sahnede yok. | ✅ Hazır | Sabah ışığında kerpiç şehrin kapısından ovaya doğru neşeyle yürüyen, bayramlık giysili insanlar; yol kenarındaki hurma dallarında renkli kumaş şeritler |
+| `hz-ibrahim/bolum-4/bos-sokak.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez; elinde bir şey yok. Karakter bloğu: Hz. İbrahim (genç). | ✅ Hazır | Bomboş, dar bir kerpiç sokak; sokağın sonunda basamaklı tapınağın gölgeli girişi ve oraya varmak üzere olan, arkası dönük Hz. İbrahim |
+| `hz-ibrahim/bolum-4/dokunulmamis-yemekler.jpg` | 1. Kısım | A | — | ✅ Hazır | Loş tapınakta yere dizilmiş, hiç dokunulmamış yemek tabakları; arkada gölgede kırık, yüzsüz taş parçaları |
+| `hz-ibrahim/bolum-4/buyuk-put.jpg` | Devam | B | — | ✅ Hazır | Loş tapınakta, arkadan görünen iri ve yüzsüz bir taş kütle; boynuna iple asılmış bir balta ve önünde boş bir zemin |
+| `hz-ibrahim/bolum-4/tapinak-kapisi.jpg` | Devam | B | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Hz. İbrahim (genç). Şehir halkı — Katman 3; yüz gösterilebilir, sessiz ve düşünceli, öfkeli değil. Karma sahne: Hz. İbrahim promptta "seen from behind" ile yazıldı. | ✅ Hazır | Akşam ışığında basamaklı tapınağın kapı eşiği; basamaklarda başları önüne eğik, sessizce duran insanlar ve ön planda onlara dönük, arkası izleyiciye bakan Hz. İbrahim |
+| `hz-ibrahim/bolum-4/saray-yolu.jpg` | Devam | B | — | ✅ Hazır | Gece, şehrin en yüksek yerinde, yüksek kerpiç duvarlı bir saraya çıkan geniş basamaklar; kapının iki yanında yanan meşaleler ve yıldızlı gök |
 
 ### Bölüm 5 — Güneşi Batıdan Getir
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-ibrahim/bolum-5/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Sabahın erken saatinde şehrin üstünde yükselen, yüksek duvarlı ve basamaklı kerpiç bir saray; aşağıda düz damlar ve nehir |
-| `hz-ibrahim/bolum-5/saray-koridoru.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; tamamen arkadan, yüz görünmez. Karakter bloğu: Hz. İbrahim (genç). Saray görevlileri — Katman 2; bu kadrajda arkadan; silahsız. Karma sahne: Hz. İbrahim promptta "seen from behind" ile yazıldı. | ⬜ Bekliyor | Kalın kerpiç sütunlar arasında uzanan loş bir saray koridoru; iki saray görevlisinin arasında arkası dönük yürüyen Hz. İbrahim ve koridorun sonunda ışıklı bir salon |
-| `hz-ibrahim/bolum-5/taht-ve-mesaleler.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Hz. İbrahim (genç). Kral (Nemrud) ve danışmanları — Katman 2; yüz gösterilebilir, sakin, korkutucu ya da karikatür değil. Karma sahne: Hz. İbrahim promptta "seen from behind" ile yazıldı. | ⬜ Bekliyor | Loş taht salonunda meşaleler arasında, yüksek bir tahtta oturan kral ve çevresinde danışmanları; ön planda onlara dönük, arkası izleyiciye bakan, dimdik duran Hz. İbrahim |
-| `hz-ibrahim/bolum-5/dogan-gunes.jpg` | Devam | B | — | ⬜ Bekliyor | Doğu ufkundan yükselen altın güneş; ışığı sarayın pencerelerinden ve kerpiç damlardan içeri doğru akıyor |
-| `hz-ibrahim/bolum-5/golgede-merdiven.jpg` | Devam | B | — | ⬜ Bekliyor | Gün batımında sarayın geniş taş merdiveni; basamakların yarısı kızıl ışıkta, yarısı uzayan gölgede |
-| `hz-ibrahim/bolum-5/odun-yiginlari.jpg` | Devam | B | Şehir halkı — Katman 3; yüz gösterilebilir, sakin. Hz. İbrahim bu sahnede yok. | ⬜ Bekliyor | Alacakaranlıkta bir meydanda üst üste yığılmış odun kütükleri ve sırtında, eşeklerinde odun taşıyan birkaç insan; üstte ilk yıldızlar |
+| `hz-ibrahim/bolum-5/kapak.jpg` | Açılış | A | — | ✅ Hazır | Sabahın erken saatinde şehrin üstünde yükselen, yüksek duvarlı ve basamaklı kerpiç bir saray; aşağıda düz damlar ve nehir |
+| `hz-ibrahim/bolum-5/saray-koridoru.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; tamamen arkadan, yüz görünmez. Karakter bloğu: Hz. İbrahim (genç). Saray görevlileri — Katman 2; bu kadrajda arkadan; silahsız. Karma sahne: Hz. İbrahim promptta "seen from behind" ile yazıldı. | ✅ Hazır | Kalın kerpiç sütunlar arasında uzanan loş bir saray koridoru; iki saray görevlisinin arasında arkası dönük yürüyen Hz. İbrahim ve koridorun sonunda ışıklı bir salon |
+| `hz-ibrahim/bolum-5/taht-ve-mesaleler.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Hz. İbrahim (genç). Kral (Nemrud) ve danışmanları — Katman 2; yüz gösterilebilir, sakin, korkutucu ya da karikatür değil. Karma sahne: Hz. İbrahim promptta "seen from behind" ile yazıldı. | ✅ Hazır | Loş taht salonunda meşaleler arasında, yüksek bir tahtta oturan kral ve çevresinde danışmanları; ön planda onlara dönük, arkası izleyiciye bakan, dimdik duran Hz. İbrahim |
+| `hz-ibrahim/bolum-5/dogan-gunes.jpg` | Devam | B | — | ✅ Hazır | Doğu ufkundan yükselen altın güneş; ışığı sarayın pencerelerinden ve kerpiç damlardan içeri doğru akıyor |
+| `hz-ibrahim/bolum-5/golgede-merdiven.jpg` | Devam | B | — | ✅ Hazır | Gün batımında sarayın geniş taş merdiveni; basamakların yarısı kızıl ışıkta, yarısı uzayan gölgede |
+| `hz-ibrahim/bolum-5/odun-yiginlari.jpg` | Devam | B | Şehir halkı — Katman 3; yüz gösterilebilir, sakin. Hz. İbrahim bu sahnede yok. | ✅ Hazır | Alacakaranlıkta bir meydanda üst üste yığılmış odun kütükleri ve sırtında, eşeklerinde odun taşıyan birkaç insan; üstte ilk yıldızlar |
 
 ### Bölüm 6 — Ey Ateş, Serin Ol!
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-ibrahim/bolum-6/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Alacakaranlıkta uzaktan görülen kerpiç şehir; şehrin ortasından gökyüzüne yükselen geniş, gri bir duman sütunu |
-| `hz-ibrahim/bolum-6/uzaktaki-alevler.jpg` | 1. Kısım | A | — | ⬜ Bekliyor | Gece, yüksek kerpiç bir duvarın ardından gökyüzüne yükselen turuncu alevler; ön planda boş bir yol ve uzakta kıvılcımlar |
-| `hz-ibrahim/bolum-6/dumanin-ustu.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez; elleri gövdesinin önünde, görünmüyor. Karakter bloğu: Hz. İbrahim (genç). Başka insan yok. | ⬜ Bekliyor | Uzakta yükselen dumanın önünde, arkası dönük, başını hafifçe gökyüzüne kaldırmış Hz. İbrahim; dumanın üstünde açılan berrak gökte parlayan tek bir yıldız |
-| `hz-ibrahim/bolum-6/alevlerde-yesillik.jpg` | Devam | B | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Hz. İbrahim (genç). Başka insan yok; melek, ikinci figür yok. | ⬜ Bekliyor | Yumuşak turuncu alevlerin geri çekildiği serin, yeşil bir halkanın ortasında, taze otların üstünde arkası dönük, huzurla oturan Hz. İbrahim |
-| `hz-ibrahim/bolum-6/sabah-dumani.jpg` | Devam | B | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Hz. İbrahim (genç). Şehir halkı — Katman 3; uzakta, küçük, şaşkın; yüz gösterilebilir. Karma sahne: Hz. İbrahim promptta "seen from behind" ile yazıldı. | ⬜ Bekliyor | Sabah ışığında, serinlemiş küllerin ve son ince dumanın arasından duvardaki açıklığa doğru yürüyüp meydana çıkan Hz. İbrahim, arkadan; açıklığın ötesinde onu şaşkınlıkla izleyen insanlar |
-| `hz-ibrahim/bolum-6/serin-safak.jpg` | Devam | B | — | ⬜ Bekliyor | Şafakta nehir kıyısı; çiyle ıslanmış sazlar, sakin su ve ufukta yükselen yumuşak altın ışık |
+| `hz-ibrahim/bolum-6/kapak.jpg` | Açılış | A | — | ✅ Hazır | Alacakaranlıkta uzaktan görülen kerpiç şehir; şehrin ortasından gökyüzüne yükselen geniş, gri bir duman sütunu |
+| `hz-ibrahim/bolum-6/uzaktaki-alevler.jpg` | 1. Kısım | A | — | ✅ Hazır | Gece, yüksek kerpiç bir duvarın ardından gökyüzüne yükselen turuncu alevler; ön planda boş bir yol ve uzakta kıvılcımlar |
+| `hz-ibrahim/bolum-6/dumanin-ustu.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez; elleri gövdesinin önünde, görünmüyor. Karakter bloğu: Hz. İbrahim (genç). Başka insan yok. | ✅ Hazır | Uzakta yükselen dumanın önünde, arkası dönük, başını hafifçe gökyüzüne kaldırmış Hz. İbrahim; dumanın üstünde açılan berrak gökte parlayan tek bir yıldız |
+| `hz-ibrahim/bolum-6/alevlerde-yesillik.jpg` | Devam | B | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Hz. İbrahim (genç). Başka insan yok; melek, ikinci figür yok. | ✅ Hazır | Yumuşak turuncu alevlerin geri çekildiği serin, yeşil bir halkanın ortasında, taze otların üstünde arkası dönük, huzurla oturan Hz. İbrahim |
+| `hz-ibrahim/bolum-6/sabah-dumani.jpg` | Devam | B | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Hz. İbrahim (genç). Şehir halkı — Katman 3; uzakta, küçük, şaşkın; yüz gösterilebilir. Karma sahne: Hz. İbrahim promptta "seen from behind" ile yazıldı. | ✅ Hazır | Sabah ışığında, serinlemiş küllerin ve son ince dumanın arasından duvardaki açıklığa doğru yürüyüp meydana çıkan Hz. İbrahim, arkadan; açıklığın ötesinde onu şaşkınlıkla izleyen insanlar |
+| `hz-ibrahim/bolum-6/serin-safak.jpg` | Devam | B | — | ✅ Hazır | Şafakta nehir kıyısı; çiyle ıslanmış sazlar, sakin su ve ufukta yükselen yumuşak altın ışık |
 
 ### Bölüm 7 — Rabbime Doğru Yola
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-ibrahim/bolum-7/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Akşamüstü nehrin kıyısındaki kerpiç şehir; damlarda uzayan gölgeler ve şehrin dışına çıkan tek bir toprak yol |
-| `hz-ibrahim/bolum-7/baba-evi.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; tamamen arkadan. Karakter bloğu: Hz. İbrahim (yetişkin). Âzer — Katman 1 (yakın akraba); kapı kanadının ardında, başı içeriye dönük; yüzü ve profili görünmez, yalnız omzu ve başlığının arkası. Karakter bloğu: Âzer. | ⬜ Bekliyor | Alacakaranlıkta kerpiç bir evin aralık kapısı; eşikte arkası dönük duran Hz. İbrahim ve kapı kanadının ardında, başı içeriye dönük, yalnız omzu görünen babası Âzer |
-| `hz-ibrahim/bolum-7/yol-ayrimi.jpg` | 1. Kısım | A | — | ⬜ Bekliyor | Gece, şehrin dışında ikiye ayrılan bir toprak yol; biri karanlık şehre dönüyor, öbürü ay ışığında uzak tepelere uzanıyor |
-| `hz-ibrahim/bolum-7/yola-cikis.jpg` | Devam | B | Hz. İbrahim, Hz. Lût ve Sâre — üçü de Katman 1; yalnız arkadan, uzak plan, yüz ve profil görünmez. Karakter blokları: Hz. İbrahim (yetişkin), Hz. Lût, Sâre. | ⬜ Bekliyor | Şafakta ufka uzanan bir toprak yolda arkası dönük yürüyen Hz. İbrahim, Hz. Lût ve Sâre; önlerinde yüklü birkaç eşek ve deve |
-| `hz-ibrahim/bolum-7/yesil-tepeler.jpg` | Devam | B | — | ⬜ Bekliyor | Sabah ışığında zeytin ağaçlarıyla kaplı yumuşak yeşil tepeler, aralarından akan bir dere ve taşların arasından kaynayan bir pınar |
-| `hz-ibrahim/bolum-7/cadir-ve-kuyu.jpg` | Devam | B | Çobanlar — Katman 3; yüz gösterilebilir, sakin ve doğal. Hz. İbrahim bu sahnede yok. | ⬜ Bekliyor | Akşam, zeytinli bir yamaçta kurulmuş keçi kılı çadırlar; önünde taş bir kuyudan su çeken iki çoban ve çevrede otlayan koyunlar |
+| `hz-ibrahim/bolum-7/kapak.jpg` | Açılış | A | — | ✅ Hazır | Akşamüstü nehrin kıyısındaki kerpiç şehir; damlarda uzayan gölgeler ve şehrin dışına çıkan tek bir toprak yol |
+| `hz-ibrahim/bolum-7/baba-evi.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; tamamen arkadan. Karakter bloğu: Hz. İbrahim (yetişkin). Âzer — Katman 1 (yakın akraba); kapı kanadının ardında, başı içeriye dönük; yüzü ve profili görünmez, yalnız omzu ve başlığının arkası. Karakter bloğu: Âzer. | ✅ Hazır | Alacakaranlıkta kerpiç bir evin aralık kapısı; eşikte arkası dönük duran Hz. İbrahim ve kapı kanadının ardında, başı içeriye dönük, yalnız omzu görünen babası Âzer |
+| `hz-ibrahim/bolum-7/yol-ayrimi.jpg` | 1. Kısım | A | — | ✅ Hazır | Gece, şehrin dışında ikiye ayrılan bir toprak yol; biri karanlık şehre dönüyor, öbürü ay ışığında uzak tepelere uzanıyor |
+| `hz-ibrahim/bolum-7/yola-cikis.jpg` | Devam | B | Hz. İbrahim, Hz. Lût ve Sâre — üçü de Katman 1; yalnız arkadan, uzak plan, yüz ve profil görünmez. Karakter blokları: Hz. İbrahim (yetişkin), Hz. Lût, Sâre. | ✅ Hazır | Şafakta ufka uzanan bir toprak yolda arkası dönük yürüyen Hz. İbrahim, Hz. Lût ve Sâre; önlerinde yüklü birkaç eşek ve deve |
+| `hz-ibrahim/bolum-7/yesil-tepeler.jpg` | Devam | B | — | ✅ Hazır | Sabah ışığında zeytin ağaçlarıyla kaplı yumuşak yeşil tepeler, aralarından akan bir dere ve taşların arasından kaynayan bir pınar |
+| `hz-ibrahim/bolum-7/cadir-ve-kuyu.jpg` | Devam | B | Çobanlar — Katman 3; yüz gösterilebilir, sakin ve doğal. Hz. İbrahim bu sahnede yok. | ✅ Hazır | Akşam, zeytinli bir yamaçta kurulmuş keçi kılı çadırlar; önünde taş bir kuyudan su çeken iki çoban ve çevrede otlayan koyunlar |
 
 ### Bölüm 8 — Ekinsiz Vadideki Dua
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-ibrahim/bolum-8/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Gece, zeytinli bir yamaçta yıldızların altında duran keçi kılı çadırlar; birinin aralığından sızan sıcak ışık |
-| `hz-ibrahim/bolum-8/besik.jpg` | 1. Kısım | A | Hâcer — Katman 1 (peygamber eşi ve annesi); tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Hâcer. Bebek Hz. İsmail görünmez (örtünün altında). | ⬜ Bekliyor | Çadırın içinde, kandil ışığında hasırdan örülmüş, üzeri örtülü bir beşik ve başında arkası dönük oturan Hâcer |
-| `hz-ibrahim/bolum-8/issiz-vadi.jpg` | 1. Kısım | A | Hz. İbrahim ve Hâcer — Katman 1; tamamen arkadan, uzak plan, yüz ve profil görünmez. Karakter blokları: Hz. İbrahim (yetişkin), Hâcer. Bebek Hz. İsmail örtülere sarılı, yüzü görünmez. | ⬜ Bekliyor | Öğle güneşinde iki sıra koyu tepe arasında uzanan kurak vadi; uzakta vadiye giren küçük kafile: deveyi yeden Hz. İbrahim ve devenin üstünde bebeğini kucaklamış Hâcer |
-| `hz-ibrahim/bolum-8/tepeden-bakis.jpg` | Devam | B | Hz. İbrahim — Katman 1; yalnız arkadan, uzak plan, başı örtülü; yüz ve profil görünmez; elleri göğüs hizasında dua için açık (arkadan yalnız dirsekler). Karakter bloğu: Hz. İbrahim (yetişkin). Vadide insan figürü yok. | ⬜ Bekliyor | Akşamüstü, kayalık bir tepenin üstünde arkası dönük, elleri göğüs hizasında dua için açık duran Hz. İbrahim; aşağıda uzanan kurak vadi ve vadinin ortasında küçük bir akasya |
-| `hz-ibrahim/bolum-8/vadide-aksam.jpg` | Devam | B | Hâcer — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Hâcer. Bebek Hz. İsmail örtüye sarılı, görünmez. | ⬜ Bekliyor | Alacakaranlıkta vadideki akasyanın dibinde, sırtı dönük oturan, kucağındaki bebeği örtüsüne sarmış Hâcer; yanında küçük bir kandil, su kabı ve hurma torbası; gökte ilk yıldızlar |
-| `hz-ibrahim/bolum-8/safakta-vadi.jpg` | Devam | B | — | ⬜ Bekliyor | Şafakta iki koyu tepenin arasından vadiye yükselen ince, altın bir ışık şeridi ve vadinin tabanında sabah ışığında parlayan çiyli kumlar |
+| `hz-ibrahim/bolum-8/kapak.jpg` | Açılış | A | — | ✅ Hazır | Gece, zeytinli bir yamaçta yıldızların altında duran keçi kılı çadırlar; birinin aralığından sızan sıcak ışık |
+| `hz-ibrahim/bolum-8/besik.jpg` | 1. Kısım | A | Hâcer — Katman 1 (peygamber eşi ve annesi); tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Hâcer. Bebek Hz. İsmail görünmez (örtünün altında). | ✅ Hazır | Çadırın içinde, kandil ışığında hasırdan örülmüş, üzeri örtülü bir beşik ve başında arkası dönük oturan Hâcer |
+| `hz-ibrahim/bolum-8/issiz-vadi.jpg` | 1. Kısım | A | Hz. İbrahim ve Hâcer — Katman 1; tamamen arkadan, uzak plan, yüz ve profil görünmez. Karakter blokları: Hz. İbrahim (yetişkin), Hâcer. Bebek Hz. İsmail örtülere sarılı, yüzü görünmez. | ✅ Hazır | Öğle güneşinde iki sıra koyu tepe arasında uzanan kurak vadi; uzakta vadiye giren küçük kafile: deveyi yeden Hz. İbrahim ve devenin üstünde bebeğini kucaklamış Hâcer |
+| `hz-ibrahim/bolum-8/tepeden-bakis.jpg` | Devam | B | Hz. İbrahim — Katman 1; yalnız arkadan, uzak plan, başı örtülü; yüz ve profil görünmez; elleri göğüs hizasında dua için açık (arkadan yalnız dirsekler). Karakter bloğu: Hz. İbrahim (yetişkin). Vadide insan figürü yok. | ✅ Hazır | Akşamüstü, kayalık bir tepenin üstünde arkası dönük, elleri göğüs hizasında dua için açık duran Hz. İbrahim; aşağıda uzanan kurak vadi ve vadinin ortasında küçük bir akasya |
+| `hz-ibrahim/bolum-8/vadide-aksam.jpg` | Devam | B | Hâcer — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Hâcer. Bebek Hz. İsmail örtüye sarılı, görünmez. | ✅ Hazır | Alacakaranlıkta vadideki akasyanın dibinde, sırtı dönük oturan, kucağındaki bebeği örtüsüne sarmış Hâcer; yanında küçük bir kandil, su kabı ve hurma torbası; gökte ilk yıldızlar |
+| `hz-ibrahim/bolum-8/safakta-vadi.jpg` | Devam | B | — | ✅ Hazır | Şafakta iki koyu tepenin arasından vadiye yükselen ince, altın bir ışık şeridi ve vadinin tabanında sabah ışığında parlayan çiyli kumlar |
 
 ### Bölüm 9 — Kapıdaki Misafirler
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-ibrahim/bolum-9/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | İkindi ışığında zeytinli bir yamaç; yaşlı bir zeytin ağacının yanında keçi kılı çadırlar ve uzakta yolcuların geleceği toprak yol |
-| `hz-ibrahim/bolum-9/acik-cadir.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Hz. İbrahim (yetişkin). Yolda ve çevrede başka insan yok (misafirler melek; gösterilmez). | ⬜ Bekliyor | Ön perdesi ardına kadar açılmış geniş bir keçi kılı çadır; girişte arkası dönük oturan, uzaktaki boş yola bakan Hz. İbrahim ve yanında su testileri |
-| `hz-ibrahim/bolum-9/bos-patika.jpg` | 1. Kısım | A | — | ⬜ Bekliyor | İkindi ışığında zeytinli yamaçtan çadıra doğru kıvrılan boş, tozlu bir patika; ilerde ön perdesi açık duran çadır girişi |
-| `hz-ibrahim/bolum-9/ikram-getiris.jpg` | Devam | B | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Hz. İbrahim (yetişkin). Misafirler (melek) hiç görünmez; çadırın içinde kimse yok. | ⬜ Bekliyor | İkindi ışığında, kapağı kapalı, buharı tüten büyük bir toprak tencereyi çadırın açık girişine doğru taşıyan Hz. İbrahim, arkadan; çadırın içi karanlıkta |
-| `hz-ibrahim/bolum-9/uzaklasan-yol.jpg` | Devam | B | — | ⬜ Bekliyor | Akşam ışığında zeytinli yamaçtan aşağı inip uzak, mavi tepelere doğru kıvrılan boş bir toprak yol |
-| `hz-ibrahim/bolum-9/sabah-yildizi.jpg` | Devam | B | — | ⬜ Bekliyor | Şafakta zeytinli tepelerin üstünde, pembe ve altın gökyüzünde sakin sakin parlayan tek bir sabah yıldızı |
+| `hz-ibrahim/bolum-9/kapak.jpg` | Açılış | A | — | ✅ Hazır | İkindi ışığında zeytinli bir yamaç; yaşlı bir zeytin ağacının yanında keçi kılı çadırlar ve uzakta yolcuların geleceği toprak yol |
+| `hz-ibrahim/bolum-9/acik-cadir.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Hz. İbrahim (yetişkin). Yolda ve çevrede başka insan yok (misafirler melek; gösterilmez). | ✅ Hazır | Ön perdesi ardına kadar açılmış geniş bir keçi kılı çadır; girişte arkası dönük oturan, uzaktaki boş yola bakan Hz. İbrahim ve yanında su testileri |
+| `hz-ibrahim/bolum-9/bos-patika.jpg` | 1. Kısım | A | — | ✅ Hazır | İkindi ışığında zeytinli yamaçtan çadıra doğru kıvrılan boş, tozlu bir patika; ilerde ön perdesi açık duran çadır girişi |
+| `hz-ibrahim/bolum-9/ikram-getiris.jpg` | Devam | B | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Hz. İbrahim (yetişkin). Misafirler (melek) hiç görünmez; çadırın içinde kimse yok. | ✅ Hazır | İkindi ışığında, kapağı kapalı, buharı tüten büyük bir toprak tencereyi çadırın açık girişine doğru taşıyan Hz. İbrahim, arkadan; çadırın içi karanlıkta |
+| `hz-ibrahim/bolum-9/uzaklasan-yol.jpg` | Devam | B | — | ✅ Hazır | Akşam ışığında zeytinli yamaçtan aşağı inip uzak, mavi tepelere doğru kıvrılan boş bir toprak yol |
+| `hz-ibrahim/bolum-9/sabah-yildizi.jpg` | Devam | B | — | ✅ Hazır | Şafakta zeytinli tepelerin üstünde, pembe ve altın gökyüzünde sakin sakin parlayan tek bir sabah yıldızı |
 
 ---
 
@@ -1588,13 +1634,13 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 | Hz. Nûh | 8 | 40 | **48** | 48 | 0 |
 | Hz. Musa | 10 | 50 | **60** | 60 | 0 |
 | Hz. Eyyûb | 5 | 25 | **30** | 30 | 0 |
-| Hz. İbrahim | 9 | 45 | **54** | 0 | 54 (hepsi yer tutucu; kitap "preparing") |
+| Hz. İbrahim | 9 | 45 | **54** | 54 | 0 |
 | Hz. Yusuf | 10 | 50 | **60** | 0 | 60 (hepsi yer tutucu; kitap "preparing") |
 | Hz. Süleyman | 7 | 35 | **42** | 0 | 42 (hepsi yer tutucu; kitap "preparing") |
 | Hz. Yunus | 5 | 24 | **29** | 29 | 0 |
 | Hz. Îsâ | 8 | 40 | **48** | 0 | 48 (hepsi yer tutucu; kitap "preparing") |
 | Hz. İsmail | 6 | 30 | **36** | 0 | 36 (hepsi yer tutucu; kitap "preparing") |
-| **Genel** | **84** | **403** | **487** | **231** | **257** |
+| **Genel** | **84** | **403** | **487** | **285** | **203** |
 
 **Bu sicilin dışındakiler:**
 
@@ -1616,10 +1662,10 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 | Harita durağı | `kitaplar/hz-eyyub/harita-kapak.jpg` | ✅ Var (597×597, Musa durağıyla aynı çerçeve ailesi; sembol: taşlar arasından kaynayan pınar) |
 | Rozet | `rozetler/hz-eyyub/bolum-1…5.png` | □ 5 kare görsel, 512×512 opak, **çerçeve bekliyor** (15 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-eyyub/`) |
 | Madalya | `madalyalar/hz-eyyub.png` | □ Kare görsel, 512×512 opak, **çerçeve bekliyor** (15 Eki 2026; sembol: yeniden yeşeren genç ağaç) |
-| Kitap kapağı | `kitaplar/hz-ibrahim/kapak.png` | ⬜ Yer tutucu (600×900) — brif final MD §C1; **yazısız** üretilir |
-| Harita durağı | `kitaplar/hz-ibrahim/harita-kapak.jpg` | ⬜ Yer tutucu (512×512) — brif final MD §C2 (sembol: alevlerin ortasında açan serin yeşil yaprak) |
-| Rozet | `rozetler/hz-ibrahim/bolum-1…9.png` | ⬜ 9 yer tutucu — brifler final MD §H "Rozet üretim brifleri" |
-| Madalya | `madalyalar/hz-ibrahim.png` | ⬜ Yer tutucu — brif final MD §C3 (sembol: korlardan filizlenen dal ve sabah yıldızı) |
+| Kitap kapağı | `kitaplar/hz-ibrahim/kapak.png` | ✅ Var (600×900, **yazısız** — başlık tasarımda eklenecek; 2K ana dosya `gorsel-kaynaklari/kitaplar/hz-ibrahim/kapak.png`) |
+| Harita durağı | `kitaplar/hz-ibrahim/harita-kapak.jpg` | ✅ Var (600×600, Yunus durağıyla aynı çerçeve ailesi; sembol: alevlerin ortasında açan serin yeşil yaprak) |
+| Rozet | `rozetler/hz-ibrahim/bolum-1…9.png` | □ 9 kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-ibrahim/`) |
+| Madalya | `madalyalar/hz-ibrahim.png` | □ Kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; sembol: korlardan filizlenen dal ve sabah yıldızı) |
 | Kitap kapağı | `kitaplar/hz-yusuf/kapak.png` | ⬜ Yer tutucu (600×900) — brif final MD §C1; **yazısız** üretilir |
 | Harita durağı | `kitaplar/hz-yusuf/harita-kapak.jpg` | ⬜ Yer tutucu (512×512) — brif final MD §C2 (sembol: taş kuyu ağzı ve üstünde tek parlak yıldız) |
 | Rozet | `rozetler/hz-yusuf/bolum-1…10.png` | ⬜ 10 yer tutucu — brifler final MD §H "Rozet üretim brifleri" |
@@ -1679,6 +1725,11 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 > = 66 görsel.** Dokuz bölümün sesli anlatımı da yer tutucudur
 > (`sesli-anlatim/hz-ibrahim/`). Yeni figür kuralıyla aktarılan ilk kitap: 26/54
 > figürlü sahne (§4g).
+>
+> ✅ **Görseller teslim edildi (17 Eki 2026, `/gorsel-uretim ibrahim`):** 66 görselin
+> 66'sı yerinde (54 sahne + kapak + harita durağı + 9 rozet + madalya). Rozet ve
+> madalya çerçevesiz kare; ana dosyalar `gorsel-kaynaklari/` altında. Ses yer tutucu.
+> **17 Eki 2026 yayına alındı** (Hasan kararı; ses yer tutucuyla — Hz. Nûh emsali).
 
 > **16 Eki 2026 — Hz. Yusuf aktarıldı (yayında değil, "preparing").** Kitap
 > katalog sırasında #12'dir; `public/kitaplar/hz-yusuf/` klasörü yoktu, yer tutucu
@@ -1925,7 +1976,7 @@ değiştirmez, yeni görsel yeri açmaz (o aktarımın işidir), commit atmaz.
 
 | Klasör | Kalıp | Kurulan | Not |
 |---|---|---|---|
-| `public/rozetler/hz-{bookKey}/` | `bolum-{n}.png` | **84** | âdem 8 + şît 4 **gerçek** (11 Ağu 2026) · idrîs 4 **yer tutucu** (12 Ağu 2026) · nûh 8 **gerçek** (13 Eki 2026) · musa 10 **kare, çerçeve bekliyor** (13 Eki 2026) · eyyûb 5 **kare, çerçeve bekliyor** (15 Eki 2026) · ibrahim 9, yusuf 10, süleyman 7, yunus 5, îsâ 8, ismail 6 **yer tutucu** (16 Eki 2026; kitaplar "preparing"). Hedef 34 (İlk İzler Vadisi): + hûd 5, sâlih 5 — bu ikisinin klasörü **henüz yok**, içerikleri `books.ts`'e aktarılınca betik açacak |
+| `public/rozetler/hz-{bookKey}/` | `bolum-{n}.png` | **84** | âdem 8 + şît 4 **gerçek** (11 Ağu 2026) · idrîs 4 **yer tutucu** (12 Ağu 2026) · nûh 8 **gerçek** (13 Eki 2026) · musa 10 **kare, çerçeve bekliyor** (13 Eki 2026) · eyyûb 5 **kare, çerçeve bekliyor** (15 Eki 2026) · ibrahim 9 **kare, çerçeve bekliyor** (17 Eki 2026) · yusuf 10, süleyman 7, yunus 5, îsâ 8, ismail 6 **yer tutucu** (16 Eki 2026; kitaplar "preparing"). Hedef 34 (İlk İzler Vadisi): + hûd 5, sâlih 5 — bu ikisinin klasörü **henüz yok**, içerikleri `books.ts`'e aktarılınca betik açacak |
 | `public/madalyalar/` | `hz-{bookKey}.png` | **12** | âdem + şît **gerçek** (11 Ağu 2026) · idrîs **yer tutucu** (12 Ağu 2026) · nûh **gerçek** (13 Eki 2026) · musa **kare, çerçeve bekliyor** (13 Eki 2026) · eyyûb **kare, çerçeve bekliyor** (15 Eki 2026) · ibrahim, yusuf, süleyman, yunus, îsâ, ismail **yer tutucu** (16 Eki 2026). İlk İzler Vadisi hedefi 6 |
 | `public/unvanlar/` | `{unvan-anahtari}.png` | **10** | Hepsi yer tutucu: `yeni-gezgin`, `yol-kasifi`, `deger-toplayicisi`, `yol-arkadasi`, `bilge-yolcu`, `hikaye-ustasi`, `emanet-koruyucusu`, `isik-tasiyicisi`, `kissa-rehberi`, `buyuk-yolculuk-kasifi` (12 Eki 2026'da `atlas-bilgini` ve `yedi-bolge-kasifi` yerine). Anahtarlar `derive.ts:UNVAN_ESIKLERI` + `unvanAnahtari()` türetimidir; eşik tablosu değişirse `npm run gorsel-yertutucu -- unvanlar` yeniden çalıştırılır |
 | `public/avatarlar/` | `avatar-{1..10}.jpg` | **10** | Veli panelinde üçerli pencerede oklarla gezilir |
