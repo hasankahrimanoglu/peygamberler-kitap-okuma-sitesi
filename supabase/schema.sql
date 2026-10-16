@@ -82,6 +82,38 @@ where not exists (
   where lower(isim) like '%nuh%'
 );
 
+-- Hz. İbrahim aktarıldı (16 Eki 2026); katalog sırası 7, 9 bölüm. Katalogda
+-- henüz "preparing"; satır yayından önce açıldı ki yayına alındığı gün rozet ve
+-- madalya kaydı hazır olsun. Uygulama kitabı adından bulur
+-- (`normalizeBookName(isim)` → "ibrahim"); `isim` bu yüzden "Hz. İbrahim" olmalıdır.
+insert into public.books (isim, aciklama, sira, toplam_bolum)
+select 'Hz. İbrahim', 'Hakikati arayan kalp', 7, 9
+where not exists (
+  select 1 from public.books
+  where lower(isim) like '%ibrahim%' or lower(isim) like '%i̇brahim%' or lower(isim) like '%ibrâhim%'
+);
+
+-- Hz. İsmail aktarıldı (16 Eki 2026); katalog sırası 9, 6 bölüm. Katalogda
+-- henüz "preparing"; satır yayından önce açıldı (Hz. Süleyman emsali).
+-- `normalizeBookName(isim)` → "hz. ismail".
+insert into public.books (isim, aciklama, sira, toplam_bolum)
+select 'Hz. İsmail', 'Sözüne sadık, sabırlı oğul', 9, 6
+where not exists (
+  select 1 from public.books
+  where lower(isim) like '%ismail%' or lower(isim) like '%i̇smail%'
+);
+
+-- Hz. Yusuf aktarıldı (16 Eki 2026); katalog sırası 12, 10 bölüm. Katalogda
+-- henüz "preparing"; satır yayından önce açıldı ki yayına alındığı gün rozet ve
+-- madalya kaydı hazır olsun. Uygulama kitabı adından bulur
+-- (`normalizeBookName(isim)` → "yusuf"); `isim` bu yüzden "Hz. Yusuf" olmalıdır.
+insert into public.books (isim, aciklama, sira, toplam_bolum)
+select 'Hz. Yusuf', 'Sabırdan bağışlamaya', 12, 10
+where not exists (
+  select 1 from public.books
+  where lower(isim) like '%yusuf%' or lower(isim) like '%yûsuf%'
+);
+
 -- Hz. Eyyûb aktarıldı (15 Eki 2026); katalog sırası 13, 5 bölüm. Uygulama
 -- kitabı adından bulur (`normalizeBookName(isim)` → "eyyub"); `isim` bu yüzden
 -- "Hz. Eyyûb" olmalıdır ("Eyüp" yazımı eşleşmez).
@@ -100,6 +132,37 @@ select 'Hz. Musa', 'Özgürlüğe uzanan yol', 16, 10
 where not exists (
   select 1 from public.books
   where lower(isim) like '%musa%' or lower(isim) like '%mûsâ%'
+);
+
+-- Hz. Süleyman aktarıldı (16 Eki 2026); katalog sırası 20, 7 bölüm. Katalogda
+-- henüz "preparing"; satır yayından önce açıldı ki yayına alındığı gün rozet ve
+-- madalya kaydı hazır olsun. Uygulama kitabı adından bulur
+-- (`normalizeBookName(isim)` → "suleyman"); `isim` bu yüzden "Hz. Süleyman" olmalıdır.
+insert into public.books (isim, aciklama, sira, toplam_bolum)
+select 'Hz. Süleyman', 'Şükürle büyüyen hikmet', 20, 7
+where not exists (
+  select 1 from public.books
+  where lower(isim) like '%süleyman%' or lower(isim) like '%suleyman%'
+);
+
+-- Hz. Yunus aktarıldı (16 Eki 2026); katalog sırası 23, 5 bölüm. Katalogda
+-- henüz "preparing"; satır yayından önce açıldı (Hz. Süleyman emsali).
+-- `normalizeBookName(isim)` → "yunus".
+insert into public.books (isim, aciklama, sira, toplam_bolum)
+select 'Hz. Yunus', 'Duayla yeniden başlamak', 23, 5
+where not exists (
+  select 1 from public.books
+  where lower(isim) like '%yunus%'
+);
+
+-- Hz. Îsâ aktarıldı (16 Eki 2026); katalog sırası 27, 8 bölüm. Katalogda
+-- henüz "preparing"; satır yayından önce açıldı (Hz. Süleyman emsali).
+-- `normalizeBookName(isim)` → "hz. isa".
+insert into public.books (isim, aciklama, sira, toplam_bolum)
+select 'Hz. Îsâ', 'Merhamet ve umut', 27, 8
+where not exists (
+  select 1 from public.books
+  where lower(isim) like '%îsâ%' or lower(isim) like '%isa%'
 );
 
 insert into public.books (isim, aciklama, sira, toplam_bolum)

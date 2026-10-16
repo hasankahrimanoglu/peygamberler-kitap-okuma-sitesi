@@ -289,6 +289,265 @@ const nuhQuizQuestions: QuizQuestion[] = [
 
 // Hz. Musa — KITAP-HZ-MUSA-ICERIK-final.md §E. On bölümün her birinden
 // bir soru; doğru harf dağılımı A=4 · B=3 · C=3.
+const ibrahimQuizQuestions: QuizQuestion[] = [
+  {
+    id: 1,
+    question: "Parlak yıldız batınca Hz. İbrahim ne dedi?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "“Bunların hepsi benim tanrımdır.”" },
+      { id: "b", text: "“Ben batanları sevmem.”" },
+      { id: "c", text: "“Gökyüzüne bir daha bakmayacağım.”" },
+    ],
+  },
+  {
+    id: 2,
+    question: "Hz. İbrahim'in babasıyla konuşurken her sözüne “Babacığım” diye başlaması bize ne anlatır?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Babasına çok kızgın olduğunu" },
+      { id: "b", text: "Babasından bir şey istediğini" },
+      { id: "c", text: "Doğruyu söylerken bile babasına sevgi ve saygı gösterdiğini" },
+    ],
+  },
+  {
+    id: 3,
+    question: "Hz. İbrahim'in kavmi, putların onları duyup duymadığı sorulunca nasıl cevap verdi?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "“Biz atalarımızı böyle yaparken bulduk.”" },
+      { id: "b", text: "“Putlar bizi duyuyor ve bizimle konuşuyor.”" },
+      { id: "c", text: "“Kral bize böyle yapmamızı emretti.”" },
+    ],
+  },
+  {
+    id: 4,
+    question: "Hz. İbrahim “Konuşabiliyorlarsa onlara sorun!” diyerek ne yapmak istedi?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "İnsanların putların konuşamadığını kendilerinin fark etmesini" },
+      { id: "b", text: "Halkı bayram yerine geri göndermeyi" },
+      { id: "c", text: "Halkla alay edip onları kızdırmayı" },
+    ],
+  },
+  {
+    id: 5,
+    question: "Kral “Hayat veren ve öldüren benim!” diye övününce Hz. İbrahim ona ne dedi?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "“Sen de gökteki yıldızları sayabilir misin?”" },
+      { id: "b", text: "“Sen de bu büyük nehri durdur.”" },
+      { id: "c", text: "“Allah güneşi doğudan getiriyor, sen de onu batıdan getir.”" },
+    ],
+  },
+  {
+    id: 6,
+    question: "Hz. İbrahim ateşe atıldığında Allah ateşe ne buyurdu?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "“Daha da büyü ve yüksel!”" },
+      { id: "b", text: "“Ey ateş, İbrahim'e serin ve esenlik ol!”" },
+      { id: "c", text: "“Hemen sön ve küle dön!”" },
+    ],
+  },
+  {
+    id: 7,
+    question: "Hz. İbrahim'in babasından ayrılırken “Esen kal, Rabbimden senin için bağışlanma dileyeceğim!” demesi bize ne öğretir?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Ayrılırken bile kırgın sözler yerine güzel sözler söyleyebileceğimizi" },
+      { id: "b", text: "Ayrıldığımız birini bir daha hiç anmamamız gerektiğini" },
+      { id: "c", text: "Ayrılırken herkesin hatasını yüzüne söylememiz gerektiğini" },
+    ],
+  },
+  {
+    id: 8,
+    question: "Hz. İbrahim'in vadiden ayrılırken Hâcer ve Hz. İsmail için dua etmesi bize ne anlatır?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Onları hemen unutup yoluna devam ettiğini" },
+      { id: "b", text: "Onlara kızgın olduğu için uzaklaştığını" },
+      { id: "c", text: "Sevdiklerini dualarıyla Allah'a emanet ettiğini" },
+    ],
+  },
+  {
+    id: 9,
+    question: "Tanımadığı yolcular kapısına geldiğinde Hz. İbrahim ne yaptı?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "Onları kapıdan geri çevirdi" },
+      { id: "b", text: "Onları içeri buyur edip hemen kızartılmış bir buzağı ikram etti" },
+      { id: "c", text: "Onlara yalnızca su verip yollarına gönderdi" },
+    ],
+  },
+];
+
+const ismailQuizQuestions: QuizQuestion[] = [
+  {
+    id: 1,
+    question: "Vadide su bitince Hâcer ne yaptı?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Akasyanın gölgesinde oturup birinin gelmesini bekledi." },
+      { id: "b", text: "Oğlunu alıp vadiden uzaklara gitti." },
+      { id: "c", text: "Safa ile Merve tepeleri arasında koşarak yardım aradı." },
+    ],
+  },
+  {
+    id: 2,
+    question: "Hâcer'in yolculara “Kalabilirsiniz, ama suyun hakkı bende kalsın” demesi neyi gösterir?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Suyu paylaşırken herkesin bildiği açık ve adil bir kural koyduğunu" },
+      { id: "b", text: "Yolculara hiç güvenmediğini" },
+      { id: "c", text: "Suyu kimseyle paylaşmak istemediğini" },
+    ],
+  },
+  {
+    id: 3,
+    question: "Büyük imtihanın sonunda Allah, Hz. İsmail'in yerine ne gönderdi?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "Gökyüzünde dönen bir kuş sürüsü" },
+      { id: "b", text: "İri bir kurbanlık" },
+      { id: "c", text: "Uzaktan gelen bir yolcu" },
+    ],
+  },
+  {
+    id: 4,
+    question: "İkinci ziyarette Hz. İbrahim'i en çok sevindiren ne oldu?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Hz. İsmail'in eşinin onu güler yüzle karşılayıp Allah'a hamd ederek konuşması" },
+      { id: "b", text: "Evin çok büyük ve süslü olması" },
+      { id: "c", text: "Hz. İsmail'in evde onu beklemesi" },
+    ],
+  },
+  {
+    id: 5,
+    question: "Hz. İbrahim “Bana yardım eder misin?” diye sorunca Hz. İsmail ne yaptı?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Önce avdan dönmeyi bekledi." },
+      { id: "b", text: "Bu işe yardım edemeyeceğini söyledi." },
+      { id: "c", text: "“Yardım ederim” dedi ve taş taşıyarak babasına yardım etti." },
+    ],
+  },
+  {
+    id: 6,
+    question: "Hz. İsmail'in, babası uzaktayken de evi temiz tutmayı sürdürmesi bize ne anlatır?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "Görevini yalnızca biri onu kontrol edince yaptığını" },
+      { id: "b", text: "Üstlendiği görevi ve verdiği sözü kimse kontrol etmese de sürdürdüğünü" },
+      { id: "c", text: "Temizliği her zaman başkalarına bıraktığını" },
+    ],
+  },
+];
+
+const yusufQuizQuestions: QuizQuestion[] = [
+  {
+    id: 1,
+    question: "Hz. Yakup, oğlu Hz. Yusuf'a rüyası hakkında ne öğüt verdi?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Rüyasını herkese anlatmasını" },
+      { id: "b", text: "Rüyasını hemen unutmasını" },
+      { id: "c", text: "Rüyasını kardeşlerine anlatmamasını" },
+    ],
+  },
+  {
+    id: 2,
+    question: "Kuyunun dibindeki Hz. Yusuf'un umudunu korumasına ne yardım etti?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Allah'ın onu gördüğünü ve koruduğunu bilmesi" },
+      { id: "b", text: "Kardeşlerinin hemen geri döneceğini düşünmesi" },
+      { id: "c", text: "Kuyudan kendi başına çıkabileceğini düşünmesi" },
+    ],
+  },
+  {
+    id: 3,
+    question: "Hz. Yusuf kuyudan nasıl çıktı?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "Kardeşleri geri dönüp onu çıkardı." },
+      { id: "b", text: "Su almaya gelen bir kervancının sarkıttığı ipe tutundu." },
+      { id: "c", text: "Babası onu aramaya gelip buldu." },
+    ],
+  },
+  {
+    id: 4,
+    question: "Hz. Yusuf, evin hanımının yanlış isteğine neden hayır dedi?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Aziz'in kapıda onu görmesinden korktuğu için" },
+      { id: "b", text: "O evden ayrılıp ailesine dönmek istediği için" },
+      { id: "c", text: "Allah'a sığındığı ve efendisinin güvenine ihanet etmek istemediği için" },
+    ],
+  },
+  {
+    id: 5,
+    question: "Hz. Yusuf, zindan arkadaşlarının rüyalarını yorumlamadan önce ne yaptı?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Onlara bir olan Allah'ı anlattı." },
+      { id: "b", text: "Onlardan bir karşılık istedi." },
+      { id: "c", text: "Onlara kızıp hiç konuşmadı." },
+    ],
+  },
+  {
+    id: 6,
+    question: "Kral onu çağırdığında Hz. Yusuf neden hemen zindandan çıkmadı?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Zindandaki arkadaşlarını yalnız bırakmak istemediği için" },
+      { id: "b", text: "Kralın kendisine bir ödül vermesini beklediği için" },
+      { id: "c", text: "Önce suçsuz olduğunun herkesçe bilinmesini istediği için" },
+    ],
+  },
+  {
+    id: 7,
+    question: "Kardeşleri erzak almaya geldiğinde Hz. Yusuf onlara nasıl davrandı?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "Onları hiç erzak vermeden geri gönderdi." },
+      { id: "b", text: "Onlara da herkes gibi paylarını eksiksiz verdi." },
+      { id: "c", text: "Onlara kim olduğunu hemen söyledi." },
+    ],
+  },
+  {
+    id: 8,
+    question: "Kardeşlerin, Bünyamin'in yerine kendilerinden birini bırakmayı teklif etmesi neyi gösterir?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Bu kez kardeşlerine sahip çıktıklarını" },
+      { id: "b", text: "Mısır'da kalmak istediklerini" },
+      { id: "c", text: "Su kabını gerçekten onların aldığını" },
+    ],
+  },
+  {
+    id: 9,
+    question: "Hz. Yusuf kim olduğunu söyledikten sonra kardeşlerine ne dedi?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "“Yaptıklarınızı hiç unutmayacağım.”" },
+      { id: "b", text: "“Hemen buradan gidin.”" },
+      { id: "c", text: "“Bugün size hiçbir kınama yok; Allah sizi bağışlasın.”" },
+    ],
+  },
+  {
+    id: 10,
+    question: "Hz. Yusuf, ailesine kavuştuğunda geçmişi nasıl andı?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "Kardeşlerinin yaptıklarını herkese anlattı." },
+      { id: "b", text: "Kimseyi suçlamadan Allah'ın iyiliğini anıp şükretti." },
+      { id: "c", text: "Yalnızca kendi başardıklarından söz etti." },
+    ],
+  },
+];
+
 const eyyubQuizQuestions: QuizQuestion[] = [
   {
     id: 1,
@@ -445,6 +704,215 @@ const musaQuizQuestions: QuizQuestion[] = [
   },
 ];
 
+const suleymanQuizQuestions: QuizQuestion[] = [
+  {
+    id: 1,
+    question: "Hikâyede Hz. Süleyman'ın bağ davasındaki önerisi neydi?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Sürü bir süre bağ sahibinde kalsın, bağ onarılınca geri verilsin" },
+      { id: "b", text: "Sürü sahibi bütün sürüsünü hemen ve tamamen bağ sahibine versin" },
+      { id: "c", text: "Bağ sahibi zararını unutsun, iki taraf da evine dönüp barışsın" },
+    ],
+  },
+  {
+    id: 2,
+    question: "Hz. Süleyman, kendisine verilen kuş dili ve rüzgâr gibi nimetler için ne düşünürdü?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Bunları kendi zekâsı ve çalışmasıyla kazandığını" },
+      { id: "b", text: "Bunların gizli bir sihirle elde edildiğini" },
+      { id: "c", text: "Hepsinin Allah'ın bir lütfu olduğunu" },
+    ],
+  },
+  {
+    id: 3,
+    question: "Karınca vadisinde bir karınca arkadaşlarına ne söyledi?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "Hep birlikte ordunun önüne çıkıp yolu kapatmalarını" },
+      { id: "b", text: "Ordu onları ezmesin diye yuvalarına girmelerini" },
+      { id: "c", text: "Yiyecekleri hemen vadinin dışına taşımalarını" },
+    ],
+  },
+  {
+    id: 4,
+    question: "Kaybolan hüdhüd geri dönünce Hz. Süleyman'ın davranışından ne öğreniriz?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Önce dinlemek ve haberin doğruluğunu araştırmak gerektiğini" },
+      { id: "b", text: "Geç kalan birini dinlemeden cezalandırmak gerektiğini" },
+      { id: "c", text: "Duyduğumuz her habere hemen inanmak gerektiğini" },
+    ],
+  },
+  {
+    id: 5,
+    question: "Sebe melikesi, Hz. Süleyman'ın mektubunu okuyunca ne yaptı?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Mektubu kimseye göstermeden sakladı" },
+      { id: "b", text: "Hiç düşünmeden savaş kararı verdi" },
+      { id: "c", text: "İleri gelenlerini toplayıp onlara danıştı" },
+    ],
+  },
+  {
+    id: 6,
+    question: "Taht göz açıp kapayıncaya kadar gelince Hz. Süleyman ne dedi?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "“Bu başarı, benim gücüm ve bilgim sayesinde oldu.”" },
+      { id: "b", text: "“Bu, beni sınayan Rabbimin bir lütfudur.”" },
+      { id: "c", text: "“Artık hiç kimse bana karşı gelemez, gücüm yeter.”" },
+    ],
+  },
+  {
+    id: 7,
+    question: "Hz. Süleyman'ın vefat ettiğini herkese ne gösterdi?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Asasını kemiren küçük bir ağaç kurdu" },
+      { id: "b", text: "Uzaktan haber getiren bir hüdhüd" },
+      { id: "c", text: "Cinlerin herkese verdiği bir haber" },
+    ],
+  },
+];
+
+const yunusQuizQuestions: QuizQuestion[] = [
+  {
+    id: 1,
+    question: "Hz. Yunus, Ninova'da insanları Allah'a çağırırken nerelerde konuşurdu?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Meydanlarda, pazarlarda ve yol kenarlarında" },
+      { id: "b", text: "Yalnızca kendi evinin bahçesinde" },
+      { id: "c", text: "Yalnızca gemilerde, nehrin üstünde" },
+    ],
+  },
+  {
+    id: 2,
+    question: "Gemide kura çekilirken Hz. Yunus'un güverteye çıkıp ne yaptığını söylemesi bize ne anlatır?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Kalabalıkta susmanın her zaman daha doğru olduğunu" },
+      { id: "b", text: "Kurada kendi adının çıkmasını istediğini" },
+      { id: "c", text: "Yaptığımızı saklamayıp dürüstçe söylemenin değerini" },
+    ],
+  },
+  {
+    id: 3,
+    question: "Hz. Yunus balığın karnında, karanlıklar içinde ne yaptı?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "Hiç konuşmadan uzun bir uykuya daldı" },
+      { id: "b", text: "Allah'a dua edip hatasını açıkça kabul etti" },
+      { id: "c", text: "Kendisini kurtarması için gemidekilere seslendi" },
+    ],
+  },
+  {
+    id: 4,
+    question: "Issız kıyıda Hz. Yunus'un üstüne gölge yapan neydi?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Kabak türünden geniş yapraklı bir bitki" },
+      { id: "b", text: "Kıyıdan geçen yolcuların kurduğu bir çadır" },
+      { id: "c", text: "Denizin kenarında yükselen büyük bir kayalık" },
+    ],
+  },
+  {
+    id: 5,
+    question: "Hz. Yunus'un, onu yıllarca dinlemeyen Ninova halkını sevgiyle karşılaması bize ne anlatır?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Kırgın olduğumuz kişilerle bir daha hiç konuşmamak gerektiğini" },
+      { id: "b", text: "Eski kırgınlıkları her fırsatta hatırlatmak gerektiğini" },
+      { id: "c", text: "Kırgınlığı bırakıp insanlarla yeniden birlikte sevinmek gerektiğini" },
+    ],
+  },
+];
+
+const isaQuizQuestions: QuizQuestion[] = [
+  {
+    id: 1,
+    question: "Hz. Meryem, aldığı müjde karşısında aklına gelen soruyu kime sordu?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Mabette ibadet eden insanlara" },
+      { id: "b", text: "Hz. Zekeriyyâ'ya" },
+      { id: "c", text: "Doğrudan Rabbine" },
+    ],
+  },
+  {
+    id: 2,
+    question: "Hz. Meryem'in çok yorgunken hurma ağacını silkelemesi bize ne anlatır?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "Yorgunken hiçbir şey yapmamak gerektiğini" },
+      { id: "b", text: "Zor bir anda bile elimizden gelen küçük adımı atmanın değerini" },
+      { id: "c", text: "Ağaçların her zaman meyve verdiğini" },
+    ],
+  },
+  {
+    id: 3,
+    question: "Hz. Meryem kucağındaki bebeği işaret edince ne oldu?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Bebek konuştu ve “Ben Allah'ın kuluyum” dedi" },
+      { id: "b", text: "Kalabalık hemen dağılıp gitti" },
+      { id: "c", text: "Hz. Meryem söz orucunu bozup konuştu" },
+    ],
+  },
+  {
+    id: 4,
+    question: "Hz. Îsâ'nın “Allah benim de Rabbim, sizin de Rabbiniz” sözü insanlara ne anlatıyordu?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "Kendisinin herkesten üstün olduğunu" },
+      { id: "b", text: "Hepsinin tek bir Rabbin kulları olduğunu" },
+      { id: "c", text: "Herkesin ayrı bir yol seçmesi gerektiğini" },
+    ],
+  },
+  {
+    id: 5,
+    question: "Hz. Îsâ'nın her mucizede “Allah'ın izniyle” demesi bize ne anlatır?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Mucizeleri kendi gücüyle yaptığını" },
+      { id: "b", text: "Mucizelerin bir oyun olduğunu" },
+      { id: "c", text: "Başardığı güzel işi kendine mal etmeyip Allah'a bağladığını" },
+    ],
+  },
+  {
+    id: 6,
+    question: "Hz. Îsâ “Allah'a giden yolda bana yardımcı olacaklar kimlerdir?” diye sorunca kim cevap verdi?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Havariler" },
+      { id: "b", text: "Kasabanın ileri gelenleri" },
+      { id: "c", text: "Yoldan geçen bir yolcu" },
+    ],
+  },
+  {
+    id: 7,
+    question: "Hz. Îsâ'nın duasına ilk gelenden son gelene kadar herkesi katması bize ne anlatır?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "Duanın yalnızca kendimiz için edilmesi gerektiğini" },
+      { id: "b", text: "Bir nimeti herkes için istemenin güzelliğini" },
+      { id: "c", text: "Duanın çok uzun olması gerektiğini" },
+    ],
+  },
+  {
+    id: 8,
+    question: "Kur'an'a göre Hz. Îsâ'ya kurulan tuzak ne oldu?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Tuzak hiç kurulmadı" },
+      { id: "b", text: "Hz. Îsâ tuzağı kendi gücüyle bozdu" },
+      { id: "c", text: "Allah tuzağı bozdu ve Hz. Îsâ'yı kendi katına kaldırdı" },
+    ],
+  },
+];
+
 export const quizConfig: Record<string, QuizConfig> = {
   adem: {
     label: "Hz. Âdem",
@@ -470,6 +938,24 @@ export const quizConfig: Record<string, QuizConfig> = {
     storagePrefix: "nuh",
     keywords: ["nuh"],
   },
+  ibrahim: {
+    label: "Hz. İbrahim",
+    questions: ibrahimQuizQuestions,
+    storagePrefix: "ibrahim",
+    keywords: ["ibrahim"],
+  },
+  ismail: {
+    label: "Hz. İsmail",
+    questions: ismailQuizQuestions,
+    storagePrefix: "ismail",
+    keywords: ["ismail"],
+  },
+  yusuf: {
+    label: "Hz. Yusuf",
+    questions: yusufQuizQuestions,
+    storagePrefix: "yusuf",
+    keywords: ["yusuf"],
+  },
   eyyub: {
     label: "Hz. Eyyûb",
     questions: eyyubQuizQuestions,
@@ -481,5 +967,23 @@ export const quizConfig: Record<string, QuizConfig> = {
     questions: musaQuizQuestions,
     storagePrefix: "musa",
     keywords: ["musa"],
+  },
+  suleyman: {
+    label: "Hz. Süleyman",
+    questions: suleymanQuizQuestions,
+    storagePrefix: "suleyman",
+    keywords: ["suleyman"],
+  },
+  yunus: {
+    label: "Hz. Yunus",
+    questions: yunusQuizQuestions,
+    storagePrefix: "yunus",
+    keywords: ["yunus"],
+  },
+  isa: {
+    label: "Hz. Îsâ",
+    questions: isaQuizQuestions,
+    storagePrefix: "isa",
+    keywords: ["isa"],
   },
 };

@@ -62,12 +62,12 @@ export const atlasRegions: AtlasRegion[] = [
     description: "Bir ailenin farklı zamanlara ve ülkelere uzanan yolunda güveni, misafirperverliği, sabrı ve bağışlamayı keşfet.",
     mood: "Aile ve güven",
     books: [
-      { order: 7, key: "ibrahim", title: "Hz. İbrahim", subtitle: "Hakikati arayan kalp", chapterCount: 9, availability: "preparing" },
+      { order: 7, key: "ibrahim", title: "Hz. İbrahim", subtitle: "Hakikati arayan kalp", description: "Batan yıldızlardan hiç batmayan Rabbe, ateşin ortasındaki esenlikten misafire açılan kapıya uzanan yolculukta Hz. İbrahim'in güvenini keşfet.", chapterCount: 9, availability: "preparing" },
       { order: 8, key: "lut", title: "Hz. Lût", subtitle: "Zor zamanda doğruyu korumak", chapterCount: 5, availability: "preparing" },
-      { order: 9, key: "ismail", title: "Hz. İsmail", subtitle: "Sözünde duran yol arkadaşı", chapterCount: 6, availability: "preparing" },
+      { order: 9, key: "ismail", title: "Hz. İsmail", subtitle: "Sözüne sadık, sabırlı oğul", description: "Issız bir vadide kaynayan sudan Allah'ın evinin taşlarına uzanan yolculukta Hz. İsmail'in sabrını, el birliğini ve sözüne sadakatini keşfet.", chapterCount: 6, availability: "preparing" },
       { order: 10, key: "ishak", title: "Hz. İshak", subtitle: "Bereketli bir emanet", chapterCount: 4, availability: "preparing" },
       { order: 11, key: "yakup", title: "Hz. Yakup", subtitle: "Umudu koruyan baba", chapterCount: 5, availability: "preparing" },
-      { order: 12, key: "yusuf", title: "Hz. Yusuf", subtitle: "Sabırdan bağışlamaya", chapterCount: 10, availability: "preparing", vitrin: true },
+      { order: 12, key: "yusuf", title: "Hz. Yusuf", subtitle: "Sabırdan bağışlamaya", description: "Bir rüyayla başlayan, kuyudan zindana, oradan kavuşmaya uzanan yolculukta Hz. Yusuf'la sabrı, iffeti, güvenilirliği ve affetmeyi keşfet.", chapterCount: 10, availability: "preparing", vitrin: true },
     ],
   },
   {
@@ -93,7 +93,7 @@ export const atlasRegions: AtlasRegion[] = [
     mood: "Hikmet ve adalet",
     books: [
       { order: 19, key: "davud", title: "Hz. Dâvûd", subtitle: "Cesaret ve adalet", chapterCount: 6, availability: "preparing" },
-      { order: 20, key: "suleyman", title: "Hz. Süleyman", subtitle: "Şükürle büyüyen hikmet", chapterCount: 7, availability: "preparing", vitrin: true },
+      { order: 20, key: "suleyman", title: "Hz. Süleyman", subtitle: "Şükürle büyüyen hikmet", description: "Bir bağ davasından karınca vadisine, kayıp bir kuştan billur bir köşke uzanan yolculukta Hz. Süleyman'ın hikmetini, adaletini ve şükrünü keşfet.", chapterCount: 7, availability: "preparing", vitrin: true },
       { order: 21, key: "ilyas", title: "Hz. İlyas", subtitle: "Doğru sözü korumak", chapterCount: 5, availability: "preparing" },
       { order: 22, key: "elyesa", title: "Hz. Elyesa", subtitle: "İyilik yolunu sürdürmek", chapterCount: 4, availability: "preparing" },
     ],
@@ -105,11 +105,11 @@ export const atlasRegions: AtlasRegion[] = [
     description: "Zor anlarda edilen duaların, şefkatli kalplerin ve yeniden başlamanın ışığını takip et.",
     mood: "Umut ve merhamet",
     books: [
-      { order: 23, key: "yunus", title: "Hz. Yunus", subtitle: "Duayla yeniden başlamak", chapterCount: 5, availability: "preparing" },
+      { order: 23, key: "yunus", title: "Hz. Yunus", subtitle: "Duayla yeniden başlamak", description: "Büyük bir şehre çağrıdan karanlıklar içindeki duaya, ıssız bir kıyıdaki gölgeden eve dönüşe uzanan yolculukta sorumluluğu, tövbeyi ve umudu keşfet.", chapterCount: 5, availability: "published", yayinTarihi: "2026-10-16" },
       { order: 24, key: "saya", title: "Hz. Şa‘yâ", subtitle: "Zor zamanda umut taşımak", chapterCount: 4, availability: "preparing" },
       { order: 25, key: "zekeriyya", title: "Hz. Zekeriyyâ", subtitle: "Sabırla edilen dua", chapterCount: 5, availability: "preparing" },
       { order: 26, key: "yahya", title: "Hz. Yahyâ", subtitle: "Temiz kalp ve hikmet", chapterCount: 4, availability: "preparing" },
-      { order: 27, key: "isa", title: "Hz. Îsâ", subtitle: "Merhamet ve umut", chapterCount: 8, availability: "preparing", vitrin: true },
+      { order: 27, key: "isa", title: "Hz. Îsâ", subtitle: "Merhamet ve umut", description: "Mabette gelen bir müjdeden hurma ağacının dibine, çamurdan bir kuştan herkes için edilen duaya uzanan yolculukta merhametin, umudun ve tek Rabbe güvenin anlamını keşfet.", chapterCount: 8, availability: "preparing", vitrin: true },
     ],
   },
   {

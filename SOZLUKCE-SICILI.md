@@ -79,7 +79,7 @@ Bu 11 terimin tanımı projenin standardıdır. Bir kitapta geçtiğinde bu tan�
 | Put | İnsanların kendi elleriyle yapıp taptıkları heykellerdir. | Hz. Şît · 4 |
 | Tevekkül | Elinden geleni yaptıktan sonra sonucu Allah'a bırakmaktır. | Hz. Nûh · 6 |
 | Mucize | Allah'ın izniyle peygamberlerin gösterdiği olağanüstü olaylardır. | Hz. İdrîs · 4 |
-| Zekât | Zenginlerin, mallarının bir kısmını ihtiyaç sahipleriyle paylaşmasıdır. | Henüz yok |
+| Zekât | Zenginlerin, mallarının bir kısmını ihtiyaç sahipleriyle paylaşmasıdır. | Hz. İsmail · 6 |
 
 > "Kutulandı mı?" sütunu, terimin hangi kitap/bölümde etkileşimli hâle
 > geldiğini gösterir. Terim bir kez kutulandıktan sonra buraya kitap ve bölüm
@@ -136,6 +136,55 @@ listeyle karşılaştırılır.**
 | 40 | vefa | Zor günde de sevdiklerini bırakmayıp onlara bağlı kalmaktır. | Hz. Eyyûb · 3 | Yeni terim — **onaylandı** (Hasan, 13 Eki 2026) |
 | 41 | imtihan | Allah'ın insanı iyi ve zor günlerle denemesidir. | Hz. Eyyûb · 4 | Yeni terim — **onaylandı** (Hasan, 13 Eki 2026) |
 | 42 | şifa | Bir hastalıktan kurtulup iyileşmektir. | Hz. Eyyûb · 5 | Yeni terim — **onaylandı** (Hasan, 13 Eki 2026) |
+| 43 | Rab | Her şeyi yaratan, besleyen ve yöneten Allah'ı anlatan bir addır. | Hz. İbrahim · 1 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 44 | davet | Birini güzel sözlerle doğru yola çağırmaktır. | Hz. İbrahim · 2 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 45 | taklit | Düşünmeden başkalarının yaptığını aynen yapmaktır. | Hz. İbrahim · 3 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 46 | tapınak | İnsanların putlarına ibadet etmek için yaptıkları yapıdır. | Hz. İbrahim · 4 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 47 | delil | Bir şeyin doğru olduğunu gösteren açık işarettir. | Hz. İbrahim · 5 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 48 | esenlik | Zarar görmeden, huzur ve güven içinde olmaktır. | Hz. İbrahim · 6 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 49 | bereket | Bir şeyin artarak bol ve faydalı olmasıdır. | Hz. İbrahim · 7 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 50 | vadi | İki dağ ya da tepe arasında uzanan alçak yerdir. | Hz. İbrahim · 8 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 51 | misafirperver | Misafirlerini sevinçle karşılayıp onlara en güzel şekilde ikram eden kimsedir. | Hz. İbrahim · 9 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 52 | haset | Başkasındaki bir iyiliği çekemeyip onun elinden gitmesini istemektir. | Hz. Yusuf · 1 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 53 | kervan | Yük taşıyan hayvanlarla birlikte uzun yola çıkan yolcu topluluğudur. | Hz. Yusuf · 2 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 54 | dirhem | Eski zamanlarda kullanılan küçük gümüş paradır. | Hz. Yusuf · 3 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 55 | Aziz | Eski Mısır'da kraldan sonra gelen büyük yöneticiye verilen unvandır. | Hz. Yusuf · 4 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 56 | iffet | Kendini utanç verici ve yasak davranışlardan koruyup temiz kalmaktır. | Hz. Yusuf · 4 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 57 | zindan | Eski zamanlarda insanların kapatıldığı kapalı ve karanlık hapishanedir. | Hz. Yusuf · 5 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 58 | kıtlık | Yiyeceğin çok azaldığı ve insanların zorlukla geçindiği dönemdir. | Hz. Yusuf · 6 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 59 | ambar | Tahıl ve yiyeceklerin uzun süre saklandığı büyük depodur. | Hz. Yusuf · 7 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 60 | kefil | Bir sözün yerine getirileceğine kendi adıyla güvence veren kişidir. | Hz. Yusuf · 8 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 61 | af | Bize yanlış yapan birini bağışlayıp ona kin tutmamaktır. | Hz. Yusuf · 9 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 62 | hasret | Uzakta olan birini ya da bir yeri çok özlemektir. | Hz. Yusuf · 10 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 63 | dava | İki tarafın anlaşamadığı bir konuyu karar vermesi için birine götürmesidir. | Hz. Süleyman · 1 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 64 | cin | Allah'ın yarattığı, gözle göremediğimiz varlıklardır. | Hz. Süleyman · 2 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 65 | sıvazlamak | Elini bir yerin üzerinde yavaşça gezdirerek okşamaktır. | Hz. Süleyman · 3 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 66 | hüdhüd | Başında taç gibi tüyleri olan, ibibik de denen bir kuştur. | Hz. Süleyman · 4 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 67 | melike | Bir ülkeyi yöneten kadın hükümdardır. | Hz. Süleyman · 5 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 68 | billur | Çok saydam ve parlak bir cam türüdür. | Hz. Süleyman · 6 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 69 | gayb | Yalnız Allah'ın bildiği, insanların göremediği ve bilemediği şeylerdir. | Hz. Süleyman · 7 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 70 | elçi | Bir mesajı başkalarına ulaştırmakla görevlendirilen kişidir. | Hz. Yunus · 1 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 71 | kura | Bir işin kime düşeceğini belirlemek için yapılan çekiliştir. | Hz. Yunus · 2 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 72 | tesbih | Allah'ı her türlü eksiklikten uzak tutup O'nu yüceltmektir. | Hz. Yunus · 3 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 73 | rahmet | Allah'ın kullarına gösterdiği sınırsız şefkat ve iyiliktir. | Hz. Yunus · 4 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 74 | lakap | Birine, bir özelliği ya da yaşadığı bir olay yüzünden verilen ikinci addır. | Hz. Yunus · 5 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 75 | mabet | İnsanların Allah'a ibadet etmek için toplandığı yerdir. | Hz. Îsâ · 1 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 76 | müjde | Sevindirici bir haberi önceden bildirmektir. | Hz. Îsâ · 1 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026; KARAR 6a) |
+| 77 | tasa | İnsanın içini kaplayan üzüntü ve kaygıdır. | Hz. Îsâ · 2 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 78 | iftira | Birinin yapmadığı kötü bir şeyi ona yüklemektir. | Hz. Îsâ · 3 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 79 | Tevrat | Allah'ın Hz. Musa'ya indirdiği kutsal kitaptır. | Hz. Îsâ · 4 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 80 | İncil | Allah'ın Hz. Îsâ'ya indirdiği kutsal kitaptır. | Hz. Îsâ · 4 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 81 | cüzzam | Deride yaralar açan, eskiden insanların çok korktuğu bulaşıcı bir hastalıktır. | Hz. Îsâ · 5 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 82 | havari | Hz. Îsâ'ya inanıp Allah yolunda ona yardım eden yakın arkadaşlarına verilen addır. | Hz. Îsâ · 6 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 83 | şölen | Birçok kişinin bir araya gelip sevinçle yemek yediği toplantıdır. | Hz. Îsâ · 7 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 84 | şüphe | Bir şeyin doğru olup olmadığından emin olamamaktır. | Hz. Îsâ · 8 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026; KARAR 6a) |
+| 85 | zemzem | Kâbe'nin yakınında, Hz. İsmail'in bebekliğinde kaynayan ve bugün de akan su kaynağıdır. | Hz. İsmail · 1 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 86 | göçebe | Bir yere yerleşmeden, hayvanlarıyla birlikte yer değiştirerek yaşayan kimsedir. | Hz. İsmail · 2 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 87 | teslimiyet | Allah'ın emrine ve takdirine gönülden bağlanıp onları kabul etmektir. | Hz. İsmail · 3 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026; tanım Faz 2 denetiminden sonra Hasan kararıyla) |
+| 88 | eşik | Bir evin kapısının altında, içeriyi dışarıdan ayıran kısımdır. | Hz. İsmail · 4 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 89 | temel | Bir yapının toprağa oturan ve onu ayakta tutan en alt kısmıdır. | Hz. İsmail · 5 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 90 | hac | Belirli günlerde Kâbe'yi ve çevresindeki kutsal yerleri ziyaret ederek yapılan ibadettir. | Hz. İsmail · 6 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
+| 91 | zekât | Zenginlerin, mallarının bir kısmını ihtiyaç sahipleriyle paylaşmasıdır. | Hz. İsmail · 6 | Sabit sözlükçe (§2) |
 
 **Kanonik** = onaylı Hz. Âdem içeriğinden gelir, değiştirilmez.
 
@@ -177,6 +226,120 @@ listeyle karşılaştırılır.**
 > ek kutunun dışındadır ("musibet" + "lerin", "vefa" + "yla"). Konuşma satırı
 > içeren paragraflarda kutu yalnız terimin geçtiği satırdadır; öbür satırlar ayrı
 > `text` bloğudur (Hz. Nûh'taki *alay* ve *şefkat* gibi).
+
+> **16 Eki 2026 — Hz. İbrahim'de dokuz kutu var** (kitap katalogda henüz
+> "preparing"). Hepsi yeni terim ve Faz 1'de Hasan tarafından onaylandı: *Rab* (1),
+> *davet* (2), *taklit* (3), *tapınak* (4), *delil* (5), *esenlik* (6), *bereket* (7),
+> *vadi* (8), *misafirperver* (9). Sabit sözlükçeden kutulanan yok: *peygamber*
+> (Âdem'e geriye dönük karar) ve *put* düz metin. *kavim, nimet, emanet, şükür* ve
+> *alay* metinde geçiyor ama §1 gereği ikinci kez kutulanmadı, düz `text` olarak
+> aktarıldı. Rotada İbrahim'den sonra gelen Eyyûb ve Musa'da kutulu ağır terimler
+> (*hikmet, ibret, imtihan, musibet, vefa, zulüm, şifa, iman*; kutu olarak *sabır*)
+> ile Îsâ B1'e ayrılan *müjde* ve *hicret* çocuk metninde bilerek kullanılmadı
+> (KARAR 10b; *sabırla* zarf olarak düz geçer). *Rab*'ın türevleri (Rabbim, Rabbine)
+> B1'deki kutudan sonra düz metindir. *esenlik* kutusu konuşma satırı içeren
+> paragrafta yalnız "— Ey ateş, İbrahim'e serin ve esenlik ol!" satırındadır; anlatı
+> satırı ayrı `text` bloğudur. Ek kutunun dışındadır (*taklit* + "ti", *tapınak* +
+> "ta", *delil* + "di", *bereket* + "li", *vadi* + "ye"). **Sonraki aktarımlar
+> için:** *vadi* ve *bereket* Hz. İsmail'de düz metin kalır; *Rab, davet, taklit,
+> tapınak, delil, esenlik, misafirperver* de artık hiçbir kitapta ikinci kez
+> kutulanmaz.
+
+> **16 Eki 2026 — Hz. Yusuf'ta on bir kutu var** (kitap katalogda henüz
+> "preparing"). Hepsi yeni terim ve Faz 1'de Hasan tarafından onaylandı: *haset* (1),
+> *kervan* (2), *dirhem* (3), *Aziz* (4), *iffet* (4), *zindan* (5), *kıtlık* (6),
+> *ambar* (7), *kefil* (8), *af* (9), *hasret* (10). Sabit sözlükçeden kutulanan yok:
+> *peygamber* (Âdem'e geriye dönük karar) düz metin; *hicret* kullanılmadı.
+> *nimet, şefkat, sabır, emanet, hikmet, ilim, tedbir* ve *şükür* metinde geçiyor ama
+> §1 gereği ikinci kez kutulanmadı, düz `text` olarak aktarıldı; *Rab* ve *bereket*
+> (Hz. İbrahim · 1 ve 7'de kutulu) da düz metindir. Kutudan önce terim geçmez:
+> *Aziz* B3'te "evin efendisi", *zindan* B4'te "hapis", *af* B9'a kadar
+> "bağışlanma", *hasret* B10'a kadar "özlem" diye geçer. Ek kutunun dışındadır
+> (*iffet* + "ini", *zindan* + "daydı", *ambar* + "lara", *kefil* + "im"). *kervan*
+> kutusu konuşma satırı içeren paragrafta yalnız terimin geçtiği satırdadır. B5
+> etkileşimli kelimeyle (*zindan*) açıldığı için o bölümde büyük başlangıç harfi
+> görünmez (Hz. İbrahim B2 emsali; `interactive_word`'de `dropCap` alanı yok).
+> **Sonraki aktarımlar için:** *müjde* bu kitapta düz metin, kutusu Hz. Îsâ B1'de
+> (KARAR 6a); *rahmet* (B9) ve *elçi* (B6) bu kitapta düz metin — Hz. Yunus taslağı
+> bunları kutulamayı öneriyor; Hz. Yusuf önce yayımlanırsa kutu Yunus'ta KARAR 6a
+> ile açılabilir (içerik dosyası §I11). *haset, kervan, dirhem, Aziz, iffet, zindan,
+> kıtlık, ambar, kefil, af, hasret* artık hiçbir kitapta ikinci kez kutulanmaz.
+
+> **16 Eki 2026 — Hz. Süleyman'da yedi kutu var** (kitap katalogda henüz
+> "preparing"). Hepsi yeni terim ve Faz 1'de Hasan tarafından onaylandı: *dava* (1),
+> *cin* (2), *sıvazlamak* (3), *hüdhüd* (4), *melike* (5), *billur* (6), *gayb* (7).
+> Sabit sözlükçeden kutulanan yok: *peygamber* (Âdem'e geriye dönük karar) düz metin.
+> *hikmet, ilim, şükür, nimet, sihir, emanet, secde, asa, iman* ve *sabır* metinde
+> geçiyor ama §1 gereği ikinci kez kutulanmadı, düz `text` olarak aktarıldı; *vadi*
+> ve *Rab* (Hz. İbrahim · 8 ve 1'de kutulu) da düz metindir. Kutudan önce terim geçmez:
+> B4'te Sebe'nin yöneticisi "kadın hükümdar" diye anılır, *melike* ilk kez B5'teki
+> kutuda geçer. *sıvazlamak* Kelime Defterim'de mastar görünsün diye cümle mastarla
+> kuruldu ("…sevgiyle sıvazlamak oldu"). Ek kutunun dışındadır (*cin* + "ler",
+> *sıvazlamak* + " oldu", *hüdhüd* + " kuşuydu", *melike* + "nin", *billur* + "dan",
+> *gayb* + "ı"). *hüdhüd* kutusu konuşma satırı içeren paragrafta yalnız terimin
+> geçtiği satırdadır; konuşma satırı ayrı `text` bloğudur. Lansman koordinasyonu
+> gereği *rahmet, elçi, tesbih* (Hz. Yunus) ve *müjde, mabet, şüphe, iftira* (Hz. Îsâ)
+> bu kitabın hikâye metninde bilerek kullanılmadı. **Sonraki aktarımlar için:** *dava,
+> cin, sıvazlamak, hüdhüd, melike, billur, gayb* artık hiçbir kitapta ikinci kez
+> kutulanmaz.
+
+> **16 Eki 2026 — Hz. Yunus'ta beş kutu var** (kitap katalogda henüz "preparing").
+> Hepsi yeni terim ve Faz 1'de Hasan tarafından onaylandı: *elçi* (1), *kura* (2),
+> *tesbih* (3), *rahmet* (4), *lakap* (5). *elçi* daha önce yalnız **kutusuz** geçti
+> (yayımlanmış Hz. Nûh ve Hz. Musa; preparing Hz. İbrahim ve Hz. Yusuf), *rahmet* de
+> öyle (yayımlanmış Hz. Âdem, Hz. Eyyûb ve Hz. Musa; preparing Hz. Yusuf · 9); ikisi de
+> hiçbir yerde kutulanmadığı için §1'deki **KARAR 6a** ile kutu Yunus'ta açıldı. O
+> kitaplar değişmedi; kutusuz geçişler düz metin kalır. Sabit sözlükçeden kutulanan
+> yok: *peygamber* (Âdem'e geriye dönük karar) ve *put* düz metin; *peygamber*
+> tanımındaki "elçi" sabit sözlükçedir, değişmedi. *iman, alay, tövbe, sabır* ve
+> *Rab* (Hz. İbrahim · 1) metinde geçiyor ama §1 gereği ikinci kez kutulanmadı, düz
+> `text` olarak aktarıldı; *kervan* (Hz. Yusuf · 2) B1'de "kervanların" diye düz
+> geçer; *şükür* "şükretti" fiiliyle düz geçer. *rahmet* B5'te kutusuz tekrar geçer.
+> Ek kutunun dışındadır (*elçi* + "lerden", *rahmet* + "in", *lakap* + "la").
+> **Sonraki aktarımlar için:** *elçi, kura, tesbih, rahmet, lakap* artık hiçbir kitapta
+> ikinci kez kutulanmaz (Îsâ'da Zekeriyyâ'nın kurası ve İsmail'de geçebilecek *elçi*
+> / *rahmet* düz metin kalır).
+
+> **16 Eki 2026 — Hz. Îsâ'da on kutu var** (kitap katalogda henüz "preparing"). Hepsi
+> yeni terim ve Faz 1'de Hasan tarafından onaylandı: *mabet* (1), *müjde* (1), *tasa* (2),
+> *iftira* (3), *Tevrat* (4), *İncil* (4), *cüzzam* (5), *havari* (6), *şölen* (7),
+> *şüphe* (8). *müjde* ve *şüphe* daha önce yalnız **kutusuz** geçti (*müjde*:
+> yayımlanmış Hz. Şît, Hz. İdrîs, Hz. Nûh ve preparing Hz. Yusuf; *şüphe*: yayımlanmış
+> Hz. Âdem, Hz. İdrîs, Hz. Nûh) ve hiçbir yerde kutulanmadığı için §1'deki **KARAR 6a** ile kutu Îsâ'da açıldı; o kitaplar
+> değişmedi. *müjde* kutusunun Îsâ B1'de kalması koordinasyon kararıdır (Hasan, 16 Eki
+> 2026: "Îsâ lansmanda, İshak değil"); Hz. İshak'ta düz metin. Sabit sözlükçeden kutulanan yok: *peygamber*
+> (Âdem'e geriye dönük karar) düz metin; *zekât* B3'te ("namazı, zekâtı") **düz metindir**,
+> kutusu Hz. İsmail B6'da açılır (Îsâ içerik dosyası §I11, K1 koşulu). *mucize, secde,
+> emanet, nimet, hikmet, ibret, iman, şifa* ve *sabır* metinde geçiyor ama §1 gereği
+> ikinci kez kutulanmadı, düz `text` olarak aktarıldı. Kutudan önce terim geçmez; *müjde, tasa, Tevrat, havari* ve
+> *mabet*'in sonraki geçişleri (müjdelenen, tasanın, Tevrat'ı, havariler, mabedin) düz
+> metindir. Ek kutunun dışındadır (*mabet* + "te", *Tevrat* + "'ı"). *şölen* kutusu
+> konuşma satırı içeren paragrafta yalnız terimin geçtiği satırdadır; ilk satır ayrı
+> `text` bloğudur. **Sonraki aktarımlar için:** *mabet, müjde, tasa, iftira, Tevrat,
+> İncil, cüzzam, havari, şölen, şüphe* artık hiçbir kitapta ikinci kez kutulanmaz
+> (Hz. Zekeriyyâ ve Hz. Yahyâ'daki *mabet* / *müjde* dahil).
+
+> **16 Eki 2026 — Hz. İsmail'de yedi kutu var** (kitap katalogda henüz "preparing").
+> Altısı yeni terim ve Faz 1'de Hasan tarafından onaylandı: *zemzem* (1), *göçebe* (2),
+> *teslimiyet* (3), *eşik* (4), *temel* (5), *hac* (6). *teslimiyet*'in tanımı Faz 2
+> denetiminden sonra Hasan kararıyla "Allah'ın emrine ve takdirine gönülden bağlanıp onları
+> kabul etmektir." oldu (kurban bölümünde "boyun eğmek" çağrışımı nedeniyle). Sabit
+> sözlükçeden *zekât* (6) **set genelinde ilk kez** kutulandı; tanım §2 ile harfiyen aynı
+> (Hz. Îsâ B3'teki "zekâtı" düz metindir — Îsâ içerik dosyası §I11, K1 koşulu). *peygamber*
+> (Âdem'e geriye dönük karar) düz metin. *Kâbe, kurban, şükür, şefkat* ve *Rab* metinde
+> geçiyor ama §1 gereği ikinci kez kutulanmadı, düz `text` olarak aktarıldı; *vadi* ve
+> *bereket* (Hz. İbrahim · 8 ve 7'de kutulu) da düz metindir. *imtihan* (Hz. Eyyûb · 4)
+> yalnız B3'teki Sâffât 106 cümlesinde ve bölüm sonunda, *sabreden* yalnız Kur'an sözlerinde
+> (Sâffât 102, Enbiyâ 85) düz geçer; *sabır* kutu olarak kullanılmadı. Lansman koordinasyonu
+> gereği *rahmet, elçi, müjde, tasa, mabet, kervan, şüphe* ile rotada sonra gelen Musa ve
+> Eyyûb kutuları (*hikmet, ibret, iman, zulüm, vefa, musibet, şifa, cömert*) çocuk metninde
+> bilerek kullanılmadı. Kutudan önce terim geçmez; *zemzem* B1'den sonra düz metindir.
+> *eşik* kutusu Türkçe ünsüz yumuşaması yüzünden öğüt cümlesindeki "eşiğini"de değil,
+> 1. Kısım'daki "taş eşikte durdu" cümlesindedir; "eşiğini" düz metindir. Ek kutunun
+> dışındadır (*göçebe* + "lerdi", *eşik* + "te", *temel* + "lerini", *zekât* + "ı").
+> Kutulu terimlerin hiçbiri konuşma satırında değildir. **Sonraki aktarımlar için:**
+> *zemzem, göçebe, teslimiyet, eşik, temel, hac, zekât* artık hiçbir kitapta ikinci kez
+> kutulanmaz.
 
 ### 3.1 Kod tarafındaki ikinci kopya
 
@@ -221,7 +384,8 @@ sicil, sonra `demoChapters.ts` güncellenir.
   10 Ağu 2026'da Hz. Şît içeriğiyle **Kâbe · vahiy · put** kutulandı,
   12 Ağu 2026'da Hz. İdrîs içeriğiyle **mucize**, 12 Eki 2026'da Hz. Nûh
   içeriğiyle **müşrik · tevekkül** kutulandı; sabit sözlükçeden geriye
-  *hicret · halife · sahabe · peygamber · zekât* kaldı.
+  *hicret · halife · sahabe · peygamber · zekât* kaldı. 16 Eki 2026'da Hz. İsmail
+  içeriğiyle **zekât** kutulandı; geriye *hicret · halife · sahabe · peygamber* kaldı.
 - ~~Hz. Şît'in etkileşimli kelimesi kaldırıldığı için o geçici demo kitapta
   hiç kutulanmış kelime yoktur.~~ **KAPANDI (10 Ağu 2026)** — nihai içerik
   aktarıldı; kitapta beş kutu var: Kâbe (1), tedbir (2), harç (3), vahiy ve

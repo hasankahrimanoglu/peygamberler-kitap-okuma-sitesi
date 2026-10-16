@@ -1,7 +1,7 @@
 # KİTAP: HZ. YUNUS (a.s.) — FAZ 2 İÇERİK PAKETİ
 
 > **Durum:** Nihai — Faz 2 **onaylandı, Hasan, 16 Ekim 2026** ("Yunus Faz 2'yi onaylıyorum;
-> aktarıma hazır."). **Aktarım bekliyor** (`/aktarim yunus`). Faz 1, 16 Ekim 2026'da onaylandı;
+> aktarıma hazır."). **Aktarıldı (16 Ekim 2026)** — `books.ts`, `quizzes.ts`, `atlasCatalog.ts` (katalogda "preparing"); sıradaki adım ayrı oturumda `/gorsel-uretim yunus`. Faz 1, 16 Ekim 2026'da onaylandı;
 > Faz 1 kaydı: `KITAP-HZ-YUNUS-KAYNAK-DENETIMI.md`. Bu dosya o kaydın başındaki **Karar
 > kaydı** ile yazıldı; karar kaydı Faz 1'deki "Önerim" ifadelerinin önüne geçer. Editoryal
 > denetim (metin: 0 kritik · 6 önemli · 16 küçük; görsel: 0 kritik · 5 önemli · 16 küçük),

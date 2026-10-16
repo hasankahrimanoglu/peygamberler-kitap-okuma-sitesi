@@ -120,8 +120,168 @@ ad ikinci kez kullanılamaz.
 | 37 | Zor Günde Vefa Rozeti | Hz. Eyyûb | 3 | Nihai |
 | 38 | Merhamete Sığınma Rozeti | Hz. Eyyûb | 4 | Nihai |
 | 39 | Sabrın Pınarı Rozeti | Hz. Eyyûb | 5 | Nihai |
+| 40 | Batmayan Işık Rozeti | Hz. İbrahim | 1 | Nihai |
+| 41 | Saygılı Öğüt Rozeti | Hz. İbrahim | 2 | Nihai |
+| 42 | Düşünerek İnanma Rozeti | Hz. İbrahim | 3 | Nihai |
+| 43 | Uyandıran Soru Rozeti | Hz. İbrahim | 4 | Nihai |
+| 44 | Açık Delil Rozeti | Hz. İbrahim | 5 | Nihai |
+| 45 | Ateşte Esenlik Rozeti | Hz. İbrahim | 6 | Nihai |
+| 46 | Yola Çıkan İman Rozeti | Hz. İbrahim | 7 | Nihai |
+| 47 | Duayla Emanet Rozeti | Hz. İbrahim | 8 | Nihai |
+| 48 | Misafir Sevinci Rozeti | Hz. İbrahim | 9 | Nihai |
+| 49 | Doğru Kişiye Danışma Rozeti | Hz. Yusuf | 1 | Nihai |
+| 50 | Yalnız Değilim Rozeti | Hz. Yusuf | 2 | Nihai |
+| 51 | Özenli Hizmet Rozeti | Hz. Yusuf | 3 | Nihai |
+| 52 | Korunan İffet Rozeti | Hz. Yusuf | 4 | Nihai |
+| 53 | Haksızlıkta Sabır Rozeti | Hz. Yusuf | 5 | Nihai |
+| 54 | Aklanan İsim Rozeti | Hz. Yusuf | 6 | Nihai |
+| 55 | Güvenilir Bekçi Rozeti | Hz. Yusuf | 7 | Nihai |
+| 56 | Kardeşe Sahip Çıkma Rozeti | Hz. Yusuf | 8 | Nihai |
+| 57 | Başa Kakmayan Af Rozeti | Hz. Yusuf | 9 | Nihai |
+| 58 | Kucaklayan Şükür Rozeti | Hz. Yusuf | 10 | Nihai |
+| 59 | Adil Çözüm Rozeti | Hz. Süleyman | 1 | Nihai |
+| 60 | Şükürle Çalışma Rozeti | Hz. Süleyman | 2 | Nihai |
+| 61 | Küçük Canlıya Özen Rozeti | Hz. Süleyman | 3 | Nihai |
+| 62 | Önce Dinleme Rozeti | Hz. Süleyman | 4 | Nihai |
+| 63 | Gönül Tokluğu Rozeti | Hz. Süleyman | 5 | Nihai |
+| 64 | Nimette Tevazu Rozeti | Hz. Süleyman | 6 | Nihai |
+| 65 | Bilgide Tevazu Rozeti | Hz. Süleyman | 7 | Nihai |
+| 66 | Görev Bilinci Rozeti | Hz. Yunus | 1 | Nihai |
+| 67 | Dürüst İtiraf Rozeti | Hz. Yunus | 2 | Nihai |
+| 68 | Karanlıktaki Dua Rozeti | Hz. Yunus | 3 | Nihai |
+| 69 | Rahmet Gölgesi Rozeti | Hz. Yunus | 4 | Nihai |
+| 70 | Kırgınlığı Bırakma Rozeti | Hz. Yunus | 5 | Nihai |
+| 71 | Teslim Olan Kalp Rozeti | Hz. Îsâ | 1 | Nihai |
+| 72 | Silkelenen Dal Rozeti | Hz. Îsâ | 2 | Nihai |
+| 73 | Söz Orucu Rozeti | Hz. Îsâ | 3 | Nihai |
+| 74 | Hepimizin Rabbi Rozeti | Hz. Îsâ | 4 | Nihai |
+| 75 | Allah'ın İzniyle Rozeti | Hz. Îsâ | 5 | Nihai |
+| 76 | Gönüllü Yardım Rozeti | Hz. Îsâ | 6 | Nihai |
+| 77 | Herkes İçin Dua Rozeti | Hz. Îsâ | 7 | Nihai |
+| 78 | Tükenmeyen Umut Rozeti | Hz. Îsâ | 8 | Nihai |
+| 79 | Umutla Çaba Rozeti | Hz. İsmail | 1 | Nihai |
+| 80 | Güzel Komşuluk Rozeti | Hz. İsmail | 2 | Nihai |
+| 81 | Birlikte Teslimiyet Rozeti | Hz. İsmail | 3 | Nihai |
+| 82 | Tatlı Dil Rozeti | Hz. İsmail | 4 | Nihai |
+| 83 | El Birliği Rozeti | Hz. İsmail | 5 | Nihai |
+| 84 | Vaadinde Sadakat Rozeti | Hz. İsmail | 6 | Nihai |
 
 **Nihai** = dinî doğruluk onayı verilmiş, kalıcı ad. Değiştirilmez.
+
+> **16 Ekim 2026 — Hz. İsmail nihai içerikle eklendi.** Altı ad da §2'deki önceki
+> 78 adla ve §2.1'deki serbest adlarla çakışmıyor (gerekçeler
+> `KITAP-HZ-ISMAIL-KAYNAK-DENETIMI.md` §C1 ve `KITAP-HZ-ISMAIL-ICERIK-final.md` §I6,
+> Hasan onayı; "Çaba" ve "Komşu" kelimeleri matriste ilk kez geçiyor). Nüans ayrışmaları:
+> *Teslim Olan Kalp* (Îsâ 1) bireysel kabul, *Birlikte Teslimiyet* **baba ile oğlun
+> Allah'ın emrine birlikte teslim olmasıdır** (Sâffât 103). *Vaade Güven* (Musa 1)
+> Allah'ın sözüne güvenmek, *Vaadinde Sadakat* **kendi verdiği sözü tutmaktır**
+> (Meryem 54); *Sözü Koruma* (Âdem 3) ve *Güvenilen Söz* (İdrîs 4) ile adı ayrı.
+> *Gelen Umut* (Şît 1) ve *Tükenmeyen Umut* (Îsâ 8) umudu korumak, *Umutla Çaba*
+> **umudu oturup beklemek yerine harekete dökmektir**. *Misafir Sevinci* (İbrahim 9)
+> misafiri ağırlamak, *Güzel Komşuluk* **yabancıyı komşu olarak yanına almak ve suyu
+> kurallı, adil paylaşmaktır**. *Saygılı Öğüt* (İbrahim 2) ve *Yumuşak Cesaret* (Nûh 2)
+> doğruyu nazikçe söylemek, *Tatlı Dil* **evdeki sözün şükürle ve güzellikle
+> kurulmasıdır**. *El Birliği* **aile içinde büyükle küçüğün aynı işi birlikte
+> yapmasıdır**; *Gönüllü Yardım* (Îsâ 6) ve §2.1'deki serbest *Dayanışma* ile
+> karıştırılmaz. Kitap adı hiçbir rozet adında geçmiyor.
+
+> **16 Ekim 2026 — Hz. Îsâ nihai içerikle eklendi.** Sekiz ad da §2'deki önceki
+> 70 adla ve §2.1'deki serbest adlarla çakışmıyor (gerekçeler
+> `KITAP-HZ-ISA-KAYNAK-DENETIMI.md` §C1 ve `KITAP-HZ-ISA-ICERIK-final.md` §I6,
+> Hasan onayı). Nüans ayrışmaları: *Dikkatli Kalp* (Âdem 4) fısıltıya karşı kendini
+> korumak, *Teslim Olan Kalp* **anlaşılması zor bir haberi saygıyla sorup Allah'a
+> güvenle kabul etmektir**. *Silkelenen Dal* en zor anda küçük adımı atmaktır (sette
+> benzersiz). *Sözü Koruma* (Âdem 3) verilen sözü tutmak, *Güvenilen Söz* (İdrîs 4)
+> başkalarının güvenmesi; *Söz Orucu* **gerektiğinde susabilmektir** (yakın sahne:
+> *Aklanan İsim*, Yusuf 6 — adı farklı). *Hepimizin Rabbi* setteki ilk tevhid adıdır.
+> *Nimette Tevazu* / *Bilgide Tevazu* (Süleyman 6–7) ile ayrışma: *Allah'ın İzniyle*
+> **başarıyı kendine mal etmemektir**. *Karşılıksız İyilik* (Musa 4) yabancıya
+> karşılıksız yardım; *Gönüllü Yardım* **çağrıya ilk cevap vermektir** (§2.1'deki serbest
+> *Dayanışma* ile karıştırılmaz). "Dua" üç adda, nüanslar ayrı: *Duayla Emanet*
+> (İbrahim 8), *Karanlıktaki Dua* (Yunus 3) ve *Herkes İçin Dua* **duaya herkesi
+> katmaktır**; *Merhamete Sığınma* (Eyyûb 4) ise kendi derdini Allah'a açmaktır. *Gelen Umut* (Şît 1)
+> kayıptan sonra teselli; *Tükenmeyen Umut* **tehlike anında umudu korumaktır**. Kitap
+> adı hiçbir rozet adında geçmiyor.
+
+> **16 Ekim 2026 — Hz. Yunus nihai içerikle eklendi.** Beş ad da §2'deki önceki
+> 65 adla ve §2.1'deki serbest adlarla çakışmıyor (gerekçeler
+> `KITAP-HZ-YUNUS-KAYNAK-DENETIMI.md` §C1 ve `KITAP-HZ-YUNUS-ICERIK-final.md` §I6,
+> Hasan onayı; "Göreve Sahip Çıkma" Yusuf'taki kalıp tekrarı yüzünden "Görev Bilinci"
+> oldu). Nüans ayrışmaları: *Asırlık Sabır* (Nûh 4) ve *Vazgeçmeyen El* (İdrîs 3)
+> sonucu görmeden sürdürme sabrı/emeği; *Görev Bilinci* **verilen görevi, fark
+> edilmese de sorumlulukla sürdürmektir**. *Gerçeği Kabul* (Musa 7) ve *Aklanan İsim*
+> (Yusuf 6) ile ayrışma: *Dürüst İtiraf* **kimse görmemişken kendi hatasını
+> söylemektir**. *Tövbe* (Âdem 5) adının kendisi kullanılmadı. "Dua" üç adda,
+> nüanslar ayrı: *Duayla Emanet* (İbrahim 8) ayrılıkta sevdiklerini emanet etmek,
+> *Karanlıktaki Dua* **en zor anda hatayı kabul edip Allah'a yönelmek**, Îsâ'nın
+> açık taslağındaki *Herkes İçin Dua* ise başkaları için dua. *Merhamete Sığınma*
+> (Eyyûb 4) derdi Allah'a açmak, *Sabrın Pınarı* (Eyyûb 5) sabrın sonundaki rahmet;
+> *Rahmet Gölgesi* **yorgunken gelen küçük iyiliği fark edip şükretmektir**. *Başa
+> Kakmayan Af* (Yusuf 9) affeden tarafın tutumu; *Kırgınlığı Bırakma* **eski
+> kırgınlığı geride bırakıp sevinçle karşılamaktır**. Kitap adı hiçbir rozet adında
+> geçmiyor.
+
+> **16 Ekim 2026 — Hz. Süleyman nihai içerikle eklendi.** Yedi ad da §2'deki önceki
+> 58 adla ve §2.1'deki serbest adlarla çakışmıyor (gerekçeler
+> `KITAP-HZ-SULEYMAN-KAYNAK-DENETIMI.md` §C1 ve `KITAP-HZ-SULEYMAN-ICERIK-final.md` §I6,
+> Hasan onayı). Nüans ayrışmaları: §2.1'deki serbest *Adalet Rozeti* ileride
+> kullanılabilir; *Adil Çözüm* **iki tarafı da gözeten karardır**. *Bereketli İniş*
+> (Nûh 8), *Paylaşılan Nimet* (Eyyûb 1) ve *Kucaklayan Şükür* (Yusuf 10; kavuşma anında
+> suçlamadan şükür) ile ayrışma: *Şükürle Çalışma* **şükrü çabayla göstermektir**
+> (Sebe 13). *Şefkatli Çağrı* (Nûh 7) insana şefkat; *Küçük Canlıya Özen* merhametin
+> **hayvan** nüansıdır. *Doğruyu Arama* (Şît 2) aramak; *Önce Dinleme* **hüküm vermeden
+> önce dinlemektir**. *Karşılıksız İyilik* (Musa 4) ve *Paylaşılan Nimet* (Eyyûb 1)
+> vermekle ilgili; *Gönül Tokluğu* **hediyeyle/malla etkilenmemektir**. *Nimette
+> Tevazu* setteki ilk "tevazu" adıdır (*Sakin Güç* — Âdem 7 — öfkeyi tutmak); *Bilgide
+> Tevazu* **bilmediğini kabul etmektir** (*Meraklı Zihin* — Âdem 2 — ve *Öğrenen Yolcu* —
+> Musa 10 — öğrenmek). Kitapta iki tevazu, iki uç (Eyyûb'daki iki sabır emsali).
+> **Sonraki kitaplar için:** katalogda tevazu Hz. Hûd ve Hz. Ömer'de de var; onlara
+> başka nüans kalır (tavır, makamda tevazu). Yakın nüans (açık taslak): *Nimette
+> Tevazu* / *Bilgide Tevazu* – Îsâ *Allah'ın İzniyle* (adlar farklı, sorun değil).
+
+> **16 Ekim 2026 — Hz. Yusuf nihai içerikle eklendi.** On ad da §2'deki önceki
+> 48 adla ve §2.1'deki serbest adlarla çakışmıyor (gerekçeler
+> `KITAP-HZ-YUSUF-KAYNAK-DENETIMI.md` §C1 ve `KITAP-HZ-YUSUF-ICERIK-final.md` §I6,
+> Hasan onayı). Nüans ayrışmaları: *Çözülen Düğüm* (Musa 5) Allah'tan yardım
+> istemek, *Doğru Kişiye Danışma* **güvendiğin büyüğe danışmaktır**. *Gelen Umut*
+> (Şît 1), *Dalgada Güven* (Nûh 6) ve *Açılan Yol* (Musa 9) ile ayrışma: *Yalnız
+> Değilim* **terk edilmişken Allah'ın yanında olduğunu bilmektir**. *Yılmayan Emek*
+> (Şît 3) ve *Vazgeçmeyen El* (İdrîs 3) ile ayrışma: *Özenli Hizmet* **kendi
+> seçmediği bir yerde işi özenle yapmaktır**. *Dikkatli Kalp* (Âdem 4) içten gelen
+> fısıltıya karşı korunmak, *Korunan İffet* **dışarıdan gelen yanlış isteğe "hayır"
+> demektir**. *Haksızlıkta Sabır* **haksız yere bekletilirken** sabırdır (Öğreten /
+> Asırlık / İlk Andaki / Sabrın Pınarı'ndan ayrı). *Gerçeği Kabul* (Musa 7)
+> başkasının gerçeği kabul etmesi, *Aklanan İsim* **kendi adının dürüstçe temize
+> çıkmasını istemektir**. *Güvenilen Söz* (İdrîs 4) söze güvenilmesi, *Güvenilir
+> Bekçi* **emanet edilen malı korumaktır**. *Kardeşe Sahip Çıkma* **suçlanan
+> kardeşi bırakmamaktır**. *Tövbe* (Âdem 5) af dileyenin tarafı, *Başa Kakmayan Af*
+> **affedenin tarafıdır**. *Bereketli İniş* (Nûh 8), *Paylaşılan Nimet* (Eyyûb 1) ve
+> *Göz Aydınlığı* (Musa 2) ile ayrışma: *Kucaklayan Şükür* **kavuşma anında kimseyi
+> suçlamadan şükretmektir**. **Sonraki kitaplar için:** *Güzel Sabır* hâlâ Hz.
+> Yakup'a ayrılmıştır; Hz. Hârûn (#17) kitabındaki "kardeşine destek" nüansı
+> *Kardeşe Sahip Çıkma*'dan **yardımcı olmak** yönüne ayrışmalı. Yakın nüanslar
+> (açık taslaklar): *Aklanan İsim* – Îsâ *Söz Orucu*, *Kucaklayan Şükür* – Süleyman
+> *Şükürle Çalışma*, *Başa Kakmayan Af* – Yunus *Kırgınlığı Bırakma*.
+
+> **16 Ekim 2026 — Hz. İbrahim nihai içerikle eklendi.** Dokuz ad da §2'deki
+> önceki 39 adla ve §2.1'deki serbest adlarla çakışmıyor (gerekçeler
+> `KITAP-HZ-IBRAHIM-ICERIK-final.md` §I6, Faz 1 ve Faz 2 Hasan onayı). Nüans
+> ayrışmaları: *Doğruyu Arama* (Şît 2) kendi gözüyle bakıp gerçeği öğrenmek,
+> *Batmayan Işık* **geçici olanın ötesinde hiç batmayanı aramak**, *Düşünerek
+> İnanma* ise **"herkes böyle yapıyor" baskısında taklit etmeden düşünmektir**.
+> *Yumuşak Cesaret* (Nûh 2) doğruyu nazik dille söylemek; *Saygılı Öğüt* **sevilen
+> bir büyüğe saygıyla doğruyu söylemektir** (baba–oğul). *Gerçeği Kabul* (Musa 7)
+> gördüğün gerçeği kabul etmek, *Uyandıran Soru* **soruyla başkasını düşündürmek**,
+> *Açık Delil* **güçlü biri karşısında sakin ve açık kanıt göstermektir**. *Dalgada
+> Güven* (Nûh 6) ve *Vaade Güven* (Musa 1) ile ayrışma: *Ateşte Esenlik* **tehlikenin
+> ortasında Allah'a sığınıp korunmaktır**. *Yola Çıkan İman* setteki ilk "iman"
+> adıdır (doğru bildiği için yurdundan ayrılmak); *iman* kutusu Musa'da kalır.
+> *Devralınan Emanet* (Şît 4) ve *Huzurlu Miras* (Âdem 8) ile ayrışma: *Duayla
+> Emanet* **ayrılıkta sevdiklerini duayla Allah'a emanet etmektir**; paralel
+> taslaklardaki *Karanlıktaki Dua* (Yunus) ve *Herkes İçin Dua* (Îsâ) ile nüans
+> ayrı. *Açık Kapı* (Nûh 3) dışlanana sahip çıkmak, *Paylaşılan Nimet* (Eyyûb 1)
+> bolluğu paylaşmak; *Misafir Sevinci* **yeni geleni sevinçle karşılayıp
+> ağırlamaktır**.
 
 > **15 Ekim 2026 — Hz. Eyyûb nihai içerikle eklendi.** Beş ad da §2'deki önceki
 > 34 adla ve §2.1'deki serbest adlarla çakışmıyor (gerekçeler
@@ -255,9 +415,9 @@ Bölüm sayıları ve değerler `KITAP-KATALOGU-VE-URETIM-PLANI.md`'den alınmı
 **Görsel durumu kısaltmaları:** `—` üretilmedi · `□` kare teslim edildi,
 çerçeve bekliyor (13 Eki 2026'dan itibaren üretim böyle teslim eder —
 ICERIK-GORSEL-SICILI §6.2) · `✓` çerçeveli son dosya yerinde.
-**15 Ekim 2026 itibarıyla 35 rozet görseli teslim edildi** (Hz. Âdem 8 ·
-Hz. Şît 4 · Hz. Nûh 8 — 512×512 şeffaf PNG, çerçeveli; Hz. Musa 10 · Hz. Eyyûb 5
-— 512×512 kare PNG, çerçeve bekliyor). Kalan 181 rozet görseli bekliyor.
+**16 Ekim 2026 itibarıyla 40 rozet görseli teslim edildi** (Hz. Âdem 8 ·
+Hz. Şît 4 · Hz. Nûh 8 — 512×512 şeffaf PNG, çerçeveli; Hz. Musa 10 · Hz. Eyyûb 5 ·
+Hz. Yunus 5 — 512×512 kare PNG, çerçeve bekliyor). Kalan 176 rozet görseli bekliyor.
 
 ### Bölge 1 — İlk İzler Vadisi (6 kitap · 34 rozet)
 
@@ -274,12 +434,12 @@ Hz. Şît 4 · Hz. Nûh 8 — 512×512 şeffaf PNG, çerçeveli; Hz. Musa 10 · 
 
 | Kitap | bookKey | Böl. | Anahtar aralığı | Ana değerler | İçerik | Görsel |
 |---|---|---:|---|---|---|---|
-| Hz. İbrahim | `ibrahim` | 9 | `hz-ibrahim/bolum-1…9` | tevhid, cesaret, teslimiyet, misafirperverlik | Bekliyor (K1) | — |
+| Hz. İbrahim | `ibrahim` | 9 | `hz-ibrahim/bolum-1…9` | tevhid, cesaret, teslimiyet, misafirperverlik | ✅ Nihai (§2) | — 0/9 |
 | Hz. Lût | `lut` | 5 | `hz-lut/bolum-1…5` | ahlâk, cesaret, koruma, doğruluk | Bekliyor (K1) | — |
-| Hz. İsmail | `ismail` | 6 | `hz-ismail/bolum-1…6` | teslimiyet, çalışma, aile, sözünde durma | Bekliyor (K1) | — |
+| Hz. İsmail | `ismail` | 6 | `hz-ismail/bolum-1…6` | teslimiyet, çalışma, aile, sözünde durma | ✅ Nihai (§2) | — 0/6 |
 | Hz. İshak | `ishak` | 4 | `hz-ishak/bolum-1…4` | şükür, aile, sabır, devamlılık | Bekliyor (K2) | — |
 | Hz. Yakup | `yakup` | 5 | `hz-yakup/bolum-1…5` | sabır, sevgi, umut, bağışlama | Bekliyor (K1) | — |
-| Hz. Yusuf | `yusuf` | 10 | `hz-yusuf/bolum-1…10` | sabır, iffet, güvenilirlik, bağışlama | Bekliyor (K1) | — |
+| Hz. Yusuf | `yusuf` | 10 | `hz-yusuf/bolum-1…10` | sabır, iffet, güvenilirlik, bağışlama | ✅ Nihai (§2) | — 0/10 |
 
 ### Bölge 3 — Sabır ve Cesaret Geçidi (6 kitap · 33 rozet)
 
@@ -297,7 +457,7 @@ Hz. Şît 4 · Hz. Nûh 8 — 512×512 şeffaf PNG, çerçeveli; Hz. Musa 10 · 
 | Kitap | bookKey | Böl. | Anahtar aralığı | Ana değerler | İçerik | Görsel |
 |---|---|---:|---|---|---|---|
 | Hz. Dâvûd | `davud` | 6 | `hz-davud/bolum-1…6` | cesaret, adalet, emek, şükür | Bekliyor (K1) | — |
-| Hz. Süleyman | `suleyman` | 7 | `hz-suleyman/bolum-1…7` | hikmet, şükür, merhamet, adalet | Bekliyor (K1) | — |
+| Hz. Süleyman | `suleyman` | 7 | `hz-suleyman/bolum-1…7` | hikmet, şükür, merhamet, adalet | ✅ Nihai (§2) | — 0/7 |
 | Hz. İlyas | `ilyas` | 5 | `hz-ilyas/bolum-1…5` | tevhid, cesaret, sabır, doğruluk | Bekliyor (K2) | — |
 | Hz. Elyesa | `elyesa` | 4 | `hz-elyesa/bolum-1…4` | emanet, devamlılık, iyilik, sabır | Bekliyor (K2) | — |
 
@@ -305,11 +465,11 @@ Hz. Şît 4 · Hz. Nûh 8 — 512×512 şeffaf PNG, çerçeveli; Hz. Musa 10 · 
 
 | Kitap | bookKey | Böl. | Anahtar aralığı | Ana değerler | İçerik | Görsel |
 |---|---|---:|---|---|---|---|
-| Hz. Yunus | `yunus` | 5 | `hz-yunus/bolum-1…5` | tövbe, umut, sorumluluk, sabır | Bekliyor (K1) | — |
+| Hz. Yunus | `yunus` | 5 | `hz-yunus/bolum-1…5` | tövbe, umut, sorumluluk, sabır | ✅ Nihai (§2) | □ 5/5 |
 | Hz. Şa‘yâ | `saya` | 4 | `hz-saya/bolum-1…4` | doğruluk, umut, cesaret, emanet | Bekliyor (**K3**) | — |
 | Hz. Zekeriyyâ | `zekeriyya` | 5 | `hz-zekeriyya/bolum-1…5` | dua, hizmet, umut, güven | Bekliyor (K1) | — |
 | Hz. Yahyâ | `yahya` | 4 | `hz-yahya/bolum-1…4` | hikmet, merhamet, doğruluk, sadelik | Bekliyor (K2) | — |
-| Hz. Îsâ | `isa` | 8 | `hz-isa/bolum-1…8` | merhamet, tevhid, umut, yardım, doğruluk | Bekliyor (K1) | — |
+| Hz. Îsâ | `isa` | 8 | `hz-isa/bolum-1…8` | merhamet, tevhid, umut, yardım, doğruluk | ✅ Nihai (§2) | — 0/8 |
 
 ### Bölge 6 — Rahmet Yolculuğu (4 kitap · 36 rozet)
 
@@ -342,20 +502,20 @@ Hz. Şît 4 · Hz. Nûh 8 — 512×512 şeffaf PNG, çerçeveli; Hz. Musa 10 · 
 | | Sayı |
 |---|---:|
 | Planlanan rozet (216 bölüm) | 216 |
-| Nihai rozet adı kayıtlı | 39 |
+| Nihai rozet adı kayıtlı | 84 |
 | Geçici demo adı kayıtlı | 0 |
-| Ad bekleyen | 177 |
-| Üretilmiş rozet görseli | 35 |
-| Rozet görseli bekleyen | 181 |
+| Ad bekleyen | 132 |
+| Üretilmiş rozet görseli | 40 |
+| Rozet görseli bekleyen | 176 |
 
-Üretilmiş 35 görsel: `rozetler/hz-adem/bolum-1…8.png` ve
+Üretilmiş 40 görsel: `rozetler/hz-adem/bolum-1…8.png` ve
 `rozetler/hz-sit/bolum-1…4.png` (11 Ağu 2026), `rozetler/hz-nuh/bolum-1…8.png`
 (13 Eki 2026) — 512×512 şeffaf PNG; `rozetler/hz-musa/bolum-1…10.png`
-(13 Eki 2026) ve `rozetler/hz-eyyub/bolum-1…5.png` (15 Eki 2026) — 512×512
-kare, çerçevesiz (`□`).
+(13 Eki 2026), `rozetler/hz-eyyub/bolum-1…5.png` (15 Eki 2026) ve
+`rozetler/hz-yunus/bolum-1…5.png` (16 Eki 2026) — 512×512 kare, çerçevesiz (`□`).
 Madalya görselleri bu matriste izlenmez; sicilleri `ICERIK-GORSEL-SICILI.md`
 §5'tedir (`madalyalar/hz-adem.png`, `hz-sit.png` ve `hz-nuh.png` teslim edildi;
-`hz-musa.png` ve `hz-eyyub.png` kare teslim edildi, çerçeve bekliyor).
+`hz-musa.png`, `hz-eyyub.png` ve `hz-yunus.png` kare teslim edildi, çerçeve bekliyor).
 
 > **12 Ağu 2026 — Hz. İdrîs:** dört rozet **adı** nihai olarak kaydedildi
 > (12 → 16), ama **görselleri henüz üretilmedi.** `rozetler/hz-idris/bolum-1…4.png`
@@ -390,6 +550,48 @@ Madalya görselleri bu matriste izlenmez; sicilleri `ICERIK-GORSEL-SICILI.md`
 > beş rozet ve kitap madalyası **çerçevesiz kare** (§6.2 kuralı) 512×512 PNG;
 > 2K ana dosyalar `gorsel-kaynaklari/` altında. Görsel sütunu `□` — çerçeveyi
 > Hasan ekleyince `✓` olur. Görsel sayaçları 30 → 35 / 186 → 181.
+
+> **16 Eki 2026 — Hz. İbrahim:** dokuz rozet **adı** nihai olarak kaydedildi
+> (39 → 48); görselleri henüz üretilmedi. `rozetler/hz-ibrahim/bolum-1…9.png` ve
+> `madalyalar/hz-ibrahim.png` yer tutucudur, görsel sayaçları 35/181 olarak kaldı.
+> Brifler `KITAP-HZ-IBRAHIM-ICERIK-final.md` §H'sindedir. Kitap katalogda
+> "preparing" durumunda (yayına alınmadı).
+
+> **16 Eki 2026 — Hz. Yusuf:** on rozet **adı** nihai olarak kaydedildi
+> (48 → 58); görselleri henüz üretilmedi. `rozetler/hz-yusuf/bolum-1…10.png` ve
+> `madalyalar/hz-yusuf.png` yer tutucudur, görsel sayaçları 35/181 olarak kaldı.
+> Brifler `KITAP-HZ-YUSUF-ICERIK-final.md` §H'sindedir. Kitap katalogda
+> "preparing" durumunda (yayına alınmadı).
+
+> **16 Eki 2026 — Hz. Süleyman:** yedi rozet **adı** nihai olarak kaydedildi
+> (58 → 65); görselleri henüz üretilmedi. `rozetler/hz-suleyman/bolum-1…7.png` ve
+> `madalyalar/hz-suleyman.png` yer tutucudur, görsel sayaçları 35/181 olarak kaldı.
+> Brifler `KITAP-HZ-SULEYMAN-ICERIK-final.md` §H'sindedir. Kitap katalogda
+> "preparing" durumunda (yayına alınmadı).
+
+> **16 Eki 2026 — Hz. Yunus:** beş rozet **adı** nihai olarak kaydedildi
+> (65 → 70); görselleri henüz üretilmedi. `rozetler/hz-yunus/bolum-1…5.png` ve
+> `madalyalar/hz-yunus.png` yer tutucudur, görsel sayaçları 35/181 olarak kaldı.
+> Brifler `KITAP-HZ-YUNUS-ICERIK-final.md` §H'sindedir (B2 sembolü "dalgalarda beyaz
+> yelken ve ışık"; Faz 1'deki kura çubukları değil). Kitap katalogda "preparing"
+> durumunda (yayına alınmadı).
+>
+> **16 Eki 2026 — Hz. Yunus görselleri teslim edildi** (`/gorsel-uretim yunus`):
+> beş rozet ve kitap madalyası **çerçevesiz kare** (§6.2 kuralı) 512×512 PNG;
+> 2K ana dosyalar `gorsel-kaynaklari/` altında. Görsel sütunu `□` — çerçeveyi
+> Hasan ekleyince `✓` olur. Görsel sayaçları 35 → 40 / 181 → 176.
+
+> **16 Eki 2026 — Hz. Îsâ:** sekiz rozet **adı** nihai olarak kaydedildi
+> (70 → 78); görselleri henüz üretilmedi. `rozetler/hz-isa/bolum-1…8.png` ve
+> `madalyalar/hz-isa.png` yer tutucudur, görsel sayaçları 35/181 olarak kaldı.
+> Brifler `KITAP-HZ-ISA-ICERIK-final.md` §H'sindedir. Kitap katalogda "preparing"
+> durumunda (yayına alınmadı).
+
+> **16 Eki 2026 — Hz. İsmail:** altı rozet **adı** nihai olarak kaydedildi
+> (78 → 84); görselleri henüz üretilmedi. `rozetler/hz-ismail/bolum-1…6.png` ve
+> `madalyalar/hz-ismail.png` yer tutucudur, görsel sayaçları 35/181 olarak kaldı.
+> Brifler `KITAP-HZ-ISMAIL-ICERIK-final.md` §H'sindedir. Kitap katalogda "preparing"
+> durumunda (yayına alınmadı).
 
 ---
 
