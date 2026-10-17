@@ -1939,7 +1939,7 @@ MD geçerlidir**; oturum durur ve Hasan'a sorar.
 
 | Ayar | Standart |
 |---|---|
-| Model | Magnific · **Seedream 5 Pro** · **2K** |
+| Model | Magnific · **Seedream 5 Pro** · sahne **2K** (100 kredi) · rozet, madalya, kitap kapağı, harita durağı **1.5K** (75 kredi) — KARAR 17 Eki 2026 (Hasan): sahnede kaliteden taviz verilmez; küçük gösterilen ve geçici görsellerde 1.5K yeter |
 | Oran | Sahne **16:9** · rozet ve madalya **1:1** |
 | Sahne stil referansı | Proje kökündeki **`stil-referans-gorsel.jpg`** — Magnific'e stil referansı olarak verilir. Ayrıntılı, sıcak, orta doygunlukta "suluboya üstüne net boyama" masal kitabı dili; soluk pastel yok |
 | Rozet/madalya stil referansı | Sahnelerle aynı **`stil-referans-gorsel.jpg`**; pilotta onaylanan ilk kare rozet, kitabın diğer rozet ve madalyasına ikinci referans olur. Çerçeveli eski rozetler referans **verilmez** (çerçeveyi geri getirir) |
@@ -2009,7 +2009,7 @@ sicilin kitap bölümüne yazılır; standart değişecekse önce bu tablo günc
 3. **Sahne teknik işlemi:** gerekirse büyütme → 16:9 kırpma → **1920×1080
    `.jpg`** → yer tutucunun **üzerine aynı adla** yazma → boyut doğrulama
    (`sips -g pixelWidth -g pixelHeight`).
-4. **Rozet/madalya teknik işlemi:** 1:1 · 2K üretim → **arka plan kaldırılmaz**
+4. **Rozet/madalya teknik işlemi:** 1:1 · 1.5K üretim → **arka plan kaldırılmaz**
    → orijinal ana dosya olarak `gorsel-kaynaklari/` altına kaydedilir →
    küçültülmüş **512×512 kare `.png`** yer tutucunun **üzerine aynı adla**
    yazılır → boyut doğrulama. Ayrıntı aşağıda.
@@ -2057,7 +2057,7 @@ kod değişmez, yol değişmez.
   | Ne | Yol | Biçim |
   |---|---|---|
   | Site dosyası | `public/rozetler/hz-{key}/bolum-{n}.png` · `public/madalyalar/hz-{key}.png` | 512×512 kare `.png`, opak |
-  | Ana dosya (Photoshop için) | `gorsel-kaynaklari/rozetler/hz-{key}/bolum-{n}.png` · `gorsel-kaynaklari/madalyalar/hz-{key}.png` | Magnific orijinali (2K), işlenmemiş |
+  | Ana dosya (Photoshop için) | `gorsel-kaynaklari/rozetler/hz-{key}/bolum-{n}.png` · `gorsel-kaynaklari/madalyalar/hz-{key}.png` | Magnific orijinali (1.5K; 17 Eki 2026'dan önceki kitaplarda 2K), işlenmemiş |
 
   `gorsel-kaynaklari/` `public/` dışındadır, siteye servis edilmez ve repoya
   girmez (`.gitignore`). Hasan çerçeveyi ana dosyadan çalışır, sonucu
