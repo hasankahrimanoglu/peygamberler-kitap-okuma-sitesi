@@ -415,9 +415,9 @@ Bölüm sayıları ve değerler `KITAP-KATALOGU-VE-URETIM-PLANI.md`'den alınmı
 **Görsel durumu kısaltmaları:** `—` üretilmedi · `□` kare teslim edildi,
 çerçeve bekliyor (13 Eki 2026'dan itibaren üretim böyle teslim eder —
 ICERIK-GORSEL-SICILI §6.2) · `✓` çerçeveli son dosya yerinde.
-**17 Ekim 2026 itibarıyla 59 rozet görseli teslim edildi** (Hz. Âdem 8 ·
+**17 Ekim 2026 itibarıyla 66 rozet görseli teslim edildi** (Hz. Âdem 8 ·
 Hz. Şît 4 · Hz. Nûh 8 — 512×512 şeffaf PNG, çerçeveli; Hz. Musa 10 · Hz. Eyyûb 5 ·
-Hz. Yunus 5 · Hz. İbrahim 9 · Hz. Yusuf 10 — 512×512 kare PNG, çerçeve bekliyor). Kalan 157 rozet görseli bekliyor.
+Hz. Yunus 5 · Hz. İbrahim 9 · Hz. Yusuf 10 · Hz. Süleyman 7 — 512×512 kare PNG, çerçeve bekliyor). Kalan 150 rozet görseli bekliyor.
 
 ### Bölge 1 — İlk İzler Vadisi (6 kitap · 34 rozet)
 
@@ -457,7 +457,7 @@ Hz. Yunus 5 · Hz. İbrahim 9 · Hz. Yusuf 10 — 512×512 kare PNG, çerçeve b
 | Kitap | bookKey | Böl. | Anahtar aralığı | Ana değerler | İçerik | Görsel |
 |---|---|---:|---|---|---|---|
 | Hz. Dâvûd | `davud` | 6 | `hz-davud/bolum-1…6` | cesaret, adalet, emek, şükür | Bekliyor (K1) | — |
-| Hz. Süleyman | `suleyman` | 7 | `hz-suleyman/bolum-1…7` | hikmet, şükür, merhamet, adalet | ✅ Nihai (§2) | — 0/7 |
+| Hz. Süleyman | `suleyman` | 7 | `hz-suleyman/bolum-1…7` | hikmet, şükür, merhamet, adalet | ✅ Nihai (§2) | □ 7/7 |
 | Hz. İlyas | `ilyas` | 5 | `hz-ilyas/bolum-1…5` | tevhid, cesaret, sabır, doğruluk | Bekliyor (K2) | — |
 | Hz. Elyesa | `elyesa` | 4 | `hz-elyesa/bolum-1…4` | emanet, devamlılık, iyilik, sabır | Bekliyor (K2) | — |
 
@@ -505,18 +505,18 @@ Hz. Yunus 5 · Hz. İbrahim 9 · Hz. Yusuf 10 — 512×512 kare PNG, çerçeve b
 | Nihai rozet adı kayıtlı | 84 |
 | Geçici demo adı kayıtlı | 0 |
 | Ad bekleyen | 132 |
-| Üretilmiş rozet görseli | 59 |
-| Rozet görseli bekleyen | 157 |
+| Üretilmiş rozet görseli | 66 |
+| Rozet görseli bekleyen | 150 |
 
-Üretilmiş 59 görsel: `rozetler/hz-adem/bolum-1…8.png` ve
+Üretilmiş 66 görsel: `rozetler/hz-adem/bolum-1…8.png` ve
 `rozetler/hz-sit/bolum-1…4.png` (11 Ağu 2026), `rozetler/hz-nuh/bolum-1…8.png`
 (13 Eki 2026) — 512×512 şeffaf PNG; `rozetler/hz-musa/bolum-1…10.png`
 (13 Eki 2026), `rozetler/hz-eyyub/bolum-1…5.png` (15 Eki 2026) ve
 `rozetler/hz-yunus/bolum-1…5.png` (16 Eki 2026), `rozetler/hz-ibrahim/bolum-1…9.png`
-ve `rozetler/hz-yusuf/bolum-1…10.png` (17 Eki 2026) — 512×512 kare, çerçevesiz (`□`).
+`rozetler/hz-yusuf/bolum-1…10.png` ve `rozetler/hz-suleyman/bolum-1…7.png` (17 Eki 2026) — 512×512 kare, çerçevesiz (`□`).
 Madalya görselleri bu matriste izlenmez; sicilleri `ICERIK-GORSEL-SICILI.md`
 §5'tedir (`madalyalar/hz-adem.png`, `hz-sit.png` ve `hz-nuh.png` teslim edildi;
-`hz-musa.png`, `hz-eyyub.png`, `hz-yunus.png`, `hz-ibrahim.png` ve `hz-yusuf.png` kare
+`hz-musa.png`, `hz-eyyub.png`, `hz-yunus.png`, `hz-ibrahim.png`, `hz-yusuf.png` ve `hz-suleyman.png` kare
 teslim edildi, çerçeve bekliyor).
 
 > **12 Ağu 2026 — Hz. İdrîs:** dört rozet **adı** nihai olarak kaydedildi
@@ -570,6 +570,11 @@ teslim edildi, çerçeve bekliyor).
 > `madalyalar/hz-suleyman.png` yer tutucudur, görsel sayaçları 35/181 olarak kaldı.
 > Brifler `KITAP-HZ-SULEYMAN-ICERIK-final.md` §H'sindedir. Kitap katalogda
 > "preparing" durumunda (yayına alınmadı).
+>
+> **17 Eki 2026 — Hz. Süleyman görselleri teslim edildi** (`/gorsel-uretim suleyman`):
+> yedi rozet ve kitap madalyası **çerçevesiz kare** (§6.2 kuralı) 512×512 PNG;
+> 2K ana dosyalar `gorsel-kaynaklari/` altında. Görsel sütunu `□` — çerçeveyi
+> Hasan ekleyince `✓` olur. Görsel sayaçları 59 → 66 / 157 → 150.
 
 > **16 Eki 2026 — Hz. Yunus:** beş rozet **adı** nihai olarak kaydedildi
 > (65 → 70); görselleri henüz üretilmedi. `rozetler/hz-yunus/bolum-1…5.png` ve

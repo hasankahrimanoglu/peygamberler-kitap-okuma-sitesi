@@ -1098,10 +1098,10 @@ Devam 3).
 
 ## 4i. Hz. Süleyman (`bookKey: suleyman`) — 42 görsel
 
-**Durum (16 Eki 2026):** aktarıldı, katalogda **"preparing"** (yayında değil;
-katalogda vitrin kitabı). 42 sahne slotunun hepsi **yer tutucu**
-(`npm run gorsel-yertutucu -- suleyman`); kitap kapağı, harita durağı, 7 rozet ve
-madalya da yer tutucudur. Briflerin tamamı
+**Durum (17 Eki 2026):** aktarıldı, katalogda **"preparing"** (yayında değil;
+katalogda vitrin kitabı). 42 sahne, kitap kapağı, harita durağı, 7 rozet ve madalya
+**üretildi** (`/gorsel-uretim suleyman`, aşağıdaki üretim kararları); rozet ve madalya
+çerçeve bekliyor, ses yer tutucu. Briflerin tamamı
 `kitap-icerikleri/KITAP-HZ-SULEYMAN-ICERIK-final.md` §B, §C, §D ve §H'dedir
 (İngilizce ana üretim promptu, ortak stil bloğu, ortak negatif, **karakter blokları
 (EN)** ve rozet sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer,
@@ -1154,89 +1154,121 @@ Devam 3).
 > omurga: hüdhüd (B2, B4–B5; kapak, durak, B4 rozeti ve madalyada ayrı imgeler),
 > mühürlü mektup (B5) ve asa (B7).
 
+> **Üretim kararları (17 Eki 2026, `/gorsel-uretim suleyman`):** §6.2 set geneli
+> standardı uygulandı (Seedream 5 Pro · 2K · `stil-referans-gorsel.jpg`). Figürlü
+> sahnelerde üçer-dörder varyant üretildi; seçilen her Katman 1 başı büyütülerek
+> kontrol edildi. Kitaba özgü notlar:
+> - **Ad prompta girmez** (Yunus, İbrahim, Yusuf emsali): kişiler "a mature man / a young
+>   man / a tall man / a woman seen from behind" olarak verildi; karakter blokları adsız.
+>   Başörtüsü tarifine "only cloth is visible, no cheek, jaw, beard, ear or hair" eklendi.
+> - **Karakter referansları:** yetişkin Hz. Süleyman için `bolum-2/mescit-avlusu`, Sebe
+>   melikesi için `bolum-5/danisma-salonu`, hüdhüd için `bolum-4/donen-hudhud`; `iki-taht`
+>   için `bos-yer` (aynı açı), `degisen-taht` için `iki-taht` ikinci referans verildi.
+> - **Yüz hattı sızması:** pilotta `hukum-avlusu`'nun ilk üç adayında başörtüsü kenarından
+>   sakal görünüyordu; sıkılaştırılmış prompttan temiz aday seçildi. `kuzeye-bakan-pencere`'nin
+>   bir adayında peçe kenarında ten şeridi seçiliyordu, reddedildi.
+> - **Rötuş:** `iki-taht`'ta öndeki ileri gelen (Katman 3) başı açık, uzun saçlı-sakallı
+>   hâliyle yaygın Hz. Îsâ ikonografisini andırıyordu; baş bölgesi maskelenip sarıklı,
+>   kısa sakallı olarak rötuşlandı.
+> - **Reddedilenler:** minareye benzeyen bayraklı kule (`sebe-sabahi`), sivri/kemerli
+>   pencereler (`danisma-salonu` iki aday), parmaklıklı ve kafesli pencere
+>   (`kuzeye-bakan-pencere`), modern tele benzeyen iplere dizilmiş kuşlar ve yasak hüdhüd
+>   (`bolum-4/kapak`), toz bulutunun içinde atlı figürler (`vadide-toz`), arkada yarı saydam
+>   "hayalet" figür (`iki-taht`), Yunan tapınağına benzeyen yapı (kitap kapağı iki aday),
+>   kâğıt kenarı çerçeveli rozet adayları.
+> - **Brife göre küçük sapmalar:** `mescitte-isik`'te asanın yalnız alt ucu değil, üst
+>   kenardan giren uzun bir bölümü görünüyor (kişi yok); `sabah-kosku`'nda billur zemin
+>   kapıdan mavi bir parıltı olarak seçiliyor; `bos-dal`'daki tüy dalda dik duruyor.
+> - **Kredi kuralı (Hasan, 17 Eki 2026):** küçük kompozisyon kusuru için en fazla bir
+>   yeniden üretim turu; sonra en yakın aday kullanılır. Rozet 7 bu kuralla seçildi.
+> - **Rozet ikinci referansı:** onaylanan pilot `rozetler/hz-suleyman/bolum-1.png`.
+> - **Kapak ve harita durağı:** yayındaki `hz-yusuf/kapak.png` ve `hz-yusuf/harita-kapak.jpg`
+>   görsel referans verilerek aynı aileden üretildi. Kapak **yazısız**; "Hz. Süleyman"
+>   başlığı tasarımda eklenecek. 2K ana dosyalar `gorsel-kaynaklari/kitaplar/hz-suleyman/`.
+
 ### Kitap kapağı ve harita durağı
 
 | Dosya | Biçim | Durum | Görsel brifi |
 |---|---|---|---|
-| `hz-suleyman/kapak.png` | 600×900, 2:3 dikey | ⬜ Bekliyor | Lacivert deri dokulu kapakta altın yıldız çerçeveli madalyon; içinde sabah göğünde kanatlarını açmış, taç tüyü kabarık bir hüdhüd, aşağıda teraslı bağlar ve sıra sıra taş sütunlu sade bir yapı. **Yazısız** üretilir; "Hz. Süleyman" yazısı tasarım aşamasında eklenir; gagada mektup yok (final MD §C1) |
-| `hz-suleyman/harita-kapak.jpg` | Kare, 512×512 veya üstü | ⬜ Bekliyor | Hardal-okr zemin üzerinde altın çerçeveli madalyonda, dalda duran, taç tüyü açık tek bir hüdhüd (final MD §C2) |
+| `hz-suleyman/kapak.png` | 600×900, 2:3 dikey | ✅ Hazır | Lacivert deri dokulu kapakta altın yıldız çerçeveli madalyon; içinde sabah göğünde kanatlarını açmış, taç tüyü kabarık bir hüdhüd, aşağıda teraslı bağlar ve sıra sıra taş sütunlu sade bir yapı. **Yazısız** üretilir; "Hz. Süleyman" yazısı tasarım aşamasında eklenir; gagada mektup yok (final MD §C1) |
+| `hz-suleyman/harita-kapak.jpg` | Kare, 512×512 veya üstü | ✅ Hazır | Hardal-okr zemin üzerinde altın çerçeveli madalyonda, dalda duran, taç tüyü açık tek bir hüdhüd (final MD §C2) |
 
 ### Bölüm 1 — Sürü ve Bağ Davası
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-suleyman/bolum-1/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Şafak ışığında teraslı yamaçlara uzanan üzüm bağları, taş duvarlar ve uzakta düz damlı taş evler |
-| `hz-suleyman/bolum-1/hukum-avlusu.jpg` | 1. Kısım | A | Hz. Dâvûd — Katman 1, arkadan, yüz görünmez (karma sahne). Hz. Süleyman (genç) — Katman 1, arkadan, yüz görünmez. Bağ sahibi ve sürü sahibi — Katman 3, karşıdan, sakin. Karakter bloğu yok (tek sahne; tarif promptta). | ⬜ Bekliyor | Sabah ışığında kesme taş bir avlu; sedir bir oturakta arkası dönük oturan bir hükümdar, onun gerisinde küçük bir taburede genç oğlu ve karşılarında hasır minderlerde oturan iki köylü |
-| `hz-suleyman/bolum-1/gece-bag.jpg` | 1. Kısım | A | — | ⬜ Bekliyor | Ay ışığında bir bağın alçak taş duvarındaki açıklıktan asmaların arasına giren beyaz koyunlar |
-| `hz-suleyman/bolum-1/avludaki-koyunlar.jpg` | Devam | B | Bağ sahibi — Katman 3, yandan, yüzü görünebilir. | ⬜ Bekliyor | Taş bir ağılın önünde otlayan koyunlar; ön planda taş sekide oturup yün saran yaşlıca bir köylü, yanında süt dolu bir toprak kap ve yün dolu bir sepet |
-| `hz-suleyman/bolum-1/onarilan-bag.jpg` | Devam | B | Sürü sahibi — Katman 3, yandan, yüzü görünebilir. | ⬜ Bekliyor | Bahar sabahı bir bağda, alçak taş duvara son taşları yerleştiren genç bir adam; önünde yeni bağlanmış genç asma filizleri |
-| `hz-suleyman/bolum-1/yeniden-salkim.jpg` | Devam | B | — | ⬜ Bekliyor | Gün batımında mor salkımlarla dolu bir bağ; ön planda salkım dolu bir örgü sepet, uzakta yamaçta otlayan koyunlar |
+| `hz-suleyman/bolum-1/kapak.jpg` | Açılış | A | — | ✅ Hazır | Şafak ışığında teraslı yamaçlara uzanan üzüm bağları, taş duvarlar ve uzakta düz damlı taş evler |
+| `hz-suleyman/bolum-1/hukum-avlusu.jpg` | 1. Kısım | A | Hz. Dâvûd — Katman 1, arkadan, yüz görünmez (karma sahne). Hz. Süleyman (genç) — Katman 1, arkadan, yüz görünmez. Bağ sahibi ve sürü sahibi — Katman 3, karşıdan, sakin. Karakter bloğu yok (tek sahne; tarif promptta). | ✅ Hazır | Sabah ışığında kesme taş bir avlu; sedir bir oturakta arkası dönük oturan bir hükümdar, onun gerisinde küçük bir taburede genç oğlu ve karşılarında hasır minderlerde oturan iki köylü |
+| `hz-suleyman/bolum-1/gece-bag.jpg` | 1. Kısım | A | — | ✅ Hazır | Ay ışığında bir bağın alçak taş duvarındaki açıklıktan asmaların arasına giren beyaz koyunlar |
+| `hz-suleyman/bolum-1/avludaki-koyunlar.jpg` | Devam | B | Bağ sahibi — Katman 3, yandan, yüzü görünebilir. | ✅ Hazır | Taş bir ağılın önünde otlayan koyunlar; ön planda taş sekide oturup yün saran yaşlıca bir köylü, yanında süt dolu bir toprak kap ve yün dolu bir sepet |
+| `hz-suleyman/bolum-1/onarilan-bag.jpg` | Devam | B | Sürü sahibi — Katman 3, yandan, yüzü görünebilir. | ✅ Hazır | Bahar sabahı bir bağda, alçak taş duvara son taşları yerleştiren genç bir adam; önünde yeni bağlanmış genç asma filizleri |
+| `hz-suleyman/bolum-1/yeniden-salkim.jpg` | Devam | B | — | ✅ Hazır | Gün batımında mor salkımlarla dolu bir bağ; ön planda salkım dolu bir örgü sepet, uzakta yamaçta otlayan koyunlar |
 
 ### Bölüm 2 — Kuş Dili ve Rüzgâr
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-suleyman/bolum-2/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Sabah ışığında tepelere yayılmış, düz damlı kireç taşı evlerden oluşan bir şehir ve üzerinde açık, geniş bir gökyüzü |
-| `hz-suleyman/bolum-2/kuslu-gok.jpg` | 1. Kısım | A | — | ⬜ Bekliyor | Sabah göğünde süzülen farklı türde kuşlar ve yaşlı bir zeytin ağacının dallarına konmuş ötüşen küçük kuşlar |
-| `hz-suleyman/bolum-2/ruzgarli-tepeler.jpg` | 1. Kısım | A | — | ⬜ Bekliyor | Tepelerin üzerinde aynı yöne eğilen otlar ve zeytin dalları; gökte yumuşakça sürüklenen bulutlar ve havada uçuşan yapraklar |
-| `hz-suleyman/bolum-2/mescit-avlusu.jpg` | Devam | B | Hz. Süleyman — Katman 1, arkadan, yüz görünmez; karakter bloğu: Hz. Süleyman (karma sahne). Ustalar — Katman 3, uzak. Cinler çizilmez (Faz 1 KARAR 2a). | ⬜ Bekliyor | Sabah ışığında yükselen sade bir taş yapı; iskelelerde taş yontan ustalar ve ön planda avlunun basamağında arkası dönük duran uzun boylu bir adam |
-| `hz-suleyman/bolum-2/bakir-kazanlar.jpg` | Devam | B | yok — cinlerin emeği; cinler çizilmez (Faz 1 KARAR 2a), insan işçi de konmaz ki iş insanlara mal edilmesin | ⬜ Bekliyor | Taş bir oluktan parlayarak akan turuncu erimiş bakır ve yanında sıra sıra duran, havuz kadar büyük bakır kazanlar |
-| `hz-suleyman/bolum-2/aksam-gogu.jpg` | Devam | B | Hz. Süleyman — Katman 1, arkadan, yüz görünmez; karakter bloğu: Hz. Süleyman. | ⬜ Bekliyor | Gün batımında düz bir taş damın kenarında arkası dönük duran, asalı uzun boylu bir adam; gökte yuvalarına dönen kuş sürüsü ve uzakta ufka uzanan bir yol |
+| `hz-suleyman/bolum-2/kapak.jpg` | Açılış | A | — | ✅ Hazır | Sabah ışığında tepelere yayılmış, düz damlı kireç taşı evlerden oluşan bir şehir ve üzerinde açık, geniş bir gökyüzü |
+| `hz-suleyman/bolum-2/kuslu-gok.jpg` | 1. Kısım | A | — | ✅ Hazır | Sabah göğünde süzülen farklı türde kuşlar ve yaşlı bir zeytin ağacının dallarına konmuş ötüşen küçük kuşlar |
+| `hz-suleyman/bolum-2/ruzgarli-tepeler.jpg` | 1. Kısım | A | — | ✅ Hazır | Tepelerin üzerinde aynı yöne eğilen otlar ve zeytin dalları; gökte yumuşakça sürüklenen bulutlar ve havada uçuşan yapraklar |
+| `hz-suleyman/bolum-2/mescit-avlusu.jpg` | Devam | B | Hz. Süleyman — Katman 1, arkadan, yüz görünmez; karakter bloğu: Hz. Süleyman (karma sahne). Ustalar — Katman 3, uzak. Cinler çizilmez (Faz 1 KARAR 2a). | ✅ Hazır | Sabah ışığında yükselen sade bir taş yapı; iskelelerde taş yontan ustalar ve ön planda avlunun basamağında arkası dönük duran uzun boylu bir adam |
+| `hz-suleyman/bolum-2/bakir-kazanlar.jpg` | Devam | B | yok — cinlerin emeği; cinler çizilmez (Faz 1 KARAR 2a), insan işçi de konmaz ki iş insanlara mal edilmesin | ✅ Hazır | Taş bir oluktan parlayarak akan turuncu erimiş bakır ve yanında sıra sıra duran, havuz kadar büyük bakır kazanlar |
+| `hz-suleyman/bolum-2/aksam-gogu.jpg` | Devam | B | Hz. Süleyman — Katman 1, arkadan, yüz görünmez; karakter bloğu: Hz. Süleyman. | ✅ Hazır | Gün batımında düz bir taş damın kenarında arkası dönük duran, asalı uzun boylu bir adam; gökte yuvalarına dönen kuş sürüsü ve uzakta ufka uzanan bir yol |
 
 ### Bölüm 3 — Karınca Vadisi
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-suleyman/bolum-3/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Sabah ışığında taşlı yamaçlar arasında uzanan, kuru otlu ve toprak yollu geniş bir vadi; uzakta yolun üzerinde ince bir toz bulutu |
-| `hz-suleyman/bolum-3/atin-boynu.jpg` | 1. Kısım | A | Hz. Süleyman — Katman 1, yalnız el ve giysi yeni; baş, omuz ve beden kadraj dışında. Karakter bloğu prompta eklenmez (yakın planda bütün figürü çağırır); yalnız yen rengi bloktan alındı (krem-beyaz). | ⬜ Bekliyor | İkindi ışığında kızıl-kahverengi bir atın parlak boynu ve yelesi; boynunu yavaşça sıvazlayan, krem-beyaz bir cüppe yeninin içinden uzanan bir el |
-| `hz-suleyman/bolum-3/karinca-yolu.jpg` | 1. Kısım | A | — | ⬜ Bekliyor | Yerden, karınca boyundan bakış: kuru otların arasında buğday taneleri taşıyan bir sıra karınca ve küçük bir yuva ağzı; arkada bulanık, çok uzakta bir toz bulutu |
-| `hz-suleyman/bolum-3/yuvaya-donus.jpg` | Devam | B | — | ⬜ Bekliyor | Kuru otların arasında toprak bir karınca yuvasının ağzı; son birkaç karınca içeri giriyor, üzerlerine ılık bir ışık düşüyor |
-| `hz-suleyman/bolum-3/vadide-toz.jpg` | Devam | B | Hz. Süleyman — Katman 1, arkadan, yüz görünmez; karakter bloğu: Hz. Süleyman. Ordu yalnız toz bulutu (içinde cinler de olduğu için figürsüz; Faz 1 KARAR 2a). | ⬜ Bekliyor | Ön planda bir taşın üzerinde tek bir karınca; orta planda yolun kenarında başı hafifçe eğik, arkası dönük duran asalı bir adam; geride yükselen altın renkli bir toz bulutu ve düzenli uçan kuşlar |
-| `hz-suleyman/bolum-3/aksam-vadisi.jpg` | Devam | B | — | ⬜ Bekliyor | Gün batımında sessizleşmiş geniş bir vadi; tozu yatışmış toprak yol ve otların arasında ışıkta parlayan ince karınca yolları |
+| `hz-suleyman/bolum-3/kapak.jpg` | Açılış | A | — | ✅ Hazır | Sabah ışığında taşlı yamaçlar arasında uzanan, kuru otlu ve toprak yollu geniş bir vadi; uzakta yolun üzerinde ince bir toz bulutu |
+| `hz-suleyman/bolum-3/atin-boynu.jpg` | 1. Kısım | A | Hz. Süleyman — Katman 1, yalnız el ve giysi yeni; baş, omuz ve beden kadraj dışında. Karakter bloğu prompta eklenmez (yakın planda bütün figürü çağırır); yalnız yen rengi bloktan alındı (krem-beyaz). | ✅ Hazır | İkindi ışığında kızıl-kahverengi bir atın parlak boynu ve yelesi; boynunu yavaşça sıvazlayan, krem-beyaz bir cüppe yeninin içinden uzanan bir el |
+| `hz-suleyman/bolum-3/karinca-yolu.jpg` | 1. Kısım | A | — | ✅ Hazır | Yerden, karınca boyundan bakış: kuru otların arasında buğday taneleri taşıyan bir sıra karınca ve küçük bir yuva ağzı; arkada bulanık, çok uzakta bir toz bulutu |
+| `hz-suleyman/bolum-3/yuvaya-donus.jpg` | Devam | B | — | ✅ Hazır | Kuru otların arasında toprak bir karınca yuvasının ağzı; son birkaç karınca içeri giriyor, üzerlerine ılık bir ışık düşüyor |
+| `hz-suleyman/bolum-3/vadide-toz.jpg` | Devam | B | Hz. Süleyman — Katman 1, arkadan, yüz görünmez; karakter bloğu: Hz. Süleyman. Ordu yalnız toz bulutu (içinde cinler de olduğu için figürsüz; Faz 1 KARAR 2a). | ✅ Hazır | Ön planda bir taşın üzerinde tek bir karınca; orta planda yolun kenarında başı hafifçe eğik, arkası dönük duran asalı bir adam; geride yükselen altın renkli bir toz bulutu ve düzenli uçan kuşlar |
+| `hz-suleyman/bolum-3/aksam-vadisi.jpg` | Devam | B | — | ✅ Hazır | Gün batımında sessizleşmiş geniş bir vadi; tozu yatışmış toprak yol ve otların arasında ışıkta parlayan ince karınca yolları |
 
 ### Bölüm 4 — Kaybolan Hüdhüd
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-suleyman/bolum-4/kapak.jpg` | Açılış | A | Hz. Süleyman — Katman 1, arkadan, uzak plan, yüz görünmez; karakter bloğu: Hz. Süleyman. | ⬜ Bekliyor | Sabah ışığında taş duvarlar ve yaşlı ağaçlarla çevrili bir avlu; dallara ve duvarlara sıra sıra konmuş kuşlar ve aralarında arkası dönük, yavaşça yürüyen uzun boylu bir adam |
-| `hz-suleyman/bolum-4/bos-dal.jpg` | 1. Kısım | A | — | ⬜ Bekliyor | Yakın planda, kuşların yan yana dizildiği bir zeytin dalı; sıranın ortasında boş kalan bir yer ve dala takılı kalmış tek bir çizgili tüy |
-| `hz-suleyman/bolum-4/donen-hudhud.jpg` | 1. Kısım | A | — | ⬜ Bekliyor | Kanatlarını açmış, taç tüyü kabarık bir hüdhüd, tozlu bir yoldan gelip taş bir duvarın üzerine konuyor |
-| `hz-suleyman/bolum-4/sebe-sabahi.jpg` | Devam | B | — | ⬜ Bekliyor | Sabah ışığında, hurmalıklar ve yeşil tarlalar arasında yükselen çok katlı kerpiç-taş yapılardan oluşan uzak bir şehir |
-| `hz-suleyman/bolum-4/tas-kolcak.jpg` | Devam | B | Hz. Süleyman — Katman 1, tam arkadan ve hafif yukarıdan, baş dönük değil, yüz görünmez; karakter bloğu: Hz. Süleyman. | ⬜ Bekliyor | Sütunlu bir taş salonda sedir bir oturakta arkası dönük, dimdik oturan uzun boylu bir adam; tam karşısında alçak bir taş dayanağın üzerinde duran hüdhüd |
-| `hz-suleyman/bolum-4/guneye-yol.jpg` | Devam | B | — | ⬜ Bekliyor | Gün batımında taş tepelerden güneye, kum tepelerine doğru uzanan ince bir yol ve ufukta parlayan akşam yıldızı |
+| `hz-suleyman/bolum-4/kapak.jpg` | Açılış | A | Hz. Süleyman — Katman 1, arkadan, uzak plan, yüz görünmez; karakter bloğu: Hz. Süleyman. | ✅ Hazır | Sabah ışığında taş duvarlar ve yaşlı ağaçlarla çevrili bir avlu; dallara ve duvarlara sıra sıra konmuş kuşlar ve aralarında arkası dönük, yavaşça yürüyen uzun boylu bir adam |
+| `hz-suleyman/bolum-4/bos-dal.jpg` | 1. Kısım | A | — | ✅ Hazır | Yakın planda, kuşların yan yana dizildiği bir zeytin dalı; sıranın ortasında boş kalan bir yer ve dala takılı kalmış tek bir çizgili tüy |
+| `hz-suleyman/bolum-4/donen-hudhud.jpg` | 1. Kısım | A | — | ✅ Hazır | Kanatlarını açmış, taç tüyü kabarık bir hüdhüd, tozlu bir yoldan gelip taş bir duvarın üzerine konuyor |
+| `hz-suleyman/bolum-4/sebe-sabahi.jpg` | Devam | B | — | ✅ Hazır | Sabah ışığında, hurmalıklar ve yeşil tarlalar arasında yükselen çok katlı kerpiç-taş yapılardan oluşan uzak bir şehir |
+| `hz-suleyman/bolum-4/tas-kolcak.jpg` | Devam | B | Hz. Süleyman — Katman 1, tam arkadan ve hafif yukarıdan, baş dönük değil, yüz görünmez; karakter bloğu: Hz. Süleyman. | ✅ Hazır | Sütunlu bir taş salonda sedir bir oturakta arkası dönük, dimdik oturan uzun boylu bir adam; tam karşısında alçak bir taş dayanağın üzerinde duran hüdhüd |
+| `hz-suleyman/bolum-4/guneye-yol.jpg` | Devam | B | — | ✅ Hazır | Gün batımında taş tepelerden güneye, kum tepelerine doğru uzanan ince bir yol ve ufukta parlayan akşam yıldızı |
 
 ### Bölüm 5 — Kuşun Getirdiği Mektup
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-suleyman/bolum-5/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Şafakta dalga dalga uzanan altın renkli kum tepeleri ve gökyüzünde güneye doğru uçan tek bir küçük kuş |
-| `hz-suleyman/bolum-5/mektup-tasiyan-kus.jpg` | 1. Kısım | A | — | ⬜ Bekliyor | Pençelerinde dürülmüş, mühürlü bir mektup taşıyan hüdhüd, aşağıda uzanan hurmalıkların ve çölün üzerinden uçuyor |
-| `hz-suleyman/bolum-5/danisma-salonu.jpg` | 1. Kısım | A | Sebe melikesi — Katman 1, arkadan, yüz görünmez; karakter bloğu: Sebe melikesi (karma sahne). İleri gelenler — Katman 3, karşıdan, sakin. | ⬜ Bekliyor | Yüksek pencereli bir taş salonda oymalı bir oturakta arkası dönük oturan bir melike; önündeki alçak masada açılmış bir mektup ve çevresinde minderlerde oturup konuşan ileri gelenler |
-| `hz-suleyman/bolum-5/acilmayan-sandiklar.jpg` | Devam | B | Hz. Süleyman — Katman 1, arkadan, yüz görünmez; karakter bloğu: Hz. Süleyman (karma sahne). Hediyeleri getirenler — Katman 3, karşıdan. | ⬜ Bekliyor | Taş bir avluda kapakları kapalı ahşap sandıklar; önlerinde bir elini hafifçe kaldırmış, arkası dönük duran uzun boylu bir adam ve karşısında şaşkın yolcular, dinlenen develer |
-| `hz-suleyman/bolum-5/geri-donen-kervan.jpg` | Devam | B | Kervancılar — Katman 3, çok uzak ve küçük. | ⬜ Bekliyor | Gün batımında kum tepelerinin sırtında, üzerinde kapalı sandıklar taşıyan uzun bir deve dizisi ve yanlarında yürüyen küçük kervancı figürleri |
-| `hz-suleyman/bolum-5/kuzeye-bakan-pencere.jpg` | Devam | B | Sebe melikesi — Katman 1, arkadan, yüz görünmez; karakter bloğu: Sebe melikesi. | ⬜ Bekliyor | Akşam, yüksek bir taş binanın dikdörtgen penceresinden kuzeye uzanan kervan yoluna bakan, arkası dönük bir kadın; eli pervazdaki dürülmüş mektubun üzerinde |
+| `hz-suleyman/bolum-5/kapak.jpg` | Açılış | A | — | ✅ Hazır | Şafakta dalga dalga uzanan altın renkli kum tepeleri ve gökyüzünde güneye doğru uçan tek bir küçük kuş |
+| `hz-suleyman/bolum-5/mektup-tasiyan-kus.jpg` | 1. Kısım | A | — | ✅ Hazır | Pençelerinde dürülmüş, mühürlü bir mektup taşıyan hüdhüd, aşağıda uzanan hurmalıkların ve çölün üzerinden uçuyor |
+| `hz-suleyman/bolum-5/danisma-salonu.jpg` | 1. Kısım | A | Sebe melikesi — Katman 1, arkadan, yüz görünmez; karakter bloğu: Sebe melikesi (karma sahne). İleri gelenler — Katman 3, karşıdan, sakin. | ✅ Hazır | Yüksek pencereli bir taş salonda oymalı bir oturakta arkası dönük oturan bir melike; önündeki alçak masada açılmış bir mektup ve çevresinde minderlerde oturup konuşan ileri gelenler |
+| `hz-suleyman/bolum-5/acilmayan-sandiklar.jpg` | Devam | B | Hz. Süleyman — Katman 1, arkadan, yüz görünmez; karakter bloğu: Hz. Süleyman (karma sahne). Hediyeleri getirenler — Katman 3, karşıdan. | ✅ Hazır | Taş bir avluda kapakları kapalı ahşap sandıklar; önlerinde bir elini hafifçe kaldırmış, arkası dönük duran uzun boylu bir adam ve karşısında şaşkın yolcular, dinlenen develer |
+| `hz-suleyman/bolum-5/geri-donen-kervan.jpg` | Devam | B | Kervancılar — Katman 3, çok uzak ve küçük. | ✅ Hazır | Gün batımında kum tepelerinin sırtında, üzerinde kapalı sandıklar taşıyan uzun bir deve dizisi ve yanlarında yürüyen küçük kervancı figürleri |
+| `hz-suleyman/bolum-5/kuzeye-bakan-pencere.jpg` | Devam | B | Sebe melikesi — Katman 1, arkadan, yüz görünmez; karakter bloğu: Sebe melikesi. | ✅ Hazır | Akşam, yüksek bir taş binanın dikdörtgen penceresinden kuzeye uzanan kervan yoluna bakan, arkası dönük bir kadın; eli pervazdaki dürülmüş mektubun üzerinde |
 
 ### Bölüm 6 — Sırça Köşkteki Taht
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-suleyman/bolum-6/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Sabah ışığının sütunların arasından süzüldüğü, kesme taştan geniş ve sakin bir salon |
-| `hz-suleyman/bolum-6/bos-yer.jpg` | 1. Kısım | A | yok — teklifi yapan cin çizilmez (KARAR 2a); bekleyiş boş kaideyle anlatılır | ⬜ Bekliyor | Taş bir salonda sedir ağacından sade bir oturak ve yanında üzerinde hiçbir şey olmayan geniş, alçak bir taş kaide |
-| `hz-suleyman/bolum-6/iki-taht.jpg` | 1. Kısım | A | Hz. Süleyman — Katman 1, arkadan, yüz görünmez; karakter bloğu: Hz. Süleyman (karma sahne). İleri gelenler — Katman 3. Cinler ve "kitaptan bilgisi olan" kişi çizilmez. | ⬜ Bekliyor | Sade sedir oturağın yanında, az önce boş olan taş kaidenin üzerinde duran oymalı büyük bir taht; önünde arkası dönük duran asalı bir adam ve salonun kenarında hayretle bakan ileri gelenler |
-| `hz-suleyman/bolum-6/degisen-taht.jpg` | Devam | B | — | ⬜ Bekliyor | Aynı oymalı tahtın üzerine bu kez lacivert, sade bir örtü serilmiş, yanına farklı minderler konmuş; salonda öğle ışığı |
-| `hz-suleyman/bolum-6/billur-zemin.jpg` | Devam | B | Sebe melikesi — Katman 1, arkadan, yüz görünmez; bacak ve ayak görünmez (Faz 1 §A2/59); karakter bloğu: Sebe melikesi. | ⬜ Bekliyor | Billurdan düzgün bir zeminin altında berrak su ve yüzen balıklar; taş eşikte arkası dönük duran, eliyle uzun cüppesinin eteğini hafifçe toplamış bir kadın |
-| `hz-suleyman/bolum-6/sabah-kosku.jpg` | Devam | B | — | ⬜ Bekliyor | Sabah ışığında bahçenin ortasında duran, sütunlu, düz damlı sade bir köşk; açık kapısından içerideki parlak zemin görünüyor |
+| `hz-suleyman/bolum-6/kapak.jpg` | Açılış | A | — | ✅ Hazır | Sabah ışığının sütunların arasından süzüldüğü, kesme taştan geniş ve sakin bir salon |
+| `hz-suleyman/bolum-6/bos-yer.jpg` | 1. Kısım | A | yok — teklifi yapan cin çizilmez (KARAR 2a); bekleyiş boş kaideyle anlatılır | ✅ Hazır | Taş bir salonda sedir ağacından sade bir oturak ve yanında üzerinde hiçbir şey olmayan geniş, alçak bir taş kaide |
+| `hz-suleyman/bolum-6/iki-taht.jpg` | 1. Kısım | A | Hz. Süleyman — Katman 1, arkadan, yüz görünmez; karakter bloğu: Hz. Süleyman (karma sahne). İleri gelenler — Katman 3. Cinler ve "kitaptan bilgisi olan" kişi çizilmez. | ✅ Hazır | Sade sedir oturağın yanında, az önce boş olan taş kaidenin üzerinde duran oymalı büyük bir taht; önünde arkası dönük duran asalı bir adam ve salonun kenarında hayretle bakan ileri gelenler |
+| `hz-suleyman/bolum-6/degisen-taht.jpg` | Devam | B | — | ✅ Hazır | Aynı oymalı tahtın üzerine bu kez lacivert, sade bir örtü serilmiş, yanına farklı minderler konmuş; salonda öğle ışığı |
+| `hz-suleyman/bolum-6/billur-zemin.jpg` | Devam | B | Sebe melikesi — Katman 1, arkadan, yüz görünmez; bacak ve ayak görünmez (Faz 1 §A2/59); karakter bloğu: Sebe melikesi. | ✅ Hazır | Billurdan düzgün bir zeminin altında berrak su ve yüzen balıklar; taş eşikte arkası dönük duran, eliyle uzun cüppesinin eteğini hafifçe toplamış bir kadın |
+| `hz-suleyman/bolum-6/sabah-kosku.jpg` | Devam | B | — | ✅ Hazır | Sabah ışığında bahçenin ortasında duran, sütunlu, düz damlı sade bir köşk; açık kapısından içerideki parlak zemin görünüyor |
 
 ### Bölüm 7 — Asa ve Ağaç Kurdu
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-suleyman/bolum-7/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Akşam ışığında sade taş sütunlarla çevrili, sessiz ve geniş bir taş avlu; avlunun ortasında bir zeytin ağacı |
-| `hz-suleyman/bolum-7/iskeledeki-taslar.jpg` | 1. Kısım | A | yok — cinlerin emeği; cinler çizilmez (KARAR 2a) | ⬜ Bekliyor | Sedir iskelelerle sarılı, yarısı yükselmiş bir taş duvar; yerde düzgünce dizilmiş iri yontma taşlar ve yeni dökülmüş bir bakır kazan |
-| `hz-suleyman/bolum-7/mescitte-isik.jpg` | 1. Kısım | A | yok — vefat bölümü: Hz. Süleyman'ın bedeni çizilmez (Faz 1 §B6, §16/1); yalnız asanın alt ucu | ⬜ Bekliyor | Sütunlu, loş bir taş salonda yüksek pencereden süzülen tek bir ışık huzmesi; huzmenin altında taş zemine dayanmış ahşap bir asanın alt ucu |
-| `hz-suleyman/bolum-7/kemirilmis-asa.jpg` | Devam | B | yok — beden ve düşüş çizilmez (§16/1) | ⬜ Bekliyor | Yakın planda, taş zeminde yatan ahşap bir asa parçası; yüzeyinde minik delikler ve yanında küçük bir talaş yığını |
-| `hz-suleyman/bolum-7/mescide-dusen-isik.jpg` | Devam | B | — | ⬜ Bekliyor | Taş bir salonun açık, büyük ahşap kapısından içeri dolan geniş bir sabah ışığı ve taş zeminde uzanan ışık yolu |
-| `hz-suleyman/bolum-7/safakta-tepeler.jpg` | Devam | B | — | ⬜ Bekliyor | Şafakta bağlı yamaçlar ve zeytinlikler; gökyüzünde güneşe doğru uçan bir kuş sürüsü ve rüzgârla hafifçe eğilen otlar |
+| `hz-suleyman/bolum-7/kapak.jpg` | Açılış | A | — | ✅ Hazır | Akşam ışığında sade taş sütunlarla çevrili, sessiz ve geniş bir taş avlu; avlunun ortasında bir zeytin ağacı |
+| `hz-suleyman/bolum-7/iskeledeki-taslar.jpg` | 1. Kısım | A | yok — cinlerin emeği; cinler çizilmez (KARAR 2a) | ✅ Hazır | Sedir iskelelerle sarılı, yarısı yükselmiş bir taş duvar; yerde düzgünce dizilmiş iri yontma taşlar ve yeni dökülmüş bir bakır kazan |
+| `hz-suleyman/bolum-7/mescitte-isik.jpg` | 1. Kısım | A | yok — vefat bölümü: Hz. Süleyman'ın bedeni çizilmez (Faz 1 §B6, §16/1); yalnız asanın alt ucu | ✅ Hazır | Sütunlu, loş bir taş salonda yüksek pencereden süzülen tek bir ışık huzmesi; huzmenin altında taş zemine dayanmış ahşap bir asanın alt ucu |
+| `hz-suleyman/bolum-7/kemirilmis-asa.jpg` | Devam | B | yok — beden ve düşüş çizilmez (§16/1) | ✅ Hazır | Yakın planda, taş zeminde yatan ahşap bir asa parçası; yüzeyinde minik delikler ve yanında küçük bir talaş yığını |
+| `hz-suleyman/bolum-7/mescide-dusen-isik.jpg` | Devam | B | — | ✅ Hazır | Taş bir salonun açık, büyük ahşap kapısından içeri dolan geniş bir sabah ışığı ve taş zeminde uzanan ışık yolu |
+| `hz-suleyman/bolum-7/safakta-tepeler.jpg` | Devam | B | — | ✅ Hazır | Şafakta bağlı yamaçlar ve zeytinlikler; gökyüzünde güneşe doğru uçan bir kuş sürüsü ve rüzgârla hafifçe eğilen otlar |
 
 ## 4j. Hz. Yunus (`bookKey: yunus`) — 29 görsel
 
@@ -1681,11 +1713,11 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 | Hz. Eyyûb | 5 | 25 | **30** | 30 | 0 |
 | Hz. İbrahim | 9 | 45 | **54** | 54 | 0 |
 | Hz. Yusuf | 10 | 50 | **60** | 60 | 0 |
-| Hz. Süleyman | 7 | 35 | **42** | 0 | 42 (hepsi yer tutucu; kitap "preparing") |
+| Hz. Süleyman | 7 | 35 | **42** | 42 | 0 |
 | Hz. Yunus | 5 | 24 | **29** | 29 | 0 |
 | Hz. Îsâ | 8 | 40 | **48** | 0 | 48 (hepsi yer tutucu; kitap "preparing") |
 | Hz. İsmail | 6 | 30 | **36** | 0 | 36 (hepsi yer tutucu; kitap "preparing") |
-| **Genel** | **84** | **403** | **487** | **341** | **147** |
+| **Genel** | **84** | **403** | **487** | **383** | **105** |
 
 **Bu sicilin dışındakiler:**
 
@@ -1715,10 +1747,10 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 | Harita durağı | `kitaplar/hz-yusuf/harita-kapak.jpg` | ✅ Var (600×600, İbrahim durağıyla aynı çerçeve ailesi; sembol: taş kuyu ağzı ve üstünde tek parlak yıldız) |
 | Rozet | `rozetler/hz-yusuf/bolum-1…10.png` | □ 10 kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-yusuf/`) |
 | Madalya | `madalyalar/hz-yusuf.png` | □ Kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; sembol: katlanmış gömlek ve yedi başak) |
-| Kitap kapağı | `kitaplar/hz-suleyman/kapak.png` | ⬜ Yer tutucu (600×900) — brif final MD §C1; **yazısız** üretilir |
-| Harita durağı | `kitaplar/hz-suleyman/harita-kapak.jpg` | ⬜ Yer tutucu (512×512) — brif final MD §C2 (sembol: taç tüyü açık bir hüdhüd) |
-| Rozet | `rozetler/hz-suleyman/bolum-1…7.png` | ⬜ 7 yer tutucu — brifler final MD §H "Rozet üretim brifleri" |
-| Madalya | `madalyalar/hz-suleyman.png` | ⬜ Yer tutucu — brif final MD §C3 (sembol: hüdhüd tüyü ile mühürlü mektup) |
+| Kitap kapağı | `kitaplar/hz-suleyman/kapak.png` | ✅ Var (600×900, **yazısız** — başlık tasarımda eklenecek; 2K ana dosya `gorsel-kaynaklari/kitaplar/hz-suleyman/kapak.png`) |
+| Harita durağı | `kitaplar/hz-suleyman/harita-kapak.jpg` | ✅ Var (600×600, Yusuf durağıyla aynı çerçeve ailesi; sembol: dalda duran, taç tüyü açık hüdhüd) |
+| Rozet | `rozetler/hz-suleyman/bolum-1…7.png` | □ 7 kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-suleyman/`) |
+| Madalya | `madalyalar/hz-suleyman.png` | □ Kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; sembol: hüdhüd tüyü ile mühürlü mektup) |
 | Kitap kapağı | `kitaplar/hz-yunus/kapak.png` | ✅ Var (600×900, **yazısız** — başlık tasarımda eklenecek; 2K ana dosya `gorsel-kaynaklari/kitaplar/hz-yunus/kapak.png`) |
 | Harita durağı | `kitaplar/hz-yunus/harita-kapak.jpg` | ✅ Var (600×600, İbrahim durağıyla aynı çerçeve ailesi; sembol: geniş kabak yaprağı ve gölgesi) |
 | Rozet | `rozetler/hz-yunus/bolum-1…5.png` | □ 5 kare görsel, 512×512 opak, **çerçeve bekliyor** (16 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-yunus/`; B2 sembolü: dalgalarda beyaz yelken ve ışık) |
@@ -1792,6 +1824,10 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 > = 52 görsel.** Yedi bölümün sesli anlatımı da yer tutucudur
 > (`sesli-anlatim/hz-suleyman/`). 15/42 figürlü sahne (§4i); cinler hiçbir görselde
 > çizilmez, B7 figürsüz.
+>
+> ✅ **Görseller teslim edildi (17 Eki 2026, `/gorsel-uretim suleyman`):** 52 görselin
+> 52'si yerinde (42 sahne + kapak + harita durağı + 7 rozet + madalya). Rozet ve
+> madalya çerçevesiz kare; ana dosyalar `gorsel-kaynaklari/` altında. Ses yer tutucu.
 
 > **16 Eki 2026 — Hz. Yunus aktarıldı (yayında değil, "preparing").** Kitap
 > katalog sırasında #23'tür; `public/kitaplar/hz-yunus/` klasörü yoktu, yer tutucu
@@ -1908,6 +1944,25 @@ MD geçerlidir**; oturum durur ve Hasan'a sorar.
 | Sahne stil referansı | Proje kökündeki **`stil-referans-gorsel.jpg`** — Magnific'e stil referansı olarak verilir. Ayrıntılı, sıcak, orta doygunlukta "suluboya üstüne net boyama" masal kitabı dili; soluk pastel yok |
 | Rozet/madalya stil referansı | Sahnelerle aynı **`stil-referans-gorsel.jpg`**; pilotta onaylanan ilk kare rozet, kitabın diğer rozet ve madalyasına ikinci referans olur. Çerçeveli eski rozetler referans **verilmez** (çerçeveyi geri getirir) |
 
+**Aday sayısı ve kredi sınırı (KARAR 17 Eki 2026 — Hasan):**
+
+| Görsel | Aday |
+|---|---:|
+| Kitap kapağı, harita durağı | 1 — geçicidir; Hasan yayından önce kendisi yeniden hazırlar |
+| Bölüm açılışı | 2 |
+| Katman 1 kişinin bulunduğu figürlü sahne | 2 |
+| Diğer sahneler (figürsüz, yalnız Katman 2/3) | 1 |
+| Rozet, madalya | 1 |
+
+- Seçim o turdaki adaylardan yapılır. Küçük kompozisyon kusuru (sembolün güvenli
+  alana tam oturmaması, kadraj, brifle ince farklar) yeniden üretim sebebi değildir;
+  en yakın aday kullanılır ve Hasan'a not düşülür.
+- Tasvir ihlali (Katman 1 yüz/sakal/ten sızması, cami-kubbe-minare, yazı, hayalet
+  figür, yasak nesne) yine reddedilir; önce **rötuş** (`images_retouch`, maskeli,
+  ~10 kredi) denenir, olmazsa **en fazla bir** yeniden üretim turu yapılır.
+- Gerekçe: kredi ve süre. Hz. Süleyman'da 52 görsel için 146 aday üretildi
+  (14.610 kredi); bu düzenle aynı kitap yaklaşık 7.000 kredi tutar.
+
 Resim tekniğini **stil referansı belirler**, final MD'deki ortak stil bloğu
 değil. Bloğun kitaba özgü kısmı (mekân, dönem, palet, nesneler) prompta girer;
 referansla çelişen teknik ifadeler ("soft gouache", "soft edges", soluk pastel
@@ -1947,7 +2002,7 @@ sicilin kitap bölümüne yazılır; standart değişecekse önce bu tablo günc
 
 **Akış:**
 1. **Pilot:** önce 1. bölümün açılışı + bir sahnesi ile bir rozet, yukarıdaki
-   standartla üretilir ve Hasan'a gösterilir. Onay gelmeden seri üretime
+   standartla (aday sayısı tablosuna göre) üretilir ve Hasan'a gösterilir. Onay gelmeden seri üretime
    geçilmez (Magnific kredisi boşa gitmesin). Onaylanan model ve ayarlar kitap
    boyunca sabit tutulur.
 2. **Bölüm bölüm ilerlenir;** her bölüm bitince Hasan'a gösterilir.
