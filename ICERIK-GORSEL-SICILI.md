@@ -227,9 +227,12 @@ kaydeder; uzun prompt metni tekrarlanmaz.
 
 ## 4c. Hz. İdrîs (`bookKey: idris`) — 20 görsel
 
-**Durum (12 Ağu 2026):** 20 slot açıldı · **4 gerçek görsel var, 16 yer tutucu
-bekliyor.** Dört bölüm kapağı (`bolum-1…4/kapak.jpg`) içerik aktarımından önce
-diske konmuştu ve `npm run gorsel-yertutucu -- idris` bunları korudu. Briflerin
+**Durum (17 Eki 2026 — disk kontrolüyle düzeltildi):** 20 slotun **20'si de yer
+tutucu.** 12 Ağu kaydı dört bölüm kapağını (`bolum-1…4/kapak.jpg`) hazır sayıyordu;
+oysa bu dosyalar git'e ilk girdikleri 28 Tem 2026'dan beri `placeholder-sahne.jpg`
+kopyasıdır, gerçek kapak hiç konmamış. Kitap yayında ve 20 sahnenin tamamı yer
+tutucuyla görünüyor. Kitap kapağı (`kapak.png`) ve harita durağı gerçektir; 4 rozet
+ve madalya yer tutucudur (§5). Briflerin
 tamamı `kitap-icerikleri/KITAP-HZ-IDRIS-ICERIK-final.md` §H'dedir (ana
 üretim promptu ve negatif prompt dahil); aşağıdaki tablo yalnız dosya adı,
 akıştaki yer ve `alt` metnini kaydeder.
@@ -245,7 +248,7 @@ akıştaki yer ve `alt` metnini kaydeder.
 
 | Dosya | Akıştaki yer | Öncelik | Durum | Görsel brifi |
 |---|---|---|---|---|
-| `hz-idris/bolum-1/kapak.jpg` | Açılış | A | ✅ Hazır | Sabah ışığında geniş bir otlak, uzakta tepeler ve yamaçta tek bir zeytin ağacı |
+| `hz-idris/bolum-1/kapak.jpg` | Açılış | A | ⬜ Bekliyor | Sabah ışığında geniş bir otlak, uzakta tepeler ve yamaçta tek bir zeytin ağacı |
 | `hz-idris/bolum-1/kizgin-oglen.jpg` | 1. Kısım | A | ⬜ Bekliyor | Öğle güneşinin altında titreşen sıcak hava, kuru otlar ve kısa gölgeler |
 | `hz-idris/bolum-1/yaprak-golgelik.jpg` | 1. Kısım | A | ⬜ Bekliyor | Bir taşın üstüne bırakılmış, iri yapraklardan örülerek yapılmış iki gölgelik |
 | `hz-idris/bolum-1/kuruyan-yaprak.jpg` | Devam | B | ⬜ Bekliyor | Kenarları kıvrılıp kurumaya başlamış tek bir yaprak ve yanında dökülmüş parçaları |
@@ -255,7 +258,7 @@ akıştaki yer ve `alt` metnini kaydeder.
 
 | Dosya | Akıştaki yer | Öncelik | Durum | Görsel brifi |
 |---|---|---|---|---|
-| `hz-idris/bolum-2/kapak.jpg` | Açılış | A | ✅ Hazır | Sabah ışığında, kayaların arasına kurulmuş tenha bir düzlük ve yere serilmiş hasırlar |
+| `hz-idris/bolum-2/kapak.jpg` | Açılış | A | ⬜ Bekliyor | Sabah ışığında, kayaların arasına kurulmuş tenha bir düzlük ve yere serilmiş hasırlar |
 | `hz-idris/bolum-2/topraktaki-ders.jpg` | 1. Kısım | A | ⬜ Bekliyor | Düzeltilmiş toprak zemine çizilmiş sade şekiller, yanında bir çubuk ve dizilmiş çakıl taşları |
 | `hz-idris/bolum-2/suyun-yolu.jpg` | Devam | B | ⬜ Bekliyor | Toprakta açılmış küçük bir arkta akan berrak su ve yolu ikiye ayıran ince bir set |
 | `hz-idris/bolum-2/kuzeydeki-yildiz.jpg` | Devam | B | ⬜ Bekliyor | Gece gökyüzünde kuzeyde duran tek bir parlak yıldız ve altında uzanan boş çöl yolu |
@@ -265,7 +268,7 @@ akıştaki yer ve `alt` metnini kaydeder.
 
 | Dosya | Akıştaki yer | Öncelik | Durum | Görsel brifi |
 |---|---|---|---|---|
-| `hz-idris/bolum-3/kapak.jpg` | Açılış | A | ✅ Hazır | Alacakaranlıkta tenha bir kır köşesi, bir taşın üstünde duran yün yumağı ve öreke |
+| `hz-idris/bolum-3/kapak.jpg` | Açılış | A | ⬜ Bekliyor | Alacakaranlıkta tenha bir kır köşesi, bir taşın üstünde duran yün yumağı ve öreke |
 | `hz-idris/bolum-3/denenip-birakilanlar.jpg` | 1. Kısım | A | ⬜ Bekliyor | Bir kayanın üstüne yan yana serilmiş kurumuş yapraklar, sert deri parçaları ve kabuk şeritleri |
 | `hz-idris/bolum-3/orumcek-agi.jpg` | 1. Kısım | A | ⬜ Bekliyor | İki sırığın arasına örülmüş, üzerinde çiy taneleri parlayan bir örümcek ağı |
 | `hz-idris/bolum-3/bir-karis-bez.jpg` | 1. Kısım | A | ⬜ Bekliyor | Ahşap bir el gergefinin üstünde duran, avuç kadar küçük ham beyaz bez parçası |
@@ -275,7 +278,7 @@ akıştaki yer ve `alt` metnini kaydeder.
 
 | Dosya | Akıştaki yer | Öncelik | Durum | Görsel brifi |
 |---|---|---|---|---|
-| `hz-idris/bolum-4/kapak.jpg` | Açılış | A | ✅ Hazır | Şafak öncesi bir tepe, altındaki sessiz vadi ve tepede yalnız duran bir ağaç |
+| `hz-idris/bolum-4/kapak.jpg` | Açılış | A | ⬜ Bekliyor | Şafak öncesi bir tepe, altındaki sessiz vadi ve tepede yalnız duran bir ağaç |
 | `hz-idris/bolum-4/ufuktaki-toz.jpg` | 1. Kısım | A | ⬜ Bekliyor | Doğu ufkunda yükselen geniş bir toz perdesi ve önündeki boş düzlük |
 | `hz-idris/bolum-4/tanimadigimiz-hayvanlar.jpg` | 1. Kısım | A | ⬜ Bekliyor | Yamaçta otlayan bir at sürüsü ve aralarında dolaşan taylar |
 | `hz-idris/bolum-4/bos-yemlik.jpg` | 1. Kısım | A | ⬜ Bekliyor | Ağılda dibi görünen boş bir yemlik, yanında devrilmiş su kabı ve dağılmış saman |
@@ -877,10 +880,11 @@ sahne (1. Kısım 2 / Devam 3).
 
 ## 4h. Hz. Yusuf (`bookKey: yusuf`) — 60 görsel
 
-**Durum (16 Eki 2026):** aktarıldı, katalogda **"preparing"** (yayında değil;
-katalogda vitrin kitabı). 60 sahne slotunun hepsi **yer tutucu**
-(`npm run gorsel-yertutucu -- yusuf`); kitap kapağı, harita durağı, 10 rozet ve
-madalya da yer tutucudur. Briflerin tamamı
+**Durum (17 Eki 2026):** aktarıldı, katalogda **"preparing"** (yayında değil;
+katalogda vitrin kitabı). 60 sahne slotunun **60'ı da gerçek görsel**
+(`/gorsel-uretim yusuf`); 10 rozet ve madalya **çerçevesiz kare** teslim edildi,
+çerçeveyi Hasan ekler. Kitap kapağı ve harita durağı da teslim edildi; sesli
+anlatım yer tutucudur. Briflerin tamamı
 `kitap-icerikleri/KITAP-HZ-YUSUF-ICERIK-final.md` §B, §C, §D ve §H'dedir (İngilizce
 ana üretim promptu, ortak stil bloğu, ortak negatif, **karakter blokları (EN)** ve
 rozet sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figür
@@ -934,122 +938,163 @@ Devam 3).
 > omurga: üç gömlek (B3'te çizilmez · B4 · B10), yıldızlar (B1, B2, B10) ve başak
 > (B6–B7).
 
+> **Üretim kararları (17 Eki 2026, `/gorsel-uretim yusuf`):** §6.2 set geneli
+> standardı uygulandı (Seedream 5 Pro · 2K · `stil-referans-gorsel.jpg`). Figürlü
+> sahnelerde üçer-dörder varyant üretildi; seçilen her Katman 1 başı büyütülerek
+> kontrol edildi. Kitaba özgü notlar:
+> - **Ad prompta girmez** (Yunus, İbrahim emsali): kişiler "a boy on the edge of youth /
+>   an elderly father / a group of grown men" olarak verildi; karakter blokları adsız eklendi.
+> - **Karakter referansları:** Hz. Yusuf (Kenan) için pilot `bolum-1/iki-kardes`, (Mısır)
+>   için `bolum-3/duzenli-avlu`; kardeşler için `bolum-1/otlaktaki-kardesler`, B8'den sonra
+>   rötuşlu `bolum-7/yuklenen-cuvallar` ve `bolum-8/kapida-kalan` ikinci referans verildi.
+> - **Sayı tutturma:** model 11 yıldızı ilk denemelerde 9–10 çizdi. Promptta "5 + 1 + 5"
+>   dizilimi yazılınca tuttu (B1 rozeti, `ruyadaki-gokyuzu`, `yildizli-misir`, B10 rozeti).
+>   `kralin-ruyasi`'nda zayıf inekler altı ve biri alacalıydı; arka sıra iki rötuşla yedi
+>   soluk gri ineğe tamamlandı (zayıflık hafif, ayrım renk ve ışıkla). B6 rozeti ve madalyada
+>   yedi başak sayılarak seçildi.
+> - **Yüz hattı ve sakal sızması** en çok kardeşlerin çizgili başlığının kenarında oldu:
+>   `izin-istegi`'nde üç başın, `yuklenen-cuvallar`'da (yedi adayın hepsinde sızma vardı)
+>   üç başın bölgesi maskelenip başlık kumaşıyla rötuşlandı. `bolum-8/iki-kardes`'te
+>   Bünyamin'in yanak hattı için rötuş denendi; bir denemede model **açık yüz çizdi**, bu
+>   yol bırakıldı ve rötuşsuz temiz aday seçildi (Hz. Yusuf burada sarık biçiminde örtülü).
+>   `ben-yusufum`'un ilk turunda uzak silüette sakal biçimi seçiliyordu ve Bünyamin çocuk
+>   boyundaydı; ikinci turda iki yetişkin boyunda, yüzsüz başlıklı silüet olarak çıktı.
+> - **Kavuşma** (`bolum-10/kavusma`): seçilen karede iki baş da örtülü ve birbirine gömülü,
+>   aralarında yalnız gölge var; bir adayda Hz. Yakup'un gözü ve burnu görünüyordu, bir
+>   başkasında minare ve kubbe vardı, ikisi reddedildi. Figürler briften büyük (kadrajın
+>   yaklaşık üçte biri) ve tam koyu silüet değil, aydınlık; **Hasan'ın ayrıca bakması istendi.**
+> - **Reddedilen diğerleri:** kubbeli uzak köy (`otlaktaki-kardesler`, `nil-sabahi`),
+>   zindan parmaklığına benzeyen kafesli pencere (`gece-penceresi`), duvar kabartmasında
+>   insan figürü (`ziyafet-sofrasi`), çıplak gövdeli işçiler (`ambarin-ici`), yan dönük
+>   başlıklar (`yildizli-pencere`, `paylasilan-ekmek`), Yunan tapınağına benzeyen saray
+>   (`haberci`), tişört ya da gömlek yakası (`bohcadaki-gomlek`).
+> - **Hasan'a not edilen küçük sapmalar:** `yirtik-gomlek`'te yırtık sırtın orta hattında,
+>   model bunu önü açık bir giysiye benzetebiliyor; `yildizli-pencere`'deki iki zindan
+>   arkadaşı genç/çocuksu çıktı.
+> - **Rozet ikinci referansı:** onaylanan pilot `rozetler/hz-yusuf/bolum-1.png`.
+> - **Kapak ve harita durağı:** yayındaki `hz-ibrahim/kapak.png` ve
+>   `hz-ibrahim/harita-kapak.jpg` görsel referans verilerek aynı aileden üretildi. Kapak
+>   **yazısız**dır; "Hz. Yusuf" başlığı tasarımda eklenecek. İlk iki kapak adayında 9 yıldız
+>   vardı; seçilen adayda 11 yıldız var, ama kuyuya akasyadan sarkan iki ip çizilmişti
+>   (brif yasağı) — ip bölgesi silinip gökyüzüyle rötuşlandı. Ay çizilmedi. 2K ana dosyalar
+>   `gorsel-kaynaklari/kitaplar/hz-yusuf/`.
+
 ### Kitap kapağı ve harita durağı
 
 | Dosya | Biçim | Durum | Görsel brifi |
 |---|---|---|---|
-| `hz-yusuf/kapak.png` | 600×900, 2:3 dikey | ⬜ Bekliyor | Lacivert deri dokulu kapakta altın yıldız çerçeveli madalyon; içinde gece göğünde yay çizen on bir yıldız, ay ışığında gümüşlenen çöl yolu ve ufukta Mısır'ın ışıkları; arkada eski taş kuyu ağzı ve akasya. **Yazısız** üretilir; "Hz. Yusuf" yazısı tasarım aşamasında eklenir; gökte ay çizilmez (final MD §C1) |
-| `hz-yusuf/harita-kapak.jpg` | Kare, 512×512 veya üstü | ⬜ Bekliyor | Hardal zemin üzerinde altın çerçeveli madalyonda taş kuyu ağzı ve üstünde tek parlak yıldız (final MD §C2) |
+| `hz-yusuf/kapak.png` | 600×900, 2:3 dikey | ✅ Hazır | Lacivert deri dokulu kapakta altın yıldız çerçeveli madalyon; içinde gece göğünde yay çizen on bir yıldız, ay ışığında gümüşlenen çöl yolu ve ufukta Mısır'ın ışıkları; arkada eski taş kuyu ağzı ve akasya. **Yazısız** üretilir; "Hz. Yusuf" yazısı tasarım aşamasında eklenir; gökte ay çizilmez (final MD §C1) |
+| `hz-yusuf/harita-kapak.jpg` | Kare, 512×512 veya üstü | ✅ Hazır | Hardal zemin üzerinde altın çerçeveli madalyonda taş kuyu ağzı ve üstünde tek parlak yıldız (final MD §C2) |
 
 ### Bölüm 1 — On Bir Yıldız
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-yusuf/bolum-1/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Alacakaranlıkta geniş otlaklar, keçi kılı çadırlar, önlerinde yanan küçük ateşler ve gökte ilk yıldızlar |
-| `hz-yusuf/bolum-1/iki-kardes.jpg` | 1. Kısım | A | Hz. Yusuf (Katman 1) ve Bünyamin (Katman 1) — ikisi de yalnız arkadan, başları örtülü, ileri bakıyor; yüz, profil ve yüz hattı yok. Karakter blokları: Hz. Yusuf (Kenan), Bünyamin (çocuk). | ⬜ Bekliyor | Akşam ışığında, otlakların arasındaki patikada birkaç kuzuyla birlikte çadırlara doğru yürüyen, sırtları dönük iki çocuk |
-| `hz-yusuf/bolum-1/ruyadaki-gokyuzu.jpg` | 1. Kısım | A | — | ⬜ Bekliyor | Masalsı bir gece göğünde yay gibi dizilmiş on bir parlak yıldız, yumuşak ışıklı bir güneş ve dolunay; ışıkları aşağıdaki küçük bir çadıra doğru eğiliyor |
-| `hz-yusuf/bolum-1/babanin-cadiri.jpg` | Devam | B | Hz. Yakup (Katman 1) ve Hz. Yusuf (Katman 1) — yalnız arkadan ve karşı ışıkta, ileri bakıyorlar; başları örtülü; yüz, profil ve yüz hattı yok. Karakter blokları: Hz. Yakup, Hz. Yusuf (Kenan). | ⬜ Bekliyor | Sabah ışığında bir çadırın içi: hasırın üstünde, çadırın aralık kapısına dönük yan yana oturan bir baba ile oğlu; sırtları izleyiciye dönük |
-| `hz-yusuf/bolum-1/otlaktaki-kardesler.jpg` | Devam | B | Hz. Yusuf'un kardeşleri (Katman 1, grup) — uzak plan, hepsi arkadan, başları örtülü; yüz, profil ve yüz hattı seçilmez; kötü karakter gibi çizilmez. Karakter bloğu: Kardeşler. | ⬜ Bekliyor | Öğle sıcağında, uzak bir vadide sürülerinin yanında bir araya toplanmış, sırtları dönük bir grup çoban ve tepede yalnız bir akasya ağacı |
-| `hz-yusuf/bolum-1/sabah-yolu.jpg` | Devam | B | — | ⬜ Bekliyor | Sabah ışığında otlakların arasından ufka doğru uzanan, iki yanı taşlı ince bir patika |
+| `hz-yusuf/bolum-1/kapak.jpg` | Açılış | A | — | ✅ Hazır | Alacakaranlıkta geniş otlaklar, keçi kılı çadırlar, önlerinde yanan küçük ateşler ve gökte ilk yıldızlar |
+| `hz-yusuf/bolum-1/iki-kardes.jpg` | 1. Kısım | A | Hz. Yusuf (Katman 1) ve Bünyamin (Katman 1) — ikisi de yalnız arkadan, başları örtülü, ileri bakıyor; yüz, profil ve yüz hattı yok. Karakter blokları: Hz. Yusuf (Kenan), Bünyamin (çocuk). | ✅ Hazır | Akşam ışığında, otlakların arasındaki patikada birkaç kuzuyla birlikte çadırlara doğru yürüyen, sırtları dönük iki çocuk |
+| `hz-yusuf/bolum-1/ruyadaki-gokyuzu.jpg` | 1. Kısım | A | — | ✅ Hazır | Masalsı bir gece göğünde yay gibi dizilmiş on bir parlak yıldız, yumuşak ışıklı bir güneş ve dolunay; ışıkları aşağıdaki küçük bir çadıra doğru eğiliyor |
+| `hz-yusuf/bolum-1/babanin-cadiri.jpg` | Devam | B | Hz. Yakup (Katman 1) ve Hz. Yusuf (Katman 1) — yalnız arkadan ve karşı ışıkta, ileri bakıyorlar; başları örtülü; yüz, profil ve yüz hattı yok. Karakter blokları: Hz. Yakup, Hz. Yusuf (Kenan). | ✅ Hazır | Sabah ışığında bir çadırın içi: hasırın üstünde, çadırın aralık kapısına dönük yan yana oturan bir baba ile oğlu; sırtları izleyiciye dönük |
+| `hz-yusuf/bolum-1/otlaktaki-kardesler.jpg` | Devam | B | Hz. Yusuf'un kardeşleri (Katman 1, grup) — uzak plan, hepsi arkadan, başları örtülü; yüz, profil ve yüz hattı seçilmez; kötü karakter gibi çizilmez. Karakter bloğu: Kardeşler. | ✅ Hazır | Öğle sıcağında, uzak bir vadide sürülerinin yanında bir araya toplanmış, sırtları dönük bir grup çoban ve tepede yalnız bir akasya ağacı |
+| `hz-yusuf/bolum-1/sabah-yolu.jpg` | Devam | B | — | ✅ Hazır | Sabah ışığında otlakların arasından ufka doğru uzanan, iki yanı taşlı ince bir patika |
 
 ### Bölüm 2 — Kuyunun Dibinde
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-yusuf/bolum-2/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Gün doğarken tepelerin arasından kıvrılarak uzaklaşan bir çoban yolu, yol kenarında taş yığınları ve uzakta sis |
-| `hz-yusuf/bolum-2/izin-istegi.jpg` | 1. Kısım | A | Hz. Yakup (Katman 1) ve Hz. Yusuf'un kardeşleri (Katman 1, grup) — uzak planda karşı ışıkta küçük koyu silüet; yüz, profil ve yüz hattı seçilmez. Karakter blokları: Hz. Yakup, Kardeşler. | ⬜ Bekliyor | Gün batımında, uzaktan görülen bir çadırın önünde oturan yaşlı bir baba ve karşısında duran bir grup oğul; hepsi karşı ışıkta küçük koyu siluetler |
-| `hz-yusuf/bolum-2/kuyu-basi.jpg` | 1. Kısım | A | Hz. Yusuf (Katman 1) ve kardeşleri (Katman 1, grup) — yalnız arkadan ve uzak planda; yüz, profil ve yüz hattı yok. Karakter blokları: Hz. Yusuf (Kenan), Kardeşler. | ⬜ Bekliyor | Kervan yolunun kıyısındaki eski bir taş kuyuya doğru uzaktan yürüyen bir grup çoban ve aralarında daha küçük bir figür; yanında yalnız bir akasya |
-| `hz-yusuf/bolum-2/kuyudan-gokyuzu.jpg` | Devam | B | — | ⬜ Bekliyor | Kuyunun içinden yukarı bakış: taş duvarların ortasında yuvarlak, aydınlık bir gökyüzü parçası ve içeri süzülen yumuşak bir ışık |
-| `hz-yusuf/bolum-2/ilk-yildiz.jpg` | Devam | B | — | ⬜ Bekliyor | Alacakaranlıkta geniş bir ovanın ortasında küçük bir kuyu ağzı ve üstündeki lacivert gökte beliren tek parlak yıldız |
-| `hz-yusuf/bolum-2/yoldaki-toz.jpg` | Devam | B | Kervandaki yolcular (Katman 3) — çok uzakta, küçük siluetler; ayrıntı seçilmez. | ⬜ Bekliyor | Gün doğarken uzak ufukta, yolun üstünde yükselen altın renkli bir toz bulutu ve içinde yüklü develerle yürüyen küçük yolcu siluetleri |
+| `hz-yusuf/bolum-2/kapak.jpg` | Açılış | A | — | ✅ Hazır | Gün doğarken tepelerin arasından kıvrılarak uzaklaşan bir çoban yolu, yol kenarında taş yığınları ve uzakta sis |
+| `hz-yusuf/bolum-2/izin-istegi.jpg` | 1. Kısım | A | Hz. Yakup (Katman 1) ve Hz. Yusuf'un kardeşleri (Katman 1, grup) — uzak planda karşı ışıkta küçük koyu silüet; yüz, profil ve yüz hattı seçilmez. Karakter blokları: Hz. Yakup, Kardeşler. | ✅ Hazır | Gün batımında, uzaktan görülen bir çadırın önünde oturan yaşlı bir baba ve karşısında duran bir grup oğul; hepsi karşı ışıkta küçük koyu siluetler |
+| `hz-yusuf/bolum-2/kuyu-basi.jpg` | 1. Kısım | A | Hz. Yusuf (Katman 1) ve kardeşleri (Katman 1, grup) — yalnız arkadan ve uzak planda; yüz, profil ve yüz hattı yok. Karakter blokları: Hz. Yusuf (Kenan), Kardeşler. | ✅ Hazır | Kervan yolunun kıyısındaki eski bir taş kuyuya doğru uzaktan yürüyen bir grup çoban ve aralarında daha küçük bir figür; yanında yalnız bir akasya |
+| `hz-yusuf/bolum-2/kuyudan-gokyuzu.jpg` | Devam | B | — | ✅ Hazır | Kuyunun içinden yukarı bakış: taş duvarların ortasında yuvarlak, aydınlık bir gökyüzü parçası ve içeri süzülen yumuşak bir ışık |
+| `hz-yusuf/bolum-2/ilk-yildiz.jpg` | Devam | B | — | ✅ Hazır | Alacakaranlıkta geniş bir ovanın ortasında küçük bir kuyu ağzı ve üstündeki lacivert gökte beliren tek parlak yıldız |
+| `hz-yusuf/bolum-2/yoldaki-toz.jpg` | Devam | B | Kervandaki yolcular (Katman 3) — çok uzakta, küçük siluetler; ayrıntı seçilmez. | ✅ Hazır | Gün doğarken uzak ufukta, yolun üstünde yükselen altın renkli bir toz bulutu ve içinde yüklü develerle yürüyen küçük yolcu siluetleri |
 
 ### Bölüm 3 — Kervanla Mısır'a
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-yusuf/bolum-3/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Sabah ışığında kuyunun yanındaki yolda mola vermiş develer, yükleri ve bir akasyanın gölgesi |
-| `hz-yusuf/bolum-3/sarkitilan-kova.jpg` | 1. Kısım | A | Kervancı (Katman 3) — yandan ve hafif arkadan; yüz sakin, ayrıntısız. Hz. Yusuf bu sahnede görünmez. | ⬜ Bekliyor | Sabah ışığında taş kenarlı bir kuyunun başında, gerilmiş halatı iki eliyle yukarı çeken ve şaşkınlıkla içeri bakan bir kervancı |
-| `hz-yusuf/bolum-3/kervan-yolu.jpg` | 1. Kısım | A | Hz. Yusuf (Katman 1) — yalnız arkadan ve uzak planda, başı örtülü; yüz, profil ve yüz hattı yok. Kervancılar (Katman 3) — uzak, küçük, ayrıntısız. Karma sahne: elle kontrol edilir. Karakter bloğu: Hz. Yusuf (Kenan). | ⬜ Bekliyor | Uzak planda, çöl yolunda ilerleyen yüklü bir deve kervanı, yanlarında yürüyen yolcular ve kervanın arkasında yürüyen, sırtı dönük genç bir figür |
-| `hz-yusuf/bolum-3/duzenli-avlu.jpg` | Devam | B | Hz. Yusuf (Katman 1) — yalnız arkadan, başı örtülü; yüz, profil ve yüz hattı yok. Karakter bloğu: Hz. Yusuf (Mısır). | ⬜ Bekliyor | Mısır'da bir evin güneşli avlusunda, omzunda bir toprak testiyle uzaklaşan genç bir figür; süpürülmüş taş zemin, sıra sıra testiler ve hurma gölgesi |
-| `hz-yusuf/bolum-3/gece-penceresi.jpg` | Devam | B | — | ⬜ Bekliyor | Gece, sade bir odanın küçük penceresinden görünen yıldızlı gökyüzü ve pencere kenarında yanan bir kil kandil |
-| `hz-yusuf/bolum-3/nil-sabahi.jpg` | Devam | B | — | ⬜ Bekliyor | Sabah sisi içinde Nil kıyısı: sazlıklar, hurma ağaçları ve suya yansıyan ilk güneş ışığı |
+| `hz-yusuf/bolum-3/kapak.jpg` | Açılış | A | — | ✅ Hazır | Sabah ışığında kuyunun yanındaki yolda mola vermiş develer, yükleri ve bir akasyanın gölgesi |
+| `hz-yusuf/bolum-3/sarkitilan-kova.jpg` | 1. Kısım | A | Kervancı (Katman 3) — yandan ve hafif arkadan; yüz sakin, ayrıntısız. Hz. Yusuf bu sahnede görünmez. | ✅ Hazır | Sabah ışığında taş kenarlı bir kuyunun başında, gerilmiş halatı iki eliyle yukarı çeken ve şaşkınlıkla içeri bakan bir kervancı |
+| `hz-yusuf/bolum-3/kervan-yolu.jpg` | 1. Kısım | A | Hz. Yusuf (Katman 1) — yalnız arkadan ve uzak planda, başı örtülü; yüz, profil ve yüz hattı yok. Kervancılar (Katman 3) — uzak, küçük, ayrıntısız. Karma sahne: elle kontrol edilir. Karakter bloğu: Hz. Yusuf (Kenan). | ✅ Hazır | Uzak planda, çöl yolunda ilerleyen yüklü bir deve kervanı, yanlarında yürüyen yolcular ve kervanın arkasında yürüyen, sırtı dönük genç bir figür |
+| `hz-yusuf/bolum-3/duzenli-avlu.jpg` | Devam | B | Hz. Yusuf (Katman 1) — yalnız arkadan, başı örtülü; yüz, profil ve yüz hattı yok. Karakter bloğu: Hz. Yusuf (Mısır). | ✅ Hazır | Mısır'da bir evin güneşli avlusunda, omzunda bir toprak testiyle uzaklaşan genç bir figür; süpürülmüş taş zemin, sıra sıra testiler ve hurma gölgesi |
+| `hz-yusuf/bolum-3/gece-penceresi.jpg` | Devam | B | — | ✅ Hazır | Gece, sade bir odanın küçük penceresinden görünen yıldızlı gökyüzü ve pencere kenarında yanan bir kil kandil |
+| `hz-yusuf/bolum-3/nil-sabahi.jpg` | Devam | B | — | ✅ Hazır | Sabah sisi içinde Nil kıyısı: sazlıklar, hurma ağaçları ve suya yansıyan ilk güneş ışığı |
 
 ### Bölüm 4 — Kapalı Kapılar
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-yusuf/bolum-4/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Mısır'da büyük bir evin sütunlu iç avlusu; gölgeli revaklar, küçük bir havuz ve sabahın sakin ışığı |
-| `hz-yusuf/bolum-4/anahtarlar.jpg` | 1. Kısım | A | — | ⬜ Bekliyor | Ahşap bir kapının yanındaki çiviye asılmış, bir halkaya geçirilmiş birkaç eski ahşap anahtar ve duvara vuran gün ışığı |
-| `hz-yusuf/bolum-4/kapali-kapilar.jpg` | 1. Kısım | A | — | ⬜ Bekliyor | Loş bir koridor boyunca art arda kapanmış ahşap kapılar ve en uzaktaki küçük pencereden giren tek ışık huzmesi |
-| `hz-yusuf/bolum-4/yirtik-gomlek.jpg` | Devam | B | — | ⬜ Bekliyor | Bir sandığın üstüne serilmiş sade keten bir gömlek; arka tarafında boydan boya bir yırtık, üstüne pencereden sabah ışığı düşüyor |
-| `hz-yusuf/bolum-4/ziyafet-sofrasi.jpg` | Devam | B | — | ⬜ Bekliyor | Alçak bir sofrada meyve tabakları ve boş minderler; aralık bir kapıdan süzülen ışık |
-| `hz-yusuf/bolum-4/safak-duasi.jpg` | Devam | B | Hz. Yusuf (Katman 1) — yalnız arkadan, başı örtülü; yüz, profil ve yüz hattı yok; bölümün tek figürlü sahnesi. Karakter bloğu: Hz. Yusuf (Mısır). | ⬜ Bekliyor | Şafakta sade bir odada, açık pencereye dönük ayakta duran, sırtı izleyiciye dönük tek bir figür; pencereden giren ilk ışık |
+| `hz-yusuf/bolum-4/kapak.jpg` | Açılış | A | — | ✅ Hazır | Mısır'da büyük bir evin sütunlu iç avlusu; gölgeli revaklar, küçük bir havuz ve sabahın sakin ışığı |
+| `hz-yusuf/bolum-4/anahtarlar.jpg` | 1. Kısım | A | — | ✅ Hazır | Ahşap bir kapının yanındaki çiviye asılmış, bir halkaya geçirilmiş birkaç eski ahşap anahtar ve duvara vuran gün ışığı |
+| `hz-yusuf/bolum-4/kapali-kapilar.jpg` | 1. Kısım | A | — | ✅ Hazır | Loş bir koridor boyunca art arda kapanmış ahşap kapılar ve en uzaktaki küçük pencereden giren tek ışık huzmesi |
+| `hz-yusuf/bolum-4/yirtik-gomlek.jpg` | Devam | B | — | ✅ Hazır | Bir sandığın üstüne serilmiş sade keten bir gömlek; arka tarafında boydan boya bir yırtık, üstüne pencereden sabah ışığı düşüyor |
+| `hz-yusuf/bolum-4/ziyafet-sofrasi.jpg` | Devam | B | — | ✅ Hazır | Alçak bir sofrada meyve tabakları ve boş minderler; aralık bir kapıdan süzülen ışık |
+| `hz-yusuf/bolum-4/safak-duasi.jpg` | Devam | B | Hz. Yusuf (Katman 1) — yalnız arkadan, başı örtülü; yüz, profil ve yüz hattı yok; bölümün tek figürlü sahnesi. Karakter bloğu: Hz. Yusuf (Mısır). | ✅ Hazır | Şafakta sade bir odada, açık pencereye dönük ayakta duran, sırtı izleyiciye dönük tek bir figür; pencereden giren ilk ışık |
 
 ### Bölüm 5 — Zindandaki İki Rüya
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-yusuf/bolum-5/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Şehrin dışında, yüksek taş duvarlı eski bir yapı; duvarların üstünde sabah ışığı ve dibinde yabani otlar |
-| `hz-yusuf/bolum-5/paylasilan-ekmek.jpg` | 1. Kısım | A | Hz. Yusuf (Katman 1) — yalnız arkadan, başı örtülü; yüz, profil ve yüz hattı yok. Yaşlı mahpus (Katman 3) — karşıda, sakin; yüzü gösterilebilir, sefil ya da korkutucu değil. Karma sahne: elle kontrol edilir. Karakter bloğu: Hz. Yusuf (Mısır). | ⬜ Bekliyor | Taş duvarlı sade bir odada, yüksek pencereden düşen ışıkta, sırtı izleyiciye dönük bir gencin karşısında oturan yaşlı mahpusa ekmek uzatması |
-| `hz-yusuf/bolum-5/iki-ruya.jpg` | 1. Kısım | A | — | ⬜ Bekliyor | Masalsı bir rüya sahnesi: bir yanda dolgun üzüm salkımları ve taze üzüm suyu dolu bir kâse, öbür yanda bir ekmek sepeti ve çevresinde uçuşan küçük kuşlar |
-| `hz-yusuf/bolum-5/yildizli-pencere.jpg` | Devam | B | Hz. Yusuf (Katman 1) — yalnız arkadan, başı örtülü; yüz, profil ve yüz hattı yok. İki zindan arkadaşı (Katman 3) — yüzleri sakin, kandil ışığında. Karma sahne: elle kontrol edilir. Karakter bloğu: Hz. Yusuf (Mısır). | ⬜ Bekliyor | Gece, yüksek ve dar bir pencereden görünen tek parlak yıldızın altında, kandil ışığında oturan iki genç ve onlara dönük, sırtı izleyiciye dönük bir figür |
-| `hz-yusuf/bolum-5/acik-kapi.jpg` | Devam | B | Zindandan çıkan genç (Katman 3) — sakin ve rahatlamış; yüzü gösterilebilir, öne çıkarılmaz. Hz. Yusuf görünmez. | ⬜ Bekliyor | Dışarıdan bakış: zindanın kalın taş duvarındaki aralık kapıdan güneşe adım atan, rahatlamış sade giysili bir genç; arkasında karanlık kapı aralığı |
-| `hz-yusuf/bolum-5/avludaki-hurma.jpg` | Devam | B | — | ⬜ Bekliyor | Zindanın küçük avlusunda tek başına yükselen bir hurma ağacı; dibindeki taşlara düşen gölge ve açık mavi gökyüzü |
+| `hz-yusuf/bolum-5/kapak.jpg` | Açılış | A | — | ✅ Hazır | Şehrin dışında, yüksek taş duvarlı eski bir yapı; duvarların üstünde sabah ışığı ve dibinde yabani otlar |
+| `hz-yusuf/bolum-5/paylasilan-ekmek.jpg` | 1. Kısım | A | Hz. Yusuf (Katman 1) — yalnız arkadan, başı örtülü; yüz, profil ve yüz hattı yok. Yaşlı mahpus (Katman 3) — karşıda, sakin; yüzü gösterilebilir, sefil ya da korkutucu değil. Karma sahne: elle kontrol edilir. Karakter bloğu: Hz. Yusuf (Mısır). | ✅ Hazır | Taş duvarlı sade bir odada, yüksek pencereden düşen ışıkta, sırtı izleyiciye dönük bir gencin karşısında oturan yaşlı mahpusa ekmek uzatması |
+| `hz-yusuf/bolum-5/iki-ruya.jpg` | 1. Kısım | A | — | ✅ Hazır | Masalsı bir rüya sahnesi: bir yanda dolgun üzüm salkımları ve taze üzüm suyu dolu bir kâse, öbür yanda bir ekmek sepeti ve çevresinde uçuşan küçük kuşlar |
+| `hz-yusuf/bolum-5/yildizli-pencere.jpg` | Devam | B | Hz. Yusuf (Katman 1) — yalnız arkadan, başı örtülü; yüz, profil ve yüz hattı yok. İki zindan arkadaşı (Katman 3) — yüzleri sakin, kandil ışığında. Karma sahne: elle kontrol edilir. Karakter bloğu: Hz. Yusuf (Mısır). | ✅ Hazır | Gece, yüksek ve dar bir pencereden görünen tek parlak yıldızın altında, kandil ışığında oturan iki genç ve onlara dönük, sırtı izleyiciye dönük bir figür |
+| `hz-yusuf/bolum-5/acik-kapi.jpg` | Devam | B | Zindandan çıkan genç (Katman 3) — sakin ve rahatlamış; yüzü gösterilebilir, öne çıkarılmaz. Hz. Yusuf görünmez. | ✅ Hazır | Dışarıdan bakış: zindanın kalın taş duvarındaki aralık kapıdan güneşe adım atan, rahatlamış sade giysili bir genç; arkasında karanlık kapı aralığı |
+| `hz-yusuf/bolum-5/avludaki-hurma.jpg` | Devam | B | — | ✅ Hazır | Zindanın küçük avlusunda tek başına yükselen bir hurma ağacı; dibindeki taşlara düşen gölge ve açık mavi gökyüzü |
 
 ### Bölüm 6 — Yedi Başak
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-yusuf/bolum-6/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Gece, Nil kıyısında uzanan bir sarayın sütunlu terası; ay ışığında parlayan nehir ve uzakta ekin tarlaları |
-| `hz-yusuf/bolum-6/kralin-ruyasi.jpg` | 1. Kısım | A | — | ⬜ Bekliyor | Masalsı bir rüya sahnesi: nehir kıyısında yeşil çayırda yedi besili inek, arkada soluk ışıkta yedi zayıf inek; ön planda yeşil ve kuru başaklar |
-| `hz-yusuf/bolum-6/basakta-saklanan.jpg` | 1. Kısım | A | Çiftçiler (Katman 3) — orta plan, işlerine eğilmiş; yüzler gösterilebilir ama öne çıkarılmaz. | ⬜ Bekliyor | İkindi ışığında hasat edilmiş bir tarlada, buğdayı başaklarıyla birlikte demet demet bağlayıp dizen çiftçiler |
-| `hz-yusuf/bolum-6/haberci.jpg` | Devam | B | Saray habercisi (Katman 3) — hareket hâlinde, sakin; yüzü gösterilebilir, öne çıkarılmaz. | ⬜ Bekliyor | Sabah ışığında sarayın geniş taş basamaklarından aceleyle inen bir saray habercisi; arkasında sütunlu giriş ve şehre uzanan yol |
-| `hz-yusuf/bolum-6/zindandan-cikis.jpg` | Devam | B | Hz. Yusuf (Katman 1) — yalnız arkadan ve uzak planda, başı örtülü; yüz, profil ve yüz hattı yok. Karakter bloğu: Hz. Yusuf (Mısır). | ⬜ Bekliyor | Ardına kadar açılmış zindan kapısından güneşli bir yola doğru yürüyen, sırtı dönük bir figür; önünde uzanan aydınlık yol |
-| `hz-yusuf/bolum-6/yesil-basaklar.jpg` | Devam | B | — | ⬜ Bekliyor | Rüzgârda dalgalanan, göz alabildiğine uzanan yeşil buğday tarlaları ve üstünde açık gökyüzü |
+| `hz-yusuf/bolum-6/kapak.jpg` | Açılış | A | — | ✅ Hazır | Gece, Nil kıyısında uzanan bir sarayın sütunlu terası; ay ışığında parlayan nehir ve uzakta ekin tarlaları |
+| `hz-yusuf/bolum-6/kralin-ruyasi.jpg` | 1. Kısım | A | — | ✅ Hazır | Masalsı bir rüya sahnesi: nehir kıyısında yeşil çayırda yedi besili inek, arkada soluk ışıkta yedi zayıf inek; ön planda yeşil ve kuru başaklar |
+| `hz-yusuf/bolum-6/basakta-saklanan.jpg` | 1. Kısım | A | Çiftçiler (Katman 3) — orta plan, işlerine eğilmiş; yüzler gösterilebilir ama öne çıkarılmaz. | ✅ Hazır | İkindi ışığında hasat edilmiş bir tarlada, buğdayı başaklarıyla birlikte demet demet bağlayıp dizen çiftçiler |
+| `hz-yusuf/bolum-6/haberci.jpg` | Devam | B | Saray habercisi (Katman 3) — hareket hâlinde, sakin; yüzü gösterilebilir, öne çıkarılmaz. | ✅ Hazır | Sabah ışığında sarayın geniş taş basamaklarından aceleyle inen bir saray habercisi; arkasında sütunlu giriş ve şehre uzanan yol |
+| `hz-yusuf/bolum-6/zindandan-cikis.jpg` | Devam | B | Hz. Yusuf (Katman 1) — yalnız arkadan ve uzak planda, başı örtülü; yüz, profil ve yüz hattı yok. Karakter bloğu: Hz. Yusuf (Mısır). | ✅ Hazır | Ardına kadar açılmış zindan kapısından güneşli bir yola doğru yürüyen, sırtı dönük bir figür; önünde uzanan aydınlık yol |
+| `hz-yusuf/bolum-6/yesil-basaklar.jpg` | Devam | B | — | ✅ Hazır | Rüzgârda dalgalanan, göz alabildiğine uzanan yeşil buğday tarlaları ve üstünde açık gökyüzü |
 
 ### Bölüm 7 — Kıtlıkta Gelen Kafile
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-yusuf/bolum-7/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Nil kıyısında sıra sıra yükselen büyük kerpiç ambarlar ve önlerinde uzanan altın renkli tarlalar |
-| `hz-yusuf/bolum-7/ambarin-ici.jpg` | 1. Kısım | A | Ambar işçileri (Katman 3) — orta plan, işlerine dönük; yüzler gösterilebilir ama öne çıkarılmaz. Hz. Yusuf bu sahnede yok. | ⬜ Bekliyor | Büyük bir ambarın içinde tavana kadar istiflenmiş başaklı buğday demetleri ve omuzlarında demet taşıyıp istiflere yerleştiren işçiler |
-| `hz-yusuf/bolum-7/catlak-toprak.jpg` | 1. Kısım | A | — | ⬜ Bekliyor | Kurumuş ve çatlamış bir tarla; uzakta, ufukta sağlam duran ambarların silueti |
-| `hz-yusuf/bolum-7/yuklenen-cuvallar.jpg` | Devam | B | Hz. Yusuf'un kardeşleri (Katman 1, grup) — yalnız arkadan; yüz, profil ve yüz hattı yok. Ambar işçileri (Katman 3) — yandan, sakin. Karma sahne: elle kontrol edilir. Karakter bloğu: Kardeşler. | ⬜ Bekliyor | Ambarın önünde ağzına kadar dolu tahıl çuvallarını yere çökmüş develere yükleyen, sırtları dönük bir grup yolcu ve onlara çuval uzatan ambar işçileri |
-| `hz-yusuf/bolum-7/cuvaldaki-kese.jpg` | Devam | B | — | ⬜ Bekliyor | Ağzı açık bir tahıl çuvalının içinde, buğday tanelerinin arasına yerleştirilmiş küçük, bağlı bir deri kese |
-| `hz-yusuf/bolum-7/uzaklasan-kafile.jpg` | Devam | B | Hz. Yusuf'un kardeşleri (Katman 1, grup) — çok uzakta, arkadan, küçük silüet; yüz seçilmez. Karakter bloğu: Kardeşler. | ⬜ Bekliyor | Gün batımında çöl yolunda uzaklaşan, yüklü develeri ve yanlarında yürüyen yolcularıyla küçük bir kafile ve kumda kalan izler |
+| `hz-yusuf/bolum-7/kapak.jpg` | Açılış | A | — | ✅ Hazır | Nil kıyısında sıra sıra yükselen büyük kerpiç ambarlar ve önlerinde uzanan altın renkli tarlalar |
+| `hz-yusuf/bolum-7/ambarin-ici.jpg` | 1. Kısım | A | Ambar işçileri (Katman 3) — orta plan, işlerine dönük; yüzler gösterilebilir ama öne çıkarılmaz. Hz. Yusuf bu sahnede yok. | ✅ Hazır | Büyük bir ambarın içinde tavana kadar istiflenmiş başaklı buğday demetleri ve omuzlarında demet taşıyıp istiflere yerleştiren işçiler |
+| `hz-yusuf/bolum-7/catlak-toprak.jpg` | 1. Kısım | A | — | ✅ Hazır | Kurumuş ve çatlamış bir tarla; uzakta, ufukta sağlam duran ambarların silueti |
+| `hz-yusuf/bolum-7/yuklenen-cuvallar.jpg` | Devam | B | Hz. Yusuf'un kardeşleri (Katman 1, grup) — yalnız arkadan; yüz, profil ve yüz hattı yok. Ambar işçileri (Katman 3) — yandan, sakin. Karma sahne: elle kontrol edilir. Karakter bloğu: Kardeşler. | ✅ Hazır | Ambarın önünde ağzına kadar dolu tahıl çuvallarını yere çökmüş develere yükleyen, sırtları dönük bir grup yolcu ve onlara çuval uzatan ambar işçileri |
+| `hz-yusuf/bolum-7/cuvaldaki-kese.jpg` | Devam | B | — | ✅ Hazır | Ağzı açık bir tahıl çuvalının içinde, buğday tanelerinin arasına yerleştirilmiş küçük, bağlı bir deri kese |
+| `hz-yusuf/bolum-7/uzaklasan-kafile.jpg` | Devam | B | Hz. Yusuf'un kardeşleri (Katman 1, grup) — çok uzakta, arkadan, küçük silüet; yüz seçilmez. Karakter bloğu: Kardeşler. | ✅ Hazır | Gün batımında çöl yolunda uzaklaşan, yüklü develeri ve yanlarında yürüyen yolcularıyla küçük bir kafile ve kumda kalan izler |
 
 ### Bölüm 8 — Kayıp Su Kabı
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-yusuf/bolum-8/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Sabah ışığında Mısır şehrine uzanan geniş bir yol, uzakta kerpiç surlar ve hurma ağaçları |
-| `hz-yusuf/bolum-8/iki-kardes.jpg` | 1. Kısım | A | Hz. Yusuf (Katman 1) ve Bünyamin (Katman 1) — yalnız arkadan, başları örtülü, ileri bakıyorlar; yüz, profil ve yüz hattı yok. Karakter blokları: Hz. Yusuf (Mısır, görevli), Bünyamin (genç). | ⬜ Bekliyor | Sakin bir iç odada, açık pencereye dönük yan yana oturan, sırtları izleyiciye dönük iki adam; birinin eli öbürünün omzunda |
-| `hz-yusuf/bolum-8/acilan-cuvallar.jpg` | 1. Kısım | A | Hz. Yusuf (Katman 1) — orta planda, arkadan, başı örtülü; Hz. Yusuf'un kardeşleri (Katman 1, grup) — ön planda arkadan; ikisinde de yüz, profil ve yüz hattı yok. Saray görevlisi (Katman 3) — yandan, sakin. Karma sahne: elle kontrol edilir. Karakter blokları: Hz. Yusuf (Mısır, görevli), Kardeşler. | ⬜ Bekliyor | Bir ağaç gölgesinde sıra sıra açılmış tahıl çuvalları, açılmış bir çuvalın yanında dik duran sırtı dönük bir figür, yanında bir görevli ve kenarda sırtı dönük bekleyen bir grup yolcu; en sondaki çuval hâlâ bağlı |
-| `hz-yusuf/bolum-8/kardeslerin-teklifi.jpg` | Devam | B | Hz. Yusuf'un kardeşleri (Katman 1, grup) — yalnız arkadan ve karşı ışıkta; yüz, profil ve yüz hattı yok. Karakter bloğu: Kardeşler. | ⬜ Bekliyor | Öbür yüklerden ayrı duran tek bir tahıl çuvalının önünde, birbirine sokulmuş ve ışıklı bir kapıya dönük duran, sırtları izleyiciye dönük bir grup adam |
-| `hz-yusuf/bolum-8/bekleyen-develer.jpg` | Devam | B | — | ⬜ Bekliyor | İkindi ışığında yere çökmüş, yola çıkmayı bekleyen yüklü develer ve uzakta şehrin surları |
-| `hz-yusuf/bolum-8/kapida-kalan.jpg` | Devam | B | Kalan büyük kardeş (Katman 1) — yalnız arkadan, başı örtülü; uzaklaşan kardeşler (Katman 1, grup) — çok uzakta küçük silüet; yüz, profil ve yüz hattı yok. Karakter bloğu: Kardeşler. | ⬜ Bekliyor | Akşamüstü, şehrin kerpiç kapısında tek başına duran, sırtı dönük bir adam ve çöl yolunda uzaklaşan yüklü bir deve kafilesi |
+| `hz-yusuf/bolum-8/kapak.jpg` | Açılış | A | — | ✅ Hazır | Sabah ışığında Mısır şehrine uzanan geniş bir yol, uzakta kerpiç surlar ve hurma ağaçları |
+| `hz-yusuf/bolum-8/iki-kardes.jpg` | 1. Kısım | A | Hz. Yusuf (Katman 1) ve Bünyamin (Katman 1) — yalnız arkadan, başları örtülü, ileri bakıyorlar; yüz, profil ve yüz hattı yok. Karakter blokları: Hz. Yusuf (Mısır, görevli), Bünyamin (genç). | ✅ Hazır | Sakin bir iç odada, açık pencereye dönük yan yana oturan, sırtları izleyiciye dönük iki adam; birinin eli öbürünün omzunda |
+| `hz-yusuf/bolum-8/acilan-cuvallar.jpg` | 1. Kısım | A | Hz. Yusuf (Katman 1) — orta planda, arkadan, başı örtülü; Hz. Yusuf'un kardeşleri (Katman 1, grup) — ön planda arkadan; ikisinde de yüz, profil ve yüz hattı yok. Saray görevlisi (Katman 3) — yandan, sakin. Karma sahne: elle kontrol edilir. Karakter blokları: Hz. Yusuf (Mısır, görevli), Kardeşler. | ✅ Hazır | Bir ağaç gölgesinde sıra sıra açılmış tahıl çuvalları, açılmış bir çuvalın yanında dik duran sırtı dönük bir figür, yanında bir görevli ve kenarda sırtı dönük bekleyen bir grup yolcu; en sondaki çuval hâlâ bağlı |
+| `hz-yusuf/bolum-8/kardeslerin-teklifi.jpg` | Devam | B | Hz. Yusuf'un kardeşleri (Katman 1, grup) — yalnız arkadan ve karşı ışıkta; yüz, profil ve yüz hattı yok. Karakter bloğu: Kardeşler. | ✅ Hazır | Öbür yüklerden ayrı duran tek bir tahıl çuvalının önünde, birbirine sokulmuş ve ışıklı bir kapıya dönük duran, sırtları izleyiciye dönük bir grup adam |
+| `hz-yusuf/bolum-8/bekleyen-develer.jpg` | Devam | B | — | ✅ Hazır | İkindi ışığında yere çökmüş, yola çıkmayı bekleyen yüklü develer ve uzakta şehrin surları |
+| `hz-yusuf/bolum-8/kapida-kalan.jpg` | Devam | B | Kalan büyük kardeş (Katman 1) — yalnız arkadan, başı örtülü; uzaklaşan kardeşler (Katman 1, grup) — çok uzakta küçük silüet; yüz, profil ve yüz hattı yok. Karakter bloğu: Kardeşler. | ✅ Hazır | Akşamüstü, şehrin kerpiç kapısında tek başına duran, sırtı dönük bir adam ve çöl yolunda uzaklaşan yüklü bir deve kafilesi |
 
 ### Bölüm 9 — Ben Yusuf'um
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-yusuf/bolum-9/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Kıtlık yılında, kurumuş otlakların arasından Mısır'a doğru uzanan tozlu bir yol |
-| `hz-yusuf/bolum-9/yorgun-develer.jpg` | 1. Kısım | A | Hz. Yusuf'un kardeşleri (Katman 1, grup) — yalnız arkadan; yüz, profil ve yüz hattı yok. Karakter bloğu: Kardeşler. | ⬜ Bekliyor | Şehir kapısının önünde yere çökmüş tozlu ve yorgun develer; yanlarında, yarı boş çuvalların başında sırtları dönük bekleyen bir grup yolcu |
-| `hz-yusuf/bolum-9/saray-kapisi.jpg` | 1. Kısım | A | — | ⬜ Bekliyor | Sarayın büyük ahşap kapısının önünde basamaklara düşen ikindi ışığı ve kapının iki yanında taş sütunlar |
-| `hz-yusuf/bolum-9/ben-yusufum.jpg` | Devam | B | Hz. Yusuf'un kardeşleri (Katman 1, grup) — ön planda dik ve arkadan; Hz. Yusuf (Katman 1) ve Bünyamin (Katman 1) — uzakta, güçlü karşı ışıkta koyu silüet; hiçbirinde yüz, profil ve yüz hattı yok. Karakter blokları: Kardeşler, Hz. Yusuf (Mısır, görevli), Bünyamin (genç). | ⬜ Bekliyor | Sütunlu bir salonda, ön planda sırtları dönük dik duran bir grup adam; karşılarında, ışıkla dolan geniş açıklığın önünde koyu silüet hâlinde duran iki figür |
-| `hz-yusuf/bolum-9/paylasilan-sofra.jpg` | Devam | B | Hz. Yusuf'un kardeşleri (Katman 1, grup) — tek sıra, yalnız arkadan, başları örtülü; yüz, profil ve yüz hattı yok. Karakter bloğu: Kardeşler. | ⬜ Bekliyor | Akşam ışığında uzun, alçak bir sofrada ekmekler, hurmalar ve üzüm salkımları; sofranın bir yanında yan yana oturan, sırtları dönük ve başları örtülü bir grup adam |
-| `hz-yusuf/bolum-9/dogu-yolu.jpg` | Devam | B | — | ⬜ Bekliyor | Şafakta sarayın düz damından görünen, alçak bir korkuluğun ötesinde kuzeydoğuya, çöle uzanan yol ve ufukta doğan güneş |
+| `hz-yusuf/bolum-9/kapak.jpg` | Açılış | A | — | ✅ Hazır | Kıtlık yılında, kurumuş otlakların arasından Mısır'a doğru uzanan tozlu bir yol |
+| `hz-yusuf/bolum-9/yorgun-develer.jpg` | 1. Kısım | A | Hz. Yusuf'un kardeşleri (Katman 1, grup) — yalnız arkadan; yüz, profil ve yüz hattı yok. Karakter bloğu: Kardeşler. | ✅ Hazır | Şehir kapısının önünde yere çökmüş tozlu ve yorgun develer; yanlarında, yarı boş çuvalların başında sırtları dönük bekleyen bir grup yolcu |
+| `hz-yusuf/bolum-9/saray-kapisi.jpg` | 1. Kısım | A | — | ✅ Hazır | Sarayın büyük ahşap kapısının önünde basamaklara düşen ikindi ışığı ve kapının iki yanında taş sütunlar |
+| `hz-yusuf/bolum-9/ben-yusufum.jpg` | Devam | B | Hz. Yusuf'un kardeşleri (Katman 1, grup) — ön planda dik ve arkadan; Hz. Yusuf (Katman 1) ve Bünyamin (Katman 1) — uzakta, güçlü karşı ışıkta koyu silüet; hiçbirinde yüz, profil ve yüz hattı yok. Karakter blokları: Kardeşler, Hz. Yusuf (Mısır, görevli), Bünyamin (genç). | ✅ Hazır | Sütunlu bir salonda, ön planda sırtları dönük dik duran bir grup adam; karşılarında, ışıkla dolan geniş açıklığın önünde koyu silüet hâlinde duran iki figür |
+| `hz-yusuf/bolum-9/paylasilan-sofra.jpg` | Devam | B | Hz. Yusuf'un kardeşleri (Katman 1, grup) — tek sıra, yalnız arkadan, başları örtülü; yüz, profil ve yüz hattı yok. Karakter bloğu: Kardeşler. | ✅ Hazır | Akşam ışığında uzun, alçak bir sofrada ekmekler, hurmalar ve üzüm salkımları; sofranın bir yanında yan yana oturan, sırtları dönük ve başları örtülü bir grup adam |
+| `hz-yusuf/bolum-9/dogu-yolu.jpg` | Devam | B | — | ✅ Hazır | Şafakta sarayın düz damından görünen, alçak bir korkuluğun ötesinde kuzeydoğuya, çöle uzanan yol ve ufukta doğan güneş |
 
 ### Bölüm 10 — Rüya Gerçek Oldu
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-yusuf/bolum-10/kapak.jpg` | Açılış | A | — | ⬜ Bekliyor | Gün doğarken Mısır'ın kerpiç evleri, hurma ağaçları ve Nil'in üzerinde altın bir ışık; uzakta yaklaşan bir kafilenin tozu |
-| `hz-yusuf/bolum-10/bohcadaki-gomlek.jpg` | 1. Kısım | A | — | ⬜ Bekliyor | Bir deve semerinin üstüne özenle bağlanmış keten bir bohça; aralığından katlanmış beyaz bir gömleğin ucu görünüyor |
-| `hz-yusuf/bolum-10/misire-giden-kafile.jpg` | 1. Kısım | A | Hz. Yakup, kardeşler ve aile (Katman 1) — yalnız çok uzakta küçük silüet; kimse seçilmez, yüz ayrıntısı oluşmaz; karakter bloğu gerekmez. | ⬜ Bekliyor | Sabah ışığında, Nil vadisine doğru inen yolda uzaktan yaklaşan uzun, yüklü bir deve kafilesi ve yanlarında yürüyen küçük yolcu siluetleri |
-| `hz-yusuf/bolum-10/kavusma.jpg` | 1. Kısım | A | Hz. Yusuf (Katman 1) — tamamen arkadan; Hz. Yakup (Katman 1) — başı oğlunun omzuna gömülü; ikisi de karşı ışıkta koyu silüet, başları örtülü; yüz, profil ve yüz hattı yok. Anne, kardeşler ve kafiledeki başka hiç kimse seçilmez. Karakter blokları: Hz. Yusuf (Mısır, görevli), Hz. Yakup. | ⬜ Bekliyor | Şehrin dışında, durmuş kafilenin önünde, uzak planda birbirine sarılan iki figür; arkalarından vuran sabah ışığı onları altın kenarlı bir silüete dönüştürüyor |
-| `hz-yusuf/bolum-10/taht-basamaklari.jpg` | Devam | B | — | ⬜ Bekliyor | Sarayın büyük salonunda, ışık dolu basamakların üstünde boş ve sade bir oturma yeri; açık kapılardan içeri sabah ışığı doluyor |
-| `hz-yusuf/bolum-10/yildizli-misir.jpg` | Devam | B | — | ⬜ Bekliyor | Gece olurken Mısır'ın düz damlı evleri ve Nil'in üstünde yay gibi dizilmiş on bir yıldız; ufukta batan güneşin son ışığı ve yükselen dolunay |
+| `hz-yusuf/bolum-10/kapak.jpg` | Açılış | A | — | ✅ Hazır | Gün doğarken Mısır'ın kerpiç evleri, hurma ağaçları ve Nil'in üzerinde altın bir ışık; uzakta yaklaşan bir kafilenin tozu |
+| `hz-yusuf/bolum-10/bohcadaki-gomlek.jpg` | 1. Kısım | A | — | ✅ Hazır | Bir deve semerinin üstüne özenle bağlanmış keten bir bohça; aralığından katlanmış beyaz bir gömleğin ucu görünüyor |
+| `hz-yusuf/bolum-10/misire-giden-kafile.jpg` | 1. Kısım | A | Hz. Yakup, kardeşler ve aile (Katman 1) — yalnız çok uzakta küçük silüet; kimse seçilmez, yüz ayrıntısı oluşmaz; karakter bloğu gerekmez. | ✅ Hazır | Sabah ışığında, Nil vadisine doğru inen yolda uzaktan yaklaşan uzun, yüklü bir deve kafilesi ve yanlarında yürüyen küçük yolcu siluetleri |
+| `hz-yusuf/bolum-10/kavusma.jpg` | 1. Kısım | A | Hz. Yusuf (Katman 1) — tamamen arkadan; Hz. Yakup (Katman 1) — başı oğlunun omzuna gömülü; ikisi de karşı ışıkta koyu silüet, başları örtülü; yüz, profil ve yüz hattı yok. Anne, kardeşler ve kafiledeki başka hiç kimse seçilmez. Karakter blokları: Hz. Yusuf (Mısır, görevli), Hz. Yakup. | ✅ Hazır | Şehrin dışında, durmuş kafilenin önünde, uzak planda birbirine sarılan iki figür; arkalarından vuran sabah ışığı onları altın kenarlı bir silüete dönüştürüyor |
+| `hz-yusuf/bolum-10/taht-basamaklari.jpg` | Devam | B | — | ✅ Hazır | Sarayın büyük salonunda, ışık dolu basamakların üstünde boş ve sade bir oturma yeri; açık kapılardan içeri sabah ışığı doluyor |
+| `hz-yusuf/bolum-10/yildizli-misir.jpg` | Devam | B | — | ✅ Hazır | Gece olurken Mısır'ın düz damlı evleri ve Nil'in üstünde yay gibi dizilmiş on bir yıldız; ufukta batan güneşin son ışığı ve yükselen dolunay |
 
 ## 4i. Hz. Süleyman (`bookKey: suleyman`) — 42 görsel
 
@@ -1630,17 +1675,17 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 |---|---|---|---|---|---|
 | Hz. Âdem | 8 | 32 | **40** | 40 | 1 (oran: `bolum-1/kapak.jpg`) |
 | Hz. Şît | 4 | 16 | **20** | 20 | 0 |
-| Hz. İdrîs | 4 | 16 | **20** | 4 | 16 (içerik sahneleri yer tutucu) |
+| Hz. İdrîs | 4 | 16 | **20** | 0 | 20 (açılışlar dahil hepsi yer tutucu; kitap yayında) |
 | Hz. Nûh | 8 | 40 | **48** | 48 | 0 |
 | Hz. Musa | 10 | 50 | **60** | 60 | 0 |
 | Hz. Eyyûb | 5 | 25 | **30** | 30 | 0 |
 | Hz. İbrahim | 9 | 45 | **54** | 54 | 0 |
-| Hz. Yusuf | 10 | 50 | **60** | 0 | 60 (hepsi yer tutucu; kitap "preparing") |
+| Hz. Yusuf | 10 | 50 | **60** | 60 | 0 |
 | Hz. Süleyman | 7 | 35 | **42** | 0 | 42 (hepsi yer tutucu; kitap "preparing") |
 | Hz. Yunus | 5 | 24 | **29** | 29 | 0 |
 | Hz. Îsâ | 8 | 40 | **48** | 0 | 48 (hepsi yer tutucu; kitap "preparing") |
 | Hz. İsmail | 6 | 30 | **36** | 0 | 36 (hepsi yer tutucu; kitap "preparing") |
-| **Genel** | **84** | **403** | **487** | **285** | **203** |
+| **Genel** | **84** | **403** | **487** | **341** | **147** |
 
 **Bu sicilin dışındakiler:**
 
@@ -1666,18 +1711,18 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 | Harita durağı | `kitaplar/hz-ibrahim/harita-kapak.jpg` | ✅ Var (600×600, Yunus durağıyla aynı çerçeve ailesi; sembol: alevlerin ortasında açan serin yeşil yaprak) |
 | Rozet | `rozetler/hz-ibrahim/bolum-1…9.png` | □ 9 kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-ibrahim/`) |
 | Madalya | `madalyalar/hz-ibrahim.png` | □ Kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; sembol: korlardan filizlenen dal ve sabah yıldızı) |
-| Kitap kapağı | `kitaplar/hz-yusuf/kapak.png` | ⬜ Yer tutucu (600×900) — brif final MD §C1; **yazısız** üretilir |
-| Harita durağı | `kitaplar/hz-yusuf/harita-kapak.jpg` | ⬜ Yer tutucu (512×512) — brif final MD §C2 (sembol: taş kuyu ağzı ve üstünde tek parlak yıldız) |
-| Rozet | `rozetler/hz-yusuf/bolum-1…10.png` | ⬜ 10 yer tutucu — brifler final MD §H "Rozet üretim brifleri" |
-| Madalya | `madalyalar/hz-yusuf.png` | ⬜ Yer tutucu — brif final MD §C3 (sembol: katlanmış gömlek ve yedi başak) |
+| Kitap kapağı | `kitaplar/hz-yusuf/kapak.png` | ✅ Var (600×900, **yazısız** — başlık tasarımda eklenecek; 2K ana dosya `gorsel-kaynaklari/kitaplar/hz-yusuf/kapak.png`) |
+| Harita durağı | `kitaplar/hz-yusuf/harita-kapak.jpg` | ✅ Var (600×600, İbrahim durağıyla aynı çerçeve ailesi; sembol: taş kuyu ağzı ve üstünde tek parlak yıldız) |
+| Rozet | `rozetler/hz-yusuf/bolum-1…10.png` | □ 10 kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-yusuf/`) |
+| Madalya | `madalyalar/hz-yusuf.png` | □ Kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; sembol: katlanmış gömlek ve yedi başak) |
 | Kitap kapağı | `kitaplar/hz-suleyman/kapak.png` | ⬜ Yer tutucu (600×900) — brif final MD §C1; **yazısız** üretilir |
 | Harita durağı | `kitaplar/hz-suleyman/harita-kapak.jpg` | ⬜ Yer tutucu (512×512) — brif final MD §C2 (sembol: taç tüyü açık bir hüdhüd) |
 | Rozet | `rozetler/hz-suleyman/bolum-1…7.png` | ⬜ 7 yer tutucu — brifler final MD §H "Rozet üretim brifleri" |
 | Madalya | `madalyalar/hz-suleyman.png` | ⬜ Yer tutucu — brif final MD §C3 (sembol: hüdhüd tüyü ile mühürlü mektup) |
-| Kitap kapağı | `kitaplar/hz-yunus/kapak.png` | ⬜ Yer tutucu (600×900) — brif final MD §C1; **yazısız** üretilir |
-| Harita durağı | `kitaplar/hz-yunus/harita-kapak.jpg` | ⬜ Yer tutucu (512×512) — brif final MD §C2 (sembol: geniş kabak yaprağı ve gölgesi) |
-| Rozet | `rozetler/hz-yunus/bolum-1…5.png` | ⬜ 5 yer tutucu — brifler final MD §H "Rozet üretim brifleri" (B2 sembolü: dalgalarda beyaz yelken ve ışık) |
-| Madalya | `madalyalar/hz-yunus.png` | ⬜ Yer tutucu — brif final MD §C3 (sembol: dalgalarda süzülen balık ve doğan güneş) |
+| Kitap kapağı | `kitaplar/hz-yunus/kapak.png` | ✅ Var (600×900, **yazısız** — başlık tasarımda eklenecek; 2K ana dosya `gorsel-kaynaklari/kitaplar/hz-yunus/kapak.png`) |
+| Harita durağı | `kitaplar/hz-yunus/harita-kapak.jpg` | ✅ Var (600×600, İbrahim durağıyla aynı çerçeve ailesi; sembol: geniş kabak yaprağı ve gölgesi) |
+| Rozet | `rozetler/hz-yunus/bolum-1…5.png` | □ 5 kare görsel, 512×512 opak, **çerçeve bekliyor** (16 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-yunus/`; B2 sembolü: dalgalarda beyaz yelken ve ışık) |
+| Madalya | `madalyalar/hz-yunus.png` | □ Kare görsel, 512×512 opak, **çerçeve bekliyor** (16 Eki 2026; sembol: dalgalarda süzülen balık ve doğan güneş) |
 | Kitap kapağı | `kitaplar/hz-isa/kapak.png` | ⬜ Yer tutucu (600×900) — brif final MD §C1; **yazısız** üretilir |
 | Harita durağı | `kitaplar/hz-isa/harita-kapak.jpg` | ⬜ Yer tutucu (512×512) — brif final MD §C2 (sembol: dibinde su kaynağı olan tek hurma ağacı) |
 | Rozet | `rozetler/hz-isa/bolum-1…8.png` | ⬜ 8 yer tutucu — brifler final MD §H "Rozet üretim brifleri" |
@@ -1691,6 +1736,8 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 > dört bölüm kapağı da diskteydi. Bekleyen üretim: **16 içerik sahnesi + 4 rozet
 > + 1 madalya = 21 görsel.** Hepsi yer tutucudur; Hasan gerçek dosyayı AYNI ADLA
 > üzerine yazınca kod değişmeden yayına girer.
+> **Düzeltme (17 Eki 2026):** dört bölüm kapağı da yer tutucu kopyasıymış (§4c).
+> Doğru sayı: **20 sahne + 4 rozet + 1 madalya = 25 görsel.**
 
 > **12 Eki 2026 — Hz. Nûh aktarıldı.** Kitap kapağı ve harita durağı hazırdı;
 > sekiz bölüm kapağı diskte vardı ama yer tutucu kopyasıydı. Bekleyen üretim:
@@ -1976,8 +2023,8 @@ değiştirmez, yeni görsel yeri açmaz (o aktarımın işidir), commit atmaz.
 
 | Klasör | Kalıp | Kurulan | Not |
 |---|---|---|---|
-| `public/rozetler/hz-{bookKey}/` | `bolum-{n}.png` | **84** | âdem 8 + şît 4 **gerçek** (11 Ağu 2026) · idrîs 4 **yer tutucu** (12 Ağu 2026) · nûh 8 **gerçek** (13 Eki 2026) · musa 10 **kare, çerçeve bekliyor** (13 Eki 2026) · eyyûb 5 **kare, çerçeve bekliyor** (15 Eki 2026) · ibrahim 9 **kare, çerçeve bekliyor** (17 Eki 2026) · yusuf 10, süleyman 7, yunus 5, îsâ 8, ismail 6 **yer tutucu** (16 Eki 2026; kitaplar "preparing"). Hedef 34 (İlk İzler Vadisi): + hûd 5, sâlih 5 — bu ikisinin klasörü **henüz yok**, içerikleri `books.ts`'e aktarılınca betik açacak |
-| `public/madalyalar/` | `hz-{bookKey}.png` | **12** | âdem + şît **gerçek** (11 Ağu 2026) · idrîs **yer tutucu** (12 Ağu 2026) · nûh **gerçek** (13 Eki 2026) · musa **kare, çerçeve bekliyor** (13 Eki 2026) · eyyûb **kare, çerçeve bekliyor** (15 Eki 2026) · ibrahim, yusuf, süleyman, yunus, îsâ, ismail **yer tutucu** (16 Eki 2026). İlk İzler Vadisi hedefi 6 |
+| `public/rozetler/hz-{bookKey}/` | `bolum-{n}.png` | **84** | âdem 8 + şît 4 **gerçek** (11 Ağu 2026) · idrîs 4 **yer tutucu** (12 Ağu 2026) · nûh 8 **gerçek** (13 Eki 2026) · musa 10 **kare, çerçeve bekliyor** (13 Eki 2026) · eyyûb 5 **kare, çerçeve bekliyor** (15 Eki 2026) · yunus 5 **kare, çerçeve bekliyor** (16 Eki 2026) · ibrahim 9 **kare, çerçeve bekliyor** (17 Eki 2026) · yusuf 10 **kare, çerçeve bekliyor** (17 Eki 2026) · süleyman 7, îsâ 8, ismail 6 **yer tutucu** (16 Eki 2026; kitaplar "preparing"). Hedef 34 (İlk İzler Vadisi): + hûd 5, sâlih 5 — bu ikisinin klasörü **henüz yok**, içerikleri `books.ts`'e aktarılınca betik açacak |
+| `public/madalyalar/` | `hz-{bookKey}.png` | **12** | âdem + şît **gerçek** (11 Ağu 2026) · idrîs **yer tutucu** (12 Ağu 2026) · nûh **gerçek** (13 Eki 2026) · musa **kare, çerçeve bekliyor** (13 Eki 2026) · eyyûb **kare, çerçeve bekliyor** (15 Eki 2026) · yunus **kare, çerçeve bekliyor** (16 Eki 2026) · ibrahim **kare, çerçeve bekliyor** (17 Eki 2026) · yusuf **kare, çerçeve bekliyor** (17 Eki 2026) · süleyman, îsâ, ismail **yer tutucu** (16 Eki 2026). İlk İzler Vadisi hedefi 6 |
 | `public/unvanlar/` | `{unvan-anahtari}.png` | **10** | Hepsi yer tutucu: `yeni-gezgin`, `yol-kasifi`, `deger-toplayicisi`, `yol-arkadasi`, `bilge-yolcu`, `hikaye-ustasi`, `emanet-koruyucusu`, `isik-tasiyicisi`, `kissa-rehberi`, `buyuk-yolculuk-kasifi` (12 Eki 2026'da `atlas-bilgini` ve `yedi-bolge-kasifi` yerine). Anahtarlar `derive.ts:UNVAN_ESIKLERI` + `unvanAnahtari()` türetimidir; eşik tablosu değişirse `npm run gorsel-yertutucu -- unvanlar` yeniden çalıştırılır |
 | `public/avatarlar/` | `avatar-{1..10}.jpg` | **10** | Veli panelinde üçerli pencerede oklarla gezilir |
 | `public/ikonlar/` | `final-kapisi.svg` | **1** | Bölüm rotasındaki **Büyük Final Testi** durağının ikonu — arayüz ikonu olduğu için SVG kalır |
