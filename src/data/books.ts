@@ -2409,7 +2409,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-nuh/bolum-1/kucuk-tekne.jpg",
-            alt: "Tarla kenarındaki dar bir arkta yüzen, tahtadan yontulmuş küçük bir oyuncak tekne.",
+            alt: "Akşamüstü bir arkın kıyısında diz çökmüş, başı beyaz örtülü küçük bir çocuk; arkadan görünüyor, önünde suda yüzen tahta oyuncak tekne.",
           },
           { type: "text", text: "Bir akşam annesinin yanına oturdu ve aklını kurcalayan soruyu sordu." },
           { type: "text", text: "— Anneciğim, buğdayı toprak büyütüyor, beni de sen doğurdun, dedi. Peki bütün bunları kim yarattı?" },
@@ -2442,7 +2442,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-nuh/bolum-1/birakilan-keski.jpg",
-            alt: "Ahşap tezgâhın üstüne bırakılmış bir keski ve yanında işlenmemiş düz bir tahta parçası.",
+            alt: "Kamış çardak altında oymalı kapı panelinin çevresinde düşünceli üç komşu ve onlara arkası dönük duran genç usta.",
           },
           { type: "text", text: "Komşular bu soruya bir cevap bulamadı ve bir süre sessizce birbirlerine baktılar. Biri omuz silkip uzaklaştı, öteki söylene söylene evinin yolunu tuttu. Yine de Nûh'un tezgâhına iş getiren hiç eksik olmadı, çünkü yaptığı her şey hem sağlam hem güzeldi." },
           { type: "text", text: "Zamanla şehirden de ona iş getirmeye başladılar ve adı uzaklara kadar duyuldu. Gündüzleri şehirde çalıştı, akşamları ise vadideki evine döndü. Şehrin gece eğlencelerine onu çok çağırdılar, ama o hiçbirine katılmadı." },
@@ -2542,7 +2542,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-nuh/bolum-2/sacilan-aletler.jpg",
-            alt: "Toprak yola saçılmış marangoz aletleri ve yan devrilmiş bir su testisi.",
+            alt: "Tozlu yolda saçılmış aletleri sepete toplayan, arkası dönük diz çökmüş bir adam; uzakta şehre doğru uzaklaşan bir grup insan.",
           },
           { type: "text", text: "Hz. Nûh yavaşça doğruldu, üstündeki tozu silkeledi ve aletlerini tek tek topladı. Ne bağırdı ne de onlara aynı biçimde karşılık verdi. Kalabalık dağılırken arkalarından baktı ve onların doğru yolu bulması için dua etti." },
           {
@@ -2607,7 +2607,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-nuh/bolum-3/zengin-avlu.jpg",
-            alt: "Yüksek duvarlı bir avlu, süslü yastıklar, bakır kaplar ve oymalı büyük bir kapı.",
+            alt: "Yüksek duvarlı zengin bir avluda yastıklara yaslanmış, kibarca gülümseyen adamlar ve onlara arkası dönük konuşan bir figür.",
           },
           { type: "text", text: "Ertesi gün Hz. Nûh, şehrin ortasındaki en büyük ve en kalabalık meydana gitti. Orada evi olmayan, ekmeğini zor kazanan ve kimsenin dönüp bakmadığı insanlar vardı. Hz. Nûh onların arasına, yere serili eski bir hasıra oturdu ve aynı sözleri onlara da söyledi." },
           { type: "text", text: "— Bunun için sizden hiçbir karşılık istemiyorum, dedi. Benim karşılığımı yalnız âlemlerin Rabbi verir." },
@@ -2615,7 +2615,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-nuh/bolum-3/meydan-golgesi.jpg",
-            alt: "Meydandaki büyük ağacın gölgesinde halka hâlinde dizilmiş taşlar, yere serilmiş eski bir hasır ve bir ekmek sepeti.",
+            alt: "Meydandaki büyük ağacın gölgesinde hasıra oturmuş yoksul insanlar ve onlara arkası dönük oturan bir figür.",
           },
           { type: "text", text: "O günden sonra yoksullardan bazıları her gün Hz. Nûh'u dinlemeye geldi. Bir olan Allah'a inandılar ve onun çevresinde küçük ama sıcak bir topluluk oldular. Bunu uzaktan gören ileri gelenler ise hiç hoşnut olmadı." },
           {
@@ -2636,7 +2636,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-nuh/bolum-3/uzaklasan-izler.jpg",
-            alt: "Tozlu meydanda büyük evlere doğru uzaklaşan ayak izleri ve ağacın altında yerinde duran taşlar.",
+            alt: "Tozlu meydanda büyük evlere doğru uzaklaşan süslü giysili adamlar; ağacın gölgesinde başı dik oturan yoksullar.",
           },
           { type: "text", text: "İleri gelenler öfkeyle döndü ve meydandan hızlı adımlarla uzaklaştı. Giderken yoksullara yine tepeden baktılar ve arkalarından söylenmeye devam ettiler. Ama Hz. Nûh'un yanındakiler bu kez başlarını öne eğmedi, çünkü artık ne kadar değerli olduklarını biliyorlardı." },
           { type: "text", text: "Artık Hz. Nûh'un kapısı herkese ve her saatte açık kaldı. Zengin de yoksul da, yorgun da yalnız da onun yanına çekinmeden gelebilirdi. Onun yanında hiç kimse kapının önünde bekletilmedi, hiç kimseye “Sen git” denmedi." },
@@ -2650,7 +2650,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-nuh/bolum-3/bas-kose.jpg",
-            alt: "Kandil ışığında yere serilmiş uzun bir sofra, çevresinde aynı tür sade minderler ve paylaşılmış ekmek.",
+            alt: "Kandil ışığında yere serilmiş sofrada yan yana oturan farklı insanlar ve sofranın başında arkası dönük oturan bir figür.",
           },
         ],
         has_question: true,
@@ -2810,13 +2810,13 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-nuh/bolum-5/tahta-yigini.jpg",
-            alt: "Kesilmiş büyük bir ağaç kütüğü ve yanında düzgünce istiflenmiş kalın tahtalar.",
+            alt: "Kuru düzlükte kesilmiş dev ağaç kütüğünün yanında tahta taşıyan ve istifleyen, arkası dönük dört figür.",
           },
           { type: "text", text: "Gemi, Kur'an'da bildirildiği gibi tahtalardan ve çivilerden yapılıyordu. Hz. Nûh her tahtayı Allah'ın bildirdiği gibi ölçtü ve büyük bir özenle yerine oturttu. Ailesi de onun yanında gece gündüz demeden çalıştı ve hiç yakınmadı." },
           {
             type: "image",
             src: "/kitaplar/hz-nuh/bolum-5/gemi-iskeleti.jpg",
-            alt: "Kuru bir düzlükte, kaburgaları görünen ve tahtaları yarı yarıya çakılmış büyük bir gemi gövdesi.",
+            alt: "Kuru düzlükte iskelesi kurulmuş yarım gemi; ön planda gemiye bakıp gülen yolcular, iskelede çalışan küçük figürler.",
           },
           {
             type: "interactive_word",
@@ -2843,7 +2843,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-nuh/bolum-5/ailecek-is.jpg",
-            alt: "Geminin gölgesinde bir su testisi, ekmek sepeti, çivi kutusu ve yan yana bırakılmış aletler.",
+            alt: "Yarım geminin gölgesinde çalışan aile: tahta taşıyan, merdivende çivi çakan, ekmek ve su getiren figürler, hepsi arkadan.",
           },
           { type: "text", text: "Sonunda bir gün gemi tamamlandı ve son çivi de yerine çakıldı. Kocaman gövdesiyle kuru düzlüğün ortasında, yaşlı bir dağ gibi duruyordu. Gülenler hâlâ gülüyordu, ama Hz. Nûh'un içi rahattı; Allah'ın istediğini yapmıştı." },
           {
@@ -2914,7 +2914,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-nuh/bolum-6/hayvan-izleri.jpg",
-            alt: "Islak çamurda gemiye doğru ilerleyen, yan yana ikişer ikişer basılmış farklı hayvan izleri.",
+            alt: "Yağmur altında çamurlu ovada ikişer ikişer gemiye yürüyen hayvanlar ve rampadan eşyalarla gemiye çıkan aile.",
           },
           { type: "text", text: "Hayvanlar ikişer ikişer gemiye doğru geldi: kuşlar, ceylanlar, koyunlar ve daha niceleri. Ailesi de evden aldıkları birkaç eşyayı sırtlayıp sessizce geminin kapısına yöneldi. Bu arada sular her saat biraz daha yükseliyor, ovalar göle dönüyordu." },
           { type: "text", text: "Gemi kocaman, içi ise karanlık görünüyordu ve dışarıda sular durmadan yükseliyordu. Hiçbiri daha önce bir gemiye binmemişti, çoğunun kalbi hızlı hızlı çarpıyordu. Hepsi kapının önünde durdu ve Hz. Nûh'un ne diyeceğini beklemeye başladı." },
@@ -2952,7 +2952,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-nuh/bolum-6/kandil-ve-yagmur.jpg",
-            alt: "Yağmur damlaları süzülen küçük bir ahşap pencerenin önünde yanan toprak kandil.",
+            alt: "Geminin içinde kandil ışığında yan yana oturup el ele dua eden insanlar; açık pencereden dalgalar görünüyor.",
           },
         ],
         has_question: true,
@@ -3001,7 +3001,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-nuh/bolum-7/dalgalar.jpg",
-            alt: "Geminin kenarından görülen, dağlar gibi yükselen dalgalar ve uzakta sisin içinde bir tepe.",
+            alt: "Geminin küpeştesinde arkası dönük duran bir figür; sisli suların ortasındaki tepede tek başına duran çok küçük bir genç.",
           },
           {
             type: "interactive_word",
@@ -3123,13 +3123,13 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-nuh/bolum-8/yeni-koy.jpg",
-            alt: "Dağ eteğinde yeni örülmekte olan taş duvarlı küçük evler, kazılmış toprak ve sıra sıra dikilmiş fidanlar.",
+            alt: "Dağ eteğinde taş duvar ören, toprak kazan ve fidan diken insanlar; ön planda taş taşıyan arkası dönük bir figür, tepede gemi.",
           },
           { type: "text", text: "Hz. Nûh da yamacın en güzel yerine kendi eliyle bir fidan dikti. Yıllar önce diktiği fidan büyümüş, Allah'ın izniyle onları taşıyan bir gemi olmuştu. Şimdi bu yeni fidan, yeryüzündeki yeni bir hayatın başlangıcıydı." },
           {
             type: "image",
             src: "/kitaplar/hz-nuh/bolum-8/yeni-fidan.jpg",
-            alt: "Dağ yamacında yeni dikilmiş tek bir fidan, toprağı nemli; arkada açılan gökyüzü ve uzakta duran gemi.",
+            alt: "Gün doğarken dağ yamacında genç bir fidanı toprağa diken, arkası dönük diz çökmüş bir figür; uzakta gemi ve yeni köy.",
           },
           { type: "text", text: "Gemi ise uzun yıllar boyunca dağın üzerinde öylece kaldı. Allah onu ve yaşananları, sonra gelecek bütün insanlar için bir ibret olarak bıraktı. Bu hikâyeyi dinleyenler; sabrı, güveni ve teşekkür etmeyi hep hatırlayacaktı." },
           {

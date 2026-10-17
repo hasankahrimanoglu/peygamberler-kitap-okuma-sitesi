@@ -300,11 +300,11 @@ Görsel ID: nuh-1-kucuk-tekne
 Metin çapası: "Nûh büyüdükçe ellerinin hiç boş durmadığını herkes fark…" paragrafından sonra
 Sahnenin amacı: Çocuğun el becerisini göstermek; Bölüm 5'teki gemiye uzanan halkayı ekmek.
 Dosya: bolum-1/kucuk-tekne.jpg
-Alt metin: Tarla kenarındaki dar bir arkta yüzen, tahtadan yontulmuş küçük bir oyuncak tekne.
+Alt metin: Akşamüstü bir arkın kıyısında diz çökmüş, başı beyaz örtülü küçük bir çocuk; arkadan görünüyor, önünde suda yüzen tahta oyuncak tekne.
 Ana üretim promptu: Tarla kenarındaki dar ve berrak bir sulama arkında yüzen, tahtadan elle yontulmuş küçük bir oyuncak tekne. Arkın kıyısında taze otlar ve birkaç tahta talaşı. Suyun yüzeyinde gökyüzü ve sabah ışığı yansıyor. Arkada yumuşak flu bir buğday tarlası.
 Ana üretim promptu (EN): A small hand-carved wooden toy boat floating in a narrow, clear irrigation channel at the edge of a field. Fresh grass and a few wood shavings lie on the bank. The morning sky and sunlight reflect on the water. A wheat field fades softly out of focus in the background.
 Kadraj notu: 16:9; yakın plan, tekne merkezin hafif solunda, arka plan flu.
-Figür: yok
+Figür: Çocuk Nûh — Katman 1; ark kıyısında diz çökmüş, tamamen arkadan; yüz ve profil görünmez.
 Negatif prompt/kesin yasaklar: human figure, person, child, silhouette, hands, sails with symbols, flags
 ```
 
@@ -326,11 +326,11 @@ Görsel ID: nuh-1-birakilan-keski
 Metin çapası: "Nûh elindeki keskiyi yavaşça tezgâhın üstüne bıraktı ve…" paragrafından sonra
 Sahnenin amacı: Ret kararını sakin bir nesne üzerinden göstermek.
 Dosya: bolum-1/birakilan-keski.jpg
-Alt metin: Ahşap tezgâhın üstüne bırakılmış bir keski ve yanında işlenmemiş düz bir tahta parçası.
+Alt metin: Kamış çardak altında oymalı kapı panelinin çevresinde düşünceli üç komşu ve onlara arkası dönük duran genç usta.
 Ana üretim promptu: Ahşap bir tezgâhın üstüne yatay olarak bırakılmış bir keski. Hemen yanında hiç dokunulmamış, düz ve pürüzsüz bir tahta parçası duruyor. Tezgâhın üstünde ince bir talaş tozu. Atölyenin açık kapısından sakin, sıcak bir ışık süzülüyor.
 Ana üretim promptu (EN): A chisel laid flat on a wooden workbench. Right next to it rests a smooth, untouched plank of wood. A fine dust of shavings covers the bench. Calm, warm light streams in through the open workshop door.
 Kadraj notu: 16:9; yakın plan, keski ve tahta merkezde, arka plan flu.
-Figür: yok
+Figür: Genç Nûh — Katman 1; komşulara dönük, tamamen arkadan; yüz ve profil görünmez. Üç komşu — Katman 3; yüz gösterilebilir, düşünceli.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, statue, idol, carved figure, weapon
 ```
 
@@ -511,11 +511,11 @@ Görsel ID: nuh-2-sacilan-aletler
 Metin çapası: "Ama kalabalık dinlemek istemedi ve gülüşmeler yerini öfkeye…" paragrafından sonra
 Sahnenin amacı: Yaşanan zorluğu şiddet göstermeden, dağınık nesnelerle anlatmak.
 Dosya: bolum-2/sacilan-aletler.jpg
-Alt metin: Toprak yola saçılmış marangoz aletleri ve yan devrilmiş bir su testisi.
+Alt metin: Tozlu yolda saçılmış aletleri sepete toplayan, arkası dönük diz çökmüş bir adam; uzakta şehre doğru uzaklaşan bir grup insan.
 Ana üretim promptu: Toprak yolun üzerine dağınık biçimde saçılmış marangoz aletleri: bir keski, bir rende, birkaç tahta parçası. Yanında yan yatmış, ağzından biraz su akmış bir testi. Toz havada hafifçe asılı. Işık soluk ama sert değil.
 Ana üretim promptu (EN): Carpenter's tools scattered across a dirt road: a chisel, a hand plane and a few pieces of wood. Next to them a clay jug lies on its side with a little water spilled from its mouth. Dust hangs lightly in the air. The light is muted but not harsh.
 Kadraj notu: 16:9; yakın-orta plan, aletler kadrajın alt yarısında yayılmış.
-Figür: yok
+Figür: Hz. Nûh — Katman 1; diz çökmüş, aletleri topluyor, tamamen arkadan; yüz ve profil görünmez. Kalabalık — Katman 3; uzakta, şehre doğru uzaklaşıyor.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, feet, footprints of a fight, blood, weapon, stones being thrown
 ```
 
@@ -676,11 +676,11 @@ Görsel ID: nuh-3-zengin-avlu
 Metin çapası: "Hz. Nûh onların işlerini özenle bitirdi, ama asıl…" paragrafından sonra
 Sahnenin amacı: İleri gelenlerin varlıklı dünyasını göstermek.
 Dosya: bolum-3/zengin-avlu.jpg
-Alt metin: Yüksek duvarlı bir avlu, süslü yastıklar, bakır kaplar ve oymalı büyük bir kapı.
+Alt metin: Yüksek duvarlı zengin bir avluda yastıklara yaslanmış, kibarca gülümseyen adamlar ve onlara arkası dönük konuşan bir figür.
 Ana üretim promptu: Yüksek duvarlı geniş bir avlu. Taş zemin üzerinde renkli kumaş yastıklar, parlak bakır kaplar ve meyve dolu tabaklar. Avlunun girişinde asma ve çiçek oymalarıyla süslü, büyük çift kanatlı ahşap bir kapı. Avluya ılık bir ikindi ışığı düşüyor.
 Ana üretim promptu (EN): A wide courtyard with high walls. On the stone floor lie colorful fabric cushions, shiny copper vessels and plates full of fruit. At the courtyard entrance stands a large double wooden door carved with vines and flowers. Mild afternoon light falls into the courtyard.
 Kadraj notu: 16:9; kapı sol üçte birde, yastıklar ve kaplar sağ önde.
-Figür: yok
+Figür: Hz. Nûh — Katman 1; ayakta konuşuyor, tamamen arkadan; yüz ve profil görünmez. İleri gelenler — Katman 3; yastıklarda oturmuş, yüz gösterilebilir, kibarca gülümsüyor.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, statue, idol, wine, drunkenness
 ```
 
@@ -689,11 +689,11 @@ Görsel ID: nuh-3-meydan-golgesi
 Metin çapası: "— Bunun için sizden hiçbir karşılık istemiyorum, dedi.…" paragrafından sonra
 Sahnenin amacı: Yoksulların sade dünyasını ve Hz. Nûh'un onlarla aynı yerde oturmasını sezdirmek.
 Dosya: bolum-3/meydan-golgesi.jpg
-Alt metin: Meydandaki büyük ağacın gölgesinde halka hâlinde dizilmiş taşlar, yere serilmiş eski bir hasır ve bir ekmek sepeti.
+Alt metin: Meydandaki büyük ağacın gölgesinde hasıra oturmuş yoksul insanlar ve onlara arkası dönük oturan bir figür.
 Ana üretim promptu: Meydandaki büyük ağacın gölgesinde, halka hâlinde dizilmiş düz taşlar. Ortada yere serilmiş eski, yamalı bir hasır ve üstünde paylaşılmış birkaç somun ekmekle bir su testisi. Yapraklardan süzülen benekli ışık. Sade ama sıcak bir atmosfer.
 Ana üretim promptu (EN): In the shade of the big tree in the square, flat stones are arranged in a circle. In the middle lies an old, patched straw mat with a few shared loaves of bread and a clay water jug on it. Dappled light filters through the leaves. A simple but warm atmosphere.
 Kadraj notu: 16:9; hasır merkezde, taşlar çevresinde halka; ağaç gövdesi sol kenarda.
-Figür: yok
+Figür: Hz. Nûh — Katman 1; hasırda oturmuş, tamamen arkadan; yüz ve profil görünmez. Yoksullar — Katman 3; yüz gösterilebilir, sakin.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, beggar, sad faces, crowd
 ```
 
@@ -702,11 +702,11 @@ Görsel ID: nuh-3-uzaklasan-izler
 Metin çapası: "— Size "Allah'ın hazineleri bende" demiyorum, diye devam…" paragrafından sonra
 Sahnenin amacı: İleri gelenlerin gidişini insan göstermeden, izlerle anlatmak.
 Dosya: bolum-3/uzaklasan-izler.jpg
-Alt metin: Tozlu meydanda büyük evlere doğru uzaklaşan ayak izleri ve ağacın altında yerinde duran taşlar.
+Alt metin: Tozlu meydanda büyük evlere doğru uzaklaşan süslü giysili adamlar; ağacın gölgesinde başı dik oturan yoksullar.
 Ana üretim promptu: Tozlu meydan zemininde, ağacın gölgesinden uzaklaşıp büyük evlerin oymalı kapılarına doğru giden bir dizi sandalet izi. Ağacın altındaki taş halkası yerinde duruyor. Öğleden sonra ışığı, uzun gölgeler.
 Ana üretim promptu (EN): On the dusty ground of the square, a line of sandal prints leads away from the tree's shade toward the carved doors of the big houses. The ring of stones under the tree remains in place. Late afternoon light, long shadows.
 Kadraj notu: 16:9; izler ön planda sağdan sola, kapılar arka planda; taş halkası sağ kenarda.
-Figür: yok
+Figür: İleri gelenler — Katman 3; arkası dönük uzaklaşıyor. Yoksullar — Katman 3; ağacın gölgesinde oturuyor, yüz gösterilebilir. Hz. Nûh bu sahnede yok.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, feet, crowd
 ```
 
@@ -728,11 +728,11 @@ Görsel ID: nuh-3-bas-kose
 Metin çapası: "Onun gözünde bir insanın değeri, kesesindeki altınla ya…" paragrafından sonra (bölüm sonu)
 Sahnenin amacı: Herkese eşit yer açılan sıcak bir sofra ortamıyla değeri kapatmak.
 Dosya: bolum-3/bas-kose.jpg
-Alt metin: Kandil ışığında yere serilmiş uzun bir sofra, çevresinde aynı tür sade minderler ve paylaşılmış ekmek.
+Alt metin: Kandil ışığında yere serilmiş sofrada yan yana oturan farklı insanlar ve sofranın başında arkası dönük oturan bir figür.
 Ana üretim promptu: Kandil ışığıyla aydınlanan sade bir oda. Yere serilmiş uzun bir sofra bezi ve çevresinde birbirinin aynısı, sade minderler. Sofranın üstünde paylaşılmış ekmekler, bir tas çorba ve birkaç hurma. Hiçbir minder ötekinden süslü değil.
 Ana üretim promptu (EN): A simple room lit by an oil lamp. A long cloth is spread on the floor, surrounded by identical plain cushions. On it lie shared bread, a bowl of soup and a few dates. No cushion is fancier than another.
 Kadraj notu: 16:9; sofra kadrajı yatay kesiyor, kandil sol üstte.
-Figür: yok
+Figür: Hz. Nûh — Katman 1; sofranın başında oturuyor, tamamen arkadan; yüz ve profil görünmez. İnananlar — Katman 3; sofrada yan yana, yüz gösterilebilir.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, throne, golden cushion
 ```
 
@@ -1052,11 +1052,11 @@ Görsel ID: nuh-5-tahta-yigini
 Metin çapası: "Birlikte baltalarını aldılar ve yıllardır büyüyen ağacın yanına…" paragrafından sonra
 Sahnenin amacı: Ağacın gemiye dönüşmeye başladığı anı göstermek; Bölüm 4'ten gelen halkayı sürdürmek.
 Dosya: bolum-5/tahta-yigini.jpg
-Alt metin: Kesilmiş büyük bir ağaç kütüğü ve yanında düzgünce istiflenmiş kalın tahtalar.
+Alt metin: Kuru düzlükte kesilmiş dev ağaç kütüğünün yanında tahta taşıyan ve istifleyen, arkası dönük dört figür.
 Ana üretim promptu: Kuru düzlükte, yeni kesilmiş büyük bir ağacın geniş kütüğü; yıllık halkaları açıkça görünüyor. Yanında düzgünce üst üste istiflenmiş kalın, açık renkli tahtalar ve ağaca dayanmış birkaç balta. Yerde taze talaş ve kıymıklar. Sabah ışığı, sıcak ahşap tonları.
 Ana üretim promptu (EN): On the dry plain, the wide stump of a freshly cut large tree with its growth rings clearly visible. Next to it, thick light-colored planks are neatly stacked, and a few axes lean against the stump. Fresh shavings and wood chips cover the ground. Morning light, warm wood tones.
 Kadraj notu: 16:9; kütük sol önde, tahta yığını sağa doğru uzanıyor.
-Figür: yok
+Figür: Hz. Nûh ve üç oğlu — Katman 1; tahta taşıyor ve istifliyor, tamamen arkadan; yüz ve profil görünmez.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, saw mill, machinery, metal saw
 ```
 
@@ -1065,11 +1065,11 @@ Görsel ID: nuh-5-gemi-iskeleti
 Metin çapası: "Gemi, Kur'an'da bildirildiği gibi tahtalardan ve çivilerden yapılıyordu.…" paragrafından sonra
 Sahnenin amacı: Yapımın ilerleyişini göstermek; tahtaların yavaş yavaş bir gövdeye dönüşmesi.
 Dosya: bolum-5/gemi-iskeleti.jpg
-Alt metin: Kuru bir düzlükte, kaburgaları görünen ve tahtaları yarı yarıya çakılmış büyük bir gemi gövdesi.
+Alt metin: Kuru düzlükte iskelesi kurulmuş yarım gemi; ön planda gemiye bakıp gülen yolcular, iskelede çalışan küçük figürler.
 Ana üretim promptu: Kuru bir düzlükte, ahşap destekler üzerinde yükselen büyük bir gemi gövdesi. Kaburgaları açıkça görünüyor, alt kısmı tahtalarla kaplanmış, üst kısmı henüz açık. Yanında tahta yığınları ve sepet içinde çiviler. Gün ortası ışığı, gölgeler kısa. Gemi biçimi sade ve gerçekçi, süssüz.
 Ana üretim promptu (EN): On a dry plain, a large ship's hull rises on wooden supports. Its ribs are clearly visible; the lower part is planked while the upper part is still open. Stacks of planks and a basket of nails lie beside it. Midday light with short shadows. The ship's shape is simple and plain, without decoration.
 Kadraj notu: 16:9; gövde yan profilden, kadrajın üçte ikisini dolduruyor.
-Figür: yok
+Figür: Yolcular — Katman 3; ön planda gemiye bakıp gülüyor, yüz gösterilebilir, karikatür değil. Hz. Nûh ve ailesi — Katman 1; iskelede çalışan küçük, uzak figürler; yüz seçilmez.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, sails, mast flags, modern ship, cabin windows with glass, multiple decks labeled, measuring numbers
 ```
 
@@ -1091,11 +1091,11 @@ Görsel ID: nuh-5-ailecek-is
 Metin çapası: "Aileden herkes elinden gelen işi üstlendi ve kimse…" paragrafından sonra
 Sahnenin amacı: Aile içi iş birliğini insan göstermeden, eşyalarla anlatmak.
 Dosya: bolum-5/ailecek-is.jpg
-Alt metin: Geminin gölgesinde bir su testisi, ekmek sepeti, çivi kutusu ve yan yana bırakılmış aletler.
+Alt metin: Yarım geminin gölgesinde çalışan aile: tahta taşıyan, merdivende çivi çakan, ekmek ve su getiren figürler, hepsi arkadan.
 Ana üretim promptu: Yarı bitmiş geminin gölgesinde, yere serilmiş bir örtü üzerinde bir su testisi, ekmek ve hurma dolu bir sepet, bir kutu çivi ve yan yana bırakılmış birkaç alet. Yakında üst üste dizilmiş tahtalar. Akşamüstü ışığı, sıcak ve huzurlu bir mola anı.
 Ana üretim promptu (EN): In the shade of the half-finished ship, on a cloth spread on the ground, lie a clay water jug, a basket of bread and dates, a box of nails and several tools placed side by side. Stacked planks are nearby. Late-afternoon light, a warm and peaceful moment of rest.
 Kadraj notu: 16:9; örtü ve eşyalar ön planda, gemi gövdesinin alt kısmı arka planda.
-Figür: yok
+Figür: Hz. Nûh'un ailesi — Katman 1; tahta taşıyor, çivi çakıyor, ekmek ve su getiriyor; hepsi tamamen arkadan; yüz ve profil görünmez.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, children, food with labels
 ```
 
@@ -1241,11 +1241,11 @@ Görsel ID: nuh-6-hayvan-izleri
 Metin çapası: "O sırada Hz. Nûh'a, gemiye kimleri alacağı tek…" paragrafından sonra
 Sahnenin amacı: Hayvanların gemiye gelişini izler üzerinden, sevimli ve sakin biçimde göstermek.
 Dosya: bolum-6/hayvan-izleri.jpg
-Alt metin: Islak çamurda gemiye doğru ilerleyen, yan yana ikişer ikişer basılmış farklı hayvan izleri.
+Alt metin: Yağmur altında çamurlu ovada ikişer ikişer gemiye yürüyen hayvanlar ve rampadan eşyalarla gemiye çıkan aile.
 Ana üretim promptu: Islak, parlak çamurun üzerinde gemiye doğru ilerleyen yan yana ikişer ikişer basılmış hayvan izleri: kuş ayakları, ceylan toynakları, koyun izleri ve daha büyük patiler. İzlerin sonunda ahşap geminin açık kapısına çıkan bir rampa. Yağmur hafiflemiş, ışık yumuşak.
 Ana üretim promptu (EN): On wet, shining mud, animal tracks pressed side by side in pairs lead toward the ship: bird feet, gazelle hooves, sheep tracks and larger paws. At the end of the tracks, a ramp rises to the open door of the wooden ship. The rain has eased and the light is soft.
 Kadraj notu: 16:9; izler ön planda alttan yukarı, rampa ve kapı arka planda.
-Figür: yok
+Figür: Hz. Nûh'un ailesi — Katman 1; eşyalarla rampadan gemiye çıkıyor, arkadan ve uzak; yüz görünmez.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, human footprints, predators attacking
 ```
 
@@ -1280,11 +1280,11 @@ Görsel ID: nuh-6-kandil-ve-yagmur
 Metin çapası: "İçeride küçük bir kandil yanıyor, tahta duvarlara sıcak…" paragrafından sonra (bölüm sonu)
 Sahnenin amacı: Bölümü dışarıdaki fırtına ile içerideki sıcaklık arasındaki farkla, güvenle kapatmak.
 Dosya: bolum-6/kandil-ve-yagmur.jpg
-Alt metin: Yağmur damlaları süzülen küçük bir ahşap pencerenin önünde yanan toprak kandil.
+Alt metin: Geminin içinde kandil ışığında yan yana oturup el ele dua eden insanlar; açık pencereden dalgalar görünüyor.
 Ana üretim promptu: Geminin içinden küçük bir ahşap pencere; camsız kepenk aralığından dışarıda yağan yağmur ve koyu mavi dalgalar görünüyor. Pencerenin önündeki ahşap rafta yanan küçük bir toprak kandil; alevi sakin ve dimdik. İçerisi sıcak altın, dışarısı serin mavi.
 Ana üretim promptu (EN): A small wooden window seen from inside the ship; through the gap of the glassless shutter, rain and dark blue waves are visible outside. On the wooden shelf in front of the window, a small clay oil lamp burns with a calm, upright flame. Inside is warm gold, outside is cool blue.
 Kadraj notu: 16:9; kandil sol üçte birde, pencere sağda; sıcak-soğuk ışık karşıtlığı belirgin.
-Figür: yok
+Figür: Hz. Nûh ve ailesi — Katman 1; kandilin önünde el ele, tamamen arkadan; yüz ve profil görünmez. Gemideki inananlar — Katman 3; yandaki dört adam, yüz hatları kısmen görünüyor.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, glass window pane, storm destruction
 ```
 
@@ -1407,11 +1407,11 @@ Görsel ID: nuh-7-dalgalar
 Metin çapası: "Bu, babasının çağrısına yıllardır kulak vermeyen oğluydu. Hz.…" paragrafından sonra
 Sahnenin amacı: Dalgaların büyüklüğünü ve ayrılığın mesafesini insan göstermeden hissettirmek.
 Dosya: bolum-7/dalgalar.jpg
-Alt metin: Geminin kenarından görülen, dağlar gibi yükselen dalgalar ve uzakta sisin içinde bir tepe.
+Alt metin: Geminin küpeştesinde arkası dönük duran bir figür; sisli suların ortasındaki tepede tek başına duran çok küçük bir genç.
 Ana üretim promptu: Geminin ahşap küpeştesinin üstünden bakış: önde ıslak tahta tırabzan, ileride dağlar gibi yükselen yuvarlak dalgalar. Çok uzakta, sisin ve suların arasında yükselen tek bir koyu tepe. Gökyüzü gri, ışık serin ama yumuşak.
 Ana üretim promptu (EN): A view over the ship's wooden railing: in the foreground the wet wooden rail, beyond it rounded waves rising like mountains. Far away, a single dark hill rises between the mist and the water. The sky is grey; the light is cool but soft.
 Kadraj notu: 16:9; küpeşte kadrajın alt kenarında, tepe sağ üçte birde küçük ve uzak.
-Figür: yok
+Figür: Hz. Nûh — Katman 1; küpeştede duruyor, tamamen arkadan; yüz ve profil görünmez. Oğlu — Katman 1 (yakın akraba); tepede tek başına, çok küçük ve uzak; yüz seçilmez. Boğulma imgesi yok.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, figure on the hill, people in water, floating bodies
 ```
 
@@ -1624,11 +1624,11 @@ Görsel ID: nuh-8-yeni-koy
 Metin çapası: "Ertesi sabah herkes güneşle birlikte erkenden kalktı ve…" paragrafından sonra
 Sahnenin amacı: Yeniden kuruluşu ve ortak emeği göstermek.
 Dosya: bolum-8/yeni-koy.jpg
-Alt metin: Dağ eteğinde yeni örülmekte olan taş duvarlı küçük evler, kazılmış toprak ve sıra sıra dikilmiş fidanlar.
+Alt metin: Dağ eteğinde taş duvar ören, toprak kazan ve fidan diken insanlar; ön planda taş taşıyan arkası dönük bir figür, tepede gemi.
 Ana üretim promptu: Dağ eteğinde, yeşillenen bir yamaçta yeni örülmekte olan taş duvarlı küçük evler; bazılarının çatısı henüz bitmemiş. Önlerinde yeni kazılmış, koyu renkli toprak ve sıra sıra dikilmiş genç fidanlar. Bir köşede alet sepetleri ve su testileri. Parlak sabah ışığı.
 Ana üretim promptu (EN): At the foot of the mountain, on a greening slope, small stone-walled houses are being built; some of their roofs are still unfinished. In front of them is freshly dug dark soil and rows of newly planted young saplings. Baskets of tools and clay water jugs stand in a corner. Bright morning light.
 Kadraj notu: 16:9; evler orta planda yatay dizi, fidanlar ön planda; dağ arka planda.
-Figür: yok
+Figür: Hz. Nûh — Katman 1; ön planda taş taşıyor, tamamen arkadan; yüz ve profil görünmez. İnananlar — Katman 3; duvar örüyor, toprak kazıyor, fidan dikiyor; yüz gösterilebilir.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, crowd, city walls, temple, signboard, village name
 ```
 
@@ -1637,11 +1637,11 @@ Görsel ID: nuh-8-yeni-fidan
 Metin çapası: "Hz. Nûh da yamacın en güzel yerine kendi…" paragrafından sonra
 Sahnenin amacı: Kitap boyunca süren fidan halkasını kapatmak; rozet sembolüyle bağ kurmak.
 Dosya: bolum-8/yeni-fidan.jpg
-Alt metin: Dağ yamacında yeni dikilmiş tek bir fidan, toprağı nemli; arkada açılan gökyüzü ve uzakta duran gemi.
+Alt metin: Gün doğarken dağ yamacında genç bir fidanı toprağa diken, arkası dönük diz çökmüş bir figür; uzakta gemi ve yeni köy.
 Ana üretim promptu: Dağ yamacında, toprağı yeni sulanmış ve nemli tek bir genç fidan; taze yaprakları ışıkta parlıyor. Fidanın dibinde bir toprak testi. Arka planda flu biçimde açık, berrak bir gökyüzü ve çok uzakta dağın üstünde duran ahşap geminin silüeti.
 Ana üretim promptu (EN): On the mountainside, a single young sapling with freshly watered, moist soil; its fresh leaves shine in the light. A clay jug sits at its base. In the blurred background, an open, clear sky and, very far away, the silhouette of the wooden ship resting on the mountain.
 Kadraj notu: 16:9; fidan sol üçte birde ön planda ve keskin, gemi sağ uzakta küçük ve flu.
-Figür: yok
+Figür: Hz. Nûh — Katman 1; fidanın başında diz çökmüş, tamamen arkadan; yüz ve profil görünmez.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, olive branch, dove, rainbow, specific tree species label
 ```
 
@@ -1986,23 +1986,23 @@ envanterde YOKTUR** (ikisi de hazır). Bölge sahnesi de girmez.
 | # | Dosya | Akıştaki yer | Alt metin |
 |---:|---|---|---|
 | 1 | `kitaplar/hz-nuh/bolum-1/kapak.jpg` | Açılış | Sabah ışığında yeşil bir vadi, küçük bir kerpiç ev, bahçesi ve uzakta parlayan iki nehir. |
-| 2 | `kitaplar/hz-nuh/bolum-1/kucuk-tekne.jpg` | 1. Kısım | Tarla kenarındaki dar bir arkta yüzen, tahtadan yontulmuş küçük bir oyuncak tekne. |
+| 2 | `kitaplar/hz-nuh/bolum-1/kucuk-tekne.jpg` | 1. Kısım | Akşamüstü bir arkın kıyısında diz çökmüş, başı beyaz örtülü küçük bir çocuk; arkadan görünüyor, önünde suda yüzen tahta oyuncak tekne. |
 | 3 | `kitaplar/hz-nuh/bolum-1/oymali-kapi.jpg` | 1. Kısım | Asma dalları ve çiçek oymalarıyla süslenmiş ahşap bir kapı ve önünde dağınık talaşlar. |
-| 4 | `kitaplar/hz-nuh/bolum-1/birakilan-keski.jpg` | Devam | Ahşap tezgâhın üstüne bırakılmış bir keski ve yanında işlenmemiş düz bir tahta parçası. |
+| 4 | `kitaplar/hz-nuh/bolum-1/birakilan-keski.jpg` | Devam | Kamış çardak altında oymalı kapı panelinin çevresinde düşünceli üç komşu ve onlara arkası dönük duran genç usta. |
 | 5 | `kitaplar/hz-nuh/bolum-1/uzak-sehir.jpg` | Devam | Akşam karanlığında uzakta ışıkları yanan bir şehir ve önde sessiz bir vadi patikası. |
 | 6 | `kitaplar/hz-nuh/bolum-1/dik-fidan.jpg` | Devam | Yıldızlı bir gecede rüzgâra rağmen dimdik duran genç bir fidan. |
 | 7 | `kitaplar/hz-nuh/bolum-2/kapak.jpg` | Açılış | Akşam ışığında vadiye inen bir yol ve yolun kenarındaki küçük bir evin aydınlık penceresi. |
 | 8 | `kitaplar/hz-nuh/bolum-2/yol-kenari-tezgah.jpg` | 1. Kısım | Yol kenarında kamış örtülü basit bir çardak, altında marangoz tezgâhı ve el aletleri. |
 | 9 | `kitaplar/hz-nuh/bolum-2/komurde-elmas.jpg` | 1. Kısım | Kara kömür parçalarının arasında, içinden ışık saçan tek bir elmas. |
-| 10 | `kitaplar/hz-nuh/bolum-2/sacilan-aletler.jpg` | Devam | Toprak yola saçılmış marangoz aletleri ve yan devrilmiş bir su testisi. |
+| 10 | `kitaplar/hz-nuh/bolum-2/sacilan-aletler.jpg` | Devam | Tozlu yolda saçılmış aletleri sepete toplayan, arkası dönük diz çökmüş bir adam; uzakta şehre doğru uzaklaşan bir grup insan. |
 | 11 | `kitaplar/hz-nuh/bolum-2/bos-yol.jpg` | Devam | Alacakaranlıkta bomboş kalan yol, çardak ve yeniden düzenlenmiş tezgâh. |
 | 12 | `kitaplar/hz-nuh/bolum-2/yeni-sabah.jpg` | Devam | Sabah güneşinde yol kenarındaki tezgâhın başında, arkası dönük ve yüzü görünmeyen bir figür. |
 | 13 | `kitaplar/hz-nuh/bolum-3/kapak.jpg` | Açılış | Öğle ışığında geniş, tozlu bir şehir meydanı, ortasında gölgeli büyük bir ağaç ve çevresinde kerpiç evler. |
-| 14 | `kitaplar/hz-nuh/bolum-3/zengin-avlu.jpg` | 1. Kısım | Yüksek duvarlı bir avlu, süslü yastıklar, bakır kaplar ve oymalı büyük bir kapı. |
-| 15 | `kitaplar/hz-nuh/bolum-3/meydan-golgesi.jpg` | 1. Kısım | Meydandaki büyük ağacın gölgesinde halka hâlinde dizilmiş taşlar, yere serilmiş eski bir hasır ve bir ekmek sepeti. |
-| 16 | `kitaplar/hz-nuh/bolum-3/uzaklasan-izler.jpg` | Devam | Tozlu meydanda büyük evlere doğru uzaklaşan ayak izleri ve ağacın altında yerinde duran taşlar. |
+| 14 | `kitaplar/hz-nuh/bolum-3/zengin-avlu.jpg` | 1. Kısım | Yüksek duvarlı zengin bir avluda yastıklara yaslanmış, kibarca gülümseyen adamlar ve onlara arkası dönük konuşan bir figür. |
+| 15 | `kitaplar/hz-nuh/bolum-3/meydan-golgesi.jpg` | 1. Kısım | Meydandaki büyük ağacın gölgesinde hasıra oturmuş yoksul insanlar ve onlara arkası dönük oturan bir figür. |
+| 16 | `kitaplar/hz-nuh/bolum-3/uzaklasan-izler.jpg` | Devam | Tozlu meydanda büyük evlere doğru uzaklaşan süslü giysili adamlar; ağacın gölgesinde başı dik oturan yoksullar. |
 | 17 | `kitaplar/hz-nuh/bolum-3/acik-kapi.jpg` | Devam | Akşam karanlığında ardına kadar açık duran sade ahşap bir kapı ve içeriden yola taşan sıcak ışık. |
-| 18 | `kitaplar/hz-nuh/bolum-3/bas-kose.jpg` | Devam | Kandil ışığında yere serilmiş uzun bir sofra, çevresinde aynı tür sade minderler ve paylaşılmış ekmek. |
+| 18 | `kitaplar/hz-nuh/bolum-3/bas-kose.jpg` | Devam | Kandil ışığında yere serilmiş sofrada yan yana oturan farklı insanlar ve sofranın başında arkası dönük oturan bir figür. |
 | 19 | `kitaplar/hz-nuh/bolum-4/kapak.jpg` | Açılış | Bir yanı yıldızlı gece, öbür yanı şafak olan gökyüzünün altında yalnız bir tepe ve tepeye çıkan patika. |
 | 20 | `kitaplar/hz-nuh/bolum-4/tepedeki-yol.jpg` | 1. Kısım | Uzak planda, tepenin üstünde arkası dönük duran ve aşağıdaki yola bakan küçük bir figür; yüzü görünmüyor. |
 | 21 | `kitaplar/hz-nuh/bolum-4/ocak-basi.jpg` | 1. Kısım | Akşam ışığında bir evin ocak başı; yanan ateş, yere dizilmiş farklı boylarda sandaletler ve tahta oyuncaklar. |
@@ -2010,19 +2010,19 @@ envanterde YOKTUR** (ikisi de hazır). Bölge sahnesi de girmez.
 | 23 | `kitaplar/hz-nuh/bolum-4/ay-ve-gunes.jpg` | Devam | Alacakaranlıkta bir yanda batan güneş, öbür yanda yükselen ay ve aradaki geniş, yumuşak ova. |
 | 24 | `kitaplar/hz-nuh/bolum-4/buyuyen-fidan.jpg` | Devam | Bir düzlükte toprağı yeni sulanmış genç bir ağaç ve yanında duran toprak bir su testisi. |
 | 25 | `kitaplar/hz-nuh/bolum-5/kapak.jpg` | Açılış | Uçsuz bucaksız kuru bir düzlüğün ortasında tek başına yükselen, gövdesi kalın büyük bir ağaç. |
-| 26 | `kitaplar/hz-nuh/bolum-5/tahta-yigini.jpg` | 1. Kısım | Kesilmiş büyük bir ağaç kütüğü ve yanında düzgünce istiflenmiş kalın tahtalar. |
-| 27 | `kitaplar/hz-nuh/bolum-5/gemi-iskeleti.jpg` | 1. Kısım | Kuru bir düzlükte, kaburgaları görünen ve tahtaları yarı yarıya çakılmış büyük bir gemi gövdesi. |
+| 26 | `kitaplar/hz-nuh/bolum-5/tahta-yigini.jpg` | 1. Kısım | Kuru düzlükte kesilmiş dev ağaç kütüğünün yanında tahta taşıyan ve istifleyen, arkası dönük dört figür. |
+| 27 | `kitaplar/hz-nuh/bolum-5/gemi-iskeleti.jpg` | 1. Kısım | Kuru düzlükte iskelesi kurulmuş yarım gemi; ön planda gemiye bakıp gülen yolcular, iskelede çalışan küçük figürler. |
 | 28 | `kitaplar/hz-nuh/bolum-5/cekic-ve-civiler.jpg` | Devam | Bir tahta üzerine bırakılmış ahşap tokmak ve yanında dizili demir çiviler. |
-| 29 | `kitaplar/hz-nuh/bolum-5/ailecek-is.jpg` | Devam | Geminin gölgesinde bir su testisi, ekmek sepeti, çivi kutusu ve yan yana bırakılmış aletler. |
+| 29 | `kitaplar/hz-nuh/bolum-5/ailecek-is.jpg` | Devam | Yarım geminin gölgesinde çalışan aile: tahta taşıyan, merdivende çivi çakan, ekmek ve su getiren figürler, hepsi arkadan. |
 | 30 | `kitaplar/hz-nuh/bolum-5/tamamlanan-gemi.jpg` | Devam | Akşam ışığında, denizden çok uzak kuru bir düzlüğün ortasında duran büyük, tamamlanmış ahşap gemi. |
 | 31 | `kitaplar/hz-nuh/bolum-6/kapak.jpg` | Açılış | Kuru düzlükte duran ahşap gemi ve ufukta toplanan koyu yağmur bulutları. |
 | 32 | `kitaplar/hz-nuh/bolum-6/kara-bulutlar.jpg` | 1. Kısım | Çatlak toprağa düşen ilk iri yağmur damlaları ve üstte koyu bulutlar. |
-| 33 | `kitaplar/hz-nuh/bolum-6/hayvan-izleri.jpg` | 1. Kısım | Islak çamurda gemiye doğru ilerleyen, yan yana ikişer ikişer basılmış farklı hayvan izleri. |
+| 33 | `kitaplar/hz-nuh/bolum-6/hayvan-izleri.jpg` | 1. Kısım | Yağmur altında çamurlu ovada ikişer ikişer gemiye yürüyen hayvanlar ve rampadan eşyalarla gemiye çıkan aile. |
 | 34 | `kitaplar/hz-nuh/bolum-6/gemi-ici.jpg` | Devam | Geminin içinde kalın ahşap kirişler, saman serili bölmeler ve kirişlere tünemiş kuşlar. |
 | 35 | `kitaplar/hz-nuh/bolum-6/yuzen-gemi.jpg` | Devam | Yağmur altında geniş bir suyun üstünde ağır ağır yüzen ahşap gemi. |
-| 36 | `kitaplar/hz-nuh/bolum-6/kandil-ve-yagmur.jpg` | Devam | Yağmur damlaları süzülen küçük bir ahşap pencerenin önünde yanan toprak kandil. |
+| 36 | `kitaplar/hz-nuh/bolum-6/kandil-ve-yagmur.jpg` | Devam | Geminin içinde kandil ışığında yan yana oturup el ele dua eden insanlar; açık pencereden dalgalar görünüyor. |
 | 37 | `kitaplar/hz-nuh/bolum-7/kapak.jpg` | Açılış | Gri gökyüzünün altında yüksek dalgalar ve dalgaların arasında sağlamca yol alan ahşap gemi. |
-| 38 | `kitaplar/hz-nuh/bolum-7/dalgalar.jpg` | 1. Kısım | Geminin kenarından görülen, dağlar gibi yükselen dalgalar ve uzakta sisin içinde bir tepe. |
+| 38 | `kitaplar/hz-nuh/bolum-7/dalgalar.jpg` | 1. Kısım | Geminin küpeştesinde arkası dönük duran bir figür; sisli suların ortasındaki tepede tek başına duran çok küçük bir genç. |
 | 39 | `kitaplar/hz-nuh/bolum-7/uzak-tepe.jpg` | 1. Kısım | Suların ortasında yalnız kalmış, çevresini sis saran ıssız bir tepe. |
 | 40 | `kitaplar/hz-nuh/bolum-7/kandil-penceresi.jpg` | Devam | Geminin loş iç mekânında, pencere önündeki rafta tek başına yanan bir kandil ve dışarıda yağmurun dinişi. |
 | 41 | `kitaplar/hz-nuh/bolum-7/sonsuz-su.jpg` | Devam | Geminin açık kepenginden görülen, ufka kadar uzanan durgun su ve rafa bırakılmış kurumuş bir yeşil yaprak. |
@@ -2030,8 +2030,8 @@ envanterde YOKTUR** (ikisi de hazır). Bölge sahnesi de girmez.
 | 43 | `kitaplar/hz-nuh/bolum-8/kapak.jpg` | Açılış | Gün doğumunda berrak bir gökyüzü altında, yeşilin yeniden belirdiği dağ sırtları ve çekilen sular. |
 | 44 | `kitaplar/hz-nuh/bolum-8/cudide-gemi.jpg` | 1. Kısım | Bir dağın yeşermeye başlayan yamacına oturmuş ahşap gemi ve aşağıda çekilen sular. |
 | 45 | `kitaplar/hz-nuh/bolum-8/dagilan-hayvanlar.jpg` | 1. Kısım | Uzak planda, gemi rampasının yanında arkası dönük duran bir figür ve yamaçlara dağılan ceylanlar, koyunlar ve göğe uçan kuşlar. |
-| 46 | `kitaplar/hz-nuh/bolum-8/yeni-koy.jpg` | Devam | Dağ eteğinde yeni örülmekte olan taş duvarlı küçük evler, kazılmış toprak ve sıra sıra dikilmiş fidanlar. |
-| 47 | `kitaplar/hz-nuh/bolum-8/yeni-fidan.jpg` | Devam | Dağ yamacında yeni dikilmiş tek bir fidan, toprağı nemli; arkada açılan gökyüzü ve uzakta duran gemi. |
+| 46 | `kitaplar/hz-nuh/bolum-8/yeni-koy.jpg` | Devam | Dağ eteğinde taş duvar ören, toprak kazan ve fidan diken insanlar; ön planda taş taşıyan arkası dönük bir figür, tepede gemi. |
+| 47 | `kitaplar/hz-nuh/bolum-8/yeni-fidan.jpg` | Devam | Gün doğarken dağ yamacında genç bir fidanı toprağa diken, arkası dönük diz çökmüş bir figür; uzakta gemi ve yeni köy. |
 | 48 | `kitaplar/hz-nuh/bolum-8/dagdaki-gemi.jpg` | Devam | Akşam ışığında dağın üstünde sessizce duran ahşap gemi ve aşağıda yeni kurulan köyün ilk ocak dumanları. |
 
 ### Ödül görselleri — 512×512 şeffaf `.png` (9 dosya)

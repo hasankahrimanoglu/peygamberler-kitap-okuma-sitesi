@@ -320,14 +320,28 @@ ve negatif prompt dahil); aşağıdaki tablo yalnız dosya adı, akıştaki yer 
 > profil ve yüz hattı yoktur. Oğlu, eşi ve kavmin insanları hiçbir görselde
 > gösterilmez; diğer bütün sahnelerde insan figürü, silüet ve el yoktur.
 
+> **Seçici yeniden üretim (17 Eki 2026 — Hasan; tasvir kuralı REVİZE 16 Eki 2026,
+> PROJE-MODELI 6.4):** olayın öznesi insan olduğu hâlde figürsüz kalan 15 sahne figürlü
+> olarak yeniden üretildi ve aynı adla yazıldı (aday listesi: `GORSEL-YENIDEN-URETIM-ADAYLARI.md`
+> §2). Hz. Nûh, eşi, oğulları ve oğlu (`bolum-7/dalgalar`) Katman 1: arkadan, yüz yok; kavmin
+> insanları, yoksullar, ileri gelenler ve gemideki inananlar Katman 3: yüz görünebilir.
+> Yukarıdaki "Hz. Nûh yalnız üç sahnede… oğlu, eşi ve kavmin insanları gösterilmez"
+> satırı o günkü uygulamadır; bu 15 sahnede geçerli değildir. Güvercin, zeytin dalı,
+> gökkuşağı, karga, boğulan insan ve yıkım yasakları sürer. Ayar: Seedream 5 Pro · 2K ·
+> `stil-referans-gorsel.jpg` + onaylı pilot `bolum-3/meydan-golgesi` karakter referansı.
+> Ana dosyalar `gorsel-kaynaklari/nuh-yeniden-uretim/`. Yüz sızması rötuşla
+> (`images_retouch`) temizlendi. `bolum-6/kandil-ve-yagmur`'da yan taraftaki dört adam
+> gemideki inananlar (Katman 3) olarak kabul edildi, yüz hatları kısmen görünüyor.
+> **`books.ts` alt metinleri henüz eski figürsüz tarifi taşıyor** (aktarım işi).
+
 ### Bölüm 1 — Putlara Eğilmeyen Eller
 
 | Dosya | Akıştaki yer | Öncelik | Durum | Görsel brifi |
 |---|---|---|---|---|
 | `hz-nuh/bolum-1/kapak.jpg` | Açılış | A | ✅ Hazır | Sabah ışığında yeşil bir vadi, küçük bir kerpiç ev, bahçesi ve uzakta parlayan iki nehir |
-| `hz-nuh/bolum-1/kucuk-tekne.jpg` | 1. Kısım | A | ✅ Hazır | Tarla kenarındaki dar bir arkta yüzen, tahtadan yontulmuş küçük bir oyuncak tekne |
+| `hz-nuh/bolum-1/kucuk-tekne.jpg` | 1. Kısım | A | ✅ Hazır | Akşamüstü bir arkın kıyısında diz çökmüş, başı beyaz örtülü küçük bir çocuk; arkadan görünüyor, önünde suda yüzen tahta oyuncak tekne *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-nuh/bolum-1/oymali-kapi.jpg` | 1. Kısım | A | ✅ Hazır | Asma dalları ve çiçek oymalarıyla süslenmiş ahşap bir kapı ve önünde dağınık talaşlar |
-| `hz-nuh/bolum-1/birakilan-keski.jpg` | Devam | B | ✅ Hazır | Ahşap tezgâhın üstüne bırakılmış bir keski ve yanında işlenmemiş düz bir tahta parçası |
+| `hz-nuh/bolum-1/birakilan-keski.jpg` | Devam | B | ✅ Hazır | Kamış çardak altında oymalı kapı panelinin çevresinde düşünceli üç komşu ve onlara arkası dönük duran genç usta *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-nuh/bolum-1/uzak-sehir.jpg` | Devam | B | ✅ Hazır | Akşam karanlığında uzakta ışıkları yanan bir şehir ve önde sessiz bir vadi patikası |
 | `hz-nuh/bolum-1/dik-fidan.jpg` | Devam | B | ✅ Hazır | Yıldızlı bir gecede rüzgâra rağmen dimdik duran genç bir fidan |
 
@@ -338,7 +352,7 @@ ve negatif prompt dahil); aşağıdaki tablo yalnız dosya adı, akıştaki yer 
 | `hz-nuh/bolum-2/kapak.jpg` | Açılış | A | ✅ Hazır | Akşam ışığında vadiye inen bir yol ve yolun kenarındaki küçük bir evin aydınlık penceresi |
 | `hz-nuh/bolum-2/yol-kenari-tezgah.jpg` | 1. Kısım | A | ✅ Hazır | Yol kenarında kamış örtülü basit bir çardak, altında marangoz tezgâhı ve el aletleri |
 | `hz-nuh/bolum-2/komurde-elmas.jpg` | 1. Kısım | A | ✅ Hazır | Kara kömür parçalarının arasında, içinden ışık saçan tek bir elmas |
-| `hz-nuh/bolum-2/sacilan-aletler.jpg` | Devam | B | ✅ Hazır | Toprak yola saçılmış marangoz aletleri ve yan devrilmiş bir su testisi |
+| `hz-nuh/bolum-2/sacilan-aletler.jpg` | Devam | B | ✅ Hazır | Tozlu yolda saçılmış aletleri sepete toplayan, arkası dönük diz çökmüş bir adam; uzakta şehre doğru uzaklaşan bir grup insan *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-nuh/bolum-2/bos-yol.jpg` | Devam | B | ✅ Hazır | Alacakaranlıkta bomboş kalan yol, çardak ve yeniden düzenlenmiş tezgâh |
 | `hz-nuh/bolum-2/yeni-sabah.jpg` | Devam | B | ✅ Hazır | Sabah güneşinde yol kenarındaki tezgâhın başında, arkası dönük ve yüzü görünmeyen bir figür |
 
@@ -347,11 +361,11 @@ ve negatif prompt dahil); aşağıdaki tablo yalnız dosya adı, akıştaki yer 
 | Dosya | Akıştaki yer | Öncelik | Durum | Görsel brifi |
 |---|---|---|---|---|
 | `hz-nuh/bolum-3/kapak.jpg` | Açılış | A | ✅ Hazır | Öğle ışığında geniş, tozlu bir şehir meydanı, ortasında gölgeli büyük bir ağaç ve çevresinde kerpiç evler |
-| `hz-nuh/bolum-3/zengin-avlu.jpg` | 1. Kısım | A | ✅ Hazır | Yüksek duvarlı bir avlu, süslü yastıklar, bakır kaplar ve oymalı büyük bir kapı |
-| `hz-nuh/bolum-3/meydan-golgesi.jpg` | 1. Kısım | A | ✅ Hazır | Meydandaki büyük ağacın gölgesinde halka hâlinde dizilmiş taşlar, yere serilmiş eski bir hasır ve bir ekmek sepeti |
-| `hz-nuh/bolum-3/uzaklasan-izler.jpg` | Devam | B | ✅ Hazır | Tozlu meydanda büyük evlere doğru uzaklaşan ayak izleri ve ağacın altında yerinde duran taşlar |
+| `hz-nuh/bolum-3/zengin-avlu.jpg` | 1. Kısım | A | ✅ Hazır | Yüksek duvarlı zengin bir avluda yastıklara yaslanmış, kibarca gülümseyen adamlar ve onlara arkası dönük konuşan bir figür *(figürlü yeniden üretim, 17 Eki 2026)* |
+| `hz-nuh/bolum-3/meydan-golgesi.jpg` | 1. Kısım | A | ✅ Hazır | Meydandaki büyük ağacın gölgesinde hasıra oturmuş yoksul insanlar ve onlara arkası dönük oturan bir figür *(figürlü yeniden üretim, 17 Eki 2026)* |
+| `hz-nuh/bolum-3/uzaklasan-izler.jpg` | Devam | B | ✅ Hazır | Tozlu meydanda büyük evlere doğru uzaklaşan süslü giysili adamlar; ağacın gölgesinde başı dik oturan yoksullar *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-nuh/bolum-3/acik-kapi.jpg` | Devam | B | ✅ Hazır | Akşam karanlığında ardına kadar açık duran sade ahşap bir kapı ve içeriden yola taşan sıcak ışık |
-| `hz-nuh/bolum-3/bas-kose.jpg` | Devam | B | ✅ Hazır | Kandil ışığında yere serilmiş uzun bir sofra, çevresinde aynı tür sade minderler ve paylaşılmış ekmek |
+| `hz-nuh/bolum-3/bas-kose.jpg` | Devam | B | ✅ Hazır | Kandil ışığında yere serilmiş sofrada yan yana oturan farklı insanlar ve sofranın başında arkası dönük oturan bir figür *(figürlü yeniden üretim, 17 Eki 2026)* |
 
 ### Bölüm 4 — Gece Gündüz, Yıllarca
 
@@ -369,10 +383,10 @@ ve negatif prompt dahil); aşağıdaki tablo yalnız dosya adı, akıştaki yer 
 | Dosya | Akıştaki yer | Öncelik | Durum | Görsel brifi |
 |---|---|---|---|---|
 | `hz-nuh/bolum-5/kapak.jpg` | Açılış | A | ✅ Hazır | Uçsuz bucaksız kuru bir düzlüğün ortasında tek başına yükselen, gövdesi kalın büyük bir ağaç |
-| `hz-nuh/bolum-5/tahta-yigini.jpg` | 1. Kısım | A | ✅ Hazır | Kesilmiş büyük bir ağaç kütüğü ve yanında düzgünce istiflenmiş kalın tahtalar |
-| `hz-nuh/bolum-5/gemi-iskeleti.jpg` | 1. Kısım | A | ✅ Hazır | Kuru bir düzlükte, kaburgaları görünen ve tahtaları yarı yarıya çakılmış büyük bir gemi gövdesi |
+| `hz-nuh/bolum-5/tahta-yigini.jpg` | 1. Kısım | A | ✅ Hazır | Kuru düzlükte kesilmiş dev ağaç kütüğünün yanında tahta taşıyan ve istifleyen, arkası dönük dört figür *(figürlü yeniden üretim, 17 Eki 2026)* |
+| `hz-nuh/bolum-5/gemi-iskeleti.jpg` | 1. Kısım | A | ✅ Hazır | Kuru düzlükte iskelesi kurulmuş yarım gemi; ön planda gemiye bakıp gülen yolcular, iskelede çalışan küçük figürler *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-nuh/bolum-5/cekic-ve-civiler.jpg` | Devam | B | ✅ Hazır | Bir tahta üzerine bırakılmış ahşap tokmak ve yanında dizili demir çiviler |
-| `hz-nuh/bolum-5/ailecek-is.jpg` | Devam | B | ✅ Hazır | Geminin gölgesinde bir su testisi, ekmek sepeti, çivi kutusu ve yan yana bırakılmış aletler |
+| `hz-nuh/bolum-5/ailecek-is.jpg` | Devam | B | ✅ Hazır | Yarım geminin gölgesinde çalışan aile: tahta taşıyan, merdivende çivi çakan, ekmek ve su getiren figürler, hepsi arkadan *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-nuh/bolum-5/tamamlanan-gemi.jpg` | Devam | B | ✅ Hazır | Akşam ışığında, denizden çok uzak kuru bir düzlüğün ortasında duran büyük, tamamlanmış ahşap gemi |
 
 ### Bölüm 6 — Allah'ın Adıyla Binin
@@ -381,17 +395,17 @@ ve negatif prompt dahil); aşağıdaki tablo yalnız dosya adı, akıştaki yer 
 |---|---|---|---|---|
 | `hz-nuh/bolum-6/kapak.jpg` | Açılış | A | ✅ Hazır | Kuru düzlükte duran ahşap gemi ve ufukta toplanan koyu yağmur bulutları |
 | `hz-nuh/bolum-6/kara-bulutlar.jpg` | 1. Kısım | A | ✅ Hazır | Çatlak toprağa düşen ilk iri yağmur damlaları ve üstte koyu bulutlar |
-| `hz-nuh/bolum-6/hayvan-izleri.jpg` | 1. Kısım | A | ✅ Hazır | Islak çamurda gemiye doğru ilerleyen, yan yana ikişer ikişer basılmış farklı hayvan izleri |
+| `hz-nuh/bolum-6/hayvan-izleri.jpg` | 1. Kısım | A | ✅ Hazır | Yağmur altında çamurlu ovada ikişer ikişer gemiye yürüyen hayvanlar ve rampadan eşyalarla gemiye çıkan aile *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-nuh/bolum-6/gemi-ici.jpg` | Devam | B | ✅ Hazır | Geminin içinde kalın ahşap kirişler, saman serili bölmeler ve kirişlere tünemiş kuşlar |
 | `hz-nuh/bolum-6/yuzen-gemi.jpg` | Devam | B | ✅ Hazır | Yağmur altında geniş bir suyun üstünde ağır ağır yüzen ahşap gemi |
-| `hz-nuh/bolum-6/kandil-ve-yagmur.jpg` | Devam | B | ✅ Hazır | Yağmur damlaları süzülen küçük bir ahşap pencerenin önünde yanan toprak kandil |
+| `hz-nuh/bolum-6/kandil-ve-yagmur.jpg` | Devam | B | ✅ Hazır | Geminin içinde kandil ışığında yan yana oturup el ele dua eden insanlar; açık pencereden dalgalar görünüyor *(figürlü yeniden üretim, 17 Eki 2026)* |
 
 ### Bölüm 7 — Dağlar Gibi Dalgalar
 
 | Dosya | Akıştaki yer | Öncelik | Durum | Görsel brifi |
 |---|---|---|---|---|
 | `hz-nuh/bolum-7/kapak.jpg` | Açılış | A | ✅ Hazır | Gri gökyüzünün altında yüksek dalgalar ve dalgaların arasında sağlamca yol alan ahşap gemi |
-| `hz-nuh/bolum-7/dalgalar.jpg` | 1. Kısım | A | ✅ Hazır | Geminin kenarından görülen, dağlar gibi yükselen dalgalar ve uzakta sisin içinde bir tepe |
+| `hz-nuh/bolum-7/dalgalar.jpg` | 1. Kısım | A | ✅ Hazır | Geminin küpeştesinde arkası dönük duran bir figür; sisli suların ortasındaki tepede tek başına duran çok küçük bir genç *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-nuh/bolum-7/uzak-tepe.jpg` | 1. Kısım | A | ✅ Hazır | Suların ortasında yalnız kalmış, çevresini sis saran ıssız bir tepe |
 | `hz-nuh/bolum-7/kandil-penceresi.jpg` | Devam | B | ✅ Hazır | Geminin loş iç mekânında, pencere önündeki rafta tek başına yanan bir kandil ve dışarıda yağmurun dinişi |
 | `hz-nuh/bolum-7/sonsuz-su.jpg` | Devam | B | ✅ Hazır | Geminin açık kepenginden görülen, ufka kadar uzanan durgun su ve rafa bırakılmış kurumuş bir yeşil yaprak |
@@ -404,8 +418,8 @@ ve negatif prompt dahil); aşağıdaki tablo yalnız dosya adı, akıştaki yer 
 | `hz-nuh/bolum-8/kapak.jpg` | Açılış | A | ✅ Hazır | Gün doğumunda berrak bir gökyüzü altında, yeşilin yeniden belirdiği dağ sırtları ve çekilen sular |
 | `hz-nuh/bolum-8/cudide-gemi.jpg` | 1. Kısım | A | ✅ Hazır | Bir dağın yeşermeye başlayan yamacına oturmuş ahşap gemi ve aşağıda çekilen sular |
 | `hz-nuh/bolum-8/dagilan-hayvanlar.jpg` | 1. Kısım | A | ✅ Hazır | Uzak planda, gemi rampasının yanında arkası dönük duran bir figür ve yamaçlara dağılan ceylanlar, koyunlar ve göğe uçan kuşlar |
-| `hz-nuh/bolum-8/yeni-koy.jpg` | Devam | B | ✅ Hazır | Dağ eteğinde yeni örülmekte olan taş duvarlı küçük evler, kazılmış toprak ve sıra sıra dikilmiş fidanlar |
-| `hz-nuh/bolum-8/yeni-fidan.jpg` | Devam | B | ✅ Hazır | Dağ yamacında yeni dikilmiş tek bir fidan, toprağı nemli; arkada açılan gökyüzü ve uzakta duran gemi |
+| `hz-nuh/bolum-8/yeni-koy.jpg` | Devam | B | ✅ Hazır | Dağ eteğinde taş duvar ören, toprak kazan ve fidan diken insanlar; ön planda taş taşıyan arkası dönük bir figür, tepede gemi *(figürlü yeniden üretim, 17 Eki 2026)* |
+| `hz-nuh/bolum-8/yeni-fidan.jpg` | Devam | B | ✅ Hazır | Gün doğarken dağ yamacında genç bir fidanı toprağa diken, arkası dönük diz çökmüş bir figür; uzakta gemi ve yeni köy *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-nuh/bolum-8/dagdaki-gemi.jpg` | Devam | B | ✅ Hazır | Akşam ışığında dağın üstünde sessizce duran ahşap gemi ve aşağıda yeni kurulan köyün ilk ocak dumanları |
 
 ## 4e. Hz. Musa (`bookKey: musa`) — 60 görsel
