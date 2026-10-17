@@ -93,7 +93,7 @@ export const atlasRegions: AtlasRegion[] = [
     mood: "Hikmet ve adalet",
     books: [
       { order: 19, key: "davud", title: "Hz. Dâvûd", subtitle: "Cesaret ve adalet", chapterCount: 6, availability: "preparing" },
-      { order: 20, key: "suleyman", title: "Hz. Süleyman", subtitle: "Şükürle büyüyen hikmet", description: "Bir bağ davasından karınca vadisine, kayıp bir kuştan billur bir köşke uzanan yolculukta Hz. Süleyman'ın hikmetini, adaletini ve şükrünü keşfet.", chapterCount: 7, availability: "preparing", vitrin: true },
+      { order: 20, key: "suleyman", title: "Hz. Süleyman", subtitle: "Şükürle büyüyen hikmet", description: "Bir bağ davasından karınca vadisine, kayıp bir kuştan billur bir köşke uzanan yolculukta Hz. Süleyman'ın hikmetini, adaletini ve şükrünü keşfet.", chapterCount: 7, availability: "published", yayinTarihi: "2026-10-17" },
       { order: 21, key: "ilyas", title: "Hz. İlyas", subtitle: "Doğru sözü korumak", chapterCount: 5, availability: "preparing" },
       { order: 22, key: "elyesa", title: "Hz. Elyesa", subtitle: "İyilik yolunu sürdürmek", chapterCount: 4, availability: "preparing" },
     ],

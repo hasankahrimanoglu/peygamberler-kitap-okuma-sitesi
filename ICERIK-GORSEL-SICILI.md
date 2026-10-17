@@ -1098,8 +1098,8 @@ Devam 3).
 
 ## 4i. Hz. Süleyman (`bookKey: suleyman`) — 42 görsel
 
-**Durum (17 Eki 2026):** aktarıldı, katalogda **"preparing"** (yayında değil;
-katalogda vitrin kitabı). 42 sahne, kitap kapağı, harita durağı, 7 rozet ve madalya
+**Durum (17 Eki 2026):** aktarıldı ve **yayında** (katalogda "published", `yayinTarihi:
+2026-10-17`; vitrin işareti kaldırıldı). 42 sahne, kitap kapağı, harita durağı, 7 rozet ve madalya
 **üretildi** (`/gorsel-uretim suleyman`, aşağıdaki üretim kararları); rozet ve madalya
 çerçeve bekliyor, ses yer tutucu. Briflerin tamamı
 `kitap-icerikleri/KITAP-HZ-SULEYMAN-ICERIK-final.md` §B, §C, §D ve §H'dedir
