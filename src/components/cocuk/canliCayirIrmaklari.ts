@@ -15,6 +15,8 @@ export type CayirIrmagi = {
   akislar: string[];
   /** Köpük parıltılarının yerleri. */
   parilti: [number, number][];
+  /** Balıkların çıktığı yer ve akış yönündeki açı (derece): [x, y, açı]. */
+  baliklar: [number, number, number][];
 };
 
 export const CAYIR_IRMAKLARI: CayirIrmagi[] = [
@@ -49,6 +51,48 @@ export const CAYIR_IRMAKLARI: CayirIrmagi[] = [
         934,
         1014
       ]
+    ],
+    baliklar: [
+      [
+        1083,
+        342,
+        128
+      ],
+      [
+        1039,
+        398,
+        121
+      ],
+      [
+        1045,
+        566,
+        61
+      ],
+      [
+        1086,
+        650,
+        75
+      ],
+      [
+        1094,
+        734,
+        95
+      ],
+      [
+        1026,
+        860,
+        129
+      ],
+      [
+        953,
+        958,
+        111
+      ],
+      [
+        1020,
+        1098,
+        38
+      ]
     ]
   },
   {
@@ -81,6 +125,48 @@ export const CAYIR_IRMAKLARI: CayirIrmagi[] = [
       [
         192,
         2426
+      ]
+    ],
+    baliklar: [
+      [
+        79,
+        1726,
+        36
+      ],
+      [
+        191,
+        1824,
+        64
+      ],
+      [
+        223,
+        1950,
+        111
+      ],
+      [
+        137,
+        2062,
+        133
+      ],
+      [
+        66,
+        2160,
+        104
+      ],
+      [
+        166,
+        2384,
+        47
+      ],
+      [
+        257,
+        2468,
+        68
+      ],
+      [
+        312,
+        2566,
+        67
       ]
     ]
   }

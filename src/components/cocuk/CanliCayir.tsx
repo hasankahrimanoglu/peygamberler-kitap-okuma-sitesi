@@ -8,7 +8,8 @@ import styles from "./canli-cayir.module.css";
  * Canlı çayır (KARAR — 17 Eki 2026, Hasan; PROJE-MODELI 3.10.1).
  *
  * Boyalı rota görseli (`ROTA_ARKAPLANI`) olduğu gibi zemindir; bu katman onun
- * üstüne kodla çizilen hareketi ekler: ırmakta akan su, çimenin üstünden geçen
+ * üstüne kodla çizilen hareketi ekler: ırmakta akan su ve suyun altında ara sıra
+ * görünüp dalan balıklar, çimenin üstünden geçen
  * rüzgâr, rüzgârda sallanan çiçek ve saz öbekleri, kenarlarda uçan kelebekler,
  * ara sıra çıkan bir tavşan ve arada bir çayırın üstünden geçen kuş sürüsü. Görsel `repeat-y` ile alt alta tekrar ettiği için katman da görselin
  * bir kopyası boyunca bir "karo" çizer ve karoları aynı aralıkla dizer.
@@ -93,6 +94,8 @@ const KELEBEKLER: Kelebek[] = [
 /** Rüzgâr dalgalarının geçtiği satırlar (görsel pikseli). */
 const RUZGARLAR = [620, 1900];
 
+const YER_SINIFI = { dar: styles.yalnizDar, genis: styles.yalnizGenis, her: "" };
+
 const UCUS_SINIFI = { a: styles.ucusA, b: styles.ucusB, c: styles.ucusC };
 const RENK_SINIFI = {
   altin: styles.kelebekAltin,
@@ -150,8 +153,9 @@ const KUS_SERITLERI = [760, 1560, 2300];
 /**
  * `yer`: dar ekranda (< 1024 px) görsel kabuğun zeminidir, katman da oraya
  * konur; geniş ekranda görsel rota kartındadır. Yanlış yerdeki kopya çizilmez.
+ * `her` her genişlikte çizilir (test ekranı `/tasarim/canli-cayir`).
  */
-export function CanliCayir({ yer }: { yer: "dar" | "genis" }) {
+export function CanliCayir({ yer }: { yer: "dar" | "genis" | "her" }) {
   const kokRef = useRef<HTMLDivElement>(null);
   const [olcu, setOlcu] = useState({ genislik: 0, yukseklik: 0 });
 
@@ -213,7 +217,7 @@ export function CanliCayir({ yer }: { yer: "dar" | "genis" }) {
   return (
     <div
       ref={kokRef}
-      className={`${styles.canliCayir} ${yer === "dar" ? styles.yalnizDar : styles.yalnizGenis}`}
+      className={`${styles.canliCayir} ${YER_SINIFI[yer]}`}
       aria-hidden="true"
     >
       {Array.from({ length: karoSayisi }, (_, sira) => {
@@ -342,6 +346,23 @@ function IrmakSuyu({
   kimlik: string;
 }) {
   const { kutu } = irmak;
+  // Sol ırmakta renk ve saat sırası kaydırılır; iki ırmak birbirinin kopyası olmasın.
+  const kayik = irmak.ad === "sol" ? 3 : 0;
+  const baliklar = irmak.baliklar.map(([x, y, aci], sira) => {
+    const atlar = sira === SICRAYAN_BALIK;
+    const sure = atlar ? 22 : 9 + ((sira * 3) % 5);
+    return {
+      sira,
+      x,
+      y,
+      // Tek sıradakiler akıntıya karşı yüzer.
+      aci: aci + (sira % 2 ? 180 : 0),
+      renk: BALIK_RENKLERI[(sira + kayik) % BALIK_RENKLERI.length],
+      atlar,
+      sure,
+      gecikme: +((sira * 3.7 + kayik * 1.9) % sure).toFixed(1),
+    };
+  });
   return (
     <svg
       className={styles.su}
@@ -360,6 +381,10 @@ function IrmakSuyu({
         </clipPath>
       </defs>
       <g clipPath={`url(#${kimlik})`}>
+        {/* Balıklar suyun altındadır: akış çizgileri üstlerinden geçer. */}
+        {baliklar.filter((b) => !b.atlar).map((b) => (
+          <Balik key={b.sira} {...b} />
+        ))}
         {irmak.akislar.map((d, i) => (
           <path key={i} d={d} className={`${styles.akis} ${styles[`akis${i + 1}`]}`} />
         ))}
@@ -373,6 +398,10 @@ function IrmakSuyu({
             className={styles.kopuk}
             style={{ animationDelay: `calc(var(--kayma) - ${i * 1.3}s)` }}
           />
+        ))}
+        {/* Sıçrayan balık suyun üstüne çıktığı için akış çizgilerinin üstündedir. */}
+        {baliklar.filter((b) => b.atlar).map((b) => (
+          <Balik key={b.sira} {...b} />
         ))}
       </g>
     </svg>
@@ -515,6 +544,100 @@ const KUS_DIZILISI: [number, number][] = [
   [-3.2, 3.2],
   [-7, 5.4],
 ];
+
+type BalikRengi = "turuncu" | "gri" | "altin" | "koi" | "kirmizi" | "pembe";
+
+/** Sırayla dağıtılan renkler; yan yana iki balık aynı renkte olmaz. */
+const BALIK_RENKLERI: BalikRengi[] = ["turuncu", "gri", "altin", "koi", "kirmizi", "pembe"];
+
+const BALIK_RENK_SINIFI: Record<BalikRengi, string> = {
+  turuncu: styles.balikTuruncu,
+  gri: styles.balikGri,
+  altin: styles.balikAltin,
+  koi: styles.balikKoi,
+  kirmizi: styles.balikKirmizi,
+  pembe: styles.balikPembe,
+};
+
+/** Her ırmakta bu sıradaki balık ara sıra suyun üstüne sıçrar. */
+const SICRAYAN_BALIK = 3;
+
+/** Sıçrayan balık suya inerken etrafa saçılan damlalar (balığa göre, birim). */
+const DAMLALAR: [number, number][] = [
+  [-15, -10],
+  [13, -13],
+  [19, 8],
+  [-12, 13],
+  [2, -18],
+];
+
+/**
+ * Yukarıdan görülen, suyun altında yüzen küçük balık (burnu yerel +x yönünde).
+ * Döngünün başında suda bir halka açarak belirir, kısa bir yol yüzer, ikinci
+ * bir halkayla dalıp kaybolur; döngünün kalanında görünmez. `atlar` olan balık
+ * yüzerken bir kez suyun üstüne sıçrar (yukarıdan bakınca büyür), damlalar
+ * saçarak suya iner ve dalar.
+ */
+function Balik({
+  x,
+  y,
+  aci,
+  renk,
+  atlar,
+  sure,
+  gecikme,
+}: {
+  x: number;
+  y: number;
+  aci: number;
+  renk: BalikRengi;
+  atlar: boolean;
+  sure: number;
+  gecikme: number;
+}) {
+  return (
+    <g
+      transform={`translate(${x} ${y}) rotate(${aci})`}
+      className={BALIK_RENK_SINIFI[renk]}
+      style={{ "--sure": `${sure}s`, "--gecikme": `calc(var(--kayma) - ${gecikme}s)` } as CSSProperties}
+    >
+      <ellipse cx={-34} cy={0} rx={13} ry={8} className={`${styles.balikHalkasi} ${styles.halkaIlk}`} />
+      {atlar ? (
+        <>
+          <ellipse cx={-12} cy={0} rx={11} ry={7} className={`${styles.balikHalkasi} ${styles.halkaKalkis}`} />
+          <ellipse cx={30} cy={0} rx={15} ry={9} className={`${styles.balikHalkasi} ${styles.halkaInis}`} />
+          {DAMLALAR.map(([dx, dy], k) => (
+            <circle
+              key={k}
+              cx={30}
+              cy={0}
+              r={2.8}
+              className={styles.damla}
+              style={{ "--dx": `${dx}px`, "--dy": `${dy}px` } as CSSProperties}
+            />
+          ))}
+        </>
+      ) : (
+        <ellipse cx={34} cy={0} rx={13} ry={8} className={`${styles.balikHalkasi} ${styles.halkaSon}`} />
+      )}
+      <g className={atlar ? styles.balikSicrar : styles.balik}>
+        <g className={styles.balikKuyruk}>
+          <path d="M-10 0L-20 -6.5Q-16.5 0 -20 6.5Z" className={styles.balikYuzgec} />
+        </g>
+        <path d="M-5 -4.4Q0 -9.5 5 -4.4Z" className={styles.balikYuzgec} />
+        <ellipse cx={0} cy={0} rx={12.5} ry={5.4} className={styles.balikGovde} />
+        {renk === "koi" ? (
+          <>
+            <ellipse cx={-3} cy={-1.2} rx={3.6} ry={2.5} className={styles.balikBenek} />
+            <ellipse cx={4.5} cy={1.6} rx={2.6} ry={1.8} className={styles.balikBenek} />
+          </>
+        ) : null}
+        <ellipse cx={1} cy={1.7} rx={7.5} ry={1.9} className={styles.balikIsigi} />
+        <circle cx={7.4} cy={-1.4} r={1.15} className={styles.balikGozu} />
+      </g>
+    </g>
+  );
+}
 
 /** Yukarıdan görülen, sağa uçan küçük beyaz kuş. */
 function KusCizimi({ gecikme }: { gecikme: number }) {

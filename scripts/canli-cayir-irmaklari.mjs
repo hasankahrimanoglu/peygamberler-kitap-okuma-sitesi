@@ -21,10 +21,25 @@ const GORSEL = path.resolve("public/harita/rota-harita-arkaplan.jpg");
 const CIKTI = path.resolve("src/components/cocuk/canliCayirIrmaklari.ts");
 const ADIM = 14;
 
-/** Her ırmak: ölçülecek satır aralığı ve ilk satırdaki yaklaşık kıyıları. */
+/**
+ * Her ırmak: ölçülecek satır aralığı, ilk satırdaki yaklaşık kıyıları ve
+ * balıkların yüzmeye başladığı satırlar (sudaki taşlardan uzak seçilir).
+ */
 const IRMAKLAR = [
-  { ad: "sag", ust: 300, alt: 1206, ilkKiyi: [1076, 1121] },
-  { ad: "sol", ust: 1656, alt: 2626, ilkKiyi: [0, 30] },
+  {
+    ad: "sag",
+    ust: 300,
+    alt: 1206,
+    ilkKiyi: [1076, 1121],
+    baliklar: [340, 400, 570, 650, 740, 860, 960, 1100],
+  },
+  {
+    ad: "sol",
+    ust: 1656,
+    alt: 2626,
+    ilkKiyi: [0, 30],
+    baliklar: [1720, 1830, 1950, 2060, 2160, 2380, 2470, 2570],
+  },
 ];
 
 /** Akış çizgileri ırmak genişliğinin bu oranlarından geçer (0 = sol kıyı). */
@@ -101,6 +116,18 @@ const sonuc = IRMAKLAR.map((irmak) => {
   kutu.g = Math.min(W, Math.ceil(Math.max(...xler))) - kutu.x;
   kutu.h = satirlar[satirlar.length - 1][0] + ADIM - kutu.y;
 
+  // Balık: orta çizgide durur, burnu akış yönüne (aşağı) bakar; açı derecedir.
+  const orta = (y) => {
+    const en = satirlar.reduce((a, b) => (Math.abs(b[0] - y) < Math.abs(a[0] - y) ? b : a));
+    return [(en[1] + en[2]) / 2, en[0]];
+  };
+  const baliklar = irmak.baliklar.map((y) => {
+    const [x, oy] = orta(y);
+    const [x1, y1] = orta(y - 28);
+    const [x2, y2] = orta(y + 28);
+    return [Math.round(x), oy, Math.round((Math.atan2(y2 - y1, x2 - x1) * 180) / Math.PI)];
+  });
+
   const seyrek = satirlar.filter((_, i) => i % 2 === 0 || i === satirlar.length - 1);
   return {
     ad: irmak.ad,
@@ -114,6 +141,7 @@ const sonuc = IRMAKLAR.map((irmak) => {
       const [y, a, b] = satirlar[Math.round(t * (satirlar.length - 1))];
       return [Math.round(a + (b - a) * (i % 2 ? 0.38 : 0.62)), y];
     }),
+    baliklar,
   };
 });
 
@@ -134,6 +162,8 @@ export type CayirIrmagi = {
   akislar: string[];
   /** Köpük parıltılarının yerleri. */
   parilti: [number, number][];
+  /** Balıkların çıktığı yer ve akış yönündeki açı (derece): [x, y, açı]. */
+  baliklar: [number, number, number][];
 };
 
 export const CAYIR_IRMAKLARI: CayirIrmagi[] = ${JSON.stringify(sonuc, null, 2).replace(/"(\w+)":/g, "$1:")};

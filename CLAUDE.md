@@ -203,8 +203,9 @@ kendisi söylemez, tanım içerik verisidir). Okuma açılışında künye, böl
 (< 1024 px) rozet kapak görselinin ortasındadır (REVİZE 12 Eki 2026). Hamburger menü yerine profil kartı; ayrı bölüm rotası sayfası yerine
 alttan sayfa / sağ panel; okunan yol altın ışık izi, durak halkası = kitap ilerlemesi;
 rota arka planı boyalı, dikişsiz alt alta tekrar eden çayır görseli
-(`ROTA_ARKAPLANI`) + kodla çizilen canlı çayır katmanı (`CanliCayir`: su,
-rüzgâr, sallanan çiçek/saz, kelebek, tavşan, kuş sürüsü — KARAR 17 Eki 2026;
+(`ROTA_ARKAPLANI`) + kodla çizilen canlı çayır katmanı (`CanliCayir`: su ve
+balıklar, rüzgâr, sallanan çiçek/saz, kelebek, tavşan, kuş sürüsü — KARAR
+17–18 Eki 2026; test ekranı `/tasarim/canli-cayir`;
 görsel değişirse `node scripts/canli-cayir-irmaklari.mjs`); geniş ekranda gece manzarası zemin,
 üst menü ve kartlar eşit köşeli, aralarında boşluklu (REVİZE 12 Eki 2026). Velinin okuma
 sırası ayarı YAPILMAZ.

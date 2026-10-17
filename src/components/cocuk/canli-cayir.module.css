@@ -117,6 +117,284 @@
   }
 }
 
+/*
+ * Balıklar (18 Eki 2026): her ırmakta 8 tane, suyun altında, yarı saydam.
+ * Gövde, halkalar ve yüzüş aynı süreyi ve gecikmeyi paylaşır (satır içi
+ * --sure, --gecikme). Döngünün ~yarısında görünür: halkayla belirir, yüzer,
+ * halkayla dalar. Irmak başına bir balık ara sıra suyun üstüne sıçrar.
+ */
+.balik {
+  opacity: 0;
+  animation: balikYuz var(--sure) ease-in-out infinite;
+  animation-delay: var(--gecikme);
+}
+
+.balikTuruncu {
+  --renk: color-mix(in srgb, var(--tehlike) 55%, var(--vurgu));
+}
+
+.balikGri {
+  --renk: color-mix(in srgb, var(--zemin) 50%, var(--okuma-yuzey));
+}
+
+.balikAltin {
+  --renk: var(--vurgu);
+}
+
+.balikKoi {
+  --renk: var(--okuma-yuzey);
+}
+
+.balikKirmizi {
+  --renk: color-mix(in srgb, var(--tehlike) 88%, var(--vurgu));
+}
+
+.balikPembe {
+  --renk: color-mix(in srgb, var(--tehlike) 34%, color-mix(in srgb, var(--okuma-yuzey) 84%, var(--zemin)));
+}
+
+.balikBenek {
+  fill: color-mix(in srgb, var(--tehlike) 55%, var(--vurgu));
+}
+
+/*
+ * Sıçrayan balık (22 sn döngü): yüzer, ~3,5. saniyede suyun üstüne çıkar
+ * (yukarıdan bakınca büyür ve hafifçe döner), ~1,2 sn sonra damlalar saçarak
+ * suya iner ve dalar.
+ */
+.balikSicrar {
+  opacity: 0;
+  animation: balikSicra var(--sure) ease-in-out infinite;
+  animation-delay: var(--gecikme);
+}
+
+@keyframes balikSicra {
+  0% {
+    opacity: 0;
+    transform: translate(-34px, 0) scale(1) rotate(0deg);
+  }
+
+  4% {
+    opacity: 0.88;
+  }
+
+  16% {
+    opacity: 0.88;
+    transform: translate(-12px, 2px) scale(1) rotate(0deg);
+  }
+
+  17% {
+    opacity: 1;
+  }
+
+  19% {
+    transform: translate(6px, -2px) scale(1.55) rotate(-10deg);
+  }
+
+  21.5% {
+    opacity: 1;
+    transform: translate(28px, 0) scale(1.05) rotate(6deg);
+  }
+
+  22.5% {
+    opacity: 0.5;
+    transform: translate(31px, 0) scale(0.9) rotate(6deg);
+  }
+
+  24%,
+  100% {
+    opacity: 0;
+    transform: translate(34px, 0) scale(0.85) rotate(6deg);
+  }
+}
+
+.halkaKalkis {
+  animation-name: halkaKalkis;
+}
+
+.halkaInis {
+  animation-name: halkaInis;
+}
+
+@keyframes halkaKalkis {
+  0%,
+  15.5% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+
+  16.5% {
+    opacity: 0.75;
+  }
+
+  24%,
+  100% {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+}
+
+@keyframes halkaInis {
+  0%,
+  21% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+
+  22% {
+    opacity: 0.85;
+  }
+
+  31%,
+  100% {
+    opacity: 0;
+    transform: scale(1.9);
+  }
+}
+
+.damla {
+  fill: var(--okuma-yuzey);
+  opacity: 0;
+  animation: damlaSac var(--sure) ease-out infinite;
+  animation-delay: var(--gecikme);
+}
+
+@keyframes damlaSac {
+  0%,
+  21.4% {
+    opacity: 0;
+    transform: translate(0, 0) scale(1);
+  }
+
+  21.8% {
+    opacity: 0.9;
+  }
+
+  27%,
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) scale(0.4);
+  }
+}
+
+@keyframes balikYuz {
+  0% {
+    opacity: 0;
+    transform: translate(-34px, 0);
+  }
+
+  6% {
+    opacity: 0.88;
+  }
+
+  16% {
+    transform: translate(-13px, 3px);
+  }
+
+  30% {
+    transform: translate(11px, -3px);
+  }
+
+  40% {
+    opacity: 0.88;
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+    transform: translate(34px, 0);
+  }
+}
+
+.balikKuyruk {
+  transform-box: fill-box;
+  transform-origin: right center;
+  animation: kuyrukSalla 0.32s ease-in-out infinite alternate;
+}
+
+@keyframes kuyrukSalla {
+  from {
+    transform: rotate(-20deg);
+  }
+
+  to {
+    transform: rotate(20deg);
+  }
+}
+
+.balikGovde {
+  fill: var(--renk);
+}
+
+.balikYuzgec {
+  fill: color-mix(in srgb, var(--renk) 75%, black);
+}
+
+.balikIsigi {
+  fill: color-mix(in srgb, var(--renk) 45%, var(--okuma-yuzey));
+  opacity: 0.7;
+}
+
+.balikGozu {
+  fill: var(--koyu);
+}
+
+.balikHalkasi {
+  fill: none;
+  stroke: var(--okuma-yuzey);
+  stroke-width: 2;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation-duration: var(--sure);
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  animation-delay: var(--gecikme);
+}
+
+.halkaIlk {
+  animation-name: halkaIlk;
+}
+
+.halkaSon {
+  animation-name: halkaSon;
+}
+
+@keyframes halkaIlk {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+
+  2% {
+    opacity: 0.75;
+  }
+
+  12%,
+  100% {
+    opacity: 0;
+    transform: scale(1.7);
+  }
+}
+
+@keyframes halkaSon {
+  0%,
+  41% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+
+  43% {
+    opacity: 0.75;
+  }
+
+  53%,
+  100% {
+    opacity: 0;
+    transform: scale(1.7);
+  }
+}
+
 /* -------------------------------------------------------------- RÜZGÂR */
 
 /* Çimenin üstünden geçen yumuşak bir ışık dalgası; arada uzun dinlenme. */

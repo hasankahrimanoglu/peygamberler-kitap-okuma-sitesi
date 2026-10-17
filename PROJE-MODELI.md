@@ -764,6 +764,17 @@ testi henüz yapılmadı; kararlar gözlem ve ölçüme dayanır.
   sıra çıkıp otlayan bir tavşan ve 45 saniyede bir çayırın üstünden geçen,
   gölgesi çimene düşen küçük bir kuş sürüsü. Akşam ateşböcekleri gündüz
   sahnesinde azaltıldı (Işıl'la bağ için birkaçı kalır).
+  **Balıklar (KARAR — 18 Ekim 2026, Hasan):** her ırmakta **8 balık** suyun
+  altında, yarı saydam yüzer; 9–13 saniyede bir suda bir halka açarak belirir,
+  birkaç saniye yüzer, ikinci bir halkayla dalar. Altı renk sırayla dağıtılır
+  (turuncu, gri, altın, beyaz-turuncu benekli koi, kırmızı, pembe; yan yana iki
+  balık aynı renkte olmaz). Irmak başına **bir balık arada bir sıçrar**
+  (22 saniyede bir): suyun üstüne çıkınca büyür, akış çizgilerinin üstüne
+  geçer, damlalar saçarak suya iner. Balık yerleri ırmak verisiyle birlikte
+  görselden ölçülür (sudaki taşlardan uzak satırlar betikte tanımlıdır).
+  **Test ekranı:** `/tasarim/canli-cayir` (giriş gerektirmez) — rota arka
+  planının tek karosu, duraklar olmadan gerçek boyutta; sağ/sol ırmak
+  bağlantıları ve seyrek canlıları beklemeden görmek için 4× hız düğmesi.
   **Dikkat dağıtmama kuralları:** çiçek, saz ve kelebek yalnız kenar
   şeritlerindedir, orta sütun sakin kalır; hareketler yavaş ve küçüktür; karo
   başına **tek tavşan** vardır, çoğu zaman görünmez ve **hiçbir durağın,
@@ -777,7 +788,7 @@ testi henüz yapılmadı; kararlar gözlem ve ölçüme dayanır.
   kabuğun zemininde, geniş ekranda rota kartındadır. Irmak suyu verisi
   görselden ölçülür: `ROTA_ARKAPLANI` değişirse
   `node scripts/canli-cayir-irmaklari.mjs` yeniden çalıştırılır (çıktı:
-  `canliCayirIrmaklari.ts`); çiçek, saz, tavşan ve kelebek yerleri de yeni
+  `canliCayirIrmaklari.ts`, balık yerleri dahil); çiçek, saz, tavşan ve kelebek yerleri de yeni
   görsele göre `CanliCayir.tsx` içinde güncellenir. İkinci animasyon
   kütüphanesi eklenmedi (döngüler CSS'tir).
 - **Rota arka planı — boyalı görsel (REVİZE — 12 Ekim 2026, Hasan):** kodla
@@ -1919,6 +1930,12 @@ Kurallar:
       hareket katmanı (su, rüzgâr, sallanan çiçek ve sazlar, kelebekler,
       tavşan, kuş sürüsü). Önce `/tasarim/ana-ekran` önizlemesinde iki turda
       denendi, onaydan sonra `/map`'te kalıcı açıldı.
+
+### 18 Ekim 2026 (canlı çayır balıkları — Hasan onayı, bkz. 3.10.1)
+
+- [x] **Irmaklara balık eklendi:** her ırmakta 8 balık, 6 renk, ırmak başına
+      arada bir sıçrayan bir balık. İnceleme için test ekranı
+      `/tasarim/canli-cayir` eklendi.
 
 ### 18 Ekim 2026 (veli paneli tek kaynak — Hasan onayı, bkz. 7.2)
 
