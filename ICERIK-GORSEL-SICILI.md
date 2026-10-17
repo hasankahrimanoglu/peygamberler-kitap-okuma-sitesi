@@ -1431,8 +1431,8 @@ Devam 3); **B3'te 1 açılış + 4 sahne** (1. Kısım 2 / Devam 2).
 
 ## 4k. Hz. Îsâ (`bookKey: isa`) — 48 görsel
 
-**Durum (17 Eki 2026):** aktarıldı, katalogda **"preparing"** (yayında değil). 48 sahne,
-kitap kapağı, harita durağı, 8 rozet ve madalya **üretildi** (`/gorsel-uretim isa`, aşağıdaki
+**Durum (17 Eki 2026):** aktarıldı ve **yayında** (katalogda "published", `yayinTarihi:
+2026-10-17`; vitrin işareti kaldırıldı). 48 sahne, kitap kapağı, harita durağı, 8 rozet ve madalya **üretildi** (`/gorsel-uretim isa`, aşağıdaki
 üretim kararları); rozet ve madalya çerçeve bekliyor, ses yer tutucu. Briflerin tamamı
 `kitap-icerikleri/KITAP-HZ-ISA-ICERIK-final.md` §B, §C, §D ve §H'dedir (İngilizce
 ana üretim promptu, ortak stil bloğu, ortak negatif, **karakter bloğu (EN)** ve rozet
@@ -1749,7 +1749,7 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 | Hz. Yusuf | 10 | 50 | **60** | 60 | 0 |
 | Hz. Süleyman | 7 | 35 | **42** | 42 | 0 |
 | Hz. Yunus | 5 | 24 | **29** | 29 | 0 |
-| Hz. Îsâ | 8 | 40 | **48** | 48 | 0 (kitap "preparing") |
+| Hz. Îsâ | 8 | 40 | **48** | 48 | 0 |
 | Hz. İsmail | 6 | 30 | **36** | 0 | 36 (hepsi yer tutucu; kitap "preparing") |
 | **Genel** | **84** | **403** | **487** | **431** | **57** |
 

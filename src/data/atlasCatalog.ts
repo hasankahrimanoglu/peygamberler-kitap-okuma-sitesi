@@ -109,7 +109,7 @@ export const atlasRegions: AtlasRegion[] = [
       { order: 24, key: "saya", title: "Hz. Şa‘yâ", subtitle: "Zor zamanda umut taşımak", chapterCount: 4, availability: "preparing" },
       { order: 25, key: "zekeriyya", title: "Hz. Zekeriyyâ", subtitle: "Sabırla edilen dua", chapterCount: 5, availability: "preparing" },
       { order: 26, key: "yahya", title: "Hz. Yahyâ", subtitle: "Temiz kalp ve hikmet", chapterCount: 4, availability: "preparing" },
-      { order: 27, key: "isa", title: "Hz. Îsâ", subtitle: "Merhamet ve umut", description: "Mabette gelen bir müjdeden hurma ağacının dibine, çamurdan bir kuştan herkes için edilen duaya uzanan yolculukta merhametin, umudun ve tek Rabbe güvenin anlamını keşfet.", chapterCount: 8, availability: "preparing", vitrin: true },
+      { order: 27, key: "isa", title: "Hz. Îsâ", subtitle: "Merhamet ve umut", description: "Mabette gelen bir müjdeden hurma ağacının dibine, çamurdan bir kuştan herkes için edilen duaya uzanan yolculukta merhametin, umudun ve tek Rabbe güvenin anlamını keşfet.", chapterCount: 8, availability: "published", yayinTarihi: "2026-10-17" },
     ],
   },
   {
