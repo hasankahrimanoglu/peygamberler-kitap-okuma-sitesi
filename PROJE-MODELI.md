@@ -754,6 +754,32 @@ testi henüz yapılmadı; kararlar gözlem ve ölçüme dayanır.
   (devam/onayla, 3.3) değişmez.**
 - **Işıl "Buradasın" (KARAR — 12 Ekim 2026, Hasan):** ana ekranda çocuğun
   okuduğu kitabın yanında Işıl ve "Buradasın" balonu durur (3.10.5).
+- **Canlı çayır (KARAR — 17 Ekim 2026, Hasan):** boyalı rota görseli zemin
+  olarak kalır; üstüne **kodla çizilen bir hareket katmanı** eklenir
+  (`src/components/cocuk/CanliCayir.tsx`). Tamamen kodla çizilmiş sahne 12
+  Ekim'de soluk bulunduğu için karma yol seçildi; yeni görsel üretilmedi.
+  Katmanda: ırmakta akan su (akış çizgileri + köpük parıltısı), çimenin
+  üstünden geçen rüzgâr dalgası, kenar şeritlerinde rüzgârda sallanan çiçek
+  öbekleri, ırmak kıyılarında saz öbekleri, kenarlarda uçan kelebekler, ara
+  sıra çıkıp otlayan bir tavşan ve 45 saniyede bir çayırın üstünden geçen,
+  gölgesi çimene düşen küçük bir kuş sürüsü. Akşam ateşböcekleri gündüz
+  sahnesinde azaltıldı (Işıl'la bağ için birkaçı kalır).
+  **Dikkat dağıtmama kuralları:** çiçek, saz ve kelebek yalnız kenar
+  şeritlerindedir, orta sütun sakin kalır; hareketler yavaş ve küçüktür; karo
+  başına **tek tavşan** vardır, çoğu zaman görünmez ve **hiçbir durağın,
+  levhanın ya da kartın altına düşmez** (yerini `data-kitap` ve
+  `data-cayir-engel` öğelerine bakarak seçer); dokunma etkileşimi ve ses YOK.
+  **Teknik:** görsel `repeat-y` ile tekrar ettiği için katman da görselin bir
+  kopyası boyunca bir karo çizer; koordinatlar görsel pikselidir, ölçüler
+  `cqw` ile görselle birlikte ölçeklenir. Yalnız `transform`/`opacity` (su
+  çizgilerinde `stroke-dashoffset`) canlandırılır; ekran dışındaki karo durur;
+  **"hareketi azalt" tercihinde katman hiç çizilmez.** Dar ekranda katman
+  kabuğun zemininde, geniş ekranda rota kartındadır. Irmak suyu verisi
+  görselden ölçülür: `ROTA_ARKAPLANI` değişirse
+  `node scripts/canli-cayir-irmaklari.mjs` yeniden çalıştırılır (çıktı:
+  `canliCayirIrmaklari.ts`); çiçek, saz, tavşan ve kelebek yerleri de yeni
+  görsele göre `CanliCayir.tsx` içinde güncellenir. İkinci animasyon
+  kütüphanesi eklenmedi (döngüler CSS'tir).
 - **Rota arka planı — boyalı görsel (REVİZE — 12 Ekim 2026, Hasan):** kodla
   çizilmiş çayırın yerine Hasan'ın ürettiği boyalı çayır görseli geçer:
   `public/harita/rota-harita-arkaplan.jpg` (1122×2804, alt ve üst kenarı
@@ -1374,7 +1400,8 @@ public/
     final-kapisi.svg                   Büyük Final Testi durağının ikonu
   bolgeler/     bolge-{regionId}.png   keşif bölgesi sahne arka planı (7 adet)
   harita/
-    rota-harita-arkaplan.jpg           ana ekran rotasının boyalı, dikişsiz tekrar eden arka planı (3.10.1)
+    rota-harita-arkaplan.jpg           ana ekran rotasının boyalı, dikişsiz tekrar eden arka planı (3.10.1);
+                                       üstündeki hareket katmanı kodla çizilir (CanliCayir.tsx, 17 Eki 2026)
     rota-cayir.svg                     (kullanılmıyor — eski kodla çizilmiş çayır)
   site-genel-arkaplan.jpg              çocuk ana ekranının geniş ekran gece zemini (3.10.6)
   sesli-anlatim/
@@ -1883,6 +1910,13 @@ Kurallar:
 - [x] **Faz D (12 Ekim 2026, Hasan):** Işıl görsel dosya yerine kodla çizilen,
       canlandırılmış bir karakter oldu (üç poz, yeşil yol atkısı); tanımlı
       bütün anlara yerleştirildi (3.10.5).
+
+### 17 Ekim 2026 (canlı çayır — Hasan onayı, bkz. 3.10.1)
+
+- [x] **Rota arka planı canlandı:** boyalı görsel korunarak üstüne kodla
+      hareket katmanı (su, rüzgâr, sallanan çiçek ve sazlar, kelebekler,
+      tavşan, kuş sürüsü). Önce `/tasarim/ana-ekran` önizlemesinde iki turda
+      denendi, onaydan sonra `/map`'te kalıcı açıldı.
 
 ## 11. İçerik Durumu
 

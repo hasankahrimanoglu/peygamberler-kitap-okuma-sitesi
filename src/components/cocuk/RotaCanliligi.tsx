@@ -9,9 +9,12 @@ import styles from "./yolculuk.module.css";
  * Yalnız `transform` ve `opacity` canlandırılır (tablette tam ekran yeniden
  * boyama olmasın — PROJE-MODELI 3.1'deki yıldız parıltısı kararının gerekçesi).
  * "Hareketi azalt" tercihinde hepsi durur.
+ *
+ * Canlı çayırla (KARAR 17 Eki 2026 — PROJE-MODELI 3.10.1) sahne gündüz olduğu
+ * için ateşböcekleri azaltıldı; Işıl'la bağ kurmaya birkaçı yeter.
  */
 export function RotaCanliligi({ kitapSayisi }: { kitapSayisi: number }) {
-  const sayi = Math.min(36, 12 + kitapSayisi * 3);
+  const sayi = Math.min(10, 4 + kitapSayisi);
   // Sabit tohumlu sözde rastgele dağılım: her açılışta aynı yerleşim, sunucu
   // ve tarayıcı çizimi birebir aynı.
   const ateslar = Array.from({ length: sayi }, (_, sira) => {

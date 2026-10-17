@@ -18,6 +18,7 @@ import {
   YEDEK,
 } from "../../lib/varlikYollari";
 import { YedekliGorsel } from "../ui";
+import { CanliCayir } from "./CanliCayir";
 import { Isil } from "./Isil";
 import { RotaCanliligi } from "./RotaCanliligi";
 import styles from "./yolculuk.module.css";
@@ -159,6 +160,8 @@ export function YolculukRotasi({
       className={styles.rotaZemini}
       style={{ "--rota-arkaplan": `url("${ROTA_ARKAPLANI}")` } as CSSProperties}
     >
+      {/* Geniş ekranda manzara rota kartının zeminidir (3.10.1). */}
+      <CanliCayir yer="genis" />
       <RotaCanliligi kitapSayisi={kitaplar.length} />
       <div ref={kokRef} className={styles.rota} style={{ height: yukseklik }}>
         {genislik > 0 ? (
@@ -266,6 +269,7 @@ export function YolculukRotasi({
 
             {siradakiSira >= 0 ? (
               <div
+                data-cayir-engel
                 className={`${styles.isilIsareti} ${siradakiSira % 2 === 1 ? styles.isilSolda : ""}`}
                 style={
                   {

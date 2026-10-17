@@ -232,6 +232,7 @@ export function AnaEkran({
       {finalKitabi?.bitti ? (
         <div
           className={`${styles.duyuru} ${styles.duyuruKutlama}`}
+          data-cayir-engel
           role="status"
         >
           <YedekliGorsel
@@ -256,7 +257,7 @@ export function AnaEkran({
         </div>
       ) : null}
 
-      <section className={styles.siradakiKart} aria-label="Sıradaki bölümün">
+      <section className={styles.siradakiKart} aria-label="Sıradaki bölümün" data-cayir-engel>
         {siradaki ? (
           <>
             <span className={styles.siradakiEtiketi}>
@@ -332,7 +333,7 @@ export function AnaEkran({
       <div className={styles.izgara}>
         <div className={styles.rotaCercevesi}>
           {karsilama ? (
-            <div className={`${styles.duyuru} ${styles.karsilama}`} role="status">
+            <div className={`${styles.duyuru} ${styles.karsilama}`} role="status" data-cayir-engel>
               <Isil poz="konusma" boyut={60} className={styles.duyuruIsil} />
               <p>
                 <b>Merhaba, ben Işıl!</b> Bu yolculukta yolunu aydınlatacağım.
@@ -342,7 +343,7 @@ export function AnaEkran({
               </button>
             </div>
           ) : duyuruKitabi ? (
-            <div className={styles.duyuru} role="status">
+            <div className={styles.duyuru} role="status" data-cayir-engel>
               <Isil poz="konusma" boyut={52} className={styles.duyuruIsil} />
               <p>
                 Yeni bir kitap geldi: <b>{duyuruKitabi.ad}!</b>
@@ -380,6 +381,7 @@ export function AnaEkran({
               >
                 {devami.sayi > 0 ? (
                   <section
+                    data-cayir-engel
                     className={styles.yolunDevami}
                     aria-label="Yolun devamı"
                   >

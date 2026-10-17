@@ -1,0 +1,818 @@
+/*
+ * Canlı çayır (KARAR — 17 Eki 2026, PROJE-MODELI 3.10.1). Boyalı rota görselinin üstündeki
+ * hareket katmanı; açıklama `CanliCayir.tsx` başındadır.
+ *
+ * Yalnız `transform`, `translate`, `scale`, `opacity` ve sudaki çizgilerin
+ * `stroke-dashoffset`'i canlandırılır. Renkler yalnız tema token'larından türer.
+ */
+
+.canliCayir {
+  --tuy: color-mix(in srgb, var(--okuma-yuzey) 54%, color-mix(in srgb, var(--vurgu) 62%, black));
+  --tuy-golge: color-mix(in srgb, var(--okuma-yuzey) 32%, color-mix(in srgb, var(--vurgu) 52%, black));
+  --tuy-kontur: color-mix(in srgb, var(--vurgu) 30%, black);
+  --pembe: color-mix(in srgb, var(--okuma-yuzey) 62%, var(--tehlike));
+  --koyu: color-mix(in srgb, var(--zemin) 55%, black);
+
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Dar ekranda katman sayfanın (kabuğun) zemininde, geniş ekranda rota kartında. */
+.yalnizDar {
+  z-index: -1;
+}
+
+@media (min-width: 1024px) {
+  .yalnizDar {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .yalnizGenis {
+    display: none;
+  }
+}
+
+.karo {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  container-type: inline-size;
+}
+
+.karo[data-gorunur="0"] *,
+.karo[data-gorunur="0"] *::before {
+  animation-play-state: paused;
+}
+
+/* ------------------------------------------------------------------ SU */
+
+.su {
+  position: absolute;
+  overflow: visible;
+}
+
+.akis {
+  fill: none;
+  stroke: color-mix(in srgb, var(--okuma-yuzey) 85%, transparent);
+  stroke-linecap: round;
+  stroke-width: 4.5;
+  animation: akisAk linear infinite;
+  animation-delay: var(--kayma);
+}
+
+.akis1 {
+  --dongu: -190;
+
+  opacity: 0.7;
+  stroke-dasharray: 34 156;
+  animation-duration: 3.4s;
+}
+
+.akis2 {
+  --dongu: -260;
+
+  opacity: 0.5;
+  stroke-dasharray: 52 208;
+  stroke-width: 6;
+  animation-duration: 4.6s;
+}
+
+.akis3 {
+  --dongu: -150;
+
+  opacity: 0.6;
+  stroke-dasharray: 22 128;
+  animation-duration: 2.9s;
+}
+
+@keyframes akisAk {
+  to {
+    stroke-dashoffset: var(--dongu);
+  }
+}
+
+.kopuk {
+  fill: var(--okuma-yuzey);
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: kopukParla 3.6s ease-in-out infinite;
+}
+
+@keyframes kopukParla {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  45% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+}
+
+/* -------------------------------------------------------------- RÜZGÂR */
+
+/* Çimenin üstünden geçen yumuşak bir ışık dalgası; arada uzun dinlenme. */
+.ruzgar {
+  position: absolute;
+  left: 0;
+  width: 70cqw;
+  height: 24cqw;
+  margin-top: -12cqw;
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in srgb, var(--okuma-yuzey) 20%, transparent),
+    color-mix(in srgb, var(--okuma-yuzey) 0%, transparent)
+  );
+  opacity: 0;
+  rotate: -10deg;
+  translate: -80cqw 0;
+  animation: ruzgarGec 22s ease-in-out infinite;
+}
+
+@keyframes ruzgarGec {
+  0% {
+    opacity: 0;
+    translate: -80cqw 0;
+  }
+
+  6% {
+    opacity: 1;
+  }
+
+  26% {
+    opacity: 1;
+  }
+
+  32%,
+  100% {
+    opacity: 0;
+    translate: 110cqw -6cqw;
+  }
+}
+
+/* ------------------------------------------------- ÇİÇEK VE SAZ ÖBEKLERİ */
+
+/* Konum öbeğin dibidir. */
+.cicekObegi,
+.sazObegi {
+  position: absolute;
+}
+
+/* Ölçüler boyalı görseldeki çiçek ve saz öbeklerine denk düşer. */
+.cicekObegi {
+  width: 9.6cqw;
+  height: 8.4cqw;
+  margin: -8.4cqw 0 0 -4.8cqw;
+}
+
+.sazObegi {
+  width: 6.4cqw;
+  height: 12.8cqw;
+  margin: -12.8cqw 0 0 -3.2cqw;
+}
+
+.cicekObegi svg,
+.sazObegi svg {
+  display: block;
+  overflow: visible;
+}
+
+/* Her sap kendi dibinden salınır; dip noktası satır içinde verilir. */
+.salinim {
+  --aci: 4deg;
+  --sure: 4s;
+
+  transform-box: view-box;
+  animation: salin var(--sure) ease-in-out infinite alternate;
+}
+
+@keyframes salin {
+  from {
+    transform: rotate(calc(var(--aci) * -1));
+  }
+
+  to {
+    transform: rotate(var(--aci));
+  }
+}
+
+.yaprak {
+  fill: color-mix(in srgb, var(--eylem) 82%, var(--vurgu));
+}
+
+.yaprakKoyu {
+  fill: color-mix(in srgb, var(--eylem) 58%, black);
+}
+
+.sap {
+  fill: none;
+  stroke: color-mix(in srgb, var(--eylem) 70%, black);
+  stroke-linecap: round;
+  stroke-width: 1.8;
+}
+
+.tacyaprak {
+  fill: var(--tac);
+  stroke: color-mix(in srgb, var(--tac) 70%, black);
+  stroke-width: 0.5;
+}
+
+.cicekGobegi {
+  fill: color-mix(in srgb, var(--vurgu) 72%, var(--tehlike));
+}
+
+.tacSari {
+  --tac: var(--vurgu);
+}
+
+.tacBeyaz {
+  --tac: var(--okuma-yuzey);
+}
+
+.tacPembe {
+  --tac: color-mix(in srgb, var(--tehlike) 34%, color-mix(in srgb, var(--okuma-yuzey) 84%, var(--zemin)));
+}
+
+.tacKirmizi {
+  --tac: color-mix(in srgb, var(--tehlike) 82%, var(--vurgu));
+}
+
+.tacMor {
+  --tac: color-mix(in srgb, var(--zemin) 40%, color-mix(in srgb, var(--tehlike) 40%, var(--okuma-yuzey)));
+}
+
+.sazSapi {
+  fill: none;
+  stroke: color-mix(in srgb, var(--eylem) 62%, black);
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+
+.sazBasi {
+  fill: color-mix(in srgb, var(--tehlike) 72%, var(--vurgu));
+  stroke: color-mix(in srgb, var(--tehlike) 55%, black);
+  stroke-width: 0.6;
+}
+
+.sazIsigi {
+  fill: color-mix(in srgb, var(--vurgu) 55%, var(--okuma-yuzey));
+  opacity: 0.55;
+}
+
+/* ----------------------------------------------------------- KELEBEKLER */
+
+.kelebekYeri {
+  position: absolute;
+  width: 3.6cqw;
+  height: 2.9cqw;
+  margin: -1.45cqw 0 0 -1.8cqw;
+  animation: linear infinite;
+}
+
+.kelebek {
+  display: block;
+  width: 100%;
+  height: 100%;
+  animation: kelebekSalin 1.9s ease-in-out infinite;
+}
+
+.kelebek svg {
+  display: block;
+  overflow: visible;
+}
+
+@keyframes kelebekSalin {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-8deg);
+  }
+
+  50% {
+    transform: translateY(-0.6cqw) rotate(8deg);
+  }
+}
+
+.kanatSol,
+.kanatSag {
+  transform-box: fill-box;
+  animation: kanatCirp 0.32s ease-in-out infinite alternate;
+}
+
+.kanatSol {
+  transform-origin: right center;
+}
+
+.kanatSag {
+  transform-origin: left center;
+}
+
+@keyframes kanatCirp {
+  from {
+    transform: scaleX(1);
+  }
+
+  to {
+    transform: scaleX(0.28);
+  }
+}
+
+.kanatUst {
+  fill: var(--kanat);
+}
+
+.kanatAlt {
+  fill: color-mix(in srgb, var(--kanat) 78%, var(--okuma-yuzey));
+}
+
+.kanatBenek {
+  fill: color-mix(in srgb, var(--kanat) 40%, var(--koyu));
+  opacity: 0.55;
+}
+
+.kelebekGovde {
+  fill: var(--koyu);
+}
+
+.kelebekAnten {
+  fill: none;
+  stroke: var(--koyu);
+  stroke-linecap: round;
+  stroke-width: 0.9;
+}
+
+.kelebekAltin {
+  --kanat: var(--vurgu);
+}
+
+.kelebekKrem {
+  --kanat: var(--okuma-yuzey);
+}
+
+.kelebekMercan {
+  --kanat: color-mix(in srgb, var(--tehlike) 50%, var(--vurgu));
+}
+
+/*
+ * Uçuş yolları: çiçek öbeğinin çevresinde tembel döngüler. Kenardan orta
+ * sütuna doğru en çok ~9cqw açılır.
+ */
+.ucusA {
+  animation-name: ucusA;
+  animation-duration: 24s;
+}
+
+.ucusB {
+  animation-name: ucusB;
+  animation-duration: 28s;
+}
+
+.ucusC {
+  animation-name: ucusC;
+  animation-duration: 21s;
+}
+
+@keyframes ucusA {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  18% {
+    translate: 4cqw -3cqw;
+  }
+
+  36% {
+    translate: 8.5cqw 0.5cqw;
+  }
+
+  54% {
+    translate: 5cqw 5cqw;
+  }
+
+  72% {
+    translate: 0.5cqw 3cqw;
+  }
+
+  86% {
+    translate: -2.5cqw -1.5cqw;
+  }
+}
+
+@keyframes ucusB {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  16% {
+    translate: -4cqw 3cqw;
+  }
+
+  34% {
+    translate: -8cqw -1cqw;
+  }
+
+  52% {
+    translate: -5cqw -6cqw;
+  }
+
+  70% {
+    translate: -1cqw -4cqw;
+  }
+
+  86% {
+    translate: 2cqw 1cqw;
+  }
+}
+
+@keyframes ucusC {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  20% {
+    translate: 3cqw 4cqw;
+  }
+
+  40% {
+    translate: 7cqw 1cqw;
+  }
+
+  60% {
+    translate: 4cqw -4cqw;
+  }
+
+  80% {
+    translate: -1cqw -2cqw;
+  }
+}
+
+/* --------------------------------------------------------------- TAVŞAN */
+
+/*
+ * Konum ayakların ortasıdır; sola giden tavşan bütünüyle aynalanır. Ölçüler
+ * `CanliCayir.tsx:TAVSAN_YOLU` ile aynı tutulur (boş cep hesabı ona dayanır).
+ */
+.tavsanYeri {
+  position: absolute;
+  width: 8cqw;
+  height: 6.4cqw;
+  margin: -6.4cqw 0 0 -4cqw;
+}
+
+.tavsanSola {
+  scale: -1 1;
+}
+
+.tavsan {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: tavsanGez 40s linear infinite;
+  animation-delay: var(--kayma);
+}
+
+.tavsan svg {
+  display: block;
+  overflow: visible;
+}
+
+/*
+ * 40 saniyelik döngü (1 sn = %2,5): çalının dibinde belirir, üç sıçrayış
+ * ilerler, oturup otlar, döner, üç sıçrayışla geri gidip kaybolur; döngünün
+ * kalan ~28 saniyesinde görünmez.
+ */
+@keyframes tavsanGez {
+  0% {
+    opacity: 0;
+    translate: 0 0;
+    scale: 1 1;
+  }
+
+  1.5% {
+    opacity: 1;
+  }
+
+  2.5%,
+  4.75%,
+  7% {
+    animation-timing-function: ease-out;
+  }
+
+  2.5% {
+    translate: 0 0;
+  }
+
+  3.19% {
+    translate: 1.6cqw -1.5cqw;
+    animation-timing-function: ease-in;
+  }
+
+  3.875%,
+  4.75% {
+    translate: 3.2cqw 0;
+  }
+
+  5.44% {
+    translate: 4.8cqw -1.5cqw;
+    animation-timing-function: ease-in;
+  }
+
+  6.125%,
+  7% {
+    translate: 6.4cqw 0;
+  }
+
+  7.69% {
+    translate: 7.8cqw -1.2cqw;
+    animation-timing-function: ease-in;
+  }
+
+  8.375% {
+    translate: 9.2cqw 0;
+  }
+
+  22% {
+    translate: 9.2cqw 0;
+    scale: 1 1;
+  }
+
+  22.1% {
+    scale: -1 1;
+  }
+
+  23.25%,
+  25.5%,
+  27.75% {
+    animation-timing-function: ease-out;
+  }
+
+  23.25% {
+    translate: 9.2cqw 0;
+  }
+
+  23.94% {
+    translate: 7.6cqw -1.5cqw;
+    animation-timing-function: ease-in;
+  }
+
+  24.625%,
+  25.5% {
+    translate: 6cqw 0;
+  }
+
+  26.19% {
+    translate: 4.4cqw -1.5cqw;
+    animation-timing-function: ease-in;
+  }
+
+  26.875%,
+  27.75% {
+    translate: 2.8cqw 0;
+  }
+
+  28.44% {
+    translate: 1.4cqw -1.2cqw;
+    animation-timing-function: ease-in;
+  }
+
+  29.125% {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  30.5%,
+  100% {
+    opacity: 0;
+    translate: 0 0;
+    scale: -1 1;
+  }
+}
+
+/* Otlarken baş boyun noktasından eğilir; kulaklar ara sıra kıpırdar. */
+.tavsanBas {
+  transform-box: view-box;
+  transform-origin: 36px 30px;
+  animation: tavsanOtla 40s ease-in-out infinite;
+  animation-delay: var(--kayma);
+}
+
+@keyframes tavsanOtla {
+  0%,
+  9.5%,
+  15.5%,
+  17%,
+  19.5%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  10.5%,
+  13% {
+    transform: rotate(18deg);
+  }
+
+  11.75% {
+    transform: rotate(12deg);
+  }
+
+  14.25% {
+    transform: rotate(18deg);
+  }
+
+  18.2% {
+    transform: rotate(15deg);
+  }
+}
+
+.tavsanKulaklar {
+  transform-box: view-box;
+  transform-origin: 39px 16px;
+  animation: kulakKipirdat 40s ease-in-out infinite;
+  animation-delay: var(--kayma);
+}
+
+@keyframes kulakKipirdat {
+  0%,
+  16%,
+  17.2%,
+  20.4%,
+  21.6%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  16.6%,
+  21% {
+    transform: rotate(-9deg);
+  }
+}
+
+.tavsanGolge {
+  fill: rgb(0 0 0 / 18%);
+}
+
+/* İnce koyu kontur tavşanı boyalı çimenden ayırır. */
+.tavsanGovde,
+.tavsanBacak {
+  stroke: color-mix(in srgb, var(--tuy-kontur) 55%, transparent);
+  stroke-width: 0.9;
+  paint-order: stroke;
+}
+
+.tavsanGovde {
+  fill: var(--tuy);
+}
+
+.tavsanBacak {
+  fill: var(--tuy-golge);
+}
+
+.tavsanAyak {
+  fill: color-mix(in srgb, var(--tuy) 55%, var(--okuma-yuzey));
+}
+
+.tavsanKuyruk {
+  fill: var(--okuma-yuzey);
+}
+
+.tavsanKulakIci,
+.tavsanBurun {
+  fill: var(--pembe);
+}
+
+.tavsanYanak {
+  fill: color-mix(in srgb, var(--tuy) 50%, var(--okuma-yuzey));
+}
+
+.tavsanGoz {
+  fill: var(--koyu);
+}
+
+.tavsanGozIsigi {
+  fill: var(--okuma-yuzey);
+}
+
+/* ------------------------------------------------------------ KUŞ SÜRÜSÜ */
+
+/*
+ * 45 saniyelik döngü: sürü yaklaşık 10 saniyede çayırı soldan sağa, hafifçe
+ * yükselerek geçer; kalan sürede görünmez. Kuşların biraz altında gölgeleri
+ * çimene düşer (kuşlar yukarıdan görülür).
+ */
+.kusSurusu {
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  translate: -20cqw 0;
+  animation: kusGec 45s linear infinite;
+  animation-delay: calc(var(--kayma) - 18s);
+}
+
+@keyframes kusGec {
+  0% {
+    opacity: 0;
+    translate: -20cqw 0;
+  }
+
+  1% {
+    opacity: 1;
+  }
+
+  22% {
+    opacity: 1;
+    translate: 128cqw -24cqw;
+  }
+
+  22.5%,
+  100% {
+    opacity: 0;
+    translate: 128cqw -24cqw;
+  }
+}
+
+.kusYeri {
+  position: absolute;
+  width: 4.4cqw;
+  height: 4.4cqw;
+  margin: -2.2cqw 0 0 -2.2cqw;
+}
+
+.kus {
+  display: block;
+  overflow: visible;
+  rotate: -9deg;
+}
+
+.kusGolgesi {
+  position: absolute;
+  top: 125%;
+  left: 30%;
+  width: 70%;
+  height: 26%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgb(0 0 0 / 20%), rgb(0 0 0 / 0%));
+  rotate: -9deg;
+}
+
+.kanatUstKus,
+.kanatAltKus {
+  transform-box: fill-box;
+  animation: kusKanatCirp 0.42s ease-in-out infinite alternate;
+}
+
+.kanatUstKus {
+  transform-origin: center bottom;
+}
+
+.kanatAltKus {
+  transform-origin: center top;
+}
+
+@keyframes kusKanatCirp {
+  from {
+    transform: scaleY(1);
+  }
+
+  to {
+    transform: scaleY(0.3);
+  }
+}
+
+.kusKanat,
+.kusGovde {
+  stroke: color-mix(in srgb, var(--zemin) 40%, transparent);
+  stroke-width: 0.6;
+  paint-order: stroke;
+}
+
+.kusKanat {
+  fill: var(--okuma-yuzey);
+}
+
+.kusGovde {
+  fill: color-mix(in srgb, var(--okuma-yuzey) 86%, var(--zemin));
+}
+
+.kusGaga {
+  fill: var(--vurgu);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .canliCayir {
+    display: none;
+  }
+}

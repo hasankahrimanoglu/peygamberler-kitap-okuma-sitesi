@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ROTA_ARKAPLANI, SITE_ARKAPLANI } from "../../lib/varlikYollari";
 import { CocukAvatari, Ikon, type IkonAdi } from "../ui";
+import { CanliCayir } from "./CanliCayir";
 import { ProfilKarti } from "./ProfilKarti";
 import styles from "./cocuk-kabugu.module.css";
 
@@ -89,7 +90,9 @@ export function CocukKabugu({
           : undefined
       }
     >
-      <header className={styles.ustBant}>
+      {/* Dar ekranda manzara kabuğun zeminidir; canlı çayır da burada (3.10.1). */}
+      {rotaArkaplani ? <CanliCayir yer="dar" /> : null}
+      <header className={styles.ustBant} data-cayir-engel>
         <div className={styles.ustBar}>
           <Link href="/map" className={styles.logo}>
             <Ikon ad="harita" boyut={24} />

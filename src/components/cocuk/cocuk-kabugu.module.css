@@ -65,6 +65,12 @@
   }
 }
 
+/* Canlı çayır katmanı (dar ekran) kabuğun zemini ile içeriği arasında durur. */
+.kabukRota {
+  position: relative;
+  isolation: isolate;
+}
+
 /* --------------------------------------------------------------- ÜST BANT */
 
 .ustBant {
