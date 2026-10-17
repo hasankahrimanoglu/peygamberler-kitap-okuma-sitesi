@@ -880,8 +880,8 @@ sahne (1. Kısım 2 / Devam 3).
 
 ## 4h. Hz. Yusuf (`bookKey: yusuf`) — 60 görsel
 
-**Durum (17 Eki 2026):** aktarıldı, katalogda **"preparing"** (yayında değil;
-katalogda vitrin kitabı). 60 sahne slotunun **60'ı da gerçek görsel**
+**Durum (17 Eki 2026):** aktarıldı ve **yayında** (katalogda "published", `yayinTarihi:
+2026-10-17`; vitrin işareti kaldırıldı). 60 sahne slotunun **60'ı da gerçek görsel**
 (`/gorsel-uretim yusuf`); 10 rozet ve madalya **çerçevesiz kare** teslim edildi,
 çerçeveyi Hasan ekler. Kitap kapağı ve harita durağı da teslim edildi; sesli
 anlatım yer tutucudur. Briflerin tamamı
