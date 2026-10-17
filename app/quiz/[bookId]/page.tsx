@@ -8,7 +8,7 @@ import { FinalTesti, type FinalSaveState } from "../../../src/components/final/F
 import okuma from "../../../src/components/reader/okuma-akisi.module.css";
 import styles from "../../../src/components/final/final-testi.module.css";
 import { Ikon } from "../../../src/components/ui";
-import { dbKitabiBul } from "../../../src/lib/child/yolculuk";
+import { dbKitabiBul } from "../../../src/lib/derive";
 import { quizConfig, type QuizConfig, type QuizOption } from "../../../src/data/quizzes";
 
 type SavedCompletionState = "loading" | "completed" | "incomplete" | "unknown";

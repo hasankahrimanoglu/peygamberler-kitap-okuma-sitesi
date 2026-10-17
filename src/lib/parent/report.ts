@@ -8,7 +8,7 @@ import {
   type ParentReportBook,
 } from "../../data/books";
 import {
-  normalizeBookName,
+  yayindakiKitaplar,
   type DeriveBookRow,
   type DeriveProgressRow,
 } from "../derive";
@@ -43,16 +43,6 @@ export type ChildReport = {
   currentAdventure: CurrentAdventureHint;
 };
 
-function findBookRowForReportBook(
-  reportBook: ParentReportBook,
-  books: DeriveBookRow[],
-) {
-  return books.find((book) => {
-    const normalizedName = normalizeBookName(book.isim);
-    return reportBook.keywords.some((keyword) => normalizedName.includes(keyword));
-  });
-}
-
 export function formatReportDate(value: string | null) {
   if (!value) return "Tarih kaydı yok";
   return new Intl.DateTimeFormat("tr-TR", {
@@ -85,115 +75,65 @@ export function getDefaultChatQuestions(childName: string) {
   ];
 }
 
-/** Zaten çekilmiş ilerleme + kitap verisinden gelişim raporunu üretir. */
+/**
+ * Zaten çekilmiş ilerleme + kitap verisinden gelişim raporunu üretir.
+ * Kitaplar katalogdan gelir (yalnız yayındakiler, `derive.ts:yayindakiKitaplar`);
+ * veli metinleri kitaba katalog anahtarıyla bağlanır (`parentReportBooks[].key`).
+ */
 export function buildChildReport(
   profile: ReportProfile,
   progressRows: DeriveProgressRow[],
   books: DeriveBookRow[],
 ): ChildReport {
-  const progressByBookId = new Map(
-    progressRows.map((progress) => [progress.book_id, progress]),
-  );
+  const kaynaklar = yayindakiKitaplar(books, progressRows).map((kitap) => ({
+    kitap,
+    reportBook: parentReportBooks.find((rapor) => rapor.key === kitap.katalog.key),
+  }));
 
-  const reportSources = parentReportBooks.map((reportBook) => {
-    const matchedBook = findBookRowForReportBook(reportBook, books);
-    return {
-      reportBook,
-      book: matchedBook,
-      progress: matchedBook ? progressByBookId.get(matchedBook.id) : undefined,
-    };
-  });
+  const totalBadges = kaynaklar.reduce((sum, { kitap }) => sum + kitap.tamamlanan, 0);
 
-  const totalBadges = reportSources.reduce((sum, source) => {
-    const totalChapters =
-      source.book?.toplam_bolum || source.reportBook.totalQuizQuestions || 1;
-    const completedCount = Math.min(
-      totalChapters,
-      Math.max(0, source.progress?.tamamlanan_bolum_sayisi ?? 0),
-    );
-    return sum + completedCount;
-  }, 0);
-
-  const completedAdventures = reportSources
-    .map(({ reportBook, book, progress }) => {
-      const totalChapters = book?.toplam_bolum || reportBook.totalQuizQuestions || 1;
-      const completedCount = Math.min(
-        totalChapters,
-        Math.max(0, progress?.tamamlanan_bolum_sayisi ?? 0),
-      );
-      const isFinished = Boolean(progress?.bitti_mi);
-
-      if (!isFinished) return null;
-
-      const totalQuestions =
-        reportBook.totalQuizQuestions ||
-        book?.toplam_bolum ||
-        progress?.final_score ||
-        1;
-      const finalScore = Math.max(0, progress?.final_score ?? NaN);
-      const normalizedFinalScore = Number.isFinite(finalScore) ? finalScore : null;
+  const completedAdventures = kaynaklar
+    .filter(({ kitap }) => kitap.bitti)
+    .map(({ kitap, reportBook }) => {
+      const finalScore = Math.max(0, kitap.ilerleme?.final_score ?? NaN);
 
       return {
-        bookTitle: reportBook.title,
-        completedCount,
-        totalChapters,
-        finalScore: normalizedFinalScore,
-        totalQuestions,
-        medalName: `${reportBook.title} Yolculuk Madalyası`,
-        updatedAt: progress?.updated_at ?? null,
+        bookTitle: kitap.katalog.title,
+        completedCount: kitap.tamamlanan,
+        totalChapters: kitap.toplam,
+        finalScore: Number.isFinite(finalScore) ? finalScore : null,
+        // Final testinde her bölümden tam bir soru vardır (içerik brifi §9).
+        totalQuestions: reportBook?.totalQuizQuestions || kitap.toplam,
+        medalName: `${kitap.katalog.title} Yolculuk Madalyası`,
+        updatedAt: kitap.ilerleme?.updated_at ?? null,
         parentMessage: getParentMessage({
           childName: profile.isim,
           reportBook,
         }),
-        chatQuestions: reportBook.chat_questions?.length
+        chatQuestions: reportBook?.chat_questions?.length
           ? reportBook.chat_questions
           : getDefaultChatQuestions(profile.isim),
-        parentFaq: reportBook.parent_faq ?? [],
+        parentFaq: reportBook?.parent_faq ?? [],
       } satisfies CompletedAdventureReport;
     })
-    .filter((report): report is CompletedAdventureReport => report !== null)
     .sort((first, second) => {
       const firstDate = first.updatedAt ? new Date(first.updatedAt).getTime() : 0;
       const secondDate = second.updatedAt ? new Date(second.updatedAt).getTime() : 0;
       return secondDate - firstDate;
     });
 
-  const currentProgress = reportSources
-    .map(({ reportBook, book, progress }) => {
-      const totalChapters = book?.toplam_bolum || reportBook.totalQuizQuestions || 1;
-      const completedCount = Math.min(
-        totalChapters,
-        Math.max(0, progress?.tamamlanan_bolum_sayisi ?? 0),
-      );
-      const isFinished = Boolean(progress?.bitti_mi);
-
-      if (isFinished || completedCount <= 0) return null;
-
-      return {
-        bookTitle: reportBook.title,
-        completedCount,
-        totalChapters,
-        updatedAt: progress?.updated_at ?? null,
-      };
-    })
-    .filter(
-      (item): item is CurrentAdventureHint & { updatedAt: string | null } =>
-        item !== null,
-    )
-    .sort((first, second) => {
-      const firstDate = first.updatedAt ? new Date(first.updatedAt).getTime() : 0;
-      const secondDate = second.updatedAt ? new Date(second.updatedAt).getTime() : 0;
-      return secondDate - firstDate;
-    })[0];
+  const guncel = kaynaklar
+    .filter(({ kitap }) => !kitap.bitti && kitap.tamamlanan > 0)
+    .sort((first, second) => second.kitap.sonOkuma - first.kitap.sonOkuma)[0];
 
   return {
     totalBadges,
     completedAdventures,
-    currentAdventure: currentProgress
+    currentAdventure: guncel
       ? {
-          bookTitle: currentProgress.bookTitle,
-          completedCount: currentProgress.completedCount,
-          totalChapters: currentProgress.totalChapters,
+          bookTitle: guncel.kitap.katalog.title,
+          completedCount: guncel.kitap.tamamlanan,
+          totalChapters: guncel.kitap.toplam,
         }
       : null,
   };

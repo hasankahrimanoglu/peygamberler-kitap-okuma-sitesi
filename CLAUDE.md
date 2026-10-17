@@ -82,6 +82,10 @@ Stack: Next.js + TypeScript + Tailwind + Supabase. Paket yöneticisi: **npm**.
   türetilir → `public/rozetler/hz-{bookKey}/bolum-{no}.png`. Bölümlere
   `rozetIcon` alanı ekleme.
 - Supabase tabloları: `profiles`, `parent_subscriptions`, `books`, `user_progress`.
+- **Kitap listesi tek kaynaktan (18 Eki 2026):** çocuk ekranları ve veli paneli
+  kitapları `derive.ts:yayindakiKitaplar()`'dan alır (katalogda `published` +
+  `books.ts`'te içerik). Elle kitap listesi ya da anahtar tablosu TUTMA; Supabase
+  `books` satırı yalnız ilerleme anahtarıdır, ad katalogdan gelir.
 - Türetilen kavramlar tablo GEREKTİRMEZ: rozet (`tamamlanan_bölüm >= sıra`),
   madalya (`bitti_mi = true`), unvan (tamamlanan kitap sayısı → eşik tablosu).
 

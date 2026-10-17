@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
 import { profilAvatarliOku } from "../profilFotografi";
-import type { DeriveBookRow, DeriveProgressRow } from "../derive";
-import { yayindakiDbKitaplari } from "./yolculuk";
+import { yayindakiDbKitaplari, type DeriveBookRow, type DeriveProgressRow } from "../derive";
 
 export type SelectedChild = {
   id: string;

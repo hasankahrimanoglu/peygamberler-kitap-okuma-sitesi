@@ -11,7 +11,7 @@ import {
 } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
-import type { DeriveBookRow, DeriveProgressRow } from "../derive";
+import { yayindakiDbKitaplari, type DeriveBookRow, type DeriveProgressRow } from "../derive";
 
 export type ChildProfile = {
   id: string;
@@ -185,7 +185,9 @@ export function ParentDataProvider({ children }: { children: ReactNode }) {
     const loadedProfiles = profileRows ?? [];
     setProfiles(loadedProfiles);
     setProfileLimit(subscriptionResult.data?.profile_limit ?? 1);
-    setBooks((booksResult.data as DeriveBookRow[] | null) ?? []);
+    // Çocuk tarafıyla aynı liste: yalnız yayındaki kitaplar. Veritabanındaki
+    // eski halife demo satırları Kütüphane'de açılamayan kitap olarak görünüyordu.
+    setBooks(yayindakiDbKitaplari((booksResult.data as DeriveBookRow[] | null) ?? []));
 
     // Tüm çocukların ilerleme + görev durumunu tek seferde çek, profile_id'ye
     // göre grupla. profile_tasks migration'ı henüz çalıştırılmadıysa görevler

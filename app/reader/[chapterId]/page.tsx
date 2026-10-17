@@ -6,7 +6,7 @@ import { supabase } from "../../../lib/supabase";
 // Kaydırmalı okuyucu (Faz 6.2) 28 Tem 2026'da Hasan onayıyla üretime alındı;
 // sayfalı okuyucu 30 Tem 2026'da tamamen kaldırıldı. Tek okuyucu budur.
 import { AtlasScrollReader } from "../../../src/components/reader/AtlasScrollReader";
-import { dbKitabiBul } from "../../../src/lib/child/yolculuk";
+import { dbKitabiBul } from "../../../src/lib/derive";
 import { atlasBookByKey } from "../../../src/data/atlasCatalog";
 import {
   adaptDataChapter,

@@ -4,16 +4,16 @@
  * Saf fonksiyonlardır: Supabase satırlarını ve statik içeriği alır, ekranın
  * ihtiyaç duyduğu modeli döner. Harita artık kitapları elle tanımıyor —
  * `atlasCatalog.ts`'te `availability: "published"` olan ve `books.ts`'te içeriği
- * bulunan her kitap, katalog sırasıyla rotaya girer. Kitaplar arasında kilit
- * yoktur (3.10.2); kilit yalnız kitap içindeki bölümlerde ve finaldedir.
+ * bulunan her kitap, katalog sırasıyla rotaya girer. Liste veli paneliyle
+ * ortaktır (`derive.ts:yayindakiKitaplar`). Kitaplar arasında kilit yoktur
+ * (3.10.2); kilit yalnız kitap içindeki bölümlerde ve finaldedir.
  */
-import { atlasRegions, type AtlasCatalogBook } from "../../data/atlasCatalog";
-import { books as kitapIcerikleri } from "../../data/books";
 import { quizConfig } from "../../data/quizzes";
 import {
-  normalizeBookName,
+  katalogKitaplari,
   UNVAN_ESIKLERI,
   unvanFromBookCount,
+  yayindakiKitaplar,
   type DeriveBookRow,
   type DeriveProgressRow,
 } from "../derive";
@@ -51,100 +51,39 @@ export type SiradakiAdim =
   | { tur: "bolum"; kitap: YolculukKitabi; bolum: YolculukBolumu }
   | { tur: "final"; kitap: YolculukKitabi; yol: string };
 
-function kelimeler(metin: string) {
-  return normalizeBookName(metin)
-    .replace(/[^a-z0-9]+/g, " ")
-    .split(" ")
-    .filter((kelime) => kelime && kelime !== "hz");
-}
-
-/**
- * Katalogdaki kitabın Supabase `books` satırı. Kelime kümesiyle eşleşir:
- * "ali" anahtarı "Hz. Sâlih" içinde geçtiği için alt dize eşleşmesi ileride
- * yanlış kitabı bulurdu.
- */
-export function dbKitabiBul<T extends { isim: string | null }>(
-  satirlar: T[],
-  baslik: string,
-  anahtar?: string,
-): T | undefined {
-  const hedef = kelimeler(baslik);
-  const tam = satirlar.find((satir) => {
-    const ad = new Set(kelimeler(satir.isim ?? ""));
-    return hedef.length > 0 && hedef.every((kelime) => ad.has(kelime));
-  });
-  if (tam || !anahtar) return tam;
-  return satirlar.find((satir) => kelimeler(satir.isim ?? "").includes(anahtar));
-}
-
-function katalogKitaplari(): AtlasCatalogBook[] {
-  return atlasRegions
-    .flatMap((bolge) => bolge.books)
-    .sort((a, b) => a.order - b.order);
-}
-
-/**
- * Supabase `books` satırlarından yalnız yayındaki (ve içeriği hazır) kitaplara
- * ait olanlar. Veritabanında Temmuz 2026 demolarından kalan ilerleme kayıtları
- * var (Hz. Nûh, halife demoları); bunlar sayılınca Ödüllerim sayfası ana
- * ekrandan farklı madalya ve unvan gösteriyordu. Çocuk tarafı yalnız bu
- * listeyle çalışır.
- */
-export function yayindakiDbKitaplari<T extends { isim: string | null }>(satirlar: T[]): T[] {
-  const yayindakiler = katalogKitaplari().filter(
-    (kitap) =>
-      kitap.availability === "published" &&
-      kitapIcerikleri.some((icerik) => icerik.routePrefix === kitap.key),
-  );
-  return satirlar.filter((satir) =>
-    yayindakiler.some((kitap) => dbKitabiBul([satir], kitap.title, kitap.key)),
-  );
-}
-
 /** Yayındaki ve içeriği hazır kitaplar, katalog sırasıyla. */
 export function yolculukKitaplari(
   dbKitaplar: DeriveBookRow[],
   ilerlemeler: DeriveProgressRow[],
   simdi = Date.now(),
 ): YolculukKitabi[] {
-  const sonuc: YolculukKitabi[] = [];
+  return yayindakiKitaplar(dbKitaplar, ilerlemeler).map(
+    ({ katalog, icerik, tamamlanan, bitti, sonOkuma }) => {
+      const basladi = tamamlanan > 0 || bitti;
+      const yayin = katalog.yayinTarihi ? Date.parse(katalog.yayinTarihi) : Number.NaN;
 
-  for (const katalog of katalogKitaplari()) {
-    if (katalog.availability !== "published") continue;
-    const icerik = kitapIcerikleri.find((kitap) => kitap.routePrefix === katalog.key);
-    if (!icerik) continue;
-
-    const db = dbKitabiBul(dbKitaplar, katalog.title, katalog.key);
-    const satir = db ? ilerlemeler.find((ilerleme) => ilerleme.book_id === db.id) : undefined;
-    const toplam = icerik.chapters.length;
-    const tamamlanan = Math.min(toplam, Math.max(0, satir?.tamamlanan_bolum_sayisi ?? 0));
-    const bitti = Boolean(satir?.bitti_mi);
-    const basladi = tamamlanan > 0 || bitti;
-    const yayin = katalog.yayinTarihi ? Date.parse(katalog.yayinTarihi) : Number.NaN;
-
-    sonuc.push({
-      key: katalog.key,
-      ad: katalog.title,
-      altBaslik: katalog.subtitle,
-      aciklama: katalog.description,
-      bolumler: icerik.chapters.map((bolum, sira) => ({
-        no: sira + 1,
-        ad: bolum.title.replace(/\s+/g, " ").trim(),
-        rozetAdi: bolum.badgeName,
-        gorevVar: Boolean(bolum.gorev),
-        okumaYolu: `/reader/${icerik.routePrefix}-${bolum.id}`,
-      })),
-      tamamlanan,
-      bitti,
-      basladi,
-      yeni: !basladi && Number.isFinite(yayin) && simdi - yayin < YENI_GUN_SINIRI * GUN_MS,
-      sonOkuma: satir?.updated_at ? Date.parse(satir.updated_at) : 0,
-      finalYolu: quizConfig[katalog.key] ? `/quiz/${katalog.key}` : null,
-      madalyaAdi: `${katalog.title} Yolculuk Madalyası`,
-    });
-  }
-
-  return sonuc;
+      return {
+        key: katalog.key,
+        ad: katalog.title,
+        altBaslik: katalog.subtitle,
+        aciklama: katalog.description,
+        bolumler: icerik.chapters.map((bolum, sira) => ({
+          no: sira + 1,
+          ad: bolum.title.replace(/\s+/g, " ").trim(),
+          rozetAdi: bolum.badgeName,
+          gorevVar: Boolean(bolum.gorev),
+          okumaYolu: `/reader/${icerik.routePrefix}-${bolum.id}`,
+        })),
+        tamamlanan,
+        bitti,
+        basladi,
+        yeni: !basladi && Number.isFinite(yayin) && simdi - yayin < YENI_GUN_SINIRI * GUN_MS,
+        sonOkuma,
+        finalYolu: quizConfig[katalog.key] ? `/quiz/${katalog.key}` : null,
+        madalyaAdi: `${katalog.title} Yolculuk Madalyası`,
+      };
+    },
+  );
 }
 
 function adimBul(kitap: YolculukKitabi): SiradakiAdim | null {

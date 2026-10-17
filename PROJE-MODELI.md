@@ -1168,7 +1168,7 @@ kalkar), **Kelimelerim'e yeni özellik yok** (yalnız tasarım).
   4. **Unvan yolu:** 10 unvan; telefonda dikey, genişte yatay. Altın iz şu anki
      unvana kadar dolar, şu anki unvanda "Şu an" etiketi durur.
 - **Kelimelerim** (`/kelime-defterim`):
-  - Arama kutusu ve kitap çipleri (Tümü · Hz. Âdem 8 · Hz. Şît 1).
+  - Arama kutusu ve kitap çipleri (Tümü · Hz. Âdem 8 · Hz. Şît 5).
   - Arama yokken kitap kitap gruplanır (kapak + ad + sayı), bölüm sırasıyla.
   - Kelime kartında kelime okuma ekranındaki sözlük kelimesi gibi işaretlidir
     (yeşil vurgu, noktalı çizgi); anlamı hikâye yazısıyla yazılır.
@@ -1208,7 +1208,7 @@ kalkar), **Kelimelerim'e yeni özellik yok** (yalnız tasarım).
 | 2 | Tasarım sistemi | Bölüm 3'teki tokenlar + ortak bileşenler (Card, Button, Badge, ProgressBar) | Yok |
 | 3 | Veli paneli yeniden kurgusu | Sol menülü (mobilde alt menülü) çok sayfalı yapı: Ana Sayfa, Kütüphane, Ödüller, Gelişim Raporları | Yok — mevcut veriden türetilir |
 | 4 | Veli ana sayfası | Bölüm 3.7'deki geniş okuma yolculuğu kartları: avatar, unvan, okunan kitap, ilerleme, son rozet + **çocuğun güncel "Bugüne Taşı" görevi (tek satır, en güncel görev — veli kartı geçmiş görev listesi GÖSTERMEZ; çocuğun tam görev listesi kendi "Görevlerim" ekranındadır, bkz. madde 17)** + son okuma zamanı + "Okumaya Devam Et / Gelişim Raporu / Profili Düzenle". Profil ekleme formu ayrı ekrana taşınır; ana sayfada yalnız kompakt ekleme alanı bulunur. "Şifre Değiştir" sağ üst hesap menüsüne girer | Yok |
-| 5 | Kütüphane sayfası (veli) | Tüm kitaplar, çocuk/durum filtresi, arama, kilitli kitap açıklamaları | Yok — books + user_progress |
+| 5 | Kütüphane sayfası (veli) | Tüm kitaplar, çocuk/durum filtresi, arama, kilitli kitap açıklamaları. *(REVİZE 18 Eki 2026: "tüm kitaplar" = çocuk haritasındaki yayındaki kitaplar (7.2); kitap kilidi 3.10.2'de kalktığı için kilit açıklaması ve "Kilitli" filtresi kaldırıldı.)* | Yok — books + user_progress |
 | 6 | Ödüller sayfası (veli) | Rozetler / Madalyalar / Unvanlar sekmeleri, rozet detay paneli | Yok — türetilir |
 | 7 | Gelişim raporu: modal → sekmeli tam sayfa | Genel Bakış, Kitaplar, Ödüller, **Görevler**, Sohbet Önerileri sekmeleri; mobilde tam ekran | Yok (Görevler `profile_tasks`'tan) |
 | 8 | Çocuk kitap detayı: modal → tam ekran sayfa | Bölüm listesi, kazanılacak rozet, final testi kartı (kilitli/açık), çift scrollbar sorunu biter | Yok |
@@ -1649,7 +1649,9 @@ ileride istenirse eklenmesi kolaydır.)
 | Bölüm rozeti kazanıldı mı | `tamamlanan_bolum_sayisi >= bölüm sırası` |
 | Madalya kazanıldı mı | `bitti_mi = true` (final testi dahil) |
 | Unvan | Tamamlanan kitap sayısı → Bölüm 2 eşik tablosu; sonuç `profiles.unvan`a yazılır |
-| Kütüphane/Ödüller sayfaları | books + user_progress + books.ts birleşimi |
+| Kitap listesi (çocuk ve veli tarafı) | Katalogda `published` olan ve `books.ts`'te içeriği bulunan kitaplar, katalog sırasıyla (`derive.ts:yayindakiKitaplar`). Ad katalogdan, bölüm sayısı içerikten gelir; Supabase `books` satırı yalnız ilerleme kaydının anahtarıdır. Elle tutulan ikinci bir kitap listesi YOKTUR (REVİZE 18 Eki 2026 — veli paneli eski, dört kitaplık bir listeye bakıyordu) |
+| Kütüphane/Ödüller/Gelişim Raporu (veli) | Yukarıdaki kitap listesi + user_progress |
+| Kelimelerim (çocuk) | Tamamlanan bölümlerin iki hikâye parçasındaki (1. Kısım + Hikâye Devam Ediyor) sözlük kelimeleri |
 | Son aktivite (ilk sürüm) | `user_progress.updated_at` |
 
 ### 7.3 İleriki faz eklemeleri
@@ -1917,6 +1919,21 @@ Kurallar:
       hareket katmanı (su, rüzgâr, sallanan çiçek ve sazlar, kelebekler,
       tavşan, kuş sürüsü). Önce `/tasarim/ana-ekran` önizlemesinde iki turda
       denendi, onaydan sonra `/map`'te kalıcı açıldı.
+
+### 18 Ekim 2026 (veli paneli tek kaynak — Hasan onayı, bkz. 7.2)
+
+- [x] **Veli paneli de katalogdan beslenir.** Çocuk tarafı Faz C'de katalogdan
+      beslenmeye geçmişti; veli paneli ve Kelimelerim ise yalnız Hz. Âdem, Şît,
+      İdrîs ve Nûh'u tanıyan eski bir listeye bakıyordu. Sonuç: veli
+      Ödüller'de 84 rozetin 24'ü görünüyordu, sonraki 8 kitabın madalyası yoktu,
+      yayında olmayan üç halife demosu Kütüphane'de ve madalyalarda duruyordu,
+      kartta okunan kitabın son rozeti çıkmıyordu. Artık iki taraf aynı listeyi
+      kullanır (`derive.ts:yayindakiKitaplar`); adlar katalogdan gelir
+      ("Hz. Adem" değil "Hz. Âdem").
+- [x] **Kelimelerim hikâyenin iki parçasını da toplar.** Yalnız 1. Kısım
+      taranıyordu; bütün bölümler bitse bile 91 kelimenin 15'i görünüyordu.
+- [x] Veli Kütüphanesi'ndeki **"Kilitli" filtresi kaldırıldı** (kitap kilidi
+      3.10.2'de kalktığından beri hiçbir kitaba uymuyordu).
 
 ## 11. İçerik Durumu
 

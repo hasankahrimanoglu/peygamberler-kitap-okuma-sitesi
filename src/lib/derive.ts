@@ -1,10 +1,14 @@
-// Veli paneli (Faz 5) ve harita için ortak türetme katmanı.
-// PROJE-MODELI.md Bölüm 7.2: kavramlar tablo GEREKTİRMEZ — hepsi
-// profiles + user_progress + books + books.ts birleşiminden türetilir.
+// Veli paneli ve çocuk ekranları için ortak türetme katmanı.
+// PROJE-MODELI.md Bölüm 7.2: kavramlar tablo GEREKTİRMEZ — hepsi katalog
+// (atlasCatalog.ts) + içerik (books.ts) + user_progress birleşiminden türetilir.
+// Hangi kitapların var olduğunu katalog ve içerik söyler; Supabase `books`
+// satırı yalnız ilerleme kaydının anahtarıdır (adı aksansız olabilir, yayında
+// olmayan eski demo satırları da durur).
 // Buradaki fonksiyonlar SAF'tır (Supabase'e bağlı değil); veri sayfa/provider
 // tarafından çekilip bu fonksiyonlara verilir.
 
-import { books as bookDefs } from "../data/books";
+import { atlasRegions, type AtlasCatalogBook } from "../data/atlasCatalog";
+import { books as bookDefs, type BookDefinition } from "../data/books";
 
 // --- Supabase satır tipleri (türetme girdisi) ---
 export type DeriveProgressRow = {
@@ -77,49 +81,116 @@ export function unvanAnahtari(unvan: string) {
   return normalizeBookName(unvan).replaceAll(" ", "-");
 }
 
-// --- Kitap anahtarları (DB kitabı ↔ görsel/route anahtarı ↔ books.ts içeriği) ---
+// --- Kitap kataloğu: hangi kitaplar var (tek kaynak) ---
 
-type KitapAnahtari = {
-  /** Görsel + route anahtarı: kapak-{bookKey}.png, /kitap/{bookKey} */
-  bookKey: string;
-  /** books.ts içindeki gerçek içerik id'si (varsa) */
-  booksTsId?: string;
-  /** DB kitap adını eşleştirmek için anahtar kelimeler (normalize edilmiş) */
-  keywords: string[];
-};
-
-// Merkezî Rozet Matrisi'nin kod tarafı (ROZET-MATRISI.md · PROJE-MODELI.md 6.1).
-// Rozet adları YALNIZCA books.ts içeriğinden okunur. Katalogda "Hazırlanıyor"
-// durumundaki kitaplarda rozet listesi boştur (PROJE-MODELI.md 3.7: hazırlanıyor
-// durağında rozet/madalya sayısı gösterilmez). Buradaki girdiler içeriği olmayan
-// kitaplar için de korunur; `keywords` DB kitap eşleştirmesini, `bookKey` ise
-// route ve görsel anahtarını besler.
-export const KITAP_ANAHTARLARI: KitapAnahtari[] = [
-  { bookKey: "adem", booksTsId: "hz-adem", keywords: ["adem"] },
-  { bookKey: "sit", booksTsId: "hz-sit", keywords: ["sit"] },
-  { bookKey: "idris", booksTsId: "hz-idris", keywords: ["idris"] },
-  { bookKey: "nuh", booksTsId: "hz-nuh", keywords: ["nuh"] },
-  { bookKey: "ebubekir", keywords: ["ebu bekir", "ebubekir"] },
-  { bookKey: "omer", keywords: ["omer"] },
-  { bookKey: "osman", keywords: ["osman"] },
-];
-
-export function kitapAnahtariBul(isim: string): KitapAnahtari | undefined {
-  const normalized = normalizeBookName(isim);
-  return KITAP_ANAHTARLARI.find((anahtar) =>
-    anahtar.keywords.some((keyword) => normalized.includes(keyword)),
-  );
+function kelimeler(metin: string) {
+  return normalizeBookName(metin)
+    .replace(/[^a-z0-9]+/g, " ")
+    .split(" ")
+    .filter((kelime) => kelime && kelime !== "hz");
 }
 
 /**
- * Bir kitabın sıralı rozet adları. Tek kaynak books.ts içeriğidir; içeriği
- * yayımlanmamış kitapta boş dizi döner ve ekranlar rozet listesi göstermez.
+ * Katalogdaki kitabın Supabase `books` satırı. Kelime kümesiyle eşleşir:
+ * "ali" anahtarı "Hz. Sâlih" içinde geçtiği için alt dize eşleşmesi ileride
+ * yanlış kitabı bulurdu.
  */
-export function rozetAdlari(anahtar: KitapAnahtari): string[] {
-  if (!anahtar.booksTsId) return [];
-  const def = bookDefs.find((book) => book.id === anahtar.booksTsId);
-  return def ? def.chapters.map((chapter) => chapter.badgeName) : [];
+export function dbKitabiBul<T extends { isim: string | null }>(
+  satirlar: T[],
+  baslik: string,
+  anahtar?: string,
+): T | undefined {
+  const hedef = kelimeler(baslik);
+  const tam = satirlar.find((satir) => {
+    const ad = new Set(kelimeler(satir.isim ?? ""));
+    return hedef.length > 0 && hedef.every((kelime) => ad.has(kelime));
+  });
+  if (tam || !anahtar) return tam;
+  return satirlar.find((satir) => kelimeler(satir.isim ?? "").includes(anahtar));
 }
+
+/** Katalogdaki bütün kitaplar (yayında olmayanlar dahil), katalog sırasıyla. */
+export function katalogKitaplari(): AtlasCatalogBook[] {
+  return atlasRegions
+    .flatMap((bolge) => bolge.books)
+    .sort((a, b) => a.order - b.order);
+}
+
+type YayindakiKatalogKitabi = { katalog: AtlasCatalogBook; icerik: BookDefinition };
+
+/** Katalogda `published` olan ve `books.ts`'te içeriği bulunan kitaplar. */
+function yayindakiKatalog(): YayindakiKatalogKitabi[] {
+  return katalogKitaplari().flatMap((katalog) => {
+    if (katalog.availability !== "published") return [];
+    const icerik = bookDefs.find((kitap) => kitap.routePrefix === katalog.key);
+    return icerik ? [{ katalog, icerik }] : [];
+  });
+}
+
+/**
+ * Supabase `books` satırlarından yalnız yayındaki (ve içeriği hazır) kitaplara
+ * ait olanlar. Veritabanında Temmuz 2026 demolarından kalan satırlar var
+ * (Hz. Ebû Bekir, Hz. Ömer, Hz. Osman); bunlar sayılınca ekranlar birbirinden
+ * farklı kitap, madalya ve unvan gösteriyordu. Çocuk tarafı ve veli paneli
+ * yalnız bu listeyle çalışır.
+ */
+export function yayindakiDbKitaplari<T extends { isim: string | null }>(satirlar: T[]): T[] {
+  const yayindakiler = yayindakiKatalog();
+  return satirlar.filter((satir) =>
+    yayindakiler.some(({ katalog }) => dbKitabiBul([satir], katalog.title, katalog.key)),
+  );
+}
+
+export type YayindakiKitap = YayindakiKatalogKitabi & {
+  /** Supabase `books` satırı; yoksa ilerleme kaydedilemez ama kitap yine listelenir. */
+  db: DeriveBookRow | undefined;
+  ilerleme: DeriveProgressRow | undefined;
+  /** Bölüm sayısı içerikten gelir (veritabanındaki `toplam_bolum` onun kopyasıdır). */
+  toplam: number;
+  tamamlanan: number;
+  bitti: boolean;
+  /** Son okuma zamanı (ms); kayıt yoksa 0. */
+  sonOkuma: number;
+};
+
+/**
+ * Yayındaki ve içeriği hazır kitaplar, ilerlemeleriyle ve katalog sırasıyla.
+ * Çocuk ana ekranı (`yolculukKitaplari`) ve veli paneli bu listeden türer;
+ * katalogda yayına alınan kitap iki tarafa da kendiliğinden girer, elle
+ * tutulan ikinci bir kitap listesi yoktur.
+ */
+export function yayindakiKitaplar(
+  dbKitaplar: DeriveBookRow[],
+  ilerlemeler: DeriveProgressRow[],
+): YayindakiKitap[] {
+  return yayindakiKatalog().map(({ katalog, icerik }) => {
+    const db = dbKitabiBul(dbKitaplar, katalog.title, katalog.key);
+    const ilerleme = db ? ilerlemeler.find((satir) => satir.book_id === db.id) : undefined;
+    const toplam = icerik.chapters.length;
+    return {
+      katalog,
+      icerik,
+      db,
+      ilerleme,
+      toplam,
+      tamamlanan: Math.min(toplam, Math.max(0, ilerleme?.tamamlanan_bolum_sayisi ?? 0)),
+      bitti: Boolean(ilerleme?.bitti_mi),
+      sonOkuma: ilerleme?.updated_at ? Date.parse(ilerleme.updated_at) : 0,
+    };
+  });
+}
+
+/** Kitaba başlandı mı — çocuk ana ekranıyla aynı tanım. */
+function basladiMi(kitap: YayindakiKitap) {
+  return kitap.tamamlanan > 0 || kitap.bitti;
+}
+
+/** İlerleme yüzdesi tamamlanan bölümden hesaplanır (okuma ekranı da öyle yazar). */
+function ilerlemeYuzdesi(kitap: YayindakiKitap) {
+  return clampProgress((kitap.tamamlanan / kitap.toplam) * 100);
+}
+
+// --- Görsel anahtarları ---
 
 /**
  * Rozet dosya anahtarı: ("adem", 1) → "hz-adem/bolum-1"
@@ -134,18 +205,6 @@ export function rozetIconKey(bookKey: string, chapterNo: number) {
 export function madalyaIconKey(bookKey: string) {
   return `hz-${bookKey}`;
 }
-
-/** Belirli bir bölümün "Bugüne Taşı" görevi (yalnız books.ts içeriği olanlarda). */
-export function buguneTasiForChapter(
-  anahtar: KitapAnahtari,
-  chapterIndex: number,
-): string | null {
-  if (!anahtar.booksTsId || chapterIndex < 0) return null;
-  const def = bookDefs.find((book) => book.id === anahtar.booksTsId);
-  return def?.chapters[chapterIndex]?.buguneTasi ?? null;
-}
-
-// --- Çocuk kartı / özet türetmesi ---
 
 // --- Ödüller vitrini (rozet / madalya / unvan) ---
 
@@ -174,42 +233,21 @@ export type UnvanOgesi = {
   guncelMi: boolean;
 };
 
-function siraliKitaplar(bookRows: DeriveBookRow[]) {
-  return [...bookRows].sort((a, b) => {
-    const sa = a.sira ?? Number.MAX_SAFE_INTEGER;
-    const sb = b.sira ?? Number.MAX_SAFE_INTEGER;
-    return sa - sb;
-  });
-}
-
-/** Tüm kitapların bölüm rozetleri; kazanılmış olanlar işaretli (PROJE-MODELI 7.2). */
+/** Yayındaki kitapların bölüm rozetleri; kazanılmış olanlar işaretli (PROJE-MODELI 7.2). */
 export function rozetVitrini(
   bookRows: DeriveBookRow[],
   progressRows: DeriveProgressRow[],
 ): RozetOgesi[] {
-  const progressByBookId = new Map(progressRows.map((row) => [row.book_id, row]));
-  const ogeler: RozetOgesi[] = [];
-
-  for (const book of siraliKitaplar(bookRows)) {
-    const anahtar = kitapAnahtariBul(book.isim);
-    if (!anahtar) continue;
-    const adlar = rozetAdlari(anahtar);
-    const durum = kitapDurumu(book, progressByBookId.get(book.id));
-
-    adlar.forEach((ad, index) => {
-      const bolumNo = index + 1;
-      ogeler.push({
-        bookKey: anahtar.bookKey,
-        bookIsim: book.isim,
-        bolumNo,
-        ad,
-        iconKey: rozetIconKey(anahtar.bookKey, bolumNo),
-        kazanildi: durum.tamamlanan >= bolumNo,
-      });
-    });
-  }
-
-  return ogeler;
+  return yayindakiKitaplar(bookRows, progressRows).flatMap((kitap) =>
+    kitap.icerik.chapters.map((bolum, index) => ({
+      bookKey: kitap.katalog.key,
+      bookIsim: kitap.katalog.title,
+      bolumNo: index + 1,
+      ad: bolum.badgeName,
+      iconKey: rozetIconKey(kitap.katalog.key, index + 1),
+      kazanildi: kitap.tamamlanan >= index + 1,
+    })),
+  );
 }
 
 /** Kitap madalyaları; madalya kitabın finali bitince kazanılır (bitti_mi). */
@@ -217,25 +255,15 @@ export function madalyaVitrini(
   bookRows: DeriveBookRow[],
   progressRows: DeriveProgressRow[],
 ): MadalyaOgesi[] {
-  const progressByBookId = new Map(progressRows.map((row) => [row.book_id, row]));
-  const ogeler: MadalyaOgesi[] = [];
-
-  for (const book of siraliKitaplar(bookRows)) {
-    const anahtar = kitapAnahtariBul(book.isim);
-    if (!anahtar) continue;
-    const progress = progressByBookId.get(book.id);
-    ogeler.push({
-      bookKey: anahtar.bookKey,
-      bookIsim: book.isim,
-      // Ad her zaman katalogdan türetilir; Supabase final_title/final_badge
-      // eski sürümden kalan adları ("Altın Yol Arkadaşı" gibi) taşıyabilir.
-      ad: `${book.isim} Yolculuk Madalyası`,
-      iconKey: madalyaIconKey(anahtar.bookKey),
-      kazanildi: Boolean(progress?.bitti_mi),
-    });
-  }
-
-  return ogeler;
+  return yayindakiKitaplar(bookRows, progressRows).map((kitap) => ({
+    bookKey: kitap.katalog.key,
+    bookIsim: kitap.katalog.title,
+    // Ad her zaman katalogdan türetilir; Supabase final_title/final_badge
+    // eski sürümden kalan adları ("Altın Yol Arkadaşı" gibi) taşıyabilir.
+    ad: `${kitap.katalog.title} Yolculuk Madalyası`,
+    iconKey: madalyaIconKey(kitap.katalog.key),
+    kazanildi: kitap.bitti,
+  }));
 }
 
 /** Unvan eşik tablosu; tamamlanan kitap sayısına göre kazanım (PROJE-MODELI 2). */
@@ -257,7 +285,7 @@ export type GorevTanimiDetay = {
     (typeof bookDefs)[number]["chapters"][number]["gorev"]
   >;
   bookTitle: string;
-  bookKey: string | null;
+  bookKey: string;
   bolumNo: number;
   bolumAdi: string;
 };
@@ -266,13 +294,12 @@ export type GorevTanimiDetay = {
 export function tumGorevTanimlari(): GorevTanimiDetay[] {
   const sonuc: GorevTanimiDetay[] = [];
   for (const book of bookDefs) {
-    const anahtar = KITAP_ANAHTARLARI.find((k) => k.booksTsId === book.id);
     book.chapters.forEach((chapter, index) => {
       if (chapter.gorev) {
         sonuc.push({
           gorev: chapter.gorev,
           bookTitle: book.title,
-          bookKey: anahtar?.bookKey ?? null,
+          bookKey: book.routePrefix,
           bolumNo: index + 1,
           bolumAdi: chapter.title,
         });
@@ -319,7 +346,7 @@ export function gorevDurumDetaylari(
     .sort((a, b) => new Date(b.addedAt).getTime() - new Date(a.addedAt).getTime());
 }
 
-// --- Kelime Defterim (çocuğun okuduğu bölümlerdeki Kelime Kutusu kelimeleri) ---
+// --- Kelimelerim (çocuğun okuduğu bölümlerdeki sözlük kelimeleri) ---
 
 export type KelimeOgesi = {
   word: string;
@@ -330,35 +357,25 @@ export type KelimeOgesi = {
 };
 
 /**
- * Çocuğun tamamladığı bölümlerdeki `interactive_word` (Kelime Kutusu) bloklarını
- * toplar. Yalnız books.ts içeriği olan kitaplarda kelime vardır. PROJE-MODELI 5.1.
+ * Çocuğun tamamladığı bölümlerdeki `interactive_word` (sözlük) bloklarını,
+ * hikâyenin iki parçasından ("1. Kısım" ve "Hikâye Devam Ediyor") okuma
+ * sırasıyla toplar. Yalnız yayındaki kitaplar sayılır. PROJE-MODELI 5.1.
  */
 export function kelimeDefteri(
   bookRows: DeriveBookRow[],
   progressRows: DeriveProgressRow[],
 ): KelimeOgesi[] {
-  const progressByBookId = new Map(progressRows.map((row) => [row.book_id, row]));
   const ogeler: KelimeOgesi[] = [];
 
-  for (const book of siraliKitaplar(bookRows)) {
-    const anahtar = kitapAnahtariBul(book.isim);
-    if (!anahtar?.booksTsId) continue;
-    const def = bookDefs.find((b) => b.id === anahtar.booksTsId);
-    if (!def) continue;
-
-    const tamamlanan = Math.max(
-      0,
-      progressByBookId.get(book.id)?.tamamlanan_bolum_sayisi ?? 0,
-    );
-
-    def.chapters.slice(0, tamamlanan).forEach((chapter, index) => {
-      for (const block of chapter.paragraphs) {
+  for (const kitap of yayindakiKitaplar(bookRows, progressRows)) {
+    kitap.icerik.chapters.slice(0, kitap.tamamlanan).forEach((chapter, index) => {
+      for (const block of [...chapter.paragraphs, ...(chapter.continuationParagraphs ?? [])]) {
         if (block.type === "interactive_word") {
           ogeler.push({
             word: block.word,
             meaning: block.meaning,
-            bookIsim: book.isim,
-            bookKey: anahtar.bookKey,
+            bookIsim: kitap.katalog.title,
+            bookKey: kitap.katalog.key,
             bolumNo: index + 1,
           });
         }
@@ -367,6 +384,40 @@ export function kelimeDefteri(
   }
 
   return ogeler;
+}
+
+// --- Kütüphane ve çocuk kartı ---
+
+export type KutuphaneDurum = "tamamlandi" | "devam" | "yeni";
+
+export type KutuphaneKitap = {
+  /** Kapak ve yönlendirme anahtarı (katalog anahtarı, ör. "adem") */
+  bookKey: string;
+  /** Katalogdaki ad ("Hz. Âdem"); veritabanının aksansız adı gösterilmez. */
+  ad: string;
+  durum: KutuphaneDurum;
+  tamamlanan: number;
+  toplam: number;
+  yuzde: number;
+};
+
+/**
+ * Kütüphane için yayındaki kitaplar, katalog sırasıyla.
+ * REVİZE 12 Eki 2026 (PROJE-MODELI 3.10.2): kitaplar arasında kilit YOKTUR;
+ * yayındaki her kitap açıktır, kilit yalnız kitap içindeki bölümlerde ve finalde.
+ */
+export function kutuphaneListesi(
+  bookRows: DeriveBookRow[],
+  progressRows: DeriveProgressRow[],
+): KutuphaneKitap[] {
+  return yayindakiKitaplar(bookRows, progressRows).map((kitap) => ({
+    bookKey: kitap.katalog.key,
+    ad: kitap.katalog.title,
+    durum: kitap.bitti ? "tamamlandi" : basladiMi(kitap) ? "devam" : "yeni",
+    tamamlanan: kitap.tamamlanan,
+    toplam: kitap.toplam,
+    yuzde: ilerlemeYuzdesi(kitap),
+  }));
 }
 
 export type CocukOzeti = {
@@ -380,162 +431,53 @@ export type CocukOzeti = {
   aktifToplam: number;
   sonRozetAdi: string | null;
   sonRozetIconKey: string | null;
-  buguneTasi: string | null;
   /** En son güncellenen ilerlemenin zamanı (ISO) — "son okuma" özeti (Faz 6 / S1) */
   sonAktiviteZamani: string | null;
 };
 
-type KitapDurumu = {
-  isim: string;
-  anahtar?: KitapAnahtari;
-  toplam: number;
-  tamamlanan: number;
-  yuzde: number;
-  bitti: boolean;
-  updatedAt: number;
-};
-
-/** Bir kitabın ilerleme durumunu tek satıra indirger (Kütüphane + kart ortak). */
-export function kitapDurumu(
-  book: DeriveBookRow,
-  progress: DeriveProgressRow | undefined,
-): KitapDurumu {
-  const anahtar = kitapAnahtariBul(book.isim);
-  const toplam =
-    book.toplam_bolum && book.toplam_bolum > 0
-      ? book.toplam_bolum
-      : anahtar
-        ? Math.max(1, rozetAdlari(anahtar).length)
-        : 1;
-  const tamamlanan = Math.min(
-    toplam,
-    Math.max(0, progress?.tamamlanan_bolum_sayisi ?? 0),
-  );
-  const yuzde =
-    progress?.yuzde !== null && progress?.yuzde !== undefined
-      ? Math.max(clampProgress(progress.yuzde), clampProgress((tamamlanan / toplam) * 100))
-      : clampProgress((tamamlanan / toplam) * 100);
-  return {
-    isim: book.isim,
-    anahtar,
-    toplam,
-    tamamlanan,
-    yuzde,
-    bitti: Boolean(progress?.bitti_mi),
-    updatedAt: progress?.updated_at ? new Date(progress.updated_at).getTime() : 0,
-  };
-}
-
-export type KutuphaneDurum = "tamamlandi" | "devam" | "yeni" | "kilitli";
-
-export type KutuphaneKitap = {
-  book: DeriveBookRow;
-  bookKey: string | null;
-  durum: KutuphaneDurum;
-  tamamlanan: number;
-  toplam: number;
-  yuzde: number;
-  /** Kilitliyse açılma şartı metni için bir önceki kitabın adı (PROJE-MODELI 3.4) */
-  oncekiKitapAdi: string | null;
-};
-
-/**
- * Kütüphane için sıralı kitap listesi + durum.
- * REVİZE 12 Eki 2026 (PROJE-MODELI 3.10.2): kitaplar arasında kilit YOKTUR;
- * yayındaki her kitap açıktır. "kilitli" durumu tipte duruyor ama artık
- * üretilmiyor — kilit yalnız kitap içindeki bölümlerde ve finalde.
- */
-export function kutuphaneListesi(
-  bookRows: DeriveBookRow[],
-  progressRows: DeriveProgressRow[],
-): KutuphaneKitap[] {
-  const progressByBookId = new Map(progressRows.map((row) => [row.book_id, row]));
-  const sirali = [...bookRows].sort((a, b) => {
-    const sa = a.sira ?? Number.MAX_SAFE_INTEGER;
-    const sb = b.sira ?? Number.MAX_SAFE_INTEGER;
-    return sa - sb;
-  });
-
-  const sonuc: KutuphaneKitap[] = [];
-
-  for (const book of sirali) {
-    const durum = kitapDurumu(book, progressByBookId.get(book.id));
-    const baslandi = durum.tamamlanan > 0 || durum.yuzde > 0;
-
-    let durumEtiketi: KutuphaneDurum;
-    if (durum.bitti) durumEtiketi = "tamamlandi";
-    else if (baslandi) durumEtiketi = "devam";
-    else durumEtiketi = "yeni";
-
-    sonuc.push({
-      book,
-      bookKey: durum.anahtar?.bookKey ?? null,
-      durum: durumEtiketi,
-      tamamlanan: durum.tamamlanan,
-      toplam: durum.toplam,
-      yuzde: durum.yuzde,
-      oncekiKitapAdi: null,
-    });
-  }
-
-  return sonuc;
-}
-
-/**
- * Ana Sayfa çocuk kartı için tek çağrıda özet üretir.
- * PROJE-MODELI 4.1/4: "Bugüne Taşı" = en son alınan TEK görev (geçmiş liste değil).
- */
+/** Ana Sayfa çocuk kartı ve rapor için tek çağrıda özet üretir. */
 export function cocukOzeti(
   progressRows: DeriveProgressRow[],
   bookRows: DeriveBookRow[],
 ): CocukOzeti {
-  const progressByBookId = new Map(progressRows.map((row) => [row.book_id, row]));
-  const durumlar = bookRows.map((book) =>
-    kitapDurumu(book, progressByBookId.get(book.id)),
-  );
+  const kitaplar = yayindakiKitaplar(bookRows, progressRows);
 
-  const kazanilanRozet = durumlar.reduce((sum, d) => sum + d.tamamlanan, 0);
-  const tamamlananKitap = durumlar.filter((d) => d.bitti).length;
+  const kazanilanRozet = kitaplar.reduce((toplam, kitap) => toplam + kitap.tamamlanan, 0);
+  const tamamlananKitap = kitaplar.filter((kitap) => kitap.bitti).length;
 
-  // Son aktivite: tüm ilerleme satırları içinde en yeni updated_at (Faz 6 / S1)
+  // Son aktivite: yayındaki kitapların ilerlemeleri içinde en yeni updated_at (Faz 6 / S1)
   const sonAktiviteZamani =
-    progressRows
-      .map((row) => row.updated_at)
+    kitaplar
+      .map((kitap) => kitap.ilerleme?.updated_at)
       .filter((value): value is string => Boolean(value))
       .sort((a, b) => new Date(b).getTime() - new Date(a).getTime())[0] ?? null;
 
-  // Aktif kitap: en son güncellenen, bitmemiş ve başlanmış kitap; yoksa en son
-  // güncellenen (biten dahil) kitap.
-  const baslananlar = durumlar.filter((d) => d.tamamlanan > 0 || d.yuzde > 0);
-  const devamEdenler = baslananlar
-    .filter((d) => !d.bitti)
-    .sort((a, b) => b.updatedAt - a.updatedAt);
-  const enSon = [...baslananlar].sort((a, b) => b.updatedAt - a.updatedAt)[0];
-  const aktif = devamEdenler[0] ?? enSon ?? null;
+  // Aktif kitap: en son okunan, başlanmış ve bitmemiş kitap; yoksa en son
+  // okunan (biten dahil) kitap.
+  const baslananlar = kitaplar
+    .filter(basladiMi)
+    .sort((a, b) => b.sonOkuma - a.sonOkuma);
+  const aktif = baslananlar.find((kitap) => !kitap.bitti) ?? baslananlar[0] ?? null;
 
   let sonRozetAdi: string | null = null;
   let sonRozetIconKey: string | null = null;
-  let buguneTasi: string | null = null;
 
-  if (aktif?.anahtar && aktif.tamamlanan > 0) {
-    const adlar = rozetAdlari(aktif.anahtar);
-    sonRozetAdi = adlar[Math.min(aktif.tamamlanan, adlar.length) - 1] ?? null;
-    sonRozetIconKey = rozetIconKey(aktif.anahtar.bookKey, aktif.tamamlanan);
-    buguneTasi = buguneTasiForChapter(aktif.anahtar, aktif.tamamlanan - 1);
+  if (aktif && aktif.tamamlanan > 0) {
+    sonRozetAdi = aktif.icerik.chapters[aktif.tamamlanan - 1]?.badgeName ?? null;
+    sonRozetIconKey = rozetIconKey(aktif.katalog.key, aktif.tamamlanan);
   }
 
   return {
     unvan: unvanFromBookCount(tamamlananKitap),
     kazanilanRozet,
     tamamlananKitap,
-    aktifKitapAdi: aktif?.isim ?? null,
-    aktifKitapKey: aktif?.anahtar?.bookKey ?? null,
-    aktifYuzde: aktif?.yuzde ?? 0,
+    aktifKitapAdi: aktif?.katalog.title ?? null,
+    aktifKitapKey: aktif?.katalog.key ?? null,
+    aktifYuzde: aktif ? ilerlemeYuzdesi(aktif) : 0,
     aktifTamamlanan: aktif?.tamamlanan ?? 0,
     aktifToplam: aktif?.toplam ?? 0,
     sonRozetAdi,
     sonRozetIconKey,
-    buguneTasi,
     sonAktiviteZamani,
   };
 }

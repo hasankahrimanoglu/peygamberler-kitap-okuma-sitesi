@@ -22,15 +22,15 @@ import { kitapKapagi, YEDEK } from "../../../src/lib/varlikYollari";
 
 type DurumFiltre = "hepsi" | KutuphaneDurum;
 
+// Kitaplar arasında kilit yok (PROJE-MODELI 3.10.2); "Kilitli" filtresi kalktı.
 const durumFiltreleri: { deger: DurumFiltre; etiket: string }[] = [
   { deger: "hepsi", etiket: "Tümü" },
   { deger: "devam", etiket: "Devam Eden" },
   { deger: "tamamlandi", etiket: "Tamamlanan" },
   { deger: "yeni", etiket: "Yeni Açılan" },
-  { deger: "kilitli", etiket: "Kilitli" },
 ];
 
-const aksiyonMetni: Record<Exclude<KutuphaneDurum, "kilitli">, string> = {
+const aksiyonMetni: Record<KutuphaneDurum, string> = {
   tamamlandi: "Tekrar Oku",
   devam: "Devam Et",
   yeni: "Yolculuğa Başla",
@@ -60,7 +60,7 @@ export default function KutuphaneSayfasi() {
     return kitaplar.filter((kitap) => {
       const durumUyar = durumFiltre === "hepsi" || kitap.durum === durumFiltre;
       const aramaUyar =
-        aramaNorm.length === 0 || normalizeBookName(kitap.book.isim).includes(aramaNorm);
+        aramaNorm.length === 0 || normalizeBookName(kitap.ad).includes(aramaNorm);
       return durumUyar && aramaUyar;
     });
   }, [kitaplar, durumFiltre, arama]);
@@ -69,16 +69,16 @@ export default function KutuphaneSayfasi() {
     () => ({
       devam: kitaplar.filter((kitap) => kitap.durum === "devam").length,
       tamamlandi: kitaplar.filter((kitap) => kitap.durum === "tamamlandi").length,
-      acik: kitaplar.filter((kitap) => kitap.durum !== "kilitli").length,
+      acik: kitaplar.length,
     }),
     [kitaplar],
   );
 
-  function cocuklaOku(child: ChildProfile, bookKey: string | null) {
+  function cocuklaOku(child: ChildProfile, bookKey: string) {
     window.localStorage.setItem("selected_child_profile_id", child.id);
     window.localStorage.setItem("selected_child_profile_name", child.isim);
     window.localStorage.setItem("selected_child_name", child.isim);
-    router.push(bookKey ? `/kitap/${bookKey}` : "/map");
+    router.push(`/kitap/${bookKey}`);
   }
 
   return (
@@ -185,28 +185,20 @@ export default function KutuphaneSayfasi() {
           ) : (
             <ol className="grid gap-4 xl:grid-cols-2">
               {gorunenKitaplar.map((kitap) => (
-                <li key={kitap.book.id}>
-                  <Kart
-                    parlak={kitap.durum === "devam"}
-                    kilitli={kitap.durum === "kilitli"}
-                    className="h-full"
-                  >
+                <li key={kitap.bookKey}>
+                  <Kart parlak={kitap.durum === "devam"} className="h-full">
                     <div className="grid gap-4 sm:grid-cols-[auto_minmax(0,1fr)]">
                       <YedekliGorsel
-                        src={
-                          kitap.bookKey
-                            ? kitapKapagi(kitap.bookKey)
-                            : YEDEK.kitapKapagi
-                        }
+                        src={kitapKapagi(kitap.bookKey)}
                         yedekSrc={YEDEK.kitapKapagi}
-                        alt={`${kitap.book.isim} kitap kapağı`}
+                        alt={`${kitap.ad} kitap kapağı`}
                         className="mx-auto h-44 w-auto rounded-kart object-contain shadow-kart sm:mx-0"
                       />
 
                       <div className="flex flex-col">
                         <div className="flex items-start justify-between gap-3">
                           <h2 className="font-baslik text-xl font-bold text-murekkep">
-                            {kitap.book.isim}
+                            {kitap.ad}
                           </h2>
                           <DurumCipi durum={kitap.durum} />
                         </div>
@@ -222,14 +214,7 @@ export default function KutuphaneSayfasi() {
                         </div>
 
                         <div className="mt-4">
-                          {kitap.durum === "kilitli" ? (
-                            <p className="flex items-start gap-2 rounded-kart border border-cizgi bg-yuzey-2 px-3 py-3 text-base font-medium leading-6 text-murekkep-soluk">
-                              <Ikon ad="kilit" boyut={18} className="mt-0.5 shrink-0" />
-                              {kitap.oncekiKitapAdi
-                                ? `${kitap.book.isim}, ${kitap.oncekiKitapAdi} kitabının finalini tamamlayınca açılacak.`
-                                : "Bir önceki kitabın finali tamamlanınca açılacak."}
-                            </p>
-                          ) : aktifCocuk ? (
+                          {aktifCocuk ? (
                             <Buton
                               varyant={kitap.durum === "yeni" ? "altin" : "eylem"}
                               tamGenislik

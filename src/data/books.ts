@@ -133,9 +133,9 @@ export type ParentFaqItem = {
 };
 
 export type ParentReportBook = {
+  /** Katalog anahtarı (`atlasCatalog.ts` `key` = `routePrefix`); rapor kitaba bununla bağlanır. */
   key: string;
   title: string;
-  keywords: string[];
   totalQuizQuestions: number;
   /**
    * Panelde gösterilen özet. S5 (Sen Olsaydın cevap kaydı) gelene kadar sistem
@@ -156,7 +156,6 @@ export const parentReportBooks: ParentReportBook[] = [
   {
     key: "adem",
     title: "Hz. Âdem",
-    keywords: ["adem"],
     totalQuizQuestions: 8,
     // Panel S5'e kadar mixed varyantını gösterir (PROJE-MODELI.md S5 kararı).
     parent_summary:
@@ -205,7 +204,6 @@ export const parentReportBooks: ParentReportBook[] = [
   {
     key: "sit",
     title: "Hz. Şît",
-    keywords: ["sit"],
     totalQuizQuestions: 4,
     // Panel S5'e kadar mixed varyantını gösterir (PROJE-MODELI.md S5 kararı).
     parent_summary:
@@ -250,7 +248,6 @@ export const parentReportBooks: ParentReportBook[] = [
   {
     key: "idris",
     title: "Hz. İdrîs",
-    keywords: ["idris"],
     totalQuizQuestions: 4,
     // Panel S5'e kadar mixed varyantını gösterir (PROJE-MODELI.md S5 kararı).
     parent_summary:
@@ -291,7 +288,6 @@ export const parentReportBooks: ParentReportBook[] = [
   {
     key: "nuh",
     title: "Hz. Nûh",
-    keywords: ["nuh"],
     totalQuizQuestions: 8,
     // Panel S5'e kadar mixed varyantını gösterir (PROJE-MODELI.md S5 kararı).
     parent_summary:
@@ -336,7 +332,6 @@ export const parentReportBooks: ParentReportBook[] = [
   {
     key: "ibrahim",
     title: "Hz. İbrahim",
-    keywords: ["ibrahim"],
     totalQuizQuestions: 9,
     // Panel S5'e kadar mixed varyantını gösterir (PROJE-MODELI.md S5 kararı).
     parent_summary:
@@ -393,7 +388,6 @@ export const parentReportBooks: ParentReportBook[] = [
   {
     key: "ismail",
     title: "Hz. İsmail",
-    keywords: ["ismail"],
     totalQuizQuestions: 6,
     // Panel S5'e kadar mixed varyantını gösterir (PROJE-MODELI.md S5 kararı).
     parent_summary:
@@ -454,7 +448,6 @@ export const parentReportBooks: ParentReportBook[] = [
   {
     key: "yusuf",
     title: "Hz. Yusuf",
-    keywords: ["yusuf"],
     totalQuizQuestions: 10,
     // Panel S5'e kadar mixed varyantını gösterir (PROJE-MODELI.md S5 kararı).
     parent_summary:
@@ -515,7 +508,6 @@ export const parentReportBooks: ParentReportBook[] = [
   {
     key: "eyyub",
     title: "Hz. Eyyûb",
-    keywords: ["eyyub"],
     totalQuizQuestions: 5,
     // Panel S5'e kadar mixed varyantını gösterir (PROJE-MODELI.md S5 kararı).
     parent_summary:
@@ -560,7 +552,6 @@ export const parentReportBooks: ParentReportBook[] = [
   {
     key: "musa",
     title: "Hz. Musa",
-    keywords: ["musa"],
     totalQuizQuestions: 10,
     // Panel S5'e kadar mixed varyantını gösterir (PROJE-MODELI.md S5 kararı).
     parent_summary:
@@ -605,7 +596,6 @@ export const parentReportBooks: ParentReportBook[] = [
   {
     key: "suleyman",
     title: "Hz. Süleyman",
-    keywords: ["suleyman"],
     totalQuizQuestions: 7,
     // Panel S5'e kadar mixed varyantını gösterir (PROJE-MODELI.md S5 kararı).
     parent_summary:
@@ -658,7 +648,6 @@ export const parentReportBooks: ParentReportBook[] = [
   {
     key: "yunus",
     title: "Hz. Yunus",
-    keywords: ["yunus"],
     totalQuizQuestions: 5,
     // Panel S5'e kadar mixed varyantını gösterir (PROJE-MODELI.md S5 kararı).
     parent_summary:
@@ -715,7 +704,6 @@ export const parentReportBooks: ParentReportBook[] = [
   {
     key: "isa",
     title: "Hz. Îsâ",
-    keywords: ["isa"],
     totalQuizQuestions: 8,
     // Panel S5'e kadar mixed varyantını gösterir (PROJE-MODELI.md S5 kararı).
     parent_summary:

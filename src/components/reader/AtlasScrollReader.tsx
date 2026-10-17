@@ -8,7 +8,7 @@ import { sonrakiBolumuBul, type ChapterData, type DecisionOption } from "../../d
 import { quizConfig } from "../../data/quizzes";
 import { Ikon, YedekliGorsel } from "../ui";
 import { Isil } from "../cocuk/Isil";
-import { dbKitabiBul } from "../../lib/child/yolculuk";
+import { dbKitabiBul } from "../../lib/derive";
 import { adimIdsi, okumaAdimlari, okumaAkisiniOlustur, type AdimId, type OkumaAkisBolumu } from "./akis";
 import { AdimCubugu } from "./AdimCubugu";
 import { RozetKutlamasi, type RozetDurumu } from "./RozetKutlamasi";
