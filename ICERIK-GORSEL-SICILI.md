@@ -1617,7 +1617,8 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 
 ## 4l. Hz. İsmail (`bookKey: ismail`) — 36 görsel
 
-**Durum (17 Eki 2026):** aktarıldı, katalogda **"preparing"** (yayında değil). 36 sahne,
+**Durum (17 Eki 2026):** aktarıldı ve **yayında** (katalogda "published", `yayinTarihi:
+2026-10-17`). 36 sahne,
 kitap kapağı, harita durağı, 6 rozet ve madalya **üretildi** (`/gorsel-uretim ismail`);
 rozet ve madalya çerçevesiz kare, çerçeveyi Hasan ekleyecek; ses yer tutucu. Briflerin tamamı
 `kitap-icerikleri/KITAP-HZ-ISMAIL-ICERIK-final.md` §B, §C, §D ve §H'dedir (İngilizce
