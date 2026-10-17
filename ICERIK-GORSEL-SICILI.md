@@ -80,17 +80,48 @@ Hepsinin aynı anda üretilmesi gerekmez; eksik olanlar placeholder ile görün�
 
 ## 4. Hz. Âdem (`bookKey: adem`) — 40 görsel
 
-**Durum (11 Ağu 2026):** 40 slot · **40 gerçek görsel teslim edildi.** 39'u 16:9;
+**Durum (11 Ağu 2026 — 17 Eki 2026'da set stiline yeniden üretildi, aşağıdaki not):** 40 slot · **40 gerçek görsel teslim edildi.** 39'u 16:9;
 `bolum-1/kapak.jpg` 1200×896 (4:3) geldiği için tek açık kalem odur. Bölüm 1'in
 diğer dört sahnesi 1376×768 (1.792) — 16:9'a %0.8 sapma, gözle fark edilmiyor,
 yeniden üretim gerektirmez. Bölüm 2–8 tamamı 1920×1080.
 Tam üretim promptları: `kitap-icerikleri/HZ-ADEM-GORSEL-PROMPTLARI.md`.
 
+> **Set stiline yeniden üretim (KARAR 17 Eki 2026 — Hasan):** Ağustos üretimi eski
+> "sinematik, gerçekçi doğa resmi" stil bloğuyla yapıldığı için B2–B8 fotoğraf gibi duruyor;
+> set ise 13 Eki 2026'dan beri `stil-referans-gorsel.jpg` masal kitabı dilinde. **40 sahnenin
+> hepsi** §6.2 standardıyla (Seedream 5 Pro · 2K · stil referansı) aynı adla yeniden üretilir;
+> brifler (sahne içeriği) korunur. Kitap kapağı, harita durağı ve rozetler kapsam dışı.
+> Ayrıca düzeltilen dört içerik/tasvir sorunu: `bolum-1/toprak-isik` (yaratılış paragrafında
+> ışıktan yüzsüz insan figürü), `bolum-1/isimlerin-izi` (kara silüet + o dönemde olmayan köy),
+> `bolum-1/secim-sorumluluk` (modern metal sulama kabı ve eller), `bolum-1/kapak` (4:3, alt
+> yarısı boş). **Figür kuralı (PROJE-MODELI 6.4):** Hz. Âdem, Hz. Havva ve çocukları Katman 1
+> (yüz hiç görünmez; arkadan / uzak plan). Figürlü 5 sahne: `bolum-2/isimlerin-ogretilmesi`,
+> `bolum-3/sinir-cizgisi` (cennette arkadan, uzak — Hasan kararı), `bolum-5/donus-sozleri`,
+> `bolum-6/ilk-ocak`, `bolum-7/buyuyen-yurt`. Figürsüz kalanlar: yaratılış anı, melekler,
+> İblis (yılan dahil hiçbir biçimde), örtünme (`yapraklarin-golgesi`), Hâbil ile Kâbil
+> (`duran-yol`, `karganin-ogrettigi`; şiddet, beden ve mezar imgesi yok). Yasak ağacın türü
+> belli edilmez (elma yok). Yeni promptlar ve karakter blokları
+> `kitap-icerikleri/HZ-ADEM-GORSEL-PROMPTLARI.md` sonundaki "Set stiline yeniden üretim"
+> bölümünde.
+>
+> **Üretim (17 Eki 2026):** 40 sahnenin 40'ı yeniden üretildi ve aynı adla 1920×1080 `.jpg`
+> olarak yazıldı; artık hepsi 16:9 (eski 4:3 kapak ve 1376×768 dosyalar kalktı). Figürsüz
+> 35 sahnenin `alt` metni değişmedi (aynı brif); figürlü 5 sahnenin `alt` metni `books.ts`'te
+> ve aşağıdaki tabloda güncellendi. Pilot onayı Hasan'dan (B1 açılış + `isimlerin-ogretilmesi`);
+> Âdem'in karakter referansı onaylı `isimlerin-ogretilmesi`, eşininki `sinir-cizgisi`. 50 aday +
+> 8 rötuş (~5.300 kredi). Yeniden tur: `iki-yol` (ışık farkı zayıftı), `donus-sozleri`
+> (cennet bahçesine benzedi), `buyuyen-yurt` (yüzler izleyiciye dönük). Rötuş: `ilk-ocak`
+> (çocukların yanakları, Âdem'in profil kenarı — `replace` önce yeni profil çizdi, `erase`
+> temizledi), `donus-sozleri` (sakal kenarı; `replace` tam profil çizdi, `erase` temizledi),
+> `buyuyen-yurt` (sakal/yanak kenarları silindi, yüzü sızan iki yan figür sahneden çıkarıldı).
+> **Hasan'a not:** `buyuyen-yurt`'ta iki oğlanın sarık altından arkadan kulak/ense kenarı
+> seçiliyor (yüz yok, figür ~60 px). Ana dosyalar `gorsel-kaynaklari/adem-yeniden-uretim/`.
+
 ### Bölüm 1 — Beklenen Misafir
 
 | Dosya | Akıştaki yer | Öncelik | Durum | Görsel brifi |
 |---|---|---|---|---|
-| `hz-adem/bolum-1/kapak.jpg` | Açılış | A | ⚠️ Oran hatalı | Dağlar, nehir ve yıldızlı gökyüzüyle insanı bekleyen yeryüzü *(3 keşif noktalı sahne)* — **dosya 1200×896 (4:3), 16:9 olarak yeniden üretilecek** |
+| `hz-adem/bolum-1/kapak.jpg` | Açılış | A | ✅ Hazır | Dağlar, nehir ve yıldızlı gökyüzüyle insanı bekleyen yeryüzü *(3 keşif noktalı sahne; 16:9, set stiline yeniden üretim, 17 Eki 2026)* |
 | `hz-adem/bolum-1/secim-sorumluluk.jpg` | 1. Kısım | A | ✅ Hazır | İki doğal yola ayrılan vadide, su ve taşların arasında büyüyen genç bir fidan |
 | `hz-adem/bolum-1/toprak-isik.jpg` | 1. Kısım | A | ✅ Hazır | Yağmurla ıslanmış toprak, doğal çamur katmanları, küçük bir filiz ve sabah ışığı |
 | `hz-adem/bolum-1/ogrenme-alemi.jpg` | 1. Kısım | A | ✅ Hazır | Yıldızların yansıdığı sığ suyun yanında farklı taşlar, yaprak, tohum ve küçük bir filiz |
@@ -101,7 +132,7 @@ Tam üretim promptları: `kitap-icerikleri/HZ-ADEM-GORSEL-PROMPTLARI.md`.
 | Dosya | Akıştaki yer | Öncelik | Durum | Görsel brifi |
 |---|---|---|---|---|
 | `hz-adem/bolum-2/kapak.jpg` | Açılış | A | ✅ Hazır | Şafak ışığında farklı bitki, taş ve su damlalarının bir arada göründüğü geniş vadi |
-| `hz-adem/bolum-2/isimlerin-ogretilmesi.jpg` | 1. Kısım | A | ✅ Hazır | Yan yana dizilmiş yaprak, tüy, kabuk ve taşların üzerine düşen sabah ışığı |
+| `hz-adem/bolum-2/isimlerin-ogretilmesi.jpg` | 1. Kısım | A | ✅ Hazır | Sabah ışığında çiçekli bir çayırda, derenin kenarında ayakta duran, arkası dönük, başı örtülü bir adam; önünde ceylan ile yavrusu, bir tavşan, dalda kuşlar ve taşın üstünde bir tüy *(figürlü — set stiline yeniden üretim, 17 Eki 2026)* |
 | `hz-adem/bolum-2/egilen-dallar.jpg` | 1. Kısım | A | ✅ Hazır | Rüzgârda aynı yöne eğilmiş uzun otlar ve dalların oluşturduğu sakin sahne |
 | `hz-adem/bolum-2/atesin-golgesi.jpg` | Devam | B | ✅ Hazır | Sönmeye yüz tutmuş bir ateşin közleri ve hemen yanındaki nemli koyu toprak |
 | `hz-adem/bolum-2/iki-yol.jpg` | Devam | B | ✅ Hazır | Bir tepenin üzerinde ikiye ayrılan; biri aydınlığa, diğeri gölgeye giden patika |
@@ -112,7 +143,7 @@ Tam üretim promptları: `kitap-icerikleri/HZ-ADEM-GORSEL-PROMPTLARI.md`.
 |---|---|---|---|---|
 | `hz-adem/bolum-3/kapak.jpg` | Açılış | A | ✅ Hazır | Gölgeli ağaçlar, berrak dereler ve olgun meyvelerle dolu geniş bir bahçe |
 | `hz-adem/bolum-3/cennet-bahcesi.jpg` | 1. Kısım | A | ✅ Hazır | Berrak suyun aktığı, yeşilliklerin gözün alabildiğine uzandığı bahçe |
-| `hz-adem/bolum-3/sinir-cizgisi.jpg` | 1. Kısım | A | ✅ Hazır | Geniş bir bahçenin içinde tek bir ağaca uzanan, taşlarla belirginleşmiş ince patika — **ağacın türü belli edilmez** |
+| `hz-adem/bolum-3/sinir-cizgisi.jpg` | 1. Kısım | A | ✅ Hazır | Geniş bir bahçede tek bir ağaca uzanan taşlı patikanın başında yan yana duran, arkası dönük, başları örtülü bir adam ve bir kadın *(figürlü — set stiline yeniden üretim, 17 Eki 2026)* |
 | `hz-adem/bolum-3/sayisiz-nimet.jpg` | Devam | B | ✅ Hazır | Dalları meyveyle dolu ağaçların arasından süzülen ışık |
 | `hz-adem/bolum-3/guvenin-sinavi.jpg` | Devam | B | ✅ Hazır | Akşam alacasında tek bir ağacın gölgesinin uzadığı sessiz bahçe köşesi |
 
@@ -132,7 +163,7 @@ Tam üretim promptları: `kitap-icerikleri/HZ-ADEM-GORSEL-PROMPTLARI.md`.
 |---|---|---|---|---|
 | `hz-adem/bolum-5/kapak.jpg` | Açılış | A | ✅ Hazır | Şafak sökerken bulutların aralanmasıyla yeryüzüne inen ışık huzmesi |
 | `hz-adem/bolum-5/iki-yol-ayrimi.jpg` | 1. Kısım | A | ✅ Hazır | Biri sarp kayalığa, diğeri yumuşak toprağa uzanan iki ayrı patika |
-| `hz-adem/bolum-5/donus-sozleri.jpg` | 1. Kısım | A | ✅ Hazır | Sabah çiyiyle ıslanmış toprakta yeni açılmış küçük bir su yolu |
+| `hz-adem/bolum-5/donus-sozleri.jpg` | 1. Kısım | A | ✅ Hazır | Şafakta çiyli toprakta yeni açılmış küçük bir su yolu; ötesinde doğan güneşe dönük, yan yana diz çökmüş, arkası dönük bir adam ve bir kadın *(figürlü — set stiline yeniden üretim, 17 Eki 2026)* |
 | `hz-adem/bolum-5/acilan-kapi.jpg` | Devam | B | ✅ Hazır | Kayaların arasından aydınlığa açılan geniş bir geçit |
 | `hz-adem/bolum-5/umudun-isigi.jpg` | Devam | B | ✅ Hazır | Yağmur sonrası bulutların aralanmasıyla ıslak toprağa vuran ilk ışık |
 
@@ -144,7 +175,7 @@ Tam üretim promptları: `kitap-icerikleri/HZ-ADEM-GORSEL-PROMPTLARI.md`.
 | `hz-adem/bolum-6/yagmurdan-sonra.jpg` | 1. Kısım | A | ✅ Hazır | Yağmurdan sonra canlanan toprakta filizlenen taze tohumlar |
 | `hz-adem/bolum-6/ilk-sabah.jpg` | 1. Kısım | A | ✅ Hazır | Gün doğarken sisin çekildiği geniş ova ve ufuktaki dağ sırası |
 | `hz-adem/bolum-6/mevsimlerin-donusu.jpg` | Devam | B | ✅ Hazır | Aynı ağacın farklı mevsimlerdeki hâllerini andıran, ayrı renklerde dalların bir arada göründüğü sahne |
-| `hz-adem/bolum-6/ilk-ocak.jpg` | Devam | B | ✅ Hazır | Taşlarla çevrilmiş küçük bir ocak, yanında toprak kaplar ve kurumuş otlar — **insan yok** |
+| `hz-adem/bolum-6/ilk-ocak.jpg` | Devam | B | ✅ Hazır | Taşlarla çevrili küçük bir ocağın başında yan yana oturan, arkası dönük bir anne, bir baba ve iki küçük çocuk; yanlarında toprak kaplar ve kuru otlar *(figürlü — set stiline yeniden üretim, 17 Eki 2026)* |
 
 ### Bölüm 7 — İki Kardeşin Sınavı
 
@@ -154,7 +185,7 @@ Tam üretim promptları: `kitap-icerikleri/HZ-ADEM-GORSEL-PROMPTLARI.md`.
 | Dosya | Akıştaki yer | Öncelik | Durum | Görsel brifi |
 |---|---|---|---|---|
 | `hz-adem/bolum-7/kapak.jpg` | Açılış | A | ✅ Hazır | Bir tepede ikiye ayrılan patika; biri ekili tarlaya, diğeri taşlık yamaca gider |
-| `hz-adem/bolum-7/buyuyen-yurt.jpg` | 1. Kısım | A | ✅ Hazır | Ekili tarlalar, otlaklar ve bir akarsuyla çevrili geniş yerleşim vadisi |
+| `hz-adem/bolum-7/buyuyen-yurt.jpg` | 1. Kısım | A | ✅ Hazır | Ekili tarlalar ve akarsuyla dolu vadiye bakan tepede kolunu uzatıp konuşan, arkası dönük bir adam ve çevresinde onu dinleyen, arkası dönük aile *(figürlü — set stiline yeniden üretim, 17 Eki 2026)* |
 | `hz-adem/bolum-7/duran-yol.jpg` | 1. Kısım | A | ✅ Hazır | Bir kavşakta duran patika; bir kolu aydınlık ovaya, diğeri gölgeli kayalığa uzanır |
 | `hz-adem/bolum-7/karganin-ogrettigi.jpg` | Devam | B | ✅ Hazır | Toprağı eşeleyen bir karga ve yanında yeni açılmış küçük bir çukur — **beden veya mezar imgesi yok** |
 | `hz-adem/bolum-7/ofkenin-dindigi-yer.jpg` | Devam | B | ✅ Hazır | Fırtınadan sonra durulmuş bir gölün yüzeyi ve kıyıdaki sakin otlar |

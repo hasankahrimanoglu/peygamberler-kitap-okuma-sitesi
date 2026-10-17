@@ -893,7 +893,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-adem/bolum-2/isimlerin-ogretilmesi.jpg",
-            alt: "Yan yana dizilmiş yaprak, tüy, kabuk ve taşların üzerine düşen sabah ışığı",
+            alt: "Sabah ışığında çiçekli bir çayırda, derenin kenarında ayakta duran, arkası dönük, başı örtülü bir adam; önünde ceylan ile yavrusu, bir tavşan, dalda kuşlar ve taşın üstünde bir tüy",
           },
           { type: "text", text: "Öğrenme armağanı insana büyük imkânlar açıyordu. Fakat her armağan gibi bunun da doğru kullanılması gerekiyordu. Bilgiyle övünmek yerine şükretmek, bilmediğinde dürüst olmak ve öğrendiğini yararlı işler için kullanmak önemliydi." },
           { type: "text", text: "Hz. Âdem'in bilgisi kendiliğinden ortaya çıkmamıştı. Onu öğreten Allah'tı. Bu nedenle insan ne kadar çok öğrenirse öğrensin, bilgisinin kaynağını ve sınırlarını unutmamalıydı. Bilmediği şeyler her zaman bildiklerinden daha fazla olabilirdi." },
@@ -1009,7 +1009,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-adem/bolum-3/sinir-cizgisi.jpg",
-            alt: "Geniş bir bahçenin içinde tek bir ağaca uzanan, taşlarla belirginleşmiş ince patika",
+            alt: "Geniş bir bahçede tek bir ağaca uzanan taşlı patikanın başında yan yana duran, arkası dönük, başları örtülü bir adam ve bir kadın",
           },
           { type: "text", text: "Bir sınır, bütün özgürlüğü ortadan kaldırmaz. Geniş bir bahçedeki tek kapalı yol, diğer bütün yolların değerini azaltmaz. Fakat insan yalnızca kapalı yola bakarsa önündeki güzellikleri unutabilir." },
           { type: "text", text: "Kur'an, bu ağacın türünü açıklamaz. Bu nedenle onun elma, buğday veya başka bir bitki olduğunu söyleyemeyiz. Önemli olan meyvenin adı değil, Allah'ın koyduğu sınıra güvenmekti." },
@@ -1193,7 +1193,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-adem/bolum-5/donus-sozleri.jpg",
-            alt: "Sabah çiyiyle ıslanmış toprakta yeni açılmış küçük bir su yolu",
+            alt: "Şafakta çiyli toprakta yeni açılmış küçük bir su yolu; ötesinde doğan güneşe dönük, yan yana diz çökmüş, arkası dönük bir adam ve bir kadın",
           },
           { type: "text", text: "Tövbe yalnızca dilde kalan birkaç söz değildir. İnsan yaptığına pişman olur, yanlışı bırakır ve mümkünse verdiği zararı düzeltir. Böylece kalbin dönüşü davranışta da görünür hâle gelir." },
           {
@@ -1320,7 +1320,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-adem/bolum-6/ilk-ocak.jpg",
-            alt: "Taşlarla çevrilmiş küçük bir ocak, yanında toprak kaplar ve kurumuş otlar",
+            alt: "Taşlarla çevrili küçük bir ocağın başında yan yana oturan, arkası dönük bir anne, bir baba ve iki küçük çocuk; yanlarında toprak kaplar ve kuru otlar",
           },
           { type: "text", text: "Kur'an, bütün insanların aynı insanlık ailesinden geldiğini bildirir. İnsanların dilleri, renkleri ve yaşadıkları yerler zamanla farklılaşsa da hiçbiri yaratılışı sebebiyle diğerinden daha değerli değildi. Ortak köklerini hatırlamak, birbirlerinin hakkını koruma sorumluluğunu da hatırlatacaktı." },
           { type: "text", text: "Fakat aile büyüdükçe başka bir sorumluluk doğacaktı: Allah'tan gelen rehberliği yeni nesillere ulaştırmak." },
@@ -1372,7 +1372,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-adem/bolum-7/buyuyen-yurt.jpg",
-            alt: "Ekili tarlalar, otlaklar ve bir akarsuyla çevrili geniş yerleşim vadisi",
+            alt: "Ekili tarlalar ve akarsuyla dolu vadiye bakan tepede kolunu uzatıp konuşan, arkası dönük bir adam ve çevresinde onu dinleyen, arkası dönük aile",
           },
           { type: "text", text: "Kur'an-ı Kerim, Hz. Âdem'in iki oğlu arasında yaşanan üzücü ve düşündürücü bir olaydan söz eder. Kur'an'da bu iki kardeşin isimleri açıklanmaz. İslâmî kaynaklarda ve anlatılarda onlar **Hâbil** ve **Kābil** isimleriyle tanınmıştır. Biz de anlatımı kolaylaştırmak için bu isimleri kullanacağız." },
           { type: "text", text: "Bir gün iki kardeş Allah'a birer kurban sundu." },
