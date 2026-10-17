@@ -369,11 +369,11 @@ Görsel ID: musa-1-hazir-sandik
 Metin çapası: "Annesi bu sözlere tutundu ve küçük, sağlam bir sandık…" paragrafından sonra
 Sahnenin amacı: Annenin özenli hazırlığını kapalı bir sandıkla göstermek.
 Dosya: bolum-1/hazir-sandik.jpg
-Alt metin: Şafak öncesi nehir kıyısında, sazlıkların dibinde duran kapağı kapalı küçük ahşap bir sandık.
+Alt metin: Şafak öncesi nehir kıyısında, sazlıklar arasında diz çökmüş, başörtülü bir kadın; arkadan görünüyor, elleri kapalı küçük bir sandığın üstünde.
 Ana üretim promptu: Şafaktan hemen önce, nehir kıyısında, sazlıkların dibinde ıslak kumun üstüne bırakılmış küçük ve sağlam bir ahşap sandık. Kapağı kapalı, kenarlarından yumuşak bir örtünün ucu görünüyor. Su, sandığın hemen önünde sakin halkalar çiziyor. Işık mavimsi gri, ufukta ilk pembe çizgi.
 Ana üretim promptu (EN): Just before dawn, a small, sturdy wooden chest rests on wet sand at the river's edge among the reeds. Its lid is closed, and the corner of a soft cloth peeks out from under it. The water makes calm rings just in front of the chest. The light is bluish grey, with the first pink line on the horizon.
 Kadraj notu: 16:9; yakın-orta plan, sandık merkezin hafif solunda, su sağdan kadraja giriyor.
-Figür: yok
+Figür: Annesi — Katman 1; sazlıkta diz çökmüş, başörtülü, tamamen arkadan; yüz ve profil görünmez. Sandık kapalı, bebek yok.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, baby, infant, open lid, basket, coffin shape, crocodile
 ```
 
@@ -382,11 +382,11 @@ Görsel ID: musa-1-nehirdeki-sandik
 Metin çapası: "Annesi derin bir nefes aldı ve titreyen elleriyle sandığı…" paragrafından sonra
 Sahnenin amacı: Bırakma anını, akıntıya kapılan sandıkla sakin biçimde göstermek.
 Dosya: bolum-1/nehirdeki-sandik.jpg
-Alt metin: Sabah sisi içinde, geniş nehrin ortasında süzülen kapalı küçük bir sandık.
+Alt metin: Sabah sisinde kıyıda yan yana duran bir kadın ve küçük kızı; arkadan görünüyorlar, nehrin ortasında uzaklaşan kapalı bir sandık.
 Ana üretim promptu: Sabahın ilk sisi nehrin üstünde yayılmış. Geniş suyun ortasında kapalı küçük bir ahşap sandık, akıntıyla yavaşça süzülüyor. Arkasında ince bir iz bırakıyor. Kıyıda yüksek sazlıklar ve uzakta silik hurma ağaçları. Işık yumuşak altın ve gümüş.
 Ana üretim promptu (EN): The first morning mist spreads over the river. In the middle of the wide water, a small closed wooden chest drifts slowly with the current, leaving a thin wake behind it. Tall reeds line the bank and faint date palms stand in the distance. The light is soft gold and silver.
 Kadraj notu: 16:9; geniş plan, sandık küçük ve kadrajın ortasında, nehir sola doğru akıyor.
-Figür: yok
+Figür: Annesi ve ablası — Katman 1; kıyıda yan yana, tamamen arkadan; yüz ve profil görünmez. Sandık kapalı.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, baby, infant, crocodiles, birds attacking, storm, rapids
 ```
 
@@ -395,11 +395,11 @@ Görsel ID: musa-1-sazlik-yolu
 Metin çapası: "Sonra yanındaki kızına döndü ve kimse duymasın diye…" paragrafından sonra
 Sahnenin amacı: Ablanın kıyı boyunca takibini figürsüz, ayak izleriyle göstermek.
 Dosya: bolum-1/sazlik-yolu.jpg
-Alt metin: Nehir kıyısındaki sazlıkların arasından geçen dar bir patika ve ıslak toprakta küçük ayak izleri.
+Alt metin: Sazlıkların arasında eğilerek yürüyen, başörtülü küçük bir kız; arkadan görünüyor, nehirde uzakta süzülen sandık.
 Ana üretim promptu: Nehir kıyısında, yüksek sazlıkların arasından geçen dar ve çamurlu bir patika. Islak toprakta küçük, çıplak ayak izleri suyun akışıyla aynı yöne doğru uzanıyor. Sazlıkların aralığından uzakta parlayan nehir görünüyor. Sabah ışığı, yeşil ve altın tonlar.
 Ana üretim promptu (EN): A narrow, muddy path winding through tall reeds along the riverbank. Small bare footprints in the wet earth lead in the same direction as the flowing water. Through a gap in the reeds, the river shines in the distance. Morning light in green and gold tones.
 Kadraj notu: 16:9; patika sol alttan sağ üste çapraz, ayak izleri ön planda net.
-Figür: yok
+Figür: Ablası — Katman 1; sazlıkta eğilerek yürüyor, başörtülü, tamamen arkadan; yüz ve profil görünmez.
 Negatif prompt/kesin yasaklar: human figure, person, child, silhouette, hands, feet, shoes, animal tracks, snake
 ```
 
@@ -535,11 +535,11 @@ Görsel ID: musa-2-dallardaki-sandik
 Metin çapası: "Firavun'un ailesinden biri sandığı fark etti ve onu…" paragrafından sonra
 Sahnenin amacı: Sandığın sarayın kıyısında güvenle durduğu anı göstermek.
 Dosya: bolum-2/dallardaki-sandik.jpg
-Alt metin: Suya sarkan söğüt dallarının ve nilüferlerin arasında duran kapalı küçük bir sandık.
+Alt metin: Saray bahçesinin kıyısında sığ suya girip söğüt dallarının arasından kapalı bir sandığı çeken iki hizmetkâr.
 Ana üretim promptu: Bir saray bahçesinin kıyısında, suya sarkan uzun söğüt dallarının arasına takılmış kapalı küçük bir ahşap sandık. Çevresinde açmış beyaz ve mavi nilüferler. Dalların arasından sızan sabah ışığı suyun üstünde benekler oluşturuyor.
 Ana üretim promptu (EN): At the edge of a palace garden, a small closed wooden chest is caught among long willow branches hanging into the water. White and blue lotus flowers bloom around it. Morning light filtering through the branches makes dappled spots on the water.
 Kadraj notu: 16:9; yakın-orta plan, sandık merkezde, dallar üstten kadraja sarkıyor.
-Figür: yok
+Figür: İki saray hizmetkârı — Katman 2; sığ suda sandığı çekiyor, yüz görünebilir. Sandık kapalı, bebek yok.
 Negatif prompt/kesin yasaklar: human figure, person, servants, silhouette, hands, baby, infant, open lid, crocodile
 ```
 
@@ -548,11 +548,11 @@ Görsel ID: musa-2-saray-salonu
 Metin çapası: "Allah, bebeğin başka kadınların sütünü emmesini daha önceden…" paragrafından sonra
 Sahnenin amacı: Sarayın telaşını figürsüz, boş bir beşik ve geniş bir salonla anlatmak.
 Dosya: bolum-2/saray-salonu.jpg
-Alt metin: Sütunlu, aydınlık bir saray salonunun ortasında ince örtülerle hazırlanmış boş bir beşik.
+Alt metin: Sütunlu saray salonunda örtülü bir beşiğin yanında arkası dönük oturan bir kadın; kapıya doğru üzgün çıkan birkaç kadın.
 Ana üretim promptu: Yüksek taş sütunları olan aydınlık bir saray salonu. Ortada, ince keten örtülerle hazırlanmış, oyma ahşaptan boş bir beşik duruyor. Yüksek pencerelerden içeri sabah ışığı ve hafif rüzgârla dalgalanan perdeler giriyor. Zemin cilalı taş, köşelerde saksılarda papirüs.
 Ana üretim promptu (EN): A bright palace hall with tall stone columns. In the middle stands an empty carved wooden cradle laid with fine linen. Morning light and curtains moving in a light breeze come in through the high windows. The floor is polished stone, with potted papyrus in the corners.
 Kadraj notu: 16:9; simetrik orta plan, beşik merkezde, sütunlar iki yandan derinliğe uzanıyor.
-Figür: yok
+Figür: Âsiye — Katman 1; beşiğin yanında oturuyor, tamamen arkadan; yüz ve profil görünmez · sütanneler — Katman 3; kapıya doğru çıkıyor. Bebek görünmez.
 Negatif prompt/kesin yasaklar: human figure, person, women, servants, silhouette, hands, baby, infant, throne, statues of gods, wall paintings of people, hieroglyphs
 ```
 
@@ -561,11 +561,11 @@ Görsel ID: musa-2-saraya-giden-yol
 Metin çapası: "Ablası koşa koşa eve gitti ve annesine olanları…" paragrafından sonra
 Sahnenin amacı: Ablanın koşuşunu ve saraya giden umutlu yolu, gün ışığında ve figürsüz göstermek.
 Dosya: bolum-2/saraya-giden-yol.jpg
-Alt metin: Gün ışığında nehir kıyısı boyunca saraya uzanan toprak bir yol ve tozda koşar adımlarla bırakılmış küçük ayak izleri.
+Alt metin: Nehir kıyısındaki toprak yolda el ele saraya doğru koşan bir kadın ve küçük kızı; arkadan görünüyorlar.
 Ana üretim promptu: Parlak gün ışığında nehir kıyısı boyunca uzanan toprak bir yol. Yolun ucunda, uzakta sarayın sütunları görünüyor. Tozlu yolda saraya doğru giden, koşar adımlarla bırakılmış küçük ayak izleri. Kıyıda hurma ağaçları ve papirüsler, nehir mavi ve parlak.
 Ana üretim promptu (EN): A dirt road running along the riverbank in bright daylight. At the far end of the road, the columns of the palace can be seen. In the dust, small footprints left by running steps lead toward the palace. Date palms and papyrus line the bank, and the river is blue and bright.
 Kadraj notu: 16:9; yol sol alttan sağ üste kıvrılıyor, ayak izleri ön planda, saray sağ uzakta.
-Figür: yok
+Figür: Annesi ve ablası — Katman 1; el ele koşuyor, tamamen arkadan; yüz ve profil görünmez.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, litter, chariot, horses, guards
 ```
 
@@ -723,11 +723,11 @@ Görsel ID: musa-3-dar-sokak
 Metin çapası: "Bir gün Hz. Musa, insanların pek dikkat etmediği sakin bir…" paragrafından sonra
 Sahnenin amacı: Olayın geçtiği yeri, kavgayı göstermeden sakin ama gergin bir sokakla tanıtmak.
 Dosya: bolum-3/dar-sokak.jpg
-Alt metin: Öğle sıcağında bomboş, dar bir şehir sokağı; yerde devrilmiş bir sepet ve dağılmış birkaç hurma.
+Alt metin: Dar bir şehir sokağında yakalarından tutuşmuş iki adam, yerde devrik bir hurma sepeti; sokak ağzında arkası dönük duran bir figür.
 Ana üretim promptu: Öğle sıcağında, kerpiç duvarlar arasında bomboş ve dar bir şehir sokağı. Duvarlarda keskin gölgeler. Yerde yan devrilmiş bir hasır sepet ve tozun üstüne dağılmış birkaç hurma. Sokağın ucunda parlak, beyaza yakın bir ışık.
 Ana üretim promptu (EN): A narrow, completely empty city street between mud-brick walls in the midday heat. Sharp shadows fall across the walls. On the ground, a woven basket lies tipped over, with a few dates scattered in the dust. At the far end of the street, a bright, almost white light.
 Kadraj notu: 16:9; sokak tam ortadan derinliğe uzanıyor, sepet sol önde.
-Figür: yok
+Figür: Kavga eden iki adam — Katman 3; yakadan tutuşmuş, darbe yok · Hz. Musa — Katman 1; sokak ağzında, tamamen arkadan; yüz ve profil görünmez.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, fight, fist, body on the ground, blood, weapon, shadows of people
 ```
 
@@ -749,11 +749,11 @@ Görsel ID: musa-3-sabah-sokagi
 Metin çapası: "Sonra Hz. Musa, kavgayı durdurmak için öteki adamı tutmaya…" paragrafından sonra
 Sahnenin amacı: Gerginliği figürsüz, birbirine bakan iki ayrı sokak ağzıyla ve havalanan tozla göstermek.
 Dosya: bolum-3/sabah-sokagi.jpg
-Alt metin: Sabah ışığında bir sokak kavşağı, havada asılı kalmış toz ve yere düşmüş bir su testisi.
+Alt metin: Sabah ışığında sokak kavşağında korkuyla geri çekilen bir adam ve onu durdurmak için elini kaldırmış, arkası dönük bir figür.
 Ana üretim promptu: Sabah ışığında, kerpiç evlerin arasında küçük bir sokak kavşağı. Havada ince bir toz bulutu asılı kalmış. Bir duvarın dibinde yere düşmüş ama kırılmamış bir su testisi. Kavşaktan üç ayrı sokak farklı yönlere açılıyor.
 Ana üretim promptu (EN): A small street crossing between mud-brick houses in morning light. A thin cloud of dust hangs in the air. At the foot of a wall, a clay water jug has fallen over but has not broken. Three separate streets open from the crossing in different directions.
 Kadraj notu: 16:9; orta plan, kavşak merkezde, testi sağ önde.
-Figür: yok
+Figür: Geri çekilen adam — Katman 3 · Hz. Musa — Katman 1; eli kalkık, tamamen arkadan; yüz ve profil görünmez.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, fight, weapon, blood, crowd
 ```
 
@@ -762,11 +762,11 @@ Görsel ID: musa-3-sehir-kapisi
 Metin çapası: "Hz. Musa korku içinde, etrafı gözetleyerek şehirden çıktı…" paragrafından sonra
 Sahnenin amacı: Ayrılışı, şehrin kapısından çöle açılan yolla göstermek.
 Dosya: bolum-3/sehir-kapisi.jpg
-Alt metin: Şafakta kalın taş duvarlı bir şehir kapısının aralığından görünen, çöle uzanan boş yol.
+Alt metin: Şafakta yarı açık şehir kapısından çöle uzanan yolda yürüyen, arkası dönük, başlıklı bir yolcu.
 Ana üretim promptu: Şafak vakti, kalın kerpiç ve taş duvarlı bir şehir kapısı, içeriden bakış. Kapının aralığından dışarıdaki boş toprak yol, alçak kum tepelerine doğru uzanıyor. Kapı kanatları yarı açık, yerde tek sıra ayak izi dışarı doğru gidiyor. Gökyüzü pembe ve soluk altın.
 Ana üretim promptu (EN): At dawn, a city gate with thick mud-brick and stone walls, seen from inside. Through the gap in the gate, an empty dirt road stretches out toward low sand dunes. The doors are half open, and a single line of footprints leads outward. The sky is pink and pale gold.
 Kadraj notu: 16:9; kapı kadrajı çerçeveliyor, yol tam ortadan dışarı uzanıyor.
-Figür: yok
+Figür: Hz. Musa — Katman 1; başlıklı, çöle yürüyor, tamamen arkadan; yüz ve profil görünmez.
 Negatif prompt/kesin yasaklar: human figure, person, guards, soldiers, silhouette, hands, weapons, banners with symbols
 ```
 
@@ -918,11 +918,11 @@ Görsel ID: musa-4-medyen-suyu
 Metin çapası: "Sonunda yorgun, aç ve tozlu bir hâlde Medyen'e…" paragrafından sonra
 Sahnenin amacı: Su başındaki kalabalığı insan göstermeden, sürüler ve tozla anlatmak.
 Dosya: bolum-4/medyen-suyu.jpg
-Alt metin: Taş kenarlı bir kuyunun çevresinde birbirine karışmış koyun ve keçi sürüleri, havada toz.
+Alt metin: Taş kenarlı bir kuyunun başında birbirini iterek kovalarla su çeken çobanlar ve çevrelerine toplanmış koyun ve keçiler.
 Ana üretim promptu: Bir vaha kasabasının girişinde taş kenarlı geniş bir kuyu ve yanında uzun taş yalaklar. Çevresinde birbirine karışmış kalabalık koyun ve keçi sürüleri itişiyor. Havada altın renkli bir toz bulutu. Arka planda hurma ağaçları ve kerpiç duvarlar.
 Ana üretim promptu (EN): At the entrance of an oasis town, a wide stone-rimmed well with long stone water troughs beside it. Crowded flocks of sheep and goats push and jostle around it. A golden cloud of dust hangs in the air. Date palms and mud-brick walls stand in the background.
 Kadraj notu: 16:9; orta-geniş plan, kuyu merkezin hafif solunda, sürüler kadrajı dolduruyor.
-Figür: yok
+Figür: Çobanlar — Katman 3; kuyuda itişiyor, yüz görünebilir.
 Negatif prompt/kesin yasaklar: human figure, person, shepherds, silhouette, hands, fighting animals, blood, crowd of people *(bu sahnede ortak negatiften yalnız `crowd` çıkarılır; sürüler kalabalık görünmelidir)*
 ```
 
@@ -931,11 +931,11 @@ Görsel ID: musa-4-bekleyen-suru
 Metin çapası: "— Çobanlar sulayıp çekilmeden biz hayvanlarımızı sulayamayız…" paragrafından sonra
 Sahnenin amacı: Kızların bekleyişini figürsüz, kenarda bekleyen küçük bir sürüyle anlatmak.
 Dosya: bolum-4/bekleyen-suru.jpg
-Alt metin: Bir ağacın gölgesinde, kalabalıktan uzakta sabırla bekleyen küçük bir koyun sürüsü.
+Alt metin: Kalabalık kuyudan uzakta bir akasyanın gölgesinde küçük sürüleriyle sabırla bekleyen iki başörtülü genç kadın; arkadan görünüyorlar.
 Ana üretim promptu: Kuyudan biraz uzakta, tek bir akasya ağacının gölgesinde sabırla bekleyen küçük bir koyun sürüsü. Koyunlar başlarını kaldırmış, uzaktaki suya bakıyor. Arkada kuyunun çevresindeki kalabalık sürüler ve toz bulanık görünüyor. Yerde iki tahta kova ve bir değnek.
 Ana üretim promptu (EN): Some distance from the well, a small flock of sheep waits patiently in the shade of a single acacia tree. The sheep raise their heads and look toward the distant water. Behind them, the crowded flocks and dust around the well appear blurred. Two wooden buckets and a shepherd's stick lie on the ground.
 Kadraj notu: 16:9; küçük sürü sol üçte birde net, kuyu sağ arkada flu.
-Figür: yok
+Figür: Hz. Şuayb'ın iki kızı — Katman 1; ağaç gölgesinde, başörtülü, tamamen arkadan; yüz ve profil görünmez.
 Negatif prompt/kesin yasaklar: human figure, person, girls, women, silhouette, hands, crowd of people *(bu sahnede ortak negatiften yalnız `crowd` çıkarılır; arkadaki sürüler kalabalık görünmelidir)*
 ```
 
@@ -957,11 +957,11 @@ Görsel ID: musa-4-yasli-babanin-avlusu
 Metin çapası: "Hz. Musa başından geçenleri yaşlı adama bir bir anlattı…" paragrafından sonra
 Sahnenin amacı: Güven veren misafirliği ve yeni yuvayı mekânla anlatmak.
 Dosya: bolum-4/yasli-babanin-avlusu.jpg
-Alt metin: Akşam ışığında sade bir evin avlusu; ağaç altına serilmiş hasır, üstünde ekmek ve su testisi.
+Alt metin: Akşam ışığında incir ağacının yanında hasıra oturmuş, arkası dönük iki adam; yaşlı olanın eli gencin omzunda, önlerinde ekmek ve testi.
 Ana üretim promptu: Akşam ışığında, alçak taş duvarlı sade bir evin avlusu. Bir incir ağacının altına geniş bir hasır serilmiş; üstünde bir tabak yassı ekmek, bir kâse hurma ve bir toprak su testisi. Avlunun kapısı açık ve dışarıda sakin bir ağıl görünüyor. Sıcak, misafirperver bir atmosfer.
 Ana üretim promptu (EN): The courtyard of a simple house with low stone walls in evening light. A wide reed mat is spread under a fig tree, with a plate of flatbread, a bowl of dates and a clay water jug on it. The courtyard gate is open, and a calm sheep pen can be seen outside. A warm, welcoming atmosphere.
 Kadraj notu: 16:9; hasır merkezde, ağaç sol üstten gölge veriyor, kapı sağ arkada.
-Figür: yok
+Figür: Hz. Şuayb ve Hz. Musa — Katman 1; hasırda yan yana, tamamen arkadan; yüz ve profil görünmez.
 Negatif prompt/kesin yasaklar: human figure, person, old man, women, girls, silhouette, hands, wine, idols
 ```
 
@@ -1170,11 +1170,11 @@ Görsel ID: musa-5-kamp-atesi
 Metin çapası: "Kalbindeki kaygı elbette bir anda tamamen geçmemişti…" paragrafından sonra (bölüm sonu)
 Sahnenin amacı: Ailesine dönüşü ve yeni görevin başlangıcını şafakla göstermek.
 Dosya: bolum-5/kamp-atesi.jpg
-Alt metin: Şafak sökerken küçük bir çadırın önünde yanan kamp ateşi ve çadıra dayalı sade bir asa.
+Alt metin: Şafakta elinde asasıyla çadıra doğru yürüyen, arkası dönük bir adam; çadırın önünde ateşin başında oturan başörtülü bir kadın.
 Ana üretim promptu: Şafak sökerken, kayalık bir yamacın dibinde kurulu küçük bir çadır. Önünde taşlarla çevrili küçük bir kamp ateşi yanıyor, üstünde bir toprak çömlek. Çadırın direğine sade, uzun bir asa dayalı duruyor. Gökyüzü pembe ve altın, dağların ardından gün doğuyor.
 Ana üretim promptu (EN): At daybreak, a small tent stands at the foot of a rocky slope. In front of it burns a small campfire ringed with stones, with a clay pot on top. A plain, long staff leans against the tent pole. The sky is pink and gold as the sun rises behind the mountains.
 Kadraj notu: 16:9; orta plan, çadır ve ateş sol üçte birde, gün doğumu sağ üstte.
-Figür: yok
+Figür: Hz. Musa — Katman 1; asasıyla çadıra yürüyor · Musa'nın eşi — Katman 1; ateş başında, uzakta; ikisi de tamamen arkadan; yüz ve profil görünmez.
 Negatif prompt/kesin yasaklar: human figure, person, family, silhouette, hands, figure in tent, glowing staff, snake
 ```
 
@@ -1319,11 +1319,11 @@ Görsel ID: musa-6-buyuk-kapi
 Metin çapası: "Allah, onlara Firavun'un karşısında ne söyleyeceklerini de…" paragrafından sonra
 Sahnenin amacı: Karar anının eşiğini; büyük kapı ve küçük bir basamakla göstermek.
 Dosya: bolum-6/buyuk-kapi.jpg
-Alt metin: Devasa, kapalı ahşap ve bronz bir saray kapısı ve önündeki geniş taş basamağa düşen ince bir ışık şeridi.
+Alt metin: Devasa kapalı saray kapısının önündeki basamaklarda yan yana duran, arkası dönük iki başlıklı adam; birinin elinde asa.
 Ana üretim promptu: Yakından, devasa ve kapalı bir saray kapısı: kalın ahşap kanatlar, bronz çiviler ve ağır halkalar. Kapının önünde geniş tek bir taş basamak. Yandan gelen ince bir sabah ışığı şeridi yalnızca bu basamağın üstüne düşüyor. Atmosfer gergin ama umutlu.
 Ana üretim promptu (EN): A close view of a huge, closed palace gate: thick wooden doors, bronze studs and heavy rings. In front of the gate is a single wide stone step. A thin strip of morning light coming from the side falls only on this step. The mood is tense but hopeful.
 Kadraj notu: 16:9; kapı kadrajın büyük kısmını kaplıyor, ışıklı basamak alt ortada.
-Figür: yok
+Figür: Hz. Musa ve Hz. Hârûn — Katman 1; kapı önünde, tamamen arkadan; yüz ve profil görünmez.
 Negatif prompt/kesin yasaklar: human figure, person, guards, silhouette, hands, feet, shadows of people, carved faces on the door, hieroglyphs, idols
 ```
 
@@ -1332,11 +1332,11 @@ Görsel ID: musa-6-sutunlu-salon
 Metin çapası: "Firavun, karşısındakinin kendi sarayında büyüyen o çocuk…" paragrafından sonra
 Sahnenin amacı: Saray salonunun ağırlığını, kimseyi göstermeden anlatmak.
 Dosya: bolum-6/sutunlu-salon.jpg
-Alt metin: Yüksek sütunlu, loş bir taht salonu; uzakta boş bir taht ve tavandaki pencereden süzülen tek ışık hüzmesi.
+Alt metin: Sütunlu loş taht salonunda tahtta oturan hükümdar ve yanındaki saraylılar; ön planda arkası dönük duran iki başlıklı adam.
 Ana üretim promptu: Yüksek ve kalın sütunlu, loş bir taht salonu. Çok uzakta, basamakların üstünde boş ve görkemli bir taht. Tavana yakın küçük bir pencereden tek bir ışık hüzmesi süzülüp salonun ortasındaki taş zemine düşüyor. Havada ince toz zerreleri.
 Ana üretim promptu (EN): A dim throne hall with tall, thick columns. Far away, an empty, grand throne stands on top of a few steps. A single beam of light comes through a small window near the ceiling and falls on the stone floor in the middle of the hall. Fine dust floats in the air.
 Kadraj notu: 16:9; simetrik derinlik, taht uzakta ve küçük, ışık hüzmesi merkezde.
-Figür: yok
+Figür: Firavun ve saraylılar — Katman 2; tahtta ve yanında, yüz görünebilir · Hz. Musa ve Hz. Hârûn — Katman 1; ön planda, tamamen arkadan; yüz ve profil görünmez.
 Negatif prompt/kesin yasaklar: human figure, person, king, pharaoh, guards, silhouette, hands, statues of gods, wall paintings of people, hieroglyphs, snake
 ```
 
@@ -1505,11 +1505,11 @@ Görsel ID: musa-7-ziynet-meydani
 Metin çapası: "Sonunda Ziynet Günü geldi ve halk sabahın erken…" paragrafından sonra
 Sahnenin amacı: Karşılaşmanın yapılacağı geniş meydanı, beklenti anında göstermek.
 Dosya: bolum-7/ziynet-meydani.jpg
-Alt metin: Kuşluk güneşinde, kenarları gölgelikler ve sütunlarla çevrili, ortası boş geniş kumlu bir meydan.
+Alt metin: Bayram süsleriyle dolu kalabalık bir meydan; ortası boş kum alan ve bir kenarda koyu cüppeli bir grup.
 Ana üretim promptu: Kuşluk vakti, parlak güneş altında geniş ve kumlu bir meydan. Kenarlarında sade kumaş gölgelikler, taş sütunlar ve basamaklı oturma yerleri var. Meydanın ortası tamamen boş ve düzgünce süpürülmüş. Havada hafif bir toz ve sıcaklık titreşimi.
 Ana üretim promptu (EN): Mid-morning, a wide sandy square under bright sun. Its edges are lined with plain cloth awnings, stone columns and stepped seating. The center of the square is completely empty and neatly swept. A light dust and heat shimmer hang in the air.
 Kadraj notu: 16:9; geniş plan, boş meydan merkezde, gölgelikler kenarlarda; kalabalık yalnız ima edilir.
-Figür: yok
+Figür: Kalabalık — Katman 3 · sihirbazlar — Katman 2; bir kenarda grup.
 Negatif prompt/kesin yasaklar: human figure, person, crowd, magicians, silhouette, hands, throne with king, statues of gods, idols
 ```
 
@@ -1518,11 +1518,11 @@ Görsel ID: musa-7-kivrilan-ipler
 Metin çapası: "Sihirbazlar ellerindeki ipleri ve değnekleri yere attılar…" paragrafından sonra
 Sahnenin amacı: Göz aldatmasını korkutmadan, kumdaki ip ve gölgelerle göstermek.
 Dosya: bolum-7/kivrilan-ipler.jpg
-Alt metin: Kumun üstüne saçılmış ipler ve ince değnekler; uzun gölgeleri kıvrılıyormuş gibi görünüyor.
+Alt metin: Kumun üstüne saçılmış ipler ve gölgeleri kıvrılıyor gibi; karşıda koyu cüppeli sihirbazlar ve geri çekilen kalabalık, ön planda arkası dönük iki adam.
 Ana üretim promptu: Parlak güneş altında, kumlu zemine saçılmış onlarca kalın ip ve ince değnek. Sıcak hava titreşimi ve alçak açılı ışık yüzünden gölgeleri kumun üstünde kıvrılıyormuş gibi görünüyor. Gerçek bir hayvan yok; yalnız ipler, değnekler ve dalgalı gölgeler. Renkler sıcak, sahne gergin ama ürkütücü değil.
 Ana üretim promptu (EN): Under bright sun, dozens of thick ropes and thin sticks are scattered across sandy ground. Because of the heat shimmer and the low-angle light, their shadows seem to wriggle across the sand. There are no real animals; only ropes, sticks and wavy shadows. The colors are warm, and the scene is tense but not frightening.
 Kadraj notu: 16:9; yakın-orta plan, ipler kadrajın alt yarısına yayılmış, gölgeler sağa uzanıyor.
-Figür: yok
+Figür: Sihirbazlar — Katman 2 · kalabalık — Katman 3; geri çekiliyor · Hz. Musa ve Hz. Hârûn — Katman 1; ön planda, tamamen arkadan; yüz ve profil görünmez. İpler ip kalır, yılan yok.
 Negatif prompt/kesin yasaklar: human figure, person, magicians, silhouette, hands, snakes, serpents, fangs, monsters, dark magic, smoke, glowing eyes
 ```
 
@@ -1531,11 +1531,11 @@ Görsel ID: musa-7-sessiz-kum
 Metin çapası: "— Korkma, üstün gelecek olan sensin; sağ elindekini…" paragrafından sonra
 Sahnenin amacı: Göz aldatmasının bittiği ve gerçeğin ortaya çıktığı anı sade bir boşlukla göstermek.
 Dosya: bolum-7/sessiz-kum.jpg
-Alt metin: Bomboş kalmış düz kum zemin; ortasında uzun bir gölge ve çevresinde dağılmış birkaç ip parçası.
+Alt metin: Boşalmış kum meydanda şaşkınlıkla donup kalmış koyu cüppeli sihirbazlar; ön planda asasıyla arkası dönük duran bir adam.
 Ana üretim promptu: Az önce iplerle dolu olan kumlu zemin artık neredeyse bomboş. Kumun üstünde yalnızca kenarlara savrulmuş birkaç kopuk ip parçası kalmış. Ortada, çerçevenin dışındaki uzun bir asanın düz ve dimdik gölgesi kumun üstüne düşüyor. Işık berrak, hava duru ve sessiz.
 Ana üretim promptu (EN): The sandy ground that was full of ropes a moment ago is now almost empty. Only a few broken bits of rope remain, tossed to the edges. In the middle, the straight, upright shadow of a long staff standing just outside the frame falls across the sand. The light is clear, the air still and silent.
 Kadraj notu: 16:9; yüksek açıdan yakın plan, düz gölge kadrajın ortasından dikey geçiyor.
-Figür: yok
+Figür: Sihirbazlar — Katman 2; şaşkın, durmuş · Hz. Musa — Katman 1; asasıyla, tamamen arkadan; yüz ve profil görünmez.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, snake, serpent, dragon, glowing staff, magic sparks, blood
 ```
 
@@ -1544,11 +1544,11 @@ Görsel ID: musa-7-bos-meydan
 Metin çapası: "Firavun ise öfkeden yerinde duramadı…" paragrafından sonra
 Sahnenin amacı: Tehdidi göstermeden, gün ilerlerken boşalan meydan ve devrilmiş ödül kâseleriyle anlatmak.
 Dosya: bolum-7/bos-meydan.jpg
-Alt metin: İkindi ışığında boşalmaya başlamış meydan, bir basamağın üstünde devrilmiş altın bir kâse ve rüzgârda savrulan toz.
+Alt metin: İkindi ışığında kumda yan yana diz çöküp eğilmiş koyu cüppeli adamlar, arkadan görünüyor; uzakta terasta onları gösteren hükümdar ve devrik altın kâse.
 Ana üretim promptu: İkindi ışığında yavaş yavaş boşalan geniş meydan. Bir taş basamağın üstünde yan devrilmiş, içi boş altın bir kâse. Rüzgârda hafifçe savrulan ince bir toz. Uzun gölgeler, ciddi ama sakin bir atmosfer.
 Ana üretim promptu (EN): The wide square slowly emptying in afternoon light. On a stone step lies an overturned, empty golden bowl. A thin layer of dust drifts gently in the wind. Long shadows, a serious but calm atmosphere.
 Kadraj notu: 16:9; altın kâse sol önde net, meydan arkada derinlemesine.
-Figür: yok
+Figür: İman eden sihirbazlar — Katman 1 (Hasan kararı); diz çökmüş, tamamen arkadan; yüz ve profil görünmez · Firavun — Katman 2; uzakta terasta.
 Negatif prompt/kesin yasaklar: human figure, person, crowd, guards, silhouette, hands, gallows, palm trunks with ropes, chains, blood, weapons
 ```
 
@@ -1724,11 +1724,11 @@ Görsel ID: musa-8-irmak-ve-saray
 Metin çapası: "Ama Firavun bu kez de sözünü tutmadı; üstelik halkını…" paragrafından sonra
 Sahnenin amacı: Firavun'un böbürlendiği "ırmaklar ve mülk"ü, kimseyi göstermeden anlatmak.
 Dosya: bolum-8/irmak-ve-saray.jpg
-Alt metin: Akşam ışığında, kanallarla bölünmüş nehrin kıyısında yükselen görkemli bir sarayın terası.
+Alt metin: Akşam ışığında kanallara bölünmüş nehrin kıyısındaki saray terasında halkına kolunu uzatarak konuşan hükümdar; aşağıda toplanmış insanlar.
 Ana üretim promptu: Akşam ışığında, yüksek bir saray terasından görülen geniş manzara: nehir ve ondan ayrılan kanallar sarayın önünden akıyor. Terasın taş korkuluğu ön planda. Uzakta tarlalar ve şehir. Işık turuncu ve altın, ama gökyüzünün bir yanı koyulaşıyor.
 Ana üretim promptu (EN): In the evening light, a wide view from a high palace terrace: the river and the canals branching from it flow past the front of the palace. The stone balustrade of the terrace fills the foreground. Fields and the city lie in the distance. The light is orange and gold, but one side of the sky is darkening.
 Kadraj notu: 16:9; korkuluk alt bantta, nehir ve kanallar kadrajın ortasında yayılıyor.
-Figür: yok
+Figür: Firavun — Katman 2; terasta konuşuyor · halk — Katman 3; aşağıda toplanmış.
 Negatif prompt/kesin yasaklar: human figure, person, king, pharaoh, silhouette, hands, statues of gods, throne
 ```
 
@@ -1737,11 +1737,11 @@ Görsel ID: musa-8-kandilli-evler
 Metin çapası: "Bu zor günlerde inananlar evlerinde bir araya geliyor…" paragrafından sonra
 Sahnenin amacı: İnananların sabrını ve birlikteliğini, gece yanan ışıklarla göstermek.
 Dosya: bolum-8/kandilli-evler.jpg
-Alt metin: Gece, bir mahallede yan yana kerpiç evlerin pencerelerinden süzülen sıcak kandil ışıkları.
+Alt metin: Gece kerpiç bir odada kandil ışığında hasırlara oturmuş, birlikte dua edip birbirine güç veren aileler.
 Ana üretim promptu: Gece, sessiz bir mahallede yan yana dizilmiş kerpiç evler. Hemen her pencereden sıcak, sarı bir kandil ışığı süzülüyor. Sokak karanlık ama evler birbirini aydınlatıyor gibi. Gökyüzü lacivert ve yıldızlı; sakin, güven veren bir atmosfer.
 Ana üretim promptu (EN): Night, mud-brick houses side by side in a quiet neighborhood. Warm yellow oil-lamp light glows from almost every window. The street is dark, yet the houses seem to light each other up. The sky is navy and starry; a calm, reassuring atmosphere.
 Kadraj notu: 16:9; evler kadrajın alt yarısında bir sıra hâlinde, gökyüzü üst yarıda.
-Figür: yok
+Figür: İnanan aileler — Katman 3; hasırda oturmuş, dua ediyor.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, figures in windows, mosque, dome, minaret, crescent
 ```
 
@@ -1888,11 +1888,11 @@ Görsel ID: musa-9-ay-isiginda-izler
 Metin çapası: "İnananlar hemen hazırlandı, yanlarına taşıyabildiklerini alıp…" paragrafından sonra
 Sahnenin amacı: Kafileyi figürsüz; geride bıraktığı izlerle göstermek.
 Dosya: bolum-9/ay-isiginda-izler.jpg
-Alt metin: Ay ışığında kumda uzayıp giden sayısız ayak izi ve uzakta denizin parıltısı.
+Alt metin: Ay ışığında kumda denize doğru yürüyen uzun bir kafile; aileler, çocuklar ve yük taşıyan eşekler, önde iki küçük figür.
 Ana üretim promptu: Ay ışığında gümüşi bir kum düzlüğü. Kumun üstünde, ufka doğru uzayıp giden sayısız ayak izi, küçük ve büyük adımlar yan yana. Yolun kenarına düşmüş küçük bir kumaş bohça. Ufukta denizin karanlık parıltısı ve tepede parlak yıldızlar.
 Ana üretim promptu (EN): A silvery sand plain in the moonlight. On the sand, countless footprints, both small and large steps side by side, stretch toward the horizon. A small cloth bundle has dropped at the side of the path. On the horizon lies the dark shimmer of the sea, with bright stars above.
 Kadraj notu: 16:9; izler alt ortadan ufka çizgi gibi, deniz parıltısı üst bantta.
-Figür: yok
+Figür: Kafile — Katman 3; aileler ve çocuklar, arkadan · Hz. Musa ve Hz. Hârûn — Katman 1; önde küçük, tamamen arkadan; yüz ve profil görünmez. At ve asker yok.
 Negatif prompt/kesin yasaklar: human figure, person, crowd, silhouette, hands, feet, animals, soldiers
 ```
 
@@ -1901,11 +1901,11 @@ Görsel ID: musa-9-toz-bulutu
 Metin çapası: "Güneş doğarken kafilenin arkasında, ufukta büyük bir…" paragrafından sonra
 Sahnenin amacı: Tehlikeyi yalnız uzaktaki bir toz bulutuyla, korkutmadan göstermek.
 Dosya: bolum-9/toz-bulutu.jpg
-Alt metin: Gün doğarken, sahil kumlarının ardında ufukta yükselen büyük ve uzak bir toz bulutu.
+Alt metin: Gün doğarken sahilde denize bakan, çocuklarını tutan aileler; ufukta yükselen büyük bir toz bulutu.
 Ana üretim promptu: Gün doğumu. Ön planda deniz kıyısının ıslak kumu ve hafif dalgalar. Kadrajın öbür ucunda, ufukta, kum tepelerinin ardından yükselen büyük ve uzak bir toz bulutu; içinde hiçbir şey seçilmiyor. Gökyüzü turuncu, toz bulutu altın-kahverengi.
 Ana üretim promptu (EN): Sunrise. In the foreground, the wet sand of the seashore and gentle waves. At the other side of the frame, on the horizon, a huge, distant cloud of dust rises behind the sand dunes; nothing can be made out inside it. The sky is orange and the dust cloud golden-brown.
 Kadraj notu: 16:9; deniz kıyısı sol yarıda, toz bulutu sağ ufukta, aradaki boşluk gerilimi verir.
-Figür: yok
+Figür: Kafile — Katman 3; denize dönük aileler. Ordu görünmez, yalnız toz bulutu.
 Negatif prompt/kesin yasaklar: human figure, person, soldiers, army, horses, chariots, spears, flags, silhouette, hands
 ```
 
@@ -1940,11 +1940,11 @@ Görsel ID: musa-9-karsi-kiyi
 Metin çapası: "Önlerinde deniz, arkalarında ordu varken kaçacak hiçbir…" paragrafından sonra (bölüm sonu)
 Sahnenin amacı: Kurtuluşu ve şükrü, karşı kıyıya çıkan izlerle kapatmak.
 Dosya: bolum-9/karsi-kiyi.jpg
-Alt metin: Gün doğarken denizden çıkıp kıyıdaki tepeye doğru yükselen sayısız ayak izi.
+Alt metin: Gün doğumunda deniz kıyısındaki tepede ellerini açıp şükreden kalabalık; denizden tepeye uzanan ayak izleri.
 Ana üretim promptu: Gün doğumunda karşı kıyı. Denizin kenarındaki ıslak kumdan başlayıp kıyıdaki alçak bir tepeye doğru yükselen sayısız ayak izi. Tepenin ardından güneş doğuyor ve izleri altın renge boyuyor. Kıyıda birkaç deniz kabuğu ve yumuşak köpük.
 Ana üretim promptu (EN): The far shore at sunrise. Countless footprints start from the wet sand at the water's edge and climb toward a low hill on the shore. The sun rises behind the hill and paints the footprints gold. A few seashells and soft foam lie along the shore.
 Kadraj notu: 16:9; izler sol alttan sağ üstteki tepeye, güneş tepenin hemen üstünde.
-Figür: yok
+Figür: Kalabalık — Katman 3; tepede şükrediyor.
 Negatif prompt/kesin yasaklar: human figure, person, crowd, silhouette, hands, feet, rainbow, dove, bodies
 ```
 
@@ -2096,11 +2096,11 @@ Görsel ID: musa-10-kaya-ve-deniz
 Metin çapası: "Yolculuk için yanlarına azık olarak bir balık almışlardı. İki denizin…" paragrafından sonra
 Sahnenin amacı: İki denizin buluştuğu yeri ve balığın gittiği yolu göstermek.
 Dosya: bolum-10/kaya-ve-deniz.jpg
-Alt metin: Büyük bir kayanın dibinde, iki farklı renkteki suyun buluştuğu yer ve suda kıvrılarak uzaklaşan ince bir iz.
+Alt metin: İki renkli suyun buluştuğu kıyıda kayanın üstünde oturan, arkası dönük iki yolcu; suda halkalanarak uzaklaşan bir iz.
 Ana üretim promptu: Büyük, yuvarlak hatlı bir kayanın dibinde iki suyun buluştuğu yer: bir yanda koyu turkuaz, öbür yanda daha açık ve yeşilimsi su; aralarında belirgin ama yumuşak bir çizgi. Suda, kıyıdan açığa doğru kıvrılarak uzaklaşan ince bir iz.
 Ana üretim promptu (EN): At the foot of a large, rounded rock lies the place where two waters meet: dark turquoise on one side, lighter greenish water on the other, with a clear but soft line between them. In the water, a thin trail curves away from the shore toward the open sea.
 Kadraj notu: 16:9; kaya sol üçte birde, su çizgisi kadrajı çapraz kesiyor, iz sağa uzanıyor.
-Figür: yok
+Figür: Hz. Musa ve genç yol arkadaşı — Katman 1; kayada oturmuş, tamamen arkadan; yüz ve profil görünmez.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, basket, fish close-up, magic glow, fountain of life, river names, maps
 ```
 
@@ -2109,11 +2109,11 @@ Görsel ID: musa-10-kiyidaki-izler
 Metin çapası: "Kayanın yanında, Allah'ın rahmet ve bilgi verdiği o kulu buldular. İslam inancına…" paragrafından sonra
 Sahnenin amacı: Geri dönüşü ve buluşmayı, kimseyi göstermeden izlerle anlatmak.
 Dosya: bolum-10/kiyidaki-izler.jpg
-Alt metin: Islak kumda gidip geri dönen iki sıra ayak izi ve kayanın yanında başlayan üçüncü bir iz.
+Alt metin: Kıyıdaki kayanın üstünde kontra ışıkta duran yeşil cüppeli bir figür; ona doğru yürüyen, arkası dönük iki yolcu.
 Ana üretim promptu: Islak sahil kumunda iki sıra ayak izi önce uzaklaşıyor, sonra geri dönüp büyük kayanın yanına geliyor. Kayanın yanında, oradan başlayan üçüncü bir iz sırası öbür ikisine katılıyor. Dalgalar izlerin kenarını hafifçe yalıyor. Işık yumuşak öğle ışığı.
 Ana üretim promptu (EN): On the wet sand of the shore, two lines of footprints first walk away, then turn back and return to the large rock. Beside the rock, a third line of footprints starts there and joins the other two. Waves gently lick the edges of the prints. Soft midday light.
 Kadraj notu: 16:9; yüksek açı, izler kadrajda bir döngü çiziyor, kaya üst sağda.
-Figür: yok
+Figür: Hızır — Katman 1; kontra ışıkta, yüz görünmez · Hz. Musa ve genç yol arkadaşı — Katman 1; ona yürüyor, tamamen arkadan; yüz ve profil görünmez.
 Negatif prompt/kesin yasaklar: human figure, person, feet, silhouette, hands, green cloak, glowing figure, halo, angel
 ```
 
@@ -2135,11 +2135,11 @@ Görsel ID: musa-10-duzelen-duvar
 Metin çapası: "Sonunda bir şehre vardılar ve oradakilerden yemek istediler…" paragrafından sonra
 Sahnenin amacı: Karşılıksız düzeltilen duvarı göstermek; gizli hazineye ima etmek.
 Dosya: bolum-10/duzelen-duvar.jpg
-Alt metin: Akşam ışığında yeni düzeltilmiş, dimdik duran eski bir taş duvar ve dibinde taze harç izleri.
+Alt metin: Akşam ışığında eski bir taş duvarın dibinde diz çöküp taşları harçla yerine oturtan yeşil cüppeli bir adam ve yanında asasıyla duran bir yolcu; ikisi de arkadan.
 Ana üretim promptu: Dar bir sokakta, eski ama yeni düzeltilmiş, dimdik duran bir taş duvar. Taşların arasında taze harç izleri, dibinde birkaç fazla taş ve bir mala. Duvarın dibindeki toprak dokunulmamış, sakin. Akşam ışığı duvarı altın rengine boyuyor.
 Ana üretim promptu (EN): In a narrow street stands an old stone wall that has just been straightened and now stands upright. Fresh mortar marks show between the stones, with a few spare stones and a trowel at its base. The earth at the foot of the wall is undisturbed and calm. Evening light paints the wall gold.
 Kadraj notu: 16:9; duvar kadrajın sol yarısında önden-çapraz, sokak sağa uzanıyor.
-Figür: yok
+Figür: Hızır ve Hz. Musa — Katman 1; duvar dibinde, ikisi de tamamen arkadan; yüz ve profil görünmez.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, children, visible treasure, gold coins, open chest, ruins collapsing
 ```
 
@@ -2569,63 +2569,63 @@ klasörü yok). Bölge sahnesi envantere girmez. Sahnelerin bölüm klasörleri
 |---:|---|---|---|
 | 1 | `kitaplar/hz-musa/bolum-1/kapak.jpg` | Açılış | Alacakaranlıkta geniş bir nehir, kıyıda sazlıklar, hurma ağaçları ve uzakta düz damlı kerpiç evler. |
 | 2 | `kitaplar/hz-musa/bolum-1/gece-penceresi.jpg` | 1. Kısım | Gece sessiz bir sokakta, kepenkleri kapalı kerpiç bir evin aralığından sızan sıcak kandil ışığı. |
-| 3 | `kitaplar/hz-musa/bolum-1/hazir-sandik.jpg` | 1. Kısım | Şafak öncesi nehir kıyısında, sazlıkların dibinde duran kapağı kapalı küçük ahşap bir sandık. |
-| 4 | `kitaplar/hz-musa/bolum-1/nehirdeki-sandik.jpg` | Devam | Sabah sisi içinde, geniş nehrin ortasında süzülen kapalı küçük bir sandık. |
-| 5 | `kitaplar/hz-musa/bolum-1/sazlik-yolu.jpg` | Devam | Nehir kıyısındaki sazlıkların arasından geçen dar bir patika ve ıslak toprakta küçük ayak izleri. |
+| 3 | `kitaplar/hz-musa/bolum-1/hazir-sandik.jpg` | 1. Kısım | Şafak öncesi nehir kıyısında, sazlıklar arasında diz çökmüş, başörtülü bir kadın; arkadan görünüyor, elleri kapalı küçük bir sandığın üstünde. |
+| 4 | `kitaplar/hz-musa/bolum-1/nehirdeki-sandik.jpg` | Devam | Sabah sisinde kıyıda yan yana duran bir kadın ve küçük kızı; arkadan görünüyorlar, nehrin ortasında uzaklaşan kapalı bir sandık. |
+| 5 | `kitaplar/hz-musa/bolum-1/sazlik-yolu.jpg` | Devam | Sazlıkların arasında eğilerek yürüyen, başörtülü küçük bir kız; arkadan görünüyor, nehirde uzakta süzülen sandık. |
 | 6 | `kitaplar/hz-musa/bolum-1/gun-dogarken.jpg` | Devam | Güneş doğarken altın renge bürünen sakin bir nehir ve çok uzakta süzülen küçük bir sandık. |
 | 7 | `kitaplar/hz-musa/bolum-2/kapak.jpg` | Açılış | Sabah ışığında nehrin karşı kıyısında yükselen büyük bir sarayın sütunları ve suya inen bahçesi. |
-| 8 | `kitaplar/hz-musa/bolum-2/dallardaki-sandik.jpg` | 1. Kısım | Suya sarkan söğüt dallarının ve nilüferlerin arasında duran kapalı küçük bir sandık. |
-| 9 | `kitaplar/hz-musa/bolum-2/saray-salonu.jpg` | 1. Kısım | Sütunlu, aydınlık bir saray salonunun ortasında ince örtülerle hazırlanmış boş bir beşik. |
-| 10 | `kitaplar/hz-musa/bolum-2/saraya-giden-yol.jpg` | Devam | Gün ışığında nehir kıyısı boyunca saraya uzanan toprak bir yol ve tozda koşar adımlarla bırakılmış küçük ayak izleri. |
+| 8 | `kitaplar/hz-musa/bolum-2/dallardaki-sandik.jpg` | 1. Kısım | Saray bahçesinin kıyısında sığ suya girip söğüt dallarının arasından kapalı bir sandığı çeken iki hizmetkâr. |
+| 9 | `kitaplar/hz-musa/bolum-2/saray-salonu.jpg` | 1. Kısım | Sütunlu saray salonunda örtülü bir beşiğin yanında arkası dönük oturan bir kadın; kapıya doğru üzgün çıkan birkaç kadın. |
+| 10 | `kitaplar/hz-musa/bolum-2/saraya-giden-yol.jpg` | Devam | Nehir kıyısındaki toprak yolda el ele saraya doğru koşan bir kadın ve küçük kızı; arkadan görünüyorlar. |
 | 11 | `kitaplar/hz-musa/bolum-2/yumusak-ortu.jpg` | Devam | Gün ışığında, sade bir yüzeyin üstünde özenle katlanmış yumuşak dokuma bir örtü ve yanında tek bir nilüfer çiçeği. |
 | 12 | `kitaplar/hz-musa/bolum-2/nilufer.jpg` | Devam | Şafak ışığında nehir kıyısında yeni açmış tek bir nilüfer çiçeği. |
 | 13 | `kitaplar/hz-musa/bolum-3/kapak.jpg` | Açılış | Tepeden bakışla, bir yanda sarayın yeşil bahçeleri, öbür yanda sıkışık kerpiç mahalleler ve aralarından akan nehir. |
-| 14 | `kitaplar/hz-musa/bolum-3/dar-sokak.jpg` | 1. Kısım | Öğle sıcağında bomboş, dar bir şehir sokağı; yerde devrilmiş bir sepet ve dağılmış birkaç hurma. |
+| 14 | `kitaplar/hz-musa/bolum-3/dar-sokak.jpg` | 1. Kısım | Dar bir şehir sokağında yakalarından tutuşmuş iki adam, yerde devrik bir hurma sepeti; sokak ağzında arkası dönük duran bir figür. |
 | 15 | `kitaplar/hz-musa/bolum-3/sabaha-kadar-kandil.jpg` | 1. Kısım | Karanlık bir odada pencere kenarında yanan küçük bir kandil ve dışarıda sabaha dönen mavi gökyüzü. |
-| 16 | `kitaplar/hz-musa/bolum-3/sabah-sokagi.jpg` | Devam | Sabah ışığında bir sokak kavşağı, havada asılı kalmış toz ve yere düşmüş bir su testisi. |
-| 17 | `kitaplar/hz-musa/bolum-3/sehir-kapisi.jpg` | Devam | Şafakta kalın taş duvarlı bir şehir kapısının aralığından görünen, çöle uzanan boş yol. |
+| 16 | `kitaplar/hz-musa/bolum-3/sabah-sokagi.jpg` | Devam | Sabah ışığında sokak kavşağında korkuyla geri çekilen bir adam ve onu durdurmak için elini kaldırmış, arkası dönük bir figür. |
+| 17 | `kitaplar/hz-musa/bolum-3/sehir-kapisi.jpg` | Devam | Şafakta yarı açık şehir kapısından çöle uzanan yolda yürüyen, arkası dönük, başlıklı bir yolcu. |
 | 18 | `kitaplar/hz-musa/bolum-3/col-yolu.jpg` | Devam | Sabah güneşinde kum tepelerinin arasından ufka uzanan, ayak izli tek bir yol. |
 | 19 | `kitaplar/hz-musa/bolum-4/kapak.jpg` | Açılış | Sıcak bir çöl öğleden sonrasında, kum tepelerinin ardında ufukta beliren yeşil bir vaha ve hurma ağaçları. |
-| 20 | `kitaplar/hz-musa/bolum-4/medyen-suyu.jpg` | 1. Kısım | Taş kenarlı bir kuyunun çevresinde birbirine karışmış koyun ve keçi sürüleri, havada toz. |
-| 21 | `kitaplar/hz-musa/bolum-4/bekleyen-suru.jpg` | 1. Kısım | Bir ağacın gölgesinde, kalabalıktan uzakta sabırla bekleyen küçük bir koyun sürüsü. |
+| 20 | `kitaplar/hz-musa/bolum-4/medyen-suyu.jpg` | 1. Kısım | Taş kenarlı bir kuyunun başında birbirini iterek kovalarla su çeken çobanlar ve çevrelerine toplanmış koyun ve keçiler. |
+| 21 | `kitaplar/hz-musa/bolum-4/bekleyen-suru.jpg` | 1. Kısım | Kalabalık kuyudan uzakta bir akasyanın gölgesinde küçük sürüleriyle sabırla bekleyen iki başörtülü genç kadın; arkadan görünüyorlar. |
 | 22 | `kitaplar/hz-musa/bolum-4/agac-golgesi.jpg` | Devam | Uzak planda, bir ağacın gölgesinde arkası dönük oturan ve yüzü görünmeyen bir yolcu; önünde sulanmış sürü. |
-| 23 | `kitaplar/hz-musa/bolum-4/yasli-babanin-avlusu.jpg` | Devam | Akşam ışığında sade bir evin avlusu; ağaç altına serilmiş hasır, üstünde ekmek ve su testisi. |
+| 23 | `kitaplar/hz-musa/bolum-4/yasli-babanin-avlusu.jpg` | Devam | Akşam ışığında incir ağacının yanında hasıra oturmuş, arkası dönük iki adam; yaşlı olanın eli gencin omzunda, önlerinde ekmek ve testi. |
 | 24 | `kitaplar/hz-musa/bolum-4/otlaktaki-suru.jpg` | Devam | Gün batımında yeşil bir yamaçta otlayan koyunlar ve bir kayaya dayalı duran uzun ahşap bir değnek. |
 | 25 | `kitaplar/hz-musa/bolum-5/kapak.jpg` | Açılış | Ay ışığında kayalık dağların arasından geçen ıssız bir yol ve uzakta kurulmuş küçük bir çadır. |
 | 26 | `kitaplar/hz-musa/bolum-5/karanlik-vadi.jpg` | 1. Kısım | Karanlık bir vadinin derinliğinde, çok uzakta küçük ve sıcak bir ateş ışığı. |
 | 27 | `kitaplar/hz-musa/bolum-5/cikarilan-pabuclar.jpg` | 1. Kısım | Taşlı bir vadi zemininde yan yana çıkarılmış eski deri sandaletler; üzerlerine uzaktan sıcak bir ışık vuruyor. |
 | 28 | `kitaplar/hz-musa/bolum-5/yerdeki-asa.jpg` | 1. Kısım | Ay ışığında taşlı zeminde uzanan sade ahşap bir asa ve çevresindeki kumda kıvrımlı izler. |
 | 29 | `kitaplar/hz-musa/bolum-5/yildizli-gece.jpg` | Devam | Dağların üstünde açılan geniş, yıldızlı bir gökyüzü ve vadinin üzerinde yumuşak bir aydınlık. |
-| 30 | `kitaplar/hz-musa/bolum-5/kamp-atesi.jpg` | Devam | Şafak sökerken küçük bir çadırın önünde yanan kamp ateşi ve çadıra dayalı sade bir asa. |
+| 30 | `kitaplar/hz-musa/bolum-5/kamp-atesi.jpg` | Devam | Şafakta elinde asasıyla çadıra doğru yürüyen, arkası dönük bir adam; çadırın önünde ateşin başında oturan başörtülü bir kadın. |
 | 31 | `kitaplar/hz-musa/bolum-6/kapak.jpg` | Açılış | Sabah sisi içinde nehir kıyısında uzanan büyük bir şehir, yüksek duvarlar ve uzakta dikilitaşlar. |
 | 32 | `kitaplar/hz-musa/bolum-6/uzak-saray.jpg` | 1. Kısım | Taş döşeli geniş bir yolun sonunda, yüksek basamaklarla yükselen görkemli bir saray. |
-| 33 | `kitaplar/hz-musa/bolum-6/buyuk-kapi.jpg` | 1. Kısım | Devasa, kapalı ahşap ve bronz bir saray kapısı ve önündeki geniş taş basamağa düşen ince bir ışık şeridi. |
-| 34 | `kitaplar/hz-musa/bolum-6/sutunlu-salon.jpg` | Devam | Yüksek sütunlu, loş bir taht salonu; uzakta boş bir taht ve tavandaki pencereden süzülen tek ışık hüzmesi. |
+| 33 | `kitaplar/hz-musa/bolum-6/buyuk-kapi.jpg` | 1. Kısım | Devasa kapalı saray kapısının önündeki basamaklarda yan yana duran, arkası dönük iki başlıklı adam; birinin elinde asa. |
+| 34 | `kitaplar/hz-musa/bolum-6/sutunlu-salon.jpg` | Devam | Sütunlu loş taht salonunda tahtta oturan hükümdar ve yanındaki saraylılar; ön planda arkası dönük duran iki başlıklı adam. |
 | 35 | `kitaplar/hz-musa/bolum-6/dagilan-ulaklar.jpg` | Devam | Akşamüstü, şehrin dışından farklı yönlere uzanan yollar ve her yolun üstünde uzaklaşan ince toz bulutları. |
 | 36 | `kitaplar/hz-musa/bolum-6/aksam-nehri.jpg` | Devam | Akşam ışığında sakin akan nehir, kıyıdaki kumda yan yana uzanan iki sıra ayak izi ve arkada uzak sarayın silueti. |
 | 37 | `kitaplar/hz-musa/bolum-7/kapak.jpg` | Açılış | Sabah güneşinde büyük bir meydana açılan geniş ve tertemiz bir şehir caddesi. |
-| 38 | `kitaplar/hz-musa/bolum-7/ziynet-meydani.jpg` | 1. Kısım | Kuşluk güneşinde, kenarları gölgelikler ve sütunlarla çevrili, ortası boş geniş kumlu bir meydan. |
-| 39 | `kitaplar/hz-musa/bolum-7/kivrilan-ipler.jpg` | 1. Kısım | Kumun üstüne saçılmış ipler ve ince değnekler; uzun gölgeleri kıvrılıyormuş gibi görünüyor. |
-| 40 | `kitaplar/hz-musa/bolum-7/sessiz-kum.jpg` | 1. Kısım | Bomboş kalmış düz kum zemin; ortasında uzun bir gölge ve çevresinde dağılmış birkaç ip parçası. |
-| 41 | `kitaplar/hz-musa/bolum-7/bos-meydan.jpg` | Devam | İkindi ışığında boşalmaya başlamış meydan, bir basamağın üstünde devrilmiş altın bir kâse ve rüzgârda savrulan toz. |
+| 38 | `kitaplar/hz-musa/bolum-7/ziynet-meydani.jpg` | 1. Kısım | Bayram süsleriyle dolu kalabalık bir meydan; ortası boş kum alan ve bir kenarda koyu cüppeli bir grup. |
+| 39 | `kitaplar/hz-musa/bolum-7/kivrilan-ipler.jpg` | 1. Kısım | Kumun üstüne saçılmış ipler ve gölgeleri kıvrılıyor gibi; karşıda koyu cüppeli sihirbazlar ve geri çekilen kalabalık, ön planda arkası dönük iki adam. |
+| 40 | `kitaplar/hz-musa/bolum-7/sessiz-kum.jpg` | 1. Kısım | Boşalmış kum meydanda şaşkınlıkla donup kalmış koyu cüppeli sihirbazlar; ön planda asasıyla arkası dönük duran bir adam. |
+| 41 | `kitaplar/hz-musa/bolum-7/bos-meydan.jpg` | Devam | İkindi ışığında kumda yan yana diz çöküp eğilmiş koyu cüppeli adamlar, arkadan görünüyor; uzakta terasta onları gösteren hükümdar ve devrik altın kâse. |
 | 42 | `kitaplar/hz-musa/bolum-7/ilk-yildiz.jpg` | Devam | Alacakaranlıkta şehrin düz damlarının üstünde parlayan tek ve parlak bir akşam yıldızı. |
 | 43 | `kitaplar/hz-musa/bolum-8/kapak.jpg` | Açılış | Bulutlu bir sabahta nehir kıyısındaki tarlalar, uzakta şehir ve gökyüzünde ağır, gri bulutlar. |
 | 44 | `kitaplar/hz-musa/bolum-8/kuru-tarla.jpg` | 1. Kısım | Çatlamış toprakta kurumuş buğday sapları, boş bir sulama kanalı ve kenarda duran boş bir toprak küp. |
 | 45 | `kitaplar/hz-musa/bolum-8/cekirge-bulutu.jpg` | 1. Kısım | Yeşil tarlaların üstünde ufuktan yaklaşan, uzak ve koyu bir çekirge bulutu. |
-| 46 | `kitaplar/hz-musa/bolum-8/irmak-ve-saray.jpg` | Devam | Akşam ışığında, kanallarla bölünmüş nehrin kıyısında yükselen görkemli bir sarayın terası. |
-| 47 | `kitaplar/hz-musa/bolum-8/kandilli-evler.jpg` | Devam | Gece, bir mahallede yan yana kerpiç evlerin pencerelerinden süzülen sıcak kandil ışıkları. |
+| 46 | `kitaplar/hz-musa/bolum-8/irmak-ve-saray.jpg` | Devam | Akşam ışığında kanallara bölünmüş nehrin kıyısındaki saray terasında halkına kolunu uzatarak konuşan hükümdar; aşağıda toplanmış insanlar. |
+| 47 | `kitaplar/hz-musa/bolum-8/kandilli-evler.jpg` | Devam | Gece kerpiç bir odada kandil ışığında hasırlara oturmuş, birlikte dua edip birbirine güç veren aileler. |
 | 48 | `kitaplar/hz-musa/bolum-8/safak-yolu.jpg` | Devam | Şafak vakti şehrin dışından çöle doğru uzanan geniş ve boş bir yol. |
 | 49 | `kitaplar/hz-musa/bolum-9/kapak.jpg` | Açılış | Yıldızlı bir gecede şehrin dışında açık kalmış bir kapı ve çöle doğru uzanan yol. |
-| 50 | `kitaplar/hz-musa/bolum-9/ay-isiginda-izler.jpg` | 1. Kısım | Ay ışığında kumda uzayıp giden sayısız ayak izi ve uzakta denizin parıltısı. |
-| 51 | `kitaplar/hz-musa/bolum-9/toz-bulutu.jpg` | 1. Kısım | Gün doğarken, sahil kumlarının ardında ufukta yükselen büyük ve uzak bir toz bulutu. |
+| 50 | `kitaplar/hz-musa/bolum-9/ay-isiginda-izler.jpg` | 1. Kısım | Ay ışığında kumda denize doğru yürüyen uzun bir kafile; aileler, çocuklar ve yük taşıyan eşekler, önde iki küçük figür. |
+| 51 | `kitaplar/hz-musa/bolum-9/toz-bulutu.jpg` | 1. Kısım | Gün doğarken sahilde denize bakan, çocuklarını tutan aileler; ufukta yükselen büyük bir toz bulutu. |
 | 52 | `kitaplar/hz-musa/bolum-9/acilan-yol.jpg` | Devam | İkiye yarılmış denizin ortasında uzanan kuru bir yol; yolun başında, arkası dönük, asasını kaldırmış küçük bir figür. |
 | 53 | `kitaplar/hz-musa/bolum-9/sakin-deniz.jpg` | Devam | Sabah ışığında yeniden durulmuş, geniş ve sakin bir deniz; kıyıya yumuşak dalgalar vuruyor. |
-| 54 | `kitaplar/hz-musa/bolum-9/karsi-kiyi.jpg` | Devam | Gün doğarken denizden çıkıp kıyıdaki tepeye doğru yükselen sayısız ayak izi. |
+| 54 | `kitaplar/hz-musa/bolum-9/karsi-kiyi.jpg` | Devam | Gün doğumunda deniz kıyısındaki tepede ellerini açıp şükreden kalabalık; denizden tepeye uzanan ayak izleri. |
 | 55 | `kitaplar/hz-musa/bolum-10/kapak.jpg` | Açılış | Sabah ışığında kayalık bir sahil boyunca uzanan, deniz kenarında kıvrılan ıssız bir patika. |
-| 56 | `kitaplar/hz-musa/bolum-10/kaya-ve-deniz.jpg` | 1. Kısım | Büyük bir kayanın dibinde, iki farklı renkteki suyun buluştuğu yer ve suda kıvrılarak uzaklaşan ince bir iz. |
-| 57 | `kitaplar/hz-musa/bolum-10/kiyidaki-izler.jpg` | 1. Kısım | Islak kumda gidip geri dönen iki sıra ayak izi ve kayanın yanında başlayan üçüncü bir iz. |
+| 56 | `kitaplar/hz-musa/bolum-10/kaya-ve-deniz.jpg` | 1. Kısım | İki renkli suyun buluştuğu kıyıda kayanın üstünde oturan, arkası dönük iki yolcu; suda halkalanarak uzaklaşan bir iz. |
+| 57 | `kitaplar/hz-musa/bolum-10/kiyidaki-izler.jpg` | 1. Kısım | Kıyıdaki kayanın üstünde kontra ışıkta duran yeşil cüppeli bir figür; ona doğru yürüyen, arkası dönük iki yolcu. |
 | 58 | `kitaplar/hz-musa/bolum-10/serce-ve-damla.jpg` | 1. Kısım | Geniş denizin üstünde alçaktan uçan bir serçe ve gagasından düşen tek bir parlak su damlası. |
-| 59 | `kitaplar/hz-musa/bolum-10/duzelen-duvar.jpg` | Devam | Akşam ışığında yeni düzeltilmiş, dimdik duran eski bir taş duvar ve dibinde taze harç izleri. |
+| 59 | `kitaplar/hz-musa/bolum-10/duzelen-duvar.jpg` | Devam | Akşam ışığında eski bir taş duvarın dibinde diz çöküp taşları harçla yerine oturtan yeşil cüppeli bir adam ve yanında asasıyla duran bir yolcu; ikisi de arkadan. |
 | 60 | `kitaplar/hz-musa/bolum-10/ayrilan-yollar.jpg` | Devam | Gün batımında deniz kıyısında ikiye ayrılan bir yol; biri kıyı boyunca, öbürü tepelere doğru uzanıyor. |
 
 ### Ödül görselleri — 512×512 şeffaf `.png` (11 dosya)

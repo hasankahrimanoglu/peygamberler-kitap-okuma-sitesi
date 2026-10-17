@@ -332,7 +332,7 @@ ve negatif prompt dahil); aşağıdaki tablo yalnız dosya adı, akıştaki yer 
 > Ana dosyalar `gorsel-kaynaklari/nuh-yeniden-uretim/`. Yüz sızması rötuşla
 > (`images_retouch`) temizlendi. `bolum-6/kandil-ve-yagmur`'da yan taraftaki dört adam
 > gemideki inananlar (Katman 3) olarak kabul edildi, yüz hatları kısmen görünüyor.
-> **`books.ts` alt metinleri henüz eski figürsüz tarifi taşıyor** (aktarım işi).
+> `books.ts` alt metinleri bu tabloyla eşitlendi (17 Eki 2026).
 
 ### Bölüm 1 — Putlara Eğilmeyen Eller
 
@@ -459,6 +459,24 @@ Bölüm başına 1 açılış + 5 sahne (1. Kısım ve Devam'da 2/3 ya da 3/2).
 > ve Hızır hiçbir görselde gösterilmez; diğer bütün sahnelerde insan figürü,
 > silüet ve el yoktur.
 
+> **Seçici yeniden üretim (17 Eki 2026 — Hasan; tasvir kuralı REVİZE 16 Eki 2026,
+> PROJE-MODELI 6.4):** olayın öznesi insan olduğu hâlde figürsüz kalan 27 sahne figürlü
+> olarak yeniden üretildi ve aynı adla yazıldı (aday listesi `GORSEL-YENIDEN-URETIM-ADAYLARI.md`
+> §1; orada önerilen 34 adaydan 7 düşük öncelikli sahne üretilmedi). Katman 1 (arkadan, yüz yok):
+> Hz. Musa, Hz. Hârûn, annesi, ablası, Âsiye, Hz. Şuayb ve kızları, Musa'nın eşi, genç yol
+> arkadaşı, Hızır (kontra ışık) ve **iman eden sihirbazlar** (`bolum-7/bos-meydan`, Hasan
+> kararı). Katman 2 (yüz görünebilir): Firavun (`sutunlu-salon`, `bos-meydan`, `irmak-ve-saray`),
+> saraylılar, iman etmeden önceki sihirbazlar. Katman 3: kavga edenler, çobanlar, sütanneler,
+> kalabalık, kafile. Yukarıdaki "Hz. Musa yalnız iki sahnede… bebek, anne, abla… gösterilmez"
+> satırının kişi listesi o günkü uygulamadır; **bebek, ordu, asker, at, savaş arabası, yılan,
+> boğulan insan yasakları sürer** (bebek hiçbir sahnede yok, sandık hep kapalı; ordu yalnız
+> toz bulutu). Ayar: Seedream 5 Pro · 2K · `stil-referans-gorsel.jpg` + karakter referansı
+> `bolum-4/agac-golgesi` ve onaylı pilot `bolum-6/sutunlu-salon` (Musa kum rengi başlıklı
+> cüppe, Hârûn zeytin yeşili cüppe + krem başlık). Ana dosyalar
+> `gorsel-kaynaklari/musa-yeniden-uretim/`. Yüz/sakal sızması rötuşla temizlendi; elenen
+> adaylar: bebek taşıyan kalabalık, haç biçimli kuyu direği, gülen yüzlü kavga, mızraklı muhafız.
+> `books.ts` alt metinleri ve `KITAP-HZ-MUSA-ICERIK-final.md` (Alt metin + Figür alanları, §D tablosu) bu tabloyla eşitlendi (17 Eki 2026).
+
 ### Kitap kapağı ve harita durağı
 
 | Dosya | Biçim | Durum | Görsel brifi |
@@ -472,9 +490,9 @@ Bölüm başına 1 açılış + 5 sahne (1. Kısım ve Devam'da 2/3 ya da 3/2).
 |---|---|---|---|---|
 | `hz-musa/bolum-1/kapak.jpg` | Açılış | A | ✅ Hazır | Alacakaranlıkta geniş bir nehir, kıyıda sazlıklar, hurma ağaçları ve uzakta düz damlı kerpiç evler |
 | `hz-musa/bolum-1/gece-penceresi.jpg` | 1. Kısım | A | ✅ Hazır | Gece sessiz bir sokakta, kepenkleri kapalı kerpiç bir evin aralığından sızan sıcak kandil ışığı |
-| `hz-musa/bolum-1/hazir-sandik.jpg` | 1. Kısım | A | ✅ Hazır | Şafak öncesi nehir kıyısında, sazlıkların dibinde duran kapağı kapalı küçük ahşap bir sandık |
-| `hz-musa/bolum-1/nehirdeki-sandik.jpg` | Devam | B | ✅ Hazır | Sabah sisi içinde, geniş nehrin ortasında süzülen kapalı küçük bir sandık |
-| `hz-musa/bolum-1/sazlik-yolu.jpg` | Devam | B | ✅ Hazır | Nehir kıyısındaki sazlıkların arasından geçen dar bir patika ve ıslak toprakta küçük ayak izleri |
+| `hz-musa/bolum-1/hazir-sandik.jpg` | 1. Kısım | A | ✅ Hazır | Şafak öncesi nehir kıyısında, sazlıklar arasında diz çökmüş, başörtülü bir kadın; arkadan görünüyor, elleri kapalı küçük bir sandığın üstünde *(figürlü yeniden üretim, 17 Eki 2026)* |
+| `hz-musa/bolum-1/nehirdeki-sandik.jpg` | Devam | B | ✅ Hazır | Sabah sisinde kıyıda yan yana duran bir kadın ve küçük kızı; arkadan görünüyorlar, nehrin ortasında uzaklaşan kapalı bir sandık *(figürlü yeniden üretim, 17 Eki 2026)* |
+| `hz-musa/bolum-1/sazlik-yolu.jpg` | Devam | B | ✅ Hazır | Sazlıkların arasında eğilerek yürüyen, başörtülü küçük bir kız; arkadan görünüyor, nehirde uzakta süzülen sandık *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-musa/bolum-1/gun-dogarken.jpg` | Devam | B | ✅ Hazır | Güneş doğarken altın renge bürünen sakin bir nehir ve çok uzakta süzülen küçük bir sandık |
 
 ### Bölüm 2 — Annesine Dönen Bebek
@@ -482,9 +500,9 @@ Bölüm başına 1 açılış + 5 sahne (1. Kısım ve Devam'da 2/3 ya da 3/2).
 | Dosya | Akıştaki yer | Öncelik | Durum | Görsel brifi |
 |---|---|---|---|---|
 | `hz-musa/bolum-2/kapak.jpg` | Açılış | A | ✅ Hazır | Sabah ışığında nehrin karşı kıyısında yükselen büyük bir sarayın sütunları ve suya inen bahçesi |
-| `hz-musa/bolum-2/dallardaki-sandik.jpg` | 1. Kısım | A | ✅ Hazır | Suya sarkan söğüt dallarının ve nilüferlerin arasında duran kapalı küçük bir sandık |
-| `hz-musa/bolum-2/saray-salonu.jpg` | 1. Kısım | A | ✅ Hazır | Sütunlu, aydınlık bir saray salonunun ortasında ince örtülerle hazırlanmış boş bir beşik |
-| `hz-musa/bolum-2/saraya-giden-yol.jpg` | Devam | B | ✅ Hazır | Gün ışığında nehir kıyısı boyunca saraya uzanan toprak bir yol ve tozda koşar adımlarla bırakılmış küçük ayak izleri |
+| `hz-musa/bolum-2/dallardaki-sandik.jpg` | 1. Kısım | A | ✅ Hazır | Saray bahçesinin kıyısında sığ suya girip söğüt dallarının arasından kapalı bir sandığı çeken iki hizmetkâr *(figürlü yeniden üretim, 17 Eki 2026)* |
+| `hz-musa/bolum-2/saray-salonu.jpg` | 1. Kısım | A | ✅ Hazır | Sütunlu saray salonunda örtülü bir beşiğin yanında arkası dönük oturan bir kadın; kapıya doğru üzgün çıkan birkaç kadın *(figürlü yeniden üretim, 17 Eki 2026)* |
+| `hz-musa/bolum-2/saraya-giden-yol.jpg` | Devam | B | ✅ Hazır | Nehir kıyısındaki toprak yolda el ele saraya doğru koşan bir kadın ve küçük kızı; arkadan görünüyorlar *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-musa/bolum-2/yumusak-ortu.jpg` | Devam | B | ✅ Hazır | Gün ışığında, sade bir yüzeyin üstünde özenle katlanmış yumuşak dokuma bir örtü ve yanında tek bir nilüfer çiçeği |
 | `hz-musa/bolum-2/nilufer.jpg` | Devam | B | ✅ Hazır | Şafak ışığında nehir kıyısında yeni açmış tek bir nilüfer çiçeği |
 
@@ -493,10 +511,10 @@ Bölüm başına 1 açılış + 5 sahne (1. Kısım ve Devam'da 2/3 ya da 3/2).
 | Dosya | Akıştaki yer | Öncelik | Durum | Görsel brifi |
 |---|---|---|---|---|
 | `hz-musa/bolum-3/kapak.jpg` | Açılış | A | ✅ Hazır | Tepeden bakışla, bir yanda sarayın yeşil bahçeleri, öbür yanda sıkışık kerpiç mahalleler ve aralarından akan nehir |
-| `hz-musa/bolum-3/dar-sokak.jpg` | 1. Kısım | A | ✅ Hazır | Öğle sıcağında bomboş, dar bir şehir sokağı; yerde devrilmiş bir sepet ve dağılmış birkaç hurma |
+| `hz-musa/bolum-3/dar-sokak.jpg` | 1. Kısım | A | ✅ Hazır | Dar bir şehir sokağında yakalarından tutuşmuş iki adam, yerde devrik bir hurma sepeti; sokak ağzında arkası dönük duran bir figür *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-musa/bolum-3/sabaha-kadar-kandil.jpg` | 1. Kısım | A | ✅ Hazır | Karanlık bir odada pencere kenarında yanan küçük bir kandil ve dışarıda sabaha dönen mavi gökyüzü |
-| `hz-musa/bolum-3/sabah-sokagi.jpg` | Devam | B | ✅ Hazır | Sabah ışığında bir sokak kavşağı, havada asılı kalmış toz ve yere düşmüş bir su testisi |
-| `hz-musa/bolum-3/sehir-kapisi.jpg` | Devam | B | ✅ Hazır | Şafakta kalın taş duvarlı bir şehir kapısının aralığından görünen, çöle uzanan boş yol |
+| `hz-musa/bolum-3/sabah-sokagi.jpg` | Devam | B | ✅ Hazır | Sabah ışığında sokak kavşağında korkuyla geri çekilen bir adam ve onu durdurmak için elini kaldırmış, arkası dönük bir figür *(figürlü yeniden üretim, 17 Eki 2026)* |
+| `hz-musa/bolum-3/sehir-kapisi.jpg` | Devam | B | ✅ Hazır | Şafakta yarı açık şehir kapısından çöle uzanan yolda yürüyen, arkası dönük, başlıklı bir yolcu *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-musa/bolum-3/col-yolu.jpg` | Devam | B | ✅ Hazır | Sabah güneşinde kum tepelerinin arasından ufka uzanan, ayak izli tek bir yol |
 
 ### Bölüm 4 — Medyen'deki Kuyu
@@ -504,10 +522,10 @@ Bölüm başına 1 açılış + 5 sahne (1. Kısım ve Devam'da 2/3 ya da 3/2).
 | Dosya | Akıştaki yer | Öncelik | Durum | Görsel brifi |
 |---|---|---|---|---|
 | `hz-musa/bolum-4/kapak.jpg` | Açılış | A | ✅ Hazır | Sıcak bir çöl öğleden sonrasında, kum tepelerinin ardında ufukta beliren yeşil bir vaha ve hurma ağaçları |
-| `hz-musa/bolum-4/medyen-suyu.jpg` | 1. Kısım | A | ✅ Hazır | Taş kenarlı bir kuyunun çevresinde birbirine karışmış koyun ve keçi sürüleri, havada toz |
-| `hz-musa/bolum-4/bekleyen-suru.jpg` | 1. Kısım | A | ✅ Hazır | Bir ağacın gölgesinde, kalabalıktan uzakta sabırla bekleyen küçük bir koyun sürüsü |
+| `hz-musa/bolum-4/medyen-suyu.jpg` | 1. Kısım | A | ✅ Hazır | Taş kenarlı bir kuyunun başında birbirini iterek kovalarla su çeken çobanlar ve çevrelerine toplanmış koyun ve keçiler *(figürlü yeniden üretim, 17 Eki 2026)* |
+| `hz-musa/bolum-4/bekleyen-suru.jpg` | 1. Kısım | A | ✅ Hazır | Kalabalık kuyudan uzakta bir akasyanın gölgesinde küçük sürüleriyle sabırla bekleyen iki başörtülü genç kadın; arkadan görünüyorlar *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-musa/bolum-4/agac-golgesi.jpg` | Devam | B | ✅ Hazır | Uzak planda, bir ağacın gölgesinde arkası dönük oturan ve yüzü görünmeyen bir yolcu; önünde sulanmış sürü |
-| `hz-musa/bolum-4/yasli-babanin-avlusu.jpg` | Devam | B | ✅ Hazır | Akşam ışığında sade bir evin avlusu; ağaç altına serilmiş hasır, üstünde ekmek ve su testisi |
+| `hz-musa/bolum-4/yasli-babanin-avlusu.jpg` | Devam | B | ✅ Hazır | Akşam ışığında incir ağacının yanında hasıra oturmuş, arkası dönük iki adam; yaşlı olanın eli gencin omzunda, önlerinde ekmek ve testi *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-musa/bolum-4/otlaktaki-suru.jpg` | Devam | B | ✅ Hazır | Gün batımında yeşil bir yamaçta otlayan koyunlar ve bir kayaya dayalı duran uzun ahşap bir değnek |
 
 ### Bölüm 5 — Vadideki Ateş
@@ -519,7 +537,7 @@ Bölüm başına 1 açılış + 5 sahne (1. Kısım ve Devam'da 2/3 ya da 3/2).
 | `hz-musa/bolum-5/cikarilan-pabuclar.jpg` | 1. Kısım | A | ✅ Hazır | Taşlı bir vadi zemininde yan yana çıkarılmış eski deri sandaletler; üzerlerine uzaktan sıcak bir ışık vuruyor |
 | `hz-musa/bolum-5/yerdeki-asa.jpg` | 1. Kısım | A | ✅ Hazır | Ay ışığında taşlı zeminde uzanan sade ahşap bir asa ve çevresindeki kumda kıvrımlı izler |
 | `hz-musa/bolum-5/yildizli-gece.jpg` | Devam | B | ✅ Hazır | Dağların üstünde açılan geniş, yıldızlı bir gökyüzü ve vadinin üzerinde yumuşak bir aydınlık |
-| `hz-musa/bolum-5/kamp-atesi.jpg` | Devam | B | ✅ Hazır | Şafak sökerken küçük bir çadırın önünde yanan kamp ateşi ve çadıra dayalı sade bir asa |
+| `hz-musa/bolum-5/kamp-atesi.jpg` | Devam | B | ✅ Hazır | Şafakta elinde asasıyla çadıra doğru yürüyen, arkası dönük bir adam; çadırın önünde ateşin başında oturan başörtülü bir kadın *(figürlü yeniden üretim, 17 Eki 2026)* |
 
 ### Bölüm 6 — Saraydaki Soru
 
@@ -527,8 +545,8 @@ Bölüm başına 1 açılış + 5 sahne (1. Kısım ve Devam'da 2/3 ya da 3/2).
 |---|---|---|---|---|
 | `hz-musa/bolum-6/kapak.jpg` | Açılış | A | ✅ Hazır | Sabah sisi içinde nehir kıyısında uzanan büyük bir şehir, yüksek duvarlar ve uzakta dikilitaşlar |
 | `hz-musa/bolum-6/uzak-saray.jpg` | 1. Kısım | A | ✅ Hazır | Taş döşeli geniş bir yolun sonunda, yüksek basamaklarla yükselen görkemli bir saray |
-| `hz-musa/bolum-6/buyuk-kapi.jpg` | 1. Kısım | A | ✅ Hazır | Devasa, kapalı ahşap ve bronz bir saray kapısı ve önündeki geniş taş basamağa düşen ince bir ışık şeridi |
-| `hz-musa/bolum-6/sutunlu-salon.jpg` | Devam | B | ✅ Hazır | Yüksek sütunlu, loş bir taht salonu; uzakta boş bir taht ve tavandaki pencereden süzülen tek ışık hüzmesi |
+| `hz-musa/bolum-6/buyuk-kapi.jpg` | 1. Kısım | A | ✅ Hazır | Devasa kapalı saray kapısının önündeki basamaklarda yan yana duran, arkası dönük iki başlıklı adam; birinin elinde asa *(figürlü yeniden üretim, 17 Eki 2026)* |
+| `hz-musa/bolum-6/sutunlu-salon.jpg` | Devam | B | ✅ Hazır | Sütunlu loş taht salonunda tahtta oturan hükümdar ve yanındaki saraylılar; ön planda arkası dönük duran iki başlıklı adam *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-musa/bolum-6/dagilan-ulaklar.jpg` | Devam | B | ✅ Hazır | Akşamüstü, şehrin dışından farklı yönlere uzanan yollar ve her yolun üstünde uzaklaşan ince toz bulutları |
 | `hz-musa/bolum-6/aksam-nehri.jpg` | Devam | B | ✅ Hazır | Akşam ışığında sakin akan nehir, kıyıdaki kumda yan yana uzanan iki sıra ayak izi ve arkada uzak sarayın silueti |
 
@@ -537,10 +555,10 @@ Bölüm başına 1 açılış + 5 sahne (1. Kısım ve Devam'da 2/3 ya da 3/2).
 | Dosya | Akıştaki yer | Öncelik | Durum | Görsel brifi |
 |---|---|---|---|---|
 | `hz-musa/bolum-7/kapak.jpg` | Açılış | A | ✅ Hazır | Sabah güneşinde büyük bir meydana açılan geniş ve tertemiz bir şehir caddesi |
-| `hz-musa/bolum-7/ziynet-meydani.jpg` | 1. Kısım | A | ✅ Hazır | Kuşluk güneşinde, kenarları gölgelikler ve sütunlarla çevrili, ortası boş geniş kumlu bir meydan |
-| `hz-musa/bolum-7/kivrilan-ipler.jpg` | 1. Kısım | A | ✅ Hazır | Kumun üstüne saçılmış ipler ve ince değnekler; uzun gölgeleri kıvrılıyormuş gibi görünüyor |
-| `hz-musa/bolum-7/sessiz-kum.jpg` | 1. Kısım | A | ✅ Hazır | Bomboş kalmış düz kum zemin; ortasında uzun bir gölge ve çevresinde dağılmış birkaç ip parçası |
-| `hz-musa/bolum-7/bos-meydan.jpg` | Devam | B | ✅ Hazır | İkindi ışığında boşalmaya başlamış meydan, bir basamağın üstünde devrilmiş altın bir kâse ve rüzgârda savrulan toz |
+| `hz-musa/bolum-7/ziynet-meydani.jpg` | 1. Kısım | A | ✅ Hazır | Bayram süsleriyle dolu kalabalık bir meydan; ortası boş kum alan ve bir kenarda koyu cüppeli bir grup *(figürlü yeniden üretim, 17 Eki 2026)* |
+| `hz-musa/bolum-7/kivrilan-ipler.jpg` | 1. Kısım | A | ✅ Hazır | Kumun üstüne saçılmış ipler ve gölgeleri kıvrılıyor gibi; karşıda koyu cüppeli sihirbazlar ve geri çekilen kalabalık, ön planda arkası dönük iki adam *(figürlü yeniden üretim, 17 Eki 2026)* |
+| `hz-musa/bolum-7/sessiz-kum.jpg` | 1. Kısım | A | ✅ Hazır | Boşalmış kum meydanda şaşkınlıkla donup kalmış koyu cüppeli sihirbazlar; ön planda asasıyla arkası dönük duran bir adam *(figürlü yeniden üretim, 17 Eki 2026)* |
+| `hz-musa/bolum-7/bos-meydan.jpg` | Devam | B | ✅ Hazır | İkindi ışığında kumda yan yana diz çöküp eğilmiş koyu cüppeli adamlar, arkadan görünüyor; uzakta terasta onları gösteren hükümdar ve devrik altın kâse *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-musa/bolum-7/ilk-yildiz.jpg` | Devam | B | ✅ Hazır | Alacakaranlıkta şehrin düz damlarının üstünde parlayan tek ve parlak bir akşam yıldızı |
 
 ### Bölüm 8 — Tutulmayan Sözler
@@ -550,8 +568,8 @@ Bölüm başına 1 açılış + 5 sahne (1. Kısım ve Devam'da 2/3 ya da 3/2).
 | `hz-musa/bolum-8/kapak.jpg` | Açılış | A | ✅ Hazır | Bulutlu bir sabahta nehir kıyısındaki tarlalar, uzakta şehir ve gökyüzünde ağır, gri bulutlar |
 | `hz-musa/bolum-8/kuru-tarla.jpg` | 1. Kısım | A | ✅ Hazır | Çatlamış toprakta kurumuş buğday sapları, boş bir sulama kanalı ve kenarda duran boş bir toprak küp |
 | `hz-musa/bolum-8/cekirge-bulutu.jpg` | 1. Kısım | A | ✅ Hazır | Yeşil tarlaların üstünde ufuktan yaklaşan, uzak ve koyu bir çekirge bulutu |
-| `hz-musa/bolum-8/irmak-ve-saray.jpg` | Devam | B | ✅ Hazır | Akşam ışığında, kanallarla bölünmüş nehrin kıyısında yükselen görkemli bir sarayın terası |
-| `hz-musa/bolum-8/kandilli-evler.jpg` | Devam | B | ✅ Hazır | Gece, bir mahallede yan yana kerpiç evlerin pencerelerinden süzülen sıcak kandil ışıkları |
+| `hz-musa/bolum-8/irmak-ve-saray.jpg` | Devam | B | ✅ Hazır | Akşam ışığında kanallara bölünmüş nehrin kıyısındaki saray terasında halkına kolunu uzatarak konuşan hükümdar; aşağıda toplanmış insanlar *(figürlü yeniden üretim, 17 Eki 2026)* |
+| `hz-musa/bolum-8/kandilli-evler.jpg` | Devam | B | ✅ Hazır | Gece kerpiç bir odada kandil ışığında hasırlara oturmuş, birlikte dua edip birbirine güç veren aileler *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-musa/bolum-8/safak-yolu.jpg` | Devam | B | ✅ Hazır | Şafak vakti şehrin dışından çöle doğru uzanan geniş ve boş bir yol |
 
 ### Bölüm 9 — Denizde Açılan Yol
@@ -559,21 +577,21 @@ Bölüm başına 1 açılış + 5 sahne (1. Kısım ve Devam'da 2/3 ya da 3/2).
 | Dosya | Akıştaki yer | Öncelik | Durum | Görsel brifi |
 |---|---|---|---|---|
 | `hz-musa/bolum-9/kapak.jpg` | Açılış | A | ✅ Hazır | Yıldızlı bir gecede şehrin dışında açık kalmış bir kapı ve çöle doğru uzanan yol |
-| `hz-musa/bolum-9/ay-isiginda-izler.jpg` | 1. Kısım | A | ✅ Hazır | Ay ışığında kumda uzayıp giden sayısız ayak izi ve uzakta denizin parıltısı |
-| `hz-musa/bolum-9/toz-bulutu.jpg` | 1. Kısım | A | ✅ Hazır | Gün doğarken, sahil kumlarının ardında ufukta yükselen büyük ve uzak bir toz bulutu |
+| `hz-musa/bolum-9/ay-isiginda-izler.jpg` | 1. Kısım | A | ✅ Hazır | Ay ışığında kumda denize doğru yürüyen uzun bir kafile; aileler, çocuklar ve yük taşıyan eşekler, önde iki küçük figür *(figürlü yeniden üretim, 17 Eki 2026)* |
+| `hz-musa/bolum-9/toz-bulutu.jpg` | 1. Kısım | A | ✅ Hazır | Gün doğarken sahilde denize bakan, çocuklarını tutan aileler; ufukta yükselen büyük bir toz bulutu *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-musa/bolum-9/acilan-yol.jpg` | Devam | B | ✅ Hazır | İkiye yarılmış denizin ortasında uzanan kuru bir yol; yolun başında, arkası dönük, asasını kaldırmış küçük bir figür |
 | `hz-musa/bolum-9/sakin-deniz.jpg` | Devam | B | ✅ Hazır | Sabah ışığında yeniden durulmuş, geniş ve sakin bir deniz; kıyıya yumuşak dalgalar vuruyor |
-| `hz-musa/bolum-9/karsi-kiyi.jpg` | Devam | B | ✅ Hazır | Gün doğarken denizden çıkıp kıyıdaki tepeye doğru yükselen sayısız ayak izi |
+| `hz-musa/bolum-9/karsi-kiyi.jpg` | Devam | B | ✅ Hazır | Gün doğumunda deniz kıyısındaki tepede ellerini açıp şükreden kalabalık; denizden tepeye uzanan ayak izleri *(figürlü yeniden üretim, 17 Eki 2026)* |
 
 ### Bölüm 10 — İki Denizin Buluştuğu Yer
 
 | Dosya | Akıştaki yer | Öncelik | Durum | Görsel brifi |
 |---|---|---|---|---|
 | `hz-musa/bolum-10/kapak.jpg` | Açılış | A | ✅ Hazır | Sabah ışığında kayalık bir sahil boyunca uzanan, deniz kenarında kıvrılan ıssız bir patika |
-| `hz-musa/bolum-10/kaya-ve-deniz.jpg` | 1. Kısım | A | ✅ Hazır | Büyük bir kayanın dibinde, iki farklı renkteki suyun buluştuğu yer ve suda kıvrılarak uzaklaşan ince bir iz |
-| `hz-musa/bolum-10/kiyidaki-izler.jpg` | 1. Kısım | A | ✅ Hazır | Islak kumda gidip geri dönen iki sıra ayak izi ve kayanın yanında başlayan üçüncü bir iz |
+| `hz-musa/bolum-10/kaya-ve-deniz.jpg` | 1. Kısım | A | ✅ Hazır | İki renkli suyun buluştuğu kıyıda kayanın üstünde oturan, arkası dönük iki yolcu; suda halkalanarak uzaklaşan bir iz *(figürlü yeniden üretim, 17 Eki 2026)* |
+| `hz-musa/bolum-10/kiyidaki-izler.jpg` | 1. Kısım | A | ✅ Hazır | Kıyıdaki kayanın üstünde kontra ışıkta duran yeşil cüppeli bir figür; ona doğru yürüyen, arkası dönük iki yolcu *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-musa/bolum-10/serce-ve-damla.jpg` | 1. Kısım | A | ✅ Hazır | Geniş denizin üstünde alçaktan uçan bir serçe ve gagasından düşen tek bir parlak su damlası |
-| `hz-musa/bolum-10/duzelen-duvar.jpg` | Devam | B | ✅ Hazır | Akşam ışığında yeni düzeltilmiş, dimdik duran eski bir taş duvar ve dibinde taze harç izleri |
+| `hz-musa/bolum-10/duzelen-duvar.jpg` | Devam | B | ✅ Hazır | Akşam ışığında eski bir taş duvarın dibinde diz çöküp taşları harçla yerine oturtan yeşil cüppeli bir adam ve yanında asasıyla duran bir yolcu; ikisi de arkadan *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-musa/bolum-10/ayrilan-yollar.jpg` | Devam | B | ✅ Hazır | Gün batımında deniz kıyısında ikiye ayrılan bir yol; biri kıyı boyunca, öbürü tepelere doğru uzanıyor |
 
 ---

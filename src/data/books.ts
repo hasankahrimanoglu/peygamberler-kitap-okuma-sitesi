@@ -6167,7 +6167,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-1/hazir-sandik.jpg",
-            alt: "Şafak öncesi nehir kıyısında, sazlıkların dibinde duran kapağı kapalı küçük ahşap bir sandık.",
+            alt: "Şafak öncesi nehir kıyısında, sazlıklar arasında diz çökmüş, başörtülü bir kadın; arkadan görünüyor, elleri kapalı küçük bir sandığın üstünde.",
           },
           { type: "text", text: "Nehir o saatte sakin sakin akıyordu ve kıyıda sazlıklardan başka hiçbir şey yoktu. Annesi sandığı suyun kenarına koydu, ama ellerini bir türlü üstünden çekemedi. Kalbinin bir yanı, bebeğini hiçbir zaman bırakmak istemiyordu. Öbür yanında ise Allah'ın sözü parlıyordu: “Korkma, onu sana geri döndüreceğiz.”" },
         ],
@@ -6176,7 +6176,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-1/nehirdeki-sandik.jpg",
-            alt: "Sabah sisi içinde, geniş nehrin ortasında süzülen kapalı küçük bir sandık.",
+            alt: "Sabah sisinde kıyıda yan yana duran bir kadın ve küçük kızı; arkadan görünüyorlar, nehrin ortasında uzaklaşan kapalı bir sandık.",
           },
           { type: "text", text: "Sonra yanındaki kızına döndü ve kimse duymasın diye fısıltıyla konuştu." },
           { type: "text", text: "— Kardeşinin izini takip et, nereye gittiğini gör, dedi." },
@@ -6184,7 +6184,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-1/sazlik-yolu.jpg",
-            alt: "Nehir kıyısındaki sazlıkların arasından geçen dar bir patika ve ıslak toprakta küçük ayak izleri.",
+            alt: "Sazlıkların arasında eğilerek yürüyen, başörtülü küçük bir kız; arkadan görünüyor, nehirde uzakta süzülen sandık.",
           },
           { type: "text", text: "Annesi eve döndüğünde yüreği bomboş kalmıştı ve aklı yalnızca bebeğindeydi. Öyle ki neredeyse her şeyi herkese anlatacak, sırrını açığa vuracaktı. Ama Allah onun kalbini sakinleştirdi ve verdiği söze güvenmesini sağladı." },
           { type: "text", text: "Bu sırada küçük sandık, büyük nehrin üstünde ağır ağır ilerliyordu. Çevresinde su kuşları uçuyor, kıyıdaki sazlıklar rüzgârda hafifçe hışırdıyordu. Sandığın nerede duracağını ve onu kimin bulacağını Allah'tan başka kimse bilmiyordu." },
@@ -6241,7 +6241,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-2/dallardaki-sandik.jpg",
-            alt: "Suya sarkan söğüt dallarının ve nilüferlerin arasında duran kapalı küçük bir sandık.",
+            alt: "Saray bahçesinin kıyısında sığ suya girip söğüt dallarının arasından kapalı bir sandığı çeken iki hizmetkâr.",
           },
           { type: "text", text: "Firavun'un eşi Âsiye bebeği kucağına aldı ve onu ilk görüşte çok sevdi. Allah, bu bebeğe bakan herkesin kalbine onun sevgisini yerleştirmişti. Firavun ise bu işten hiç hoşlanmadı, ama Âsiye ona yalvardı." },
           { type: "text", text: "— Bu çocuk benim de senin de gözümüzün aydınlığı olsun, dedi. Onu öldürmeyin; belki bize faydası olur ya da onu evlat ediniriz." },
@@ -6257,7 +6257,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-2/saray-salonu.jpg",
-            alt: "Sütunlu, aydınlık bir saray salonunun ortasında ince örtülerle hazırlanmış boş bir beşik.",
+            alt: "Sütunlu saray salonunda örtülü bir beşiğin yanında arkası dönük oturan bir kadın; kapıya doğru üzgün çıkan birkaç kadın.",
           },
           { type: "text", text: "Bu sırada sarayın kapısında küçük bir kız sessizce bekliyordu. Bu kız, kardeşinin izini süren Hz. Musa'nın ablasıydı. Kardeşine yardım etmenin yolunu bulabilirdi, ama yanlış bir söz ikisinin de sırrını ortaya çıkarabilirdi." },
         ],
@@ -6269,7 +6269,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-2/saraya-giden-yol.jpg",
-            alt: "Gün ışığında nehir kıyısı boyunca saraya uzanan toprak bir yol ve tozda koşar adımlarla bırakılmış küçük ayak izleri.",
+            alt: "Nehir kıyısındaki toprak yolda el ele saraya doğru koşan bir kadın ve küçük kızı; arkadan görünüyorlar.",
           },
           { type: "text", text: "Saraydakiler bu duruma hem çok şaşırdı hem de çok sevindi. Bebeğin bakımını hemen bu kadına verdiler; artık onu kendi annesi emzirecekti. Kur'an'da anlatıldığına göre Allah, gözü aydın olsun ve üzülmesin diye onu annesine geri vermişti." },
           { type: "text", text: "Annesinin gözleri sevinçle aydınlanmıştı, çünkü Allah'ın vaadinin gerçek olduğunu kendi gözüyle görmüştü. Bir zamanlar titreyen elleriyle nehre bıraktığı bebeği, şimdi yeniden onun yanındaydı. Ablasının yüreği de büyük bir sevinçle dolmuştu." },
@@ -6338,7 +6338,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-3/dar-sokak.jpg",
-            alt: "Öğle sıcağında bomboş, dar bir şehir sokağı; yerde devrilmiş bir sepet ve dağılmış birkaç hurma.",
+            alt: "Dar bir şehir sokağında yakalarından tutuşmuş iki adam, yerde devrik bir hurma sepeti; sokak ağzında arkası dönük duran bir figür.",
           },
           { type: "text", text: "Kendi halkından olan adam Hz. Musa'yı görünce bağırarak ondan yardım istedi. Hz. Musa onu korumak için öteki adama bir yumruk vurdu ve istemeden adamın ölümüne sebep oldu. Hz. Musa böyle bir sonucu hiç ama hiç istememişti." },
           { type: "text", text: "Hz. Musa olduğu yerde donup kaldı ve olanların ne kadar ağır olduğunu hemen anladı." },
@@ -6363,7 +6363,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-3/sabah-sokagi.jpg",
-            alt: "Sabah ışığında bir sokak kavşağı, havada asılı kalmış toz ve yere düşmüş bir su testisi.",
+            alt: "Sabah ışığında sokak kavşağında korkuyla geri çekilen bir adam ve onu durdurmak için elini kaldırmış, arkası dönük bir figür.",
           },
           { type: "text", text: "Böylece dünkü olay herkesin önünde duyulmuş oldu ve haber kısa sürede şehrin ileri gelenlerine ulaştı. Çok geçmeden şehrin öbür ucundan bir adam koşarak geldi." },
           { type: "text", text: "— Ey Musa, ileri gelenler seni öldürmek için toplanıp konuşuyor, dedi. Hemen buradan git; inan bana, ben senin iyiliğini istiyorum." },
@@ -6372,7 +6372,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-3/sehir-kapisi.jpg",
-            alt: "Şafakta kalın taş duvarlı bir şehir kapısının aralığından görünen, çöle uzanan boş yol.",
+            alt: "Şafakta yarı açık şehir kapısından çöle uzanan yolda yürüyen, arkası dönük, başlıklı bir yolcu.",
           },
           { type: "text", text: "Hz. Musa bir hata yapmıştı, ama o hatadan kaçmamıştı. Pişman olmuş, Allah'tan bağışlanma dilemiş ve bir daha haksızın yanında durmayacağına söz vermişti. Ertesi sabah da sözünü hatırlamış ve kavgaya atılmak yerine kavgayı sürdüreni uyarmıştı." },
           { type: "text", text: "Şimdi önünde bilmediği, uzun ve yalnız bir çöl yolu vardı. Nereye gideceğini ve orada kimi bulacağını bilmiyordu. Ama kalbinde taşıdığı Rabbine güven, bu yolda onun en sadık yol arkadaşıydı." },
@@ -6429,7 +6429,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-4/medyen-suyu.jpg",
-            alt: "Taş kenarlı bir kuyunun çevresinde birbirine karışmış koyun ve keçi sürüleri, havada toz.",
+            alt: "Taş kenarlı bir kuyunun başında birbirini iterek kovalarla su çeken çobanlar ve çevrelerine toplanmış koyun ve keçiler.",
           },
           { type: "text", text: "Kalabalığın biraz gerisinde iki kız, kendi hayvanlarını sudan uzakta tutmaya çalışıyordu. Sabırla bekliyor, çobanların arasına girip öne çıkmaya çalışmıyorlardı. Hz. Musa onlara yaklaştı ve ne olduğunu nazikçe sordu." },
           { type: "text", text: "— Neden burada bekliyorsunuz, derdiniz nedir?" },
@@ -6438,7 +6438,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-4/bekleyen-suru.jpg",
-            alt: "Bir ağacın gölgesinde, kalabalıktan uzakta sabırla bekleyen küçük bir koyun sürüsü.",
+            alt: "Kalabalık kuyudan uzakta bir akasyanın gölgesinde küçük sürüleriyle sabırla bekleyen iki başörtülü genç kadın; arkadan görünüyorlar.",
           },
           { type: "text", text: "Hz. Musa'nın ise ayakta duracak hâli kalmamıştı, çünkü günlerdir doğru dürüst bir şey yememişti. Üstelik burası yabancı bir yerdi; kimseyi tanımıyor, kimseden bir şey bekleyemiyordu. Bir gölgeye çekilip dinlenebilir, yalnızca kendi derdine bakabilirdi. Ama o zaman bu iki kızın hâli ne olacaktı?" },
         ],
@@ -6461,7 +6461,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-4/yasli-babanin-avlusu.jpg",
-            alt: "Akşam ışığında sade bir evin avlusu; ağaç altına serilmiş hasır, üstünde ekmek ve su testisi.",
+            alt: "Akşam ışığında incir ağacının yanında hasıra oturmuş, arkası dönük iki adam; yaşlı olanın eli gencin omzunda, önlerinde ekmek ve testi.",
           },
           {
             type: "interactive_word",
@@ -6583,7 +6583,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-5/kamp-atesi.jpg",
-            alt: "Şafak sökerken küçük bir çadırın önünde yanan kamp ateşi ve çadıra dayalı sade bir asa.",
+            alt: "Şafakta elinde asasıyla çadıra doğru yürüyen, arkası dönük bir adam; çadırın önünde ateşin başında oturan başörtülü bir kadın.",
           },
         ],
         has_question: true,
@@ -6650,7 +6650,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-6/buyuk-kapi.jpg",
-            alt: "Devasa, kapalı ahşap ve bronz bir saray kapısı ve önündeki geniş taş basamağa düşen ince bir ışık şeridi.",
+            alt: "Devasa kapalı saray kapısının önündeki basamaklarda yan yana duran, arkası dönük iki başlıklı adam; birinin elinde asa.",
           },
           { type: "text", text: "Sonunda bir sabah iki kardeş sarayın büyük kapısının önünde durdu. Kapının ardında, bütün Mısır'ın önünde titrediği Firavun vardı. Hz. Musa yıllar önce bu şehirden korku içinde kaçmıştı. Şimdi o kapıdan girecek ve Firavun'a doğruyu kendi sarayında söyleyecekti." },
         ],
@@ -6664,7 +6664,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-6/sutunlu-salon.jpg",
-            alt: "Yüksek sütunlu, loş bir taht salonu; uzakta boş bir taht ve tavandaki pencereden süzülen tek ışık hüzmesi.",
+            alt: "Sütunlu loş taht salonunda tahtta oturan hükümdar ve yanındaki saraylılar; ön planda arkası dönük duran iki başlıklı adam.",
           },
           { type: "text", text: "— Peki sizin Rabbiniz de kimmiş? diye sordu Firavun alaycı bir sesle." },
           { type: "text", text: "— Rabbimiz, her şeye yaratılışını veren, sonra ona yolunu gösterendir, dedi Hz. Musa. O, göklerin, yerin ve aradaki her şeyin Rabbidir." },
@@ -6738,7 +6738,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-7/ziynet-meydani.jpg",
-            alt: "Kuşluk güneşinde, kenarları gölgelikler ve sütunlarla çevrili, ortası boş geniş kumlu bir meydan.",
+            alt: "Bayram süsleriyle dolu kalabalık bir meydan; ortası boş kum alan ve bir kenarda koyu cüppeli bir grup.",
           },
           { type: "text", text: "Sihirbazlar gösteriden önce Firavun'un yanına gidip bir ödül sözü istemişti." },
           { type: "text", text: "— Üstün gelen biz olursak bize mutlaka bir ödül vardır, değil mi? diye sormuşlardı." },
@@ -6752,14 +6752,14 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-7/kivrilan-ipler.jpg",
-            alt: "Kumun üstüne saçılmış ipler ve ince değnekler; uzun gölgeleri kıvrılıyormuş gibi görünüyor.",
+            alt: "Kumun üstüne saçılmış ipler ve gölgeleri kıvrılıyor gibi; karşıda koyu cüppeli sihirbazlar ve geri çekilen kalabalık, ön planda arkası dönük iki adam.",
           },
           { type: "text", text: "— Korkma, üstün gelecek olan sensin; sağ elindekini at, diye buyurdu Allah." },
           { type: "text", text: "Hz. Musa asasını attı ve asa, sihirbazların uydurduğu her şeyi bir bir yakalayıp yuttu. Meydanda kıvrılıyormuş gibi görünen tek bir ip bile kalmadı." },
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-7/sessiz-kum.jpg",
-            alt: "Bomboş kalmış düz kum zemin; ortasında uzun bir gölge ve çevresinde dağılmış birkaç ip parçası.",
+            alt: "Boşalmış kum meydanda şaşkınlıkla donup kalmış koyu cüppeli sihirbazlar; ön planda asasıyla arkası dönük duran bir adam.",
           },
           { type: "text", text: "Bütün meydanı derin bir sessizlik kapladı. Sihirbazlar donup kaldı, çünkü sihrin yalnızca bir göz aldatması olduğunu herkesten iyi biliyorlardı. Gördükleri ise sihir değildi. Ama Firavun tam karşılarında oturuyordu ve verdiği ödül sözü hâlâ kulaklarında çınlıyordu." },
           {
@@ -6786,7 +6786,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-7/bos-meydan.jpg",
-            alt: "İkindi ışığında boşalmaya başlamış meydan, bir basamağın üstünde devrilmiş altın bir kâse ve rüzgârda savrulan toz.",
+            alt: "İkindi ışığında kumda yan yana diz çöküp eğilmiş koyu cüppeli adamlar, arkadan görünüyor; uzakta terasta onları gösteren hükümdar ve devrik altın kâse.",
           },
           { type: "text", text: "— Bize gelen bu apaçık işaretlere ve bizi yaratana seni asla tercih etmeyiz, dediler. Zararı yok, nasıl olsa hepimiz Rabbimize döneceğiz." },
           { type: "text", text: "Sonra ellerini açıp hep birlikte dua ettiler." },
@@ -6873,7 +6873,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-8/irmak-ve-saray.jpg",
-            alt: "Akşam ışığında, kanallarla bölünmüş nehrin kıyısında yükselen görkemli bir sarayın terası.",
+            alt: "Akşam ışığında kanallara bölünmüş nehrin kıyısındaki saray terasında halkına kolunu uzatarak konuşan hükümdar; aşağıda toplanmış insanlar.",
           },
           { type: "text", text: "Firavun, Hz. Musa'nın dilindeki düğümle alay ediyordu. Oysa Hz. Musa o düğümü yıllar önce Rabbine açıkça söylemiş ve O'ndan yardım istemişti. Asıl güç, kendini büyük gören Firavun'da değil, Allah'ın elindeydi." },
           { type: "text", text: "Kur'an'da bildirildiğine göre Allah, Hz. Musa'ya apaçık dokuz işaret vermişti. Firavun bunların her birini kendi gözüyle görmüştü. Her işaret ona yeni bir fırsat, yeni bir uyarıydı; ama o hiçbirinden ders almadı." },
@@ -6882,7 +6882,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-8/kandilli-evler.jpg",
-            alt: "Gece, bir mahallede yan yana kerpiç evlerin pencerelerinden süzülen sıcak kandil ışıkları.",
+            alt: "Gece kerpiç bir odada kandil ışığında hasırlara oturmuş, birlikte dua edip birbirine güç veren aileler.",
           },
           { type: "text", text: "Firavun pek çok kez söz verdi, ama hiçbirini tutmadı. Her sıkıntı ona bir uyarıydı, o ise sıkıntı geçince hepsini unutup gitti. Oysa sözünü tutmak, sıkıntı geçtikten sonra da aynı kararlılıkla devam edebilmekti." },
           { type: "text", text: "Mısır'da günler böyle geçerken inananların bekleyişi de sonuna yaklaşıyordu. Sabırla bekleyen bu insanlar, çok yakında hiç unutamayacakları büyük bir yolculuğa çıkacaklardı. O yolculukta sabırlarının karşılığını da göreceklerdi." },
@@ -6946,7 +6946,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-9/ay-isiginda-izler.jpg",
-            alt: "Ay ışığında kumda uzayıp giden sayısız ayak izi ve uzakta denizin parıltısı.",
+            alt: "Ay ışığında kumda denize doğru yürüyen uzun bir kafile; aileler, çocuklar ve yük taşıyan eşekler, önde iki küçük figür.",
           },
           {
             type: "interactive_word",
@@ -6963,7 +6963,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-9/toz-bulutu.jpg",
-            alt: "Gün doğarken, sahil kumlarının ardında ufukta yükselen büyük ve uzak bir toz bulutu.",
+            alt: "Gün doğarken sahilde denize bakan, çocuklarını tutan aileler; ufukta yükselen büyük bir toz bulutu.",
           },
           { type: "text", text: "Kafilede küçük çocuklar annelerine sarıldı, yaşlılar olduğu yere çöktü. Herkes çaresizlik içinde Hz. Musa'ya baktı. Kaçacak hiçbir yer görünmüyordu; şimdi ne olacaktı?" },
           {
@@ -6995,7 +6995,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-9/karsi-kiyi.jpg",
-            alt: "Gün doğarken denizden çıkıp kıyıdaki tepeye doğru yükselen sayısız ayak izi.",
+            alt: "Gün doğumunda deniz kıyısındaki tepede ellerini açıp şükreden kalabalık; denizden tepeye uzanan ayak izleri.",
           },
         ],
         has_question: true,
@@ -7052,7 +7052,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-10/kaya-ve-deniz.jpg",
-            alt: "Büyük bir kayanın dibinde, iki farklı renkteki suyun buluştuğu yer ve suda kıvrılarak uzaklaşan ince bir iz.",
+            alt: "İki renkli suyun buluştuğu kıyıda kayanın üstünde oturan, arkası dönük iki yolcu; suda halkalanarak uzaklaşan bir iz.",
           },
           { type: "text", text: "Bir süre daha yürüdüler ve iyice yoruldular." },
           { type: "text", text: "— Yemeğimizi getir, bu yolculuk bizi çok yordu, dedi Hz. Musa." },
@@ -7064,7 +7064,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-10/kiyidaki-izler.jpg",
-            alt: "Islak kumda gidip geri dönen iki sıra ayak izi ve kayanın yanında başlayan üçüncü bir iz.",
+            alt: "Kıyıdaki kayanın üstünde kontra ışıkta duran yeşil cüppeli bir figür; ona doğru yürüyen, arkası dönük iki yolcu.",
           },
           { type: "text", text: "— Sen benimle sabredemezsin; iç yüzünü bilmediğin bir şeye nasıl sabredersin? dedi Hızır." },
           { type: "text", text: "— İnşallah beni sabırlı bulacaksın ve hiçbir işte sana karşı gelmeyeceğim, dedi Hz. Musa." },
@@ -7089,7 +7089,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-musa/bolum-10/duzelen-duvar.jpg",
-            alt: "Akşam ışığında yeni düzeltilmiş, dimdik duran eski bir taş duvar ve dibinde taze harç izleri.",
+            alt: "Akşam ışığında eski bir taş duvarın dibinde diz çöküp taşları harçla yerine oturtan yeşil cüppeli bir adam ve yanında asasıyla duran bir yolcu; ikisi de arkadan.",
           },
           { type: "text", text: "— İşte burada yollarımız ayrılıyor; şimdi sana sabredemediğin şeylerin iç yüzünü anlatacağım, dedi Hızır." },
           { type: "text", text: "Gemi, denizde çalışarak geçimini sağlayan yoksul insanlarındı. Gidecekleri yerde sağlam gemileri zorla ele geçiren bir kral vardı. Hızır gemiyi kusurlu yapmıştı ki onların elinden alınmasın." },
