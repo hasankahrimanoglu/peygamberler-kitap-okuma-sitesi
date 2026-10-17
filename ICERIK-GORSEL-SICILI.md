@@ -1617,9 +1617,9 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 
 ## 4l. Hz. İsmail (`bookKey: ismail`) — 36 görsel
 
-**Durum (16 Eki 2026):** aktarıldı, katalogda **"preparing"** (yayında değil). 36 sahne
-slotunun hepsi **yer tutucu** (`npm run gorsel-yertutucu -- ismail`); kitap kapağı,
-harita durağı, 6 rozet ve madalya da yer tutucudur. Briflerin tamamı
+**Durum (17 Eki 2026):** aktarıldı, katalogda **"preparing"** (yayında değil). 36 sahne,
+kitap kapağı, harita durağı, 6 rozet ve madalya **üretildi** (`/gorsel-uretim ismail`);
+rozet ve madalya çerçevesiz kare, çerçeveyi Hasan ekleyecek; ses yer tutucu. Briflerin tamamı
 `kitap-icerikleri/KITAP-HZ-ISMAIL-ICERIK-final.md` §B, §C, §D ve §H'dedir (İngilizce
 ana üretim promptu, ortak stil bloğu, ortak negatif, **karakter blokları (EN)** ve rozet
 sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figür bilgisi ve
@@ -1662,78 +1662,115 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 > görselleriyle aynı ağaç) ve dibinde kaynayan su; B2'den sonra keçi kılı çadırlar, sonra
 > alçak taş ve kerpiç evler.
 
+> **Üretim kararları (17 Eki 2026, `/gorsel-uretim ismail`):** §6.2 set geneli standardı
+> uygulandı (Seedream 5 Pro · sahne 2K · rozet, madalya, kapak, durak 1.5K ·
+> `stil-referans-gorsel.jpg`); aday sayısı §6.2 tablosuna göre. Kitaba özgü notlar:
+> - **Ad prompta girmez** (İbrahim/Yunus emsali); karakter blokları adsız eklendi.
+> - **Karakter referansları:** Hâcer için Hz. İbrahim `bolum-8/vadide-aksam`, sonra onaylanan
+>   `bolum-1/akasya-golgesi`; Hz. İbrahim (yetişkin) için Hz. İbrahim `bolum-7/baba-evi`, sonra
+>   `bolum-3/birlikte-calisma` ve `bolum-5/tas-tasima`; genç Hz. İsmail için `bolum-4/avci-genc`.
+>   Açılışlarda önceki bölümün açılışı (vadi sürekliliği) referans verildi.
+> - **Rozet ikinci referansı verilmedi:** B2'de 1. rozet referans verilince model sembolü
+>   (tepeler arasında fışkıran su) kopyaladı; B2 yalnız stil referansıyla yeniden üretildi,
+>   kalan rozetler de öyle.
+> - **Rötuş dersi:** sakal/yanak sızmasında `replace` rötuşu bir kez **yeni bir yüz** üretti
+>   (`bolum-3/sevincle-donus`, reddedildi); `erase` modu (~30 kredi) temiz sonuç verdi ve
+>   `sevincle-donus`, `bolum-5/dua-ani`, `bolum-5/tas-tasima`'da kullanıldı.
+> - **Hz. İbrahim yüz sızması:** model yetişkin Hz. İbrahim'i B5'te ısrarla yüzü açık çizdi.
+>   `ok-yontan` (uzaktaki figürün yüzü seçiliyordu), `kucaklasma` (kontra ışıkta profil ve
+>   sakal silueti) ve `tas-tasima` (profil) bir kez yeniden üretildi; `ok-yontan`'da uzaktaki
+>   figür rötuşla küçük, yüzsüz, kapüşonlu koyu bir siluete çevrildi (biraz stilize — Hasan'ın
+>   onayına bırakıldı); `tas-tasima`'da yanak silme moduyla kaldırıldı.
+> - **Diğer rötuşlar:** `bolum-1/akasya-golgesi`'nde bebeğin yanağı Hâcer'in omzundan
+>   görünüyordu, örtü kıvrımıyla kapatıldı (ilk rötuş bebeği katlanmış örtüye çevirdi,
+>   reddedildi); `bolum-2/cadirlar-kuruluyor`'da mavi elbiseli kadın (Hâcer'e benziyordu,
+>   brif negatifi) pas rengi elbiseye çevrildi.
+> - **Reddedilen diğerleri:** `bolum-1/toprak-set` B (Hâcer önden, yüz bölgesi boş);
+>   `bolum-3/kapak` A (testiler ön planı kaplıyor); `bolum-3/sevincle-donus` B (sakal);
+>   `bolum-4/huzurlu-ev` A (başlık kenarında sakal ucu); rozet 6 ilk aday (yollar köşelere
+>   uzanan X, kâğıt kenar payı).
+> - **Bilinen küçük sapmalar** (Hasan'ın onayına): `bolum-1/kaynayan-su`'da suyun kabarışı cam
+>   kubbe gibi parlak; `bolum-4/ikram`'da Hz. İbrahim brifteki "arkası yarı dönük" yerine önden
+>   oturuyor, yüzü başörtüsüyle tamamen kapalı; `bolum-3/kapak`'ta su seti kumla karışık;
+>   rozet 3'te boynuzun ağzı açık, şofarı andırabilir; rozet 5 ve madalyada kâğıt kenar payı
+>   kırpıldı (sembol biraz büyüdü).
+> - **Kapak ve harita durağı:** yayındaki `hz-isa/kapak.png` ve `hz-isa/harita-kapak.jpg`
+>   referans verilerek aynı aileden üretildi. Kapak **yazısız**; "Hz. İsmail" başlığı tasarımda
+>   eklenecek. Durakta su fışkırır biçimde, brifteki "kabaran" kadar yumuşak değil. 1.5K ana
+>   dosyalar `gorsel-kaynaklari/kitaplar/hz-ismail/`.
+
 ### Kitap kapağı ve harita durağı
 
 | Dosya | Biçim | Durum | Görsel brifi |
 |---|---|---|---|
-| `hz-ismail/kapak.png` | 600×900, 2:3 dikey | ⬜ Bekliyor | Lacivert deri dokulu kapakta çok köşeli yıldız biçiminde altın çerçeveli madalyon; içinde iki taşlı tepe arasında kumdan kaynayan turkuaz su ve üstünde daire çizen küçük beyaz kuşlar; arkada kurak vadi ve yaşlı akasya. **Yazısız** üretilir; "Hz. İsmail" yazısı tasarım aşamasında eklenir (final MD §C1) |
-| `hz-ismail/harita-kapak.jpg` | Kare, 512×512 veya üstü | ⬜ Bekliyor | Hardal-okr zemin üzerinde altın çerçeveli madalyonda, iki küçük tepe arasında kumdan kaynayan berrak su (final MD §C2; B1 rozetiyle aynı imge) |
+| `hz-ismail/kapak.png` | 600×900, 2:3 dikey | ✅ Hazır | Lacivert deri dokulu kapakta çok köşeli yıldız biçiminde altın çerçeveli madalyon; içinde iki taşlı tepe arasında kumdan kaynayan turkuaz su ve üstünde daire çizen küçük beyaz kuşlar; arkada kurak vadi ve yaşlı akasya. **Yazısız** üretilir; "Hz. İsmail" yazısı tasarım aşamasında eklenir (final MD §C1) |
+| `hz-ismail/harita-kapak.jpg` | Kare, 512×512 veya üstü | ✅ Hazır | Hardal-okr zemin üzerinde altın çerçeveli madalyonda, iki küçük tepe arasında kumdan kaynayan berrak su (final MD §C2; B1 rozetiyle aynı imge) |
 
 ### Bölüm 1 — Safa ile Merve Arasında
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-ismail/bolum-1/kapak.jpg` | Açılış | A | yok | ⬜ Bekliyor | Öğle sıcağında iki koyu, taşlı tepe arasında uzanan kurak vadi; vadinin ortasında tek başına duran yaşlı, dikenli bir akasya ve titreyen sıcak hava |
-| `hz-ismail/bolum-1/akasya-golgesi.jpg` | 1. Kısım | A | Hâcer — Katman 1 (peygamber eşi ve annesi); tamamen arkadan, yüz ve profil görünmez. Bebek Hz. İsmail — Katman 1; örtüye sarılı, yüzü görünmez. Karakter blokları: Hâcer; Ismail (infant). | ⬜ Bekliyor | Akasyanın gölgesinde arkası dönük oturan, kucağındaki örtüye sarılı bebeğini tutan Hâcer; yanında deri bir hurma torbası ve toprak bir su kabı; önünde uzanan ıssız vadi |
-| `hz-ismail/bolum-1/bos-su-kabi.jpg` | 1. Kısım | A | yok | ⬜ Bekliyor | Çatlamış kuru toprağın üstünde yan yatmış, ağzı boş bir toprak su kabı ve yanında buruşmuş, boş bir deri torba; üzerlerine düşen sert öğle ışığı |
-| `hz-ismail/bolum-1/iki-tepe-arasi.jpg` | Devam | B | Hâcer — Katman 1; tamamen arkadan, uzak plan, yüz ve profil görünmez. Karakter bloğu: Hâcer. Bebek bu karede görünmez. | ⬜ Bekliyor | İki taşlı tepe arasındaki vadi tabanında, uzun eteği ve örtüsü rüzgârda savrulurken karşıdaki tepeye doğru koşan Hâcer, arkadan ve uzakta |
-| `hz-ismail/bolum-1/kaynayan-su.jpg` | Devam | B | yok (bebeğin örtüsünün yalnız kenarı; beden ve yüz görünmez) | ⬜ Bekliyor | Kupkuru kumların ve çakılların arasından yukarı doğru kabaran berrak, turkuaz su; suyun yüzeyinde parlayan ışık ve çevresinde koyulaşan ıslak kum |
-| `hz-ismail/bolum-1/toprak-set.jpg` | Devam | B | Hâcer — Katman 1; tamamen arkadan, yüz ve profil görünmez. Bebek Hz. İsmail — Katman 1; örtüye sarılı, yüzü görünmez. Karakter blokları: Hâcer; Ismail (infant). | ⬜ Bekliyor | Kaynağın başında arkası dönük diz çökmüş, suyun çevresine elleriyle topraktan küçük bir set yapan Hâcer; yanında akasyanın gölgesinde örtüye sarılı bebeği |
+| `hz-ismail/bolum-1/kapak.jpg` | Açılış | A | yok | ✅ Hazır | Öğle sıcağında iki koyu, taşlı tepe arasında uzanan kurak vadi; vadinin ortasında tek başına duran yaşlı, dikenli bir akasya ve titreyen sıcak hava |
+| `hz-ismail/bolum-1/akasya-golgesi.jpg` | 1. Kısım | A | Hâcer — Katman 1 (peygamber eşi ve annesi); tamamen arkadan, yüz ve profil görünmez. Bebek Hz. İsmail — Katman 1; örtüye sarılı, yüzü görünmez. Karakter blokları: Hâcer; Ismail (infant). | ✅ Hazır | Akasyanın gölgesinde arkası dönük oturan, kucağındaki örtüye sarılı bebeğini tutan Hâcer; yanında deri bir hurma torbası ve toprak bir su kabı; önünde uzanan ıssız vadi |
+| `hz-ismail/bolum-1/bos-su-kabi.jpg` | 1. Kısım | A | yok | ✅ Hazır | Çatlamış kuru toprağın üstünde yan yatmış, ağzı boş bir toprak su kabı ve yanında buruşmuş, boş bir deri torba; üzerlerine düşen sert öğle ışığı |
+| `hz-ismail/bolum-1/iki-tepe-arasi.jpg` | Devam | B | Hâcer — Katman 1; tamamen arkadan, uzak plan, yüz ve profil görünmez. Karakter bloğu: Hâcer. Bebek bu karede görünmez. | ✅ Hazır | İki taşlı tepe arasındaki vadi tabanında, uzun eteği ve örtüsü rüzgârda savrulurken karşıdaki tepeye doğru koşan Hâcer, arkadan ve uzakta |
+| `hz-ismail/bolum-1/kaynayan-su.jpg` | Devam | B | yok (bebeğin örtüsünün yalnız kenarı; beden ve yüz görünmez) | ✅ Hazır | Kupkuru kumların ve çakılların arasından yukarı doğru kabaran berrak, turkuaz su; suyun yüzeyinde parlayan ışık ve çevresinde koyulaşan ıslak kum |
+| `hz-ismail/bolum-1/toprak-set.jpg` | Devam | B | Hâcer — Katman 1; tamamen arkadan, yüz ve profil görünmez. Bebek Hz. İsmail — Katman 1; örtüye sarılı, yüzü görünmez. Karakter blokları: Hâcer; Ismail (infant). | ✅ Hazır | Kaynağın başında arkası dönük diz çökmüş, suyun çevresine elleriyle topraktan küçük bir set yapan Hâcer; yanında akasyanın gölgesinde örtüye sarılı bebeği |
 
 ### Bölüm 2 — Kuşların Haber Verdiği Su
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-ismail/bolum-2/kapak.jpg` | Açılış | A | yok | ⬜ Bekliyor | Serin sabah ışığında vadinin üstünde daireler çizen beyaz kuşlar; aşağıda akasyanın dibinde, topraktan setle çevrili, parlayan küçük bir su |
-| `hz-ismail/bolum-2/uzaktaki-yolcular.jpg` | 1. Kısım | A | Cürhümlü yolcular — Katman 3 (sıradan halk); yüz gösterilebilir, sakin, karikatürsüz; çoğu yandan ya da arkadan. | ⬜ Bekliyor | Taşlı bir sırtta develeri ve keçileriyle durmuş göçebe yolcular; içlerinden biri kolunu uzatıp uzaktaki vadinin üstünde dönen beyaz kuşları gösteriyor |
-| `hz-ismail/bolum-2/kaynak-basinda.jpg` | 1. Kısım | A | Hâcer — Katman 1; tamamen arkadan, yüz ve profil görünmez (karma sahne: "seen from behind"). Bebek Hz. İsmail — Katman 1; örtüye sarılı. Yolcular — Katman 3; yüz gösterilebilir. Karakter blokları: Hâcer; Ismail (infant). | ⬜ Bekliyor | Akasyanın dibindeki suyun başında arkası dönük oturan, kucağında bebeğini tutan Hâcer; karşıdan, birkaç adım ötede durup saygıyla eğilen göçebe yolcular ve arkalarında develer |
-| `hz-ismail/bolum-2/cadirlar-kuruluyor.jpg` | Devam | B | Cürhümlü aileler — Katman 3; yüz gösterilebilir, sakin, karikatürsüz. Hâcer ve Hz. İsmail bu karede yok. | ⬜ Bekliyor | Suyun çevresinde keçi kılı çadırlarını kuran aileler; direk diken erkekler, kilim seren kadınlar, keçilerin arasında koşan çocuklar ve diz çökmüş develer |
-| `hz-ismail/bolum-2/testiler.jpg` | Devam | B | yok | ⬜ Bekliyor | Toprak setle çevrili suyun kenarında yan yana dizilmiş, farklı boy ve renklerde toprak testiler; birinin ağzından taşan su ve arkada keçi kılı çadırlar |
-| `hz-ismail/bolum-2/senlenen-vadi.jpg` | Devam | B | Cürhümlü aileler — Katman 3; çok küçük ve uzak, yüz seçilmez. | ⬜ Bekliyor | Akşam alacasında iki tepe arasındaki vadide, suyun çevresine kurulmuş çadırlar, yanan ocaklar ve uzakta küçük insan toplulukları; gökte ilk yıldızlar |
+| `hz-ismail/bolum-2/kapak.jpg` | Açılış | A | yok | ✅ Hazır | Serin sabah ışığında vadinin üstünde daireler çizen beyaz kuşlar; aşağıda akasyanın dibinde, topraktan setle çevrili, parlayan küçük bir su |
+| `hz-ismail/bolum-2/uzaktaki-yolcular.jpg` | 1. Kısım | A | Cürhümlü yolcular — Katman 3 (sıradan halk); yüz gösterilebilir, sakin, karikatürsüz; çoğu yandan ya da arkadan. | ✅ Hazır | Taşlı bir sırtta develeri ve keçileriyle durmuş göçebe yolcular; içlerinden biri kolunu uzatıp uzaktaki vadinin üstünde dönen beyaz kuşları gösteriyor |
+| `hz-ismail/bolum-2/kaynak-basinda.jpg` | 1. Kısım | A | Hâcer — Katman 1; tamamen arkadan, yüz ve profil görünmez (karma sahne: "seen from behind"). Bebek Hz. İsmail — Katman 1; örtüye sarılı. Yolcular — Katman 3; yüz gösterilebilir. Karakter blokları: Hâcer; Ismail (infant). | ✅ Hazır | Akasyanın dibindeki suyun başında arkası dönük oturan, kucağında bebeğini tutan Hâcer; karşıdan, birkaç adım ötede durup saygıyla eğilen göçebe yolcular ve arkalarında develer |
+| `hz-ismail/bolum-2/cadirlar-kuruluyor.jpg` | Devam | B | Cürhümlü aileler — Katman 3; yüz gösterilebilir, sakin, karikatürsüz. Hâcer ve Hz. İsmail bu karede yok. | ✅ Hazır | Suyun çevresinde keçi kılı çadırlarını kuran aileler; direk diken erkekler, kilim seren kadınlar, keçilerin arasında koşan çocuklar ve diz çökmüş develer |
+| `hz-ismail/bolum-2/testiler.jpg` | Devam | B | yok | ✅ Hazır | Toprak setle çevrili suyun kenarında yan yana dizilmiş, farklı boy ve renklerde toprak testiler; birinin ağzından taşan su ve arkada keçi kılı çadırlar |
+| `hz-ismail/bolum-2/senlenen-vadi.jpg` | Devam | B | Cürhümlü aileler — Katman 3; çok küçük ve uzak, yüz seçilmez. | ✅ Hazır | Akşam alacasında iki tepe arasındaki vadide, suyun çevresine kurulmuş çadırlar, yanan ocaklar ve uzakta küçük insan toplulukları; gökte ilk yıldızlar |
 
 ### Bölüm 3 — Rüya ve Büyük İmtihan
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-ismail/bolum-3/kapak.jpg` | Açılış | A | yok | ⬜ Bekliyor | İkindi ışığında vadide, akasyanın ve suyun çevresine dağılmış keçi kılı çadırlar, alçak taş ağıllar ve otlayan keçiler; arkada iki taşlı tepe |
-| `hz-ismail/bolum-3/birlikte-calisma.jpg` | 1. Kısım | A | Hz. İbrahim ve Hz. İsmail — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter blokları: Ibrahim (adult); Ismail (boy). | ⬜ Bekliyor | İkindi ışığında taşlı bir patikada, aralarında taşlarla dolu hasır bir sepeti birlikte taşıyarak yürüyen Hz. İbrahim ve oğlu Hz. İsmail, arkadan |
-| `hz-ismail/bolum-3/yildizli-gece.jpg` | 1. Kısım | A | yok | ⬜ Bekliyor | Gece, vadide yıldızlı bir göğün altında duran keçi kılı çadır; aralığından sızan sakin kandil ışığı ve yanında karanlıkta seçilen akasya |
-| `hz-ismail/bolum-3/sabah-yamaci.jpg` | Devam | B | yok (Faz 1 KARAR: teslimiyet anı figürsüz) | ⬜ Bekliyor | Şafakta sessiz, taşlı bir dağ yamacı; tepenin ardından yükselen yumuşak altın ışık yamaca ve kayaların arasındaki küçük bir çalılığa düşüyor |
-| `hz-ismail/bolum-3/otlayan-koc.jpg` | Devam | B | yok | ⬜ Bekliyor | Sabah ışığında yamaçta, kayaların arasında sakin sakin otlayan, kıvrık boynuzlu, kalın beyaz yünlü iri bir koç |
-| `hz-ismail/bolum-3/sevincle-donus.jpg` | Devam | B | Hz. İbrahim ve Hz. İsmail — Katman 1; tamamen arkadan, uzak plan, yüz ve profil görünmez. Karakter blokları: Ibrahim (adult); Ismail (boy). | ⬜ Bekliyor | Gün batımında vadiye inen patikada, yan yana yürüyen Hz. İbrahim ve Hz. İsmail, arkadan ve uzakta; babasının bir eli oğlunun omzunda; aşağıda çadırların ışıkları |
+| `hz-ismail/bolum-3/kapak.jpg` | Açılış | A | yok | ✅ Hazır | İkindi ışığında vadide, akasyanın ve suyun çevresine dağılmış keçi kılı çadırlar, alçak taş ağıllar ve otlayan keçiler; arkada iki taşlı tepe |
+| `hz-ismail/bolum-3/birlikte-calisma.jpg` | 1. Kısım | A | Hz. İbrahim ve Hz. İsmail — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter blokları: Ibrahim (adult); Ismail (boy). | ✅ Hazır | İkindi ışığında taşlı bir patikada, aralarında taşlarla dolu hasır bir sepeti birlikte taşıyarak yürüyen Hz. İbrahim ve oğlu Hz. İsmail, arkadan |
+| `hz-ismail/bolum-3/yildizli-gece.jpg` | 1. Kısım | A | yok | ✅ Hazır | Gece, vadide yıldızlı bir göğün altında duran keçi kılı çadır; aralığından sızan sakin kandil ışığı ve yanında karanlıkta seçilen akasya |
+| `hz-ismail/bolum-3/sabah-yamaci.jpg` | Devam | B | yok (Faz 1 KARAR: teslimiyet anı figürsüz) | ✅ Hazır | Şafakta sessiz, taşlı bir dağ yamacı; tepenin ardından yükselen yumuşak altın ışık yamaca ve kayaların arasındaki küçük bir çalılığa düşüyor |
+| `hz-ismail/bolum-3/otlayan-koc.jpg` | Devam | B | yok | ✅ Hazır | Sabah ışığında yamaçta, kayaların arasında sakin sakin otlayan, kıvrık boynuzlu, kalın beyaz yünlü iri bir koç |
+| `hz-ismail/bolum-3/sevincle-donus.jpg` | Devam | B | Hz. İbrahim ve Hz. İsmail — Katman 1; tamamen arkadan, uzak plan, yüz ve profil görünmez. Karakter blokları: Ibrahim (adult); Ismail (boy). | ✅ Hazır | Gün batımında vadiye inen patikada, yan yana yürüyen Hz. İbrahim ve Hz. İsmail, arkadan ve uzakta; babasının bir eli oğlunun omzunda; aşağıda çadırların ışıkları |
 
 ### Bölüm 4 — Kapı Eşiğindeki Öğüt
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-ismail/bolum-4/kapak.jpg` | Açılış | A | yok | ⬜ Bekliyor | İkindi ışığında vadide yan yana dizilmiş alçak taş ve kerpiç evler; kapı önlerinde hasır gölgelikler, toprak testiler ve uzakta akasya |
-| `hz-ismail/bolum-4/avci-genc.jpg` | 1. Kısım | A | Hz. İsmail — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Ismail (young man). | ⬜ Bekliyor | Sabahın ilk ışığında vadinin dışına, taşlı kırlara doğru yürüyen, sırtında ahşap bir yay ve deri bir okluk taşıyan genç Hz. İsmail, arkadan |
-| `hz-ismail/bolum-4/kapidaki-misafir.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Ibrahim (adult). Hz. İsmail'in ilk eşi gösterilmez (kapının içinde kimse yok). | ⬜ Bekliyor | İkindi ışığında taş bir evin kapısı önünde, uzun asasına dayanarak duran yaşlı yolcu Hz. İbrahim, arkadan; açık kapının içi loş ve boş görünüyor |
-| `hz-ismail/bolum-4/esik.jpg` | Devam | B | yok | ⬜ Bekliyor | Akşamüstü ışığında, yarı açık ahşap bir kapının altındaki eski, aşınmış taş eşik ve eşiğin üstüne düşen ince ışık şeridi |
-| `hz-ismail/bolum-4/ikram.jpg` | Devam | B | Hz. İbrahim — Katman 1; uzak plan, arkası yarı dönük, yüzü başörtüsünün gölgesinde tamamen gizli ("face fully hidden in deep shadow"). Hz. İsmail'in eşi — Katman 1 (peygamber eşi); tamamen arkadan, yüz ve profil görünmez (karakter bloğu yok; tarif bu promptta). Karakter bloğu: Ibrahim (adult). | ⬜ Bekliyor | Pişmiş et ve toprak bir testi su dolu tepsiyle hasır gölgeliğe doğru yürüyen Hz. İsmail'in eşi, arkadan; gölgeliğin derinliğinde, başörtüsü öne düşmüş, yüzü gölgede oturan yaşlı misafir Hz. İbrahim |
-| `hz-ismail/bolum-4/huzurlu-ev.jpg` | Devam | B | Hz. İsmail — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Ismail (young man). | ⬜ Bekliyor | Akşam alacasında, kapısından ve küçük penceresinden sıcak ışık sızan taş bir eve doğru yürüyen genç Hz. İsmail, arkadan; kapının önünde toprak bir testi |
+| `hz-ismail/bolum-4/kapak.jpg` | Açılış | A | yok | ✅ Hazır | İkindi ışığında vadide yan yana dizilmiş alçak taş ve kerpiç evler; kapı önlerinde hasır gölgelikler, toprak testiler ve uzakta akasya |
+| `hz-ismail/bolum-4/avci-genc.jpg` | 1. Kısım | A | Hz. İsmail — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Ismail (young man). | ✅ Hazır | Sabahın ilk ışığında vadinin dışına, taşlı kırlara doğru yürüyen, sırtında ahşap bir yay ve deri bir okluk taşıyan genç Hz. İsmail, arkadan |
+| `hz-ismail/bolum-4/kapidaki-misafir.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Ibrahim (adult). Hz. İsmail'in ilk eşi gösterilmez (kapının içinde kimse yok). | ✅ Hazır | İkindi ışığında taş bir evin kapısı önünde, uzun asasına dayanarak duran yaşlı yolcu Hz. İbrahim, arkadan; açık kapının içi loş ve boş görünüyor |
+| `hz-ismail/bolum-4/esik.jpg` | Devam | B | yok | ✅ Hazır | Akşamüstü ışığında, yarı açık ahşap bir kapının altındaki eski, aşınmış taş eşik ve eşiğin üstüne düşen ince ışık şeridi |
+| `hz-ismail/bolum-4/ikram.jpg` | Devam | B | Hz. İbrahim — Katman 1; uzak plan, arkası yarı dönük, yüzü başörtüsünün gölgesinde tamamen gizli ("face fully hidden in deep shadow"). Hz. İsmail'in eşi — Katman 1 (peygamber eşi); tamamen arkadan, yüz ve profil görünmez (karakter bloğu yok; tarif bu promptta). Karakter bloğu: Ibrahim (adult). | ✅ Hazır | Pişmiş et ve toprak bir testi su dolu tepsiyle hasır gölgeliğe doğru yürüyen Hz. İsmail'in eşi, arkadan; gölgeliğin derinliğinde, başörtüsü öne düşmüş, yüzü gölgede oturan yaşlı misafir Hz. İbrahim |
+| `hz-ismail/bolum-4/huzurlu-ev.jpg` | Devam | B | Hz. İsmail — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Ismail (young man). | ✅ Hazır | Akşam alacasında, kapısından ve küçük penceresinden sıcak ışık sızan taş bir eve doğru yürüyen genç Hz. İsmail, arkadan; kapının önünde toprak bir testi |
 
 ### Bölüm 5 — Allah'ın Evinin Temelleri
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-ismail/bolum-5/kapak.jpg` | Açılış | A | yok | ⬜ Bekliyor | Sabah ışığında, vadinin ortasında çevresinden hafifçe yüksekte duran boş, kızıl toprak bir tümsek; çevresinde tepeler ve uzakta yerleşimin damları |
-| `hz-ismail/bolum-5/ok-yontan.jpg` | 1. Kısım | A | Hz. İsmail ve Hz. İbrahim — Katman 1; ikisi de yüzü görünmeden: İsmail tamamen arkadan, İbrahim uzak planda ve yüzü sisle seçilmez. Karakter blokları: Ismail (young man); Ibrahim (adult). | ⬜ Bekliyor | Büyük bir akasyanın gölgesinde arkası dönük oturan, kucağındaki oku düz bir bileği taşıyla düzelten genç Hz. İsmail; uzakta patikadan yaklaşan, asalı yaşlı Hz. İbrahim |
-| `hz-ismail/bolum-5/kucaklasma.jpg` | 1. Kısım | A | Hz. İbrahim ve Hz. İsmail — Katman 1; uzak plan ve kontra ışık, yüz hiç seçilmez (doğal sebep: güneş arkalarında). Karakter blokları: Ibrahim (adult); Ismail (young man). | ⬜ Bekliyor | Sabah güneşi arkalarından doğarken vadinin patikasında birbirine sarılan Hz. İbrahim ve Hz. İsmail, uzakta ve kontra ışıkta koyu biçimler hâlinde |
-| `hz-ismail/bolum-5/tas-tasima.jpg` | Devam | B | Hz. İsmail ve Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter blokları: Ismail (young man); Ibrahim (adult). | ⬜ Bekliyor | Kızıl toprak tümseğin üstünde yükselmeye başlayan alçak taş duvar; omzunda yassı bir taş taşıyarak duvara yürüyen Hz. İsmail ve duvarın başında taşları üst üste dizen Hz. İbrahim, ikisi de arkadan |
-| `hz-ismail/bolum-5/yukselen-duvar.jpg` | Devam | B | yok | ⬜ Bekliyor | Alçak açıdan, öğle göğüne doğru yükselen, kaba yontulmuş taşlardan yalın bir duvar köşesi ve dibine basamak gibi konmuş büyük, yassı bir taş |
-| `hz-ismail/bolum-5/dua-ani.jpg` | Devam | B | Hz. İbrahim ve Hz. İsmail — Katman 1; tamamen arkadan, uzak plan, yüz ve profil görünmez. Karakter blokları: Ibrahim (adult); Ismail (young man). | ⬜ Bekliyor | Gün batımında, kızıl toprak tümsekte yükselmiş yalın taş duvarların önünde yan yana durup ellerini dua için açmış Hz. İbrahim ve Hz. İsmail, arkadan ve uzakta |
+| `hz-ismail/bolum-5/kapak.jpg` | Açılış | A | yok | ✅ Hazır | Sabah ışığında, vadinin ortasında çevresinden hafifçe yüksekte duran boş, kızıl toprak bir tümsek; çevresinde tepeler ve uzakta yerleşimin damları |
+| `hz-ismail/bolum-5/ok-yontan.jpg` | 1. Kısım | A | Hz. İsmail ve Hz. İbrahim — Katman 1; ikisi de yüzü görünmeden: İsmail tamamen arkadan, İbrahim uzak planda ve yüzü sisle seçilmez. Karakter blokları: Ismail (young man); Ibrahim (adult). | ✅ Hazır | Büyük bir akasyanın gölgesinde arkası dönük oturan, kucağındaki oku düz bir bileği taşıyla düzelten genç Hz. İsmail; uzakta patikadan yaklaşan, asalı yaşlı Hz. İbrahim |
+| `hz-ismail/bolum-5/kucaklasma.jpg` | 1. Kısım | A | Hz. İbrahim ve Hz. İsmail — Katman 1; uzak plan ve kontra ışık, yüz hiç seçilmez (doğal sebep: güneş arkalarında). Karakter blokları: Ibrahim (adult); Ismail (young man). | ✅ Hazır | Sabah güneşi arkalarından doğarken vadinin patikasında birbirine sarılan Hz. İbrahim ve Hz. İsmail, uzakta ve kontra ışıkta koyu biçimler hâlinde |
+| `hz-ismail/bolum-5/tas-tasima.jpg` | Devam | B | Hz. İsmail ve Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter blokları: Ismail (young man); Ibrahim (adult). | ✅ Hazır | Kızıl toprak tümseğin üstünde yükselmeye başlayan alçak taş duvar; omzunda yassı bir taş taşıyarak duvara yürüyen Hz. İsmail ve duvarın başında taşları üst üste dizen Hz. İbrahim, ikisi de arkadan |
+| `hz-ismail/bolum-5/yukselen-duvar.jpg` | Devam | B | yok | ✅ Hazır | Alçak açıdan, öğle göğüne doğru yükselen, kaba yontulmuş taşlardan yalın bir duvar köşesi ve dibine basamak gibi konmuş büyük, yassı bir taş |
+| `hz-ismail/bolum-5/dua-ani.jpg` | Devam | B | Hz. İbrahim ve Hz. İsmail — Katman 1; tamamen arkadan, uzak plan, yüz ve profil görünmez. Karakter blokları: Ibrahim (adult); Ismail (young man). | ✅ Hazır | Gün batımında, kızıl toprak tümsekte yükselmiş yalın taş duvarların önünde yan yana durup ellerini dua için açmış Hz. İbrahim ve Hz. İsmail, arkadan ve uzakta |
 
 ### Bölüm 6 — Herkesi Bekleyen Ev
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-ismail/bolum-6/kapak.jpg` | Açılış | A | yok | ⬜ Bekliyor | Şafakta, vadinin ortasındaki kızıl tümsekte duran yalın, örtüsüz, kaba yontulmuş taşlardan alçak bir yapı; çevresinde düz damlı evler, akasya ve uzakta tepeler |
-| `hz-ismail/bolum-6/cagri.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Ibrahim (adult). | ⬜ Bekliyor | Sabah ışığında yüksek bir kayanın üstünde arkası dönük duran Hz. İbrahim; mantosu rüzgârda dalgalanıyor; önünde katman katman uzanan tepeler ve ufka giden yollar |
-| `hz-ismail/bolum-6/uzak-yollar.jpg` | 1. Kısım | A | Yolcular — Katman 3; çok küçük ve uzak, yüz seçilmez. | ⬜ Bekliyor | Öğleden sonra ışığında, uzak tepelerin arasından vadiye inen kıvrımlı yollarda yaya yürüyen ve develer üzerinde gelen küçük yolcu kafileleri |
-| `hz-ismail/bolum-6/temiz-tutma.jpg` | Devam | B | Hz. İsmail — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Ismail (young man) — bu sahnede yay ve okluk yok. | ⬜ Bekliyor | Şafakta, yalın taş yapının önündeki toprak avluyu hurma yaprağından yapılmış bir süpürgeyle süpüren Hz. İsmail, arkadan; yanında toprak bir su testisi |
-| `hz-ismail/bolum-6/kaynakta-yolcular.jpg` | Devam | B | Yolcular — Katman 3; yüz gösterilebilir, sakin, karikatürsüz. Katman 1 kişi yok. | ⬜ Bekliyor | Akşamüstü ışığında, akasyanın dibindeki suyun taş seti başında toprak kaplarla su içen, dinlenen yolcular; kadınlar, yaşlılar ve çocuklar |
-| `hz-ismail/bolum-6/ilk-yildizlar.jpg` | Devam | B | yok | ⬜ Bekliyor | Akşam alacasında, vadinin ortasındaki yalın taş evin çevresinde yanan sakin ocak ışıkları; dört yönden eve uzanan ince yollar ve gökte beliren ilk yıldızlar |
+| `hz-ismail/bolum-6/kapak.jpg` | Açılış | A | yok | ✅ Hazır | Şafakta, vadinin ortasındaki kızıl tümsekte duran yalın, örtüsüz, kaba yontulmuş taşlardan alçak bir yapı; çevresinde düz damlı evler, akasya ve uzakta tepeler |
+| `hz-ismail/bolum-6/cagri.jpg` | 1. Kısım | A | Hz. İbrahim — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Ibrahim (adult). | ✅ Hazır | Sabah ışığında yüksek bir kayanın üstünde arkası dönük duran Hz. İbrahim; mantosu rüzgârda dalgalanıyor; önünde katman katman uzanan tepeler ve ufka giden yollar |
+| `hz-ismail/bolum-6/uzak-yollar.jpg` | 1. Kısım | A | Yolcular — Katman 3; çok küçük ve uzak, yüz seçilmez. | ✅ Hazır | Öğleden sonra ışığında, uzak tepelerin arasından vadiye inen kıvrımlı yollarda yaya yürüyen ve develer üzerinde gelen küçük yolcu kafileleri |
+| `hz-ismail/bolum-6/temiz-tutma.jpg` | Devam | B | Hz. İsmail — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter bloğu: Ismail (young man) — bu sahnede yay ve okluk yok. | ✅ Hazır | Şafakta, yalın taş yapının önündeki toprak avluyu hurma yaprağından yapılmış bir süpürgeyle süpüren Hz. İsmail, arkadan; yanında toprak bir su testisi |
+| `hz-ismail/bolum-6/kaynakta-yolcular.jpg` | Devam | B | Yolcular — Katman 3; yüz gösterilebilir, sakin, karikatürsüz. Katman 1 kişi yok. | ✅ Hazır | Akşamüstü ışığında, akasyanın dibindeki suyun taş seti başında toprak kaplarla su içen, dinlenen yolcular; kadınlar, yaşlılar ve çocuklar |
+| `hz-ismail/bolum-6/ilk-yildizlar.jpg` | Devam | B | yok | ✅ Hazır | Akşam alacasında, vadinin ortasındaki yalın taş evin çevresinde yanan sakin ocak ışıkları; dört yönden eve uzanan ince yollar ve gökte beliren ilk yıldızlar |
 
 ## 5. Sayaçlar
 
@@ -1750,8 +1787,8 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 | Hz. Süleyman | 7 | 35 | **42** | 42 | 0 |
 | Hz. Yunus | 5 | 24 | **29** | 29 | 0 |
 | Hz. Îsâ | 8 | 40 | **48** | 48 | 0 |
-| Hz. İsmail | 6 | 30 | **36** | 0 | 36 (hepsi yer tutucu; kitap "preparing") |
-| **Genel** | **84** | **403** | **487** | **431** | **57** |
+| Hz. İsmail | 6 | 30 | **36** | 36 | 0 |
+| **Genel** | **84** | **403** | **487** | **467** | **21** |
 
 **Bu sicilin dışındakiler:**
 
@@ -1793,10 +1830,10 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 | Harita durağı | `kitaplar/hz-isa/harita-kapak.jpg` | ✅ Var (600×600, Süleyman durağıyla aynı çerçeve ailesi; sembol: dibinde su kaynağı olan tek hurma ağacı) |
 | Rozet | `rozetler/hz-isa/bolum-1…8.png` | □ 8 kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-isa/`) |
 | Madalya | `madalyalar/hz-isa.png` | □ Kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; sembol: pınarlı tepede hurma dalı) |
-| Kitap kapağı | `kitaplar/hz-ismail/kapak.png` | ⬜ Yer tutucu (600×900) — brif final MD §C1; **yazısız** üretilir |
-| Harita durağı | `kitaplar/hz-ismail/harita-kapak.jpg` | ⬜ Yer tutucu (512×512) — brif final MD §C2 (sembol: iki tepe arasında kumdan kaynayan berrak su) |
-| Rozet | `rozetler/hz-ismail/bolum-1…6.png` | ⬜ 6 yer tutucu — brifler final MD §H "Rozet üretim brifleri" |
-| Madalya | `madalyalar/hz-ismail.png` | ⬜ Yer tutucu — brif final MD §C3 (sembol: kaynayan su ve yükselen taş temel) |
+| Kitap kapağı | `kitaplar/hz-ismail/kapak.png` | ✅ Var (600×900, **yazısız** — başlık tasarımda eklenecek; 1.5K ana dosya `gorsel-kaynaklari/kitaplar/hz-ismail/kapak.png`) |
+| Harita durağı | `kitaplar/hz-ismail/harita-kapak.jpg` | ✅ Var (512×512, Îsâ durağıyla aynı çerçeve ailesi; sembol: iki tepe arasında kumdan kaynayan berrak su) |
+| Rozet | `rozetler/hz-ismail/bolum-1…6.png` | □ 6 kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-ismail/`) |
+| Madalya | `madalyalar/hz-ismail.png` | □ Kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; sembol: kaynayan su ve yükselen taş temel) |
 
 > **12 Ağu 2026 — Hz. İdrîs aktarıldı.** Kitap kapağı ve harita durağı hazırdı,
 > dört bölüm kapağı da diskteydi. Bekleyen üretim: **16 içerik sahnesi + 4 rozet

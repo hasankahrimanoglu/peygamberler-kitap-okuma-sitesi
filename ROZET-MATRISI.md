@@ -436,7 +436,7 @@ Hz. Yunus 5 · Hz. İbrahim 9 · Hz. Yusuf 10 · Hz. Süleyman 7 · Hz. Îsâ 8 
 |---|---|---:|---|---|---|---|
 | Hz. İbrahim | `ibrahim` | 9 | `hz-ibrahim/bolum-1…9` | tevhid, cesaret, teslimiyet, misafirperverlik | ✅ Nihai (§2) | □ 9/9 |
 | Hz. Lût | `lut` | 5 | `hz-lut/bolum-1…5` | ahlâk, cesaret, koruma, doğruluk | Bekliyor (K1) | — |
-| Hz. İsmail | `ismail` | 6 | `hz-ismail/bolum-1…6` | teslimiyet, çalışma, aile, sözünde durma | ✅ Nihai (§2) | — 0/6 |
+| Hz. İsmail | `ismail` | 6 | `hz-ismail/bolum-1…6` | teslimiyet, çalışma, aile, sözünde durma | ✅ Nihai (§2) | □ 6/6 |
 | Hz. İshak | `ishak` | 4 | `hz-ishak/bolum-1…4` | şükür, aile, sabır, devamlılık | Bekliyor (K2) | — |
 | Hz. Yakup | `yakup` | 5 | `hz-yakup/bolum-1…5` | sabır, sevgi, umut, bağışlama | Bekliyor (K1) | — |
 | Hz. Yusuf | `yusuf` | 10 | `hz-yusuf/bolum-1…10` | sabır, iffet, güvenilirlik, bağışlama | ✅ Nihai (§2) | □ 10/10 |
@@ -505,18 +505,18 @@ Hz. Yunus 5 · Hz. İbrahim 9 · Hz. Yusuf 10 · Hz. Süleyman 7 · Hz. Îsâ 8 
 | Nihai rozet adı kayıtlı | 84 |
 | Geçici demo adı kayıtlı | 0 |
 | Ad bekleyen | 132 |
-| Üretilmiş rozet görseli | 74 |
-| Rozet görseli bekleyen | 142 |
+| Üretilmiş rozet görseli | 80 |
+| Rozet görseli bekleyen | 136 |
 
-Üretilmiş 74 görsel: `rozetler/hz-adem/bolum-1…8.png` ve
+Üretilmiş 80 görsel: `rozetler/hz-adem/bolum-1…8.png` ve
 `rozetler/hz-sit/bolum-1…4.png` (11 Ağu 2026), `rozetler/hz-nuh/bolum-1…8.png`
 (13 Eki 2026) — 512×512 şeffaf PNG; `rozetler/hz-musa/bolum-1…10.png`
 (13 Eki 2026), `rozetler/hz-eyyub/bolum-1…5.png` (15 Eki 2026) ve
 `rozetler/hz-yunus/bolum-1…5.png` (16 Eki 2026), `rozetler/hz-ibrahim/bolum-1…9.png`
-`rozetler/hz-yusuf/bolum-1…10.png`, `rozetler/hz-suleyman/bolum-1…7.png` ve `rozetler/hz-isa/bolum-1…8.png` (17 Eki 2026) — 512×512 kare, çerçevesiz (`□`).
+`rozetler/hz-yusuf/bolum-1…10.png`, `rozetler/hz-suleyman/bolum-1…7.png`, `rozetler/hz-isa/bolum-1…8.png` ve `rozetler/hz-ismail/bolum-1…6.png` (17 Eki 2026) — 512×512 kare, çerçevesiz (`□`).
 Madalya görselleri bu matriste izlenmez; sicilleri `ICERIK-GORSEL-SICILI.md`
 §5'tedir (`madalyalar/hz-adem.png`, `hz-sit.png` ve `hz-nuh.png` teslim edildi;
-`hz-musa.png`, `hz-eyyub.png`, `hz-yunus.png`, `hz-ibrahim.png`, `hz-yusuf.png` ve `hz-suleyman.png` kare
+`hz-musa.png`, `hz-eyyub.png`, `hz-yunus.png`, `hz-ibrahim.png`, `hz-yusuf.png`, `hz-suleyman.png`, `hz-isa.png` ve `hz-ismail.png` kare
 teslim edildi, çerçeve bekliyor).
 
 > **12 Ağu 2026 — Hz. İdrîs:** dört rozet **adı** nihai olarak kaydedildi
@@ -598,6 +598,11 @@ teslim edildi, çerçeve bekliyor).
 > sekiz rozet ve kitap madalyası **çerçevesiz kare** (§6.2 kuralı) 512×512 PNG;
 > 1.5K ana dosyalar `gorsel-kaynaklari/` altında. Görsel sütunu `□` — çerçeveyi
 > Hasan ekleyince `✓` olur. Görsel sayaçları 66 → 74 / 150 → 142.
+
+> **17 Eki 2026 — Hz. İsmail görselleri teslim edildi** (`/gorsel-uretim ismail`):
+> altı rozet ve kitap madalyası **çerçevesiz kare** (§6.2 kuralı) 512×512 PNG;
+> 1.5K ana dosyalar `gorsel-kaynaklari/` altında. Görsel sütunu `□` — çerçeveyi
+> Hasan ekleyince `✓` olur. Görsel sayaçları 74 → 80 / 142 → 136.
 
 > **16 Eki 2026 — Hz. İsmail:** altı rozet **adı** nihai olarak kaydedildi
 > (78 → 84); görselleri henüz üretilmedi. `rozetler/hz-ismail/bolum-1…6.png` ve
