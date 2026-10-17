@@ -1431,9 +1431,9 @@ Devam 3); **B3'te 1 açılış + 4 sahne** (1. Kısım 2 / Devam 2).
 
 ## 4k. Hz. Îsâ (`bookKey: isa`) — 48 görsel
 
-**Durum (16 Eki 2026):** aktarıldı, katalogda **"preparing"** (yayında değil). 48 sahne
-slotunun hepsi **yer tutucu** (`npm run gorsel-yertutucu -- isa`); kitap kapağı,
-harita durağı, 8 rozet ve madalya da yer tutucudur. Briflerin tamamı
+**Durum (17 Eki 2026):** aktarıldı, katalogda **"preparing"** (yayında değil). 48 sahne,
+kitap kapağı, harita durağı, 8 rozet ve madalya **üretildi** (`/gorsel-uretim isa`, aşağıdaki
+üretim kararları); rozet ve madalya çerçeve bekliyor, ses yer tutucu. Briflerin tamamı
 `kitap-icerikleri/KITAP-HZ-ISA-ICERIK-final.md` §B, §C, §D ve §H'dedir (İngilizce
 ana üretim promptu, ortak stil bloğu, ortak negatif, **karakter bloğu (EN)** ve rozet
 sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figür bilgisi ve
@@ -1486,100 +1486,134 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 > pınarlı tepe); `bolum-6/yol-heybeleri` → `bolum-7/ikindi-tepe` (havari karakter
 > tutarlılığı).
 
+> **Üretim kararları (17 Eki 2026, `/gorsel-uretim isa`):** §6.2 set geneli standardı
+> uygulandı (Seedream 5 Pro · sahne 2K · rozet, madalya, kapak, durak 1.5K ·
+> `stil-referans-gorsel.jpg`); aday sayısı §6.2 tablosuna göre (açılış ve havari sahnesi 2,
+> diğerleri 1). Kitaba özgü notlar:
+> - **Görsel referans çiftleri** yukarıdaki listeye göre verildi; ayrıca `bolum-5/camur-kus`
+>   → `havalanan-kus` ve `tek-tuy` (aynı taş), `bolum-1/kapak` → `aksam-kandilleri`.
+>   Rozet ikinci referansı: onaylanan pilot `rozetler/hz-isa/bolum-1.png`.
+> - **Havariler:** `yol-heybeleri`'nin ilk iki adayında arka sıradaki adamların yüzü ve sakalı
+>   görünüyordu (çember hâlinde duran grup); "tek sıra, hepsi yola dönük, tamamen arkadan"
+>   prompttan temiz aday seçildi ve `ikindi-tepe`'ye referans verildi. Başlar büyütülerek
+>   kontrol edildi; yüz, yanak, sakal yok.
+> - **Reddedilenler:** `bolum-1/kapak` B adayı (uzak kapıda beyaz giysili küçük figür);
+>   pilot rozetin ilk adayı (kâse içinde kalkan biçimli amblem); `bolum-4/kapak` B adayı
+>   (kemerli köprü, mağara ağzı); `bolum-8/kapali-kapilar` (kemerli kapılar, metal fener) ve
+>   `bolum-8/gece-damlar` (kubbeli çatılar) — ikisi bir kez yeniden üretildi; rozet 4 ilk aday
+>   (yapılı çeşme ağzı ve kâse) ve rozet 7 ilk aday (kandiller halka/kalp biçiminde).
+> - **Rötuş (maskeli, ~10 kredi):** `bolum-6/yan-yana-fidanlar`'da uzak tepenin üstündeki iki
+>   haç biçimli direk silindi; rozet 4'ün ikinci adayında yollar ortada dört kollu kavşak
+>   oluşturuyordu, alt kol çimle örtüldü (üç yol pınarın yanında birleşiyor).
+> - **Katman 3:** komşular ve mahalle halkı (B3) arkadan/yandan; `aralik-kepenkler`'de yaşlı
+>   adam ve fısıldaşan çift yandan görünüyor (Katman 3'te serbest). `acilan-kepenk`'teki
+>   iyileşen adam brifteki "arkadan" yerine dörtte üç arkadan, yüz hattı yandan seçiliyor.
+> - **Kapak ve harita durağı:** yayındaki `hz-suleyman/kapak.png` ve
+>   `hz-suleyman/harita-kapak.jpg` referans verilerek aynı aileden üretildi (yıldız biçimli
+>   madalyon, sekiz köşeli değil). Kapak **yazısız**; "Hz. Îsâ" başlığı tasarımda eklenecek.
+>   1.5K ana dosyalar `gorsel-kaynaklari/kitaplar/hz-isa/`.
+> - **Bilinen küçük sapmalar** (Hasan 17 Eki 2026'da hepsini onayladı): `bolum-2/kapak` ve
+>   `tasli-patika`'da mucizeden önce küçük bir su birikintisi var, patika vadisi brifteki
+>   kadar çorak değil; `bolum-1/mabet-odasi`'nda küçük pencerenin yanında avluya açılan geniş
+>   bir açıklık var; `perdeli-kose`'de ahşap sandalye; `bolum-3/kapak`'ta birkaç küçük ev
+>   kapısı hafif kemerli; `ciyli-yapraklar`'da yerde kırık testi parçaları; rozet 1'deki
+>   ışık bir parça sıvı gibi okunuyor; rozet 2, 3, 5 ve 7'de sembol %60 güvenli alanı biraz
+>   aşıyor.
+
 ### Kitap kapağı ve harita durağı
 
 | Dosya | Biçim | Durum | Görsel brifi |
 |---|---|---|---|
-| `hz-isa/kapak.png` | 600×900, 2:3 dikey | ⬜ Bekliyor | Lacivert deri dokulu kapakta çok köşeli yıldız biçiminde altın çerçeveli madalyon; içinde şafak ışığında hurmalarla dolu tek bir hurma ağacı ve dibinde düz taşlar arasından akan su kaynağı. **Yazısız** üretilir; "Hz. Îsâ" yazısı tasarım aşamasında eklenir (final MD §C1) |
-| `hz-isa/harita-kapak.jpg` | Kare, 512×512 veya üstü | ⬜ Bekliyor | Hardal zemin üzerinde altın çerçeveli madalyonda, dibinde su kaynağı olan tek hurma ağacı (final MD §C2; B2'nin merkez imgesi) |
+| `hz-isa/kapak.png` | 600×900, 2:3 dikey | ✅ Hazır | Lacivert deri dokulu kapakta çok köşeli yıldız biçiminde altın çerçeveli madalyon; içinde şafak ışığında hurmalarla dolu tek bir hurma ağacı ve dibinde düz taşlar arasından akan su kaynağı. **Yazısız** üretilir; "Hz. Îsâ" yazısı tasarım aşamasında eklenir (final MD §C1) |
+| `hz-isa/harita-kapak.jpg` | Kare, 512×512 veya üstü | ✅ Hazır | Hardal zemin üzerinde altın çerçeveli madalyonda, dibinde su kaynağı olan tek hurma ağacı (final MD §C2; B2'nin merkez imgesi) |
 
 ### Bölüm 1 — Mabette Gelen Müjde
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-isa/bolum-1/kapak.jpg` | Açılış | A | yok — mekân/manzara sahnesi | ⬜ Bekliyor | Sabah ışığında sade taş sütunlu bir mabet avlusu; sütunların arasında kil kandiller ve uzakta zeytinli tepeler |
-| `hz-isa/bolum-1/mabet-odasi.jpg` | 1. Kısım | A | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz (rızık sahnesi ve Hz. Zekeriyyâ Zekeriyyâ kitabına kalır, D-k2) | ⬜ Bekliyor | Mabedin sade, taş duvarlı küçük bir odası; küçük bir pencere açıklığından giren sabah ışığı, yerde bir hasır ve yanan bir kil kandil |
-| `hz-isa/bolum-1/perdeli-kose.jpg` | 1. Kısım | A | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz | ⬜ Bekliyor | Taş bir duvarın önüne gerilmiş açık renkli keten perde, kenarından sızan şafak ışığı ve yerde bir hasır |
-| `hz-isa/bolum-1/yeni-sabah.jpg` | Devam | B | yok — sembol ve nesne sahnesi | ⬜ Bekliyor | Tepelerin ardından yükselen güneş; ışık vadideki zeytinliklere ve taş evlere yayılıyor |
-| `hz-isa/bolum-1/ilk-filiz.jpg` | Devam | B | yok — sembol ve nesne sahnesi | ⬜ Bekliyor | Kuru ve çatlak toprağın arasından yükselen tek bir taze yeşil filiz ve üzerinde bir damla çiy |
-| `hz-isa/bolum-1/aksam-kandilleri.jpg` | Devam | B | yok — mekân/manzara sahnesi; Hz. Meryem'in sahnesi (S5) | ⬜ Bekliyor | Akşam, sade taş sütunlu mabet avlusunda birer birer yanan kil kandiller; gökyüzü mor ve lacivert |
+| `hz-isa/bolum-1/kapak.jpg` | Açılış | A | yok — mekân/manzara sahnesi | ✅ Hazır | Sabah ışığında sade taş sütunlu bir mabet avlusu; sütunların arasında kil kandiller ve uzakta zeytinli tepeler |
+| `hz-isa/bolum-1/mabet-odasi.jpg` | 1. Kısım | A | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz (rızık sahnesi ve Hz. Zekeriyyâ Zekeriyyâ kitabına kalır, D-k2) | ✅ Hazır | Mabedin sade, taş duvarlı küçük bir odası; küçük bir pencere açıklığından giren sabah ışığı, yerde bir hasır ve yanan bir kil kandil |
+| `hz-isa/bolum-1/perdeli-kose.jpg` | 1. Kısım | A | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz | ✅ Hazır | Taş bir duvarın önüne gerilmiş açık renkli keten perde, kenarından sızan şafak ışığı ve yerde bir hasır |
+| `hz-isa/bolum-1/yeni-sabah.jpg` | Devam | B | yok — sembol ve nesne sahnesi | ✅ Hazır | Tepelerin ardından yükselen güneş; ışık vadideki zeytinliklere ve taş evlere yayılıyor |
+| `hz-isa/bolum-1/ilk-filiz.jpg` | Devam | B | yok — sembol ve nesne sahnesi | ✅ Hazır | Kuru ve çatlak toprağın arasından yükselen tek bir taze yeşil filiz ve üzerinde bir damla çiy |
+| `hz-isa/bolum-1/aksam-kandilleri.jpg` | Devam | B | yok — mekân/manzara sahnesi; Hz. Meryem'in sahnesi (S5) | ✅ Hazır | Akşam, sade taş sütunlu mabet avlusunda birer birer yanan kil kandiller; gökyüzü mor ve lacivert |
 
 ### Bölüm 2 — Hurma Ağacının Dibinde
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-isa/bolum-2/kapak.jpg` | Açılış | A | yok — mekân/manzara sahnesi | ⬜ Bekliyor | Alacakaranlıkta kireç taşı kayalarla çevrili ıssız bir vadi ve vadinin ortasında tek başına duran bir hurma ağacı |
-| `hz-isa/bolum-2/tasli-patika.jpg` | 1. Kısım | A | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz | ⬜ Bekliyor | Kayalık tepelerin arasından ıssız bir vadiye doğru kıvrılarak inen taşlı, dar bir patika |
-| `hz-isa/bolum-2/kuru-kutuk.jpg` | 1. Kısım | A | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz | ⬜ Bekliyor | Yakın planda, kabuğu çatlak, yaprakları solmuş kupkuru görünen bir hurma ağacı gövdesi ve dibindeki taşlar |
-| `hz-isa/bolum-2/dokulen-hurmalar.jpg` | Devam | B | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz | ⬜ Bekliyor | Hurma ağacının dibinde kumun üstüne dökülmüş taze, parlak hurmalar ve hemen yanından akan berrak su |
-| `hz-isa/bolum-2/su-kaynagi.jpg` | Devam | B | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz | ⬜ Bekliyor | Yakın planda, düz taşların arasından sessizce kaynayan berrak su ve kenarında birkaç hurma |
-| `hz-isa/bolum-2/hurmali-agac.jpg` | Devam | B | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz | ⬜ Bekliyor | Sabah ışığında salkım salkım hurmalarla dolu hurma ağacı, dibinden akan su ve tepelerin arasına uzanan patika |
+| `hz-isa/bolum-2/kapak.jpg` | Açılış | A | yok — mekân/manzara sahnesi | ✅ Hazır | Alacakaranlıkta kireç taşı kayalarla çevrili ıssız bir vadi ve vadinin ortasında tek başına duran bir hurma ağacı |
+| `hz-isa/bolum-2/tasli-patika.jpg` | 1. Kısım | A | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz | ✅ Hazır | Kayalık tepelerin arasından ıssız bir vadiye doğru kıvrılarak inen taşlı, dar bir patika |
+| `hz-isa/bolum-2/kuru-kutuk.jpg` | 1. Kısım | A | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz | ✅ Hazır | Yakın planda, kabuğu çatlak, yaprakları solmuş kupkuru görünen bir hurma ağacı gövdesi ve dibindeki taşlar |
+| `hz-isa/bolum-2/dokulen-hurmalar.jpg` | Devam | B | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz | ✅ Hazır | Hurma ağacının dibinde kumun üstüne dökülmüş taze, parlak hurmalar ve hemen yanından akan berrak su |
+| `hz-isa/bolum-2/su-kaynagi.jpg` | Devam | B | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz | ✅ Hazır | Yakın planda, düz taşların arasından sessizce kaynayan berrak su ve kenarında birkaç hurma |
+| `hz-isa/bolum-2/hurmali-agac.jpg` | Devam | B | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz | ✅ Hazır | Sabah ışığında salkım salkım hurmalarla dolu hurma ağacı, dibinden akan su ve tepelerin arasına uzanan patika |
 
 ### Bölüm 3 — Beşikten Gelen Ses
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-isa/bolum-3/kapak.jpg` | Açılış | A | yok — mekân/manzara sahnesi | ⬜ Bekliyor | Sabah ışığında tepe yamacına kurulmuş düz damlı taş evler, uzakta mabedin taş sütunları ve yola uzanan zeytin ağaçları |
-| `hz-isa/bolum-3/aralik-kepenkler.jpg` | 1. Kısım | A | Komşular — Katman 3 (sıradan halk); arkadan ya da yandan, yüz seçilmeyecek uzaklıkta (Faz 1 B6 notu, F3); sakin, meraklı. Hz. Meryem ve bebek kadrajda yok (S5). | ⬜ Bekliyor | Dar, taş döşeli bir sokakta yarı aralık kapıların önünde, uzakta, arkadan görünen ve fısıldaşan birkaç komşu; uzun sabah gölgeleri |
-| `hz-isa/bolum-3/muhurlu-testi.jpg` | 1. Kısım | A | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz (söz orucu) | ⬜ Bekliyor | Taş bir basamağın üstünde, ağzı keten bir bezle kapatılıp iple sıkıca bağlanmış toprak bir testi |
-| `hz-isa/bolum-3/bos-besik.jpg` | Devam | B | yok — olayın öznesi bebek Hz. Îsâ ve Hz. Meryem; Faz 1 S5 gereği figürsüz | ⬜ Bekliyor | Taş zemin üzerinde duran, içinde katlanmış keten örtü olan sade ve boş ahşap bir beşik |
-| `hz-isa/bolum-3/acik-kepenkler.jpg` | Devam | B | Mahalle halkı — Katman 3; arkadan ve yandan, orta-uzak plan; bakılan yer (Hz. Meryem ve bebek) kadrajın dışında (S5). | ⬜ Bekliyor | Aynı sokak, kepenkleri ve kapıları ardına kadar açık; ikindi ışığında sokakta sessizce durup kadraj dışına bakan birkaç kişi |
-| `hz-isa/bolum-3/zeytin-gun-batimi.jpg` | Devam | B | yok — mekân/manzara sahnesi; Hz. Meryem'in sahnesi (S5) | ⬜ Bekliyor | Yerleşimin kenarında gün batımında yaşlı zeytin ağaçları ve ağaçların arasından uzaklara uzanan sakin bir patika |
+| `hz-isa/bolum-3/kapak.jpg` | Açılış | A | yok — mekân/manzara sahnesi | ✅ Hazır | Sabah ışığında tepe yamacına kurulmuş düz damlı taş evler, uzakta mabedin taş sütunları ve yola uzanan zeytin ağaçları |
+| `hz-isa/bolum-3/aralik-kepenkler.jpg` | 1. Kısım | A | Komşular — Katman 3 (sıradan halk); arkadan ya da yandan, yüz seçilmeyecek uzaklıkta (Faz 1 B6 notu, F3); sakin, meraklı. Hz. Meryem ve bebek kadrajda yok (S5). | ✅ Hazır | Dar, taş döşeli bir sokakta yarı aralık kapıların önünde, uzakta, arkadan görünen ve fısıldaşan birkaç komşu; uzun sabah gölgeleri |
+| `hz-isa/bolum-3/muhurlu-testi.jpg` | 1. Kısım | A | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz (söz orucu) | ✅ Hazır | Taş bir basamağın üstünde, ağzı keten bir bezle kapatılıp iple sıkıca bağlanmış toprak bir testi |
+| `hz-isa/bolum-3/bos-besik.jpg` | Devam | B | yok — olayın öznesi bebek Hz. Îsâ ve Hz. Meryem; Faz 1 S5 gereği figürsüz | ✅ Hazır | Taş zemin üzerinde duran, içinde katlanmış keten örtü olan sade ve boş ahşap bir beşik |
+| `hz-isa/bolum-3/acik-kepenkler.jpg` | Devam | B | Mahalle halkı — Katman 3; arkadan ve yandan, orta-uzak plan; bakılan yer (Hz. Meryem ve bebek) kadrajın dışında (S5). | ✅ Hazır | Aynı sokak, kepenkleri ve kapıları ardına kadar açık; ikindi ışığında sokakta sessizce durup kadraj dışına bakan birkaç kişi |
+| `hz-isa/bolum-3/zeytin-gun-batimi.jpg` | Devam | B | yok — mekân/manzara sahnesi; Hz. Meryem'in sahnesi (S5) | ✅ Hazır | Yerleşimin kenarında gün batımında yaşlı zeytin ağaçları ve ağaçların arasından uzaklara uzanan sakin bir patika |
 
 ### Bölüm 4 — Benim de Rabbim, Sizin de
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-isa/bolum-4/kapak.jpg` | Açılış | A | yok — mekân/manzara sahnesi (Hz. Meryem ile Hz. Îsâ'nın yuvası, S5) | ⬜ Bekliyor | Öğle ışığında yeşil yamaçlı yüksekçe bir düzlük, kayaların arasından çıkan kaynak suyu, küçük taş bir ev ve zeytin ağaçları |
-| `hz-isa/bolum-4/pinar-basi.jpg` | 1. Kısım | A | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz (anne ve oğulun yuvası) | ⬜ Bekliyor | Taşların arasından akan kaynak suyunun başında bir toprak testi, taş bir seki ve gölge veren genç bir zeytin ağacı |
-| `hz-isa/bolum-4/sarili-tomarlar.jpg` | 1. Kısım | A | yok — sembol ve nesne sahnesi | ⬜ Bekliyor | Alçak ahşap bir rafta iple bağlanmış iki sarılı tomar ve yanında yanan küçük bir kil kandil |
-| `hz-isa/bolum-4/birlesen-yollar.jpg` | Devam | B | Yolcular — Katman 3 (sıradan halk); çok uzak ve küçük. Pınarın başında bekleyen ya da öne çıkan bir figür yok (Hz. Îsâ çizilmez, S5). | ⬜ Bekliyor | Tepeden bakış: üç farklı yönden gelen toprak yollar yamaçtaki tek bir pınarda buluşuyor; yollarda pınara doğru yürüyen küçük insan grupları |
-| `hz-isa/bolum-4/sade-sofra.jpg` | Devam | B | yok — "yiyip içen birer insan" ifadesinin öznesi Hz. Îsâ ve Hz. Meryem; Faz 1 S5 gereği figürsüz | ⬜ Bekliyor | Bir hasırın üstüne serilmiş sade bir yer sofrası: yuvarlak bir ekmek, birkaç hurma, su dolu toprak testi ve kâseler |
-| `hz-isa/bolum-4/tepeden-bakis.jpg` | Devam | B | yok — mekân/manzara sahnesi | ⬜ Bekliyor | Gün batımında pınarlı tepeden vadiye bakış; uzakta köylerin damlarından ince dumanlar yükseliyor |
+| `hz-isa/bolum-4/kapak.jpg` | Açılış | A | yok — mekân/manzara sahnesi (Hz. Meryem ile Hz. Îsâ'nın yuvası, S5) | ✅ Hazır | Öğle ışığında yeşil yamaçlı yüksekçe bir düzlük, kayaların arasından çıkan kaynak suyu, küçük taş bir ev ve zeytin ağaçları |
+| `hz-isa/bolum-4/pinar-basi.jpg` | 1. Kısım | A | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz (anne ve oğulun yuvası) | ✅ Hazır | Taşların arasından akan kaynak suyunun başında bir toprak testi, taş bir seki ve gölge veren genç bir zeytin ağacı |
+| `hz-isa/bolum-4/sarili-tomarlar.jpg` | 1. Kısım | A | yok — sembol ve nesne sahnesi | ✅ Hazır | Alçak ahşap bir rafta iple bağlanmış iki sarılı tomar ve yanında yanan küçük bir kil kandil |
+| `hz-isa/bolum-4/birlesen-yollar.jpg` | Devam | B | Yolcular — Katman 3 (sıradan halk); çok uzak ve küçük. Pınarın başında bekleyen ya da öne çıkan bir figür yok (Hz. Îsâ çizilmez, S5). | ✅ Hazır | Tepeden bakış: üç farklı yönden gelen toprak yollar yamaçtaki tek bir pınarda buluşuyor; yollarda pınara doğru yürüyen küçük insan grupları |
+| `hz-isa/bolum-4/sade-sofra.jpg` | Devam | B | yok — "yiyip içen birer insan" ifadesinin öznesi Hz. Îsâ ve Hz. Meryem; Faz 1 S5 gereği figürsüz | ✅ Hazır | Bir hasırın üstüne serilmiş sade bir yer sofrası: yuvarlak bir ekmek, birkaç hurma, su dolu toprak testi ve kâseler |
+| `hz-isa/bolum-4/tepeden-bakis.jpg` | Devam | B | yok — mekân/manzara sahnesi | ✅ Hazır | Gün batımında pınarlı tepeden vadiye bakış; uzakta köylerin damlarından ince dumanlar yükseliyor |
 
 ### Bölüm 5 — Çamurdan Bir Kuş
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-isa/bolum-5/kapak.jpg` | Açılış | A | yok — mekân/manzara sahnesi | ⬜ Bekliyor | Parlak bir bahar sabahında küçük bir derenin kenarında ıslak kızıl toprak, çiçekli otlar ve zeytin ağaçları |
-| `hz-isa/bolum-5/camur-kus.jpg` | 1. Kısım | A | yok — olayın öznesi Hz. Îsâ; Faz 1 S5 gereği figürsüz; el de çizilmez | ⬜ Bekliyor | Yakın planda, düz ve yuvarlak bir taşın üstünde duran, ıslak kilden yapılmış küçük bir kuş biçimi |
-| `hz-isa/bolum-5/havalanan-kus.jpg` | 1. Kısım | A | yok — olayın öznesi Hz. Îsâ; Faz 1 S5 gereği figürsüz; Faz 1 S6 gereği tanık ve izleyen kalabalık da yok | ⬜ Bekliyor | Zeytin dallarının arasından mavi gökyüzüne doğru havalanan küçük, toprak kahverengisi bir serçe |
-| `hz-isa/bolum-5/acilan-kepenk.jpg` | Devam | B | İyileşen kişi — Katman 3 (sıradan halk); arkadan. Odada başka figür yok; onu iyileştiren Hz. Îsâ çizilmez (S5). | ⬜ Bekliyor | Loş bir taş odada, ardına kadar açılmış ahşap kepengin önünde arkadan görünen ve dışarıdaki bahçeye bakan bir adam; içeri dolan sıcak gün ışığı |
-| `hz-isa/bolum-5/zeytin-yolu.jpg` | Devam | B | yok — olayın öznesi Hz. Îsâ; Faz 1 S5 gereği figürsüz (yoluna devam etmesi) | ⬜ Bekliyor | Zeytinliklerin arasından kıvrılarak uzaktaki bir köye doğru giden toprak yol ve kenarındaki yabani çiçekler |
-| `hz-isa/bolum-5/tek-tuy.jpg` | Devam | B | yok — sembol ve nesne sahnesi | ⬜ Bekliyor | Gün batımında düz bir taşın üstünde duran küçük, kahverengi bir kuş tüyü; ufukta küçük bir nokta gibi kaybolan kuş |
+| `hz-isa/bolum-5/kapak.jpg` | Açılış | A | yok — mekân/manzara sahnesi | ✅ Hazır | Parlak bir bahar sabahında küçük bir derenin kenarında ıslak kızıl toprak, çiçekli otlar ve zeytin ağaçları |
+| `hz-isa/bolum-5/camur-kus.jpg` | 1. Kısım | A | yok — olayın öznesi Hz. Îsâ; Faz 1 S5 gereği figürsüz; el de çizilmez | ✅ Hazır | Yakın planda, düz ve yuvarlak bir taşın üstünde duran, ıslak kilden yapılmış küçük bir kuş biçimi |
+| `hz-isa/bolum-5/havalanan-kus.jpg` | 1. Kısım | A | yok — olayın öznesi Hz. Îsâ; Faz 1 S5 gereği figürsüz; Faz 1 S6 gereği tanık ve izleyen kalabalık da yok | ✅ Hazır | Zeytin dallarının arasından mavi gökyüzüne doğru havalanan küçük, toprak kahverengisi bir serçe |
+| `hz-isa/bolum-5/acilan-kepenk.jpg` | Devam | B | İyileşen kişi — Katman 3 (sıradan halk); arkadan. Odada başka figür yok; onu iyileştiren Hz. Îsâ çizilmez (S5). | ✅ Hazır | Loş bir taş odada, ardına kadar açılmış ahşap kepengin önünde arkadan görünen ve dışarıdaki bahçeye bakan bir adam; içeri dolan sıcak gün ışığı |
+| `hz-isa/bolum-5/zeytin-yolu.jpg` | Devam | B | yok — olayın öznesi Hz. Îsâ; Faz 1 S5 gereği figürsüz (yoluna devam etmesi) | ✅ Hazır | Zeytinliklerin arasından kıvrılarak uzaktaki bir köye doğru giden toprak yol ve kenarındaki yabani çiçekler |
+| `hz-isa/bolum-5/tek-tuy.jpg` | Devam | B | yok — sembol ve nesne sahnesi | ✅ Hazır | Gün batımında düz bir taşın üstünde duran küçük, kahverengi bir kuş tüyü; ufukta küçük bir nokta gibi kaybolan kuş |
 
 ### Bölüm 6 — Allah Yolunda Yardımcılar
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-isa/bolum-6/kapak.jpg` | Açılış | A | yok — mekân/manzara sahnesi | ⬜ Bekliyor | Gün doğumunda alçak tepelerin arasından kıvrılan uzun bir toprak yol, yol boyunca zeytin ağaçları ve uzakta küçük köyler |
-| `hz-isa/bolum-6/catal-yol.jpg` | 1. Kısım | A | Yolcular — Katman 3 (sıradan halk); çok uzak ve küçük. Çatalda ya da ağacın altında bekleyen figür yok (S5). | ⬜ Bekliyor | Bir tepe eteğinde iki yöne ayrılan toprak yol, çatalda yaşlı bir zeytin ağacı; yollardan birinde birlikte yürüyen birkaç kişi, öbüründe uzaklaşan iki kişi |
-| `hz-isa/bolum-6/sessiz-aksam.jpg` | 1. Kısım | A | yok — sembol ve nesne sahnesi (sorudan sonraki sessizlik) | ⬜ Bekliyor | Alacakaranlıkta rüzgârsız, kımıltısız bir buğday tarlası ve kenarında yaşlı bir zeytin ağacı |
-| `hz-isa/bolum-6/yol-heybeleri.jpg` | Devam | B | Havariler — Katman 1; arkadan, orta plan, başları örtülü; yüzleri ve profilleri görünmez; karakter bloğu "Havariler" eklenir. Grubun önünde, ortasında ya da ayrı duran figür yok (Hz. Îsâ çizilmez, S5). | ⬜ Bekliyor | Şafakta taş bir duvarın önünde, arkadan görünen birkaç adam heybelerini omuzlarına alıp önlerinde açılan yola bakıyor |
-| `hz-isa/bolum-6/gece-atesi.jpg` | Devam | B | yok — metinde Hz. Îsâ da konaklayanların arasında; grup ateş başında gösterilirse görünmeyen bir merkez figür izlenimi doğar (F3, Faz 1 S5) | ⬜ Bekliyor | Gece, açık bir tepede sönmeye yüz tutmuş küçük bir ateş ve çevresinde gelişigüzel bırakılmış heybeler, değnekler ve bir testi |
-| `hz-isa/bolum-6/yan-yana-fidanlar.jpg` | Devam | B | yok — sembol ve nesne sahnesi (dostluk) | ⬜ Bekliyor | Sabah ışığında bir yol kenarında yan yana yükselen genç zeytin fidanları ve ardında aydınlanan vadi |
+| `hz-isa/bolum-6/kapak.jpg` | Açılış | A | yok — mekân/manzara sahnesi | ✅ Hazır | Gün doğumunda alçak tepelerin arasından kıvrılan uzun bir toprak yol, yol boyunca zeytin ağaçları ve uzakta küçük köyler |
+| `hz-isa/bolum-6/catal-yol.jpg` | 1. Kısım | A | Yolcular — Katman 3 (sıradan halk); çok uzak ve küçük. Çatalda ya da ağacın altında bekleyen figür yok (S5). | ✅ Hazır | Bir tepe eteğinde iki yöne ayrılan toprak yol, çatalda yaşlı bir zeytin ağacı; yollardan birinde birlikte yürüyen birkaç kişi, öbüründe uzaklaşan iki kişi |
+| `hz-isa/bolum-6/sessiz-aksam.jpg` | 1. Kısım | A | yok — sembol ve nesne sahnesi (sorudan sonraki sessizlik) | ✅ Hazır | Alacakaranlıkta rüzgârsız, kımıltısız bir buğday tarlası ve kenarında yaşlı bir zeytin ağacı |
+| `hz-isa/bolum-6/yol-heybeleri.jpg` | Devam | B | Havariler — Katman 1; arkadan, orta plan, başları örtülü; yüzleri ve profilleri görünmez; karakter bloğu "Havariler" eklenir. Grubun önünde, ortasında ya da ayrı duran figür yok (Hz. Îsâ çizilmez, S5). | ✅ Hazır | Şafakta taş bir duvarın önünde, arkadan görünen birkaç adam heybelerini omuzlarına alıp önlerinde açılan yola bakıyor |
+| `hz-isa/bolum-6/gece-atesi.jpg` | Devam | B | yok — metinde Hz. Îsâ da konaklayanların arasında; grup ateş başında gösterilirse görünmeyen bir merkez figür izlenimi doğar (F3, Faz 1 S5) | ✅ Hazır | Gece, açık bir tepede sönmeye yüz tutmuş küçük bir ateş ve çevresinde gelişigüzel bırakılmış heybeler, değnekler ve bir testi |
+| `hz-isa/bolum-6/yan-yana-fidanlar.jpg` | Devam | B | yok — sembol ve nesne sahnesi (dostluk) | ✅ Hazır | Sabah ışığında bir yol kenarında yan yana yükselen genç zeytin fidanları ve ardında aydınlanan vadi |
 
 ### Bölüm 7 — Gökten Bir Sofra
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-isa/bolum-7/kapak.jpg` | Açılış | A | yok — mekân/manzara sahnesi | ⬜ Bekliyor | İkindi ışığında çimenli geniş bir tepe düzlüğü, kenarlarında zeytin ağaçları ve bulutlarla dolu bir gökyüzü |
-| `hz-isa/bolum-7/genis-gokyuzu.jpg` | 1. Kısım | A | yok — sembol ve nesne sahnesi; gökyüzüne bakan grup yükseliş ikonografisini çağırdığı için havariler çizilmedi | ⬜ Bekliyor | Zeytin dallarının çerçevelediği, beyaz ve altın bulutlarla dolu derin mavi bir gökyüzü |
-| `hz-isa/bolum-7/ikindi-tepe.jpg` | 1. Kısım | A | Havariler — Katman 1; arkadan, orta plan; yüzleri görünmez; karakter bloğu "Havariler" eklenir. Önlerinde konuşan ya da ayakta duran figür yok (S5). | ⬜ Bekliyor | Tepe düzlüğünde uzun ikindi gölgeleri; düz taşlara oturmuş, arkadan görünen birkaç adam aşağıdaki vadiye bakıyor; ön planda toprak bir testi |
-| `hz-isa/bolum-7/uzak-kandiller.jpg` | Devam | B | yok — sembol ve nesne sahnesi ("ilk gelenimizden son gelenimize kadar") | ⬜ Bekliyor | Alacakaranlıkta tepeden vadiye inen bir yol boyunca dizilmiş, uzaklaştıkça küçülen yanan kil kandiller |
-| `hz-isa/bolum-7/minder-halkasi.jpg` | Devam | B | yok — sembol ve nesne sahnesi; sofra başındaki grup "Son Akşam Yemeği" ikonografisini çağırdığı için havariler çizilmedi | ⬜ Bekliyor | Çimenlerin üstüne serilmiş boş, temiz bir keten örtü ve çevresinde geniş bir halka hâlinde dizilmiş minderler |
-| `hz-isa/bolum-7/kapanan-gun.jpg` | Devam | B | yok — mekân/manzara sahnesi | ⬜ Bekliyor | Gün batımından sonra mavi saatte vadiden geçen kıvrımlı bir yol ve ufukta son turuncu çizgi |
+| `hz-isa/bolum-7/kapak.jpg` | Açılış | A | yok — mekân/manzara sahnesi | ✅ Hazır | İkindi ışığında çimenli geniş bir tepe düzlüğü, kenarlarında zeytin ağaçları ve bulutlarla dolu bir gökyüzü |
+| `hz-isa/bolum-7/genis-gokyuzu.jpg` | 1. Kısım | A | yok — sembol ve nesne sahnesi; gökyüzüne bakan grup yükseliş ikonografisini çağırdığı için havariler çizilmedi | ✅ Hazır | Zeytin dallarının çerçevelediği, beyaz ve altın bulutlarla dolu derin mavi bir gökyüzü |
+| `hz-isa/bolum-7/ikindi-tepe.jpg` | 1. Kısım | A | Havariler — Katman 1; arkadan, orta plan; yüzleri görünmez; karakter bloğu "Havariler" eklenir. Önlerinde konuşan ya da ayakta duran figür yok (S5). | ✅ Hazır | Tepe düzlüğünde uzun ikindi gölgeleri; düz taşlara oturmuş, arkadan görünen birkaç adam aşağıdaki vadiye bakıyor; ön planda toprak bir testi |
+| `hz-isa/bolum-7/uzak-kandiller.jpg` | Devam | B | yok — sembol ve nesne sahnesi ("ilk gelenimizden son gelenimize kadar") | ✅ Hazır | Alacakaranlıkta tepeden vadiye inen bir yol boyunca dizilmiş, uzaklaştıkça küçülen yanan kil kandiller |
+| `hz-isa/bolum-7/minder-halkasi.jpg` | Devam | B | yok — sembol ve nesne sahnesi; sofra başındaki grup "Son Akşam Yemeği" ikonografisini çağırdığı için havariler çizilmedi | ✅ Hazır | Çimenlerin üstüne serilmiş boş, temiz bir keten örtü ve çevresinde geniş bir halka hâlinde dizilmiş minderler |
+| `hz-isa/bolum-7/kapanan-gun.jpg` | Devam | B | yok — mekân/manzara sahnesi | ✅ Hazır | Gün batımından sonra mavi saatte vadiden geçen kıvrımlı bir yol ve ufukta son turuncu çizgi |
 
 ### Bölüm 8 — Allah Onu Yükseltti
 
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
-| `hz-isa/bolum-8/kapak.jpg` | Açılış | A | yok — mekân/manzara sahnesi; zeytin bahçesi ve gece kullanılmadı (D-Ö6) | ⬜ Bekliyor | Akşamüstü taş teraslı bir yamaç, seyrek zeytin ağaçları, uzakta düz damlı evler ve gökyüzünde toplanan bulutlar |
-| `hz-isa/bolum-8/kapali-kapilar.jpg` | 1. Kısım | A | yok — olayın öznesi tuzak kuran ileri gelenler (Katman 2); §16/7 riski nedeniyle figürsüz bırakıldı (açık soru F2) | ⬜ Bekliyor | İkindi sonunda dar bir sokak; iki yanda sıkıca kapatılmış ahşap kapılar ve kepenkler, duvarlarda uzun gölgeler |
-| `hz-isa/bolum-8/gece-damlar.jpg` | 1. Kısım | A | yok — endişeli havariler (Katman 1) ve inananlar (Katman 3) bir gece sahnesinde Getsemani ikonografisine yaklaşacağı için figürsüz; zeytinlik de kullanılmadı (D-Ö6) | ⬜ Bekliyor | Gece, düz damlı taş evlerin üstünde ince bulutların arasından görünen dolunay ve tek bir pencereden sızan sıcak kandil ışığı |
-| `hz-isa/bolum-8/cozulen-ag.jpg` | Devam | B | yok — sembol ve nesne sahnesi | ⬜ Bekliyor | Şafak öncesi çimenlerin üstünde ipleri gevşemiş, düğümleri çözülmüş, boş ve eski bir ağ |
-| `hz-isa/bolum-8/ciyli-yapraklar.jpg` | Devam | B | yok — olayın öznesi Hz. Îsâ; Faz 1 S2 ve S5 gereği figürsüz | ⬜ Bekliyor | Şafakta, ilk ışığın düştüğü çiyli zeytin yaprakları ve yere yakın taze otlar |
-| `hz-isa/bolum-8/pinarli-tepe.jpg` | Devam | B | yok — mekân/manzara sahnesi | ⬜ Bekliyor | Sabah güneşinde pınarlı yüksekçe bir düzlük; kayaların arasından akan berrak su, yanında taze hurmalı bir hurma ağacı ve zeytinler |
+| `hz-isa/bolum-8/kapak.jpg` | Açılış | A | yok — mekân/manzara sahnesi; zeytin bahçesi ve gece kullanılmadı (D-Ö6) | ✅ Hazır | Akşamüstü taş teraslı bir yamaç, seyrek zeytin ağaçları, uzakta düz damlı evler ve gökyüzünde toplanan bulutlar |
+| `hz-isa/bolum-8/kapali-kapilar.jpg` | 1. Kısım | A | yok — olayın öznesi tuzak kuran ileri gelenler (Katman 2); §16/7 riski nedeniyle figürsüz bırakıldı (açık soru F2) | ✅ Hazır | İkindi sonunda dar bir sokak; iki yanda sıkıca kapatılmış ahşap kapılar ve kepenkler, duvarlarda uzun gölgeler |
+| `hz-isa/bolum-8/gece-damlar.jpg` | 1. Kısım | A | yok — endişeli havariler (Katman 1) ve inananlar (Katman 3) bir gece sahnesinde Getsemani ikonografisine yaklaşacağı için figürsüz; zeytinlik de kullanılmadı (D-Ö6) | ✅ Hazır | Gece, düz damlı taş evlerin üstünde ince bulutların arasından görünen dolunay ve tek bir pencereden sızan sıcak kandil ışığı |
+| `hz-isa/bolum-8/cozulen-ag.jpg` | Devam | B | yok — sembol ve nesne sahnesi | ✅ Hazır | Şafak öncesi çimenlerin üstünde ipleri gevşemiş, düğümleri çözülmüş, boş ve eski bir ağ |
+| `hz-isa/bolum-8/ciyli-yapraklar.jpg` | Devam | B | yok — olayın öznesi Hz. Îsâ; Faz 1 S2 ve S5 gereği figürsüz | ✅ Hazır | Şafakta, ilk ışığın düştüğü çiyli zeytin yaprakları ve yere yakın taze otlar |
+| `hz-isa/bolum-8/pinarli-tepe.jpg` | Devam | B | yok — mekân/manzara sahnesi | ✅ Hazır | Sabah güneşinde pınarlı yüksekçe bir düzlük; kayaların arasından akan berrak su, yanında taze hurmalı bir hurma ağacı ve zeytinler |
 
 ## 4l. Hz. İsmail (`bookKey: ismail`) — 36 görsel
 
@@ -1715,9 +1749,9 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 | Hz. Yusuf | 10 | 50 | **60** | 60 | 0 |
 | Hz. Süleyman | 7 | 35 | **42** | 42 | 0 |
 | Hz. Yunus | 5 | 24 | **29** | 29 | 0 |
-| Hz. Îsâ | 8 | 40 | **48** | 0 | 48 (hepsi yer tutucu; kitap "preparing") |
+| Hz. Îsâ | 8 | 40 | **48** | 48 | 0 (kitap "preparing") |
 | Hz. İsmail | 6 | 30 | **36** | 0 | 36 (hepsi yer tutucu; kitap "preparing") |
-| **Genel** | **84** | **403** | **487** | **383** | **105** |
+| **Genel** | **84** | **403** | **487** | **431** | **57** |
 
 **Bu sicilin dışındakiler:**
 
@@ -1755,10 +1789,10 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 | Harita durağı | `kitaplar/hz-yunus/harita-kapak.jpg` | ✅ Var (600×600, İbrahim durağıyla aynı çerçeve ailesi; sembol: geniş kabak yaprağı ve gölgesi) |
 | Rozet | `rozetler/hz-yunus/bolum-1…5.png` | □ 5 kare görsel, 512×512 opak, **çerçeve bekliyor** (16 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-yunus/`; B2 sembolü: dalgalarda beyaz yelken ve ışık) |
 | Madalya | `madalyalar/hz-yunus.png` | □ Kare görsel, 512×512 opak, **çerçeve bekliyor** (16 Eki 2026; sembol: dalgalarda süzülen balık ve doğan güneş) |
-| Kitap kapağı | `kitaplar/hz-isa/kapak.png` | ⬜ Yer tutucu (600×900) — brif final MD §C1; **yazısız** üretilir |
-| Harita durağı | `kitaplar/hz-isa/harita-kapak.jpg` | ⬜ Yer tutucu (512×512) — brif final MD §C2 (sembol: dibinde su kaynağı olan tek hurma ağacı) |
-| Rozet | `rozetler/hz-isa/bolum-1…8.png` | ⬜ 8 yer tutucu — brifler final MD §H "Rozet üretim brifleri" |
-| Madalya | `madalyalar/hz-isa.png` | ⬜ Yer tutucu — brif final MD §C3 (sembol: pınarlı tepede hurma dalı) |
+| Kitap kapağı | `kitaplar/hz-isa/kapak.png` | ✅ Var (600×900, **yazısız** — başlık tasarımda eklenecek; 1.5K ana dosya `gorsel-kaynaklari/kitaplar/hz-isa/kapak.png`) |
+| Harita durağı | `kitaplar/hz-isa/harita-kapak.jpg` | ✅ Var (600×600, Süleyman durağıyla aynı çerçeve ailesi; sembol: dibinde su kaynağı olan tek hurma ağacı) |
+| Rozet | `rozetler/hz-isa/bolum-1…8.png` | □ 8 kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-isa/`) |
+| Madalya | `madalyalar/hz-isa.png` | □ Kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; sembol: pınarlı tepede hurma dalı) |
 | Kitap kapağı | `kitaplar/hz-ismail/kapak.png` | ⬜ Yer tutucu (600×900) — brif final MD §C1; **yazısız** üretilir |
 | Harita durağı | `kitaplar/hz-ismail/harita-kapak.jpg` | ⬜ Yer tutucu (512×512) — brif final MD §C2 (sembol: iki tepe arasında kumdan kaynayan berrak su) |
 | Rozet | `rozetler/hz-ismail/bolum-1…6.png` | ⬜ 6 yer tutucu — brifler final MD §H "Rozet üretim brifleri" |
