@@ -84,10 +84,15 @@ hasır, örgü sepet, ekmek, üzüm salkımı, ahşap saban, deri sandalet. Köy
 **ev olarak değil**, tepede tek başına duran yaşlı bir zeytin ağacı ve gölgesindeki
 hasırla gösterilir (B3–B5'in görsel çapası). Işık ve renk yayı: B1 altın-yeşil bolluk →
 B2 soluk gri sabah ve tek sıcak kandil → B3 alacakaranlık ve şafak → B4 öğle ışığından
-yıldızlı geceye → B5 berrak su mavisi, taze yeşil ve sıcak şafak. **Hz. Eyyûb yalnız iki
-sahnede** (`eyyub-1-bugday-tarlasi`, `eyyub-5-pinar-basinda`), arkadan ve uzak planda,
-sağlıklı hâliyle görünür; yüzü hiçbir görselde yoktur. Hasta ya da yatan beden, eşi,
-çocukları, dostları, köy halkı ve şeytan hiçbir görselde gösterilmez.
+yıldızlı geceye → B5 berrak su mavisi, taze yeşil ve sıcak şafak. **Figür kuralı (REVİZE 17 Eki 2026 —
+Hasan; PROJE-MODELI 6.4):** öznesi insan olan sahne figürlüdür. **Katman 1** (yüz hiç
+görünmez; arkadan, uzak plan ya da kontra ışık): Hz. Eyyûb (yalnız **sağlıklı** hâliyle;
+B1–B2 ve iyileştikten sonra B5), eşi ve çocukları. **Katman 3** (yüz görünebilir,
+korkutucu ve karikatür değil): dostları, ziyaretçiler, haberci, köy halkı, yetimler ve
+yaşlılar. Hasta ya da yatan beden ve şeytan hiçbir görselde gösterilmez; bu yüzden Hz.
+Eyyûb hastalık döneminde (B3–B4, B5'teki iyileşmeden önce) kadraj dışında kalır. Eski
+"yalnız iki sahnede, eller görünmez; eşi, dostları ve köy halkı gösterilmez" kaydı 15 Eki
+2026'daki uygulamadır.
 
 **Ortak stil bloğu (EN)** — her sahne promptunun sonuna **aynen** eklenir:
 
@@ -109,6 +114,28 @@ visible face, facial features, eyes, mouth, face outline, profile, portrait, clo
 > `eyyub-5-pinar-basinda`) dışındaki **bütün sahnelerde** sahneye özgü negatife
 > `human figure, person, silhouette, hands` eklenmiştir. Figürsüz sahnelere üretimde ayrıca
 > `birds, tipi, tent` eklenir (`ICERIK-GORSEL-SICILI.md` §6.2).
+>
+> **Yeniden üretimde (17 Eki 2026):** ortak negatifteki `visible face, facial features,
+> eyes, mouth, face outline, profile, portrait, close-up of a person, crowd` terimleri
+> figürlü sahnelerde §6.2'ye göre sahne sahne ayıklanır: Katman 1 kişi varsa yüz terimleri
+> kalır (`blank face, featureless face` eklenir), yalnız Katman 3 kişilerin bulunduğu
+> sahnede yüz terimleri ve `crowd` çıkarılır. `sick person, wounds, sores, bandages, lying
+> body, bed` her sahnede kalır.
+
+**Karakter blokları (EN)** — Katman 1 kişinin bulunduğu her sahne promptuna **aynen**
+eklenir:
+
+```text
+Hz. Eyyûb: a tall, healthy man wrapped in a wide, ankle-length dusty-rose terracotta wool cloak that covers his head like a hood and falls over his shoulders and arms; plain leather sandals; calm, upright posture; always seen from behind or from far away, his face never visible, hidden by the hood and its shadow.
+```
+
+```text
+His wife: a slender woman in a long olive-green wool dress with a cream-colored headscarf that covers her hair and falls over her shoulders; plain leather sandals; gentle, steady posture; always seen from behind or from far away, her face never visible, hidden by the headscarf and its shadow.
+```
+
+> Bloklar prompta ad taşımadan girer (görsel modeli adı başka ikonografiyle
+> eşleştirmesin diye). Hz. Eyyûb'un karakter referansı onaylı `bolum-5/pinar-basinda.jpg`;
+> eşinin ilk onaylanan sahnesi sonrakilere ikinci referans olur.
 
 **Rozet sembol stili bloğu (EN)** — beş rozette ve madalyada aynen kullanılır; değişen
 yalnız semboldür:
@@ -383,11 +410,11 @@ Görsel ID: eyyub-1-acik-sofra
 Metin çapası: "Yetimlere, yaşlılara ve kimsesi olmayanlara kendisi bakar…" paragrafından sonra
 Sahnenin amacı: Herkese açık kapıyı ve paylaşılan sofrayı figürsüz göstermek (sofra halkasının başlangıcı).
 Dosya: bolum-1/acik-sofra.jpg
-Alt metin: Bağ çardağının altında, avluya serilmiş uzun bir sofra; ekmekler, üzüm salkımları, toprak kaseler ve yola açılan avlu kapısı.
+Alt metin: Bağ çardağının altında, avluya serilmiş sofranın çevresinde oturan çocuklar ve yaşlılar; arkası dönük, gül rengi pelerinli bir adam bir çocuğa ekmek uzatıyor, arkada açık avlu kapısı.
 Ana üretim promptu: Asma yapraklarıyla örtülü bir bağ çardağının altında, taş döşeli bir avluya serilmiş uzun bir yer sofrası. Sofrada yuvarlak ekmekler, mor üzüm salkımları, zeytin ve yoğurt dolu toprak kaseler, su testileri; çevresinde boş minderler. Avlunun ahşap kapısı ardına kadar açık ve yola bakıyor. Öğle ışığı yaprakların arasından benek benek düşüyor.
 Ana üretim promptu (EN): Under a vine arbor covered with grape leaves, a long floor spread is laid out on a stone-paved courtyard. On it are round loaves of bread, bunches of purple grapes, clay bowls of olives and yogurt, and water jugs, with empty cushions all around. The courtyard's wooden gate stands wide open, facing the road. Midday light falls in dappled spots through the leaves.
 Kadraj notu: 16:9; sofra ön planda çapraz uzanıyor, açık kapı arka planda sağda.
-Figür: yok
+Figür: Hz. Eyyûb — Katman 1; sofranın başında ayakta, ekmek uzatıyor, tamamen arkadan; yüz ve profil görünmez · yetimler ve yaşlılar — Katman 3; sofrada oturuyor.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, wine, cups of wine, meat on spits, crowd, gold plates, jewelry
 ```
 
@@ -396,11 +423,11 @@ Görsel ID: eyyub-1-meydan-agaci
 Metin çapası: "Hz. Eyyûb bu güzel günlerde de insanları Allah'a çağırmayı sürdürdü…" paragrafından sonra
 Sahnenin amacı: Davetin yapıldığı yeri, insanları göstermeden sakin bir köy meydanıyla anlatmak.
 Dosya: bolum-1/meydan-agaci.jpg
-Alt metin: Akşam ışığında taş evlerle çevrili küçük bir köy meydanı; ortasında yaşlı bir çınar ve altında taş sekiler.
+Alt metin: Akşam ışığında köy meydanındaki yaşlı çınarın altında taş sekilere oturmuş birkaç kişi ve ön planda onlara dönük, arkadan görünen pelerinli bir adam.
 Ana üretim promptu: Akşamüstünün sıcak ışığında, taş evlerle çevrili küçük bir köy meydanı. Ortada geniş dallı, yaşlı bir çınar ağacı; gövdesinin çevresinde yarım daire biçiminde taş sekiler. Meydana açılan dar, toprak yollar ve evlerin kapılarının önünde birkaç toprak küp.
 Ana üretim promptu (EN): A small village square surrounded by stone houses in warm late-afternoon light. In the center stands an old plane tree with wide branches, ringed by stone benches in a half circle. Narrow dirt lanes open onto the square, and a few clay storage jars stand by the house doors.
 Kadraj notu: 16:9; orta-geniş plan, çınar kadrajın merkezinde, gölgesi sağa uzanıyor.
-Figür: yok
+Figür: Hz. Eyyûb — Katman 1; taş sekide oturuyor, tamamen arkadan; yüz ve profil görünmez · dostları — Katman 3; çınarın altında halka olmuş.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, crowd, statue, idol, altar, pillar with carvings, market stalls
 ```
 
@@ -547,11 +574,11 @@ Görsel ID: eyyub-2-tozlu-yol
 Metin çapası: "Köyün yolunda soluk soluğa koşan bir haberci belirdi…" paragrafından sonra
 Sahnenin amacı: Haberin gelişini, haberciyi göstermeden yoldaki toz iziyle anlatmak.
 Dosya: bolum-2/tozlu-yol.jpg
-Alt metin: Ovadan köye uzanan toprak bir yol ve yolun uzağında havada asılı kalmış ince bir toz izi.
+Alt metin: Ovadan köye uzanan taş duvarlı toprak yolda, tozu ardında bırakarak soluk soluğa koşan genç bir haberci; yol kenarında boş bir ağıl.
 Ana üretim promptu: Ovadan köye doğru uzanan, iki yanı alçak taş duvarlı toprak bir yol. Yolun çok uzağında, havada asılı kalmış ince, uzun bir toz izi; sanki biri az önce koşarak geçmiş. Yol kenarında kuru otlar ve tek bir yabani zeytin ağacı. Gri-mavi sabah ışığı.
 Ana üretim promptu (EN): A dirt road with low stone walls on both sides stretches from the plain toward the village. Far down the road, a thin, long trail of dust hangs in the air, as if someone has just run past. Dry grass and a single wild olive tree line the roadside. Grey-blue morning light.
 Kadraj notu: 16:9; yol sol alttan sağ üste doğru uzanıyor, toz izi uzakta küçük.
-Figür: yok
+Figür: Haberci — Katman 3; yolda koşuyor, yüz görünebilir; telaşlı, korkutucu değil. Ağıl boş.
 Negatif prompt/kesin yasaklar: human figure, person, runner, silhouette, hands, footprints in focus, horse, rider, chariot, army
 ```
 
@@ -599,11 +626,11 @@ Görsel ID: eyyub-2-kapidaki-sandaletler
 Metin çapası: "O zor günlerde Hz. Eyyûb'a inanan birkaç dostu…" paragrafından sonra (bölüm sonu)
 Sahnenin amacı: Dostların gelişini figürsüz, eşikte bırakılmış sandaletlerle göstermek; bölümü sıcaklıkla kapatmak.
 Dosya: bolum-2/kapidaki-sandaletler.jpg
-Alt metin: Akşam, bir evin eşiğinde yan yana bırakılmış birkaç çift eski deri sandalet ve aralık kapıdan dışarı sızan sıcak ışık.
+Alt metin: Akşam, taş bir evin eşiğinde yan yana bırakılmış sandaletler; içeride kandil ışığında hasıra oturmuş, arkası dönük pelerinli bir adam ve onu üzüntüyle teselli eden üç dost.
 Ana üretim promptu: Alacakaranlıkta taş bir evin eşiği. Eşiğin önüne yan yana, özenle bırakılmış birkaç çift eski, tozlu deri sandalet. Aralık duran ahşap kapıdan dışarıya sıcak, turuncu bir kandil ışığı sızıyor ve sandaletlerin üzerine düşüyor. Kapının yanında bir su testisi.
 Ana üretim promptu (EN): The doorstep of a stone house at dusk. Several pairs of old, dusty leather sandals have been placed neatly side by side in front of the threshold. Warm orange lamplight spills out through the half-open wooden door and falls on the sandals. A water jug stands beside the door.
 Kadraj notu: 16:9; yakın-orta plan, sandaletler alt ortada, kapı aralığından gelen ışık çaprazlama.
-Figür: yok
+Figür: Hz. Eyyûb — Katman 1; hasırda oturuyor, tamamen arkadan; yüz ve profil görünmez · üç dost — Katman 3; karşısında, hüzünlü ve şefkatli, biri elini omzuna koymuş.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, feet, shadows of people, crowd, mourning cloth
 ```
 
@@ -770,11 +797,11 @@ Görsel ID: eyyub-3-gidip-gelen-izler
 Metin çapası: "Eşi bu sözü duyunca hiç düşünmeden cevap verdi…" paragrafından sonra
 Sahnenin amacı: Eşin vefasını figürsüz, her gün gidip gelinmiş bir patikayla göstermek.
 Dosya: bolum-3/gidip-gelen-izler.jpg
-Alt metin: Köyün kenarından zeytin ağacına uzanan toprak patika ve üzerinde defalarca gidilip gelinmiş aynı küçük ayak izleri.
+Alt metin: Sabah ışığında köyden tepedeki zeytin ağacına uzanan, ayak izleriyle dolu patikada omzunda testiyle yürüyen başörtülü bir kadın; arkadan görünüyor.
 Ana üretim promptu: Sabah ışığında, köyün kenarından tepedeki zeytin ağacına uzanan ince bir toprak patika. Patikanın tozunda, iki yöne doğru defalarca basılmış aynı küçük ayak izleri; o kadar çok gidilip gelinmiş ki patika iyice belirginleşmiş. Kenarda çiyli otlar ve yabani çiçekler.
 Ana üretim promptu (EN): In morning light, a thin dirt path runs from the edge of the village up to the olive tree on the hill. In the dust of the path, the same small footprints have been pressed many times in both directions; it has been walked so often that the path is now clearly worn. Dewy grass and wildflowers line its edges.
 Kadraj notu: 16:9; patika ön planda geniş başlayıp uzaktaki zeytin ağacına daralarak gidiyor; ayak izleri ön planda net.
-Figür: yok
+Figür: Eşi — Katman 1; omzunda testi, patikada yürüyor, tamamen arkadan; yüz ve profil görünmez. Hz. Eyyûb kadraj dışında (hastalık dönemi).
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, feet, shoes, animal tracks, blood, crowd
 ```
 
@@ -929,11 +956,11 @@ Görsel ID: eyyub-4-ziyaret-patikasi
 Metin çapası: "Bir gün iki dostu ve onlardan daha genç bir arkadaşları yine çıkageldi…" paragrafından sonra
 Sahnenin amacı: Ziyaretçilerin gelişini figürsüz, patikadaki taze ayak izleriyle göstermek.
 Dosya: bolum-4/ziyaret-patikasi.jpg
-Alt metin: Kuru otların arasından zeytin ağacına doğru kıvrılan dar bir patika ve tozda farklı boylarda taze ayak izleri.
+Alt metin: Kuru otların arasından tepedeki zeytin ağacına uzanan patikada yürüyen iki yaşlı ve bir genç adam; arkadan görünüyorlar.
 Ana üretim promptu: Kuru otların arasından tepedeki zeytin ağacına doğru kıvrılan dar bir toprak patika. Patikanın tozunda, aynı yöne giden farklı boylarda üç sıra taze ayak izi. Yanda alçak bir taş duvar ve duvarın üstünde birkaç yabani çiçek. Sabahın geç saatlerinin parlak ışığı.
 Ana üretim promptu (EN): A narrow dirt path winds through dry grass toward the olive tree on the hill. In the dust of the path are three lines of fresh footprints of different sizes, all heading the same way. A low stone wall runs alongside, with a few wildflowers on top. Bright late-morning light.
 Kadraj notu: 16:9; ayak izleri ön planda net, patika arka plandaki ağaca doğru daralıyor.
-Figür: yok
+Figür: İki dost ve genç arkadaşları — Katman 3; patikada, arkadan. Hz. Eyyûb kadraj dışında (hastalık dönemi).
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, feet, shoes, animal tracks, walking sticks, crowd
 ```
 
@@ -1137,11 +1164,11 @@ Görsel ID: eyyub-5-iki-testi
 Metin çapası: "Anlatılanlara göre Hz. Eyyûb, eşini de o serin suyla yıkadı…" paragrafından sonra
 Sahnenin amacı: Eşinin de yeniden güç bulmasını, figür göstermeden pınarın başındaki iki testiyle anlatmak (su halkasının kapanışı).
 Dosya: bolum-5/iki-testi.jpg
-Alt metin: Pınarın kenarında yan yana duran, sudan yeni dolmuş iki toprak testi; çevrede yeşeren otlar ve küçük çiçekler.
+Alt metin: Gün doğarken taşlar arasından akan pınarın başında yan yana duran pelerinli bir adam ve başörtülü bir kadın; arkadan görünüyorlar, yanlarında dolu iki toprak testi.
 Ana üretim promptu: Taşlar arasından akan pınarın kenarında, yan yana duran ve sudan yeni dolmuş iki toprak testi; ikisinin de dış yüzünde su damlaları parlıyor. Çevrede taze yeşeren otlar ve küçük beyaz, sarı çiçekler. Yumuşak sabah ışığı.
 Ana üretim promptu (EN): At the edge of the spring flowing between stones, two clay jugs stand side by side, freshly filled with water, drops shining on both of them. All around are freshly sprouting grass and small white and yellow flowers. Soft morning light.
 Kadraj notu: 16:9; yakın-orta plan, iki testi merkezde yan yana, pınar sol arkada.
-Figür: yok
+Figür: Hz. Eyyûb ve eşi — Katman 1; pınar başında yan yana ayakta, sağlıklı, tamamen arkadan; yüz ve profil görünmez.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, gold, coins, jewelry, insects, locusts
 ```
 
@@ -1150,11 +1177,11 @@ Görsel ID: eyyub-5-yeseren-bag
 Metin çapası: "Anlatılanlara göre o yurtta pek çok insan, sonunda Hz. Eyyûb'un Rabbine inandı…" paragrafından sonra
 Sahnenin amacı: Bereketin dönüşünü yeşeren bağlar ve tarlalarla göstermek (sofra halkasının kapanışı); altın imgesi kullanmadan.
 Dosya: bolum-5/yeseren-bag.jpg
-Alt metin: Sabah ışığında yeniden yeşermiş bağlar, taze yapraklı asmalar ve uzakta yeşil tarlalarla çevrili taş evler.
+Alt metin: Sabah ışığında yeniden yeşermiş bağlarda üzüm toplayan köylüler; arkada buğday tarlaları ve taş evli köy.
 Ana üretim promptu: Sabah ışığında yeniden yeşermiş bağlar; asmalarda taze, parlak yapraklar ve yeni beliren salkımlar. Arkada yemyeşil buğday tarlaları ve teraslar, uzakta düz damlı taş evler. Gökyüzü berrak mavi, hava taze.
 Ana üretim promptu (EN): Vineyards turned green again in morning light; the vines carry fresh, glossy leaves and newly forming bunches of grapes. Behind them are lush green wheat fields and terraces, with flat-roofed stone houses in the distance. The sky is clear blue and the air is fresh.
 Kadraj notu: 16:9; bağ sıraları ön planda çapraz, tarlalar ve köy arka planda.
-Figür: yok
+Figür: Köylüler — Katman 3; bağda üzüm topluyor, uzak plan.
 Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, gold, golden grain heaps, coins, treasure, insects, locusts, crowd, mosque, temple
 ```
 
@@ -1468,23 +1495,23 @@ klasörü yok). Bölge sahnesi envantere girmez. Sahnelerin bölüm klasörleri
 | 1 | `kitaplar/hz-eyyub/bolum-1/kapak.jpg` | Açılış | Sabah ışığında yamaçlarında bağlar ve buğday tarlaları uzanan yeşil bir vadi ve ortasında taş evlerden küçük bir köy. |
 | 2 | `kitaplar/hz-eyyub/bolum-1/bugday-tarlasi.jpg` | 1. Kısım | Öğleden sonra ışığında uçsuz bucaksız bir buğday tarlası ve tarlanın içinde, uzakta, arkası dönük yürüyen küçük bir figür. |
 | 3 | `kitaplar/hz-eyyub/bolum-1/dolu-ambar.jpg` | 1. Kısım | Aralık ahşap kapısından içeri ışık giren taş bir ambar; tavana kadar yığılmış buğday çuvalları ve yere dökülmüş taneler. |
-| 4 | `kitaplar/hz-eyyub/bolum-1/acik-sofra.jpg` | Devam | Bağ çardağının altında, avluya serilmiş uzun bir sofra; ekmekler, üzüm salkımları, toprak kaseler ve yola açılan avlu kapısı. |
-| 5 | `kitaplar/hz-eyyub/bolum-1/meydan-agaci.jpg` | Devam | Akşam ışığında taş evlerle çevrili küçük bir köy meydanı; ortasında yaşlı bir çınar ve altında taş sekiler. |
+| 4 | `kitaplar/hz-eyyub/bolum-1/acik-sofra.jpg` | Devam | Bağ çardağının altında, avluya serilmiş sofranın çevresinde oturan çocuklar ve yaşlılar; arkası dönük, gül rengi pelerinli bir adam bir çocuğa ekmek uzatıyor, arkada açık avlu kapısı. |
+| 5 | `kitaplar/hz-eyyub/bolum-1/meydan-agaci.jpg` | Devam | Akşam ışığında köy meydanındaki yaşlı çınarın altında taş sekilere oturmuş birkaç kişi ve ön planda onlara dönük, arkadan görünen pelerinli bir adam. |
 | 6 | `kitaplar/hz-eyyub/bolum-1/ufuktaki-bulut.jpg` | Devam | Gün batımında ön planda bir bağ çardağı ve bereketli vadi; çok uzakta ufukta toplanan gri bulutlar. |
 | 7 | `kitaplar/hz-eyyub/bolum-2/kapak.jpg` | Açılış | Alçak gri bulutların altında sessiz bir sabah; taş evler, bağlar ve ovaya uzanan tarlalar. |
-| 8 | `kitaplar/hz-eyyub/bolum-2/tozlu-yol.jpg` | 1. Kısım | Ovadan köye uzanan toprak bir yol ve yolun uzağında havada asılı kalmış ince bir toz izi. |
+| 8 | `kitaplar/hz-eyyub/bolum-2/tozlu-yol.jpg` | 1. Kısım | Ovadan köye uzanan taş duvarlı toprak yolda, tozu ardında bırakarak soluk soluğa koşan genç bir haberci; yol kenarında boş bir ağıl. |
 | 9 | `kitaplar/hz-eyyub/bolum-2/bos-agil.jpg` | 1. Kısım | Taş duvarlı boş bir ağıl; ahşap kapısı açık kalmış, yerde birkaç tutam saman. |
 | 10 | `kitaplar/hz-eyyub/bolum-2/bos-ambar.jpg` | Devam | Aralık kapısından ışık giren bomboş bir taş ambar; köşede devrilmiş boş bir sepet. |
 | 11 | `kitaplar/hz-eyyub/bolum-2/tek-kandil.jpg` | Devam | Akşam karanlığında taş bir avlu; ocakta küllenmiş közler ve duvar oyuğunda sakin sakin yanan tek bir kil kandil. |
-| 12 | `kitaplar/hz-eyyub/bolum-2/kapidaki-sandaletler.jpg` | Devam | Akşam, bir evin eşiğinde yan yana bırakılmış birkaç çift eski deri sandalet ve aralık kapıdan dışarı sızan sıcak ışık. |
+| 12 | `kitaplar/hz-eyyub/bolum-2/kapidaki-sandaletler.jpg` | Devam | Akşam, taş bir evin eşiğinde yan yana bırakılmış sandaletler; içeride kandil ışığında hasıra oturmuş, arkası dönük pelerinli bir adam ve onu üzüntüyle teselli eden üç dost. |
 | 13 | `kitaplar/hz-eyyub/bolum-3/kapak.jpg` | Açılış | Alacakaranlıkta uzaktan görünen, kapıları kapalı taş evler ve köyden tepedeki tek bir zeytin ağacına uzanan ince bir patika. |
 | 14 | `kitaplar/hz-eyyub/bolum-3/bos-tarla.jpg` | 1. Kısım | Bakımsız kalmış bir buğday tarlası, başakların arasında yabani otlar ve taş duvara yaslanmış ahşap bir saban. |
 | 15 | `kitaplar/hz-eyyub/bolum-3/koy-disi.jpg` | 1. Kısım | Köyün dışında, alçak bir tepede tek başına duran yaşlı bir zeytin ağacı ve gölgesine serilmiş sade bir hasır; arkada uzakta köy. |
-| 16 | `kitaplar/hz-eyyub/bolum-3/gidip-gelen-izler.jpg` | Devam | Köyün kenarından zeytin ağacına uzanan toprak patika ve üzerinde defalarca gidilip gelinmiş aynı küçük ayak izleri. |
+| 16 | `kitaplar/hz-eyyub/bolum-3/gidip-gelen-izler.jpg` | Devam | Sabah ışığında köyden tepedeki zeytin ağacına uzanan, ayak izleriyle dolu patikada omzunda testiyle yürüyen başörtülü bir kadın; arkadan görünüyor. |
 | 17 | `kitaplar/hz-eyyub/bolum-3/dolu-testi.jpg` | Devam | Zeytin ağacının gölgesinde, hasırın yanında ağzına kadar su dolu bir toprak testi ve üzeri örtülü küçük bir ekmek sepeti. |
 | 18 | `kitaplar/hz-eyyub/bolum-3/huzurlu-safak.jpg` | Devam | Şafakta zeytin ağacının ardından doğan güneş; dalların arasından süzülen ilk ışık hasıra düşüyor. |
 | 19 | `kitaplar/hz-eyyub/bolum-4/kapak.jpg` | Açılış | Öğle güneşinde kuru otlu tepeler, taş duvarlar ve tepede tek başına duran küçük bir zeytin ağacı. |
-| 20 | `kitaplar/hz-eyyub/bolum-4/ziyaret-patikasi.jpg` | 1. Kısım | Kuru otların arasından zeytin ağacına doğru kıvrılan dar bir patika ve tozda farklı boylarda taze ayak izleri. |
+| 20 | `kitaplar/hz-eyyub/bolum-4/ziyaret-patikasi.jpg` | 1. Kısım | Kuru otların arasından tepedeki zeytin ağacına uzanan patikada yürüyen iki yaşlı ve bir genç adam; arkadan görünüyorlar. |
 | 21 | `kitaplar/hz-eyyub/bolum-4/kirik-dal.jpg` | 1. Kısım | Bulutlu gökyüzü önünde, zeytin ağacının kırılıp sarkmış ama yaprakları hâlâ yeşil bir dalı. |
 | 22 | `kitaplar/hz-eyyub/bolum-4/genc-fidan.jpg` | Devam | Kalın gövdeli yaşlı zeytin ağacının hemen yanında dimdik yükselen ince, genç bir fidan. |
 | 23 | `kitaplar/hz-eyyub/bolum-4/tas-sekiler.jpg` | Devam | Zeytin ağacının gölgesinde, ziyaretçilerin oturduğu ve şimdi boş kalan, yarım daire biçiminde üç düz taş. |
@@ -1492,8 +1519,8 @@ klasörü yok). Bölge sahnesi envantere girmez. Sahnelerin bölüm klasörleri
 | 25 | `kitaplar/hz-eyyub/bolum-5/kapak.jpg` | Açılış | Şafak vakti, taşlı bir tepede yaşlı zeytin ağacı; gökyüzü pembe ve altın, toprağa ilk ışık düşüyor. |
 | 26 | `kitaplar/hz-eyyub/bolum-5/kaynayan-pinar.jpg` | 1. Kısım | Yakın planda, taşların arasından kaynayan serin ve berrak su; küçük halkalar ve ışıkta parlayan damlalar. |
 | 27 | `kitaplar/hz-eyyub/bolum-5/pinar-basinda.jpg` | 1. Kısım | Taşlar arasından akan pınarın başında, sabah ışığına bürünmüş, arkası dönük ayakta duran bir figür. |
-| 28 | `kitaplar/hz-eyyub/bolum-5/iki-testi.jpg` | Devam | Pınarın kenarında yan yana duran, sudan yeni dolmuş iki toprak testi; çevrede yeşeren otlar ve küçük çiçekler. |
-| 29 | `kitaplar/hz-eyyub/bolum-5/yeseren-bag.jpg` | Devam | Sabah ışığında yeniden yeşermiş bağlar, taze yapraklı asmalar ve uzakta yeşil tarlalarla çevrili taş evler. |
+| 28 | `kitaplar/hz-eyyub/bolum-5/iki-testi.jpg` | Devam | Gün doğarken taşlar arasından akan pınarın başında yan yana duran pelerinli bir adam ve başörtülü bir kadın; arkadan görünüyorlar, yanlarında dolu iki toprak testi. |
+| 29 | `kitaplar/hz-eyyub/bolum-5/yeseren-bag.jpg` | Devam | Sabah ışığında yeniden yeşermiş bağlarda üzüm toplayan köylüler; arkada buğday tarlaları ve taş evli köy. |
 | 30 | `kitaplar/hz-eyyub/bolum-5/yeseren-agac.jpg` | Devam | İkindi altın ışığında, kurumuş eski dalların arasından yükselen taze yeşil yapraklı genç bir ağaç ve dibinde ince bir su şeridi. |
 
 ### Ödül görselleri — 512×512 `.png`, üretimde çerçevesiz kare (6 dosya)

@@ -652,6 +652,33 @@ metnini kaydeder. Bölüm başına 1 açılış + 5 sahne (1. Kısım 2 / Devam 
 > çizilmez (B5'teki pınarla karışmasın). Pınar "su sütunu" değil, taşlardan
 > taşan alçak bir kaynaktır.
 
+> **Figür kuralı güncellemesi ve seçici yeniden üretim (17 Eki 2026 — Hasan; tasvir kuralı
+> REVİZE 16 Eki 2026, PROJE-MODELI 6.4):** Eyyûb'un görsel kuralları yeni tasvir kuralına
+> çekildi. **Katman 1** (yüz hiç görünmez; arkadan, uzak plan ya da kontra ışık): Hz. Eyyûb
+> (yalnız sağlıklı hâliyle), eşi ve çocukları. **Katman 3** (yüz görünebilir): dostları,
+> ziyaretçiler, haberci, köy halkı, yetimler ve yaşlılar. Yukarıdaki "Hz. Eyyûb yalnız iki
+> sahnede… yüz, profil ve eller yoktur. Eşi, çocukları, dostları, köy halkı ve haberci
+> hiçbir görselde gösterilmez" kaydı 15 Eki 2026'daki uygulamadır; **el yasağı kalktı**
+> (genel kuralda yalnız yüz yasağı var). **Sürenler:** hasta ya da yatan beden, yara,
+> bandaj, şeytan, ışık-figür ve listedeki diğer bütün nesne yasakları; bu yüzden Hz. Eyyûb
+> hastalık döneminde (B3–B4 ve B5'te iyileşmeden önce) kadraj dışında kalır. Karakter
+> blokları final MD §B'de; Eyyûb'un referansı `bolum-5/pinar-basinda`. Aday listesi
+> `GORSEL-YENIDEN-URETIM-ADAYLARI.md` §3.
+>
+> **Üretim (17 Eki 2026):** 10 adaydan yüksek ve orta öncelikli **8 sahne** figürlü olarak
+> yeniden üretildi ve aynı adla yazıldı (`acik-sofra`, `meydan-agaci`, `tozlu-yol`,
+> `kapidaki-sandaletler`, `gidip-gelen-izler`, `ziyaret-patikasi`, `iki-testi`,
+> `yeseren-bag`); düşük öncelikli `dolu-ambar` ve `tek-kandil` üretilmedi (Musa'daki gibi).
+> Ayar: Seedream 5 Pro · 2K · `stil-referans-gorsel.jpg` + karakter referansı
+> `bolum-5/pinar-basinda`; ağaç sahnelerinde `bolum-3/koy-disi`; `iki-testi`'de eşin
+> onaylanan `gidip-gelen-izler` figürü. 15 aday + 2 rötuş (~1.520 kredi). Elenenler:
+> `acik-sofra`'da Eyyûb'un profili ve sakalı görünen aday; `kapidaki-sandaletler`'de
+> Eyyûb'u kapının dışında ayakta, dostları gülümser çizen iki aday (bir yeniden üretim
+> turuyla çözüldü). Rötuş: `tozlu-yol`'da ağıldaki koyunlar ve yamaçtaki keçiler silindi
+> (metin "ağıllar bomboş" diyor); `yeseren-bag`'de vidalı şarap presi silindi. Ana
+> dosyalar `gorsel-kaynaklari/eyyub-yeniden-uretim/`. `books.ts` alt metinleri ve final MD
+> (Alt metin + Figür, §H tablosu) bu tabloyla eşitlendi.
+
 ### Kitap kapağı ve harita durağı
 
 | Dosya | Biçim | Durum | Görsel brifi |
@@ -666,8 +693,8 @@ metnini kaydeder. Bölüm başına 1 açılış + 5 sahne (1. Kısım 2 / Devam 
 | `hz-eyyub/bolum-1/kapak.jpg` | Açılış | A | ✅ Hazır | Sabah ışığında yamaçlarında bağlar ve buğday tarlaları uzanan yeşil bir vadi ve ortasında taş evlerden küçük bir köy |
 | `hz-eyyub/bolum-1/bugday-tarlasi.jpg` | 1. Kısım | A | ✅ Hazır | Öğleden sonra ışığında uçsuz bucaksız bir buğday tarlası ve tarlanın içinde, uzakta, arkası dönük yürüyen küçük bir figür |
 | `hz-eyyub/bolum-1/dolu-ambar.jpg` | 1. Kısım | A | ✅ Hazır | Aralık ahşap kapısından içeri ışık giren taş bir ambar; tavana kadar yığılmış buğday çuvalları ve yere dökülmüş taneler |
-| `hz-eyyub/bolum-1/acik-sofra.jpg` | Devam | B | ✅ Hazır | Bağ çardağının altında, avluya serilmiş uzun bir sofra; ekmekler, üzüm salkımları, toprak kaseler ve yola açılan avlu kapısı |
-| `hz-eyyub/bolum-1/meydan-agaci.jpg` | Devam | B | ✅ Hazır | Akşam ışığında taş evlerle çevrili küçük bir köy meydanı; ortasında yaşlı bir çınar ve altında taş sekiler |
+| `hz-eyyub/bolum-1/acik-sofra.jpg` | Devam | B | ✅ Hazır | Bağ çardağının altında, avluya serilmiş sofranın çevresinde oturan çocuklar ve yaşlılar; arkası dönük, gül rengi pelerinli bir adam bir çocuğa ekmek uzatıyor, arkada açık avlu kapısı *(figürlü yeniden üretim, 17 Eki 2026)* |
+| `hz-eyyub/bolum-1/meydan-agaci.jpg` | Devam | B | ✅ Hazır | Akşam ışığında köy meydanındaki yaşlı çınarın altında taş sekilere oturmuş birkaç kişi ve ön planda onlara dönük, arkadan görünen pelerinli bir adam *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-eyyub/bolum-1/ufuktaki-bulut.jpg` | Devam | B | ✅ Hazır | Gün batımında ön planda bir bağ çardağı ve bereketli vadi; çok uzakta ufukta toplanan gri bulutlar |
 
 ### Bölüm 2 — Art Arda Gelen Haberler
@@ -675,11 +702,11 @@ metnini kaydeder. Bölüm başına 1 açılış + 5 sahne (1. Kısım 2 / Devam 
 | Dosya | Akıştaki yer | Öncelik | Durum | Görsel brifi |
 |---|---|---|---|---|
 | `hz-eyyub/bolum-2/kapak.jpg` | Açılış | A | ✅ Hazır | Alçak gri bulutların altında sessiz bir sabah; taş evler, bağlar ve ovaya uzanan tarlalar |
-| `hz-eyyub/bolum-2/tozlu-yol.jpg` | 1. Kısım | A | ✅ Hazır | Ovadan köye uzanan toprak bir yol ve yolun uzağında havada asılı kalmış ince bir toz izi |
+| `hz-eyyub/bolum-2/tozlu-yol.jpg` | 1. Kısım | A | ✅ Hazır | Ovadan köye uzanan taş duvarlı toprak yolda, tozu ardında bırakarak soluk soluğa koşan genç bir haberci; yol kenarında boş bir ağıl *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-eyyub/bolum-2/bos-agil.jpg` | 1. Kısım | A | ✅ Hazır | Taş duvarlı boş bir ağıl; ahşap kapısı açık kalmış, yerde birkaç tutam saman |
 | `hz-eyyub/bolum-2/bos-ambar.jpg` | Devam | B | ✅ Hazır | Aralık kapısından ışık giren bomboş bir taş ambar; köşede devrilmiş boş bir sepet |
 | `hz-eyyub/bolum-2/tek-kandil.jpg` | Devam | B | ✅ Hazır | Akşam karanlığında taş bir avlu; ocakta küllenmiş közler ve duvar oyuğunda sakin sakin yanan tek bir kil kandil |
-| `hz-eyyub/bolum-2/kapidaki-sandaletler.jpg` | Devam | B | ✅ Hazır | Akşam, bir evin eşiğinde yan yana bırakılmış birkaç çift eski deri sandalet ve aralık kapıdan dışarı sızan sıcak ışık |
+| `hz-eyyub/bolum-2/kapidaki-sandaletler.jpg` | Devam | B | ✅ Hazır | Akşam, taş bir evin eşiğinde yan yana bırakılmış sandaletler; içeride kandil ışığında hasıra oturmuş, arkası dönük pelerinli bir adam ve onu üzüntüyle teselli eden üç dost *(figürlü yeniden üretim, 17 Eki 2026)* |
 
 ### Bölüm 3 — Herkes Gidince
 
@@ -688,7 +715,7 @@ metnini kaydeder. Bölüm başına 1 açılış + 5 sahne (1. Kısım 2 / Devam 
 | `hz-eyyub/bolum-3/kapak.jpg` | Açılış | A | ✅ Hazır | Alacakaranlıkta uzaktan görünen, kapıları kapalı taş evler ve köyden tepedeki tek bir zeytin ağacına uzanan ince bir patika |
 | `hz-eyyub/bolum-3/bos-tarla.jpg` | 1. Kısım | A | ✅ Hazır | Bakımsız kalmış bir buğday tarlası, başakların arasında yabani otlar ve taş duvara yaslanmış ahşap bir saban |
 | `hz-eyyub/bolum-3/koy-disi.jpg` | 1. Kısım | A | ✅ Hazır | Köyün dışında, alçak bir tepede tek başına duran yaşlı bir zeytin ağacı ve gölgesine serilmiş sade bir hasır; arkada uzakta köy |
-| `hz-eyyub/bolum-3/gidip-gelen-izler.jpg` | Devam | B | ✅ Hazır | Köyün kenarından zeytin ağacına uzanan toprak patika ve üzerinde defalarca gidilip gelinmiş aynı küçük ayak izleri |
+| `hz-eyyub/bolum-3/gidip-gelen-izler.jpg` | Devam | B | ✅ Hazır | Sabah ışığında köyden tepedeki zeytin ağacına uzanan, ayak izleriyle dolu patikada omzunda testiyle yürüyen başörtülü bir kadın; arkadan görünüyor *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-eyyub/bolum-3/dolu-testi.jpg` | Devam | B | ✅ Hazır | Zeytin ağacının gölgesinde, hasırın yanında ağzına kadar su dolu bir toprak testi ve üzeri örtülü küçük bir ekmek sepeti |
 | `hz-eyyub/bolum-3/huzurlu-safak.jpg` | Devam | B | ✅ Hazır | Şafakta zeytin ağacının ardından doğan güneş; dalların arasından süzülen ilk ışık hasıra düşüyor |
 
@@ -697,7 +724,7 @@ metnini kaydeder. Bölüm başına 1 açılış + 5 sahne (1. Kısım 2 / Devam 
 | Dosya | Akıştaki yer | Öncelik | Durum | Görsel brifi |
 |---|---|---|---|---|
 | `hz-eyyub/bolum-4/kapak.jpg` | Açılış | A | ✅ Hazır | Öğle güneşinde kuru otlu tepeler, taş duvarlar ve tepede tek başına duran küçük bir zeytin ağacı |
-| `hz-eyyub/bolum-4/ziyaret-patikasi.jpg` | 1. Kısım | A | ✅ Hazır | Kuru otların arasından zeytin ağacına doğru kıvrılan dar bir patika ve tozda farklı boylarda taze ayak izleri |
+| `hz-eyyub/bolum-4/ziyaret-patikasi.jpg` | 1. Kısım | A | ✅ Hazır | Kuru otların arasından tepedeki zeytin ağacına uzanan patikada yürüyen iki yaşlı ve bir genç adam; arkadan görünüyorlar *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-eyyub/bolum-4/kirik-dal.jpg` | 1. Kısım | A | ✅ Hazır | Bulutlu gökyüzü önünde, zeytin ağacının kırılıp sarkmış ama yaprakları hâlâ yeşil bir dalı |
 | `hz-eyyub/bolum-4/genc-fidan.jpg` | Devam | B | ✅ Hazır | Kalın gövdeli yaşlı zeytin ağacının hemen yanında dimdik yükselen ince, genç bir fidan |
 | `hz-eyyub/bolum-4/tas-sekiler.jpg` | Devam | B | ✅ Hazır | Zeytin ağacının gölgesinde, ziyaretçilerin oturduğu ve şimdi boş kalan, yarım daire biçiminde üç düz taş |
@@ -710,8 +737,8 @@ metnini kaydeder. Bölüm başına 1 açılış + 5 sahne (1. Kısım 2 / Devam 
 | `hz-eyyub/bolum-5/kapak.jpg` | Açılış | A | ✅ Hazır | Şafak vakti, taşlı bir tepede yaşlı zeytin ağacı; gökyüzü pembe ve altın, toprağa ilk ışık düşüyor |
 | `hz-eyyub/bolum-5/kaynayan-pinar.jpg` | 1. Kısım | A | ✅ Hazır | Yakın planda, taşların arasından kaynayan serin ve berrak su; küçük halkalar ve ışıkta parlayan damlalar |
 | `hz-eyyub/bolum-5/pinar-basinda.jpg` | 1. Kısım | A | ✅ Hazır | Taşlar arasından akan pınarın başında, sabah ışığına bürünmüş, arkası dönük ayakta duran bir figür |
-| `hz-eyyub/bolum-5/iki-testi.jpg` | Devam | B | ✅ Hazır | Pınarın kenarında yan yana duran, sudan yeni dolmuş iki toprak testi; çevrede yeşeren otlar ve küçük çiçekler |
-| `hz-eyyub/bolum-5/yeseren-bag.jpg` | Devam | B | ✅ Hazır | Sabah ışığında yeniden yeşermiş bağlar, taze yapraklı asmalar ve uzakta yeşil tarlalarla çevrili taş evler |
+| `hz-eyyub/bolum-5/iki-testi.jpg` | Devam | B | ✅ Hazır | Gün doğarken taşlar arasından akan pınarın başında yan yana duran pelerinli bir adam ve başörtülü bir kadın; arkadan görünüyorlar, yanlarında dolu iki toprak testi *(figürlü yeniden üretim, 17 Eki 2026)* |
+| `hz-eyyub/bolum-5/yeseren-bag.jpg` | Devam | B | ✅ Hazır | Sabah ışığında yeniden yeşermiş bağlarda üzüm toplayan köylüler; arkada buğday tarlaları ve taş evli köy *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-eyyub/bolum-5/yeseren-agac.jpg` | Devam | B | ✅ Hazır | İkindi altın ışığında, kurumuş eski dalların arasından yükselen taze yeşil yapraklı genç bir ağaç ve dibinde ince bir su şeridi |
 
 ## 4g. Hz. İbrahim (`bookKey: ibrahim`) — 54 görsel

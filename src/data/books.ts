@@ -5685,14 +5685,14 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-eyyub/bolum-1/acik-sofra.jpg",
-            alt: "Bağ çardağının altında, avluya serilmiş uzun bir sofra; ekmekler, üzüm salkımları, toprak kaseler ve yola açılan avlu kapısı.",
+            alt: "Bağ çardağının altında, avluya serilmiş sofranın çevresinde oturan çocuklar ve yaşlılar; arkası dönük, gül rengi pelerinli bir adam bir çocuğa ekmek uzatıyor, arkada açık avlu kapısı.",
           },
           { type: "text", text: "Hz. Eyyûb için nimeti paylaşmak, Allah'a şükretmenin en güzel yollarından biriydi. Verdiği her lokmanın aslında Allah'ın bir ikramı olduğunu bilir, bu yüzden kimseye büyüklük taslamazdı. Yanında çalışanlar da ondan çok memnundu ve onun yurdunda herkesin yüzü gülerdi." },
           { type: "text", text: "Hz. Eyyûb bu güzel günlerde de insanları Allah'a çağırmayı sürdürdü. Ona inanan az sayıdaki kişi, zamanla onun en yakın ve en sadık dostları oldu. Hz. Eyyûb bu dostlarla birlikte Allah'ı anar, sevincini onlarla paylaşırdı." },
           {
             type: "image",
             src: "/kitaplar/hz-eyyub/bolum-1/meydan-agaci.jpg",
-            alt: "Akşam ışığında taş evlerle çevrili küçük bir köy meydanı; ortasında yaşlı bir çınar ve altında taş sekiler.",
+            alt: "Akşam ışığında köy meydanındaki yaşlı çınarın altında taş sekilere oturmuş birkaç kişi ve ön planda onlara dönük, arkadan görünen pelerinli bir adam.",
           },
           { type: "text", text: "Hz. Eyyûb'un evi bereketle, kalbi şükürle doluydu. Akşamları bağının çardağı altında oturur, o gün kendisine verilen nimetleri tek tek düşünürdü. Ama bu bereketli ve huzurlu günler, hep böyle gitmeyecekti." },
           {
@@ -5764,7 +5764,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-eyyub/bolum-2/tozlu-yol.jpg",
-            alt: "Ovadan köye uzanan toprak bir yol ve yolun uzağında havada asılı kalmış ince bir toz izi.",
+            alt: "Ovadan köye uzanan taş duvarlı toprak yolda, tozu ardında bırakarak soluk soluğa koşan genç bir haberci; yol kenarında boş bir ağıl.",
           },
           { type: "text", text: "Avluya derin bir sessizlik çöktü; yanındakiler önce habere, sonra merakla Hz. Eyyûb'a baktı. Yıllardır bakıp büyüttüğü sürüler, tek bir sabah içinde elinden çıkmıştı." },
           { type: "text", text: "Hz. Eyyûb bu sürüleri hiçbir zaman kendi malı gibi görmemiş, Allah'ın bir nimeti saymıştı. Şimdi bu düşüncenin gerçekten sınanacağı zor bir an gelmişti. İnsan böyle bir haberi ilk duyduğu anda ne yapardı? Hz. Eyyûb bu haber karşısında şimdi ne diyecekti?" },
@@ -5806,7 +5806,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-eyyub/bolum-2/kapidaki-sandaletler.jpg",
-            alt: "Akşam, bir evin eşiğinde yan yana bırakılmış birkaç çift eski deri sandalet ve aralık kapıdan dışarı sızan sıcak ışık.",
+            alt: "Akşam, taş bir evin eşiğinde yan yana bırakılmış sandaletler; içeride kandil ışığında hasıra oturmuş, arkası dönük pelerinli bir adam ve onu üzüntüyle teselli eden üç dost.",
           },
         ],
         has_question: true,
@@ -5884,7 +5884,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-eyyub/bolum-3/gidip-gelen-izler.jpg",
-            alt: "Köyün kenarından zeytin ağacına uzanan toprak patika ve üzerinde defalarca gidilip gelinmiş aynı küçük ayak izleri.",
+            alt: "Sabah ışığında köyden tepedeki zeytin ağacına uzanan, ayak izleriyle dolu patikada omzunda testiyle yürüyen başörtülü bir kadın; arkadan görünüyor.",
           },
           { type: "text", text: "Eşi her gün testisiyle köyün çeşmesinden su taşıdı, onun yemeğini hazırladı. Hz. Eyyûb'a inanan birkaç dostu da sık sık gelip hâlini sordu. Köyün geri kalanı uzak dursa da onu sevenler, Hz. Eyyûb'u bir gün bile yalnız bırakmadı." },
           {
@@ -5958,7 +5958,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-eyyub/bolum-4/ziyaret-patikasi.jpg",
-            alt: "Kuru otların arasından zeytin ağacına doğru kıvrılan dar bir patika ve tozda farklı boylarda taze ayak izleri.",
+            alt: "Kuru otların arasından tepedeki zeytin ağacına uzanan patikada yürüyen iki yaşlı ve bir genç adam; arkadan görünüyorlar.",
           },
           { type: "text", text: "İçlerinden biri, yanındakine dönüp alçak sesle konuştu." },
           { type: "text", text: "— Eyyûb herhalde kimsenin işlemediği bir günah işlemiş olmalı; yoksa Allah bu derdi çoktan kaldırırdı, dedi." },
@@ -6078,7 +6078,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-eyyub/bolum-5/iki-testi.jpg",
-            alt: "Pınarın kenarında yan yana duran, sudan yeni dolmuş iki toprak testi; çevrede yeşeren otlar ve küçük çiçekler.",
+            alt: "Gün doğarken taşlar arasından akan pınarın başında yan yana duran pelerinli bir adam ve başörtülü bir kadın; arkadan görünüyorlar, yanlarında dolu iki toprak testi.",
           },
           { type: "text", text: "Kur'an'a göre Allah, Hz. Eyyûb'a ailesini ve onlarla birlikte bir o kadarını daha bağışladı. Kur'an bunu Allah'tan gelen bir rahmet olarak anlatır; Hz. Eyyûb bu büyük rahmete de şükürle karşılık verdi." },
           { type: "text", text: "İslam inancına ve tarihî rivayetlere göre Hz. Eyyûb yıkanırken üzerine altın çekirgeler dökülmüştü. Hz. Eyyûb bunu bir rahmet işareti olarak gördü ve yine şükretti." },
@@ -6087,7 +6087,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-eyyub/bolum-5/yeseren-bag.jpg",
-            alt: "Sabah ışığında yeniden yeşermiş bağlar, taze yapraklı asmalar ve uzakta yeşil tarlalarla çevrili taş evler.",
+            alt: "Sabah ışığında yeniden yeşermiş bağlarda üzüm toplayan köylüler; arkada buğday tarlaları ve taş evli köy.",
           },
           { type: "text", text: "Bir zamanlar ilk kötü haberi duyduğunda “Mülk Allah'ındır” diyen Hz. Eyyûb, şimdi de aynı Rabbine şükrediyordu. Zor günde de iyi günde de kalbi hep O'na dönüktü. Zorluklar onu Rabbinden uzaklaştırmamış, O'na daha da yaklaştırmıştı." },
           { type: "text", text: "Kur'an, Hz. Eyyûb'un hikâyesini akıl sahipleri için bir öğüt olarak anlatır. Bu hikâye, zor günde umudu kaybetmemeyi, iyi günde de şükretmeyi hatırlatır. Kur'an, Hz. Eyyûb için şöyle der: “Biz onu sabırlı bulduk. O ne güzel bir kuldu! O, her zaman Allah'a yönelirdi.”" },
