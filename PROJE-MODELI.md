@@ -1072,7 +1072,8 @@ Bugüne Taşı, Büyük Final Testi. "Kazanımlarım → Ödüllerim" gerekçesi
   fotoğrafına dokununca **profil kartı** açılır (mobilde alttan, masaüstünde
   profilin altında): unvan görseli + unvan + bir sonraki unvana kalan kitap
   ("1 kitap daha okuyunca: Değer Toplayıcısı"), rozet ve madalya sayısı,
-  **Veli Paneli** ("Annen ya da baban için"), **Çıkış Yap.** Sayfa bağlantıları
+  **Veli Paneli** ("Annen ya da baban için"), **Çıkış Yap** *(REVİZE 19 Eki
+  2026 — 3.11: "Profil değiştir" olur; bağlı cihazda ikisi de yok)*. Sayfa bağlantıları
   kartta tekrar edilmez.
 - Sayfalar: mobil ve tablet dikeyde **alttaki 4 sekme** (Harita · Ödüllerim ·
   Kelimelerim · Görevlerim); tablet yatay ve masaüstünde **üst bardaki sekmeler**
@@ -1100,7 +1101,8 @@ Bugüne Taşı, Büyük Final Testi. "Kazanımlarım → Ödüllerim" gerekçesi
   kapla, alttan hizalı). Ödüllerim · Kelimelerim · Görevlerim'de zemin açık
   krem kalır, menü aynı kart biçimindedir. Telefon ve tablet dikey değişmez
   (yalnız rota görseli yenilendi).
-- Veli Paneli bağlantısı Faz 7'de PIN arkasına alınır.
+- Veli Paneli bağlantısı Faz 7'de PIN arkasına alınır. *(UYGULANDI — 19 Eki
+  2026: veli kapısı, 3.11.)*
 
 #### 3.10.7 Kitap ve bölümleri (KARAR — 12 Ekim 2026, Hasan)
 
@@ -1209,6 +1211,64 @@ kalkar), **Kelimelerim'e yeni özellik yok** (yalnız tasarım).
   `/tasarim/oduller`, `/tasarim/kelimeler`, `/tasarim/gorevler` (`?durum=bos`;
   görevlerde `?durum=bekleyen`).
 
+### 3.11 Aile cihazı, profil şifresi ve veli kapısı (KARAR — 19 Ekim 2026, Hasan; Faz 7)
+
+**Gerekçe:** Çocuk girişi kullanıcı adı ve düz metin şifreyle tarayıcıda
+yapılıyordu; veritabanı kuralları bu yüzden giriş yapmamış herkese çocuk
+profillerini okuma, ilerleme ve görev yazma izni veriyordu (Bölüm 8). Çocuğun
+ayrı hesabı kalkar. **Çocuk verisine yalnız velinin oturumu ya da o çocuğa
+bağlanmış cihaz erişir.**
+
+- **Ortak cihaz (velinin oturumu açık):** çocuk ekranları **"Kim okuyor?"**
+  ekranıyla açılır (`/kim-okuyor`): ailenin çocuklarının avatarları, çocuk
+  kendi avatarına dokunur. Çocuk kullanıcı adı ve çocuk şifresiyle giriş
+  YOKTUR. Veli kendi kartındaki "Okumaya Devam Et" ile çocuğu doğrudan da
+  açabilir (velinin eylemi; şifre sorulmaz).
+- **Profil şifresi (aile ayarı, varsayılan KAPALI):** veli panelindeki
+  "Profillere girerken şifre sorulsun" ayarı bütün aileye uygulanır.
+  - Açıkken her çocuğun **kendi 4 rakamlı şifresi** vardır; veli belirler
+    (çocukla birlikte) ve değiştirir. Şifre yalnız şifrelenmiş saklanır,
+    sonradan gösterilmez.
+  - Şifresi olmayan çocuk kaldıkça ayar açılamaz; ayar açıkken eklenen profil
+    şifreyle açılır.
+  - Çocuk şifresi **veli PIN'iyle aynı olamaz.**
+  - 5 yanlış denemede 5 dakika bekleme. "Şifremi unuttum" → "Annene ya da
+    babana söyle"; veli panelden yenisini belirler.
+  - Ayar açıkken açık profil, **site yeniden açıldığında** (tarayıcı oturumu
+    kapanınca) ya da **30 dakika etkileşim olmayınca** kapanır; ekran
+    "Kim okuyor?"a döner.
+  - Çocuk ekranında kelime **"şifre"**dir ("4 rakamlı şifreni gir"); "PIN"
+    kelimesi çocuğa gösterilmez.
+  - İkinci çocuk eklenince veli panelinde ayar bir kez hatırlatılır.
+- **Veli kapısı (veli PIN'i, 4 hane):** cihaz **çocuk modundaysa** (bu
+  cihazda çocuk ekranı açıldıysa) veli paneline geçiş veli PIN'i ister.
+  - PIN, cihazda çocuk ekranı ilk kez açılmadan önce belirlenir; belirleme ve
+    sıfırlama hesap şifresiyle yapılır.
+  - Panel 15 dakika etkileşimsiz kalınca ya da çocuk ekranına dönülünce yeniden
+    kilitlenir. 5 yanlış denemede 5 dakika bekleme.
+  - Çocuk ekranı hiç açılmamış cihazda (velinin kendi telefonu) PIN sorulmaz;
+    veli panelden "Bu cihazda çocuk modunu kapat" diyebilir.
+- **Çocuğun kendi cihazı (eşleme kodu):** veli panelden çocuk için **6
+  rakamlı, 10 dakika geçerli, tek kullanımlık** bir kod üretir. Çocuk kendi
+  cihazında `/cihaz-bagla` ekranına kodu girer; cihaz o çocuk profiline
+  bağlanır (Supabase anonim oturumu + `cihaz_baglantilari`). Bu cihazda yalnız
+  o çocuğun verisi açılır; "Kim okuyor?", profil şifresi ve veli paneli
+  bağlantısı yoktur. Veli "Bağlı cihazlar" listesinden cihazı kaldırır; cihaz o
+  an erişimini kaybeder. Yanlış koda 5 denemede 15 dakika bekleme.
+- **Çocuk menüsü:** profil kartındaki **"Çıkış Yap"** (velinin oturumunu
+  kapatıyordu) yerine **"Profil değiştir"** → "Kim okuyor?". Bağlı cihazda bu
+  düğme ve "Veli Paneli" yoktur.
+- **Profil fotoğrafı:** depolama kovası kapalıdır; fotoğraf süreli imzalı
+  adresle gösterilir. `profiles.avatar_url` kovadaki yolu tutar
+  (`{veli_id}/{profil_id}.jpg?v=…`).
+- **Sınır (dürüst not):** profil şifresi ve veli kapısı kardeşi ve meraklı
+  çocuğu durdurur, teknik bilgisi olan bir yetişkini değil. Asıl veri koruması
+  veritabanı kurallarıdır (Bölüm 8).
+- **Ekranlar:** "Kim okuyor?" ve cihaz bağlama çocuk dünyasındadır (gece
+  zemin). Aile ayarları veli panelinde **"Aile ve Güvenlik"** sayfasıdır
+  (`/dashboard/ayarlar`, hesap menüsünden). Girişsiz önizleme:
+  `/tasarim/kim-okuyor` (`?sifre=1` şifreli aile; örnek şifre 1234).
+
 ---
 
 ## 4. Özellik Kararları
@@ -1244,7 +1304,7 @@ kalkar), **Kelimelerim'e yeni özellik yok** (yalnız tasarım).
 | S1 | Son okuma hareketleri (aktivite akışı) | Yeni event tablosu ister; ilk sürümde `user_progress.updated_at`'ten "son aktivite" özeti gösterilir | `activity_events` tablosu |
 | S2 | Ses çubuğu geliştirmeleri (hız, 10sn ileri/geri, kaldığı yerden devam) | Pozisyon kaydı ister | progress'e ses pozisyonu alanı |
 | S3 | Hesap aktivasyon akışı (şifre maili yerine tek kullanımlık bağlantı) | Çalışan Shopier akışını bozmadan, kendi fazında | E-posta şablonu + token akışı |
-| S4 | Çocuk girişi PIN'e geçiş + parola güvenliği | S3 ile birlikte ele alınır (bkz. Bölüm 8) | Şema + RLS değişikliği |
+| S4 | Çocuk girişi PIN'e geçiş + parola güvenliği | S3 ile birlikte ele alınır (bkz. Bölüm 8). *(ÇÖZÜLDÜ — 19 Eki 2026, 3.11: çocuk hesabı kalktı; ortak cihazda isteğe bağlı profil şifresi, kendi cihazında eşleme kodu)* | Şema + RLS değişikliği |
 | S5 | "Sen Olsaydın" cevaplarının **kalıcı** kaydı (geçmiş cevapların saklanması + veli raporunda `high/mixed/low` özet seçimi) | Değerli ama zorunlu değil. **İki ihtiyaç karıştırılmamalı:** seçimin AYNI OKUMA OTURUMUNDA tutulup bölüm sonunda "Seçimini Karşılaştır"da kullanılması S5 DEĞİLDİR — okuma akışının temel parçasıdır (4.1/16, Faz 6.1; oturum içi state, tablo gerektirmez). S5 yalnızca veritabanına kalıcı kayıttır | Yeni tablo |
 
 > **Not (değişken veli özeti):** İçerik şablonunda veli özeti üç varyant olarak
@@ -1280,6 +1340,8 @@ kalkar), **Kelimelerim'e yeni özellik yok** (yalnız tasarım).
 | `/kitap/[bookId]` | Kitap Yolculuğu (detay) | YENİ — modal yerine tam sayfa. Bölüm listesi + final testi kartı |
 | `/reader/[chapterId]` | Okuma akışı | Mevcut rota korunur. **Bölüm tek sayfada kaydırılır (REVİZE — 26 Tem 2026, Faz 6.2); sayfa yoktur, "durak" vardır.** Duraklar: hikâye (**1. Kısım + Hikâye Devam Ediyor**), **Tanık Sayfası**, Sen Olsaydın, **Seçimini Karşılaştır**, Ne Öğrendik, Bugüne Taşı (**varsa**), Rozet Kapısı. Bölüm içi sıra için aşağıdaki "Bölüm içi akış" kararına bak |
 | `/quiz/[bookId]` | Büyük Final Testi | Mevcut rota korunur |
+| `/kim-okuyor` | Kim okuyor? | YENİ (Faz 7, 3.11) — ortak cihazda çocuk ekranlarının girişi: avatarlar, aile ayarı açıksa 4 rakamlı profil şifresi |
+| `/cihaz-bagla` | Cihaz bağlama | YENİ (Faz 7, 3.11) — çocuğun kendi cihazı: velinin ürettiği 6 rakamlı kod girilir |
 | `/kazanimlarim` | Kazanımlarım (çocuk) | YENİ — çocuğun topladığı rozetler, madalyalar ve ünvanı gördüğü vitrin ekranı. Koleksiyon/başarı hissi verir; veri türetilir (yeni tablo yok) |
 | `/kelime-defterim` | Kelime Defterim (çocuk) | YENİ — çocuğun okuduğu kitaplardaki Kelime Kutusu kelimeleri, anlamlarıyla, aranabilir liste. Kelimeler `books.ts`'te zaten var; çocuğun gördükleri toplanıp gösterilir |
 | `/gorevlerim` | Görevlerim (çocuk) | PLANLANDI (Faz 6.1 — onaysız başlamaz) — çocuğun profiline eklediği "Bugüne Taşı" görevleri: görev adı, geldiği kitap+bölüm, Tamamlandı/Tamamlanmadı durumu, "Görevi Tamamladım" eylemi, görev ayrıntısı (varsa güvenlik notu görünür). **Rota adı ve giriş noktası ONAYLANDI (15 Tem 2026):** rota `/gorevlerim`; giriş, haritadaki Kazanımlarım / Kelime Defterim buton grubuna eklenen üçüncü buton |
@@ -1360,6 +1422,7 @@ Okuma ekranı düzeni (**REVİZE — 26 Temmuz 2026, Hasan onayı; Faz 6.2**):
 | `/dashboard/kutuphane` | Kütüphane | Filtre: çocuk + durum; arama |
 | `/dashboard/oduller` | Ödüller | Rozetler / Madalyalar / Unvanlar sekmeleri |
 | `/dashboard/rapor/[profileId]` | Gelişim Raporu | Tam sayfa, sekmeli: Genel Bakış · Kitaplar · Ödüller · **Görevler** · Sohbet Önerileri |
+| `/dashboard/ayarlar` | Aile ve Güvenlik | YENİ (Faz 7, 3.11) — veli PIN'i, profil şifresi ayarı ve çocuk şifreleri, cihaz bağlama ve bağlı cihazlar, bu cihazda çocuk modu. Hesap menüsünden açılır |
 
 **Profili Düzenle penceresi (`/dashboard` çocuk kartı → Profili Düzenle):**
 çocuğun **ismi**, çocuk kullanıcı adı ve şifresi, **profil fotoğrafı** ve profil
@@ -1639,9 +1702,18 @@ ileride istenirse eklenmesi kolaydır.)
 ### 7.1 Mevcut yapı (değişmiyor)
 
 - `profiles` — çocuk profilleri (veli_id, isim, avatar_tipi, **avatar_url**,
-  unvan, child_username/password, profile_limit). `avatar_url` 8 Ağu 2026'da
-  eklendi: veli panelinden yüklenen fotoğrafın public URL'i, boşsa hazır avatar
-  geçerlidir (bkz. 6.1 ve `supabase/migration-profil-fotografi.sql`).
+  unvan, profile_limit). `avatar_url` 8 Ağu 2026'da eklendi: veli panelinden
+  yüklenen fotoğraf, boşsa hazır avatar geçerlidir (bkz. 6.1 ve
+  `supabase/migration-profil-fotografi.sql`). *(REVİZE 19 Eki 2026 — Faz 7:
+  `child_username` / `child_password` sütunları kaldırıldı; `avatar_url` public
+  adres değil, kapalı kovadaki yoldur ve imzalı adresle gösterilir.)*
+- **Faz 7 tabloları (19 Eki 2026, 3.11):** `veli_ayarlari` (profil şifresi
+  ayarı; veli okur/yazar), `cihaz_baglantilari` (bağlı cihaz ↔ çocuk; veli
+  görür/kaldırır, cihaz kendi satırını görür). Gizli değerler —
+  `veli_pinleri`, `profil_sifreleri`, `eslesme_kodlari`,
+  `eslesme_denemeleri` — RLS'si açık ama hiç kuralı olmayan tablolardadır;
+  istemci okuyamaz, yalnız `SECURITY DEFINER` fonksiyonlar kullanır. Göç:
+  `supabase/migration-faz7-guvenlik.sql`.
 - `parent_subscriptions` — Shopier abonelikleri
 - `books` — kitap meta (isim, sıra, toplam bölüm)
 - `user_progress` — profil+kitap başına ilerleme (bölüm sayısı, %, bitti_mi, final skoru)
@@ -1695,21 +1767,37 @@ ileride istenirse eklenmesi kolaydır.)
 
 ---
 
-## 8. Güvenlik Notları (Faz 7'de ele alınacak — ŞİMDİ DOKUNULMUYOR)
+## 8. Güvenlik (Faz 7 — 19 Ekim 2026)
 
-1. `child_password` düz metin saklanıyor → PIN'e geçiş + hash.
-2. `"Children can login with profile credentials"` RLS politikası, kimliği
-   doğrulanmamış herkese `child_username/password` dolu satırları SELECT
-   ettirebiliyor → giriş doğrulaması server-side API'ye alınmalı, politika
-   daraltılmalı.
-3. Veli hesabı: otomatik şifre maili yerine tek kullanımlık aktivasyon
-   bağlantısı; velinin şifresini kendisinin belirlemesi.
-4. Shopier webhook'una çift bildirim gelirse çift hesap oluşmamalı
-   (`shopier_order_id unique` mevcut — davranış test edilmeli).
-5. Giriş e-posta ile olmalı (yalnızca Gmail sınırı varsa kaldırılmalı);
-   "e-postayı yeniden gönder" seçeneği eklenmeli.
-6. Profil silmede ilerlemenin de silineceği açıkça yazılmalı; mümkünse
-   önce "arşivle" seçeneği.
+**Bulgu (19 Eki 2026, canlı veritabanında doğrulandı):** sitenin herkese açık
+anahtarıyla giriş yapmamış herkes çocuk profillerini (ad, kullanıcı adı, düz
+metin şifre, veli kimliği, fotoğraf adresi) okuyabiliyor, herhangi bir çocuğun
+ilerlemesini ve görevlerini değiştirebiliyor, fotoğraf kovasını listeleyip
+bütün çocuk fotoğraflarını indirebiliyordu. Supabase'in güvenlik denetimi bunu
+göstermiyordu: RLS açıktı, kurallar fazla genişti.
+
+| # | Konu | Durum |
+|---|---|---|
+| 1 | `child_password` düz metin | **Kaldırıldı** — çocuk hesabı yok; profil şifresi ve veli PIN'i bcrypt ile şifrelenmiş, istemcinin okuyamadığı tablolarda; doğrulama veritabanı fonksiyonunda (3.11) |
+| 2 | Giriş yapmamış herkese açık RLS kuralları (`profiles`, `user_progress`, `profile_tasks`) ve listelenebilir fotoğraf kovası | **Kaldırıldı** — çocuk verisi yalnız veli (`veli_id = auth.uid()`) ve bağlı cihaz; anonim oturum veli işlemi yapamaz; kova kapalı, imzalı adres |
+| 3 | Veli hesabı: şifre e-postası yerine tek kullanımlık "şifreni belirle" bağlantısı | Bekliyor (Faz 7, 3. adım) |
+| 4 | Shopier çift bildirimde çift hesap oluşmaması (`shopier_order_id unique` var) | Bekliyor (test) |
+| 5 | "E-postayı yeniden gönder" | Bekliyor |
+| 6 | Profil silmede ilerlemenin de silineceği | **Uyarı eklendi**; arşiv yok |
+| 7 | Sızdırılmış şifre koruması (Supabase Auth ayarı) | Bekliyor (Supabase panelinden açılır) |
+
+**Sonraki işler için kurallar:**
+- Herkese açık anahtarla (`anon`) çalışan açık kural YAZILMAZ. Çocuk verisi
+  tutan her yeni tablo "veli (`veli_id = auth.uid()`) + bağlı cihaz
+  (`cihaz_baglantilari`)" desenini izler.
+- Gizli değerler (şifre özetleri, eşleme kodları) RLS'si açık ama kuralı
+  olmayan tablolarda tutulur; yalnız `SECURITY DEFINER` fonksiyonlar okur.
+- Anonim oturum (bağlı cihaz) veli işlemi yapamaz: profil ekleme/değiştirme ve
+  fotoğraf yükleme anonim oturuma kapalıdır.
+- Göç: `supabase/migration-faz7-guvenlik.sql`; geri alma:
+  `supabase/migration-faz7-guvenlik-geri-al.sql`. Cihaz bağlama için Supabase
+  panelinde **anonim oturum açık** olmalıdır (Authentication → Sign In /
+  Providers → "Allow anonymous sign-ins").
 
 ---
 
@@ -1726,7 +1814,7 @@ ileride istenirse eklenmesi kolaydır.)
 | **6** | Unvan hesaplama + son aktivite; istenirse `activity_events` | Küçük veri eklemeleri |
 | **6.1** | **İçerik ve Etkileşim Revizyonu (PLANLANDI — Hasan onayı olmadan BAŞLAMAZ):** (a) okuma akışı revizyonu: iki parçalı hikâye + karar noktasında "Sen Olsaydın" + "Seçimini Karşılaştır" + seçimin oturum içinde tutulması (4.1/16); (b) koşullu "Bugüne Taşı" + "Görevi Listeme Ekle / Şimdilik Değil" eylemleri; (c) görev veri altyapısı: `profile_tasks` tablosu + migration + RLS (7.3) — **ekrandan önce altyapı**; (d) çocuk "Görevlerim" ekranı (5.1); (e) veli ana sayfadaki güncel görev alanının yeni görev durumundan beslenmesi; (f) 8 bölümlük yeni Hz. Âdem içeriğinin `books.ts`'e aktarımı | Yeni bölüm akışı + kalıcı görev takibi çalışıyor |
 | **6.2** | **Kaydırmalı Okuma Akışı (ONAY — 26 Temmuz 2026):** (a) karakter bütçesiz akış modeli (`src/components/reader/akis.ts`); (b) `AtlasScrollReader` — tek sayfa kaydırma, satır içi görsel/sözlükçe, "Sen Olsaydın" kapısı, akış içi butonlar; (c) alt gezinme çubuğunun yerine üst ilerleme çubuğu + durak göstergesi (scroll-spy); (d) ~~otomatik "kaldığın yer"~~ — **28 Tem 2026'da kaldırıldı** (kaydırma konumu okunan yeri güvenilir biçimde göstermiyor); (e) Hz. Âdem B1–B8 için görsel yerlerinin açılması + `ICERIK-GORSEL-SICILI.md`. Sayfalı okuyucu (`AtlasReader` + `sayfalar.ts` + sayfa bileşenleri + iki tasarım önizlemesi) yenisi üretimde bir hafta çalıştıktan sonra, **30 Tem 2026'da silindi**; `BookDiscovery` tipleri de hiç kullanılmadığı için kaldırıldı | Bölüm kesintisiz kaydırılarak okunuyor |
-| **7** | Güvenlik/hesap akışı (Bölüm 8) | Aktivasyon bağlantısı + PIN |
+| **7** | Güvenlik/hesap akışı (Bölüm 8). **19 Eki 2026:** 1–2. adım (açık kuralların kapanması, "Kim okuyor?", profil şifresi, veli kapısı, eşleme kodu, kapalı fotoğraf kovası — 3.11) uygulandı; 3. adım (aktivasyon bağlantısı, e-postayı yeniden gönder, Shopier çift bildirim testi, sızdırılmış şifre koruması) bekliyor | Aktivasyon bağlantısı + PIN |
 | **8** | Landing page'in gerçek özelliklerle güncellenmesi. **Başladı (15 Eki 2026):** eski sayfa silindi, yenisi `app/(tanitim)/` altında (bileşenler `src/components/tanitim/`). **KARAR (Hasan):** site bütün kitaplar ve sesli anlatımlar bitmeden yayına açılmayacağı için tanıtım sitenin TAM hâlini anlatır — kitap/bölüm sayıları yayın durumuna bakmadan katalogdan (`src/data/katalogSayilari.ts`), sesli anlatım öne çıkan özelliktir. Ürün Bahar Yayıncılık'ın değil, bağımsız bir ürün olarak sunulur. Marka adı ve logo geçicidir (`src/data/marka.ts`, `src/components/marka/Logo.tsx`). Paket modeli öneridir (tek ödeme, süre sınırı yok; 1 / 3 / 5 profil — `src/data/paketler.ts`). Yasal sayfalar (KVKK, gizlilik, çerez, kullanım, ön bilgilendirme, mesafeli satış, iptal-iade, iletişim) taslaktır; satıcı bilgileri `src/data/yasal/satici.ts`'te yer tutucudur. Ürün ekran görüntüleri `npm run tanitim-gorselleri` ile `/tasarim/*` önizlemelerinden üretilir. **Hareket katmanı (KARAR 16 Eki 2026 — Hasan):** yalnız Motion + CSS (`src/components/tanitim/hareket/`); Işıl bölüm bölüm tek karakter gibi rehberlik eder (hero'da uçarak gelir → altın yolda kaydırmayı izler → şafakta dinlenmeye gider → kapanışta döner), dinî içeriğin (İlkeler, Hz. Muhammed / halife listesi) yanında Işıl yoktur; fiyat kartlarına yalnız giriş ve düğme tepkisi eklenir; ses efekti yok; "hareketi azalt"ta süsler durur | Pazarlama yüzü güncel |
 
 **Çocuk arayüzü sadeleştirme fazları (Ekim 2026 — bkz. 3.10).** Harfler 11 Ekim
@@ -1965,6 +2053,22 @@ Kurallar:
 - [x] Seçenekler (Hasan): "Çocuğunuz Sorarsa" okunan kitapta da görünür ve
       kapalı açılır listedir; yalnız son bölüm gösterilir; çocuğun seçtiği şık
       gösterilmez; girişsiz önizleme `/tasarim/veli-rapor` eklenir.
+
+### 19 Ekim 2026 (Faz 7 güvenlik — Hasan onayı, bkz. 3.11 ve Bölüm 8)
+
+- [x] **Çocuk hesabı kalkar.** Ortak cihazda "Kim okuyor?" ekranı; çocuğun
+      kendi cihazı velinin ürettiği tek kullanımlık 6 rakamlı kodla bağlanır.
+- [x] **Profil şifresi Hasan'ın tarifiyle:** veli panelinde bütün aileye
+      uygulanan aç/kapa ayarı (varsayılan kapalı); her çocuğun kendi 4 rakamlı
+      şifresi; veli PIN'iyle aynı olamaz; açık profil 30 dakika etkileşimsizlikte
+      ya da site yeniden açılınca "Kim okuyor?"a döner. Resimli kilit önerildi,
+      Hasan rakamı seçti.
+- [x] **Veli kapısı:** çocuk modundaki cihazda veli paneli 4 haneli veli
+      PIN'iyle açılır.
+- [x] **Mevcut hesaplar testtir** (3 veli, 9 çocuk profili): çocuk kullanıcı
+      adları ve düz metin şifreler silinir; ilerleme, rozet, görev ve fotoğraf
+      korunur.
+- [x] Veritabanı değişikliği uygulanmadan önce Hasan'a gösterilir.
 
 ## 11. İçerik Durumu
 

@@ -19,6 +19,7 @@ import {
 import { VeliCocukSecici } from "../../../src/components/dashboard/VeliCocukSecici";
 import { VeliSayfaBasligi } from "../../../src/components/dashboard/VeliSayfaBasligi";
 import { kitapKapagi, YEDEK } from "../../../src/lib/varlikYollari";
+import { cocukEkraninaGec } from "../../../src/lib/child/cocukOturumu";
 
 type DurumFiltre = "hepsi" | KutuphaneDurum;
 
@@ -75,10 +76,7 @@ export default function KutuphaneSayfasi() {
   );
 
   function cocuklaOku(child: ChildProfile, bookKey: string) {
-    window.localStorage.setItem("selected_child_profile_id", child.id);
-    window.localStorage.setItem("selected_child_profile_name", child.isim);
-    window.localStorage.setItem("selected_child_name", child.isim);
-    router.push(`/kitap/${bookKey}`);
+    void cocukEkraninaGec(router, { id: child.id, isim: child.isim }, `/kitap/${bookKey}`);
   }
 
   return (

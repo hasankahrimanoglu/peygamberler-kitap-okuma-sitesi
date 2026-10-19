@@ -7,7 +7,8 @@ import { supabase } from "../../../lib/supabase";
 import { useParentData } from "../../lib/parent/ParentDataProvider";
 import { Buton, Ikon } from "../ui";
 
-// PROJE-MODELI.md 5.2 — sağ üst hesap menüsü: Hesap Bilgileri, Şifre Değiştir, Çıkış.
+// PROJE-MODELI.md 5.2 — sağ üst hesap menüsü: Hesap Bilgileri, Aile ve Güvenlik
+// (Faz 7, 3.11), Şifre Değiştir, Çıkış.
 export function HesapMenusu() {
   const router = useRouter();
   const { setNotice, setError } = useParentData();
@@ -101,6 +102,18 @@ export function HesapMenusu() {
                 {email ?? "—"}
               </p>
             </div>
+            <button
+              type="button"
+              role="menuitem"
+              onClick={() => {
+                setAcik(false);
+                router.push("/dashboard/ayarlar");
+              }}
+              className="flex min-h-12 w-full items-center gap-3 px-4 py-3 text-left text-base font-semibold text-murekkep transition-colors hover:bg-yuzey-2"
+            >
+              <Ikon ad="hesap" boyut={18} className="text-murekkep-soluk" />
+              Aile ve Güvenlik
+            </button>
             <button
               type="button"
               role="menuitem"

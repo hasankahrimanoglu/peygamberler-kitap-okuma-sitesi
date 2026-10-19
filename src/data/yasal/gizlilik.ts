@@ -2,8 +2,8 @@ import type { YasalBelge } from "./tipler";
 
 /**
  * TASLAK — yayından önce hukukçu tarafından gözden geçirilmelidir.
- * Güvenlik bölümü Faz 7 (hesap ve erişim güvenliği) tamamlandıktan sonra
- * somut önlemlerle yeniden yazılmalıdır; o güne kadar genel ifade kullanıldı.
+ * Güvenlik bölümü Faz 7'nin çocuk verisi adımlarıyla (19 Eki 2026, PROJE-MODELI
+ * 3.11) somutlaştı; veli hesabı aktivasyonu (Faz 7, 3. adım) bitince gözden geçirilir.
  */
 export const GIZLILIK_POLITIKASI: YasalBelge = {
   yol: "/gizlilik-politikasi",
@@ -29,7 +29,7 @@ export const GIZLILIK_POLITIKASI: YasalBelge = {
       baslik: "Topladığımız bilgiler",
       icerik: [
         "Veliden: satın alma sırasında ödeme sağlayıcısının ilettiği ad soyad ve e-posta adresi, satın alınan paket ve sipariş numarası.",
-        "Çocuk profilinden: velinin belirlediği profil adı ve kullanıcı adı, seçilen avatar ya da velinin isteğe bağlı olarak yüklediği fotoğraf.",
+        "Çocuk profilinden: velinin belirlediği profil adı, seçilen avatar ya da velinin isteğe bağlı olarak yüklediği fotoğraf; aile ayarı açıksa şifrelenmiş olarak saklanan 4 rakamlı profil şifresi. Çocuğun kendi cihazı bağlanırsa cihaz türü ve bağlanma tarihi.",
         "Kullanım sırasında: okunan bölümler, kazanılan rozet, madalya ve unvanlar, final testi sonuçları ve listeye eklenen görevlerin durumu. Bu bilgiler veli panelindeki gelişim raporunu oluşturmak için kullanılır.",
       ],
     },
@@ -48,7 +48,7 @@ export const GIZLILIK_POLITIKASI: YasalBelge = {
     {
       baslik: "Bilgileri nasıl koruruz",
       icerik: [
-        "Site ile tarayıcınız arasındaki veri trafiği şifreli bağlantı üzerinden taşınır. Veli hesabı şifreleri açık metin olarak saklanmaz. Kişisel verilere erişim, hizmetin işletilmesi için yetkilendirilmiş kişilerle sınırlıdır.",
+        "Site ile tarayıcınız arasındaki veri trafiği şifreli bağlantı üzerinden taşınır. Veli hesabı şifreleri, veli PIN'i ve çocuk profil şifreleri açık metin olarak saklanmaz. Çocuğunuzun verilerine yalnız sizin hesabınız ve sizin bağladığınız cihaz erişebilir; veritabanı kuralları başka kimsenin bu verileri okumasına izin vermez. Çocuk fotoğrafları herkese açık değildir, yalnız süreli bağlantıyla gösterilir. Kişisel verilere erişim, hizmetin işletilmesi için yetkilendirilmiş kişilerle sınırlıdır.",
       ],
     },
     {

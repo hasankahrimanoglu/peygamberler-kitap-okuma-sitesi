@@ -9,6 +9,7 @@ import okuma from "../../../src/components/reader/okuma-akisi.module.css";
 import styles from "../../../src/components/final/final-testi.module.css";
 import { Ikon } from "../../../src/components/ui";
 import { dbKitabiBul } from "../../../src/lib/derive";
+import { CocukKorumasi } from "../../../src/components/cocuk/CocukKorumasi";
 import { quizConfig, type QuizConfig, type QuizOption } from "../../../src/data/quizzes";
 
 type SavedCompletionState = "loading" | "completed" | "incomplete" | "unknown";
@@ -192,7 +193,16 @@ async function saveQuizCompletionToSupabase({
   return "error";
 }
 
+// Çocuk oturumu (Faz 7): veli oturumu + açık profil ya da bağlı cihaz.
 export default function QuizPage() {
+  return (
+    <CocukKorumasi>
+      <QuizIcerik />
+    </CocukKorumasi>
+  );
+}
+
+function QuizIcerik() {
   const router = useRouter();
   const params = useParams<{ bookId: string }>();
   const bookId = params.bookId as keyof typeof quizConfig;

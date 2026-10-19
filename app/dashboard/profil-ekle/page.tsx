@@ -1,19 +1,21 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
 import {
-  isMissingChildLoginColumn,
+  isMissingColumn,
+  profileSelectTam,
   useParentData,
   type ChildProfile,
 } from "../../../src/lib/parent/ParentDataProvider";
+import { aileGuvenlikDurumu, cocukSifresiBelirle } from "../../../src/lib/aileGuvenligi";
+import { cocukSifresiHataMetni } from "../../../src/components/dashboard/cocukSifresiMetni";
+import { PinGirdisi } from "../../../src/components/dashboard/VeliPinFormu";
 import { Buton, Ikon, Kart, OdulIkonu } from "../../../src/components/ui";
 import { VeliSayfaBasligi } from "../../../src/components/dashboard/VeliSayfaBasligi";
 
-const profileSelectWithChildLogin =
-  "id, isim, avatar_tipi, unvan, child_username, child_password, profile_limit, created_at";
 const profileSelectBase =
   "id, isim, avatar_tipi, unvan, profile_limit, created_at";
 
@@ -33,14 +35,43 @@ export default function ProfilEkleSayfasi() {
     useParentData();
 
   const [childName, setChildName] = useState("");
-  const [childUsername, setChildUsername] = useState("");
-  const [childPassword, setChildPassword] = useState("");
   const [avatarType, setAvatarType] = useState(avatarOptions[0].value);
   const [avatarBaslangic, setAvatarBaslangic] = useState(0);
   const [isAdding, setIsAdding] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
 
-  const canAddProfile = profiles.length < profileLimit;
+  // Aile ayarı açıksa yeni profil şifresiyle açılır (PROJE-MODELI 3.11).
+  const [sifreAcik, setSifreAcik] = useState(false);
+  const [sifre, setSifre] = useState("");
+  const [sifreTekrar, setSifreTekrar] = useState("");
+  // Profil eklendi ama şifre kaydedilemediyse yalnız şifre yeniden istenir.
+  const [eklenenProfil, setEklenenProfil] = useState<ChildProfile | null>(null);
+
+  useEffect(() => {
+    let iptal = false;
+    void aileGuvenlikDurumu().then((durum) => {
+      if (!iptal) setSifreAcik(Boolean(durum?.profilSifresiAcik));
+    });
+    return () => {
+      iptal = true;
+    };
+  }, []);
+
+  const canAddProfile = profiles.length < profileLimit || eklenenProfil !== null;
+
+  async function sifreyiKaydet(profil: ChildProfile) {
+    const sonuc = await cocukSifresiBelirle(profil.id, sifre);
+    if (sonuc === "tamam") return true;
+    setLocalError(`${profil.isim} profili eklendi, ama şifre kaydedilemedi: ${cocukSifresiHataMetni(sonuc)}`);
+    setSifre("");
+    setSifreTekrar("");
+    return false;
+  }
+
+  function bitir(profil: ChildProfile) {
+    setNotice(`${profil.isim} profili eklendi.`);
+    router.push("/dashboard");
+  }
 
   async function handleAddProfile(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -49,71 +80,85 @@ export default function ProfilEkleSayfasi() {
     setNotice(null);
 
     if (!parentId) return;
+
+    if (sifreAcik) {
+      if (!/^[0-9]{4}$/.test(sifre)) {
+        setLocalError("Profil şifresi 4 rakam olmalı.");
+        return;
+      }
+      if (sifre !== sifreTekrar) {
+        setLocalError("İki şifre aynı değil.");
+        return;
+      }
+    }
+
+    // Önceki denemede profil eklendi, şifre kaydedilemediyse yalnız şifre.
+    if (eklenenProfil) {
+      setIsAdding(true);
+      const tamam = await sifreyiKaydet(eklenenProfil);
+      setIsAdding(false);
+      if (tamam) bitir(eklenenProfil);
+      return;
+    }
+
     if (!canAddProfile) {
       setLocalError("Profil limitin dolu. Yeni profil ekleyemezsin.");
       return;
     }
 
     const trimmedName = childName.trim();
-    const trimmedUsername = childUsername.trim();
-
     if (!trimmedName) {
       setLocalError("Çocuğun ismini yazmalısın.");
-      return;
-    }
-    if (!trimmedUsername || !childPassword.trim()) {
-      setLocalError("Çocuğun kullanıcı adı ve şifresi zorunlu.");
       return;
     }
 
     setIsAdding(true);
 
-    let insertNoticeMessage = `${trimmedName} profili eklendi.`;
+    const yeniProfil = {
+      veli_id: parentId,
+      isim: trimmedName,
+      avatar_tipi: avatarType,
+      profile_limit: profileLimit,
+    };
     const insertResult = await supabase
       .from("profiles")
-      .insert({
-        veli_id: parentId,
-        isim: trimmedName,
-        avatar_tipi: avatarType,
-        child_username: trimmedUsername,
-        child_password: childPassword,
-        profile_limit: profileLimit,
-      })
-      .select(profileSelectWithChildLogin)
+      .insert(yeniProfil)
+      .select(profileSelectTam)
       .single();
     let createdProfile = insertResult.data as ChildProfile | null;
     let insertError = insertResult.error;
 
-    if (insertError && isMissingChildLoginColumn(insertError.message)) {
+    if (insertError && isMissingColumn(insertError.message)) {
       const fallback = await supabase
         .from("profiles")
-        .insert({
-          veli_id: parentId,
-          isim: trimmedName,
-          avatar_tipi: avatarType,
-          profile_limit: profileLimit,
-        })
+        .insert(yeniProfil)
         .select(profileSelectBase)
         .single();
-
       createdProfile = fallback.data as ChildProfile | null;
       insertError = fallback.error;
-
-      if (!fallback.error) {
-        insertNoticeMessage = `${trimmedName} profili eklendi. Çocuk girişi için veritabanına child_username ve child_password sütunlarını eklemelisin.`;
-      }
     }
 
-    setIsAdding(false);
-
     if (insertError || !createdProfile) {
+      setIsAdding(false);
       setLocalError("Profil eklenemedi. Lütfen tekrar dene.");
       return;
     }
 
-    setProfiles((current) => [...current, createdProfile as ChildProfile]);
-    setNotice(insertNoticeMessage);
-    router.push("/dashboard");
+    const profil = createdProfile;
+    setProfiles((current) => [...current, profil]);
+
+    if (sifreAcik) {
+      const tamam = await sifreyiKaydet(profil);
+      setIsAdding(false);
+      if (!tamam) {
+        setEklenenProfil(profil);
+        return;
+      }
+    } else {
+      setIsAdding(false);
+    }
+
+    bitir(profil);
   }
 
   return (
@@ -169,39 +214,26 @@ export default function ProfilEkleSayfasi() {
               <input
                 value={childName}
                 onChange={(event) => setChildName(event.target.value)}
-                className="h-12 w-full rounded-buton border border-cizgi bg-yuzey-2 px-4 text-base font-medium text-murekkep outline-none transition focus:border-eylem focus:bg-yuzey focus:ring-2 focus:ring-eylem/30"
+                disabled={eklenenProfil !== null}
+                className="h-12 w-full rounded-buton border border-cizgi bg-yuzey-2 px-4 text-base font-medium text-murekkep outline-none transition focus:border-eylem focus:bg-yuzey focus:ring-2 focus:ring-eylem/30 disabled:opacity-60"
                 placeholder="Örn. Ahmet"
               />
             </label>
 
-            <div className="grid gap-5 sm:grid-cols-2">
-              <label className="block">
-                <span className="mb-2 block text-base font-semibold text-murekkep">
-                  Çocuğun Kullanıcı Adı
-                </span>
-                <input
-                  value={childUsername}
-                  onChange={(event) => setChildUsername(event.target.value)}
-                  autoComplete="username"
-                  className="h-12 w-full rounded-buton border border-cizgi bg-yuzey-2 px-4 text-base font-medium text-murekkep outline-none transition focus:border-eylem focus:bg-yuzey focus:ring-2 focus:ring-eylem/30"
-                  placeholder="Örn. hasan01"
-                />
-              </label>
-
-              <label className="block">
-                <span className="mb-2 block text-base font-semibold text-murekkep">
-                  Çocuğun Şifresi
-                </span>
-                <input
-                  type="password"
-                  value={childPassword}
-                  onChange={(event) => setChildPassword(event.target.value)}
-                  autoComplete="new-password"
-                  className="h-12 w-full rounded-buton border border-cizgi bg-yuzey-2 px-4 text-base font-medium text-murekkep outline-none transition focus:border-eylem focus:bg-yuzey focus:ring-2 focus:ring-eylem/30"
-                  placeholder="Çocuk şifresi"
-                />
-              </label>
-            </div>
+            {sifreAcik ? (
+              <div>
+                <p className="text-base font-semibold text-murekkep">Profil şifresi</p>
+                <p className="mt-1 text-sm font-medium leading-6 text-murekkep-soluk">
+                  Ailede profil şifresi açık: çocuk ortak tablette kendi profiline bu 4 rakamlı
+                  şifreyle girer. Şifreyi çocukla birlikte seçin; kardeşlerinin şifresinden ve
+                  veli PIN&apos;inizden farklı olmalı.
+                </p>
+                <div className="mt-3 grid gap-4 sm:grid-cols-2">
+                  <PinGirdisi etiket="Şifre" deger={sifre} onDegis={setSifre} />
+                  <PinGirdisi etiket="Şifreyi tekrar yazın" deger={sifreTekrar} onDegis={setSifreTekrar} />
+                </div>
+              </div>
+            ) : null}
 
             <div>
               <div className="mb-2 flex items-center justify-between gap-3">
@@ -282,7 +314,7 @@ export default function ProfilEkleSayfasi() {
                 Vazgeç
               </Buton>
               <Buton type="submit" varyant="altin" tamGenislik disabled={isAdding} className="flex-1">
-                {isAdding ? "Ekleniyor..." : "Profili Ekle"}
+                {isAdding ? "Kaydediliyor..." : eklenenProfil ? "Şifreyi Kaydet" : "Profili Ekle"}
               </Buton>
             </div>
           </form>

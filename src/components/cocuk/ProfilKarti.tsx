@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
+import { profiliKapat } from "../../lib/child/cocukOturumu";
 import { unvanAnahtari } from "../../lib/derive";
 import { unvanGorseli, YEDEK } from "../../lib/varlikYollari";
 import { CocukAvatari, Ikon, YedekliGorsel } from "../ui";
@@ -19,11 +20,14 @@ type ProfilKartiProps = {
  * Profil kartı — hamburger menünün yerine (KARAR 12 Eki 2026 — 3.10.6).
  * Mobilde alttan açılır, geniş ekranda profilin altında durur. Sayfa
  * bağlantılarını tekrar etmez: onlar sekmelerde. Burada çocuğun kimliği ve
- * yetişkin işleri kalır. Veli Paneli bağlantısı Faz 7'de PIN arkasına alınır.
+ * yetişkin işleri kalır. Faz 7 (3.11): Veli Paneli veli PIN'iyle açılır;
+ * "Çıkış Yap" velinin oturumunu kapattığı için "Profil değiştir" oldu. Bağlı
+ * çocuk cihazında ikisi de yoktur.
  */
 export function ProfilKarti({ profil, ozet, onKapat }: ProfilKartiProps) {
   const router = useRouter();
   const kapatRef = useRef<HTMLButtonElement>(null);
+  const [bagliCihaz, setBagliCihaz] = useState(false);
 
   useEffect(() => {
     kapatRef.current?.focus();
@@ -34,9 +38,19 @@ export function ProfilKarti({ profil, ozet, onKapat }: ProfilKartiProps) {
     return () => window.removeEventListener("keydown", tus);
   }, [onKapat]);
 
-  async function cikisYap() {
-    await supabase.auth.signOut();
-    router.push("/login");
+  useEffect(() => {
+    let iptal = false;
+    void supabase.auth.getSession().then(({ data }) => {
+      if (!iptal) setBagliCihaz(Boolean(data.session?.user.is_anonymous));
+    });
+    return () => {
+      iptal = true;
+    };
+  }, []);
+
+  function profilDegistir() {
+    profiliKapat();
+    router.push("/kim-okuyor");
   }
 
   return (
@@ -98,23 +112,28 @@ export function ProfilKarti({ profil, ozet, onKapat }: ProfilKartiProps) {
           </div>
         </div>
 
-        <div className={styles.satirlar}>
-          <button type="button" className={styles.satir} onClick={() => router.push("/dashboard")}>
-            <Ikon ad="hesap" boyut={22} />
-            <span>
-              <strong>Veli Paneli</strong>
-              <small>Annen ya da baban için</small>
-            </span>
-            <Ikon ad="ok-sag" boyut={18} className={styles.satirOku} />
-          </button>
-          <button type="button" className={styles.satir} onClick={cikisYap}>
-            <Ikon ad="cikis" boyut={22} />
-            <span>
-              <strong>Çıkış Yap</strong>
-            </span>
-            <Ikon ad="ok-sag" boyut={18} className={styles.satirOku} />
-          </button>
-        </div>
+        {bagliCihaz ? (
+          <p className={styles.bagliCihazNotu}>Bu cihaz {profil.ad} için bağlı.</p>
+        ) : (
+          <div className={styles.satirlar}>
+            <button type="button" className={styles.satir} onClick={profilDegistir}>
+              <Ikon ad="hesap" boyut={22} />
+              <span>
+                <strong>Profil değiştir</strong>
+                <small>Kim okuyor?</small>
+              </span>
+              <Ikon ad="ok-sag" boyut={18} className={styles.satirOku} />
+            </button>
+            <button type="button" className={styles.satir} onClick={() => router.push("/dashboard")}>
+              <Ikon ad="kilit" boyut={22} />
+              <span>
+                <strong>Veli Paneli</strong>
+                <small>Annen ya da baban için</small>
+              </span>
+              <Ikon ad="ok-sag" boyut={18} className={styles.satirOku} />
+            </button>
+          </div>
+        )}
       </section>
     </div>
   );

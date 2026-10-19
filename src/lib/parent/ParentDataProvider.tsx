@@ -17,35 +17,25 @@ export type ChildProfile = {
   id: string;
   isim: string;
   avatar_tipi: string;
-  /** Veli yüklediyse çocuk fotoğrafının public URL'i; boşsa hazır avatar geçerli */
+  /** Veli yüklediyse fotoğrafın kapalı kovadaki yolu; boşsa hazır avatar geçerli */
   avatar_url?: string | null;
   unvan: string | null;
-  child_username?: string | null;
-  child_password?: string | null;
   profile_limit: number;
   created_at: string;
 };
 
-// Sütun merdiveni: en zengin select ile başlanır, "sütun yok" hatasında bir
-// basamak inilir. Böylece migration'lardan biri çalıştırılmamışsa panel komple
-// düşmez, yalnız o özellik eksik kalır.
+// Çocuk kullanıcı adı ve şifresi Faz 7'de kaldırıldı (PROJE-MODELI 3.11).
 export const profileSelectTam =
-  "id, isim, avatar_tipi, avatar_url, unvan, child_username, child_password, profile_limit, created_at";
-const profileSelectWithChildLogin =
-  "id, isim, avatar_tipi, unvan, child_username, child_password, profile_limit, created_at";
+  "id, isim, avatar_tipi, avatar_url, unvan, profile_limit, created_at";
 const profileSelectBase =
   "id, isim, avatar_tipi, unvan, profile_limit, created_at";
 const progressSelect =
   "profile_id, book_id, tamamlanan_bolum_sayisi, yuzde, bitti_mi, final_title, final_score, final_badge, updated_at";
 
-export function isMissingChildLoginColumn(message?: string) {
+/** Supabase "sütun yok" hatası mı (fotoğraf göçü çalıştırılmamış kurulum)? */
+export function isMissingColumn(message?: string) {
   const normalized = (message ?? "").toLocaleLowerCase("tr-TR");
-  return (
-    normalized.includes("child_username") ||
-    normalized.includes("child_password") ||
-    normalized.includes("avatar_url") ||
-    normalized.includes("column")
-  );
+  return normalized.includes("avatar_url") || normalized.includes("column");
 }
 
 type ProgressWithProfile = DeriveProgressRow & { profile_id: string };
@@ -116,6 +106,12 @@ export function ParentDataProvider({ children }: { children: ReactNode }) {
       return;
     }
 
+    // Bağlı çocuk cihazı (anonim oturum) veli paneline giremez (Faz 7, 3.11).
+    if (user.is_anonymous) {
+      router.replace("/map");
+      return;
+    }
+
     setParentId(user.id);
 
     const [profileResult, subscriptionResult, booksResult] = await Promise.all([
@@ -136,11 +132,11 @@ export function ParentDataProvider({ children }: { children: ReactNode }) {
     let profileRows = profileResult.data as ChildProfile[] | null;
     let profilesError = profileResult.error;
 
-    // 1. basamak: fotoğraf sütunu yoksa fotoğrafsız (ama girişli) select'e in.
-    if (profilesError && isMissingChildLoginColumn(profilesError.message)) {
+    // Fotoğraf sütunu yoksa panel düşmesin; fotoğrafsız select'e in.
+    if (profilesError && isMissingColumn(profilesError.message)) {
       const fotografsiz = await supabase
         .from("profiles")
-        .select(profileSelectWithChildLogin)
+        .select(profileSelectBase)
         .eq("veli_id", user.id)
         .order("created_at", { ascending: true });
 
@@ -150,24 +146,6 @@ export function ParentDataProvider({ children }: { children: ReactNode }) {
       if (!fotografsiz.error) {
         setNotice(
           "Profil fotoğrafı için Supabase'e avatar_url sütununu eklemelisin (supabase/migration-profil-fotografi.sql).",
-        );
-      }
-    }
-
-    // 2. basamak: çocuk giriş sütunları da yoksa en sade select'e in.
-    if (profilesError && isMissingChildLoginColumn(profilesError.message)) {
-      const fallback = await supabase
-        .from("profiles")
-        .select(profileSelectBase)
-        .eq("veli_id", user.id)
-        .order("created_at", { ascending: true });
-
-      profileRows = fallback.data as ChildProfile[] | null;
-      profilesError = fallback.error;
-
-      if (!fallback.error) {
-        setNotice(
-          "Çocuk giriş bilgileri için Supabase'e child_username ve child_password sütunlarını eklemelisin.",
         );
       }
     }

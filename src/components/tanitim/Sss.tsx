@@ -45,7 +45,7 @@ const SORULAR: { soru: string; cevap: ReactNode }[] = [
   {
     soru: "Satın aldıktan sonra nasıl başlarım?",
     cevap:
-      "Ödeme onaylanınca giriş bilgileriniz e-posta adresinize gelir. Veli paneline girip çocuk profillerini oluşturursunuz; çocuğunuz kendi kullanıcı adıyla girip ilk bölüme başlar.",
+      "Ödeme onaylanınca giriş bilgileriniz e-posta adresinize gelir. Veli paneline girip çocuk profillerini oluşturursunuz; çocuğunuz evdeki tablette \"Kim okuyor?\" ekranından kendi profiline girip ilk bölüme başlar. Kendi cihazı varsa panelden alacağınız kodla o cihazı bağlarsınız.",
   },
   {
     soru: "İade edebilir miyim?",

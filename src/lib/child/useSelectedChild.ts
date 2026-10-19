@@ -1,16 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
 import { profilAvatarliOku } from "../profilFotografi";
 import { yayindakiDbKitaplari, type DeriveBookRow, type DeriveProgressRow } from "../derive";
+import { useCocukOturumu } from "./cocukOturumu";
 
 export type SelectedChild = {
   id: string;
   name: string;
   avatarType: string;
-  /** Veli yüklediyse fotoğrafın public URL'i; boşsa hazır avatar geçerli */
+  /** Veli yüklediyse fotoğrafın kovadaki yolu; boşsa hazır avatar geçerli */
   avatarUrl: string | null;
   title: string | null;
 };
@@ -22,33 +22,29 @@ type SelectedChildData = {
   progress: DeriveProgressRow[];
 };
 
-// Çocuk tarafı ekranları (Kazanımlarım, Kelime Defterim) için ortak veri yükleyici.
-// localStorage'daki seçili profili + kitapları + o çocuğun ilerlemesini çeker;
-// profil yoksa /dashboard'a yönlendirir (map ile aynı kalıp).
+// Çocuk tarafı ekranları (harita, Ödüllerim, Kelimelerim, Görevlerim) için
+// ortak veri yükleyici. Önce çocuk oturumu korumasından geçer (Faz 7 —
+// `cocukOturumu.ts`: veli oturumu + açık profil ya da bağlı cihaz); sonra o
+// çocuğun profilini, kitapları ve ilerlemesini çeker.
 export function useSelectedChild(): SelectedChildData {
-  const router = useRouter();
+  const oturum = useCocukOturumu();
+  const profilId = oturum.durum === "hazir" ? oturum.profilId : null;
   const [isLoading, setIsLoading] = useState(true);
   const [child, setChild] = useState<SelectedChild | null>(null);
   const [books, setBooks] = useState<DeriveBookRow[]>([]);
   const [progress, setProgress] = useState<DeriveProgressRow[]>([]);
 
   useEffect(() => {
-    async function load() {
-      const selectedProfileId = window.localStorage.getItem(
-        "selected_child_profile_id",
-      );
-      const selectedProfileName = window.localStorage.getItem(
-        "selected_child_profile_name",
-      );
+    if (!profilId) return undefined;
+    const seciliProfil = profilId;
+    let iptal = false;
 
-      if (!selectedProfileId) {
-        router.push("/dashboard");
-        return;
-      }
+    async function load() {
+      const selectedProfileName = window.localStorage.getItem("selected_child_profile_name");
 
       setIsLoading(true);
       setChild({
-        id: selectedProfileId,
+        id: seciliProfil,
         name: selectedProfileName || "Gezgin",
         avatarType: "lantern",
         avatarUrl: null,
@@ -60,19 +56,20 @@ export function useSelectedChild(): SelectedChildData {
           isim: string | null;
           avatar_tipi: string | null;
           unvan: string | null;
-        }>(selectedProfileId, "isim, avatar_tipi, unvan"),
+        }>(seciliProfil, "isim, avatar_tipi, unvan"),
         supabase.from("books").select("id, isim, toplam_bolum, sira"),
         supabase
           .from("user_progress")
           .select(
             "book_id, tamamlanan_bolum_sayisi, yuzde, bitti_mi, final_title, final_score, final_badge, updated_at",
           )
-          .eq("profile_id", selectedProfileId),
+          .eq("profile_id", seciliProfil),
       ]);
+      if (iptal) return;
 
       if (profileResult.data) {
         setChild({
-          id: selectedProfileId,
+          id: seciliProfil,
           name: profileResult.data.isim ?? selectedProfileName ?? "Gezgin",
           avatarType: profileResult.data.avatar_tipi ?? "lantern",
           avatarUrl: profileResult.data.avatar_url ?? null,
@@ -86,8 +83,11 @@ export function useSelectedChild(): SelectedChildData {
       setIsLoading(false);
     }
 
-    load();
-  }, [router]);
+    void load();
+    return () => {
+      iptal = true;
+    };
+  }, [profilId]);
 
   return { isLoading, child, books, progress };
 }

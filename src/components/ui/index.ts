@@ -8,3 +8,4 @@ export { YedekliGorsel } from "./YedekliGorsel";
 export { Ikon } from "./Ikon";
 export type { IkonAdi } from "./Ikon";
 export { HareketAyari } from "./HareketAyari";
+export { SifrePaneli, type SifreDenemesi } from "./SifrePaneli";

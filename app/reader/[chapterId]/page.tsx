@@ -6,6 +6,7 @@ import { supabase } from "../../../lib/supabase";
 // Kaydırmalı okuyucu (Faz 6.2) 28 Tem 2026'da Hasan onayıyla üretime alındı;
 // sayfalı okuyucu 30 Tem 2026'da tamamen kaldırıldı. Tek okuyucu budur.
 import { AtlasScrollReader } from "../../../src/components/reader/AtlasScrollReader";
+import { CocukKorumasi } from "../../../src/components/cocuk/CocukKorumasi";
 import { dbKitabiBul } from "../../../src/lib/derive";
 import { atlasBookByKey } from "../../../src/data/atlasCatalog";
 import {
@@ -138,11 +139,14 @@ export default function ReaderPage() {
   // Yayın durumu tek kaynaktan: katalogda `published` olmayan kitabın bölümü açılmaz.
   if (atlasBookByKey.get(chapter.bookKey ?? "")?.availability !== "published") notFound();
 
+  // Çocuk oturumu (Faz 7): veli oturumu + açık profil ya da bağlı cihaz.
   return (
-    <AtlasScrollReader
-      key={chapter.id}
-      chapter={chapter}
-      onProgressSync={() => syncChapterProgress(chapter)}
-    />
+    <CocukKorumasi>
+      <AtlasScrollReader
+        key={chapter.id}
+        chapter={chapter}
+        onProgressSync={() => syncChapterProgress(chapter)}
+      />
+    </CocukKorumasi>
   );
 }

@@ -6,17 +6,9 @@ create table if not exists public.profiles (
   isim text not null,
   avatar_tipi text not null default 'lantern',
   unvan text,
-  child_username text,
-  child_password text,
   profile_limit int not null default 3,
   created_at timestamptz not null default now()
 );
-
-alter table public.profiles
-add column if not exists child_username text;
-
-alter table public.profiles
-add column if not exists child_password text;
 
 -- Veli panelinden yüklenen çocuk fotoğrafının public URL'i. Boşsa ekranlar
 -- `avatar_tipi`ndeki hazır avatara düşer. Depolama kovası ve politikaları
@@ -24,9 +16,6 @@ add column if not exists child_password text;
 alter table public.profiles
 add column if not exists avatar_url text;
 
-create unique index if not exists profiles_child_username_unique
-on public.profiles (child_username)
-where child_username is not null;
 
 create table if not exists public.parent_subscriptions (
   id uuid primary key default gen_random_uuid(),
@@ -275,11 +264,6 @@ on public.profiles for all
 using (auth.uid() = veli_id)
 with check (auth.uid() = veli_id);
 
-drop policy if exists "Children can login with profile credentials" on public.profiles;
-create policy "Children can login with profile credentials"
-on public.profiles for select
-using (child_username is not null and child_password is not null);
-
 drop policy if exists "Books are readable" on public.books;
 create policy "Books are readable"
 on public.books for select
@@ -310,50 +294,8 @@ with check (
   )
 );
 
-drop policy if exists "Children can read own progress" on public.user_progress;
-create policy "Children can read own progress"
-on public.user_progress for select
-using (
-  exists (
-    select 1
-    from public.profiles
-    where profiles.id = user_progress.profile_id
-      and profiles.child_username is not null
-      and profiles.child_password is not null
-  )
-);
-
-drop policy if exists "Children can insert own progress" on public.user_progress;
-create policy "Children can insert own progress"
-on public.user_progress for insert
-with check (
-  exists (
-    select 1
-    from public.profiles
-    where profiles.id = user_progress.profile_id
-      and profiles.child_username is not null
-      and profiles.child_password is not null
-  )
-);
-
-drop policy if exists "Children can update own progress" on public.user_progress;
-create policy "Children can update own progress"
-on public.user_progress for update
-using (
-  exists (
-    select 1
-    from public.profiles
-    where profiles.id = user_progress.profile_id
-      and profiles.child_username is not null
-      and profiles.child_password is not null
-  )
-)
-with check (
-  exists (
-    select 1
-    from public.profiles
-    where profiles.id = user_progress.profile_id
-      and profiles.child_username is not null
-      and profiles.child_password is not null
-  )
-);
+-- FAZ 7 (19 Eki 2026, PROJE-MODELI 3.11 ve Bölüm 8): çocuk kullanıcı adı ve
+-- şifresi kaldırıldı; giriş yapmamış herkese açık "Children can ..." kuralları
+-- YOKTUR ve geri eklenmez. Aile ayarı, veli PIN'i, profil şifresi, eşleme kodu,
+-- bağlı cihaz tabloları, fonksiyonları ve bağlı cihaz kuralları
+-- migration-faz7-guvenlik.sql içindedir; bu dosyadan sonra çalıştırılır.

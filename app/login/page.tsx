@@ -1,9 +1,11 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { supabase } from "../../lib/supabase";
+import { veliKapisiniAc } from "../../src/lib/child/cocukOturumu";
 
 function BookIcon() {
   return (
@@ -33,26 +35,17 @@ function CompassIcon() {
   );
 }
 
-function isMissingChildLoginColumn(message?: string) {
-  const normalized = (message ?? "").toLocaleLowerCase("tr-TR");
-
-  return (
-    normalized.includes("child_username") ||
-    normalized.includes("child_password") ||
-    normalized.includes("column")
-  );
-}
-
+/**
+ * Giriş. Çocuk hesabı yoktur (Faz 7 — PROJE-MODELI 3.11): veli giriş yapar,
+ * çocuk ortak cihazda "Kim okuyor?"dan girer; çocuğun kendi cihazı velinin
+ * ürettiği kodla `/cihaz-bagla`'dan bağlanır.
+ */
 export default function LoginPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [childUsername, setChildUsername] = useState("");
-  const [childPassword, setChildPassword] = useState("");
   const [parentError, setParentError] = useState<string | null>(null);
-  const [childError, setChildError] = useState<string | null>(null);
   const [isParentSubmitting, setIsParentSubmitting] = useState(false);
-  const [isChildSubmitting, setIsChildSubmitting] = useState(false);
 
   async function handleParentSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -71,44 +64,9 @@ export default function LoginPage() {
       return;
     }
 
+    // Şifre az önce girildi: bu cihaz çocuk modundaysa da veli kapısı açık başlar.
+    veliKapisiniAc();
     router.push("/dashboard");
-  }
-
-  async function handleChildSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setChildError(null);
-    setIsChildSubmitting(true);
-
-    const trimmedUsername = childUsername.trim();
-    const trimmedPassword = childPassword.trim();
-
-    const { data, error } = await supabase
-      .from("profiles")
-      .select("id, isim")
-      .eq("child_username", trimmedUsername)
-      .eq("child_password", trimmedPassword)
-      .maybeSingle();
-
-    setIsChildSubmitting(false);
-
-    if (error) {
-      setChildError(
-        isMissingChildLoginColumn(error.message)
-          ? "Çocuk girişi için Supabase profiles tablosuna child_username ve child_password sütunlarını eklemelisin."
-          : "Çocuk girişi kontrol edilemedi. Lütfen tekrar dene.",
-      );
-      return;
-    }
-
-    if (!data) {
-      setChildError("Kullanıcı adı veya şifre hatalı. Lütfen tekrar dene.");
-      return;
-    }
-
-    window.localStorage.setItem("selected_child_profile_id", data.id);
-    window.localStorage.setItem("selected_child_profile_name", data.isim);
-    window.localStorage.setItem("selected_child_name", data.isim);
-    router.push("/map");
   }
 
   return (
@@ -205,67 +163,31 @@ export default function LoginPage() {
             className="relative overflow-hidden rounded-3xl border border-emerald-200 bg-white/85 p-6 shadow-2xl shadow-emerald-900/10 backdrop-blur sm:p-8"
           >
             <div className="pointer-events-none absolute -bottom-12 -left-12 h-36 w-36 rounded-full bg-emerald-200/55 blur-3xl" />
-            <div className="relative mb-8 text-center">
+            <div className="relative text-center">
               <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-2xl border border-emerald-300 bg-emerald-100 text-emerald-800 shadow-inner">
                 <CompassIcon />
               </div>
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-700">
-                Çocuk Girişi
+                Çocuklar İçin
               </p>
               <h2 className="mt-3 text-3xl font-black tracking-normal text-emerald-950">
                 Keşif Haritası
               </h2>
-            </div>
-
-            <form className="relative space-y-5" onSubmit={handleChildSubmit}>
-              <label className="block">
-                <span className="mb-2 block text-sm font-bold text-stone-700">
-                  Kullanıcı Adı
-                </span>
-                <input
-                  value={childUsername}
-                  onChange={(event) => setChildUsername(event.target.value)}
-                  required
-                  autoComplete="username"
-                  className="h-14 w-full rounded-2xl border border-emerald-200 bg-emerald-50/70 px-4 py-3 text-base font-semibold text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-emerald-500 focus:bg-white focus:ring-4 focus:ring-emerald-200/60"
-                  placeholder="Örn. hasan01"
-                />
-              </label>
-
-              <label className="block">
-                <span className="mb-2 block text-sm font-bold text-stone-700">
-                  Şifre
-                </span>
-                <input
-                  type="password"
-                  value={childPassword}
-                  onChange={(event) => setChildPassword(event.target.value)}
-                  required
-                  autoComplete="current-password"
-                  className="h-14 w-full rounded-2xl border border-emerald-200 bg-emerald-50/70 px-4 py-3 text-base font-semibold text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-emerald-500 focus:bg-white focus:ring-4 focus:ring-emerald-200/60"
-                  placeholder="Şifren"
-                />
-              </label>
-
-              {childError ? (
-                <motion.p
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm font-bold leading-6 text-rose-700"
-                  role="alert"
-                >
-                  {childError}
-                </motion.p>
-              ) : null}
-
-              <button
-                type="submit"
-                disabled={isChildSubmitting}
-                className="mt-2 h-14 w-full rounded-2xl bg-emerald-800 px-5 py-3 text-base font-black text-emerald-50 shadow-lg shadow-emerald-900/15 transition hover:bg-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-300 disabled:cursor-not-allowed disabled:bg-stone-400 disabled:shadow-none"
+              <p className="mt-5 text-base font-semibold leading-7 text-stone-700">
+                Evdeki tablette veli girişi açıksa çocuğunuz &quot;Kim okuyor?&quot; ekranından
+                kendi profiline girer; ayrıca kullanıcı adı ya da şifre gerekmez.
+              </p>
+              <p className="mt-4 text-base font-semibold leading-7 text-stone-700">
+                Çocuğunuzun kendi cihazı varsa veli panelindeki Aile ve Güvenlik sayfasından bir
+                kod alın ve o cihazda kodu girin.
+              </p>
+              <Link
+                href="/cihaz-bagla"
+                className="mt-6 inline-flex h-14 w-full items-center justify-center rounded-2xl bg-emerald-800 px-5 py-3 text-base font-black text-emerald-50 shadow-lg shadow-emerald-900/15 transition hover:bg-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-300"
               >
-                {isChildSubmitting ? "Harita Açılıyor..." : "Maceraya Başla"}
-              </button>
-            </form>
+                Bu Cihazı Çocuğa Bağla
+              </Link>
+            </div>
           </motion.section>
         </div>
       </div>

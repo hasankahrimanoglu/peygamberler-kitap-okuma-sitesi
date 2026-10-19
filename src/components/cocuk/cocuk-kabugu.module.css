@@ -398,6 +398,18 @@
   gap: 8px;
 }
 
+/* Bağlı çocuk cihazında satırların yerine tek not (Faz 7, 3.11). */
+.bagliCihazNotu {
+  padding: 14px;
+  border: 1.5px solid var(--krem-cizgi);
+  border-radius: 16px;
+  color: var(--murekkep-koyu);
+  background: color-mix(in srgb, white 45%, var(--krem));
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
 .satir {
   display: flex;
   min-height: 58px;

@@ -185,7 +185,8 @@ gözlem testi var. Ana ekran bileşenleri `src/components/cocuk/`, veri modeli
 (Büyük Final Testi; kayıt yok), `/tasarim/oduller`, `/tasarim/kelimeler`, `/tasarim/gorevler`
 (`?durum=bos`) ve `/tasarim/isil`. Veli tarafının girişsiz önizlemesi
 `/tasarim/veli-rapor` (Gelişim Raporu'nun Kitaplar ve Sohbet Önerileri sekmeleri;
-`?durum=bos|tek`, `?sekme=kitaplar`; görünüm `src/components/dashboard/Rapor*Sekmesi.tsx`). Ödüllerim · Kelimelerim · Görevlerim: açık krem zemin
+`?durum=bos|tek`, `?sekme=kitaplar`; görünüm `src/components/dashboard/Rapor*Sekmesi.tsx`).
+"Kim okuyor?" önizlemesi `/tasarim/kim-okuyor` (`?sifre=1`; örnek şifre 1234). Ödüllerim · Kelimelerim · Görevlerim: açık krem zemin
 + gece mavisi menü bantları (unvan kartı gece mavisi), görünüm `src/components/cocuk/*Ekrani.tsx`, sayfalar yalnız veri çeker (3.10.8). Final testi görünümü
 `src/components/final/FinalTesti.tsx`; okuma ekranının modülünü ve rozet anıyla ortak
 `KutlamaSahnesi`'ni kullanır.
@@ -259,10 +260,23 @@ Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
 
 ---
 
-## GÜVENLİK — ŞİMDİ DOKUNMA (Bölüm 8, Faz 7)
-`child_password` düz metin ve gevşek RLS gibi bilinen açıklar var ama bunlar
-**kendi fazında** ele alınacak. İstenmedikçe auth/RLS/şifre akışına dokunma.
-`.env.local` (Supabase anahtarları) asla commit edilmez.
+## GÜVENLİK (Bölüm 8, Faz 7 — 19 Eki 2026; PROJE-MODELI 3.11)
+- **Çocuk hesabı yoktur.** Çocuk verisine yalnız velinin oturumu
+  (`veli_id = auth.uid()`) ya da o çocuğa bağlanmış cihaz (Supabase anonim
+  oturumu + `cihaz_baglantilari`) erişir. Ortak cihazda giriş "Kim okuyor?"
+  (`/kim-okuyor`), kendi cihazında eşleme kodu (`/cihaz-bagla`).
+- **Herkese açık anahtarla çalışan açık RLS kuralı YAZMA.** Çocuk verisi tutan
+  her yeni tablo veli + bağlı cihaz desenini izler. Gizli değerler (şifre
+  özetleri, kodlar) kuralı olmayan tablolarda durur, yalnız `SECURITY DEFINER`
+  fonksiyonlar okur. Anonim oturum veli işlemi yapamaz.
+- Profil fotoğrafı kapalı kovadadır; `CocukAvatari` imzalı adres üretir.
+  Fotoğrafı `getPublicUrl` ile gösterme.
+- Çocuk ekranları `src/lib/child/cocukOturumu.ts` korumasından geçer (profil
+  şifresi, 30 dk zaman aşımı, bağlı cihaz); yeni çocuk ekranı eklerken bu
+  korumayı kullan. Veli paneli `VeliKapisi` ile korunur.
+- Faz 7'nin 3. adımı (veli hesabı aktivasyon bağlantısı, Shopier) bekliyor;
+  istenmedikçe Shopier ve e-posta akışına dokunma.
+- `.env.local` (Supabase anahtarları) asla commit edilmez.
 
 ---
 

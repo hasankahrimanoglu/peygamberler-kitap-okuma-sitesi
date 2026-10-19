@@ -10,14 +10,14 @@
 alter table public.profiles
 add column if not exists avatar_url text;
 
--- Fotoğraflar public kovada tutulur: çocuk tarafı ekranları (harita, keşif
--- menüsü) Supabase auth oturumu OLMADAN çalışıyor, imzalı URL üretemezler.
--- Dosya adı tahmin edilemez olsun diye anahtar veli_id/profile_id (iki uuid).
+-- FAZ 7 (19 Eki 2026): kova KAPALIDIR; fotoğraf imzalı adresle gösterilir.
+-- Okuma kuralları (veli + bağlı cihaz) migration-faz7-guvenlik.sql içindedir.
+-- Anahtar veli_id/profile_id (iki uuid).
 insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
 values (
   'profil-fotograflari',
   'profil-fotograflari',
-  true,
+  false,
   2097152, -- 2 MB; istemci zaten 512x512 JPEG'e küçültüp gönderiyor
   array['image/jpeg', 'image/png', 'image/webp']
 )
@@ -57,9 +57,3 @@ using (
   bucket_id = 'profil-fotograflari'
   and (storage.foldername(name))[1] = auth.uid()::text
 );
-
--- Okuma herkese açıktır (kova public); çocuk tarafı da bu yolla görüntüler.
-drop policy if exists "Child photos are readable" on storage.objects;
-create policy "Child photos are readable"
-on storage.objects for select
-using (bucket_id = 'profil-fotograflari');

@@ -135,11 +135,13 @@ async function kareyeOlcekle(dosya: File): Promise<Blob> {
 }
 
 /**
- * Fotoğrafı yükler ve `avatar_url` için kullanılacak public URL'i döndürür.
+ * Fotoğrafı yükler ve `avatar_url` için kovadaki yolu döndürür
+ * (`{veli_id}/{profil_id}.jpg?v=…`). Faz 7'den beri kova kapalıdır; ekran
+ * yolu `fotografAdresiniCoz` ile süreli imzalı adrese çevirir.
  *
- * Anahtar profil başına sabittir (upsert) — eski fotoğraf birikmez. Aynı
- * anahtar CDN'de önbelleğe alındığı için URL'e sürüm damgası eklenir; damgasız
- * URL'de veli fotoğrafı değiştirdiğinde ekranda eskisi kalıyordu.
+ * Anahtar profil başına sabittir (upsert) — eski fotoğraf birikmez. Sürüm
+ * damgası, veli fotoğrafı değiştirince eski imzalı adresin önbellekten
+ * gelmemesi içindir.
  */
 export async function profilFotografiYukle(
   veliId: string,
@@ -177,11 +179,44 @@ export async function profilFotografiYukle(
     };
   }
 
-  const { data } = supabase.storage
-    .from(PROFIL_FOTOGRAFI_KOVASI)
-    .getPublicUrl(anahtar);
+  return { tamam: true, url: `${anahtar}?v=${Date.now()}` };
+}
 
-  return { tamam: true, url: `${data.publicUrl}?v=${Date.now()}` };
+/** İmzalı adresin geçerlilik süresi (saniye). */
+const IMZA_SURESI = 60 * 60;
+const imzaOnbellegi = new Map<string, { adres: string; bitis: number }>();
+
+/** Tarayıcının doğrudan gösterebileceği adres mi (önizleme, yerel dosya)? */
+export function dogrudanFotografAdresi(deger: string | null | undefined) {
+  if (!deger) return null;
+  return deger.startsWith("blob:") || deger.startsWith("data:") ? deger : null;
+}
+
+/**
+ * `avatar_url` değerini gösterilebilir adrese çevirir (Faz 7 — 3.11): kova
+ * kapalı olduğu için süreli imzalı adres üretir ve önbellekte tutar. Faz 7
+ * öncesinden kalmış public adresler de yola çevrilerek imzalanır. Yetki yoksa
+ * (başka ailenin fotoğrafı) `null` döner; ekran hazır avatara düşer.
+ */
+export async function fotografAdresiniCoz(deger: string | null | undefined): Promise<string | null> {
+  if (!deger) return null;
+  const dogrudan = dogrudanFotografAdresi(deger);
+  if (dogrudan) return dogrudan;
+
+  const onbellekte = imzaOnbellegi.get(deger);
+  if (onbellekte && onbellekte.bitis > Date.now()) return onbellekte.adres;
+
+  const isaret = `/object/public/${PROFIL_FOTOGRAFI_KOVASI}/`;
+  const yol = (deger.includes(isaret) ? deger.slice(deger.indexOf(isaret) + isaret.length) : deger).split("?")[0];
+
+  const { data, error } = await supabase.storage
+    .from(PROFIL_FOTOGRAFI_KOVASI)
+    .createSignedUrl(yol, IMZA_SURESI);
+  if (error || !data?.signedUrl) return null;
+
+  // Süresi dolmadan bir dakika önce yenilensin.
+  imzaOnbellegi.set(deger, { adres: data.signedUrl, bitis: Date.now() + (IMZA_SURESI - 60) * 1000 });
+  return data.signedUrl;
 }
 
 /**

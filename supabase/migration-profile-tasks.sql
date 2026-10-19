@@ -2,8 +2,8 @@
 -- Görev TANIMLARI books.ts'te statiktir; bu tablo yalnızca çocuk-görev
 -- DURUM ilişkisini tutar. Supabase SQL Editor'de tek seferde çalıştırılır.
 --
--- RLS deseni bilinçli olarak user_progress ile AYNIDIR (çocuk oturumu henüz
--- Supabase auth değil — Faz 7'de ikisi birlikte sıkılaştırılacak, bkz. Bölüm 8).
+-- FAZ 7 (19 Eki 2026): çocuk için açık kurallar bu dosyadan çıkarıldı; bağlı
+-- cihaz kuralları migration-faz7-guvenlik.sql içindedir. Veli kuralı aynen kalır.
 
 create table if not exists public.profile_tasks (
   id uuid primary key default gen_random_uuid(),
@@ -35,54 +35,5 @@ with check (
     from public.profiles
     where profiles.id = profile_tasks.profile_id
       and profiles.veli_id = auth.uid()
-  )
-);
-
--- Çocuk: kendi görev durumunu okur/ekler/günceller (user_progress deseni).
-drop policy if exists "Children can read own tasks" on public.profile_tasks;
-create policy "Children can read own tasks"
-on public.profile_tasks for select
-using (
-  exists (
-    select 1
-    from public.profiles
-    where profiles.id = profile_tasks.profile_id
-      and profiles.child_username is not null
-      and profiles.child_password is not null
-  )
-);
-
-drop policy if exists "Children can insert own tasks" on public.profile_tasks;
-create policy "Children can insert own tasks"
-on public.profile_tasks for insert
-with check (
-  exists (
-    select 1
-    from public.profiles
-    where profiles.id = profile_tasks.profile_id
-      and profiles.child_username is not null
-      and profiles.child_password is not null
-  )
-);
-
-drop policy if exists "Children can update own tasks" on public.profile_tasks;
-create policy "Children can update own tasks"
-on public.profile_tasks for update
-using (
-  exists (
-    select 1
-    from public.profiles
-    where profiles.id = profile_tasks.profile_id
-      and profiles.child_username is not null
-      and profiles.child_password is not null
-  )
-)
-with check (
-  exists (
-    select 1
-    from public.profiles
-    where profiles.id = profile_tasks.profile_id
-      and profiles.child_username is not null
-      and profiles.child_password is not null
   )
 );

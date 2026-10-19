@@ -1,16 +1,23 @@
 "use client";
 
-import { ChangeEvent, FormEvent, useMemo, useRef, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { supabase } from "../../lib/supabase";
 import {
-  isMissingChildLoginColumn,
+  isMissingColumn,
   useParentData,
   type ChildProfile,
 } from "../../src/lib/parent/ParentDataProvider";
 import { cocukOzeti, gorevTanimiBul } from "../../src/lib/derive";
+import { aileGuvenlikDurumu } from "../../src/lib/aileGuvenligi";
+import {
+  cocukEkraninaGec,
+  seciliProfilAdiniGuncelle,
+  seciliProfilId,
+  seciliProfiliTemizle,
+} from "../../src/lib/child/cocukOturumu";
 import {
   FOTOGRAF_KABUL_EDILEN,
   profilFotografiSil,
@@ -18,6 +25,8 @@ import {
 } from "../../src/lib/profilFotografi";
 import { CocukKarti } from "../../src/components/dashboard/CocukKarti";
 import { Buton, CocukAvatari, Ikon, Kart } from "../../src/components/ui";
+
+const HATIRLATMA_ANAHTARI = "profil_sifresi_hatirlatmasi_kapandi";
 
 export default function VeliAnaSayfa() {
   const router = useRouter();
@@ -36,11 +45,39 @@ export default function VeliAnaSayfa() {
 
   const [editingProfile, setEditingProfile] = useState<ChildProfile | null>(null);
   const [editName, setEditName] = useState("");
-  const [editChildUsername, setEditChildUsername] = useState("");
-  const [editChildPassword, setEditChildPassword] = useState("");
-  const [isUpdatingChildLogin, setIsUpdatingChildLogin] = useState(false);
+  const [isUpdatingProfile, setIsUpdatingProfile] = useState(false);
   const [isDeleteConfirmOpen, setIsDeleteConfirmOpen] = useState(false);
   const [isDeletingProfile, setIsDeletingProfile] = useState(false);
+
+  // İkinci çocuk eklenince profil şifresi bir kez hatırlatılır (PROJE-MODELI 3.11).
+  const [sifreHatirlatmasi, setSifreHatirlatmasi] = useState(false);
+  const cocukSayisi = profiles.length;
+  useEffect(() => {
+    if (cocukSayisi < 2) return;
+    let kapatildi = false;
+    try {
+      kapatildi = window.localStorage.getItem(HATIRLATMA_ANAHTARI) === "1";
+    } catch {
+      kapatildi = false;
+    }
+    if (kapatildi) return;
+    let iptal = false;
+    void aileGuvenlikDurumu().then((durum) => {
+      if (!iptal && durum && !durum.profilSifresiAcik) setSifreHatirlatmasi(true);
+    });
+    return () => {
+      iptal = true;
+    };
+  }, [cocukSayisi]);
+
+  function hatirlatmayiKapat() {
+    setSifreHatirlatmasi(false);
+    try {
+      window.localStorage.setItem(HATIRLATMA_ANAHTARI, "1");
+    } catch {
+      // Depolama kapalıysa hatırlatma bir sonraki açılışta yine görünür.
+    }
+  }
 
   // Fotoğraf seçimi kaydedilene kadar yalnızca önizlemedir; yükleme "Kaydet"
   // ile birlikte yapılır, böylece vazgeçen veli hiçbir şey değiştirmemiş olur.
@@ -92,11 +129,10 @@ export default function VeliAnaSayfa() {
     return map;
   }, [profiles, tasksByProfile]);
 
+  // Velinin eylemi: profil şifresi sorulmaz, ama veli PIN'i yoksa önce
+  // belirletilir (cihaz çocuk moduna girince panel PIN'le korunur — 3.11).
   function selectProfile(profile: ChildProfile) {
-    window.localStorage.setItem("selected_child_profile_id", profile.id);
-    window.localStorage.setItem("selected_child_profile_name", profile.isim);
-    window.localStorage.setItem("selected_child_name", profile.isim);
-    router.push("/map");
+    void cocukEkraninaGec(router, { id: profile.id, isim: profile.isim }, "/map");
   }
 
   function closeEditProfile() {
@@ -110,8 +146,6 @@ export default function VeliAnaSayfa() {
   function openEditProfile(profile: ChildProfile) {
     setEditingProfile(profile);
     setEditName(profile.isim);
-    setEditChildUsername(profile.child_username ?? "");
-    setEditChildPassword(profile.child_password ?? "");
     setSecilenFotograf(null);
     onizlemeyiBirak();
     setFotografKaldirildi(false);
@@ -144,26 +178,20 @@ export default function VeliAnaSayfa() {
     if (!editingProfile) return;
 
     const trimmedName = editName.trim();
-    const trimmedUsername = editChildUsername.trim();
-    const trimmedPassword = editChildPassword.trim();
 
     if (!trimmedName) {
       setError("Çocuğun ismi boş bırakılamaz.");
       return;
     }
-    if (!trimmedUsername || !trimmedPassword) {
-      setError("Çocuk kullanıcı adı ve şifresi boş bırakılamaz.");
-      return;
-    }
 
-    setIsUpdatingChildLogin(true);
+    setIsUpdatingProfile(true);
 
     // Fotoğraf işi önce biter: yükleme başarısızsa satırı hiç ellemiyoruz,
     // aksi hâlde veritabanı olmayan bir dosyayı işaret ederdi.
     let avatarUrl = editingProfile.avatar_url ?? null;
     if (secilenFotograf) {
       if (!parentId) {
-        setIsUpdatingChildLogin(false);
+        setIsUpdatingProfile(false);
         setError("Oturum bilgisi okunamadı. Sayfayı yenileyip tekrar dene.");
         return;
       }
@@ -173,7 +201,7 @@ export default function VeliAnaSayfa() {
         secilenFotograf,
       );
       if (!sonuc.tamam) {
-        setIsUpdatingChildLogin(false);
+        setIsUpdatingProfile(false);
         setError(sonuc.hata);
         return;
       }
@@ -183,23 +211,17 @@ export default function VeliAnaSayfa() {
       avatarUrl = null;
     }
 
-    const temelAlanlar = {
-      isim: trimmedName,
-      child_username: trimmedUsername,
-      child_password: trimmedPassword,
-    };
-
     let { error: updateError } = await supabase
       .from("profiles")
-      .update({ ...temelAlanlar, avatar_url: avatarUrl })
+      .update({ isim: trimmedName, avatar_url: avatarUrl })
       .eq("id", editingProfile.id);
 
-    // avatar_url sütunu henüz yoksa isim ve giriş bilgileri yine de kaydedilsin.
+    // avatar_url sütunu henüz yoksa isim yine de kaydedilsin.
     let fotografKaydedilemedi = false;
-    if (updateError && isMissingChildLoginColumn(updateError.message)) {
+    if (updateError && isMissingColumn(updateError.message)) {
       const tekrar = await supabase
         .from("profiles")
-        .update(temelAlanlar)
+        .update({ isim: trimmedName })
         .eq("id", editingProfile.id);
       updateError = tekrar.error;
       if (!tekrar.error) {
@@ -208,39 +230,24 @@ export default function VeliAnaSayfa() {
       }
     }
 
-    setIsUpdatingChildLogin(false);
+    setIsUpdatingProfile(false);
 
     if (updateError) {
-      setError(
-        isMissingChildLoginColumn(updateError.message)
-          ? "Profili kaydetmek için Supabase profiles tablosuna child_username ve child_password sütunlarını eklemelisin."
-          : "Profil güncellenemedi. Lütfen tekrar dene.",
-      );
+      setError("Profil güncellenemedi. Lütfen tekrar dene.");
       return;
     }
 
     setProfiles((current) =>
       current.map((profile) =>
         profile.id === editingProfile.id
-          ? {
-              ...profile,
-              isim: trimmedName,
-              avatar_url: avatarUrl,
-              child_username: trimmedUsername,
-              child_password: trimmedPassword,
-            }
+          ? { ...profile, isim: trimmedName, avatar_url: avatarUrl }
           : profile,
       ),
     );
 
-    // Çocuk tarafı ekranları ismi localStorage'dan okuyor; seçili profil bu
+    // Çocuk tarafı ekranları ismi tarayıcıda tutuyor; seçili profil bu
     // profilse orayı da güncellemezsek harita eski ismi göstermeye devam eder.
-    if (
-      window.localStorage.getItem("selected_child_profile_id") === editingProfile.id
-    ) {
-      window.localStorage.setItem("selected_child_profile_name", trimmedName);
-      window.localStorage.setItem("selected_child_name", trimmedName);
-    }
+    seciliProfilAdiniGuncelle(editingProfile.id, trimmedName);
 
     setNotice(
       fotografKaydedilemedi
@@ -277,13 +284,7 @@ export default function VeliAnaSayfa() {
       current.filter((profile) => profile.id !== editingProfile.id),
     );
 
-    if (
-      window.localStorage.getItem("selected_child_profile_id") === editingProfile.id
-    ) {
-      window.localStorage.removeItem("selected_child_profile_id");
-      window.localStorage.removeItem("selected_child_profile_name");
-      window.localStorage.removeItem("selected_child_name");
-    }
+    if (seciliProfilId() === editingProfile.id) seciliProfiliTemizle();
 
     setNotice(`${editingProfile.isim} profili silindi.`);
     closeEditProfile();
@@ -327,6 +328,40 @@ export default function VeliAnaSayfa() {
         </Kart>
       ) : (
         <div className="space-y-5">
+          {sifreHatirlatmasi ? (
+            <Kart className="flex flex-col gap-4 border-vurgu/40 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex items-start gap-3">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-vurgu-yumusak text-vurgu">
+                  <Ikon ad="kilit" boyut={20} />
+                </span>
+                <div>
+                  <p className="font-baslik text-lg font-bold text-murekkep">
+                    Çocuklarınız aynı tableti mi kullanıyor?
+                  </p>
+                  <p className="mt-1 text-base font-medium leading-7 text-murekkep-soluk">
+                    Profil şifresini açarsanız her çocuk kendi profiline 4 rakamlı
+                    şifresiyle girer; kardeşinin profilinde okuyamaz.
+                  </p>
+                </div>
+              </div>
+              <div className="flex shrink-0 gap-2">
+                <Buton varyant="cerceve" boyut="kucuk" onClick={hatirlatmayiKapat}>
+                  Şimdi Değil
+                </Buton>
+                <Buton
+                  varyant="eylem"
+                  boyut="kucuk"
+                  onClick={() => {
+                    hatirlatmayiKapat();
+                    router.push("/dashboard/ayarlar");
+                  }}
+                >
+                  Ayarı Aç
+                </Buton>
+              </div>
+            </Kart>
+          ) : null}
+
           {profiles.map((profile) => (
             <CocukKarti
               key={profile.id}
@@ -472,34 +507,13 @@ export default function VeliAnaSayfa() {
                 />
               </label>
 
-              <label className="mt-4 block">
-                <span className="mb-2 block text-sm font-semibold text-murekkep">
-                  Kullanıcı Adı
-                </span>
-                <input
-                  value={editChildUsername}
-                  onChange={(event) => setEditChildUsername(event.target.value)}
-                  autoComplete="username"
-                  className="h-12 w-full rounded-buton border border-cizgi bg-yuzey-2 px-4 text-base font-medium text-murekkep outline-none transition focus:border-eylem focus:bg-yuzey focus:ring-2 focus:ring-eylem/30"
-                  placeholder="Örn. hasan01"
-                  required
-                />
-              </label>
-
-              <label className="mt-4 block">
-                <span className="mb-2 block text-sm font-semibold text-murekkep">
-                  Çocuk Şifresi
-                </span>
-                <input
-                  type="password"
-                  value={editChildPassword}
-                  onChange={(event) => setEditChildPassword(event.target.value)}
-                  autoComplete="new-password"
-                  className="h-12 w-full rounded-buton border border-cizgi bg-yuzey-2 px-4 text-base font-medium text-murekkep outline-none transition focus:border-eylem focus:bg-yuzey focus:ring-2 focus:ring-eylem/30"
-                  placeholder="Yeni çocuk şifresi"
-                  required
-                />
-              </label>
+              <p className="mt-4 text-sm font-medium leading-6 text-murekkep-soluk">
+                Profil şifresi ve çocuğun kendi cihazı{" "}
+                <Link href="/dashboard/ayarlar" className="font-semibold text-eylem hover:underline">
+                  Aile ve Güvenlik
+                </Link>{" "}
+                sayfasından yönetilir.
+              </p>
 
               <div className="mt-6 flex gap-3">
                 <Buton
@@ -510,8 +524,8 @@ export default function VeliAnaSayfa() {
                 >
                   Vazgeç
                 </Buton>
-                <Buton type="submit" varyant="eylem" tamGenislik disabled={isUpdatingChildLogin}>
-                  {isUpdatingChildLogin ? "Kaydediliyor..." : "Kaydet"}
+                <Buton type="submit" varyant="eylem" tamGenislik disabled={isUpdatingProfile}>
+                  {isUpdatingProfile ? "Kaydediliyor..." : "Kaydet"}
                 </Buton>
               </div>
 
@@ -519,8 +533,9 @@ export default function VeliAnaSayfa() {
                 {isDeleteConfirmOpen ? (
                   <div className="space-y-4">
                     <p className="text-sm font-semibold leading-6 text-tehlike">
-                      Bu profile ait tüm ilerleme ve rozetler kalıcı olarak
-                      silinecektir. Emin misiniz?
+                      {editingProfile.isim} profiliyle birlikte bütün ilerlemesi,
+                      rozetleri, madalyaları, görevleri ve bağlı cihazları kalıcı
+                      olarak silinir; geri alınamaz. Emin misiniz?
                     </p>
                     <div className="grid grid-cols-2 gap-3">
                       <Buton

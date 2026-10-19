@@ -1,0 +1,160 @@
+"use client";
+
+import { FormEvent, useEffect, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { supabase } from "../../lib/supabase";
+import { beklemeMetni, cihazAdiTahmini, cihaziBagla } from "../../src/lib/aileGuvenligi";
+import { profiliAc } from "../../src/lib/child/cocukOturumu";
+import { Logo } from "../../src/components/marka/Logo";
+import { Buton } from "../../src/components/ui";
+
+/**
+ * Çocuğun kendi cihazını bağlama (Faz 7 — PROJE-MODELI 3.11). Veli panelden
+ * 6 rakamlı, 10 dakika geçerli bir kod üretir; çocuk kodu burada girer.
+ * Cihaz Supabase'in anonim oturumuyla açılır ve yalnız o çocuğun verisine
+ * erişir. Bu cihazda velinin oturumu açıksa önce uyarılır: bağlamak veli
+ * oturumunu bu cihazda kapatır.
+ */
+export default function CihazBaglaSayfasi() {
+  const router = useRouter();
+  const [kod, setKod] = useState("");
+  const [hata, setHata] = useState<string | null>(null);
+  const [bilgi, setBilgi] = useState<string | null>(null);
+  const [bekliyor, setBekliyor] = useState(false);
+  const [veliUyarisi, setVeliUyarisi] = useState(false);
+
+  useEffect(() => {
+    queueMicrotask(() => {
+      if (new URLSearchParams(window.location.search).get("durum") === "kaldirildi") {
+        setBilgi("Bu cihazın bağlantısı kaldırılmış. Annenden ya da babandan yeni bir kod iste.");
+      }
+    });
+  }, []);
+
+  async function bagla(veliOturumunuKapat: boolean) {
+    setHata(null);
+    setBekliyor(true);
+
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
+
+    if (session && !session.user.is_anonymous) {
+      if (!veliOturumunuKapat) {
+        setBekliyor(false);
+        setVeliUyarisi(true);
+        return;
+      }
+      await supabase.auth.signOut();
+    }
+
+    if (!session || !session.user.is_anonymous) {
+      const { error } = await supabase.auth.signInAnonymously();
+      if (error) {
+        setBekliyor(false);
+        setHata(
+          error.message.toLocaleLowerCase("tr-TR").includes("anonymous")
+            ? "Cihaz bağlama şu an kapalı. Annene ya da babana söyle."
+            : "Bağlanamadı. İnternetini kontrol edip tekrar dene.",
+        );
+        return;
+      }
+    }
+
+    const sonuc = await cihaziBagla(kod, cihazAdiTahmini());
+    setBekliyor(false);
+
+    if (sonuc?.durum === "tamam" && sonuc.profilId) {
+      profiliAc({ id: sonuc.profilId, isim: sonuc.isim ?? null });
+      router.replace("/map");
+      return;
+    }
+    setKod("");
+    if (sonuc?.durum === "kilitli") {
+      setHata(`Çok deneme oldu. ${beklemeMetni(sonuc.kalanSaniye)} sonra tekrar dene.`);
+    } else if (sonuc?.durum === "yanlis") {
+      setHata("Kod tutmadı. Kodu kontrol et; kodlar 10 dakika geçerli.");
+    } else {
+      setHata("Bağlanamadı. İnternetini kontrol edip tekrar dene.");
+    }
+  }
+
+  function gonder(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (kod.length !== 6) {
+      setHata("Kod 6 rakamdan oluşur.");
+      return;
+    }
+    void bagla(false);
+  }
+
+  return (
+    <main className="tema-cocuk zemin-yildizli flex min-h-screen flex-col items-center px-4 pb-10 pt-6 text-murekkep sm:px-8">
+      <div className="w-full max-w-5xl">
+        <Logo ton="acik" boyut={40} />
+      </div>
+
+      <div className="flex w-full flex-1 items-center justify-center py-10">
+        <section className="w-full max-w-md rounded-kart border border-cizgi bg-yuzey p-6 sm:p-8">
+          <h1 className="text-center font-baslik text-3xl font-bold">Cihazını bağla</h1>
+          <p className="mt-3 text-center text-lg font-medium leading-7 text-murekkep-soluk">
+            Annenden ya da babandan aldığın 6 rakamlı kodu yaz.
+          </p>
+
+          {bilgi ? (
+            <p className="mt-5 rounded-buton border border-cizgi bg-yuzey-2 px-4 py-3 text-base font-semibold leading-6">
+              {bilgi}
+            </p>
+          ) : null}
+
+          {veliUyarisi ? (
+            <div className="mt-6 space-y-4 text-center">
+              <p className="text-base font-semibold leading-7">
+                Bu cihazda bir veli hesabı açık. Cihazı çocuğa bağlarsanız veli oturumu bu cihazda
+                kapanır.
+              </p>
+              <Buton varyant="eylem" tamGenislik disabled={bekliyor} onClick={() => void bagla(true)}>
+                {bekliyor ? "Bağlanıyor…" : "Devam Et ve Bağla"}
+              </Buton>
+              <Buton varyant="cerceve" tamGenislik onClick={() => router.push("/kim-okuyor")}>
+                Vazgeç
+              </Buton>
+            </div>
+          ) : (
+            <form onSubmit={gonder} className="mt-6 space-y-5">
+              <label className="block">
+                <span className="sr-only">6 rakamlı kod</span>
+                <input
+                  value={kod}
+                  onChange={(event) => {
+                    setHata(null);
+                    setKod(event.target.value.replace(/\D/g, "").slice(0, 6));
+                  }}
+                  inputMode="numeric"
+                  autoComplete="one-time-code"
+                  maxLength={6}
+                  placeholder="000000"
+                  className="h-16 w-full rounded-buton border-2 border-cizgi bg-zemin text-center font-baslik text-4xl font-bold tracking-[0.3em] text-murekkep outline-none transition placeholder:text-murekkep-soluk/40 focus:border-vurgu"
+                />
+              </label>
+              <p role="alert" className="min-h-6 text-center text-base font-semibold text-vurgu">
+                {hata ?? ""}
+              </p>
+              <Buton type="submit" varyant="eylem" boyut="buyuk" tamGenislik disabled={bekliyor}>
+                {bekliyor ? "Bağlanıyor…" : "Bağla"}
+              </Buton>
+            </form>
+          )}
+        </section>
+      </div>
+
+      <Link
+        href="/login"
+        className="min-h-11 px-3 py-2 text-base font-semibold text-murekkep-soluk underline-offset-4 hover:underline"
+      >
+        Veli misiniz? Giriş yapın
+      </Link>
+    </main>
+  );
+}
