@@ -285,8 +285,14 @@ Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
   değilse "Bu cihazı çocuğunuz kullanacak mı?" sorulur (Evet → veli PIN'i +
   çocuk modu + "Kim okuyor?"; Hayır → göz atma, kilit yok). Panelde çocuk
   ekranına yeni bir giriş eklerken `cocukEkraninaGec`'i doğrudan çağırma.
-- Faz 7'nin 3. adımı (veli hesabı aktivasyon bağlantısı, Shopier) bekliyor;
-  istenmedikçe Shopier ve e-posta akışına dokunma.
+- **Satın alma (Faz 7, 3. adım — 20 Eki 2026; PROJE-MODELI Bölüm 8):** ödeme
+  sisteminden bağımsız çekirdek `src/lib/odeme/sunucu.ts` (`siparisiIsle`);
+  Shopier bildirimi yalnız doğrulayıp onu çağırır, elden satış `/yonetim`'den
+  aynı çekirdeği kullanır. Şifre üretme/gönderme/kayda yazma YOK: veli
+  `/sifre-belirle` bağlantısıyla şifresini kendisi koyar; "Şifremi unuttum"
+  `/sifremi-unuttum`. E-posta metinleri `src/lib/odeme/epostaSablonlari.ts`
+  (önizleme `/tasarim/epostalar`). E-postaları `toLowerCase()` ile karşılaştır,
+  `tr-TR` ile değil. Yeni ödeme kaynağı (iyzico/PayTR) yalnız ince katman ekler.
 - `.env.local` (Supabase anahtarları) asla commit edilmez.
 
 ---

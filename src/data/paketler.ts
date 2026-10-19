@@ -17,9 +17,10 @@ import { KATALOG_SAYILARI } from "./katalogSayilari";
  * Shopier bağlantısı: Shopier'de her paket için ayrı ürün açılınca ürün
  * sayfasının adresi `shopierBaglantisi`na yazılır. Ödeme bildirimi
  * (`app/api/shopier/webhook/route.ts`) profil hakkını ürün kimliğinden okur:
- * ürün kimlikleri `.env.local`'de SHOPIER_PACKAGE_1_PRODUCT_ID,
+ * ürün kimlikleri Vercel ortam değişkenlerinde SHOPIER_PACKAGE_1_PRODUCT_ID,
  * SHOPIER_PACKAGE_3_PRODUCT_ID ve SHOPIER_PACKAGE_5_PRODUCT_ID olarak
- * tanımlanmalıdır.
+ * tanımlanmalıdır (yoksa paket ürün adından tahmin edilir). Elden satışta
+ * yönetim sayfası paketleri buradan listeler.
  */
 export type Paket = {
   kimlik: "tek" | "kardes" | "aile";

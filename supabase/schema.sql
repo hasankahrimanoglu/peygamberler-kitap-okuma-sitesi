@@ -299,3 +299,8 @@ with check (
 -- YOKTUR ve geri eklenmez. Aile ayarı, veli PIN'i, profil şifresi, eşleme kodu,
 -- bağlı cihaz tabloları, fonksiyonları ve bağlı cihaz kuralları
 -- migration-faz7-guvenlik.sql içindedir; bu dosyadan sonra çalıştırılır.
+--
+-- FAZ 7, 3. ADIM (20 Eki 2026, Bölüm 8): siparişler (tekrar koruması),
+-- şifre isteği sınırı ve yöneticiler tabloları ile sunucu fonksiyonları
+-- migration-faz7-satin-alma.sql içindedir; ondan sonra çalıştırılır.
+-- parent_subscriptions.shopier_order_id artık yazılmaz (geçmiş: siparisler).

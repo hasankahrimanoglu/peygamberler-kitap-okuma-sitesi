@@ -1,7 +1,19 @@
 import crypto from "crypto";
-import { getSupabaseAdmin } from "../../../../lib/supabase-admin";
+import { PAKETLER } from "../../../../src/data/paketler";
+import { epostaNormal, maskele, siparisiIsle } from "../../../../src/lib/odeme/sunucu";
 
 export const runtime = "nodejs";
+
+/**
+ * Shopier ödeme bildirimi (OSB) — yalnız Shopier'e özgü kısım (Faz 7, 3. adım;
+ * PROJE-MODELI Bölüm 8). Bildirimi doğrular, e-posta / sipariş no / paket
+ * çıkarır ve ödeme sisteminden bağımsız `siparisiIsle`'ye verir. Hesap,
+ * abonelik, e-posta ve tekrar koruması oradadır; ileride iyzico/PayTR aynı
+ * çekirdeği kullanır.
+ *
+ * Shopier'e "success" dönülmezse bildirim tekrarlanır: işlenmiş ya da deneme
+ * bildiriminde de "success" dönülür, yalnız gerçek hatada 500.
+ */
 
 type ShopierPayload = {
   email?: string;
@@ -10,8 +22,6 @@ type ShopierPayload = {
   productlist?: unknown;
   chartdetails?: unknown;
   customernote?: string;
-  buyername?: string;
-  buyersurname?: string;
   istest?: string | number;
 };
 
@@ -47,10 +57,6 @@ function decodeShopierPayload(res: string): ShopierPayload {
   return JSON.parse(decoded) as ShopierPayload;
 }
 
-function generatePassword() {
-  return `Peygamber-${crypto.randomBytes(4).toString("hex")}`;
-}
-
 function stringifyProductData(payload: ShopierPayload) {
   return [
     payload.productid,
@@ -66,6 +72,11 @@ function stringifyProductData(payload: ShopierPayload) {
     .toLocaleLowerCase("tr-TR");
 }
 
+/**
+ * Profil hakkı: önce Vercel'deki ürün kimlikleri (SHOPIER_PACKAGE_{n}_PRODUCT_ID),
+ * yoksa ürün bilgisindeki "3 profil / 3 kullanıcı / 3 çocuk", yoksa paket adı
+ * ("Kardeş"), hiçbiri yoksa 1.
+ */
 function resolvePackageLimit(payload: ShopierPayload) {
   const productData = stringifyProductData(payload);
 
@@ -90,130 +101,16 @@ function resolvePackageLimit(payload: ShopierPayload) {
   if (/(4|dört)\s*(kullanıcı|profil|çocuk)/i.test(productData)) return 4;
   if (/(3|üç)\s*(kullanıcı|profil|çocuk)/i.test(productData)) return 3;
   if (/(2|iki)\s*(kullanıcı|profil|çocuk)/i.test(productData)) return 2;
-  return 1;
-}
 
-function resolvePackageName(profileLimit: number) {
-  return `${profileLimit} Kullanıcılı Paket`;
-}
-
-async function findUserByEmail(email: string) {
-  const supabaseAdmin = getSupabaseAdmin();
-  const normalizedEmail = email.toLocaleLowerCase("tr-TR");
-  let page = 1;
-
-  while (page <= 10) {
-    const { data, error } = await supabaseAdmin.auth.admin.listUsers({
-      page,
-      perPage: 100,
-    });
-
-    if (error) {
-      throw error;
-    }
-
-    const users = data.users as Array<{ id: string; email?: string | null }>;
-    const foundUser = users.find(
-      (user) => user.email?.toLocaleLowerCase("tr-TR") === normalizedEmail,
-    );
-
-    if (foundUser) {
-      return foundUser;
-    }
-
-    if (data.users.length < 100) {
-      return null;
-    }
-
-    page += 1;
-  }
-
-  return null;
-}
-
-async function createOrRefreshParentUser(email: string, password: string) {
-  const supabaseAdmin = getSupabaseAdmin();
-  const existingUser = await findUserByEmail(email);
-
-  if (existingUser) {
-    const { data, error } = await supabaseAdmin.auth.admin.updateUserById(
-      existingUser.id,
-      {
-        password,
-        email_confirm: true,
-      },
-    );
-
-    if (error) {
-      throw error;
-    }
-
-    return data.user;
-  }
-
-  const { data, error } = await supabaseAdmin.auth.admin.createUser({
-    email,
-    password,
-    email_confirm: true,
-  });
-
-  if (error) {
-    throw error;
-  }
-
-  return data.user;
-}
-
-async function sendWelcomeEmail(params: {
-  email: string;
-  password: string;
-  profileLimit: number;
-}) {
-  const resendApiKey = process.env.RESEND_API_KEY;
-  const mailFrom = process.env.MAIL_FROM;
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-
-  if (!resendApiKey || !mailFrom) {
-    console.log("Shopier parent login:", {
-      email: params.email,
-      password: params.password,
-      profileLimit: params.profileLimit,
-      loginUrl: `${siteUrl}/login`,
-    });
-    return;
-  }
-
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${resendApiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from: mailFrom,
-      to: params.email,
-      subject: "Peygamberler Keşif Dünyası giriş bilgileriniz",
-      html: `
-        <div style="font-family:Arial,sans-serif;line-height:1.6;color:#3b1f0f">
-          <h2>Peygamberler Keşif Dünyası hazır</h2>
-          <p>Satın aldığınız paket hesabınıza tanımlandı.</p>
-          <p><strong>Profil hakkı:</strong> ${params.profileLimit}</p>
-          <p><strong>Giriş e-postası:</strong> ${params.email}</p>
-          <p><strong>Geçici şifre:</strong> ${params.password}</p>
-          <p><a href="${siteUrl}/login">Giriş ekranına git</a></p>
-          <p>Giriş yaptıktan sonra veli panelinden şifrenizi değiştirebilirsiniz.</p>
-        </div>
-      `,
-    }),
-  });
-
-  if (!response.ok) {
-    const detail = await response.text();
-    throw new Error(`Welcome email could not be sent: ${detail}`);
-  }
+  const paket = [...PAKETLER]
+    .sort((a, b) => b.profilSayisi - a.profilSayisi)
+    .find((p) => productData.includes(p.ad.toLocaleLowerCase("tr-TR")));
+  return paket?.profilSayisi ?? 1;
 }
 
 export async function POST(request: Request) {
+  let siparisNo = "";
+  let eposta = "";
   try {
     const formData = await request.formData();
     const res = formData.get("res")?.toString();
@@ -228,53 +125,28 @@ export async function POST(request: Request) {
     }
 
     const payload = decodeShopierPayload(res);
-    const email = payload.email?.trim().toLocaleLowerCase("tr-TR");
-    const orderId = payload.orderid?.toString();
+    eposta = payload.email ? epostaNormal(payload.email) : "";
+    siparisNo = payload.orderid?.toString() ?? "";
 
-    if (!email || !orderId) {
+    if (!eposta || !siparisNo) {
       return new Response("missing order data", { status: 400 });
     }
 
-    const supabaseAdmin = getSupabaseAdmin();
-    const profileLimit = resolvePackageLimit(payload);
-    const packageName = resolvePackageName(profileLimit);
-    const password = generatePassword();
-    const parentUser = await createOrRefreshParentUser(email, password);
-
-    const { error: subscriptionError } = await supabaseAdmin
-      .from("parent_subscriptions")
-      .upsert(
-        {
-          user_id: parentUser.id,
-          email,
-          package_name: packageName,
-          profile_limit: profileLimit,
-          shopier_order_id: orderId,
-          status: "active",
-        },
-        { onConflict: "email" },
-      );
-
-    if (subscriptionError) {
-      throw subscriptionError;
-    }
-
-    try {
-      await sendWelcomeEmail({ email, password, profileLimit });
-    } catch (emailError) {
-      const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-      console.error("Shopier welcome email error:", emailError);
-      console.log("Shopier parent login fallback:", {
-        email,
-        password,
-        profileLimit,
-        loginUrl: `${siteUrl}/login`,
-      });
-    }
+    await siparisiIsle({
+      kaynak: "shopier",
+      siparisNo,
+      eposta,
+      profilHakki: resolvePackageLimit(payload),
+      test: String(payload.istest ?? "0") === "1",
+    });
 
     return new Response("success", { status: 200 });
   } catch (error) {
-    console.error("Shopier webhook error:", error);
+    console.error("Shopier bildirimi işlenemedi.", {
+      siparisNo,
+      eposta: eposta ? maskele(eposta) : null,
+      hata: error instanceof Error ? error.message : String(error),
+    });
     return new Response("webhook error", { status: 500 });
   }
 }

@@ -6,8 +6,8 @@
  * logo kendiliğinden yeni adı kullanır.
  *
  * Henüz buraya bağlı OLMAYAN eski yazımlar (isim değişince elle taşınacak):
- * çocuk üst menüsündeki "Keşif Dünyası", `app/layout.tsx` başlığı ve
- * `app/api/shopier/webhook/route.ts` içindeki hoş geldin e-postası.
+ * çocuk üst menüsündeki "Keşif Dünyası" ve `app/layout.tsx` başlığı. Veliye
+ * giden e-postalar (`src/lib/odeme/epostaSablonlari.ts`) buradan beslenir.
  */
 export const MARKA = {
   /** Tam ad — sayfa başlıkları, yasal metinler, altbilgi. */
@@ -22,4 +22,9 @@ export const MARKA = {
   /** Köşeli parantezli değerler doldurulmamış yer tutuculardır. */
   alanAdi: "[alanadi.com]",
   iletisimEposta: "[iletisim@alanadi.com]",
+  /**
+   * Veliye giden e-postalara verilen yanıtların gideceği adres (reply-to).
+   * Alan adı gelene kadar Hasan'ın adresi (20 Eki 2026); sonra iletisimEposta.
+   */
+  yanitEposta: "hasankahrimanoglu@gmail.com",
 } as const;

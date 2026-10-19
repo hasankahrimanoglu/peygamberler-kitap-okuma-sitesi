@@ -46,8 +46,8 @@ export function HesapMenusu() {
     setError(null);
     setNotice(null);
 
-    if (yeniSifre.length < 6) {
-      setError("Yeni şifre en az 6 karakter olmalı.");
+    if (yeniSifre.length < 8) {
+      setError("Yeni şifre en az 8 karakter olmalı.");
       return;
     }
 
@@ -180,7 +180,7 @@ export function HesapMenusu() {
                   value={yeniSifre}
                   onChange={(event) => setYeniSifre(event.target.value)}
                   className="h-12 w-full rounded-buton border border-cizgi bg-yuzey-2 px-4 text-base font-medium text-murekkep outline-none transition focus:border-eylem focus:bg-yuzey focus:ring-2 focus:ring-eylem/30"
-                  placeholder="En az 6 karakter"
+                  placeholder="En az 8 karakter"
                   required
                 />
               </label>

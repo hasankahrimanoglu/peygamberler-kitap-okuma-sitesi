@@ -1480,6 +1480,9 @@ Okuma ekranı düzeni (**REVİZE — 26 Temmuz 2026, Hasan onayı; Faz 6.2**):
 | `/dashboard/oduller` | Ödüller | Rozetler / Madalyalar / Unvanlar sekmeleri |
 | `/dashboard/rapor/[profileId]` | Gelişim Raporu | Tam sayfa, sekmeli: Genel Bakış · Kitaplar · Ödüller · **Görevler** · Sohbet Önerileri |
 | `/dashboard/ayarlar` | Aile ve Güvenlik | YENİ (Faz 7, 3.11) — veli PIN'i, profil şifresi ayarı ve çocuk şifreleri, cihaz bağlama ve bağlı cihazlar, bu cihazda çocuk modu. Hesap menüsünden açılır |
+| `/sifre-belirle` | Şifre belirleme | YENİ (Faz 7, 3. adım) — e-postadaki tek kullanımlık bağlantı; süresi dolmuşsa yenisi istenir |
+| `/sifremi-unuttum` | Şifremi unuttum | YENİ (Faz 7, 3. adım) — giriş sayfasından; "e-postayı yeniden gönder" de budur |
+| `/yonetim` | Yönetim (satışlar) | YENİ (Faz 7, 3. adım) — yalnız yönetici; elden satış + son siparişler; sitede bağlantısı yok |
 
 **Profili Düzenle penceresi (`/dashboard` çocuk kartı → Profili Düzenle):**
 çocuğun **ismi**, çocuk kullanıcı adı ve şifresi, **profil fotoğrafı** ve profil
@@ -1837,9 +1840,9 @@ göstermiyordu: RLS açıktı, kurallar fazla genişti.
 |---|---|---|
 | 1 | `child_password` düz metin | **Kaldırıldı** — çocuk hesabı yok; profil şifresi ve veli PIN'i bcrypt ile şifrelenmiş, istemcinin okuyamadığı tablolarda; doğrulama veritabanı fonksiyonunda (3.11) |
 | 2 | Giriş yapmamış herkese açık RLS kuralları (`profiles`, `user_progress`, `profile_tasks`) ve listelenebilir fotoğraf kovası | **Kaldırıldı** — çocuk verisi yalnız veli (`veli_id = auth.uid()`) ve bağlı cihaz; anonim oturum veli işlemi yapamaz; kova kapalı, imzalı adres |
-| 3 | Veli hesabı: şifre e-postası yerine tek kullanımlık "şifreni belirle" bağlantısı | Bekliyor (Faz 7, 3. adım) |
-| 4 | Shopier çift bildirimde çift hesap oluşmaması (`shopier_order_id unique` var) | Bekliyor (test) |
-| 5 | "E-postayı yeniden gönder" | Bekliyor |
+| 3 | Veli hesabı: şifre e-postası yerine tek kullanımlık "şifreni belirle" bağlantısı | **Uygulandı (20 Eki 2026)** — ödeme bildirimi şifre üretmez/göndermez; hesap şifresiz açılır, veliye `/sifre-belirle` bağlantısı gider (24 saat, tek kullanım; anahtar sayfa açılınca değil kaydedince harcanır). Şifre sunucu kayıtlarına yazılmaz |
+| 4 | Shopier çift bildirimde çift hesap oluşmaması | **Uygulandı (20 Eki 2026)** — `siparisler (kaynak, siparis_no)` tekil; tekrar gelen bildirim hiçbir şey yapmaz, yarıda kalan yeniden denenir; mevcut hesabın şifresine dokunulmaz, profil hakkı küçülmez. Canlı Shopier denemesi bekliyor |
+| 5 | "E-postayı yeniden gönder" | **Uygulandı (20 Eki 2026)** — giriş sayfasında "Şifremi unuttum" (`/sifremi-unuttum`); cevap adresin kayıtlı olup olmadığını söylemez; adres başına dakikada 1 / saatte 5, IP başına saatte 20 |
 | 6 | Profil silmede ilerlemenin de silineceği | **Uyarı eklendi**; arşiv yok |
 | 7 | Sızdırılmış şifre koruması (Supabase Auth ayarı) | Bekliyor (Supabase panelinden açılır) |
 
@@ -1856,6 +1859,37 @@ göstermiyordu: RLS açıktı, kurallar fazla genişti.
   panelinde **anonim oturum açık** olmalıdır (Authentication → Sign In /
   Providers → "Allow anonymous sign-ins").
 
+**Satın alma ve ilk giriş (Faz 7, 3. adım — KARAR 20 Eki 2026, Hasan):**
+- **Ödeme sisteminden bağımsız çekirdek:** `src/lib/odeme/sunucu.ts`
+  `siparisiIsle` siparişi kaydeder (tekrar koruması), hesabı açar ya da bulur,
+  aboneliği günceller, e-postayı gönderir. Ödeme kaynağına özgü kısım yalnız
+  bildirimi doğrulayıp çekirdeği çağırır: bugün Shopier
+  (`app/api/shopier/webhook`) ve elden satış; ileride iyzico/PayTR aynı
+  çekirdeğe bağlanır, hesap/e-posta/şifre tarafı değişmez.
+- **Profil hakkı küçülmez:** ikinci satın almada eskisiyle yeninin büyüğü.
+  Shopier deneme bildirimi (`istest`) hesap açmaz, yalnız kayda düşer.
+- **E-postalar** (`src/lib/odeme/epostaSablonlari.ts`, Türkçe, kodda): hoş
+  geldin (şifre belirle), paket güncellendi, şifre belirleme bağlantısı;
+  Resend ile gider, yanıtlar `MARKA.yanitEposta`'ya (alan adı gelene kadar
+  Hasan'ın adresi). Supabase'in kendi e-posta sistemi KULLANILMAZ. Önizleme:
+  `/tasarim/epostalar`.
+- **Elden satış (WhatsApp, havale/EFT):** `/yonetim` — yalnız `yoneticiler`
+  tablosundaki e-postayla girilir, sitede bağlantısı yoktur. Yönetici ödemeyi
+  kontrol edip e-posta + paket girer; aynı çekirdek çalışır, bağlantı
+  kopyalanıp WhatsApp'tan da gönderilebilir. Son 50 sipariş (bütün kaynaklar)
+  listelenir, "Yeni bağlantı" üretilir. Önizleme: `/tasarim/yonetim`.
+- **Şifre kuralı:** en az 8 karakter (şifre belirleme ve "Şifre Değiştir").
+- **E-posta karşılaştırması** `toLowerCase()` ile yapılır;
+  `toLocaleLowerCase("tr-TR")` "I"yı "ı" yapar, veritabanıyla uyuşmaz.
+- Göç: `supabase/migration-faz7-satin-alma.sql`; geri alma:
+  `supabase/migration-faz7-satin-alma-geri-al.sql`. Yeni tablolar
+  (`siparisler`, `sifre_istekleri`, `yoneticiler`) tarayıcıya kapalıdır;
+  fonksiyonları yalnız `service_role` çağırır.
+- **Hasan'ın panel işleri:** Supabase → bağlantı süresi 86400 sn ("Email OTP
+  Expiration"), en az şifre uzunluğu 8, sızdırılmış şifre koruması; Resend'de
+  doğrulanmış alan adı (gerçek veliye e-posta için; alan adı kesinleşince);
+  Shopier ürünleri açılınca ürün numaraları Vercel'e.
+
 ---
 
 ## 9. Uygulama Fazları
@@ -1871,7 +1905,7 @@ göstermiyordu: RLS açıktı, kurallar fazla genişti.
 | **6** | Unvan hesaplama + son aktivite; istenirse `activity_events` | Küçük veri eklemeleri |
 | **6.1** | **İçerik ve Etkileşim Revizyonu (PLANLANDI — Hasan onayı olmadan BAŞLAMAZ):** (a) okuma akışı revizyonu: iki parçalı hikâye + karar noktasında "Sen Olsaydın" + "Seçimini Karşılaştır" + seçimin oturum içinde tutulması (4.1/16); (b) koşullu "Bugüne Taşı" + "Görevi Listeme Ekle / Şimdilik Değil" eylemleri; (c) görev veri altyapısı: `profile_tasks` tablosu + migration + RLS (7.3) — **ekrandan önce altyapı**; (d) çocuk "Görevlerim" ekranı (5.1); (e) veli ana sayfadaki güncel görev alanının yeni görev durumundan beslenmesi; (f) 8 bölümlük yeni Hz. Âdem içeriğinin `books.ts`'e aktarımı | Yeni bölüm akışı + kalıcı görev takibi çalışıyor |
 | **6.2** | **Kaydırmalı Okuma Akışı (ONAY — 26 Temmuz 2026):** (a) karakter bütçesiz akış modeli (`src/components/reader/akis.ts`); (b) `AtlasScrollReader` — tek sayfa kaydırma, satır içi görsel/sözlükçe, "Sen Olsaydın" kapısı, akış içi butonlar; (c) alt gezinme çubuğunun yerine üst ilerleme çubuğu + durak göstergesi (scroll-spy); (d) ~~otomatik "kaldığın yer"~~ — **28 Tem 2026'da kaldırıldı** (kaydırma konumu okunan yeri güvenilir biçimde göstermiyor); (e) Hz. Âdem B1–B8 için görsel yerlerinin açılması + `ICERIK-GORSEL-SICILI.md`. Sayfalı okuyucu (`AtlasReader` + `sayfalar.ts` + sayfa bileşenleri + iki tasarım önizlemesi) yenisi üretimde bir hafta çalıştıktan sonra, **30 Tem 2026'da silindi**; `BookDiscovery` tipleri de hiç kullanılmadığı için kaldırıldı | Bölüm kesintisiz kaydırılarak okunuyor |
-| **7** | Güvenlik/hesap akışı (Bölüm 8). **19 Eki 2026:** 1–2. adım (açık kuralların kapanması, "Kim okuyor?", profil şifresi, veli kapısı, eşleme kodu, kapalı fotoğraf kovası — 3.11) uygulandı; 3. adım (aktivasyon bağlantısı, e-postayı yeniden gönder, Shopier çift bildirim testi, sızdırılmış şifre koruması) bekliyor | Aktivasyon bağlantısı + PIN |
+| **7** | Güvenlik/hesap akışı (Bölüm 8). **19 Eki 2026:** 1–2. adım (açık kuralların kapanması, "Kim okuyor?", profil şifresi, veli kapısı, eşleme kodu, kapalı fotoğraf kovası — 3.11) uygulandı. **20 Eki 2026:** 3. adım (şifre belirleme bağlantısı, Şifremi unuttum, çift bildirim koruması, ödeme sisteminden bağımsız çekirdek, elden satış için `/yonetim`) uygulandı; canlı Shopier denemesi ve Supabase/Resend panel ayarları bekliyor | Aktivasyon bağlantısı + PIN |
 | **8** | Landing page'in gerçek özelliklerle güncellenmesi. **Başladı (15 Eki 2026):** eski sayfa silindi, yenisi `app/(tanitim)/` altında (bileşenler `src/components/tanitim/`). **KARAR (Hasan):** site bütün kitaplar ve sesli anlatımlar bitmeden yayına açılmayacağı için tanıtım sitenin TAM hâlini anlatır — kitap/bölüm sayıları yayın durumuna bakmadan katalogdan (`src/data/katalogSayilari.ts`), sesli anlatım öne çıkan özelliktir. Ürün Bahar Yayıncılık'ın değil, bağımsız bir ürün olarak sunulur. Marka adı ve logo geçicidir (`src/data/marka.ts`, `src/components/marka/Logo.tsx`). Paket modeli öneridir (tek ödeme, süre sınırı yok; 1 / 3 / 5 profil — `src/data/paketler.ts`). Yasal sayfalar (KVKK, gizlilik, çerez, kullanım, ön bilgilendirme, mesafeli satış, iptal-iade, iletişim) taslaktır; satıcı bilgileri `src/data/yasal/satici.ts`'te yer tutucudur. Ürün ekran görüntüleri `npm run tanitim-gorselleri` ile `/tasarim/*` önizlemelerinden üretilir. **Hareket katmanı (KARAR 16 Eki 2026 — Hasan):** yalnız Motion + CSS (`src/components/tanitim/hareket/`); Işıl bölüm bölüm tek karakter gibi rehberlik eder (hero'da uçarak gelir → altın yolda kaydırmayı izler → şafakta dinlenmeye gider → kapanışta döner), dinî içeriğin (İlkeler, Hz. Muhammed / halife listesi) yanında Işıl yoktur; fiyat kartlarına yalnız giriş ve düğme tepkisi eklenir; ses efekti yok; "hareketi azalt"ta süsler durur | Pazarlama yüzü güncel |
 
 **Çocuk arayüzü sadeleştirme fazları (Ekim 2026 — bkz. 3.10).** Harfler 11 Ekim
@@ -2126,6 +2160,20 @@ Kurallar:
       adları ve düz metin şifreler silinir; ilerleme, rozet, görev ve fotoğraf
       korunur.
 - [x] Veritabanı değişikliği uygulanmadan önce Hasan'a gösterilir.
+
+### 20 Ekim 2026 (Faz 7, 3. adım — satın alma ve ilk giriş; Hasan onayı, bkz. Bölüm 8)
+
+- [x] **Şifre e-postada gitmez:** hesap şifresiz açılır, veli tek kullanımlık
+      bağlantıyla şifresini kendisi belirler. Eski akışta her ödeme bildirimi
+      mevcut velinin şifresini sıfırlıyor, e-posta gidemezse şifre sunucu
+      kaydına düz yazılıyordu; veli aranırken ilk 1.000 kullanıcıya
+      bakılıyordu.
+- [x] Kararlar (Hasan): profil hakkı küçülmez; bağlantı 24 saat; Shopier
+      deneme bildirimi hesap açmaz; ödeme sisteminden bağımsız katmanlı yapı
+      (ileride iyzico/PayTR); elden satış için yönetim sayfası (yönetici
+      Hasan); e-posta yanıtları şimdilik Hasan'ın adresine.
+- [x] Alan adı şimdilik şart değil: kod alan adından bağımsız; gerçek veliye
+      e-posta için Resend'de doğrulanmış alan adı satışa açılırken gerekir.
 
 ### 19 Ekim 2026 (cihazı çocuğa verme sorusu — Hasan onayı, bkz. 3.11)
 

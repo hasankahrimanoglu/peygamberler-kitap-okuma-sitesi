@@ -200,6 +200,12 @@ export default function LoginPage() {
                 >
                   {isParentSubmitting ? "Giriş Yapılıyor..." : "Giriş Yap"}
                 </button>
+                <Link
+                  href="/sifremi-unuttum"
+                  className="flex min-h-11 items-center justify-center text-base font-bold text-amber-800 underline-offset-4 hover:underline"
+                >
+                  Şifremi unuttum
+                </Link>
               </form>
             </motion.section>
 
