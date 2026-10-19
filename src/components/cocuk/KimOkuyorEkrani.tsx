@@ -99,7 +99,7 @@ export function KimOkuyorEkrani({
           <div className="mt-10 w-full max-w-md rounded-kart border border-cizgi bg-yuzey p-6 text-center">
             <p className="font-baslik text-xl font-bold">Önce veli PIN&apos;i belirleyin</p>
             <p className="mt-2 text-base font-medium leading-7 text-murekkep-soluk">
-              Bu cihazda çocuk ekranı açılınca veli paneli 4 haneli bir PIN&apos;le korunur.
+              Bu cihaz çocuğa verilince veli paneli 4 haneli bir PIN&apos;le korunur.
             </p>
             <Buton varyant="altin" className="mt-5" onClick={onVeliPiniBelirle}>
               PIN Belirle

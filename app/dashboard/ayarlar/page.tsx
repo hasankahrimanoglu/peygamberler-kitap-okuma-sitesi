@@ -11,7 +11,13 @@ import {
   profilSifresiAyariniDegistir,
   type AileGuvenlikDurumu,
 } from "../../../src/lib/aileGuvenligi";
-import { cocukModuAcikMi, cocukModunuKapat, profiliAc } from "../../../src/lib/child/cocukOturumu";
+import {
+  cihaziCocugaVer,
+  cocukModuAcikMi,
+  cocukModunuAc,
+  cocukModunuKapat,
+  profiliAc,
+} from "../../../src/lib/child/cocukOturumu";
 import { formatReportDate } from "../../../src/lib/parent/report";
 import { cocukSifresiHataMetni } from "../../../src/components/dashboard/cocukSifresiMetni";
 import { PinGirdisi, VeliPinBelirlemeAkisi } from "../../../src/components/dashboard/VeliPinFormu";
@@ -48,6 +54,7 @@ export default function AileVeGuvenlikSayfasi() {
   const [pinAkisiAcik, setPinAkisiAcik] = useState(false);
   const [pinYonlendirmesi, setPinYonlendirmesi] = useState<PinYonlendirmesi | null>(null);
   const [cocukModu, setCocukModu] = useState(false);
+  const [cihazVeriliyor, setCihazVeriliyor] = useState(false);
 
   const yenile = useCallback(async () => {
     const [guvenlik, baglantilar] = await Promise.all([
@@ -79,6 +86,7 @@ export default function AileVeGuvenlikSayfasi() {
     setMesaj("Veli PIN'i kaydedildi.");
     void yenile();
 
+    // PIN, cihaz çocuğa verilirken istendi: şimdi çocuk moduna geçilir.
     if (!pinYonlendirmesi) return;
     const hedef = pinYonlendirmesi.hedef?.startsWith("/") ? pinYonlendirmesi.hedef : "/map";
     const profil = profiles.find((p) => p.id === pinYonlendirmesi.profil);
@@ -86,6 +94,7 @@ export default function AileVeGuvenlikSayfasi() {
       profiliAc({ id: profil.id, isim: profil.isim });
       router.push(hedef);
     } else if (pinYonlendirmesi.hedef) {
+      cocukModunuAc();
       router.push(hedef);
     }
   }
@@ -112,14 +121,14 @@ export default function AileVeGuvenlikSayfasi() {
           <BolumBasligi ikon="kilit" baslik="Veli PIN'i" />
           {pinYonlendirmesi ? (
             <p className="mt-3 text-base font-semibold leading-7 text-murekkep">
-              Çocuk ekranını açmadan önce 4 haneli bir veli PIN&apos;i belirleyin. Çocuk ekranı açılan
-              bir cihazda veli paneli bu PIN&apos;le açılır.
+              Cihazı çocuğa vermeden önce 4 haneli bir veli PIN&apos;i belirleyin. Çocuğa verilen
+              cihazda veli paneli bu PIN&apos;le açılır.
             </p>
           ) : (
             <p className="mt-3 text-base font-medium leading-7 text-murekkep-soluk">
               {durum?.veliPinVar
-                ? "Belirlendi. Çocuk ekranı açılmış bir cihazda veli paneli bu PIN'le açılır."
-                : "Henüz belirlenmedi. Çocuk ekranını ilk kez açmadan önce belirleyin."}
+                ? "Belirlendi. Çocuğa verilen cihazda veli paneli bu PIN'le açılır."
+                : "Henüz belirlenmedi. Bir cihazı ilk kez çocuğa verirken istenir."}
             </p>
           )}
 
@@ -164,8 +173,8 @@ export default function AileVeGuvenlikSayfasi() {
           {cocukModu ? (
             <>
               <p className="mt-3 text-base font-medium leading-7 text-murekkep-soluk">
-                Bu cihaz çocuk modunda: burada çocuk ekranı açıldığı için veli paneli PIN ister.
-                Bu cihazı yalnız siz kullanıyorsanız çocuk modunu kapatabilirsiniz.
+                Bu cihaz çocuğunuza verildi: veli paneli burada PIN ister. Bu cihazı yalnız siz
+                kullanıyorsanız çocuk modunu kapatabilirsiniz.
               </p>
               <Buton
                 varyant="cerceve"
@@ -181,10 +190,25 @@ export default function AileVeGuvenlikSayfasi() {
               </Buton>
             </>
           ) : (
-            <p className="mt-3 text-base font-medium leading-7 text-murekkep-soluk">
-              Bu cihazda çocuk modu kapalı; veli paneli PIN istemez. Bu cihazda bir çocuk ekranı
-              açılırsa çocuk modu kendiliğinden açılır.
-            </p>
+            <>
+              <p className="mt-3 text-base font-medium leading-7 text-murekkep-soluk">
+                Bu cihaz sizde: veli paneli PIN istemez. Evdeki tablet gibi çocuğunuzun da
+                kullanacağı bir cihazsa çocuğa verin; panel PIN&apos;le kilitlenir, çocuklar
+                &quot;Kim okuyor?&quot; ekranından kendi profillerine girer.
+              </p>
+              <Buton
+                varyant="eylem"
+                boyut="kucuk"
+                className="mt-4"
+                disabled={cihazVeriliyor}
+                onClick={() => {
+                  setCihazVeriliyor(true);
+                  void cihaziCocugaVer(router);
+                }}
+              >
+                {cihazVeriliyor ? "Hazırlanıyor…" : "Bu Cihazı Çocuğa Ver"}
+              </Buton>
+            </>
           )}
         </Kart>
       </div>

@@ -19,7 +19,7 @@ import {
 import { VeliCocukSecici } from "../../../src/components/dashboard/VeliCocukSecici";
 import { VeliSayfaBasligi } from "../../../src/components/dashboard/VeliSayfaBasligi";
 import { kitapKapagi, YEDEK } from "../../../src/lib/varlikYollari";
-import { cocukEkraninaGec } from "../../../src/lib/child/cocukOturumu";
+import { useCocukEkraniGecisi } from "../../../src/components/dashboard/CihazKullanimSorusu";
 
 type DurumFiltre = "hepsi" | KutuphaneDurum;
 
@@ -39,6 +39,7 @@ const aksiyonMetni: Record<KutuphaneDurum, string> = {
 
 export default function KutuphaneSayfasi() {
   const router = useRouter();
+  const cocukEkrani = useCocukEkraniGecisi();
   const { profiles, books, progressByProfile, isLoading } = useParentData();
 
   const [secilenCocukId, setSecilenCocukId] = useState<string | null>(null);
@@ -76,7 +77,7 @@ export default function KutuphaneSayfasi() {
   );
 
   function cocuklaOku(child: ChildProfile, bookKey: string) {
-    void cocukEkraninaGec(router, { id: child.id, isim: child.isim }, `/kitap/${bookKey}`);
+    cocukEkrani.ac({ id: child.id, isim: child.isim }, `/kitap/${bookKey}`);
   }
 
   return (
@@ -231,6 +232,8 @@ export default function KutuphaneSayfasi() {
           )}
         </>
       )}
+
+      {cocukEkrani.pencere}
     </div>
   );
 }

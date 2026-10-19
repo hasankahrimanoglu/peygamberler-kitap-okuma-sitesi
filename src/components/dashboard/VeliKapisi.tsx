@@ -16,7 +16,7 @@ import { HesapSifresiFormu, VeliPinBelirlemeAkisi } from "./VeliPinFormu";
 type Asama = "denetleniyor" | "acik" | "pin" | "hesap-sifresi" | "yeni-pin";
 
 /**
- * Veli kapısı (Faz 7 — PROJE-MODELI 3.11). Bu cihazda çocuk ekranı açıldıysa
+ * Veli kapısı (Faz 7 — PROJE-MODELI 3.11). Bu cihaz çocuğa verildiyse
  * veli paneli 4 haneli veli PIN'i ister; panel 15 dakika etkileşimsiz kalınca
  * yeniden kilitlenir. Çocuk ekranı hiç açılmamış cihazda (velinin kendi
  * telefonu) kapı yoktur. PIN unutulursa hesap şifresiyle yenisi belirlenir.
@@ -113,7 +113,7 @@ export function VeliKapisi({ children }: { children: ReactNode }) {
               </h2>
               <p className="mt-2 text-base font-medium leading-7 text-murekkep-soluk">
                 {pinYok
-                  ? "Bu cihazda çocuk ekranı açık. Devam etmek için hesap şifrenizi girin; ardından 4 haneli bir veli PIN'i belirleyeceksiniz."
+                  ? "Bu cihaz çocuğunuza verildi. Devam etmek için hesap şifrenizi girin; ardından 4 haneli bir veli PIN'i belirleyeceksiniz."
                   : "Hesap şifrenizi girin; ardından yeni bir veli PIN'i belirleyeceksiniz."}
               </p>
               <div className="mt-4">
@@ -124,7 +124,7 @@ export function VeliKapisi({ children }: { children: ReactNode }) {
           ) : (
             <VeliPinBelirlemeAkisi
               baslik="Veli PIN'i belirleyin"
-              aciklama="Çocuk ekranı açık bir cihazda veli paneli bu PIN'le açılır. Çocuklarınızın şifresinden farklı olmalı."
+              aciklama="Çocuğa verilen cihazda veli paneli bu PIN'le açılır. Çocuklarınızın şifresinden farklı olmalı."
               hesapSifresiDogrulandi
               onBitti={ac}
             />

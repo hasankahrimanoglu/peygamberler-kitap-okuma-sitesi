@@ -186,7 +186,8 @@ gözlem testi var. Ana ekran bileşenleri `src/components/cocuk/`, veri modeli
 (`?durum=bos`) ve `/tasarim/isil`. Veli tarafının girişsiz önizlemesi
 `/tasarim/veli-rapor` (Gelişim Raporu'nun Kitaplar ve Sohbet Önerileri sekmeleri;
 `?durum=bos|tek`, `?sekme=kitaplar`; görünüm `src/components/dashboard/Rapor*Sekmesi.tsx`).
-"Kim okuyor?" önizlemesi `/tasarim/kim-okuyor` (`?sifre=1`; örnek şifre 1234). Ödüllerim · Kelimelerim · Görevlerim: açık krem zemin
+"Kim okuyor?" önizlemesi `/tasarim/kim-okuyor` (`?sifre=1`; örnek şifre 1234);
+"Bu cihazı çocuğunuz kullanacak mı?" sorusu `/tasarim/cihaz-sorusu`. Ödüllerim · Kelimelerim · Görevlerim: açık krem zemin
 + gece mavisi menü bantları (unvan kartı gece mavisi), görünüm `src/components/cocuk/*Ekrani.tsx`, sayfalar yalnız veri çeker (3.10.8). Final testi görünümü
 `src/components/final/FinalTesti.tsx`; okuma ekranının modülünü ve rozet anıyla ortak
 `KutlamaSahnesi`'ni kullanır.
@@ -274,6 +275,11 @@ Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
 - Çocuk ekranları `src/lib/child/cocukOturumu.ts` korumasından geçer (profil
   şifresi, 30 dk zaman aşımı, bağlı cihaz); yeni çocuk ekranı eklerken bu
   korumayı kullan. Veli paneli `VeliKapisi` ile korunur.
+- **Çocuk modu görünmeden açılmaz (REVİZE 19 Eki 2026):** panelden çocuk
+  ekranına geçiş `useCocukEkraniGecisi` ile yapılır; cihaz çocuk modunda
+  değilse "Bu cihazı çocuğunuz kullanacak mı?" sorulur (Evet → veli PIN'i +
+  çocuk modu + "Kim okuyor?"; Hayır → göz atma, kilit yok). Panelde çocuk
+  ekranına yeni bir giriş eklerken `cocukEkraninaGec`'i doğrudan çağırma.
 - Faz 7'nin 3. adımı (veli hesabı aktivasyon bağlantısı, Shopier) bekliyor;
   istenmedikçe Shopier ve e-posta akışına dokunma.
 - `.env.local` (Supabase anahtarları) asla commit edilmez.

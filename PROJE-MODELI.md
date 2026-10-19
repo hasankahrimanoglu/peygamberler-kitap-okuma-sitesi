@@ -1224,6 +1224,28 @@ bağlanmış cihaz erişir.**
   kendi avatarına dokunur. Çocuk kullanıcı adı ve çocuk şifresiyle giriş
   YOKTUR. Veli kendi kartındaki "Okumaya Devam Et" ile çocuğu doğrudan da
   açabilir (velinin eylemi; şifre sorulmaz).
+- **Cihazı çocuğa verme açık bir sorudur (REVİZE 19 Eki 2026, Hasan):** çocuk
+  modu artık görünmeden açılmaz. Çocuk modunda olmayan bir cihazda veli
+  panelden çocuk ekranı açınca ("Okumaya Devam Et", "Keşif Haritasını Aç",
+  Kütüphane) **"Bu cihazı çocuğunuz kullanacak mı?"** sorulur:
+  - **"Evet, çocuğuma veriyorum"** → veli PIN'i yoksa önce belirlenir (hesap
+    şifresi + PIN), cihaz çocuk moduna geçer (panel kilitlenir) ve **"Kim
+    okuyor?"** açılır. Tek çocuklu ve profil şifresi kapalı ailede "Kim
+    okuyor?" çocuğu kendiliğinden açar.
+  - **"Hayır, yalnız göz atacağım"** → seçilen çocuğun ekranı açılır, cihaz
+    çocuk moduna geçmez; panele PIN'siz dönülür. Çocuk tarafında tarayıcı
+    oturumu boyunca sürer ("Profil değiştir" ile başka çocuğa bakmak da göz
+    atmadır); tarayıcı kapanınca biter. Panelden her yeni açışta soru yeniden
+    sorulur: veli cihazı az sonra çocuğa veriyor olabilir, kilitsiz kalmasın.
+  - Cihaz zaten çocuk modundaysa (veli panele PIN'le girmiştir) soru sorulmaz.
+  - Kurulumda **yalnız veli PIN'i** istenir; çocuk şifreleri sorulmaz, Aile ve
+    Güvenlik'te kalır (isteğe bağlı aile ayarı). 3 çocuklu ailede kurulum bir
+    dakikayı geçmesin diye (Hasan, seçenek A).
+  - Aile ve Güvenlik → **"Bu cihaz"** bölümünde aynı işlem **"Bu Cihazı Çocuğa
+    Ver"** düğmesiyle de yapılır; çocuk modundaki cihazda "Çocuk modunu kapat"
+    kalır.
+  - "Kim okuyor?" adresine sorudan geçmeden gelinirse (yer imi, eski sekme)
+    seçilen profil cihazı yine çocuk moduna alır: kuşkuda kilitli taraf seçilir.
 - **Profil şifresi (aile ayarı, varsayılan KAPALI):** veli panelindeki
   "Profillere girerken şifre sorulsun" ayarı bütün aileye uygulanır.
   - Açıkken her çocuğun **kendi 4 rakamlı şifresi** vardır; veli belirler
@@ -1242,11 +1264,11 @@ bağlanmış cihaz erişir.**
   - İkinci çocuk eklenince veli panelinde ayar bir kez hatırlatılır.
 - **Veli kapısı (veli PIN'i, 4 hane):** cihaz **çocuk modundaysa** (bu
   cihazda çocuk ekranı açıldıysa) veli paneline geçiş veli PIN'i ister.
-  - PIN, cihazda çocuk ekranı ilk kez açılmadan önce belirlenir; belirleme ve
+  - PIN, cihaz ilk kez çocuğa verilmeden önce belirlenir; belirleme ve
     sıfırlama hesap şifresiyle yapılır.
   - Panel 15 dakika etkileşimsiz kalınca ya da çocuk ekranına dönülünce yeniden
     kilitlenir. 5 yanlış denemede 5 dakika bekleme.
-  - Çocuk ekranı hiç açılmamış cihazda (velinin kendi telefonu) PIN sorulmaz;
+  - Çocuğa verilmemiş cihazda (velinin kendi telefonu, göz atma) PIN sorulmaz;
     veli panelden "Bu cihazda çocuk modunu kapat" diyebilir.
 - **Çocuğun kendi cihazı (eşleme kodu):** veli panelden çocuk için **6
   rakamlı, 10 dakika geçerli, tek kullanımlık** bir kod üretir. Çocuk kendi
@@ -1266,8 +1288,9 @@ bağlanmış cihaz erişir.**
   veritabanı kurallarıdır (Bölüm 8).
 - **Ekranlar:** "Kim okuyor?" ve cihaz bağlama çocuk dünyasındadır (gece
   zemin). Aile ayarları veli panelinde **"Aile ve Güvenlik"** sayfasıdır
-  (`/dashboard/ayarlar`, hesap menüsünden). Girişsiz önizleme:
-  `/tasarim/kim-okuyor` (`?sifre=1` şifreli aile; örnek şifre 1234).
+  (`/dashboard/ayarlar`, hesap menüsünden). Girişsiz önizlemeler:
+  `/tasarim/kim-okuyor` (`?sifre=1` şifreli aile; örnek şifre 1234) ve
+  `/tasarim/cihaz-sorusu` ("Bu cihazı çocuğunuz kullanacak mı?").
 
 ---
 
@@ -2069,6 +2092,16 @@ Kurallar:
       adları ve düz metin şifreler silinir; ilerleme, rozet, görev ve fotoğraf
       korunur.
 - [x] Veritabanı değişikliği uygulanmadan önce Hasan'a gösterilir.
+
+### 19 Ekim 2026 (cihazı çocuğa verme sorusu — Hasan onayı, bkz. 3.11)
+
+- [x] **Çocuk modu görünmeden açılmaz.** Veli panelden çocuk ekranını açınca
+      cihaz arka planda kilitleniyordu; Hasan canlıda denerken "ortak tablet"
+      kavramı oturmadı, velinin kendi telefonu da istemeden kilitleniyordu.
+      Yerine "Bu cihazı çocuğunuz kullanacak mı?" sorusu: Evet → veli PIN'i
+      (yoksa) + çocuk modu + "Kim okuyor?"; Hayır → göz atma, kilit yok.
+- [x] Kurulumda yalnız veli PIN'i (seçenek A); çocuk şifreleri Aile ve
+      Güvenlik'te kalır. "Bu cihaz" bölümüne "Bu Cihazı Çocuğa Ver" eklenir.
 
 ## 11. İçerik Durumu
 

@@ -13,7 +13,6 @@ import {
 import { cocukOzeti, gorevTanimiBul } from "../../src/lib/derive";
 import { aileGuvenlikDurumu } from "../../src/lib/aileGuvenligi";
 import {
-  cocukEkraninaGec,
   seciliProfilAdiniGuncelle,
   seciliProfilId,
   seciliProfiliTemizle,
@@ -24,12 +23,14 @@ import {
   profilFotografiYukle,
 } from "../../src/lib/profilFotografi";
 import { CocukKarti } from "../../src/components/dashboard/CocukKarti";
+import { useCocukEkraniGecisi } from "../../src/components/dashboard/CihazKullanimSorusu";
 import { Buton, CocukAvatari, Ikon, Kart } from "../../src/components/ui";
 
 const HATIRLATMA_ANAHTARI = "profil_sifresi_hatirlatmasi_kapandi";
 
 export default function VeliAnaSayfa() {
   const router = useRouter();
+  const cocukEkrani = useCocukEkraniGecisi();
   const {
     parentId,
     profiles,
@@ -129,10 +130,10 @@ export default function VeliAnaSayfa() {
     return map;
   }, [profiles, tasksByProfile]);
 
-  // Velinin eylemi: profil şifresi sorulmaz, ama veli PIN'i yoksa önce
-  // belirletilir (cihaz çocuk moduna girince panel PIN'le korunur — 3.11).
+  // Velinin eylemi: profil şifresi sorulmaz. Cihaz çocuk modunda değilse önce
+  // "Bu cihazı çocuğunuz kullanacak mı?" sorulur (3.11).
   function selectProfile(profile: ChildProfile) {
-    void cocukEkraninaGec(router, { id: profile.id, isim: profile.isim }, "/map");
+    cocukEkrani.ac({ id: profile.id, isim: profile.isim }, "/map");
   }
 
   function closeEditProfile() {
@@ -575,6 +576,8 @@ export default function VeliAnaSayfa() {
           </motion.div>
         ) : null}
       </AnimatePresence>
+
+      {cocukEkrani.pencere}
     </div>
   );
 }

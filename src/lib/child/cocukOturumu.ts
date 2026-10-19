@@ -24,7 +24,7 @@ const SECILI_PROFIL = "selected_child_profile_id";
 const SECILI_PROFIL_ADI = "selected_child_profile_name";
 const SECILI_COCUK_ADI = "selected_child_name";
 
-/** Bu cihazda çocuk ekranı açıldı mı (veli kapısı buna bakar). */
+/** Bu cihaz çocuğa verildi mi (veli kapısı buna bakar). */
 const COCUK_MODU = "cocuk_modu";
 /** Son çocuk etkinliği (ms) — 30 dakikalık zaman aşımı için. */
 const SON_ETKINLIK = "son_cocuk_etkinligi";
@@ -32,6 +32,8 @@ const SON_ETKINLIK = "son_cocuk_etkinligi";
 const ACIK_PROFIL = "profil_acik";
 /** Veli kapısının açıldığı / son panel etkinliği zamanı (sessionStorage). */
 const VELI_KAPISI = "veli_kapisi_acik";
+/** Veli "yalnız göz atacağım" dedi: bu tarayıcı oturumunda çocuk modu açılmaz (sessionStorage). */
+const GOZ_ATMA = "veli_goz_atiyor";
 
 export const PROFIL_ZAMAN_ASIMI_DK = 30;
 export const VELI_KAPISI_ZAMAN_ASIMI_DK = 15;
@@ -92,20 +94,38 @@ export function cocukModunuKapat() {
   yaz(sessionStorage, ACIK_PROFIL, null);
 }
 
+/** "Bu cihazı çocuğunuz kullanacak mı?" → Evet: cihaz çocuğa verilir, panel kilitlenir. */
+export function cocukModunuAc() {
+  yaz(localStorage, COCUK_MODU, "1");
+  yaz(sessionStorage, GOZ_ATMA, null);
+  veliKapisiniKapat();
+}
+
+function veliGozAtiyorMu() {
+  return oku(sessionStorage, GOZ_ATMA) === "1";
+}
+
 export function etkinligiKaydet() {
   yaz(localStorage, SON_ETKINLIK, String(Date.now()));
 }
 
 /**
  * Profili açar (şifre doğrulandıktan sonra ya da şifre istenmiyorsa). Cihazı
- * çocuk moduna alır ve veli kapısını kilitler.
+ * çocuk moduna alır ve veli kapısını kilitler — veli bu tarayıcı oturumunda
+ * "yalnız göz atacağım" demediyse (`gozAt`, 3.11).
  */
-export function profiliAc(profil: { id: string; isim: string | null }) {
+export function profiliAc(
+  profil: { id: string; isim: string | null },
+  { gozAt = false }: { gozAt?: boolean } = {},
+) {
   seciliProfiliYaz(profil);
-  yaz(localStorage, COCUK_MODU, "1");
   yaz(sessionStorage, ACIK_PROFIL, profil.id);
   etkinligiKaydet();
-  veliKapisiniKapat();
+  if (gozAt) {
+    yaz(sessionStorage, GOZ_ATMA, "1");
+    return;
+  }
+  if (!veliGozAtiyorMu()) cocukModunuAc();
 }
 
 /** "Profil değiştir" ve zaman aşımı: açık profil kapanır, seçim durur. */
@@ -204,7 +224,9 @@ async function cocukOturumunuDenetle(): Promise<Denetim> {
     return { tur: "yonlendir", adres: "/kim-okuyor" };
   }
 
-  yaz(localStorage, COCUK_MODU, "1");
+  // Sorudan geçmeden açılan çocuk ekranı (yer imi, eski sekme) cihazı kilitler;
+  // yalnız velinin göz attığı oturumda kilitlemez.
+  if (!veliGozAtiyorMu()) yaz(localStorage, COCUK_MODU, "1");
   return { tur: "hazir", profilId: secili, bagliCihaz: false, zamanAsimi: sifreAcik };
 }
 
@@ -253,22 +275,45 @@ export function useCocukOturumu(): CocukOturumu {
   return oturum;
 }
 
+type Yonlendirici = { push: (adres: string) => void };
+
 /**
  * Veli panelinden çocuk ekranına geçiş ("Okumaya Devam Et", Kütüphane).
- * Veli PIN'i yoksa önce belirletir: PIN'siz cihaz çocuk moduna girerse veli
- * paneli korumasız kalır.
+ * Çocuk modunda olmayan cihazda önce "Bu cihazı çocuğunuz kullanacak mı?"
+ * sorulur (`useCocukEkraniGecisi`); bu fonksiyon cevaptan sonra çalışır.
+ * Göz atmada cihaz kilitlenmez. Kilitlenecekse ve veli PIN'i yoksa önce
+ * belirletir: PIN'siz cihaz çocuk moduna girerse veli paneli korumasız kalır.
  */
 export async function cocukEkraninaGec(
-  router: { push: (adres: string) => void },
+  router: Yonlendirici,
   profil: { id: string; isim: string | null },
   hedef = "/map",
+  { gozAt = false }: { gozAt?: boolean } = {},
 ) {
+  if (!gozAt) {
+    const durum = await aileGuvenlikDurumu();
+    if (durum && !durum.veliPinVar) {
+      const sorgu = new URLSearchParams({ pin: "gerekli", profil: profil.id, hedef });
+      router.push(`/dashboard/ayarlar?${sorgu.toString()}`);
+      return;
+    }
+  }
+  profiliAc(profil, { gozAt });
+  router.push(hedef);
+}
+
+/**
+ * "Evet, çocuğuma veriyorum" ve Aile ve Güvenlik → "Bu Cihazı Çocuğa Ver".
+ * Veli PIN'i yoksa önce belirletir (Aile ve Güvenlik, sonra buraya döner);
+ * varsa cihazı çocuk moduna alıp "Kim okuyor?"u açar.
+ */
+export async function cihaziCocugaVer(router: Yonlendirici) {
   const durum = await aileGuvenlikDurumu();
   if (durum && !durum.veliPinVar) {
-    const sorgu = new URLSearchParams({ pin: "gerekli", profil: profil.id, hedef });
+    const sorgu = new URLSearchParams({ pin: "gerekli", hedef: "/kim-okuyor" });
     router.push(`/dashboard/ayarlar?${sorgu.toString()}`);
     return;
   }
-  profiliAc(profil);
-  router.push(hedef);
+  cocukModunuAc();
+  router.push("/kim-okuyor");
 }
