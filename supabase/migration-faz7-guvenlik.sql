@@ -689,6 +689,19 @@ revoke all on function public.profil_sifresi_ayarini_degistir(boolean) from publ
 revoke all on function public.eslesme_kodu_olustur(uuid) from public;
 revoke all on function public.cihazi_bagla(text, text) from public;
 
+-- Supabase'in varsayılan yetkileri yeni fonksiyonu anon'a da doğrudan açar;
+-- "from public" bunu kapatmaz.
+revoke all on function public.anonim_oturum() from anon;
+revoke all on function public.veli_kimligi() from anon;
+revoke all on function public.aile_guvenlik_durumu() from anon;
+revoke all on function public.veli_pin_belirle(text) from anon;
+revoke all on function public.veli_pin_dogrula(text) from anon;
+revoke all on function public.cocuk_sifresi_belirle(uuid, text) from anon;
+revoke all on function public.cocuk_sifresi_dogrula(uuid, text) from anon;
+revoke all on function public.profil_sifresi_ayarini_degistir(boolean) from anon;
+revoke all on function public.eslesme_kodu_olustur(uuid) from anon;
+revoke all on function public.cihazi_bagla(text, text) from anon;
+
 grant execute on function public.anonim_oturum() to authenticated;
 grant execute on function public.veli_kimligi() to authenticated;
 grant execute on function public.aile_guvenlik_durumu() to authenticated;
