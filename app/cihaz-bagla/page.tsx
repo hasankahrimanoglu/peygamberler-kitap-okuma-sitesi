@@ -9,6 +9,7 @@ import { beklemeMetni, cihazAdiTahmini, cihaziBagla } from "../../src/lib/aileGu
 import { profiliAc } from "../../src/lib/child/cocukOturumu";
 import { Logo } from "../../src/components/marka/Logo";
 import { Buton } from "../../src/components/ui";
+import { anaEkranUygulamasindaMi, appleCihazi } from "../../src/components/dashboard/AnaEkranNotu";
 
 /**
  * Çocuğun kendi cihazını bağlama (Faz 7 — PROJE-MODELI 3.11). Veli panelden
@@ -31,13 +32,31 @@ export default function CihazBaglaSayfasi() {
   // sayacı aynı oturuma işler.
   const geciciIstemci = useRef<SupabaseClient | null>(null);
 
+  const [anaEkranIpucu, setAnaEkranIpucu] = useState(false);
+
   useEffect(() => {
     queueMicrotask(() => {
       if (new URLSearchParams(window.location.search).get("durum") === "kaldirildi") {
         setBilgi("Bu cihazın bağlantısı kaldırılmış. Annenden ya da babandan yeni bir kod iste.");
       }
+      // iPad/iPhone'da ana ekran simgesinin hafızası tarayıcıdan ayrıdır:
+      // kod simgeden açılan ekranda girilmeli (3.11).
+      setAnaEkranIpucu(appleCihazi() && !anaEkranUygulamasindaMi());
     });
   }, []);
+
+  // Ana ekrana bu sayfadan eklenmiş, zaten bağlı cihaz: doğrudan haritaya.
+  useEffect(() => {
+    let iptal = false;
+    void supabase.auth.getSession().then(async ({ data: { session } }) => {
+      if (!session?.user.is_anonymous) return;
+      const { data } = await supabase.from("cihaz_baglantilari").select("profile_id").maybeSingle();
+      if (!iptal && data?.profile_id) router.replace("/map");
+    });
+    return () => {
+      iptal = true;
+    };
+  }, [router]);
 
   function baglanamadi(metin = "Bağlanamadı. İnternetini kontrol edip tekrar dene.") {
     setBekliyor(false);
@@ -193,6 +212,12 @@ export default function CihazBaglaSayfasi() {
         </section>
       </div>
 
+      {anaEkranIpucu ? (
+        <p className="mb-4 max-w-md text-center text-base font-medium leading-7 text-murekkep-soluk">
+          Veliye not: Bu cihazı ana ekrana ekleyecekseniz önce ekleyin, kodu simgeden açılan
+          ekranda girin; simgenin hafızası tarayıcıdan ayrıdır.
+        </p>
+      ) : null}
       <Link
         href="/login"
         className="min-h-11 px-3 py-2 text-base font-semibold text-murekkep-soluk underline-offset-4 hover:underline"

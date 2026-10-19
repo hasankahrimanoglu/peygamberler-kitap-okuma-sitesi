@@ -4,9 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../lib/supabase";
 import { aileGuvenlikDurumu, cocukSifresiDogrula } from "../../src/lib/aileGuvenligi";
-import { KURULUM_ADRESI, profiliAc, profiliKapat } from "../../src/lib/child/cocukOturumu";
+import { COCUK_GIRISI, KURULUM_ADRESI, profiliAc, profiliKapat } from "../../src/lib/child/cocukOturumu";
 import { KimOkuyorEkrani, type KimOkuyorCocugu } from "../../src/components/cocuk/KimOkuyorEkrani";
-import { AnaEkranNotu } from "../../src/components/dashboard/AnaEkranNotu";
+import { AnaEkranNotu, anaEkranUygulamasindaMi } from "../../src/components/dashboard/AnaEkranNotu";
 
 /**
  * "Kim okuyor?" (Faz 7 — PROJE-MODELI 3.11). Ortak cihazda velinin oturumuyla
@@ -30,7 +30,7 @@ export default function KimOkuyorSayfasi() {
         data: { session },
       } = await supabase.auth.getSession();
       if (!session) {
-        router.replace("/login");
+        router.replace(COCUK_GIRISI);
         return;
       }
       if (session.user.is_anonymous) {
@@ -80,7 +80,7 @@ export default function KimOkuyorSayfasi() {
           profiliAc({ id: liste[0].id, isim: liste[0].isim });
           router.replace("/map");
         };
-        if (!kurulum) {
+        if (!kurulum || anaEkranUygulamasindaMi()) {
           ac();
           return;
         }
@@ -90,7 +90,8 @@ export default function KimOkuyorSayfasi() {
       setCocuklar(liste);
       setSifreAcik(acik);
       setVeliPinGerekli(pinGerekli);
-      setAnaEkranNotu(kurulum && !pinGerekli);
+      // Ana ekran uygulamasının içindeyse not gereksiz: zaten oradan açılmış.
+      setAnaEkranNotu(kurulum && !pinGerekli && !anaEkranUygulamasindaMi());
       setYukleniyor(false);
     }
 

@@ -193,7 +193,7 @@ async function cocukOturumunuDenetle(): Promise<Denetim> {
   const {
     data: { session },
   } = await supabase.auth.getSession();
-  if (!session) return { tur: "yonlendir", adres: "/login" };
+  if (!session) return { tur: "yonlendir", adres: COCUK_GIRISI };
 
   // Bağlı cihaz: profil bağlantıdan gelir.
   if (session.user.is_anonymous) {
@@ -279,6 +279,13 @@ type Yonlendirici = { push: (adres: string) => void };
 
 /** Cihaz çocuğa verildikten sonra: "Kim okuyor?" veliye ana ekran notunu gösterir. */
 export const KURULUM_ADRESI = "/kim-okuyor?kurulum=1";
+
+/**
+ * Oturumsuz çocuk ekranının gittiği giriş (ana ekran uygulamasının ilk
+ * açılışı ya da düşmüş oturum): veli giriş yapınca cihaz çocuğa verilir ve
+ * "Kim okuyor?" açılır (PROJE-MODELI 3.11).
+ */
+export const COCUK_GIRISI = "/login?cocuk=1";
 
 /**
  * Veli panelinden çocuk ekranına geçiş ("Okumaya Devam Et", Kütüphane).

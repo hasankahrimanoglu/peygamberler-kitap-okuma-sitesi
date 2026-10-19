@@ -1255,16 +1255,30 @@ bağlanmış cihaz erişir.**
     götürür. Veli hesap değiştirmek isterse panelden çıkış yapar.
   - **Ana ekran notu (veliye, tek seferlik):** cihaz çocuğa verilince
     ("Evet, çocuğuma veriyorum" ya da "Bu Cihazı Çocuğa Ver") "Kim okuyor?"
-    üstünde "Son adım: ana ekrana ekleyin" notu çıkar (iPad/iPhone: Paylaş →
-    Ana Ekrana Ekle; Android: ⋮ → Ana ekrana ekle). Not açılınca adres
-    `/kim-okuyor`'a temizlenir ki simge doğru sayfayı açsın. Eşleme kodu
-    kartında 2. adım olarak yazar; cihaz bağlanınca kart "Son adım" notuyla
-    kalır.
-  - **Uygulama bildirimi (web manifest) EKLENMEZ:** iOS'ta ana ekrandan
-    bağımsız açılan uygulama Safari'den ayrı depolama kullanır; tarayıcıda
-    açılmış veli oturumu ya da cihaz bağlantısı oraya geçmez, çocuk ekranı
-    girişe düşer. Manifestsiz simge siteyi tarayıcıda açar, oturum korunur.
-    Uygulama ikonu tasarımı ayrı iştir (marka geçici).
+    üstünde "Son adım: ana ekrana ekleyin" notu çıkar. Adımlar: Safari
+    (iPad/iPhone) Paylaş → Ana Ekrana Ekle; Chrome (iPad/iPhone) adres
+    çubuğunun en sağındaki Paylaş → Ana Ekrana Ekle; Android Chrome ⋮ → Ana
+    ekrana ekle. Not açılınca adres `/kim-okuyor`'a temizlenir ki simge doğru
+    sayfayı açsın. Ana ekran uygulamasının içindeyken not çıkmaz.
+  - **Ana ekran simgesi ayrı hafızalı bir uygulamadır (DÜZELTME 19 Eki 2026 —
+    Hasan iPhone'da denedi):** iOS/iPadOS 26'da Safari'den de Chrome'dan da
+    eklenen simge, manifest olmasa da, tarayıcıdan **ayrı hafızalı** bir
+    uygulama olarak açılır; tarayıcıdaki veli oturumu ve cihaz bağlantısı
+    oraya geçmez. (Önceki "manifestsiz simge tarayıcıda açılır, oturum
+    korunur" varsayımı yanlıştı.) Bu yüzden:
+    - Simge ilk açılışta **bir kez veli girişi** ister. Çocuk ekranından
+      girişe düşülünce (`/login?cocuk=1`) giriş sayfası bunu açıklar ve veli
+      giriş yapınca cihaz **kendiliğinden çocuğa verilir** (veli PIN'i yoksa
+      önce belirlenir) ve "Kim okuyor?" açılır; panele uğramaz, ayrıca soru
+      sorulmaz — veli çocuk ekranından gelmiştir.
+    - **Çocuğun kendi cihazında sıra:** önce `/cihaz-bagla` adresi ana
+      ekrana eklenir, kod simgeden açılan uygulamada girilir. Kod kartı bu
+      sırayı yazar. Bağlanmış cihaz `/cihaz-bagla`'dan açılırsa doğrudan
+      haritaya gider.
+    - Android'de ana ekran simgesi Chrome'un hafızasını paylaşır; ikinci
+      giriş gerekmez.
+  - **Web manifest şimdilik EKLENMEZ:** iOS 26'da davranışı değiştirmez;
+    uygulama adı ve ikonu marka kesinleşince (ikon tasarımıyla) eklenir.
 - **Profil şifresi (aile ayarı, varsayılan KAPALI):** veli panelindeki
   "Profillere girerken şifre sorulsun" ayarı bütün aileye uygulanır.
   - Açıkken her çocuğun **kendi 4 rakamlı şifresi** vardır; veli belirler
@@ -2127,6 +2141,14 @@ Kurallar:
       oturumu tanır ve cihazı doğru yere yönlendirir; veliye cihaz çocuğa
       verilince ve kod kartında ana ekran notu gösterilir. Web manifest
       eklenmez (iOS'ta oturum ana ekran uygulamasına geçmez).
+- [x] **Düzeltme (Hasan'ın denemesi):** iOS 26'da Safari'den de Chrome'dan da
+      eklenen simge ayrı hafızalı uygulama açıyor ve ilk açılışta veli girişi
+      istiyor; giriş sonrası panele gidiyor, uygulamada cihaz "çocuğa
+      verilmiş" sayılmadığından bir çocuk profili açılana kadar veli paneli
+      PIN'siz açılıyordu. Çocuk ekranından girişe düşülünce veli girişi cihazı
+      çocuğa verir ve "Kim okuyor?"u açar; giriş sayfası durumu açıklar;
+      talimat "önce ana ekrana ekle, sonra simgeden aç" sırasına geçer;
+      uygulama içinde not çıkmaz; bağlı cihaz `/cihaz-bagla`'dan haritaya gider.
 
 ## 11. İçerik Durumu
 

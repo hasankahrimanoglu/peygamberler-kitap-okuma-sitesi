@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { supabase } from "../../lib/supabase";
-import { cocukModuAcikMi, veliKapisiniAc } from "../../src/lib/child/cocukOturumu";
+import { cihaziCocugaVer, cocukModuAcikMi, veliKapisiniAc } from "../../src/lib/child/cocukOturumu";
 
 function BookIcon() {
   return (
@@ -46,6 +46,9 @@ function CompassIcon() {
 export default function LoginPage() {
   const router = useRouter();
   const [oturumDenetleniyor, setOturumDenetleniyor] = useState(true);
+  // Çocuk ekranından gelindi (ana ekran uygulamasının ilk açılışı ya da düşmüş
+  // oturum): giriş cihazı çocuğa verir, "Kim okuyor?" açılır (3.11).
+  const [cocukEkranindan, setCocukEkranindan] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [parentError, setParentError] = useState<string | null>(null);
@@ -59,6 +62,7 @@ export default function LoginPage() {
       if (iptal) return;
       const kullanici = data.user;
       if (!kullanici) {
+        setCocukEkranindan(new URLSearchParams(window.location.search).get("cocuk") === "1");
         setOturumDenetleniyor(false);
         return;
       }
@@ -87,6 +91,11 @@ export default function LoginPage() {
       return;
     }
 
+    if (cocukEkranindan) {
+      await cihaziCocugaVer(router);
+      return;
+    }
+
     // Şifre az önce girildi: bu cihaz çocuk modundaysa da veli kapısı açık başlar.
     veliKapisiniAc();
     router.push("/dashboard");
@@ -110,6 +119,16 @@ export default function LoginPage() {
             <h1 className="mt-3 text-4xl font-black tracking-normal text-amber-950 sm:text-5xl">
               Hoş Geldin
             </h1>
+            {cocukEkranindan ? (
+              <p
+                role="status"
+                className="mx-auto mt-5 max-w-2xl rounded-2xl border border-amber-300 bg-white/85 px-5 py-4 text-base font-semibold leading-7 text-stone-700"
+              >
+                Çocuk ekranı için bu cihazda bir kez veli girişi gerekiyor. Ana ekrandaki simgeden
+                açtıysanız bu normaldir: simgenin hafızası tarayıcıdan ayrıdır. Giriş yapınca
+                &quot;Kim okuyor?&quot; ekranı açılır ve veli paneli bu cihazda PIN&apos;le kilitlenir.
+              </p>
+            ) : null}
           </div>
 
           <div className="grid gap-6 lg:grid-cols-2">

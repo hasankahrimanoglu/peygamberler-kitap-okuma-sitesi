@@ -21,7 +21,7 @@ import {
 import { formatReportDate } from "../../../src/lib/parent/report";
 import { cocukSifresiHataMetni } from "../../../src/components/dashboard/cocukSifresiMetni";
 import { PinGirdisi, VeliPinBelirlemeAkisi } from "../../../src/components/dashboard/VeliPinFormu";
-import { CihazBaglandiKarti } from "../../../src/components/dashboard/AnaEkranNotu";
+import { CihazBaglandiKarti, EslesmeKoduKarti } from "../../../src/components/dashboard/AnaEkranNotu";
 import { VeliSayfaBasligi } from "../../../src/components/dashboard/VeliSayfaBasligi";
 import { Buton, CocukAvatari, Ikon, Kart } from "../../../src/components/ui";
 
@@ -466,31 +466,14 @@ function CihazBolumu({
       {hata ? <p role="alert" className="mt-3 text-sm font-semibold text-tehlike">{hata}</p> : null}
 
       {kod ? (
-        <div className="mt-4 rounded-kart border border-vurgu/50 bg-vurgu-yumusak p-5 text-center">
-          <p className="text-base font-semibold text-murekkep">{isim(kod.profilId)} için bağlama kodu</p>
-          <p className="mt-2 font-baslik text-5xl font-bold tracking-[0.2em] text-murekkep">
-            {kalan > 0 ? `${kod.kod.slice(0, 3)} ${kod.kod.slice(3)}` : "— — —"}
-          </p>
-          <p className="mt-3 text-base font-medium leading-7 text-murekkep-soluk">
-            {kalan > 0
-              ? `1. Çocuğunuzun cihazında ${adres} adresini açıp bu kodu girin. Kod ${Math.floor(kalan / 60)}:${String(kalan % 60).padStart(2, "0")} içinde ve yalnız bir kez geçerli.`
-              : "Kodun süresi doldu. Yeni bir kod üretin."}
-          </p>
-          {kalan > 0 ? (
-            <p className="mt-2 text-base font-medium leading-7 text-murekkep-soluk">
-              2. Harita açılınca o ekranı cihazın ana ekranına ekleyin; nasıl yapılacağı cihaz
-              bağlanınca burada görünür.
-            </p>
-          ) : null}
-          <div className="mt-4 flex justify-center gap-3">
-            <Buton varyant="cerceve" boyut="kucuk" onClick={() => setKod(null)}>
-              Kapat
-            </Buton>
-            <Buton varyant="eylem" boyut="kucuk" onClick={() => void kodUret(kod.profilId)}>
-              Yeni Kod
-            </Buton>
-          </div>
-        </div>
+        <EslesmeKoduKarti
+          isim={isim(kod.profilId)}
+          kod={kod.kod}
+          kalanSaniye={kalan}
+          adres={adres}
+          onKapat={() => setKod(null)}
+          onYeniKod={() => void kodUret(kod.profilId)}
+        />
       ) : baglanan ? (
         <CihazBaglandiKarti
           isim={isim(baglanan.profilId)}

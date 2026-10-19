@@ -5,10 +5,20 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Buton } from "../ui";
 
 /** iPad, iPhone ya da dokunmatik Mac görünümlü iPad. */
-function appleCihazi() {
+export function appleCihazi() {
   if (typeof navigator === "undefined") return false;
   const ua = navigator.userAgent;
   return /iPad|iPhone|iPod/i.test(ua) || (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
+}
+
+/**
+ * Ana ekran simgesinden açılmış uygulamanın içinde mi (tarayıcı sekmesi
+ * değil)? iOS 26'da bu uygulamanın hafızası tarayıcıdan ayrıdır (3.11).
+ */
+export function anaEkranUygulamasindaMi() {
+  if (typeof window === "undefined") return false;
+  const iosUygulamasi = (navigator as Navigator & { standalone?: boolean }).standalone === true;
+  return iosUygulamasi || window.matchMedia("(display-mode: standalone)").matches;
 }
 
 /**
@@ -17,25 +27,37 @@ function appleCihazi() {
  * korunur.
  */
 export function AnaEkranTalimati({ className = "" }: { className?: string }) {
-  const [apple, setApple] = useState(true);
+  const [cihaz, setCihaz] = useState<"safari" | "chrome-ios" | "android">("safari");
 
   useEffect(() => {
-    queueMicrotask(() => setApple(appleCihazi()));
+    queueMicrotask(() => {
+      if (!appleCihazi()) setCihaz("android");
+      else if (/CriOS/i.test(navigator.userAgent)) setCihaz("chrome-ios");
+    });
   }, []);
 
-  const adimlar = [
-    {
-      anahtar: "apple",
-      cihaz: "iPad ya da iPhone (Safari)",
-      metin: "Paylaş düğmesine (yukarı oklu kare) dokunun, “Ana Ekrana Ekle”yi seçin.",
+  const tum = {
+    safari: {
+      cihaz: "iPad ya da iPhone · Safari",
+      metin: "Paylaş simgesine dokunun (görünmüyorsa ••• menüsündedir), listeyi kaydırıp “Ana Ekrana Ekle”yi seçin.",
     },
-    {
-      anahtar: "android",
-      cihaz: "Android (Chrome)",
+    "chrome-ios": {
+      cihaz: "iPad ya da iPhone · Chrome",
+      metin: "Adres çubuğunun en sağındaki Paylaş simgesine dokunun, “Ana Ekrana Ekle”yi seçin.",
+    },
+    android: {
+      cihaz: "Android · Chrome",
       metin: "Sağ üstteki ⋮ menüsüne dokunun, “Ana ekrana ekle”yi seçin.",
     },
-  ];
-  if (!apple) adimlar.reverse();
+  };
+  // Kullanılan tarayıcının adımı önce.
+  const sira =
+    cihaz === "android"
+      ? (["android", "safari", "chrome-ios"] as const)
+      : cihaz === "chrome-ios"
+        ? (["chrome-ios", "safari", "android"] as const)
+        : (["safari", "chrome-ios", "android"] as const);
+  const adimlar = sira.map((anahtar) => ({ anahtar, ...tum[anahtar] }));
 
   return (
     <ul className={`space-y-2 ${className}`}>
@@ -52,8 +74,69 @@ export function AnaEkranTalimati({ className = "" }: { className?: string }) {
 }
 
 /**
+ * Aile ve Güvenlik → "Çocuğun kendi cihazı": üretilen eşleme kodu ve sırası.
+ * iPad/iPhone'da ana ekran simgesinin hafızası tarayıcıdan ayrı olduğu için
+ * önce ana ekrana ekleme, sonra kodu simgeden açılan ekranda girme (3.11).
+ */
+export function EslesmeKoduKarti({
+  isim,
+  kod,
+  kalanSaniye,
+  adres,
+  onKapat,
+  onYeniKod,
+}: {
+  isim: string;
+  kod: string;
+  kalanSaniye: number;
+  adres: string;
+  onKapat: () => void;
+  onYeniKod: () => void;
+}) {
+  const gecerli = kalanSaniye > 0;
+  return (
+    <div className="mt-4 rounded-kart border border-vurgu/50 bg-vurgu-yumusak p-5 text-center">
+      <p className="text-base font-semibold text-murekkep">{isim} için bağlama kodu</p>
+      <p className="mt-2 font-baslik text-5xl font-bold tracking-[0.2em] text-murekkep">
+        {gecerli ? `${kod.slice(0, 3)} ${kod.slice(3)}` : "— — —"}
+      </p>
+      {gecerli ? (
+        <div className="mt-4 space-y-3 text-left">
+          <p className="text-base font-medium leading-7 text-murekkep">
+            <strong>1.</strong> Çocuğunuzun cihazında <strong className="break-all">{adres}</strong> adresini açın ve kodu
+            girmeden <strong>önce ana ekrana ekleyin</strong>:
+          </p>
+          <AnaEkranTalimati />
+          <p className="text-base font-medium leading-7 text-murekkep">
+            <strong>2.</strong> Ana ekrandaki simgeyle açıp bu kodu girin. Kod{" "}
+            {Math.floor(kalanSaniye / 60)}:{String(kalanSaniye % 60).padStart(2, "0")} içinde ve
+            yalnız bir kez geçerli.
+          </p>
+          <p className="text-base font-medium leading-7 text-murekkep-soluk">
+            Ana ekrana eklemek istemezseniz kodu doğrudan tarayıcıda da girebilirsiniz.
+          </p>
+        </div>
+      ) : (
+        <p className="mt-3 text-base font-medium leading-7 text-murekkep-soluk">
+          Kodun süresi doldu. Yeni bir kod üretin.
+        </p>
+      )}
+      <div className="mt-4 flex justify-center gap-3">
+        <Buton varyant="cerceve" boyut="kucuk" onClick={onKapat}>
+          Kapat
+        </Buton>
+        <Buton varyant="eylem" boyut="kucuk" onClick={onYeniKod}>
+          Yeni Kod
+        </Buton>
+      </div>
+    </div>
+  );
+}
+
+/**
  * Aile ve Güvenlik → "Çocuğun kendi cihazı": kodla cihaz bağlanınca kod kartının
- * yerine gelir; veliye son adımı (ana ekrana ekleme) söyler.
+ * yerine gelir. Ana ekrana ekleme kod girilmeden önce yapılır (kod kartı
+ * anlatır); burada yalnız sonucu ve sıra karışmışsa ne olacağını söyler.
  */
 export function CihazBaglandiKarti({
   isim,
@@ -70,10 +153,12 @@ export function CihazBaglandiKarti({
         {isim} için cihaz bağlandı{cihazAdi ? `: ${cihazAdi}` : ""}.
       </p>
       <p className="mt-2 text-base font-medium leading-7 text-murekkep">
-        Son adım: çocuğunuzun cihazında açılan haritayı ana ekrana ekleyin. Çocuğunuz simgeye
-        dokununca doğrudan haritasına gelir.
+        Çocuğunuz bundan sonra o cihazdaki simgeye dokunarak doğrudan haritasına gelir.
       </p>
-      <AnaEkranTalimati className="mt-3" />
+      <p className="mt-2 text-base font-medium leading-7 text-murekkep-soluk">
+        Kodu ana ekran simgesi yerine tarayıcıda girdiyseniz: simgenin hafızası ayrıdır, simgeden
+        ilk açılışta yeni bir kod gerekir.
+      </p>
       <Buton varyant="cerceve" boyut="kucuk" className="mt-4" onClick={onTamam}>
         Tamam
       </Buton>
@@ -112,7 +197,8 @@ export function AnaEkranNotu({ acik, onTamam }: { acik: boolean; onTamam: () => 
               Son adım: bu ekranı ana ekrana ekleyin
             </h2>
             <p className="mt-2 text-base font-medium leading-7 text-murekkep-soluk">
-              Çocuğunuz siteyi adres yazmadan, bir uygulama gibi açar: ana ekrandaki simgeye
+              Çocuğunuz siteyi bir uygulama gibi açsın. Simgeyi ilk açtığınızda bir kez daha veli
+              girişi istenir; simgenin hafızası tarayıcıdan ayrıdır. Sonra çocuğunuz simgeye
               dokununca doğrudan buraya gelir.
             </p>
             <AnaEkranTalimati className="mt-4" />

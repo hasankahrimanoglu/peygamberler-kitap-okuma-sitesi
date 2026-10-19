@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { CihazKullanimSorusu } from "../../../src/components/dashboard/CihazKullanimSorusu";
-import { CihazBaglandiKarti } from "../../../src/components/dashboard/AnaEkranNotu";
+import { CihazBaglandiKarti, EslesmeKoduKarti } from "../../../src/components/dashboard/AnaEkranNotu";
 import { Buton, CocukAvatari, Ikon, Kart } from "../../../src/components/ui";
 
 /**
@@ -12,20 +12,23 @@ import { Buton, CocukAvatari, Ikon, Kart } from "../../../src/components/ui";
  * panelinde çocuk kartındaki "Keşif Haritasını Aç" ile ve Kütüphane'den açılır
  * (PROJE-MODELI 3.11). "Evet" → `/tasarim/kim-okuyor?kurulum=1` (ana ekran notu).
  *   ?acik=0        → soru kapalı başlar
+ *   ?durum=kod      → Aile ve Güvenlik'te üretilen eşleme kodu kartı
  *   ?durum=baglandi → Aile ve Güvenlik'te kodla cihaz bağlandıktan sonraki kart
  */
 export default function CihazSorusuOnizleme() {
   const router = useRouter();
   const [acik, setAcik] = useState(true);
   const [baglandi, setBaglandi] = useState(false);
+  const [kodKarti, setKodKarti] = useState(false);
   const [sonuc, setSonuc] = useState<string | null>(null);
 
   useEffect(() => {
     queueMicrotask(() => {
       const parametreler = new URLSearchParams(window.location.search);
-      const baglandiDurumu = parametreler.get("durum") === "baglandi";
-      setBaglandi(baglandiDurumu);
-      if (parametreler.get("acik") === "0" || baglandiDurumu) setAcik(false);
+      const durum = parametreler.get("durum");
+      setBaglandi(durum === "baglandi");
+      setKodKarti(durum === "kod");
+      if (parametreler.get("acik") === "0" || durum === "baglandi" || durum === "kod") setAcik(false);
     });
   }, []);
 
@@ -35,10 +38,22 @@ export default function CihazSorusuOnizleme() {
         <div className="mx-auto max-w-3xl">
           <p className="text-sm font-semibold text-vurgu">Veli paneli · önizleme</p>
           <h1 className="mt-1 font-baslik text-3xl font-bold text-murekkep sm:text-4xl">
-            {baglandi ? "Aile ve Güvenlik" : "Çocuk Profilleri"}
+            {baglandi || kodKarti ? "Aile ve Güvenlik" : "Çocuk Profilleri"}
           </h1>
 
-          {baglandi ? (
+          {kodKarti ? (
+            <Kart className="mt-6">
+              <h2 className="font-baslik text-xl font-bold">Çocuğun kendi cihazı</h2>
+              <EslesmeKoduKarti
+                isim="Elif"
+                kod="482915"
+                kalanSaniye={583}
+                adres="peygamberler-kitap-okuma-sitesi.vercel.app/cihaz-bagla"
+                onKapat={() => setKodKarti(false)}
+                onYeniKod={() => undefined}
+              />
+            </Kart>
+          ) : baglandi ? (
             <Kart className="mt-6">
               <h2 className="font-baslik text-xl font-bold">Çocuğun kendi cihazı</h2>
               <CihazBaglandiKarti isim="Elif" cihazAdi="iPad" onTamam={() => setBaglandi(false)} />

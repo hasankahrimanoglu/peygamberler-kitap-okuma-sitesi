@@ -189,7 +189,10 @@ gözlem testi var. Ana ekran bileşenleri `src/components/cocuk/`, veri modeli
 "Kim okuyor?" önizlemesi `/tasarim/kim-okuyor` (`?sifre=1`; örnek şifre 1234;
 `?kurulum=1` ana ekran notu); "Bu cihazı çocuğunuz kullanacak mı?" sorusu
 `/tasarim/cihaz-sorusu` (`?durum=baglandi`). Giriş sayfası açık oturumu tanır
-ve yönlendirir (3.11 "Çocuğun geri dönüşü"); web manifest EKLENMEZ. Ödüllerim · Kelimelerim · Görevlerim: açık krem zemin
+ve yönlendirir (3.11 "Çocuğun geri dönüşü"). **iOS 26'da ana ekran simgesi
+tarayıcıdan ayrı hafızalı uygulamadır** (Hasan denedi): oturumsuz çocuk ekranı
+`/login?cocuk=1`'e gider, veli girişi cihazı çocuğa verir; çocuğun kendi
+cihazında kod simgeden açılan ekranda girilir. Web manifest şimdilik eklenmez. Ödüllerim · Kelimelerim · Görevlerim: açık krem zemin
 + gece mavisi menü bantları (unvan kartı gece mavisi), görünüm `src/components/cocuk/*Ekrani.tsx`, sayfalar yalnız veri çeker (3.10.8). Final testi görünümü
 `src/components/final/FinalTesti.tsx`; okuma ekranının modülünü ve rozet anıyla ortak
 `KutlamaSahnesi`'ni kullanır.
