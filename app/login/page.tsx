@@ -1,11 +1,11 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { supabase } from "../../lib/supabase";
-import { veliKapisiniAc } from "../../src/lib/child/cocukOturumu";
+import { cocukModuAcikMi, veliKapisiniAc } from "../../src/lib/child/cocukOturumu";
 
 function BookIcon() {
   return (
@@ -39,13 +39,36 @@ function CompassIcon() {
  * Giriş. Çocuk hesabı yoktur (Faz 7 — PROJE-MODELI 3.11): veli giriş yapar,
  * çocuk ortak cihazda "Kim okuyor?"dan girer; çocuğun kendi cihazı velinin
  * ürettiği kodla `/cihaz-bagla`'dan bağlanır.
+ *
+ * Açık oturum varsa form gösterilmez, cihaz doğru yere gider (REVİZE 19 Eki
+ * 2026): siteye tanıtım sayfasından dönen çocuk "Giriş Yap"ta takılmasın.
  */
 export default function LoginPage() {
   const router = useRouter();
+  const [oturumDenetleniyor, setOturumDenetleniyor] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [parentError, setParentError] = useState<string | null>(null);
   const [isParentSubmitting, setIsParentSubmitting] = useState(false);
+
+  useEffect(() => {
+    let iptal = false;
+    // getUser sunucuya sorar: süresi dolmuş ya da kaldırılmış oturumla
+    // yönlendirip girişe geri düşen bir döngü olmasın.
+    void supabase.auth.getUser().then(({ data }) => {
+      if (iptal) return;
+      const kullanici = data.user;
+      if (!kullanici) {
+        setOturumDenetleniyor(false);
+        return;
+      }
+      if (kullanici.is_anonymous) router.replace("/map");
+      else router.replace(cocukModuAcikMi() ? "/kim-okuyor" : "/dashboard");
+    });
+    return () => {
+      iptal = true;
+    };
+  }, [router]);
 
   async function handleParentSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -74,123 +97,130 @@ export default function LoginPage() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_12%,rgba(251,191,36,0.28),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(45,212,191,0.2),transparent_26%),linear-gradient(180deg,rgba(255,251,235,0),rgba(254,243,199,0.62))]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-emerald-100/70 to-transparent" />
 
-      <div className="relative w-full max-w-6xl">
-        <div className="mb-8 text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-amber-700">
-            Peygamberler Kitap Okuma
-          </p>
-          <h1 className="mt-3 text-4xl font-black tracking-normal text-amber-950 sm:text-5xl">
-            Hoş Geldin
-          </h1>
-        </div>
+      {oturumDenetleniyor ? (
+        <p role="status" className="relative text-lg font-semibold text-stone-600">
+          Yükleniyor…
+        </p>
+      ) : (
+        <div className="relative w-full max-w-6xl">
+          <div className="mb-8 text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-amber-700">
+              Peygamberler Kitap Okuma
+            </p>
+            <h1 className="mt-3 text-4xl font-black tracking-normal text-amber-950 sm:text-5xl">
+              Hoş Geldin
+            </h1>
+          </div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
-          <motion.section
-            initial={{ opacity: 0, y: 24, scale: 0.97 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.42, ease: "easeOut" }}
-            className="relative overflow-hidden rounded-3xl border border-amber-200 bg-white/85 p-6 shadow-2xl shadow-amber-900/10 backdrop-blur sm:p-8"
-          >
-            <div className="pointer-events-none absolute -right-12 -top-12 h-36 w-36 rounded-full bg-amber-200/50 blur-3xl" />
-            <div className="relative mb-8 text-center">
-              <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-2xl border border-amber-300 bg-amber-100 text-amber-900 shadow-inner">
-                <BookIcon />
+          <div className="grid gap-6 lg:grid-cols-2">
+            <motion.section
+              initial={{ opacity: 0, y: 24, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.42, ease: "easeOut" }}
+              className="relative overflow-hidden rounded-3xl border border-amber-200 bg-white/85 p-6 shadow-2xl shadow-amber-900/10 backdrop-blur sm:p-8"
+            >
+              <div className="pointer-events-none absolute -right-12 -top-12 h-36 w-36 rounded-full bg-amber-200/50 blur-3xl" />
+              <div className="relative mb-8 text-center">
+                <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-2xl border border-amber-300 bg-amber-100 text-amber-900 shadow-inner">
+                  <BookIcon />
+                </div>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-700">
+                  Veli Girişi
+                </p>
+                <h2 className="mt-3 text-3xl font-black tracking-normal text-amber-950">
+                  Yönetim Paneli
+                </h2>
               </div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-700">
-                Veli Girişi
-              </p>
-              <h2 className="mt-3 text-3xl font-black tracking-normal text-amber-950">
-                Yönetim Paneli
-              </h2>
-            </div>
 
-            <form className="relative space-y-5" onSubmit={handleParentSubmit}>
-              <label className="block">
-                <span className="mb-2 block text-sm font-bold text-stone-700">
-                  E-posta
-                </span>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(event) => setEmail(event.target.value)}
-                  required
-                  autoComplete="email"
-                  className="h-14 w-full rounded-2xl border border-amber-200 bg-amber-50/70 px-4 py-3 text-base font-semibold text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-amber-500 focus:bg-white focus:ring-4 focus:ring-amber-200/60"
-                  placeholder="ornek@mail.com"
-                />
-              </label>
+              <form className="relative space-y-5" onSubmit={handleParentSubmit}>
+                <label className="block">
+                  <span className="mb-2 block text-sm font-bold text-stone-700">
+                    E-posta
+                  </span>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                    required
+                    autoComplete="email"
+                    className="h-14 w-full rounded-2xl border border-amber-200 bg-amber-50/70 px-4 py-3 text-base font-semibold text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-amber-500 focus:bg-white focus:ring-4 focus:ring-amber-200/60"
+                    placeholder="ornek@mail.com"
+                  />
+                </label>
 
-              <label className="block">
-                <span className="mb-2 block text-sm font-bold text-stone-700">
-                  Şifre
-                </span>
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(event) => setPassword(event.target.value)}
-                  required
-                  autoComplete="current-password"
-                  className="h-14 w-full rounded-2xl border border-amber-200 bg-amber-50/70 px-4 py-3 text-base font-semibold text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-amber-500 focus:bg-white focus:ring-4 focus:ring-amber-200/60"
-                  placeholder="Şifren"
-                />
-              </label>
+                <label className="block">
+                  <span className="mb-2 block text-sm font-bold text-stone-700">
+                    Şifre
+                  </span>
+                  <input
+                    type="password"
+                    value={password}
+                    onChange={(event) => setPassword(event.target.value)}
+                    required
+                    autoComplete="current-password"
+                    className="h-14 w-full rounded-2xl border border-amber-200 bg-amber-50/70 px-4 py-3 text-base font-semibold text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-amber-500 focus:bg-white focus:ring-4 focus:ring-amber-200/60"
+                    placeholder="Şifren"
+                  />
+                </label>
 
-              {parentError ? (
-                <motion.p
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm font-bold leading-6 text-rose-700"
-                  role="alert"
+                {parentError ? (
+                  <motion.p
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm font-bold leading-6 text-rose-700"
+                    role="alert"
+                  >
+                    {parentError}
+                  </motion.p>
+                ) : null}
+
+                <button
+                  type="submit"
+                  disabled={isParentSubmitting}
+                  className="mt-2 h-14 w-full rounded-2xl bg-amber-900 px-5 py-3 text-base font-black text-amber-50 shadow-lg shadow-amber-900/15 transition hover:bg-amber-800 focus:outline-none focus:ring-4 focus:ring-amber-300 disabled:cursor-not-allowed disabled:bg-stone-400 disabled:shadow-none"
                 >
-                  {parentError}
-                </motion.p>
-              ) : null}
+                  {isParentSubmitting ? "Giriş Yapılıyor..." : "Giriş Yap"}
+                </button>
+              </form>
+            </motion.section>
 
-              <button
-                type="submit"
-                disabled={isParentSubmitting}
-                className="mt-2 h-14 w-full rounded-2xl bg-amber-900 px-5 py-3 text-base font-black text-amber-50 shadow-lg shadow-amber-900/15 transition hover:bg-amber-800 focus:outline-none focus:ring-4 focus:ring-amber-300 disabled:cursor-not-allowed disabled:bg-stone-400 disabled:shadow-none"
-              >
-                {isParentSubmitting ? "Giriş Yapılıyor..." : "Giriş Yap"}
-              </button>
-            </form>
-          </motion.section>
-
-          <motion.section
-            initial={{ opacity: 0, y: 24, scale: 0.97 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.42, delay: 0.06, ease: "easeOut" }}
-            className="relative overflow-hidden rounded-3xl border border-emerald-200 bg-white/85 p-6 shadow-2xl shadow-emerald-900/10 backdrop-blur sm:p-8"
-          >
-            <div className="pointer-events-none absolute -bottom-12 -left-12 h-36 w-36 rounded-full bg-emerald-200/55 blur-3xl" />
-            <div className="relative text-center">
-              <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-2xl border border-emerald-300 bg-emerald-100 text-emerald-800 shadow-inner">
-                <CompassIcon />
+            <motion.section
+              initial={{ opacity: 0, y: 24, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.42, delay: 0.06, ease: "easeOut" }}
+              className="relative overflow-hidden rounded-3xl border border-emerald-200 bg-white/85 p-6 shadow-2xl shadow-emerald-900/10 backdrop-blur sm:p-8"
+            >
+              <div className="pointer-events-none absolute -bottom-12 -left-12 h-36 w-36 rounded-full bg-emerald-200/55 blur-3xl" />
+              <div className="relative text-center">
+                <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-2xl border border-emerald-300 bg-emerald-100 text-emerald-800 shadow-inner">
+                  <CompassIcon />
+                </div>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-700">
+                  Çocuklar İçin
+                </p>
+                <h2 className="mt-3 text-3xl font-black tracking-normal text-emerald-950">
+                  Keşif Haritası
+                </h2>
+                <p className="mt-5 text-base font-semibold leading-7 text-stone-700">
+                  Evdeki tableti çocuğa vermek için o tablette veli olarak giriş yapın ve panelden
+                  çocuğun haritasını açın. Sonra çocuğunuz &quot;Kim okuyor?&quot; ekranından kendi
+                  profiline girer; ayrı kullanıcı adı ya da şifre gerekmez.
+                </p>
+                <p className="mt-4 text-base font-semibold leading-7 text-stone-700">
+                  Çocuğunuzun kendi cihazı varsa veli panelindeki Aile ve Güvenlik sayfasından bir
+                  kod alın ve o cihazda kodu girin.
+                </p>
+                <Link
+                  href="/cihaz-bagla"
+                  className="mt-6 inline-flex h-14 w-full items-center justify-center rounded-2xl bg-emerald-800 px-5 py-3 text-base font-black text-emerald-50 shadow-lg shadow-emerald-900/15 transition hover:bg-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-300"
+                >
+                  Bu Cihazı Çocuğa Bağla
+                </Link>
               </div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-700">
-                Çocuklar İçin
-              </p>
-              <h2 className="mt-3 text-3xl font-black tracking-normal text-emerald-950">
-                Keşif Haritası
-              </h2>
-              <p className="mt-5 text-base font-semibold leading-7 text-stone-700">
-                Evdeki tablette veli girişi açıksa çocuğunuz &quot;Kim okuyor?&quot; ekranından
-                kendi profiline girer; ayrıca kullanıcı adı ya da şifre gerekmez.
-              </p>
-              <p className="mt-4 text-base font-semibold leading-7 text-stone-700">
-                Çocuğunuzun kendi cihazı varsa veli panelindeki Aile ve Güvenlik sayfasından bir
-                kod alın ve o cihazda kodu girin.
-              </p>
-              <Link
-                href="/cihaz-bagla"
-                className="mt-6 inline-flex h-14 w-full items-center justify-center rounded-2xl bg-emerald-800 px-5 py-3 text-base font-black text-emerald-50 shadow-lg shadow-emerald-900/15 transition hover:bg-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-300"
-              >
-                Bu Cihazı Çocuğa Bağla
-              </Link>
-            </div>
-          </motion.section>
+            </motion.section>
+          </div>
         </div>
-      </div>
+      )}
     </main>
   );
 }

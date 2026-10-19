@@ -21,6 +21,7 @@ import {
 import { formatReportDate } from "../../../src/lib/parent/report";
 import { cocukSifresiHataMetni } from "../../../src/components/dashboard/cocukSifresiMetni";
 import { PinGirdisi, VeliPinBelirlemeAkisi } from "../../../src/components/dashboard/VeliPinFormu";
+import { CihazBaglandiKarti } from "../../../src/components/dashboard/AnaEkranNotu";
 import { VeliSayfaBasligi } from "../../../src/components/dashboard/VeliSayfaBasligi";
 import { Buton, CocukAvatari, Ikon, Kart } from "../../../src/components/ui";
 
@@ -401,6 +402,7 @@ function CihazBolumu({
   onMesaj: (mesaj: string) => void;
 }) {
   const [kod, setKod] = useState<EslesmeKodu | null>(null);
+  const [baglanan, setBaglanan] = useState<{ profilId: string; cihazAdi: string | null } | null>(null);
   const [simdi, setSimdi] = useState(() => Date.now());
   const [hata, setHata] = useState<string | null>(null);
   const [kaldirilacak, setKaldirilacak] = useState<string | null>(null);
@@ -416,9 +418,8 @@ function CihazBolumu({
           (c) => c.profile_id === kod.profilId && Date.parse(c.baglandi) >= kod.olusturuldu - 5000,
         );
         if (yeni) {
-          const ad = profiller.find((p) => p.id === kod.profilId)?.isim ?? "Çocuk";
           setKod(null);
-          onMesaj(`${ad} için cihaz bağlandı${yeni.cihaz_adi ? `: ${yeni.cihaz_adi}` : ""}.`);
+          setBaglanan({ profilId: kod.profilId, cihazAdi: yeni.cihaz_adi });
         }
       });
     }, 4000);
@@ -426,10 +427,11 @@ function CihazBolumu({
       window.clearInterval(saniye);
       window.clearInterval(yoklama);
     };
-  }, [kod, yenile, onMesaj, profiller]);
+  }, [kod, yenile]);
 
   async function kodUret(profilId: string) {
     setHata(null);
+    setBaglanan(null);
     const sonuc = await eslesmeKoduOlustur(profilId);
     if (!sonuc) {
       setHata("Kod üretilemedi. Tekrar deneyin.");
@@ -471,9 +473,15 @@ function CihazBolumu({
           </p>
           <p className="mt-3 text-base font-medium leading-7 text-murekkep-soluk">
             {kalan > 0
-              ? `Çocuğunuzun cihazında ${adres} adresini açıp bu kodu girin. Kod ${Math.floor(kalan / 60)}:${String(kalan % 60).padStart(2, "0")} içinde ve yalnız bir kez geçerli.`
+              ? `1. Çocuğunuzun cihazında ${adres} adresini açıp bu kodu girin. Kod ${Math.floor(kalan / 60)}:${String(kalan % 60).padStart(2, "0")} içinde ve yalnız bir kez geçerli.`
               : "Kodun süresi doldu. Yeni bir kod üretin."}
           </p>
+          {kalan > 0 ? (
+            <p className="mt-2 text-base font-medium leading-7 text-murekkep-soluk">
+              2. Harita açılınca o ekranı cihazın ana ekranına ekleyin; nasıl yapılacağı cihaz
+              bağlanınca burada görünür.
+            </p>
+          ) : null}
           <div className="mt-4 flex justify-center gap-3">
             <Buton varyant="cerceve" boyut="kucuk" onClick={() => setKod(null)}>
               Kapat
@@ -483,6 +491,12 @@ function CihazBolumu({
             </Buton>
           </div>
         </div>
+      ) : baglanan ? (
+        <CihazBaglandiKarti
+          isim={isim(baglanan.profilId)}
+          cihazAdi={baglanan.cihazAdi}
+          onTamam={() => setBaglanan(null)}
+        />
       ) : (
         <div className="mt-4 flex flex-wrap gap-2">
           {profiller.map((profil) => (

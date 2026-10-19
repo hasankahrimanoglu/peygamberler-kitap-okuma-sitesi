@@ -186,8 +186,10 @@ gözlem testi var. Ana ekran bileşenleri `src/components/cocuk/`, veri modeli
 (`?durum=bos`) ve `/tasarim/isil`. Veli tarafının girişsiz önizlemesi
 `/tasarim/veli-rapor` (Gelişim Raporu'nun Kitaplar ve Sohbet Önerileri sekmeleri;
 `?durum=bos|tek`, `?sekme=kitaplar`; görünüm `src/components/dashboard/Rapor*Sekmesi.tsx`).
-"Kim okuyor?" önizlemesi `/tasarim/kim-okuyor` (`?sifre=1`; örnek şifre 1234);
-"Bu cihazı çocuğunuz kullanacak mı?" sorusu `/tasarim/cihaz-sorusu`. Ödüllerim · Kelimelerim · Görevlerim: açık krem zemin
+"Kim okuyor?" önizlemesi `/tasarim/kim-okuyor` (`?sifre=1`; örnek şifre 1234;
+`?kurulum=1` ana ekran notu); "Bu cihazı çocuğunuz kullanacak mı?" sorusu
+`/tasarim/cihaz-sorusu` (`?durum=baglandi`). Giriş sayfası açık oturumu tanır
+ve yönlendirir (3.11 "Çocuğun geri dönüşü"); web manifest EKLENMEZ. Ödüllerim · Kelimelerim · Görevlerim: açık krem zemin
 + gece mavisi menü bantları (unvan kartı gece mavisi), görünüm `src/components/cocuk/*Ekrani.tsx`, sayfalar yalnız veri çeker (3.10.8). Final testi görünümü
 `src/components/final/FinalTesti.tsx`; okuma ekranının modülünü ve rozet anıyla ortak
 `KutlamaSahnesi`'ni kullanır.

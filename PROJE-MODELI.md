@@ -1246,6 +1246,25 @@ bağlanmış cihaz erişir.**
     kalır.
   - "Kim okuyor?" adresine sorudan geçmeden gelinirse (yer imi, eski sekme)
     seçilen profil cihazı yine çocuk moduna alır: kuşkuda kilitli taraf seçilir.
+- **Çocuğun geri dönüşü (REVİZE 19 Eki 2026, Hasan):** çocuk siteyi kapatıp
+  sonra açtığında yolu kaybetmez.
+  - **Giriş sayfası (`/login`) açık oturumu tanır,** formu göstermeden
+    yönlendirir: bağlı çocuk cihazı → `/map`; çocuğa verilmiş cihaz →
+    `/kim-okuyor`; velinin kendi cihazı → `/dashboard`; oturum yoksa form.
+    Tanıtım sayfası değişmez; oradaki "Giriş Yap" her cihazda doğru yere
+    götürür. Veli hesap değiştirmek isterse panelden çıkış yapar.
+  - **Ana ekran notu (veliye, tek seferlik):** cihaz çocuğa verilince
+    ("Evet, çocuğuma veriyorum" ya da "Bu Cihazı Çocuğa Ver") "Kim okuyor?"
+    üstünde "Son adım: ana ekrana ekleyin" notu çıkar (iPad/iPhone: Paylaş →
+    Ana Ekrana Ekle; Android: ⋮ → Ana ekrana ekle). Not açılınca adres
+    `/kim-okuyor`'a temizlenir ki simge doğru sayfayı açsın. Eşleme kodu
+    kartında 2. adım olarak yazar; cihaz bağlanınca kart "Son adım" notuyla
+    kalır.
+  - **Uygulama bildirimi (web manifest) EKLENMEZ:** iOS'ta ana ekrandan
+    bağımsız açılan uygulama Safari'den ayrı depolama kullanır; tarayıcıda
+    açılmış veli oturumu ya da cihaz bağlantısı oraya geçmez, çocuk ekranı
+    girişe düşer. Manifestsiz simge siteyi tarayıcıda açar, oturum korunur.
+    Uygulama ikonu tasarımı ayrı iştir (marka geçici).
 - **Profil şifresi (aile ayarı, varsayılan KAPALI):** veli panelindeki
   "Profillere girerken şifre sorulsun" ayarı bütün aileye uygulanır.
   - Açıkken her çocuğun **kendi 4 rakamlı şifresi** vardır; veli belirler
@@ -1289,8 +1308,9 @@ bağlanmış cihaz erişir.**
 - **Ekranlar:** "Kim okuyor?" ve cihaz bağlama çocuk dünyasındadır (gece
   zemin). Aile ayarları veli panelinde **"Aile ve Güvenlik"** sayfasıdır
   (`/dashboard/ayarlar`, hesap menüsünden). Girişsiz önizlemeler:
-  `/tasarim/kim-okuyor` (`?sifre=1` şifreli aile; örnek şifre 1234) ve
-  `/tasarim/cihaz-sorusu` ("Bu cihazı çocuğunuz kullanacak mı?").
+  `/tasarim/kim-okuyor` (`?sifre=1` şifreli aile; örnek şifre 1234;
+  `?kurulum=1` ana ekran notu) ve `/tasarim/cihaz-sorusu` ("Bu cihazı
+  çocuğunuz kullanacak mı?"; `?durum=baglandi` kodla bağlanma sonrası kart).
 
 ---
 
@@ -2102,6 +2122,11 @@ Kurallar:
       (yoksa) + çocuk modu + "Kim okuyor?"; Hayır → göz atma, kilit yok.
 - [x] Kurulumda yalnız veli PIN'i (seçenek A); çocuk şifreleri Aile ve
       Güvenlik'te kalır. "Bu cihaz" bölümüne "Bu Cihazı Çocuğa Ver" eklenir.
+- [x] **Çocuğun geri dönüşü:** siteyi adresten açan çocuk tanıtım sayfasından
+      "Giriş Yap"a basınca veli formunda takılıyordu. Giriş sayfası açık
+      oturumu tanır ve cihazı doğru yere yönlendirir; veliye cihaz çocuğa
+      verilince ve kod kartında ana ekran notu gösterilir. Web manifest
+      eklenmez (iOS'ta oturum ana ekran uygulamasına geçmez).
 
 ## 11. İçerik Durumu
 

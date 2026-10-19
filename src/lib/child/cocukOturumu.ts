@@ -277,6 +277,9 @@ export function useCocukOturumu(): CocukOturumu {
 
 type Yonlendirici = { push: (adres: string) => void };
 
+/** Cihaz çocuğa verildikten sonra: "Kim okuyor?" veliye ana ekran notunu gösterir. */
+export const KURULUM_ADRESI = "/kim-okuyor?kurulum=1";
+
 /**
  * Veli panelinden çocuk ekranına geçiş ("Okumaya Devam Et", Kütüphane).
  * Çocuk modunda olmayan cihazda önce "Bu cihazı çocuğunuz kullanacak mı?"
@@ -310,10 +313,10 @@ export async function cocukEkraninaGec(
 export async function cihaziCocugaVer(router: Yonlendirici) {
   const durum = await aileGuvenlikDurumu();
   if (durum && !durum.veliPinVar) {
-    const sorgu = new URLSearchParams({ pin: "gerekli", hedef: "/kim-okuyor" });
+    const sorgu = new URLSearchParams({ pin: "gerekli", hedef: KURULUM_ADRESI });
     router.push(`/dashboard/ayarlar?${sorgu.toString()}`);
     return;
   }
   cocukModunuAc();
-  router.push("/kim-okuyor");
+  router.push(KURULUM_ADRESI);
 }

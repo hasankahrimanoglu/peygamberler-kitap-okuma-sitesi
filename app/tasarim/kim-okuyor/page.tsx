@@ -3,12 +3,14 @@
 import { useEffect, useState } from "react";
 import { KimOkuyorEkrani, type KimOkuyorCocugu } from "../../../src/components/cocuk/KimOkuyorEkrani";
 import type { DogrulamaSonucu } from "../../../src/lib/aileGuvenligi";
+import { AnaEkranNotu } from "../../../src/components/dashboard/AnaEkranNotu";
 
 /**
  * "Kim okuyor?" önizlemesi — giriş gerektirmez, Supabase'e bağlanmaz. Gerçek
  * ekran `/kim-okuyor`'dur.
  *   ?sifre=1 → aile ayarı açık; Elif'in şifresi 1234, Can'ınki 4321.
  *   ?durum=pin → veli PIN'i henüz belirlenmemiş.
+ *   ?kurulum=1 → cihaz az önce çocuğa verildi: veliye ana ekran notu.
  */
 const ORNEK_COCUKLAR: KimOkuyorCocugu[] = [
   { id: "ornek-elif", isim: "Elif", avatarTipi: "avatar-2", fotografUrl: null, sifreVar: true },
@@ -21,12 +23,14 @@ export default function KimOkuyorOnizleme() {
   const [veliPinGerekli, setVeliPinGerekli] = useState(false);
   const [denemeler, setDenemeler] = useState<Record<string, number>>({});
   const [acilan, setAcilan] = useState<string | null>(null);
+  const [anaEkranNotu, setAnaEkranNotu] = useState(false);
 
   useEffect(() => {
     queueMicrotask(() => {
       const parametreler = new URLSearchParams(window.location.search);
       setSifreAcik(parametreler.get("sifre") === "1");
       setVeliPinGerekli(parametreler.get("durum") === "pin");
+      setAnaEkranNotu(parametreler.get("kurulum") === "1");
     });
   }, []);
 
@@ -50,6 +54,7 @@ export default function KimOkuyorOnizleme() {
         onVeliPaneli={() => setAcilan("Veli Paneli")}
         onVeliPiniBelirle={() => setVeliPinGerekli(false)}
       />
+      <AnaEkranNotu acik={anaEkranNotu} onTamam={() => setAnaEkranNotu(false)} />
       {acilan ? (
         <p
           role="status"
