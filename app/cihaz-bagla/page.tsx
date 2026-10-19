@@ -1,9 +1,10 @@
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { supabase } from "../../lib/supabase";
+import type { SupabaseClient } from "@supabase/supabase-js";
+import { geciciCihazIstemcisi, supabase } from "../../lib/supabase";
 import { beklemeMetni, cihazAdiTahmini, cihaziBagla } from "../../src/lib/aileGuvenligi";
 import { profiliAc } from "../../src/lib/child/cocukOturumu";
 import { Logo } from "../../src/components/marka/Logo";
@@ -14,7 +15,9 @@ import { Buton } from "../../src/components/ui";
  * 6 rakamlı, 10 dakika geçerli bir kod üretir; çocuk kodu burada girer.
  * Cihaz Supabase'in anonim oturumuyla açılır ve yalnız o çocuğun verisine
  * erişir. Bu cihazda velinin oturumu açıksa önce uyarılır: bağlamak veli
- * oturumunu bu cihazda kapatır.
+ * oturumunu bu cihazda kapatır — ama yalnız kod tuttuktan sonra.
+ * Aynı tarayıcının sekmeleri aynı cihazdır; bağlanınca öteki sekmedeki veli
+ * oturumu da kapanır.
  */
 export default function CihazBaglaSayfasi() {
   const router = useRouter();
@@ -23,6 +26,10 @@ export default function CihazBaglaSayfasi() {
   const [bilgi, setBilgi] = useState<string | null>(null);
   const [bekliyor, setBekliyor] = useState(false);
   const [veliUyarisi, setVeliUyarisi] = useState(false);
+  const [veliOnayladi, setVeliOnayladi] = useState(false);
+  // Geçici istemcideki anonim oturum denemeler arasında korunur; yanlış kod
+  // sayacı aynı oturuma işler.
+  const geciciIstemci = useRef<SupabaseClient | null>(null);
 
   useEffect(() => {
     queueMicrotask(() => {
@@ -32,6 +39,11 @@ export default function CihazBaglaSayfasi() {
     });
   }, []);
 
+  function baglanamadi(metin = "Bağlanamadı. İnternetini kontrol edip tekrar dene.") {
+    setBekliyor(false);
+    setHata(metin);
+  }
+
   async function bagla(veliOturumunuKapat: boolean) {
     setHata(null);
     setBekliyor(true);
@@ -39,37 +51,63 @@ export default function CihazBaglaSayfasi() {
     const {
       data: { session },
     } = await supabase.auth.getSession();
+    const veliOturumu = Boolean(session && !session.user.is_anonymous);
 
-    if (session && !session.user.is_anonymous) {
-      if (!veliOturumunuKapat) {
-        setBekliyor(false);
-        setVeliUyarisi(true);
-        return;
-      }
-      await supabase.auth.signOut();
+    if (veliOturumu && !veliOturumunuKapat) {
+      setBekliyor(false);
+      setVeliUyarisi(true);
+      return;
     }
 
-    if (!session || !session.user.is_anonymous) {
-      const { error } = await supabase.auth.signInAnonymously();
-      if (error) {
-        setBekliyor(false);
-        setHata(
-          error.message.toLocaleLowerCase("tr-TR").includes("anonymous")
-            ? "Cihaz bağlama şu an kapalı. Annene ya da babana söyle."
-            : "Bağlanamadı. İnternetini kontrol edip tekrar dene.",
-        );
-        return;
+    // Bağlantısı kaldırılmış cihaz kendi anonim oturumuyla yeniden dener.
+    // Diğer durumlarda anonim oturum geçici istemcide açılır: kod tutmadıkça
+    // ya da anonim giriş kapalıysa bu cihazdaki veli oturumu kapanmaz.
+    let istemci: SupabaseClient = supabase;
+    if (!session?.user.is_anonymous) {
+      if (!geciciIstemci.current) {
+        const gecici = geciciCihazIstemcisi();
+        const { error } = await gecici.auth.signInAnonymously();
+        if (error) {
+          baglanamadi(
+            error.message.toLocaleLowerCase("tr-TR").includes("anonymous")
+              ? "Cihaz bağlama şu an kapalı. Annene ya da babana söyle."
+              : undefined,
+          );
+          return;
+        }
+        geciciIstemci.current = gecici;
       }
+      istemci = geciciIstemci.current;
     }
 
-    const sonuc = await cihaziBagla(kod, cihazAdiTahmini());
-    setBekliyor(false);
+    const sonuc = await cihaziBagla(kod, cihazAdiTahmini(), istemci);
 
     if (sonuc?.durum === "tamam" && sonuc.profilId) {
+      if (istemci !== supabase) {
+        const {
+          data: { session: cihazOturumu },
+        } = await istemci.auth.getSession();
+        if (!cihazOturumu) {
+          baglanamadi();
+          return;
+        }
+        if (veliOturumu) await supabase.auth.signOut({ scope: "local" });
+        const { error } = await supabase.auth.setSession({
+          access_token: cihazOturumu.access_token,
+          refresh_token: cihazOturumu.refresh_token,
+        });
+        if (error) {
+          baglanamadi();
+          return;
+        }
+        geciciIstemci.current = null;
+      }
       profiliAc({ id: sonuc.profilId, isim: sonuc.isim ?? null });
       router.replace("/map");
       return;
     }
+
+    setBekliyor(false);
     setKod("");
     if (sonuc?.durum === "kilitli") {
       setHata(`Çok deneme oldu. ${beklemeMetni(sonuc.kalanSaniye)} sonra tekrar dene.`);
@@ -86,7 +124,13 @@ export default function CihazBaglaSayfasi() {
       setHata("Kod 6 rakamdan oluşur.");
       return;
     }
-    void bagla(false);
+    void bagla(veliOnayladi);
+  }
+
+  function veliOnayiVer() {
+    setVeliUyarisi(false);
+    setVeliOnayladi(true);
+    void bagla(true);
   }
 
   return (
@@ -114,8 +158,8 @@ export default function CihazBaglaSayfasi() {
                 Bu cihazda bir veli hesabı açık. Cihazı çocuğa bağlarsanız veli oturumu bu cihazda
                 kapanır.
               </p>
-              <Buton varyant="eylem" tamGenislik disabled={bekliyor} onClick={() => void bagla(true)}>
-                {bekliyor ? "Bağlanıyor…" : "Devam Et ve Bağla"}
+              <Buton varyant="eylem" tamGenislik disabled={bekliyor} onClick={veliOnayiVer}>
+                Devam Et ve Bağla
               </Buton>
               <Buton varyant="cerceve" tamGenislik onClick={() => router.push("/kim-okuyor")}>
                 Vazgeç

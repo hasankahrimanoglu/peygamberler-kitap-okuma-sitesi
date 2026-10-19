@@ -7,6 +7,7 @@
  * Ağ ya da yetki hatasında fonksiyonlar `null` döner; ekran "tekrar dene" der.
  */
 
+import type { SupabaseClient } from "@supabase/supabase-js";
 import { supabase } from "../../lib/supabase";
 
 export type AileGuvenlikDurumu = {
@@ -104,8 +105,13 @@ export async function eslesmeKoduOlustur(
   return data as { kod: string; bitis: string };
 }
 
-export async function cihaziBagla(kod: string, cihazAdi: string): Promise<CihazBaglamaSonucu | null> {
-  const { data, error } = await supabase.rpc("cihazi_bagla", {
+/** `istemci`: cihaz bağlamanın geçici istemcisi (`geciciCihazIstemcisi`) olabilir. */
+export async function cihaziBagla(
+  kod: string,
+  cihazAdi: string,
+  istemci: SupabaseClient = supabase,
+): Promise<CihazBaglamaSonucu | null> {
+  const { data, error } = await istemci.rpc("cihazi_bagla", {
     p_kod: kod,
     p_cihaz_adi: cihazAdi,
   });

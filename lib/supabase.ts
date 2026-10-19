@@ -8,3 +8,20 @@ if (!supabaseUrl || !supabaseAnonKey) {
 }
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+/**
+ * Cihaz bağlamada kullanılan, oturumu kaydetmeyen ikinci istemci (Faz 7).
+ * Anonim oturum önce burada açılır; kod tutmadan cihazdaki asıl oturuma
+ * (velinin oturumu olabilir) dokunulmaz. Ayrı `storageKey`, iki istemcinin
+ * aynı kayıt anahtarında çakışmasını önler.
+ */
+export function geciciCihazIstemcisi() {
+  return createClient(supabaseUrl!, supabaseAnonKey!, {
+    auth: {
+      persistSession: false,
+      autoRefreshToken: false,
+      detectSessionInUrl: false,
+      storageKey: "cihaz-baglama-gecici",
+    },
+  });
+}
