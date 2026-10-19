@@ -15,6 +15,8 @@ import {
   formatReportDate,
 } from "../../../../src/lib/parent/report";
 import { goreliZaman } from "../../../../src/lib/zaman";
+import { RaporKitaplarSekmesi } from "../../../../src/components/dashboard/RaporKitaplarSekmesi";
+import { RaporSohbetSekmesi } from "../../../../src/components/dashboard/RaporSohbetSekmesi";
 import {
   Buton,
   CocukAvatari,
@@ -273,79 +275,12 @@ export default function GelisimRaporuSayfasi() {
         </div>
       ) : null}
 
-      {/* Kitaplar */}
+      {/* Kitaplar — okunan + biten kitaplar (PROJE-MODELI 4.1/19) */}
       {sekme === "kitaplar" ? (
-        rapor.completedAdventures.length === 0 ? (
-          <Kart dolgu="genis" className="text-center">
-            <p className="font-baslik font-bold text-murekkep">
-              Henüz tamamlanan bir macera bulunmuyor.
-            </p>
-            <p className="mt-2 text-base font-medium text-murekkep-soluk">
-              Çocuk profilinden haritaya girerek ilk macerayı başlatabilirsiniz.
-            </p>
-          </Kart>
-        ) : (
-          <div className="space-y-4">
-            {rapor.completedAdventures.map((adventure) => {
-              const wrongCount =
-                adventure.finalScore === null
-                  ? null
-                  : Math.max(0, adventure.totalQuestions - adventure.finalScore);
-              return (
-                <Kart key={`${adventure.bookTitle}-${adventure.updatedAt}`}>
-                  <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <p className="text-sm font-semibold text-vurgu">
-                        Kitap Yolculuğu
-                      </p>
-                      <h2 className="mt-1 font-baslik text-lg font-bold text-murekkep">
-                        {adventure.bookTitle}
-                      </h2>
-                      <p className="mt-1 text-sm font-semibold text-murekkep-soluk">
-                        Yolculuk Günlüğü: {formatReportDate(adventure.updatedAt)}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 grid gap-3 sm:grid-cols-3">
-                    <div className="rounded-buton border border-cizgi bg-yuzey-2 p-3">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-murekkep-soluk">
-                        Bölüm
-                      </p>
-                      <p className="mt-1 font-baslik text-lg font-bold text-murekkep">
-                        {adventure.completedCount}/{adventure.totalChapters}
-                      </p>
-                    </div>
-                    <div className="rounded-buton border border-cizgi bg-yuzey-2 p-3">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-murekkep-soluk">
-                        Final Testi
-                      </p>
-                      <p className="mt-1 font-baslik text-base font-bold text-murekkep">
-                        {adventure.finalScore === null || wrongCount === null
-                          ? "Kayıt yok"
-                          : `${adventure.finalScore} doğru · ${wrongCount} yanlış`}
-                      </p>
-                    </div>
-                    <div className="rounded-buton border border-cizgi bg-yuzey-2 p-3">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-murekkep-soluk">
-                        Madalya
-                      </p>
-                      <p className="mt-1 text-base font-bold text-murekkep">
-                        {adventure.medalName}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 rounded-kart border border-eylem/25 bg-eylem-yumusak p-4">
-                    <p className="text-base font-medium leading-7 text-murekkep">
-                      {adventure.parentMessage}
-                    </p>
-                  </div>
-                </Kart>
-              );
-            })}
-          </div>
-        )
+        <RaporKitaplarSekmesi
+          okunanlar={rapor.readingAdventures}
+          bitenler={rapor.completedAdventures}
+        />
       ) : null}
 
       {/* Ödüller özeti */}
@@ -477,65 +412,12 @@ export default function GelisimRaporuSayfasi() {
         </div>
       ) : null}
 
-      {/* Sohbet Önerileri */}
+      {/* Sohbet Önerileri — bölüm bölüm veli sohbeti (PROJE-MODELI 4.1/19) */}
       {sekme === "sohbet" ? (
-        rapor.completedAdventures.length === 0 ? (
-          <Kart dolgu="genis" className="text-center">
-            <p className="font-baslik font-bold text-murekkep">
-              Sohbet önerileri tamamlanan kitaplardan gelir.
-            </p>
-            <p className="mt-2 text-base font-medium text-murekkep-soluk">
-              İlk kitap tamamlandığında burada akşam sohbeti için öneriler görünecek.
-            </p>
-          </Kart>
-        ) : (
-          <div className="space-y-4">
-            {rapor.completedAdventures.map((adventure) => (
-              <Kart key={`sohbet-${adventure.bookTitle}-${adventure.updatedAt}`}>
-                <h2 className="font-baslik text-lg font-bold text-murekkep">
-                  {adventure.bookTitle}
-                </h2>
-
-                <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-vurgu">
-                  <Ikon ad="dusunce" boyut={16} />
-                  Akşam İçin Sohbet Başlatıcıları
-                </p>
-                <div className="mt-2 grid gap-2">
-                  {adventure.chatQuestions.slice(0, 3).map((question) => (
-                    <p
-                      key={question}
-                      className="rounded-buton bg-yuzey-2 px-4 py-3 text-base font-medium leading-7 text-murekkep"
-                    >
-                      {question}
-                    </p>
-                  ))}
-                </div>
-
-                {adventure.parentFaq.length > 0 ? (
-                  <div className="mt-4">
-                    <p className="flex items-center gap-2 text-sm font-semibold text-vurgu">
-                      <Ikon ad="kalp" boyut={16} />
-                      Çocuğunuz Sorarsa
-                    </p>
-                    <div className="mt-2 space-y-2">
-                      {adventure.parentFaq.map((faq) => (
-                        <div
-                          key={faq.question}
-                          className="rounded-kart border border-cizgi bg-yuzey-2 p-3"
-                        >
-                          <p className="text-base font-bold text-murekkep">{faq.question}</p>
-                          <p className="mt-1 text-base font-medium leading-7 text-murekkep-soluk">
-                            {faq.approach}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ) : null}
-              </Kart>
-            ))}
-          </div>
-        )
+        <RaporSohbetSekmesi
+          okunanlar={rapor.readingAdventures}
+          bitenler={rapor.completedAdventures}
+        />
       ) : null}
       </div>
     </div>

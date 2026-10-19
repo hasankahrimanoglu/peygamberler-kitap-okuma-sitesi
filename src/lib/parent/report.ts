@@ -31,6 +31,32 @@ export type CompletedAdventureReport = {
   parentFaq: ParentFaqItem[];
 };
 
+/**
+ * Okunan (başlanmış, finali bitmemiş) kitap — bölüm bölüm veli sohbeti
+ * (PROJE-MODELI 4.1/19).
+ */
+export type ReadingAdventureReport = {
+  bookKey: string;
+  bookTitle: string;
+  completedCount: number;
+  totalChapters: number;
+  /** Bütün bölümler bitti, Büyük Final Testi kaldı. */
+  finalPending: boolean;
+  updatedAt: string | null;
+  /**
+   * Kitapta ulaşılan son bölüm: tamamlanan bölüm sayısından türer, kaydırma
+   * konumuna bakmaz ("Kaldığın yer" değildir). Çocuğun seçtiği şık bilinçli
+   * olarak taşınmaz.
+   */
+  lastChapter: {
+    number: number;
+    title: string;
+    summary: string | null;
+    question: string | null;
+  };
+  parentFaq: ParentFaqItem[];
+};
+
 export type CurrentAdventureHint = {
   bookTitle: string;
   completedCount: number;
@@ -39,6 +65,8 @@ export type CurrentAdventureHint = {
 
 export type ChildReport = {
   totalBadges: number;
+  /** Okunan kitaplar, en son okunan önce. */
+  readingAdventures: ReadingAdventureReport[];
   completedAdventures: CompletedAdventureReport[];
   currentAdventure: CurrentAdventureHint;
 };
@@ -122,18 +150,40 @@ export function buildChildReport(
       return secondDate - firstDate;
     });
 
-  const guncel = kaynaklar
+  const readingAdventures = kaynaklar
     .filter(({ kitap }) => !kitap.bitti && kitap.tamamlanan > 0)
-    .sort((first, second) => second.kitap.sonOkuma - first.kitap.sonOkuma)[0];
+    .sort((first, second) => second.kitap.sonOkuma - first.kitap.sonOkuma)
+    .map(({ kitap, reportBook }) => {
+      const chapter = kitap.icerik.chapters[kitap.tamamlanan - 1];
+
+      return {
+        bookKey: kitap.katalog.key,
+        bookTitle: kitap.katalog.title,
+        completedCount: kitap.tamamlanan,
+        totalChapters: kitap.toplam,
+        finalPending: kitap.tamamlanan >= kitap.toplam,
+        updatedAt: kitap.ilerleme?.updated_at ?? null,
+        lastChapter: {
+          number: kitap.tamamlanan,
+          title: chapter.title.replace(/\s+/g, " ").trim(),
+          summary: chapter.ozet ?? null,
+          question: chapter.question?.prompt ?? null,
+        },
+        parentFaq: reportBook?.parent_faq ?? [],
+      } satisfies ReadingAdventureReport;
+    });
+
+  const guncel = readingAdventures[0];
 
   return {
     totalBadges,
+    readingAdventures,
     completedAdventures,
     currentAdventure: guncel
       ? {
-          bookTitle: guncel.kitap.katalog.title,
-          completedCount: guncel.kitap.tamamlanan,
-          totalChapters: guncel.kitap.toplam,
+          bookTitle: guncel.bookTitle,
+          completedCount: guncel.completedCount,
+          totalChapters: guncel.totalChapters,
         }
       : null,
   };

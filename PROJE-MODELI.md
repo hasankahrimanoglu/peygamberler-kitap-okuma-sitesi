@@ -688,7 +688,9 @@ etmez:
 - Rapor seçimi çocuk başına güncel kitap, unvan ve son okuma bağlamını gösteren
   sakin kartlardan oluşur. Rapor detayı Genel Bakış · Kitaplar · Ödüller ·
   Görevler · Sohbet Önerileri sekmelerini korur; mobilde sekmeler yatay
-  kaydırılır, içerik tek sütundur.
+  kaydırılır, içerik tek sütundur. *(REVİZE 19 Eki 2026 — 4.1/19: Kitaplar ve
+  Sohbet Önerileri sekmeleri okunan kitapları da gösterir; ilk kitap bitene
+  kadar boş kalmaz.)*
 - İşlevsel gövde metni 16px hedefini, buton ve dokunma alanları Bölüm 3.5'i
   korur. Rapor metinleri gözlem bildirir; başarı puanı veya kesin çocuk
   değerlendirmesi üretmez.
@@ -1233,6 +1235,7 @@ kalkar), **Kelimelerim'e yeni özellik yok** (yalnız tasarım).
 | 16 | Bölüm içi karar akışı (KARAR 15 Tem 2026) | "Sen Olsaydın" bağımsız bir bölüm sonu sorusu DEĞİLDİR; hikâyenin karar/doruk noktasına yerleşir. Akış: **Hikâye — 1. Kısım → Sen Olsaydın → Hikâye Devam Ediyor → Seçimini Karşılaştır**. Seçim hikâyeyi DALLANDIRMAZ (tek hikâye); doğru cevap seçim anında AÇIKLANMAZ; hikâye devamı bittikten sonra yalnızca **seçilen şıkkın** karşılaştırma metni gösterilir (her şık için ayrı metin içerikte hazır). Seçim aynı okuma oturumu içinde tutulur (kalıcı kayıt ayrı iştir — bkz. S5) | Yok — books.ts + oturum içi state |
 | 17 | "Bugüne Taşı" görev takibi (KARAR 15 Tem 2026) | Görev KOŞULLUDUR (her bölümde değil; kitabın yaklaşık %40–50'sinde görev bulunması editoryal hedeftir, teknik sınır olarak kodlanmaz) ve GÖNÜLLÜDÜR. Çocuk görevde "Görevi Listeme Ekle / Şimdilik Değil" seçer; eklediği görevleri "Görevlerim" ekranında görür, "Görevi Tamamladım" ile işaretler; Tamamlandı/Tamamlanmadı durumu KALICI saklanır (öz bildirim yeterli, kanıt istenmez). Görev; bölüm rozetinin, madalyanın, sonraki kitabın veya ilerlemenin ŞARTI DEĞİLDİR. Son tarih, ceza, seri YOK | Yeni tablo (bkz. 7.3 — Faz 6.1) |
 | 18 | Veli tarafında görev görünürlüğü (KARAR 15 Tem 2026 akşam) | Veli, çocuğun aldığı TÜM görevleri ve durumlarını Gelişim Raporu'ndaki **Görevler sekmesinden** görür (Alındı / Tamamlandı, hangi kitap-bölüm, tarih). Ana Sayfa kartı ise yalnız EN GÜNCEL tek görevi durum çipiyle ("Alındı"/"Tamamlandı") gösterir — tam liste değil. Veli görevleri yalnız GÖRÜR, düzenlemez/tamamlamaz (öz bildirim çocuğundur). Rapor dili gözlem bildirir; tamamlanmamış görev eksiklik/başarısızlık olarak sunulmaz | Yok — `profile_tasks`'tan türetilir |
+| 19 | Bölüm bölüm veli sohbeti (KARAR 19 Eki 2026) | Gelişim Raporu → Sohbet Önerileri'nde **okunan** (başlanmış, finali bitmemiş) her kitap için bir kart: kitapta ulaşılan son bölüm (numara, ad, `ozet`), o bölümün "Sen Olsaydın" sorusu ("Bu bölümde düşündüğü soru") ve sabit öneri ("Akşam sohbeti için: Bu soruyu ona siz de sorun ve cevabını dinleyin. Sonra hikâyede ne olduğunu birlikte hatırlayabilirsiniz."). Bölüm tamamlanan bölüm sayısından türer; kaydırma konumuna bakılmaz ("Kaldığın yer" değildir), tekrar okunan eski bölüm gösterilmez. **Yalnız son bölüm** gösterilir. **Çocuğun seçtiği şık gösterilmez** — özellik S5'e bağlı değildir; veli göreceğini bilen çocuk "beklenen" şıkkı seçer. Kitabın "Çocuğunuz Sorarsa" yönlendirmeleri kitap okunurken de görünür (zor soru kitabın ortasında gelir); okunan ve biten kitapta **kapalı açılır liste**dir. Kitaplar sekmesi okunan kitapları da listeler (kapak, ilerleme, kitapta gelinen bölüm, son okuma; bölümleri biten ama finali kalan kitapta "Büyük Final Testi kaldı"). Ana Sayfa kartı değişmez (3.8). Girişsiz önizleme: `/tasarim/veli-rapor` | Yok — books.ts + user_progress |
 
 ### 4.2 SONRAYA BIRAKILDI (ayrı fazlarda)
 
@@ -1951,6 +1954,17 @@ Kurallar:
       taranıyordu; bütün bölümler bitse bile 91 kelimenin 15'i görünüyordu.
 - [x] Veli Kütüphanesi'ndeki **"Kilitli" filtresi kaldırıldı** (kitap kilidi
       3.10.2'de kalktığından beri hiçbir kitaba uymuyordu).
+
+### 19 Ekim 2026 (bölüm bölüm veli sohbeti — Hasan onayı, bkz. 4.1/19)
+
+- [x] **Gelişim Raporu ilk bölümden itibaren dolu.** Sohbet Önerileri ve
+      Kitaplar sekmeleri yalnız biten kitapları gösteriyordu; 8–10 bölümlük bir
+      kitap bitene kadar veli haftalarca boş ekran görüyordu. Artık okunan her
+      kitap için kitapta ulaşılan son bölüm ve o bölümün "Sen Olsaydın" sorusu
+      sohbet önerisi olarak görünür. Yeni içerik ve tablo gerekmez.
+- [x] Seçenekler (Hasan): "Çocuğunuz Sorarsa" okunan kitapta da görünür ve
+      kapalı açılır listedir; yalnız son bölüm gösterilir; çocuğun seçtiği şık
+      gösterilmez; girişsiz önizleme `/tasarim/veli-rapor` eklenir.
 
 ## 11. İçerik Durumu
 

@@ -183,7 +183,9 @@ gözlem testi var. Ana ekran bileşenleri `src/components/cocuk/`, veri modeli
 `src/lib/child/yolculuk.ts`, girişsiz önizlemeler `/tasarim/ana-ekran`,
 `/tasarim/okuma?bolum=adem-2` (rozet kaydı Supabase'e gitmez), `/tasarim/final?kitap=idris`
 (Büyük Final Testi; kayıt yok), `/tasarim/oduller`, `/tasarim/kelimeler`, `/tasarim/gorevler`
-(`?durum=bos`) ve `/tasarim/isil`. Ödüllerim · Kelimelerim · Görevlerim: açık krem zemin
+(`?durum=bos`) ve `/tasarim/isil`. Veli tarafının girişsiz önizlemesi
+`/tasarim/veli-rapor` (Gelişim Raporu'nun Kitaplar ve Sohbet Önerileri sekmeleri;
+`?durum=bos|tek`, `?sekme=kitaplar`; görünüm `src/components/dashboard/Rapor*Sekmesi.tsx`). Ödüllerim · Kelimelerim · Görevlerim: açık krem zemin
 + gece mavisi menü bantları (unvan kartı gece mavisi), görünüm `src/components/cocuk/*Ekrani.tsx`, sayfalar yalnız veri çeker (3.10.8). Final testi görünümü
 `src/components/final/FinalTesti.tsx`; okuma ekranının modülünü ve rozet anıyla ortak
 `KutlamaSahnesi`'ni kullanır.
