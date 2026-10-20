@@ -17,7 +17,7 @@ const RENK = {
   yuzey: "#fffdf8",
   cizgi: "#e7dcc5",
   murekkep: "#3d2b1f",
-  soluk: "#8a7260",
+  soluk: "#7d6656",
   eylem: "#2e7d5b",
 } as const;
 

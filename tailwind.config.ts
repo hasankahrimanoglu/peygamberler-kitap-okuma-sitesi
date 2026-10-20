@@ -1,5 +1,25 @@
 import type { Config } from "tailwindcss";
 
+/**
+ * Tema token'ı: değeri .tema-veli / .tema-cocuk belirler (globals.css).
+ *
+ * Tailwind 3, düz `var(--x)` rengine opaklık eki (`border-eylem/30`) uygulayamaz
+ * ve o sınıfı sessizce hiç üretmez (20 Eki 2026'da 24 sınıf bu yüzden boştu:
+ * mavi odak halkası, saydam üst şerit, gri kenarlar). Renk bu yüzden fonksiyon:
+ * ek yoksa yine düz `var(--x)`; ek varsa `color-mix` yüzdesi (calc yok — okuma
+ * ekranının CSS modülleriyle aynı biçim, iPad Safari'de de çalışır).
+ */
+function token(ad: string): string {
+  const renk = ({ opacityValue }: { opacityValue?: string }) => {
+    const oran = Number(opacityValue);
+    return Number.isFinite(oran) && oran < 1
+      ? `color-mix(in srgb, var(--${ad}) ${Math.round(oran * 100)}%, transparent)`
+      : `var(--${ad})`;
+  };
+  // Tailwind renk fonksiyonunu çalışırken destekler, tip tanımı yalnız metin bekler.
+  return renk as unknown as string;
+}
+
 const config: Config = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,32 +30,27 @@ const config: Config = {
     extend: {
       // Semantik renkler — değerleri .tema-veli / .tema-cocuk belirler (globals.css)
       colors: {
-        zemin: "var(--zemin)",
+        zemin: token("zemin"),
         yuzey: {
-          DEFAULT: "var(--yuzey)",
-          2: "var(--yuzey-2)",
+          DEFAULT: token("yuzey"),
+          2: token("yuzey-2"),
         },
-        cizgi: "var(--cizgi)",
-        // Tailwind 3, var() renklerine opaklık eki (`/30`) uygulayamaz; sınıf hiç
-        // üretilmez. Saydam tonlar bu yüzden ayrı token: `ipucu` (yer tutucu
-        // yazısı), `eylem-halka` (metin kutusunun odak halkası).
+        cizgi: token("cizgi"),
         murekkep: {
-          DEFAULT: "var(--murekkep)",
-          soluk: "var(--murekkep-soluk)",
-          ipucu: "color-mix(in srgb, var(--murekkep-soluk) 60%, transparent)",
+          DEFAULT: token("murekkep"),
+          soluk: token("murekkep-soluk"),
         },
         vurgu: {
-          DEFAULT: "var(--vurgu)",
-          yumusak: "var(--vurgu-yumusak)",
+          DEFAULT: token("vurgu"),
+          yumusak: token("vurgu-yumusak"),
         },
         eylem: {
-          DEFAULT: "var(--eylem)",
-          koyu: "var(--eylem-koyu)",
-          metin: "var(--eylem-metin)",
-          yumusak: "var(--eylem-yumusak)",
-          halka: "color-mix(in srgb, var(--eylem) 30%, transparent)",
+          DEFAULT: token("eylem"),
+          koyu: token("eylem-koyu"),
+          metin: token("eylem-metin"),
+          yumusak: token("eylem-yumusak"),
         },
-        "okuma-yuzey": "var(--okuma-yuzey)",
+        "okuma-yuzey": token("okuma-yuzey"),
         // Sabit paletler (tema dışı özel kullanımlar için)
         gece: {
           700: "#1e2f52",

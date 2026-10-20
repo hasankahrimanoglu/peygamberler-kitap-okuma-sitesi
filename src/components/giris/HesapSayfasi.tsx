@@ -7,7 +7,7 @@ import { Buton, Kart } from "../ui";
 
 /** Hesap formlarının metin kutusu: krem zemin, odakta yeşil kenar ve halka. */
 export const GIRDI_SINIFI =
-  "h-14 w-full rounded-buton border border-cizgi bg-zemin px-4 text-base font-semibold text-murekkep outline-none transition placeholder:text-murekkep-ipucu focus:border-eylem focus:ring-2 focus:ring-eylem-halka";
+  "h-14 w-full rounded-buton border border-cizgi bg-zemin px-4 text-base font-semibold text-murekkep outline-none transition placeholder:text-murekkep-soluk/60 focus:border-eylem focus:ring-2 focus:ring-eylem/30";
 
 /**
  * Giriş, şifre belirleme ve "Şifremi unuttum" sayfalarının ortak çerçevesi:

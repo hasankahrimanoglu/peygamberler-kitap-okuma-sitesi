@@ -20,7 +20,9 @@
   --yuzey-2: #f4eddd;
   --cizgi: #e7dcc5;
   --murekkep: #3d2b1f;
-  --murekkep-soluk: #8a7260;
+  /* İkincil metin: zeminde 4,98, kartta 5,29, bej panelde 4,61 kontrast
+     (REVİZE 20 Eki 2026 — eski #8a7260 4,5 sınırının altındaydı). */
+  --murekkep-soluk: #7d6656;
   --vurgu: #c9a227;
   --vurgu-yumusak: #f4e9c8;
   --eylem: #2e7d5b;

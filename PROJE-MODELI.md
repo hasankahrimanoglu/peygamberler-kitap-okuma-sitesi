@@ -121,6 +121,17 @@ Görsel dosyası gerekmez: anahtar unvan adından türetilir ve yol
 - Vurgu: nane/açık yeşil (#E8F3EA zeminler, #2E7D5B aksiyon)
 - Başlık: sıcak kahve (#4A3426 civarı)
 - Altın: rozet/madalya vurgularında (#C9A227 civarı)
+- İkincil metin (`--murekkep-soluk`): **#7D6656** *(REVİZE — 20 Eki 2026,
+  Hasan: eski #8A7260 sayfa zemininde 4,18:1, bej iç panelde 3,87:1 veriyordu;
+  normal metin için erişilebilirlik sınırı 4,5:1. Yeni değer zeminde 4,98,
+  kartta 5,29, bej panelde 4,61. E-posta şablonundaki aynı renk de değişti.)*
+
+**Tailwind opaklık eki (DÜZELTME — 20 Eki 2026).** Tema renkleri `var(--x)`
+olduğu için Tailwind 3 `border-eylem/30` gibi sınıfları hiç üretmiyordu: veli
+panelinde 24 sınıf boştu (metin kutularında varsayılan **mavi** odak halkası,
+saydam üst şerit ve alt menü, gri kenarlar). Renkler `tailwind.config.ts`'te
+fonksiyonla tanımlanır: ek yoksa düz `var(--x)`, ek varsa `color-mix` yüzdesi.
+Opaklık eki artık her tema renginde kullanılabilir.
 
 **Çocuk tarafı (macera):**
 - Zemin: gece indigosu (#17275C) + yıldız dokusu
