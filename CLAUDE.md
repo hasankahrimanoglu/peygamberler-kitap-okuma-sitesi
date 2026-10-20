@@ -227,7 +227,9 @@ Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
   Ne Öğrendik (3 madde) → (varsa) Bugüne Taşı → Rozet Kapısı.
   Kurallar: seçim hikâyeyi DALLANDIRMAZ; doğru cevap seçim anında AÇIKLANMAZ;
   bölüm sonunda YALNIZCA seçilen şıkkın karşılaştırma metni gösterilir; seçim
-  aynı okuma oturumunda tutulur (kalıcı kayıt S5'tir, karıştırma).
+  yalnız sayfa yenilenince korunur, bölüm haritadan ya da başka bölümden
+  açılınca soru yeniden cevaplanır (REVİZE 20 Eki 2026; ilk seçim kalıcı S5
+  kaydında kalır, karıştırma).
 - **Bölüm TEK SAYFADA KAYDIRILIR (KARAR 26 Tem 2026 — Faz 6.2):** sayfa yok,
   **durak** var. Sayfa bölme / sayfa çevirme / iç kaydırma alanı KULLANILMAZ;
   alt gezinme çubuğu ve "Sayfa 3 / 12" göstergesi KALDIRILDI. Yerine **adım

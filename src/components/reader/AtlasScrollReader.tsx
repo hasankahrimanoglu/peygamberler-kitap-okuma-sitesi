@@ -46,6 +46,16 @@ const YAZI_ORNEKLERI = [styles.yaziOrnekKucuk, styles.yaziOrnekNormal, styles.ya
 const YAZI_ANAHTARI = "okuma-yazi-boyutu";
 /** Işıl'ın sözlük ipucu, çocuk bir kelimeye dokunana kadar görünür (3.10.5). */
 const SOZLUK_IPUCU_ANAHTARI = "isil-sozluk-ipucu-goruldu";
+/** Sayfa yenileme işareti (sessionStorage): Sen Olsaydın seçimi yalnız yenilemede korunur. */
+const YENILEME_ANAHTARI = "okuma-yenileniyor";
+/** Yenilemeden sonra sayfanın yeniden açılması için tanınan süre (yavaş bağlantı payıyla). */
+const YENILEME_SURESI_MS = 30_000;
+/**
+ * Bu sayfa yüklemesinde okuyucunun ilk açılışı mı? Yenileme yalnız ilk açılışta
+ * tanınır; aynı yüklemede haritadan dönülen bölüm baştan başlar. Modül
+ * düzeyinde: tam sayfa yüklemesinde sıfırlanır, istemci içi geçişte kalır.
+ */
+let sayfaYuklemesindeIlkAcilis = true;
 
 function temizMetin(value: string) {
   return value.replace(/\s+/g, " ").trim();
@@ -321,16 +331,54 @@ export function AtlasScrollReader({
     }
   }
 
-  // --- Sen Olsaydın seçimi: sayfa yenilenince korunur (sessionStorage) -------
+  // --- Sen Olsaydın seçimi: yalnız sayfa yenilenince korunur (REVİZE 20 Eki 2026)
+  // Haritadan ("Tekrar Oku") ya da başka bölümden gelindiğinde soru yeniden
+  // cevaplanır; ilk seçim zaten kalıcı kayıttadır (S5). Yenilemeyi ayırmak için
+  // `pagehide`'da bölüm işaretlenir: istemci içi geçişte bu olay olmaz. İşaret
+  // silinmez, kısa sürede eskir (React'in çift çalıştırmasında da tutarlı).
   useEffect(() => {
-    const kayitli = window.sessionStorage.getItem(secimAnahtari);
-    if (kayitli !== "a" && kayitli !== "b" && kayitli !== "c") return;
-    const timer = window.setTimeout(() => {
-      setSecilen(kayitli);
-      setKararOnayli(true);
+    let yenilendi = false;
+    try {
+      const isaret = JSON.parse(window.sessionStorage.getItem(YENILEME_ANAHTARI) ?? "null") as {
+        bolum: string;
+        zaman: number;
+      } | null;
+      yenilendi =
+        sayfaYuklemesindeIlkAcilis &&
+        isaret?.bolum === chapter.id &&
+        Date.now() - isaret.zaman < YENILEME_SURESI_MS;
+    } catch {
+      yenilendi = false;
+    }
+    if (!yenilendi) window.sessionStorage.removeItem(secimAnahtari);
+    // React'in geliştirme modundaki çift çalıştırması aynı turda biter; ikisi de
+    // ilk açılış sayılsın diye işaret bir sonraki turda kapanır.
+    const ilkAcilisZamanlayici = window.setTimeout(() => {
+      sayfaYuklemesindeIlkAcilis = false;
     }, 0);
-    return () => window.clearTimeout(timer);
-  }, [secimAnahtari]);
+
+    const yenileniyor = () => {
+      window.sessionStorage.setItem(
+        YENILEME_ANAHTARI,
+        JSON.stringify({ bolum: chapter.id, zaman: Date.now() }),
+      );
+    };
+    window.addEventListener("pagehide", yenileniyor);
+
+    const kayitli = yenilendi ? window.sessionStorage.getItem(secimAnahtari) : null;
+    const timer =
+      kayitli === "a" || kayitli === "b" || kayitli === "c"
+        ? window.setTimeout(() => {
+            setSecilen(kayitli);
+            setKararOnayli(true);
+          }, 0)
+        : undefined;
+    return () => {
+      window.removeEventListener("pagehide", yenileniyor);
+      if (timer !== undefined) window.clearTimeout(timer);
+      window.clearTimeout(ilkAcilisZamanlayici);
+    };
+  }, [secimAnahtari, chapter.id]);
 
   // --- Bu bölüm daha önce tamamlandı mı? ------------------------------------
   useEffect(() => {
