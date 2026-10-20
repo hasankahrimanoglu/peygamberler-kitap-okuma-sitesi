@@ -2276,7 +2276,9 @@ değiştirmez, yeni görsel yeri açmaz (o aktarımın işidir), commit atmaz.
 **Ödül görselleri 512×512 şeffaf PNG'dir** (REVİZE 7 Ağu 2026 — PROJE-MODELI
 6.1; eskiden SVG'ydi). Rozet, madalya ve unvan dosyaları **elle konmaz**: iç
 görsel `gorsel-kaynaklari/` altına konur, ortak çerçeveyi `npm run odul-cerceve`
-çizer ve aynı adla yazar (REVİZE 20 Eki 2026).
+çizer ve aynı adla yazar (REVİZE 20 Eki 2026). Betik 21 Eki 2026'dan beri
+**paletli PNG** yazar (rozet ~45 KB, madalya ~75 KB, unvan ~55 KB, durak
+336 px ~40 KB); elle kaydedilen tam renkli PNG sayfayı 4–5 kat ağırlaştırır.
 
 | Klasör | Kalıp | Kurulan | Not |
 |---|---|---|---|

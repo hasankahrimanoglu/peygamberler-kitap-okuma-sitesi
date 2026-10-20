@@ -519,9 +519,10 @@ async function unvanSvg(ikonDosya) {
 M = RENKLER.mavi;
 // ---------------- komut satırı ----------------
 // Görseller sitede küçültülmeden sunulur (düz <img>), dosya boyutu doğrudan sayfa
-// ağırlığıdır. Durak ekranda en fazla 112 px çizilir: 3x ekran için 336 px ve
-// paletli PNG yeter (PROJE-MODELI 6.1).
-async function yaz(svg, hedef, { boyut = 512, palet = false } = {}) {
+// ağırlığıdır; bu yüzden hepsi paletli PNG'dir (görünür fark yok, ~%70 küçük).
+// Rozet/madalya/unvan 512 px kalır (kutlama ve kapak ortasında büyük çizilir);
+// durak ekranda en fazla 112 px çizildiği için 336 px (PROJE-MODELI 6.1).
+async function yaz(svg, hedef, { boyut = 512, palet = true } = {}) {
   fs.mkdirSync(path.dirname(hedef), { recursive: true });
   await sharp(Buffer.from(svg)).resize(boyut, boyut)
     .png(palet ? { compressionLevel: 9, palette: true, quality: 90, effort: 10 } : { compressionLevel: 9 })
@@ -547,7 +548,7 @@ async function durakUret(k) {
   const kaynak = path.join(PROJE, "gorsel-kaynaklari", "duraklar", `hz-${k}.jpg`);
   if (!fs.existsSync(kaynak)) throw new Error(`Durak sahnesi yok: ${path.relative(PROJE, kaynak)}`);
   maskeler = [];
-  await yaz(svgYap(durak(), await veriUri(kaynak)), path.join(PROJE, "public/kitaplar", `hz-${k}`, "harita-durak.png"), { boyut: 336, palet: true });
+  await yaz(svgYap(durak(), await veriUri(kaynak)), path.join(PROJE, "public/kitaplar", `hz-${k}`, "harita-durak.png"), { boyut: 336 });
 }
 async function unvanUret(anahtarlar) {
   const U = path.join(PROJE, "gorsel-kaynaklari", "unvanlar");

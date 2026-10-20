@@ -1639,7 +1639,11 @@ public/
   - **Tek kural.** Rozet PNG, madalya SVG gibi karışık bir düzen ileride "hangi
     ödül hangi uzantıda?" tuzağı üretirdi; üç ödül tipi birlikte taşındı.
 
-  Dosya boyutu tek dezavantajdır ve sıkıştırmayla karşılanır. Yedek
+  Dosya boyutu tek dezavantajdır ve sıkıştırmayla karşılanır. **21 Ekim
+  2026:** görseller sitede küçültülmeden (düz `<img>`) sunulduğu için çerçeve
+  betiği hepsini **paletli PNG** yazar — 512×512 kalır, görünür fark yoktur;
+  rozet ~45 KB, madalya ~75 KB, unvan ~55 KB (öncesi 230–350 KB). Ödüllerim
+  sayfasının ödül görselleri ~25 MB'tan ~5,4 MB'a indi. Yedek
   (placeholder) dosyalar SVG kalır — onlar ayrı dosyalardır, her zaman çözülür.
   Final Kapısı ikonu da SVG kalır; o bir arayüz ikonudur, ödül görseli değildir.
 - **Ortak ödül çerçevesi — kodla çizilir (KARAR 20 Ekim 2026, Hasan).** Rozet,
