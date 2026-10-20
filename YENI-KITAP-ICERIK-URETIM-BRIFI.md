@@ -417,10 +417,24 @@ Kaynak/kurgu sınırı notu: ...
   daha”, “umursamazdım”, “karıştırırdım”, “beklerdim”, “vazgeçerdim” gibi
   davranışı baştan kötü gösteren kelimeler; doğru seçenekte de yalnız ona
   ait “sakin olur, düşünüp, nazikçe” gibi süslemeler yer almaz.
+- **Kalıp ipucu oluşmaz (KARAR 20 Eki 2026, Hasan):** yalnız doğru şıkta
+  tekrar eden bir ifade, çocuğa doğru şıkkı ele verir.
+  - Allah, dua ve şükür ifadesi doğru şıkta yalnız bölümün değeri doğrudan
+    Allah'a yönelikse (dua, tövbe, şükür, Allah'a güven) yer alır; değilse
+    değer davranışla anlatılır. Zayıf şıkka dua ya da şükür konmaz: Seçimini
+    Karşılaştır o şıkkı ayırdığında dua zayıf bir seçim gibi görünür.
+  - “Güvendiğim bir büyüğe anlatırdım” güvenlik, öfke ve haksız suçlama
+    sorularında doğru şıkta kalır. Diğer sorularda bir büyüğe ya da öğretmene
+    başvurmak zayıf şıkta da geçebilir; böylece “büyüğe başvuran şık doğrudur”
+    ipucu oluşmaz.
 - **Üç seçenek benzer uzunlukta ve tondadır:** karakter sayıları arasındaki
   fark %20'yi geçmez; doğru seçenek en uzun seçenek olarak tekrar etmez
   (kitap genelinde en fazla bölüm sayısının üçte biri kadar). Çocuk şıkkı
   uzunluğundan ya da tonundan değil, düşünerek seçmelidir.
+- **Doğru şıkkın uzunluk sırası dağıtılır (KARAR 20 Eki 2026, Hasan):** kitap
+  içinde doğru şık bölümlerin yaklaşık üçte birinde en uzun (yukarıdaki kota),
+  üçte birinde orta, üçte birinde en kısa seçenektir. Böylece “en kısa şık
+  doğrudur” ipucu da oluşmaz.
 - Doğru harf kitap genelinde A/B/C arasında dengeli dağılır; harflerin kullanım
   sayıları arasındaki fark en fazla 1 olur. Aynı harf üç bölüm üst üste gelmez.
 - Seçim anında geri bildirim yoktur. Sabit nötr not:

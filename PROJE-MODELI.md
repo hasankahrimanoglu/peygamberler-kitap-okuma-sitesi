@@ -2196,6 +2196,8 @@ Kurallar:
       brifinin 7.6 bölümüne üç kural eklendi (gerçekçi zayıf şık, ele veren
       kelime yok, benzer uzunluk ve ton). Yeni kitaplar bu kuralla yazılır;
       mevcut 84 soru içerik oturumlarında kitap kitap düzeltilir.
+- [x] **Düzeltmede çıkan iki ölçüt** (dua/şükür ve büyüğe anlatma kalıbı,
+      doğru şıkkın uzunluk sırası) brifin 7.6 bölümüne eklendi.
 
 ### 20 Ekim 2026 (Faz 7, 3. adım — satın alma ve ilk giriş; Hasan onayı, bkz. Bölüm 8)
 
