@@ -235,9 +235,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Arkadaşların hep birlikte bir şey yapıyor ve sana da "Sen bunu çok güzel yaparsın" diyor. Ama sen yaptıkları şeyi doğru bulmuyorsun. Ne yaparsın?
-A) Beni övdükleri için kırmaz, ben de yapardım.
-B) Teşekkür eder ama doğru bulmadığım bir işe katılmazdım.
-C) Onlara kızar, bir daha hiç konuşmazdım.
+A) Övgüleri için teşekkür eder, ben de onlarla yapardım.
+B) Teşekkür eder ama doğru bulmadığım bu işe katılmazdım.
+C) Bu seferlik yapar, bir sonrakine katılmayacağımı söylerdim.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -269,7 +269,7 @@ Nûh başını kaldırıp uzun süre yıldızlara baktı. Çocukken sorduğu sor
 
 A) Arkadaşlarını kırmak istememen çok anlaşılır. Nûh ise övgüye rağmen doğru bulmadığı işi yapmadı ve ustalığını güzel işlere sakladı.
 B) Sen de Nûh gibi davrandın. O da hem nazik kaldı hem de doğru bulmadığı işe katılmadı.
-C) Kızgınlık insanın içinde kolayca büyür. Nûh ise kızmadan, sakin bir soruyla düşüncesini anlattı.
+C) Arkadaşlarını bir anda bırakmak zor gelebilir. Nûh ise “bir seferlik” bile demedi; doğru bulmadığı işi baştan yapmadı.
 
 #### NE ÖĞRENDİK
 
@@ -419,9 +419,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Sınıfta doğru olduğunu bildiğin bir şeyi söylüyorsun ve birkaç arkadaşın gülmeye başlıyor. Ne yaparsın?
-A) Sakin kalır, düşüncemi nazik bir dille yeniden anlatırdım.
-B) Utanır, bir daha sınıfta hiç konuşmazdım.
-C) Ben de onlarla dalga geçerek karşılık verirdim.
+A) Gülüşlere rağmen düşüncemi yeniden anlatırdım.
+B) Utandığım için o gün sınıfta başka söz almazdım.
+C) Gülüşlere ben de katılır, konuyu şakaya vururdum.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -454,7 +454,7 @@ Ertesi sabah Hz. Nûh tezgâhını yeniden kurdu ve ilk gelen yolcuya yine gül�
 
 A) Sen de Hz. Nûh gibi davrandın. O da gülüşlere rağmen kızmadı, sözünü yumuşak bir dille yeniden söyledi.
 B) Gülüşler insanı gerçekten utandırabilir. Hz. Nûh ise susmadı; ertesi sabah tezgâhını yeniden kurdu.
-C) Gülüşlere karşılık vermek istemek çok doğal. Hz. Nûh ise kimseyle dalga geçmedi, gidenler için dua etti.
+C) Şakaya vurmak o anı kolaylaştırabilir. Hz. Nûh ise doğru bildiğini şakaya vurmadı; sözünü yumuşak bir dille yeniden söyledi.
 
 #### NE ÖĞRENDİK
 
@@ -605,8 +605,8 @@ Bu bölümde yok.
 
 Soru: Grubundaki arkadaşların, sınıfa yeni gelen sessiz bir çocuğu oyuna almak istemiyor. "Onu alırsan biz oynamayız" diyorlar. Ne yaparsın?
 A) Grubumu kaybetmemek için yeni çocuğu oyuna almazdım.
-B) Yeni çocukla gizlice oynar, arkadaşlarıma hiç söylemezdim.
-C) Yeni çocuğun da bizim kadar değerli olduğunu söyler, onu oyuna çağırırdım.
+B) Yeni çocukla başka bir zaman, arkadaşlarım görmeden oynardım.
+C) Arkadaşlarıma rağmen yeni çocuğu oyuna davet ederdim.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -791,9 +791,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Uzun süredir her gün küçük bir iyilik yapıyorsun; örneğin sınıftaki çiçekleri suluyorsun. Ama kimse fark etmiyor, teşekkür eden de yok. Ne yaparsın?
-A) Kimse görmese de sürdürürdüm, çünkü yaptığım iş zaten değerli.
+A) Kimse fark etmese de çiçekleri sulamayı sürdürürdüm.
 B) Fark edilmediği için bırakır, başka bir şeye geçerdim.
-C) Herkese ne kadar uzun süredir yaptığımı anlatıp teşekkür beklerdim.
+C) Fark etsinler diye öğretmene suladığımı söylerdim.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -823,7 +823,7 @@ O, bunca yıl insanlardan hiçbir karşılık beklememiş, bütün umudunu yaln�
 
 A) Sen de Hz. Nûh gibi davrandın. O da yüzlerce yıl, çoğu insan dinlemese bile çağırmayı sürdürdü.
 B) Fark edilmemek insanın hevesini kırabilir. Hz. Nûh ise sonuç görmese de her sabah tepeye yeniden çıktı.
-C) Teşekkür duymak güzeldir. Hz. Nûh ise karşılığı insanlardan değil, yalnız Allah'tan bekledi.
+C) Emeğinin görülmesini istemek çok doğal. Hz. Nûh ise karşılığı insanlardan değil, yalnız Allah'tan bekledi.
 
 #### NE ÖĞRENDİK
 
@@ -980,9 +980,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Okulda yapılacak bir gösteri için haftalar öncesinden hazırlanmaya başladın. Arkadaşların "Daha çok var, boşuna uğraşıyorsun" diye seninle dalga geçiyor. Ne yaparsın?
-A) Gülmesinler diye hazırlığı bırakır, son güne kadar beklerdim.
-B) Gülseler de hazırlığımı sakin sakin sürdürürdüm.
-C) Ben de onların hazırlıksız olmasıyla dalga geçerdim.
+A) Gülmesinler diye hazırlığı son haftaya bırakırdım.
+B) Gülseler de hazırlığımı her gün biraz biraz sürdürürdüm.
+C) Onlar haklı olabilir diye hazırlığa biraz ara verirdim.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1011,7 +1011,7 @@ O akşam Hz. Nûh gemiye son kez dışarıdan baktı. Gökyüzü açıktı ve ha
 
 A) Gülüşlerden kaçmak istemek çok anlaşılır. Hz. Nûh ise gülenlere rağmen hazırlığı bırakmadı ve gemiyi vaktinde bitirdi.
 B) Sen de Hz. Nûh gibi davrandın. O da alaylara aldırmadan, sakin sakin çalışmayı sürdürdü.
-C) Alay edene alayla karşılık vermek kolay gelebilir. Hz. Nûh ise kimseyle dalga geçmedi, yalnızca işine döndü.
+C) Başkalarının sözü insanı şüpheye düşürebilir. Hz. Nûh ise ne zaman lazım olacağını bilmese de hazırlığı tehlike gelmeden bitirdi.
 
 #### NE ÖĞRENDİK
 
@@ -1162,9 +1162,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Daha önce hiç yapmadığın ve biraz korktuğun bir şeye başlamak üzeresin; örneğin ilk yüzme dersine giriyorsun. Hazırlığını yaptın, öğretmenin de yanında. Ne yaparsın?
-A) Korkum tamamen geçene kadar hiç başlamazdım.
-B) Öğretmenimi beklemeden, kendi bildiğim gibi suya atlardım.
-C) Allah'ın adını anar, yaptığım hazırlığa güvenip adımımı atardım.
+A) Korkum biraz geçsin diye önce kenardan diğerlerini izlerdim.
+B) Öğretmenimden ilk gün yalnızca ayaklarımı suya sokmayı isterdim.
+C) Allah'ın adını anar, öğretmenimle birlikte suya girerdim.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1196,7 +1196,7 @@ Pencereden bakınca, gözün gördüğü her yerin suyla kaplanmaya başladığ�
 #### SEÇİMİNİ KARŞILAŞTIR
 
 A) Korku çok doğal bir duygudur. Gemidekiler de korktu, ama beklemek yerine Allah'ın adını anıp gemiye bindiler.
-B) Heyecanla hemen atlamak isteyebilirsin. Hz. Nûh ise gemiyi Allah'ın bildirdiği gibi yaptı ve herkesi düzenle gemiye aldı.
+B) Yavaş başlamak istemen anlaşılır. Gemidekiler de korkuyordu, ama hazırlıklarını yapmışlardı ve Allah'ın adıyla gemiye bindiler.
 C) Sen de gemidekiler gibi davrandın. Onlar da hazırlıklarını yapıp Allah'ın adıyla gemiye bindiler.
 
 #### NE ÖĞRENDİK
@@ -1343,9 +1343,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Çok sevdiğin bir arkadaşın tehlikeli bir oyun oynuyor; örneğin arabaların geçtiği yolun kenarında top oynuyor. Onu birkaç kez çağırdın ama seni dinlemiyor. Ne yaparsın?
-A) Onu sevgiyle bir kez daha çağırır, sonra hemen bir yetişkine haber verirdim.
-B) Beni dinlemediği için ona küser, kendi hâline bırakırdım.
-C) Onu zorla çekip götürmeye çalışır, gerekirse onunla kavga ederdim.
+A) Onu bir kez daha çağırır, sonra hemen bir yetişkine haber verirdim.
+B) Belki dinler diye onu biraz daha uzaktan çağırmayı sürdürürdüm.
+C) Oyunu bitince ona yolun tehlikeli olduğunu anlatmayı düşünürdüm.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1375,8 +1375,8 @@ Bir sabah uyandıklarında her yerin derin bir sessizliğe gömüldüğünü far
 #### SEÇİMİNİ KARŞILAŞTIR
 
 A) Sen de Hz. Nûh gibi davrandın. O da oğlunu son ana kadar sevgiyle çağırdı, sonra Rabbine yöneldi.
-B) Dinlenmemek insanı kırar. Hz. Nûh ise oğluna küsmedi; son ana kadar ona şefkatle seslendi.
-C) Sevdiğin birini korumak istemen çok güzel. Hz. Nûh ise kimseyi zorlamadı; çağırdı ve kararı ona bıraktı.
+B) Onu çağırmayı sürdürmen sevgini gösterir. Hz. Nûh da oğlunu son ana kadar çağırdı; tehlikede bir yetişkinden yardım istemek de önemlidir.
+C) Onu kızdırmak istememen anlaşılır. Hz. Nûh ise dalgalar yükselirken hemen seslendi; tehlike anında hemen bir yetişkine haber vermek gerekir.
 
 #### NE ÖĞRENDİK
 
@@ -1523,9 +1523,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Uzun ve zor bir dönemden sonra yeniden başlıyorsun; örneğin yeni bir şehre taşındınız ve her şey çok yabancı. Ne yaparsın?
-A) Eski günleri düşünüp üzülür, hiçbir şeye başlamak istemezdim.
-B) Elimdekiler için şükreder, küçük bir işten başlayarak yeniden kurardım.
-C) Her şey kendiliğinden eskisi gibi olana kadar beklerdim.
+A) İlk günlerde eski arkadaşlarımla konuşarak oyalanırdım.
+B) Elimdekilere şükreder, küçük bir işle başlardım.
+C) Her şeye alışana kadar evden pek çıkmamayı seçerdim.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1555,9 +1555,9 @@ Yeni köyün evlerinin, bahçelerinin ve fidanlarının üzerinde akşam güneş
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Eski günleri özlemek çok doğal. Gemidekiler de yabancılık çekti, ama üzülüp beklemek yerine işe koyuldular.
+A) Eski günleri özlemek çok doğal. Gemidekiler de yabancılık çekti, ama ertesi sabah hep birlikte işe koyuldular.
 B) Sen de Hz. Nûh gibi davrandın. O da önce şükretti, sonra bir fidan dikip yeniden başladı.
-C) Beklemek bazen gerekir. Hz. Nûh ise yeni hayatın kendiliğinden kurulmasını beklemedi; ertesi sabah işe başladı.
+C) Yeni bir yere alışmak zaman alır. Hz. Nûh ise yeni hayatın kendiliğinden kurulmasını beklemedi; ertesi sabah işe başladı.
 
 #### NE ÖĞRENDİK
 

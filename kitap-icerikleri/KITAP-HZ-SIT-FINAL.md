@@ -698,9 +698,9 @@ Bu bölümde yok.
 
 ```text
 Soru: Evinde birinin uzun zamandır üzgün olduğunu görüyorsun ve kimse onu neşelendiremiyor. Ne yaparsın?
-A) Rahatsız etmemek için uzaktan bakar, hiçbir şey söylemezdim.
-B) Yanına oturur, bir şey anlatmak isterse sabırla dinlerdim.
-C) Onu güldürmek için hemen şaka yapar, konuyu değiştirirdim.
+A) Rahatsız etmemek için onu uzaktan izler, yanına gitmezdim.
+B) Yanına oturur, bir şey anlatmak isterse onu dinlerdim.
+C) Onu güldürmek için şaka yapar, konuyu değiştirirdim.
 Doğru seçenek: B
 Seçim sonrası nötr not: "Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."
 ```
@@ -859,9 +859,9 @@ Bu bölümde yok.
 
 ```text
 Soru: Bir şeyin tehlikeli olduğunu fark ettin, ama kimse seni dinlemiyor. Ne yaparsın?
-A) Kimse dinlemiyorsa ben de vazgeçerdim.
-B) Kızar, onlara darılır ve bir daha hiçbir şey söylemezdim.
-C) Bir kez daha sakince anlatır, sonra kendi hazırlığımı yapardım.
+A) Dinlemedikleri için uyarmayı bırakıp işime dönerdim.
+B) Onlara darılıp yalnızca kendi hazırlığımı yapmaya bakardım.
+C) Bir kez daha uyarır, sonra bir büyüğe de haber verirdim.
 Doğru seçenek: C
 Seçim sonrası nötr not: "Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."
 ```
@@ -923,11 +923,11 @@ Aşağıda Şît, iri bir taşın önünde çalışıyor, ona vura vura üzerind
 
 ### SEÇİMİNİ KARŞILAŞTIR
 
-A) Vazgeçmek kolaydır. Hikâyede Şît son bir kez daha seslendi ve o sesi duyup peşinden gelen birkaç kişi oldu.
+A) Dinlenmemek insanın hevesini kırar. Şît ise son bir kez daha seslendi ve o sesi duyup peşinden gelen birkaç kişi oldu.
 
-B) Darılmak insanı yalnızlaştırır. Şît dinlenmediği hâlde kimseye kırılmadı ve hazırlığını tamamladı.
+B) Kendini korumak önemlidir. Şît ise darılmadı; kendi hazırlığını yaparken son bir kez daha seslenip başkalarını da düşündü.
 
-C) Hikâyede Şît tam olarak bunu yaptı: bir kez daha seslendi, sonra vadiye sığındı. Hem sesini duyurdu, hem güvende kaldı.
+C) Sen de Şît gibi davrandın. O da dinlenmese bile bir kez daha seslendi; tehlikeyi bir büyüğe bildirmek de seni ve onları korur.
 
 ### NE ÖĞRENDİK
 
@@ -1031,9 +1031,9 @@ Bu bölümde yok.
 
 ```text
 Soru: Uzun süredir uğraştığın bir şey son anda bozuldu. Ne yaparsın?
-A) Nerede yanlış yaptığımı bulur, baştan denerdim.
-B) Artık uğraşmaz, başka bir işe geçerdim.
-C) Kimse görmesin diye bozulduğunu saklardım.
+A) Nerede yanlış yaptığımı bulup işi baştan denerdim.
+B) Bu işin olmayacağını düşünüp başka bir işe geçerdim.
+C) Üzüldüğümü belli etmemek için bozulanı kaldırırdım.
 Doğru seçenek: A
 Seçim sonrası nötr not: "Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."
 ```
@@ -1093,7 +1093,7 @@ A) Şît de tam bunu yaptı. Dağılan taşlara tek tek bakıp eksiğin ne oldu�
 
 B) Başka bir işe geçmek bazen doğrudur. Ama hikâyedeki çözüm, tam da vazgeçilmediği için ortaya çıktı.
 
-C) Saklamak kimseye yardımcı olmaz. Şît yıkılan duvarı herkesin gözü önünde inceledi ve çaresini sonra buldu.
+C) Üzüntünü saklamak istemen çok doğal. Şît ise yıkılan duvarı herkesin gözü önünde inceledi ve çaresini sonra buldu.
 
 ### NE ÖĞRENDİK
 
@@ -1209,9 +1209,9 @@ Bu bölümde yok.
 
 ```text
 Soru: Sana emanet edilen bir şeyi daha sağlam yapmak istiyorsun, ama başkaları dokunmana karşı çıkıyor. Ne yaparsın?
-A) Onlar yokken kendi bildiğim gibi yapardım.
-B) Niçin yapmak istediğimi anlatır, onların da razı olmasını beklerdim.
-C) Hemen vazgeçer, bir daha hiç konuşmazdım.
+A) Onlar yokken işi kendi bildiğim gibi yapardım.
+B) Nedenini anlatır, onlar razı olunca yapardım.
+C) Onlar kırılmasın diye bu fikri bir kenara bırakırdım.
 Doğru seçenek: B
 Seçim sonrası nötr not: "Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."
 ```
@@ -1277,11 +1277,11 @@ Hz. Şît o gün sessizce vefat etti. Geriye taştan evler, sağlam bir temel ve
 
 ### SEÇİMİNİ KARŞILAŞTIR
 
-A) Habersiz yapmak güveni zedeler. Şît, kimse yardıma gelmediğinde bile gizlice işe girişmedi.
+A) Emaneti korumak istemen çok güzel. Şît ise kimse yardıma gelmediğinde bile gizlice işe girişmedi; insanların razı olmasını bekledi.
 
 B) Hikâyede Şît tam olarak bunu yaptı. Ölçünün değişmeyeceğini anlattı, zorlamadan bekledi ve insanlar sonunda kendileri istedi.
 
-C) Vazgeçmek kolaydı. Ama Şît isteğini kalbinde tuttu ve sırası gelince yaptı.
+C) Onları kırmak istememen anlaşılır. Şît ise isteğini kalbinde tuttu ve sırası gelince yaptı.
 
 ### NE ÖĞRENDİK
 

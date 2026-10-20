@@ -837,24 +837,24 @@ export const books: BookDefinition[] = [
         has_question: true,
         question: {
           title: "Beklenen Misafir",
-          prompt: "Öğretmenin sana önemli bir görev verdi ama nasıl yapacağını henüz bilmiyorsun. Ne yapardın?",
+          prompt: "Öğretmenin sana önemli bir görev verdi ama nasıl yapacağını henüz bilmiyorsun. Ne yaparsın?",
           afterChoiceNote: "Cevabını aklında tut. Hz. Âdem'in büyük sorumluluğa nasıl hazırlandığını okuyarak seçimini karşılaştır.",
           correctOption: "b",
           options: [
             {
               id: "a",
-              text: "Zor göründüğü için görevi hemen bırakırdım.",
-              comparison: "Görevden uzaklaşmak kısa süreli bir rahatlık verebilirdi; hikâye ise sorumluluğun öğrenerek taşındığını gösterdi.",
+              text: "Yanlış yapmamak için görevi bilen bir arkadaşıma verirdim.",
+              comparison: "Görevin iyi yapılmasını istemen anlaşılır. Hikâyede ise Allah, görev verdiği Hz. Âdem'e öğrenme yeteneği de verdi.",
             },
             {
               id: "b",
-              text: "Görevi kabul eder, öğrenmek için yardım isterdim.",
+              text: "Görevi kabul eder, nasıl yapılacağını sorarak öğrenirdim.",
               comparison: "Seçimin hikâyedeki değerle uyumlu. Hz. Âdem de büyük görevine Allah'ın öğrettikleriyle hazırlandı.",
             },
             {
               id: "c",
-              text: "Biliyormuş gibi davranır, kimseye soru sormazdım.",
-              comparison: "Her şeyi biliyormuş gibi davranmak öğrenmeyi zorlaştırırdı; hikâyede yardım ve bilginin değeri öne çıktı.",
+              text: "Öğretmenimi meşgul etmemek için kendi bildiğim gibi yapardım.",
+              comparison: "Öğretmenini yormamak istemen düşünceli bir davranış. Hikâyede ise insanın yolculuğu, ona öğretilenleri öğrenerek başladı.",
             },
           ],
         },
@@ -927,24 +927,24 @@ export const books: BookDefinition[] = [
         has_question: true,
         question: {
           title: "Bilginin Armağanı",
-          prompt: "Bir arkadaşın yeni bir konuyu senden önce öğrendi. Ne yapardın?",
+          prompt: "Bir arkadaşın, senin de öğrenmek istediğin yeni bir konuyu senden önce öğrendi ve sınıfta anlattı. Ne yaparsın?",
           afterChoiceNote: "Cevabını aklında tut. Meleklerin ve İblis'in farklı seçimlerini okuyarak kararını karşılaştır.",
           correctOption: "c",
           options: [
             {
               id: "a",
-              text: "Onun başarısını küçümser, aslında önemli olmadığını söylerdim.",
-              comparison: "Başkasının başarısını küçümsemek İblis'in kibrine benzeyen bir kapı açabilirdi.",
+              text: "Ondan geri kalmamak için konuyu evde tek başıma çalışırdım.",
+              comparison: "Çalışmak istemen güzel. Hikâyede melekler ise bilmediklerini kabul etti; başkasından öğrenmek de bu alçak gönüllülüğün parçasıdır.",
             },
             {
               id: "b",
-              text: "Bir daha onunla aynı ortamda bulunmak istemezdim.",
-              comparison: "Uzaklaşmak kendi öğrenme fırsatını da azaltırdı; melekler gerçeğe açık kaldılar.",
+              text: "Bozulduğumu belli etmemek için konuyu değiştirirdim.",
+              comparison: "Bozulduğunu göstermemek o an seni rahatlatabilir. Hikâyede melekler ise bilmediklerini saklamadı, açıkça kabul etti.",
             },
             {
               id: "c",
-              text: "Onu tebrik eder, ben de öğrenmek için çalışırdım.",
-              comparison: "Seçimin hikâyedeki değerle uyumlu. Başkasının başarısı, senin değerini azaltmaz.",
+              text: "Onu tebrik eder, bu konuyu ondan öğrenmek isterdim.",
+              comparison: "Seçimin hikâyedeki değerle uyumlu. Melekler de bilmediklerini kabul etti; başkasının başarısı senin değerini azaltmaz.",
             },
           ],
         },
@@ -1025,19 +1025,19 @@ export const books: BookDefinition[] = [
         has_question: true,
         question: {
           title: "Cennetteki Uyarı",
-          prompt: "Ailen evdeki birçok şeyi kullanabileceğini, yalnızca bir kutuyu açmaman gerektiğini söyledi. Ne yapardın?",
+          prompt: "Ailen evdeki birçok şeyi kullanabileceğini, yalnızca bir kutuyu açmaman gerektiğini söyledi. Ne yaparsın?",
           afterChoiceNote: "Cevabını aklında tut. İblis'in tek bir sınırı nasıl çekici göstermeye çalıştığını okuyarak kararını karşılaştır.",
           correctOption: "a",
           options: [
             {
               id: "a",
-              text: "Nedenini anlamasam da verilen sınıra uyardım.",
+              text: "Nedenini tam anlamasam da verilen sınıra uyardım.",
               comparison: "Seçimin hikâyedeki değerle uyumlu. Güven, her merakı hemen gidermekten daha değerlidir.",
             },
             {
               id: "b",
-              text: "Kimse görmeden kutuyu biraz aralardım.",
-              comparison: "Küçük bir aralık bile verilen sınırı aşmak olurdu; hikâye yaklaşmama uyarısını öne çıkardı.",
+              text: "Açmadan anlamak için kutuyu sallayıp sesini dinlerdim.",
+              comparison: "Kutuyu açmadan bir yol bulmak akıllıca görünebilir. Hikâyede ise korunmanın en güvenli yolunun, sınıra ne kadar yaklaşılabileceğini denememek olduğu anlatıldı.",
             },
             {
               id: "c",
@@ -1126,13 +1126,13 @@ export const books: BookDefinition[] = [
         has_question: true,
         question: {
           title: "Tatlı Fısıltı",
-          prompt: "Bir arkadaşın sana, “Kimse görmez, yasak olanı bir kere denesen ne olur?” dedi. Ne yapardın?",
+          prompt: "Bir arkadaşın sana, “Kimse görmez, yasak olanı bir kere denesen ne olur?” dedi. Ne yaparsın?",
           afterChoiceNote: "Cevabını aklında tut. Hz. Âdem ile eşinin seçiminin neye yol açtığını okuyarak kararını karşılaştır.",
           correctOption: "b",
           options: [
             {
               id: "a",
-              text: "Merakımı gidermek için bir kere denerdim.",
+              text: "Merakımı gidermek için yalnız bir kere denerdim.",
               comparison: "Bir kez denemek de verilen sınırı aşardı; hikâyede küçük görünen seçimin üzüntü getirdiği görüldü.",
             },
             {
@@ -1142,8 +1142,8 @@ export const books: BookDefinition[] = [
             },
             {
               id: "c",
-              text: "Önce arkadaşımın denemesini bekler, sonra karar verirdim.",
-              comparison: "Başkasının davranışını beklemek kendi sorumluluğunu kaldırmazdı; hikâyede ikisi de kendi seçimini taşıdı.",
+              text: "Önce arkadaşımın denemesine bakar, sonra karar verirdim.",
+              comparison: "Arkadaşına bakarak karar vermek temkinli görünebilir. Hikâyede ise Hz. Âdem ile eşinin her biri kendi seçimini taşıdı.",
             },
           ],
         },
@@ -1217,24 +1217,24 @@ export const books: BookDefinition[] = [
         has_question: true,
         question: {
           title: "Tövbenin Kapısı",
-          prompt: "Evde yanlışlıkla bir eşyaya zarar verdin ve bunu kimse görmedi. Ne yapardın?",
+          prompt: "Evde yanlışlıkla bir eşyaya zarar verdin ve bunu kimse görmedi. Ne yaparsın?",
           afterChoiceNote: "Cevabını aklında tut. Hz. Âdem ile Hz. Havva'nın hatalarına nasıl karşılık verdiğini okuyarak seçimini karşılaştır.",
           correctOption: "c",
           options: [
             {
               id: "a",
-              text: "Fark edilmemesi için eşyayı saklardım.",
-              comparison: "Saklamak sorunu görünmez yapabilirdi; hikâyede iyileşme gerçeği kabul etmekle başladı.",
+              text: "Annem üzülmesin diye eşyayı kendim onarmaya çalışırdım.",
+              comparison: "Zararı düzeltmek istemen güzel bir düşünce. Hikâyede ise iyileşme, Hz. Âdem ile Hz. Havva'nın yanlışlarını açıkça kabul etmesiyle başladı.",
             },
             {
               id: "b",
-              text: "Başka birinin yaptığını söylemeyi düşünürdüm.",
-              comparison: "Sorumluluğu başkasına bırakmak hatayı büyütürdü; Hz. Âdem ile eşi birbirini suçlamadı.",
+              text: "Biri sorarsa söylerdim, sormazsa konuyu açmazdım.",
+              comparison: "Sorulunca doğruyu söylemek de dürüstlüktür. Hikâyede ise Hz. Âdem ile Hz. Havva bahane aramadan yanlışlarını kabul etti ve bağışlanma istedi.",
             },
             {
               id: "c",
-              text: "Yaptığımı anlatır, özür diler ve düzeltmeye çalışırdım.",
-              comparison: "Seçimin hikâyedeki değerle uyumlu. Özür ve düzeltme, pişmanlığı güzel bir başlangıca dönüştürür.",
+              text: "Ailemin yanına gidip olanı anlatır, özür dilerdim.",
+              comparison: "Seçimin hikâyedeki değerle uyumlu. Tövbe gibi özür de gerçeği kabul etmekle başlar ve yeni bir kapı açar.",
             },
           ],
         },
@@ -1316,24 +1316,24 @@ export const books: BookDefinition[] = [
         has_question: true,
         question: {
           title: "Yeni Bir Yurt",
-          prompt: "Daha önce hiç yapmadığın önemli bir işle karşılaştın. Ne yapardın?",
+          prompt: "Ailen, bahçenin bir köşesine fide dikme işini ilk kez sana verdi. Daha önce hiç fide dikmedin. Ne yaparsın?",
           afterChoiceNote: "Cevabını aklında tut. Yeryüzündeki yeni hayatın hangi destekle başladığını okuyarak kararını karşılaştır.",
           correctOption: "a",
           options: [
             {
               id: "a",
-              text: "İşi küçük adımlara böler, öğrenerek ilerlerdim.",
+              text: "Önce birkaç fide diker, öğrendikçe devamını getirirdim.",
               comparison: "Seçimin hikâyedeki değerle uyumlu. Yeni başlangıçlar, rehberlik ve küçük adımlarla kolaylaşır.",
             },
             {
               id: "b",
-              text: "Birinin benim yerime yapmasını beklerdim.",
-              comparison: "Yardım istemek güzeldir; fakat kendi sorumluluğumuzu tamamen başkasına bırakamayız.",
+              text: "İş çabuk bitsin diye bütün fideleri aynı gün dikerdim.",
+              comparison: "Hevesle başlamak güzel. Hikâyede ise yeni hayat adım adım ve öğrenerek kuruldu; bazı emeklerin karşılığı zamanla geldi.",
             },
             {
               id: "c",
-              text: "İlk denemede zorlanınca yapamayacağıma karar verirdim.",
-              comparison: "İlk zorluk sonucu belirlemez; yeryüzündeki hayatın kendisi öğrenerek ilerlemeyi gerektirdi.",
+              text: "İlk fideler kurursa bu işin bana göre olmadığını düşünürdüm.",
+              comparison: "İlk sonuç insanı üzebilir. Hikâyede ise zorluklar bir anda kalkmadı; insan bilmediğini öğrenerek ilerledi.",
             },
           ],
         },
@@ -1419,24 +1419,24 @@ export const books: BookDefinition[] = [
         has_question: true,
         question: {
           title: "İki Kardeşin Sınavı",
-          prompt: "Yaptığın bir çalışma seçilmedi, kardeşinin veya arkadaşının çalışması seçildi. İçinde kıskançlık ve öfke hissettin. Ne yapardın?",
+          prompt: "Yaptığın bir çalışma seçilmedi, kardeşinin veya arkadaşının çalışması seçildi. İçinde kıskançlık ve öfke hissettin. Ne yaparsın?",
           afterChoiceNote: "Cevabını aklında tut. Şimdi Kābil'in hangi yolu seçtiğini ve bu seçimin nelere yol açtığını oku.",
           correctOption: "b",
           options: [
             {
               id: "a",
-              text: "Onu suçlar ve öfkemi ondan çıkarırdım.",
-              comparison: "Kābil de öfkesini kardeşine yöneltti. Hikâye, başkasını suçlamanın ve öfkeyle davranmanın çok ağır sonuçlar doğurabileceğini gösterdi.",
+              text: "Bunun haksızlık olduğunu düşünür, öğretmenime itiraz ederdim.",
+              comparison: "Haksızlık olduğunu düşünmen anlaşılır. Hikâye, öfke yükselirken önce durmanın ve sakinleşince konuşmanın insanı koruduğunu gösterdi.",
             },
             {
               id: "b",
-              text: "Biraz uzaklaşır, sakinleşir, neden üzüldüğümü düşünür ve güvendiğim bir büyüğe anlatırdım.",
-              comparison: "Seçimin hikâyedeki doğru değerle uyumlu. Sakinleşmek, biraz uzaklaşmak ve güvendiğin birinden yardım istemek seni yanlış davranışlardan koruyabilir.",
+              text: "Biraz uzaklaşır, sonra güvendiğim bir büyüğe anlatırdım.",
+              comparison: "Seçimin hikâyedeki değerle uyumlu. Öfke yükseldiğinde durmak, uzaklaşmak ve güvendiğin birinden yardım istemek seni korur.",
             },
             {
               id: "c",
-              text: "Hiçbir şey söylemez fakat içimdeki öfkeyi büyütmeye devam ederdim.",
-              comparison: "Öfkeyi sessizce büyütmek onu ortadan kaldırmaz. Kābil'in öfkesi de zamanla daha tehlikeli hâle geldi. Duyguları güvenilir biriyle paylaşmak daha doğru olurdu.",
+              text: "Belli etmemek için gülümser, öfkemi kendi içimde tutardım.",
+              comparison: "Öfkeni göstermemek o an kolay görünebilir. Hikâyede ise içte büyüyen öfkenin insanı yönetebildiği görüldü; duyguyu güvendiğin biriyle paylaşmak onu küçültür.",
             },
           ],
         },
@@ -1517,24 +1517,24 @@ export const books: BookDefinition[] = [
         has_question: true,
         question: {
           title: "Sılaya Uzanan Yol",
-          prompt: "Ailenden öğrendiğin güzel ve yararlı bir bilgiyi küçük bir çocuğa öğretmen istendi. Ne yapardın?",
+          prompt: "Ailenden öğrendiğin güzel ve yararlı bir bilgiyi küçük bir çocuğa öğretmen istendi. Ne yaparsın?",
           afterChoiceNote: "Cevabını aklında tut. Hz. Âdem'in bıraktığı mirasın nasıl devam ettiğini okuyarak kararını karşılaştır.",
           correctOption: "c",
           options: [
             {
               id: "a",
-              text: "Unuturum diye bu sorumluluğu kabul etmezdim.",
-              comparison: "Sorumluluktan kaçmak bilgiyi durdurabilirdi; hikâyede güzel miras aktarılınca yaşamaya devam etti.",
+              text: "İlgi çeksin diye bilgiye kendimden bir şeyler katardım.",
+              comparison: "Anlatmayı eğlenceli yapmak istemen güzel. Hikâyede ise bir söz eklenince bilginin zamanla ilk anlamından uzaklaşabileceği anlatıldı.",
             },
             {
               id: "b",
-              text: "Yalnızca beni dinlerse anlatacağımı söylerdim.",
-              comparison: "Öğretmek yalnızca karşımızdaki kusursuz dinlediğinde yapılmaz; sabır rehberliğin bir parçasıdır.",
+              text: "Aynı gün, aklımda kaldığı kadarıyla anlatmaya başlardım.",
+              comparison: "Paylaşmaya istekli olman güzel. Hikâyede ise güzel miras, doğru öğrenilip güvenilir biçimde aktarıldığında korundu.",
             },
             {
               id: "c",
-              text: "Doğru öğrendiğimden emin olur, sabırla anlatırdım.",
-              comparison: "Seçimin hikâyedeki değerle uyumlu. Doğru bilgi, özenle öğrenilip sabırla aktarılır.",
+              text: "Önce doğru hatırladığımdan emin olur, sonra anlatırdım.",
+              comparison: "Seçimin hikâyedeki değerle uyumlu. Doğru bilgi, emin olunarak öğrenilir ve güvenilir biçimde aktarılır.",
             },
           ],
         },
@@ -1628,17 +1628,17 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Rahatsız etmemek için uzaktan bakar, hiçbir şey söylemezdim.",
+              text: "Rahatsız etmemek için onu uzaktan izler, yanına gitmezdim.",
               comparison: "Sessiz kalmak bazen saygıdır. Yine de hikâyede babasının yanına giden Eşüt, onu yalnız bırakmamış oldu.",
             },
             {
               id: "b",
-              text: "Yanına oturur, bir şey anlatmak isterse sabırla dinlerdim.",
+              text: "Yanına oturur, bir şey anlatmak isterse onu dinlerdim.",
               comparison: "Hikâyede Hz. Âdem'e iyi gelen şey, yanında duran ve acele etmeyen ailesi oldu. Sen de yanında durmayı seçtin.",
             },
             {
               id: "c",
-              text: "Onu güldürmek için hemen şaka yapar, konuyu değiştirirdim.",
+              text: "Onu güldürmek için şaka yapar, konuyu değiştirirdim.",
               comparison: "Güldürmek iyi niyetlidir. Ama hikâyede bunu deneyenler sonuç alamadı; bazı üzüntüler önce sadece duyulmak ister.",
             },
           ],
@@ -1724,18 +1724,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Kimse dinlemiyorsa ben de vazgeçerdim.",
-              comparison: "Vazgeçmek kolaydır. Hikâyede Şît son bir kez daha seslendi ve o sesi duyup peşinden gelen birkaç kişi oldu.",
+              text: "Dinlemedikleri için uyarmayı bırakıp işime dönerdim.",
+              comparison: "Dinlenmemek insanın hevesini kırar. Şît ise son bir kez daha seslendi ve o sesi duyup peşinden gelen birkaç kişi oldu.",
             },
             {
               id: "b",
-              text: "Kızar, onlara darılır ve bir daha hiçbir şey söylemezdim.",
-              comparison: "Darılmak insanı yalnızlaştırır. Şît dinlenmediği hâlde kimseye kırılmadı ve hazırlığını tamamladı.",
+              text: "Onlara darılıp yalnızca kendi hazırlığımı yapmaya bakardım.",
+              comparison: "Kendini korumak önemlidir. Şît ise darılmadı; kendi hazırlığını yaparken son bir kez daha seslenip başkalarını da düşündü.",
             },
             {
               id: "c",
-              text: "Bir kez daha sakince anlatır, sonra kendi hazırlığımı yapardım.",
-              comparison: "Hikâyede Şît tam olarak bunu yaptı: bir kez daha seslendi, sonra vadiye sığındı. Hem sesini duyurdu, hem güvende kaldı.",
+              text: "Bir kez daha uyarır, sonra bir büyüğe de haber verirdim.",
+              comparison: "Sen de Şît gibi davrandın. O da dinlenmese bile bir kez daha seslendi; tehlikeyi bir büyüğe bildirmek de seni ve onları korur.",
             },
           ],
         },
@@ -1822,18 +1822,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Nerede yanlış yaptığımı bulur, baştan denerdim.",
+              text: "Nerede yanlış yaptığımı bulup işi baştan denerdim.",
               comparison: "Şît de tam bunu yaptı. Dağılan taşlara tek tek bakıp eksiğin ne olduğunu aradı ve harcı böyle buldu.",
             },
             {
               id: "b",
-              text: "Artık uğraşmaz, başka bir işe geçerdim.",
+              text: "Bu işin olmayacağını düşünüp başka bir işe geçerdim.",
               comparison: "Başka bir işe geçmek bazen doğrudur. Ama hikâyedeki çözüm, tam da vazgeçilmediği için ortaya çıktı.",
             },
             {
               id: "c",
-              text: "Kimse görmesin diye bozulduğunu saklardım.",
-              comparison: "Saklamak kimseye yardımcı olmaz. Şît yıkılan duvarı herkesin gözü önünde inceledi ve çaresini sonra buldu.",
+              text: "Üzüldüğümü belli etmemek için bozulanı kaldırırdım.",
+              comparison: "Üzüntünü saklamak istemen çok doğal. Şît ise yıkılan duvarı herkesin gözü önünde inceledi ve çaresini sonra buldu.",
             },
           ],
         },
@@ -1935,18 +1935,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Onlar yokken kendi bildiğim gibi yapardım.",
-              comparison: "Habersiz yapmak güveni zedeler. Şît, kimse yardıma gelmediğinde bile gizlice işe girişmedi.",
+              text: "Onlar yokken işi kendi bildiğim gibi yapardım.",
+              comparison: "Emaneti korumak istemen çok güzel. Şît ise kimse yardıma gelmediğinde bile gizlice işe girişmedi; insanların razı olmasını bekledi.",
             },
             {
               id: "b",
-              text: "Niçin yapmak istediğimi anlatır, onların da razı olmasını beklerdim.",
+              text: "Nedenini anlatır, onlar razı olunca yapardım.",
               comparison: "Hikâyede Şît tam olarak bunu yaptı. Ölçünün değişmeyeceğini anlattı, zorlamadan bekledi ve insanlar sonunda kendileri istedi.",
             },
             {
               id: "c",
-              text: "Hemen vazgeçer, bir daha hiç konuşmazdım.",
-              comparison: "Vazgeçmek kolaydı. Ama Şît isteğini kalbinde tuttu ve sırası gelince yaptı.",
+              text: "Onlar kırılmasın diye bu fikri bir kenara bırakırdım.",
+              comparison: "Onları kırmak istememen anlaşılır. Şît ise isteğini kalbinde tuttu ve sırası gelince yaptı.",
             },
           ],
         },
@@ -2042,8 +2042,8 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Hemen herkese anlatırdım, zararını sonra düşünürdüm.",
-              comparison: "Hızlı davranmak çoğu zaman iyidir. Ama İdrîs bir gün beklediği için ağaçların tükenmesini önledi.",
+              text: "Çok işe yarayacağı için bulduğum yolu herkese anlatırdım.",
+              comparison: "Faydalı bir şeyi paylaşmak istemen güzel. Ama İdrîs bir gün beklediği için ağaçların tükenmesini önledi.",
             },
             {
               id: "b",
@@ -2052,8 +2052,8 @@ export const books: BookDefinition[] = [
             },
             {
               id: "c",
-              text: "Kimseye söylemez, bulduğum yolu kendime saklardım.",
-              comparison: "Bir bilgiyi saklamak da bir çözümdür. İdrîs ise saklamadı; daha iyisini bulana kadar aramayı sürdürdü.",
+              text: "Bulduğum yolu yalnızca en yakın arkadaşıma anlatırdım.",
+              comparison: "Bilgiyi az kişiyle paylaşmak da bir yol. İdrîs ise önce bu yolun kime ne yapacağını düşündü.",
             },
           ],
         },
@@ -2148,13 +2148,13 @@ export const books: BookDefinition[] = [
             },
             {
               id: "b",
-              text: "Diğerleri sıkılmasın diye konuyu hemen geçerdim.",
+              text: "Diğerleri sıkılmasın diye konuyu geçip devam ederdim.",
               comparison: "Bir grubu bekletmemek de düşünülmesi gereken bir şeydir. Ama o gün ders uzadı ve kimse buna üzülmedi.",
             },
             {
               id: "c",
-              text: "Anlamasını beklemeden onu kendi başına bırakırdım.",
-              comparison: "Herkes bazen kendi başına öğrenir. İdrîs ise beklemeyi seçti ve öğrencisi o gün anladı.",
+              text: "Ona sonra tek başına anlatmak üzere konuyu geçerdim.",
+              comparison: "Ona sonra ayrıca anlatmayı düşünmen güzel. İdrîs ise orada, o an başka bir yoldan anlattı; bekleyenler de bir şey öğrendi.",
             },
           ],
         },
@@ -2247,7 +2247,7 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Bu yolu bırakıp bambaşka bir şey denerdim.",
+              text: "Bu yol olmuyor diye bırakıp bambaşka bir şey denerdim.",
               comparison: "Yeni bir yol denemek bazen doğrudur. Ama İdrîs o yolu bırakmadı ve altı aylık emeği boşa gitmedi.",
             },
             {
@@ -2257,7 +2257,7 @@ export const books: BookDefinition[] = [
             },
             {
               id: "c",
-              text: "Küçük de olsa elimdekine bakıp aynı yoldan devam ederdim.",
+              text: "Elimdeki küçük sonuca bakıp aynı yolda ilerlerdim.",
               comparison: "Sen de İdrîs gibi davrandın. O da bir karışlık beze bakıp aynı yoldan devam etti.",
             },
           ],
@@ -2356,13 +2356,13 @@ export const books: BookDefinition[] = [
             },
             {
               id: "b",
-              text: "Çoğunluk ne diyorsa ben de onu yapardım.",
+              text: "Bu kadar çok kişi şüpheleniyorsa ben de onlara uyardım.",
               comparison: "Çoğunluğa uymak bazen kolaydır. O gün çoğunluk vazgeçmek istiyordu; sonuç ise tam tersi çıktı.",
             },
             {
               id: "c",
-              text: "Kimseye sormadan hemen kendi kararımı verirdim.",
-              comparison: "Kendi kararını vermek değerlidir. Ama o gün bilmedikleri bir konu vardı; sormak onlara zaman kazandırdı.",
+              text: "Kendi fikrime güvenip kararımı tek başıma verirdim.",
+              comparison: "Kendi fikrine güvenmek değerlidir. Ama o gün bilmedikleri bir konu vardı; güvenilir birine sormak onlara zaman kazandırdı.",
             },
           ],
         },
@@ -2459,18 +2459,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Beni övdükleri için kırmaz, ben de yapardım.",
+              text: "Övgüleri için teşekkür eder, ben de onlarla yapardım.",
               comparison: "Arkadaşlarını kırmak istememen çok anlaşılır. Nûh ise övgüye rağmen doğru bulmadığı işi yapmadı ve ustalığını güzel işlere sakladı.",
             },
             {
               id: "b",
-              text: "Teşekkür eder ama doğru bulmadığım bir işe katılmazdım.",
+              text: "Teşekkür eder ama doğru bulmadığım bu işe katılmazdım.",
               comparison: "Sen de Nûh gibi davrandın. O da hem nazik kaldı hem de doğru bulmadığı işe katılmadı.",
             },
             {
               id: "c",
-              text: "Onlara kızar, bir daha hiç konuşmazdım.",
-              comparison: "Kızgınlık insanın içinde kolayca büyür. Nûh ise kızmadan, sakin bir soruyla düşüncesini anlattı.",
+              text: "Bu seferlik yapar, bir sonrakine katılmayacağımı söylerdim.",
+              comparison: "Arkadaşlarını bir anda bırakmak zor gelebilir. Nûh ise “bir seferlik” bile demedi; doğru bulmadığı işi baştan yapmadı.",
             },
           ],
         },
@@ -2556,18 +2556,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Sakin kalır, düşüncemi nazik bir dille yeniden anlatırdım.",
+              text: "Gülüşlere rağmen düşüncemi yeniden anlatırdım.",
               comparison: "Sen de Hz. Nûh gibi davrandın. O da gülüşlere rağmen kızmadı, sözünü yumuşak bir dille yeniden söyledi.",
             },
             {
               id: "b",
-              text: "Utanır, bir daha sınıfta hiç konuşmazdım.",
+              text: "Utandığım için o gün sınıfta başka söz almazdım.",
               comparison: "Gülüşler insanı gerçekten utandırabilir. Hz. Nûh ise susmadı; ertesi sabah tezgâhını yeniden kurdu.",
             },
             {
               id: "c",
-              text: "Ben de onlarla dalga geçerek karşılık verirdim.",
-              comparison: "Gülüşlere karşılık vermek istemek çok doğal. Hz. Nûh ise kimseyle dalga geçmedi, gidenler için dua etti.",
+              text: "Gülüşlere ben de katılır, konuyu şakaya vururdum.",
+              comparison: "Şakaya vurmak o anı kolaylaştırabilir. Hz. Nûh ise doğru bildiğini şakaya vurmadı; sözünü yumuşak bir dille yeniden söyledi.",
             },
           ],
         },
@@ -2655,12 +2655,12 @@ export const books: BookDefinition[] = [
             },
             {
               id: "b",
-              text: "Yeni çocukla gizlice oynar, arkadaşlarıma hiç söylemezdim.",
+              text: "Yeni çocukla başka bir zaman, arkadaşlarım görmeden oynardım.",
               comparison: "Yeni çocukla oynaman ona iyi gelir. Hz. Nûh ise inananlara gizlice değil, herkesin önünde açıkça sahip çıktı.",
             },
             {
               id: "c",
-              text: "Yeni çocuğun da bizim kadar değerli olduğunu söyler, onu oyuna çağırırdım.",
+              text: "Arkadaşlarıma rağmen yeni çocuğu oyuna davet ederdim.",
               comparison: "Sen de Hz. Nûh gibi davrandın. O da ileri gelenlerin isteğine uymadı ve inananların hiçbirini geri çevirmedi.",
             },
           ],
@@ -2750,7 +2750,7 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Kimse görmese de sürdürürdüm, çünkü yaptığım iş zaten değerli.",
+              text: "Kimse fark etmese de çiçekleri sulamayı sürdürürdüm.",
               comparison: "Sen de Hz. Nûh gibi davrandın. O da yüzlerce yıl, çoğu insan dinlemese bile çağırmayı sürdürdü.",
             },
             {
@@ -2760,8 +2760,8 @@ export const books: BookDefinition[] = [
             },
             {
               id: "c",
-              text: "Herkese ne kadar uzun süredir yaptığımı anlatıp teşekkür beklerdim.",
-              comparison: "Teşekkür duymak güzeldir. Hz. Nûh ise karşılığı insanlardan değil, yalnız Allah'tan bekledi.",
+              text: "Fark etsinler diye öğretmene suladığımı söylerdim.",
+              comparison: "Emeğinin görülmesini istemek çok doğal. Hz. Nûh ise karşılığı insanlardan değil, yalnız Allah'tan bekledi.",
             },
           ],
         },
@@ -2850,18 +2850,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Gülmesinler diye hazırlığı bırakır, son güne kadar beklerdim.",
+              text: "Gülmesinler diye hazırlığı son haftaya bırakırdım.",
               comparison: "Gülüşlerden kaçmak istemek çok anlaşılır. Hz. Nûh ise gülenlere rağmen hazırlığı bırakmadı ve gemiyi vaktinde bitirdi.",
             },
             {
               id: "b",
-              text: "Gülseler de hazırlığımı sakin sakin sürdürürdüm.",
+              text: "Gülseler de hazırlığımı her gün biraz biraz sürdürürdüm.",
               comparison: "Sen de Hz. Nûh gibi davrandın. O da alaylara aldırmadan, sakin sakin çalışmayı sürdürdü.",
             },
             {
               id: "c",
-              text: "Ben de onların hazırlıksız olmasıyla dalga geçerdim.",
-              comparison: "Alay edene alayla karşılık vermek kolay gelebilir. Hz. Nûh ise kimseyle dalga geçmedi, yalnızca işine döndü.",
+              text: "Onlar haklı olabilir diye hazırlığa biraz ara verirdim.",
+              comparison: "Başkalarının sözü insanı şüpheye düşürebilir. Hz. Nûh ise ne zaman lazım olacağını bilmese de hazırlığı tehlike gelmeden bitirdi.",
             },
           ],
         },
@@ -2952,17 +2952,17 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Korkum tamamen geçene kadar hiç başlamazdım.",
+              text: "Korkum biraz geçsin diye önce kenardan diğerlerini izlerdim.",
               comparison: "Korku çok doğal bir duygudur. Gemidekiler de korktu, ama beklemek yerine Allah'ın adını anıp gemiye bindiler.",
             },
             {
               id: "b",
-              text: "Öğretmenimi beklemeden, kendi bildiğim gibi suya atlardım.",
-              comparison: "Heyecanla hemen atlamak isteyebilirsin. Hz. Nûh ise gemiyi Allah'ın bildirdiği gibi yaptı ve herkesi düzenle gemiye aldı.",
+              text: "Öğretmenimden ilk gün yalnızca ayaklarımı suya sokmayı isterdim.",
+              comparison: "Yavaş başlamak istemen anlaşılır. Gemidekiler de korkuyordu, ama hazırlıklarını yapmışlardı ve Allah'ın adıyla gemiye bindiler.",
             },
             {
               id: "c",
-              text: "Allah'ın adını anar, yaptığım hazırlığa güvenip adımımı atardım.",
+              text: "Allah'ın adını anar, öğretmenimle birlikte suya girerdim.",
               comparison: "Sen de gemidekiler gibi davrandın. Onlar da hazırlıklarını yapıp Allah'ın adıyla gemiye bindiler.",
             },
           ],
@@ -3044,18 +3044,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Onu sevgiyle bir kez daha çağırır, sonra hemen bir yetişkine haber verirdim.",
+              text: "Onu bir kez daha çağırır, sonra hemen bir yetişkine haber verirdim.",
               comparison: "Sen de Hz. Nûh gibi davrandın. O da oğlunu son ana kadar sevgiyle çağırdı, sonra Rabbine yöneldi.",
             },
             {
               id: "b",
-              text: "Beni dinlemediği için ona küser, kendi hâline bırakırdım.",
-              comparison: "Dinlenmemek insanı kırar. Hz. Nûh ise oğluna küsmedi; son ana kadar ona şefkatle seslendi.",
+              text: "Belki dinler diye onu biraz daha uzaktan çağırmayı sürdürürdüm.",
+              comparison: "Onu çağırmayı sürdürmen sevgini gösterir. Hz. Nûh da oğlunu son ana kadar çağırdı; tehlikede bir yetişkinden yardım istemek de önemlidir.",
             },
             {
               id: "c",
-              text: "Onu zorla çekip götürmeye çalışır, gerekirse onunla kavga ederdim.",
-              comparison: "Sevdiğin birini korumak istemen çok güzel. Hz. Nûh ise kimseyi zorlamadı; çağırdı ve kararı ona bıraktı.",
+              text: "Oyunu bitince ona yolun tehlikeli olduğunu anlatmayı düşünürdüm.",
+              comparison: "Onu kızdırmak istememen anlaşılır. Hz. Nûh ise dalgalar yükselirken hemen seslendi; tehlike anında hemen bir yetişkine haber vermek gerekir.",
             },
           ],
         },
@@ -3138,18 +3138,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Eski günleri düşünüp üzülür, hiçbir şeye başlamak istemezdim.",
-              comparison: "Eski günleri özlemek çok doğal. Gemidekiler de yabancılık çekti, ama üzülüp beklemek yerine işe koyuldular.",
+              text: "İlk günlerde eski arkadaşlarımla konuşarak oyalanırdım.",
+              comparison: "Eski günleri özlemek çok doğal. Gemidekiler de yabancılık çekti, ama ertesi sabah hep birlikte işe koyuldular.",
             },
             {
               id: "b",
-              text: "Elimdekiler için şükreder, küçük bir işten başlayarak yeniden kurardım.",
+              text: "Elimdekilere şükreder, küçük bir işle başlardım.",
               comparison: "Sen de Hz. Nûh gibi davrandın. O da önce şükretti, sonra bir fidan dikip yeniden başladı.",
             },
             {
               id: "c",
-              text: "Her şey kendiliğinden eskisi gibi olana kadar beklerdim.",
-              comparison: "Beklemek bazen gerekir. Hz. Nûh ise yeni hayatın kendiliğinden kurulmasını beklemedi; ertesi sabah işe başladı.",
+              text: "Her şeye alışana kadar evden pek çıkmamayı seçerdim.",
+              comparison: "Yeni bir yere alışmak zaman alır. Hz. Nûh ise yeni hayatın kendiliğinden kurulmasını beklemedi; ertesi sabah işe başladı.",
             },
           ],
         },
@@ -3249,17 +3249,17 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Arkadaşlarım öyle diyorsa ben de aklıma gelen ilk şeyi yazar geçerdim.",
-              comparison: "Arkadaşlara uymak o an kolay gelebilir. Hz. İbrahim ise herkes gibi yapmadı; cevabı bulana kadar düşünmeyi sürdürdü.",
+              text: "Vakit kaybetmemek için aklıma ilk gelen cevabı yazardım.",
+              comparison: "Zamanı iyi kullanmak istemen anlaşılır. Hz. İbrahim ise cevabı hemen bulamayınca aramayı bırakmadı; sabaha kadar düşünmeyi sürdürdü.",
             },
             {
               id: "b",
-              text: "Soruyu boş bırakır, bir daha da üzerinde düşünmezdim.",
-              comparison: "Zor bir soru insanı yorabilir. Hz. İbrahim yıldız ve ay battığında aramayı bırakmadı, sabahı bekledi.",
+              text: "Soruyu boş bırakır, öğretmen anlatınca öğrenirdim.",
+              comparison: "Cevabı öğretmeninden öğrenmek de bir yol. Hz. İbrahim ise cevabı kendisi düşünerek aradı ve sonunda hiç batmayan Rabbini buldu.",
             },
             {
               id: "c",
-              text: "Biraz daha düşünür, gerekirse öğretmenime sorar ve cevabı aramaya devam ederdim.",
+              text: "Soruyu baştan okur, cevabı bulana kadar düşünürdüm.",
               comparison: "Sen de Hz. İbrahim gibi davrandın. O da cevabı hemen bulamadı, ama aramayı sürdürdü ve hiç batmayan Rabbine yöneldi.",
             },
           ],
@@ -3346,18 +3346,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Uygun bir anda yanına gider, ne düşündüğümü saygılı ve sakin bir dille anlatırdım.",
-              comparison: "Sen de Hz. İbrahim gibi davrandın. O da babasına doğruyu söylerken her sözüne “Babacığım” diye başladı ve onu kırmadı.",
+              text: "Onunla yalnız kaldığımızda ne düşündüğümü anlatırdım.",
+              comparison: "Sen de Hz. İbrahim gibi davrandın. O da babasının atölyesine gidip doğruyu her sözüne “Babacığım” diye başlayarak anlattı.",
             },
             {
               id: "b",
-              text: "Herkesin içinde yüksek sesle ona yanlış yaptığını söylerdim.",
-              comparison: "Doğruyu söylemek istemen güzel. Hz. İbrahim ise babasını kimsenin önünde küçük düşürmedi; ona yumuşak bir sesle seslendi.",
+              text: "Fark ettiğim anda, yanımızdakilerin önünde ona söylerdim.",
+              comparison: "Doğruyu hemen söylemek istemen güzel. Hz. İbrahim ise babasını kimsenin önünde küçük düşürmedi; yanına gidip yumuşak bir sesle konuştu.",
             },
             {
               id: "c",
-              text: "Hiçbir şey söylemez, ama ona da küserdim.",
-              comparison: "Üzülmek çok doğal. Hz. İbrahim de üzüldü, ama babasına küsmedi; onun için dua etmeyi sürdürdü.",
+              text: "Aramız bozulmasın diye bu konuyu ona açmamayı seçerdim.",
+              comparison: "Sevdiğin birini üzmek istememen çok anlaşılır. Hz. İbrahim de babasını kırmaktan çekindi, ama susmadı; doğruyu sevgiyle söyledi.",
             },
           ],
         },
@@ -3446,18 +3446,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Herkes böyle yapıyorsa doğrudur diye düşünür, ben de onlar gibi yapardım.",
-              comparison: "Arkadaşlarının arasında farklı olmak zor gelebilir. Hikâyede Hz. Lût, çevresindekiler başka türlü düşünse de dinledi, düşündü ve doğruyu kendisi seçti.",
+              text: "Oyun bozulmasın diye ben de onlar gibi oynardım.",
+              comparison: "Oyunun bozulmasını istememen anlaşılır. Hz. İbrahim ise bir şeyin çok kişi yaptığı için doğru olmayacağını biliyordu.",
             },
             {
               id: "b",
-              text: "Neden böyle yaptıklarını sorar, bana doğru gelen kurala göre oynamaya devam ederdim.",
+              text: "Neden böyle yaptıklarını sorar, kurala uyup oynardım.",
               comparison: "Sen de Hz. İbrahim gibi davrandın. O da kavmine sorular sordu ve herkes yüz çevirse de doğru bildiğinden vazgeçmedi.",
             },
             {
               id: "c",
-              text: "Hiçbir şey demeden oyunu bırakır, eve dönerdim.",
-              comparison: "Uzaklaşmak bazen kolay görünür. Hz. İbrahim ise meydandan küsüp gitmedi; ertesi gün yine anlatmayı sürdürdü.",
+              text: "Tartışma çıkmasın diye oyundan sessizce ayrılırdım.",
+              comparison: "Tartışmadan uzak durmak bazen iyi gelir. Hz. İbrahim ise ertesi gün yine meydana çıktı ve anlatmayı sürdürdü.",
             },
           ],
         },
@@ -3545,17 +3545,17 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Bir şey demez, ben de onlar gibi taştan dilekte bulunurdum.",
-              comparison: "Arkadaşlarına uymak o an kolay gelebilir. Hz. İbrahim ise kavmine uymadı; bir soruyla herkesin kendi içine dönmesini sağladı.",
+              text: "Arkadaşlarımı kırmamak için ben de taştan bir dilek tutardım.",
+              comparison: "Arkadaşlarını kırmak istememen güzel. Hz. İbrahim ise kavmine uymadı; bir soruyla herkesin kendi içine dönmesini sağladı.",
             },
             {
               id: "b",
-              text: "“Bu çok saçma” diyerek onlarla alay ederdim.",
-              comparison: "Alay etmek insanların kalbini kapatabilir. Hz. İbrahim kimseyle alay etmedi; “Konuşabiliyorlarsa onlara sorun!” diyerek düşündürdü.",
+              text: "Bunun doğru olmadığını söyler, konuyu orada kapatırdım.",
+              comparison: "Doğru bildiğini söylemen cesurca. Hz. İbrahim ise bir soru sorarak insanların gerçeği kendi ağızlarıyla söylemesini sağladı.",
             },
             {
               id: "c",
-              text: "Onlara “Bu taş seni duyabiliyor mu, sana yardım edebilir mi?” diye sorar, düşünmelerini beklerdim.",
+              text: "Taşın onları duyup duyamayacağını sorup düşünmelerini isterdim.",
               comparison: "Sen de Hz. İbrahim gibi davrandın. O da bir soruyla insanların putların konuşamadığını kendi ağızlarıyla söylemesini sağladı.",
             },
           ],
@@ -3636,18 +3636,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Ben de ondan daha güçlü olduğumu söyleyip bağırırdım.",
-              comparison: "Övünen birine öfkelenmek çok doğal. Hz. İbrahim ise bağırmadı; herkesin gördüğü güneşi örnek vererek sakin bir cevap verdi.",
+              text: "Ondan aşağı kalmamak için ben de neler yapabildiğimi sayardım.",
+              comparison: "Küçümsenince kendini savunmak istemen çok doğal. Hz. İbrahim ise kendini övmedi; herkesin gördüğü güneşi örnek vererek cevap verdi.",
             },
             {
               id: "b",
-              text: "Sakin kalır, ne düşündüğümü açık ve anlaşılır bir şekilde söylerdim.",
-              comparison: "Sen de Hz. İbrahim gibi davrandın. O da güçlü kralın karşısında sakin kaldı ve açık bir delille konuştu.",
+              text: "Ne düşündüğümü herkesin görebileceği bir örnekle anlatırdım.",
+              comparison: "Sen de Hz. İbrahim gibi davrandın. O da güçlü kralın karşısında herkesin gördüğü güneşi örnek vererek açıkça konuştu.",
             },
             {
               id: "c",
-              text: "Korkup hiçbir şey söylemez, onun haklı olduğunu kabul ederdim.",
-              comparison: "Güçlü birinin karşısında korkmak çok doğal. Hz. İbrahim de kralın gücünü biliyordu, ama susmadı; doğruyu sakin bir sesle söyledi.",
+              text: "Tartışma büyümesin diye susar, konuyu orada kapatırdım.",
+              comparison: "Tartışmayı büyütmek istememen anlaşılır. Hz. İbrahim de kralın gücünü biliyordu, ama susmadı; doğruyu açık bir örnekle söyledi.",
             },
           ],
         },
@@ -3724,18 +3724,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Elimden geldiğince hazırlanır, korkumu bir büyüğüme anlatır ve Allah'a güvenirdim.",
+              text: "Hazırlığımı yapar, korktuğumda Allah'a sığınırdım.",
               comparison: "Sen de Hz. İbrahim gibi davrandın. O da en zor anında bütün kalbiyle Allah'a sığındı ve O'na güvendi.",
             },
             {
               id: "b",
-              text: "Korkumu kimseye söylemez, bütün gece kendi kendime üzülürdüm.",
-              comparison: "Korkunu içinde tutmak seni daha çok yorabilir. Hz. İbrahim ise korkulu anda yalnız kalmadı; Rabbine sığınıp O'ndan yardım istedi.",
+              text: "Korkum geçsin diye sunumu defalarca tek başıma çalışırdım.",
+              comparison: "Çok çalışmak güzel bir hazırlık. Hz. İbrahim ise en zor anında kendi gücüne değil, bütün kalbiyle Allah'a güvendi.",
             },
             {
               id: "c",
-              text: "Hiç hazırlanmaz, nasılsa kötü geçecek diye düşünüp vazgeçerdim.",
-              comparison: "Korku insana “vazgeç” diyebilir. Hz. İbrahim ise ateşin önünde bile umudunu kaybetmedi; Allah'a güvendi.",
+              text: "Öğretmenimden sunumu başka bir güne ertelemesini isterdim.",
+              comparison: "Korkunun geçmesini istemek çok doğal. Hz. İbrahim ise o zor anda Rabbine sığındı ve kalbi güvenle doldu.",
             },
           ],
         },
@@ -3825,18 +3825,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Ayrılırken onlara kızar, kırıcı sözler söylerdim.",
-              comparison: "Kırıldığında öfkelenmek çok doğal. Hz. İbrahim de çok üzüldü, ama babasına “Esen kal!” dedi ve onun için dua edeceğini söyledi.",
+              text: "Ayrılırken neden yanlış yaptıklarını onlara tek tek anlatırdım.",
+              comparison: "Doğruyu anlatmak istemen güzel. Hz. İbrahim ise ayrılırken suçlayıcı bir söz söylemedi; “Esen kal!” deyip dua edeceğini söyledi.",
             },
             {
               id: "b",
-              text: "Yanlış olduğunu bilsem de yalnız kalmamak için grupta kalmaya devam ederdim.",
+              text: "Yalnız kalmamak için onlarla arada bir görüşmeyi sürdürürdüm.",
               comparison: "Yalnız kalmaktan korkmak anlaşılır bir duygu. Hz. İbrahim ise doğru bildiği yol için ayrıldı; yolda Hz. Lût da yanındaydı.",
             },
             {
               id: "c",
-              text: "Kimseyi kırmadan uzaklaşır, onlara iyi dileklerimi söyleyip kendime iyi arkadaşlar arardım.",
-              comparison: "Sen de Hz. İbrahim gibi davrandın. O da kimseyi kırmadan ayrıldı, iyi dileklerini söyledi ve Rabbine doğru yola çıktı.",
+              text: "Onlara iyi dileklerimi söyler, yeni arkadaşlar arardım.",
+              comparison: "Sen de Hz. İbrahim gibi davrandın. O da iyi dileklerini söyleyerek ayrıldı ve Rabbine doğru yola çıktı.",
             },
           ],
         },
@@ -3917,18 +3917,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Gitmesin diye ağlar, bütün gün kimseyle konuşmazdım.",
+              text: "Gitmesin diye onu son ana kadar ikna etmeye çalışırdım.",
               comparison: "Sevdiğinden ayrılırken üzülmek çok doğal. Hz. İbrahim de çok hüzünlüydü, ama ayrılığı duayla karşıladı ve sevdiklerini Allah'a emanet etti.",
             },
             {
               id: "b",
-              text: "Ona sarılıp iyi dileklerimi söyler, onun için dua eder ve dönüşünü beklerdim.",
+              text: "Ona sarılıp vedalaşır, yolculuğu için de dua ederdim.",
               comparison: "Sen de hikâyedekiler gibi davrandın. Hâcer gibi Allah'a güvendin, Hz. İbrahim gibi de sevdiğin için dua ettin.",
             },
             {
               id: "c",
-              text: "Gittiği için ona küser, dönünce de yüzüne bakmazdım.",
-              comparison: "Ayrılık insanı kırabilir. Hz. İbrahim ve Hâcer ise birbirlerine küsmedi; ikisi de Allah'ın onları sahipsiz bırakmayacağına güvendi.",
+              text: "Üzüleceğim için vedalaşmadan kendi odama giderdim.",
+              comparison: "Üzülmemek için vedalaşmadan gitmek o an kolay gelebilir. Hz. İbrahim ise vadiden ayrılırken durup sevdiklerine döndü ve onlar için dua etti.",
             },
           ],
         },
@@ -4009,18 +4009,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Yanına gider, kendimi tanıtır ve onu arkadaşlarımla oynadığımız oyuna çağırırdım.",
+              text: "Yanına gidip onu arkadaşlarımla oynadığımız oyuna davet ederdim.",
               comparison: "Sen de Hz. İbrahim gibi davrandın. O da tanımadığı yolcuları kapıda bekletmedi; hemen buyur edip ağırladı.",
             },
             {
               id: "b",
-              text: "Önce onun bizimle konuşmasını bekler, kendim yanına gitmezdim.",
-              comparison: "Beklemek bazen kolay gelir. Hz. İbrahim ise misafirlerinin bir şey istemesini beklemedi; hemen kalkıp ikram hazırladı.",
+              text: "Onu yormamak için önce kendi kendine alışmasına izin verirdim.",
+              comparison: "Yeni gelenin rahat etmesini istemen düşünceli bir davranış. Hz. İbrahim ise misafirlerinin bir şey istemesini beklemedi; hemen buyur edip ağırladı.",
             },
             {
               id: "c",
-              text: "Onu tanımadığım için hiç ilgilenmez, kendi oyunuma devam ederdim.",
-              comparison: "Tanımadığımız birine yaklaşmak zor gelebilir. Hz. İbrahim ise yolcuları tanımasa da onları güler yüzle karşıladı.",
+              text: "Oyunumuz yarım kalmasın diye onu sonraki teneffüste çağırırdım.",
+              comparison: "Oyunun yarım kalmasını istememen anlaşılır. Hz. İbrahim ise yolcuları sonraya bırakmadı; onları hemen içeri buyur etti.",
             },
           ],
         },
@@ -4112,18 +4112,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "“Bu iş olmayacak” der, yarım bırakıp bir daha denemezdim.",
-              comparison: "Yorulunca bırakmak istemek çok doğal. Hâcer de çok yorulmuştu, ama aramayı sürdürdü ve sonunda suyu buldu.",
+              text: "Yorulduğum için işi yarına bırakır, dinlenmeye geçerdim.",
+              comparison: "Yorulunca dinlenmek istemek çok doğal. Hâcer de çok yorulmuştu, ama aramayı bırakmadı ve sonunda suyu buldu.",
             },
             {
               id: "b",
-              text: "Kısa bir mola verir, Allah'tan yardım diler ve yeniden denerdim.",
+              text: "Allah'tan yardım diler, işi bir kez daha denerdim.",
               comparison: "Sen de Hâcer gibi davrandın. O da yorulduğunda dua etti, aramayı bırakmadı ve sonunda su kaynadı.",
             },
             {
               id: "c",
-              text: "Oturup birinin gelip benim yerime bitirmesini beklerdim.",
-              comparison: "Beklemek bazen daha kolay görünür. Hâcer ise oturup beklemek yerine kalktı ve iki tepe arasında yardım aradı.",
+              text: "Yardım edecek biri gelene kadar işe ara verirdim.",
+              comparison: "Yardım beklemek bazen daha kolay görünür. Hâcer ise oturup beklemek yerine kalktı ve iki tepe arasında yardım aradı.",
             },
           ],
         },
@@ -4211,13 +4211,13 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "“Bu bizim oyunumuz, sen başka yerde oyna” derdim.",
-              comparison: "Yeni birini aramıza almak ilk başta zor gelebilir. Hâcer ise yolculara kalabileceklerini söyledi ve onlarla komşu oldu.",
+              text: "Oyun kalabalıklaşmasın diye onu sonraki oyuna alırdım.",
+              comparison: "Oyunun düzenini korumak istemen anlaşılır. Hâcer ise yolculara kalabileceklerini hemen söyledi ve onlarla komşu oldu.",
             },
             {
               id: "b",
-              text: "Ona cevap vermez, arkadaşlarımın karar vermesini beklerdim.",
-              comparison: "Başkalarının karar vermesini beklemek kolay görünür. Hâcer ise yolculara kendisi cevap verdi ve suyun kuralını da açıkça söyledi.",
+              text: "Arkadaşlarım ne der diye önce onlara danışmak isterdim.",
+              comparison: "Arkadaşlarının fikrini almak düşünceli bir davranış. Hâcer ise yolculara kendisi cevap verdi ve suyun kuralını da açıkça söyledi.",
             },
             {
               id: "c",
@@ -4299,18 +4299,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Üzüntümü aileme anlatır, sonra yeni yere alışmak için onlarla birlikte elimden geleni yapardım.",
+              text: "Üzüntümü aileme anlatır, onlarla birlikte alışmaya çalışırdım.",
               comparison: "Sen de hikâyedeki gibi davrandın. Baba ile oğul da zor bir anda konuştu, birbirine danıştı ve birbirine destek oldu.",
             },
             {
               id: "b",
-              text: "Kimseye bir şey söylemez, odama kapanıp kimseyle konuşmazdım.",
-              comparison: "Zor bir haberden sonra yalnız kalmak istemek doğal. Hikâyede ise baba ile oğul o zor anda konuştu ve birbirine destek oldu.",
+              text: "Ailemi üzmemek için üzüntümü kendime saklar, belli etmezdim.",
+              comparison: "Aileni üzmek istememen çok güzel bir düşünce. Hikâyede ise baba ile oğul zor anda açıkça konuştu ve birbirine destek oldu.",
             },
             {
               id: "c",
-              text: "Taşınmamak için her gün ağlar, ailemle tartışırdım.",
-              comparison: "Zor bir değişikliğe üzülmek çok doğal. Hikâyede baba ile oğul zor anda birbirine danıştı ve birlikte Allah'a güvendi.",
+              text: "Yeni yeri düşünmemek için eski arkadaşlarımla daha çok oynardım.",
+              comparison: "Arkadaşlarınla vakit geçirmek istemen çok doğal. Hikâyede ise baba ile oğul zor anı konuşarak karşıladı ve yükü birlikte taşıdı.",
             },
           ],
         },
@@ -4394,18 +4394,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Canım sıkkın olduğu için sert bir sesle “Bilmem” der, konuşmayı keserdim.",
-              comparison: "Canı sıkılan biri böyle cevap verebilir. Hikâyede eve bereket getiren, zor zamanda bile şükürle konuşmaktı.",
+              text: "Canım sıkkın olduğu için bugün kötü giden her şeyi anlatırdım.",
+              comparison: "İçini dökmek istemen çok anlaşılır. Hikâyede ise misafiri şükürle ve güzel sözle karşılamak eve bereket duası getirdi.",
             },
             {
               id: "b",
-              text: "Hiçbir şey söylemez, omuz silkip yanından geçerdim.",
+              text: "Konuşmak istemediğim için “İyiyim” deyip odama giderdim.",
               comparison: "Canın sıkkınken konuşmak zor gelebilir. Hikâyede ise misafiri güler yüzle ve tatlı dille karşılamak eve bereket duası getirdi.",
             },
             {
               id: "c",
-              text: "Güler yüzle selam verir, canımı sıkan şeyi kırıcı olmadan anlatır, güzel giden bir şeyi de söylerdim.",
-              comparison: "Sen de hikâyedeki gibi misafiri güler yüzle ve güzel sözle karşıladın. Güzel söz ve şükür, Hz. İbrahim'i çok sevindirdi ve eve bereket duası getirdi.",
+              text: "Canım sıkkın olsa da okulda güzel giden bir şeyi de anlatırdım.",
+              comparison: "Sen de hikâyedeki gibi misafire güzel sözle karşılık verdin. Güzel söz ve şükür, Hz. İbrahim'i çok sevindirdi ve eve bereket duası getirdi.",
             },
           ],
         },
@@ -4495,18 +4495,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Oyunumu bırakıp yardıma gider, iş bitene kadar onlarla birlikte çalışırdım.",
+              text: "Oyunumu bırakır, iş bitene kadar onlara yardım ederdim.",
               comparison: "Sen de Hz. İsmail gibi davrandın. O da babası yardım isteyince hemen “Yardım ederim” dedi ve iş bitene kadar taş taşıdı.",
             },
             {
               id: "b",
-              text: "“Birazdan gelirim” der, oyunuma devam ederdim.",
-              comparison: "Oyunu bırakmak bazen zor gelir. Hz. İsmail ise babası yardım isteyince elindeki işi bıraktı ve hemen ona katıldı.",
+              text: "Oyunum bitince gelirim deyip birkaç dakika daha oynardım.",
+              comparison: "Oyunu yarım bırakmak zor gelebilir. Hz. İsmail ise babası yardım isteyince elindeki işi bıraktı ve hemen ona katıldı.",
             },
             {
               id: "c",
-              text: "Duymamış gibi yapar, oyunumu sürdürürdüm.",
-              comparison: "Bir işe ara vermek kolay değildir. Hz. İsmail ise babasının sorusuna hemen cevap verdi ve onunla birlikte çalıştı.",
+              text: "Bu iş büyüklerin işi diye yardım edemeyeceğimi düşünürdüm.",
+              comparison: "Büyük bir işe yetişemeyeceğini düşünmek doğal. Hz. İsmail ise taş taşıyarak işin bir parçası oldu ve babasının işini kolaylaştırdı.",
             },
           ],
         },
@@ -4587,18 +4587,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Kimse bakmayacağı için sulamayı unutur, başka işlerle uğraşırdım.",
-              comparison: "Kimse kontrol etmeyince unutmak kolaydır. Hz. İsmail ise babası uzaktayken de evi temiz tutma görevini yıllarca sürdürdü.",
+              text: "Hafta sonu bitkileri bir kerede bolca sulamayı düşünürdüm.",
+              comparison: "İşi kolaylaştırmak istemen anlaşılır. Hz. İsmail ise babası uzaktayken de evi temiz tutma görevini her gün, yıllarca sürdürdü.",
             },
             {
               id: "b",
-              text: "Kimse kontrol etmese de bitkileri her gün sular, görevimi sürdürürdüm.",
+              text: "Kimse sormasa da bitkileri her gün sulamayı sürdürürdüm.",
               comparison: "Sen de Hz. İsmail gibi davrandın. O da kimse sormasa da sözünü tuttu ve görevini yıllarca sürdürdü.",
             },
             {
               id: "c",
-              text: "Görevi bir arkadaşıma bırakır, bir daha ilgilenmezdim.",
-              comparison: "Bir işi başkasına bırakmak kolay görünebilir. Hz. İsmail ise kendisine verilen görevi üstlendi ve ömrü boyunca sürdürdü.",
+              text: "İşlerim çok olduğu için görevi bir arkadaşımla değişirdim.",
+              comparison: "Çok işin varken yükünü paylaşmak istemen doğal. Hz. İsmail ise kendisine emanet edilen görevi üstlendi ve ömrü boyunca sürdürdü.",
             },
           ],
         },
@@ -4695,17 +4695,17 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Önce ailemden güvendiğim bir büyükle konuşur, bu sevinci nasıl paylaşacağımı ona danışırdım.",
+              text: "Önce bu sevinci nasıl paylaşacağımı aileme danışırdım.",
               comparison: "Sen de Hz. Yusuf gibi davrandın. O da rüyasını önce babasına anlattı ve onun öğüdünü dinledi.",
             },
             {
               id: "b",
-              text: "Hemen herkese anlatır, resmimin en güzeli olduğunu söylerdim.",
+              text: "Sevincimi o gün en yakın arkadaşlarıma anlatırdım.",
               comparison: "Sevinci hemen paylaşmak istemek çok doğal. Hz. Yusuf ise önce babasına danıştı; babası da ona rüyasını kardeşlerine anlatmamasını öğütledi.",
             },
             {
               id: "c",
-              text: "Kimse kıskanmasın diye sevincimi saklar, hiç kimseye bir şey söylemezdim.",
+              text: "Kıskanılmamak için sevincimi bir süre kendime saklardım.",
               comparison: "Sevincini korumak istemen anlaşılır. Hz. Yusuf ise rüyasını tek başına saklamadı; güvendiği babasına anlatıp onun öğüdünü dinledi.",
             },
           ],
@@ -4797,18 +4797,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Kimseye bir şey söylemez, bu üzüntüyü hep içimde taşırdım.",
+              text: "Üzüntümü belli etmemek için tek başıma oyalanırdım.",
               comparison: "Üzüntünü saklamak istemen anlaşılır. Hz. Yusuf ise kuyunun dibinde yalnız olmadığını hatırladı ve Allah'a dua etti.",
             },
             {
               id: "b",
-              text: "Bir daha hiç kimseyle oynamamaya karar verirdim.",
-              comparison: "Kırılmak çok doğal. Hz. Yusuf ise umudunu kaybetmedi; bir gün kardeşlerini yeniden göreceğini biliyordu.",
+              text: "Beni neden almadıklarını düşünüp kendimi suçlardım.",
+              comparison: "Üzgünken kendini suçlamak çok olur. Hz. Yusuf ise kuyunun dibinde umudunu kaybetmedi; Allah'ın onu gördüğünü ve koruduğunu bildi.",
             },
             {
               id: "c",
-              text: "Allah'ın beni gördüğünü hatırlar, dua eder ve olanları güvendiğim bir büyüğe anlatırdım.",
-              comparison: "Sen de Hz. Yusuf gibi davrandın. O da kuyunun dibinde Allah'ın kendisini gördüğünü hatırladı, umudunu koruyup dua etti.",
+              text: "Allah'ın beni gördüğünü hatırlar, aileme anlatırdım.",
+              comparison: "Sen de Hz. Yusuf gibi davrandın. O da kuyunun dibinde Allah'ın kendisini gördüğünü hatırladı ve umudunu korudu.",
             },
           ],
         },
@@ -4886,18 +4886,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Burası benim eski okulum değil diyerek görevle hiç ilgilenmezdim.",
-              comparison: "Eski yerini özlemen çok doğal. Hz. Yusuf da ailesini özlüyordu, ama yeni evinde kendisine verilen işleri özenle yaptı.",
+              text: "Daha alışmadığım için öğretmenden görevi sonra almayı isterdim.",
+              comparison: "Yeni bir yerde çekinmek çok doğal. Hz. Yusuf da ailesini özlüyordu, ama yeni evinde kendisine verilen işleri hemen üstlendi.",
             },
             {
               id: "b",
-              text: "Yeni yerime alışmaya çalışırken görevimi her gün özenle yapardım.",
+              text: "Yeni yerime alışmaya çalışırken görevimi her sabah yapardım.",
               comparison: "Sen de Hz. Yusuf gibi davrandın. O da yabancı bir evde işine sarıldı ve kısa sürede evin efendisinin güvenini kazandı.",
             },
             {
               id: "c",
-              text: "Görevimi yapardım ama kimse görmüyorsa yarım bırakırdım.",
-              comparison: "Bazen bir işi yarıda bırakmak kolay gelir. Hz. Yusuf ise kimse görmese bile işini yarım bırakmadı; bu yüzden ona güvenildi.",
+              text: "Görevimi yapardım ama acelem olunca bazı çiçekleri atlardım.",
+              comparison: "Bazen acele etmek kolay gelir. Hz. Yusuf ise kimse görmese bile işini yarım bırakmadı; bu yüzden ona güvenildi.",
             },
           ],
         },
@@ -4997,17 +4997,17 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Hayır der, hemen oradan uzaklaşır ve olanları güvendiğim bir büyüğe anlatırdım.",
+              text: "Hayır der, oradan uzaklaşır ve bir büyüğüme anlatırdım.",
               comparison: "Sen de Hz. Yusuf gibi davrandın. O da yanlış isteğe hayır dedi, Allah'a sığındı ve hemen kapıya koştu.",
             },
             {
               id: "b",
-              text: "Kızmasın diye istediğini yapar, kimseye bir şey söylemezdim.",
-              comparison: "Birinin bize kızmasından korkmak çok doğal; Hz. Yusuf ise yanlışı yapmaktansa hapse girmeyi göze aldı. Böyle bir durumda hayır deyip hemen güvendiğin bir büyüğe anlatabilirsin; bunun için kimse sana kızmamalı.",
+              text: "Ne yapacağımı bilemediğim için düşünmek için zaman isterdim.",
+              comparison: "Ne yapacağını bilememek çok doğal. Hz. Yusuf ise hemen hayır dedi ve kapıya koştu; sen de hemen güvendiğin bir büyüğe anlatabilirsin.",
             },
             {
               id: "c",
-              text: "Hayır derdim ama bunu bir sır gibi saklar, kimseye anlatmazdım.",
+              text: "Hayır derdim ama kızmasın diye bunu aramızda tutardım.",
               comparison: "Hayır demek çok doğru bir adım. Hz. Yusuf da gerçeği saklamadı ve açıkça söyledi; sen de böyle bir durumu bir büyüğüne anlatabilirsin.",
             },
           ],
@@ -5090,8 +5090,8 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Kendi derdim yeter diye onunla hiç konuşmazdım.",
-              comparison: "Üzgünken içine kapanmak çok doğal. Hz. Yusuf ise haksız yere zindandayken bile arkadaşlarını dinledi ve onlara yardım etti.",
+              text: "Ben de üzgün olduğum için kendi düşüncelerime dalardım.",
+              comparison: "Üzgünken kendi düşüncelerine dalmak çok doğal. Hz. Yusuf ise haksız yere zindandayken bile arkadaşlarını dinledi ve onlara yardım etti.",
             },
             {
               id: "b",
@@ -5100,7 +5100,7 @@ export const books: BookDefinition[] = [
             },
             {
               id: "c",
-              text: "Arkadaşımla konuşup ona moral verir, olanları sonra bir büyüğe anlatırdım.",
+              text: "Arkadaşımın yanına geçip ona moral vermeye çalışırdım.",
               comparison: "Sen de Hz. Yusuf gibi davrandın. O da haksız yere zindandayken üzgün arkadaşlarını yalnız bırakmadı ve onlara yardım etti.",
             },
           ],
@@ -5191,18 +5191,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Hemen çıkar giderdim, olan biteni bir daha hiç düşünmezdim.",
+              text: "Sorun büyümesin diye “Tamam” der, sınıftan çıkardım.",
               comparison: "Bir an önce rahatlamak istemen çok doğal. Hz. Yusuf ise hemen çıkmadı; önce gerçeğin ortaya çıkmasını istedi.",
             },
             {
               id: "b",
-              text: "Bir büyüğümle birlikte öğretmenimle sakince konuşur, gerçeğin ortaya çıkmasını isterdim.",
+              text: "Gitmeden önce gerçeğin ortaya çıkmasını isterdim.",
               comparison: "Sen de Hz. Yusuf gibi davrandın. O da zindandan çıkmadan önce olayın sakince araştırılmasını istedi ve adı temize çıktı.",
             },
             {
               id: "c",
-              text: "Beni suçlayan arkadaşı bütün sınıfın önünde bağırarak suçlardım.",
-              comparison: "Haksızlığa öfkelenmek anlaşılır. Hz. Yusuf ise kimseye bağırmadı; gerçeğin araştırılmasını istedi ve sabırla bekledi.",
+              text: "Suçsuz olduğumu herkese tek tek anlatmaya çalışırdım.",
+              comparison: "Herkesin sana inanmasını istemen anlaşılır. Hz. Yusuf ise herkesi tek tek ikna etmeye çalışmadı; olayın araştırılmasını istedi.",
             },
           ],
         },
@@ -5292,13 +5292,13 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Ona en kötü kalemi verir, ne hissettiğimi anlamasını isterdim.",
-              comparison: "Kırgınlığını hatırlaman çok doğal. Hz. Yusuf ise kendisini kuyuya bırakan kardeşlerine bile payını eksiksiz verdi.",
+              text: "Ona kalemini verir ama yüzüne bakmadan geçip giderdim.",
+              comparison: "Kırgınlığını hatırlaman çok doğal. Hz. Yusuf ise kendisini kuyuya bırakan kardeşlerine bile kızmadı; onlara herkese davrandığı gibi davrandı.",
             },
             {
               id: "b",
-              text: "Onu görmezden gelir, sırasını en sona bırakırdım.",
-              comparison: "Uzak durmak istemen anlaşılır. Hz. Yusuf ise kardeşlerinden uzak durmadı; onlara herkese davrandığı gibi davrandı.",
+              text: "Onunla konuşmamak için kalemini başkasıyla gönderirdim.",
+              comparison: "Uzak durmak istemen anlaşılır. Hz. Yusuf ise kardeşlerinden kaçmadı; onları kendisi karşıladı ve herkese davrandığı gibi davrandı.",
             },
             {
               id: "c",
@@ -5404,12 +5404,12 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Onun yanında kalır, olanları onunla birlikte bir büyüğe anlatırdım.",
+              text: "Onun yanında kalır, olanları birlikte anlatmayı önerirdim.",
               comparison: "Sen de Hz. Yusuf'un kardeşleri gibi davrandın. Onlar da bu kez kardeşlerine sahip çıktı ve onun yerine kalmayı teklif etti.",
             },
             {
               id: "b",
-              text: "Başım derde girmesin diye hemen oradan uzaklaşırdım.",
+              text: "Başım derde girmesin diye sessizce oradan uzaklaşırdım.",
               comparison: "Korkup uzaklaşmak istemek çok doğal. Hz. Yusuf'un kardeşleri ise bu kez hemen çekip gitmedi; Bünyamin'in yerine kalmayı teklif ettiler.",
             },
             {
@@ -5496,7 +5496,7 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Yardım ederdim ama bana yaptığını ona sık sık hatırlatırdım.",
+              text: "Yardım ederdim ama bana yaptığını ona bir kez hatırlatırdım.",
               comparison: "Kırgınlığını unutmak zaman alabilir. Hz. Yusuf ise kardeşlerine yardım ederken geçmişi yüzlerine vurmadı.",
             },
             {
@@ -5506,8 +5506,8 @@ export const books: BookDefinition[] = [
             },
             {
               id: "c",
-              text: "Özrünü kabul etmez, ona yardım etmezdim.",
-              comparison: "Kırılmış olmak çok doğal. Hz. Yusuf ise kardeşlerinin özrünü kabul etti ve onları yanında ağırladı.",
+              text: "Özrünü kabul eder ama yardımı başka bir arkadaşa bırakırdım.",
+              comparison: "Biraz mesafe istemen çok doğal. Hz. Yusuf ise kardeşlerinin özrünü kabul etti, onları yanında ağırladı ve onlara yardım etti.",
             },
           ],
         },
@@ -5603,13 +5603,13 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Her şeyi tek başıma başardığımı söylerdim.",
+              text: "Tebrikleri alırken ne kadar çok çalıştığımı anlatırdım.",
               comparison: "Emeğinle gurur duyman çok doğal. Hz. Yusuf ise başına gelen her iyiliği Allah'a bağladı ve O'na şükretti.",
             },
             {
               id: "b",
-              text: "Hazırlanırken beni üzen arkadaşları tek tek sayardım.",
-              comparison: "Zor günleri hatırlamak doğal. Hz. Yusuf ise sevinç anında kimseyi suçlamadı; kırgınlığı kardeşlerine bağlamadı.",
+              text: "Hazırlık sırasında yaşadığım zorlukları arkadaşlarıma anlatırdım.",
+              comparison: "Zor günleri hatırlamak çok doğal. Hz. Yusuf ise sevinç anında kuyudan hiç söz etmedi; yalnızca Allah'ın iyiliğini andı.",
             },
             {
               id: "c",
@@ -5698,17 +5698,17 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Kutuyu çantama koyar, eve götürüp kurabiyelerin hepsini kendim yerdim.",
-              comparison: "Güzel bir hediyeyi saklamak istemek çok doğal. Hz. Eyyûb ise ambarları dolduğunda kapısını kilitlemedi, nimeti herkesle paylaştı.",
+              text: "Doğum günü hediyem olduğu için kutuyu eve götürürdüm.",
+              comparison: "Hediyeni korumak istemek çok doğal. Hz. Eyyûb ise ambarları dolduğunda kapısını kilitlemedi, nimeti herkesle paylaştı.",
             },
             {
               id: "b",
-              text: "Arkadaşlarıma birer kurabiye ikram eder, bu güzel hediye için içimden şükrederdim.",
+              text: "Arkadaşlarıma birer kurabiye verir, içimden şükrederdim.",
               comparison: "Sen de Hz. Eyyûb gibi davrandın. O da kendisine verilen nimeti şükürle paylaştı ve sofrasını herkese açtı.",
             },
             {
               id: "c",
-              text: "Yalnızca en yakın arkadaşıma verir, diğerleri görmesin diye kutuyu saklardım.",
+              text: "Önce en yakın arkadaşlarıma verir, kalanı eve götürürdüm.",
               comparison: "Yakın arkadaşınla paylaşmak güzel bir başlangıç. Hz. Eyyûb ise kapısını herkese açtı; konuğu da yetimi de doyurdu.",
             },
           ],
@@ -5806,17 +5806,17 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Çok üzülsem de bağırmadan durur, sakinleşip ne yapabileceğimi düşünürdüm.",
+              text: "Çok üzülsem de durup ne yapabileceğimi düşünürdüm.",
               comparison: "Sen de Hz. Eyyûb'a yakın davrandın. O da çok üzüldü ama ilk anda öfkelenmedi; “Mülk Allah'ındır” deyip Rabbine sığındı.",
             },
             {
               id: "b",
-              text: "Hemen bağırır, maketi düşüren arkadaşıma çok kızardım.",
-              comparison: "Böyle bir anda öfkelenmek çok anlaşılır bir şey. Hz. Eyyûb ise ilk haberi duyduğunda sakin kaldı ve Allah'a sığındı.",
+              text: "İlk anda çok üzülür, ağlayarak oradan uzaklaşırdım.",
+              comparison: "Böyle bir anda ağlamak çok doğal. Hz. Eyyûb da çok üzüldü, ama ilk anda Rabbine sığındı ve umudunu kaybetmedi.",
             },
             {
               id: "c",
-              text: "“Zaten hiçbir şey yolunda gitmiyor” der, maketi tamamen bırakırdım.",
+              text: "Dağılan maketi o gün toplamayıp olduğu gibi bırakırdım.",
               comparison: "Her şeyi bırakmak istemek, ne kadar üzüldüğümüzü gösterir. Hz. Eyyûb ise art arda gelen haberlere rağmen umudunu kaybetmedi.",
             },
           ],
@@ -6004,18 +6004,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Ben de ona aynı kırıcılıkta bir sözle karşılık verirdim.",
-              comparison: "Kırılınca karşılık vermek istemek çok doğal. Hz. Eyyûb ise kırıcı söze kırıcı sözle karşılık vermedi; derdini Allah'a açtı.",
+              text: "Haklı olmadığını göstermek için onunla tartışırdım.",
+              comparison: "Haklı olduğunu göstermek istemen çok doğal. Hz. Eyyûb ise tartışmaya girmedi; kırıldığını söyledi ve derdini Allah'a açtı.",
             },
             {
               id: "b",
-              text: "Kırıldığımı sakince söyler, tartışmayı uzatmaz, derdimi bir büyüğüme ve Allah'a açardım.",
+              text: "Kırıldığımı ona söyler, sonra derdimi Allah'a açardım.",
               comparison: "Sen de Hz. Eyyûb gibi davrandın. O da kırıldığını sakince söyledi, tartışmaya girmedi ve derdini Allah'a açtı.",
             },
             {
               id: "c",
-              text: "Hiçbir şey söylemez, kırgınlığımı kimseye anlatmadan uzun süre içimde tutardım.",
-              comparison: "Kırgınlığı içinde tutmak insanı daha da yorabilir. Hz. Eyyûb ise kırıldığını açıkça söyledi ve derdini Rabbine anlattı.",
+              text: "Kırgınlığımı belli etmeden onunla bir süre konuşmazdım.",
+              comparison: "Kırgınken uzak durmak istemek anlaşılır. Hz. Eyyûb ise kırıldığını açıkça söyledi ve derdini Rabbine anlattı.",
             },
           ],
         },
@@ -6094,17 +6094,17 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Bana bakan aileme teşekkür eder, iyileştiğim için Allah'a şükrederdim.",
+              text: "Bana bakan aileme teşekkür eder, Allah'a şükrederdim.",
               comparison: "Sen de Hz. Eyyûb gibi davrandın. O da iyileşince Rabbine şükretti ve sevincini eşiyle paylaştı.",
             },
             {
               id: "b",
-              text: "Zor günleri hemen unutur, kimseye bir şey demeden doğruca oyuna koşardım.",
-              comparison: "Oyuna koşmak istemek çok doğal. Hz. Eyyûb ise iyileşince zor günleri unutmadı; Rabbine yöneldi ve şükretti.",
+              text: "Çok özlediğim için doğruca arkadaşlarımın yanına koşardım.",
+              comparison: "Oyuna koşmak istemek çok doğal. Hz. Eyyûb ise iyileşince önce Rabbine yöneldi ve şükretti.",
             },
             {
               id: "c",
-              text: "“Ya yine hastalanırsam?” diye korkar, bir süre dışarı çıkmazdım.",
+              text: "“Ya yine hastalanırsam?” diye bir süre dışarı çıkmazdım.",
               comparison: "Korkunun bir süre sürmesi anlaşılır bir şey. Hz. Eyyûb ise zor günler bitince umutla ayağa kalktı ve şükretti.",
             },
           ],
@@ -6192,13 +6192,13 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Kimseye güvenmez, ne olursa olsun onu yanımdan ayırmazdım.",
+              text: "Onu çok özleyeceğim için yolculuğa onu da götürmek isterdim.",
               comparison: "Sevdiğini yanında tutmak istemen çok anlaşılır. Hz. Musa'nın annesi ise korkusuna rağmen Allah'ın sözüne güvendi ve sandığı suya bıraktı.",
             },
             {
               id: "b",
-              text: "İçim titrese de ona güvenir, kedimi bırakıp dönüşümü beklerdim.",
-              comparison: "Sen de Hz. Musa'nın annesi gibi davrandın. O da içi titrese de güvendi ve sandığı suya bırakıp beklemeye başladı.",
+              text: "İçim titrese de teyzeme güvenir, kedimi ona bırakırdım.",
+              comparison: "Sen de Hz. Musa'nın annesi gibi davrandın. O da içi titrese de güvendi ve sandığı suya bıraktı.",
             },
             {
               id: "c",
@@ -6287,13 +6287,13 @@ export const books: BookDefinition[] = [
             },
             {
               id: "b",
-              text: "Heyecanla her şeyi bir anda anlatır, durumu karıştırırdım.",
-              comparison: "Heyecanlanmak çok doğal. Hz. Musa'nın ablası ise kimliğini belli etmeden, sakin bir teklifle kardeşine yardım etti.",
+              text: "Heyecanlanıp aklıma gelen her şeyi bir anda anlatırdım.",
+              comparison: "Heyecanlanmak çok doğal. Hz. Musa'nın ablası ise gereğinden fazla konuşmadı; tek bir teklifle kardeşine yardım etti.",
             },
             {
               id: "c",
-              text: "Sakin olur, düşünüp yardımcı olacak sözü doğru zamanda söylerdim.",
-              comparison: "Sen de Hz. Musa'nın ablası gibi davrandın. O da düşünerek konuştu ve kardeşinin annesine dönmesini sağladı.",
+              text: "Söyleyeceğim sözü önceden seçip uygun anda söylerdim.",
+              comparison: "Sen de Hz. Musa'nın ablası gibi davrandın. O da sözünü seçerek konuştu ve kardeşinin annesine dönmesini sağladı.",
             },
           ],
         },
@@ -6379,17 +6379,17 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Kavgaya karışmaz, arkadaşıma durmasını söyler ve bir öğretmenden yardım isterdim.",
+              text: "Arkadaşıma durmasını söyler, bir öğretmenden yardım isterdim.",
               comparison: "Sen de Hz. Musa gibi davrandın. O da ikinci kez kavgaya atılmadı; dünkü olayı ve verdiği sözü hatırlayıp önce durdu.",
             },
             {
               id: "b",
-              text: "Arkadaşım olduğu için hiç düşünmeden onun tarafını tutardım.",
+              text: "Arkadaşım olduğu için yanına gidip onun tarafını tutardım.",
               comparison: "Arkadaşını korumak istemen çok anlaşılır. Hz. Musa ise kimin haklı olduğunu düşünmeden atılmanın sonucunu bir gün önce görmüştü.",
             },
             {
               id: "c",
-              text: "Görmemiş gibi yapıp hemen oradan uzaklaşırdım.",
+              text: "Karışmamak için oradan uzaklaşıp kendi oyunuma dönerdim.",
               comparison: "Uzaklaşmak seni güvende tutar. Hz. Musa ise oradan ayrılmadı; durup sözünü hatırladı ve kavgayı sürdüren adamı uyardı.",
             },
           ],
@@ -6583,18 +6583,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Bunu yapamayacağımı söyler, görevden vazgeçerdim.",
-              comparison: "Zor bir görev insanı korkutabilir. Hz. Musa ise vazgeçmedi; zorlandığı yeri Rabbine söyleyip yardım istedi.",
+              text: "Başka bir arkadaşımın sunumu benim yerime yapmasını isterdim.",
+              comparison: "Zor bir görev insanı korkutabilir. Hz. Musa ise görevi başkasına bırakmadı; zorlandığı yeri söyleyip yardım istedi.",
             },
             {
               id: "b",
-              text: "Zorlandığım yeri açıkça söyler, bir büyüğümden yardım ister ve hazırlanırdım.",
+              text: "Zorlandığım yeri öğretmenime söyleyip ondan yardım isterdim.",
               comparison: "Sen de Hz. Musa gibi davrandın. O da dilindeki düğümü saklamadı, yardım istedi ve kardeşiyle desteklendi.",
             },
             {
               id: "c",
-              text: "Kimseye bir şey söylemeden, hazırlanmadan çıkar ve idare etmeye çalışırdım.",
-              comparison: "İdare etmeye çalışmak cesaret gibi görünebilir. Hz. Musa ise göreve başlamadan önce yardım istemeyi seçti.",
+              text: "Zorlandığımı belli etmeden evde tek başıma çok çalışırdım.",
+              comparison: "Kendi başına çalışmak güzel bir çaba. Hz. Musa ise dilindeki düğümü saklamadı; zorlandığı yeri açıkça söyleyip yardım istedi.",
             },
           ],
         },
@@ -6690,18 +6690,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Bir öğretmene haber verir, onun yanında sakin ama açık bir dille konuşurdum.",
+              text: "Bir öğretmeni yanıma alıp ona haksızlık yaptığını söylerdim.",
               comparison: "Sen de Hz. Musa ile Hz. Hârûn gibi davrandın. Onlar da Allah'a güvenip korkularına rağmen gittiler ve doğruyu sakince söylediler.",
             },
             {
               id: "b",
-              text: "Korktuğum için hiçbir şey söylemez, olanları izlemekle yetinirdim.",
+              text: "Başıma bir iş açılmasın diye bu sefer sesimi çıkarmazdım.",
               comparison: "Böyle bir anda çekinmek çok anlaşılır. Hz. Musa ile Hz. Hârûn da korkmuştu, ama “Ben sizinle beraberim” sözüne güvenip gittiler.",
             },
             {
               id: "c",
-              text: "Ona bağırır, herkesin önünde onu küçük düşürmeye çalışırdım.",
-              comparison: "Haksızlığa kızmak çok doğal. Hz. Musa ise Firavun'a bile bağırmadı; Allah'ın buyurduğu gibi yumuşak bir dille konuştu.",
+              text: "Küçüklere başka bir oyun alanı bulmalarında yardım ederdim.",
+              comparison: "Küçüklere yardım etmek istemen güzel. Hz. Musa ile Hz. Hârûn ise haksızlığı yapan Firavun'a gidip doğruyu yüzüne söylediler.",
             },
           ],
         },
@@ -6796,12 +6796,12 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Haklı olduğu belli olsa da tarafımı tutanları bırakmaz, susardım.",
+              text: "Tarafımı tutanları kırmamak için o an susardım.",
               comparison: "Arkadaşlarını kırmak istememen çok anlaşılır. Sihirbazlar ise Firavun'un ödülünü bile bırakıp gördükleri gerçeği söylediler.",
             },
             {
               id: "b",
-              text: "Konuyu değiştirir, tartışmayı yarım bırakıp geçerdim.",
+              text: "Konuyu değiştirir, tartışmayı yarım bırakırdım.",
               comparison: "Tartışmayı bırakmak bazen kolay gelir. Sihirbazlar ise susmadı; gerçeği herkesin önünde açıkça kabul ettiler.",
             },
             {
@@ -6889,8 +6889,8 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Kimse hatırlamadığı için sözümü boş verirdim.",
-              comparison: "Kimse hatırlamayınca sözü unutmak gerçekten kolaydır. Hikâye, verilen bir sözün asıl değerinin sıkıntı geçtikten sonra tutulduğunda ortaya çıktığını gösteriyor.",
+              text: "Annem unuttuğu için sözümü artık geçmiş sayardım.",
+              comparison: "Unutulan bir sözü geçmiş saymak kolay gelebilir. Hikâye ise verilen sözün asıl değerinin, sıkıntı geçtikten sonra da tutulduğunda ortaya çıktığını gösteriyor.",
             },
             {
               id: "b",
@@ -6995,18 +6995,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Derin bir nefes alır, onlara güvenir ve söylediklerini yapardım.",
+              text: "Anneme ve babama güvenir, söylediklerini yapardım.",
               comparison: "Sen de kafiledekiler gibi güvenmeyi seçtin. Onlar da korkularına rağmen Hz. Musa'nın sözüne güvenip açılan yolda yürüdüler.",
             },
             {
               id: "b",
-              text: "Korkuyla ağlar, kimseyi dinlemezdim.",
+              text: "Korkudan ağlar, ne zaman gideceğimizi durmadan sorardım.",
               comparison: "Korkunca ağlamak çok doğal. Kafiledekiler de çok korkmuştu; Hz. Musa'nın “Rabbim benimle beraberdir” sözü onlara güç verdi.",
             },
             {
               id: "c",
-              text: "“Artık her şey bitti” diye düşünüp umudumu kaybederdim.",
-              comparison: "Böyle bir anda umut kaybolmuş gibi görünebilir. Hz. Musa ise “Asla, Rabbim benimle beraberdir” dedi ve çıkış yolunun geleceğine güvendi.",
+              text: "Korkumu unutmak için gözlerimi kapatıp uyumaya çalışırdım.",
+              comparison: "Korkuyu unutmaya çalışmak çok anlaşılır. Kafiledekiler ise korkularına rağmen Hz. Musa'nın sözüne güvenip açılan yolda yürüdüler.",
             },
           ],
         },
@@ -7100,18 +7100,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Hemen itiraz eder, anlamadığım için yapmayı reddederdim.",
-              comparison: "Sebebini bilmeden bir şeye itiraz etmek çok anlaşılır. Hz. Musa da itiraz etti, ama sonunda iç yüzünü öğrenince sabrın değerini gördü.",
+              text: "Ne işe yarayacağını öğrenmeden başlamak istemediğimi söylerdim.",
+              comparison: "Sebebini bilmeden başlamak istememek çok anlaşılır. Hz. Musa da itiraz etti, ama sonunda iç yüzünü öğrenince sabrın değerini gördü.",
             },
             {
               id: "b",
-              text: "Sabırla katılır, uygun bir zamanda sebebini nazikçe sorardım.",
+              text: "Etkinliğe katılır, sebebini sonra öğretmenime sorardım.",
               comparison: "Sen de sabırla katılıp sonra sormayı seçtin. Hikâyede Hızır da sebepleri en sonunda tek tek anlattı.",
             },
             {
               id: "c",
-              text: "Hiç düşünmeden yapar, ne öğrendiğimle ilgilenmezdim.",
-              comparison: "Bir şeyi düşünmeden yapmak kolaydır. Hz. Musa ise öğrenmek için hem dinledi hem de anlamak için sormaktan vazgeçmedi.",
+              text: "Merak ettiğim için etkinlik sırasında sebebini sorup dururdum.",
+              comparison: "Merak etmen çok güzel. Hz. Musa da sorularını bekletemedi; Hızır ise sebepleri en sonunda tek tek anlattı.",
             },
           ],
         },
@@ -7218,7 +7218,7 @@ export const books: BookDefinition[] = [
             },
             {
               id: "b",
-              text: "Parmak kaldırıp söz ister, fikrimi saygıyla anlatırdım.",
+              text: "Parmak kaldırıp izin ister, fikrimi öğretmene anlatırdım.",
               comparison: "Sen de Hz. Süleyman gibi davrandın. O da söz istedi, fikrini saygıyla anlattı ve iki tarafın da hakkı korundu.",
             },
             {
@@ -7313,12 +7313,12 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Önlerinden hızla geçip “Bakın, ben ne kadar iyi sürüyorum!” derdim.",
-              comparison: "Yeni bir şey başarınca sevinmek çok doğal. Hz. Süleyman ise kendisine verilenlerle övünmedi; onları şükürle ve başkalarının iyiliği için kullandı.",
+              text: "Onlar utanmasın diye yanlarında bisiklete binmezdim.",
+              comparison: "Arkadaşlarını utandırmak istememen güzel. Hz. Süleyman ise verilen nimeti gizlemedi; onu şükürle ve iyi işlerde kullandı.",
             },
             {
               id: "b",
-              text: "Kendi kendime sürer, onlarla hiç ilgilenmezdim.",
+              text: "Kendi kendime sürer, onlar öğrenince birlikte sürerdik.",
               comparison: "Kendi işine bakmak bazen rahat gelir. Hz. Süleyman ise nimetleri yalnız kendine saklamadı; onları herkesin yararlanacağı işlerde kullandı.",
             },
             {
@@ -7404,13 +7404,13 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Arkadaşlarıma haber verir, oyunu karıncalardan biraz uzağa taşımayı önerirdim.",
+              text: "Oyunu karıncalardan biraz uzağa taşımayı önerirdim.",
               comparison: "Sen de Hz. Süleyman gibi davrandın. O da koca bir ordunun içinde minik bir karıncanın sesini önemsedi.",
             },
             {
               id: "b",
-              text: "Oyunu bölmemek için hiçbir şey söylemeden oynamaya devam ederdim.",
-              comparison: "Oyunun keyfini bozmak istememek anlaşılır bir duygu. Hz. Süleyman ise kalabalığın içinde bile küçük bir canlının sesini fark edip önemsedi.",
+              text: "Oyunu bölmemek için karıncalara basmadan oynamaya çalışırdım.",
+              comparison: "Hem oyunu hem karıncaları düşünmen güzel. Hz. Süleyman ise koca bir ordunun içinde minik karıncaların sesini önemsedi ve onların yuvasını değerli gördü.",
             },
             {
               id: "c",
@@ -7509,12 +7509,12 @@ export const books: BookDefinition[] = [
             },
             {
               id: "b",
-              text: "Bir şey söylemez, ama içimden ona kızgın kalmaya devam ederdim.",
+              text: "Bir şey söylemez ama içimden ona hâlâ kızgın kalırdım.",
               comparison: "Kızgınlığını kimseyi incitmeden içinde tutmaya çalışman bir adım. Hz. Süleyman ise sessizce kızgın kalmadı; hüdhüdü dinleyip neler olduğunu öğrendi.",
             },
             {
               id: "c",
-              text: "Önce sakinleşir, neden geciktiğini sonuna kadar dinlerdim.",
+              text: "Kızgınlığımı bırakıp neden geciktiğini dinlerdim.",
               comparison: "Sen de Hz. Süleyman gibi davrandın. O da hüküm vermeden önce hüdhüdü sonuna kadar dinledi.",
             },
           ],
@@ -7603,7 +7603,7 @@ export const books: BookDefinition[] = [
             },
             {
               id: "b",
-              text: "Teşekkür eder ama sözümü tutar, yeni gelen arkadaşımla oynardım.",
+              text: "Çıkartmaları almaz, sözümü tutup yeni arkadaşımla oynardım.",
               comparison: "Sen de Hz. Süleyman gibi davrandın. O da değerli hediyeleri geri çevirdi ve doğru bildiği yoldan ayrılmadı.",
             },
             {
@@ -7694,17 +7694,17 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Beğenilmesine sevinir, bana yardım edenlere de içtenlikle teşekkür ederdim.",
+              text: "Sevinir, bana yardım eden annemi ve arkadaşımı da anardım.",
               comparison: "Sen de Hz. Süleyman gibi davrandın. O da başarıyı kendine mal etmedi; olanın Rabbinin bir lütfu olduğunu söyledi.",
             },
             {
               id: "b",
-              text: "“Hepsini tek başıma yaptım.” der, bütün övgüleri kendime alırdım.",
-              comparison: "Emeğinin beğenilmesine sevinmen çok doğal. Hz. Süleyman ise büyük bir başarı karşısında övünmedi; verilenin Rabbinin lütfu olduğunu söyledi.",
+              text: "Teşekkür eder, en zor kısmı nasıl yaptığımı anlatırdım.",
+              comparison: "Emeğinin beğenilmesine sevinmen çok doğal. Hz. Süleyman ise başarıyı kendine mal etmedi; verilenin Rabbinin lütfu olduğunu söyledi.",
             },
             {
               id: "c",
-              text: "Sevindiğimi kimseye göstermez, hiç konuşmadan yerime otururdum.",
+              text: "Utandığım için tebriklere yalnızca gülümseyip yerime otururdum.",
               comparison: "Sevincini saklaman alçakgönüllü görünebilir. Hz. Süleyman ise susmadı; başarıyı açıkça Rabbinin lütfu olarak andı ve şükretti.",
             },
           ],
@@ -7788,7 +7788,7 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "“Ben de zaten oraya bakacaktım.” derdim.",
+              text: "“Ben de zaten tam oraya bakacaktım.” derdim.",
               comparison: "Haklı çıkmak istemek çok doğal. Hikâyede güçlü cinler bile gaybı bilmiyordu; bilmediğimizi kabul etmek de bir güzelliktir.",
             },
             {
@@ -7798,8 +7798,8 @@ export const books: BookDefinition[] = [
             },
             {
               id: "c",
-              text: "Hiçbir şey söylemez, haritayı kapatıp başka bir şeyle ilgilenirdim.",
-              comparison: "Böyle bir anda ne diyeceğini bilememek olabilir. Hikâyede büyük gerçeği küçük bir ağaç kurdu gösterdi; kardeşine “sen doğru buldun” demek de güzel bir karşılık olurdu.",
+              text: "Biraz bozulup haritayı kapatır, başka şeye geçerdim.",
+              comparison: "Böyle bir anda bozulmak olabilir. Hikâyede büyük gerçeği küçük bir ağaç kurdu gösterdi; kardeşine “sen doğru buldun” demek de güzel bir karşılık olurdu.",
             },
           ],
         },
@@ -7886,12 +7886,12 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Kimse fark etmediği için sulamayı bırakır, görevi başkasının almasını beklerdim.",
+              text: "Fark edilmediği için görevi başka bir arkadaşa devrederdim.",
               comparison: "Emeğin fark edilmeyince bırakmak istemek çok doğal. Hz. Yunus ise yıllarca kimse dinlemese de görevini bırakmadı.",
             },
             {
               id: "b",
-              text: "Bana verilen bir görev olduğu için bitkileri her sabah sulamaya devam ederdim.",
+              text: "Bana verilen görev olduğu için her sabah sulamayı sürdürürdüm.",
               comparison: "Sen de Hz. Yunus gibi davrandın. O da sonuç görünmese de kendisine verilen görevi yapmayı sürdürdü.",
             },
             {
@@ -7986,17 +7986,17 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Sessiz kalır, başka birinin söylemesini ya da öğretmenin konuyu unutmasını beklerdim.",
-              comparison: "Kimse görmediyse susmak insana daha kolay gelebilir. Hz. Yunus ise kalabalığın arasında susmadı; yaptığını kendisi söyledi.",
+              text: "Sınıfın önünde söylemeye utanıp akşam anneme anlatırdım.",
+              comparison: "Utanmak çok doğal. Hz. Yunus ise kalabalığın arasında susmadı; kimse sormadan yaptığını kendisi söyledi.",
             },
             {
               id: "b",
-              text: "“Belki kendi kendine düşmüştür” der, konuyu kapatmaya çalışırdım.",
-              comparison: "Böyle anlarda bahane bulmak kolay görünebilir. Hz. Yunus ise hiçbir bahane aramadı, gerçeği olduğu gibi anlattı.",
+              text: "Öğretmen kızar diye teneffüs bitince ona yalnızken söylerdim.",
+              comparison: "Yalnızken söylemek daha kolay gelebilir. Hz. Yunus ise kura başka birine çıkmadan, herkesin önünde gerçeği kendisi söyledi.",
             },
             {
               id: "c",
-              text: "“Ben yaptım” der, kırılan sürahi için ne yapabileceğimi sorardım.",
+              text: "“Ben yaptım” der, sürahi için ne yapabileceğimi sorardım.",
               comparison: "Sen de Hz. Yunus gibi davrandın. O da yaptığını saklamadı; kimse sormadan güverteye çıkıp gerçeği kendi ağzıyla söyledi.",
             },
           ],
@@ -8070,18 +8070,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Hatamı kabul eder, Allah'tan yardım diler, kardeşimden özür dileyip düzeltmenin yolunu arardım.",
+              text: "Allah'tan yardım diler, kardeşimden özür dilemeye giderdim.",
               comparison: "Sen de Hz. Yunus gibi davrandın. O da karanlıkta umudunu yitirmedi; hatasını kabul edip Allah'a döndü.",
             },
             {
               id: "b",
-              text: "“Artık hiçbir şey düzelmez” diye düşünür, akşama kadar odamdan çıkmazdım.",
+              text: "“Bu düzelmez” diye düşünüp akşama kadar odamda otururdum.",
               comparison: "Büyük bir hatadan sonra her şeyin bittiğini düşünmek çok doğal. Hz. Yunus ise en karanlık yerde bile umudunu yitirmedi ve Allah'a dua etti.",
             },
             {
               id: "c",
-              text: "Olanları düşünmemek için hemen oyun oynamaya başlar, kardeşime de hiçbir şey söylemezdim.",
-              comparison: "Üzücü bir şeyi unutmaya çalışmak insana iyi gelebilir. Hz. Yunus ise hatasından kaçmadı; onu açıkça söyleyip Allah'a yöneldi.",
+              text: "Kardeşim sakinleşsin diye konuyu bir süre açmamayı seçerdim.",
+              comparison: "Kardeşinin sakinleşmesini beklemek düşünceli bir davranış. Hz. Yunus ise hatasını bekletmedi; onu hemen kabul edip Allah'a yöneldi.",
             },
           ],
         },
@@ -8157,17 +8157,17 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Suyu alır, hiçbir şey söylemeden içip yoluma devam ederdim.",
-              comparison: "Yorgunken bir iyiliği sessizce kabul etmek çok doğal. Hz. Yunus ise gölgeyi fark etti ve onun için Rabbine şükretti.",
+              text: "Çok susadığım için suyu alıp bir dikişte içerdim.",
+              comparison: "Çok susamışken hemen içmek çok doğal. Hz. Yunus ise gölgeyi fark etti ve onun için Rabbine şükretti.",
             },
             {
               id: "b",
-              text: "Yorgunluktan söylenip durur, getirilen suyu fark etmeden kenara koyardım.",
+              text: "Yorgunluktan söylenip dururken suyu alıp kenara koyardım.",
               comparison: "Çok yorgunken insan çevresindeki iyilikleri göremeyebilir. Hz. Yunus ise en yorgun anında bile başının üstündeki gölgeyi fark etti.",
             },
             {
               id: "c",
-              text: "Suyu alır, arkadaşıma bu iyiliği için içtenlikle teşekkür ederdim.",
+              text: "Suyu alır, bu iyiliği için arkadaşıma teşekkür ederdim.",
               comparison: "Sen de Hz. Yunus gibi davrandın. O da zor bir anda gelen iyiliği fark etti ve bunun için şükretti.",
             },
           ],
@@ -8258,7 +8258,7 @@ export const books: BookDefinition[] = [
             },
             {
               id: "b",
-              text: "Eski kırgınlığımı bırakır, onları sevinçle oyuna katardım.",
+              text: "Eski kırgınlığımı bırakır, onları da oyuna katardım.",
               comparison: "Sen de Hz. Yunus gibi davrandın. O da kırgınlığını geride bıraktı ve kendisine gelen insanlarla birlikte sevindi.",
             },
             {
@@ -8358,18 +8358,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Hiçbir şey sormaz, aklımdaki soruları kimseye söylemeden içimde saklardım.",
-              comparison: "Soruları içinde saklamak bazen daha kolay gelir. Hz. Meryem ise aklını karıştıran soruyu Rabbine sordu ve cevabıyla rahatladı.",
+              text: "Annemi üzmemek için sorularımı şimdilik kendi içimde tutardım.",
+              comparison: "Anneni üzmek istememen çok güzel. Hz. Meryem ise aklını karıştıran soruyu saklamadı; Rabbine sordu ve cevabıyla rahatladı.",
             },
             {
               id: "b",
-              text: "Merak ettiklerimi anneme sakince sorar, verdiği cevaba güvenirdim.",
+              text: "Merak ettiklerimi anneme sorar, verdiği cevaba güvenirdim.",
               comparison: "Sen de Hz. Meryem gibi davrandın. O da merak ettiğini saygıyla sordu, aldığı cevaba güvendi ve kalbi sakinleşti.",
             },
             {
               id: "c",
-              text: "“Ben gitmek istemiyorum!” diye bağırır, odama kapanırdım.",
-              comparison: "Şaşırtıcı bir haber karşısında kızmak çok anlaşılır. Hz. Meryem ise sorusunu sakince Rabbine sordu ve aldığı cevapla rahatladı.",
+              text: "Sorularımı annem yerine önce arkadaşlarıma sorardım.",
+              comparison: "Arkadaşlarına danışmak da bir yol. Hz. Meryem ise sorusunu en doğru cevabı verecek olana, doğrudan Rabbine sordu.",
             },
           ],
         },
@@ -8449,18 +8449,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Yorgun olsam da kalkar, en azından kitaplarımı çantama yerleştirirdim.",
+              text: "Yorgun olsam da kitaplarımı çantaya koyardım.",
               comparison: "Sen de Hz. Meryem gibi davrandın. O da çok yorgunken ağacı silkeledi ve elinden gelen küçük adımı attı.",
             },
             {
               id: "b",
-              text: "Hiçbir şey yapmaz, “Sabah bakarım” diyerek hemen yatardım.",
-              comparison: "Yorgunken dinlenmek istemek çok doğal. Hz. Meryem ise çok yorgun olduğu hâlde ağacı silkeledi ve elinden geleni yaptı.",
+              text: "“Sabah erken kalkıp hazırlarım” diyerek yatardım.",
+              comparison: "Sabaha bırakmak o an kolay gelir. Hz. Meryem ise çok yorgun olduğu hâlde o an ağacı silkeledi ve elinden geleni yaptı.",
             },
             {
               id: "c",
-              text: "“Çok yorgunum” diye söylenir, çantamı annemin hazırlamasını beklerdim.",
-              comparison: "Bazen yardım istemek de gerekir. Hz. Meryem ise o an kendisinden isteneni yaptı ve ağacı kendine doğru silkeledi.",
+              text: "Önce biraz dinlenip sonra hazırlamayı düşünürdüm.",
+              comparison: "Önce dinlenmek istemek çok doğal. Hz. Meryem ise hiçbir şey yapmadan bekleyebilirdi, ama o an küçük adımını attı.",
             },
           ],
         },
@@ -8546,18 +8546,18 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Hemen ayağa kalkar, bağırarak arkadaşımla tartışırdım.",
-              comparison: "Haksızlığa kızmak çok anlaşılır; Hz. Meryem ise bağırıp tartışmadı, sakin kaldı. Olanı sonra güvendiğin bir büyüğüne anlatmak da seni korur.",
+              text: "Ders sırasında söz isteyip o şeyi yapmadığımı söylerdim.",
+              comparison: "Hemen doğruyu söylemek istemen anlaşılır. Hz. Meryem ise o an tartışmaya girmedi; olanı sonra güvendiğin bir büyüğe anlatmak da seni korur.",
             },
             {
               id: "b",
-              text: "Sakin kalır, kavga etmez; dersten sonra olanı öğretmenime anlatırdım.",
+              text: "Dersin bitmesini bekler, sonra öğretmenime anlatırdım.",
               comparison: "Sen de Hz. Meryem gibi sakin kaldın ve tartışmadın. Olanı sonra güvendiğin bir büyüğüne anlatmak da seni korur.",
             },
             {
               id: "c",
-              text: "Ben de ona, onun yaptığı başka bir şeyi söyleyerek karşılık verirdim.",
-              comparison: "Karşılık vermek istemek çok doğal; Hz. Meryem ise kimseyi suçlamadan sakin kaldı. Olanı sonra güvendiğin bir büyüğüne anlatmak da seni korur.",
+              text: "Arkadaşıma kısık sesle “Yapmadım” deyip açıklardım.",
+              comparison: "Açıklama yapmak istemen çok doğal. Hz. Meryem ise kalabalığa açıklama yapmadı, sakin kaldı; olanı sonra bir büyüğüne anlatmak da seni korur.",
             },
           ],
         },
@@ -8653,17 +8653,17 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Kendi tarafımı tutar, ben de karşı taraftakilere kızardım.",
-              comparison: "Kendi tarafını tutmak kolay gelebilir. Hz. Îsâ ise kızmadan, herkese aynı sakinlikle doğruyu anlattı.",
+              text: "Kendi tarafımın haklı olduğunu söyleyip onları savunurdum.",
+              comparison: "Kendi tarafını tutmak kolay gelebilir. Hz. Îsâ ise taraf tutmadı; herkese aynı sakinlikle doğruyu anlattı.",
             },
             {
               id: "b",
-              text: "Hiçbir şey söylemez, oyunu bırakıp başka bir yere giderdim.",
+              text: "Kavgaya karışmamak için oyunu bırakıp başka yere giderdim.",
               comparison: "Tartışmadan uzaklaşmak bazen insanı rahatlatır. Hz. Îsâ ise insanlardan uzaklaşmadı; anlaşmazlığı açıklamak için onlarla konuştu.",
             },
             {
               id: "c",
-              text: "Herkesi dinler, kuralı nazikçe anlatıp birlikte oynamaya çağırırdım.",
+              text: "Kuralı herkese anlatıp birlikte oynamaya çağırırdım.",
               comparison: "Sen de Hz. Îsâ gibi davrandın. O da anlaşmazlık karşısında doğruyu nazikçe anlattı ve herkesi birliğe çağırdı.",
             },
           ],
@@ -8747,13 +8747,13 @@ export const books: BookDefinition[] = [
             },
             {
               id: "b",
-              text: "“Ben zaten her şeyi herkesten iyi yaparım” diye övünürdüm.",
-              comparison: "Başarınla sevinmek çok doğal. Hz. Îsâ ise övülünce büyüklenmedi; işin Allah'ın izniyle olduğunu hatırlattı.",
+              text: "Alkışlar için herkese teşekkür eder, yerime otururdum.",
+              comparison: "Alçak gönüllü davranman güzel. Hz. Îsâ ise yalnızca susmadı; her güzel işin Allah'ın izniyle olduğunu açıkça söyledi.",
             },
             {
               id: "c",
-              text: "Hiçbir şey söylemez, bütün alkışların yalnızca bana olmasını isterdim.",
-              comparison: "Beğenilmek insanı mutlu eder. Hz. Îsâ ise övgüyü kendine almadı; her mucizede “Allah'ın izniyle” dedi.",
+              text: "Çok çalıştığım için bu alkışları sevinçle kabul ederdim.",
+              comparison: "Emeğinle sevinmek çok doğal. Hz. Îsâ ise övülünce büyüklenmedi; işin Allah'ın izniyle olduğunu hatırlattı.",
             },
           ],
         },
@@ -8844,12 +8844,12 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Başkası kalksın diye bekler, ben parmak kaldırmazdım.",
+              text: "Başka biri kalkar diye bir süre parmak kaldırmazdım.",
               comparison: "Başkasının kalkmasını beklemek kolay gelebilir. Havariler ise sessizlik uzamadan öne çıktı ve “Biz Allah için yardımcılarız” dedi.",
             },
             {
               id: "b",
-              text: "Parmağımı kaldırır, “Ben yardım ederim” derdim.",
+              text: "Parmağımı kaldırır, “Ben yardım ederim” diye seslenirdim.",
               comparison: "Sen de havariler gibi davrandın. Onlar da yardım çağrısına ilk cevap verdi ve Hz. Îsâ'nın yanında oldu.",
             },
             {
@@ -8947,17 +8947,17 @@ export const books: BookDefinition[] = [
           options: [
             {
               id: "a",
-              text: "Yalnızca çok istediğim yeni oyuncak için dua ederdim.",
+              text: "Sıram gelince aklıma ilk gelen oyuncak dileğimi söylerdim.",
               comparison: "Kendi dileğini düşünmek çok doğal. Hz. Îsâ ise duasına ilk gelenden son gelene kadar herkesi kattı.",
             },
             {
               id: "b",
-              text: "Ne diyeceğimi bilemez, sıramı başkasına verirdim.",
+              text: "Ne diyeceğimi bilemez, sıramı bir sonraki kişiye verirdim.",
               comparison: "Ne diyeceğini bilememek olabilir. Hz. Îsâ ise duasında kimseyi unutmadı ve herkes için bir şölen istedi.",
             },
             {
               id: "c",
-              text: "Kendim için, ailem için ve tanımadığım insanlar için de dua ederdim.",
+              text: "Kendim için olduğu kadar başkaları için de dua ederdim.",
               comparison: "Sen de Hz. Îsâ gibi davrandın. O da duasına ilk gelenden son gelene kadar herkesi kattı.",
             },
           ],
@@ -9039,13 +9039,13 @@ export const books: BookDefinition[] = [
             },
             {
               id: "b",
-              text: "Yorganın altına saklanır, kimseye bir şey söylemezdim.",
+              text: "Yorganın altına saklanıp gürültünün geçmesini umardım.",
               comparison: "Korkunu saklamak istemek çok anlaşılır. Hz. Îsâ ise korkulu bir zamanda umudunu yitirmedi ve Rabbine güvendi.",
             },
             {
               id: "c",
-              text: "Korkudan bütün gece uyumadan, gözlerim açık beklerdim.",
-              comparison: "Korkunca uyuyamamak çok doğal. Hz. Îsâ ise tehlike yaklaşırken Rabbine güvendi ve Allah onu korudu.",
+              text: "Işığı açıp korkum geçene kadar kitap okumaya çalışırdım.",
+              comparison: "Kendi kendine sakinleşmeye çalışman güzel. Hz. Îsâ ise tehlike yaklaşırken Rabbine güvendi; korkunu bir büyüğüne anlatmak da kalbini sakinleştirir.",
             },
           ],
         },

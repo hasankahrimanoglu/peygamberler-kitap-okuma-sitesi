@@ -355,7 +355,7 @@ Bu bölümde yok.
 
 Soru: Sınıfta iki arkadaşın aynı kitabı okumak istiyor. Öğretmenin kitabı birine verdi, öbürü çok üzüldü. Senin aklına ikisini de düşünen başka bir fikir geldi. Ne yaparsın?
 A) Öğretmen karar verdi diye fikrimi kendime saklardım.
-B) Parmak kaldırıp söz ister, fikrimi saygıyla anlatırdım.
+B) Parmak kaldırıp izin ister, fikrimi öğretmene anlatırdım.
 C) Teneffüste arkadaşlarıma "Öğretmen haksızlık etti." derdim.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
@@ -553,8 +553,8 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Bisiklet sürmeyi çok çabuk öğrendin. Mahalledeki bazı arkadaşların ise henüz zorlanıyor ve sık sık düşüyor. Ne yaparsın?
-A) Önlerinden hızla geçip "Bakın, ben ne kadar iyi sürüyorum!" derdim.
-B) Kendi kendime sürer, onlarla hiç ilgilenmezdim.
+A) Onlar utanmasın diye yanlarında bisiklete binmezdim.
+B) Kendi kendime sürer, onlar öğrenince birlikte sürerdik.
 C) Öğrendiğim için sevinir, isteyen arkadaşlarıma yardım ederdim.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
@@ -579,7 +579,7 @@ Hz. Süleyman her nimeti, Allah'ın kendisine verdiği bir emanet olarak gördü
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Yeni bir şey başarınca sevinmek çok doğal. Hz. Süleyman ise kendisine verilenlerle övünmedi; onları şükürle ve başkalarının iyiliği için kullandı.
+A) Arkadaşlarını utandırmak istememen güzel. Hz. Süleyman ise verilen nimeti gizlemedi; onu şükürle ve iyi işlerde kullandı.
 B) Kendi işine bakmak bazen rahat gelir. Hz. Süleyman ise nimetleri yalnız kendine saklamadı; onları herkesin yararlanacağı işlerde kullandı.
 C) Sen de Hz. Süleyman gibi davrandın. O da verilen nimeti Allah'ın lütfu bildi ve şükrünü çalışarak gösterdi.
 
@@ -733,8 +733,8 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Okul bahçesinde arkadaşlarınla koşarak top oynuyorsunuz. Birden oyun alanının tam ortasında, yerde uzun bir karınca yolu görüyorsun. Ne yaparsın?
-A) Arkadaşlarıma haber verir, oyunu karıncalardan biraz uzağa taşımayı önerirdim.
-B) Oyunu bölmemek için hiçbir şey söylemeden oynamaya devam ederdim.
+A) Oyunu karıncalardan biraz uzağa taşımayı önerirdim.
+B) Oyunu bölmemek için karıncalara basmadan oynamaya çalışırdım.
 C) Karıncaları ellerimle kenara itip oynamaya devam ederdim.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
@@ -763,7 +763,7 @@ O gün karınca vadisinde küçük bir canlı, herkese büyük bir şey hatırla
 #### SEÇİMİNİ KARŞILAŞTIR
 
 A) Sen de Hz. Süleyman gibi davrandın. O da koca bir ordunun içinde minik bir karıncanın sesini önemsedi.
-B) Oyunun keyfini bozmak istememek anlaşılır bir duygu. Hz. Süleyman ise kalabalığın içinde bile küçük bir canlının sesini fark edip önemsedi.
+B) Hem oyunu hem karıncaları düşünmen güzel. Hz. Süleyman ise koca bir ordunun içinde minik karıncaların sesini önemsedi ve onların yuvasını değerli gördü.
 C) Karıncaları düşünmen güzel. Hz. Süleyman ise karıncanın sesini fark edip önemsedi ve Rabbine şükretti.
 
 #### NE ÖĞRENDİK
@@ -927,8 +927,8 @@ Bu bölümde yok.
 
 Soru: Arkadaşınla birlikte ödev yapmak için sözleşmiştiniz, ama o gelmedi ve seni uzun süre bekletti. Biraz sonra koşarak geldi ve sana bir şey anlatmak istiyor. Ne yaparsın?
 A) "Beni beklettin!" deyip onu dinlemeden küserdim.
-B) Bir şey söylemez, ama içimden ona kızgın kalmaya devam ederdim.
-C) Önce sakinleşir, neden geciktiğini sonuna kadar dinlerdim.
+B) Bir şey söylemez ama içimden ona hâlâ kızgın kalırdım.
+C) Kızgınlığımı bırakıp neden geciktiğini dinlerdim.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1114,7 +1114,7 @@ Bu bölümde yok.
 
 Soru: Teneffüste, yeni gelen ve yalnız kalan bir arkadaşınla oynamaya söz verdin. O sırada başka bir arkadaşın, kendisiyle oynarsan sana en sevdiğin çıkartmaları vereceğini söylüyor. Ne yaparsın?
 A) Çıkartmaları alır, yeni gelen arkadaşıma "Sonra oynarız." derdim.
-B) Teşekkür eder ama sözümü tutar, yeni gelen arkadaşımla oynardım.
+B) Çıkartmaları almaz, sözümü tutup yeni arkadaşımla oynardım.
 C) Çıkartmaları alır, ikisiyle de biraz biraz oynamaya çalışırdım.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
@@ -1292,9 +1292,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Okulda hazırladığın proje çok beğenildi ve herkes seni tebrik ediyor. Projeyi hazırlarken annen ve bir arkadaşın da sana yardım etmişti. Ne yaparsın?
-A) Beğenilmesine sevinir, bana yardım edenlere de içtenlikle teşekkür ederdim.
-B) "Hepsini tek başıma yaptım." der, bütün övgüleri kendime alırdım.
-C) Sevindiğimi kimseye göstermez, hiç konuşmadan yerime otururdum.
+A) Sevinir, bana yardım eden annemi ve arkadaşımı da anardım.
+B) Teşekkür eder, en zor kısmı nasıl yaptığımı anlatırdım.
+C) Utandığım için tebriklere yalnızca gülümseyip yerime otururdum.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1330,7 +1330,7 @@ O gün bir taht, bir köşk ve billur bir zemin, bir insanın gerçeği görmesi
 #### SEÇİMİNİ KARŞILAŞTIR
 
 A) Sen de Hz. Süleyman gibi davrandın. O da başarıyı kendine mal etmedi; olanın Rabbinin bir lütfu olduğunu söyledi.
-B) Emeğinin beğenilmesine sevinmen çok doğal. Hz. Süleyman ise büyük bir başarı karşısında övünmedi; verilenin Rabbinin lütfu olduğunu söyledi.
+B) Emeğinin beğenilmesine sevinmen çok doğal. Hz. Süleyman ise başarıyı kendine mal etmedi; verilenin Rabbinin lütfu olduğunu söyledi.
 C) Sevincini saklaman alçakgönüllü görünebilir. Hz. Süleyman ise susmadı; başarıyı açıkça Rabbinin lütfu olarak andı ve şükretti.
 
 #### NE ÖĞRENDİK
@@ -1487,9 +1487,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Evde kardeşinle bir haritaya bakıyorsunuz. Bir şehrin yerini bildiğinden emindin, ama kardeşin doğru yeri gösterdi; senin düşündüğün yer başkaymış. Ne yaparsın?
-A) "Ben de zaten oraya bakacaktım." derdim.
+A) “Ben de zaten tam oraya bakacaktım.” derdim.
 B) "Ben bilmiyormuşum, sen doğru buldun." derdim.
-C) Hiçbir şey söylemez, haritayı kapatıp başka bir şeyle ilgilenirdim.
+C) Biraz bozulup haritayı kapatır, başka şeye geçerdim.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1519,7 +1519,7 @@ Kur'an onun için "O ne iyi kuldu! Yönü hep Allah'a dönüktü." der. Allah ay
 
 A) Haklı çıkmak istemek çok doğal. Hikâyede güçlü cinler bile gaybı bilmiyordu; bilmediğimizi kabul etmek de bir güzelliktir.
 B) Sen bilmediğini kabul ettin ve kardeşinden öğrendin. Hikâyede de büyük bir gerçeği küçücük bir ağaç kurdu gösterdi; her şeyi yalnız Allah bilir.
-C) Böyle bir anda ne diyeceğini bilememek olabilir. Hikâyede büyük gerçeği küçük bir ağaç kurdu gösterdi; kardeşine "sen doğru buldun" demek de güzel bir karşılık olurdu.
+C) Böyle bir anda bozulmak olabilir. Hikâyede büyük gerçeği küçük bir ağaç kurdu gösterdi; kardeşine “sen doğru buldun” demek de güzel bir karşılık olurdu.
 
 #### NE ÖĞRENDİK
 

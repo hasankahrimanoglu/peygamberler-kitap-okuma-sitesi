@@ -336,8 +336,8 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Öğretmenin sana sınıftaki bitkileri sulama görevini verdi. Haftalardır her sabah suluyorsun ama kimse fark etmiyor. Bir arkadaşın da "Boşuna uğraşıyorsun" diyor. Ne yaparsın?
-A) Kimse fark etmediği için sulamayı bırakır, görevi başkasının almasını beklerdim.
-B) Bana verilen bir görev olduğu için bitkileri her sabah sulamaya devam ederdim.
+A) Fark edilmediği için görevi başka bir arkadaşa devrederdim.
+B) Bana verilen görev olduğu için her sabah sulamayı sürdürürdüm.
 C) Arkadaşımın sözüne bakıp yalnızca canım istediği günlerde sulardım.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
@@ -533,9 +533,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Teneffüste sınıfta top oynarken öğretmen masasındaki su sürahisini devirdin ve sürahi kırıldı. Öğretmen sınıfa gelip kimin yaptığını soruyor; seni gören olmadı. Ne yaparsın?
-A) Sessiz kalır, başka birinin söylemesini ya da öğretmenin konuyu unutmasını beklerdim.
-B) "Belki kendi kendine düşmüştür" der, konuyu kapatmaya çalışırdım.
-C) "Ben yaptım" der, kırılan sürahi için ne yapabileceğimi sorardım.
+A) Sınıfın önünde söylemeye utanıp akşam anneme anlatırdım.
+B) Öğretmen kızar diye teneffüs bitince ona yalnızken söylerdim.
+C) “Ben yaptım” der, sürahi için ne yapabileceğimi sorardım.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -560,8 +560,8 @@ Balık, derin sulara doğru süzülüp uzaklaştı ve gemi geride küçük bir n
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Kimse görmediyse susmak insana daha kolay gelebilir. Hz. Yunus ise kalabalığın arasında susmadı; yaptığını kendisi söyledi.
-B) Böyle anlarda bahane bulmak kolay görünebilir. Hz. Yunus ise hiçbir bahane aramadı, gerçeği olduğu gibi anlattı.
+A) Utanmak çok doğal. Hz. Yunus ise kalabalığın arasında susmadı; kimse sormadan yaptığını kendisi söyledi.
+B) Yalnızken söylemek daha kolay gelebilir. Hz. Yunus ise kura başka birine çıkmadan, herkesin önünde gerçeği kendisi söyledi.
 C) Sen de Hz. Yunus gibi davrandın. O da yaptığını saklamadı; kimse sormadan güverteye çıkıp gerçeği kendi ağzıyla söyledi.
 
 #### NE ÖĞRENDİK
@@ -709,9 +709,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Kardeşinin günlerdir uğraştığı resmi yanlışlıkla yırttın. Kardeşin ağlayarak odasına gitti, sen de kendi odanda tek başına oturuyorsun. Ne yaparsın?
-A) Hatamı kabul eder, Allah'tan yardım diler, kardeşimden özür dileyip düzeltmenin yolunu arardım.
-B) "Artık hiçbir şey düzelmez" diye düşünür, akşama kadar odamdan çıkmazdım.
-C) Olanları düşünmemek için hemen oyun oynamaya başlar, kardeşime de hiçbir şey söylemezdim.
+A) Allah'tan yardım diler, kardeşimden özür dilemeye giderdim.
+B) “Bu düzelmez” diye düşünüp akşama kadar odamda otururdum.
+C) Kardeşim sakinleşsin diye konuyu bir süre açmamayı seçerdim.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -742,7 +742,7 @@ Karanlıklar hâlâ yerindeydi, ama Hz. Yunus'un kalbi artık aydınlıktı. Bal
 
 A) Sen de Hz. Yunus gibi davrandın. O da karanlıkta umudunu yitirmedi; hatasını kabul edip Allah'a döndü.
 B) Büyük bir hatadan sonra her şeyin bittiğini düşünmek çok doğal. Hz. Yunus ise en karanlık yerde bile umudunu yitirmedi ve Allah'a dua etti.
-C) Üzücü bir şeyi unutmaya çalışmak insana iyi gelebilir. Hz. Yunus ise hatasından kaçmadı; onu açıkça söyleyip Allah'a yöneldi.
+C) Kardeşinin sakinleşmesini beklemek düşünceli bir davranış. Hz. Yunus ise hatasını bekletmedi; onu hemen kabul edip Allah'a yöneldi.
 
 #### NE ÖĞRENDİK
 
@@ -875,9 +875,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Okulda çok yorucu bir gün geçirdin; beden eğitimi dersinden sonra çok susadın. Bir arkadaşın, sen istemeden sana bir bardak su getirdi. Ne yaparsın?
-A) Suyu alır, hiçbir şey söylemeden içip yoluma devam ederdim.
-B) Yorgunluktan söylenip durur, getirilen suyu fark etmeden kenara koyardım.
-C) Suyu alır, arkadaşıma bu iyiliği için içtenlikle teşekkür ederdim.
+A) Çok susadığım için suyu alıp bir dikişte içerdim.
+B) Yorgunluktan söylenip dururken suyu alıp kenara koyardım.
+C) Suyu alır, bu iyiliği için arkadaşıma teşekkür ederdim.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -905,7 +905,7 @@ Hz. Yunus bütün bunlardan habersiz, kıyıda dinlenmeye devam ediyordu. Günle
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Yorgunken bir iyiliği sessizce kabul etmek çok doğal. Hz. Yunus ise gölgeyi fark etti ve onun için Rabbine şükretti.
+A) Çok susamışken hemen içmek çok doğal. Hz. Yunus ise gölgeyi fark etti ve onun için Rabbine şükretti.
 B) Çok yorgunken insan çevresindeki iyilikleri göremeyebilir. Hz. Yunus ise en yorgun anında bile başının üstündeki gölgeyi fark etti.
 C) Sen de Hz. Yunus gibi davrandın. O da zor bir anda gelen iyiliği fark etti ve bunun için şükretti.
 
@@ -1064,7 +1064,7 @@ Bu bölümde yok.
 
 Soru: Geçen yıl oyunlarına katılmak istediğinde seninle alay eden arkadaşların, bugün senin kurduğun oyuna katılmak istiyor. Ne yaparsın?
 A) Geçen yılı onlara hatırlatır, onları oyuna almazdım.
-B) Eski kırgınlığımı bırakır, onları sevinçle oyuna katardım.
+B) Eski kırgınlığımı bırakır, onları da oyuna katardım.
 C) Oyuna alırdım ama onlarla pek konuşmaz, uzak dururdum.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**

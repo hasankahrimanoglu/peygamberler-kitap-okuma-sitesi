@@ -363,9 +363,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Annen sana, ailenizin yakında başka bir şehre taşınacağını söyledi. Bu haber seni çok şaşırttı ve aklına bir sürü soru geldi. Ne yaparsın?
-A) Hiçbir şey sormaz, aklımdaki soruları kimseye söylemeden içimde saklardım.
-B) Merak ettiklerimi anneme sakince sorar, verdiği cevaba güvenirdim.
-C) "Ben gitmek istemiyorum!" diye bağırır, odama kapanırdım.
+A) Annemi üzmemek için sorularımı şimdilik kendi içimde tutardım.
+B) Merak ettiklerimi anneme sorar, verdiği cevaba güvenirdim.
+C) Sorularımı annem yerine önce arkadaşlarıma sorardım.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -393,9 +393,9 @@ O akşam mabedin taş avlusuna yumuşak bir ışık düştü ve kandiller birer 
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Soruları içinde saklamak bazen daha kolay gelir. Hz. Meryem ise aklını karıştıran soruyu Rabbine sordu ve cevabıyla rahatladı.
+A) Anneni üzmek istememen çok güzel. Hz. Meryem ise aklını karıştıran soruyu saklamadı; Rabbine sordu ve cevabıyla rahatladı.
 B) Sen de Hz. Meryem gibi davrandın. O da merak ettiğini saygıyla sordu, aldığı cevaba güvendi ve kalbi sakinleşti.
-C) Şaşırtıcı bir haber karşısında kızmak çok anlaşılır. Hz. Meryem ise sorusunu sakince Rabbine sordu ve aldığı cevapla rahatladı.
+C) Arkadaşlarına danışmak da bir yol. Hz. Meryem ise sorusunu en doğru cevabı verecek olana, doğrudan Rabbine sordu.
 
 #### NE ÖĞRENDİK
 
@@ -544,9 +544,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Çok yorgun döndüğün bir akşam annen, yarın için okul çantanı hazırlamanı istedi. Hem yorgunsun hem de canın hiçbir şey yapmak istemiyor. Ne yaparsın?
-A) Yorgun olsam da kalkar, en azından kitaplarımı çantama yerleştirirdim.
-B) Hiçbir şey yapmaz, "Sabah bakarım" diyerek hemen yatardım.
-C) "Çok yorgunum" diye söylenir, çantamı annemin hazırlamasını beklerdim.
+A) Yorgun olsam da kitaplarımı çantaya koyardım.
+B) “Sabah erken kalkıp hazırlarım” diyerek yatardım.
+C) Önce biraz dinlenip sonra hazırlamayı düşünürdüm.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -576,8 +576,8 @@ Hz. Meryem'in verdiği bu söz bir tür oruçtu: yemekten değil, konuşmaktan u
 #### SEÇİMİNİ KARŞILAŞTIR
 
 A) Sen de Hz. Meryem gibi davrandın. O da çok yorgunken ağacı silkeledi ve elinden gelen küçük adımı attı.
-B) Yorgunken dinlenmek istemek çok doğal. Hz. Meryem ise çok yorgun olduğu hâlde ağacı silkeledi ve elinden geleni yaptı.
-C) Bazen yardım istemek de gerekir. Hz. Meryem ise o an kendisinden isteneni yaptı ve ağacı kendine doğru silkeledi.
+B) Sabaha bırakmak o an kolay gelir. Hz. Meryem ise çok yorgun olduğu hâlde o an ağacı silkeledi ve elinden geleni yaptı.
+C) Önce dinlenmek istemek çok doğal. Hz. Meryem ise hiçbir şey yapmadan bekleyebilirdi, ama o an küçük adımını attı.
 
 #### NE ÖĞRENDİK
 
@@ -733,9 +733,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Sınıfta bir arkadaşın, senin yapmadığın bir şeyi senin yaptığını söyledi. Herkes sana dönüp baktı; o sırada öğretmenin de dersi anlatıyor. Ne yaparsın?
-A) Hemen ayağa kalkar, bağırarak arkadaşımla tartışırdım.
-B) Sakin kalır, kavga etmez; dersten sonra olanı öğretmenime anlatırdım.
-C) Ben de ona, onun yaptığı başka bir şeyi söyleyerek karşılık verirdim.
+A) Ders sırasında söz isteyip o şeyi yapmadığımı söylerdim.
+B) Dersin bitmesini bekler, sonra öğretmenime anlatırdım.
+C) Arkadaşıma kısık sesle “Yapmadım” deyip açıklardım.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -765,9 +765,9 @@ Hz. Meryem bebeğini sevgiyle bağrına bastı. Zor günler henüz tamamen bitme
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Haksızlığa kızmak çok anlaşılır; Hz. Meryem ise bağırıp tartışmadı, sakin kaldı. Olanı sonra güvendiğin bir büyüğüne anlatmak da seni korur.
+A) Hemen doğruyu söylemek istemen anlaşılır. Hz. Meryem ise o an tartışmaya girmedi; olanı sonra güvendiğin bir büyüğe anlatmak da seni korur.
 B) Sen de Hz. Meryem gibi sakin kaldın ve tartışmadın. Olanı sonra güvendiğin bir büyüğüne anlatmak da seni korur.
-C) Karşılık vermek istemek çok doğal; Hz. Meryem ise kimseyi suçlamadan sakin kaldı. Olanı sonra güvendiğin bir büyüğüne anlatmak da seni korur.
+C) Açıklama yapmak istemen çok doğal. Hz. Meryem ise kalabalığa açıklama yapmadı, sakin kaldı; olanı sonra bir büyüğüne anlatmak da seni korur.
 
 #### NE ÖĞRENDİK
 
@@ -931,9 +931,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Teneffüste oynadığınız oyunun kuralı yüzünden arkadaşların ikiye ayrıldı ve birbirine kızmaya başladı. Kuralın doğrusunu sen biliyorsun. Ne yaparsın?
-A) Kendi tarafımı tutar, ben de karşı taraftakilere kızardım.
-B) Hiçbir şey söylemez, oyunu bırakıp başka bir yere giderdim.
-C) Herkesi dinler, kuralı nazikçe anlatıp birlikte oynamaya çağırırdım.
+A) Kendi tarafımın haklı olduğunu söyleyip onları savunurdum.
+B) Kavgaya karışmamak için oyunu bırakıp başka yere giderdim.
+C) Kuralı herkese anlatıp birlikte oynamaya çağırırdım.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -962,7 +962,7 @@ Onu dinleyip inananlar da vardı, dinlemeyenler de. Ama Hz. Îsâ herkesi aynı 
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Kendi tarafını tutmak kolay gelebilir. Hz. Îsâ ise kızmadan, herkese aynı sakinlikle doğruyu anlattı.
+A) Kendi tarafını tutmak kolay gelebilir. Hz. Îsâ ise taraf tutmadı; herkese aynı sakinlikle doğruyu anlattı.
 B) Tartışmadan uzaklaşmak bazen insanı rahatlatır. Hz. Îsâ ise insanlardan uzaklaşmadı; anlaşmazlığı açıklamak için onlarla konuştu.
 C) Sen de Hz. Îsâ gibi davrandın. O da anlaşmazlık karşısında doğruyu nazikçe anlattı ve herkesi birliğe çağırdı.
 
@@ -1108,8 +1108,8 @@ Bu bölümde yok.
 
 Soru: Sınıfça hazırladığınız gösteride senin okuduğun şiir çok beğenildi ve herkes seni alkışlıyor. Şiiri çalışırken öğretmenin de sana çok yardım etmişti. Ne yaparsın?
 A) Allah'a şükreder, öğretmenimin bana yaptığı yardımı da anardım.
-B) "Ben zaten her şeyi herkesten iyi yaparım" diye övünürdüm.
-C) Hiçbir şey söylemez, bütün alkışların yalnızca bana olmasını isterdim.
+B) Alkışlar için herkese teşekkür eder, yerime otururdum.
+C) Çok çalıştığım için bu alkışları sevinçle kabul ederdim.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1142,8 +1142,8 @@ Allah, Hz. Îsâ'yı korudu ve ona zarar vermek isteyenlere fırsat vermedi. Hz.
 #### SEÇİMİNİ KARŞILAŞTIR
 
 A) Sen de Hz. Îsâ gibi davrandın. O da övgülere kapılmadı ve her güzel işin Allah'ın izniyle olduğunu söyledi.
-B) Başarınla sevinmek çok doğal. Hz. Îsâ ise övülünce büyüklenmedi; işin Allah'ın izniyle olduğunu hatırlattı.
-C) Beğenilmek insanı mutlu eder. Hz. Îsâ ise övgüyü kendine almadı; her mucizede "Allah'ın izniyle" dedi.
+B) Alçak gönüllü davranman güzel. Hz. Îsâ ise yalnızca susmadı; her güzel işin Allah'ın izniyle olduğunu açıkça söyledi.
+C) Emeğinle sevinmek çok doğal. Hz. Îsâ ise övülünce büyüklenmedi; işin Allah'ın izniyle olduğunu hatırlattı.
 
 #### NE ÖĞRENDİK
 
@@ -1298,8 +1298,8 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Öğretmenin sınıfa, "Okul bahçesindeki fidanları sulamak için bana kim yardım eder?" diye sordu. Kimse parmak kaldırmadı ve sınıf birden sessizleşti. Ne yaparsın?
-A) Başkası kalksın diye bekler, ben parmak kaldırmazdım.
-B) Parmağımı kaldırır, "Ben yardım ederim" derdim.
+A) Başka biri kalkar diye bir süre parmak kaldırmazdım.
+B) Parmağımı kaldırır, “Ben yardım ederim” diye seslenirdim.
 C) Yardım etmek isterdim ama arkadaşlarım ne der diye susardım.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
@@ -1497,9 +1497,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Akşam ailecek dua ederken herkes sırayla dileğini söylüyor. Şimdi sıra sende ve aklına önce kendi istediğin şeyler geliyor. Ne yaparsın?
-A) Yalnızca çok istediğim yeni oyuncak için dua ederdim.
-B) Ne diyeceğimi bilemez, sıramı başkasına verirdim.
-C) Kendim için, ailem için ve tanımadığım insanlar için de dua ederdim.
+A) Sıram gelince aklıma ilk gelen oyuncak dileğimi söylerdim.
+B) Ne diyeceğimi bilemez, sıramı bir sonraki kişiye verirdim.
+C) Kendim için olduğu kadar başkaları için de dua ederdim.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1676,8 +1676,8 @@ Bu bölümde yok.
 
 Soru: Gece odanda yatarken dışarıdan büyük bir gök gürültüsü geldi ve çok korktun. Kalbin hızlı hızlı çarpıyor. Ne yaparsın?
 A) Rabbime güvenir, korktuğumu da anneme ya da babama anlatırdım.
-B) Yorganın altına saklanır, kimseye bir şey söylemezdim.
-C) Korkudan bütün gece uyumadan, gözlerim açık beklerdim.
+B) Yorganın altına saklanıp gürültünün geçmesini umardım.
+C) Işığı açıp korkum geçene kadar kitap okumaya çalışırdım.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1711,7 +1711,7 @@ Hz. Îsâ'nın hikâyesi, bir annenin Rabbine güveniyle başlamıştı. Mabette
 
 A) Sen de Hz. Îsâ gibi umudunu korudun. O da tehlike anında Rabbine güvendi; korkunu güvendiğin bir büyüğüne anlatmak da kalbini sakinleştirir.
 B) Korkunu saklamak istemek çok anlaşılır. Hz. Îsâ ise korkulu bir zamanda umudunu yitirmedi ve Rabbine güvendi.
-C) Korkunca uyuyamamak çok doğal. Hz. Îsâ ise tehlike yaklaşırken Rabbine güvendi ve Allah onu korudu.
+C) Kendi kendine sakinleşmeye çalışman güzel. Hz. Îsâ ise tehlike yaklaşırken Rabbine güvendi; korkunu bir büyüğüne anlatmak da kalbini sakinleştirir.
 
 #### NE ÖĞRENDİK
 

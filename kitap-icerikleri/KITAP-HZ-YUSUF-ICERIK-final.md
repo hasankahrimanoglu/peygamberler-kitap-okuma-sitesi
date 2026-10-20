@@ -369,9 +369,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Seni çok sevindiren bir haber aldın: Yaptığın resim okul panosuna asılacak. Bazı arkadaşlarının bunu kıskanabileceğini hissediyorsun. Ne yaparsın?
-A) Önce ailemden güvendiğim bir büyükle konuşur, bu sevinci nasıl paylaşacağımı ona danışırdım.
-B) Hemen herkese anlatır, resmimin en güzeli olduğunu söylerdim.
-C) Kimse kıskanmasın diye sevincimi saklar, hiç kimseye bir şey söylemezdim.
+A) Önce bu sevinci nasıl paylaşacağımı aileme danışırdım.
+B) Sevincimi o gün en yakın arkadaşlarıma anlatırdım.
+C) Kıskanılmamak için sevincimi bir süre kendime saklardım.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -573,9 +573,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Arkadaşların seni oyunlarına almadı ve teneffüste tek başına kaldın. Kendini çok yalnız ve üzgün hissediyorsun. Ne yaparsın?
-A) Kimseye bir şey söylemez, bu üzüntüyü hep içimde taşırdım.
-B) Bir daha hiç kimseyle oynamamaya karar verirdim.
-C) Allah'ın beni gördüğünü hatırlar, dua eder ve olanları güvendiğim bir büyüğe anlatırdım.
+A) Üzüntümü belli etmemek için tek başıma oyalanırdım.
+B) Beni neden almadıklarını düşünüp kendimi suçlardım.
+C) Allah'ın beni gördüğünü hatırlar, aileme anlatırdım.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -602,8 +602,8 @@ Hz. Yusuf karanlık bir kuyunun dibindeydi, ama artık bir şeyi çok iyi biliyo
 #### SEÇİMİNİ KARŞILAŞTIR
 
 A) Üzüntünü saklamak istemen anlaşılır. Hz. Yusuf ise kuyunun dibinde yalnız olmadığını hatırladı ve Allah'a dua etti.
-B) Kırılmak çok doğal. Hz. Yusuf ise umudunu kaybetmedi; bir gün kardeşlerini yeniden göreceğini biliyordu.
-C) Sen de Hz. Yusuf gibi davrandın. O da kuyunun dibinde Allah'ın kendisini gördüğünü hatırladı, umudunu koruyup dua etti.
+B) Üzgünken kendini suçlamak çok olur. Hz. Yusuf ise kuyunun dibinde umudunu kaybetmedi; Allah'ın onu gördüğünü ve koruduğunu bildi.
+C) Sen de Hz. Yusuf gibi davrandın. O da kuyunun dibinde Allah'ın kendisini gördüğünü hatırladı ve umudunu korudu.
 
 #### NE ÖĞRENDİK
 
@@ -754,9 +754,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Yeni bir okula başladın ve henüz kimseyi tanımıyorsun. Öğretmenin sana sınıfta küçük bir görev verdi: her sabah çiçekleri sulamak. Ne yaparsın?
-A) Burası benim eski okulum değil diyerek görevle hiç ilgilenmezdim.
-B) Yeni yerime alışmaya çalışırken görevimi her gün özenle yapardım.
-C) Görevimi yapardım ama kimse görmüyorsa yarım bırakırdım.
+A) Daha alışmadığım için öğretmenden görevi sonra almayı isterdim.
+B) Yeni yerime alışmaya çalışırken görevimi her sabah yapardım.
+C) Görevimi yapardım ama acelem olunca bazı çiçekleri atlardım.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -780,9 +780,9 @@ Hz. Yusuf olgunluk çağına erişince, Allah ona hikmet ve ilim verdi. Kur'an'a
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Eski yerini özlemen çok doğal. Hz. Yusuf da ailesini özlüyordu, ama yeni evinde kendisine verilen işleri özenle yaptı.
+A) Yeni bir yerde çekinmek çok doğal. Hz. Yusuf da ailesini özlüyordu, ama yeni evinde kendisine verilen işleri hemen üstlendi.
 B) Sen de Hz. Yusuf gibi davrandın. O da yabancı bir evde işine sarıldı ve kısa sürede evin efendisinin güvenini kazandı.
-C) Bazen bir işi yarıda bırakmak kolay gelir. Hz. Yusuf ise kimse görmese bile işini yarım bırakmadı; bu yüzden ona güvenildi.
+C) Bazen acele etmek kolay gelir. Hz. Yusuf ise kimse görmese bile işini yarım bırakmadı; bu yüzden ona güvenildi.
 
 #### NE ÖĞRENDİK
 
@@ -935,9 +935,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Biri senden gizli ve yanlış bir şey yapmanı istiyor. "Kimse bilmeyecek" diyor ve hayır dersen sana kızacağını söylüyor. Ne yaparsın?
-A) Hayır der, hemen oradan uzaklaşır ve olanları güvendiğim bir büyüğe anlatırdım.
-B) Kızmasın diye istediğini yapar, kimseye bir şey söylemezdim.
-C) Hayır derdim ama bunu bir sır gibi saklar, kimseye anlatmazdım.
+A) Hayır der, oradan uzaklaşır ve bir büyüğüme anlatırdım.
+B) Ne yapacağımı bilemediğim için düşünmek için zaman isterdim.
+C) Hayır derdim ama kızmasın diye bunu aramızda tutardım.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -981,7 +981,7 @@ Bir süre sonra, suçsuz olduğu bilindiği hâlde Hz. Yusuf'un hapse atılması
 #### SEÇİMİNİ KARŞILAŞTIR
 
 A) Sen de Hz. Yusuf gibi davrandın. O da yanlış isteğe hayır dedi, Allah'a sığındı ve hemen kapıya koştu.
-B) Birinin bize kızmasından korkmak çok doğal; Hz. Yusuf ise yanlışı yapmaktansa hapse girmeyi göze aldı. Böyle bir durumda hayır deyip hemen güvendiğin bir büyüğe anlatabilirsin; bunun için kimse sana kızmamalı.
+B) Ne yapacağını bilememek çok doğal. Hz. Yusuf ise hemen hayır dedi ve kapıya koştu; sen de hemen güvendiğin bir büyüğe anlatabilirsin.
 C) Hayır demek çok doğru bir adım. Hz. Yusuf da gerçeği saklamadı ve açıkça söyledi; sen de böyle bir durumu bir büyüğüne anlatabilirsin.
 
 #### NE ÖĞRENDİK
@@ -1136,9 +1136,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Yapmadığın bir şey yüzünden teneffüse çıkamadın. Aynı şeyle suçlanan bir arkadaşın da yanında oturuyor ve çok üzgün. Ne yaparsın?
-A) Kendi derdim yeter diye onunla hiç konuşmazdım.
+A) Ben de üzgün olduğum için kendi düşüncelerime dalardım.
 B) Teneffüs boyunca suçu atan kişiye söylenip dururdum.
-C) Arkadaşımla konuşup ona moral verir, olanları sonra bir büyüğe anlatırdım.
+C) Arkadaşımın yanına geçip ona moral vermeye çalışırdım.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1170,7 +1170,7 @@ Hz. Yusuf haksız yere beklediği o yıllarda ne umudunu ne de iyiliğini kaybet
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Üzgünken içine kapanmak çok doğal. Hz. Yusuf ise haksız yere zindandayken bile arkadaşlarını dinledi ve onlara yardım etti.
+A) Üzgünken kendi düşüncelerine dalmak çok doğal. Hz. Yusuf ise haksız yere zindandayken bile arkadaşlarını dinledi ve onlara yardım etti.
 B) Haksızlığa kızmak anlaşılır. Hz. Yusuf ise haksız yere beklerken bile umudunu kaybetmedi ve zindan arkadaşlarına yardım etmeyi sürdürdü.
 C) Sen de Hz. Yusuf gibi davrandın. O da haksız yere zindandayken üzgün arkadaşlarını yalnız bırakmadı ve onlara yardım etti.
 
@@ -1330,9 +1330,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Sınıfta bir kalem kayboldu ve haksız yere seni suçladılar. Sonra öğretmenin "Neyse, unutalım, gidebilirsin" diyor. Ne yaparsın?
-A) Hemen çıkar giderdim, olan biteni bir daha hiç düşünmezdim.
-B) Bir büyüğümle birlikte öğretmenimle sakince konuşur, gerçeğin ortaya çıkmasını isterdim.
-C) Beni suçlayan arkadaşı bütün sınıfın önünde bağırarak suçlardım.
+A) Sorun büyümesin diye “Tamam” der, sınıftan çıkardım.
+B) Gitmeden önce gerçeğin ortaya çıkmasını isterdim.
+C) Suçsuz olduğumu herkese tek tek anlatmaya çalışırdım.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1365,7 +1365,7 @@ Kuyuda başlayıp zindanda süren sabır, sonunda güzel bir sonuca ulaşmışt�
 
 A) Bir an önce rahatlamak istemen çok doğal. Hz. Yusuf ise hemen çıkmadı; önce gerçeğin ortaya çıkmasını istedi.
 B) Sen de Hz. Yusuf gibi davrandın. O da zindandan çıkmadan önce olayın sakince araştırılmasını istedi ve adı temize çıktı.
-C) Haksızlığa öfkelenmek anlaşılır. Hz. Yusuf ise kimseye bağırmadı; gerçeğin araştırılmasını istedi ve sabırla bekledi.
+C) Herkesin sana inanmasını istemen anlaşılır. Hz. Yusuf ise herkesi tek tek ikna etmeye çalışmadı; olayın araştırılmasını istedi.
 
 #### NE ÖĞRENDİK
 
@@ -1528,8 +1528,8 @@ Kaynak/kurgu sınırı notu: Tanık kurgusal ve isimsizdir; adı verilmez, gör�
 #### SEN OLSAYDIN
 
 Soru: Sınıfta kalemleri dağıtma görevi sana verildi. Daha önce seni üzen bir arkadaşın da kalem almak için sıraya girdi. Ne yaparsın?
-A) Ona en kötü kalemi verir, ne hissettiğimi anlamasını isterdim.
-B) Onu görmezden gelir, sırasını en sona bırakırdım.
+A) Ona kalemini verir ama yüzüne bakmadan geçip giderdim.
+B) Onunla konuşmamak için kalemini başkasıyla gönderirdim.
 C) Ona da herkese verdiğim gibi tam payını verirdim.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
@@ -1557,8 +1557,8 @@ Hz. Yusuf kendisine emanet edilen ambarları korumuş, herkese hakkını tam ver
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Kırgınlığını hatırlaman çok doğal. Hz. Yusuf ise kendisini kuyuya bırakan kardeşlerine bile payını eksiksiz verdi.
-B) Uzak durmak istemen anlaşılır. Hz. Yusuf ise kardeşlerinden uzak durmadı; onlara herkese davrandığı gibi davrandı.
+A) Kırgınlığını hatırlaman çok doğal. Hz. Yusuf ise kendisini kuyuya bırakan kardeşlerine bile kızmadı; onlara herkese davrandığı gibi davrandı.
+B) Uzak durmak istemen anlaşılır. Hz. Yusuf ise kardeşlerinden kaçmadı; onları kendisi karşıladı ve herkese davrandığı gibi davrandı.
 C) Sen de Hz. Yusuf gibi davrandın. O da kardeşlerine kızmadı ve onlara herkes gibi tam ölçek verdi.
 
 #### NE ÖĞRENDİK
@@ -1728,8 +1728,8 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Bahçede bir saksı kırıldı ve küçük bir arkadaşın suçlandı. Hepiniz oradaydınız; şimdi onu bırakıp gitmek çok kolay. Ne yaparsın?
-A) Onun yanında kalır, olanları onunla birlikte bir büyüğe anlatırdım.
-B) Başım derde girmesin diye hemen oradan uzaklaşırdım.
+A) Onun yanında kalır, olanları birlikte anlatmayı önerirdim.
+B) Başım derde girmesin diye sessizce oradan uzaklaşırdım.
 C) Herhâlde o yapmıştır diye düşünür, ondan uzak dururdum.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
@@ -1910,9 +1910,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Geçen hafta seni çok üzen bir arkadaşın senden özür diledi. Şimdi ödevi için senin yardımına ihtiyacı var. Ne yaparsın?
-A) Yardım ederdim ama bana yaptığını ona sık sık hatırlatırdım.
+A) Yardım ederdim ama bana yaptığını ona bir kez hatırlatırdım.
 B) Olanı yüzüne vurmadan, elimden geldiğince ona yardım ederdim.
-C) Özrünü kabul etmez, ona yardım etmezdim.
+C) Özrünü kabul eder ama yardımı başka bir arkadaşa bırakırdım.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1948,7 +1948,7 @@ Sonra Hz. Yusuf kardeşlerinden babasının hâlini öğrendi; babasının gözl
 
 A) Kırgınlığını unutmak zaman alabilir. Hz. Yusuf ise kardeşlerine yardım ederken geçmişi yüzlerine vurmadı.
 B) Sen de Hz. Yusuf gibi davrandın. O da kardeşlerine "Bugün size hiçbir kınama yok" dedi ve onları affetti.
-C) Kırılmış olmak çok doğal. Hz. Yusuf ise kardeşlerinin özrünü kabul etti ve onları yanında ağırladı.
+C) Biraz mesafe istemen çok doğal. Hz. Yusuf ise kardeşlerinin özrünü kabul etti, onları yanında ağırladı ve onlara yardım etti.
 
 #### NE ÖĞRENDİK
 
@@ -2120,8 +2120,8 @@ Kaynak/kurgu sınırı notu: Tanık kurgusal ve isimsizdir; B7'deki tanıkla ayn
 #### SEN OLSAYDIN
 
 Soru: Aylarca hazırlandığın okul gösterisi çok güzel geçti. Herkes seni tebrik ediyor. Ne yaparsın?
-A) Her şeyi tek başıma başardığımı söylerdim.
-B) Hazırlanırken beni üzen arkadaşları tek tek sayardım.
+A) Tebrikleri alırken ne kadar çok çalıştığımı anlatırdım.
+B) Hazırlık sırasında yaşadığım zorlukları arkadaşlarıma anlatırdım.
 C) Bana yardım eden herkese teşekkür eder, Allah'a şükrederdim.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
@@ -2147,7 +2147,7 @@ Yıllar önce bir rüyayla başlayan yolculuk, işte böyle tamamlandı. Hz. Yus
 #### SEÇİMİNİ KARŞILAŞTIR
 
 A) Emeğinle gurur duyman çok doğal. Hz. Yusuf ise başına gelen her iyiliği Allah'a bağladı ve O'na şükretti.
-B) Zor günleri hatırlamak doğal. Hz. Yusuf ise sevinç anında kimseyi suçlamadı; kırgınlığı kardeşlerine bağlamadı.
+B) Zor günleri hatırlamak çok doğal. Hz. Yusuf ise sevinç anında kuyudan hiç söz etmedi; yalnızca Allah'ın iyiliğini andı.
 C) Sen de Hz. Yusuf gibi davrandın. O da sevinç anında kimseyi suçlamadan Allah'ın iyiliğini andı ve şükretti.
 
 #### NE ÖĞRENDİK

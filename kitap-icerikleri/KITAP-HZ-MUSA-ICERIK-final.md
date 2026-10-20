@@ -295,8 +295,8 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Ailenle birkaç günlüğüne yolculuğa çıkacaksın. Çok sevdiğin kedini, ona iyi bakacağını bildiğin teyzene bırakman gerekiyor. İçinden "Bırakmasam" diye geçiriyorsun. Ne yaparsın?
-A) Kimseye güvenmez, ne olursa olsun onu yanımdan ayırmazdım.
-B) İçim titrese de ona güvenir, kedimi bırakıp dönüşümü beklerdim.
+A) Onu çok özleyeceğim için yolculuğa onu da götürmek isterdim.
+B) İçim titrese de teyzeme güvenir, kedimi ona bırakırdım.
 C) Bırakırdım ama "Ya bir şey olursa?" diye gün boyu üzülürdüm.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
@@ -324,7 +324,7 @@ Bu, bir annenin yaşayabileceği en zor sabahlardan biriydi. Ama o, çok sevdiğ
 #### SEÇİMİNİ KARŞILAŞTIR
 
 A) Sevdiğini yanında tutmak istemen çok anlaşılır. Hz. Musa'nın annesi ise korkusuna rağmen Allah'ın sözüne güvendi ve sandığı suya bıraktı.
-B) Sen de Hz. Musa'nın annesi gibi davrandın. O da içi titrese de güvendi ve sandığı suya bırakıp beklemeye başladı.
+B) Sen de Hz. Musa'nın annesi gibi davrandın. O da içi titrese de güvendi ve sandığı suya bıraktı.
 C) Endişelenmek çok doğal. Hz. Musa'nın annesinin de yüreği bomboş kalmıştı; Allah onun kalbini sakinleştirdi.
 
 #### NE ÖĞRENDİK
@@ -475,8 +475,8 @@ Bu bölümde yok.
 
 Soru: Küçük kardeşin okulda zor bir durumda kalmış. Ona yardım etmek için öğretmeninle konuşman gerekiyor, ama doğru sözü seçmek önemli. Ne yaparsın?
 A) Ne diyeceğimi bilemez, işi başkalarına bırakırdım.
-B) Heyecanla her şeyi bir anda anlatır, durumu karıştırırdım.
-C) Sakin olur, düşünüp yardımcı olacak sözü doğru zamanda söylerdim.
+B) Heyecanlanıp aklıma gelen her şeyi bir anda anlatırdım.
+C) Söyleyeceğim sözü önceden seçip uygun anda söylerdim.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -503,8 +503,8 @@ Ablası o gün hem cesur hem de çok dikkatliydi. Ne gereğinden fazla konuşmu�
 #### SEÇİMİNİ KARŞILAŞTIR
 
 A) Ne diyeceğini bilememek çok olağan. Hz. Musa'nın ablası ise korkusunu yendi ve yardım edecek tek bir cümle söyledi.
-B) Heyecanlanmak çok doğal. Hz. Musa'nın ablası ise kimliğini belli etmeden, sakin bir teklifle kardeşine yardım etti.
-C) Sen de Hz. Musa'nın ablası gibi davrandın. O da düşünerek konuştu ve kardeşinin annesine dönmesini sağladı.
+B) Heyecanlanmak çok doğal. Hz. Musa'nın ablası ise gereğinden fazla konuşmadı; tek bir teklifle kardeşine yardım etti.
+C) Sen de Hz. Musa'nın ablası gibi davrandın. O da sözünü seçerek konuştu ve kardeşinin annesine dönmesini sağladı.
 
 #### NE ÖĞRENDİK
 
@@ -658,9 +658,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Teneffüste bir arkadaşın biriyle kavga ediyor ve seni de yanına çağırıyor. Ama kavganın nasıl başladığını bilmiyorsun. Ne yaparsın?
-A) Kavgaya karışmaz, arkadaşıma durmasını söyler ve bir öğretmenden yardım isterdim.
-B) Arkadaşım olduğu için hiç düşünmeden onun tarafını tutardım.
-C) Görmemiş gibi yapıp hemen oradan uzaklaşırdım.
+A) Arkadaşıma durmasını söyler, bir öğretmenden yardım isterdim.
+B) Arkadaşım olduğu için yanına gidip onun tarafını tutardım.
+C) Karışmamak için oradan uzaklaşıp kendi oyunuma dönerdim.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1047,9 +1047,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Öğretmenin sana sınıfın önünde bir sunum yapma görevi verdi. Ama kalabalığın önünde konuşurken heyecanlanıyor, sözlerin karışıyor. Ne yaparsın?
-A) Bunu yapamayacağımı söyler, görevden vazgeçerdim.
-B) Zorlandığım yeri açıkça söyler, bir büyüğümden yardım ister ve hazırlanırdım.
-C) Kimseye bir şey söylemeden, hazırlanmadan çıkar ve idare etmeye çalışırdım.
+A) Başka bir arkadaşımın sunumu benim yerime yapmasını isterdim.
+B) Zorlandığım yeri öğretmenime söyleyip ondan yardım isterdim.
+C) Zorlandığımı belli etmeden evde tek başıma çok çalışırdım.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1075,9 +1075,9 @@ Kalbindeki kaygı elbette bir anda tamamen geçmemişti. Ama o, korkusunu saklam
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Zor bir görev insanı korkutabilir. Hz. Musa ise vazgeçmedi; zorlandığı yeri Rabbine söyleyip yardım istedi.
+A) Zor bir görev insanı korkutabilir. Hz. Musa ise görevi başkasına bırakmadı; zorlandığı yeri söyleyip yardım istedi.
 B) Sen de Hz. Musa gibi davrandın. O da dilindeki düğümü saklamadı, yardım istedi ve kardeşiyle desteklendi.
-C) İdare etmeye çalışmak cesaret gibi görünebilir. Hz. Musa ise göreve başlamadan önce yardım istemeyi seçti.
+C) Kendi başına çalışmak güzel bir çaba. Hz. Musa ise dilindeki düğümü saklamadı; zorlandığı yeri açıkça söyleyip yardım istedi.
 
 #### NE ÖĞRENDİK
 
@@ -1232,9 +1232,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Okulda büyük bir öğrencinin, küçüklerin oyun alanını sürekli ellerinden aldığını görüyorsun. Ona bunun haksızlık olduğunu söylemek istiyorsun ama çekiniyorsun. Ne yaparsın?
-A) Bir öğretmene haber verir, onun yanında sakin ama açık bir dille konuşurdum.
-B) Korktuğum için hiçbir şey söylemez, olanları izlemekle yetinirdim.
-C) Ona bağırır, herkesin önünde onu küçük düşürmeye çalışırdım.
+A) Bir öğretmeni yanıma alıp ona haksızlık yaptığını söylerdim.
+B) Başıma bir iş açılmasın diye bu sefer sesimi çıkarmazdım.
+C) Küçüklere başka bir oyun alanı bulmalarında yardım ederdim.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1275,7 +1275,7 @@ Saraydan çıkarken iki kardeşin kalbi hâlâ hızlı çarpıyordu. Ama korkula
 
 A) Sen de Hz. Musa ile Hz. Hârûn gibi davrandın. Onlar da Allah'a güvenip korkularına rağmen gittiler ve doğruyu sakince söylediler.
 B) Böyle bir anda çekinmek çok anlaşılır. Hz. Musa ile Hz. Hârûn da korkmuştu, ama "Ben sizinle beraberim" sözüne güvenip gittiler.
-C) Haksızlığa kızmak çok doğal. Hz. Musa ise Firavun'a bile bağırmadı; Allah'ın buyurduğu gibi yumuşak bir dille konuştu.
+C) Küçüklere yardım etmek istemen güzel. Hz. Musa ile Hz. Hârûn ise haksızlığı yapan Firavun'a gidip doğruyu yüzüne söylediler.
 
 #### NE ÖĞRENDİK
 
@@ -1439,8 +1439,8 @@ Kaynak/kurgu sınırı notu: Tanık kurgusal ve isimsizdir; adı verilmez, gör�
 #### SEN OLSAYDIN
 
 Soru: Sınıfta bir tartışma yapılıyor. Herkes senin tarafını tutuyor, ama konuştukça arkadaşının haklı olduğunu anlıyorsun. Ne yaparsın?
-A) Haklı olduğu belli olsa da tarafımı tutanları bırakmaz, susardım.
-B) Konuyu değiştirir, tartışmayı yarım bırakıp geçerdim.
+A) Tarafımı tutanları kırmamak için o an susardım.
+B) Konuyu değiştirir, tartışmayı yarım bırakırdım.
 C) Herkesin önünde onun haklı olduğunu açıkça söylerdim.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
@@ -1625,7 +1625,7 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Bir hatandan sonra annene "Bir daha yapmayacağım" diye söz verdin. Birkaç gün geçti, kimse bunu hatırlamıyor ve aynı şeyi yapmak yine aklına geldi. Ne yaparsın?
-A) Kimse hatırlamadığı için sözümü boş verirdim.
+A) Annem unuttuğu için sözümü artık geçmiş sayardım.
 B) Sözümü hatırlar, kimse görmese de onu tutardım.
 C) Bir kez daha yapar, sonra yine söz verirdim.
 Doğru seçenek: **B**
@@ -1655,7 +1655,7 @@ Mısır'da günler böyle geçerken inananların bekleyişi de sonuna yaklaşıy
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Kimse hatırlamayınca sözü unutmak gerçekten kolaydır. Hikâye, verilen bir sözün asıl değerinin sıkıntı geçtikten sonra tutulduğunda ortaya çıktığını gösteriyor.
+A) Unutulan bir sözü geçmiş saymak kolay gelebilir. Hikâye ise verilen sözün asıl değerinin, sıkıntı geçtikten sonra da tutulduğunda ortaya çıktığını gösteriyor.
 B) Sen de verdiğin söze sahip çıktın. Hikâyede sıkıntı geçince verilen söz tutulmadı; sen ise sözünü kimse görmese de korudun.
 C) Yeniden söz vermek kolay gelebilir. Hikâye ise tutulmayan sözlerin her seferinde aynı sıkıntıyı geri getirdiğini, söz tutulmadıkça hiçbir şeyin değişmediğini gösteriyor.
 
@@ -1826,9 +1826,9 @@ Kaynak/kurgu sınırı notu: Bölüm 7'deki tanıkla aynı kurgusal, isimsiz ço
 #### SEN OLSAYDIN
 
 Soru: Ailenle bir yolculuktasın ve kötü hava yüzünden yolda kaldınız. Çok korkuyorsun. Annen ve baban "Sakin olalım, bir çıkış yolu bulacağız" diyor. Ne yaparsın?
-A) Derin bir nefes alır, onlara güvenir ve söylediklerini yapardım.
-B) Korkuyla ağlar, kimseyi dinlemezdim.
-C) "Artık her şey bitti" diye düşünüp umudumu kaybederdim.
+A) Anneme ve babama güvenir, söylediklerini yapardım.
+B) Korkudan ağlar, ne zaman gideceğimizi durmadan sorardım.
+C) Korkumu unutmak için gözlerimi kapatıp uyumaya çalışırdım.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1857,7 +1857,7 @@ Karşı kıyıda sabah güneşi her yeri aydınlatıyordu ve deniz yeniden sakin
 
 A) Sen de kafiledekiler gibi güvenmeyi seçtin. Onlar da korkularına rağmen Hz. Musa'nın sözüne güvenip açılan yolda yürüdüler.
 B) Korkunca ağlamak çok doğal. Kafiledekiler de çok korkmuştu; Hz. Musa'nın "Rabbim benimle beraberdir" sözü onlara güç verdi.
-C) Böyle bir anda umut kaybolmuş gibi görünebilir. Hz. Musa ise "Asla, Rabbim benimle beraberdir" dedi ve çıkış yolunun geleceğine güvendi.
+C) Korkuyu unutmaya çalışmak çok anlaşılır. Kafiledekiler ise korkularına rağmen Hz. Musa'nın sözüne güvenip açılan yolda yürüdüler.
 
 #### NE ÖĞRENDİK
 
@@ -2018,9 +2018,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Öğretmenin sınıfta bir etkinlik yaptırıyor ve sebebini sonra anlatacağını söylüyor. Sen ne işe yarayacağını anlamıyorsun. Ne yaparsın?
-A) Hemen itiraz eder, anlamadığım için yapmayı reddederdim.
-B) Sabırla katılır, uygun bir zamanda sebebini nazikçe sorardım.
-C) Hiç düşünmeden yapar, ne öğrendiğimle ilgilenmezdim.
+A) Ne işe yarayacağını öğrenmeden başlamak istemediğimi söylerdim.
+B) Etkinliğe katılır, sebebini sonra öğretmenime sorardım.
+C) Merak ettiğim için etkinlik sırasında sebebini sorup dururdum.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -2053,9 +2053,9 @@ Nehre bırakılan küçük bir sandıkla başlayan bu hayat, Hz. Musa'ya öğren
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Sebebini bilmeden bir şeye itiraz etmek çok anlaşılır. Hz. Musa da itiraz etti, ama sonunda iç yüzünü öğrenince sabrın değerini gördü.
+A) Sebebini bilmeden başlamak istememek çok anlaşılır. Hz. Musa da itiraz etti, ama sonunda iç yüzünü öğrenince sabrın değerini gördü.
 B) Sen de sabırla katılıp sonra sormayı seçtin. Hikâyede Hızır da sebepleri en sonunda tek tek anlattı.
-C) Bir şeyi düşünmeden yapmak kolaydır. Hz. Musa ise öğrenmek için hem dinledi hem de anlamak için sormaktan vazgeçmedi.
+C) Merak etmen çok güzel. Hz. Musa da sorularını bekletemedi; Hızır ise sebepleri en sonunda tek tek anlattı.
 
 #### NE ÖĞRENDİK
 

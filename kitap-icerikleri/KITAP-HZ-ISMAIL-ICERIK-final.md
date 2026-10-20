@@ -356,9 +356,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Çok uğraştığın bir işin sonucu bir türlü çıkmıyor ve artık yoruldun. Ne yaparsın?
-A) "Bu iş olmayacak" der, yarım bırakıp bir daha denemezdim.
-B) Kısa bir mola verir, Allah'tan yardım diler ve yeniden denerdim.
-C) Oturup birinin gelip benim yerime bitirmesini beklerdim.
+A) Yorulduğum için işi yarına bırakır, dinlenmeye geçerdim.
+B) Allah'tan yardım diler, işi bir kez daha denerdim.
+C) Yardım edecek biri gelene kadar işe ara verirdim.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -384,9 +384,9 @@ Hâcer, Rabbinin onları yalnız bırakmadığını o gün bir kez daha gördü.
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Yorulunca bırakmak istemek çok doğal. Hâcer de çok yorulmuştu, ama aramayı sürdürdü ve sonunda suyu buldu.
+A) Yorulunca dinlenmek istemek çok doğal. Hâcer de çok yorulmuştu, ama aramayı bırakmadı ve sonunda suyu buldu.
 B) Sen de Hâcer gibi davrandın. O da yorulduğunda dua etti, aramayı bırakmadı ve sonunda su kaynadı.
-C) Beklemek bazen daha kolay görünür. Hâcer ise oturup beklemek yerine kalktı ve iki tepe arasında yardım aradı.
+C) Yardım beklemek bazen daha kolay görünür. Hâcer ise oturup beklemek yerine kalktı ve iki tepe arasında yardım aradı.
 
 #### NE ÖĞRENDİK
 
@@ -543,8 +543,8 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Mahallenize yeni taşınan bir ailenin çocuğu, arkadaşlarınla oynadığınız oyuna katılmak istiyor. Ne yaparsın?
-A) "Bu bizim oyunumuz, sen başka yerde oyna" derdim.
-B) Ona cevap vermez, arkadaşlarımın karar vermesini beklerdim.
+A) Oyun kalabalıklaşmasın diye onu sonraki oyuna alırdım.
+B) Arkadaşlarım ne der diye önce onlara danışmak isterdim.
 C) Onu oyuna çağırır, oyunun kurallarını da ona anlatırdım.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
@@ -571,8 +571,8 @@ Hz. İbrahim (a.s.), vadiden ayrılırken Rabbine dua etmiş, insanların gönü
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Yeni birini aramıza almak ilk başta zor gelebilir. Hâcer ise yolculara kalabileceklerini söyledi ve onlarla komşu oldu.
-B) Başkalarının karar vermesini beklemek kolay görünür. Hâcer ise yolculara kendisi cevap verdi ve suyun kuralını da açıkça söyledi.
+A) Oyunun düzenini korumak istemen anlaşılır. Hâcer ise yolculara kalabileceklerini hemen söyledi ve onlarla komşu oldu.
+B) Arkadaşlarının fikrini almak düşünceli bir davranış. Hâcer ise yolculara kendisi cevap verdi ve suyun kuralını da açıkça söyledi.
 C) Sen de Hâcer gibi davrandın. O da yolcuları yanına kabul etti, suyun kuralını anlattı ve vadide herkes komşu oldu.
 
 #### NE ÖĞRENDİK
@@ -714,9 +714,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Ailen başka bir şehre taşınmaya karar verdi. Okulunu ve arkadaşlarını bırakmak sana çok zor geliyor. Ne yaparsın?
-A) Üzüntümü aileme anlatır, sonra yeni yere alışmak için onlarla birlikte elimden geleni yapardım.
-B) Kimseye bir şey söylemez, odama kapanıp kimseyle konuşmazdım.
-C) Taşınmamak için her gün ağlar, ailemle tartışırdım.
+A) Üzüntümü aileme anlatır, onlarla birlikte alışmaya çalışırdım.
+B) Ailemi üzmemek için üzüntümü kendime saklar, belli etmezdim.
+C) Yeni yeri düşünmemek için eski arkadaşlarımla daha çok oynardım.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -746,8 +746,8 @@ Bu, Allah'ın bir peygambere yalnız bir kez verdiği özel bir imtihandı. Alla
 #### SEÇİMİNİ KARŞILAŞTIR
 
 A) Sen de hikâyedeki gibi davrandın. Baba ile oğul da zor bir anda konuştu, birbirine danıştı ve birbirine destek oldu.
-B) Zor bir haberden sonra yalnız kalmak istemek doğal. Hikâyede ise baba ile oğul o zor anda konuştu ve birbirine destek oldu.
-C) Zor bir değişikliğe üzülmek çok doğal. Hikâyede baba ile oğul zor anda birbirine danıştı ve birlikte Allah'a güvendi.
+B) Aileni üzmek istememen çok güzel bir düşünce. Hikâyede ise baba ile oğul zor anda açıkça konuştu ve birbirine destek oldu.
+C) Arkadaşlarınla vakit geçirmek istemen çok doğal. Hikâyede ise baba ile oğul zor anı konuşarak karşıladı ve yükü birlikte taşıdı.
 
 #### NE ÖĞRENDİK
 
@@ -891,9 +891,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Evinize ailenin tanıdığı bir büyük geldi ve sana "Nasılsın, okul nasıl?" diye sordu. O gün canın biraz sıkkın. Ne yaparsın?
-A) Canım sıkkın olduğu için sert bir sesle "Bilmem" der, konuşmayı keserdim.
-B) Hiçbir şey söylemez, omuz silkip yanından geçerdim.
-C) Güler yüzle selam verir, canımı sıkan şeyi kırıcı olmadan anlatır, güzel giden bir şeyi de söylerdim.
+A) Canım sıkkın olduğu için bugün kötü giden her şeyi anlatırdım.
+B) Konuşmak istemediğim için “İyiyim” deyip odama giderdim.
+C) Canım sıkkın olsa da okulda güzel giden bir şeyi de anlatırdım.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -925,9 +925,9 @@ Akşam Hz. İsmail eve döndü ve olanları dinledi. Gelenin babası olduğunu a
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Canı sıkılan biri böyle cevap verebilir. Hikâyede eve bereket getiren, zor zamanda bile şükürle konuşmaktı.
+A) İçini dökmek istemen çok anlaşılır. Hikâyede ise misafiri şükürle ve güzel sözle karşılamak eve bereket duası getirdi.
 B) Canın sıkkınken konuşmak zor gelebilir. Hikâyede ise misafiri güler yüzle ve tatlı dille karşılamak eve bereket duası getirdi.
-C) Sen de hikâyedeki gibi misafiri güler yüzle ve güzel sözle karşıladın. Güzel söz ve şükür, Hz. İbrahim'i çok sevindirdi ve eve bereket duası getirdi.
+C) Sen de hikâyedeki gibi misafire güzel sözle karşılık verdin. Güzel söz ve şükür, Hz. İbrahim'i çok sevindirdi ve eve bereket duası getirdi.
 
 #### NE ÖĞRENDİK
 
@@ -1079,9 +1079,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Annen ya da baban evde büyük bir iş yapıyor ve senden yardım istiyor. Sen de tam o sırada oyuna dalmıştın. Ne yaparsın?
-A) Oyunumu bırakıp yardıma gider, iş bitene kadar onlarla birlikte çalışırdım.
-B) "Birazdan gelirim" der, oyunuma devam ederdim.
-C) Duymamış gibi yapar, oyunumu sürdürürdüm.
+A) Oyunumu bırakır, iş bitene kadar onlara yardım ederdim.
+B) Oyunum bitince gelirim deyip birkaç dakika daha oynardım.
+C) Bu iş büyüklerin işi diye yardım edemeyeceğimi düşünürdüm.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1113,8 +1113,8 @@ Dualarının sonunda Allah'tan bir şey daha istediler: Soylarından, insanlara 
 #### SEÇİMİNİ KARŞILAŞTIR
 
 A) Sen de Hz. İsmail gibi davrandın. O da babası yardım isteyince hemen "Yardım ederim" dedi ve iş bitene kadar taş taşıdı.
-B) Oyunu bırakmak bazen zor gelir. Hz. İsmail ise babası yardım isteyince elindeki işi bıraktı ve hemen ona katıldı.
-C) Bir işe ara vermek kolay değildir. Hz. İsmail ise babasının sorusuna hemen cevap verdi ve onunla birlikte çalıştı.
+B) Oyunu yarım bırakmak zor gelebilir. Hz. İsmail ise babası yardım isteyince elindeki işi bıraktı ve hemen ona katıldı.
+C) Büyük bir işe yetişemeyeceğini düşünmek doğal. Hz. İsmail ise taş taşıyarak işin bir parçası oldu ve babasının işini kolaylaştırdı.
 
 #### NE ÖĞRENDİK
 
@@ -1256,9 +1256,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Sınıfta bitkileri sulama görevi sende ve bir hafta boyunca kimse kontrol etmeyecek. Ne yaparsın?
-A) Kimse bakmayacağı için sulamayı unutur, başka işlerle uğraşırdım.
-B) Kimse kontrol etmese de bitkileri her gün sular, görevimi sürdürürdüm.
-C) Görevi bir arkadaşıma bırakır, bir daha ilgilenmezdim.
+A) Hafta sonu bitkileri bir kerede bolca sulamayı düşünürdüm.
+B) Kimse sormasa da bitkileri her gün sulamayı sürdürürdüm.
+C) İşlerim çok olduğu için görevi bir arkadaşımla değişirdim.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1286,9 +1286,9 @@ Hz. İsmail uzun yıllar Allah'ın evine hizmet etti ve sonunda vefat etti. Anla
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Kimse kontrol etmeyince unutmak kolaydır. Hz. İsmail ise babası uzaktayken de evi temiz tutma görevini yıllarca sürdürdü.
+A) İşi kolaylaştırmak istemen anlaşılır. Hz. İsmail ise babası uzaktayken de evi temiz tutma görevini her gün, yıllarca sürdürdü.
 B) Sen de Hz. İsmail gibi davrandın. O da kimse sormasa da sözünü tuttu ve görevini yıllarca sürdürdü.
-C) Bir işi başkasına bırakmak kolay görünebilir. Hz. İsmail ise kendisine verilen görevi üstlendi ve ömrü boyunca sürdürdü.
+C) Çok işin varken yükünü paylaşmak istemen doğal. Hz. İsmail ise kendisine emanet edilen görevi üstlendi ve ömrü boyunca sürdürdü.
 
 #### NE ÖĞRENDİK
 

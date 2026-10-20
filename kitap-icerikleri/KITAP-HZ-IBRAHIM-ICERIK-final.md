@@ -326,9 +326,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Ödevinde bir soru var ve cevabını bir türlü bulamıyorsun. Arkadaşların "Boş ver, aklına gelen ilk şeyi yaz" diyor. Ne yaparsın?
-A) Arkadaşlarım öyle diyorsa ben de aklıma gelen ilk şeyi yazar geçerdim.
-B) Soruyu boş bırakır, bir daha da üzerinde düşünmezdim.
-C) Biraz daha düşünür, gerekirse öğretmenime sorar ve cevabı aramaya devam ederdim.
+A) Vakit kaybetmemek için aklıma ilk gelen cevabı yazardım.
+B) Soruyu boş bırakır, öğretmen anlatınca öğrenirdim.
+C) Soruyu baştan okur, cevabı bulana kadar düşünürdüm.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -358,8 +358,8 @@ Hz. İbrahim gökyüzüne her bakışında aynı şeyi düşünür, gördükleri
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Arkadaşlara uymak o an kolay gelebilir. Hz. İbrahim ise herkes gibi yapmadı; cevabı bulana kadar düşünmeyi sürdürdü.
-B) Zor bir soru insanı yorabilir. Hz. İbrahim yıldız ve ay battığında aramayı bırakmadı, sabahı bekledi.
+A) Zamanı iyi kullanmak istemen anlaşılır. Hz. İbrahim ise cevabı hemen bulamayınca aramayı bırakmadı; sabaha kadar düşünmeyi sürdürdü.
+B) Cevabı öğretmeninden öğrenmek de bir yol. Hz. İbrahim ise cevabı kendisi düşünerek aradı ve sonunda hiç batmayan Rabbini buldu.
 C) Sen de Hz. İbrahim gibi davrandın. O da cevabı hemen bulamadı, ama aramayı sürdürdü ve hiç batmayan Rabbine yöneldi.
 
 #### NE ÖĞRENDİK
@@ -512,9 +512,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Çok sevdiğin bir büyüğünün bir konuda yanlış yaptığını düşünüyorsun. Ne yaparsın?
-A) Uygun bir anda yanına gider, ne düşündüğümü saygılı ve sakin bir dille anlatırdım.
-B) Herkesin içinde yüksek sesle ona yanlış yaptığını söylerdim.
-C) Hiçbir şey söylemez, ama ona da küserdim.
+A) Onunla yalnız kaldığımızda ne düşündüğümü anlatırdım.
+B) Fark ettiğim anda, yanımızdakilerin önünde ona söylerdim.
+C) Aramız bozulmasın diye bu konuyu ona açmamayı seçerdim.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -542,9 +542,9 @@ Doğruyu söylemek her zaman kolay değildi; bazen dinlenmemek, bazen de kırıl
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Sen de Hz. İbrahim gibi davrandın. O da babasına doğruyu söylerken her sözüne "Babacığım" diye başladı ve onu kırmadı.
-B) Doğruyu söylemek istemen güzel. Hz. İbrahim ise babasını kimsenin önünde küçük düşürmedi; ona yumuşak bir sesle seslendi.
-C) Üzülmek çok doğal. Hz. İbrahim de üzüldü, ama babasına küsmedi; onun için dua etmeyi sürdürdü.
+A) Sen de Hz. İbrahim gibi davrandın. O da babasının atölyesine gidip doğruyu her sözüne “Babacığım” diye başlayarak anlattı.
+B) Doğruyu hemen söylemek istemen güzel. Hz. İbrahim ise babasını kimsenin önünde küçük düşürmedi; yanına gidip yumuşak bir sesle konuştu.
+C) Sevdiğin birini üzmek istememen çok anlaşılır. Hz. İbrahim de babasını kırmaktan çekindi, ama susmadı; doğruyu sevgiyle söyledi.
 
 #### NE ÖĞRENDİK
 
@@ -703,9 +703,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Arkadaşların bir oyunda kuralları çiğniyor ve "Herkes böyle yapıyor" diyor. Bu sana doğru gelmiyor. Ne yaparsın?
-A) Herkes böyle yapıyorsa doğrudur diye düşünür, ben de onlar gibi yapardım.
-B) Neden böyle yaptıklarını sorar, bana doğru gelen kurala göre oynamaya devam ederdim.
-C) Hiçbir şey demeden oyunu bırakır, eve dönerdim.
+A) Oyun bozulmasın diye ben de onlar gibi oynardım.
+B) Neden böyle yaptıklarını sorar, kurala uyup oynardım.
+C) Tartışma çıkmasın diye oyundan sessizce ayrılırdım.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -730,9 +730,9 @@ Kalabalığın çoğu yine de düşünmeden, atalarından gördüğü yolu sürd
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Arkadaşlarının arasında farklı olmak zor gelebilir. Hikâyede Hz. Lût, çevresindekiler başka türlü düşünse de dinledi, düşündü ve doğruyu kendisi seçti.
+A) Oyunun bozulmasını istememen anlaşılır. Hz. İbrahim ise bir şeyin çok kişi yaptığı için doğru olmayacağını biliyordu.
 B) Sen de Hz. İbrahim gibi davrandın. O da kavmine sorular sordu ve herkes yüz çevirse de doğru bildiğinden vazgeçmedi.
-C) Uzaklaşmak bazen kolay görünür. Hz. İbrahim ise meydandan küsüp gitmedi; ertesi gün yine anlatmayı sürdürdü.
+C) Tartışmadan uzak durmak bazen iyi gelir. Hz. İbrahim ise ertesi gün yine meydana çıktı ve anlatmayı sürdürdü.
 
 #### NE ÖĞRENDİK
 
@@ -881,9 +881,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Arkadaşların, şans getirdiğine inandıkları bir taşa çok değer veriyor ve ondan dileklerde bulunuyor. Sen bunun doğru olmadığını düşünüyorsun. Ne yaparsın?
-A) Bir şey demez, ben de onlar gibi taştan dilekte bulunurdum.
-B) "Bu çok saçma" diyerek onlarla alay ederdim.
-C) Onlara "Bu taş seni duyabiliyor mu, sana yardım edebilir mi?" diye sorar, düşünmelerini beklerdim.
+A) Arkadaşlarımı kırmamak için ben de taştan bir dilek tutardım.
+B) Bunun doğru olmadığını söyler, konuyu orada kapatırdım.
+C) Taşın onları duyup duyamayacağını sorup düşünmelerini isterdim.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -916,8 +916,8 @@ Hz. İbrahim'in yüreği sakindi, çünkü putların hiçbir şey yapamadığın
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Arkadaşlarına uymak o an kolay gelebilir. Hz. İbrahim ise kavmine uymadı; bir soruyla herkesin kendi içine dönmesini sağladı.
-B) Alay etmek insanların kalbini kapatabilir. Hz. İbrahim kimseyle alay etmedi; "Konuşabiliyorlarsa onlara sorun!" diyerek düşündürdü.
+A) Arkadaşlarını kırmak istememen güzel. Hz. İbrahim ise kavmine uymadı; bir soruyla herkesin kendi içine dönmesini sağladı.
+B) Doğru bildiğini söylemen cesurca. Hz. İbrahim ise bir soru sorarak insanların gerçeği kendi ağızlarıyla söylemesini sağladı.
 C) Sen de Hz. İbrahim gibi davrandın. O da bir soruyla insanların putların konuşamadığını kendi ağızlarıyla söylemesini sağladı.
 
 #### NE ÖĞRENDİK
@@ -1061,9 +1061,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Bir tartışmada arkadaşın "Ben senden daha güçlüyüm, ne dersem o olur!" diye övünüyor ve seni küçümsüyor. Ne yaparsın?
-A) Ben de ondan daha güçlü olduğumu söyleyip bağırırdım.
-B) Sakin kalır, ne düşündüğümü açık ve anlaşılır bir şekilde söylerdim.
-C) Korkup hiçbir şey söylemez, onun haklı olduğunu kabul ederdim.
+A) Ondan aşağı kalmamak için ben de neler yapabildiğimi sayardım.
+B) Ne düşündüğümü herkesin görebileceği bir örnekle anlatırdım.
+C) Tartışma büyümesin diye susar, konuyu orada kapatırdım.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1093,9 +1093,9 @@ Sonunda Hz. İbrahim'i büyük bir ateşe atmaya karar verdiler ve şehirde herk
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Övünen birine öfkelenmek çok doğal. Hz. İbrahim ise bağırmadı; herkesin gördüğü güneşi örnek vererek sakin bir cevap verdi.
-B) Sen de Hz. İbrahim gibi davrandın. O da güçlü kralın karşısında sakin kaldı ve açık bir delille konuştu.
-C) Güçlü birinin karşısında korkmak çok doğal. Hz. İbrahim de kralın gücünü biliyordu, ama susmadı; doğruyu sakin bir sesle söyledi.
+A) Küçümsenince kendini savunmak istemen çok doğal. Hz. İbrahim ise kendini övmedi; herkesin gördüğü güneşi örnek vererek cevap verdi.
+B) Sen de Hz. İbrahim gibi davrandın. O da güçlü kralın karşısında herkesin gördüğü güneşi örnek vererek açıkça konuştu.
+C) Tartışmayı büyütmek istememen anlaşılır. Hz. İbrahim de kralın gücünü biliyordu, ama susmadı; doğruyu açık bir örnekle söyledi.
 
 #### NE ÖĞRENDİK
 
@@ -1233,9 +1233,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Yarın okulda sınıfın önünde bir sunum yapacaksın ve çok korkuyorsun. Ne yaparsın?
-A) Elimden geldiğince hazırlanır, korkumu bir büyüğüme anlatır ve Allah'a güvenirdim.
-B) Korkumu kimseye söylemez, bütün gece kendi kendime üzülürdüm.
-C) Hiç hazırlanmaz, nasılsa kötü geçecek diye düşünüp vazgeçerdim.
+A) Hazırlığımı yapar, korktuğumda Allah'a sığınırdım.
+B) Korkum geçsin diye sunumu defalarca tek başıma çalışırdım.
+C) Öğretmenimden sunumu başka bir güne ertelemesini isterdim.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1267,8 +1267,8 @@ Kur'an, Allah'ın Hz. İbrahim'i ateşten kurtardığını ve bunda inanan insan
 #### SEÇİMİNİ KARŞILAŞTIR
 
 A) Sen de Hz. İbrahim gibi davrandın. O da en zor anında bütün kalbiyle Allah'a sığındı ve O'na güvendi.
-B) Korkunu içinde tutmak seni daha çok yorabilir. Hz. İbrahim ise korkulu anda yalnız kalmadı; Rabbine sığınıp O'ndan yardım istedi.
-C) Korku insana "vazgeç" diyebilir. Hz. İbrahim ise ateşin önünde bile umudunu kaybetmedi; Allah'a güvendi.
+B) Çok çalışmak güzel bir hazırlık. Hz. İbrahim ise en zor anında kendi gücüne değil, bütün kalbiyle Allah'a güvendi.
+C) Korkunun geçmesini istemek çok doğal. Hz. İbrahim ise o zor anda Rabbine sığındı ve kalbi güvenle doldu.
 
 #### NE ÖĞRENDİK
 
@@ -1418,9 +1418,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Bir arkadaş grubunun seni hep yanlış şeylere çağırdığını fark ettin ve onlardan uzaklaşmaya karar verdin. Ne yaparsın?
-A) Ayrılırken onlara kızar, kırıcı sözler söylerdim.
-B) Yanlış olduğunu bilsem de yalnız kalmamak için grupta kalmaya devam ederdim.
-C) Kimseyi kırmadan uzaklaşır, onlara iyi dileklerimi söyleyip kendime iyi arkadaşlar arardım.
+A) Ayrılırken neden yanlış yaptıklarını onlara tek tek anlatırdım.
+B) Yalnız kalmamak için onlarla arada bir görüşmeyi sürdürürdüm.
+C) Onlara iyi dileklerimi söyler, yeni arkadaşlar arardım.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1454,9 +1454,9 @@ Yıllar sonra Allah, Hz. Lût'u da peygamber olarak başka bir şehrin halkına 
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Kırıldığında öfkelenmek çok doğal. Hz. İbrahim de çok üzüldü, ama babasına "Esen kal!" dedi ve onun için dua edeceğini söyledi.
+A) Doğruyu anlatmak istemen güzel. Hz. İbrahim ise ayrılırken suçlayıcı bir söz söylemedi; “Esen kal!” deyip dua edeceğini söyledi.
 B) Yalnız kalmaktan korkmak anlaşılır bir duygu. Hz. İbrahim ise doğru bildiği yol için ayrıldı; yolda Hz. Lût da yanındaydı.
-C) Sen de Hz. İbrahim gibi davrandın. O da kimseyi kırmadan ayrıldı, iyi dileklerini söyledi ve Rabbine doğru yola çıktı.
+C) Sen de Hz. İbrahim gibi davrandın. O da iyi dileklerini söyleyerek ayrıldı ve Rabbine doğru yola çıktı.
 
 #### NE ÖĞRENDİK
 
@@ -1602,9 +1602,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Annen ya da baban iş için birkaç günlüğüne uzak bir şehre gidecek ve bir süre ayrı kalacaksınız. Ne yaparsın?
-A) Gitmesin diye ağlar, bütün gün kimseyle konuşmazdım.
-B) Ona sarılıp iyi dileklerimi söyler, onun için dua eder ve dönüşünü beklerdim.
-C) Gittiği için ona küser, dönünce de yüzüne bakmazdım.
+A) Gitmesin diye onu son ana kadar ikna etmeye çalışırdım.
+B) Ona sarılıp vedalaşır, yolculuğu için de dua ederdim.
+C) Üzüleceğim için vedalaşmadan kendi odama giderdim.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1634,7 +1634,7 @@ Allah onları gerçekten yalnız bırakmadı; bir süre sonra o kurak vadide bir
 
 A) Sevdiğinden ayrılırken üzülmek çok doğal. Hz. İbrahim de çok hüzünlüydü, ama ayrılığı duayla karşıladı ve sevdiklerini Allah'a emanet etti.
 B) Sen de hikâyedekiler gibi davrandın. Hâcer gibi Allah'a güvendin, Hz. İbrahim gibi de sevdiğin için dua ettin.
-C) Ayrılık insanı kırabilir. Hz. İbrahim ve Hâcer ise birbirlerine küsmedi; ikisi de Allah'ın onları sahipsiz bırakmayacağına güvendi.
+C) Üzülmemek için vedalaşmadan gitmek o an kolay gelebilir. Hz. İbrahim ise vadiden ayrılırken durup sevdiklerine döndü ve onlar için dua etti.
 
 #### NE ÖĞRENDİK
 
@@ -1777,9 +1777,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Sınıfınıza kimseyi tanımayan yeni bir öğrenci geldi. Teneffüste tek başına duruyor. Ne yaparsın?
-A) Yanına gider, kendimi tanıtır ve onu arkadaşlarımla oynadığımız oyuna çağırırdım.
-B) Önce onun bizimle konuşmasını bekler, kendim yanına gitmezdim.
-C) Onu tanımadığım için hiç ilgilenmez, kendi oyunuma devam ederdim.
+A) Yanına gidip onu arkadaşlarımla oynadığımız oyuna davet ederdim.
+B) Onu yormamak için önce kendi kendine alışmasına izin verirdim.
+C) Oyunumuz yarım kalmasın diye onu sonraki teneffüste çağırırdım.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1811,8 +1811,8 @@ Bir zamanlar yıldızlara bakıp Rabbini arayan o genç, şimdi yaşlı ve sevil
 #### SEÇİMİNİ KARŞILAŞTIR
 
 A) Sen de Hz. İbrahim gibi davrandın. O da tanımadığı yolcuları kapıda bekletmedi; hemen buyur edip ağırladı.
-B) Beklemek bazen kolay gelir. Hz. İbrahim ise misafirlerinin bir şey istemesini beklemedi; hemen kalkıp ikram hazırladı.
-C) Tanımadığımız birine yaklaşmak zor gelebilir. Hz. İbrahim ise yolcuları tanımasa da onları güler yüzle karşıladı.
+B) Yeni gelenin rahat etmesini istemen düşünceli bir davranış. Hz. İbrahim ise misafirlerinin bir şey istemesini beklemedi; hemen buyur edip ağırladı.
+C) Oyunun yarım kalmasını istememen anlaşılır. Hz. İbrahim ise yolcuları sonraya bırakmadı; onları hemen içeri buyur etti.
 
 #### NE ÖĞRENDİK
 

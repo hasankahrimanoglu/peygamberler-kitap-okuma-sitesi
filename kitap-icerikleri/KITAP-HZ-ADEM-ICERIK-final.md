@@ -75,13 +75,13 @@ Fakat önemli bir görev verilmek, her şeyi önceden bilmek demek değildi. Hz.
 
 ### SEN OLSAYDIN
 
-Soru: Öğretmenin sana önemli bir görev verdi ama nasıl yapacağını henüz bilmiyorsun. Ne yapardın?
+Soru: Öğretmenin sana önemli bir görev verdi ama nasıl yapacağını henüz bilmiyorsun. Ne yaparsın?
 
-A) Zor göründüğü için görevi hemen bırakırdım.
+A) Yanlış yapmamak için görevi bilen bir arkadaşıma verirdim.
 
-B) Görevi kabul eder, öğrenmek için yardım isterdim.   ← DOĞRU
+B) Görevi kabul eder, nasıl yapılacağını sorarak öğrenirdim.   ← DOĞRU
 
-C) Biliyormuş gibi davranır, kimseye soru sormazdım.
+C) Öğretmenimi meşgul etmemek için kendi bildiğim gibi yapardım.
 
 Seçimden sonra: Cevabını aklında tut. Hz. Âdem'in büyük sorumluluğa nasıl hazırlandığını okuyarak seçimini karşılaştır.
 
@@ -95,11 +95,11 @@ Yeryüzünün beklediği misafir artık gelmişti. Fakat bu misafirin neden bu k
 
 ### SEÇİMİNİ KARŞILAŞTIR
 
-A) Görevden uzaklaşmak kısa süreli bir rahatlık verebilirdi; hikâye ise sorumluluğun öğrenerek taşındığını gösterdi.
+A) Görevin iyi yapılmasını istemen anlaşılır. Hikâyede ise Allah, görev verdiği Hz. Âdem'e öğrenme yeteneği de verdi.
 
 B) Seçimin hikâyedeki değerle uyumlu. Hz. Âdem de büyük görevine Allah'ın öğrettikleriyle hazırlandı.
 
-C) Her şeyi biliyormuş gibi davranmak öğrenmeyi zorlaştırırdı; hikâyede yardım ve bilginin değeri öne çıktı.
+C) Öğretmenini yormamak istemen düşünceli bir davranış. Hikâyede ise insanın yolculuğu, ona öğretilenleri öğrenerek başladı.
 
 ### NE ÖĞRENDİK
 
@@ -163,13 +163,13 @@ Kibir, insanın gözünün önündeki gerçeği saklayan koyu bir perdeye benzer
 
 ### SEN OLSAYDIN
 
-Soru: Bir arkadaşın yeni bir konuyu senden önce öğrendi. Ne yapardın?
+Soru: Bir arkadaşın, senin de öğrenmek istediğin yeni bir konuyu senden önce öğrendi ve sınıfta anlattı. Ne yaparsın?
 
-A) Onun başarısını küçümser, aslında önemli olmadığını söylerdim.
+A) Ondan geri kalmamak için konuyu evde tek başıma çalışırdım.
 
-B) Bir daha onunla aynı ortamda bulunmak istemezdim.
+B) Bozulduğumu belli etmemek için konuyu değiştirirdim.
 
-C) Onu tebrik eder, ben de öğrenmek için çalışırdım.   ← DOĞRU
+C) Onu tebrik eder, bu konuyu ondan öğrenmek isterdim.   ← DOĞRU
 
 Seçimden sonra: Cevabını aklında tut. Meleklerin ve İblis'in farklı seçimlerini okuyarak kararını karşılaştır.
 
@@ -187,11 +187,11 @@ Hz. Âdem'in yolculuğunda iki ayrı davranış yan yana görünmüştü. Melekl
 
 ### SEÇİMİNİ KARŞILAŞTIR
 
-A) Başkasının başarısını küçümsemek İblis'in kibrine benzeyen bir kapı açabilirdi.
+A) Çalışmak istemen güzel. Hikâyede melekler ise bilmediklerini kabul etti; başkasından öğrenmek de bu alçak gönüllülüğün parçasıdır.
 
-B) Uzaklaşmak kendi öğrenme fırsatını da azaltırdı; melekler gerçeğe açık kaldılar.
+B) Bozulduğunu göstermemek o an seni rahatlatabilir. Hikâyede melekler ise bilmediklerini saklamadı, açıkça kabul etti.
 
-C) Seçimin hikâyedeki değerle uyumlu. Başkasının başarısı, senin değerini azaltmaz.
+C) Seçimin hikâyedeki değerle uyumlu. Melekler de bilmediklerini kabul etti; başkasının başarısı senin değerini azaltmaz.
 
 ### NE ÖĞRENDİK
 
@@ -273,11 +273,11 @@ Fakat İblis'in insan üzerinde zorlayıcı bir gücü yoktu. O yalnızca çağ�
 
 ### SEN OLSAYDIN
 
-Soru: Ailen evdeki birçok şeyi kullanabileceğini, yalnızca bir kutuyu açmaman gerektiğini söyledi. Ne yapardın?
+Soru: Ailen evdeki birçok şeyi kullanabileceğini, yalnızca bir kutuyu açmaman gerektiğini söyledi. Ne yaparsın?
 
-A) Nedenini anlamasam da verilen sınıra uyardım.   ← DOĞRU
+A) Nedenini tam anlamasam da verilen sınıra uyardım.   ← DOĞRU
 
-B) Kimse görmeden kutuyu biraz aralardım.
+B) Açmadan anlamak için kutuyu sallayıp sesini dinlerdim.
 
 C) Bir arkadaşım açarsa içindekine ben de bakardım.
 
@@ -297,7 +297,7 @@ Güven bazen tam da böyle zamanlarda sınanır. İnsan her sebebi bilmeyebilir.
 
 A) Seçimin hikâyedeki değerle uyumlu. Güven, her merakı hemen gidermekten daha değerlidir.
 
-B) Küçük bir aralık bile verilen sınırı aşmak olurdu; hikâye yaklaşmama uyarısını öne çıkardı.
+B) Kutuyu açmadan bir yol bulmak akıllıca görünebilir. Hikâyede ise korunmanın en güvenli yolunun, sınıra ne kadar yaklaşılabileceğini denememek olduğu anlatıldı.
 
 C) Kararı başkasına bırakmak sorumluluğu ortadan kaldırmazdı; herkes kendi seçimini taşır.
 
@@ -377,13 +377,13 @@ Karar anı gelmişti. Güzel görünen bir söz, açık bir uyarının karşıs�
 
 ### SEN OLSAYDIN
 
-Soru: Bir arkadaşın sana, “Kimse görmez, yasak olanı bir kere denesen ne olur?” dedi. Ne yapardın?
+Soru: Bir arkadaşın sana, “Kimse görmez, yasak olanı bir kere denesen ne olur?” dedi. Ne yaparsın?
 
-A) Merakımı gidermek için bir kere denerdim.
+A) Merakımı gidermek için yalnız bir kere denerdim.
 
 B) Verilen sınırı hatırlar ve teklifi kabul etmezdim.   ← DOĞRU
 
-C) Önce arkadaşımın denemesini bekler, sonra karar verirdim.
+C) Önce arkadaşımın denemesine bakar, sonra karar verirdim.
 
 Seçimden sonra: Cevabını aklında tut. Hz. Âdem ile eşinin seçiminin neye yol açtığını okuyarak kararını karşılaştır.
 
@@ -413,7 +413,7 @@ A) Bir kez denemek de verilen sınırı aşardı; hikâyede küçük görünen s
 
 B) Seçimin hikâyedeki uyarıyla uyumlu. Güzel görünen her teklif doğru olmayabilir.
 
-C) Başkasının davranışını beklemek kendi sorumluluğunu kaldırmazdı; hikâyede ikisi de kendi seçimini taşıdı.
+C) Arkadaşına bakarak karar vermek temkinli görünebilir. Hikâyede ise Hz. Âdem ile eşinin her biri kendi seçimini taşıdı.
 
 ### NE ÖĞRENDİK
 
@@ -470,13 +470,13 @@ Sıra, yanlışa nasıl karşılık vereceklerini seçmeye gelmişti.
 
 ### SEN OLSAYDIN
 
-Soru: Evde yanlışlıkla bir eşyaya zarar verdin ve bunu kimse görmedi. Ne yapardın?
+Soru: Evde yanlışlıkla bir eşyaya zarar verdin ve bunu kimse görmedi. Ne yaparsın?
 
-A) Fark edilmemesi için eşyayı saklardım.
+A) Annem üzülmesin diye eşyayı kendim onarmaya çalışırdım.
 
-B) Başka birinin yaptığını söylemeyi düşünürdüm.
+B) Biri sorarsa söylerdim, sormazsa konuyu açmazdım.
 
-C) Yaptığımı anlatır, özür diler ve düzeltmeye çalışırdım.   ← DOĞRU
+C) Ailemin yanına gidip olanı anlatır, özür dilerdim.   ← DOĞRU
 
 Seçimden sonra: Cevabını aklında tut. Hz. Âdem ile Hz. Havva'nın hatalarına nasıl karşılık verdiğini okuyarak seçimini karşılaştır.
 
@@ -502,11 +502,11 @@ Tövbe geçmişi değiştirmedi; fakat geleceğe açılan yeni bir kapı oldu. O
 
 ### SEÇİMİNİ KARŞILAŞTIR
 
-A) Saklamak sorunu görünmez yapabilirdi; hikâyede iyileşme gerçeği kabul etmekle başladı.
+A) Zararı düzeltmek istemen güzel bir düşünce. Hikâyede ise iyileşme, Hz. Âdem ile Hz. Havva'nın yanlışlarını açıkça kabul etmesiyle başladı.
 
-B) Sorumluluğu başkasına bırakmak hatayı büyütürdü; Hz. Âdem ile eşi birbirini suçlamadı.
+B) Sorulunca doğruyu söylemek de dürüstlüktür. Hikâyede ise Hz. Âdem ile Hz. Havva bahane aramadan yanlışlarını kabul etti ve bağışlanma istedi.
 
-C) Seçimin hikâyedeki değerle uyumlu. Özür ve düzeltme, pişmanlığı güzel bir başlangıca dönüştürür.
+C) Seçimin hikâyedeki değerle uyumlu. Tövbe gibi özür de gerçeği kabul etmekle başlar ve yeni bir kapı açar.
 
 ### NE ÖĞRENDİK
 
@@ -582,13 +582,13 @@ Yeni yurt genişti. Yeni hayat ise ilk bakışta zor görünebilirdi.
 
 ### SEN OLSAYDIN
 
-Soru: Daha önce hiç yapmadığın önemli bir işle karşılaştın. Ne yapardın?
+Soru: Ailen, bahçenin bir köşesine fide dikme işini ilk kez sana verdi. Daha önce hiç fide dikmedin. Ne yaparsın?
 
-A) İşi küçük adımlara böler, öğrenerek ilerlerdim.   ← DOĞRU
+A) Önce birkaç fide diker, öğrendikçe devamını getirirdim.   ← DOĞRU
 
-B) Birinin benim yerime yapmasını beklerdim.
+B) İş çabuk bitsin diye bütün fideleri aynı gün dikerdim.
 
-C) İlk denemede zorlanınca yapamayacağıma karar verirdim.
+C) İlk fideler kurursa bu işin bana göre olmadığını düşünürdüm.
 
 Seçimden sonra: Cevabını aklında tut. Yeryüzündeki yeni hayatın hangi destekle başladığını okuyarak kararını karşılaştır.
 
@@ -614,9 +614,9 @@ Fakat aile büyüdükçe başka bir sorumluluk doğacaktı: Allah'tan gelen rehb
 
 A) Seçimin hikâyedeki değerle uyumlu. Yeni başlangıçlar, rehberlik ve küçük adımlarla kolaylaşır.
 
-B) Yardım istemek güzeldir; fakat kendi sorumluluğumuzu tamamen başkasına bırakamayız.
+B) Hevesle başlamak güzel. Hikâyede ise yeni hayat adım adım ve öğrenerek kuruldu; bazı emeklerin karşılığı zamanla geldi.
 
-C) İlk zorluk sonucu belirlemez; yeryüzündeki hayatın kendisi öğrenerek ilerlemeyi gerektirdi.
+C) İlk sonuç insanı üzebilir. Hikâyede ise zorluklar bir anda kalkmadı; insan bilmediğini öğrenerek ilerledi.
 
 ### NE ÖĞRENDİK
 
@@ -676,13 +676,13 @@ Kābil'in önünde hâlâ iki yol vardı. Durabilir, sakinleşebilir ve kendi da
 
 ### SEN OLSAYDIN
 
-Soru: Yaptığın bir çalışma seçilmedi, kardeşinin veya arkadaşının çalışması seçildi. İçinde kıskançlık ve öfke hissettin. Ne yapardın?
+Soru: Yaptığın bir çalışma seçilmedi, kardeşinin veya arkadaşının çalışması seçildi. İçinde kıskançlık ve öfke hissettin. Ne yaparsın?
 
-A) Onu suçlar ve öfkemi ondan çıkarırdım.
+A) Bunun haksızlık olduğunu düşünür, öğretmenime itiraz ederdim.
 
-B) Biraz uzaklaşır, sakinleşir, neden üzüldüğümü düşünür ve güvendiğim bir büyüğe anlatırdım.   ← DOĞRU
+B) Biraz uzaklaşır, sonra güvendiğim bir büyüğe anlatırdım.   ← DOĞRU
 
-C) Hiçbir şey söylemez fakat içimdeki öfkeyi büyütmeye devam ederdim.
+C) Belli etmemek için gülümser, öfkemi kendi içimde tutardım.
 
 Seçimden sonra: Cevabını aklında tut. Şimdi Kābil'in hangi yolu seçtiğini ve bu seçimin nelere yol açtığını oku.
 
@@ -734,11 +734,11 @@ Gerçek güç, başkasına zarar vermek değil; öfkelendiğimiz anda kendimizi 
 
 ### SEÇİMİNİ KARŞILAŞTIR
 
-A) Kābil de öfkesini kardeşine yöneltti. Hikâye, başkasını suçlamanın ve öfkeyle davranmanın çok ağır sonuçlar doğurabileceğini gösterdi.
+A) Haksızlık olduğunu düşünmen anlaşılır. Hikâye, öfke yükselirken önce durmanın ve sakinleşince konuşmanın insanı koruduğunu gösterdi.
 
-B) Seçimin hikâyedeki doğru değerle uyumlu. Sakinleşmek, biraz uzaklaşmak ve güvendiğin birinden yardım istemek seni yanlış davranışlardan koruyabilir.
+B) Seçimin hikâyedeki değerle uyumlu. Öfke yükseldiğinde durmak, uzaklaşmak ve güvendiğin birinden yardım istemek seni korur.
 
-C) Öfkeyi sessizce büyütmek onu ortadan kaldırmaz. Kābil'in öfkesi de zamanla daha tehlikeli hâle geldi. Duyguları güvenilir biriyle paylaşmak daha doğru olurdu.
+C) Öfkeni göstermemek o an kolay görünebilir. Hikâyede ise içte büyüyen öfkenin insanı yönetebildiği görüldü; duyguyu güvendiğin biriyle paylaşmak onu küçültür.
 
 ### NE ÖĞRENDİK
 
@@ -821,13 +821,13 @@ Değerli bir bilgi bize ulaştığında iki seçimimiz vardır. Onu yalnızca ke
 
 ### SEN OLSAYDIN
 
-Soru: Ailenden öğrendiğin güzel ve yararlı bir bilgiyi küçük bir çocuğa öğretmen istendi. Ne yapardın?
+Soru: Ailenden öğrendiğin güzel ve yararlı bir bilgiyi küçük bir çocuğa öğretmen istendi. Ne yaparsın?
 
-A) Unuturum diye bu sorumluluğu kabul etmezdim.
+A) İlgi çeksin diye bilgiye kendimden bir şeyler katardım.
 
-B) Yalnızca beni dinlerse anlatacağımı söylerdim.
+B) Aynı gün, aklımda kaldığı kadarıyla anlatmaya başlardım.
 
-C) Doğru öğrendiğimden emin olur, sabırla anlatırdım.   ← DOĞRU
+C) Önce doğru hatırladığımdan emin olur, sonra anlatırdım.   ← DOĞRU
 
 Seçimden sonra: Cevabını aklında tut. Hz. Âdem'in bıraktığı mirasın nasıl devam ettiğini okuyarak kararını karşılaştır.
 
@@ -849,11 +849,11 @@ Toprakta başlayan yolculuk yeniden toprağa ulaştı. Fakat ekilen değerler se
 
 ### SEÇİMİNİ KARŞILAŞTIR
 
-A) Sorumluluktan kaçmak bilgiyi durdurabilirdi; hikâyede güzel miras aktarılınca yaşamaya devam etti.
+A) Anlatmayı eğlenceli yapmak istemen güzel. Hikâyede ise bir söz eklenince bilginin zamanla ilk anlamından uzaklaşabileceği anlatıldı.
 
-B) Öğretmek yalnızca karşımızdaki kusursuz dinlediğinde yapılmaz; sabır rehberliğin bir parçasıdır.
+B) Paylaşmaya istekli olman güzel. Hikâyede ise güzel miras, doğru öğrenilip güvenilir biçimde aktarıldığında korundu.
 
-C) Seçimin hikâyedeki değerle uyumlu. Doğru bilgi, özenle öğrenilip sabırla aktarılır.
+C) Seçimin hikâyedeki değerle uyumlu. Doğru bilgi, emin olunarak öğrenilir ve güvenilir biçimde aktarılır.
 
 ### NE ÖĞRENDİK
 

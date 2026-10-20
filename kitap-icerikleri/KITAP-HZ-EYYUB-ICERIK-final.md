@@ -313,9 +313,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Doğum gününde sana kocaman bir kutu kurabiye hediye edildi. Ertesi gün kutuyu okula götürdün ve teneffüste arkadaşların da kutuya bakıyor. Ne yaparsın?
-A) Kutuyu çantama koyar, eve götürüp kurabiyelerin hepsini kendim yerdim.
-B) Arkadaşlarıma birer kurabiye ikram eder, bu güzel hediye için içimden şükrederdim.
-C) Yalnızca en yakın arkadaşıma verir, diğerleri görmesin diye kutuyu saklardım.
+A) Doğum günü hediyem olduğu için kutuyu eve götürürdüm.
+B) Arkadaşlarıma birer kurabiye verir, içimden şükrederdim.
+C) Önce en yakın arkadaşlarıma verir, kalanı eve götürürdüm.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -341,7 +341,7 @@ Hz. Eyyûb'un evi bereketle, kalbi şükürle doluydu. Akşamları bağının ç
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Güzel bir hediyeyi saklamak istemek çok doğal. Hz. Eyyûb ise ambarları dolduğunda kapısını kilitlemedi, nimeti herkesle paylaştı.
+A) Hediyeni korumak istemek çok doğal. Hz. Eyyûb ise ambarları dolduğunda kapısını kilitlemedi, nimeti herkesle paylaştı.
 B) Sen de Hz. Eyyûb gibi davrandın. O da kendisine verilen nimeti şükürle paylaştı ve sofrasını herkese açtı.
 C) Yakın arkadaşınla paylaşmak güzel bir başlangıç. Hz. Eyyûb ise kapısını herkese açtı; konuğu da yetimi de doyurdu.
 
@@ -503,9 +503,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Günlerce uğraşıp yaptığın maketi bir arkadaşın yanlışlıkla düşürdü ve maket dağıldı. O ilk anda ne yaparsın?
-A) Çok üzülsem de bağırmadan durur, sakinleşip ne yapabileceğimi düşünürdüm.
-B) Hemen bağırır, maketi düşüren arkadaşıma çok kızardım.
-C) "Zaten hiçbir şey yolunda gitmiyor" der, maketi tamamen bırakırdım.
+A) Çok üzülsem de durup ne yapabileceğimi düşünürdüm.
+B) İlk anda çok üzülür, ağlayarak oradan uzaklaşırdım.
+C) Dağılan maketi o gün toplamayıp olduğu gibi bırakırdım.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -542,7 +542,7 @@ O zor günlerde Hz. Eyyûb'a inanan birkaç dostu, haberi duyar duymaz koşup ge
 #### SEÇİMİNİ KARŞILAŞTIR
 
 A) Sen de Hz. Eyyûb'a yakın davrandın. O da çok üzüldü ama ilk anda öfkelenmedi; "Mülk Allah'ındır" deyip Rabbine sığındı.
-B) Böyle bir anda öfkelenmek çok anlaşılır bir şey. Hz. Eyyûb ise ilk haberi duyduğunda sakin kaldı ve Allah'a sığındı.
+B) Böyle bir anda ağlamak çok doğal. Hz. Eyyûb da çok üzüldü, ama ilk anda Rabbine sığındı ve umudunu kaybetmedi.
 C) Her şeyi bırakmak istemek, ne kadar üzüldüğümüzü gösterir. Hz. Eyyûb ise art arda gelen haberlere rağmen umudunu kaybetmedi.
 
 #### NE ÖĞRENDİK
@@ -885,9 +885,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Zor bir gün geçiriyorsun. Bir arkadaşın sana "Kesin kendi suçundur" dedi ve bu söz seni çok kırdı. Ne yaparsın?
-A) Ben de ona aynı kırıcılıkta bir sözle karşılık verirdim.
-B) Kırıldığımı sakince söyler, tartışmayı uzatmaz, derdimi bir büyüğüme ve Allah'a açardım.
-C) Hiçbir şey söylemez, kırgınlığımı kimseye anlatmadan uzun süre içimde tutardım.
+A) Haklı olmadığını göstermek için onunla tartışırdım.
+B) Kırıldığımı ona söyler, sonra derdimi Allah'a açardım.
+C) Kırgınlığımı belli etmeden onunla bir süre konuşmazdım.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -923,9 +923,9 @@ Bu dua bir şikâyet değildi; saygı ve umut dolu bir yalvarıştı. Hz. Eyyûb
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Kırılınca karşılık vermek istemek çok doğal. Hz. Eyyûb ise kırıcı söze kırıcı sözle karşılık vermedi; derdini Allah'a açtı.
+A) Haklı olduğunu göstermek istemen çok doğal. Hz. Eyyûb ise tartışmaya girmedi; kırıldığını söyledi ve derdini Allah'a açtı.
 B) Sen de Hz. Eyyûb gibi davrandın. O da kırıldığını sakince söyledi, tartışmaya girmedi ve derdini Allah'a açtı.
-C) Kırgınlığı içinde tutmak insanı daha da yorabilir. Hz. Eyyûb ise kırıldığını açıkça söyledi ve derdini Rabbine anlattı.
+C) Kırgınken uzak durmak istemek anlaşılır. Hz. Eyyûb ise kırıldığını açıkça söyledi ve derdini Rabbine anlattı.
 
 #### NE ÖĞRENDİK
 
@@ -1072,9 +1072,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Uzun süren hastalığın sonunda geçti. Bugün yeniden dışarı çıkıp oynayabileceksin. İlk ne yaparsın?
-A) Bana bakan aileme teşekkür eder, iyileştiğim için Allah'a şükrederdim.
-B) Zor günleri hemen unutur, kimseye bir şey demeden doğruca oyuna koşardım.
-C) "Ya yine hastalanırsam?" diye korkar, bir süre dışarı çıkmazdım.
+A) Bana bakan aileme teşekkür eder, Allah'a şükrederdim.
+B) Çok özlediğim için doğruca arkadaşlarımın yanına koşardım.
+C) “Ya yine hastalanırsam?” diye bir süre dışarı çıkmazdım.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -1106,7 +1106,7 @@ Kur'an, Hz. Eyyûb'un hikâyesini akıl sahipleri için bir öğüt olarak anlat
 #### SEÇİMİNİ KARŞILAŞTIR
 
 A) Sen de Hz. Eyyûb gibi davrandın. O da iyileşince Rabbine şükretti ve sevincini eşiyle paylaştı.
-B) Oyuna koşmak istemek çok doğal. Hz. Eyyûb ise iyileşince zor günleri unutmadı; Rabbine yöneldi ve şükretti.
+B) Oyuna koşmak istemek çok doğal. Hz. Eyyûb ise iyileşince önce Rabbine yöneldi ve şükretti.
 C) Korkunun bir süre sürmesi anlaşılır bir şey. Hz. Eyyûb ise zor günler bitince umutla ayağa kalktı ve şükretti.
 
 #### NE ÖĞRENDİK

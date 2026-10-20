@@ -221,9 +221,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Diyelim ki bir işi kolaylaştıran yeni bir yol buldun. Hemen herkese anlatmak istiyorsun. Ama bu yol yayılırsa başka bir şeye zarar verebilir. Ne yaparsın?
-A) Hemen herkese anlatırdım, zararını sonra düşünürdüm.
+A) Çok işe yarayacağı için bulduğum yolu herkese anlatırdım.
 B) Önce kime ne zarar verir diye düşünür, sonra anlatırdım.
-C) Kimseye söylemez, bulduğum yolu kendime saklardım.
+C) Bulduğum yolu yalnızca en yakın arkadaşıma anlatırdım.
 Doğru seçenek: **B**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -250,9 +250,9 @@ O yıllarda başka şeyler de buldu: bulanık suyu süzmeyi, tarlaya su geçirme
 
 #### SEÇİMİNİ KARŞILAŞTIR
 
-A) Hızlı davranmak çoğu zaman iyidir. Ama İdrîs bir gün beklediği için ağaçların tükenmesini önledi.
+A) Faydalı bir şeyi paylaşmak istemen güzel. Ama İdrîs bir gün beklediği için ağaçların tükenmesini önledi.
 B) Sen de İdrîs gibi davrandın. O da önce sonucu düşündü, sonra kararını verdi.
-C) Bir bilgiyi saklamak da bir çözümdür. İdrîs ise saklamadı; daha iyisini bulana kadar aramayı sürdürdü.
+C) Bilgiyi az kişiyle paylaşmak da bir yol. İdrîs ise önce bu yolun kime ne yapacağını düşündü.
 
 #### NE ÖĞRENDİK
 
@@ -378,8 +378,8 @@ Bu bölümde yok.
 
 Soru: Bir arkadaşın senin anlattığın şeyi anlamadı. Diğerleri sıkıldı ve "geç artık" diyor. Ne yaparsın?
 A) Ona başka bir yoldan bir kez daha anlatırdım.
-B) Diğerleri sıkılmasın diye konuyu hemen geçerdim.
-C) Anlamasını beklemeden onu kendi başına bırakırdım.
+B) Diğerleri sıkılmasın diye konuyu geçip devam ederdim.
+C) Ona sonra tek başına anlatmak üzere konuyu geçerdim.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -420,7 +420,7 @@ Döndüğünde kimseyi azarlamadı; dağılanları tek tek buldu ve yeniden ders
 
 A) Sen de İdrîs gibi davrandın. O da vazgeçmedi; aynı konuyu başka bir yoldan anlattı ve arkadaşı anladı.
 B) Bir grubu bekletmemek de düşünülmesi gereken bir şeydir. Ama o gün ders uzadı ve kimse buna üzülmedi.
-C) Herkes bazen kendi başına öğrenir. İdrîs ise beklemeyi seçti ve öğrencisi o gün anladı.
+C) Ona sonra ayrıca anlatmayı düşünmen güzel. İdrîs ise orada, o an başka bir yoldan anlattı; bekleyenler de bir şey öğrendi.
 
 #### NE ÖĞRENDİK
 
@@ -557,9 +557,9 @@ Bu bölümde yok.
 #### SEN OLSAYDIN
 
 Soru: Uzun zamandır uğraştığın bir işte çok az yol aldın. Elindeki sonuç çok küçük görünüyor. Ne yaparsın?
-A) Bu yolu bırakıp bambaşka bir şey denerdim.
+A) Bu yol olmuyor diye bırakıp bambaşka bir şey denerdim.
 B) Bir süre ara verir, sonra bakmaya karar verirdim.
-C) Küçük de olsa elimdekine bakıp aynı yoldan devam ederdim.
+C) Elimdeki küçük sonuca bakıp aynı yolda ilerlerdim.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -718,8 +718,8 @@ Bu bölümde yok.
 
 Soru: Herkesin şüphelendiği bir konuda kararsız kaldın. Yanında, hiç yalan söylemediğini bildiğin biri var. Ne yaparsın?
 A) Ona sorar, söylediğine güvenip biraz daha beklerdim.
-B) Çoğunluk ne diyorsa ben de onu yapardım.
-C) Kimseye sormadan hemen kendi kararımı verirdim.
+B) Bu kadar çok kişi şüpheleniyorsa ben de onlara uyardım.
+C) Kendi fikrime güvenip kararımı tek başıma verirdim.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
 
@@ -759,7 +759,7 @@ Kur'an'da İdrîs'in çok sadık bir peygamber olduğu ve pek yüce bir mertebey
 
 A) Sen de halkın yaptığını yaptın. Onlar da hiç yalan söylemeyen birine güvendiler ve beklediler.
 B) Çoğunluğa uymak bazen kolaydır. O gün çoğunluk vazgeçmek istiyordu; sonuç ise tam tersi çıktı.
-C) Kendi kararını vermek değerlidir. Ama o gün bilmedikleri bir konu vardı; sormak onlara zaman kazandırdı.
+C) Kendi fikrine güvenmek değerlidir. Ama o gün bilmedikleri bir konu vardı; güvenilir birine sormak onlara zaman kazandırdı.
 
 #### NE ÖĞRENDİK
 
