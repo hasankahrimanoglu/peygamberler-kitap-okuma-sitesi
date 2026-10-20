@@ -30,6 +30,12 @@ type AtlasScrollReaderProps = {
    * önce kazanılıp kazanılmadığı Supabase'den sorulmaz.
    */
   tekrarOkumaOnizleme?: boolean;
+  /**
+   * "Sen Olsaydın" onaylanınca çağrılır (S5 kalıcı kayıt). Yalnız gerçek okuma
+   * ekranı verir; önizleme vermez, kayıt yapılmaz. Kayıt sonucu beklenmez:
+   * okuma akışı kayda bağlı değildir.
+   */
+  onSecim?: (secenek: DecisionOption["id"]) => void;
 };
 
 const YAZI_SINIFLARI = [styles.yaziKucuk, styles.yaziNormal, styles.yaziBuyuk] as const;
@@ -203,6 +209,7 @@ export function AtlasScrollReader({
   chapter,
   onProgressSync,
   tekrarOkumaOnizleme,
+  onSecim,
 }: AtlasScrollReaderProps) {
   const router = useRouter();
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -487,6 +494,7 @@ export function AtlasScrollReader({
 
   function karariOnayla() {
     if (!secilen) return;
+    onSecim?.(secilen);
     window.sessionStorage.setItem(secimAnahtari, secilen);
     kararKaydirmaRef.current = true;
     setKararOnayli(true);

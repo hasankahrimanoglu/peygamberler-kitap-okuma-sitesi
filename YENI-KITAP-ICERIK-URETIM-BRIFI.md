@@ -407,6 +407,20 @@ Kaynak/kurgu sınırı notu: ...
 - Üç seçenek vardır: biri değeri yaşatan davranış, ikisi gerçekçi fakat daha
   zayıf davranış.
 - Seçenekler kişisel davranış kipinde yazılır: “... yapardım / ... isterdim”.
+- **Zayıf seçenekler gerçek bir ikilemdir (KARAR 20 Eki 2026, Hasan):** 8–11
+  yaşta bir çocuğun o anda gerçekten yapabileceği, kendince haklı bir gerekçesi
+  olan davranışlar yazılır. Çocuk okuyunca “bunu ben de yapabilirdim” demeli.
+  Açıkça kötü, tembel ya da kaba davranış zayıf seçenek olarak yazılmaz.
+  - Zayıf: “Kendi derdim yeter diye onunla hiç konuşmazdım.”
+  - Güçlü: “Onu üzmemek için konuyu açmaz, teneffüste birlikte oynardım.”
+- **Ele veren kelime kullanılmaz:** zayıf seçeneklerde “hiç”, “asla”, “bir
+  daha”, “umursamazdım”, “karıştırırdım”, “beklerdim”, “vazgeçerdim” gibi
+  davranışı baştan kötü gösteren kelimeler; doğru seçenekte de yalnız ona
+  ait “sakin olur, düşünüp, nazikçe” gibi süslemeler yer almaz.
+- **Üç seçenek benzer uzunlukta ve tondadır:** karakter sayıları arasındaki
+  fark %20'yi geçmez; doğru seçenek en uzun seçenek olarak tekrar etmez
+  (kitap genelinde en fazla bölüm sayısının üçte biri kadar). Çocuk şıkkı
+  uzunluğundan ya da tonundan değil, düşünerek seçmelidir.
 - Doğru harf kitap genelinde A/B/C arasında dengeli dağılır; harflerin kullanım
   sayıları arasındaki fark en fazla 1 olur. Aynı harf üç bölüm üst üste gelmez.
 - Seçim anında geri bildirim yoktur. Sabit nötr not:
@@ -865,6 +879,8 @@ Ajan, teslim sonunda her maddeyi `tamam / sorun var` olarak raporlamalıdır:
 - [ ] Hikâye dallanmıyor; devam metni bütün seçimler için aynı.
 - [ ] Her bölümde 1 Sen Olsaydın, 3 seçenek ve 3 karşılaştırma metni var.
 - [ ] Doğru seçenekler A/B/C arasında dengeli.
+- [ ] Zayıf seçenekler gerçekçi ikilem; ele veren kelime yok; üç seçenek
+      benzer uzunlukta, doğru seçenek kitap genelinde sürekli en uzun değil.
 - [ ] Zayıf seçenek geri bildirimleri çocuğu utandırmıyor.
 - [ ] Her bölümde tam olarak 3 Ne Öğrendik maddesi var.
 - [ ] Bugüne Taşı yalnız doğal bölümlerde ve bütün meta alanlarıyla yazıldı.

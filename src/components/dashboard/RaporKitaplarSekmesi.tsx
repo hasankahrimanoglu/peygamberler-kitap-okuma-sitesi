@@ -143,11 +143,14 @@ export function RaporKitaplarSekmesi({
                   </div>
                 </div>
 
-                <div className="mt-4 rounded-kart border border-eylem/25 bg-eylem-yumusak p-4">
-                  <p className="text-base font-medium leading-7 text-murekkep">
-                    {adventure.parentMessage}
-                  </p>
-                </div>
+                {/* Seçim verisi yetersizse özet yok (S5): veriye dayanmayan gözlem yazılmaz. */}
+                {adventure.parentMessage ? (
+                  <div className="mt-4 rounded-kart border border-eylem/25 bg-eylem-yumusak p-4">
+                    <p className="text-base font-medium leading-7 text-murekkep">
+                      {adventure.parentMessage}
+                    </p>
+                  </div>
+                ) : null}
               </Kart>
             );
           })}

@@ -1360,15 +1360,32 @@ bağlanmış cihaz erişir.**
 |---|---|---|---|
 | S1 | Son okuma hareketleri (aktivite akışı) | Yeni event tablosu ister; ilk sürümde `user_progress.updated_at`'ten "son aktivite" özeti gösterilir | `activity_events` tablosu |
 | S2 | Ses çubuğu geliştirmeleri (hız, 10sn ileri/geri, kaldığı yerden devam) | Pozisyon kaydı ister | progress'e ses pozisyonu alanı |
-| S3 | Hesap aktivasyon akışı (şifre maili yerine tek kullanımlık bağlantı) | Çalışan Shopier akışını bozmadan, kendi fazında | E-posta şablonu + token akışı |
+| S3 | Hesap aktivasyon akışı (şifre maili yerine tek kullanımlık bağlantı) | Çalışan Shopier akışını bozmadan, kendi fazında. *(ÇÖZÜLDÜ — 20 Eki 2026, Faz 7 3. adım: `/sifre-belirle` bağlantısı, Şifremi unuttum; Bölüm 8)* | E-posta şablonu + token akışı |
 | S4 | Çocuk girişi PIN'e geçiş + parola güvenliği | S3 ile birlikte ele alınır (bkz. Bölüm 8). *(ÇÖZÜLDÜ — 19 Eki 2026, 3.11: çocuk hesabı kalktı; ortak cihazda isteğe bağlı profil şifresi, kendi cihazında eşleme kodu)* | Şema + RLS değişikliği |
-| S5 | "Sen Olsaydın" cevaplarının **kalıcı** kaydı (geçmiş cevapların saklanması + veli raporunda `high/mixed/low` özet seçimi) | Değerli ama zorunlu değil. **İki ihtiyaç karıştırılmamalı:** seçimin AYNI OKUMA OTURUMUNDA tutulup bölüm sonunda "Seçimini Karşılaştır"da kullanılması S5 DEĞİLDİR — okuma akışının temel parçasıdır (4.1/16, Faz 6.1; oturum içi state, tablo gerektirmez). S5 yalnızca veritabanına kalıcı kayıttır | Yeni tablo |
+| S5 | "Sen Olsaydın" cevaplarının **kalıcı** kaydı (geçmiş cevapların saklanması + veli raporunda `high/mixed/low` özet seçimi) | Değerli ama zorunlu değil. **İki ihtiyaç karıştırılmamalı:** seçimin AYNI OKUMA OTURUMUNDA tutulup bölüm sonunda "Seçimini Karşılaştır"da kullanılması S5 DEĞİLDİR — okuma akışının temel parçasıdır (4.1/16, Faz 6.1; oturum içi state, tablo gerektirmez). S5 yalnızca veritabanına kalıcı kayıttır. *(UYGULANIYOR — KARAR 20 Eki 2026, Hasan: kitap sonu veli özeti seçim verisi olmadan her çocukta aynı "mixed" metni gösteriyor, gözlem gibi okunuyordu. Kurallar aşağıdaki notta.)* | Yeni tablo `sen_olsaydin_secimleri` |
 
-> **Not (değişken veli özeti):** İçerik şablonunda veli özeti üç varyant olarak
-> yazılır (`high` / `mixed` / `low`) ve çocuğun "Sen Olsaydın" performansına göre
-> seçilmesi hedeflenir. Bu seçim S5'e (cevap kaydı) bağlıdır; **S5 gelene kadar
-> sistem varsayılan olarak `mixed` varyantını gösterir.** Varyantlar içerikte hazır
-> bekler, S5 ile otomatik devreye girer.
+> **Not (değişken veli özeti — REVİZE 20 Eki 2026, Hasan; S5):** İçerik
+> şablonunda veli özeti üç varyant olarak yazılır (`high` / `mixed` / `low`) ve
+> çocuğun "Sen Olsaydın" seçimlerine göre seçilir.
+> - **Kayıt:** Her bölümde çocuğun **ilk** seçimi kalıcı tutulur (seçilen şık +
+>   o anki içerikte değeri yaşatan şık olup olmadığı). Bölüm tekrar okununca
+>   kayıt değişmez: doğruyu gördükten sonra değiştirip oranı şişirmesin. Kayıt
+>   değiştirilemez; profil silinince silinir. Kayıt başarısız olursa okuma akışı
+>   etkilenmez (ilerleme, rozet ve madalyanın şartı değildir).
+> - **Seçim:** Kitap bitince (`bitti_mi`) o kitapta kayıtlı ilk seçimlerin
+>   oranı: **≥%70 `high`, %40–70 `mixed`, <%40 `low`.** Kitabın bölüm sayısının
+>   en az yarısı kadar kayıt yoksa oran hesaplanmaz.
+> - **Veri yoksa paragraf gösterilmez.** Eski "S5 gelene kadar `mixed`"
+>   varsayılanı kalktı: veriye dayanmayan bir gözlem cümlesiydi. S5'ten önce
+>   bitirilmiş kitaplar bu yüzden özetsiz görünür.
+> - **Veli tek tek seçimleri görmez; oran, yüzde ya da puan hiçbir yerde
+>   gösterilmez** (çocuk "beklenen" şıkkı seçmesin — 4.1/19 ile aynı ilke).
+>   Çocuğun ekranında hiçbir şey değişmez. `/tasarim/*` önizlemeleri kayıt
+>   yapmaz.
+> - **Bilinen sınır:** sorular şu an kolay (doğru şık çoğu zaman en uzun,
+>   zayıf şıklar açıkça kötü); sorular brifin 7.6 kurallarına göre
+>   düzeltilene kadar çoğu çocuk `high` alır. Kayıt, soruların ne kadar
+>   ayırt edici olduğunu da gösterir.
 
 ### 4.3 EKLENMEYECEK (bilinçli karar)
 
@@ -1774,7 +1791,12 @@ ileride istenirse eklenmesi kolaydır.)
   `eslesme_denemeleri` — RLS'si açık ama hiç kuralı olmayan tablolardadır;
   istemci okuyamaz, yalnız `SECURITY DEFINER` fonksiyonlar kullanır. Göç:
   `supabase/migration-faz7-guvenlik.sql`.
-- `parent_subscriptions` — Shopier abonelikleri
+- **`sen_olsaydin_secimleri` (S5, 20 Eki 2026):** profil + kitap anahtarı
+  (`books.ts` anahtarı) + bölüm no başına çocuğun ilk "Sen Olsaydın" seçimi
+  (`secenek`, `dogru`). Veli ve o çocuğa bağlı cihaz okur ve ekler;
+  güncelleme/silme kuralı yok (değişmez), profil silinince silinir. Göç:
+  `supabase/migration-s5-secimler.sql`.
+- `parent_subscriptions` — abonelik (profil hakkı); siparişler `siparisler`'de
 - `books` — kitap meta (isim, sıra, toplam bölüm)
 - `user_progress` — profil+kitap başına ilerleme (bölüm sayısı, %, bitti_mi, final skoru)
 - İçerik (bölümler, metinler, rozet adları, veli raporu) `src/data/books.ts`
@@ -2163,6 +2185,17 @@ Kurallar:
       adları ve düz metin şifreler silinir; ilerleme, rozet, görev ve fotoğraf
       korunur.
 - [x] Veritabanı değişikliği uygulanmadan önce Hasan'a gösterilir.
+
+### 20 Ekim 2026 ("Sen Olsaydın" seçim kaydı ve soru kalitesi — Hasan onayı, bkz. S5)
+
+- [x] **S5 kuruluyor:** her bölümde ilk seçim kalıcı kaydedilir; kitap sonu
+      veli özeti orana göre seçilir; veri yoksa özet paragrafı gösterilmez;
+      veli tek tek seçimleri ve oranı görmez.
+- [x] **Soru kalitesi:** zayıf şıklar çoğu zaman açıkça kötü ve doğru şık 84
+      sorunun 55'inde en uzun; çocuk düşünmeden doğruyu buluyor. İçerik
+      brifinin 7.6 bölümüne üç kural eklendi (gerçekçi zayıf şık, ele veren
+      kelime yok, benzer uzunluk ve ton). Yeni kitaplar bu kuralla yazılır;
+      mevcut 84 soru içerik oturumlarında kitap kitap düzeltilir.
 
 ### 20 Ekim 2026 (Faz 7, 3. adım — satın alma ve ilk giriş; Hasan onayı, bkz. Bölüm 8)
 

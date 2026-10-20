@@ -12,6 +12,7 @@ import { atlasBookByKey } from "../../../src/data/atlasCatalog";
 import {
   adaptDataChapter,
   type ChapterData,
+  type DecisionOption,
 } from "../../../src/data/demoChapters";
 
 type ProgressSyncResult = {
@@ -128,6 +129,29 @@ async function syncChapterProgress(
   return { ok: false, message: `İlerleme kaydedilemedi: ${yazmaHatasi.message}` };
 }
 
+/**
+ * "Sen Olsaydın" ilk seçiminin kalıcı kaydı (S5 — PROJE-MODELI 4.2 notu). Aynı
+ * bölüm tekrar okununca ilk seçim kalır (`ignoreDuplicates`). Hata okuma
+ * akışını durdurmaz; yalnız kitap sonu veli özeti eksik kalır.
+ */
+async function seciminiKaydet(chapter: ChapterData, secenek: DecisionOption["id"]) {
+  const profileId = window.localStorage.getItem("selected_child_profile_id");
+  const dogruSecenek = chapter.decision?.correctOption;
+  if (!profileId || !chapter.bookKey || !dogruSecenek) return;
+
+  const { error } = await supabase.from("sen_olsaydin_secimleri").upsert(
+    {
+      profile_id: profileId,
+      kitap_anahtari: chapter.bookKey,
+      bolum_no: chapter.chapterNumber ?? 1,
+      secenek,
+      dogru: secenek === dogruSecenek,
+    },
+    { onConflict: "profile_id,kitap_anahtari,bolum_no", ignoreDuplicates: true },
+  );
+  if (error) console.warn("Sen Olsaydın seçimi kaydedilemedi.", error.message);
+}
+
 export default function ReaderPage() {
   const params = useParams<{ chapterId: string }>();
   const chapter = useMemo(
@@ -146,6 +170,7 @@ export default function ReaderPage() {
         key={chapter.id}
         chapter={chapter}
         onProgressSync={() => syncChapterProgress(chapter)}
+        onSecim={(secenek) => void seciminiKaydet(chapter, secenek)}
       />
     </CocukKorumasi>
   );

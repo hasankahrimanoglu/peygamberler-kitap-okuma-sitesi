@@ -304,3 +304,7 @@ with check (
 -- şifre isteği sınırı ve yöneticiler tabloları ile sunucu fonksiyonları
 -- migration-faz7-satin-alma.sql içindedir; ondan sonra çalıştırılır.
 -- parent_subscriptions.shopier_order_id artık yazılmaz (geçmiş: siparisler).
+--
+-- S5 (20 Eki 2026): "Sen Olsaydın" ilk seçimleri `sen_olsaydin_secimleri`
+-- tablosundadır (veli + bağlı cihaz okur/ekler, değiştirilemez);
+-- migration-s5-secimler.sql.

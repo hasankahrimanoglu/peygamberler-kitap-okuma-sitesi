@@ -6,6 +6,7 @@ import {
   parentReportBooks,
   type ParentFaqItem,
   type ParentReportBook,
+  type ParentReportVariant,
 } from "../../data/books";
 import {
   yayindakiKitaplar,
@@ -26,7 +27,11 @@ export type CompletedAdventureReport = {
   /** Katalogdan türetilir; Supabase final_title/final_badge asla kullanılmaz (eski adlar sızmasın). */
   medalName: string;
   updatedAt: string | null;
-  parentMessage: string;
+  /**
+   * Kitap sonu veli özeti — "Sen Olsaydın" seçim oranından seçilen varyant (S5).
+   * Seçim verisi yetersizse null: paragraf gösterilmez.
+   */
+  parentMessage: string | null;
   chatQuestions: string[];
   parentFaq: ParentFaqItem[];
 };
@@ -80,20 +85,32 @@ export function formatReportDate(value: string | null) {
   }).format(new Date(value));
 }
 
-export function getParentMessage({
-  childName,
-  reportBook,
-}: {
-  childName: string;
-  reportBook?: ParentReportBook;
-}) {
-  // S5 (Sen Olsaydın cevap kaydı) gelene kadar mixed varyantı gösterilir.
-  // Rapor dili gözlem bildirir; çocuğun davranışı hakkında tahmin yürütülmez.
-  return (
-    reportBook?.parent_summary_variants?.mixed ??
-    reportBook?.parent_summary ??
-    `${childName} bu kitabı tamamladı. Akşam ona yolculukta en çok hangi bölümü sevdiğini sorabilirsiniz.`
-  );
+/** Çocuğun bir bölümdeki ilk "Sen Olsaydın" seçimi (S5; `sen_olsaydin_secimleri`). */
+export type SecimKaydi = { kitap_anahtari: string; dogru: boolean };
+
+/**
+ * Kitap sonu özet varyantı (PROJE-MODELI S5 notu): kayıtlı ilk seçimlerde
+ * değeri yaşatan şıkkın oranı ≥%70 `high`, %40–70 `mixed`, <%40 `low`.
+ * Kitabın bölümlerinin yarısından azında kayıt varsa null — veriye dayanmayan
+ * gözlem yazılmaz. Oran ekranda hiçbir yerde gösterilmez.
+ */
+export function ozetVaryanti(
+  secimler: SecimKaydi[],
+  kitapAnahtari: string,
+  bolumSayisi: number,
+): ParentReportVariant | null {
+  const kitabinkiler = secimler.filter((secim) => secim.kitap_anahtari === kitapAnahtari);
+  if (kitabinkiler.length === 0 || kitabinkiler.length < Math.ceil(bolumSayisi / 2)) return null;
+  const oran = kitabinkiler.filter((secim) => secim.dogru).length / kitabinkiler.length;
+  if (oran >= 0.7) return "high";
+  if (oran >= 0.4) return "mixed";
+  return "low";
+}
+
+/** Rapor dili gözlem bildirir; metin içerik verisinden gelir, kod yalnız seçer. */
+function kitapSonuOzeti(reportBook: ParentReportBook | undefined, varyant: ParentReportVariant | null) {
+  if (!varyant) return null;
+  return reportBook?.parent_summary_variants?.[varyant] ?? null;
 }
 
 export function getDefaultChatQuestions(childName: string) {
@@ -112,6 +129,8 @@ export function buildChildReport(
   profile: ReportProfile,
   progressRows: DeriveProgressRow[],
   books: DeriveBookRow[],
+  /** Çocuğun kayıtlı "Sen Olsaydın" seçimleri (S5); yoksa kitap sonu özeti çıkmaz. */
+  secimler: SecimKaydi[] = [],
 ): ChildReport {
   const kaynaklar = yayindakiKitaplar(books, progressRows).map((kitap) => ({
     kitap,
@@ -134,10 +153,10 @@ export function buildChildReport(
         totalQuestions: reportBook?.totalQuizQuestions || kitap.toplam,
         medalName: `${kitap.katalog.title} Yolculuk Madalyası`,
         updatedAt: kitap.ilerleme?.updated_at ?? null,
-        parentMessage: getParentMessage({
-          childName: profile.isim,
+        parentMessage: kitapSonuOzeti(
           reportBook,
-        }),
+          ozetVaryanti(secimler, kitap.katalog.key, kitap.toplam),
+        ),
         chatQuestions: reportBook?.chat_questions?.length
           ? reportBook.chat_questions
           : getDefaultChatQuestions(profile.isim),

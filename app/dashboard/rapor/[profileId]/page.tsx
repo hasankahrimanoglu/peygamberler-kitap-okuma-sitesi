@@ -48,7 +48,7 @@ const sekmeler: {
 export default function GelisimRaporuSayfasi() {
   const params = useParams<{ profileId: string }>();
   const profileId = params?.profileId;
-  const { profiles, books, progressByProfile, tasksByProfile, isLoading } =
+  const { profiles, books, progressByProfile, tasksByProfile, secimlerByProfile, isLoading } =
     useParentData();
   const [sekme, setSekme] = useState<Sekme>("genel");
 
@@ -57,7 +57,7 @@ export default function GelisimRaporuSayfasi() {
   const veriler = useMemo(() => {
     if (!profile) return null;
     const progress = progressByProfile[profile.id] ?? [];
-    const rapor = buildChildReport(profile, progress, books);
+    const rapor = buildChildReport(profile, progress, books, secimlerByProfile[profile.id] ?? []);
     const ozet = cocukOzeti(progress, books);
     const rozetler = rozetVitrini(books, progress);
     const madalyalar = madalyaVitrini(books, progress);
@@ -73,7 +73,7 @@ export default function GelisimRaporuSayfasi() {
       kazanilanMadalya: madalyalar.filter((m) => m.kazanildi).length,
       toplamMadalya: madalyalar.length,
     };
-  }, [profile, progressByProfile, tasksByProfile, books]);
+  }, [profile, progressByProfile, tasksByProfile, secimlerByProfile, books]);
 
   const geriLink = (
     <Link

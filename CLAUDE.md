@@ -253,13 +253,15 @@ Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
   ödül/puan YOK. Kalıcı durum (Tamamlandı/Tamamlanmadı) Faz 6.1'de yeni tabloyla
   gelir (`user_progress`'e sıkıştırılmaz). Görev meta alanları: ID, ad, kategori,
   açıklama, süre, ölçüt, (varsa) güvenlik notu.
-- **Değişken veli özeti:** veli panelindeki özet, çocuğun "Sen Olsaydın"
-  performansına göre `high`/`mixed`/`low` varyantından seçilir (≥%70 high,
-  %40-70 mixed, <%40 low; hiç cevap yoksa mixed). Metinler içerik verisinden
-  gelir; kod yalnızca oranı hesaplayıp varyant seçer. *(Not: "Sen Olsaydın"
-  cevaplarının KALICI kaydı PROJE-MODELI'de S5 olarak sonraya bırakılmış — bu
-  özellik o kayıt altyapısına bağlıdır, önce onu doğrula. Oturum içi seçim
-  tutma S5 DEĞİLDİR.)*
+- **Değişken veli özeti (REVİZE 20 Eki 2026 — S5 kuruldu):** kitap sonu veli
+  özeti, çocuğun kayıtlı ilk "Sen Olsaydın" seçimlerinin oranına göre
+  `high`/`mixed`/`low` varyantından seçilir (≥%70 high, %40-70 mixed, <%40
+  low). **Kayıt yoksa (ya da bölümlerin yarısından azında kayıt varsa) özet
+  paragrafı GÖSTERİLMEZ** — eski "cevap yoksa mixed" kuralı kalktı. Metinler
+  içerik verisinden gelir; kod yalnız oranı hesaplayıp varyant seçer. Veli tek
+  tek seçimleri ve oranı görmez; çocuk ekranında puan/oran yok. Kayıt
+  `sen_olsaydin_secimleri` (ilk seçim kalır, değiştirilemez). Oturum içi seçim
+  tutma ("Seçimini Karşılaştır") ayrıdır.
 - **Tanık Sayfası:** okuma akışına giren el yazısı/defter görünümlü sayfa tipi
   (kullanılan kitaplarda 2-3 kez; her kitapta olmayabilir). Alanlar: witnessName,
   witnessLabel, body, isFictional.

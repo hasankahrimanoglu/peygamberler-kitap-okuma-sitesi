@@ -12,6 +12,7 @@ import {
 import { useRouter } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
 import { yayindakiDbKitaplari, type DeriveBookRow, type DeriveProgressRow } from "../derive";
+import type { SecimKaydi } from "./report";
 
 export type ChildProfile = {
   id: string;
@@ -58,6 +59,11 @@ type ParentDataValue = {
   progressByProfile: Record<string, DeriveProgressRow[]>;
   /** profile_id → o çocuğun profile_tasks satırları (Faz 6.1; tablo yoksa boş) */
   tasksByProfile: Record<string, ProfileTaskRow[]>;
+  /**
+   * profile_id → o çocuğun ilk "Sen Olsaydın" seçimleri (S5). Yalnız kitap sonu
+   * özet varyantı için; tek tek seçimler ekranda gösterilmez.
+   */
+  secimlerByProfile: Record<string, SecimKaydi[]>;
   isLoading: boolean;
   notice: string | null;
   error: string | null;
@@ -88,6 +94,7 @@ export function ParentDataProvider({ children }: { children: ReactNode }) {
   const [tasksByProfile, setTasksByProfile] = useState<
     Record<string, ProfileTaskRow[]>
   >({});
+  const [secimlerByProfile, setSecimlerByProfile] = useState<Record<string, SecimKaydi[]>>({});
   const [isLoading, setIsLoading] = useState(true);
   const [notice, setNotice] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -172,7 +179,7 @@ export function ParentDataProvider({ children }: { children: ReactNode }) {
     // sessizce boş kalır (görevler gönüllü — panel bozulmaz).
     const profileIds = loadedProfiles.map((profile) => profile.id);
     if (profileIds.length > 0) {
-      const [progressResult, tasksResult] = await Promise.all([
+      const [progressResult, tasksResult, secimlerResult] = await Promise.all([
         supabase
           .from("user_progress")
           .select(progressSelect)
@@ -180,6 +187,11 @@ export function ParentDataProvider({ children }: { children: ReactNode }) {
         supabase
           .from("profile_tasks")
           .select("profile_id, task_id, status, added_at, completed_at")
+          .in("profile_id", profileIds),
+        // S5: hata olursa (tablo yok) özetler sessizce gösterilmez.
+        supabase
+          .from("sen_olsaydin_secimleri")
+          .select("profile_id, kitap_anahtari, dogru")
           .in("profile_id", profileIds),
       ]);
 
@@ -194,9 +206,19 @@ export function ParentDataProvider({ children }: { children: ReactNode }) {
         (groupedTasks[row.profile_id] ??= []).push(row);
       }
       setTasksByProfile(groupedTasks);
+
+      const groupedSecimler: Record<string, SecimKaydi[]> = {};
+      for (const row of (secimlerResult.data as (SecimKaydi & { profile_id: string })[] | null) ?? []) {
+        (groupedSecimler[row.profile_id] ??= []).push({
+          kitap_anahtari: row.kitap_anahtari,
+          dogru: row.dogru,
+        });
+      }
+      setSecimlerByProfile(groupedSecimler);
     } else {
       setProgressByProfile({});
       setTasksByProfile({});
+      setSecimlerByProfile({});
     }
 
     setIsLoading(false);
@@ -224,6 +246,7 @@ export function ParentDataProvider({ children }: { children: ReactNode }) {
       books,
       progressByProfile,
       tasksByProfile,
+      secimlerByProfile,
       isLoading,
       notice,
       error,
@@ -231,7 +254,19 @@ export function ParentDataProvider({ children }: { children: ReactNode }) {
       setError,
       reload: load,
     }),
-    [parentId, profiles, profileLimit, books, progressByProfile, tasksByProfile, isLoading, notice, error, load],
+    [
+      parentId,
+      profiles,
+      profileLimit,
+      books,
+      progressByProfile,
+      tasksByProfile,
+      secimlerByProfile,
+      isLoading,
+      notice,
+      error,
+      load,
+    ],
   );
 
   return (

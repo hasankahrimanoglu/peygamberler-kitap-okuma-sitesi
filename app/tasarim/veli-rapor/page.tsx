@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import type { DeriveBookRow, DeriveProgressRow } from "../../../src/lib/derive";
-import { buildChildReport } from "../../../src/lib/parent/report";
+import { buildChildReport, type SecimKaydi } from "../../../src/lib/parent/report";
 import { RaporKitaplarSekmesi } from "../../../src/components/dashboard/RaporKitaplarSekmesi";
 import { RaporSohbetSekmesi } from "../../../src/components/dashboard/RaporSohbetSekmesi";
 
@@ -14,9 +14,20 @@ import { RaporSohbetSekmesi } from "../../../src/components/dashboard/RaporSohbe
  *   ?durum=tek     → tek kitap, ilk bölüm bitti
  *   (varsayılan)   → biri yarıda, birinin finali kalmış, biri bitmiş
  *   ?sekme=kitaplar → Kitaplar sekmesiyle açılır
+ *   ?ozet=high|mixed|low|az|yok → biten kitabın (Hz. Âdem, 8 bölüm) "Sen
+ *     Olsaydın" seçimleri (S5): 7/8, 4/8, 2/8 doğru; "az" 3 kayıt (yarıdan az,
+ *     özet çıkmaz); "yok" kayıt yok. Varsayılan high.
  */
 
 type Durum = "karisik" | "tek" | "bos";
+type Ozet = "high" | "mixed" | "low" | "az" | "yok";
+
+/** Hz. Âdem'in 8 bölümü için örnek ilk seçimler: kaçı değeri yaşatan şık. */
+function ornekSecimler(ozet: Ozet): SecimKaydi[] {
+  const kayitSayisi = ozet === "yok" ? 0 : ozet === "az" ? 3 : 8;
+  const dogruSayisi = { high: 7, mixed: 4, low: 2, az: 3, yok: 0 }[ozet];
+  return Array.from({ length: kayitSayisi }, (_, i) => ({ kitap_anahtari: "adem", dogru: i < dogruSayisi }));
+}
 type Sekme = "kitaplar" | "sohbet";
 
 const ORNEK_KITAPLAR: DeriveBookRow[] = [
@@ -55,6 +66,7 @@ export default function VeliRaporOnizleme() {
   // çıkmasın diye veri yalnız tarayıcıda kurulur.
   const [durum, setDurum] = useState<Durum | null>(null);
   const [sekme, setSekme] = useState<Sekme>("sohbet");
+  const [ozet, setOzet] = useState<Ozet>("high");
 
   useEffect(() => {
     queueMicrotask(() => {
@@ -62,12 +74,19 @@ export default function VeliRaporOnizleme() {
       const istenen = parametreler.get("durum");
       setDurum(istenen === "bos" || istenen === "tek" ? istenen : "karisik");
       if (parametreler.get("sekme") === "kitaplar") setSekme("kitaplar");
+      const istenenOzet = parametreler.get("ozet");
+      if (istenenOzet === "mixed" || istenenOzet === "low" || istenenOzet === "az" || istenenOzet === "yok") {
+        setOzet(istenenOzet);
+      }
     });
   }, []);
 
   const rapor = useMemo(
-    () => (durum ? buildChildReport({ isim: "Elif" }, ornekIlerleme(durum), ORNEK_KITAPLAR) : null),
-    [durum],
+    () =>
+      durum
+        ? buildChildReport({ isim: "Elif" }, ornekIlerleme(durum), ORNEK_KITAPLAR, ornekSecimler(ozet))
+        : null,
+    [durum, ozet],
   );
 
   return (
