@@ -2957,8 +2957,8 @@ export const books: BookDefinition[] = [
             },
             {
               id: "b",
-              text: "Öğretmenimden ilk gün yalnızca ayaklarımı suya sokmayı isterdim.",
-              comparison: "Yavaş başlamak istemen anlaşılır. Gemidekiler de korkuyordu, ama hazırlıklarını yapmışlardı ve Allah'ın adıyla gemiye bindiler.",
+              text: "Korkum geçene kadar suya girmeyi bir sonraki derse bırakırdım.",
+              comparison: "Korkunun geçmesini beklemek çok anlaşılır. Gemidekiler ise hâlâ biraz korkuyordu, ama hazırlıklarını yapmışlardı ve Allah'ın adıyla gemiye bindiler.",
             },
             {
               id: "c",
@@ -3729,8 +3729,8 @@ export const books: BookDefinition[] = [
             },
             {
               id: "b",
-              text: "Korkum geçsin diye sunumu defalarca tek başıma çalışırdım.",
-              comparison: "Çok çalışmak güzel bir hazırlık. Hz. İbrahim ise en zor anında kendi gücüne değil, bütün kalbiyle Allah'a güvendi.",
+              text: "Korkum geçsin diye sunumu düşünmemeye çalışıp oyalanırdım.",
+              comparison: "Korkuyu düşünmemeye çalışmak çok doğal. Hz. İbrahim ise o zor anda kalbini Rabbine çevirdi ve O'na sığındı.",
             },
             {
               id: "c",
@@ -7991,8 +7991,8 @@ export const books: BookDefinition[] = [
             },
             {
               id: "b",
-              text: "Öğretmen kızar diye teneffüs bitince ona yalnızken söylerdim.",
-              comparison: "Yalnızken söylemek daha kolay gelebilir. Hz. Yunus ise kura başka birine çıkmadan, herkesin önünde gerçeği kendisi söyledi.",
+              text: "Öğretmen kızar diye sessiz kalır, konunun kapanmasını umardım.",
+              comparison: "Öğretmenin kızmasından korkmak çok doğal. Hz. Yunus ise kalabalığın arasında sessizce bekleyebilirdi, ama susmadı ve gerçeği kendisi söyledi.",
             },
             {
               id: "c",

@@ -534,7 +534,7 @@ Bu bölümde yok.
 
 Soru: Teneffüste sınıfta top oynarken öğretmen masasındaki su sürahisini devirdin ve sürahi kırıldı. Öğretmen sınıfa gelip kimin yaptığını soruyor; seni gören olmadı. Ne yaparsın?
 A) Sınıfın önünde söylemeye utanıp akşam anneme anlatırdım.
-B) Öğretmen kızar diye teneffüs bitince ona yalnızken söylerdim.
+B) Öğretmen kızar diye sessiz kalır, konunun kapanmasını umardım.
 C) “Ben yaptım” der, sürahi için ne yapabileceğimi sorardım.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
@@ -561,7 +561,7 @@ Balık, derin sulara doğru süzülüp uzaklaştı ve gemi geride küçük bir n
 #### SEÇİMİNİ KARŞILAŞTIR
 
 A) Utanmak çok doğal. Hz. Yunus ise kalabalığın arasında susmadı; kimse sormadan yaptığını kendisi söyledi.
-B) Yalnızken söylemek daha kolay gelebilir. Hz. Yunus ise kura başka birine çıkmadan, herkesin önünde gerçeği kendisi söyledi.
+B) Öğretmenin kızmasından korkmak çok doğal. Hz. Yunus ise kalabalığın arasında sessizce bekleyebilirdi, ama susmadı ve gerçeği kendisi söyledi.
 C) Sen de Hz. Yunus gibi davrandın. O da yaptığını saklamadı; kimse sormadan güverteye çıkıp gerçeği kendi ağzıyla söyledi.
 
 #### NE ÖĞRENDİK

@@ -1,6 +1,6 @@
 # Hz. Âdem — Sen Olsaydın Düzeltmesi
 
-> **Durum:** Hasan onayladı (20 Ekim 2026), aktarım bekliyor. Aktarımda `src/data/books.ts` ve `kitap-icerikleri/KITAP-HZ-ADEM-ICERIK-final.md` güncellenir; bu dosya ikisine de dokunmaz.
+> **Durum:** Aktarıldı (`c2b9af0`, 20 Ekim 2026): `src/data/books.ts` ve `kitap-icerikleri/KITAP-HZ-ADEM-ICERIK-final.md` bu metinle aynı. Hasan onayladı.
 > **Dayanak:** `SEN-OLSAYDIN-DENETIMI.md` (20 Ekim 2026) ve brif §7.6–7.7. **Tarih:** 20 Ekim 2026.
 
 ## Özet

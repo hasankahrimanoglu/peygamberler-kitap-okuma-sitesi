@@ -1,6 +1,7 @@
 # Hz. Yunus — Sen Olsaydın Düzeltmesi
 
-> **Durum:** Yazıldı, aktarım bekliyor. Hasan Âdem taslağını onaylayıp kalan kitaplar için "bana sormana gerek yok, hepsine devam et" dedi (20 Ekim 2026); bu dosya aynı kalıpla, ayrı onay beklenmeden hazırlandı. Aktarımda `src/data/books.ts` ve `kitap-icerikleri/KITAP-HZ-YUNUS-ICERIK-final.md` güncellenir; bu dosya ikisine de dokunmaz.
+> **Durum:** Aktarıldı (`c2b9af0`, 20 Ekim 2026): `src/data/books.ts` ve `kitap-icerikleri/KITAP-HZ-YUNUS-ICERIK-final.md` bu metinle aynı. Âdem'i Hasan onayladı; kalan kitaplar için "bana sormana gerek yok, hepsine devam et" dedi.
+> **İkinci tur (20 Ekim 2026, Hasan):** 2. bölümün b şıkkı ilk taslakta sağlıklı bir davranış olduğu için gerçekten daha zayıf bir davranışa çevrildi; karşılaştırma metni de yenilendi. Bu değişiklik `c2b9af0`'dan sonra yapıldı.
 > **Dayanak:** `SEN-OLSAYDIN-DENETIMI.md` (20 Ekim 2026), brif §7.6–7.7 ve onaylanan Âdem taslağının kalıbı. **Tarih:** 20 Ekim 2026.
 
 ## Özet
@@ -8,7 +9,7 @@
 | Bölüm | Eski fark | Yeni fark | Doğru şık en uzun (eski → yeni) | Eski puan → yeni |
 |---:|---:|---:|---|---|
 | 1 | %19,4 | %13,6 | hayır → hayır | 1/3 → 0/3 |
-| 2 | %30,8 | %8,9 | hayır → hayır | 2/3 → 0/3 |
+| 2 | %30,8 | %10,7 | hayır → hayır | 2/3 → 0/3 |
 | 3 | %30,1 | %5,3 | evet → hayır | 2/3 → 0/3 |
 | 4 | %23,7 | %16,3 | hayır → hayır | 2/3 → 0/3 |
 | 5 | %11,5 | %3,8 | evet → hayır | 1/3 → 0/3 |
@@ -54,7 +55,7 @@ C) Başkasının sözü bazen insanın hevesini kırabilir. Hz. Yunus ise gülü
 
 ### 2. bölüm — Beklemeden Çıkılan Yol
 
-**Neden değişti:** a'daki "beklerdim" yerine utanıp akşam anneye anlatmak, b'deki bahane ("kendi kendine düşmüştür") yerine öğretmene sonra yalnızken söylemek kondu. Böylece iki zayıf şık da dürüst ama gecikmeli; fark, hikâyedeki gibi hemen ve herkesin önünde söylemekte.
+**Neden değişti:** a'daki "beklerdim" yerine utanıp akşam anneye anlatmak, b'deki bahane ("kendi kendine düşmüştür") yerine öğretmen kızar diye susup konunun kapanmasını ummak kondu; bu, hikâyedeki "kalabalığın arasında sessizce bekleyebilirdi" seçeneğidir (20 Eki 2026 ikinci tur, Hasan: ilk taslaktaki "öğretmene yalnızken söylemek" dürüst ve sorumlu olduğu için zayıf şık sayılamazdı).
 
 **Eski**
 
@@ -64,12 +65,12 @@ C) Başkasının sözü bazen insanın hevesini kırabilir. Hz. Yunus ise gülü
 - b · “Belki kendi kendine düşmüştür” der, konuyu kapatmaya çalışırdım. *(65)*
 - c ✓ · “Ben yaptım” der, kırılan sürahi için ne yapabileceğimi sorardım. *(65)*
 
-**Yeni** — fark %8,9
+**Yeni** — fark %10,7
 
 ```text
 Soru: Teneffüste sınıfta top oynarken öğretmen masasındaki su sürahisini devirdin ve sürahi kırıldı. Öğretmen sınıfa gelip kimin yaptığını soruyor; seni gören olmadı. Ne yaparsın?
 A) Sınıfın önünde söylemeye utanıp akşam anneme anlatırdım.
-B) Öğretmen kızar diye teneffüs bitince ona yalnızken söylerdim.
+B) Öğretmen kızar diye sessiz kalır, konunun kapanmasını umardım.
 C) “Ben yaptım” der, sürahi için ne yapabileceğimi sorardım.
 Doğru seçenek: C
 Seçim sonrası nötr not: (değişmedi)
@@ -79,7 +80,7 @@ Seçim sonrası nötr not: (değişmedi)
 
 ```text
 A) Utanmak çok doğal. Hz. Yunus ise kalabalığın arasında susmadı; kimse sormadan yaptığını kendisi söyledi.
-B) Yalnızken söylemek daha kolay gelebilir. Hz. Yunus ise kura başka birine çıkmadan, herkesin önünde gerçeği kendisi söyledi.
+B) Öğretmenin kızmasından korkmak çok doğal. Hz. Yunus ise kalabalığın arasında sessizce bekleyebilirdi, ama susmadı ve gerçeği kendisi söyledi.
 C) Sen de Hz. Yunus gibi davrandın. O da yaptığını saklamadı; kimse sormadan güverteye çıkıp gerçeği kendi ağzıyla söyledi.   [mevcut metin korundu]
 ```
 

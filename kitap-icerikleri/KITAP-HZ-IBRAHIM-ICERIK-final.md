@@ -1234,7 +1234,7 @@ Bu bölümde yok.
 
 Soru: Yarın okulda sınıfın önünde bir sunum yapacaksın ve çok korkuyorsun. Ne yaparsın?
 A) Hazırlığımı yapar, korktuğumda Allah'a sığınırdım.
-B) Korkum geçsin diye sunumu defalarca tek başıma çalışırdım.
+B) Korkum geçsin diye sunumu düşünmemeye çalışıp oyalanırdım.
 C) Öğretmenimden sunumu başka bir güne ertelemesini isterdim.
 Doğru seçenek: **A**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
@@ -1267,7 +1267,7 @@ Kur'an, Allah'ın Hz. İbrahim'i ateşten kurtardığını ve bunda inanan insan
 #### SEÇİMİNİ KARŞILAŞTIR
 
 A) Sen de Hz. İbrahim gibi davrandın. O da en zor anında bütün kalbiyle Allah'a sığındı ve O'na güvendi.
-B) Çok çalışmak güzel bir hazırlık. Hz. İbrahim ise en zor anında kendi gücüne değil, bütün kalbiyle Allah'a güvendi.
+B) Korkuyu düşünmemeye çalışmak çok doğal. Hz. İbrahim ise o zor anda kalbini Rabbine çevirdi ve O'na sığındı.
 C) Korkunun geçmesini istemek çok doğal. Hz. İbrahim ise o zor anda Rabbine sığındı ve kalbi güvenle doldu.
 
 #### NE ÖĞRENDİK

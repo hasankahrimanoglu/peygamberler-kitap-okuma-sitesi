@@ -1,6 +1,7 @@
 # Hz. Nûh — Sen Olsaydın Düzeltmesi
 
-> **Durum:** Yazıldı, aktarım bekliyor. Hasan Âdem taslağını onaylayıp kalan kitaplar için "bana sormana gerek yok, hepsine devam et" dedi (20 Ekim 2026); bu dosya aynı kalıpla, ayrı onay beklenmeden hazırlandı. Aktarımda `src/data/books.ts` ve `kitap-icerikleri/KITAP-HZ-NUH-ICERIK-final.md` güncellenir; bu dosya ikisine de dokunmaz.
+> **Durum:** Aktarıldı (`c2b9af0`, 20 Ekim 2026): `src/data/books.ts` ve `kitap-icerikleri/KITAP-HZ-NUH-ICERIK-final.md` bu metinle aynı. Âdem'i Hasan onayladı; kalan kitaplar için "bana sormana gerek yok, hepsine devam et" dedi.
+> **İkinci tur (20 Ekim 2026, Hasan):** 6. bölümün b şıkkı ilk taslakta sağlıklı bir davranış olduğu için gerçekten daha zayıf bir davranışa çevrildi; karşılaştırma metni de yenilendi. Bu değişiklik `c2b9af0`'dan sonra yapıldı.
 > **Dayanak:** `SEN-OLSAYDIN-DENETIMI.md` (20 Ekim 2026), brif §7.6–7.7 ve onaylanan Âdem taslağının kalıbı. **Tarih:** 20 Ekim 2026.
 
 ## Özet
@@ -12,7 +13,7 @@
 | 3 | %42,3 | %17,3 | evet → hayır | 2/3 → 0/3 |
 | 4 | %24,1 | %8 | hayır → hayır | 2/3 → 0/3 |
 | 5 | %27,1 | %12 | hayır → evet | 3/3 → 0/3 |
-| 6 | %45,5 | %12,3 | evet → hayır | 2/3 → 0/3 |
+| 6 | %45,5 | %8,8 | evet → hayır | 2/3 → 0/3 |
 | 7 | %33,3 | %6,3 | evet → evet | 3/3 → 0/3 |
 | 8 | %26,8 | %14,6 | evet → hayır | 2/3 → 0/3 |
 
@@ -183,7 +184,7 @@ C) Başkalarının sözü insanı şüpheye düşürebilir. Hz. Nûh ise ne zama
 
 ### 6. bölüm — Allah'ın Adıyla Binin
 
-**Neden değişti:** b (öğretmeni beklemeden suya atlamak) güvenlik açısından da sorunluydu; yerine öğretmenden yavaş başlamayı istemek kondu. a'daki "tamamen, hiç" çıktı. Bölümün değeri tevekkül olduğu için Allah'ın adı doğru şıkta kaldı; doğru şıkka öğretmenle birlikte girme eklendi.
+**Neden değişti:** b (öğretmeni beklemeden suya atlamak) güvenlik açısından da sorunluydu; yerine korku geçene kadar dersi ertelemek kondu (20 Eki 2026 ikinci tur, Hasan: ilk taslaktaki "ilk gün yalnız ayaklarını sokmak" sağlıklı bir yol olduğu için zayıf şık sayılamazdı). a'daki "tamamen, hiç" çıktı. Bölümün değeri tevekkül olduğu için Allah'ın adı doğru şıkta kaldı; doğru şıkka öğretmenle birlikte girme eklendi.
 
 **Eski**
 
@@ -193,12 +194,12 @@ C) Başkalarının sözü insanı şüpheye düşürebilir. Hz. Nûh ise ne zama
 - b · Öğretmenimi beklemeden, kendi bildiğim gibi suya atlardım. *(58)*
 - c ✓ · Allah'ın adını anar, yaptığım hazırlığa güvenip adımımı atardım. *(64)*
 
-**Yeni** — fark %12,3
+**Yeni** — fark %8,8
 
 ```text
 Soru: Daha önce hiç yapmadığın ve biraz korktuğun bir şeye başlamak üzeresin; örneğin ilk yüzme dersine giriyorsun. Hazırlığını yaptın, öğretmenin de yanında. Ne yaparsın?
 A) Korkum biraz geçsin diye önce kenardan diğerlerini izlerdim.
-B) Öğretmenimden ilk gün yalnızca ayaklarımı suya sokmayı isterdim.
+B) Korkum geçene kadar suya girmeyi bir sonraki derse bırakırdım.
 C) Allah'ın adını anar, öğretmenimle birlikte suya girerdim.
 Doğru seçenek: C
 Seçim sonrası nötr not: (değişmedi)
@@ -208,7 +209,7 @@ Seçim sonrası nötr not: (değişmedi)
 
 ```text
 A) Korku çok doğal bir duygudur. Gemidekiler de korktu, ama beklemek yerine Allah'ın adını anıp gemiye bindiler.   [mevcut metin korundu]
-B) Yavaş başlamak istemen anlaşılır. Gemidekiler de korkuyordu, ama hazırlıklarını yapmışlardı ve Allah'ın adıyla gemiye bindiler.
+B) Korkunun geçmesini beklemek çok anlaşılır. Gemidekiler ise hâlâ biraz korkuyordu, ama hazırlıklarını yapmışlardı ve Allah'ın adıyla gemiye bindiler.
 C) Sen de gemidekiler gibi davrandın. Onlar da hazırlıklarını yapıp Allah'ın adıyla gemiye bindiler.   [mevcut metin korundu]
 ```
 

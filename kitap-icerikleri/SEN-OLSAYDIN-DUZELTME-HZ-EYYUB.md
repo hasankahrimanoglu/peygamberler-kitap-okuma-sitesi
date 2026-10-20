@@ -1,6 +1,6 @@
 # Hz. Eyyûb — Sen Olsaydın Düzeltmesi
 
-> **Durum:** Yazıldı, aktarım bekliyor. Hasan Âdem taslağını onaylayıp kalan kitaplar için "bana sormana gerek yok, hepsine devam et" dedi (20 Ekim 2026); bu dosya aynı kalıpla, ayrı onay beklenmeden hazırlandı. Aktarımda `src/data/books.ts` ve `kitap-icerikleri/KITAP-HZ-EYYUB-ICERIK-final.md` güncellenir; bu dosya ikisine de dokunmaz.
+> **Durum:** Aktarıldı (`c2b9af0`, 20 Ekim 2026): `src/data/books.ts` ve `kitap-icerikleri/KITAP-HZ-EYYUB-ICERIK-final.md` bu metinle aynı. Âdem'i Hasan onayladı; kalan kitaplar için "bana sormana gerek yok, hepsine devam et" dedi.
 > **Dayanak:** `SEN-OLSAYDIN-DENETIMI.md` (20 Ekim 2026), brif §7.6–7.7 ve onaylanan Âdem taslağının kalıbı. **Tarih:** 20 Ekim 2026.
 
 ## Özet

@@ -1159,6 +1159,14 @@ Aktarım notu: `books.ts`'te yalnız `question.prompt` (8, yalnız Âdem), `opti
 
 Son denetim (betikle, 84 sorunun hepsi): hiçbir soruda üç şık arasındaki fark %20'yi geçmiyor, hiçbir kitap kotayı aşmıyor, zayıf şıklarda ele veren kelime ve dua/şükür ifadesi yok, doğru şıklarda yalnız onlara ait süsleme yok, doğru harfler hiçbir soruda değişmedi. Değişmeden kalan iki model soru: Musa 4 ve Eyyûb 3.
 
+**İkinci tur (20 Ekim 2026, Hasan):** Ana oturumdaki bağımsız denetim, üç zayıf şıkkın gerçekçi yapılırken sağlıklı bir davranışa dönüştüğünü gösterdi. Çocuk iyi bir şey seçtiğinde "daha zayıf" sayılıyor, S5 oranına da öyle giriyordu. Hasan'ın onayıyla bu üç b şıkkı ve karşılaştırma metinleri, bölümün değerine göre gerçekten daha zayıf davranışlara çevrildi:
+
+- **Nûh 6:** "ilk gün yalnız ayaklarını suya sokmak" yerine "korku geçene kadar dersi ertelemek".
+- **İbrahim 6:** "sunumu defalarca tek başına çalışmak" yerine "sunumu düşünmemeye çalışıp oyalanmak".
+- **Yunus 2:** "öğretmene sonra yalnızken söylemek" yerine "öğretmen kızar diye susup konunun kapanmasını ummak".
+
+Uzunluklar, harfler ve uzunluk sırası değişmedi. Ders: zayıf şık yazarken yalnız "çocuk bunu yapabilir mi?" diye değil, "bu davranış gerçekten değerin gerisinde mi?" diye de sormak gerekir.
+
 İbrahim'den itibaren eklenen ölçüt: doğru şıkkın uzunluk sırası kitap içinde dağıtılır (yaklaşık üçte biri en uzun, üçte biri orta, üçte biri en kısa); böylece "en kısa şık doğrudur" ipucu da oluşmaz. Âdem onaylı hâliyle bırakıldı (doğru şık hiç en uzun değil; 4 soruda en kısa, farklar en çok %15,7).
 
 ## 5. Düzeltme sırasında dikkat edilecekler

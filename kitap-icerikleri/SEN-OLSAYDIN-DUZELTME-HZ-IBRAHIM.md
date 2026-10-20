@@ -1,6 +1,7 @@
 # Hz. İbrahim — Sen Olsaydın Düzeltmesi
 
-> **Durum:** Yazıldı, aktarım bekliyor. Hasan Âdem taslağını onaylayıp kalan kitaplar için "bana sormana gerek yok, hepsine devam et" dedi (20 Ekim 2026); bu dosya aynı kalıpla, ayrı onay beklenmeden hazırlandı. Aktarımda `src/data/books.ts` ve `kitap-icerikleri/KITAP-HZ-IBRAHIM-ICERIK-final.md` güncellenir; bu dosya ikisine de dokunmaz.
+> **Durum:** Aktarıldı (`c2b9af0`, 20 Ekim 2026): `src/data/books.ts` ve `kitap-icerikleri/KITAP-HZ-IBRAHIM-ICERIK-final.md` bu metinle aynı. Âdem'i Hasan onayladı; kalan kitaplar için "bana sormana gerek yok, hepsine devam et" dedi.
+> **İkinci tur (20 Ekim 2026, Hasan):** 6. bölümün b şıkkı ilk taslakta sağlıklı bir davranış olduğu için gerçekten daha zayıf bir davranışa çevrildi; karşılaştırma metni de yenilendi. Bu değişiklik `c2b9af0`'dan sonra yapıldı.
 > **Dayanak:** `SEN-OLSAYDIN-DENETIMI.md` (20 Ekim 2026), brif §7.6–7.7 ve onaylanan Âdem taslağının kalıbı. **Tarih:** 20 Ekim 2026.
 
 ## Özet
@@ -184,7 +185,7 @@ C) Tartışmayı büyütmek istememen anlaşılır. Hz. İbrahim de kralın güc
 
 ### 6. bölüm — Ey Ateş, Serin Ol!
 
-**Neden değişti:** Bölümün değeri doğrudan Allah'a sığınmak; Allah ifadesi doğru şıkta kaldı. Zayıf şıklar "hiç hazırlanmaz... vazgeçerdim" ve "bütün gece kimseye söylemez" yerine çocuğun kendince haklı göreceği iki davranışa çevrildi: tek başına çok çalışmak ve sunumu ertelemek.
+**Neden değişti:** Bölümün değeri doğrudan Allah'a sığınmak; Allah ifadesi doğru şıkta kaldı. Zayıf şıklar "hiç hazırlanmaz... vazgeçerdim" ve "bütün gece kimseye söylemez" yerine çocuğun kendince haklı göreceği iki davranışa çevrildi: korkuyu düşünmemeye çalışıp oyalanmak ve sunumu ertelemek (20 Eki 2026 ikinci tur, Hasan: ilk taslaktaki "defalarca tek başına çalışmak" iyi bir hazırlık olduğu için zayıf şık sayılamazdı).
 
 **Eski**
 
@@ -199,7 +200,7 @@ C) Tartışmayı büyütmek istememen anlaşılır. Hz. İbrahim de kralın güc
 ```text
 Soru: Yarın okulda sınıfın önünde bir sunum yapacaksın ve çok korkuyorsun. Ne yaparsın?
 A) Hazırlığımı yapar, korktuğumda Allah'a sığınırdım.
-B) Korkum geçsin diye sunumu defalarca tek başıma çalışırdım.
+B) Korkum geçsin diye sunumu düşünmemeye çalışıp oyalanırdım.
 C) Öğretmenimden sunumu başka bir güne ertelemesini isterdim.
 Doğru seçenek: A
 Seçim sonrası nötr not: (değişmedi)
@@ -209,7 +210,7 @@ Seçim sonrası nötr not: (değişmedi)
 
 ```text
 A) Sen de Hz. İbrahim gibi davrandın. O da en zor anında bütün kalbiyle Allah'a sığındı ve O'na güvendi.   [mevcut metin korundu]
-B) Çok çalışmak güzel bir hazırlık. Hz. İbrahim ise en zor anında kendi gücüne değil, bütün kalbiyle Allah'a güvendi.
+B) Korkuyu düşünmemeye çalışmak çok doğal. Hz. İbrahim ise o zor anda kalbini Rabbine çevirdi ve O'na sığındı.
 C) Korkunun geçmesini istemek çok doğal. Hz. İbrahim ise o zor anda Rabbine sığındı ve kalbi güvenle doldu.
 ```
 

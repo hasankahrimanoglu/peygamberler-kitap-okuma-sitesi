@@ -1163,7 +1163,7 @@ Bu bölümde yok.
 
 Soru: Daha önce hiç yapmadığın ve biraz korktuğun bir şeye başlamak üzeresin; örneğin ilk yüzme dersine giriyorsun. Hazırlığını yaptın, öğretmenin de yanında. Ne yaparsın?
 A) Korkum biraz geçsin diye önce kenardan diğerlerini izlerdim.
-B) Öğretmenimden ilk gün yalnızca ayaklarımı suya sokmayı isterdim.
+B) Korkum geçene kadar suya girmeyi bir sonraki derse bırakırdım.
 C) Allah'ın adını anar, öğretmenimle birlikte suya girerdim.
 Doğru seçenek: **C**
 Seçim sonrası nötr not: **"Cevabını aklında tut. Hikâyenin devamında neler olduğunu birlikte görelim."**
@@ -1196,7 +1196,7 @@ Pencereden bakınca, gözün gördüğü her yerin suyla kaplanmaya başladığ�
 #### SEÇİMİNİ KARŞILAŞTIR
 
 A) Korku çok doğal bir duygudur. Gemidekiler de korktu, ama beklemek yerine Allah'ın adını anıp gemiye bindiler.
-B) Yavaş başlamak istemen anlaşılır. Gemidekiler de korkuyordu, ama hazırlıklarını yapmışlardı ve Allah'ın adıyla gemiye bindiler.
+B) Korkunun geçmesini beklemek çok anlaşılır. Gemidekiler ise hâlâ biraz korkuyordu, ama hazırlıklarını yapmışlardı ve Allah'ın adıyla gemiye bindiler.
 C) Sen de gemidekiler gibi davrandın. Onlar da hazırlıklarını yapıp Allah'ın adıyla gemiye bindiler.
 
 #### NE ÖĞRENDİK
