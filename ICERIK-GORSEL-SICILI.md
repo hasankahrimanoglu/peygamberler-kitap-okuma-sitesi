@@ -1904,9 +1904,12 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 > (`npm run odul-cerceve -- durak {key}`; mine bandı şeffaf, renk ve ilerleme
 > CSS'ten). 12 yayındaki kitabın iç sahnesi `gorsel-kaynaklari/duraklar/hz-{key}.jpg`
 > olarak eski `harita-kapak.jpg`'lerin iç dairesinden kırpıldı; **geçicidir**
-> (Hasan yeniden hazırlayacak). Yenilenirken dikkat: **Âdem** (Arapça "Âdem")
-> ve **İdrîs** ("bilgi doğruluk") durak sahnelerinde **yazı var** — görsel
-> kuralına aykırı, yeni sahnelerde yazı olmaz. `harita-kapak.jpg` ekranda
+> (Hasan yeniden hazırlayacak). **21 Eki 2026:** Âdem (Arapça "Âdem") ve İdrîs
+> ("bilgi doğruluk") sahnelerinde yazı olduğu için ikisi yazısız yeniden üretildi
+> (Seedream 5 Pro · 1.5K · tek aday): Âdem tepede şafakta genç ağaç, İdrîs gece
+> göğünde tek yıldızın altında taşın üstünde yün yumağı ve iğ. Eski kırpmalar
+> `gorsel-kaynaklari/duraklar/eski/`. Aynı gün durak çıktısı **336×336 paletli
+> PNG**'ye indirildi (12 durak 4,9 MB → 0,5 MB). `harita-kapak.jpg` ekranda
 > kullanılmaz, arşiv olarak durur.
 
 | Varlık | Dosya | Durum |

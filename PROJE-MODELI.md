@@ -1611,14 +1611,19 @@ public/
   bozulmaz. Kapak (`kapak.png`) kütüphanede, kitap panelinde, bölüm rotasında
   ve veli kartında kullanılmaya devam eder.
   **REVİZE — 20 Ekim 2026 (Hasan):** ekranda çizilen dosya artık
-  `kitaplar/hz-{bookKey}/harita-durak.png`'dir — 512×512 şeffaf PNG, iç sahne +
-  ortak halka çerçeve, **mine bandın yeri şeffaf**
+  `kitaplar/hz-{bookKey}/harita-durak.png`'dir — **336×336 paletli şeffaf PNG**
+  (~40 KB; ekranda en fazla 112 px çizilir, 3x ekrana yeter; görseller sitede
+  küçültülmeden sunulduğu için dosya boyutu doğrudan sayfa ağırlığıdır — 12 durak
+  4,9 MB'tan 0,5 MB'a indi), iç sahne + ortak halka çerçeve, **mine bandın yeri
+  şeffaf**
   (`npm run odul-cerceve -- durak {bookKey}`). Bandın rengi ve ilerlemesi CSS'ten
   gelir; bu yüzden kitap başına tek görsel yeter, renk değişse de yeniden üretim
   gerekmez. İç sahne çerçevesiz kare olarak
   `gorsel-kaynaklari/duraklar/hz-{bookKey}.jpg`'de durur. 20 Ekim 2026'daki
   kaynaklar eski `harita-kapak.jpg`'lerin iç dairesinden kırpılmıştır ve
-  geçicidir; Hasan yeni sahneyi aynı adla koyup betiği çalıştırır.
+  geçicidir (Âdem ve İdrîs, eski sahnelerinde yazı olduğu için 21 Ekim 2026'da
+  yazısız yeniden üretildi: tepede genç ağaç · yıldız altında yün yumağı ve iğ);
+  Hasan yeni sahneyi aynı adla koyup betiği çalıştırır. Yeni sahnelerde yazı olmaz.
   `harita-kapak.jpg` dosyaları artık ekranda kullanılmaz (kaynak arşivi olarak
   durur). `harita-durak.png` yoksa ekran durak yedeğine düşer.
 - **Rozet, madalya ve unvan PNG'dir — 512×512, şeffaf zemin (REVİZE 7 Ağustos
