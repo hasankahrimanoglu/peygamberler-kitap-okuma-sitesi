@@ -16,9 +16,13 @@ const config: Config = {
           2: "var(--yuzey-2)",
         },
         cizgi: "var(--cizgi)",
+        // Tailwind 3, var() renklerine opaklık eki (`/30`) uygulayamaz; sınıf hiç
+        // üretilmez. Saydam tonlar bu yüzden ayrı token: `ipucu` (yer tutucu
+        // yazısı), `eylem-halka` (metin kutusunun odak halkası).
         murekkep: {
           DEFAULT: "var(--murekkep)",
           soluk: "var(--murekkep-soluk)",
+          ipucu: "color-mix(in srgb, var(--murekkep-soluk) 60%, transparent)",
         },
         vurgu: {
           DEFAULT: "var(--vurgu)",
@@ -29,6 +33,7 @@ const config: Config = {
           koyu: "var(--eylem-koyu)",
           metin: "var(--eylem-metin)",
           yumusak: "var(--eylem-yumusak)",
+          halka: "color-mix(in srgb, var(--eylem) 30%, transparent)",
         },
         "okuma-yuzey": "var(--okuma-yuzey)",
         // Sabit paletler (tema dışı özel kullanımlar için)

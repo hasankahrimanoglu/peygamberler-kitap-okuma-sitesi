@@ -5,26 +5,40 @@ import Link from "next/link";
 import { Logo } from "../marka/Logo";
 import { Buton, Kart } from "../ui";
 
+/** Hesap formlarının metin kutusu: krem zemin, odakta yeşil kenar ve halka. */
+export const GIRDI_SINIFI =
+  "h-14 w-full rounded-buton border border-cizgi bg-zemin px-4 text-base font-semibold text-murekkep outline-none transition placeholder:text-murekkep-ipucu focus:border-eylem focus:ring-2 focus:ring-eylem-halka";
+
 /**
- * Şifre belirleme ve "Şifremi unuttum" sayfalarının ortak çerçevesi: veli
- * dünyası (krem), ortada tek kart. Giriş sayfasına dönüş bağlantısı altta.
+ * Giriş, şifre belirleme ve "Şifremi unuttum" sayfalarının ortak çerçevesi:
+ * veli dünyası (krem), ortada tek kart. `kartAlti` kartın altındaki ikincil
+ * alandır; en altta dönüş bağlantısı (varsayılan: giriş sayfası).
  */
-export function HesapSayfasi({ children }: { children: ReactNode }) {
+export function HesapSayfasi({
+  children,
+  kartAlti,
+  donus = { href: "/login", metin: "Giriş sayfasına dön" },
+}: {
+  children: ReactNode;
+  kartAlti?: ReactNode;
+  donus?: { href: string; metin: string };
+}) {
   return (
     <main className="tema-veli flex min-h-screen flex-col items-center bg-zemin px-4 pb-10 pt-6 text-murekkep sm:px-8">
       <div className="w-full max-w-5xl">
         <Logo ton="koyu" boyut={40} />
       </div>
-      <div className="flex w-full flex-1 items-center justify-center py-10">
+      <div className="flex w-full flex-1 flex-col items-center justify-center gap-8 py-10">
         <Kart dolgu="genis" className="w-full max-w-md">
           {children}
         </Kart>
+        {kartAlti}
       </div>
       <Link
-        href="/login"
+        href={donus.href}
         className="min-h-11 px-3 py-2 text-base font-semibold text-murekkep-soluk underline-offset-4 hover:underline"
       >
-        Giriş sayfasına dön
+        {donus.metin}
       </Link>
     </main>
   );
@@ -81,7 +95,7 @@ export function YeniBaglantiFormu({ dugmeMetni = "Bağlantı Gönder" }: { dugme
           required
           autoComplete="email"
           placeholder="ornek@mail.com"
-          className="h-14 w-full rounded-buton border border-cizgi bg-zemin px-4 text-base font-semibold text-murekkep outline-none transition placeholder:text-murekkep-soluk/60 focus:border-eylem"
+          className={GIRDI_SINIFI}
         />
       </label>
       {sonuc ? (

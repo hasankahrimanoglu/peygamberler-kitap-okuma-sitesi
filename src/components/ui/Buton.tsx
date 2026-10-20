@@ -34,6 +34,15 @@ const boyutSiniflari: Record<ButonBoyut, string> = {
   buyuk: "h-14 px-8 text-lg",
 };
 
+/** Düğme görünümü; düğme gibi görünmesi gereken bağlantılar (Link) da kullanır. */
+export function butonSiniflari(
+  varyant: ButonVaryant = "eylem",
+  boyut: ButonBoyut = "normal",
+  tamGenislik = false,
+) {
+  return `inline-flex items-center justify-center gap-2 rounded-buton font-baslik font-semibold transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vurgu disabled:cursor-not-allowed disabled:opacity-50 ${varyantSiniflari[varyant]} ${boyutSiniflari[boyut]} ${tamGenislik ? "w-full" : ""}`;
+}
+
 export function Buton({
   varyant = "eylem",
   boyut = "normal",
@@ -44,7 +53,7 @@ export function Buton({
 }: ButonProps) {
   return (
     <button
-      className={`inline-flex items-center justify-center gap-2 rounded-buton font-baslik font-semibold transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vurgu disabled:cursor-not-allowed disabled:opacity-50 ${varyantSiniflari[varyant]} ${boyutSiniflari[boyut]} ${tamGenislik ? "w-full" : ""} ${className}`}
+      className={`${butonSiniflari(varyant, boyut, tamGenislik)} ${className}`}
       {...props}
     >
       {children}

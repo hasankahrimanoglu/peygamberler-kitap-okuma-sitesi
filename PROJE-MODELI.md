@@ -1497,6 +1497,7 @@ Okuma ekranı düzeni (**REVİZE — 26 Temmuz 2026, Hasan onayı; Faz 6.2**):
 | `/dashboard/oduller` | Ödüller | Rozetler / Madalyalar / Unvanlar sekmeleri |
 | `/dashboard/rapor/[profileId]` | Gelişim Raporu | Tam sayfa, sekmeli: Genel Bakış · Kitaplar · Ödüller · **Görevler** · Sohbet Önerileri |
 | `/dashboard/ayarlar` | Aile ve Güvenlik | YENİ (Faz 7, 3.11) — veli PIN'i, profil şifresi ayarı ve çocuk şifreleri, cihaz bağlama ve bağlı cihazlar, bu cihazda çocuk modu. Hesap menüsünden açılır |
+| `/login` | Veli girişi | **REVİZE — 20 Eki 2026 (Hasan):** hesap sayfalarıyla (`/sifre-belirle`, `/sifremi-unuttum`) aynı çerçeve: krem zemin, logo, ortada tek kart, "siz" dili. Kartta "Veli Girişi", e-posta, şifre, yeşil "Giriş Yap", "Şifremi unuttum". Eski iki eşit kart ("Yönetim Paneli" + "Keşif Haritası") kalktı: gelenlerin çoğu giriş yapacak veli; tableti çocuğa verme açıklaması gereksizdi (giriş sonrası "Bu cihazı çocuğunuz kullanacak mı?" sorusu bunu yapar). Çocuğun kendi cihazı için kartın altında ikincil satır ve çerçeve düğme **Cihaz Kodunu Gir** (`/cihaz-bagla`). Altta "Ana sayfaya dön". Açık oturumu tanıyıp yönlendirme ve `?cocuk=1` notu aynen kalır (3.11) |
 | `/sifre-belirle` | Şifre belirleme | YENİ (Faz 7, 3. adım) — e-postadaki tek kullanımlık bağlantı; süresi dolmuşsa yenisi istenir |
 | `/sifremi-unuttum` | Şifremi unuttum | YENİ (Faz 7, 3. adım) — giriş sayfasından; "e-postayı yeniden gönder" de budur |
 | `/yonetim` | Yönetim (satışlar) | YENİ (Faz 7, 3. adım) — yalnız yönetici; elden satış + son siparişler; sitede bağlantısı yok |
@@ -2242,6 +2243,16 @@ Kurallar:
 - [x] Düzeltme: 10 soruluk kitaplarda (Hz. Yusuf, Hz. Musa) sonuçtaki 10
       yıldızlı satır telefonda kartı ekrandan genişletiyordu (390 px ekranda
       412 px kart); noktalar dar ekranda 22 px'e kadar küçülür, tablette 30 px.
+
+### 20 Ekim 2026 (giriş sayfası yenilendi — Hasan onayı, bkz. 5.2 `/login`)
+
+- [x] Giriş sayfası veli hesap sayfalarının çerçevesine geçti; token dışı
+      amber/stone/emerald renkleri, kahverengi düğme ve renkli zemin lekeleri
+      kalktı. Marka adı `MARKA`'dan (eskiden "Peygamberler Kitap Okuma"
+      yazıyordu); "Yönetim Paneli" başlığı "Veli Girişi" oldu (yönetim artık
+      `/yonetim`). Çocuğun kendi cihazı için tek ikincil satır kaldı.
+- [x] Hitap "siz": kardeş hesap sayfaları böyle; sayfa içinde "Hoş Geldin"
+      ile "giriş yapın" karışıktı.
 
 ### 20 Ekim 2026 (Faz 7, 3. adım — satın alma ve ilk giriş; Hasan onayı, bkz. Bölüm 8)
 

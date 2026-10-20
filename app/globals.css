@@ -30,6 +30,20 @@
   --okuma-yuzey: #fffdf8;
 }
 
+/* Tarayıcının otomatik doldurma rengi (Chrome'da açık mavi) veli formlarının
+   krem zeminini bozmasın: alan kendi zemin ve yazı renginde kalır. Zemin içe
+   gölgeyle boyanır; odak halkası (Tailwind ring) gölgenin önünde korunur. */
+.tema-veli input:-webkit-autofill,
+.tema-veli input:-webkit-autofill:hover,
+.tema-veli input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--murekkep);
+  caret-color: var(--murekkep);
+  box-shadow:
+    var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000),
+    0 0 0 1000px var(--zemin) inset;
+}
+
 /*
   Gece indigosu — REVİZE 6 Ağu 2026 (PROJE-MODELI 3.1).
   Eski palet (#0a1428 zemin) ekranda siyaha yakındı ve katmanlar arası açıklık
