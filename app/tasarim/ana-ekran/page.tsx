@@ -11,19 +11,19 @@ import { CocukKabugu } from "../../../src/components/cocuk/CocukKabugu";
  * Gerçek ekran `/map`'tir; burası tasarım kontrolü içindir (PROJE-MODELI 3.6:
  * önizleme rotaları ürün rotalarından ayrı kalır).
  *
- *   /tasarim/ana-ekran              → Âdem ve Şît bitti, İdrîs 1/4
+ *   /tasarim/ana-ekran              → Âdem ve Nûh bitti, İbrahim 1/9
  *   /tasarim/ana-ekran?durum=yeni   → yeni başlayan çocuk, yeni kitap duyurusu
  */
 const KITAPLAR: DeriveBookRow[] = [
   { id: "ornek-adem", isim: "Hz. Âdem", toplam_bolum: 8, sira: 1 },
-  { id: "ornek-sit", isim: "Hz. Şît", toplam_bolum: 4, sira: 2 },
-  { id: "ornek-idris", isim: "Hz. İdrîs", toplam_bolum: 4, sira: 3 },
+  { id: "ornek-nuh", isim: "Hz. Nûh", toplam_bolum: 8, sira: 4 },
+  { id: "ornek-ibrahim", isim: "Hz. İbrahim", toplam_bolum: 9, sira: 7 },
 ];
 
 const ILERLEME: DeriveProgressRow[] = [
   { book_id: "ornek-adem", tamamlanan_bolum_sayisi: 8, yuzde: 100, bitti_mi: true, updated_at: "2026-08-20T10:00:00Z" },
-  { book_id: "ornek-sit", tamamlanan_bolum_sayisi: 4, yuzde: 100, bitti_mi: true, updated_at: "2026-09-20T10:00:00Z" },
-  { book_id: "ornek-idris", tamamlanan_bolum_sayisi: 1, yuzde: 25, bitti_mi: false, updated_at: "2026-10-10T10:00:00Z" },
+  { book_id: "ornek-nuh", tamamlanan_bolum_sayisi: 8, yuzde: 100, bitti_mi: true, updated_at: "2026-09-20T10:00:00Z" },
+  { book_id: "ornek-ibrahim", tamamlanan_bolum_sayisi: 1, yuzde: 11, bitti_mi: false, updated_at: "2026-10-10T10:00:00Z" },
 ];
 
 export default function AnaEkranOnizleme() {

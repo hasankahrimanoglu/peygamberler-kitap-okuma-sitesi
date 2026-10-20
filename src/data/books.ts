@@ -2403,7 +2403,13 @@ export const books: BookDefinition[] = [
           { type: "text", text: "— Anneciğim, buğdayı toprak büyütüyor, beni de sen doğurdun, dedi. Peki bütün bunları kim yarattı?" },
           { type: "text", text: "— Her şeyi yaratan, bir olan ve eşi benzeri olmayan Allah'tır, dedi annesi." },
           { type: "text", text: "Nûh bu cevabı kalbinin bir köşesine yerleştirdi ve hiç unutmadı." },
-          { type: "text", text: "Ama vadinin dışında bambaşka bir hayat vardı ve insanlar Allah'ı çoktan unutmuştu. Taştan ve tahtadan putlar yapıyor, sonra kendi yaptıklarının önünde eğiliyorlardı. Komşuları bile bir derdi olduğunda bu putlara gidip onlardan yardım istiyordu." },
+          {
+            type: "interactive_word",
+            before: "Ama vadinin dışında bambaşka bir hayat vardı ve insanlar Allah'ı çoktan unutmuştu. Taştan ve tahtadan ",
+            word: "put",
+            meaning: "İnsanların kendi elleriyle yapıp taptıkları heykellerdir.",
+            after: "lar yapıyor, sonra kendi yaptıklarının önünde eğiliyorlardı. Komşuları bile bir derdi olduğunda bu putlara gidip onlardan yardım istiyordu.",
+          },
           {
             type: "interactive_word",
             before: "Bir olan Allah'ı bırakıp putlara yönelen kimseye ",
@@ -2826,7 +2832,13 @@ export const books: BookDefinition[] = [
             src: "/kitaplar/hz-nuh/bolum-5/cekic-ve-civiler.jpg",
             alt: "Bir tahta üzerine bırakılmış ahşap tokmak ve yanında dizili demir çiviler.",
           },
-          { type: "text", text: "Hz. Nûh neyin, ne zaman geleceğini tam olarak bilmiyordu. Ama hazırlığın, tehlike gelmeden yapılması gerektiğini çok iyi biliyordu. Bu yüzden ne telaşla acele etti ne de bir günü boşa geçirdi; buna tedbir denirdi." },
+          {
+            type: "interactive_word",
+            before: "Hz. Nûh neyin, ne zaman geleceğini tam olarak bilmiyordu. Ama hazırlığın, tehlike gelmeden yapılması gerektiğini çok iyi biliyordu. Bu yüzden ne telaşla acele etti ne de bir günü boşa geçirdi; buna ",
+            word: "tedbir",
+            meaning: "Bir tehlike gelmeden önce alınan önlem ve yapılan hazırlıktır.",
+            after: " denirdi.",
+          },
           { type: "text", text: "Aileden herkes elinden gelen işi üstlendi ve kimse boş durmadı. Biri tahta taşıdı, biri çivi çaktı, biri de çalışanlara su ve yiyecek getirdi. Akşamları yorgun düştüklerinde hep birlikte oturup Rablerine dua ettiler." },
           {
             type: "image",
@@ -4101,7 +4113,13 @@ export const books: BookDefinition[] = [
             src: "/kitaplar/hz-ismail/bolum-1/toprak-set.jpg",
             alt: "Kaynağın başında arkası dönük diz çökmüş, suyun çevresine elleriyle topraktan küçük bir set yapan Hâcer; yanında akasyanın gölgesinde örtüye sarılı bebeği.",
           },
-          { type: "text", text: "Hâcer, Rabbinin onları yalnız bırakmadığını o gün bir kez daha gördü. Kur'an'a göre Safa ile Merve, Allah'ın nişanelerinden, yani O'nu hatırlatan işaretlerdendir. Bugün Kâbe'yi ziyarete gelen insanlar da bu iki tepe arasında yürür. Yürürken, susuz kalan oğlu için umudunu kaybetmeden koşan Hâcer'i hatırlarlar." },
+          {
+            type: "interactive_word",
+            before: "Hâcer, Rabbinin onları yalnız bırakmadığını o gün bir kez daha gördü. Kur'an'a göre Safa ile Merve, Allah'ın nişanelerinden, yani O'nu hatırlatan işaretlerdendir. Bugün ",
+            word: "Kâbe",
+            meaning: "Mekke'de bulunan, Müslümanların namazda yöneldiği kutsal yapıdır.",
+            after: "'yi ziyarete gelen insanlar da bu iki tepe arasında yürür. Yürürken, susuz kalan oğlu için umudunu kaybetmeden koşan Hâcer'i hatırlarlar.",
+          },
         ],
         has_question: true,
         question: {

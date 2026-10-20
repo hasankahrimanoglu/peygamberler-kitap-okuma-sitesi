@@ -62,7 +62,7 @@ const CEKIMLER = [
     `,
   },
   { ad: "oduller", adres: "/tasarim/oduller", ...TABLET },
-  { ad: "final", adres: "/tasarim/final?kitap=idris", ...TABLET },
+  { ad: "final", adres: "/tasarim/final?kitap=yunus", ...TABLET },
 ];
 
 /** Next'in geliştirme rozetini ve imleç parıltılarını görüntüden çıkarır. */

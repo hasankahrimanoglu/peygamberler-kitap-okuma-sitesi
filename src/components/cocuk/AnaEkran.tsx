@@ -80,7 +80,7 @@ export function AnaEkran({
     [kitaplar],
   );
 
-  // Adres çubuğundan açılış durumu: ?kitap=idris · ?final=adem (quiz dönüşü).
+  // Adres çubuğundan açılış durumu: ?kitap=nuh · ?final=adem (quiz dönüşü).
   useEffect(() => {
     const parametreler = new URLSearchParams(window.location.search);
     queueMicrotask(() => {

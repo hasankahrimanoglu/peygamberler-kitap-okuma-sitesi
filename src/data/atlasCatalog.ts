@@ -1,4 +1,13 @@
-export type AtlasAvailability = "published" | "demo" | "preparing";
+/**
+ * `hidden`: içeriği yazılmış ve yayına girmiş, ama Hasan'ın kararıyla şimdilik
+ * ekrandan kaldırılmış kitap (21 Eki 2026: Hz. Şît, Hz. İdrîs — lansman 12
+ * kitapla). İçerik, final testi, görsel, ses ve Supabase satırı yerinde kalır;
+ * ekranlar yalnız `published` kitabı gösterdiği için kitap hiçbir yerde
+ * görünmez, okuma ve final adresi 404 verir. Geri getirmek: `published` yap ve
+ * `yayinTarihi`'ni o güne çek ("Yeni" etiketi bundan açılır). Sözlük kutusu
+ * için önce SOZLUKCE-SICILI §6'ya bak.
+ */
+export type AtlasAvailability = "published" | "demo" | "preparing" | "hidden";
 
 /**
  * Rota durağının mine bandının rengi (PROJE-MODELI 3.10.1, 6.1). Yalnız yayına
@@ -57,8 +66,8 @@ export const atlasRegions: AtlasRegion[] = [
     mood: "Başlangıç ve merak",
     books: [
       { order: 1, key: "adem", title: "Hz. Âdem", subtitle: "İlk insan, ilk yolculuk", description: "Hz. Âdem'in yaratılışını, bilgiyle değer kazanmasını, tövbesini, ailesindeki ilk büyük sınavı ve yeryüzündeki sorumluluk yolculuğunu anlatan umut dolu bir keşif.", chapterCount: 8, durakRengi: "mavi", availability: "published", yayinTarihi: "2026-07-15" },
-      { order: 2, key: "sit", title: "Hz. Şît", subtitle: "Emaneti büyüterek taşımak", description: "Bir kaybın ardından gelen armağan, yıllar süren sabırlı bir emek ve babasından devraldığı emanet. Hz. Şît'in taş üstüne taş koyan yolculuğunu keşfet.", chapterCount: 4, durakRengi: "kirmizi", availability: "published", yayinTarihi: "2026-09-05" },
-      { order: 3, key: "idris", title: "Hz. İdrîs", subtitle: "Öğrenen ve öğreten bir ömür", description: "Yıldızları, taşları ve iplikleri merak eden bir peygamberin izini sür; öğrenmenin, sabrın ve vazgeçmeyen emeğin ne demek olduğunu keşfet.", chapterCount: 4, durakRengi: "yesil", availability: "published", yayinTarihi: "2026-09-05" },
+      { order: 2, key: "sit", title: "Hz. Şît", subtitle: "Emaneti büyüterek taşımak", description: "Bir kaybın ardından gelen armağan, yıllar süren sabırlı bir emek ve babasından devraldığı emanet. Hz. Şît'in taş üstüne taş koyan yolculuğunu keşfet.", chapterCount: 4, durakRengi: "kirmizi", availability: "hidden", yayinTarihi: "2026-09-05" },
+      { order: 3, key: "idris", title: "Hz. İdrîs", subtitle: "Öğrenen ve öğreten bir ömür", description: "Yıldızları, taşları ve iplikleri merak eden bir peygamberin izini sür; öğrenmenin, sabrın ve vazgeçmeyen emeğin ne demek olduğunu keşfet.", chapterCount: 4, durakRengi: "yesil", availability: "hidden", yayinTarihi: "2026-09-05" },
       { order: 4, key: "nuh", title: "Hz. Nûh", subtitle: "Sabır ve güven yolculuğu", description: "Yüzyıllarca sabırla çağıran bir peygamberin yanında dur; alaylara rağmen yapılan gemiyle güvenin, şükrün ve yeniden başlamanın anlamını keşfet.", chapterCount: 8, durakRengi: "mor", availability: "published", yayinTarihi: "2026-10-12" },
       { order: 5, key: "hud", title: "Hz. Hûd", subtitle: "Gücün karşısında doğru söz", chapterCount: 5, availability: "preparing" },
       { order: 6, key: "salih", title: "Hz. Sâlih", subtitle: "Emaneti koruyanlar", chapterCount: 5, availability: "preparing" },

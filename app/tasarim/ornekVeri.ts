@@ -4,19 +4,19 @@ import { tumGorevTanimlari, type DeriveBookRow, type DeriveProgressRow, type Gor
  * Ödüllerim · Kelimelerim · Görevlerim önizlemelerinin ortak örnek verisi.
  * Gerçek Supabase satırlarının biçimindedir; ekranlar aynı türetme
  * fonksiyonlarından geçer. Durumlar bilerek karışıktır: Hz. Âdem bitti
- * (madalya), Hz. Şît'in bölümleri bitti ama final testi bekliyor, Hz. İdrîs
+ * (madalya), Hz. Nûh'un bölümleri bitti ama final testi bekliyor, Hz. İbrahim
  * yarıda.
  */
 export const ORNEK_KITAPLAR: DeriveBookRow[] = [
   { id: "ornek-adem", isim: "Hz. Âdem", toplam_bolum: 8, sira: 1 },
-  { id: "ornek-sit", isim: "Hz. Şît", toplam_bolum: 4, sira: 2 },
-  { id: "ornek-idris", isim: "Hz. İdrîs", toplam_bolum: 4, sira: 3 },
+  { id: "ornek-nuh", isim: "Hz. Nûh", toplam_bolum: 8, sira: 4 },
+  { id: "ornek-ibrahim", isim: "Hz. İbrahim", toplam_bolum: 9, sira: 7 },
 ];
 
 export const ORNEK_ILERLEME: DeriveProgressRow[] = [
   { book_id: "ornek-adem", tamamlanan_bolum_sayisi: 8, yuzde: 100, bitti_mi: true, updated_at: "2026-08-20T10:00:00Z" },
-  { book_id: "ornek-sit", tamamlanan_bolum_sayisi: 4, yuzde: 100, bitti_mi: false, updated_at: "2026-09-20T10:00:00Z" },
-  { book_id: "ornek-idris", tamamlanan_bolum_sayisi: 1, yuzde: 25, bitti_mi: false, updated_at: "2026-10-10T10:00:00Z" },
+  { book_id: "ornek-nuh", tamamlanan_bolum_sayisi: 8, yuzde: 100, bitti_mi: false, updated_at: "2026-09-20T10:00:00Z" },
+  { book_id: "ornek-ibrahim", tamamlanan_bolum_sayisi: 1, yuzde: 11, bitti_mi: false, updated_at: "2026-10-10T10:00:00Z" },
 ];
 
 export const ORNEK_PROFIL = { ad: "Elif", avatarAnahtari: "avatar-3", avatarFotografi: null };

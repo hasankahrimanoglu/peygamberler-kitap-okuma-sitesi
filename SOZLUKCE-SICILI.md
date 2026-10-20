@@ -75,8 +75,8 @@ Bu 11 terimin tanımı projenin standardıdır. Bir kitapta geçtiğinde bu tan�
 | Halife | Peygamberimizden sonra Müslümanların başına geçen yöneticiye denir. | Henüz yok |
 | Sahabe | Peygamberimizi görmüş ve ona inanmış kimselere denir. | Henüz yok |
 | Peygamber | Allah'ın, mesajlarını insanlara ulaştırmak için seçtiği elçidir. | Henüz yok |
-| Kâbe | Mekke'de bulunan, Müslümanların namazda yöneldiği kutsal yapıdır. | Hz. Şît · 1 |
-| Put | İnsanların kendi elleriyle yapıp taptıkları heykellerdir. | Hz. Şît · 4 |
+| Kâbe | Mekke'de bulunan, Müslümanların namazda yöneldiği kutsal yapıdır. | Hz. İsmail · 1 (21 Eki 2026'ya kadar Hz. Şît · 1) |
+| Put | İnsanların kendi elleriyle yapıp taptıkları heykellerdir. | Hz. Nûh · 1 (21 Eki 2026'ya kadar Hz. Şît · 4) |
 | Tevekkül | Elinden geleni yaptıktan sonra sonucu Allah'a bırakmaktır. | Hz. Nûh · 6 |
 | Mucize | Allah'ın izniyle peygamberlerin gösterdiği olağanüstü olaylardır. | Hz. İdrîs · 4 |
 | Zekât | Zenginlerin, mallarının bir kısmını ihtiyaç sahipleriyle paylaşmasıdır. | Hz. İsmail · 6 |
@@ -102,11 +102,11 @@ listeyle karşılaştırılır.**
 | 6 | rehberlik | Doğru yolu bulabilmesi için birine yol göstermek ve yardımcı olmaktır. | Hz. Âdem · 6 | Kanonik |
 | 7 | kurban | Allah'a yakınlaşmak amacıyla sunulan şey veya yapılan ibadettir. | Hz. Âdem · 7 | Kanonik |
 | 8 | sıla | İnsanın özlediği yere veya sevdiklerine kavuşmasıdır. | Hz. Âdem · 8 | Kanonik |
-| 9 | Kâbe | Mekke'de bulunan, Müslümanların namazda yöneldiği kutsal yapıdır. | Hz. Şît · 1 | Sabit sözlükçe (§2) |
-| 10 | tedbir | Bir tehlike gelmeden önce alınan önlem ve yapılan hazırlıktır. | Hz. Şît · 2 | Yeni terim — **onaylandı** (Hasan, 10 Ağu 2026) |
+| 9 | Kâbe | Mekke'de bulunan, Müslümanların namazda yöneldiği kutsal yapıdır. | Hz. İsmail · 1 | Sabit sözlükçe (§2) — 21 Eki 2026'da Hz. Şît · 1'den taşındı (§6) |
+| 10 | tedbir | Bir tehlike gelmeden önce alınan önlem ve yapılan hazırlıktır. | Hz. Nûh · 5 | Yeni terim — **onaylandı** (Hasan, 10 Ağu 2026) — 21 Eki 2026'da Hz. Şît · 2'den taşındı (§6) |
 | 11 | harç | Yapı taşlarını birbirine tutturmak için hazırlanan, kuruyunca sertleşen karışımdır. | Hz. Şît · 3 | Yeni terim — **onaylandı** (Hasan, 10 Ağu 2026) |
 | 12 | vahiy | Allah'ın, peygamberlerine melek aracılığıyla gönderdiği mesajlardır. | Hz. Şît · 4 | Sabit sözlükçe (§2) |
-| 13 | put | İnsanların kendi elleriyle yapıp taptıkları heykellerdir. | Hz. Şît · 4 | Sabit sözlükçe (§2) |
+| 13 | put | İnsanların kendi elleriyle yapıp taptıkları heykellerdir. | Hz. Nûh · 1 | Sabit sözlükçe (§2) — 21 Eki 2026'da Hz. Şît · 4'ten taşındı (§6) |
 | 14 | basiret | Bir işin sonunu önceden görebilmek ve ona göre davranmaktır. | Hz. İdrîs · 1 | Yeni terim — **onaylandı** (Hasan, 12 Ağu 2026) |
 | 15 | kılavuz | Yolu bilmeyenlere doğru yönü gösteren kişi ya da işarettir. | Hz. İdrîs · 2 | Yeni terim — **onaylandı** (Hasan, 12 Ağu 2026) |
 | 16 | dokuma | İplikleri alt alta ve üst üste geçirerek kumaş yapmaktır. | Hz. İdrîs · 3 | Yeni terim — **onaylandı** (Hasan, 12 Ağu 2026) |
@@ -376,6 +376,27 @@ sicil, sonra `demoChapters.ts` güncellenir.
 ---
 
 ## 6. AÇIK UYARILAR
+
+- ⚠️ **Şît ve İdrîs gizlendi; dört terimin kutusu görünmüyordu (21 Eki 2026) —
+  ÜÇÜ ÇÖZÜLDÜ, mucize BEKLİYOR.** Lansman 12 kitapla yapılacağı için Hz. Şît ve Hz. İdrîs
+  ekrandan kaldırıldı (`availability: "hidden"`, silinmedi). Kutusu bu iki
+  kitapta olup görünen kitaplarda düz metin geçen terimler, çocuğun okuyabildiği
+  hiçbir yerde tanımlanmıyor. Görünen kitaplardaki ilk geçiş (katalog sırası):
+  - **Kâbe** (kutu Şît 1) → Hz. İsmail 1, Devam
+  - **put** (kutu Şît 4) → Hz. Nûh 1, 1. Kısım (aynı bölümde "müşrik" kutusu var)
+  - **tedbir** (kutu Şît 2) → Hz. Nûh 5, Devam
+  - **mucize** (kutu İdrîs 4) → Hz. Îsâ 5; ancak Hz. Sâlih'te (#6, yazılıyor)
+    geçmesi beklenir
+  Kutusu Şît/İdrîs'te olup görünen kitaplarda geçmeyen *harç · vahiy · basiret ·
+  kılavuz · dokuma* için sorun yok.
+  **KARAR (21 Eki 2026, Hasan):** Kâbe → Hz. İsmail 1, put → Hz. Nûh 1, tedbir →
+  Hz. Nûh 5 taşındı (`books.ts` + iki kitabın final.md'si; tanım harfiyen; §2 ve
+  §3 güncellendi). Hz. Şît'teki üç kutu, kitap gizliyken olduğu gibi duruyor;
+  **Şît geri getirilirken bu üçü orada düz metne çevrilir** (KARAR 10b: kutu, ilk
+  yayımlanan kitapta kalır); `npm run kitap-denetle -- sit` bu üç kutuyu o güne
+  kadar "SÖZLÜKÇE ÇAKIŞMASI" olarak gösterir — beklenen durum. ⏳ **mucize** Hz. Sâlih aktarımında karara bağlanır:
+  Sâlih'te geçerse kutu orada açılır, geçmezse Hz. Îsâ 5'e taşınır; İdrîs geri
+  getirilirken aynı kural uygulanır.
 
 - ~~**Sabit sözlükçedeki 11 terimin hiçbiri henüz kutulanmadı.**~~ **KAPANDI
   (7 Ağu 2026)** — §1'deki "ilk geçtiği yerde kutulanır" kuralı bu soruyu kalıcı

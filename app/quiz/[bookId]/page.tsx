@@ -11,6 +11,7 @@ import { Ikon } from "../../../src/components/ui";
 import { dbKitabiBul, tekrarBakilacakBolumler } from "../../../src/lib/derive";
 import { CocukKorumasi } from "../../../src/components/cocuk/CocukKorumasi";
 import { quizConfig, type QuizConfig, type QuizOption } from "../../../src/data/quizzes";
+import { atlasBookByKey } from "../../../src/data/atlasCatalog";
 
 type SavedCompletionState = "loading" | "completed" | "incomplete" | "unknown";
 type FinalSaveResult =
@@ -207,6 +208,8 @@ function QuizIcerik() {
   const params = useParams<{ bookId: string }>();
   const bookId = params.bookId as keyof typeof quizConfig;
   if (!quizConfig[bookId]) notFound();
+  // Yayın durumu tek kaynaktan: katalogda `published` olmayan kitabın finali açılmaz.
+  if (atlasBookByKey.get(bookId)?.availability !== "published") notFound();
   const activeQuiz = quizConfig[bookId];
   const questions = activeQuiz.questions;
   const madalya = `${activeQuiz.label} Yolculuk Madalyası`;

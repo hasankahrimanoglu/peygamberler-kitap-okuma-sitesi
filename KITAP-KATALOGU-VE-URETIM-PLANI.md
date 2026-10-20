@@ -296,16 +296,28 @@ düşürülmez (REVİZE 12 Ekim 2026, Hasan):** bölüm başına 1 açılış + 
 6 görsel (PROJE-MODELI 6.4). Daha önce önerilen "seyrek mod" (kapak + 2 sahne)
 iptal edildi.
 
-**Lansman listesi ve üretim önceliği (KARAR 16 Ekim 2026, Hasan).** Hasan'ın
-"ilk 10"u ile yayındaki Hz. Şît ve Hz. İdrîs birlikte lansman **12 kitap**tır.
-Yukarıdaki dalga sırası bu kitaplar bitene kadar beklemeye alınır.
+**Lansman listesi (REVİZE 21 Ekim 2026, Hasan).** Lansman **12 kitap**tır:
+Hz. Âdem · Hz. Nûh · Hz. Sâlih · Hz. İbrahim · Hz. İsmail · Hz. Yusuf ·
+Hz. Eyyûb · Hz. Musa · Hz. Dâvûd · Hz. Süleyman · Hz. Yunus · Hz. Îsâ.
+Hz. Şît ve Hz. İdrîs yazıldı ve yayındaydı; listede olmadıkları için **silinmeden
+ekrandan kaldırıldı** (`atlasCatalog.ts` → `availability: "hidden"`; içerik,
+görsel ve ses yerinde, geri getirmek tek satır). Gizlenmenin sözlükçeye etkisi:
+SOZLUKCE-SICILI §6. Yukarıdaki dalga sırası lansman kitapları bitene kadar
+beklemeye alınır.
 
 | Durum | Kitaplar | Bölüm |
 |---|---|---:|
-| Yayında | Hz. Âdem · Hz. Şît · Hz. İdrîs · Hz. Nûh · Hz. Eyyûb · Hz. Musa | 39 |
-| Üretilecek | **Hz. İbrahim · Hz. Yusuf · Hz. Yunus · Hz. Süleyman · Hz. İsmail · Hz. Îsâ** | 45 |
+| Yayında | Hz. Âdem · Hz. Nûh · Hz. İbrahim · Hz. İsmail · Hz. Yusuf · Hz. Eyyûb · Hz. Musa · Hz. Süleyman · Hz. Yunus · Hz. Îsâ | 76 |
+| Üretimde (Faz 1 — 21 Eki 2026) | **Hz. Sâlih · Hz. Dâvûd** | 11 |
+| Yazıldı, şimdilik gizli | Hz. Şît · Hz. İdrîs | 8 |
 | Lansmandan sonra ilk kitap | Hz. Muhammed — İlk Yıllar (K4; ayrı kaynak seti) | 8 |
 
+*Önceki karar (16 Ekim 2026):* lansman = Hasan'ın "ilk 10"u + Hz. Şît ve
+Hz. İdrîs. O listedeki altı kitap (İbrahim, Yusuf, Yunus, Süleyman, İsmail,
+Îsâ) 16–17 Ekim 2026'da yayına girdi; aşağıdaki iki madde o dalganın notudur.
+
+- **Sâlih ve Dâvûd (21 Eki 2026)** paralel yazılır; kaynakları birbirine
+  taşmaz. Dâvûd, Hz. Süleyman'ın Faz 1'inde yapılan ortak olay bölüşümüne uyar.
 - **Paralel yazım:** İbrahim, Yusuf, Yunus, Süleyman ve Îsâ'nın Faz 1'i aynı
   anda yazılabilir; kaynak olayları birbirine taşmaz. **İsmail, İbrahim'in
   Faz 1'i onaylandıktan sonra** başlar (Kâbe ve kurban ortak; §1.5 bölüşümü

@@ -86,6 +86,10 @@ Stack: Next.js + TypeScript + Tailwind + Supabase. Paket yöneticisi: **npm**.
   kitapları `derive.ts:yayindakiKitaplar()`'dan alır (katalogda `published` +
   `books.ts`'te içerik). Elle kitap listesi ya da anahtar tablosu TUTMA; Supabase
   `books` satırı yalnız ilerleme anahtarıdır, ad katalogdan gelir.
+  Yazılmış bir kitabı silmeden ekrandan kaldırmak: `availability: "hidden"`
+  (21 Eki 2026: Şît ve İdrîs — lansman 12 kitap, katalog belgesi §11.1). Geri
+  getirmek = `published` + o günün `yayinTarihi`; sözlük kutusu için önce
+  SOZLUKCE-SICILI §6.
 - Türetilen kavramlar tablo GEREKTİRMEZ: rozet (`tamamlanan_bölüm >= sıra`),
   madalya (`bitti_mi = true`), unvan (tamamlanan kitap sayısı → eşik tablosu).
 
@@ -196,7 +200,7 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
 Faz A, B (okuma ekranı), C (ana ekran) ve **D (Işıl) uygulandı;** sırada 5 çocukla
 gözlem testi var. Ana ekran bileşenleri `src/components/cocuk/`, veri modeli
 `src/lib/child/yolculuk.ts`, girişsiz önizlemeler `/tasarim/ana-ekran`,
-`/tasarim/okuma?bolum=adem-2` (rozet kaydı Supabase'e gitmez), `/tasarim/final?kitap=idris`
+`/tasarim/okuma?bolum=adem-2` (rozet kaydı Supabase'e gitmez), `/tasarim/final?kitap=yunus`
 (Büyük Final Testi; kayıt yok), `/tasarim/oduller`, `/tasarim/kelimeler`, `/tasarim/gorevler`
 (`?durum=bos`) ve `/tasarim/isil`. Veli tarafının girişsiz önizlemesi
 `/tasarim/veli-rapor` (Gelişim Raporu'nun Kitaplar ve Sohbet Önerileri sekmeleri;

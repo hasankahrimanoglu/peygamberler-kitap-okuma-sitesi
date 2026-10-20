@@ -10,9 +10,9 @@ import { tekrarBakilacakBolumler } from "../../../src/lib/derive";
  * Gerçek ekran `/quiz/[bookId]`'dir (PROJE-MODELI 3.6: önizleme rotaları ürün
  * rotalarından ayrı kalır).
  *
- *   /tasarim/final?kitap=idris               → ilk tamamlama, madalya kazanılır
- *   /tasarim/final?kitap=idris&durum=alistirma → madalya önceden kazanılmış
- *   /tasarim/final?kitap=idris&durum=hata      → kayıt hatası, "Tekrar Dene"
+ *   /tasarim/final?kitap=yunus               → ilk tamamlama, madalya kazanılır
+ *   /tasarim/final?kitap=yunus&durum=alistirma → madalya önceden kazanılmış
+ *   /tasarim/final?kitap=yunus&durum=hata      → kayıt hatası, "Tekrar Dene"
  */
 export default function FinalOnizleme() {
   const [ayar, setAyar] = useState<{ kitap: string; durum: string } | null>(null);
@@ -26,8 +26,8 @@ export default function FinalOnizleme() {
   useEffect(() => {
     queueMicrotask(() => {
       const parametreler = new URLSearchParams(window.location.search);
-      const kitap = parametreler.get("kitap") ?? "idris";
-      setAyar({ kitap: quizConfig[kitap] ? kitap : "idris", durum: parametreler.get("durum") ?? "" });
+      const kitap = parametreler.get("kitap") ?? "yunus";
+      setAyar({ kitap: quizConfig[kitap] ? kitap : "yunus", durum: parametreler.get("durum") ?? "" });
     });
   }, []);
 

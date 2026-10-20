@@ -32,7 +32,7 @@ type Sekme = "kitaplar" | "sohbet";
 
 const ORNEK_KITAPLAR: DeriveBookRow[] = [
   { id: "ornek-adem", isim: "Hz. Âdem", toplam_bolum: 8, sira: 1 },
-  { id: "ornek-sit", isim: "Hz. Şît", toplam_bolum: 4, sira: 2 },
+  { id: "ornek-nuh", isim: "Hz. Nûh", toplam_bolum: 8, sira: 4 },
   { id: "ornek-ibrahim", isim: "Hz. İbrahim", toplam_bolum: 9, sira: 7 },
 ];
 
@@ -51,7 +51,7 @@ function ornekIlerleme(durum: Durum): DeriveProgressRow[] {
   if (durum === "tek") return [satir("ornek-ibrahim", 1, 2)];
   return [
     satir("ornek-adem", 8, 24 * 12, true, 7),
-    satir("ornek-sit", 4, 24 * 3),
+    satir("ornek-nuh", 8, 24 * 3),
     satir("ornek-ibrahim", 2, 26),
   ];
 }

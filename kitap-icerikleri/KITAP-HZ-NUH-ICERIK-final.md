@@ -213,6 +213,8 @@ Bir akşam annesinin yanına oturdu ve aklını kurcalayan soruyu sordu.
 — Her şeyi yaratan, bir olan ve eşi benzeri olmayan Allah'tır, dedi annesi.
 Nûh bu cevabı kalbinin bir köşesine yerleştirdi ve hiç unutmadı.
 
+**[ETKİLEŞİMLİ KELİME — put]**
+
 Ama vadinin dışında bambaşka bir hayat vardı ve insanlar Allah'ı çoktan unutmuştu. Taştan ve tahtadan putlar yapıyor, sonra kendi yaptıklarının önünde eğiliyorlardı. Komşuları bile bir derdi olduğunda bu putlara gidip onlardan yardım istiyordu.
 
 **[ETKİLEŞİMLİ KELİME — müşrik]**
@@ -361,7 +363,7 @@ Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, moon wit
 ```
 
 #### BÖLÜM İÇ KALİTE ÖZETİ
-Etkileşimli kelimeler: müşrik (sabit sözlükçe — ilk kez kutulanıyor)
+Etkileşimli kelimeler: müşrik (sabit sözlükçe — ilk kez kutulanıyor), put (sabit sözlükçe; kutu 21 Eki 2026'da gizlenen Hz. Şît 4'ten taşındı, tanım harfiyen)
 Görsel sayısı: 1 açılış + 5 sahne (1. Kısım 2 / Devam 3)
 Kaynak dışı bilgi var mı?: Hayır. Roman katmanı (tekne, put isteği, eğlencelere katılmama) fikir düzeyinde kullanıldı (KARAR 4); Nûh'un komşulara verdiği kısa cevap, kaynaktaki tutumun anlamını değiştirmeyen bağlantı cümlesidir.
 
@@ -995,6 +997,8 @@ Sonra hiçbir şey olmamış gibi yeniden işinin başına döndü. Gülenler bi
 
 **[GÖRSEL — nuh-5-cekic-ve-civiler]**
 
+**[ETKİLEŞİMLİ KELİME — tedbir]**
+
 Hz. Nûh neyin, ne zaman geleceğini tam olarak bilmiyordu. Ama hazırlığın, tehlike gelmeden yapılması gerektiğini çok iyi biliyordu. Bu yüzden ne telaşla acele etti ne de bir günü boşa geçirdi; buna tedbir denirdi.
 
 Aileden herkes elinden gelen işi üstlendi ve kimse boş durmadı. Biri tahta taşıdı, biri çivi çaktı, biri de çalışanlara su ve yiyecek getirdi. Akşamları yorgun düştüklerinde hep birlikte oturup Rablerine dua ettiler.
@@ -1113,7 +1117,7 @@ Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, sea, rai
 ```
 
 #### BÖLÜM İÇ KALİTE ÖZETİ
-Etkileşimli kelimeler: alay (yeni terim, onaylı). *tedbir* Hz. Şît · 2'de kutulu olduğu için düz metin.
+Etkileşimli kelimeler: alay (yeni terim, onaylı), tedbir (kutu 21 Eki 2026'da gizlenen Hz. Şît 2'den taşındı, tanım harfiyen).
 Görsel sayısı: 1 açılış + 5 sahne (1. Kısım 2 / Devam 3)
 Kaynak dışı bilgi var mı?: Hayır. Gemi emri ve alay Kur'an'a (Hûd 36–39, Mü'minûn 27, Kamer 13); ağacın kesilmesi ve oğulların adları rivayet kalıbıyla (KARAR 7g, 4). Zift, gemi ölçüleri ve katları verilmedi (KARAR 7h).
 
@@ -1850,8 +1854,8 @@ aşure pişirip hikâyeyi yeniden hatırlarsınız.
 | **şefkat** | 7 | Sicilde yok | **Yeni terim — onaylandı** |
 | **şükür** | 8 | Sicilde yok | **Yeni terim — onaylandı** |
 | peygamber | 1, 2 | Sabit sözlükçe §2 — kutu Hz. Âdem'e geriye dönük eklenecek | Düz metin |
-| put | 1, 2 | Hz. Şît · 4'te kutulu | Düz metin |
-| tedbir | 5 | Hz. Şît · 2'de kutulu | Düz metin |
+| put | 1, 2 | Hz. Şît · 4'te kutulu | Düz metin — **REVİZE 21 Eki 2026 (Hasan):** Şît gizlendiği için kutu B1'deki ilk geçişe taşındı; B2 düz metin |
+| tedbir | 5 | Hz. Şît · 2'de kutulu | **REVİZE 21 Eki 2026 (Hasan):** Şît gizlendiği için kutu buraya taşındı, tanım harfiyen |
 | nimet | 8 | Hz. Âdem · 3'te kanonik | Düz metin |
 | vahiy, mucize, Kâbe, emanet, tövbe | — | Kutulu | Bu kitapta geçmiyor |
 

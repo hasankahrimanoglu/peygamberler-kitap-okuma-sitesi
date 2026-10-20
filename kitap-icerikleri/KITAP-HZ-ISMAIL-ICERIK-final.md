@@ -380,6 +380,8 @@ Hâcer, suyun kumlara karışıp akıp gitmesinden korkarak hemen işe koyuldu. 
 
 **[GÖRSEL — ismail-1-toprak-set]**
 
+**[ETKİLEŞİMLİ KELİME — Kâbe]**
+
 Hâcer, Rabbinin onları yalnız bırakmadığını o gün bir kez daha gördü. Kur'an'a göre Safa ile Merve, Allah'ın nişanelerinden, yani O'nu hatırlatan işaretlerdendir. Bugün Kâbe'yi ziyarete gelen insanlar da bu iki tepe arasında yürür. Yürürken, susuz kalan oğlu için umudunu kaybetmeden koşan Hâcer'i hatırlarlar.
 
 #### SEÇİMİNİ KARŞILAŞTIR
@@ -492,7 +494,7 @@ Toplam hikâye karakteri: §I1'de (programatik ölçüm)
 Paragraf sayısı: §I1'de
 Tahmini diyalog oranı: §I1'de
 18 kelimeyi aşan cümle var mı?: §I1'de
-Etkileşimli kelimeler: zemzem (yeni terim — Hasan onayı, Faz 1)
+Etkileşimli kelimeler: zemzem (yeni terim — Hasan onayı, Faz 1) · Kâbe (sabit sözlükçe; kutu 21 Eki 2026'da gizlenen Hz. Şît 1'den taşındı, tanım harfiyen)
 Görsel sayısı: 1 açılış + 5 sahne (1. Kısım 2 / Devam 3); 3'ü figürlü
 Kaynak dışı bilgi var mı?: Hayır. Köprü İbrahim B8 ile uyumlu (Allah'ın emri, dua ederek ayrılış; torba hurma ve kap su); Hâcer'in güveni sahnelenmeden tek cümle (Faz 1 §E-d; İbrahim'deki tırnaklı söz tekrar edilmedi). Akasya İbrahim B8 görselleriyle aynı ağaç (Buhârî'de "büyük bir ağaç"). Suyun bitmesi, susama, bebeğin ağlaması, önce Safa'ya çıkıp bakma, vadiyi koşarak geçip Merve'ye çıkma, yedi kez, suyun çevresini çevirme, içip emzirme Buhârî (İbn Abbas) ve Lİ s. 227–232. Her tepede dua Lİ s. 232. Melek, "bir zat", İsmail'in topuğu ve "Zem zem" yok (§16/12, /14); su "Allah'ın izniyle" kaynar. "Bugün … hatırlarlar" cümlesi Buhârî'deki açıklamanın anlatıcı diliyle karşılığıdır (Hz. Muhammed'in sözü olarak verilmedi); *hac* kutusu B6'da açıldığı için burada "Kâbe'yi ziyarete gelen insanlar" dendi. Safa ve Merve'nin nişane oluşu Bakara 158 (Diyanet). Oyuk, yılan, tulum, Sekîne, Halas yok.
 
@@ -1603,7 +1605,7 @@ suyun çevresini çevirmeseydi zemzemin akan bir dere olacağı bildirilir.
 | **temel** | 5 | Sicilde yok | **Yeni terim — onaylandı** |
 | **hac** | 6 | Sicilde yok | **Yeni terim — onaylandı** |
 | **zekât** | 6 | Sabit sözlükçe (§2) — "Henüz yok" | **Set genelinde ilk kutu**; tanım harfiyen |
-| Kâbe | 1, 5, 6 | Hz. Şît · 1 (sabit sözlükçe) | Düz metin |
+| Kâbe | 1, 5, 6 | Hz. Şît · 1 (sabit sözlükçe) | Düz metin — **REVİZE 21 Eki 2026 (Hasan):** Şît gizlendiği için kutu B1'e taşındı, tanım harfiyen; B5 ve B6 düz metin |
 | kurban, kurbanlık | 3 | Hz. Âdem · 7 | Düz metin |
 | peygamber | 3, 5, 6 | Sabit sözlükçe — kutu Hz. Âdem'e geriye dönük | Düz metin |
 | şükür (şükretti, şükrediyordu, şükür dolu) | 1–6 | Hz. Nûh · 8 | Düz metin |

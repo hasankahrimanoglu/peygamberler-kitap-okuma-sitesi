@@ -11,7 +11,7 @@ import { AtlasScrollReader } from "../../../src/components/reader/AtlasScrollRea
  *
  *   /tasarim/okuma?bolum=adem-2          → ilk okuma, "Rozetimi Al" kaydı başarılı
  *   /tasarim/okuma?bolum=adem-2&tekrar=1 → rozeti daha önce kazanılmış bölüm
- *   /tasarim/okuma?bolum=idris-4         → son bölüm: "Büyük Final Testine Geç"
+ *   /tasarim/okuma?bolum=yunus-5         → son bölüm: "Büyük Final Testine Geç"
  *   /tasarim/okuma?bolum=adem-2&hata=1   → kayıt hatası ve "Tekrar Dene"
  */
 export default function OkumaOnizleme() {

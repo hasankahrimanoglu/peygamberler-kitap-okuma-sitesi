@@ -1869,7 +1869,7 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 |---|---|---|---|---|---|
 | Hz. Âdem | 8 | 32 | **40** | 40 | 1 (oran: `bolum-1/kapak.jpg`) |
 | Hz. Şît | 4 | 16 | **20** | 20 | 0 |
-| Hz. İdrîs | 4 | 16 | **20** | 0 | 20 (açılışlar dahil hepsi yer tutucu; kitap yayında) |
+| Hz. İdrîs | 4 | 16 | **20** | 0 | 20 (açılışlar dahil hepsi yer tutucu; kitap 21 Eki 2026'dan beri gizli) |
 | Hz. Nûh | 8 | 40 | **48** | 48 | 0 |
 | Hz. Musa | 10 | 50 | **60** | 60 | 0 |
 | Hz. Eyyûb | 5 | 25 | **30** | 30 | 0 |
