@@ -13,7 +13,7 @@ import { VeliPaneli } from "../../src/components/tanitim/VeliPaneli";
 import { KATALOG_SAYILARI } from "../../src/data/katalogSayilari";
 import { MARKA } from "../../src/data/marka";
 
-const aciklama = `Peygamberlerin ve Dört Büyük Halife'nin hayatı; ${MARKA.hedefYas} yaş için ${KATALOG_SAYILARI.kitap} kitap ve ${KATALOG_SAYILARI.bolum} sesli bölümde. Reklamsız, puan baskısı olmadan, veli paneliyle.`;
+const aciklama = `Çocuklar için sesli ve etkileşimli peygamber kıssaları: ${MARKA.hedefYas} yaş için ${KATALOG_SAYILARI.kitap} kitap, ${KATALOG_SAYILARI.bolum} sesli bölüm. Reklamsız, puan baskısı olmadan, veli paneliyle.`;
 
 export const metadata: Metadata = {
   title: `${MARKA.ad} | Çocuklar için sesli ve etkileşimli peygamber kıssaları`,
@@ -27,7 +27,8 @@ export const metadata: Metadata = {
 };
 
 /**
- * Tanıtım sayfası (KARAR 15 Eki 2026 — Hasan: sitenin tam hâli anlatılır).
+ * Tanıtım sayfası. Yalnız yayındaki kitapları anlatır (REVİZE 21 Eki 2026 —
+ * Hasan: lansman 12 kitapla; sayılar ve görseller `katalogSayilari.ts`'ten).
  *
  * Akış: gece (çocuğun dünyası) → şafak → krem (velinin paneli) → akşam.
  * Bölüm sırası satış akışını izler: vaat → nasıl çalışır → öne çıkanlar →

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { IPTAL_IADE } from "../../data/yasal";
-import { KATALOG_SAYILARI } from "../../data/katalogSayilari";
+import { KATALOG_SAYILARI, YOLUN_DEVAMI } from "../../data/katalogSayilari";
 import { MARKA } from "../../data/marka";
 import { SiraliBelir, SiraliOge } from "./hareket/Belir";
 import hareket from "./hareket/hareket.module.css";
@@ -35,8 +35,17 @@ const SORULAR: { soru: string; cevap: ReactNode }[] = [
   },
   {
     soru: "Bir bölüm ne kadar sürer?",
-    cevap: `Bölümler kısa tutuldu; çoğu tek oturumda, yaklaşık 10–15 dakikada okunur. ${KATALOG_SAYILARI.kitap} kitabın tamamında ${KATALOG_SAYILARI.bolum} bölüm var. Günlük hedef ya da seri olmadığı için çocuk kendi hızında ilerler.`,
+    cevap: `Bölümler kısa tutuldu; çoğu tek oturumda, yaklaşık 10–15 dakikada okunur. Yayındaki ${KATALOG_SAYILARI.kitap} kitapta toplam ${KATALOG_SAYILARI.bolum} bölüm var. Günlük hedef ya da seri olmadığı için çocuk kendi hızında ilerler.`,
   },
+  // Bütün kitaplar yayına girince soru kendiliğinden kalkar (YOLUN_DEVAMI null olur).
+  ...(YOLUN_DEVAMI
+    ? [
+        {
+          soru: "Yeni kitaplar eklenecek mi?",
+          cevap: `Evet. ${YOLUN_DEVAMI} Bu yüzden tarih vermiyoruz. Yayına giren her kitap, hesabınızda ek ödeme olmadan açılır.`,
+        },
+      ]
+    : []),
   {
     soru: "Abonelik mi, tek ödeme mi?",
     cevap:

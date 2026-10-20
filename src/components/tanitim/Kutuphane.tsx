@@ -1,40 +1,27 @@
 import Image from "next/image";
-import { atlasRegions } from "../../data/atlasCatalog";
-import { KATALOG_SAYILARI } from "../../data/katalogSayilari";
+import { KATALOG_SAYILARI, YAYINDAKI_GRUPLAR, YOLUN_DEVAMI, yayindakilerdenSec } from "../../data/katalogSayilari";
 import { kitapKapagi } from "../../lib/varlikYollari";
+import { Ikon } from "../ui/Ikon";
 import { Belir, SiraliBelir, SiraliOge } from "./hareket/Belir";
 import hareket from "./hareket/hareket.module.css";
 import { BolumBasligi, Kap } from "./ortak";
 import styles from "./tanitim.module.css";
 
 /**
- * Kitap listesi elle yazılmaz; `atlasCatalog.ts`'ten okunur. Arayüzde
- * bölgeler gösterilmediği için (PROJE-MODELI 3.10.1) burada da bölge adı yok;
- * velinin anlayacağı üç grup kullanılır.
+ * Kitap listesi elle yazılmaz; yalnız yayındaki kitaplar `katalogSayilari.ts`
+ * üzerinden okunur (REVİZE 21 Eki 2026 — lansman 12 kitap).
  *
- * Raftaki kapaklar: kapak görseli hazır olan kitaplar. Yeni kapak geldikçe
- * `RAF` listesine eklenir.
+ * Raf: kapak tasarımına değil kitaba göre seçilir (KARAR 21 Eki 2026 — Hasan;
+ * kapaklar sonra aynı adla yenilenir). İlk insan Hz. Âdem, ulü'l-azm
+ * peygamberlerden Hz. Nûh, Hz. İbrahim, Hz. Musa, Hz. Îsâ ve çocukların en
+ * çok tanıdığı kıssalardan Hz. Yusuf, Hz. Süleyman. Listeden yayında
+ * olmayan çıkar, yerine yayındaki başka kitap girer; raf katalog sırasıyla dizilir.
  */
-const RAF = ["adem", "sit", "idris", "nuh", "hud", "salih", "musa"];
-
-const GRUPLAR = [
-  { ad: "Peygamberler", bolgeler: ["ilk-izler", "bereketli-aile", "sabir-cesaret", "hikmet-saraylari", "umut-isiklari"] },
-  { ad: "Sevgili Peygamberimiz Hz. Muhammed (s.a.v.)", bolgeler: ["rahmet-yolculugu"] },
-  { ad: "Dört Büyük Halife", bolgeler: ["dort-dost"] },
-];
+const RAF = ["adem", "nuh", "ibrahim", "yusuf", "musa", "suleyman", "isa"];
 
 export function Kutuphane() {
-  const tumKitaplar = atlasRegions.flatMap((bolge) => bolge.books);
-  const raf = RAF.map((anahtar) => tumKitaplar.find((kitap) => kitap.key === anahtar)).filter(
-    (kitap) => kitap !== undefined,
-  );
-  const gruplar = GRUPLAR.map((grup) => ({
-    ad: grup.ad,
-    kitaplar: atlasRegions
-      .filter((bolge) => grup.bolgeler.includes(bolge.id))
-      .flatMap((bolge) => bolge.books)
-      .sort((a, b) => a.order - b.order),
-  }));
+  const raf = yayindakilerdenSec(RAF, RAF.length).sort((a, b) => a.order - b.order);
+  const tekGrup = YAYINDAKI_GRUPLAR.length === 1;
 
   return (
     <section id="kutuphane" aria-labelledby="kutuphane-baslik" className="tema-veli scroll-mt-16 bg-zemin py-20 lg:py-28">
@@ -43,7 +30,7 @@ export function Kutuphane() {
           id="kutuphane-baslik"
           ust="Kütüphane"
           baslik={`${KATALOG_SAYILARI.kitap} kitap, ${KATALOG_SAYILARI.bolum} bölüm, tek bir yolculuk`}
-          aciklama="Hz. Âdem'den başlayan yol, Sevgili Peygamberimiz'in hayatı ve Dört Büyük Halife ile tamamlanır. Kitaplar tarih sırasıyla tek bir rotada dizilir; çocuk dilediği kitaptan başlayabilir."
+          aciklama="Yolculuk Hz. Âdem'le başlar; kitaplar tarih sırasıyla tek bir rotada dizilir. Çocuk dilediği kitaptan başlayabilir."
         />
       </Kap>
 
@@ -86,13 +73,13 @@ export function Kutuphane() {
             aralik={0.15}
             oran={0.1}
           >
-            {gruplar.map((grup, i) => (
-              <SiraliOge key={grup.ad} className={i === 0 ? "lg:col-span-6" : "lg:col-span-3"}>
+            {YAYINDAKI_GRUPLAR.map((grup, i) => (
+              <SiraliOge key={grup.ad} className={tekGrup ? "lg:col-span-12" : i === 0 ? "lg:col-span-6" : "lg:col-span-3"}>
                 <h3 className="border-b border-cizgi pb-3 font-baslik text-[1.05rem] font-bold text-murekkep">
                   {grup.ad}
                   <span className="ml-2 font-semibold text-vurgu">{grup.kitaplar.length} kitap</span>
                 </h3>
-                <ol className={`mt-4 gap-x-8 ${i === 0 ? "sm:columns-2" : ""}`}>
+                <ol className={`mt-4 gap-x-8 ${tekGrup ? "sm:columns-2 lg:columns-3" : i === 0 ? "sm:columns-2" : ""}`}>
                   {grup.kitaplar.map((kitap) => (
                     <li
                       key={kitap.key}
@@ -109,6 +96,19 @@ export function Kutuphane() {
                 </ol>
               </SiraliOge>
             ))}
+            {/* Yolun devamı: tarih ve sayı vermez; bütün kitaplar yayına girince kendiliğinden kalkar. */}
+            {YOLUN_DEVAMI ? (
+              <SiraliOge className="flex gap-4 rounded-2xl bg-zemin p-5 sm:p-6 lg:col-span-12">
+                {/* Telefonda ikon gizlenir: metin dar bir sütuna sıkışmasın. */}
+                <span className="hidden h-11 w-11 shrink-0 items-center justify-center rounded-full bg-vurgu-yumusak text-vurgu sm:flex">
+                  <Ikon ad="kitap" boyut={22} />
+                </span>
+                <div>
+                  <p className="font-baslik text-[1.05rem] font-bold text-murekkep">Yolun devamı hazırlanıyor</p>
+                  <p className="mt-1 font-govde leading-relaxed text-murekkep-soluk">{YOLUN_DEVAMI}</p>
+                </div>
+              </SiraliOge>
+            ) : null}
           </SiraliBelir>
         </Belir>
       </Kap>

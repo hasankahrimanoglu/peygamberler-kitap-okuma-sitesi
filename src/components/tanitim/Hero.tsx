@@ -80,9 +80,9 @@ export function Hero() {
               className={`${styles.giris} mt-6 max-w-xl text-pretty font-govde text-lg leading-relaxed text-murekkep-soluk sm:text-xl`}
               style={sira(4)}
             >
-              Peygamberlerin ve Dört Büyük Halife&apos;nin hayatı; {KATALOG_SAYILARI.kitap} kitapta, her biri sesli
-              anlatımlı {KATALOG_SAYILARI.bolum} bölümde. Çocuğunuz dinler, okur ve karar verir; siz yolculuğunu veli
-              panelinden izlersiniz.
+              Hz. Âdem&apos;le başlayan {KATALOG_SAYILARI.kitap} kitap; her biri sesli anlatımlı{" "}
+              {KATALOG_SAYILARI.bolum} bölüm. Çocuğunuz dinler, okur ve karar verir; siz yolculuğunu veli panelinden
+              izlersiniz.
             </p>
 
             <div className={`${styles.giris} mt-9 flex flex-col gap-3 sm:flex-row`} style={sira(5)}>

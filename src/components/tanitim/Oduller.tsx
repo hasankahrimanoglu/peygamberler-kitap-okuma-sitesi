@@ -1,6 +1,6 @@
 import Image, { getImageProps } from "next/image";
 import type { CSSProperties, ReactNode } from "react";
-import { KATALOG_SAYILARI } from "../../data/katalogSayilari";
+import { KATALOG_SAYILARI, yayindakilerdenSec } from "../../data/katalogSayilari";
 import { UNVAN_ESIKLERI, unvanAnahtari } from "../../lib/derive";
 import { madalyaGorseli, rozetGorseli, unvanGorseli } from "../../lib/varlikYollari";
 import { SiraliBelir, SiraliOge } from "./hareket/Belir";
@@ -23,10 +23,18 @@ function ParlayanGorsel({ src, boyut, className = "" }: { src: string; boyut: st
   );
 }
 
-/** Terminoloji sabit: yalnız ROZET · MADALYA · UNVAN (PROJE-MODELI Bölüm 2). */
+/** Madalya kartı: ortadaki (vurgulu) Hz. Âdem; yayında olmayan kitap seçilmez. */
+const MADALYA_VITRINI = ["nuh", "adem", "ibrahim"];
+
+/**
+ * Terminoloji sabit: yalnız ROZET · MADALYA · UNVAN (PROJE-MODELI Bölüm 2).
+ * Unvan kartı yalnız yayındaki kitaplarla kazanılabilen unvanları anlatır;
+ * daha fazla kitap isteyen unvanlar, kitaplar yayına girdikçe kendiliğinden eklenir.
+ */
 export function Oduller() {
-  const ilkUnvan = UNVAN_ESIKLERI[0].unvan;
-  const sonUnvan = UNVAN_ESIKLERI[UNVAN_ESIKLERI.length - 1].unvan;
+  const kazanilabilir = UNVAN_ESIKLERI.filter((esik) => esik.kitap <= KATALOG_SAYILARI.kitap);
+  const ilkUnvan = kazanilabilir[0].unvan;
+  const sonUnvan = kazanilabilir[kazanilabilir.length - 1].unvan;
 
   const kartlar: { ad: string; sayi: string; metin: string; gorsel: ReactNode }[] = [
     {
@@ -55,13 +63,13 @@ export function Oduller() {
         "Kitap ve Büyük Final Testi bitince kazanılır; her kitabın madalyası farklıdır. Testteki doğru sayısı madalyanın şartı değildir.",
       gorsel: (
         <div className="relative flex h-full items-center justify-center gap-2">
-          {["sit", "adem", "nuh"].map((kitap, i) => (
+          {yayindakilerdenSec(MADALYA_VITRINI, MADALYA_VITRINI.length).map((kitap, i) => (
             <div
-              key={kitap}
+              key={kitap.key}
               className={`${hareket.sallan} ${i === 1 ? "w-[42%]" : "w-[30%] opacity-90"}`}
               style={{ "--gecikme": `${-i * 1.7}s` } as CSSProperties}
             >
-              <ParlayanGorsel src={madalyaGorseli(kitap)} boyut="150px" />
+              <ParlayanGorsel src={madalyaGorseli(kitap.key)} boyut="150px" />
             </div>
           ))}
         </div>
@@ -69,17 +77,17 @@ export function Oduller() {
     },
     {
       ad: "Unvan",
-      sayi: `${UNVAN_ESIKLERI.length} unvan`,
-      metin: `Puanla değil, okunan kitap sayısıyla yükselir. “${ilkUnvan}” ile başlar, “${sonUnvan}” ile tamamlanır.`,
+      sayi: `${kazanilabilir.length} unvan`,
+      metin: `Puanla değil, okunan kitap sayısıyla yükselir. “${ilkUnvan}” ile başlar; yayındaki kitapların hepsini bitiren çocuk “${sonUnvan}” olur.`,
       gorsel: (
         <div className="relative flex h-full items-end justify-center gap-1">
-          {[1, 4, 8].map((sira, i) => (
+          {kazanilabilir.slice(-3).map((esik, i) => (
             <div
-              key={sira}
+              key={esik.unvan}
               className={`${hareket.unvanBasamagi} ${i === 2 ? "w-[40%]" : i === 1 ? "w-[33%]" : "w-[26%]"}`}
               style={{ "--yukselis": `${-6 - i * 5}px`, "--gecikme": `${i * 70}ms` } as CSSProperties}
             >
-              <ParlayanGorsel src={unvanGorseli(unvanAnahtari(UNVAN_ESIKLERI[sira].unvan))} boyut="150px" />
+              <ParlayanGorsel src={unvanGorseli(unvanAnahtari(esik.unvan))} boyut="150px" />
             </div>
           ))}
         </div>

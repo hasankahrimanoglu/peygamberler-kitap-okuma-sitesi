@@ -65,7 +65,9 @@ export const PAKETLER: Paket[] = [
 
 /** Bütün paketlerde ortak olanlar — kartlarda aynı liste gösterilir. */
 export const PAKET_ORTAK_OZELLIKLER = [
-  `${KATALOG_SAYILARI.kitap} kitabın tamamı, ${KATALOG_SAYILARI.bolum} bölüm`,
+  `Yayındaki ${KATALOG_SAYILARI.kitap} kitap, ${KATALOG_SAYILARI.bolum} bölüm`,
+  /** KARAR 21 Eki 2026 (Hasan): yayına giren yeni kitap mevcut alıcılara ek ödemesiz açılır. */
+  "Yeni eklenen kitaplar dahil",
   "Her bölümde sesli anlatım",
   "Rozet, madalya ve unvanlar",
   "Veli paneli ve gelişim raporu",
