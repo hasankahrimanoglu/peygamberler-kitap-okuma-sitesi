@@ -1626,10 +1626,10 @@ public/
   - **Komutlar:** `npm run odul-cerceve -- kitap {bookKey}` (o kitabın bütün
     rozetleri + madalyası) · `npm run odul-cerceve -- unvan [anahtar…]`.
     Betik aynı kaynaktan byte byte aynı dosyayı üretir.
-  - **Kapsam dışı kalanlar:** Hz. Âdem, Şît ve Nûh'un rozet ve madalyaları eski,
-    çerçevesi içine çizilmiş tek parça görsellerdir; çerçevesiz ana dosyaları
-    olmadığı için ortak çerçeveye geçmemiştir (yeniden üretim ya da kırpma —
-    Hasan'ın kararı). Hz. İdrîs yer tutucudur.
+  - **Kapsam:** yayındaki 12 kitabın 84 rozeti, 12 madalyası ve 10 unvanın
+    hepsi bu çerçevededir. Âdem, Şît ve Nûh'un eski tek parça çerçeveli
+    görselleri ile İdrîs'in yer tutucuları 20 Eki 2026'da çerçevesiz kare olarak
+    yeniden üretildi (kırpma yerine — Hasan); böylece set tek çizim dilindedir.
   - **Rota durağı çerçevesi (AÇIK KARAR):** aynı aileden halka çerçeve ve renk
     paleti (mavi · yeşil · kırmızı · mor · krem "özel") betikte hazırdır;
     öneri her kitaba rota sırasında döngülü renk. Ekrana **girmedi:** durak

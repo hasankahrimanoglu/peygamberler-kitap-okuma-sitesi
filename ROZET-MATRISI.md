@@ -418,9 +418,10 @@ Bölüm sayıları ve değerler `KITAP-KATALOGU-VE-URETIM-PLANI.md`'den alınmı
 (ICERIK-GORSEL-SICILI §6.2, PROJE-MODELI 6.1); üretim oturumu kare teslimden
 sonra betiği çalıştırır.
 **20 Ekim 2026:** Musa, Eyyûb, Yunus, İbrahim, Yusuf, Süleyman, Îsâ ve İsmail'in
-60 rozeti ortak çerçeveyle `✓` oldu (`99e2f49`). Âdem, Şît ve Nûh eski tek parça
-çerçeveli görselleriyle `✓` kalır; ortak çerçeveye geçmeleri için çerçevesiz
-yeniden üretim gerekir (Hasan kararı).
+60 rozeti ortak çerçeveyle `✓` oldu (`99e2f49`). Aynı gün Âdem 8, Şît 4, Nûh 8
+ve İdrîs 4 rozet çerçevesiz kare olarak yeniden üretilip ortak çerçeveye alındı
+(Hasan kararı: kırpma yerine yeniden üretim). Yayındaki 12 kitabın **84 rozetinin
+hepsi `✓`**, tek çerçeve ve tek çizim dilindedir.
 **17 Ekim 2026 itibarıyla 74 rozet görseli teslim edildi** (Hz. Âdem 8 ·
 Hz. Şît 4 · Hz. Nûh 8 — 512×512 şeffaf PNG, çerçeveli; Hz. Musa 10 · Hz. Eyyûb 5 ·
 Hz. Yunus 5 · Hz. İbrahim 9 · Hz. Yusuf 10 · Hz. Süleyman 7 · Hz. Îsâ 8 — 512×512 kare PNG, çerçeve bekliyor). Kalan 142 rozet görseli bekliyor.
@@ -431,7 +432,7 @@ Hz. Yunus 5 · Hz. İbrahim 9 · Hz. Yusuf 10 · Hz. Süleyman 7 · Hz. Îsâ 8 
 |---|---|---:|---|---|---|---|
 | Hz. Âdem | `adem` | 8 | `hz-adem/bolum-1…8` | öğrenme, sorumluluk, tövbe, umut | ✅ Nihai (§2) | ✓ 8/8 |
 | Hz. Şît | `sit` | 4 | `hz-sit/bolum-1…4` | emanet, devamlılık, aile, doğruluk | ✅ Nihai (§2) | ✓ 4/4 |
-| Hz. İdrîs | `idris` | 4 | `hz-idris/bolum-1…4` | bilgi, doğruluk, sabır, emek | ✅ Nihai (§2) | — 0/4 |
+| Hz. İdrîs | `idris` | 4 | `hz-idris/bolum-1…4` | bilgi, doğruluk, sabır, emek | ✅ Nihai (§2) | ✓ 4/4 |
 | Hz. Nûh | `nuh` | 8 | `hz-nuh/bolum-1…8` | sabır, güven, tedbir, umut | ✅ Nihai (§2) | ✓ 8/8 |
 | Hz. Hûd | `hud` | 5 | `hz-hud/bolum-1…5` | tevazu, cesaret, doğruluk, sorumluluk | Bekliyor (K1) | — |
 | Hz. Sâlih | `salih` | 5 | `hz-salih/bolum-1…5` | emanet, ölçülülük, sözünde durma, saygı | Bekliyor (K1) | — |
@@ -511,10 +512,10 @@ Hz. Yunus 5 · Hz. İbrahim 9 · Hz. Yusuf 10 · Hz. Süleyman 7 · Hz. Îsâ 8 
 | Nihai rozet adı kayıtlı | 84 |
 | Geçici demo adı kayıtlı | 0 |
 | Ad bekleyen | 132 |
-| Üretilmiş rozet görseli | 80 |
-| Rozet görseli bekleyen | 136 |
+| Üretilmiş rozet görseli | 84 |
+| Rozet görseli bekleyen | 132 |
 
-Üretilmiş 80 görsel: `rozetler/hz-adem/bolum-1…8.png` ve
+Üretilmiş 84 görsel (20 Eki 2026'dan beri hepsi ortak çerçeveli; Âdem, Şît, Nûh ve İdrîs o gün yeniden üretildi): `rozetler/hz-adem/bolum-1…8.png` ve
 `rozetler/hz-sit/bolum-1…4.png` (11 Ağu 2026), `rozetler/hz-nuh/bolum-1…8.png`
 (13 Eki 2026) — 512×512 şeffaf PNG; `rozetler/hz-musa/bolum-1…10.png`
 (13 Eki 2026), `rozetler/hz-eyyub/bolum-1…5.png` (15 Eki 2026) ve

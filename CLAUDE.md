@@ -166,9 +166,9 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
   `scripts/odul-cerceveleri.mjs`. İç görsel çerçevesiz üretilip
   `gorsel-kaynaklari/` altına konur, `npm run odul-cerceve -- kitap {bookKey}`
   (ya da `-- unvan`) çerçeveyi çizip `public/`'e aynı adla yazar. Ödül PNG'si
-  `public/`'e elle konmaz; çerçeve değişecekse yalnız betik değişir. Âdem, Şît,
-  Nûh eski tek parça (çerçevesiz kaynakları yok); rota durağı çerçevesi hazır
-  ama ekrana girmedi (ilerleme halkası kararı açık).
+  `public/`'e elle konmaz; çerçeve değişecekse yalnız betik değişir. Yayındaki
+  12 kitabın hepsi bu çerçevede (20 Eki 2026); rota durağı çerçevesi hazır ama
+  ekrana girmedi (ilerleme halkası kararı açık).
 - **"Sen Olsaydın" salt metindir** (Karar 11 Tem 2026) — seçeneklerde görsel yok.
 - **Sesli anlatım her bölümde vardır (KARAR 12 Eki 2026 — PROJE-MODELI 6.5).** Yol
   `varlikYollari.ts:sesliAnlatim()` ile türetilir; `books.ts`'te ses alanı YOKTUR
