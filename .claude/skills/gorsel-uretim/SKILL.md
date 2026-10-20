@@ -56,8 +56,13 @@ kontrolü ve oturumun yapmadıkları). Ayrıca aynı belgenin §1 (isimlendirme)
 ## 4. Bitiş
 
 ```bash
+npm run gorsel-sikistir -- $ARGUMENTS
 npm run kitap-denetle -- $ARGUMENTS
 ```
+
+`gorsel-sikistir` yeni sahne görsellerinin sitedeki kopyasını 1600 px / kalite
+82'ye indirir (PROJE-MODELI 6.1); zaten küçük dosyaya dokunmaz. Tam boyutlu
+orijinali önce `gorsel-kaynaklari/kitaplar/` altına aynı yolla saklar.
 
 Dosyaların hâlâ yerinde olduğunu ve "Bilgi" bölümünde kaç sahnenin yer tutucu
 kaldığını gösterir. Hasan'a kısa özet: üretilen / reddedilip yeniden üretilen /

@@ -30,7 +30,7 @@ girer (PROJE-MODELI.md Bölüm 6.1 üretim akışı).
 | Bölüm başına sayı | 1 açılış + 5 sahne = **6** (alt sınır 5) — 12 Eki 2026 |
 | Kitap kapağı | `hz-{bookKey}/kapak.png` (dikey; kütüphane, kitap paneli, veli kartı) |
 | Harita durağı görseli | `hz-{bookKey}/harita-kapak.jpg` (kare; ana ekran rotasındaki yuvarlak durak) |
-| **Oran** | Okuma sayfası görselleri **16:9** (öneri: 1920×1080) |
+| **Oran** | Okuma sayfası görselleri **16:9** (üretim: 1920×1080; sitedeki kopya `npm run gorsel-sikistir` ile en fazla 1600×900 — PROJE-MODELI 6.1, 20 Eki 2026) |
 | **Uzantı** | **`.jpg`** — sabit. Sahneler fotoğrafiktir; JPEG aynı kalitede PNG'nin onda biri yer kaplar |
 | Ad biçimi | Küçük harf, Türkçe karaktersiz, tireli |
 | Dosya yoksa | Kod bozulmaz — `public/kitaplar/placeholder-sahne.jpg` yedeği devreye girer |
@@ -2073,7 +2073,7 @@ Kural üç maddedir:
 
 - **Bölümde kullanılacak her görsel AYRI dosyadır** — tek bir "bölüm görseli"
   yoktur. Bölüm açılışı (`kapak.jpg`) + akıştaki her sahne kendi adıyla kaydedilir.
-- **Sahne görselleri `.jpg`** (16:9, 1920×1080).
+- **Sahne görselleri `.jpg`** (16:9, 1920×1080 üretilir; sitede `npm run gorsel-sikistir` ile en fazla 1600×900).
 - **Rozet ve madalya AYRI adlarla `.png`** (512×512 şeffaf):
   `rozetler/hz-{key}/bolum-{n}.png` ve `madalyalar/hz-{key}.png`.
 
@@ -2196,7 +2196,10 @@ sicilin kitap bölümüne yazılır; standart değişecekse önce bu tablo günc
 2. **Bölüm bölüm ilerlenir;** her bölüm bitince Hasan'a gösterilir.
 3. **Sahne teknik işlemi:** gerekirse büyütme → 16:9 kırpma → **1920×1080
    `.jpg`** → yer tutucunun **üzerine aynı adla** yazma → boyut doğrulama
-   (`sips -g pixelWidth -g pixelHeight`).
+   (`sips -g pixelWidth -g pixelHeight`) → bölüm bitince **`npm run
+   gorsel-sikistir`** (sitedeki kopyayı 1600 px / kalite 82'ye indirir; zaten
+   küçük olana dokunmaz; tam boyutlu orijinali önce `gorsel-kaynaklari/kitaplar/`
+   altına aynı yolla saklar — 20 Eki 2026).
 4. **Rozet/madalya teknik işlemi:** 1:1 · 1.5K üretim → **arka plan kaldırılmaz**
    → orijinal ana dosya olarak `gorsel-kaynaklari/` altına kaydedilir →
    **`npm run odul-cerceve -- kitap {key}`** çalıştırılır: betik ortak çerçeveyi

@@ -12,6 +12,11 @@ type YedekliGorselProps = {
   width?: number;
   height?: number;
   className?: string;
+  /**
+   * "lazy": görsel ekrana yaklaşınca iner (okuma akışındaki sahneler —
+   * PROJE-MODELI 6.1, 20 Eki 2026). Varsayılan tarayıcının kendi davranışıdır.
+   */
+  loading?: "lazy" | "eager";
 };
 
 /**
@@ -28,6 +33,7 @@ export function YedekliGorsel({
   width,
   height,
   className = "",
+  loading,
 }: YedekliGorselProps) {
   const [kaynak, setKaynak] = useState(src);
   const [oncekiSrc, setOncekiSrc] = useState(src);
@@ -43,11 +49,15 @@ export function YedekliGorsel({
   }
 
   useEffect(() => {
+    // Tembel görsel henüz inmemişken de `naturalWidth` 0'dır; bazı tarayıcılarda
+    // `complete` da true döner ve görsel yanlışlıkla yedeğe düşerdi. Tembel
+    // görsel hydration'dan sonra iner, onError o zaman bağlıdır.
+    if (loading === "lazy") return;
     const img = ref.current;
     if (img && img.complete && img.naturalWidth === 0 && kaynak !== yedekSrc) {
       setKaynak(yedekSrc);
     }
-  }, [kaynak, yedekSrc]);
+  }, [kaynak, yedekSrc, loading]);
 
   const gorsel = (
     // eslint-disable-next-line @next/next/no-img-element
@@ -57,6 +67,8 @@ export function YedekliGorsel({
       alt={alt}
       width={width}
       height={height}
+      loading={loading}
+      decoding={loading === "lazy" ? "async" : undefined}
       onError={() => {
         if (kaynak !== yedekSrc) setKaynak(yedekSrc);
       }}

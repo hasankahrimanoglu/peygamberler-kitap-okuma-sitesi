@@ -151,7 +151,10 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
   `public/madalyalar/hz-{bookKey}.png` · `public/unvanlar/{anahtar}.png` ·
   `public/avatarlar/avatar-{1..10}.jpg` · `public/ikonlar/final-kapisi.svg` ·
   `public/sesli-anlatim/hz-{bookKey}/hz-{bookKey}-bolum-{n}.mp3`.
-  **Okuma sayfası görselleri 16:9 ve `.jpg`** (sabit). **Rozet/madalya/unvan
+  **Okuma sayfası görselleri 16:9 ve `.jpg`** (sabit); sitedeki kopya
+  `npm run gorsel-sikistir` ile en fazla 1600 px, kalite 82 (KARAR 20 Eki 2026 —
+  1920×1080 üretim dosyası ~700 KB'tan ~180 KB'a iner; orijinal
+  `gorsel-kaynaklari/kitaplar/`'da saklanır). **Rozet/madalya/unvan
   512×512 şeffaf PNG** (REVİZE 7 Ağu 2026 — eskiden SVG'ydi; ekranda en fazla
   72px çizildikleri için vektör avantajı karşılıksızdı, brifler ise gradyan ve
   doku istiyor). Yedek placeholder'lar ve `final-kapisi.svg` SVG kalır.

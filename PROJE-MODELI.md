@@ -1589,6 +1589,19 @@ public/
 - **Okuma sayfası görselleri 16:9'dur (KARAR 27 Tem 2026)** ve uzantı
   **`.jpg`'de sabittir** — sahneler fotoğrafiktir, JPEG aynı kalitede PNG'nin
   onda biri yer kaplar. Kitap kapağı dikey olduğu için bu orana tabi değildir.
+- **Sitedeki kopya sıkıştırılır (KARAR 20 Ekim 2026, Hasan).** `public/kitaplar`
+  altındaki `.jpg`'ler en fazla **1600 px** genişlikte, mozjpeg **kalite 82**
+  ile tutulur: `npm run gorsel-sikistir`. Okuma sütunu en fazla 720 px olduğu
+  için retina tablette gereken ~1440 px'tir; 1920×1080 üretim dosyası 600–800
+  KB'tan ~180 KB'a iner, gözle fark görülmez (Hasan karşılaştırmayla onayladı).
+  Bir bölüm açılışında inen görsel ~4 MB'tan ~1 MB'a düştü. Betik yalnız
+  1600 px'ten geniş ya da 300 KB'tan ağır dosyaya dokunur; sıkıştırılmışı
+  yeniden sıkıştırmaz. Görsel üretim oturumu yeni görseli aynı adla yazdıktan
+  sonra betiği çalıştırır. **Orijinaller saklanır (Hasan):** betik sıkıştırmadan
+  önce tam boyutlu dosyayı `gorsel-kaynaklari/kitaplar/` altına aynı göreli
+  yolla kopyalar (git'e girmez); 20 Eki 2026'daki ilk turun 467 orijinali de
+  oradadır (git'teki hâliyle bayt bayt doğrulandı). Okuma ekranında ilk görsel
+  dışındakiler tembel yüklenir (`loading="lazy"`).
 - **Harita durağı görseli kapaktan AYRIDIR (KARAR 8 Ağustos 2026, Hasan).**
   Atlas haritasındaki yuvarlak madalyon `harita-kapak.jpg` dosyasını kullanır;
   dikey kapak 70px'lik daireye `object-fit: cover` ile sığdırılınca kompozisyonun
@@ -2278,6 +2291,16 @@ Kurallar:
 - [x] Düzeltme: 10 soruluk kitaplarda (Hz. Yusuf, Hz. Musa) sonuçtaki 10
       yıldızlı satır telefonda kartı ekrandan genişletiyordu (390 px ekranda
       412 px kart); noktalar dar ekranda 22 px'e kadar küçülür, tablette 30 px.
+
+### 20 Ekim 2026 (okuma görselleri sıkıştırıldı — Hasan onayı, bkz. 6.1)
+
+- [x] 513 sahne görseli ortalama 628 KB ve 1920 px'ti; bir bölüm açılınca
+      hepsi aynı anda iniyordu (Hz. Musa 3. bölüm 4 MB). Hasan dört görselin
+      tablet boyutundaki öncesi/sonrası karşılaştırmasını onayladı: 1600 px,
+      mozjpeg kalite 82. 467 görsel sıkıştırıldı (314,5 → 86,9 MB); 30 yer
+      tutucu ve 14 küçük dosyaya dokunulmadı. Sahneler tembel yüklenir.
+- [x] Orijinaller `gorsel-kaynaklari/kitaplar/`'da (Hasan: "eski orijinal
+      fotoğrafları bir yerde sakla"); betik bundan sonra da önce yedekler.
 
 ### 20 Ekim 2026 (giriş sayfası yenilendi — Hasan onayı, bkz. 5.2 `/login`)
 

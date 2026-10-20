@@ -142,6 +142,7 @@ function AkisBlogu({
             width={800}
             height={450}
             className={styles.sahneResmi}
+            loading="lazy"
           />
           {block.caption ? <figcaption>{block.caption}</figcaption> : null}
         </div>
