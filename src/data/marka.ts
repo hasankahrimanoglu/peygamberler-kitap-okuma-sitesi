@@ -24,7 +24,8 @@ export const MARKA = {
   iletisimEposta: "[iletisim@alanadi.com]",
   /**
    * Veliye giden e-postalara verilen yanıtların gideceği adres (reply-to).
-   * Alan adı gelene kadar Hasan'ın adresi (20 Eki 2026); sonra iletisimEposta.
+   * Alan adı gelene kadar projenin Gmail hesabı (Hasan, 20 Eki 2026); sonra
+   * iletisimEposta.
    */
-  yanitEposta: "hasankahrimanoglu@gmail.com",
+  yanitEposta: "peygamberlerkesifdunyasi@gmail.com",
 } as const;

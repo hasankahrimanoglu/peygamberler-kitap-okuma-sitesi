@@ -1871,10 +1871,13 @@ göstermiyordu: RLS açıktı, kurallar fazla genişti.
 - **E-postalar** (`src/lib/odeme/epostaSablonlari.ts`, Türkçe, kodda): hoş
   geldin (şifre belirle), paket güncellendi, şifre belirleme bağlantısı;
   Resend ile gider, yanıtlar `MARKA.yanitEposta`'ya (alan adı gelene kadar
-  Hasan'ın adresi). Supabase'in kendi e-posta sistemi KULLANILMAZ. Önizleme:
+  projenin Gmail hesabı `peygamberlerkesifdunyasi@gmail.com`; Resend hesabı
+  da bu adrestedir, test modunda yalnız buraya gönderir). Supabase'in kendi
+  e-posta sistemi KULLANILMAZ. Önizleme:
   `/tasarim/epostalar`.
 - **Elden satış (WhatsApp, havale/EFT):** `/yonetim` — yalnız `yoneticiler`
-  tablosundaki e-postayla girilir, sitede bağlantısı yoktur. Yönetici ödemeyi
+  tablosundaki e-postalarla girilir (Hasan'ın Gmail'i ve projenin Gmail
+  hesabı), sitede bağlantısı yoktur. Yönetici ödemeyi
   kontrol edip e-posta + paket girer; aynı çekirdek çalışır, bağlantı
   kopyalanıp WhatsApp'tan da gönderilebilir. Son 50 sipariş (bütün kaynaklar)
   listelenir, "Yeni bağlantı" üretilir. Önizleme: `/tasarim/yonetim`.
@@ -2170,8 +2173,9 @@ Kurallar:
       bakılıyordu.
 - [x] Kararlar (Hasan): profil hakkı küçülmez; bağlantı 24 saat; Shopier
       deneme bildirimi hesap açmaz; ödeme sisteminden bağımsız katmanlı yapı
-      (ileride iyzico/PayTR); elden satış için yönetim sayfası (yönetici
-      Hasan); e-posta yanıtları şimdilik Hasan'ın adresine.
+      (ileride iyzico/PayTR); elden satış için yönetim sayfası (yöneticiler:
+      Hasan'ın Gmail'i ve projenin Gmail hesabı); e-posta yanıtları
+      şimdilik projenin Gmail hesabına.
 - [x] Alan adı şimdilik şart değil: kod alan adından bağımsız; gerçek veliye
       e-posta için Resend'de doğrulanmış alan adı satışa açılırken gerekir.
 

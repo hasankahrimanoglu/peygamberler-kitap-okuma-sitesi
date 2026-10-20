@@ -65,7 +65,8 @@ create table if not exists public.yoneticiler (
   eposta text primary key check (eposta = lower(eposta)),
   eklendi timestamptz not null default now()
 );
-insert into public.yoneticiler (eposta) values ('hasankahrimanoglu@gmail.com')
+insert into public.yoneticiler (eposta)
+values ('hasankahrimanoglu@gmail.com'), ('peygamberlerkesifdunyasi@gmail.com')
 on conflict (eposta) do nothing;
 
 alter table public.siparisler enable row level security;
