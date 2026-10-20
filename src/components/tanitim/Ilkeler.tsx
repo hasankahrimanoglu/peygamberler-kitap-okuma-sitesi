@@ -42,7 +42,7 @@ const ILKELER: { ikon: IkonAdi; baslik: string; metin: string }[] = [
     ikon: "hesap",
     baslik: "Güvenli alan",
     metin:
-      "Çocuk hesabını veli açar. Mesajlaşma, yorum ya da başka kullanıcılarla etkileşim yoktur; çocuk yalnızca kendi yolculuğunu görür.",
+      "Çocuk profilini veli kendi hesabından açar. Mesajlaşma, yorum ya da başka kullanıcılarla etkileşim yoktur; çocuk yalnızca kendi yolculuğunu görür.",
   },
 ];
 

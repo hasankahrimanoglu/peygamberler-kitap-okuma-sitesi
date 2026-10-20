@@ -54,7 +54,7 @@ export const GIZLILIK_POLITIKASI: YasalBelge = {
     {
       baslik: "Çocukların gizliliği",
       icerik: [
-        "Hizmet 8–11 yaş çocukların veli gözetiminde kullanması için tasarlanmıştır. Çocuk hesabını yalnızca veli açabilir, düzenleyebilir ve silebilir. Çocuk profilinde dış bağlantı, reklam veya satın alma teklifi gösterilmez.",
+        "Hizmet 8–11 yaş çocukların veli gözetiminde kullanması için tasarlanmıştır. Çocuğun ayrı bir hesabı yoktur; çocuk profilini yalnızca veli kendi hesabından açabilir, düzenleyebilir ve silebilir. Çocuk profilinde dış bağlantı, reklam veya satın alma teklifi gösterilmez.",
       ],
     },
     {
