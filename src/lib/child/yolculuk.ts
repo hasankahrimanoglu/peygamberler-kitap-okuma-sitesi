@@ -8,6 +8,7 @@
  * ortaktır (`derive.ts:yayindakiKitaplar`). Kitaplar arasında kilit yoktur
  * (3.10.2); kilit yalnız kitap içindeki bölümlerde ve finaldedir.
  */
+import type { DurakRengi } from "../../data/atlasCatalog";
 import { quizConfig } from "../../data/quizzes";
 import {
   katalogKitaplari,
@@ -45,6 +46,8 @@ export type YolculukKitabi = {
   /** Final testi yoksa null (soruları henüz `quizzes.ts`'te değil). */
   finalYolu: string | null;
   madalyaAdi: string;
+  /** Rota durağının bant rengi (katalogdaki `durakRengi`; boşsa mavi). */
+  durakRengi: DurakRengi;
 };
 
 export type SiradakiAdim =
@@ -81,6 +84,7 @@ export function yolculukKitaplari(
         sonOkuma,
         finalYolu: quizConfig[katalog.key] ? `/quiz/${katalog.key}` : null,
         madalyaAdi: `${katalog.title} Yolculuk Madalyası`,
+        durakRengi: katalog.durakRengi ?? "mavi",
       };
     },
   );

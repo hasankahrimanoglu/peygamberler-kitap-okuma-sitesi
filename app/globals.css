@@ -7,6 +7,16 @@
   /* Hata/silme rengi; Tailwind'deki `tehlike` ile aynı değer, birlikte değişir.
      İki temada da aynıdır. CSS modülleri (okuma ekranı) bu değişkeni kullanır. */
   --tehlike: #c0392b;
+  /* Rota durağının mine bandı — kitabın `durakRengi` alanı (atlasCatalog.ts).
+     Durak görseli iki temada aynı olduğu için renkler de aynıdır
+     (PROJE-MODELI 3.10.1, 6.1). */
+  --durak-mavi: #1867d6;
+  --durak-kirmizi: #c63131;
+  --durak-yesil: #2a8a5c;
+  --durak-mor: #7442ca;
+  --durak-turkuaz: #0f98a8;
+  --durak-gul: #d2578c;
+  --durak-krem: #e3c98f;
 }
 
 /*

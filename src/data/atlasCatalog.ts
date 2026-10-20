@@ -1,5 +1,12 @@
 export type AtlasAvailability = "published" | "demo" | "preparing";
 
+/**
+ * Rota durağının mine bandının rengi (PROJE-MODELI 3.10.1, 6.1). Yalnız yayına
+ * alınırken verilir; rotadaki iki komşu yayındaki duraktan farklı seçilir ve sonra
+ * değişmez. Krem yalnız Hz. Muhammed'in kitaplarına ayrılmıştır.
+ */
+export type DurakRengi = "mavi" | "kirmizi" | "yesil" | "mor" | "turkuaz" | "gul" | "krem";
+
 export type AtlasCatalogBook = {
   order: number;
   key: string;
@@ -27,6 +34,8 @@ export type AtlasCatalogBook = {
    * seçilir, tarih vaat etmez (PROJE-MODELI 3.10.1).
    */
   vitrin?: boolean;
+  /** Durak bandının rengi — bkz. `DurakRengi`. Yayındaki her kitapta dolu olur. */
+  durakRengi?: DurakRengi;
 };
 
 export type AtlasRegion = {
@@ -47,10 +56,10 @@ export const atlasRegions: AtlasRegion[] = [
     description: "Yeryüzünün ilk zamanlarına adım at; insanların yaşamayı, öğrenmeyi, sorumluluk almayı ve yeniden umut etmeyi nasıl keşfettiğini gör.",
     mood: "Başlangıç ve merak",
     books: [
-      { order: 1, key: "adem", title: "Hz. Âdem", subtitle: "İlk insan, ilk yolculuk", description: "Hz. Âdem'in yaratılışını, bilgiyle değer kazanmasını, tövbesini, ailesindeki ilk büyük sınavı ve yeryüzündeki sorumluluk yolculuğunu anlatan umut dolu bir keşif.", chapterCount: 8, availability: "published", yayinTarihi: "2026-07-15" },
-      { order: 2, key: "sit", title: "Hz. Şît", subtitle: "Emaneti büyüterek taşımak", description: "Bir kaybın ardından gelen armağan, yıllar süren sabırlı bir emek ve babasından devraldığı emanet. Hz. Şît'in taş üstüne taş koyan yolculuğunu keşfet.", chapterCount: 4, availability: "published", yayinTarihi: "2026-09-05" },
-      { order: 3, key: "idris", title: "Hz. İdrîs", subtitle: "Öğrenen ve öğreten bir ömür", description: "Yıldızları, taşları ve iplikleri merak eden bir peygamberin izini sür; öğrenmenin, sabrın ve vazgeçmeyen emeğin ne demek olduğunu keşfet.", chapterCount: 4, availability: "published", yayinTarihi: "2026-09-05" },
-      { order: 4, key: "nuh", title: "Hz. Nûh", subtitle: "Sabır ve güven yolculuğu", description: "Yüzyıllarca sabırla çağıran bir peygamberin yanında dur; alaylara rağmen yapılan gemiyle güvenin, şükrün ve yeniden başlamanın anlamını keşfet.", chapterCount: 8, availability: "published", yayinTarihi: "2026-10-12" },
+      { order: 1, key: "adem", title: "Hz. Âdem", subtitle: "İlk insan, ilk yolculuk", description: "Hz. Âdem'in yaratılışını, bilgiyle değer kazanmasını, tövbesini, ailesindeki ilk büyük sınavı ve yeryüzündeki sorumluluk yolculuğunu anlatan umut dolu bir keşif.", chapterCount: 8, durakRengi: "mavi", availability: "published", yayinTarihi: "2026-07-15" },
+      { order: 2, key: "sit", title: "Hz. Şît", subtitle: "Emaneti büyüterek taşımak", description: "Bir kaybın ardından gelen armağan, yıllar süren sabırlı bir emek ve babasından devraldığı emanet. Hz. Şît'in taş üstüne taş koyan yolculuğunu keşfet.", chapterCount: 4, durakRengi: "kirmizi", availability: "published", yayinTarihi: "2026-09-05" },
+      { order: 3, key: "idris", title: "Hz. İdrîs", subtitle: "Öğrenen ve öğreten bir ömür", description: "Yıldızları, taşları ve iplikleri merak eden bir peygamberin izini sür; öğrenmenin, sabrın ve vazgeçmeyen emeğin ne demek olduğunu keşfet.", chapterCount: 4, durakRengi: "yesil", availability: "published", yayinTarihi: "2026-09-05" },
+      { order: 4, key: "nuh", title: "Hz. Nûh", subtitle: "Sabır ve güven yolculuğu", description: "Yüzyıllarca sabırla çağıran bir peygamberin yanında dur; alaylara rağmen yapılan gemiyle güvenin, şükrün ve yeniden başlamanın anlamını keşfet.", chapterCount: 8, durakRengi: "mor", availability: "published", yayinTarihi: "2026-10-12" },
       { order: 5, key: "hud", title: "Hz. Hûd", subtitle: "Gücün karşısında doğru söz", chapterCount: 5, availability: "preparing" },
       { order: 6, key: "salih", title: "Hz. Sâlih", subtitle: "Emaneti koruyanlar", chapterCount: 5, availability: "preparing" },
     ],
@@ -62,12 +71,12 @@ export const atlasRegions: AtlasRegion[] = [
     description: "Bir ailenin farklı zamanlara ve ülkelere uzanan yolunda güveni, misafirperverliği, sabrı ve bağışlamayı keşfet.",
     mood: "Aile ve güven",
     books: [
-      { order: 7, key: "ibrahim", title: "Hz. İbrahim", subtitle: "Hakikati arayan kalp", description: "Batan yıldızlardan hiç batmayan Rabbe, ateşin ortasındaki esenlikten misafire açılan kapıya uzanan yolculukta Hz. İbrahim'in güvenini keşfet.", chapterCount: 9, availability: "published", yayinTarihi: "2026-10-17" },
+      { order: 7, key: "ibrahim", title: "Hz. İbrahim", subtitle: "Hakikati arayan kalp", description: "Batan yıldızlardan hiç batmayan Rabbe, ateşin ortasındaki esenlikten misafire açılan kapıya uzanan yolculukta Hz. İbrahim'in güvenini keşfet.", chapterCount: 9, durakRengi: "turkuaz", availability: "published", yayinTarihi: "2026-10-17" },
       { order: 8, key: "lut", title: "Hz. Lût", subtitle: "Zor zamanda doğruyu korumak", chapterCount: 5, availability: "preparing" },
-      { order: 9, key: "ismail", title: "Hz. İsmail", subtitle: "Sözüne sadık, sabırlı oğul", description: "Issız bir vadide kaynayan sudan Allah'ın evinin taşlarına uzanan yolculukta Hz. İsmail'in sabrını, el birliğini ve sözüne sadakatini keşfet.", chapterCount: 6, availability: "published", yayinTarihi: "2026-10-17" },
+      { order: 9, key: "ismail", title: "Hz. İsmail", subtitle: "Sözüne sadık, sabırlı oğul", description: "Issız bir vadide kaynayan sudan Allah'ın evinin taşlarına uzanan yolculukta Hz. İsmail'in sabrını, el birliğini ve sözüne sadakatini keşfet.", chapterCount: 6, durakRengi: "gul", availability: "published", yayinTarihi: "2026-10-17" },
       { order: 10, key: "ishak", title: "Hz. İshak", subtitle: "Bereketli bir emanet", chapterCount: 4, availability: "preparing" },
       { order: 11, key: "yakup", title: "Hz. Yakup", subtitle: "Umudu koruyan baba", chapterCount: 5, availability: "preparing" },
-      { order: 12, key: "yusuf", title: "Hz. Yusuf", subtitle: "Sabırdan bağışlamaya", description: "Bir rüyayla başlayan, kuyudan zindana, oradan kavuşmaya uzanan yolculukta Hz. Yusuf'la sabrı, iffeti, güvenilirliği ve affetmeyi keşfet.", chapterCount: 10, availability: "published", yayinTarihi: "2026-10-17" },
+      { order: 12, key: "yusuf", title: "Hz. Yusuf", subtitle: "Sabırdan bağışlamaya", description: "Bir rüyayla başlayan, kuyudan zindana, oradan kavuşmaya uzanan yolculukta Hz. Yusuf'la sabrı, iffeti, güvenilirliği ve affetmeyi keşfet.", chapterCount: 10, durakRengi: "mavi", availability: "published", yayinTarihi: "2026-10-17" },
     ],
   },
   {
@@ -77,10 +86,10 @@ export const atlasRegions: AtlasRegion[] = [
     description: "Zorlu günlerde umudunu koruyan, haksızlığa karşı doğruyu söyleyen ve insanları güvenli bir yola çağıran elçilerle ilerle.",
     mood: "Sabır ve cesaret",
     books: [
-      { order: 13, key: "eyyub", title: "Hz. Eyyûb", subtitle: "Zorlukta umudu korumak", description: "Bereketli günlerden zorlu günlere, oradan Hz. Eyyûb'un ayağının altında kaynayan pınara uzanan yolculukta sabrın, vefanın ve şükrün anlamını keşfet.", chapterCount: 5, availability: "published", yayinTarihi: "2026-10-15" },
+      { order: 13, key: "eyyub", title: "Hz. Eyyûb", subtitle: "Zorlukta umudu korumak", description: "Bereketli günlerden zorlu günlere, oradan Hz. Eyyûb'un ayağının altında kaynayan pınara uzanan yolculukta sabrın, vefanın ve şükrün anlamını keşfet.", chapterCount: 5, durakRengi: "kirmizi", availability: "published", yayinTarihi: "2026-10-15" },
       { order: 14, key: "suayb", title: "Hz. Şuayb", subtitle: "Ölçüde ve sözde doğruluk", chapterCount: 5, availability: "preparing" },
       { order: 15, key: "zulkifl", title: "Hz. Zülkifl", subtitle: "Sözünü koruyan yolcu", chapterCount: 4, availability: "preparing" },
-      { order: 16, key: "musa", title: "Hz. Musa", subtitle: "Özgürlüğe uzanan yol", description: "Nehre bırakılan bir sandıktan denizde açılan yola uzanan yolculukta, korkuya rağmen doğruyu seçmenin ve Allah'a güvenmenin anlamını keşfet.", chapterCount: 10, availability: "published", yayinTarihi: "2026-10-13" },
+      { order: 16, key: "musa", title: "Hz. Musa", subtitle: "Özgürlüğe uzanan yol", description: "Nehre bırakılan bir sandıktan denizde açılan yola uzanan yolculukta, korkuya rağmen doğruyu seçmenin ve Allah'a güvenmenin anlamını keşfet.", chapterCount: 10, durakRengi: "yesil", availability: "published", yayinTarihi: "2026-10-13" },
       { order: 17, key: "harun", title: "Hz. Hârûn", subtitle: "Kardeşine destek olan elçi", chapterCount: 5, availability: "preparing" },
       { order: 18, key: "yusa", title: "Hz. Yûşa", subtitle: "Devralınan büyük emanet", chapterCount: 4, availability: "preparing" },
     ],
@@ -93,7 +102,7 @@ export const atlasRegions: AtlasRegion[] = [
     mood: "Hikmet ve adalet",
     books: [
       { order: 19, key: "davud", title: "Hz. Dâvûd", subtitle: "Cesaret ve adalet", chapterCount: 6, availability: "preparing" },
-      { order: 20, key: "suleyman", title: "Hz. Süleyman", subtitle: "Şükürle büyüyen hikmet", description: "Bir bağ davasından karınca vadisine, kayıp bir kuştan billur bir köşke uzanan yolculukta Hz. Süleyman'ın hikmetini, adaletini ve şükrünü keşfet.", chapterCount: 7, availability: "published", yayinTarihi: "2026-10-17" },
+      { order: 20, key: "suleyman", title: "Hz. Süleyman", subtitle: "Şükürle büyüyen hikmet", description: "Bir bağ davasından karınca vadisine, kayıp bir kuştan billur bir köşke uzanan yolculukta Hz. Süleyman'ın hikmetini, adaletini ve şükrünü keşfet.", chapterCount: 7, durakRengi: "mor", availability: "published", yayinTarihi: "2026-10-17" },
       { order: 21, key: "ilyas", title: "Hz. İlyas", subtitle: "Doğru sözü korumak", chapterCount: 5, availability: "preparing" },
       { order: 22, key: "elyesa", title: "Hz. Elyesa", subtitle: "İyilik yolunu sürdürmek", chapterCount: 4, availability: "preparing" },
     ],
@@ -105,11 +114,11 @@ export const atlasRegions: AtlasRegion[] = [
     description: "Zor anlarda edilen duaların, şefkatli kalplerin ve yeniden başlamanın ışığını takip et.",
     mood: "Umut ve merhamet",
     books: [
-      { order: 23, key: "yunus", title: "Hz. Yunus", subtitle: "Duayla yeniden başlamak", description: "Büyük bir şehre çağrıdan karanlıklar içindeki duaya, ıssız bir kıyıdaki gölgeden eve dönüşe uzanan yolculukta sorumluluğu, tövbeyi ve umudu keşfet.", chapterCount: 5, availability: "published", yayinTarihi: "2026-10-16" },
+      { order: 23, key: "yunus", title: "Hz. Yunus", subtitle: "Duayla yeniden başlamak", description: "Büyük bir şehre çağrıdan karanlıklar içindeki duaya, ıssız bir kıyıdaki gölgeden eve dönüşe uzanan yolculukta sorumluluğu, tövbeyi ve umudu keşfet.", chapterCount: 5, durakRengi: "turkuaz", availability: "published", yayinTarihi: "2026-10-16" },
       { order: 24, key: "saya", title: "Hz. Şa‘yâ", subtitle: "Zor zamanda umut taşımak", chapterCount: 4, availability: "preparing" },
       { order: 25, key: "zekeriyya", title: "Hz. Zekeriyyâ", subtitle: "Sabırla edilen dua", chapterCount: 5, availability: "preparing" },
       { order: 26, key: "yahya", title: "Hz. Yahyâ", subtitle: "Temiz kalp ve hikmet", chapterCount: 4, availability: "preparing" },
-      { order: 27, key: "isa", title: "Hz. Îsâ", subtitle: "Merhamet ve umut", description: "Mabette gelen bir müjdeden hurma ağacının dibine, çamurdan bir kuştan herkes için edilen duaya uzanan yolculukta merhametin, umudun ve tek Rabbe güvenin anlamını keşfet.", chapterCount: 8, availability: "published", yayinTarihi: "2026-10-17" },
+      { order: 27, key: "isa", title: "Hz. Îsâ", subtitle: "Merhamet ve umut", description: "Mabette gelen bir müjdeden hurma ağacının dibine, çamurdan bir kuştan herkes için edilen duaya uzanan yolculukta merhametin, umudun ve tek Rabbe güvenin anlamını keşfet.", chapterCount: 8, durakRengi: "gul", availability: "published", yayinTarihi: "2026-10-17" },
     ],
   },
   {

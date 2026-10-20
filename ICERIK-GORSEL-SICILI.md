@@ -1898,6 +1898,16 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 > "içinden ışık yükselen açık bir el" figür kuralına takıldığı için eski rozetteki
 > gibi **durgun suda ışık yükselen taş** çizildi. **Şît 4**: "elden ele geçen anahtar"
 > el çizilmeden, katlanmış bezin üstünde parlayan anahtar olarak çizildi.
+>
+> **20 Eki 2026 — rota durağı ortak halkaya geçti (PROJE-MODELI 3.10.1, 6.1).**
+> Ekrandaki dosya artık `kitaplar/hz-{key}/harita-durak.png`'dir
+> (`npm run odul-cerceve -- durak {key}`; mine bandı şeffaf, renk ve ilerleme
+> CSS'ten). 12 yayındaki kitabın iç sahnesi `gorsel-kaynaklari/duraklar/hz-{key}.jpg`
+> olarak eski `harita-kapak.jpg`'lerin iç dairesinden kırpıldı; **geçicidir**
+> (Hasan yeniden hazırlayacak). Yenilenirken dikkat: **Âdem** (Arapça "Âdem")
+> ve **İdrîs** ("bilgi doğruluk") durak sahnelerinde **yazı var** — görsel
+> kuralına aykırı, yeni sahnelerde yazı olmaz. `harita-kapak.jpg` ekranda
+> kullanılmaz, arşiv olarak durur.
 
 | Varlık | Dosya | Durum |
 |---|---|---|

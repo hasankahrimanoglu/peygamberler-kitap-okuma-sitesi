@@ -759,6 +759,14 @@ testi henüz yapılmadı; kararlar gözlem ve ölçüme dayanır.
   diğerleri 72 px; masaüstü 112 / 86 px) ve hafifçe nabız atar. Yeni kitapta
   altın "Yeni" etiketi. Her durağın altında krem ad levhası ve tek satır durum:
   "Tamamlandı", "4 bölümün 1'i", "8 bölüm".
+  **REVİZE — 20 Ekim 2026 (Hasan): çerçeveli durak.** Durak, ödül ailesinin
+  halka çerçevesini taşır (altın kenarlar, dört mavi taş, yıldızlar, iki küçük
+  kitap; 6.1 "Ortak ödül çerçevesi"). İlerleme çubuğu artık **çerçevenin mine
+  bandıdır**: bant tepeden başlayıp saat yönünde altınla dolar, kalanı kitabın
+  **durak rengini** taşır. Biten kitapta bant tam altın, köşede madalya durur.
+  Dört taş bandı dörde böler (çeyrek işareti). Ölçüler, nabız, "Yeni" etiketi
+  ve levha aynen kalır; görselin krem kenarlığı, dairesel kırpması ve ayrı
+  ilerleme halkası kalkar. Renkler ve dağıtım kuralı 6.1'dedir.
 - **Işık izi (KARAR — 12 Ekim 2026, Hasan):** okunan yol **altın ışıkla**
   parlar, okunmamış yol krem kalır (eskiden okunan yol yeşildi). Ekranın imzası
   budur: çocuk ne kadar yol aldığını sayıya bakmadan görür; Işıl ve "Işık
@@ -1589,6 +1597,17 @@ public/
   şeffaflık gerekmez. Dosya yoksa ekran kitap kapağı yedeğine düşer, kod
   bozulmaz. Kapak (`kapak.png`) kütüphanede, kitap panelinde, bölüm rotasında
   ve veli kartında kullanılmaya devam eder.
+  **REVİZE — 20 Ekim 2026 (Hasan):** ekranda çizilen dosya artık
+  `kitaplar/hz-{bookKey}/harita-durak.png`'dir — 512×512 şeffaf PNG, iç sahne +
+  ortak halka çerçeve, **mine bandın yeri şeffaf**
+  (`npm run odul-cerceve -- durak {bookKey}`). Bandın rengi ve ilerlemesi CSS'ten
+  gelir; bu yüzden kitap başına tek görsel yeter, renk değişse de yeniden üretim
+  gerekmez. İç sahne çerçevesiz kare olarak
+  `gorsel-kaynaklari/duraklar/hz-{bookKey}.jpg`'de durur. 20 Ekim 2026'daki
+  kaynaklar eski `harita-kapak.jpg`'lerin iç dairesinden kırpılmıştır ve
+  geçicidir; Hasan yeni sahneyi aynı adla koyup betiği çalıştırır.
+  `harita-kapak.jpg` dosyaları artık ekranda kullanılmaz (kaynak arşivi olarak
+  durur). `harita-durak.png` yoksa ekran durak yedeğine düşer.
 - **Rozet, madalya ve unvan PNG'dir — 512×512, şeffaf zemin (REVİZE 7 Ağustos
   2026, Hasan).** Önceki karar SVG'ydi; üç gerekçeyle değiştirildi:
   - **Ölçek avantajı karşılıksız.** Bu görseller ekranda en fazla **72px**
@@ -1630,12 +1649,17 @@ public/
     hepsi bu çerçevededir. Âdem, Şît ve Nûh'un eski tek parça çerçeveli
     görselleri ile İdrîs'in yer tutucuları 20 Eki 2026'da çerçevesiz kare olarak
     yeniden üretildi (kırpma yerine — Hasan); böylece set tek çizim dilindedir.
-  - **Rota durağı çerçevesi (AÇIK KARAR):** aynı aileden halka çerçeve ve renk
-    paleti (mavi · yeşil · kırmızı · mor · krem "özel") betikte hazırdır;
-    öneri her kitaba rota sırasında döngülü renk. Ekrana **girmedi:** durak
-    bileşeni görseli daireye kırpıyor ve çevresinde kitap ilerlemesi halkası
-    var; çerçeveli görsel için bileşen değişmeli ve ilerleme göstergesinin yeri
-    (öneri: mavi bandın okundukça altınla dolması) kararlaştırılmalı.
+  - **Rota durağı (KARAR — 20 Ekim 2026, Hasan):** halka çerçeve + şeffaf mine
+    bant + CSS ilerlemesi (3.10.1). **Durak renkleri altıdır:** mavi · kırmızı ·
+    yeşil · mor · turkuaz · gül; **krem** yalnız Hz. Muhammed'in dört kitabına
+    ayrılmıştır. Turuncu ve sarı kullanılmaz (ilerlemenin altınıyla karışır),
+    lacivert maviye, zeytin yeşile fazla yakındır. Renk `atlasCatalog.ts`'te
+    kitabın `durakRengi` alanıdır; **yalnız yayına alınırken verilir, rotadaki
+    iki komşu yayındaki duraktan farklı seçilir ve sonra değişmez** (çocuğun
+    kitabının rengi kaymaz). Renk değerleri `globals.css`'te `--durak-*`
+    token'larıdır. İlk dağıtım: Âdem mavi · Şît kırmızı · İdrîs yeşil · Nûh mor ·
+    İbrahim turkuaz · İsmail gül · Yusuf mavi · Eyyûb kırmızı · Musa yeşil ·
+    Süleyman mor · Yunus turkuaz · Îsâ gül.
 - **Çocuk profili fotoğrafı `public/` altında DEĞİLDİR (KARAR 8 Ağustos 2026,
   Hasan).** Hazır avatar seti (`public/avatarlar/avatar-{1..10}.jpg`) yerinde
   kalır; veli isterse üzerine kendi fotoğrafını yükler. Fotoğraf kullanıcı

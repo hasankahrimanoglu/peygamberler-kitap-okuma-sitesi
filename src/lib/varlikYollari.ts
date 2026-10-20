@@ -46,11 +46,14 @@ export function kitapKapagi(bookKey: string) {
  * kitap adı okunmuyordu. Durak madalyonu artık AYRI bir görseldir: kare
  * kadrajlı, dairede tam görünecek biçimde hazırlanır.
  *
- * Biçim JPG'dir — daire maskesini CSS çiziyor, şeffaflık gerekmiyor.
- * Dosya yoksa ekran `YEDEK.kitapKapagi`na düşer, kod bozulmaz.
+ * REVİZE 20 Eki 2026 (PROJE-MODELI 3.10.1, 6.1): görsel iç sahne + ortak halka
+ * çerçevedir; 512×512 şeffaf PNG, mine bandın yeri şeffaf. Bandın rengi ve
+ * ilerlemesi CSS'ten gelir. Üreten: `npm run odul-cerceve -- durak {bookKey}`.
+ * Eski `harita-kapak.jpg` ekranda kullanılmaz. Dosya yoksa ekran `YEDEK.durak`a
+ * düşer, kod bozulmaz.
  */
 export function haritaDuragiGorseli(bookKey: string) {
-  return `${kitapKlasoru(bookKey)}/harita-kapak.jpg`;
+  return `${kitapKlasoru(bookKey)}/harita-durak.png`;
 }
 
 export function bolumKlasoru(bookKey: string, bolumNo: number) {

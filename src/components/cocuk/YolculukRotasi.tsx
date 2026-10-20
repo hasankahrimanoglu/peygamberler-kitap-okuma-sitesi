@@ -229,6 +229,7 @@ export function YolculukRotasi({
                       top: nokta.y,
                       "--jeton": `${simdi ? o.simdi : o.jeton}px`,
                       "--doluluk": `${doluluk}%`,
+                      "--durak-rengi": `var(--durak-${kitap.durakRengi})`,
                     } as CSSProperties
                   }
                   aria-label={`${kitap.ad}: ${durum}${kitap.yeni ? ", yeni kitap" : ""}`}
@@ -236,6 +237,7 @@ export function YolculukRotasi({
                   onClick={() => onSec(kitap.key)}
                 >
                   <span className={styles.halka}>
+                    <span className={styles.durakBandi} aria-hidden="true" />
                     <YedekliGorsel
                       src={haritaDuragiGorseli(kitap.key)}
                       yedekSrc={YEDEK.durak}

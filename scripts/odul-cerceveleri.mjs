@@ -1,14 +1,16 @@
 // Ödül çerçeveleri — rozet (kalkan), madalya (defneli halka), unvan (kitap temalı)
-// ve rota durağı (halka; henüz ekranda kullanılmıyor) kodla çizilir.
+// ve rota durağı (halka; mine bandı şeffaf) kodla çizilir.
 // İç görsel çerçevesiz kaynaktan gelir, çerçeve üstüne konur; çıktı 512×512 şeffaf PNG.
 // Karar: PROJE-MODELI 6.1 "Ortak ödül çerçevesi" (20 Eki 2026).
 //
 //   npm run odul-cerceve -- kitap ibrahim        → rozetler/hz-ibrahim/bolum-*.png + madalyalar/hz-ibrahim.png
+//   npm run odul-cerceve -- durak ibrahim        → kitaplar/hz-ibrahim/harita-durak.png (bandı şeffaf)
 //   npm run odul-cerceve -- unvan                → bütün unvanlar
 //   npm run odul-cerceve -- unvan bilge-yolcu    → tek unvan
 //
 // Kaynaklar (git'e girmez): gorsel-kaynaklari/rozetler/hz-{k}/bolum-{n}.png,
-// gorsel-kaynaklari/madalyalar/hz-{k}.png, gorsel-kaynaklari/unvanlar/{anahtar}.png
+// gorsel-kaynaklari/madalyalar/hz-{k}.png, gorsel-kaynaklari/unvanlar/{anahtar}.png,
+// gorsel-kaynaklari/duraklar/hz-{k}.jpg
 import fs from "node:fs";
 import path from "node:path";
 import sharp from "sharp";
@@ -263,23 +265,29 @@ function halka(cx, cy, R) {
 }
 
 // ---------------- 1) ROTA DURAĞI ----------------
-// Henüz ekranda kullanılmıyor: durak bileşeni görseli daireye kırpıyor ve çevresinde
-// ilerleme halkası var (PROJE-MODELI 6.1 "Ortak ödül çerçevesi", açık karar).
-// Renk paleti RENKLER'de (mavi · yeşil · kırmızı · mor · krem).
-export function rota() {
+// Halka çerçeve; mine bandın yeri ŞEFFAF kalır. Bandın rengi (kitabın durakRengi) ve
+// okunan kısmın altını ekranda CSS'ten gelir (PROJE-MODELI 3.10.1, 6.1). Görselde
+// bandın üstünde yalnız yarı saydam gölge, parlama, yıldız ve taşlar vardır.
+function durak() {
   const C = 512, R = 446;
-  const h = halka(C, C, R);
-  const b = h.bantR;
-  const s = [];
-  s.push(h.svg);
+  const bantR = R - RIM_D / 2 - BANT / 2;
+  const icR = bantR - BANT / 2 - RIM_I / 2 + 2;
+  const pencereR = icR - RIM_I / 2 + 1;
+  const m = yeniId("m");
+  maskeler.push(`<mask id="${m}" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024"><path d="${yol(daire(C, C, bantR))}" fill="none" stroke="#fff" stroke-width="${BANT + 6}"/></mask>`);
+  const s = [`<g mask="url(#${m})">
+    <path d="${yol(daire(C, C, bantR + 24))}" fill="none" stroke="#000" stroke-width="18" opacity="0.28" filter="url(#bulanik4)"/>
+    <path d="${yol(daire(C, C, bantR - 24))}" fill="none" stroke="#000" stroke-width="18" opacity="0.3" filter="url(#bulanik4)"/>
+    <path d="${yol(daire(C, C, bantR - 4))}" fill="none" stroke="#fff" stroke-width="12" opacity="0.22" filter="url(#bulanik4)" transform="translate(-3 -5)"/>
+  </g>`, boru(yol(daire(C, C, R)), RIM_D), boru(yol(daire(C, C, icR)), RIM_I)];
+  const b = bantR;
   [[-62, -34], [34, 62], [118, 150], [210, 242]].forEach(([a1, a2]) => s.push(parlakIz(yay(C, C, b + 9, a1, a2))));
   for (const d of [24, 70, 110, 156, 204, 250, 290, 336]) s.push(yildiz(...polar(C, C, b, d), 15));
-  for (const d of [12, 348, 168, 192]) s.push(nokta(...polar(C, C, b - 4, d), 5));
   s.push(kitap(...polar(C, C, b + 2, -45), 0.95, -45), kitap(...polar(C, C, b + 2, 45), 0.95, 45));
   s.push(tas(...polar(C, C, b + 6, 0), 56, 92), tas(...polar(C, C, b + 16, 180), 56, 104));
   s.push(tas(...polar(C, C, b, 90), 74, 50), tas(...polar(C, C, b, 270), 74, 50));
-  s.push(pirilti(...polar(C, C, R, -40), 22), pirilti(...polar(C, C, R, 128), 16), pirilti(...polar(C, C, h.icR, -20), 12));
-  return { svg: s.join(""), pencere: yol(daire(C, C, h.pencereR + 8)), kutu: [C - h.pencereR, C - h.pencereR, 2 * h.pencereR, 2 * h.pencereR] };
+  s.push(pirilti(...polar(C, C, R, -40), 22), pirilti(...polar(C, C, R, 128), 16), pirilti(...polar(C, C, icR, -20), 12));
+  return { svg: s.join(""), pencere: yol(daire(C, C, pencereR + 8)), kutu: [C - pencereR, C - pencereR, 2 * pencereR, 2 * pencereR] };
 }
 
 // ---------------- 2) MADALYA ----------------
@@ -530,6 +538,12 @@ async function kitapUret(k) {
     await yaz(svgYap(madalya(), await veriUri(md)), path.join(PROJE, "public/madalyalar", `hz-${k}.png`));
   } else console.warn(`  uyarı: madalya kaynağı yok (${path.relative(PROJE, md)})`);
 }
+async function durakUret(k) {
+  const kaynak = path.join(PROJE, "gorsel-kaynaklari", "duraklar", `hz-${k}.jpg`);
+  if (!fs.existsSync(kaynak)) throw new Error(`Durak sahnesi yok: ${path.relative(PROJE, kaynak)}`);
+  maskeler = [];
+  await yaz(svgYap(durak(), await veriUri(kaynak)), path.join(PROJE, "public/kitaplar", `hz-${k}`, "harita-durak.png"));
+}
 async function unvanUret(anahtarlar) {
   const U = path.join(PROJE, "gorsel-kaynaklari", "unvanlar");
   const liste = anahtarlar.length ? anahtarlar : fs.readdirSync(U).filter((f) => f.endsWith(".png")).map((f) => f.slice(0, -4));
@@ -539,7 +553,8 @@ const [tur, ...adlar] = process.argv.slice(2);
 M = RENKLER.mavi;
 if (tur === "kitap" && adlar.length) for (const k of adlar) { console.log(`Hz. ${k}`); await kitapUret(k); }
 else if (tur === "unvan") await unvanUret(adlar);
+else if (tur === "durak" && adlar.length) for (const k of adlar) await durakUret(k);
 else {
-  console.error("Kullanım: npm run odul-cerceve -- kitap <bookKey>...  |  unvan [anahtar...]");
+  console.error("Kullanım: npm run odul-cerceve -- kitap <bookKey>...  |  durak <bookKey>...  |  unvan [anahtar...]");
   process.exit(1);
 }

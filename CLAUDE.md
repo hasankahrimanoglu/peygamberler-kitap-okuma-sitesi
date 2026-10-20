@@ -167,8 +167,10 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
   `gorsel-kaynaklari/` altına konur, `npm run odul-cerceve -- kitap {bookKey}`
   (ya da `-- unvan`) çerçeveyi çizip `public/`'e aynı adla yazar. Ödül PNG'si
   `public/`'e elle konmaz; çerçeve değişecekse yalnız betik değişir. Yayındaki
-  12 kitabın hepsi bu çerçevede (20 Eki 2026); rota durağı çerçevesi hazır ama
-  ekrana girmedi (ilerleme halkası kararı açık).
+  12 kitabın hepsi bu çerçevede (20 Eki 2026). **Rota durağı** da aynı halkayı
+  taşır (`kitaplar/hz-{bookKey}/harita-durak.png`, `-- durak {bookKey}`); mine
+  bandı şeffaftır, ilerleme altını ve kitabın `durakRengi` CSS'ten gelir
+  (PROJE-MODELI 3.10.1, 6.1).
 - **"Sen Olsaydın" salt metindir** (Karar 11 Tem 2026) — seçeneklerde görsel yok.
 - **Sesli anlatım her bölümde vardır (KARAR 12 Eki 2026 — PROJE-MODELI 6.5).** Yol
   `varlikYollari.ts:sesliAnlatim()` ile türetilir; `books.ts`'te ses alanı YOKTUR
@@ -337,6 +339,11 @@ Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
       **`yayinTarihi`** (YYYY-AA-GG) güncellendi. Kitap bu alanlarla ana ekrandaki
       rotaya kendiliğinden girer; harita kodu elle değiştirilmez (3.10.1). Yayın
       tarihi "Yeni" etiketini ve tek seferlik duyuruyu açar
+- [ ] **`durakRengi` verildi** (mavi · kırmızı · yeşil · mor · turkuaz · gül;
+      rotadaki iki komşu yayındaki duraktan farklı; krem yalnız Hz. Muhammed
+      kitapları; verilen renk sonra değişmez) ve durak sahnesi
+      `gorsel-kaynaklari/duraklar/hz-{bookKey}.jpg` ile
+      `npm run odul-cerceve -- durak {bookKey}` çalıştırıldı (PROJE-MODELI 6.1)
 - [ ] **Supabase `books` satırı eklendi** — `supabase/schema.sql`'e insert yazıldı
       VE canlı veritabanında çalıştırıldı (`isim` katalog başlığıyla eşleşir,
       `toplam_bolum` = bölüm sayısı). Satır yoksa okuma ekranı "kaydı bulunamadı"
