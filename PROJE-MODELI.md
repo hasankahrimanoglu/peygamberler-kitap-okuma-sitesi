@@ -1593,6 +1593,37 @@ public/
   Dosya boyutu tek dezavantajdır ve sıkıştırmayla karşılanır. Yedek
   (placeholder) dosyalar SVG kalır — onlar ayrı dosyalardır, her zaman çözülür.
   Final Kapısı ikonu da SVG kalır; o bir arayüz ikonudur, ödül görseli değildir.
+- **Ortak ödül çerçevesi — kodla çizilir (KARAR 20 Ekim 2026, Hasan).** Rozet,
+  madalya ve unvanın çerçevesi tek bir betikte kodla çizilir:
+  `scripts/odul-cerceveleri.mjs` (`npm run odul-cerceve`). İç görsel
+  **çerçevesiz** üretilir ve `gorsel-kaynaklari/` altında saklanır (repoya
+  girmez); betik onu çerçevenin penceresine yerleştirip 512×512 şeffaf PNG'yi
+  `public/` altındaki **aynı adla** yazar. Yol ve kod değişmez.
+  - **Biçimler** (ortak malzeme: parlak altın, mavi mine, yüzeyli mavi taş,
+    dört köşeli yıldız, defne): **rozet = kalkan** (tepe ve alt taş, yan taşlar,
+    köşe kıvrımları) · **madalya = defne kanatlı yuvarlak halka** (taç
+    yaprakları, alt kıvrımlar) · **unvan = kitap temalı pano** (Hasan'ın
+    "Kitap temalı" örneğine göre: kemerli pencere, kıvrım başlıklı kolonlar,
+    tepe taşı, yanlarda defne, önde açık kitap; yazı yok). Unvan penceresinin
+    zemini gece göğüdür (lacivert, yıldızlar, ikonun arkasında altın hale); iç
+    ikonlar Hasan'ın şeffaf PNG'leridir (`gorsel-kaynaklari/unvanlar/{anahtar}.png`).
+  - **Neden kod:** 216 rozet + 35 madalya + 10 unvan aynı çerçeveyi taşır.
+    Tasarım değişirse yalnız betik değişir ve bir komutla bütün set yeniden
+    çizilir; Photoshop'ta tek tek işlem yok. İlk deneme Hz. İbrahim'de yapıldı,
+    20 Eki 2026'da 8 kitapla canlıya çıktı.
+  - **Komutlar:** `npm run odul-cerceve -- kitap {bookKey}` (o kitabın bütün
+    rozetleri + madalyası) · `npm run odul-cerceve -- unvan [anahtar…]`.
+    Betik aynı kaynaktan byte byte aynı dosyayı üretir.
+  - **Kapsam dışı kalanlar:** Hz. Âdem, Şît ve Nûh'un rozet ve madalyaları eski,
+    çerçevesi içine çizilmiş tek parça görsellerdir; çerçevesiz ana dosyaları
+    olmadığı için ortak çerçeveye geçmemiştir (yeniden üretim ya da kırpma —
+    Hasan'ın kararı). Hz. İdrîs yer tutucudur.
+  - **Rota durağı çerçevesi (AÇIK KARAR):** aynı aileden halka çerçeve ve renk
+    paleti (mavi · yeşil · kırmızı · mor · krem "özel") betikte hazırdır;
+    öneri her kitaba rota sırasında döngülü renk. Ekrana **girmedi:** durak
+    bileşeni görseli daireye kırpıyor ve çevresinde kitap ilerlemesi halkası
+    var; çerçeveli görsel için bileşen değişmeli ve ilerleme göstergesinin yeri
+    (öneri: mavi bandın okundukça altınla dolması) kararlaştırılmalı.
 - **Çocuk profili fotoğrafı `public/` altında DEĞİLDİR (KARAR 8 Ağustos 2026,
   Hasan).** Hazır avatar seti (`public/avatarlar/avatar-{1..10}.jpg`) yerinde
   kalır; veli isterse üzerine kendi fotoğrafını yükler. Fotoğraf kullanıcı
@@ -1610,7 +1641,9 @@ public/
     sınırlıdır (bkz. `supabase/migration-profil-fotografi.sql`).
 - Dosya adı küçük harf, Türkçe karaktersiz, tire ile ayrılır.
 - **Değiştirme akışı:** Hasan eski dosyayı silip yenisini **aynı adla** klasöre
-  atar; kod değişmeden yayına girer. Dosya yoksa kod BOZULMAZ — `YedekliGorsel`
+  atar; kod değişmeden yayına girer. **Ödül görsellerinde** (rozet, madalya,
+  unvan) yeni dosya `public/`'e değil `gorsel-kaynaklari/`'na konur ve
+  `npm run odul-cerceve` çalıştırılır (20 Eki 2026). Dosya yoksa kod BOZULMAZ — `YedekliGorsel`
   ilgili yedeğe düşer.
 - **KARAR (11 Temmuz 2026, korunur): Seçenek B** — her bölüme özel rozet.
   İlk katalog hedefi: 35 kitap ve toplam **216 bölüm/rozet**. Hepsi aynı şablon
@@ -1633,9 +1666,9 @@ public/
 
 | Varlık | Boyut | Format | Not |
 |---|---|---|---|
-| Rozet | 512×512 | PNG şeffaf | Altıgen çerçeve + iç sembol; tek stil ailesi |
-| Madalya | 512×512 | PNG şeffaf | Madalyon + kurdele; kitap başına 1 |
-| Unvan | 512×512 | PNG şeffaf | Arma/nişan stili, 6 adet |
+| Rozet | 512×512 | PNG şeffaf | Kodla çizilen kalkan çerçeve + çerçevesiz kare iç sahne (6.1 "Ortak ödül çerçevesi") |
+| Madalya | 512×512 | PNG şeffaf | Kodla çizilen defneli halka + çerçevesiz kare iç sahne; kitap başına 1 |
+| Unvan | 512×512 | PNG şeffaf | Kodla çizilen kitap temalı pano + şeffaf iç ikon; 10 adet |
 | Avatar | 512×512 | PNG şeffaf | 8 adet (4 erkek + 4 kız çocuk illüstrasyonu, 3D stil ailesi) |
 | Kapak | 600×900 (2:3) | PNG/JPG | Kitap başına 1; ChatGPT görsellerindeki süslü cilt dili |
 | İçerik illüstrasyonu | yatay 4:3 + dikey 3:4 | PNG/JPG | Aynı ana sahneden türetilmiş responsive çift; metin içermez |

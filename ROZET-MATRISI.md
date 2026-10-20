@@ -413,8 +413,14 @@ Bölüm sayıları ve değerler `KITAP-KATALOGU-VE-URETIM-PLANI.md`'den alınmı
 üretmez.
 
 **Görsel durumu kısaltmaları:** `—` üretilmedi · `□` kare teslim edildi,
-çerçeve bekliyor (13 Eki 2026'dan itibaren üretim böyle teslim eder —
-ICERIK-GORSEL-SICILI §6.2) · `✓` çerçeveli son dosya yerinde.
+çerçeve betiği henüz çalışmadı · `✓` çerçeveli son dosya yerinde. 20 Eki
+2026'dan itibaren çerçeveyi `npm run odul-cerceve -- kitap {key}` kodla ekler
+(ICERIK-GORSEL-SICILI §6.2, PROJE-MODELI 6.1); üretim oturumu kare teslimden
+sonra betiği çalıştırır.
+**20 Ekim 2026:** Musa, Eyyûb, Yunus, İbrahim, Yusuf, Süleyman, Îsâ ve İsmail'in
+60 rozeti ortak çerçeveyle `✓` oldu (`99e2f49`). Âdem, Şît ve Nûh eski tek parça
+çerçeveli görselleriyle `✓` kalır; ortak çerçeveye geçmeleri için çerçevesiz
+yeniden üretim gerekir (Hasan kararı).
 **17 Ekim 2026 itibarıyla 74 rozet görseli teslim edildi** (Hz. Âdem 8 ·
 Hz. Şît 4 · Hz. Nûh 8 — 512×512 şeffaf PNG, çerçeveli; Hz. Musa 10 · Hz. Eyyûb 5 ·
 Hz. Yunus 5 · Hz. İbrahim 9 · Hz. Yusuf 10 · Hz. Süleyman 7 · Hz. Îsâ 8 — 512×512 kare PNG, çerçeve bekliyor). Kalan 142 rozet görseli bekliyor.
@@ -434,21 +440,21 @@ Hz. Yunus 5 · Hz. İbrahim 9 · Hz. Yusuf 10 · Hz. Süleyman 7 · Hz. Îsâ 8 
 
 | Kitap | bookKey | Böl. | Anahtar aralığı | Ana değerler | İçerik | Görsel |
 |---|---|---:|---|---|---|---|
-| Hz. İbrahim | `ibrahim` | 9 | `hz-ibrahim/bolum-1…9` | tevhid, cesaret, teslimiyet, misafirperverlik | ✅ Nihai (§2) | □ 9/9 |
+| Hz. İbrahim | `ibrahim` | 9 | `hz-ibrahim/bolum-1…9` | tevhid, cesaret, teslimiyet, misafirperverlik | ✅ Nihai (§2) | ✓ 9/9 |
 | Hz. Lût | `lut` | 5 | `hz-lut/bolum-1…5` | ahlâk, cesaret, koruma, doğruluk | Bekliyor (K1) | — |
-| Hz. İsmail | `ismail` | 6 | `hz-ismail/bolum-1…6` | teslimiyet, çalışma, aile, sözünde durma | ✅ Nihai (§2) | □ 6/6 |
+| Hz. İsmail | `ismail` | 6 | `hz-ismail/bolum-1…6` | teslimiyet, çalışma, aile, sözünde durma | ✅ Nihai (§2) | ✓ 6/6 |
 | Hz. İshak | `ishak` | 4 | `hz-ishak/bolum-1…4` | şükür, aile, sabır, devamlılık | Bekliyor (K2) | — |
 | Hz. Yakup | `yakup` | 5 | `hz-yakup/bolum-1…5` | sabır, sevgi, umut, bağışlama | Bekliyor (K1) | — |
-| Hz. Yusuf | `yusuf` | 10 | `hz-yusuf/bolum-1…10` | sabır, iffet, güvenilirlik, bağışlama | ✅ Nihai (§2) | □ 10/10 |
+| Hz. Yusuf | `yusuf` | 10 | `hz-yusuf/bolum-1…10` | sabır, iffet, güvenilirlik, bağışlama | ✅ Nihai (§2) | ✓ 10/10 |
 
 ### Bölge 3 — Sabır ve Cesaret Geçidi (6 kitap · 33 rozet)
 
 | Kitap | bookKey | Böl. | Anahtar aralığı | Ana değerler | İçerik | Görsel |
 |---|---|---:|---|---|---|---|
-| Hz. Eyyûb | `eyyub` | 5 | `hz-eyyub/bolum-1…5` | sabır, şükür, umut, dayanıklılık | ✅ Nihai (§2) | □ 5/5 |
+| Hz. Eyyûb | `eyyub` | 5 | `hz-eyyub/bolum-1…5` | sabır, şükür, umut, dayanıklılık | ✅ Nihai (§2) | ✓ 5/5 |
 | Hz. Şuayb | `suayb` | 5 | `hz-suayb/bolum-1…5` | dürüstlük, adalet, ölçülülük, cesaret | Bekliyor (K1) | — |
 | Hz. Zülkifl | `zulkifl` | 4 | `hz-zulkifl/bolum-1…4` | sabır, emanet, sözünde durma, düzen | Bekliyor (K2) | — |
-| Hz. Musa | `musa` | 10 | `hz-musa/bolum-1…10` | cesaret, özgürlük, adalet, güven | ✅ Nihai (§2) | □ 10/10 |
+| Hz. Musa | `musa` | 10 | `hz-musa/bolum-1…10` | cesaret, özgürlük, adalet, güven | ✅ Nihai (§2) | ✓ 10/10 |
 | Hz. Hârûn | `harun` | 5 | `hz-harun/bolum-1…5` | kardeşlik, destek, iletişim, sorumluluk | Bekliyor (K1) | — |
 | Hz. Yûşa | `yusa` | 4 | `hz-yusa/bolum-1…4` | sadakat, cesaret, emanet, kararlılık | Bekliyor (**K3**) | — |
 
@@ -457,7 +463,7 @@ Hz. Yunus 5 · Hz. İbrahim 9 · Hz. Yusuf 10 · Hz. Süleyman 7 · Hz. Îsâ 8 
 | Kitap | bookKey | Böl. | Anahtar aralığı | Ana değerler | İçerik | Görsel |
 |---|---|---:|---|---|---|---|
 | Hz. Dâvûd | `davud` | 6 | `hz-davud/bolum-1…6` | cesaret, adalet, emek, şükür | Bekliyor (K1) | — |
-| Hz. Süleyman | `suleyman` | 7 | `hz-suleyman/bolum-1…7` | hikmet, şükür, merhamet, adalet | ✅ Nihai (§2) | □ 7/7 |
+| Hz. Süleyman | `suleyman` | 7 | `hz-suleyman/bolum-1…7` | hikmet, şükür, merhamet, adalet | ✅ Nihai (§2) | ✓ 7/7 |
 | Hz. İlyas | `ilyas` | 5 | `hz-ilyas/bolum-1…5` | tevhid, cesaret, sabır, doğruluk | Bekliyor (K2) | — |
 | Hz. Elyesa | `elyesa` | 4 | `hz-elyesa/bolum-1…4` | emanet, devamlılık, iyilik, sabır | Bekliyor (K2) | — |
 
@@ -465,11 +471,11 @@ Hz. Yunus 5 · Hz. İbrahim 9 · Hz. Yusuf 10 · Hz. Süleyman 7 · Hz. Îsâ 8 
 
 | Kitap | bookKey | Böl. | Anahtar aralığı | Ana değerler | İçerik | Görsel |
 |---|---|---:|---|---|---|---|
-| Hz. Yunus | `yunus` | 5 | `hz-yunus/bolum-1…5` | tövbe, umut, sorumluluk, sabır | ✅ Nihai (§2) | □ 5/5 |
+| Hz. Yunus | `yunus` | 5 | `hz-yunus/bolum-1…5` | tövbe, umut, sorumluluk, sabır | ✅ Nihai (§2) | ✓ 5/5 |
 | Hz. Şa‘yâ | `saya` | 4 | `hz-saya/bolum-1…4` | doğruluk, umut, cesaret, emanet | Bekliyor (**K3**) | — |
 | Hz. Zekeriyyâ | `zekeriyya` | 5 | `hz-zekeriyya/bolum-1…5` | dua, hizmet, umut, güven | Bekliyor (K1) | — |
 | Hz. Yahyâ | `yahya` | 4 | `hz-yahya/bolum-1…4` | hikmet, merhamet, doğruluk, sadelik | Bekliyor (K2) | — |
-| Hz. Îsâ | `isa` | 8 | `hz-isa/bolum-1…8` | merhamet, tevhid, umut, yardım, doğruluk | ✅ Nihai (§2) | □ 8/8 |
+| Hz. Îsâ | `isa` | 8 | `hz-isa/bolum-1…8` | merhamet, tevhid, umut, yardım, doğruluk | ✅ Nihai (§2) | ✓ 8/8 |
 
 ### Bölge 6 — Rahmet Yolculuğu (4 kitap · 36 rozet)
 
@@ -513,11 +519,11 @@ Hz. Yunus 5 · Hz. İbrahim 9 · Hz. Yusuf 10 · Hz. Süleyman 7 · Hz. Îsâ 8 
 (13 Eki 2026) — 512×512 şeffaf PNG; `rozetler/hz-musa/bolum-1…10.png`
 (13 Eki 2026), `rozetler/hz-eyyub/bolum-1…5.png` (15 Eki 2026) ve
 `rozetler/hz-yunus/bolum-1…5.png` (16 Eki 2026), `rozetler/hz-ibrahim/bolum-1…9.png`
-`rozetler/hz-yusuf/bolum-1…10.png`, `rozetler/hz-suleyman/bolum-1…7.png`, `rozetler/hz-isa/bolum-1…8.png` ve `rozetler/hz-ismail/bolum-1…6.png` (17 Eki 2026) — 512×512 kare, çerçevesiz (`□`).
+`rozetler/hz-yusuf/bolum-1…10.png`, `rozetler/hz-suleyman/bolum-1…7.png`, `rozetler/hz-isa/bolum-1…8.png` ve `rozetler/hz-ismail/bolum-1…6.png` (17 Eki 2026) — kare teslim edildi, 20 Eki 2026'da ortak çerçeveyle 512×512 şeffaf PNG oldu (`✓`).
 Madalya görselleri bu matriste izlenmez; sicilleri `ICERIK-GORSEL-SICILI.md`
 §5'tedir (`madalyalar/hz-adem.png`, `hz-sit.png` ve `hz-nuh.png` teslim edildi;
 `hz-musa.png`, `hz-eyyub.png`, `hz-yunus.png`, `hz-ibrahim.png`, `hz-yusuf.png`, `hz-suleyman.png`, `hz-isa.png` ve `hz-ismail.png` kare
-teslim edildi, çerçeve bekliyor).
+teslim edildi, 20 Eki 2026'da ortak çerçeveye alındı).
 
 > **12 Ağu 2026 — Hz. İdrîs:** dört rozet **adı** nihai olarak kaydedildi
 > (12 → 16), ama **görselleri henüz üretilmedi.** `rozetler/hz-idris/bolum-1…4.png`
@@ -629,8 +635,10 @@ teslim edildi, çerçeve bekliyor).
      biçiminde: bölüm no · rozet adı · değer · anahtar).
    - Adlar §2 dizinine eklenir, durumu **Nihai** yazılır.
    - §5 sayaçları güncellenir.
-4. Görsel üretimi bittiğinde §4'teki "Görsel" sütunu `□` yapılır (kare,
-   çerçevesiz). Hasan çerçeveli dosyayı aynı adla kaydedince `✓` olur.
+4. Görsel üretimi bittiğinde kare ana dosyalar `gorsel-kaynaklari/` altına
+   konur ve `npm run odul-cerceve -- kitap {key}` çalıştırılır; §4'teki
+   "Görsel" sütunu `✓` yapılır. Betik çalışmadıysa sütun `□` kalır (REVİZE
+   20 Eki 2026 — eskiden çerçeveyi Hasan Photoshop'ta ekliyordu).
 5. Bölüm sayısı değişmesi gerekiyorsa önce `KITAP-KATALOGU-VE-URETIM-PLANI.md`
    §12 onay kuralı işletilir; matris kendi başına bölüm sayısı değiştirmez.
 

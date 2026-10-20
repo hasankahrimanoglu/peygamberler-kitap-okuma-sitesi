@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "gorsel-yertutucu": "node scripts/gorsel-yertutucu.mjs",
     "kitap-denetle": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/kitap-denetle.mjs",
-    "tanitim-gorselleri": "node scripts/tanitim-gorselleri.mjs"
+    "tanitim-gorselleri": "node scripts/tanitim-gorselleri.mjs",
+    "odul-cerceve": "node scripts/odul-cerceveleri.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.2",

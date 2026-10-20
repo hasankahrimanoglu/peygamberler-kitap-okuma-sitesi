@@ -1883,6 +1883,14 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 
 **Bu sicilin dışındakiler:**
 
+> **20 Eki 2026 — ortak ödül çerçevesi (PROJE-MODELI 6.1).** Musa, Eyyûb,
+> İbrahim, Yusuf, Süleyman, Yunus, Îsâ ve İsmail'in kare teslim edilen
+> 60 rozeti ve 8 madalyası `npm run odul-cerceve -- kitap {key}` ile kodla
+> çizilen ortak çerçeveye alındı ve canlıya çıktı (`99e2f49`). Aşağıdaki kitap
+> notlarında geçen "çerçeve bekliyor / çerçeveyi Hasan ekler" ifadeleri o günün
+> durumudur. Âdem, Şît ve Nûh eski tek parça çerçeveli görselleriyle kalır
+> (çerçevesiz kaynakları yok); İdrîs yer tutucudur.
+
 | Varlık | Dosya | Durum |
 |---|---|---|
 | Kitap kapağı | `kitaplar/hz-adem/kapak.png` · `hz-sit/kapak.png` · `hz-idris/kapak.png` · `hz-nuh/kapak.png` | ✅ Var (597×891) |
@@ -1895,36 +1903,36 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 | Madalya | `madalyalar/hz-adem.png` · `hz-sit.png` | ✅ 2 gerçek görsel, 512×512 şeffaf |
 | Madalya | `madalyalar/hz-idris.png` | ⬜ Yer tutucu — brif teslimin §C3'ünde (sembol: kayadaki ışıklı iz) |
 | Madalya | `madalyalar/hz-nuh.png` | ✅ Gerçek görsel, 512×512 şeffaf (13 Eki 2026; sembol: dağda duran gemi) |
-| Rozet | `rozetler/hz-musa/bolum-1…10.png` | □ 10 kare görsel, 512×512 opak, **çerçeve bekliyor** (13 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-musa/`) |
-| Madalya | `madalyalar/hz-musa.png` | □ Kare görsel, 512×512 opak, **çerçeve bekliyor** (13 Eki 2026; sembol: açılan yolun başındaki asa) |
+| Rozet | `rozetler/hz-musa/bolum-1…10.png` | ✅ 10 görsel, 512×512 şeffaf, **ortak çerçeveli** (20 Eki 2026; kare teslim 13 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-musa/`) |
+| Madalya | `madalyalar/hz-musa.png` | ✅ 512×512 şeffaf, **ortak çerçeveli** (20 Eki 2026; kare teslim 13 Eki 2026; sembol: açılan yolun başındaki asa) |
 | Kitap kapağı | `kitaplar/hz-eyyub/kapak.png` | ✅ Var (600×900, **yazısız** — başlık tasarımda eklenecek; 2K ana dosya `gorsel-kaynaklari/kitaplar/hz-eyyub/kapak.png`) |
 | Harita durağı | `kitaplar/hz-eyyub/harita-kapak.jpg` | ✅ Var (597×597, Musa durağıyla aynı çerçeve ailesi; sembol: taşlar arasından kaynayan pınar) |
-| Rozet | `rozetler/hz-eyyub/bolum-1…5.png` | □ 5 kare görsel, 512×512 opak, **çerçeve bekliyor** (15 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-eyyub/`) |
-| Madalya | `madalyalar/hz-eyyub.png` | □ Kare görsel, 512×512 opak, **çerçeve bekliyor** (15 Eki 2026; sembol: yeniden yeşeren genç ağaç) |
+| Rozet | `rozetler/hz-eyyub/bolum-1…5.png` | ✅ 5 görsel, 512×512 şeffaf, **ortak çerçeveli** (20 Eki 2026; kare teslim 15 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-eyyub/`) |
+| Madalya | `madalyalar/hz-eyyub.png` | ✅ 512×512 şeffaf, **ortak çerçeveli** (20 Eki 2026; kare teslim 15 Eki 2026; sembol: yeniden yeşeren genç ağaç) |
 | Kitap kapağı | `kitaplar/hz-ibrahim/kapak.png` | ✅ Var (600×900, **yazısız** — başlık tasarımda eklenecek; 2K ana dosya `gorsel-kaynaklari/kitaplar/hz-ibrahim/kapak.png`) |
 | Harita durağı | `kitaplar/hz-ibrahim/harita-kapak.jpg` | ✅ Var (600×600, Yunus durağıyla aynı çerçeve ailesi; sembol: alevlerin ortasında açan serin yeşil yaprak) |
-| Rozet | `rozetler/hz-ibrahim/bolum-1…9.png` | □ 9 kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-ibrahim/`) |
-| Madalya | `madalyalar/hz-ibrahim.png` | □ Kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; sembol: korlardan filizlenen dal ve sabah yıldızı) |
+| Rozet | `rozetler/hz-ibrahim/bolum-1…9.png` | ✅ 9 görsel, 512×512 şeffaf, **ortak çerçeveli** (20 Eki 2026; kare teslim 17 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-ibrahim/`) |
+| Madalya | `madalyalar/hz-ibrahim.png` | ✅ 512×512 şeffaf, **ortak çerçeveli** (20 Eki 2026; kare teslim 17 Eki 2026; sembol: korlardan filizlenen dal ve sabah yıldızı) |
 | Kitap kapağı | `kitaplar/hz-yusuf/kapak.png` | ✅ Var (600×900, **yazısız** — başlık tasarımda eklenecek; 2K ana dosya `gorsel-kaynaklari/kitaplar/hz-yusuf/kapak.png`) |
 | Harita durağı | `kitaplar/hz-yusuf/harita-kapak.jpg` | ✅ Var (600×600, İbrahim durağıyla aynı çerçeve ailesi; sembol: taş kuyu ağzı ve üstünde tek parlak yıldız) |
-| Rozet | `rozetler/hz-yusuf/bolum-1…10.png` | □ 10 kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-yusuf/`) |
-| Madalya | `madalyalar/hz-yusuf.png` | □ Kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; sembol: katlanmış gömlek ve yedi başak) |
+| Rozet | `rozetler/hz-yusuf/bolum-1…10.png` | ✅ 10 görsel, 512×512 şeffaf, **ortak çerçeveli** (20 Eki 2026; kare teslim 17 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-yusuf/`) |
+| Madalya | `madalyalar/hz-yusuf.png` | ✅ 512×512 şeffaf, **ortak çerçeveli** (20 Eki 2026; kare teslim 17 Eki 2026; sembol: katlanmış gömlek ve yedi başak) |
 | Kitap kapağı | `kitaplar/hz-suleyman/kapak.png` | ✅ Var (600×900, **yazısız** — başlık tasarımda eklenecek; 2K ana dosya `gorsel-kaynaklari/kitaplar/hz-suleyman/kapak.png`) |
 | Harita durağı | `kitaplar/hz-suleyman/harita-kapak.jpg` | ✅ Var (600×600, Yusuf durağıyla aynı çerçeve ailesi; sembol: dalda duran, taç tüyü açık hüdhüd) |
-| Rozet | `rozetler/hz-suleyman/bolum-1…7.png` | □ 7 kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-suleyman/`) |
-| Madalya | `madalyalar/hz-suleyman.png` | □ Kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; sembol: hüdhüd tüyü ile mühürlü mektup) |
+| Rozet | `rozetler/hz-suleyman/bolum-1…7.png` | ✅ 7 görsel, 512×512 şeffaf, **ortak çerçeveli** (20 Eki 2026; kare teslim 17 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-suleyman/`) |
+| Madalya | `madalyalar/hz-suleyman.png` | ✅ 512×512 şeffaf, **ortak çerçeveli** (20 Eki 2026; kare teslim 17 Eki 2026; sembol: hüdhüd tüyü ile mühürlü mektup) |
 | Kitap kapağı | `kitaplar/hz-yunus/kapak.png` | ✅ Var (600×900, **yazısız** — başlık tasarımda eklenecek; 2K ana dosya `gorsel-kaynaklari/kitaplar/hz-yunus/kapak.png`) |
 | Harita durağı | `kitaplar/hz-yunus/harita-kapak.jpg` | ✅ Var (600×600, İbrahim durağıyla aynı çerçeve ailesi; sembol: geniş kabak yaprağı ve gölgesi) |
-| Rozet | `rozetler/hz-yunus/bolum-1…5.png` | □ 5 kare görsel, 512×512 opak, **çerçeve bekliyor** (16 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-yunus/`; B2 sembolü: dalgalarda beyaz yelken ve ışık) |
-| Madalya | `madalyalar/hz-yunus.png` | □ Kare görsel, 512×512 opak, **çerçeve bekliyor** (16 Eki 2026; sembol: dalgalarda süzülen balık ve doğan güneş) |
+| Rozet | `rozetler/hz-yunus/bolum-1…5.png` | ✅ 5 görsel, 512×512 şeffaf, **ortak çerçeveli** (20 Eki 2026; kare teslim 16 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-yunus/`; B2 sembolü: dalgalarda beyaz yelken ve ışık) |
+| Madalya | `madalyalar/hz-yunus.png` | ✅ 512×512 şeffaf, **ortak çerçeveli** (20 Eki 2026; kare teslim 16 Eki 2026; sembol: dalgalarda süzülen balık ve doğan güneş) |
 | Kitap kapağı | `kitaplar/hz-isa/kapak.png` | ✅ Var (600×900, **yazısız** — başlık tasarımda eklenecek; 1.5K ana dosya `gorsel-kaynaklari/kitaplar/hz-isa/kapak.png`) |
 | Harita durağı | `kitaplar/hz-isa/harita-kapak.jpg` | ✅ Var (600×600, Süleyman durağıyla aynı çerçeve ailesi; sembol: dibinde su kaynağı olan tek hurma ağacı) |
-| Rozet | `rozetler/hz-isa/bolum-1…8.png` | □ 8 kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-isa/`) |
-| Madalya | `madalyalar/hz-isa.png` | □ Kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; sembol: pınarlı tepede hurma dalı) |
+| Rozet | `rozetler/hz-isa/bolum-1…8.png` | ✅ 8 görsel, 512×512 şeffaf, **ortak çerçeveli** (20 Eki 2026; kare teslim 17 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-isa/`) |
+| Madalya | `madalyalar/hz-isa.png` | ✅ 512×512 şeffaf, **ortak çerçeveli** (20 Eki 2026; kare teslim 17 Eki 2026; sembol: pınarlı tepede hurma dalı) |
 | Kitap kapağı | `kitaplar/hz-ismail/kapak.png` | ✅ Var (600×900, **yazısız** — başlık tasarımda eklenecek; 1.5K ana dosya `gorsel-kaynaklari/kitaplar/hz-ismail/kapak.png`) |
 | Harita durağı | `kitaplar/hz-ismail/harita-kapak.jpg` | ✅ Var (512×512, Îsâ durağıyla aynı çerçeve ailesi; sembol: iki tepe arasında kumdan kaynayan berrak su) |
-| Rozet | `rozetler/hz-ismail/bolum-1…6.png` | □ 6 kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-ismail/`) |
-| Madalya | `madalyalar/hz-ismail.png` | □ Kare görsel, 512×512 opak, **çerçeve bekliyor** (17 Eki 2026; sembol: kaynayan su ve yükselen taş temel) |
+| Rozet | `rozetler/hz-ismail/bolum-1…6.png` | ✅ 6 görsel, 512×512 şeffaf, **ortak çerçeveli** (20 Eki 2026; kare teslim 17 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-ismail/`) |
+| Madalya | `madalyalar/hz-ismail.png` | ✅ 512×512 şeffaf, **ortak çerçeveli** (20 Eki 2026; kare teslim 17 Eki 2026; sembol: kaynayan su ve yükselen taş temel) |
 
 > **12 Ağu 2026 — Hz. İdrîs aktarıldı.** Kitap kapağı ve harita durağı hazırdı,
 > dört bölüm kapağı da diskteydi. Bekleyen üretim: **16 içerik sahnesi + 4 rozet
@@ -2173,8 +2181,9 @@ sicilin kitap bölümüne yazılır; standart değişecekse önce bu tablo günc
    (`sips -g pixelWidth -g pixelHeight`).
 4. **Rozet/madalya teknik işlemi:** 1:1 · 1.5K üretim → **arka plan kaldırılmaz**
    → orijinal ana dosya olarak `gorsel-kaynaklari/` altına kaydedilir →
-   küçültülmüş **512×512 kare `.png`** yer tutucunun **üzerine aynı adla**
-   yazılır → boyut doğrulama. Ayrıntı aşağıda.
+   **`npm run odul-cerceve -- kitap {key}`** çalıştırılır: betik ortak çerçeveyi
+   çizer ve **512×512 şeffaf `.png`**'yi yer tutucunun **üzerine aynı adla**
+   yazar (REVİZE 20 Eki 2026) → boyut doğrulama. Ayrıntı aşağıda.
 5. **Tasvir kontrolü — her görselde, otomatiğe bırakılmaz (REVİZE 16 Ekim
    2026):** Katman 1 kişinin (peygamber, akrabası, saygın mümin) yüzü, gözü,
    ağzı, profili veya yüz hattı görünüyorsa görsel **reddedilir** ve yeniden
@@ -2186,15 +2195,19 @@ sicilin kitap bölümüne yazılır; standart değişecekse önce bu tablo günc
    hiçbir biçimde görünmez. Son onay Hasan'ındır.
 6. Teslim edilen her görselin sicildeki durumu `✅ Hazır` yapılır; §5 sayaçları
    güncellenir. Rozetler bitince `ROZET-MATRISI.md` §4 "Görsel" sütunu
-   **`□`** (kare teslim, çerçeve bekliyor) yapılır — `✓` değil; `✓` Hasan'ın
-   çerçeveli dosyasıyla gelir.
+   çerçeve betiği çalıştıysa **`✓`** yapılır; betik çalıştırılmadan kalan kare
+   teslim **`□`** olarak işaretlenir (REVİZE 20 Eki 2026).
 
 **Rozet ve madalya — çerçevesiz kare (KARAR 13 Eki 2026 — Hasan):**
 
-Rozet ve madalyalar **çerçevesiz, kare** üretilir. Çerçeveyi Hasan Photoshop'ta
-tek bir ortak şablonla ekler ve **aynı adla** üzerine kaydeder; böylece bütün
-setin çerçevesi birebir aynı olur. O ana kadar site kare görseli gösterir —
-kod değişmez, yol değişmez.
+Rozet ve madalyalar **çerçevesiz, kare** üretilir. ~~Çerçeveyi Hasan Photoshop'ta
+tek bir ortak şablonla ekler.~~ **REVİZE 20 Eki 2026 (Hasan; PROJE-MODELI 6.1):**
+çerçeve **kodla** çizilir — `scripts/odul-cerceveleri.mjs`
+(`npm run odul-cerceve -- kitap {key}`). Rozet kalkan, madalya defneli halka
+biçimindedir; betik kare ana dosyayı çerçevenin penceresine yerleştirir ve
+sonucu **aynı adla** site dosyasının üzerine yazar. Böylece bütün setin
+çerçevesi birebir aynıdır; çerçeve tasarımı değişirse yalnız betik değişip
+yeniden çalıştırılır. Kod ve yol değişmez.
 
 - **Çerçeve yok:** kalkan, madalyon, halka, kenarlık, mine zemin, kurdele,
   rozet/rozet kartı görünümü üretilmez. Yeni final MD'ler bunun için
@@ -2218,15 +2231,16 @@ kod değişmez, yol değişmez.
 
   | Ne | Yol | Biçim |
   |---|---|---|
-  | Site dosyası | `public/rozetler/hz-{key}/bolum-{n}.png` · `public/madalyalar/hz-{key}.png` | 512×512 kare `.png`, opak |
-  | Ana dosya (Photoshop için) | `gorsel-kaynaklari/rozetler/hz-{key}/bolum-{n}.png` · `gorsel-kaynaklari/madalyalar/hz-{key}.png` | Magnific orijinali (1.5K; 17 Eki 2026'dan önceki kitaplarda 2K), işlenmemiş |
+  | Site dosyası | `public/rozetler/hz-{key}/bolum-{n}.png` · `public/madalyalar/hz-{key}.png` | 512×512 şeffaf `.png`, ortak çerçeveli (betik çıktısı) |
+  | Ana dosya (çerçeve betiğinin kaynağı) | `gorsel-kaynaklari/rozetler/hz-{key}/bolum-{n}.png` · `gorsel-kaynaklari/madalyalar/hz-{key}.png` | Magnific orijinali (1.5K; 17 Eki 2026'dan önceki kitaplarda 2K), işlenmemiş |
 
   `gorsel-kaynaklari/` `public/` dışındadır, siteye servis edilmez ve repoya
-  girmez (`.gitignore`). Hasan çerçeveyi ana dosyadan çalışır, sonucu
-  **512×512 şeffaf `.png`** olarak site dosyasının üzerine aynı adla kaydeder.
+  girmez (`.gitignore`). Çerçeve betiği bu ana dosyadan çalışır; ana dosya
+  silinirse çerçeve yeniden çizilemez, o yüzden saklanır.
 - **Eski rozetler:** Âdem, Şît ve Nûh rozetleri eski, üretimde çizilmiş
-  çerçevelerle teslim edilmiştir. Bunların yeniden kare üretimi Hasan'ın
-  ayrı kararıdır; oturum kendiliğinden yeniden üretmez.
+  çerçevelerle teslim edilmiştir; çerçevesiz ana dosyaları yoktur, bu yüzden
+  ortak çerçeveye geçemezler (20 Eki 2026). Yeniden kare üretimi ya da iç
+  sahneyi kesip çıkarma Hasan'ın ayrı kararıdır; oturum kendiliğinden yapmaz.
 
 **Oturum yapmaz:** `books.ts` ve diğer kod dosyalarına dokunmaz, dosya adını
 değiştirmez, yeni görsel yeri açmaz (o aktarımın işidir), commit atmaz.
@@ -2236,13 +2250,15 @@ değiştirmez, yeni görsel yeri açmaz (o aktarımın işidir), commit atmaz.
 ## 7. Diğer görsel klasörleri (27 Temmuz 2026 kurulumu)
 
 **Ödül görselleri 512×512 şeffaf PNG'dir** (REVİZE 7 Ağu 2026 — PROJE-MODELI
-6.1; eskiden SVG'ydi). Eskisini silip aynı adla yenisini atmak yeterlidir.
+6.1; eskiden SVG'ydi). Rozet, madalya ve unvan dosyaları **elle konmaz**: iç
+görsel `gorsel-kaynaklari/` altına konur, ortak çerçeveyi `npm run odul-cerceve`
+çizer ve aynı adla yazar (REVİZE 20 Eki 2026).
 
 | Klasör | Kalıp | Kurulan | Not |
 |---|---|---|---|
-| `public/rozetler/hz-{bookKey}/` | `bolum-{n}.png` | **84** | âdem 8 + şît 4 **gerçek** (11 Ağu 2026) · idrîs 4 **yer tutucu** (12 Ağu 2026) · nûh 8 **gerçek** (13 Eki 2026) · musa 10 **kare, çerçeve bekliyor** (13 Eki 2026) · eyyûb 5 **kare, çerçeve bekliyor** (15 Eki 2026) · yunus 5 **kare, çerçeve bekliyor** (16 Eki 2026) · ibrahim 9 **kare, çerçeve bekliyor** (17 Eki 2026) · yusuf 10 **kare, çerçeve bekliyor** (17 Eki 2026) · süleyman 7, îsâ 8, ismail 6 **yer tutucu** (16 Eki 2026; kitaplar "preparing"). Hedef 34 (İlk İzler Vadisi): + hûd 5, sâlih 5 — bu ikisinin klasörü **henüz yok**, içerikleri `books.ts`'e aktarılınca betik açacak |
-| `public/madalyalar/` | `hz-{bookKey}.png` | **12** | âdem + şît **gerçek** (11 Ağu 2026) · idrîs **yer tutucu** (12 Ağu 2026) · nûh **gerçek** (13 Eki 2026) · musa **kare, çerçeve bekliyor** (13 Eki 2026) · eyyûb **kare, çerçeve bekliyor** (15 Eki 2026) · yunus **kare, çerçeve bekliyor** (16 Eki 2026) · ibrahim **kare, çerçeve bekliyor** (17 Eki 2026) · yusuf **kare, çerçeve bekliyor** (17 Eki 2026) · süleyman, îsâ, ismail **yer tutucu** (16 Eki 2026). İlk İzler Vadisi hedefi 6 |
-| `public/unvanlar/` | `{unvan-anahtari}.png` | **10** | Hepsi yer tutucu: `yeni-gezgin`, `yol-kasifi`, `deger-toplayicisi`, `yol-arkadasi`, `bilge-yolcu`, `hikaye-ustasi`, `emanet-koruyucusu`, `isik-tasiyicisi`, `kissa-rehberi`, `buyuk-yolculuk-kasifi` (12 Eki 2026'da `atlas-bilgini` ve `yedi-bolge-kasifi` yerine). Anahtarlar `derive.ts:UNVAN_ESIKLERI` + `unvanAnahtari()` türetimidir; eşik tablosu değişirse `npm run gorsel-yertutucu -- unvanlar` yeniden çalıştırılır |
+| `public/rozetler/hz-{bookKey}/` | `bolum-{n}.png` | **84** | âdem 8 + şît 4 **gerçek** (11 Ağu 2026) · idrîs 4 **yer tutucu** (12 Ağu 2026) · nûh 8 **gerçek** (13 Eki 2026) · musa 10 · eyyûb 5 · yunus 5 · ibrahim 9 · yusuf 10 · süleyman 7 · îsâ 8 · ismail 6 **ortak çerçeveli** (kare teslim 13–17 Eki, çerçeve 20 Eki 2026 — `npm run odul-cerceve`). Hedef 34 (İlk İzler Vadisi): + hûd 5, sâlih 5 — bu ikisinin klasörü **henüz yok**, içerikleri `books.ts`'e aktarılınca betik açacak |
+| `public/madalyalar/` | `hz-{bookKey}.png` | **12** | âdem + şît **gerçek** (11 Ağu 2026) · idrîs **yer tutucu** (12 Ağu 2026) · nûh **gerçek** (13 Eki 2026) · musa · eyyûb · yunus · ibrahim · yusuf · süleyman · îsâ · ismail **ortak çerçeveli** (kare teslim 13–17 Eki, çerçeve 20 Eki 2026). İlk İzler Vadisi hedefi 6 |
+| `public/unvanlar/` | `{unvan-anahtari}.png` | **10** | **Hepsi gerçek (20 Eki 2026):** kodla çizilen kitap temalı ortak çerçeve + gece göğü zeminli pencere + Hasan'ın şeffaf iç ikonları (`gorsel-kaynaklari/unvanlar/{anahtar}.png`; `npm run odul-cerceve -- unvan`). `buyuk-yolculuk-kasifi` iç ikonu Yeni Gezgin'e çok benzediği için Magnific ile yeniden üretildi (altın küre ve rota; eski ikon `gorsel-kaynaklari/unvanlar/eski/`). Anahtarlar: `yeni-gezgin`, `yol-kasifi`, `deger-toplayicisi`, `yol-arkadasi`, `bilge-yolcu`, `hikaye-ustasi`, `emanet-koruyucusu`, `isik-tasiyicisi`, `kissa-rehberi`, `buyuk-yolculuk-kasifi` (12 Eki 2026'da `atlas-bilgini` ve `yedi-bolge-kasifi` yerine). Anahtarlar `derive.ts:UNVAN_ESIKLERI` + `unvanAnahtari()` türetimidir; eşik tablosu değişirse `npm run gorsel-yertutucu -- unvanlar` yeniden çalıştırılır |
 | `public/avatarlar/` | `avatar-{1..10}.jpg` | **10** | Veli panelinde üçerli pencerede oklarla gezilir |
 | `public/ikonlar/` | `final-kapisi.svg` | **1** | Bölüm rotasındaki **Büyük Final Testi** durağının ikonu — arayüz ikonu olduğu için SVG kalır |
 

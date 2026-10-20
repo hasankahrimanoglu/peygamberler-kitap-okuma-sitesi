@@ -161,6 +161,14 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
   `rozetIconKey(bookKey, no)` ile türetilir (`hz-adem/bolum-1` gibi). Tek şablon
   ailesi; kilitli/kazanılmış durum ayrı görsel değil, CSS ile soluklaştırma.
   Rozet adlarının set genelinde tekilliği **ROZET-MATRISI.md** ile yönetilir.
+- **Ortak ödül çerçevesi kodla çizilir (KARAR 20 Eki 2026 — PROJE-MODELI 6.1):**
+  rozet = kalkan, madalya = defneli halka, unvan = kitap temalı pano;
+  `scripts/odul-cerceveleri.mjs`. İç görsel çerçevesiz üretilip
+  `gorsel-kaynaklari/` altına konur, `npm run odul-cerceve -- kitap {bookKey}`
+  (ya da `-- unvan`) çerçeveyi çizip `public/`'e aynı adla yazar. Ödül PNG'si
+  `public/`'e elle konmaz; çerçeve değişecekse yalnız betik değişir. Âdem, Şît,
+  Nûh eski tek parça (çerçevesiz kaynakları yok); rota durağı çerçevesi hazır
+  ama ekrana girmedi (ilerleme halkası kararı açık).
 - **"Sen Olsaydın" salt metindir** (Karar 11 Tem 2026) — seçeneklerde görsel yok.
 - **Sesli anlatım her bölümde vardır (KARAR 12 Eki 2026 — PROJE-MODELI 6.5).** Yol
   `varlikYollari.ts:sesliAnlatim()` ile türetilir; `books.ts`'te ses alanı YOKTUR
@@ -173,7 +181,9 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
   üretilir. Liste `ICERIK-GORSEL-SICILI.md`'den, promptlar
   `kitap-icerikleri/KITAP-HZ-{ANAHTAR}-ICERIK-final.md`'den okunur. Kurallar ve
   akış sicilin §6.2'sinde. O oturum yalnız `public/` altındaki yer tutucuların
-  üzerine aynı adla yazar ve sicil durumlarını günceller; koda dokunmaz.
+  üzerine aynı adla yazar (rozet/madalya: kaynağı `gorsel-kaynaklari/`'na koyup
+  `npm run odul-cerceve -- kitap {bookKey}` çalıştırır) ve sicil durumlarını
+  günceller; koda dokunmaz.
 
 ---
 
