@@ -167,6 +167,7 @@
 
 .sonucSatiri {
   display: grid;
+  width: 100%;
   justify-items: center;
   gap: 8px;
   color: var(--murekkep);
@@ -174,16 +175,20 @@
   font-weight: 750;
 }
 
+/* 10 soruluk kitapta 10 × 30 px telefonda karta sığmaz: noktalar 22 px'e kadar küçülür. */
 .sonucNoktalari {
   display: flex;
-  gap: 8px;
+  width: 100%;
+  justify-content: center;
+  gap: 6px;
 }
 
 .noktaDogru,
 .noktaBos {
   display: grid;
-  width: 30px;
-  height: 30px;
+  min-width: 22px;
+  flex: 0 1 30px;
+  aspect-ratio: 1;
   place-items: center;
   border-radius: 50%;
 }
@@ -217,9 +222,132 @@
   color: var(--altin);
 }
 
+/* "Tekrar bakmak istersen" (4.1/13 EK): kapalı gelir, ana eylemin altında sakin durur. */
+.tekrarAlani {
+  display: grid;
+  width: 100%;
+  justify-items: center;
+  gap: 4px;
+}
+
+.tekrarAcici {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  gap: 6px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--murekkep-soluk);
+  background: transparent;
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.tekrarAcici:hover {
+  color: var(--murekkep);
+  background: color-mix(in srgb, var(--murekkep) 8%, transparent);
+}
+
+.tekrarAcici svg {
+  transition: transform 200ms ease;
+}
+
+.tekrarAcik svg {
+  transform: rotate(180deg);
+}
+
+.tekrarListeKabi {
+  width: 100%;
+  scroll-margin-bottom: 16px;
+}
+
+.tekrarNotu {
+  margin-bottom: 8px;
+  color: var(--murekkep-soluk);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.tekrarListesi {
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.tekrarSatiri {
+  display: flex;
+  min-height: 60px;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px 8px 8px;
+  border: 1px solid var(--yuzey-2);
+  border-radius: 16px;
+  color: var(--murekkep);
+  background: color-mix(in srgb, var(--yuzey) 82%, transparent);
+  text-align: left;
+  text-decoration: none;
+  transition: border-color 160ms ease;
+}
+
+.tekrarSatiri:hover {
+  border-color: color-mix(in srgb, var(--altin) 70%, transparent);
+}
+
+.tekrarSatiri img {
+  flex: none;
+}
+
+.tekrarMetni {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  gap: 2px;
+}
+
+.tekrarMetni small {
+  color: var(--murekkep-soluk);
+  font-size: 13.5px;
+  font-weight: 800;
+}
+
+.tekrarMetni strong {
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.tekrarOku {
+  display: inline-flex;
+  min-height: 36px;
+  flex: none;
+  align-items: center;
+  gap: 2px;
+  padding: 0 10px 0 12px;
+  border: 2px solid color-mix(in srgb, var(--eylem) 50%, transparent);
+  border-radius: 999px;
+  color: var(--eylem);
+  font-size: 13.5px;
+  font-weight: 800;
+}
+
+.tekrarAcici:focus-visible,
+.tekrarSatiri:focus-visible {
+  outline: 3px solid var(--vurgu);
+  outline-offset: 2px;
+}
+
 @media (min-width: 640px) {
   .soru {
     font-size: calc(var(--story-size) + 6px);
+  }
+
+  .sonucNoktalari {
+    gap: 8px;
   }
 }
 
@@ -236,5 +364,10 @@
 @media (prefers-reduced-motion: reduce) {
   .geriBildirim {
     animation: none;
+  }
+
+  .tekrarAcici svg,
+  .tekrarSatiri {
+    transition: none;
   }
 }

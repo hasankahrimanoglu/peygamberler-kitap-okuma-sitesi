@@ -1,9 +1,11 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useMemo, useRef } from "react";
+import Link from "next/link";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { QuizOption, QuizQuestion } from "../../data/quizzes";
-import { madalyaGorseli, YEDEK } from "../../lib/varlikYollari";
+import type { TekrarBolumu } from "../../lib/derive";
+import { madalyaGorseli, rozetGorseli, YEDEK } from "../../lib/varlikYollari";
 import { AdimCubugu } from "../reader/AdimCubugu";
 import { KutlamaSahnesi } from "../reader/KutlamaSahnesi";
 import okuma from "../reader/okuma-akisi.module.css";
@@ -61,7 +63,82 @@ export type FinalTestiProps = {
   score: number;
   selectedIsCorrect: boolean;
   selectedOption: QuizOption["id"] | null;
+  /** Cevabı farklı seçilen soruların bölümleri, soru sırasıyla (4.1/13 EK). */
+  tekrarBolumleri: TekrarBolumu[];
 };
+
+/**
+ * "Tekrar bakmak istersen" (PROJE-MODELI 4.1/13 EK — 20 Eki 2026): kutlama
+ * kartını boğmasın ve yanlışlar listesi gibi okunmasın diye kapalı gelir.
+ * Açılınca liste görünür alana kaydırılır; her satır bölümü tekrar okumaya açar.
+ */
+function TekrarBak({ bookKey, bolumler }: { bookKey: string; bolumler: TekrarBolumu[] }) {
+  const [acik, setAcik] = useState(false);
+  const listeRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!acik) return;
+    const azHareket = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    listeRef.current?.scrollIntoView({ block: "nearest", behavior: azHareket ? "auto" : "smooth" });
+  }, [acik]);
+
+  return (
+    <div className={styles.tekrarAlani}>
+      <button
+        type="button"
+        className={`${styles.tekrarAcici} ${acik ? styles.tekrarAcik : ""}`}
+        aria-expanded={acik}
+        aria-controls="final-tekrar-listesi"
+        onClick={() => setAcik((onceki) => !onceki)}
+      >
+        Tekrar bakmak istersen
+        <Ikon ad="asagi" boyut={20} />
+      </button>
+      <div id="final-tekrar-listesi" ref={listeRef} className={styles.tekrarListeKabi}>
+        <AnimatePresence initial={false}>
+          {acik ? (
+            <motion.div
+              key="liste"
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+            >
+              <p className={styles.tekrarNotu}>Cevabını farklı seçtiğin soruların bölümleri:</p>
+              <ul className={styles.tekrarListesi}>
+                {bolumler.map((bolum) => (
+                  <li key={bolum.no}>
+                    <Link
+                      href={bolum.yol}
+                      className={styles.tekrarSatiri}
+                      aria-label={`${bolum.no}. bölümü tekrar oku: ${bolum.ad}`}
+                    >
+                      <YedekliGorsel
+                        src={rozetGorseli(bookKey, bolum.no)}
+                        yedekSrc={YEDEK.rozet}
+                        alt=""
+                        width={44}
+                        height={44}
+                      />
+                      <span className={styles.tekrarMetni}>
+                        <small>{bolum.no}. bölüm</small>
+                        <strong>{bolum.ad}</strong>
+                      </span>
+                      <span className={styles.tekrarOku}>
+                        Tekrar oku
+                        <Ikon ad="ok-sag" boyut={16} />
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+}
 
 /**
  * Büyük Final Testi (yeni düzen — 12 Eki 2026, Hasan; PROJE-MODELI 3.10.3 ve
@@ -98,6 +175,7 @@ export function FinalTesti({
   score,
   selectedIsCorrect,
   selectedOption,
+  tekrarBolumleri,
 }: FinalTestiProps) {
   const { sayfaRef, ustBarRef } = useUstYukseklik();
   const isAlreadyCompleted = saveState === "already-completed";
@@ -328,6 +406,10 @@ export function FinalTesti({
                           <Ikon ad="ok-sag" boyut={20} />
                         </button>
                       </div>
+
+                      {tekrarBolumleri.length > 0 ? (
+                        <TekrarBak bookKey={bookKey} bolumler={tekrarBolumleri} />
+                      ) : null}
                     </>
                   )}
                 </KutlamaSahnesi>

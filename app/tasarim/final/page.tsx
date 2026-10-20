@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { FinalTesti, type FinalSaveState } from "../../../src/components/final/FinalTesti";
 import { quizConfig, type QuizOption } from "../../../src/data/quizzes";
+import { tekrarBakilacakBolumler } from "../../../src/lib/derive";
 
 /**
  * Büyük Final Testi önizlemesi — giriş gerektirmez, kayıt Supabase'e gitmez.
@@ -79,6 +80,11 @@ export default function FinalOnizleme() {
       score={sonuclar.filter(Boolean).length}
       selectedIsCorrect={secilen === aktif.correctOption}
       selectedOption={secilen}
+      tekrarBolumleri={tekrarBakilacakBolumler(
+        ayar.kitap,
+        sonuclar,
+        (bolumRotasi) => `/tasarim/okuma?bolum=${bolumRotasi}&tekrar=1`,
+      )}
     />
   );
 }

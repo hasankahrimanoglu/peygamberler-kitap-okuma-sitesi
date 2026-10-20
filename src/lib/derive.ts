@@ -206,6 +206,34 @@ export function madalyaIconKey(bookKey: string) {
   return `hz-${bookKey}`;
 }
 
+export type TekrarBolumu = { no: number; ad: string; yol: string };
+
+/**
+ * Büyük Final Testi sonucunda cevabı farklı seçilen soruların bölümleri
+ * ("Tekrar bakmak istersen" — PROJE-MODELI 4.1/13, 20 Eki 2026). N. soru
+ * N. bölümden gelir (içerik brifi §9). `okumaYolu` bölümün rota kimliğinden
+ * ("adem-3") adresi kurar: ürün ekranı ile önizleme farklı adrese gider.
+ */
+export function tekrarBakilacakBolumler(
+  bookKey: string,
+  sonuclar: boolean[],
+  okumaYolu: (bolumRotasi: string) => string,
+): TekrarBolumu[] {
+  const icerik = bookDefs.find((kitap) => kitap.routePrefix === bookKey);
+  if (!icerik) return [];
+  return sonuclar.flatMap((dogru, sira) => {
+    const bolum = icerik.chapters[sira];
+    if (dogru || !bolum) return [];
+    return [
+      {
+        no: sira + 1,
+        ad: bolum.title.replace(/\s+/g, " ").trim(),
+        yol: okumaYolu(`${icerik.routePrefix}-${bolum.id}`),
+      },
+    ];
+  });
+}
+
 // --- Ödüller vitrini (rozet / madalya / unvan) ---
 
 export type RozetOgesi = {

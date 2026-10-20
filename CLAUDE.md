@@ -318,7 +318,8 @@ Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
 - [ ] Doldurulmuş içerik `src/data/books.ts` formatına eklendi
 - [ ] **Final testi soruları `src/data/quizzes.ts`'e eklendi ve `quizConfig`'e
       kitap anahtarı tanımlandı** (unutulmaya en açık adım)
-- [ ] Bölüm sayısı = rozet sayısı = final testi soru sayısı
+- [ ] Bölüm sayısı = rozet sayısı = final testi soru sayısı; **N. soru N. bölümden**
+      (final sonucundaki "Tekrar bakmak istersen" bağlantısı sıraya dayanır)
 - [ ] Her bölümde hikâye iki parça (1. Kısım + Devam) ve Sen Olsaydın karar noktasında; her şık için ayrı Seçimini Karşılaştır metni var
 - [ ] Bugüne Taşı YALNIZCA görev tanımlı bölümlerde; meta alanları tam; her bölümde görev ZORUNLU DEĞİL
 - [ ] Madalya adı "{Kitap adı} Yolculuk Madalyası"

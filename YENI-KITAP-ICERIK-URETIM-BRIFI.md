@@ -633,6 +633,9 @@ keşif komutu yazma.
 
 - Soru sayısı bölüm sayısına eşittir: **N bölüm = N soru**.
 - Her bölümden tam olarak 1 soru gelir.
+- **Soru sırası bölüm sırasıdır:** N. soru N. bölümden gelir. Sonuç
+  ekranındaki "Tekrar bakmak istersen" bağlantısı bu sıraya dayanır
+  (20 Eki 2026); sıra bozulursa çocuk yanlış bölüme gönderilir.
 - Yaklaşık yarısı olay bilgisi, yarısı değer/kavrayış sorusudur.
 - Yalnızca kitap metninde açıkça bulunan bilgi sorulur.
 - Her soruda üç seçenek ve tek doğru cevap vardır.
