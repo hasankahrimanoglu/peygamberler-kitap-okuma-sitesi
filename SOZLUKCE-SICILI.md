@@ -78,7 +78,7 @@ Bu 11 terimin tanımı projenin standardıdır. Bir kitapta geçtiğinde bu tan�
 | Kâbe | Mekke'de bulunan, Müslümanların namazda yöneldiği kutsal yapıdır. | Hz. İsmail · 1 (21 Eki 2026'ya kadar Hz. Şît · 1) |
 | Put | İnsanların kendi elleriyle yapıp taptıkları heykellerdir. | Hz. Nûh · 1 (21 Eki 2026'ya kadar Hz. Şît · 4) |
 | Tevekkül | Elinden geleni yaptıktan sonra sonucu Allah'a bırakmaktır. | Hz. Nûh · 6 |
-| Mucize | Allah'ın izniyle peygamberlerin gösterdiği olağanüstü olaylardır. | Hz. İdrîs · 4 |
+| Mucize | Allah'ın izniyle peygamberlerin gösterdiği olağanüstü olaylardır. | Hz. Sâlih · 3 (21 Eki 2026'ya kadar Hz. İdrîs · 4) |
 | Zekât | Zenginlerin, mallarının bir kısmını ihtiyaç sahipleriyle paylaşmasıdır. | Hz. İsmail · 6 |
 
 > "Kutulandı mı?" sütunu, terimin hangi kitap/bölümde etkileşimli hâle
@@ -110,7 +110,7 @@ listeyle karşılaştırılır.**
 | 14 | basiret | Bir işin sonunu önceden görebilmek ve ona göre davranmaktır. | Hz. İdrîs · 1 | Yeni terim — **onaylandı** (Hasan, 12 Ağu 2026) |
 | 15 | kılavuz | Yolu bilmeyenlere doğru yönü gösteren kişi ya da işarettir. | Hz. İdrîs · 2 | Yeni terim — **onaylandı** (Hasan, 12 Ağu 2026) |
 | 16 | dokuma | İplikleri alt alta ve üst üste geçirerek kumaş yapmaktır. | Hz. İdrîs · 3 | Yeni terim — **onaylandı** (Hasan, 12 Ağu 2026) |
-| 17 | mucize | Allah'ın izniyle peygamberlerin gösterdiği olağanüstü olaylardır. | Hz. İdrîs · 4 | Sabit sözlükçe (§2) |
+| 17 | mucize | Allah'ın izniyle peygamberlerin gösterdiği olağanüstü olaylardır. | Hz. Sâlih · 3 | Sabit sözlükçe (§2) — 21 Eki 2026'da Hz. İdrîs · 4'ten taşındı (§6) |
 | 18 | müşrik | Bir olan Allah'a inanmayıp putlara tapan kimse demektir. | Hz. Nûh · 1 | Sabit sözlükçe (§2) |
 | 19 | kavim | Aynı soydan gelen ve bir arada yaşayan insan topluluğudur. | Hz. Nûh · 2 | Yeni terim — **onaylandı** (Hasan, 12 Eki 2026) |
 | 20 | kibir | Kendini başkalarından üstün görüp onları küçümsemektir. | Hz. Nûh · 3 | Yeni terim — **onaylandı** (Hasan, 12 Eki 2026) |
@@ -185,6 +185,19 @@ listeyle karşılaştırılır.**
 | 89 | temel | Bir yapının toprağa oturan ve onu ayakta tutan en alt kısmıdır. | Hz. İsmail · 5 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
 | 90 | hac | Belirli günlerde Kâbe'yi ve çevresindeki kutsal yerleri ziyaret ederek yapılan ibadettir. | Hz. İsmail · 6 | Yeni terim — **onaylandı** (Hasan, 16 Eki 2026) |
 | 91 | zekât | Zenginlerin, mallarının bir kısmını ihtiyaç sahipleriyle paylaşmasıdır. | Hz. İsmail · 6 | Sabit sözlükçe (§2) |
+| 92 | oymak | Sert bir şeyi kazıyarak içinde boşluk açmaktır. | Hz. Sâlih · 1 | Yeni terim — **onaylandı** (Hasan, 21 Eki 2026; KARAR 6a) |
+| 93 | uğursuz | Başa kötülük getirdiği sanılan kişi ya da şeydir. | Hz. Sâlih · 2 | Yeni terim — **onaylandı** (Hasan, 21 Eki 2026; KARAR 6a) |
+| 94 | sağmak | Hayvanın memesinden süt almaktır. | Hz. Sâlih · 3 | Yeni terim — **onaylandı** (Hasan, 21 Eki 2026) |
+| 95 | elebaşı | Kötü bir iş için bir araya gelenlerin başını çeken kişidir. | Hz. Sâlih · 4 | Yeni terim — **onaylandı** (Hasan, 21 Eki 2026) |
+| 96 | mühlet | Bir şey olmadan önce birine tanınan süredir. | Hz. Sâlih · 5 | Yeni terim — **onaylandı** (Hasan, 21 Eki 2026; tanım Faz 2 denetiminden sonra Hasan kararıyla) |
+| 97 | harabe | Yıkılmış ve içinde artık kimsenin oturmadığı yapıdır. | Hz. Sâlih · 5 | Yeni terim — **onaylandı** (Hasan, 21 Eki 2026; tanım Faz 2 denetiminden sonra Hasan kararıyla) |
+| 98 | azık | Yolculukta yemek için yanına alınan yiyecektir. | Hz. Dâvûd · 1 | Yeni terim — **onaylandı** (Hasan, 21 Eki 2026; KARAR 6a) |
+| 99 | sebat | Zor bir durumda yerinden ayrılmadan kararlılıkla durmaktır. | Hz. Dâvûd · 2 | Yeni terim — **onaylandı** (Hasan, 21 Eki 2026) |
+| 100 | sapan | İpe bağlı küçük bir cebe konan taşı döndürüp uzağa atmaya yarayan alettir. | Hz. Dâvûd · 2 | Yeni terim — **onaylandı** (Hasan, 21 Eki 2026; KARAR 6a) |
+| 101 | Zebur | Allah'ın Hz. Dâvûd'a verdiği kutsal kitaptır. | Hz. Dâvûd · 3 | Yeni terim — **onaylandı** (Hasan, 21 Eki 2026) |
+| 102 | zırh | Savaşta vücudu darbelerden korumak için giyilen, demir halkalardan örülmüş giysidir. | Hz. Dâvûd · 4 | Yeni terim — **onaylandı** (Hasan, 21 Eki 2026) |
+| 103 | adalet | Herkese hakkını vermek ve kimseye haksızlık etmemektir. | Hz. Dâvûd · 5 | Yeni terim — **onaylandı** (Hasan, 21 Eki 2026; KARAR 6a) |
+| 104 | vâris | Birinin ardından onun yerini ve bıraktıklarını alan kimsedir. | Hz. Dâvûd · 6 | Yeni terim — **onaylandı** (Hasan, 21 Eki 2026) |
 
 **Kanonik** = onaylı Hz. Âdem içeriğinden gelir, değiştirilmez.
 
@@ -341,6 +354,41 @@ listeyle karşılaştırılır.**
 > *zemzem, göçebe, teslimiyet, eşik, temel, hac, zekât* artık hiçbir kitapta ikinci kez
 > kutulanmaz.
 
+> **21 Eki 2026 — Hz. Sâlih'te yedi kutu var** (kitap katalogda henüz "preparing").
+> Altısı yeni terim ve Faz 1'de Hasan tarafından onaylandı: *oymak* (1), *uğursuz* (2),
+> *sağmak* (3), *elebaşı* (4), *mühlet* (5), *harabe* (5). *mühlet* ve *harabe*'nin tanımı
+> Faz 2 denetiminden sonra Hasan kararıyla değişti (Faz 2 karar kaydı 14; *teslimiyet*
+> emsali): "Bir şey olmadan önce birine tanınan süredir." / "Yıkılmış ve içinde artık
+> kimsenin oturmadığı yapıdır." *oymak* (Nûh ve İdrîs'te "oyulmuş") ve *uğursuz* (gizli
+> Şît'te) daha önce yalnız **kutusuz** geçtiği için §1'deki **KARAR 6a** ile kutu Sâlih'te
+> açıldı. Sabit sözlükçeden **mucize** (3) burada kutulandı: kutu gizli Hz. İdrîs 4'ten
+> taşındı (§6; tanım §2 ile harfiyen aynı), B3'ün açılışındaki "bize bir mucize getir"
+> konuşma satırındadır; bölümün ilk satırı ayrı `text` bloğudur ve büyük başlangıç harfi
+> oradadır. Aynı bölümdeki "bir mucizeydi" düz metindir. *peygamber* (Âdem'e geriye dönük
+> karar) ve *put* düz metin. *kavim, nimet, alay, şüphe, elçi, rahmet, Rab, delil, vadi,
+> bereket, ibret, şükür* ve *sabır* (zarf olarak) metinde geçiyor ama §1 gereği ikinci kez
+> kutulanmadı, düz `text` olarak aktarıldı. *vahiy, müşrik, hicret, Kâbe, tedbir* çocuk
+> metninde kullanılmadı. Kutudan önce terim geçmez; B5 Devam'daki "harabeler" düz metindir.
+> Ek kutunun dışındadır (*oymak* + "tı", *mühlet* + "ti", *harabe* + "ydi").
+> **Sonraki aktarımlar için:** *oymak, uğursuz, sağmak, elebaşı, mühlet, harabe* ve *mucize*
+> artık hiçbir kitapta ikinci kez kutulanmaz (Hz. Dâvûd ve Hz. Îsâ 5'teki *mucize* düz metin).
+
+> **21 Eki 2026 — Hz. Dâvûd'da yedi kutu var** (kitap katalogda henüz "preparing"). Hepsi
+> yeni terim ve Faz 1'de Hasan tarafından onaylandı: *azık* (1), *sebat* (2), *sapan* (2),
+> *Zebur* (3), *zırh* (4), *adalet* (5), *vâris* (6). *azık* (Musa'da), *sapan* (Nûh'ta) ve
+> *adalet* (Âdem, Musa, Yusuf, İsmail ve Süleyman'da) daha önce yalnız **kutusuz** geçtiği
+> için §1'deki **KARAR 6a** ile kutu Dâvûd'da açıldı; o kitaplar değişmedi. **mucize** bu
+> kitapta (B3, B4) **düz metindir**: kutu Hz. Sâlih 3'te açıldı (içerik dosyası KARAR 4a;
+> §G1'deki koşullu yedek kutu bloğu kullanılmadı). *sebat* kutusu konuşma satırı içeren
+> paragrafta yalnız dua satırındadır ("— Rabbimiz! Bizi sabırla donat, bize sebat ver…");
+> anlatı satırı ayrı `text` bloğudur. *peygamber* (Âdem'e geriye dönük karar) düz metin.
+> *sabır, tesbih, hikmet, ilim, secde, mabet, iman, Rab* ve *dava* metinde geçiyor ama §1
+> gereği ikinci kez kutulanmadı, düz `text` olarak aktarıldı. *vahiy, dokuma, halife* bilerek
+> kullanılmadı. *Zebur* Diyanet yazımındaki şapka olmadan, *Tevrat* / *İncil* kalıbında.
+> Kutudan önce terim geçmez. Ek kutunun dışındadır (*sapan* + "ı", *Zebur* + "'u",
+> *adalet* + "le", *vâris* + "i"). **Sonraki aktarımlar için:** *azık, sebat, sapan, Zebur,
+> zırh, adalet, vâris* artık hiçbir kitapta ikinci kez kutulanmaz.
+
 ### 3.1 Kod tarafındaki ikinci kopya
 
 `src/data/demoChapters.ts` içindeki `glossary` sözlüğü eski okuma bileşenleri
@@ -377,8 +425,8 @@ sicil, sonra `demoChapters.ts` güncellenir.
 
 ## 6. AÇIK UYARILAR
 
-- ⚠️ **Şît ve İdrîs gizlendi; dört terimin kutusu görünmüyordu (21 Eki 2026) —
-  ÜÇÜ ÇÖZÜLDÜ, mucize BEKLİYOR.** Lansman 12 kitapla yapılacağı için Hz. Şît ve Hz. İdrîs
+- ✅ **Şît ve İdrîs gizlendi; dört terimin kutusu görünmüyordu (21 Eki 2026) —
+  DÖRDÜ DE ÇÖZÜLDÜ.** Lansman 12 kitapla yapılacağı için Hz. Şît ve Hz. İdrîs
   ekrandan kaldırıldı (`availability: "hidden"`, silinmedi). Kutusu bu iki
   kitapta olup görünen kitaplarda düz metin geçen terimler, çocuğun okuyabildiği
   hiçbir yerde tanımlanmıyor. Görünen kitaplardaki ilk geçiş (katalog sırası):
@@ -394,9 +442,12 @@ sicil, sonra `demoChapters.ts` güncellenir.
   §3 güncellendi). Hz. Şît'teki üç kutu, kitap gizliyken olduğu gibi duruyor;
   **Şît geri getirilirken bu üçü orada düz metne çevrilir** (KARAR 10b: kutu, ilk
   yayımlanan kitapta kalır); `npm run kitap-denetle -- sit` bu üç kutuyu o güne
-  kadar "SÖZLÜKÇE ÇAKIŞMASI" olarak gösterir — beklenen durum. ⏳ **mucize** Hz. Sâlih aktarımında karara bağlanır:
-  Sâlih'te geçerse kutu orada açılır, geçmezse Hz. Îsâ 5'e taşınır; İdrîs geri
-  getirilirken aynı kural uygulanır.
+  kadar "SÖZLÜKÇE ÇAKIŞMASI" olarak gösterir — beklenen durum. ✅ **mucize → Hz. Sâlih 3
+  (21 Eki 2026, Sâlih aktarımı):** terim Sâlih'te geçtiği için kutu B3'ün açılışındaki
+  konuşma satırında açıldı (§2 ve §3 güncellendi; Hz. Dâvûd ve Hz. Îsâ 5'te düz metin).
+  **Gizli Hz. İdrîs geri getirilirken İdrîs 4'teki mucize kutusu düz metne çevrilir**
+  (KARAR 10b); `npm run kitap-denetle -- idris` bu kutuyu o güne kadar "SÖZLÜKÇE
+  ÇAKIŞMASI" olarak gösterir — beklenen durum.
 
 - ~~**Sabit sözlükçedeki 11 terimin hiçbiri henüz kutulanmadı.**~~ **KAPANDI
   (7 Ağu 2026)** — §1'deki "ilk geçtiği yerde kutulanır" kuralı bu soruyu kalıcı

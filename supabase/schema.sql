@@ -71,6 +71,16 @@ where not exists (
   where lower(isim) like '%nuh%'
 );
 
+-- Hz. Sâlih aktarıldı (21 Eki 2026); katalog sırası 6, 5 bölüm. Katalogda
+-- henüz "preparing"; satır yayından önce açıldı (Hz. İbrahim emsali).
+-- `normalizeBookName(isim)` → "hz. salih"; `isim` bu yüzden "Hz. Sâlih" olmalıdır.
+insert into public.books (isim, aciklama, sira, toplam_bolum)
+select 'Hz. Sâlih', 'Nimeti hatırlamak, sınıra saygı', 6, 5
+where not exists (
+  select 1 from public.books
+  where lower(isim) like '%salih%' or lower(isim) like '%sâlih%'
+);
+
 -- Hz. İbrahim aktarıldı (16 Eki 2026); katalog sırası 7, 9 bölüm. Katalogda
 -- henüz "preparing"; satır yayından önce açıldı ki yayına alındığı gün rozet ve
 -- madalya kaydı hazır olsun. Uygulama kitabı adından bulur
@@ -121,6 +131,16 @@ select 'Hz. Musa', 'Özgürlüğe uzanan yol', 16, 10
 where not exists (
   select 1 from public.books
   where lower(isim) like '%musa%' or lower(isim) like '%mûsâ%'
+);
+
+-- Hz. Dâvûd aktarıldı (21 Eki 2026); katalog sırası 19, 6 bölüm. Katalogda
+-- henüz "preparing"; satır yayından önce açıldı (Hz. Süleyman emsali).
+-- `normalizeBookName(isim)` → "hz. davud"; `isim` bu yüzden "Hz. Dâvûd" olmalıdır.
+insert into public.books (isim, aciklama, sira, toplam_bolum)
+select 'Hz. Dâvûd', 'Cesaret ve adalet', 19, 6
+where not exists (
+  select 1 from public.books
+  where lower(isim) like '%davud%' or lower(isim) like '%dâvûd%' or lower(isim) like '%davut%'
 );
 
 -- Hz. Süleyman aktarıldı (16 Eki 2026); katalog sırası 20, 7 bölüm. Katalogda

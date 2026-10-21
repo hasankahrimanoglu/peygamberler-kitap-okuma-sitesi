@@ -1863,6 +1863,273 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 | `hz-ismail/bolum-6/kaynakta-yolcular.jpg` | Devam | B | Yolcular — Katman 3; yüz gösterilebilir, sakin, karikatürsüz. Katman 1 kişi yok. | ✅ Hazır | Akşamüstü ışığında, akasyanın dibindeki suyun taş seti başında toprak kaplarla su içen, dinlenen yolcular; kadınlar, yaşlılar ve çocuklar |
 | `hz-ismail/bolum-6/ilk-yildizlar.jpg` | Devam | B | yok | ✅ Hazır | Akşam alacasında, vadinin ortasındaki yalın taş evin çevresinde yanan sakin ocak ışıkları; dört yönden eve uzanan ince yollar ve gökte beliren ilk yıldızlar |
 
+## 4m. Hz. Sâlih (`bookKey: salih`) — 30 görsel
+
+**Durum (21 Eki 2026):** aktarıldı, katalogda **"preparing"** (yayında değil). 30 sahne,
+kitap kapağı, rota durağı, 5 rozet ve madalya **üretildi** (`/gorsel-uretim salih`);
+rozet, madalya ve durak `npm run odul-cerceve` ile ortak çerçevede, sahnelerin sitedeki
+kopyası `gorsel-sikistir` ile 1600 px. Eski `kapak.png` (kumdan kuleli şehir) yenisiyle,
+eski `harita-kapak.jpg` yeni durak sahnesinin 600×600 kopyasıyla değiştirildi (Faz 2
+karar 5). Ses yer tutucu; `durakRengi` verilmedi (yayına alma kararı). Briflerin tamamı
+`kitap-icerikleri/KITAP-HZ-SALIH-ICERIK-final.md` §B, §C, §D ve §H'dedir (İngilizce ana
+üretim promptu, ortak stil bloğu, mekân bloğu, **deve bloğu**, ortak negatif, **karakter
+bloğu (EN)** ve rozet sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer,
+figür bilgisi ve `alt` metnini kaydeder. Bölüm başına 1 açılış + 5 sahne (B1, B3, B5:
+1. Kısım 3 / Devam 2; B2, B4: 1. Kısım 2 / Devam 3).
+
+> **Figür kuralı** (REVİZE 16 Ekim 2026 — PROJE-MODELI 6.4, §2, §6.2). 30 sahnenin
+> **20'si figürlüdür** (B1 4 · B2 4 · B3 4 · B4 4 · B5 4). "Figür" sütunu final MD'deki
+> sahne "Figür:" alanının **aynısıdır**; `yok` figürsüz sahnedir. **Katman 1** — Hz. Sâlih:
+> dokuz sahnede görünür, yüzü hiçbir görselde yoktur (arkadan, uzak plan, başörtüsünün
+> gölgesi); karakter bloğu adsız eklenir ("the man seen from behind", Hz. Yunus emsali) ve
+> giysisi Hz. Yunus'tan ayrışsın diye yulaf beyazı cübbe ve koyu okr pelerindir. İlk
+> onaylanan Hz. Sâlih sahnesi sonrakilerine ikinci referans olarak verilir. **Katman 2** —
+> kavmin ileri gelenleri ve dokuz elebaşı: yüz görünebilir; sakin, tarihî, korkutucu ve
+> karikatür değil. **Katman 3** — halk ve inananlar: yüz görünebilir; sakin, doğal,
+> karikatürsüz. Hz. Sâlih'in bulunduğu sahnenin negatifinde yüz yasağı (`visible face,
+> facial features, eyes, mouth, profile, blank face, featureless face`), figürsüz sahnenin
+> negatifinde `human figure, person, silhouette, hands` yazılıdır; yalnız Katman 2/3
+> kişilerin bulunduğu sahnede yüz yasağı yazılmaz. Karma sahneler (Hz. Sâlih + Katman 2/3)
+> üretimde elle kontrol edilir (§6.2 madde 5).
+
+> **Kitaba özgü ek yasaklar** (final MD §B "Kitaba özgü yasaklar" ve ortak negatif):
+> kayanın yarılma anı çizilmez (deve hep vadide durur ya da yürür); devenin öldürülmesi,
+> yaralı, yatan ya da ölü deve çizilmez (B4'te boş kuyu başı kullanılır); ses, sarsıntı,
+> yıldırım, yıkılan ve düşen insanlar çizilmez; putlar çizilmez; Hicr'deki bugünkü süslü
+> **Nebatî mezar cepheleri** (sütun, alınlık, kartal kabartması) çok sonraki bir döneme ait
+> olduğu için kullanılmaz; melek, mescit, kubbe, minare, hilal yoktur; yazı yok. Deve iri,
+> açık kum renkli, sakin bir **dişi** devedir; devenin bulunduğu her sahneye (B3 `kapak`,
+> `vadideki-deve`, `kuyu-basi`, `otlayan-deve`; B4 `kapak`; madalya) **Deve bloğu** aynen
+> eklenir. Mekân bloğu B5 `gizli-toplanti` (kapalı kaya odası) ve B5 `safakta-inananlar`
+> sahnelerine eklenmez. B5 `issiz-kapilar` ve `veda`'da kapı oyuklarına dolmuş kum ve birkaç
+> düşmüş taş "çökmüş, ıssız evler" (Neml 52) için yeterlidir; yarık, toz bulutu, yıkılma anı
+> çizilmez. Figürsüz sahnelere üretimde `birds, tipi, tent` eklenir (§6.2). Görsel dünya:
+> Arap Yarımadası'nın kuzeyinde zamansız bir kayalık vadi; gül kızılı ve okr kumtaşı
+> kayalara oyulmuş süssüz evler, vadi tabanında hurmalıklar, bahçeler, pınar ve taş kenarlı
+> yuvarlak bir kuyu; düzlükte kalın duvarlı, düz damlı köşkler.
+
+> **Üretim kararları (21 Eki 2026, `/gorsel-uretim salih`):** §6.2 set geneli standardı
+> uygulandı (Seedream 5 Pro · sahne 2K · rozet, madalya, kapak, durak 1.5K ·
+> `stil-referans-gorsel.jpg`); aday sayısı §6.2 tablosuna göre. Zincir Hasan'ın devriyle
+> yürüdü: pilot (B1 açılış, `su-basi`, rozet 1) ve her görsel oturumda §6.2 madde 5'e göre
+> denetlendi, bölüm sonu gösterimi yapılmadı. Toplam yaklaşık **5.550 kredi** (45 sahne
+> adayı · 6 rötuş · 10 kapak/durak/rozet/madalya adayı).
+> - **Ad prompta girmez:** karakter bloğu "the man seen from behind" diye eklendi. Hz.
+>   Sâlih'in dokuz sahnesinin hepsinde baş yakından kontrol edildi: yüz, profil, sakal ya da
+>   ten sızması yok. Onaylanan `bolum-1/su-basi` sonraki sekiz sahneye ikinci referans
+>   verildi; yulaf beyazı cübbe, okr pelerin ve başörtüsü tutarlı.
+> - **En sık sorun Nebatî cephe:** model kaya evlerine korniş, alınlık ve pilastr eklemeye
+>   yatkın. Düzeltilen: `bolum-2/dayanisma` (uzak kayadaki sütunlu cephe silindi),
+>   `bolum-4/bos-kuyu` (üçgen alınlıklı cephe iki silme rötuşuyla kaldırıldı). Bir kez yeniden
+>   üretilen: `bolum-3/otlayan-deve` (kornişli cephe + devenin sırtında leke gibi ışık
+>   benekleri), kitap kapağı (madalyonda uzun Nebatî tipi cephe), madalya (kapı üstünde korniş
+>   + beyaz kâğıt payı; ikinci turdaki ince kâğıt payı kırpıldı). İki adaylılarda cepheli
+>   aday elendi (`bolum-4/kapak` A, `bolum-5/kapak` B).
+> - **Diğer rötuş ve retler:** `bolum-1/su-basi`'nde arka planda yük devesi vardı (deve B3'te
+>   gelir); silme rötuşu tuhaf bir hayvan bıraktı, `replace` rötuşu boş zemin verdi.
+>   `bolum-2/kosk-isiklari`'nde damdaki küçük kubbe silindi. `bolum-3/talep` A'da kayada
+>   darağacını andıran ahşap çatı (B seçildi); `bolum-4/bir-arada` B'de camlı metal fener
+>   (A seçildi).
+> - **Bilinen küçük sapmalar** (Hasan'ın onayına): `bolum-1/dagilan-kalabalik` ve
+>   `bolum-2/kosk-isiklari`'nde köşkler mazgallı/kuleli (brifte düz damlı köşk);
+>   `bolum-4/kiskirtma` ve `bolum-4/bos-kuyu`'nun arka kayalarında sade, sütunsuz kornişli
+>   cephe izleri; `bolum-5/yola-cikis`'te Hz. Sâlih kafilenin önünde değil, ön planda
+>   arkasından yürüyor ve kafilede asalı, beyaz başörtülü bir adam var (iki adayda da);
+>   `bolum-5/veda`'da figür brifteki "dörtte birden az"dan büyük; `bolum-5/safakta-inananlar`'da
+>   Hz. Sâlih göğe değil inananlara bakıyor; `bolum-2/karsilasma`'da ileri gelenler yukarı
+>   bakıyor; `bolum-2/sakin-cevap`'ta kapı oyuğu yuvarlak kaya ağzı; `bolum-4/kapak`'ta deve
+>   brifteki kadar küçük değil; `bolum-1/kaya-oymak`'ta tahta tokmak yerine metal çekiç;
+>   rozet 3'te kâseler kalkan penceresinin alt kısmında, aradaki çizgi küçük boyda zor seçiliyor.
+> - **Kapak ve durak:** kapak `hz-ismail/kapak.png` aile referansıyla, **yazısız**; durak iç
+>   sahnesi gün batımında tek kaya bloğuna oyulmuş ışıklı kapı ve hurma salkımı (B1 rozetiyle
+>   aynı imge). 1.5K ana dosyalar `gorsel-kaynaklari/kitaplar/hz-salih/kapak.png`,
+>   `gorsel-kaynaklari/duraklar/hz-salih.jpg` (800×800).
+
+### Kitap kapağı ve harita durağı
+
+| Dosya | Biçim | Durum | Görsel brifi |
+|---|---|---|---|
+| `hz-salih/kapak.png` | 600×900, 2:3 dikey | ✅ Hazır (21 Eki 2026; yazısız, 1.5K ana dosya `gorsel-kaynaklari/kitaplar/hz-salih/kapak.png`) | Lacivert deri dokulu kapakta altın yıldız çerçeveli madalyon; içinde kızıl kayalara oyulmuş kapıların önünde, kuyunun başında duran açık renkli bir dişi deve ve hurma ağaçları. **Yazısız** üretilir; "Hz. Sâlih" yazısı tasarım aşamasında eklenir (final MD §C1) |
+| `hz-salih/harita-durak.png` | İç sahne `gorsel-kaynaklari/duraklar/hz-salih.jpg` (kare, ≥800×800 `.jpg`) → `npm run odul-cerceve -- durak salih` çıktısı 336×336 paletli `.png` | ✅ Hazır (21 Eki 2026; iç sahne `gorsel-kaynaklari/duraklar/hz-salih.jpg` → `odul-cerceve -- durak salih`) | Gün batımı ışığında kızıl kayaya oyulmuş tek bir kapı ve önünde sarkan meyve dolu hurma dalı (final MD §C2; B1 rozetiyle aynı imge). Eski `harita-kapak.jpg` ekranda kullanılmaz; görsel üretim oturumunda yeni durak sahnesinin kopyasıyla aynı adla değiştirilir (Faz 2 karar 5) |
+
+### Bölüm 1 — Kayalara Oyulmuş Evler
+
+| Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
+|---|---|---|---|---|---|
+| `hz-salih/bolum-1/kapak.jpg` | Açılış | A | yok | ✅ Hazır | Sabah ışığında geniş, kayalık bir vadi; gül kızılı kayalara oyulmuş sade kapılar ve vadinin tabanında hurmalıklar ve bahçeler. |
+| `hz-salih/bolum-1/kaya-oymak.jpg` | 1. Kısım | A | Semûd'lu taş ustaları (üç dört kişi) — Katman 3; yüzleri görünebilir, sakin, doğal, karikatürsüz. | ✅ Hazır | Kızıl bir kayanın yamacında, yeni açılan bir kapı oyuğunun başında çalışan adamlar; biri basit bir aletle taşı yontuyor, öbürleri sepetlerle taş kırıntılarını taşıyor. |
+| `hz-salih/bolum-1/hurmaliklar.jpg` | 1. Kısım | A | yok | ✅ Hazır | Meyve dolu dalları aşağı eğilmiş hurma ağaçları, aralarından akan berrak bir pınar ve yeşil bahçeler; arkada kızıl kayalar. |
+| `hz-salih/bolum-1/su-basi.jpg` | 1. Kısım | A | Hz. Sâlih — Katman 1; arkadan, yüz görünmez, başörtüsü omuzlara düşüyor. Karakter bloğu: Hz. Sâlih (§B) — prompta aynen eklenir. · Kavmin ileri gelenleri (birkaç kişi) — Katman 2; yüzleri görünebilir, kibirli ama sakin, karikatürsüz. · Çobanlar, kadınlar, çocuklar — Katman 3; yüzleri görünebilir. | ✅ Hazır | Taş kenarlı bir kuyunun başında toplanmış kalabalık ve onlara seslenen, arkası dönük, asalı ve uzun giysili bir adam; kimi dinliyor, kimi kollarını kavuşturmuş. |
+| `hz-salih/bolum-1/dagilan-kalabalik.jpg` | Devam | B | Kavmin ileri gelenleri (üç dört kişi) — Katman 2; yüzleri yandan görünebilir, kayıtsız, karikatürsüz. | ✅ Hazır | Uzun gölgelerin düştüğü kuyu başından, işlemeli giysiler içinde omuz silkerek uzaklaşan birkaç adam; arkalarında kuyunun kenarında unutulmuş bir testi. |
+| `hz-salih/bolum-1/hurma-alti.jpg` | Devam | B | Kadın, çocuk ve yaşlı çiftçi — Katman 3; yüzleri görünebilir, sakin, doğal. | ✅ Hazır | Akşam ışığında hurmalık içinden geçen toprak yol; sade giysili bir kadın ve yanındaki çocuk durup başlarını kaldırmış, meyve dolu dallara bakıyor; biraz geride yürüyen yaşlı bir adam. |
+
+### Bölüm 2 — İki Yola Ayrılan Kavim
+
+| Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
+|---|---|---|---|---|---|
+| `hz-salih/bolum-2/kapak.jpg` | Açılış | A | yok | ✅ Hazır | Sabah ışığında kayalık bir vadide iki ayrı yöne kıvrılan toprak yol ve yolların ayrıldığı yerde tek başına duran bir hurma ağacı. |
+| `hz-salih/bolum-2/ilk-inananlar.jpg` | 1. Kısım | A | Hz. Sâlih — Katman 1; arkadan, oturur hâlde, yüz görünmez. Karakter bloğu: Hz. Sâlih (§B) — prompta aynen eklenir. · İlk inananlar (dört kişi) — Katman 3; yüzleri görünebilir, sakin, karikatürsüz. | ✅ Hazır | Akşamüstü kayaya oyulmuş sade bir evin önünde, basamakta oturan arkası dönük, uzun giysili bir adam ve hasırda oturup onu dinleyen yoksul giysili birkaç kişi. |
+| `hz-salih/bolum-2/karsilasma.jpg` | 1. Kısım | A | İleri gelenler (üç kişi) — Katman 2; yüzleri görünebilir, kibirli ama sakin, karikatürsüz. · İnananlar (iki kişi) ve çocuk — Katman 3; yüzleri görünebilir. | ✅ Hazır | Kaya evler arasında dar bir yolun iki yanında karşı karşıya duran iki grup: işlemeli zengin giysiler içinde kollarını kavuşturmuş üç adam ve testileriyle başları dik duran sade giysili iki kişi. |
+| `hz-salih/bolum-2/sakin-cevap.jpg` | Devam | B | Hz. Sâlih — Katman 1; arkadan, kamera onun arkasında, yüz görünmez. Karakter bloğu: Hz. Sâlih (§B) — prompta aynen eklenir. · İleri gelenler — Katman 2; yüzleri görünebilir. · İnananlar — Katman 3; yüzleri görünebilir. | ✅ Hazır | Kaya bir evin kapı oyuğunun içinden görülen, eşikte arkası dönük duran asalı, uzun giysili bir adam; aşağıda kollarını kavuşturmuş zengin giysili adamlar, biraz geride başlarını kaldıran sade giysili insanlar. |
+| `hz-salih/bolum-2/dayanisma.jpg` | Devam | B | İnananlar (kadınlar, genç ve yaşlı adam, çocuklar) — Katman 3; yüzleri görünebilir, sakin, doğal. | ✅ Hazır | Sabah ışığında kaya evlerin önündeki küçük meydanda birbirine su testisi uzatan iki kadın, yaşlı bir adamın yükünü taşıyan bir genç ve ekmek paylaşan çocuklar. |
+| `hz-salih/bolum-2/kosk-isiklari.jpg` | Devam | B | yok — kararı veren ileri gelenler bilerek gösterilmedi; B5 `gizli-toplanti` sahnesiyle aynı kompozisyon tekrarlanmasın diye. | ✅ Hazır | Gece, vadinin düzlüğünde kalın duvarlı büyük bir köşkün pencerelerinden ve avlusundan sızan kandil ışığı; arkada karanlık kayalar ve yıldızlar. |
+
+### Bölüm 3 — Allah'ın Devesi
+
+| Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
+|---|---|---|---|---|---|
+| `hz-salih/bolum-3/kapak.jpg` | Açılış | A | yok | ✅ Hazır | Berrak sabah ışığında, gül kızılı kayaların önünde sakince duran iri, açık renkli bir dişi deve; uzakta hurmalar. |
+| `hz-salih/bolum-3/talep.jpg` | 1. Kısım | A | Hz. Sâlih — Katman 1; arkadan, yüz görünmez. Karakter bloğu: Hz. Sâlih (§B) — prompta aynen eklenir. · İleri gelenler — Katman 2; yüzleri görünebilir, meydan okuyan ama sakin, karikatürsüz. · Kalabalık — Katman 3. | ✅ Hazır | Kayalık bir meydanda, zengin giysili adamların başını çektiği kalabalık ve onların karşısında arkası dönük, asasına dayanmış uzun giysili bir adam. |
+| `hz-salih/bolum-3/vadideki-deve.jpg` | 1. Kısım | A | Vadideki halk (küçük bir kalabalık) — Katman 3; uzak, yüzleri görünebilir, şaşkın ama korkmuş değil. | ✅ Hazır | Kayalık vadinin ortasında ağır adımlarla yürüyen açık renkli bir dişi deve; uzakta kayaların dibinde şaşkınlıkla durmuş bakan insanlar. |
+| `hz-salih/bolum-3/kuyu-basi.jpg` | 1. Kısım | A | Bekleyenler (çoban, yaşlı kadın, çocuk) — Katman 3; yüzleri görünebilir, sabırsız ama sakin. | ✅ Hazır | Taş kenarlı kuyunun yanındaki yalaktan su içen açık renkli bir dişi deve; biraz ötede testileri ve keçileriyle bekleyen birkaç kişi, biri öne doğru bir adım atmış. |
+| `hz-salih/bolum-3/halkin-gunu.jpg` | Devam | B | Kuyu başındaki halk (kadınlar, çobanlar, çocuklar) — Katman 3; yüzleri görünebilir, neşeli, doğal. | ✅ Hazır | Öğle ışığında kalabalık kuyu başı; testilerini dolduran kadınlar, koyunlarını sulayan çobanlar ve su taşıyan çocuklar. |
+| `hz-salih/bolum-3/otlayan-deve.jpg` | Devam | B | yok | ✅ Hazır | Gün batımında hurmalığın kenarında, kızıl kayaların dibinde sakince otlayan açık renkli bir dişi deve. |
+
+### Bölüm 4 — Aşılan Sınır
+
+| Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
+|---|---|---|---|---|---|
+| `hz-salih/bolum-4/kapak.jpg` | Açılış | A | yok | ✅ Hazır | Kızgın öğle güneşi altında taş kenarlı kuyu ve çevresine dizili taşlar; uzakta kayalık bir yamaçta otlayan açık renkli bir dişi deve. |
+| `hz-salih/bolum-4/kiskirtma.jpg` | 1. Kısım | A | Elebaşları (iki kişi) — Katman 2; yüzleri görünebilir, hararetli ama karikatürsüz. · Dinleyenler — Katman 3; yüzleri görünebilir. | ✅ Hazır | Bir duvarın gölgesinde el kol hareketleriyle konuşan işlemeli giysili iki adam ve çevrelerinde kimi başını sallayan, kimi kaşlarını çatmış dinleyenler. |
+| `hz-salih/bolum-4/toplanan-kalabalik.jpg` | 1. Kısım | A | Kalabalık ve elebaşları — Katman 2/3; çoğu arkadan, yüzler yandan görünebilir, karikatürsüz. · Sessiz duranlar — Katman 3; yüzleri görünebilir, kaygılı. | ✅ Hazır | Kızıl ikindi ışığında, kayalık bir yamacın dibinde toplanmış, arkadan görülen kalabalık; kimi kolunu kaldırmış, kimi el sallıyor, öndeki birkaç kişi sessizce duruyor. |
+| `hz-salih/bolum-4/bos-kuyu.jpg` | Devam | B | yok | ✅ Hazır | Şafakta sessiz ve boş kuyu başı; devenin su içtiği büyük taş yalak kuru ve boş, yanında yere düşmüş tek bir hurma yaprağı. |
+| `hz-salih/bolum-4/uzgun-bakis.jpg` | Devam | B | Hz. Sâlih — Katman 1; arkadan, yüz görünmez. Karakter bloğu: Hz. Sâlih (§B) — prompta aynen eklenir. · Uzaklaşan kalabalık — Katman 2/3; uzak ve arkadan. | ✅ Hazır | Akşamüstü kaya bir meydanda asasına dayanarak duran arkası dönük, uzun giysili bir adam; karşısında, kızıl ışıkta sırtını dönüp uzaklaşan bir kalabalık. |
+| `hz-salih/bolum-4/bir-arada.jpg` | Devam | B | Hz. Sâlih — Katman 1; arkadan, oturur hâlde, yüz görünmez. Karakter bloğu: Hz. Sâlih (§B) — prompta aynen eklenir. · İnananlar (yaşlılar, kadınlar, çocuklar) — Katman 3; yüzleri görünebilir, sakin. | ✅ Hazır | Gece, kayaya oyulmuş bir evin önündeki avluda kil kandillerin ışığında toplanmış insanlar; yaşlılar, kadınlar ve çocuklar birbirine sarılmış; aralarında arkası dönük oturan uzun giysili bir adam. |
+
+### Bölüm 5 — Üç Günün Ardından
+
+| Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
+|---|---|---|---|---|---|
+| `hz-salih/bolum-5/kapak.jpg` | Açılış | A | yok | ✅ Hazır | Yıldızlı bir gece altında kayalara oyulmuş sessiz evler; yalnızca bir kapı oyuğunda yanan tek bir kil kandil. |
+| `hz-salih/bolum-5/gizli-toplanti.jpg` | 1. Kısım | A | Dokuz elebaşı (küçük bir grup) — Katman 2; yüzleri görünebilir, gizli ve kaygılı, korkutucu ya da karikatür değil. | ✅ Hazır | Kaya bir odanın içinde, yere konmuş tek bir kandilin ışığında başlarını birbirine yaklaştırıp fısıldaşan işlemeli giysili birkaç adam; gölgeleri duvara düşüyor. |
+| `hz-salih/bolum-5/safakta-inananlar.jpg` | 1. Kısım | A | Hz. Sâlih — Katman 1; arkadan, yüz görünmez. Karakter bloğu: Hz. Sâlih (§B) — prompta aynen eklenir. · İnananlar (kadın, erkek, yaşlı, çocuk) — Katman 3; yüzleri görünebilir. | ✅ Hazır | Pembe-altın şafak ışığında kayaya oyulmuş evlerin önündeki bir avluda birbirine sarılmış duran kadınlar, erkekler, yaşlılar ve çocuklar; ön planda arkası dönük, asalı ve uzun giysili bir adam. |
+| `hz-salih/bolum-5/issiz-kapilar.jpg` | 1. Kısım | A | yok | ✅ Hazır | Sabah ışığında kayaya oyulmuş ıssız evler; karanlık, boş kapı oyukları, kum dolmuş basamaklar ve bir basamakta terk edilmiş bir toprak testi. |
+| `hz-salih/bolum-5/veda.jpg` | Devam | B | Hz. Sâlih — Katman 1; arkadan, uzak plan, yüz görünmez. Karakter bloğu: Hz. Sâlih (§B) — prompta aynen eklenir. | ✅ Hazır | Uzak plan; vadinin girişinde bir kayanın yanında duran arkası dönük, asalı ve uzun giysili bir adam ve aşağıda sabah ışığında ıssız kalmış kaya evler. |
+| `hz-salih/bolum-5/yola-cikis.jpg` | Devam | B | Hz. Sâlih — Katman 1; arkadan, uzak plan, yüz görünmez. Karakter bloğu: Hz. Sâlih (§B) — prompta aynen eklenir. · Kafiledeki inananlar — Katman 3; yüzleri yandan görünebilir, umutlu. | ✅ Hazır | Sabah güneşinde vadiden çıkan toprak yolda yürüyen küçük bir kafile; yük taşıyan eşekler, keçiler, kadınlar, erkekler ve çocuklar; önde arkası dönük, asalı bir adam. |
+
+## 4n. Hz. Dâvûd (`bookKey: davud`) — 36 görsel
+
+**Durum (21 Eki 2026):** aktarıldı, katalogda **"preparing"** (yayında değil). **Görseller
+üretildi (21 Eki 2026, `/gorsel-uretim davud`):** 36 sahne, kitap kapağı (yazısız, geçici), rota
+durağı iç sahnesi (`gorsel-kaynaklari/duraklar/hz-davud.jpg` → `harita-durak.png`), 6 rozet ve
+madalya (ortak çerçeveli). Seedream 5 Pro · sahne 2K, ödül/kapak/durak 1.5K ·
+`stil-referans-gorsel.jpg`; ikinci referans genç Hz. Dâvûd için `bolum-1/azik-yolu`, yetişkin
+Hz. Dâvûd için önce Süleyman `bolum-1/hukum-avlusu`, sonra `bolum-3/sabah-tesbihi`; B6'daki baba
+ve oğul için yine `hukum-avlusu`. Final MD'deki ortak stil bloğunun nesne listesi (köy demirhanesi,
+örs, araçlar) model tarafından sahneye eklenecek nesne gibi okundu: ilk sahnelerden üçüne
+(`bolum-1/kapak`, `bolum-1/irmak-kiyisi`, `bolum-2/dua`) fazladan demirhane çizildi ve maskeli
+silmeyle (erase) temizlendi; sonraki promptlarda liste "yalnız dönem bağlamı" diye işaretlendi,
+demirhane geçmeyen sahnelerden çıkarıldı. Eski düzenin `harita-kapak.jpg`'si yer tutucu kaldı
+(ekranda kullanılmaz). Ses yer tutucudur. Briflerin tamamı `kitap-icerikleri/KITAP-HZ-DAVUD-ICERIK-final.md` §B, §C, §D ve §H'dedir (İngilizce ana
+üretim promptu, ortak stil bloğu, ortak negatif, **karakter blokları (EN)** ve rozet sembol
+stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figür bilgisi ve `alt` metnini
+kaydeder. Bölüm başına 1 açılış + 5 sahne (1. Kısım 2 / Devam 3).
+
+> **Figür kuralı** (REVİZE 16 Ekim 2026 — PROJE-MODELI 6.4, §2, §6.2). 36 sahnenin
+> **17'si figürlüdür** (B1 5 · B2 3 · B3 2 · B4 3 · B5 2 · B6 2). "Figür" sütunu final MD'deki
+> sahne "Figür:" alanının **aynısıdır**; `yok` figürsüz sahnedir. **Katman 1** — Hz. Dâvûd
+> (genç ve yetişkin; 11 sahne), genç Hz. Süleyman (2 sahne) ve Tâlût (yalnız
+> `bolum-1/irmak-kiyisi`): yüz hiç görünmez, hep arkadan ya da uzak planda; önden açı
+> kullanılmadı. Dâvûd'un babası ve ağabeyleri hiçbir sahnede çizilmez. **Katman 2** — Câlût ve
+> askerleri: yüz gösterilebilir; korkutucu ve karikatür değil, "dev" değil, hep uzak planda.
+> **Katman 3** — Tâlût'un askerleri, iki davacı, teklif getirenler, zırhı alan genç, mabette
+> sıra bekleyenler: yüz gösterilebilir; sakin, doğal, karikatürsüz. Karakter blokları (final MD
+> §B): Young Dâvûd (B1–B2) · Hz. Dâvûd (B3–B6) · Young Süleyman (B6) — figürlü sahnenin
+> promptuna aynen eklenir; yetişkin Hz. Dâvûd ve genç Hz. Süleyman Hz. Süleyman kitabının
+> `bolum-1/hukum-avlusu` sahnesiyle uyumludur (o dosya ikinci referans olarak verilebilir).
+> Katman 1 kişinin bulunduğu sahnenin negatifinde yüz yasağı (`visible face, facial features,
+> eyes, mouth, profile, blank face, featureless face`), figürsüz sahnenin negatifinde `human
+> figure, person, silhouette, hands` yazılıdır; yalnız Katman 2/3 kişilerin bulunduğu sahnede
+> yüz yasağı yazılmaz. Karma sahneler üretimde elle kontrol edilir (§6.2 madde 5).
+
+> **Kitaba özgü ek yasaklar** (final MD §B "Figür kuralı", "Kitaba özgü yasaklar" ve ortak
+> negatif): **darbe anı hiçbir görselde yok** — uçan taş, atış, düşen beden, kan, kesik baş,
+> savaş sahnesi çizilmez; Câlût sahnesi karşılaşmadan önceki an ya da sonrasıdır; sapan yalnız
+> `bolum-2/ovada-tek-basina`'da, belde sarılı durur. **B6'da Hz. Dâvûd'un bedeni ve vefatı
+> çizilmez** (Süleyman B7 emsali): boş oturak, pencere ve akşam ışığı. **Secde çizilmez:**
+> B5'teki dönüş anı figürsüzdür (`bolum-5/yonelis`, boş hasır ve ışık; Faz 2 karar 6). Ordu ve
+> sancaklarda simge, bayrak ya da yazı yok; çalgı, mizmar ve nota yok; aslan yok; taç, taht,
+> altın yok; tomar hep yazısız. Melek, kanat, hale, cami, kubbe (Kubbetüssahra dahil), minare,
+> hilal, kilise, haç, Davud yıldızı ve menora yoktur. Demir, ocakta ısınmış metal olarak
+> çizilir; sihirli parıltı yok (Faz 2 karar 11). **§6.2 istisnası:** kuşlar birkaç sahnenin
+> konusu olduğu için `birds` yalnız kuşsuz sahnelerin negatifine yazılır. Görsel dünya: demir
+> çağı başında Kenan diyarının tepelik ülkesi; kayalık yamaçlar, teraslı zeytinlikler ve
+> bağlar, sazlı nehir vadisi, tozlu ova; şehir ve kubbesiz mabet Hz. Süleyman kitabıyla aynı
+> dildedir (kireç taşı, kesme taş avlular, sedir kirişler, sade taş sütunlar).
+
+### Kitap kapağı ve harita durağı
+
+| Dosya | Biçim | Durum | Görsel brifi |
+|---|---|---|---|
+| `hz-davud/kapak.png` | 600×900, 2:3 dikey | ✅ Hazır (yazısız, geçici; tek aday) | Koyu lacivert deri kapakta yıldız biçimli altın madalyon; içinde dağların üzerinde süzülen kuş sürüsü ve vadide kıvrılan nehir. **Yazısız** üretilir; "Hz. Dâvûd" yazısı tasarım aşamasında eklenir (final MD §C1) |
+| `hz-davud/harita-durak.png` | İç sahne `gorsel-kaynaklari/duraklar/hz-davud.jpg` (kare, 1.5K) → `npm run odul-cerceve -- durak davud` çıktısı 336×336 paletli `.png` | ✅ Hazır (iç sahne + `odul-cerceve -- durak davud`; geçici, tek aday) | Sabah ışığında, mor dağ silueti önünde açık duran sade bir tomar (Zebur; final MD §C2). Yer tutucu betiğinin açtığı `harita-kapak.jpg` eski düzenin adıdır, ekranda kullanılmaz |
+
+### Bölüm 1 — Irmak Kıyısındaki Sınav
+
+| Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
+|---|---|---|---|---|---|
+| `hz-davud/bolum-1/kapak.jpg` | Açılış | A | yok | ✅ Hazır (rötuş: fazladan demirhane silindi) | Yaz öğlesinde kurak, kayalık tepeler arasında kıvrılan tozlu bir yol; uzakta sazlarla çevrili yeşil bir nehir şeridi parlıyor. |
+| `hz-davud/bolum-1/azik-yolu.jpg` | 1. Kısım | A | Genç Hz. Dâvûd — Katman 1, arkadan, yüz görünmez; karakter bloğu "Young Dâvûd". | ✅ Hazır | Sırtında yün torbalar, elinde çoban değneğiyle tozlu bir yolda arkası dönük yürüyen genç bir çoban; uzakta önünde bir ordunun bıraktığı toz bulutu. |
+| `hz-davud/bolum-1/irmak-kiyisi.jpg` | 1. Kısım | A | Tâlût — Katman 1 (Allah'ın seçtiği hükümdar; Faz 1 §B6), arkadan, yüz görünmez (karma sahne). Askerler — Katman 3, karşıdan, sakin. | ✅ Hazır (rötuş: fazladan demirhane silindi) | Sazlıklı bir nehrin kıyısında duran yorgun askerler; önlerinde, arkası dönük, geniş omuzlu bir adam elini kaldırmış onlara sesleniyor. |
+| `hz-davud/bolum-1/bir-avuc-su.jpg` | Devam | B | İsimsiz bir asker — Katman 3, yalnız elleri ve kolu; yüz kadraj dışında. | ✅ Hazır | Nehrin kıyısında diz çökmüş bir adamın birleştirdiği avuçlarında parıldayan bir avuç berrak su. |
+| `hz-davud/bolum-1/karsi-kiyi.jpg` | Devam | B | Tâlût'un yanında kalan askerler — Katman 3, sakin, küçük. Hikâyeye göre Hz. Dâvûd'un babası ve ağabeyleri (Katman 1) bu toplulukta olabilir; bu yüzden hiçbir yüz seçilmez. Tâlût ve Hz. Dâvûd ayrıca seçilmez. | ✅ Hazır | Öğleden sonra ışığında nehrin karşı kıyısına çıkıp yamaca tırmanan küçük bir topluluk; arkalarında, öbür kıyıda suyun kenarında dinlenen kalabalık. |
+| `hz-davud/bolum-1/kucuk-ordu.jpg` | Devam | B | Genç Hz. Dâvûd — Katman 1, arkadan, yüz görünmez; karakter bloğu "Young Dâvûd". Kamptaki askerler — Katman 3, uzak ve küçük. | ✅ Hazır | Alacakaranlıkta birkaç küçük ateşin çevresinde oturan az sayıda insan; yamaçtan onlara doğru inen, arkası dönük, sırtı torbalı genç bir çoban. |
+
+### Bölüm 2 — Câlût'un Karşısında
+
+| Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
+|---|---|---|---|---|---|
+| `hz-davud/bolum-2/kapak.jpg` | Açılış | A | yok | ✅ Hazır | Şafakta pembe ve altın bir göğün altında uzanan geniş, tozlu bir ova; iki yanında alçak tepeler. |
+| `hz-davud/bolum-2/iki-ordu.jpg` | 1. Kısım | A | Câlût — Katman 2, çok uzak, yüz seçilmez; "dev" değil. Câlût'un askerleri — Katman 2, uzak ve belirsiz. Ön plandaki inananlar — Katman 3, arkadan. Hz. Dâvûd bu sahnede ayrıca seçilmez. | ✅ Hazır | Tozlu bir ovanın öbür ucunda sıra sıra dizilmiş kalabalık bir ordu ve önünde iri yapılı bir komutan; ön planda arkası dönük, birbirine yakın duran birkaç kişi. |
+| `hz-davud/bolum-2/dua.jpg` | 1. Kısım | A | İnananlar — Katman 3, arkadan; yüzleri görünmüyor. Hz. Dâvûd ayrıca seçilmez. | ✅ Hazır (rötuş: fazladan demirhane silindi) | Alçak bir tümseğin üzerinde, arkası dönük, avuçlarını göğe açmış dua eden birkaç kişi; önlerinde puslu ova. |
+| `hz-davud/bolum-2/ovada-tek-basina.jpg` | Devam | B | Genç Hz. Dâvûd — Katman 1, arkadan, yüz görünmez; karakter bloğu "Young Dâvûd" (sapan bu sahneye özgü). İnananlar — Katman 3, arkadan, kenarda. Câlût — Katman 2, çok uzak, yüz seçilmez. | ✅ Hazır | Tozlu ovanın ortasında, arkası dönük, elinde değnek ve belinde sarılı bir sapanla duran genç bir çoban; çok uzakta karşısında iri bir komutan ve ordusu. |
+| `hz-davud/bolum-2/dagilan-toz.jpg` | Devam | B | yok | ✅ Hazır | Ufka doğru dağılan toz bulutlarının arasından süzülen güneş ışınları; boşalmış, sessiz bir ova. |
+| `hz-davud/bolum-2/aksam-surusu.jpg` | Devam | B | yok | ✅ Hazır | Akşam ışığında bir yamaçta otlayan koyunlar; bir kayaya yaslanmış çoban değneği ve tepelerin üzerinde parlayan ilk yıldız. |
+
+### Bölüm 3 — Dağlar ve Kuşlarla
+
+| Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
+|---|---|---|---|---|---|
+| `hz-davud/bolum-3/kapak.jpg` | Açılış | A | yok | ✅ Hazır | Kuşluk vaktinin berrak ışığında yükselen kayalık dağ sırtları; eteklerindeki teraslı zeytinlikler ve küçük taş evler. |
+| `hz-davud/bolum-3/tomar.jpg` | 1. Kısım | A | yok | ✅ Hazır | Pencereden giren sabah ışığında, sedir ağacından alçak bir masanın üzerinde açık duran, yazısız, sade bir tomar. |
+| `hz-davud/bolum-3/sabah-tesbihi.jpg` | 1. Kısım | A | Hz. Dâvûd — Katman 1, arkadan, yüz görünmez; karakter bloğu "Hz. Dâvûd". | ✅ Hazır | Gün doğarken kayalık bir tepenin üzerinde, arkası dönük, ileriye bakarak duran koyu mavi cüppeli bir adam; çevresinde süzülen kuş sürüsü ve altın ışıkla parlayan dağlar. |
+| `hz-davud/bolum-3/gece-kandili.jpg` | Devam | B | Hz. Dâvûd — Katman 1, arkadan, yüz görünmez; karakter bloğu "Hz. Dâvûd". | ✅ Hazır | Gece, kandil ışığında taş bir odada, pencereye dönük, hasırın üzerinde diz çökmüş, arkası dönük bir adam; dışarıda yıldızlar. |
+| `hz-davud/bolum-3/iftar-sofrasi.jpg` | Devam | B | yok | ✅ Hazır | Gün batımının altın ışığında, açık bir pencerenin önündeki alçak tahta masada birkaç hurma, yassı ekmek ve bir kâse su. |
+| `hz-davud/bolum-3/aksam-daglari.jpg` | Devam | B | yok | ✅ Hazır | Akşam güneşinde turuncu ve mor renkte parlayan dağ sırtları; kayalık bir sırtın üzerine konmak üzere alçalan kuş sürüsü. |
+
+### Bölüm 4 — Demir Yumuşayınca
+
+| Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
+|---|---|---|---|---|---|
+| `hz-davud/bolum-4/kapak.jpg` | Açılış | A | yok | ✅ Hazır | Sabah ışığında taş duvarlı sade bir demirhane; ortada örs ve çekiç, yanında kızaran kömürlerle dolu bir ocak, duvarda asılı demir halkalar. |
+| `hz-davud/bolum-4/yumusayan-demir.jpg` | 1. Kısım | A | Hz. Dâvûd — Katman 1, yalnız elleri ve cüppe kolları (Faz 1 §B6: "Eller görünebilir"); yüz kadraj dışında. Karakter bloğu gerekmez. | ✅ Hazır | Koyu mavi cüppe kolları sıvanmış iki güçlü elin arasında, ocakta ısınmış, mum gibi yumuşakça kıvrılarak halkaya dönüşen bir demir çubuk. |
+| `hz-davud/bolum-4/halka-halka.jpg` | 1. Kısım | A | yok | ✅ Hazır | Ahşap bir tezgâhın üzerinde yarısı örülmüş, iç içe geçmiş küçük demir halkalardan bir zırh; yanında dağınık halkalar ve sade bir kerpeten. |
+| `hz-davud/bolum-4/ocak-basinda.jpg` | Devam | B | Hz. Dâvûd — Katman 1, arkadan, yüz görünmez (karma sahne); karakter bloğu "Hz. Dâvûd" (deri önlük sahneye özgü). Teklif getiren iki adam — Katman 3, karşıdan, sakin. | ✅ Hazır | Demirhanede örsün başında, deri önlüklü, arkası dönük çalışan koyu mavi cüppeli bir adam; açık kapıda süslü cüppeli iki adam saygıyla bekliyor. |
+| `hz-davud/bolum-4/zirhi-veren.jpg` | Devam | B | Hz. Dâvûd — Katman 1, arkadan, yüz görünmez (karma sahne); karakter bloğu "Hz. Dâvûd". Zırhı alan genç — Katman 3, karşıdan. | ✅ Hazır | Demirhanenin kapısında, arkası dönük koyu mavi cüppeli bir adamın uzattığı katlanmış zırhı iki eliyle alan sade giysili genç bir adam; tezgâhta küçük bir ekmek ve toprak bir bardak. |
+| `hz-davud/bolum-4/mabede-yol.jpg` | Devam | B | yok | ✅ Hazır | Akşam ışığında, kapısında sönmeye yüz tutmuş ocak ışığı görünen bir demirhaneden, yüksek ve sade taş duvarlı bir mabede uzanan taş döşeli yol. |
+
+### Bölüm 5 — Duvardan Gelen Davacılar
+
+| Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
+|---|---|---|---|---|---|
+| `hz-davud/bolum-5/kapak.jpg` | Açılış | A | yok | ✅ Hazır | Sabah ışığında yüksek, sade kireç taşı duvarlarla çevrili, sıra sıra taş sütunlu, sessiz ve boş bir mabet avlusu. |
+| `hz-davud/bolum-5/duvardaki-iki-adam.jpg` | 1. Kısım | A | Hz. Dâvûd — Katman 1, arkadan, yüz görünmez (karma sahne); karakter bloğu "Hz. Dâvûd". İki davacı — Katman 3, karşıdan, sakin, silahsız. | ✅ Hazır | Mabedin yüksek taş duvarından içeri yeni inmiş, sade giysili iki adam; ön planda onlara bakan, arkası dönük koyu mavi cüppeli bir adam. |
+| `hz-davud/bolum-5/tek-koyun.jpg` | 1. Kısım | A | yok | ✅ Hazır | Bir yamaçta otlayan kalabalık bir koyun sürüsü; onlardan ayrı, küçük bir taş kulübenin yanında tek başına duran beyaz bir koyun. |
+| `hz-davud/bolum-5/yonelis.jpg` | Devam | B | yok — secde ve figür bilinçli olarak çizilmedi (karar 6; B3'teki `gece-kandili` sahnesiyle tekrar da önlendi) | ✅ Hazır | Sessiz, yüksek tavanlı bir taş salonda, yüksek pencereden düşen ışığın yanında, taş zemindeki ışığın ortasında boş bir hasır minder ve yanında sönük küçük bir kil kandil. |
+| `hz-davud/bolum-5/sira-bekleyenler.jpg` | Devam | B | Sıra bekleyen insanlar — Katman 3, karşıdan ve yandan, sakin. Katman 1 kişi yok. | ✅ Hazır | Mabedin avlusunda, duvar boyunca uzanan taş sekide yan yana oturmuş, sırasını bekleyen yaşlı bir çoban, başörtülü bir kadın, çizgili cüppeli bir tüccar ve sepetli genç bir çiftçi. |
+| `hz-davud/bolum-5/aksam-zeytin.jpg` | Devam | B | yok | ✅ Hazır | Akşam güneşinde altın renkte parlayan yüksek taş bir duvar; dibinde geniş gövdeli yaşlı bir zeytin ağacı ve duvarın üstünde dinlenen birkaç kuş. |
+
+### Bölüm 6 — Babadan Oğula
+
+| Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
+|---|---|---|---|---|---|
+| `hz-davud/bolum-6/kapak.jpg` | Açılış | A | yok | ✅ Hazır | Sonbahar akşamında, yaprakları altın rengine dönmüş bağlar ve zeytinlikler arasında kıvrılan taş döşeli bir patika. |
+| `hz-davud/bolum-6/baba-ogul.jpg` | 1. Kısım | A | Hz. Dâvûd (yaşlı) — Katman 1, arkadan, yüz görünmez; karakter bloğu "Hz. Dâvûd" (değnek sahneye özgü). Hz. Süleyman (genç) — Katman 1, arkadan, yüz görünmez; karakter bloğu "Young Süleyman". | ✅ Hazır | Öğleden sonra ışığında zeytinlikler arasındaki bir yolda yan yana yürüyen, değneğine dayanan koyu mavi cüppeli yaşlı bir adam ile krem cüppeli genç bir adam; ikisi de arkadan. |
+| `hz-davud/bolum-6/mescit-tepesi.jpg` | 1. Kısım | A | yok | ✅ Hazır | Şafakta şehre bakan düz ve kayalık bir tepe; kenarında üst üste konmuş birkaç kesme kireç taşı ve uzun bir sedir kirişi. |
+| `hz-davud/bolum-6/pencere-onunde.jpg` | Devam | B | Hz. Dâvûd (yaşlı) — Katman 1, arkadan, yüz görünmez; karakter bloğu "Hz. Dâvûd". Hz. Süleyman (genç) — Katman 1, arkadan, yüz görünmez; karakter bloğu "Young Süleyman". | ✅ Hazır | Alacakaranlıkta açık bir pencerenin önünde sedir bir oturakta oturan koyu mavi cüppeli yaşlı bir adam ve yanında, eli oturağın arkasında, ayakta duran krem cüppeli genç bir adam; ikisi de arkadan, dışarıda şehrin ışıkları. |
+| `hz-davud/bolum-6/bos-oturak.jpg` | Devam | B | yok | ✅ Hazır | Akşam ışığında açık bir pencerenin önünde boş duran sedir bir oturak; üzerinde dürülmüş sade bir tomar, dışarıda mor dağlar ve ilk yıldız. |
+| `hz-davud/bolum-6/safak-daglar.jpg` | Devam | B | yok | ✅ Hazır | Şafakta kat kat dağ sırtlarının üzerinde birlikte süzülen kuşlar; ön planda teraslı bir yamaçta yaşlı bir zeytin ağacı ve yanında boy veren genç fidanlar. |
+
 ## 5. Sayaçlar
 
 | Kitap | Açılış | İçerik sahnesi | Toplam | Hazır | Açık kalem |
@@ -1879,7 +2146,9 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 | Hz. Yunus | 5 | 24 | **29** | 29 | 0 |
 | Hz. Îsâ | 8 | 40 | **48** | 48 | 0 |
 | Hz. İsmail | 6 | 30 | **36** | 36 | 0 |
-| **Genel** | **84** | **403** | **487** | **467** | **21** |
+| Hz. Sâlih | 5 | 25 | **30** | 30 | 0 |
+| Hz. Dâvûd | 6 | 30 | **36** | 36 | 0 (21 Eki 2026'da üretildi; kitap "preparing") |
+| **Genel** | **95** | **458** | **553** | **533** | **21** |
 
 **Bu sicilin dışındakiler:**
 
@@ -1954,6 +2223,10 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 | Harita durağı | `kitaplar/hz-ismail/harita-kapak.jpg` | ✅ Var (512×512, Îsâ durağıyla aynı çerçeve ailesi; sembol: iki tepe arasında kumdan kaynayan berrak su) |
 | Rozet | `rozetler/hz-ismail/bolum-1…6.png` | ✅ 6 görsel, 512×512 şeffaf, **ortak çerçeveli** (20 Eki 2026; kare teslim 17 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-ismail/`) |
 | Madalya | `madalyalar/hz-ismail.png` | ✅ 512×512 şeffaf, **ortak çerçeveli** (20 Eki 2026; kare teslim 17 Eki 2026; sembol: kaynayan su ve yükselen taş temel) |
+| Kitap kapağı | `kitaplar/hz-salih/kapak.png` | ✅ Var (600×900, **yazısız** — başlık tasarımda eklenecek; 1.5K ana dosya `gorsel-kaynaklari/kitaplar/hz-salih/kapak.png`; 21 Eki 2026) |
+| Rota durağı | `kitaplar/hz-salih/harita-durak.png` | ✅ Var (336×336, ortak halka; iç sahne `gorsel-kaynaklari/duraklar/hz-salih.jpg`; sembol: kızıl kayaya oyulmuş ışıklı kapı ve hurma salkımı; `harita-kapak.jpg` aynı sahnenin 600×600 kopyası, arşiv) |
+| Rozet | `rozetler/hz-salih/bolum-1…5.png` | ✅ 5 görsel, 512×512 şeffaf, **ortak çerçeveli** (21 Eki 2026; ana dosyalar `gorsel-kaynaklari/rozetler/hz-salih/`) |
+| Madalya | `madalyalar/hz-salih.png` | ✅ 512×512 şeffaf, **ortak çerçeveli** (21 Eki 2026; sembol: su başında dişi deve ve doğan güneş) |
 
 > **12 Ağu 2026 — Hz. İdrîs aktarıldı.** Kitap kapağı ve harita durağı hazırdı,
 > dört bölüm kapağı da diskteydi. Bekleyen üretim: **16 içerik sahnesi + 4 rozet
@@ -2047,6 +2320,33 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 > = 45 görsel.** Altı bölümün sesli anlatımı da yer tutucudur
 > (`sesli-anlatim/hz-ismail/`). 21/36 figürlü sahne (§4l); B3'te teslimiyet ve
 > sesleniş anı figürsüz, Hz. İsmail'in ilk eşi hiçbir görselde yok.
+
+> **21 Eki 2026 — Hz. Sâlih aktarıldı (yayında değil, "preparing").** Kitap katalog
+> sırasında #6'dır; `public/kitaplar/hz-salih/` klasörü Temmuz 2026'dan beri vardı (beş
+> bölüm kapağı yer tutucu kopyası, `kapak.png` ve `harita-kapak.jpg` içerikten önce üretilmiş
+> eski görseller). Yer tutucu betiği 25 içerik sahnesini, 5 rozeti, madalyayı ve beş sesi
+> açtı; var olan dosyalara dokunmadı (§6.1). Bekleyen üretim: **1 kapak + 1 rota durağı
+> (iç sahne) + 5 açılış + 25 içerik sahnesi + 5 rozet + 1 madalya = 38 görsel.** Beş
+> bölümün sesli anlatımı da yer tutucudur (`sesli-anlatim/hz-salih/`). 20/30 figürlü
+> sahne (§4m); Hz. Sâlih dokuz sahnede, yüzü hiçbir görselde yok.
+> **Görseller 21 Eki 2026'da üretildi** (§4m üretim kararları); bekleyen görsel yok, ses yer tutucu.
+
+> **21 Eki 2026 — Hz. Dâvûd aktarıldı (yayında değil, "preparing").** Kitap katalog
+> sırasında #19'dur; `public/kitaplar/hz-davud/` klasörü yoktu, yer tutucu betiği kapak ve
+> eski düzendeki harita durağı (`harita-kapak.jpg`) dahil hepsini açtı (§6.1). Ekrandaki rota
+> durağı `harita-durak.png`'dir ve iç sahne konup `npm run odul-cerceve -- durak davud`
+> çalışana kadar yedeğe düşer. Bekleyen üretim: **1 kapak + 1 rota durağı (iç sahne) +
+> 6 açılış + 30 içerik sahnesi + 6 rozet + 1 madalya = 45 görsel.** Altı bölümün sesli
+> anlatımı da yer tutucudur (`sesli-anlatim/hz-davud/`). 17/36 figürlü sahne (§4n); darbe
+> anı, Hz. Dâvûd'un vefatı ve secde hiçbir görselde yok.
+>
+> **21 Eki 2026 — Hz. Dâvûd görselleri üretildi** (`/gorsel-uretim davud`; ana oturumun
+> devriyle, pilot ve bölüm sonu onayları oturum içinde verildi). 45 görselin hepsi yerinde:
+> 36 sahne, `kapak.png` (600×900, yazısız, geçici), rota durağı (iç sahne +
+> `npm run odul-cerceve -- durak davud`), 6 rozet ve madalya (`-- kitap davud`, ortak
+> çerçeve). `npm run gorsel-sikistir -- davud` 36 sahneyi 1600 px'e indirdi (30,4 MB → 6,6 MB;
+> orijinaller `gorsel-kaynaklari/kitaplar/hz-davud/`). `npm run kitap-denetle -- davud`
+> 0 hata · 0 uyarı. Ses ve eski düzenin `harita-kapak.jpg`'si yer tutucu kaldı.
 
 > ✅ **Kapandı (11 Ağu 2026).** Hz. Şît'in ödül görselleri artık gerçek PNG'dir;
 > PNG geçişinden kalan ölü `.svg` dosyaları klasörlerde yoktur. Aşağıdaki
@@ -2282,7 +2582,7 @@ görsel `gorsel-kaynaklari/` altına konur, ortak çerçeveyi `npm run odul-cerc
 
 | Klasör | Kalıp | Kurulan | Not |
 |---|---|---|---|
-| `public/rozetler/hz-{bookKey}/` | `bolum-{n}.png` | **84** | **Hepsi ortak çerçeveli (20 Eki 2026):** âdem 8 · şît 4 · idrîs 4 · nûh 8 (20 Eki'de yeniden üretildi) · musa 10 · eyyûb 5 · yunus 5 · ibrahim 9 · yusuf 10 · süleyman 7 · îsâ 8 · ismail 6 **ortak çerçeveli** (kare teslim 13–17 Eki, çerçeve 20 Eki 2026 — `npm run odul-cerceve`). Hedef 34 (İlk İzler Vadisi): + hûd 5, sâlih 5 — bu ikisinin klasörü **henüz yok**, içerikleri `books.ts`'e aktarılınca betik açacak |
+| `public/rozetler/hz-{bookKey}/` | `bolum-{n}.png` | **84** | **Hepsi ortak çerçeveli (20 Eki 2026):** âdem 8 · şît 4 · idrîs 4 · nûh 8 (20 Eki'de yeniden üretildi) · musa 10 · eyyûb 5 · yunus 5 · ibrahim 9 · yusuf 10 · süleyman 7 · îsâ 8 · ismail 6 **ortak çerçeveli** (kare teslim 13–17 Eki, çerçeve 20 Eki 2026 — `npm run odul-cerceve`). Hedef 34 (İlk İzler Vadisi): + hûd 5, sâlih 5 — sâlih'in klasörü 21 Eki 2026'da aktarımla **yer tutucularla** açıldı (sayıma girmez); hûd'un klasörü henüz yok |
 | `public/madalyalar/` | `hz-{bookKey}.png` | **12** | **Hepsi ortak çerçeveli (20 Eki 2026):** âdem · şît · idrîs · nûh (20 Eki'de yeniden üretildi) · musa · eyyûb · yunus · ibrahim · yusuf · süleyman · îsâ · ismail **ortak çerçeveli** (kare teslim 13–17 Eki, çerçeve 20 Eki 2026). İlk İzler Vadisi hedefi 6 |
 | `public/unvanlar/` | `{unvan-anahtari}.png` | **10** | **Hepsi gerçek (20 Eki 2026):** kodla çizilen kitap temalı ortak çerçeve + gece göğü zeminli pencere + Hasan'ın şeffaf iç ikonları (`gorsel-kaynaklari/unvanlar/{anahtar}.png`; `npm run odul-cerceve -- unvan`). `buyuk-yolculuk-kasifi` iç ikonu Yeni Gezgin'e çok benzediği için Magnific ile yeniden üretildi (altın küre ve rota; eski ikon `gorsel-kaynaklari/unvanlar/eski/`). Anahtarlar: `yeni-gezgin`, `yol-kasifi`, `deger-toplayicisi`, `yol-arkadasi`, `bilge-yolcu`, `hikaye-ustasi`, `emanet-koruyucusu`, `isik-tasiyicisi`, `kissa-rehberi`, `buyuk-yolculuk-kasifi` (12 Eki 2026'da `atlas-bilgini` ve `yedi-bolge-kasifi` yerine). Anahtarlar `derive.ts:UNVAN_ESIKLERI` + `unvanAnahtari()` türetimidir; eşik tablosu değişirse `npm run gorsel-yertutucu -- unvanlar` yeniden çalıştırılır |
 | `public/avatarlar/` | `avatar-{1..10}.jpg` | **10** | Veli panelinde üçerli pencerede oklarla gezilir |
@@ -2323,7 +2623,7 @@ istersen SVG içindeki `currentColor` değerlerini kendi renginle değiştir.
 |---|---|---|
 | Hz. Âdem | `kitaplar/hz-adem/kapak.png` | ✅ Var |
 | Hz. Şît | `kitaplar/hz-sit/kapak.png` | ✅ Var |
-| Hz. İdrîs · Hz. Nûh · Hz. Hûd · Hz. Sâlih | `kitaplar/hz-{key}/kapak.png` | ✅ Var |
+| Hz. İdrîs · Hz. Nûh · Hz. Hûd · Hz. Sâlih | `kitaplar/hz-{key}/kapak.png` | ✅ Var (Hz. Sâlih'inki içerikten önceki eski kapak; yenisi §4m'de bekliyor) |
 | Hz. Musa | `kitaplar/hz-musa/kapak.png` | ✅ Var (yazısız, §4e) |
 | Hz. Eyyûb | `kitaplar/hz-eyyub/kapak.png` | ✅ Var (yazısız, §4f) |
 

@@ -287,6 +287,61 @@ const nuhQuizQuestions: QuizQuestion[] = [
   },
 ];
 
+// Hz. Sâlih — KITAP-HZ-SALIH-ICERIK-final.md §E. Beş bölümün her birinden
+// bir soru; doğru harf dağılımı A=2 · B=1 · C=2.
+const salihQuizQuestions: QuizQuestion[] = [
+  {
+    id: 1,
+    question: "Semûd halkı evlerini nasıl yapardı?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Dağların sert kayalarını oyarak" },
+      { id: "b", text: "Ağaç dallarını birbirine örerek" },
+      { id: "c", text: "Nehir kıyısında kerpiç yaparak" },
+    ],
+  },
+  {
+    id: 2,
+    question: "Hz. Sâlih ve inananlar “uğursuz” diye suçlandığında Hz. Sâlih'in verdiği cevap bize ne anlatır?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "Suçlanınca hemen o yerden uzaklaşmak gerektiğini" },
+      { id: "b", text: "Haksız bir suçlamaya sakin ve kararlı bir cevap verilebileceğini" },
+      { id: "c", text: "Sert bir söze daha sert bir sözle karşılık vermek gerektiğini" },
+    ],
+  },
+  {
+    id: 3,
+    question: "Allah'ın devesi geldikten sonra kuyunun suyu nasıl paylaşıldı?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Herkes istediği gün istediği kadar su aldı." },
+      { id: "b", text: "Su yalnızca kavmin ileri gelenlerine verildi." },
+      { id: "c", text: "Suyun bir günü devenin, belli bir günü halkın oldu." },
+    ],
+  },
+  {
+    id: 4,
+    question: "Deveyi öldürdükten sonra halkın pişman olması bize ne düşündürür?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Pişman olacağımız bir işe kalkışmadan önce durup sonunu düşünmenin önemini" },
+      { id: "b", text: "Kalabalığın verdiği kararın her zaman doğru olduğunu" },
+      { id: "c", text: "Bir işin sonunu düşünmeden hemen yapmanın daha iyi olduğunu" },
+    ],
+  },
+  {
+    id: 5,
+    question: "Uyarılarını dinlemeyen kavminin ıssız evlerine bakan Hz. Sâlih ne yaptı?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Haklı çıktığı için sevinip kutlama yaptı." },
+      { id: "b", text: "Hemen o evlerden birine yerleşti." },
+      { id: "c", text: "Hüzünlendi ve onlara öğüt verdiğini söyledi." },
+    ],
+  },
+];
+
 // Hz. Musa — KITAP-HZ-MUSA-ICERIK-final.md §E. On bölümün her birinden
 // bir soru; doğru harf dağılımı A=4 · B=3 · C=3.
 const ibrahimQuizQuestions: QuizQuestion[] = [
@@ -704,6 +759,71 @@ const musaQuizQuestions: QuizQuestion[] = [
   },
 ];
 
+// Hz. Dâvûd — KITAP-HZ-DAVUD-ICERIK-final.md §E. Altı bölümün her birinden
+// bir soru; doğru harf dağılımı A=2 · B=2 · C=2.
+const davudQuizQuestions: QuizQuestion[] = [
+  {
+    id: 1,
+    question: "Tâlût, askerlerine nehirle ilgili ne söyledi?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "Herkesin nehirden doyasıya içebileceğini" },
+      { id: "b", text: "Eliyle bir avuç alan dışında kimsenin içmemesini" },
+      { id: "c", text: "Önce hayvanların, sonra askerlerin içmesini" },
+    ],
+  },
+  {
+    id: 2,
+    question: "Hikâyeye göre az sayıdaki inananlar, Câlût'un kalabalık ordusunu nasıl yendi?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Yanlarına başka ordular da katıldığı için" },
+      { id: "b", text: "Câlût'un askerleri çok yorgun olduğu için" },
+      { id: "c", text: "Allah'ın izniyle; dua edip sabrettikleri için" },
+    ],
+  },
+  {
+    id: 3,
+    question: "Kur'an'a göre sabah akşam Hz. Dâvûd ile birlikte kimler tesbih ederdi?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Dağlar ve kuşlar" },
+      { id: "b", text: "Sarayda çalışan bütün insanlar" },
+      { id: "c", text: "Denizdeki balıklar ve dalgalar" },
+    ],
+  },
+  {
+    id: 4,
+    question: "Hikâyede Hz. Dâvûd'un hükümdarken bile demir ocağında çalışmayı sürdürmesi bize ne anlatır?",
+    correctOption: "b",
+    options: [
+      { id: "a", text: "Hükümdarların her işi tek başına yapması gerektiğini" },
+      { id: "b", text: "Elinin emeğiyle geçinmenin değerli bir şey olduğunu" },
+      { id: "c", text: "Demircilik işinin herkes için en kolay iş olduğunu" },
+    ],
+  },
+  {
+    id: 5,
+    question: "İki davacı, Hz. Dâvûd'un yanına nasıl girdi?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Mabedin kapısından izin isteyerek" },
+      { id: "b", text: "Bir kervanın arasına karışarak" },
+      { id: "c", text: "Mabedin duvarına tırmanarak" },
+    ],
+  },
+  {
+    id: 6,
+    question: "Hz. Dâvûd'un genç oğlu Hz. Süleyman'a güvenip ona yol açması bize ne anlatır?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Küçük olmanın değersiz olmak demek olmadığını" },
+      { id: "b", text: "Gençlerin her işi kimseye sormadan yapması gerektiğini" },
+      { id: "c", text: "Yaşça büyük olanın her zaman haklı olduğunu" },
+    ],
+  },
+];
+
 const suleymanQuizQuestions: QuizQuestion[] = [
   {
     id: 1,
@@ -938,6 +1058,12 @@ export const quizConfig: Record<string, QuizConfig> = {
     storagePrefix: "nuh",
     keywords: ["nuh"],
   },
+  salih: {
+    label: "Hz. Sâlih",
+    questions: salihQuizQuestions,
+    storagePrefix: "salih",
+    keywords: ["salih"],
+  },
   ibrahim: {
     label: "Hz. İbrahim",
     questions: ibrahimQuizQuestions,
@@ -967,6 +1093,12 @@ export const quizConfig: Record<string, QuizConfig> = {
     questions: musaQuizQuestions,
     storagePrefix: "musa",
     keywords: ["musa"],
+  },
+  davud: {
+    label: "Hz. Dâvûd",
+    questions: davudQuizQuestions,
+    storagePrefix: "davud",
+    keywords: ["davud"],
   },
   suleyman: {
     label: "Hz. Süleyman",

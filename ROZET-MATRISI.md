@@ -165,8 +165,49 @@ ad ikinci kez kullanılamaz.
 | 82 | Tatlı Dil Rozeti | Hz. İsmail | 4 | Nihai |
 | 83 | El Birliği Rozeti | Hz. İsmail | 5 | Nihai |
 | 84 | Vaadinde Sadakat Rozeti | Hz. İsmail | 6 | Nihai |
+| 85 | Nimeti Hatırlama Rozeti | Hz. Sâlih | 1 | Nihai |
+| 86 | Kimse Uğursuz Değil Rozeti | Hz. Sâlih | 2 | Nihai |
+| 87 | Sınıra Saygı Rozeti | Hz. Sâlih | 3 | Nihai |
+| 88 | Durup Düşünme Rozeti | Hz. Sâlih | 4 | Nihai |
+| 89 | Haklıyken Merhamet Rozeti | Hz. Sâlih | 5 | Nihai |
+| 90 | Sağlam İrade Rozeti | Hz. Dâvûd | 1 | Nihai |
+| 91 | Güvenden Doğan Cesaret Rozeti | Hz. Dâvûd | 2 | Nihai |
+| 92 | Dengeli İbadet Rozeti | Hz. Dâvûd | 3 | Nihai |
+| 93 | Alın Teri Rozeti | Hz. Dâvûd | 4 | Nihai |
+| 94 | Tarafsız Karar Rozeti | Hz. Dâvûd | 5 | Nihai |
+| 95 | Küçüğe Güven Rozeti | Hz. Dâvûd | 6 | Nihai |
 
 **Nihai** = dinî doğruluk onayı verilmiş, kalıcı ad. Değiştirilmez.
+
+> **21 Ekim 2026 — Hz. Dâvûd nihai içerikle eklendi** (katalogda "preparing"). Altı ad da
+> §2'deki önceki 89 adla (Sâlih dahil) ve §2.1'deki serbest adlarla çakışmıyor (gerekçeler
+> `KITAP-HZ-DAVUD-KAYNAK-DENETIMI.md` §C1 ve `KITAP-HZ-DAVUD-ICERIK-final.md` §I6; Faz 1
+> Hasan onayı, Faz 2 Hasan'ın yetkisiyle ana oturum). Kelime ortaklıkları ve nüanslar:
+> *Yumuşak Cesaret* (Nûh 2) doğruyu nazikçe söylemek, *Korkuyu Aşan Adım* (Musa 6) korkuya
+> rağmen gitmek; *Güvenden Doğan Cesaret* **korkarken bile Allah'a güvenip doğrunun yanında
+> durmak ve yardım istemektir**. *Dalgada Güven* (Nûh 6) ve *Vaade Güven* (Musa 1) Allah'a
+> güvenmek, *Küçüğe Güven* **senden küçüğe önce yol gösterip sonra ona güvenmektir**.
+> *Adil Çözüm* (Süleyman 1) iki tarafı da gözeten çözümü bulmak, *Tarafsız Karar* **yakın
+> arkadaşa rağmen gördüğünü söylemek ve kimseden yana olmadan hüküm vermektir**.
+> *Yılmayan Emek* (Şît 3) ve *Vazgeçmeyen El* (İdrîs 3) emeği sürdürmek, *Alın Teri* **kolay
+> yol varken işi kendi eliyle yapmaktır**. *Sağlam İrade* çok istenen bir şeyde sınıra
+> uymak, *Dengeli İbadet* iyi bir alışkanlığı işlerle dengeleyip her gün sürdürmektir
+> (ikisi de sette benzersiz). §2.1'deki serbest *Adalet* ve *Kararlılık* adları
+> kullanılmadı. Kitap adı hiçbir rozet adında geçmiyor.
+
+> **21 Ekim 2026 — Hz. Sâlih nihai içerikle eklendi** (katalogda "preparing"). Beş ad da
+> §2'deki önceki 84 adla ve §2.1'deki serbest adlarla çakışmıyor (gerekçeler
+> `KITAP-HZ-SALIH-KAYNAK-DENETIMI.md` §C1 ve `KITAP-HZ-SALIH-ICERIK-final.md` §I6,
+> Hasan onayı); aynı gün yazılan Hz. Dâvûd'un altı adıyla ortak kelime yok. Nüans
+> ayrışmaları: *Paylaşılan Nimet* (Eyyûb 1) ve *Nimette Tevazu* (Süleyman 6) ile ayrı olarak
+> *Nimeti Hatırlama* **nimetin içindeyken onu vereni hatırlamaktır**. *Kimse Uğursuz Değil*
+> aksilikte kimseyi uğursuz saymamak ve suçlananın yanında durmaktır (sette benzersiz).
+> *Güzel Komşuluk* (İsmail 2) suyu adil paylaşmak, *Sınıra Saygı* **konan sınıra ve
+> başkasının sırasına dokunmamaktır**. *Ölçülü Buluş* (İdrîs 1) ve *Düşünerek İnanma*
+> (İbrahim 3) ile ayrı olarak *Durup Düşünme* **kalabalık kalkışırken pişman olmadan önce
+> durmaktır**. *Başa Kakmayan Af* (Yusuf 9) bağışlamak, *Haklıyken Merhamet* **sözünü
+> dinlemeyenin başına gelene sevinmemektir**; §2.1'deki serbest *Merhamet Rozeti* ile ad
+> aynı değildir. Kitap adı hiçbir rozet adında geçmiyor.
 
 > **16 Ekim 2026 — Hz. İsmail nihai içerikle eklendi.** Altı ad da §2'deki önceki
 > 78 adla ve §2.1'deki serbest adlarla çakışmıyor (gerekçeler
@@ -435,7 +476,7 @@ Hz. Yunus 5 · Hz. İbrahim 9 · Hz. Yusuf 10 · Hz. Süleyman 7 · Hz. Îsâ 8 
 | Hz. İdrîs | `idris` | 4 | `hz-idris/bolum-1…4` | bilgi, doğruluk, sabır, emek | ✅ Nihai (§2) | ✓ 4/4 |
 | Hz. Nûh | `nuh` | 8 | `hz-nuh/bolum-1…8` | sabır, güven, tedbir, umut | ✅ Nihai (§2) | ✓ 8/8 |
 | Hz. Hûd | `hud` | 5 | `hz-hud/bolum-1…5` | tevazu, cesaret, doğruluk, sorumluluk | Bekliyor (K1) | — |
-| Hz. Sâlih | `salih` | 5 | `hz-salih/bolum-1…5` | emanet, ölçülülük, sözünde durma, saygı | Bekliyor (K1) | — |
+| Hz. Sâlih | `salih` | 5 | `hz-salih/bolum-1…5` | emanet, ölçülülük, sözünde durma, saygı | ✅ Nihai (§2) | ✓ 5/5 |
 
 ### Bölge 2 — Bereketli Aile Yolu (6 kitap · 39 rozet)
 
@@ -463,7 +504,7 @@ Hz. Yunus 5 · Hz. İbrahim 9 · Hz. Yusuf 10 · Hz. Süleyman 7 · Hz. Îsâ 8 
 
 | Kitap | bookKey | Böl. | Anahtar aralığı | Ana değerler | İçerik | Görsel |
 |---|---|---:|---|---|---|---|
-| Hz. Dâvûd | `davud` | 6 | `hz-davud/bolum-1…6` | cesaret, adalet, emek, şükür | Bekliyor (K1) | — |
+| Hz. Dâvûd | `davud` | 6 | `hz-davud/bolum-1…6` | cesaret, adalet, emek, şükür | ✅ Nihai (§2) | ✓ 6/6 |
 | Hz. Süleyman | `suleyman` | 7 | `hz-suleyman/bolum-1…7` | hikmet, şükür, merhamet, adalet | ✅ Nihai (§2) | ✓ 7/7 |
 | Hz. İlyas | `ilyas` | 5 | `hz-ilyas/bolum-1…5` | tevhid, cesaret, sabır, doğruluk | Bekliyor (K2) | — |
 | Hz. Elyesa | `elyesa` | 4 | `hz-elyesa/bolum-1…4` | emanet, devamlılık, iyilik, sabır | Bekliyor (K2) | — |
@@ -509,11 +550,11 @@ Hz. Yunus 5 · Hz. İbrahim 9 · Hz. Yusuf 10 · Hz. Süleyman 7 · Hz. Îsâ 8 
 | | Sayı |
 |---|---:|
 | Planlanan rozet (216 bölüm) | 216 |
-| Nihai rozet adı kayıtlı | 84 |
+| Nihai rozet adı kayıtlı | 95 |
 | Geçici demo adı kayıtlı | 0 |
-| Ad bekleyen | 132 |
-| Üretilmiş rozet görseli | 84 |
-| Rozet görseli bekleyen | 132 |
+| Ad bekleyen | 121 |
+| Üretilmiş rozet görseli | 95 |
+| Rozet görseli bekleyen | 121 |
 
 Üretilmiş 84 görsel (20 Eki 2026'dan beri hepsi ortak çerçeveli; Âdem, Şît, Nûh ve İdrîs o gün yeniden üretildi): `rozetler/hz-adem/bolum-1…8.png` ve
 `rozetler/hz-sit/bolum-1…4.png` (11 Ağu 2026), `rozetler/hz-nuh/bolum-1…8.png`
@@ -616,6 +657,28 @@ teslim edildi, 20 Eki 2026'da ortak çerçeveye alındı).
 > `madalyalar/hz-ismail.png` yer tutucudur, görsel sayaçları 35/181 olarak kaldı.
 > Brifler `KITAP-HZ-ISMAIL-ICERIK-final.md` §H'sindedir. Kitap katalogda "preparing"
 > durumunda (yayına alınmadı).
+
+> **21 Eki 2026 — Hz. Dâvûd:** altı rozet **adı** nihai olarak kaydedildi
+> (89 → 95); görselleri henüz üretilmedi. `rozetler/hz-davud/bolum-1…6.png` ve
+> `madalyalar/hz-davud.png` yer tutucudur, görsel sayaçları 84/132 olarak kaldı.
+> Brifler `KITAP-HZ-DAVUD-ICERIK-final.md` §H'sindedir. Kitap katalogda "preparing"
+> durumunda (yayına alınmadı).
+>
+> **21 Eki 2026 — Hz. Dâvûd görselleri teslim edildi** (`/gorsel-uretim davud`):
+> altı rozet ve kitap madalyası çerçevesiz kare üretildi (1.5K ana dosyalar
+> `gorsel-kaynaklari/` altında) ve `npm run odul-cerceve -- kitap davud` ile ortak
+> çerçeveye alındı; Görsel sütunu `✓`. Görsel sayaçları 84 → 90 / 132 → 126.
+
+> **21 Eki 2026 — Hz. Sâlih:** beş rozet **adı** nihai olarak kaydedildi
+> (84 → 89); görselleri henüz üretilmedi. `rozetler/hz-salih/bolum-1…5.png` ve
+> `madalyalar/hz-salih.png` yer tutucudur, görsel sayaçları 84/132 olarak kaldı.
+> Brifler `KITAP-HZ-SALIH-ICERIK-final.md` §H'sindedir. Kitap katalogda "preparing"
+> durumunda (yayına alınmadı).
+>
+> **21 Eki 2026 — Hz. Sâlih görselleri teslim edildi** (`/gorsel-uretim salih`):
+> beş rozet ve kitap madalyası çerçevesiz kare üretildi (1.5K ana dosyalar
+> `gorsel-kaynaklari/` altında) ve `npm run odul-cerceve -- kitap salih` ile ortak
+> çerçeveye alındı; Görsel sütunu `✓`. Görsel sayaçları 90 → 95 / 126 → 121.
 
 > **17 Eki 2026 — Hz. İbrahim görselleri teslim edildi** (`/gorsel-uretim ibrahim`):
 > dokuz rozet ve kitap madalyası **çerçevesiz kare** (§6.2 kuralı) 512×512 PNG;
