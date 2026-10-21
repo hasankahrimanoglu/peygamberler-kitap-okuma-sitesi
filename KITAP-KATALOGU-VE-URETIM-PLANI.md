@@ -307,8 +307,7 @@ beklemeye alınır.
 
 | Durum | Kitaplar | Bölüm |
 |---|---|---:|
-| Yayında | Hz. Âdem · Hz. Nûh · Hz. İbrahim · Hz. İsmail · Hz. Yusuf · Hz. Eyyûb · Hz. Musa · Hz. Süleyman · Hz. Yunus · Hz. Îsâ | 76 |
-| Üretimde (Faz 1 — 21 Eki 2026) | **Hz. Sâlih · Hz. Dâvûd** | 11 |
+| Yayında | Hz. Âdem · Hz. Nûh · **Hz. Sâlih** · Hz. İbrahim · Hz. İsmail · Hz. Yusuf · Hz. Eyyûb · Hz. Musa · **Hz. Dâvûd** · Hz. Süleyman · Hz. Yunus · Hz. Îsâ — lansman listesinin tamamı (Sâlih ve Dâvûd 21 Eki 2026'da yazıldı ve yayına girdi; ses yer tutucu) | 87 |
 | Yazıldı, şimdilik gizli | Hz. Şît · Hz. İdrîs | 8 |
 | Lansmandan sonra ilk kitap | Hz. Muhammed — İlk Yıllar (K4; ayrı kaynak seti) | 8 |
 

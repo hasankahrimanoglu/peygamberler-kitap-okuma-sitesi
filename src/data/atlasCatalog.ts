@@ -70,7 +70,7 @@ export const atlasRegions: AtlasRegion[] = [
       { order: 3, key: "idris", title: "Hz. İdrîs", subtitle: "Öğrenen ve öğreten bir ömür", description: "Yıldızları, taşları ve iplikleri merak eden bir peygamberin izini sür; öğrenmenin, sabrın ve vazgeçmeyen emeğin ne demek olduğunu keşfet.", chapterCount: 4, durakRengi: "yesil", availability: "hidden", yayinTarihi: "2026-09-05" },
       { order: 4, key: "nuh", title: "Hz. Nûh", subtitle: "Sabır ve güven yolculuğu", description: "Yüzyıllarca sabırla çağıran bir peygamberin yanında dur; alaylara rağmen yapılan gemiyle güvenin, şükrün ve yeniden başlamanın anlamını keşfet.", chapterCount: 8, durakRengi: "mor", availability: "published", yayinTarihi: "2026-10-12" },
       { order: 5, key: "hud", title: "Hz. Hûd", subtitle: "Gücün karşısında doğru söz", chapterCount: 5, availability: "preparing" },
-      { order: 6, key: "salih", title: "Hz. Sâlih", subtitle: "Emaneti koruyanlar", chapterCount: 5, availability: "preparing" },
+      { order: 6, key: "salih", title: "Hz. Sâlih", subtitle: "Nimeti hatırlamak, sınıra saygı", description: "Kayalara oyulmuş evlerden su başındaki bir deveye uzanan yolculukta nimeti hatırlamanın, başkasının hakkına saygının ve merhametin anlamını keşfet.", chapterCount: 5, durakRengi: "kirmizi", availability: "published", yayinTarihi: "2026-10-21" },
     ],
   },
   {
@@ -110,7 +110,7 @@ export const atlasRegions: AtlasRegion[] = [
     description: "Güç sahibi olmanın ne demek olduğunu; adaletle karar veren, şükreden ve canlıların dünyasına dikkatle bakan elçilerle keşfet.",
     mood: "Hikmet ve adalet",
     books: [
-      { order: 19, key: "davud", title: "Hz. Dâvûd", subtitle: "Cesaret ve adalet", chapterCount: 6, availability: "preparing" },
+      { order: 19, key: "davud", title: "Hz. Dâvûd", subtitle: "Cesaret ve adalet", description: "Irmak kıyısındaki sınavdan dağlarla edilen tesbihe, demirden örülen zırhtan adil bir hükme uzanan yolculukta Hz. Dâvûd'un cesaretini, emeğini ve adaletini keşfet.", chapterCount: 6, durakRengi: "mavi", availability: "published", yayinTarihi: "2026-10-21" },
       { order: 20, key: "suleyman", title: "Hz. Süleyman", subtitle: "Şükürle büyüyen hikmet", description: "Bir bağ davasından karınca vadisine, kayıp bir kuştan billur bir köşke uzanan yolculukta Hz. Süleyman'ın hikmetini, adaletini ve şükrünü keşfet.", chapterCount: 7, durakRengi: "mor", availability: "published", yayinTarihi: "2026-10-17" },
       { order: 21, key: "ilyas", title: "Hz. İlyas", subtitle: "Doğru sözü korumak", chapterCount: 5, availability: "preparing" },
       { order: 22, key: "elyesa", title: "Hz. Elyesa", subtitle: "İyilik yolunu sürdürmek", chapterCount: 4, availability: "preparing" },
