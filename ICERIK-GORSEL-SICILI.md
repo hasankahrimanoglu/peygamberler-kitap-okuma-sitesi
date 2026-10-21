@@ -2587,7 +2587,7 @@ görsel `gorsel-kaynaklari/` altına konur, ortak çerçeveyi `npm run odul-cerc
 | `public/madalyalar/` | `hz-{bookKey}.png` | **12** | **Hepsi ortak çerçeveli (20 Eki 2026):** âdem · şît · idrîs · nûh (20 Eki'de yeniden üretildi) · musa · eyyûb · yunus · ibrahim · yusuf · süleyman · îsâ · ismail **ortak çerçeveli** (kare teslim 13–17 Eki, çerçeve 20 Eki 2026). İlk İzler Vadisi hedefi 6 |
 | `public/unvanlar/` | `{unvan-anahtari}.png` | **10** | **Hepsi gerçek (20 Eki 2026):** kodla çizilen kitap temalı ortak çerçeve + gece göğü zeminli pencere + Hasan'ın şeffaf iç ikonları (`gorsel-kaynaklari/unvanlar/{anahtar}.png`; `npm run odul-cerceve -- unvan`). `buyuk-yolculuk-kasifi` iç ikonu Yeni Gezgin'e çok benzediği için Magnific ile yeniden üretildi (altın küre ve rota; eski ikon `gorsel-kaynaklari/unvanlar/eski/`). Anahtarlar: `yeni-gezgin`, `yol-kasifi`, `deger-toplayicisi`, `yol-arkadasi`, `bilge-yolcu`, `hikaye-ustasi`, `emanet-koruyucusu`, `isik-tasiyicisi`, `kissa-rehberi`, `buyuk-yolculuk-kasifi` (12 Eki 2026'da `atlas-bilgini` ve `yedi-bolge-kasifi` yerine). Anahtarlar `derive.ts:UNVAN_ESIKLERI` + `unvanAnahtari()` türetimidir; eşik tablosu değişirse `npm run gorsel-yertutucu -- unvanlar` yeniden çalıştırılır |
 | `public/avatarlar/` | `avatar-{1..10}.jpg` | **10** | Veli panelinde üçerli pencerede oklarla gezilir |
-| `public/ikonlar/` | `final-kapisi.svg` | **1** | Bölüm rotasındaki **Büyük Final Testi** durağının ikonu — arayüz ikonu olduğu için SVG kalır |
+| ~~`public/ikonlar/`~~ | ~~`final-kapisi.svg`~~ | **0** | Hiçbir ekranda kullanılmadığı için 21 Eki 2026'da silindi (final satırı `Ikon` ailesini kullanıyor) |
 
 > **Ölü SVG temizliği (11 Ağu 2026 — TAMAMLANDI).** PNG geçişinden kalan ve
 > artık hiçbir ekranda okunmayan **50 `.svg`** dosyası silindi: 34 rozet +
@@ -2605,7 +2605,7 @@ görsel `gorsel-kaynaklari/` altına konur, ortak çerçeveyi `npm run odul-cerc
 > **Tip yedekleri korundu** — `rozetler/placeholder.svg`,
 > `madalyalar/placeholder.svg`, `unvanlar/placeholder.svg` hâlâ canlıdır ve
 > `varlikYollari.ts:YEDEK` üzerinden okunur. `public` altında kalan tüm `.svg`
-> dosyaları ya bir tip yedeği ya da arayüz ikonudur (`ikonlar/final-kapisi.svg`).
+> dosyaları bir tip yedeğidir (`ikonlar/final-kapisi.svg` 21 Eki 2026'da silindi).
 
 > ⚠️ **`.svg` dosyasını `.png` adıyla kopyalamayın.** Statik sunucu içerik
 > tipini uzantıdan verir; `.png` adlı bir SVG tarayıcıda *kırık görsel* olur.
@@ -2613,10 +2613,8 @@ görsel `gorsel-kaynaklari/` altına konur, ortak çerçeveyi `npm run odul-cerc
 > yani sahte PNG, çalışan yedekten kötüdür. Yer tutucu gerekiyorsa **gerçek
 > PNG** üretin (`npm run gorsel-yertutucu -- <bookKey>` bunu yapar).
 
-**Büyük Final Testi ikonunun yolu:** `public/ikonlar/final-kapisi.svg`
-Bölüm rotasında "Final Kapısı" durağında görünür; `currentColor` kullandığı için
-durum rengini (tamamlandı/aktif/kilitli) kendiliğinden alır. Sabit renk vermek
-istersen SVG içindeki `currentColor` değerlerini kendi renginle değiştir.
+~~**Büyük Final Testi ikonunun yolu:** `public/ikonlar/final-kapisi.svg`~~ — eski
+bölüm rotasından kalmıştı, hiçbir ekranda kullanılmadığı için 21 Eki 2026'da silindi.
 
 ### Kitap kapakları
 

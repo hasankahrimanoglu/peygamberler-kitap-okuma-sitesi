@@ -11,6 +11,8 @@ yarn-debug.log*
 yarn-error.log*
 .DS_Store
 *.tsbuildinfo
+# Next her çalıştırmada yeniden yazar (dev ve build farklı yol yazar); izlenmez.
+next-env.d.ts
 .vercel
 
 # Yerel yedek görseller (ör. kapak-eski.png) repoya girmez.

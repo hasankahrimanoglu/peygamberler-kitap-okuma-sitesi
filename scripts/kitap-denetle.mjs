@@ -45,7 +45,6 @@ const PUBLIC = join(KOK, "public");
 
 const SAHNE_YEDEGI = join(PUBLIC, "kitaplar/placeholder-sahne.jpg");
 const KAPAK_YEDEGI = join(PUBLIC, "kitaplar/placeholder-kapak.png");
-const DURAK_YEDEGI = join(PUBLIC, "kitaplar/placeholder-durak.jpg");
 const SES_YEDEGI = join(PUBLIC, "sesli-anlatim/placeholder-ses.mp3");
 // Yer tutucu ses, Hz. Âdem 1. bölümün GERÇEK kaydının kopyasıdır
 // (PROJE-MODELI 6.5). O dosya yedekle aynı olsa da yer tutucu sayılmaz.
@@ -381,19 +380,22 @@ function denetle(key) {
         eksikDosyalar.map((y) => `      ${y}`).join("\n"),
     );
   const yedekKapaklar = [];
-  for (const [y, yedek] of [
-    [`/kitaplar/hz-${key}/kapak.png`, KAPAK_YEDEGI],
-    [`/kitaplar/hz-${key}/harita-kapak.jpg`, DURAK_YEDEGI],
-  ]) {
+  for (const [y, yedek] of [[`/kitaplar/hz-${key}/kapak.png`, KAPAK_YEDEGI]]) {
     const tam = join(PUBLIC, y);
     if (!existsSync(tam)) uyarilar.push(`${y} yok → \`npm run gorsel-yertutucu -- ${key}\` yer tutucusunu açar (ekran şimdilik yedeğe düşüyor).`);
     else if (yedekleAyniMi(tam, yedek)) yedekKapaklar.push(y);
   }
   if (yedekKapaklar.length) {
-    const metin = `Kitap kapağı / harita durağı hâlâ yer tutucu: ${yedekKapaklar.join(", ")}`;
+    const metin = `Kitap kapağı hâlâ yer tutucu: ${yedekKapaklar.join(", ")}`;
     if (yayinda) uyarilar.push(`YAYINDA YER TUTUCU KAPAK — ${metin}.`);
     else bilgiler.push(`${metin} — yayından önce gerçek görselle değiştirilmeli.`);
   }
+  // Rota durağının yer tutucusu yok: dosya görsel üretiminde çerçeve betiğiyle yazılır.
+  const durak = `/kitaplar/hz-${key}/harita-durak.png`;
+  if (!existsSync(join(PUBLIC, durak)))
+    (yayinda ? uyarilar : bilgiler).push(
+      `${durak} yok → görsel üretiminde \`npm run odul-cerceve -- durak ${key}\` (ekran şimdilik durak yedeğine düşüyor).`,
+    );
   if (hatalar.length === dosyaHatasi)
     gecenler.push(
       `Görsel ve ses dosyaları diskte: ${sahneler.length} sahne · ${bolumler.length} rozet · 1 madalya · ${sesYollari.length} ses.`,

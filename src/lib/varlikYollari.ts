@@ -49,7 +49,7 @@ export function kitapKapagi(bookKey: string) {
  * REVİZE 20 Eki 2026 (PROJE-MODELI 3.10.1, 6.1): görsel iç sahne + ortak halka
  * çerçevedir; 512×512 şeffaf PNG, mine bandın yeri şeffaf. Bandın rengi ve
  * ilerlemesi CSS'ten gelir. Üreten: `npm run odul-cerceve -- durak {bookKey}`.
- * Eski `harita-kapak.jpg` ekranda kullanılmaz. Dosya yoksa ekran `YEDEK.durak`a
+ * Eski `harita-kapak.jpg` dosyaları 21 Eki 2026'da kaldırıldı. Dosya yoksa ekran `YEDEK.durak`a
  * düşer, kod bozulmaz.
  */
 export function haritaDuragiGorseli(bookKey: string) {

@@ -841,7 +841,7 @@ testi henüz yapılmadı; kararlar gözlem ve ölçüme dayanır.
   `transform` / `opacity` canlandırılır; "hareketi azalt" tercihinde hepsi durur.
   İleride boyalı bir görsel istenirse yalnız `ROTA_ARKAPLANI` değişir (kurallar:
   gökyüzü yok, üst ve alt kenar dikişsiz, orta sütun sakin, figür yok). Bölge
-  görselleri (`public/bolgeler/`) artık kullanılmıyor.
+  görselleri (`public/bolgeler/`) kullanılmadığı için 21 Ekim 2026'da silindi.
 
 #### 3.10.2 Kitap kilidi kalkar
 
@@ -1558,7 +1558,7 @@ public/
     placeholder-kapak.svg              kitap kapağı yedeği
     hz-{bookKey}/
       kapak.png                        kitap kapağı (dikey; kütüphane, kitap paneli)
-      harita-kapak.jpg                 harita durağının yuvarlak görseli (kare)
+      harita-durak.png                 rota durağı: iç sahne + ortak halka (`odul-cerceve -- durak`)
       bolum-{n}/
         kapak.jpg                      bölüm açılış sahnesi (16:9)
         {kisa-ad}.jpg                  bölüm içi sahneler (16:9)
@@ -1570,9 +1570,6 @@ public/
     {unvan-anahtari}.png               ör. bilge-yolcu.png
   avatarlar/
     avatar-{1..10}.jpg                 10 avatar
-  ikonlar/
-    final-kapisi.svg                   Büyük Final Testi durağının ikonu
-  bolgeler/     bolge-{regionId}.png   keşif bölgesi sahne arka planı (7 adet)
   harita/
     rota-harita-arkaplan.jpg           ana ekran rotasının boyalı, dikişsiz tekrar eden arka planı (3.10.1);
                                        üstündeki hareket katmanı kodla çizilir (CanliCayir.tsx, 17 Eki 2026)
@@ -1624,8 +1621,8 @@ public/
   geçicidir (Âdem ve İdrîs, eski sahnelerinde yazı olduğu için 21 Ekim 2026'da
   yazısız yeniden üretildi: tepede genç ağaç · yıldız altında yün yumağı ve iğ);
   Hasan yeni sahneyi aynı adla koyup betiği çalıştırır. Yeni sahnelerde yazı olmaz.
-  `harita-kapak.jpg` dosyaları artık ekranda kullanılmaz (kaynak arşivi olarak
-  durur). `harita-durak.png` yoksa ekran durak yedeğine düşer.
+  `harita-kapak.jpg` dosyaları ekranda kullanılmadığı için 21 Ekim 2026'da
+  kaldırıldı (iç sahne kaynakları `gorsel-kaynaklari/duraklar/`'da). `harita-durak.png` yoksa ekran durak yedeğine düşer.
 - **Rozet, madalya ve unvan PNG'dir — 512×512, şeffaf zemin (REVİZE 7 Ağustos
   2026, Hasan).** Önceki karar SVG'ydi; üç gerekçeyle değiştirildi:
   - **Ölçek avantajı karşılıksız.** Bu görseller ekranda en fazla **72px**

@@ -153,7 +153,7 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
   `public/kitaplar/hz-{bookKey}/kapak.png` · `.../bolum-{n}/kapak.jpg` ·
   `.../bolum-{n}/{kisa-ad}.jpg` · `public/rozetler/hz-{bookKey}/bolum-{n}.png` ·
   `public/madalyalar/hz-{bookKey}.png` · `public/unvanlar/{anahtar}.png` ·
-  `public/avatarlar/avatar-{1..10}.jpg` · `public/ikonlar/final-kapisi.svg` ·
+  `public/avatarlar/avatar-{1..10}.jpg` ·
   `public/sesli-anlatim/hz-{bookKey}/hz-{bookKey}-bolum-{n}.mp3`.
   **Okuma sayfası görselleri 16:9 ve `.jpg`** (sabit); sitedeki kopya
   `npm run gorsel-sikistir` ile en fazla 1600 px, kalite 82 (KARAR 20 Eki 2026 —
@@ -161,7 +161,7 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
   `gorsel-kaynaklari/kitaplar/`'da saklanır). **Rozet/madalya/unvan
   512×512 şeffaf PNG** (REVİZE 7 Ağu 2026 — eskiden SVG'ydi; ekranda en fazla
   72px çizildikleri için vektör avantajı karşılıksızdı, brifler ise gradyan ve
-  doku istiyor). Yedek placeholder'lar ve `final-kapisi.svg` SVG kalır.
+  doku istiyor). Yedek placeholder'lar SVG kalır.
   Dosya adları küçük harf, Türkçe karaktersiz, tireli. İçerik görsellerinin
   sicili: `ICERIK-GORSEL-SICILI.md`.
 - **Rozet = bölüm başına özel görsel** (Karar: Seçenek B). Anahtar veriye yazılmaz,
@@ -205,7 +205,7 @@ gözlem testi var. Ana ekran bileşenleri `src/components/cocuk/`, veri modeli
 (`?durum=bos`) ve `/tasarim/isil`. Veli tarafının girişsiz önizlemesi
 `/tasarim/veli-rapor` (Gelişim Raporu'nun Kitaplar ve Sohbet Önerileri sekmeleri;
 `?durum=bos|tek`, `?sekme=kitaplar`; görünüm `src/components/dashboard/Rapor*Sekmesi.tsx`).
-"Kim okuyor?" önizlemesi `/tasarim/kim-okuyor` (`?sifre=1`; örnek şifre 1234;
+Beklenmedik hata ekranı `app/error.tsx` (dünya adresten seçilir; görünüm `src/components/ui/HataEkrani.tsx`), önizlemesi `/tasarim/hata` (`?dunya=veli`; `?gercek=1` bilerek hata verir). "Kim okuyor?" önizlemesi `/tasarim/kim-okuyor` (`?sifre=1`; örnek şifre 1234;
 `?kurulum=1` ana ekran notu); "Bu cihazı çocuğunuz kullanacak mı?" sorusu
 `/tasarim/cihaz-sorusu` (`?durum=baglandi`). Giriş sayfası açık oturumu tanır
 ve yönlendirir (3.11 "Çocuğun geri dönüşü"). **iOS 26'da ana ekran simgesi
@@ -266,8 +266,8 @@ Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
   geçti**; sayfalı okuyucu (`AtlasReader`, `sayfalar.ts`, sayfa bileşenleri ve
   `/tasarim/okuma-yeni` · `/tasarim/okuma-kaydirmali` önizlemeleri)
   **30 Tem 2026'da silindi**. `src/components/reader/` içinde artık yalnız
-  `AtlasScrollReader` + `AdimCubugu` + `RozetKutlamasi` + `akis.ts` + `Konfeti`
-  vardır; sayfa metaforuna dönüş ÖNERİLMEZ.
+  `AtlasScrollReader` + `AdimCubugu` + `RozetKutlamasi` + `KutlamaSahnesi` + `akis.ts`
+  vardır (`Konfeti` kullanılmadığı için 21 Eki 2026'da silindi); sayfa metaforuna dönüş ÖNERİLMEZ.
 - **"Bugüne Taşı" görevleri KOŞULLUDUR** — her bölümde değil (kitabın yaklaşık
   %40–50'si; editoryal hedef, teknik sınır olarak KODLANMAZ). Gönüllüdür: "Görevi Listeme
   Ekle / Şimdilik Değil". İlerleme/rozet/madalya ŞARTI DEĞİLDİR; göreve ayrı
