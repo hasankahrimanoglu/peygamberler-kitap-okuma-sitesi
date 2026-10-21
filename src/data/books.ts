@@ -8077,7 +8077,7 @@ export const books: BookDefinition[] = [
           {
             type: "image",
             src: "/kitaplar/hz-davud/bolum-4/yumusayan-demir.jpg",
-            alt: "Koyu mavi cüppe kolları sıvanmış iki güçlü elin arasında, ocakta ısınmış, mum gibi yumuşakça kıvrılarak halkaya dönüşen bir demir çubuk.",
+            alt: "Koyu mavi cüppe kolları sıvanmış iki güçlü elin arasında, mum gibi yumuşakça kıvrılarak halkaya dönüşen gri bir demir çubuk.",
           },
           {
             type: "interactive_word",

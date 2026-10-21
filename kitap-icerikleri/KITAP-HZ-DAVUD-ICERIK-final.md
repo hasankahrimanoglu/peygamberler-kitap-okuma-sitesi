@@ -29,7 +29,7 @@
 > | 8 | B1: Tâlût yola çıkarken söylediği sözü nehirde hatırlatır; "bir nehirle" (Bakara 249); final S1 kökü buna göre |
 > | 9 | "Allah'a kavuşacaklarını umanlar" → "Bir gün Allah'ın huzuruna çıkacaklarına inananlar" |
 > | 10 | F5: Bakara 251'in devamında özne Allah (âyete uygun) |
-> | 11 | Demir görseli: ocakta ısınmış metal, sihirli parıltı yok ("ateşsiz" ayrıntısı çıktı) |
+> | 11 | Demir görseli: ocakta ısınmış metal, sihirli parıltı yok ("ateşsiz" ayrıntısı çıktı). **REVİZE 21 Eki 2026 (Hasan):** demir ısıtılmış çizilmez; soğuk, mat, gri demir mum gibi yumuşar; ışıma, kızıllık, kor ve yanan ocak yok (metin ve Kur'an demirin yumuşatıldığını söyler; kızgın metale elle dokunma örneği verilmez) |
 > | 12 | Katman 1 kişilerde boy tarifi çıktı (genç Dâvûd, Tâlût, B6 karşılaştırması) |
 > | 13 | B6 Sen Olsaydın: "peçeteleri karıştırabilir" (görevin güvenlik notuyla uyum) |
 > | 14 | B3 son paragrafı zaman vermeyen köprü ("Allah'ın ona verdiği bir iyilik daha vardı…") |
@@ -1105,14 +1105,15 @@ Negatif prompt/kesin yasaklar: human figure, person, silhouette, hands, swords, 
 ```text
 Görsel ID: davud-4-yumusayan-demir
 Metin çapası: "Kur'an'a göre Allah, Hz. Dâvûd'a özel bir iyilikte bulundu…" paragrafından sonra
-Sahnenin amacı: Mucizeyi sakin bir yakın planla göstermek: güçlü iki elin arasında yumuşakça bükülen koyu demir.
+Sahnenin amacı: Mucizeyi sakin bir yakın planla göstermek: güçlü iki elin arasında, ısıtılmadan yumuşakça bükülen gri demir.
 Dosya: bolum-4/yumusayan-demir.jpg
-Alt metin: Koyu mavi cüppe kolları sıvanmış iki güçlü elin arasında, ocakta ısınmış, mum gibi yumuşakça kıvrılarak halkaya dönüşen bir demir çubuk.
-Ana üretim promptu: Yakın plan: koyu mavi yün cüppenin kolları dirseğe kadar sıvanmış iki güçlü el, örsün üzerinde koyu gri bir demir çubuğu tutuyor. Ocakta ısınmış, koyu turuncu renkteki demir, bir mum gibi yumuşakça kıvrılıyor ve bir halkaya dönüşmek üzere. Demirin üzerinde alev, kıvılcım ya da sihirli bir parıltı yok; arkadaki ocağın sıcak ışığı ellere ve metale vuruyor. Arka plan yumuşak bulanık: taş duvar ve asılı halkalar.
-Ana üretim promptu (EN): Close-up: two strong hands, with the sleeves of a dark-blue woollen robe rolled up to the elbows, hold a dark grey iron rod over an anvil. Heated in the hearth to a deep orange, the iron bends gently like soft wax and is about to become a ring. There are no flames, sparks or magical glow on the iron; the warm light of the hearth behind falls on the hands and the metal. The background is softly blurred: a stone wall and hanging rings.
+Alt metin: Koyu mavi cüppe kolları sıvanmış iki güçlü elin arasında, mum gibi yumuşakça kıvrılarak halkaya dönüşen gri bir demir çubuk.
+Ana üretim promptu: Yakın plan: koyu mavi yün cüppenin kolları dirseğe kadar sıvanmış iki güçlü el, soğuk bir örsün üzerinde mat, koyu gri bir demir çubuğu tutuyor. Demir hiç ısıtılmamış; gri rengini koruyor ama ellerin arasında bir mum ya da yumuşak kil gibi kıvrılıyor ve bir halkaya dönüşmek üzere. Hiçbir yerde ışıma, kızıllık, alev, kıvılcım ya da duman yok. Küçük bir pencereden gelen sakin gün ışığı ellere ve gri metale vuruyor. Arka plan yumuşak bulanık: taş duvar ve tahta bir çiviye asılı küçük gri halkalar; ateş görünmüyor.
+Ana üretim promptu (EN): Close-up: two strong hands, with the sleeves of a dark-blue woollen robe rolled up to the elbows, hold a cool, matte, dark grey iron rod above a cold iron anvil. The iron is not heated at all: it keeps its plain grey color, yet it bends softly in the hands like warm wax or soft clay, curling gently and about to close into a ring. There is no glow, no redness, no fire, no sparks and no smoke anywhere; the iron is dull grey metal. Soft, calm daylight from a small window falls on the hands and the grey metal. The background is softly blurred: a plain stone wall with small grey iron rings hanging on a wooden peg; no fire is visible.
 Kadraj notu: 16:9; eller ve demir kadrajın ortasında, keskin; kollar kadrajın alt kenarından giriyor; yüz ve gövde kadraj dışında.
 Figür: Hz. Dâvûd — Katman 1, yalnız elleri ve cüppe kolları (Faz 1 §B6: "Eller görünebilir"); yüz kadraj dışında. Karakter bloğu gerekmez.
-Negatif prompt/kesin yasaklar: visible face, facial features, profile, head in frame, flames on the iron, sparks, magic glow, light rays, rings on fingers, jewelry, gloves, birds
+Negatif prompt/kesin yasaklar: visible face, facial features, profile, head in frame, glowing, red-hot, orange-hot metal, sparks, fire, flames, embers, burning hearth, smoke, magic glow, light rays, rings on fingers, jewelry, gloves, birds
+REVİZE 21 Eki 2026 (Hasan; karar 11): demir ısıtılmış çizilmez; ilk üretimdeki turuncu-kızgın demir ve yanan ocak bu tarifle değiştirildi.
 ```
 
 ```text
@@ -1949,7 +1950,7 @@ Yeni bir öneri yoktur.
 | `public/kitaplar/hz-davud/bolum-3/iftar-sofrasi.jpg` | B3 · Devam | — | Gün batımının altın ışığında, açık bir pencerenin önündeki alçak tahta masada birkaç hurma, yassı ekmek ve bir kâse su. |
 | `public/kitaplar/hz-davud/bolum-3/aksam-daglari.jpg` | B3 · Devam | — | Akşam güneşinde turuncu ve mor renkte parlayan dağ sırtları; kayalık bir sırtın üzerine konmak üzere alçalan kuş sürüsü. |
 | `public/kitaplar/hz-davud/bolum-4/kapak.jpg` | B4 · açılış | — | Sabah ışığında taş duvarlı sade bir demirhane; ortada örs ve çekiç, yanında kızaran kömürlerle dolu bir ocak, duvarda asılı demir halkalar. |
-| `public/kitaplar/hz-davud/bolum-4/yumusayan-demir.jpg` | B4 · 1. Kısım | Hz. Dâvûd (K1) | Koyu mavi cüppe kolları sıvanmış iki güçlü elin arasında, ocakta ısınmış, mum gibi yumuşakça kıvrılarak halkaya dönüşen bir demir çubuk. |
+| `public/kitaplar/hz-davud/bolum-4/yumusayan-demir.jpg` | B4 · 1. Kısım | Hz. Dâvûd (K1) | Koyu mavi cüppe kolları sıvanmış iki güçlü elin arasında, mum gibi yumuşakça kıvrılarak halkaya dönüşen gri bir demir çubuk. |
 | `public/kitaplar/hz-davud/bolum-4/halka-halka.jpg` | B4 · 1. Kısım | — | Ahşap bir tezgâhın üzerinde yarısı örülmüş, iç içe geçmiş küçük demir halkalardan bir zırh; yanında dağınık halkalar ve sade bir kerpeten. |
 | `public/kitaplar/hz-davud/bolum-4/ocak-basinda.jpg` | B4 · Devam | Hz. Dâvûd (K1); Teklif getiren iki adam (K3) | Demirhanede örsün başında, deri önlüklü, arkası dönük çalışan koyu mavi cüppeli bir adam; açık kapıda süslü cüppeli iki adam saygıyla bekliyor. |
 | `public/kitaplar/hz-davud/bolum-4/zirhi-veren.jpg` | B4 · Devam | Hz. Dâvûd (K1); Zırhı alan genç (K3) | Demirhanenin kapısında, arkası dönük koyu mavi cüppeli bir adamın uzattığı katlanmış zırhı iki eliyle alan sade giysili genç bir adam; tezgâhta küçük bir ekmek ve toprak bir bardak. |
@@ -2194,7 +2195,7 @@ karar kaydı dosyanın başında). İkinci denetim turunun önerilere yaptığı
 | 8 | **Ö8 · B1 âyet ifadesi** ("bu nehirle", zamanlama) | "…Tâlût onları durdurdu ve yola çıkarken söylediği sözü hatırlattı. Kur'an'a göre şöyle demişti: — Allah sizi bir nehirle sınayacak…"; final S1: "Tâlût, askerlerine nehirle ilgili ne söyledi?" |
 | 9 | **Ö9 · "Allah'a kavuşacaklarını umanlar"** | "Bir gün Allah'ın huzuruna çıkacaklarına inananlar ise başka türlü konuştu:" |
 | 10 | **Ö11 · F5'te Bakara 251'in devamı** | Özne âyete döndü: "…Allah'ın insanların bir kısmını öbürüyle engellemesi olmasaydı…" |
-| 11 | **Ö12 · `davud-4-yumusayan-demir`** ("ateşsiz" ayrıntısı) | Demir ocakta ısınmış koyu turuncu metal olarak, alevsiz ve sihirli parıltısız, mum gibi kıvrılıyor; `glowing red-hot iron` negatiften çıktı |
+| 11 | **Ö12 · `davud-4-yumusayan-demir`** ("ateşsiz" ayrıntısı) | Demir ocakta ısınmış koyu turuncu metal olarak, alevsiz ve sihirli parıltısız, mum gibi kıvrılıyor; `glowing red-hot iron` negatiften çıktı. **REVİZE 21 Eki 2026 (Hasan):** demir ısıtılmaz; soğuk, mat, gri demir ellerde mum gibi yumuşayıp halkaya dönüyor; arkada yanan ocak yok; negatife `glowing, red-hot, orange-hot metal, sparks, fire, flames, embers` eklendi, görsel yeniden üretildi |
 | 12 | **Ö13 · Katman 1 kişilerde boy tarifi** | Genç Dâvûd bloğundan "of medium height" çıktı; Tâlût "broad-shouldered, strong" (Bakara 247); B6'daki boy karşılaştırması çıktı |
 | 13 | **Ö14 · B6 Sen Olsaydın sorusu** | "Ama peçeteleri karıştırabilir ve iş biraz uzun sürebilir." |
 | 14 | **Ö15 · B3 son paragrafı** (kronoloji) | Zaman vermeyen köprü, "lütuf" yerine "iyilik" (K10 ile uyumlu): "Allah'ın ona verdiği bir iyilik daha vardı: Sert demir, onun ellerinde yumuşardı." |

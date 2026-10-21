@@ -2050,8 +2050,9 @@ kaydeder. Bölüm başına 1 açılış + 5 sahne (1. Kısım 2 / Devam 3).
 > B5'teki dönüş anı figürsüzdür (`bolum-5/yonelis`, boş hasır ve ışık; Faz 2 karar 6). Ordu ve
 > sancaklarda simge, bayrak ya da yazı yok; çalgı, mizmar ve nota yok; aslan yok; taç, taht,
 > altın yok; tomar hep yazısız. Melek, kanat, hale, cami, kubbe (Kubbetüssahra dahil), minare,
-> hilal, kilise, haç, Davud yıldızı ve menora yoktur. Demir, ocakta ısınmış metal olarak
-> çizilir; sihirli parıltı yok (Faz 2 karar 11). **§6.2 istisnası:** kuşlar birkaç sahnenin
+> hilal, kilise, haç, Davud yıldızı ve menora yoktur. Demir ısıtılmış çizilmez:
+> soğuk, mat, gri demir mum gibi yumuşar; ışıma, kor ve yanan ocak yok (Faz 2 karar 11, REVİZE
+> 21 Eki 2026 — Hasan; `bolum-4/yumusayan-demir` aynı gün bu tarifle yeniden üretildi). **§6.2 istisnası:** kuşlar birkaç sahnenin
 > konusu olduğu için `birds` yalnız kuşsuz sahnelerin negatifine yazılır. Görsel dünya: demir
 > çağı başında Kenan diyarının tepelik ülkesi; kayalık yamaçlar, teraslı zeytinlikler ve
 > bağlar, sazlı nehir vadisi, tozlu ova; şehir ve kubbesiz mabet Hz. Süleyman kitabıyla aynı
@@ -2102,7 +2103,7 @@ kaydeder. Bölüm başına 1 açılış + 5 sahne (1. Kısım 2 / Devam 3).
 | Dosya | Akıştaki yer | Öncelik | Figür | Durum | Görsel brifi |
 |---|---|---|---|---|---|
 | `hz-davud/bolum-4/kapak.jpg` | Açılış | A | yok | ✅ Hazır | Sabah ışığında taş duvarlı sade bir demirhane; ortada örs ve çekiç, yanında kızaran kömürlerle dolu bir ocak, duvarda asılı demir halkalar. |
-| `hz-davud/bolum-4/yumusayan-demir.jpg` | 1. Kısım | A | Hz. Dâvûd — Katman 1, yalnız elleri ve cüppe kolları (Faz 1 §B6: "Eller görünebilir"); yüz kadraj dışında. Karakter bloğu gerekmez. | ✅ Hazır | Koyu mavi cüppe kolları sıvanmış iki güçlü elin arasında, ocakta ısınmış, mum gibi yumuşakça kıvrılarak halkaya dönüşen bir demir çubuk. |
+| `hz-davud/bolum-4/yumusayan-demir.jpg` | 1. Kısım | A | Hz. Dâvûd — Katman 1, yalnız elleri ve cüppe kolları (Faz 1 §B6: "Eller görünebilir"); yüz kadraj dışında. Karakter bloğu gerekmez. | ✅ Hazır (21 Eki 2026 yeniden üretildi: ışımasız gri demir, yanan ocak yok; Hasan) | Koyu mavi cüppe kolları sıvanmış iki güçlü elin arasında, mum gibi yumuşakça kıvrılarak halkaya dönüşen gri bir demir çubuk. |
 | `hz-davud/bolum-4/halka-halka.jpg` | 1. Kısım | A | yok | ✅ Hazır | Ahşap bir tezgâhın üzerinde yarısı örülmüş, iç içe geçmiş küçük demir halkalardan bir zırh; yanında dağınık halkalar ve sade bir kerpeten. |
 | `hz-davud/bolum-4/ocak-basinda.jpg` | Devam | B | Hz. Dâvûd — Katman 1, arkadan, yüz görünmez (karma sahne); karakter bloğu "Hz. Dâvûd" (deri önlük sahneye özgü). Teklif getiren iki adam — Katman 3, karşıdan, sakin. | ✅ Hazır | Demirhanede örsün başında, deri önlüklü, arkası dönük çalışan koyu mavi cüppeli bir adam; açık kapıda süslü cüppeli iki adam saygıyla bekliyor. |
 | `hz-davud/bolum-4/zirhi-veren.jpg` | Devam | B | Hz. Dâvûd — Katman 1, arkadan, yüz görünmez (karma sahne); karakter bloğu "Hz. Dâvûd". Zırhı alan genç — Katman 3, karşıdan. | ✅ Hazır | Demirhanenin kapısında, arkası dönük koyu mavi cüppeli bir adamın uzattığı katlanmış zırhı iki eliyle alan sade giysili genç bir adam; tezgâhta küçük bir ekmek ve toprak bir bardak. |
