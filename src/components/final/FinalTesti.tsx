@@ -61,6 +61,11 @@ export type FinalTestiProps = {
   saveError: string | null;
   saveState: FinalSaveState;
   score: number;
+  /**
+   * Çocuk "Tekrar oku" ile gittiği bölümden döndü (4.1/13 EK — 21 Eki 2026):
+   * patlama yinelenmez, liste açık gelir.
+   */
+  sonucaDonuldu?: boolean;
   selectedIsCorrect: boolean;
   selectedOption: QuizOption["id"] | null;
   /** Cevabı farklı seçilen soruların bölümleri, soru sırasıyla (4.1/13 EK). */
@@ -71,9 +76,18 @@ export type FinalTestiProps = {
  * "Tekrar bakmak istersen" (PROJE-MODELI 4.1/13 EK — 20 Eki 2026): kutlama
  * kartını boğmasın ve yanlışlar listesi gibi okunmasın diye kapalı gelir.
  * Açılınca liste görünür alana kaydırılır; her satır bölümü tekrar okumaya açar.
+ * Bölümden dönen çocuk sıradaki bölümü seçebilsin diye liste açık gelir.
  */
-function TekrarBak({ bookKey, bolumler }: { bookKey: string; bolumler: TekrarBolumu[] }) {
-  const [acik, setAcik] = useState(false);
+function TekrarBak({
+  bookKey,
+  bolumler,
+  acikBasla,
+}: {
+  bookKey: string;
+  bolumler: TekrarBolumu[];
+  acikBasla: boolean;
+}) {
+  const [acik, setAcik] = useState(acikBasla);
   const listeRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -173,6 +187,7 @@ export function FinalTesti({
   saveError,
   saveState,
   score,
+  sonucaDonuldu = false,
   selectedIsCorrect,
   selectedOption,
   tekrarBolumleri,
@@ -301,7 +316,7 @@ export function FinalTesti({
                   gorselAdi={madalya}
                   yaklasti
                   kazanildi={madalyaSenin}
-                  patlama={isFirstCompletionSaved}
+                  patlama={isFirstCompletionSaved && !sonucaDonuldu}
                   baslikId="final-sonuc-basligi"
                 >
                   {isWaiting ? (
@@ -408,7 +423,7 @@ export function FinalTesti({
                       </div>
 
                       {tekrarBolumleri.length > 0 ? (
-                        <TekrarBak bookKey={bookKey} bolumler={tekrarBolumleri} />
+                        <TekrarBak bookKey={bookKey} bolumler={tekrarBolumleri} acikBasla={sonucaDonuldu} />
                       ) : null}
                     </>
                   )}

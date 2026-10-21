@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { notFound, useParams } from "next/navigation";
 import { supabase } from "../../../lib/supabase";
 // Kaydırmalı okuyucu (Faz 6.2) 28 Tem 2026'da Hasan onayıyla üretime alındı;
@@ -8,6 +8,11 @@ import { supabase } from "../../../lib/supabase";
 import { AtlasScrollReader } from "../../../src/components/reader/AtlasScrollReader";
 import { CocukKorumasi } from "../../../src/components/cocuk/CocukKorumasi";
 import { dbKitabiBul } from "../../../src/lib/derive";
+import {
+  adresteVar,
+  FINAL_DONUS_PARAMETRESI,
+  FINAL_SONUC_PARAMETRESI,
+} from "../../../src/lib/child/finalSonucu";
 import { atlasBookByKey } from "../../../src/data/atlasCatalog";
 import {
   adaptDataChapter,
@@ -158,6 +163,16 @@ export default function ReaderPage() {
     () => adaptDataChapter(params.chapterId),
     [params.chapterId],
   );
+  // Final sonucundaki "Tekrar bakmak istersen"den gelindiyse dönüş oraya (4.1/13 EK).
+  const [finalSonucuYolu, setFinalSonucuYolu] = useState<string | null>(null);
+
+  useEffect(() => {
+    const yol =
+      chapter?.bookKey && adresteVar(FINAL_DONUS_PARAMETRESI)
+        ? `/quiz/${chapter.bookKey}?${FINAL_SONUC_PARAMETRESI}`
+        : null;
+    queueMicrotask(() => setFinalSonucuYolu(yol));
+  }, [chapter]);
 
   if (!chapter) notFound();
   // Yayın durumu tek kaynaktan: katalogda `published` olmayan kitabın bölümü açılmaz.
@@ -171,6 +186,7 @@ export default function ReaderPage() {
         chapter={chapter}
         onProgressSync={() => syncChapterProgress(chapter)}
         onSecim={(secenek) => void seciminiKaydet(chapter, secenek)}
+        finalSonucuYolu={finalSonucuYolu}
       />
     </CocukKorumasi>
   );

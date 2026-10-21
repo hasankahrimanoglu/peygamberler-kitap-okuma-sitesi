@@ -36,6 +36,12 @@ type AtlasScrollReaderProps = {
    * okuma akışı kayda bağlı değildir.
    */
   onSecim?: (secenek: DecisionOption["id"]) => void;
+  /**
+   * Bölüm final sonucundaki "Tekrar bakmak istersen" listesinden açıldıysa
+   * sonuç ekranının adresi (4.1/13 EK — 21 Eki 2026). Verilirse üstteki geri
+   * düğmesi ve bölüm sonundaki ana düğme sonuca döner.
+   */
+  finalSonucuYolu?: string | null;
 };
 
 const YAZI_SINIFLARI = [styles.yaziKucuk, styles.yaziNormal, styles.yaziBuyuk] as const;
@@ -221,6 +227,7 @@ export function AtlasScrollReader({
   onProgressSync,
   tekrarOkumaOnizleme,
   onSecim,
+  finalSonucuYolu = null,
 }: AtlasScrollReaderProps) {
   const router = useRouter();
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -874,6 +881,7 @@ export function AtlasScrollReader({
           finalYolu={finalYolu}
           madalyaAdi={`${chapter.bookName ?? "Kitap"} Yolculuk Madalyası`}
           geriYolu={geriYolu}
+          finalSonucuYolu={finalSonucuYolu}
           onRozetiAl={rozetiAl}
         />
       );
@@ -889,9 +897,13 @@ export function AtlasScrollReader({
     >
       <header className={styles.ustBar} ref={ustBarRef}>
         <div className={styles.ustSatir}>
-          <button type="button" className={styles.geriDugmesi} onClick={() => router.push(geriYolu)}>
+          <button
+            type="button"
+            className={styles.geriDugmesi}
+            onClick={() => router.push(finalSonucuYolu ?? geriYolu)}
+          >
             <Ikon ad="geri" boyut={20} />
-            <span className={styles.geriMetni}>Bölümler</span>
+            <span className={styles.geriMetni}>{finalSonucuYolu ? "Final sonucu" : "Bölümler"}</span>
           </button>
           <div className={styles.kimlik}>
             <strong>{bolumAdi}</strong>

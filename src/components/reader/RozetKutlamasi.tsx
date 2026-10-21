@@ -19,6 +19,10 @@ export type RozetDurumu = "bekliyor" | "kaydediliyor" | "alindi" | "hata" | "onc
  * Bölüme Geç" + "Bölümlere dön". Son bölümde yeşil düğmenin yerini altın
  * "Büyük Final Testine Geç" alır. Patlama yalnız kazanma anındadır; tekrar
  * okumada yoktur.
+ *
+ * Bölüm final sonucundan açıldıysa (4.1/13 EK — 21 Eki 2026) çocuk tek bölüme
+ * bakmaya gelmiştir: sıradaki bölüm kartı ve düğmesi yerine yeşil "Final
+ * Sonucuna Dön" gelir.
  */
 export function RozetKutlamasi({
   bookKey,
@@ -31,6 +35,7 @@ export function RozetKutlamasi({
   finalYolu,
   madalyaAdi,
   geriYolu,
+  finalSonucuYolu,
   onRozetiAl,
 }: {
   bookKey: string;
@@ -44,6 +49,7 @@ export function RozetKutlamasi({
   finalYolu: string | null;
   madalyaAdi: string;
   geriYolu: string;
+  finalSonucuYolu: string | null;
   onRozetiAl: () => void;
 }) {
   const sahneRef = useRef<HTMLElement | null>(null);
@@ -76,7 +82,7 @@ export function RozetKutlamasi({
             {durum === "alindi" ? "Bu rozet Ödüllerim'e eklendi." : "Bu rozeti daha önce kazanmıştın."}
           </p>
 
-          {sonraki ? (
+          {finalSonucuYolu ? null : sonraki ? (
             <div className={styles.siradakiKart}>
               <YedekliGorsel
                 src={sonraki.kapak ?? YEDEK.sahne}
@@ -112,7 +118,16 @@ export function RozetKutlamasi({
           ) : null}
 
           <div className={styles.kutlamaEylemleri}>
-            {sonraki ? (
+            {finalSonucuYolu ? (
+              <Link
+                ref={anaEylemRef}
+                href={finalSonucuYolu}
+                className={`${styles.buyukDugme} ${styles.yesilDugme}`}
+              >
+                Final Sonucuna Dön
+                <Ikon ad="ok-sag" boyut={20} />
+              </Link>
+            ) : sonraki ? (
               <Link
                 ref={anaEylemRef}
                 href={sonraki.okumaYolu}

@@ -10,6 +10,15 @@ import styles from "../../../src/components/final/final-testi.module.css";
 import { Ikon } from "../../../src/components/ui";
 import { dbKitabiBul, tekrarBakilacakBolumler } from "../../../src/lib/derive";
 import { CocukKorumasi } from "../../../src/components/cocuk/CocukKorumasi";
+import {
+  adresteVar,
+  FINAL_DONUS_PARAMETRESI,
+  FINAL_SONUC_PARAMETRESI,
+  finalSonucunuOku,
+  finalSonucunuSakla,
+  finalSonucunuSil,
+  type FinalSonucKaydi,
+} from "../../../src/lib/child/finalSonucu";
 import { quizConfig, type QuizConfig, type QuizOption } from "../../../src/data/quizzes";
 import { atlasBookByKey } from "../../../src/data/atlasCatalog";
 
@@ -231,7 +240,10 @@ function QuizIcerik() {
   const navigationInFlightRef = useRef(false);
   const checkClickLockedRef = useRef(false);
   const nextClickLockedRef = useRef(false);
-  const practiceMode = savedCompletionState === "completed";
+  // Bölümü tekrar okuyup dönen çocuğun sonucu (4.1/13 EK): kayıt artık
+  // "tamamlandı" dese de ekran ilk turdaki gibi görünür, alıştırmaya dönmez.
+  const [donulenSonuc, setDonulenSonuc] = useState<FinalSonucKaydi | null>(null);
+  const practiceMode = donulenSonuc ? donulenSonuc.alistirma : savedCompletionState === "completed";
   const isSaving = saveState === "saving";
 
   const activeQuestion = questions[questionIndex];
@@ -244,6 +256,21 @@ function QuizIcerik() {
       setSavedCompletionState("loading");
       const profileId = window.localStorage.getItem("selected_child_profile_id");
       profileIdRef.current = profileId;
+
+      const donulen = adresteVar(FINAL_SONUC_PARAMETRESI)
+        ? finalSonucunuOku(activeQuiz.storagePrefix, profileId, activeQuiz.questions.length)
+        : null;
+      if (donulen) {
+        setDonulenSonuc(donulen);
+        setResults(donulen.sonuclar);
+        setScore(donulen.sonuclar.filter(Boolean).length);
+        setSaveState(donulen.kayit);
+        setIsFinished(true);
+        // Saklanan her sonuç kitabın bittiği bir turdan gelir.
+        setSavedCompletionState("completed");
+        return;
+      }
+      finalSonucunuSil(activeQuiz.storagePrefix);
 
       if (!profileId) {
         if (!cancelled) setSavedCompletionState("unknown");
@@ -265,6 +292,23 @@ function QuizIcerik() {
       cancelled = true;
     };
   }, [activeQuiz]);
+
+  // Sonuç kesinleşince (Tekrar bakmak istersen görünürken) ekran hafızası yazılır
+  // ve adres `?sonuc=1` olur: bölümden, haritadan ya da yenilemeyle dönen çocuk
+  // aynı sonucu görür.
+  const sonucKesin =
+    isFinished && (practiceMode || saveState === "saved" || saveState === "already-completed");
+
+  useEffect(() => {
+    if (!sonucKesin) return;
+    finalSonucunuSakla(activeQuiz.storagePrefix, {
+      profilId: profileIdRef.current,
+      sonuclar: results,
+      kayit: saveState === "saved" || saveState === "already-completed" ? saveState : "idle",
+      alistirma: practiceMode,
+    });
+    window.history.replaceState(null, "", `${window.location.pathname}?${FINAL_SONUC_PARAMETRESI}`);
+  }, [sonucKesin, activeQuiz, results, saveState, practiceMode]);
 
   useEffect(() => {
     checkClickLockedRef.current = false;
@@ -433,9 +477,14 @@ function QuizIcerik() {
       saveError={saveError}
       saveState={saveState}
       score={score}
+      sonucaDonuldu={donulenSonuc !== null}
       selectedIsCorrect={selectedIsCorrect}
       selectedOption={selectedOption}
-      tekrarBolumleri={tekrarBakilacakBolumler(bookId, results, (bolumRotasi) => `/reader/${bolumRotasi}`)}
+      tekrarBolumleri={tekrarBakilacakBolumler(
+        bookId,
+        results,
+        (bolumRotasi) => `/reader/${bolumRotasi}?${FINAL_DONUS_PARAMETRESI}`,
+      )}
     />
   );
 }
