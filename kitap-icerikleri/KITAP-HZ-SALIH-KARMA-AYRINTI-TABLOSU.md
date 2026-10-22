@@ -1,8 +1,27 @@
 # HZ. SÂLİH (a.s.) — KARMA TARZ YENİDEN YAZIMI: AYRINTI TABLOSU
 
-> **Tarih:** 22 Ekim 2026 · **Durum:** 1. aşama tamam; Hasan'ın altı karar
-> sorusuna cevabı bekleniyor (dosyanın sonu). v2 metni kararlardan sonra
-> `KITAP-HZ-SALIH-ICERIK-v2.md` olacak.
+> **Tarih:** 22 Ekim 2026 · **Durum:** Hasan altı karar sorusunda önerileri
+> kabul etti (22 Ekim 2026): devenin gelişi B3'te kısa rivayet sahnesi; su ve süt
+> B3 Devam'da tek rivayet; B1'e yardımseverlik örnek sahnesi (`[[…]]` ile
+> işaretli, isimsiz; çocukluk, öksüzlük, teyze yok); B1'e Hz. Nûh soyu bağı (Sâm
+> adı, soy zinciri, sayı yok); deveyi öldüren adsız; veli raporuna "Semûd'un evleri
+> bugün duruyor mu?" maddesi. "Soru gerektirmeyen değişiklikler" de uygulandı. Ek
+> not (Hasan): B4 kutusu Kur'an bilgisini kesin dille versin; "neden çoğul"
+> açıklaması müfessir yorumudur, kaynağına bağlansın, anlatıcının ağzından hükme
+> dönüşmesin. v2 metni `KITAP-HZ-SALIH-ICERIK-v2.md`.
+>
+> **İçerik denetimi sonrası (23 Ekim 2026; 0 kritik, 6 önemli, 15 küçük):**
+> mekanik bulgular düzeltildi (v2 "Yazım notları"). Tablodan sapan üç nokta:
+> (1) B4 kutusu yalnız âyetlerle yazıldı (Şems 91/12, 14; Kamer 54/29); "razı
+> olanlar da ortak sayılır" açıklaması Diyanet Kur'an Yolu tefsirinde ve TDV'de
+> bulunamadığı için girmedi, açık karar olarak Hasan'a soruldu. (2) Şems 91/13'teki
+> uyarı ("Allah'ın devesine ve onun su hakkına dokunmayın!") B4 1. kısma girdi.
+> (3) Dokuz kişilik grubun halkı kışkırtması kurgu işareti yerine rivayet
+> kalıbıyla verildi (TDV "Sâlih"). #3'teki dua TDV'de yok (video; PDF'te namaz);
+> v2 yazım notlarında Hasan'ın dikkatine sunuldu. #14'teki ⚠ (devenin kuyusu)
+> eklenmedi.
+>
+> **Aktarılmadı.** Hasan'ın okuması ve iki açık kararı bekleniyor.
 > **Kural:** brif §4.3 (üç alan, kaynak ölçeği), §7.10 (karma tarz, örnek
 > sahne), §16 (yerleşik kararlar). Kitabın Faz 1 kararları
 > (`KITAP-HZ-SALIH-KAYNAK-DENETIMI.md`, karar kaydı 21 Ekim 2026) yeni kurala

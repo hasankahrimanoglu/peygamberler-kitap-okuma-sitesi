@@ -53,7 +53,9 @@
 >   [Hadis Ansiklopedisi — HadeethEnc, Müslim 2980](https://hadeethenc.com/tr/browse/hadith/66294) ·
 >   [Hadith Unlocked — Buhârî 4419](https://hadithunlocked.com/bukhari:4419).
 >   Hadisten yalnız "ibretle, üzülerek geçin" öğüdü alındı; "mucize istemeyin", su ve süt
->   günleri, Ebû Regal ve başka ayrıntı alınmadı (§F5, soru 10).
+>   günleri, Ebû Regal ve başka ayrıntı alınmadı (§F5, soru 10). **22 Ekim 2026:** Diyanet
+>   *Hadislerle İslâm* 6/117 ve 6/123'te doğrulandı (Buhârî, Enbiyâ 17, no. 3380; Müslim,
+>   Zühd 39); F5/10'un künyesine eklendi (brif §16/17b).
 >
 > **Faz 1 kararlarının özeti (Hasan, 21 Ekim 2026):** deve Kur'an'dan ("açık bir işaret"),
 > kayadan çıkış B3'te ve süt B3 Devam'da rivayet kalıbıyla birer cümle; bayram, "on aylık",
@@ -67,6 +69,16 @@
 > **Kitap kapağı ve rota durağı görseli bu teslimde VARDIR** (§C1, §C2). Klasördeki
 > `kapak.png` ve `harita-kapak.jpg` içerikten önce üretilmiş eski görsellerdir (8 Ağustos
 > 2026; kumdan kuleli şehir ve testi); yenileri aynı adla üzerine yazılır.
+>
+> **22 Ekim 2026 — karma tarz yeniden yazımı:** beş bölümün hikâye metni
+> `KITAP-HZ-SALIH-ICERIK-v2.md`'de yeniden yazıldı (Hasan'ın altı kararı; ayrıntı
+> `KITAP-HZ-SALIH-KARMA-AYRINTI-TABLOSU.md`). Hasan'ın okuması bekleniyor, `books.ts`'e
+> **aktarılmadı.** Bu dosyada v2 kararlarına göre değişenler yalnız F5 "Çocuğunuz
+> Sorarsa"dır: 8 (kaya ve süt cevabı), 9 (kuyunun suyu çıktı), 10 (Tebük künyesi ve
+> "sırasında"), yeni 11 ("Semûd'un evleri bugün duruyor mu?"); göç sorusu 12 oldu.
+> Aşağıdaki B bölümündeki kaynak ilkeleri, kitaba özgü yasaklar ve halkalar ile D
+> bölümündeki hikâye metinleri eski hâlidir; v2 kabul edilirse geçerli hikâye kaynağı v2
+> olur (kitaba özgü kararların güncel hâli v2'nin başında).
 
 ---
 
@@ -1402,7 +1414,7 @@ pişmanlığa dönüştüğünü birlikte hatırlamak, farklı seçenekleri dü�
 
 > Sorular hassasiyet sırasıyla dizildi (brif §10.3, REVİZE 16 Ekim 2026): ölüm ve afet önce,
 > hayvana ve insana zarar sonra, Allah'ın adaleti, uğursuzluk ve merhamet ortada; mucize,
-> rivayet, Tebük ve göç en sonda. 11 soru vardır.
+> rivayet, Tebük, vadinin bugünü ve göç en sonda. 12 soru vardır *(22 Ekim 2026, v2: 11 eklendi)*.
 
 **1. "Bütün insanlar mı öldü? Çocuklar da mı?"**
 Kur'an, Hz. Sâlih'i yalanlayan, dokunulmaması istenen deveyi öldürüp ona meydan okuyanların
@@ -1463,25 +1475,37 @@ anlatabilirsiniz.
 **8. "Kayadan gerçekten deve çıktı mı? Mucize ne demek?"**
 Kur'an devenin "Allah'ın devesi" olduğunu ve onlara açık bir işaret, bir mucize olarak
 gönderildiğini bildirir (A'râf 73, Hûd 64, İsrâ 59); nereden ve nasıl geldiğini anlatmaz.
-Kayanın yarılıp deve çıkması tefsirlerde geçen bir rivayettir; kitap bunu "Anlatılanlara göre"
-diye bir kez anar. Devenin su içtiği gün halkın onun sütünden içmesi de böyle bir rivayettir.
-Mucize, Allah'ın izniyle peygamberlerin gösterdiği olağanüstü olaydır; Kur'an'a göre mucizeler
-insanları uyarmak için gönderilir (İsrâ 59).
+Kitaptaki sahne, tefsir ve tarih kaynaklarında geçen yaygın bir rivayettir: kavmin ileri
+gelenleri sert bir kayayı gösterip ondan bir deve çıkarsa inanacaklarını söyler, Hz. Sâlih
+dua eder ve Allah'ın izniyle kaya yarılır. Devenin su gününde bütün halkın içtiği kadar su
+içip o kadar süt vermesi de böyle bir rivayettir (TDV İslâm Ansiklopedisi, "Sâlih"). Kitap
+ikisini de "Anlatılanlara göre" diye anar. Mucize, Allah'ın izniyle peygamberlerin
+gösterdiği olağanüstü olaydır; Kur'an'a göre mucizeler insanları uyarmak için gönderilir
+(İsrâ 59). *(REVİZE 22 Ekim 2026, v2)*
 
 **9. "Devenin bir yavrusu var mıydı? Halkın yüzü renk mi değiştirdi?"** *(başka bir kitapta ya da videoda duyduysa)*
-Bazı eski anlatımlarda devenin bir yavrusu olduğu, son üç günde halkın yüzlerinin renk
-değiştirdiği, devenin kuyunun bütün suyunu içtiği gibi ayrıntılar geçer. Bunlar Kur'an'da
-yoktur; kitap da bu yüzden onları anlatmaz. Çocuğunuza Kur'an'da bildirilenle sonradan anlatılan
-rivayetlerin farklı olabileceğini sakin bir dille söyleyebilirsiniz.
+Bazı eski anlatımlarda devenin bir yavrusu olduğu ve son üç günde halkın yüzlerinin renk
+değiştirdiği gibi ayrıntılar geçer. Bunlar Kur'an'da yoktur; kitap da çocuğa ağır
+gelebilecekleri için onları anlatmaz. Çocuğunuza Kur'an'da bildirilenle sonradan anlatılan rivayetlerin farklı
+olabileceğini sakin bir dille söyleyebilirsiniz. *(REVİZE 22 Ekim 2026, v2)*
 
 **10. "Peygamberimiz bu vadiden geçti mi?"**
-Evet. Sahih hadis kaynaklarında bildirildiğine göre Peygamberimiz (s.a.v.), yıllar sonra Tebük
-seferine giderken Semûd'un yurdu olan Hicr'den geçti. Ashabına, kendilerine zulmeden bu
-insanların yurdundan ancak ağlayarak, yani ibret alıp üzülerek geçmelerini öğütledi (Buhârî,
-Meğâzî 81; Müslim, Zühd 38–39). Bu öğüt, kitabın son bölümündeki hüzünle aynı yöndedir: Böyle
-bir yere bakarken sevinç değil, ibret ve üzüntü duyulur.
+Evet. Buhârî ve Müslim'in aktardığı hadise göre Peygamberimiz (s.a.v.), yıllar sonra Tebük
+seferi sırasında Semûd'un yurdu olan Hicr'den geçti. Ashabına, kendilerine zulmeden bu
+insanların yurduna ancak ağlayarak, yani ibret alıp üzülerek girmelerini öğütledi (Buhârî,
+Enbiyâ 17, no. 3380; Müslim, Zühd 39; *Hadislerle İslâm* 6/117). Bu öğüt,
+kitabın son bölümündeki hüzünle aynı yöndedir: Böyle bir yere bakarken sevinç değil, ibret
+ve üzüntü duyulur. *(REVİZE 22 Ekim 2026, v2)*
 
-**11. "Hz. Sâlih ve inananlar nereye gitti?"**
+**11. "Semûd'un evleri bugün hâlâ duruyor mu?"** *(internette fotoğraf gördüyse)*
+Kur'an'ın "Hicr halkı" diye andığı Semûd'un yaşadığı Hicr vadisi bugün Suudi Arabistan'dadır
+ve Medâin-i Sâlih diye de anılır.
+Oradaki görkemli kaya yapılarının çoğu, araştırmacılara göre Semûd'dan çok sonra yaşayan
+Nabatîlere aittir; bölgede Semûd'a atfedilen kaya yazıtları da bulunur (TDV İslâm
+Ansiklopedisi, "Hicr", "Semûd"). Kitap bu yüzden yalnız Kur'an'daki "Hicr halkı" adını anar;
+evlerin bugün de durduğunu söylemez. *(EK — 22 Ekim 2026, v2)*
+
+**12. "Hz. Sâlih ve inananlar nereye gitti?"**
 Kur'an, Hz. Sâlih'in ve inananların kurtarıldığını bildirir; sonra nereye gittiklerini anlatmaz.
 Bazı rivayetlerde farklı yerler sayılır; kitap bu yüzden yalnız "Anlatılanlara göre o vadiden
 ayrıldılar ve yeni bir yerde hayatlarını sürdürdüler" der, yer adı vermez. Bilmediğimiz bir
@@ -1497,7 +1521,7 @@ ayrıldılar ve yeni bir yerde hayatlarını sürdürdüler" der, yer adı verme
 |---|---|---|---|
 | **oymak** | 1 | Sicilde yok; Nûh ve İdrîs'te "oyulmuş" kutusuz geçti | **Yeni terim — onaylandı** (Hasan, Faz 1; KARAR 6a). Kelime Defterim'de mastar görünsün diye cümle mastarla kuruldu ("…kayaları oymak" + "tı") |
 | **uğursuz** | 2 | Sicilde yok; Şît'te kutusuz geçti (Şît gizli) | **Yeni terim — onaylandı** (KARAR 6a). Tanım inancı anlatır, onaylamaz ("sanılan") |
-| **mucize** | 3 | Sabit sözlükçe (§2) — kutu İdrîs 4'te; İdrîs 21 Eki 2026'dan beri gizli | **Kutu Sâlih 3'e taşınır** (sicil §6 kararı, karar kaydı). Kitaptaki ilk ve tek geçişi B3'ün açılışındaki talep; tanım harfiyen. B1–B2'de ve kitap kimliğinde kelime yok |
+| **mucize** | 3 | Sabit sözlükçe (§2) — kutu İdrîs 4'te; İdrîs 21 Eki 2026'dan beri gizli | **Kutu Sâlih 3'e taşınır** (sicil §6 kararı, karar kaydı). Kitaptaki ilk geçişi B3'ün açılışındaki talep; tanım harfiyen. Aynı bölümdeki sonraki geçişler düz metin (v2'de üç kez). B1–B2'de ve kitap kimliğinde kelime yok |
 | **sağmak** | 3 | Sicilde yok | **Yeni terim — onaylandı** (karar 1-a ile koşul gerçekleşti). Süt cümlesinde, mastar biçiminde |
 | **elebaşı** | 4 | Sicilde yok | **Yeni terim — onaylandı.** Neml 48'in Diyanet kelimesi; PDF s. 291 "ele başı" |
 | **mühlet** | 5 | Sicilde yok | **Yeni terim — onaylandı.** "Üç gün" (Hûd 65) |
