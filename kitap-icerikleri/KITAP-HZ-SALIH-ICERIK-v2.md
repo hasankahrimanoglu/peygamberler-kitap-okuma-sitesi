@@ -827,8 +827,8 @@ ayrıştırıyor (beş bölüm, bütün görseller `books.ts`'te bulundu).
 - `parentReportBooks` Sâlih `parent_faq`: 8, 9, 10'un güncel hâli ve yeni 11 ("Semûd'un
   evleri bugün hâlâ duruyor mu?") final.md F5'ten alınır; göç sorusu 12. sıraya iner.
 - `SOZLUKCE-SICILI.md` §3'teki Sâlih notu ("Aynı bölümdeki 'bir mucizeydi' düz
-  metindir") v2'de B3'te kelimenin üç kez düz metin geçtiğini söyleyecek biçimde
-  güncellenebilir; kutu yeri değişmedi.
+  metindir") aktarımda güncellendi: v2'de B3'te kutudan sonra kelime bir kez düz metin geçer
+  ("bir mucizeydi"); kutu yeri değişmedi. Çevre cümlesi değişen kutulara *mühlet* de dahildir.
 - final.md D bölümündeki seslendirme notları eski metne göre yazıldı; v2 aktarılınca
   Işıl satırlarının hafif tonu ve B3'teki kaya sahnesi için güncellenmeli. Sesler hâlâ
   yer tutucu; metin kesinleşmeden kayıt yapılmaz.

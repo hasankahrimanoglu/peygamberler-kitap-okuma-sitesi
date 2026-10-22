@@ -1468,8 +1468,9 @@ karşılaşırsa, bu sözün insanı kırdığını ve haksız olduğunu konuşa
 ilgili sorularına sakin ve açıklayıcı cevaplar vermek yeterlidir.
 
 **7. "Haklı çıkınca sevinmek yanlış mı?"**
-Haklı çıktığını görmek insana bir an iyi gelebilir; bu doğal bir duygudur. Kitap, Hz. Sâlih'in
-o anda sevinmediğini, halkı için hüzünlendiğini anlatır (A'râf 79'daki veda). Buradaki ölçü,
+Haklı çıktığını görmek insana bir an iyi gelebilir; bu doğal bir duygudur. Kur'an, Hz. Sâlih'in
+onlardan yüz çevirip onlara öğüt verdiğini söylediğini bildirir (A'râf 79); kitap bu vedayı, onun o anda
+sevinmediğini ve halkı için hüzünlendiğini anlatarak verir. Buradaki ölçü,
 haklı çıkmak değil, başkasının başına gelen kötülüğe sevinmekten kaçınmaktır. Çocuğunuza, haklı
 olduğu bir durumda bile "Söylemiştim" demeden karşısındakinin yanında durmanın güzelliğini
 anlatabilirsiniz.
@@ -1509,8 +1510,8 @@ evlerin bugün de durduğunu söylemez. *(EK — 22 Ekim 2026, v2)*
 
 **12. "Hz. Sâlih ve inananlar nereye gitti?"**
 Kur'an, Hz. Sâlih'in ve inananların kurtarıldığını bildirir; sonra nereye gittiklerini anlatmaz.
-Bazı rivayetlerde farklı yerler sayılır; kitap bu yüzden yalnız "Anlatılanlara göre o vadiden
-ayrıldılar ve yeni bir yerde hayatlarını sürdürdüler" der, yer adı vermez. Bilmediğimiz bir
+Bazı rivayetlerde farklı yerler sayılır; kitap bu yüzden yalnız "Anlatılanlara göre Hz. Sâlih, kendisine
+inananlarla birlikte o vadiden ayrıldı. Yeni bir yerde hayatlarını sürdürdüler." der, yer adı vermez. Bilmediğimiz bir
 şeye "bilmiyoruz" demek de çocuğa güzel bir örnektir.
 
 ---
@@ -1523,7 +1524,7 @@ ayrıldılar ve yeni bir yerde hayatlarını sürdürdüler" der, yer adı verme
 |---|---|---|---|
 | **oymak** | 1 | Sicilde yok; Nûh ve İdrîs'te "oyulmuş" kutusuz geçti | **Yeni terim — onaylandı** (Hasan, Faz 1; KARAR 6a). Kelime Defterim'de mastar görünsün diye cümle mastarla kuruldu ("…kayaları oymak" + "tı") |
 | **uğursuz** | 2 | Sicilde yok; Şît'te kutusuz geçti (Şît gizli) | **Yeni terim — onaylandı** (KARAR 6a). Tanım inancı anlatır, onaylamaz ("sanılan") |
-| **mucize** | 3 | Sabit sözlükçe (§2) — kutu İdrîs 4'te; İdrîs 21 Eki 2026'dan beri gizli | **Kutu Sâlih 3'e taşınır** (sicil §6 kararı, karar kaydı). Kitaptaki ilk geçişi B3'ün açılışındaki talep; tanım harfiyen. Aynı bölümdeki sonraki geçişler düz metin (v2'de üç kez). B1–B2'de ve kitap kimliğinde kelime yok |
+| **mucize** | 3 | Sabit sözlükçe (§2) — kutu İdrîs 4'te; İdrîs 21 Eki 2026'dan beri gizli | **Kutu Sâlih 3'e taşınır** (sicil §6 kararı, karar kaydı). Kitaptaki ilk geçişi B3'ün açılışındaki talep; tanım harfiyen. Aynı bölümdeki sonraki geçişler düz metin (v2'de bir kez: "bir mucizeydi"). B1–B2'de ve kitap kimliğinde kelime yok |
 | **sağmak** | 3 | Sicilde yok | **Yeni terim — onaylandı** (karar 1-a ile koşul gerçekleşti). Süt cümlesinde, mastar biçiminde |
 | **elebaşı** | 4 | Sicilde yok | **Yeni terim — onaylandı.** Neml 48'in Diyanet kelimesi; PDF s. 291 "ele başı" |
 | **mühlet** | 5 | Sicilde yok | **Yeni terim — onaylandı.** "Üç gün" (Hûd 65) |

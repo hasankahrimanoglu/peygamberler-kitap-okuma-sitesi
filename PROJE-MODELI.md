@@ -2566,6 +2566,16 @@ Kurallar:
       `kitap-denetle nuh` 0 hata (uyarı: 8 ses yer tutucu). Yayına çıkması
       `main`'e geçişle olur. Sırada hoca kontrolü ve Hz. Âdem zenginleştirme
       turu, ardından rota sırasıyla Hz. Sâlih.*
+      *23 Eki: **Hz. Sâlih v2 aktarıldı** (Hasan onayı). Beş bölümün hikâye
+      metni `books.ts`'te `KITAP-HZ-SALIH-ICERIK-v2.md` ile birebir; ayrıca
+      final testi 5. soru C şıkkı ("Onlardan uzaklaştı…", A'râf 79) ve veli
+      raporunun "Çocuğunuz Sorarsa" 8–12. maddeleri değişti (11 yeni, göç
+      sorusu 12'ye indi). Kararlar `KITAP-HZ-SALIH-ICERIK-v2.md` yazım notları
+      ve `-KARMA-AYRINTI-TABLOSU.md`'de. Geçici `salihV2Onizleme.ts` silindi;
+      `SOZLUKCE-SICILI` §3 *mucize* notu ve `ICERIK-GORSEL-SICILI`'nde
+      `bolum-1/su-basi`'nin yeri güncellendi. `kitap-denetle salih` 0 hata
+      (uyarı: 5 ses yer tutucu). Yayına çıkması `main`'e geçişle olur. Sırada
+      Hz. İbrahim.*
 
 ### 22 Ekim 2026 (iki eksenli kaynak ölçeği — Hasan onayı, bkz. 4.1/21 ve içerik brifi §4.3, §16/17b–c)
 

@@ -301,9 +301,10 @@ Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
   değiştirmez; Allah'ın sözü yalnız mealdir. Teslim dosyasında kurgu `[[…]]` ile
   işaretlenir, aktarımda işaret kaldırılır. Onaylı örnekler:
   `kitap-icerikleri/ORNEK-KARMA-TARZ.md`. Yayındaki kitaplar bu karardan önce
-  yazıldı; sırayla yeniden yazılıyor. Hz. Âdem ve Hz. Nûh 22 Eki 2026'da
-  aktarıldı (hikâye metni `KITAP-HZ-{ADEM,NUH}-ICERIK-v2.md`; Nûh yeni kaynak
-  kuralıyla ve videolu ayrıntı tablosuyla yazılan ilk kitap). Okuma önizlemesi
+  yazıldı; sırayla yeniden yazılıyor. Hz. Âdem ve Hz. Nûh 22 Eki 2026'da, Hz.
+  Sâlih 23 Eki 2026'da aktarıldı (hikâye metni
+  `KITAP-HZ-{ADEM,NUH,SALIH}-ICERIK-v2.md`; Nûh yeni kaynak kuralıyla ve videolu
+  ayrıntı tablosuyla yazılan ilk kitap). Okuma önizlemesi
   için v2 dosyası `node scripts/v2-onizleme-uret.mjs` ile geçici veriye çevrilir,
   aktarımda silinir.
 - **Kaynak kuralı: üç alan (KARAR 22 Eki 2026 — PROJE-MODELI 4.1/21, brif

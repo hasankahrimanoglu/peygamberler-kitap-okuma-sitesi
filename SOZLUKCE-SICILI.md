@@ -364,7 +364,9 @@ listeyle karşılaştırılır.**
 > açıldı. Sabit sözlükçeden **mucize** (3) burada kutulandı: kutu gizli Hz. İdrîs 4'ten
 > taşındı (§6; tanım §2 ile harfiyen aynı), B3'ün açılışındaki "bize bir mucize getir"
 > konuşma satırındadır; bölümün ilk satırı ayrı `text` bloğudur ve büyük başlangıç harfi
-> oradadır. Aynı bölümdeki "bir mucizeydi" düz metindir. *peygamber* (Âdem'e geriye dönük
+> oradadır. Aynı bölümdeki "bir mucizeydi" düz metindir (v2 aktarımı, 23 Eki 2026: kutu
+> yeri değişmedi; B3'te kelimenin tek düz geçişi budur, Işıl'a verilen cevaptadır).
+> *peygamber* (Âdem'e geriye dönük
 > karar) ve *put* düz metin. *kavim, nimet, alay, şüphe, elçi, rahmet, Rab, delil, vadi,
 > bereket, ibret, şükür* ve *sabır* (zarf olarak) metinde geçiyor ama §1 gereği ikinci kez
 > kutulanmadı, düz `text` olarak aktarıldı. *vahiy, müşrik, hicret, Kâbe, tedbir* çocuk

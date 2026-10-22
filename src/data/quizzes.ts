@@ -337,7 +337,7 @@ const salihQuizQuestions: QuizQuestion[] = [
     options: [
       { id: "a", text: "Haklı çıktığı için sevinip kutlama yaptı." },
       { id: "b", text: "Hemen o evlerden birine yerleşti." },
-      { id: "c", text: "Hüzünlendi ve onlara öğüt verdiğini söyledi." },
+      { id: "c", text: "Onlardan uzaklaştı ve onlara öğüt verdiğini söyledi." },
     ],
   },
 ];

@@ -1953,6 +1953,12 @@ figür bilgisi ve `alt` metnini kaydeder. Bölüm başına 1 açılış + 5 sahn
 >   aynı imge). 1.5K ana dosyalar `gorsel-kaynaklari/kitaplar/hz-salih/kapak.png`,
 >   `gorsel-kaynaklari/duraklar/hz-salih.jpg` (800×800).
 
+> **Karma tarz metni (v2) aktarıldı (23 Eki 2026):** Hikâye metni yeniden yazıldı, görsel
+> dosyaları ve `alt` metinleri değişmedi; yeni görsel yok, yirmi beş sahne aynı bölümde,
+> aynı parçada ve aynı sırada. Tek yer değişikliği: `bolum-1/su-basi` yine 1. Kısım'da,
+> ama artık Hz. Sâlih'in kuyu başına gidişinin hemen ardında (eskiden kavmine seslenişinin
+> sonundaydı).
+
 ### Kitap kapağı ve harita durağı
 
 | Dosya | Biçim | Durum | Görsel brifi |
