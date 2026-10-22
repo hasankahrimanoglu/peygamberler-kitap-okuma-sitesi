@@ -33,6 +33,14 @@
 >
 > **Kitap kapağı ve harita durağı görseli bu teslimde VARDIR** (`public/kitaplar/hz-ibrahim/`
 > klasörü yok; §C1, §C2).
+>
+> **23 Ekim 2026 — karma tarz yeniden yazımı:** dokuz bölümün hikâye metni
+> `KITAP-HZ-IBRAHIM-ICERIK-v2.md`'de yeniden yazıldı (Hasan'ın altı kararı; ayrıntı
+> `KITAP-HZ-IBRAHIM-KARMA-AYRINTI-TABLOSU.md`). **Aktarılmadı.** Bu dosyada v2'ye göre
+> değişen: F5 "Çocuğunuz Sorarsa" (ateş, Lût, vadi, babası, putlar ve yıldız cevapları;
+> yeni "Kral ne oldu?" maddesi; 10 soru) ve §B'deki yer adı kuralı (Kenan). Final testi
+> değişmedi. Aşağıdaki D bölümündeki hikâye metinleri eski hâlidir; v2 aktarılınca geçerli
+> hikâye kaynağı v2 olur. Kitaba özgü kararların güncel hâli v2'nin başındadır.
 
 ---
 
@@ -182,7 +190,8 @@ ifadesiyle ("Rabbim budur") yorumsuz anlatıldı; Hz. İbrahim gök cisimleriyle
 - Âzer'in "taşlarım" tehdidi, ateşin hazırlanışındaki şiddet, kralın infazı, işkence
   listesi, yanan canlılar ve "azap, ceza, gazap" kelimeleri çocuk metninde yoktur.
 - Hiçbir yaş, yıl, sayı, ölçü ve yer adı verilmez. Tek istisna Faz 1'de onaylanan "Mısırlı"
-  nitelemesidir (B8, Hâcer, rivayet kalıbıyla).
+  nitelemesidir (B8, Hâcer, rivayet kalıbıyla). **v2 (23 Ekim 2026, Hasan):** B7'de varılan topraklar
+  tek kelimeyle "Kenan" diye anılır (rivayet kalıbıyla); Filistin, Şam ve doğum yeri adı yoktur.
 - Sözlük disiplini: kutusu sonraki bir kitapta (rota sırasında İbrahim'den sonra gelen
   Eyyûb ve Musa) açılan ağır kelimeler kullanılmadı: *hikmet, ibret, imtihan, musibet, vefa,
   zulüm, şifa, iman* yerine sade karşılıklar (ders, sınav, iyileştiren, inanmak). *Müjde*
@@ -2059,9 +2068,11 @@ farklı seçenekleri birlikte düşünmesine yardımcı olabilir.
 
 ### F5. Çocuğunuz Sorarsa
 
-> **9 soru** (brif §10.3, REVİZE 16 Ekim 2026: en az 3, üst sınır yok; 8'i aştığı için
+> **10 soru** (brif §10.3, REVİZE 16 Ekim 2026: en az 3, üst sınır yok; 8'i aştığı için
 > hassasiyet sırasına dizildi, en hassas önce: ölüm · ateş ve korku · helak · ayrılık ·
-> beden güvenliği · şiddet sözü · aile içi inanç farkı · tartışmalı rivayet · iki yorum).
+> beden güvenliği · şiddet sözü · kralın sonu · aile içi inanç farkı · tartışmalı rivayet · iki yorum).
+> **v2 (23 Ekim 2026):** ateş, vadi, babası ve yıldız cevapları güncellendi; "Kral ne
+> oldu?" eklendi (karma tarz ayrıntı tablosu #21).
 
 **"Hz. İbrahim öldü mü? Herkes ölecek mi?"**
 Kitap, Hz. İbrahim'in uzun ve bereketli bir ömrün sonunda vefat ettiğini tek ve sakin bir
@@ -2074,8 +2085,13 @@ hatırlamanın ve onlar için dua etmenin, onları anmanın güzel bir yolu oldu
 **"Ateş Hz. İbrahim'i neden yakmadı? Ateşe atılmak çok korkunç değil mi?"**
 Kur'an, Allah'ın ateşe "İbrahim'e serin ve esenlik ol" diye buyurduğunu bildirir (Enbiyâ
 69; Diyanet meali "serin ve zararsız ol"); bu bir mucizedir, yani Allah'ın izniyle olan
-olağanüstü bir olaydır. Kitap ateşin hazırlanışını ve korkutucu ayrıntıları anlatmaz; odak,
-Hz. İbrahim'in Allah'a sığınması ve korunmasıdır. Bazı anlatımlarda Cebrâil'in ona yardım
+olağanüstü bir olaydır. Kitap ateşin hazırlanışını kısa anlatır (odun taşınması, ateşin büyüklüğü,
+uzaktan atılma), korkutucu ayrıntı vermez; odak,
+Hz. İbrahim'in Allah'a sığınması ve korunmasıdır. Kitap o anı Hz. İbrahim'in "Allah bize
+yeter. O ne güzel vekildir!" sözüyle anlatır. Bu söz İbn Abbas'ın anlatımıyla Buhârî'de geçer
+(Tefsîr, Âl-i İmrân 13, no. 4563; *Hadislerle İslâm* 3/313). Kur'an aynı sözü müminlerin de
+söylediğini bildirir (Âl-i İmrân 173); bunun Uhud'dan sonraki bir olayla ilgili olduğu anlatılır
+(aynı hadis). Bazı anlatımlarda Cebrâil'in ona yardım
 teklif ettiği ve Hz. İbrahim'in "Rabbim varken senden istemem" dediği anlatılır; bu
 rivayetin sağlamlığı tartışmalıdır ve kitap onu almadı. Çocuğunuz korkmuşsa, bunun çok
 eskiden yaşanmış özel bir olay olduğunu söyleyin; günlük hayatta ateşten uzak durduğumuzu
@@ -2085,15 +2101,18 @@ ve korktuğumuzda güvendiğimiz bir büyüğe gittiğimizi hatırlatın.
 Kitap bu konuyu yalnız birkaç cümleyle geçer: elçiler Hz. Lût'u ve ona inanan ailesini
 kurtaracaklarını, o şehir için Allah'ın kararının verildiğini söyler. Kur'an, o şehrin
 halkının kötü işlerinden vazgeçmediğini ve yok edildiğini bildirir (Hûd 77–83); kitap bu olayı
-burada anlatmaz, ayrıntısı Hz. Lût kitabındadır. Çocuğunuz sorarsa, Allah'ın Hz. Lût'u ve ona
+anlatmaz. Çocuğunuz sorarsa, Allah'ın Hz. Lût'u ve ona
 inananları koruduğunu öne çıkarın ve korkutucu ayrıntıya girmeyin. Kaygılanırsa, bir afet
 anında ailece ne yapacağınızı (güvenli yer, büyüklerle birlikte kalmak) sakin bir dille
 konuşmak onu rahatlatabilir.
 
 **"Hz. İbrahim ailesini neden çölde bıraktı? Hâcer kimdi? Bizi de bırakırlar mı?"**
 Kitap, Hz. İbrahim'in Hâcer ile bebek Hz. İsmail'i Allah'ın emriyle ıssız bir vadiye
-yerleştirdiğini rivayet kalıbıyla anlatır (İbrâhim 37; Buhârî'deki İbn Abbas rivayeti).
-Hâcer'in "Allah bizi sahipsiz bırakmaz" sözü ve Hz. İbrahim'in dönüp dua etmesi, olayın
+yerleştirdiğini anlatır (İbrâhim 37; Buhârî, Enbiyâ 9, no. 3364, İbn Abbas rivayeti;
+*Hadislerle İslâm* 2/335). Hâcer birkaç kez "Bizi bu ıssız vadide bırakıp nereye
+gidiyorsun?" diye sorar, cevap alamaz; sonra "Bunu sana Allah mı emretti?" diye sorar ve
+"Evet" cevabını alınca "Öyleyse Allah bizi sahipsiz bırakmaz" der. Kitap Hz. İbrahim'in neden
+cevap vermediğini yorumlamaz. Hâcer'in sözü ve Hz. İbrahim'in tepeden dönüp dua etmesi, olayın
 merkezinde güven ve emanet olduğunu gösterir; Allah onları korudu ve vadide su kaynadı
 (ayrıntısı Hz. İsmail kitabında). Kur'an bu vadinin "Allah'ın kutsal evinin yanında" olduğunu
 söyler; o yer, daha sonra Hz. İbrahim ile Hz. İsmail'in temellerini yükselttiği Kâbe'dir
@@ -2119,22 +2138,31 @@ diyeceğini bilemediğini hatırlatabilirsiniz: hayatı veren de alan da Allah't
 gücü buna yetmez. Bölümün asıl konusu, güçlü birinin karşısında da sakin ve açık
 konuşabilmektir.
 
+**"Kral ne oldu?"**
+Kur'an kralın sonunu anlatmaz; adını da vermez (kitap "Nemrud" adını bir kutuda, rivayet
+olarak verir). Anlatılanlara göre kral, burnundan başına giren bir sivrisinek yüzünden öldü
+(TDV İslâm Ansiklopedisi, "Nemrud"); bazı anlatımlar bu sahneyi çok ayrıntılı ve ürkütücü
+verir. Kitap bu rivayeti almadı. Çocuğunuz sorarsa, Kur'an'ın asıl anlattığı şeyin kralın
+güneşi batıdan getiremeyip susması olduğunu, hesabı görenin Allah olduğunu sakin bir dille
+söyleyebilirsiniz.
+
 **"Hz. İbrahim'in babası ne oldu? Hiç inanmadı mı?"**
 Kur'an, Hz. İbrahim'in babasını sevgiyle davet ettiğini, babasının ise kabul etmeyip onu
-yanından uzaklaştırdığını anlatır (Meryem 42–48). Hz. İbrahim ondan ayrılırken "Esen kal, senin
-için Rabbimden bağışlanma dileyeceğim" dedi (Meryem 47). Kur'an, babasının inanmadığını da
+yanından uzaklaştırdığını anlatır (Meryem 42–48). Hz. İbrahim ondan ayrılırken "Esen kal,
+Rabbimden senin için bağışlanma dileyeceğim!" dedi (Meryem 47). Kur'an, babasının inanmadığını da
 açıkça bildirir: Hz. İbrahim'in onun için bağışlanma dilemesi ona verdiği bir söz yüzündendi;
 babasının bir Allah düşmanı olduğu kendisine belli olunca ondan uzaklaştı (Tevbe 114). Kur'an onu "babası Âzer" diye anar; bazı âlimler Âzer'in amcası olduğunu
-söyler. Kitap babanın sonraki hayatını ve ölümünü anlatmaz. Çocuğunuzla, sevdiğimiz biri
+söyler. Kitap babanın sonraki hayatını ve ölümünü anlatmaz; Hz. İbrahim'in onun için
+bağışlanma dileyeceğine söz verdiğini anlatır, "duayı hiç bırakmadı" demez. Çocuğunuzla, sevdiğimiz biri
 bizden farklı düşündüğünde bile ona saygı ve sevgi gösterip iyiliğini dileyebileceğimizi
 konuşabilirsiniz.
 
-**"Hz. İbrahim putları kırdı ve 'Bu işi büyükleri yaptı' dedi. Bu doğru muydu? Biz de böyle yapabilir miyiz?"**
+**"Hz. İbrahim putları kırdı ve 'Bu işi şu büyükleri yapmıştır' dedi. Bu doğru muydu? Biz de böyle yapabilir miyiz?"**
 İki olay da Kur'an'da geçer (Enbiyâ 58, 63). Kitap sözün amacını açıkça söyler: Hz.
 İbrahim, putların konuşamadığını halkın kendi ağzıyla söylemesini istiyordu. Bir hadiste
-(Buhârî), Hz. İbrahim'in hayatında "yalan" diye anılan üç söz olduğu, bunların ikisinin Allah
+(Buhârî, Enbiyâ 8, no. 3358; Müslim, Fezâil 154), Hz. İbrahim'in hayatında "yalan" diye anılan üç söz olduğu, bunların ikisinin Allah
 yolunda söylendiği bildirilir: bayram günü "Ben rahatsızım" demesi (Sâffât 89) ve "Bu işi
-büyükleri yaptı" sözü. İslam âlimlerinin çoğu bunları gerçek anlamda yalan saymaz; gerçeği
+şu büyükleri yapmıştır" sözü. İslam âlimlerinin çoğu bunları gerçek anlamda yalan saymaz; gerçeği
 düşündürmek için söylenmiş, iki anlama gelebilen sözler (tarîz) olarak açıklar. Bu olay bir
 peygamberin özel görevinin parçasıydı; başkasının eşyasına zarar vermek, öfkeyle bir şey
 kırmak ya da alay etmek doğru değildir. Bir şeye katılmadığımızda bunu konuşarak, soru
@@ -2146,7 +2174,9 @@ Kur'an, Hz. İbrahim'in yıldıza, aya ve güneşe bakıp "Rabbim budur" dediği
 76–79). Âlimler bunu iki şekilde açıklar: Bir kısmı, gerçeği arayan bir gencin düşünme
 yolculuğu olarak görür; bir kısmı ise kavmine, taptıkları şeylerin batıp gittiğini göstermek
 için söylenmiş sözler olarak anlar. Kitap bu iki açıklamadan birini seçmeden Kur'an'ın
-ifadesini aktardı. Çocuğunuza, Hz. İbrahim'in sonunda hiç batmayan Allah'a yöneldiğini ve
+ifadesini aktardı. İki açıklamada da Hz. İbrahim'in bir an bile yıldıza taptığı düşünülmez;
+Kur'an onun Allah'a ortak koşanlardan olmadığını söyler (Nahl 120) ve kitap bunu bir kutuyla
+çocuğa da söyler. Çocuğunuza, Hz. İbrahim'in sonunda hiç batmayan Allah'a yöneldiğini ve
 merak edip soru sormanın düşünerek inanmanın bir parçası olabileceğini söyleyebilirsiniz.
 
 ---

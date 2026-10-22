@@ -1,7 +1,27 @@
 # HZ. İBRAHİM (a.s.) — KARMA TARZ YENİDEN YAZIMI: AYRINTI TABLOSU
 
-> **Tarih:** 23 Ekim 2026 · **Durum:** 1. aşama. Hasan'ın altı karar sorusuna
-> cevabı bekleniyor; v2 yazılmadı.
+> **Tarih:** 23 Ekim 2026 · **Durum:** Hasan altı karar sorusunda önerileri kabul
+> etti (23 Ekim 2026): B6'da romancının duası yerine "Allah bize yeter. O ne güzel
+> vekildir!" (Buhârî 4563); B8'de Hâcer'in tekrar eden sorusu ("dönüp bakmadı" yok);
+> B9'da Hicr 54–56, yalnız Hz. İbrahim'in sözü; B4'te yemeklerin nedeni çıktı; B9'da
+> "misafirsiz sofraya oturmazdı" yerine yumuşak ifade: "Anlatılanlara göre misafirlerini
+> çok severdi; ona 'misafirlerin babası' denirdi" (**"ilk başlatan" yok**, karar 4b);
+> B9 kutusuna "Halil İbrahim bereketi"; B7'de "Kenan". Şart (karar 2): B8 sahnesi Hz.
+> İsmail B1 ile aynı ifadeleri kullanır, fark varsa İsmail değişmez, raporlanır.
+> "Soru gerektirmeyen değişiklikler" de uygulandı (Tevbe 114 düzeltmesi 8–11 yaş
+> diliyle, "düşman" ifadesi olmadan). v2 metni `KITAP-HZ-IBRAHIM-ICERIK-v2.md`.
+>
+> **İçerik denetimi sonrası (23 Ekim 2026; 0 kritik, 7 önemli, 18 küçük):** mekanik
+> bulgular düzeltildi (v2 "Yazım notları"). Tablodan sapan ya da tabloya eklenen
+> noktalar: (1) B4 sonundaki "kralın huzuruna çıkarılma" da rivayet kalıbı aldı
+> (sıra rivayet, #12). (2) B8'deki dua "onların artık göremeyeceği bir tepede"
+> (Buhârî'ye göre; yayındaki "vadiyi gözden kaybetmeden önce" diyordu). (3) B8'de
+> kandil cümlesi çıktı (Hz. İsmail B1 "yalnızca hurma ve su" diyor). (4) İbrâhim 37
+> *Kur'an Yolu* ifadesiyle kaldı. Dört açık karar v2 yazım notlarının sonunda: Hz.
+> Lût'un inanma zamanı (Ankebût 26 ateşten sonra geliyor), bölüm uzunluk bandı, B1
+> Seçimini Karşılaştır B'deki "sonunda … buldu" ifadesi, B8 görselindeki kandil (bilgi).
+>
+> **Aktarılmadı.**
 > **Kural:** brif §4.3 (üç alan, kaynak ölçeği), §7.2 (ölçüler), §7.10 (karma
 > tarz, örnek sahne), §16 (yerleşik kararlar; §16/18 ortak olay). Kitabın Faz 1
 > kararları (`KITAP-HZ-IBRAHIM-KAYNAK-DENETIMI.md`, karar kaydı 16 Ekim 2026)
