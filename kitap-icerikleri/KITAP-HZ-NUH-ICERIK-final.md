@@ -18,6 +18,14 @@
 > Ayrıntı: `KITAP-HZ-NUH-KAYNAK-DENETIMI.md` başındaki Karar kaydı.
 >
 > **Kitap kapağı ve harita durağı görseli bu teslimde YOKTUR** (ikisi de hazır).
+>
+> **22 Ekim 2026 — karma tarz yeniden yazımı:** sekiz bölümün hikâye metni
+> `KITAP-HZ-NUH-ICERIK-v2.md`'de yeniden yazıldı (Hasan onayı, `books.ts`'e
+> aktarıldı; ayrıntı kararları `KITAP-HZ-NUH-KARMA-AYRINTI-TABLOSU.md`). Bu dosyada v2
+> kararlarına göre değişenler: final testi 5. soru A şıkkı, B5 Ne Öğrendik 2.
+> madde, F5 "Çocuğunuz Sorarsa" (eş cevabı + iki yeni madde), B8 seslendirme
+> notu. Bu dört değişiklik de `books.ts` ve `quizzes.ts`'e aktarıldı. Aşağıdaki
+> D bölümündeki hikâye metinleri eski hâlidir; geçerli hikâye kaynağı v2'dir.
 
 ---
 
@@ -1020,7 +1028,7 @@ C) Başkalarının sözü insanı şüpheye düşürebilir. Hz. Nûh ise ne zama
 #### NE ÖĞRENDİK
 
 1. Tehlike gelmeden hazırlanmak, sonradan telaşa düşmemenin en güzel yoludur.
-2. Hz. Nûh, Allah'ın bildirdiği gibi, yıllardır büyüyen ağaçtan tahtalar ve çivilerle bir gemi yaptı.
+2. Hz. Nûh, Allah'ın bildirdiği gibi, tahtalardan ve çivilerden bir gemi yaptı.
 3. Gelip geçenler karada yapılan gemiye güldü; Hz. Nûh ve ailesi çalışmayı sürdürdü.
 
 #### BUGÜNE TAŞI
@@ -1493,7 +1501,9 @@ Ses yolu planı: `/sesli-anlatim/hz-nuh/hz-nuh-bolum-8.mp3`
 Seslendirme notları: Açılış ferah ve sevinçli; "Ey yer, suyunu yut!" cümlesi ağır
 ve heybetli ama yüksek değil. Hayvanların salıverildiği paragraf neşeli. "Burada çok
 yabancıyız" cümlesi kaygılı, kısık. Devamda Hz. Nûh'un sözleri sıcak ve
-yüreklendirici. Son öğüt yavaş okunur; kitap sakin ve aydınlık bir tonla kapanır.
+yüreklendirici. ~~Son öğüt yavaş okunur;~~ **v2 (22 Ekim 2026):** son öğüt yerine
+vasiyet kutusu geldi; "Biliyor muydun?" diye başlayarak yavaş ve sakin okunur;
+kitap aydınlık bir tonla kapanır.
 
 #### HİKÂYE — 1. KISIM
 
@@ -1717,7 +1727,7 @@ Soru türü: değer
 
 ```text
 Soru 5: Hz. Nûh gemiyi neyle yaptı?
-A) Yıllardır büyüyen ağaçtan biçilen tahtalar ve çivilerle
+A) Tahtalar ve çivilerle
 B) Taşlarla ve kerpiçle
 C) Hayvan derileri ve iplerle
 Doğru seçenek: A
@@ -1824,10 +1834,29 @@ nasıl olduğunu tam bilmediğimizi söylemek dürüst bir cevaptır. Sohbeti sa
 bu kadar uzun bir sabrın ne demek olduğuna yönlendirmek daha verimli olur.
 
 **"Hz. Nûh'un eşi gemide miydi?"**
-Kur'an, Hz. Nûh'un eşinin ona inanmadığını bildirir (Tahrîm 10). Gemiye binip
-binmediği konusunda ise farklı anlatımlar vardır. Kitap bu yüzden yalnızca "ailesi
-ve ona inananlar gemiye bindi" der. Çocuğunuza, kesin bilinmeyen konularda farklı
-görüşler olabileceğini anlatmak için iyi bir fırsattır.
+Kur'an, Hz. Nûh'un eşinin ona inanmadığını bildirir (Tahrîm 10). Gemiye ailesinden
+"haklarında hüküm verilmiş olanlar" dışındakilerin bindiğini de bildirir (Hûd 40).
+TDV İslâm Ansiklopedisi ve Diyanet'in *Hadislerle İslâm* eseri, eşin de oğlu gibi
+inanmayanlarla birlikte kaldığını aktarır. Kitap kimseyi adlandırmadan "Ailesi de
+binecekti; yalnız Allah'ın hakkında hüküm verdikleri bunun dışındaydı" der. Bir
+peygamberin eşi ya da çocuğu olmanın, insanın kendi seçiminin yerini tutmadığını
+konuşabilirsiniz. *(REVİZE 22 Ekim 2026, v2)*
+
+**"Hz. Nûh'u gerçekten taşa tutacaklar mıydı?"**
+Kur'an, kavminin Hz. Nûh'u "Bu işten vazgeçmezsen seni taşa tutarız" diye tehdit
+ettiğini bildirir (Şuarâ 116). Kitap bu tehdidi ayrıntı vermeden, tek cümleyle
+anlatır ve Hz. Nûh'un korkmadan, kimseye kötü söz söylemeden çağrısını sürdürdüğünü
+gösterir. Çocuğunuz bunu kendi hayatına bağlarsa, biri onu tehdit ettiğinde bunu
+kendine saklamamasını ve hemen güvendiği bir yetişkine söylemesini
+hatırlatabilirsiniz. *(EK — 22 Ekim 2026, v2)*
+
+**"Heykel yapmak kötü mü?"**
+Kitabın anlattığı, heykel yapmak değil; heykellerin zamanla Allah'ın yerine
+konmasıdır. Anlatılanlara göre iyi insanların hatırası için yapılan heykellere,
+nesiller geçip neden yapıldıkları unutulunca tapılmaya başlanmıştı. Hikâyedeki
+sorun, insanların Allah'tan başkasından yardım istemeye başlamasıdır. Resim ve
+heykel yapmanın dinî hükmü ise ayrı bir konudur; merak ederseniz güvendiğiniz bir
+din görevlisine danışabilirsiniz. *(EK — 22 Ekim 2026, v2)*
 
 **"Güvercin ve zeytin dalı neden yok? Aşure Hz. Nûh'tan mı kaldı?"**
 Güvercinin gemiye zeytin dalı getirmesi çok bilinen bir anlatıdır, ama Kur'an'da

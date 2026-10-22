@@ -20,6 +20,8 @@ public/**/*-eski.*
 
 # Kaynak kitap PDF'leri (telifli, büyük) — içerik oturumu okur, repoya girmez.
 kaynak-pdfler/
+# Hasan'ın verdiği kaynak videolar ve transkriptleri (telifli, büyük) — aynı kural.
+kaynak-videolar/
 
 # Başka yayınevlerinin örnek kitapları (fotoğraf, tam metin, inceleme) — telifli, repoya girmez.
 ÖRNEK KİTAP/

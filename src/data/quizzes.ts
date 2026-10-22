@@ -250,7 +250,7 @@ const nuhQuizQuestions: QuizQuestion[] = [
     question: "Hz. Nûh gemiyi neyle yaptı?",
     correctOption: "a",
     options: [
-      { id: "a", text: "Yıllardır büyüyen ağaçtan biçilen tahtalar ve çivilerle" },
+      { id: "a", text: "Tahtalar ve çivilerle" },
       { id: "b", text: "Taşlarla ve kerpiçle" },
       { id: "c", text: "Hayvan derileri ve iplerle" },
     ],

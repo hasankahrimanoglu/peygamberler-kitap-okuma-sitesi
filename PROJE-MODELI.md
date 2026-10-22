@@ -2559,6 +2559,13 @@ Kurallar:
       1. bölümün omurgası roman sahnesi; kaynak kuralına göre "Kur'an'ın
       sustuğu dönem" olarak kalır ve bir kutu alır. Kaynak kuralı onaylandı
       (bu bölümün sonunda); yazım Hz. Nûh pilotuyla başlar.*
+      *22 Eki (gece): **Hz. Nûh v2 aktarıldı** (Hasan onayı). Sekiz bölümün
+      hikâye metni `books.ts`'te `KITAP-HZ-NUH-ICERIK-v2.md` ile birebir; ayrıca
+      B5 Ne Öğrendik 2. madde, final testi 5. soru ve veli raporuna iki "Çocuğunuz
+      Sorarsa" maddesi değişti (ayrıntı tablosu ve v2 yazım notları).
+      `kitap-denetle nuh` 0 hata (uyarı: 8 ses yer tutucu). Yayına çıkması
+      `main`'e geçişle olur. Sırada hoca kontrolü ve Hz. Âdem zenginleştirme
+      turu, ardından rota sırasıyla Hz. Sâlih.*
 
 ### 22 Ekim 2026 (iki eksenli kaynak ölçeği — Hasan onayı, bkz. 4.1/21 ve içerik brifi §4.3, §16/17b–c)
 
@@ -2786,9 +2793,11 @@ Kurallar:
 - [ ] **Uygulama sırası:** (1) ✅ Hasan taslağı ve açık soruları onayladı;
       (2) ✅ içerik brifi, içerik denetçisi ve `icerik-faz1` / `icerik-faz2`
       becerileri hizalandı (`aktarim` kaynak kuralına değinmiyor, değişmedi);
-      (3) Hz. Nûh pilotu: video ve transkript →
+      (3) ✅ Hz. Nûh pilotu: video ve transkript →
       ayrıntı tablosu (ayrıntı · videoda · PDF'te · TDV'de · alan · karar) →
-      yazım → içerik denetçisi → Hasan okuması; (4) kural ve Hz. Nûh pilotu
+      yazım → içerik denetçisi → Hasan okuması; 22 Ekim 2026'da tamamlandı ve
+      aktarıldı (`KITAP-HZ-NUH-ICERIK-v2.md`, `-KARMA-AYRINTI-TABLOSU.md`;
+      okuma önizlemesi `scripts/v2-onizleme-uret.mjs` ile); (4) kural ve Hz. Nûh pilotu
       bir hocaya gösterilir (Hasan); (5) Hz. Âdem zenginleştirme turu;
       (6) kalan 10 lansman kitabı, rota sırasıyla.
 - [x] **İki karar (Hasan, öneriler kabul):**
