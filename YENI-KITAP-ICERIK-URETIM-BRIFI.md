@@ -44,6 +44,22 @@
 > **16 Ekim 2026** — **§16 Yerleşik editoryal kararlar** eklendi: önceki
 > kitaplarda verilen emsal kararlar Faz 1'de yeniden sorulmaz; uygulanır ve
 > Faz 1 özetinde olay bazında gösterilir.
+>
+> **22 Ekim 2026** — **§7.10 Anlatım tarzı: karma** eklendi (KARAR 21–22 Ekim
+> 2026, Hasan). Ders anlatımı yerine görünür ve sıcak bir anlatıcı, sahne
+> kurma ve merak kancaları geldi. Işıl hikâye akışına soran ya da konuşan
+> balon olarak girer; soru başlığı ve "Biliyor muydun?" kutusu gerektiğinde
+> kullanılır (§7.3'e üç yeni blok). Kurgu, Kur'an ve hadis bilgisini
+> değiştirmeden serbesttir ve `[[…]]` ile işaretlenir. §4.4'teki konuşma
+> yasağı, §7.2'deki "ortalama 10–14 kelime" ve "en fazla 1–2 kez sen" kuralları
+> kalktı. Onaylı örnekler: `kitap-icerikleri/ORNEK-KARMA-TARZ.md`.
+>
+> **22 Ekim 2026** — **İki eksenli kaynak ölçeği** (KARAR 22 Ekim 2026, Hasan).
+> §4.3 yeniden yazıldı: her bilgi önce kaynak kademesine (A Kur'an · B sahih
+> hadis · C yaygın rivayet · D kullanılmaz), sonra çocuğa uygunluğa (U1–U4)
+> göre sınıflanır. Hadis doğrulaması (§16/17b) ve alıntı kuralları (§16/17c)
+> eklendi; §16/9'a hadisteki sayılar, §13 A3'e yeni sütunlar, §14'e iki
+> kontrol girdi.
 
 ---
 
@@ -105,6 +121,11 @@ Teslim şunların tamamını içermelidir:
 **Kod yazma.** TypeScript/JSON üretme. İçeriği aşağıdaki Markdown teslim
 iskeletinde ver; yazılım ekibi bu dosyayı `books.ts` yapısına aktaracaktır.
 
+**Anlatım tarzı §7.10'dadır.** Hikâyeleri yazmaya başlamadan önce §7.10'u ve
+`kitap-icerikleri/ORNEK-KARMA-TARZ.md` örneklerini oku. Biçim için önceki
+kitapların dosyalarına bakabilirsin, ama anlatım tarzını onlardan alma; 22 Ekim
+2026'dan önce yazıldılar.
+
 ---
 
 ## 3. DEĞİŞMEZ ÜRÜN KURALLARI
@@ -133,6 +154,9 @@ iskeletinde ver; yazılım ekibi bu dosyayı `books.ts` yapısına aktaracaktır
   üretme. Metin doğal akışında kalır. Yalnız gerçekten gerekli tek bir anahtar
   paragraf, bölüm başına en fazla bir kez sakin bir alıntı kutusu olarak
   önerilebilir.
+- Gerçek hayat bağlantısının asıl yeri Sen Olsaydın, Seçimini Karşılaştır, Ne
+  Öğrendik ve Bugüne Taşı'dır. Hikâyenin içinde gerçek hayat örneği ya da hayat
+  dersi, hikâyenin anlamını artırıyorsa yer alabilir (§7.10).
 - Türkçe karakterler eksiksiz kullanılmalıdır: ş, ğ, ı, İ, ç, ö, ü, â.
 
 ---
@@ -158,23 +182,78 @@ kullan; başka bir dijital kitaba ayrılan olayı sırf PDF aynı ciltte diye bu
 taşıma. Fiziksel cildin kalınlığı, sayfa sayısı veya kaynak yayınevinin kitap
 gruplaması hedef bölüm sayısını değiştirmez.
 
-### 4.3 Bilgi sınıflandırması
+### 4.3 Bilgi sınıflandırması — iki eksenli kaynak ölçeği (KARAR 22 Ekim 2026, Hasan)
 
-Özellikle dinî veya tarihî ayrıntıları üç gruba ayır:
+Kaynak PDF'ler üç katman taşır: Kur'an ve hadis, klasik tefsir/tarih
+rivayeti, romancının kendi kurgusu. Bu yüzden her dinî veya tarihî bilgiye
+**iki ayrı soru** sorulur: *Bilgi nereden geliyor?* (kademe) ve *8–11 yaşa
+uygun mu?* (uygunluk). "Dinen anlatılabilir" ile "çocuğa anlatılır" aynı şey
+değildir.
 
-- **Ana anlatıya alınabilir:** PDF'de açık, kıssanın omurgasıyla uyumlu bilgi.
-- **Rivayet/yorum:** Kesin bilgi gibi sunulmamalı; gerekiyorsa “bazı
-  anlatımlarda” çerçevesiyle ve editör onayıyla kullanılmalı.
-- **Çıkarılmalı veya doğrulanmalı:** Kaynağı belirsiz, çelişkili, çocuk için
-  uygun olmayan ya da gereksiz ayrıntı.
+**Birinci eksen — kaynak kademesi**
+
+| Kademe | Tanım | Doğrulama | Çocuk metninde nasıl söylenir |
+|---|---|---|---|
+| **A — Kur'an** | Âyetin açıkça bildirdiği olay, söz, bilgi | Diyanet meali; âyet numarası kaynak notuna (§16/17) | Kesin dille. Allah'ın sözü yalnız meal (§7.10) |
+| **B — Sahih hadis** | Buhârî, Müslim ya da muteber hadis kitaplarında güvenilir kabul edilen hadis | Diyanet *Hadislerle İslâm* ya da Buhârî/Müslim künyesi; kitap, bölüm, numara kaynak notuna (§16/17b) | "Peygamberimiz (s.a.v.) şöyle buyurdu / anlattı." Kesin dille |
+| **C — Yaygın rivayet** | Klasik tefsir/tarih ve kısas-ı enbiya geleneğinde yaygın; Kur'an ve sahih hadisle çelişmeyen; inanca ve peygamberin masumiyetine zarar vermeyen bilgi. **Müfessir yorumu** da buradadır | Kaynak PDF + en az bir ikinci güvenilir kaynak (TDV İslâm Ansiklopedisi önerilir) | Rivayet kalıbıyla (§16/8). Kesinleştirilmez. Yorumlar çoksa §16/13 |
+| **D — Kullanılmaz** | (a) Kur'an'la, sahih hadisle ya da peygamberin masumiyetiyle çelişen; (b) zayıf ya da uydurma olduğu bilinen; (c) romancının kurgusu: uydurma kişi, ad, olay, konuşturulan melek (§16/11) | — | Girmez; kurgu kılığında da geri gelmez (§7.10). Romancının kurgusu yalnız dönemin havası için fikir düzeyinde kullanılabilir (§16/11) |
+
+**Kademe kuralları**
+
+1. **Hikâyenin omurgası A'dır**, gerekiyorsa B. C omurga olamaz; tartışmalı
+   bir rivayet ana olay örgüsünü belirliyorsa ajan durur ve sorar (§15).
+2. **C azdır.** Bölüm başına birkaç destek ayrıntısı; en iyi yeri "Biliyor
+   muydun?" kutusu ya da tek cümledir. Akışı "rivayete göre"lerle doldurma.
+3. **Hadis derecesine ajan hüküm vermez** (§16/17b).
+4. **Yaygın yanlışı düzeltme istisnası:** Çocuğun duymuş olabileceği D bilgisi
+   (ör. "Hz. Havva kandırdı") Işıl'ın sorusu ve anlatıcının düzeltmesiyle
+   anılabilir (§7.10). Bu, bilgiyi kullanmak değil, düzeltmektir.
+5. **AI sohbet cevabı kaynak değildir.** Yalnız nereye bakılacağını gösterir;
+   her iddia yukarıdaki doğrulama yoluyla kontrol edilir.
+
+**İkinci eksen — çocuğa uygunluk (8–11 yaş)**
+
+| Düzey | Anlamı | Nereye gider |
+|---|---|---|
+| **U1 — Uygun** | Çocuğun anlayacağı, korkutmayan, merak ve değer katan bilgi | Çocuk metni: hikâye, kutu, Işıl, Ne Öğrendik |
+| **U2 — Yumuşatılarak uygun** | Doğru ama ağır: ölüm, tehdit, ceza, kardeş çatışması | Çocuk metni; §12 ve §16-A diliyle: tek cümle, ayrıntısız, umutla dengeli |
+| **U3 — Velinin işi** | Çocuğa ağır, soyut ya da açıklaması uzun; ama velinin bilmesi gereken | Veli raporu: "Çocuğunuz Sorarsa" veya aile sohbet sorusu (§16/14, §16/15) |
+| **U4 — Uygun değil** | Şiddet/korku ayrıntısı, cinsellik, cehennem tasviri, güncel siyaset, bir halkı etiketleme (§16/7), dinî hüküm/fetva | Hiçbir yerde |
+
+**Karar tablosu — iki eksen birlikte**
+
+| | **U1** | **U2** | **U3** | **U4** |
+|---|---|---|---|---|
+| **A — Kur'an** | Çocuk metni, kesin dil | Çocuk metni, yumuşatılmış | Saklanmaz: adı konmadan, ayrıntısız anılır; tamamı veli raporunda (§16/15) | Çocuk metnine girmez; gerekirse veli raporunda (ör. beddua, §16/5) |
+| **B — Sahih hadis** | Çocuk metni, "Peygamberimiz…" + kaynak notu | Çocuk metni, yumuşatılmış | Veli raporu | Girmez |
+| **C — Yaygın rivayet** | Çocuk metni, rivayet kalıbıyla, destek ayrıntısı olarak | Tercihen veli raporu; çocuk metnine girerse kalıp + yumuşatma | Veli raporu (§16/14) | Girmez |
+| **D — Kullanılmaz** | Girmez (yaygın yanlışı düzeltme istisnası hariç) | Girmez | Girmez | Girmez |
+
+Tablo **izin verir, zorunlu kılmaz.** C×U1 bir bilginin kullanılabileceğini
+söyler; kullanılıp kullanılmayacağı hikâyeye katkısına bakılarak editör
+kararıdır.
+
+**Faz 1'deki rivayet ve doğrulama tablosu** (teslim iskeleti A3) şu
+sütunlarla yazılır:
+
+| Bilgi | PDF s. | Kademe | Doğrulama | Uygunluk | Karar | Çocuk metnindeki kalıp |
+|---|---|---|---|---|---|---|
+| … | … | A/B/C/D | meal no / hadis künyesi / ansiklopedi maddesi | U1–U4 | çocuk metni · yumuşat · veli · çıkar | "Kur'an'da bildirildiğine göre" / "Peygamberimiz…" / "Anlatılanlara göre…" / — |
 
 Sınıflandırmada §16'daki yerleşik kararlar uygulanır; bu konular yeniden
 soru olarak sorulmaz, Faz 1 özetinde olay bazında gösterilir.
 
 Tereddütlü ayrıntıyı daha canlı hikâye yazmak için kesinleştirme. “Bilmiyoruz”
-denmesi gereken yerde bunu dürüstçe söyle. Kullanıcının izin vermediği dış
-kaynakları kullanma. Dış kaynak kullanıldıysa başlık ve bağlantıyı kaynak
-notlarına ekle.
+denmesi gereken yerde bunu dürüstçe söyle. (Anlatım kurgusu ayrı bir konudur,
+§7.10; kurgu belirsiz bir rivayeti kesin bilgiye çevirmez.) Kullanıcının izin
+vermediği dış kaynakları kullanma. **İstisna:** Diyanet meali, *Hadislerle
+İslâm* ve TDV İslâm Ansiklopedisi **yalnız doğrulama için** izinlidir; yeni
+olay veya ayrıntı getirmez (§16/17'nin mantığı). Dış kaynak kullanıldıysa
+başlık ve bağlantıyı kaynak notlarına ekle.
+
+**Yayındaki kitaplar** için geriye dönük toplu tarama yapılmaz; ölçek, kitaplar
+karma tarza göre sırayla yeniden yazılırken o turda uygulanır.
 
 ### 4.4 Telif ve yeniden yazım
 
@@ -182,11 +261,12 @@ notlarına ekle.
 - Âyet/hadis veya şiirleri uzun alıntılama; mesajını çocuk diliyle aktar.
 - Olay sırası ve olgular korunabilir; anlatım, cümle yapısı ve diyaloglar özgün
   biçimde yeniden kurulmalıdır.
-- PDF'de bulunmayan olay, karakter, isim, mekân veya konuşmayı gerçekmiş gibi
-  uydurma.
-- Kaynakta açık diyalog yoksa, tarihî kişiye kesin söz isnat eden uzun diyalog
-  yazma. Anlatıcı diliyle aktar veya kısa, anlamı değiştirmeyen bağlantı
-  cümleleri kullan.
+- PDF'de ve Kur'an'da bulunmayan olay, kişi, isim veya mekân ekleme. Anlatım
+  kurgusu (sahne, duygu, iç ses, kısa konuşma) §7.10'daki sınırla serbesttir
+  *(REVİZE 22 Ekim 2026)*.
+- Kur'an'da geçen sözler meal anlamıyla verilir; Allah'ın sözü yalnız mealdir.
+  Kaynakta söz yoksa kısa kurgu konuşma yazılabilir. Uzun kurgu diyalog sahnesi
+  kurulmaz; kurgu konuşma hiçbir bilgiyi, hükmü ya da olayı değiştirmez.
 - Kaynaktaki öğretmen-sınıf çerçevesini, tekrar eden “çocuklar” hitaplarını veya
   ders kitabı anlatımını otomatik olarak koruma. Olay ve doğrulanmış bilgileri
   çıkar; bunları sıcak, özgün ve doğrudan bir çocuk edebiyatı anlatısına dönüştür.
@@ -238,6 +318,8 @@ Her bölüm için şunların tümü gerekir:
 - bölüm açılış sahnesi (zorunlu)
 - Hikâye — 1. Kısım
 - etkileşimli kelimeler
+- gerektiğinde Işıl balonları, soru başlıkları ve "Biliyor muydun?" kutuları
+  (§7.3, §7.10)
 - isteğe bağlı Tanık Sayfası
 - Sen Olsaydın?
 - Hikâye Devam Ediyor
@@ -327,19 +409,50 @@ Her bölümde:
 
 ### 7.2 Hikâye uzunluğu ve dil
 
-- Bölüm başına iki hikâye parçası toplamı **2.500–4.000 karakter** olmalıdır.
-  İdeal hedef 2.800–3.500 karakterdir; 4.000'i aşma.
-- Her paragraf 150–400 karakter ve tek fikir taşımalıdır.
-- Cümleler ortalama 10–14 kelime, kesin üst sınır 18 kelimedir.
+> **Anlatım tarzının kuralları §7.10'dadır** (karma tarz, KARAR 21–22 Ekim
+> 2026). Bu bölüm ölçüleri verir.
+
+- **Uzunluk hikâyeden gelir (REVİZE 22 Ekim 2026, Hasan).** Bölüm, olayın ve
+  sahnelerin gerektirdiği kadar uzun olur; sabit bir hedef yoktur. İki hikâye
+  parçasının toplamı **2.500–4.000 karakter** aralığında kalır. Bu aralık hedef
+  değil, sınırdır.
+  - **Aralığın gerekçesi okuma süresidir.** Türkçe anlatıda kelime başına
+    yaklaşık 7 karakter düşer (Hz. Âdem v2 ölçümü: 7,1). Sınıf düzeyi okuma hızı
+    kaynaklara göre değişir; kabaca 8–9 yaş dakikada 70–90, 10–11 yaş 90–120
+    kelimedir. 2.500 karakter (~350 kelime) yavaş okuyan 8 yaşındaki çocuk için
+    ~4 dakika, 4.000 karakter (~560 kelime) ~7 dakikadır. Sen Olsaydın ve
+    sonrasıyla bölüm 8–10 dakikayı geçmez; tek oturuşta dikkatin taşıyabileceği
+    süre budur. Sesli anlatımda 3.000 karakter yaklaşık 4 dakikadır.
+  - **Doğru uzunluğun ölçütü:** Önemli anlar (dönüm noktası, karar, duygu)
+    yavaşlatılıp sahne olarak anlatılır; geçişler kısa tutulur. Önemli bir an
+    tek özet cümleyle geçiştirildiyse bölüm kısadır. Aynı fikir iki kez
+    söyleniyorsa ya da ders cümlesi birikiyorsa bölüm uzundur.
+  - Tek sahneli, sakin bir bölüm çoğunlukla 2.500–3.000; iki üç dönüm noktası
+    olan bölüm 3.000–3.800 karakter tutar. Bir kitabın bölümleri aynı uzunlukta
+    olmak zorunda değildir.
+  - **Alt sınıra yaslanmak hedef değildir.** Bütün bölümleri 2.500–2.700
+    arasında kalan bir kitap kırpılmış olabilir. Hz. Âdem v2 böyle kaldı; Hasan
+    bu kitap için kabul etti (22 Ekim 2026), sonraki kitaplarda tekrarlanmaz.
+    Uzunluğu tutturmak için metin doldurulmaz da.
+  - Sayıma anlatı metni girer; Işıl satırları, soru başlıkları ve bilgi
+    kutuları ayrıca raporlanır.
+- Her paragraf 150–400 karakter ve tek fikir taşımalıdır. Diyalog satırları ve
+  kısa vurgu paragrafları ("Bir ağaç hariç.") alt sınırın dışındadır.
+- Kısa ve orta cümleler karışık kullanılır; kesin üst sınır 18 kelimedir.
+  Ortalama için sayı hedefi yoktur. *(REVİZE 22 Ekim 2026: eski "ortalama
+  10–14 kelime" kuralı kalktı; onaylı karma örneklerin ortalaması 7–8
+  kelimedir.)*
 - Diyalog oranı olayın izin verdiği bölümlerde toplam metnin yaklaşık üçte
-  biridir. Kaynak buna izin vermiyorsa gerçek kişilere konuşma uydurma.
+  biridir. Kur'an'da geçen söz meal anlamıyla verilir; kaynakta söz yoksa kısa
+  kurgu konuşma §7.10'daki sınırla yazılabilir.
 - Diyalog `—` uzun çizgisiyle başlar.
-- Anlatıcı sıcak olabilir; bölüm başına en fazla 1–2 kez çocuğa “sen” diye
-  seslenir.
+- Çocuğa "sen" diye seslenmenin sayı sınırı yoktur; işe yaradığı yerde
+  kullanılır. *(REVİZE 22 Ekim 2026: eskiden bölüm başına en fazla 1–2 kezdi.)*
 - “Hikâye — 1. Kısım” gerçek karar/gerilim anında biter.
 - “Hikâye Devam Ediyor” aynı olayın çözümünü ve değerin sonucunu gösterir.
 - İkinci parça bütün seçenekler için aynıdır; dallanma yoktur.
-- Son paragraf değeri yumuşakça toplar veya sonraki bölüme köprü kurar.
+- Son paragraf sonraki bölüme köprü kurar ya da değeri bir sahneyle yumuşakça
+  toplar; ders cümlesiyle bitmez.
 - Ağır olaylar ayrıntılı sahnelenmez; sonuç, güvenlik ve umut merkezde kalır.
 - Her bölümde ilk geçişte peygamber için `Hz. ... (a.s.)`, sonrasında `Hz. ...`
   kullanılır. Halife/sahabe için `(a.s.)` kullanılmaz.
@@ -355,6 +468,27 @@ Hikâye yalnızca aşağıdaki bloklarla teslim edilir:
 4. **Tanık Sayfası:** Uygunsa ayrı blok.
 5. **İllüstrasyon:** Sahne, metindeki tam yerinden sonra eklenir; sayfa numarasına
    bağlanmaz.
+6. **Işıl** *(KARAR 22 Ekim 2026)*: `[IŞIL]` ve `Metin:` satırı. İsteğe bağlı
+   `Poz: konuşma | duruş | kutlama`; yazılmazsa konuşma. Kuralları §7.10'da.
+7. **Soru başlığı** *(KARAR 22 Ekim 2026)*: tek satır, `[SORU BAŞLIĞI] …`.
+8. **Bilgi kutusu** *(KARAR 22 Ekim 2026)*: `[BİLİYOR MUYDUN]` ve `Metin:`
+   satırı. İsteğe bağlı `Başlık:`; yazılmazsa "Biliyor muydun?".
+
+Kurgu işareti `[[…]]` bir blok değildir; metnin içinde durur (§7.10).
+6–8 numaralı bloklar okuma ekranında 22 Ekim 2026'dan beri vardır (PROJE-MODELI
+5.1); örnek görünüm `/tasarim/okuma?bolum=adem-4&ornek=karma`.
+
+Biçim:
+
+```text
+[IŞIL]
+Metin: Ama yemin etti! Yemin eden yalan söyler mi?
+
+[SORU BAŞLIĞI] Ağaçtan tattıklarında ne oldu?
+
+[BİLİYOR MUYDUN]
+Metin: Kur'an o ağacın ne ağacı olduğunu söylemez.
+```
 
 İlk gerçek hikâye paragrafı için yalnızca `Başlangıç harfi: büyük` notu verilebilir.
 Diğer paragraflarda büyük başlangıç harfi kullanılmaz.
@@ -479,6 +613,106 @@ Para, alışveriş, sosyal medya, kanıt/fotoğraf, tehlikeli araç, yabancıyla
 ve ibadet dayatması içeren görev yazma. Gerekli durumda yetişkin desteğini açıkça
 belirt.
 
+### 7.10 Anlatım tarzı: karma (KARAR 21–22 Ekim 2026, Hasan)
+
+Amaç: Çocuk okumaya başlayınca merak edip devam etmek istesin ve anlatılanı
+daha iyi kavrasın. Metin ders kitabı gibi değil, çocuğun yanına oturmuş bir
+yetişkinin anlattığı hikâye gibi okunur ve dinlenir. **Yazmadan önce
+`kitap-icerikleri/ORNEK-KARMA-TARZ.md` dosyasındaki iki onaylı örneği oku**
+(Hz. Âdem 4. bölüm, Hz. Yusuf 1. bölüm).
+
+**Ana katman: her bölümde**
+
+- **Anlatıcının sesi** görünür ve sıcaktır. Çocuğa seslenir ("Şimdi seni bir
+  bahçeye götüreceğim."), soru sorar ("Peki düşman nasıl gelir?"), merakı
+  ayakta tutar. "Sen" hitabının sayı sınırı yoktur; her paragrafta değil, işe
+  yaradığı yerde kullanılır.
+- **Kulak için yazılır**, çünkü her bölüm sesli anlatılır. Ritim değişir;
+  önemli satır ya da kısa bir nakarat tekrar edilebilir ("Bir ağaç hariç.");
+  konuşan kişi her zaman bellidir.
+- **Sahne kurulur:** doğa, mekân, ışık ve ses; olaylar sırasıyla; zaman
+  geçişleri. Önemli anda yavaşlanır, geçişte hızlanılır.
+- **1. kısım en gergin anda kesilir.** Anlatıcı karar durağına kısa bir
+  duraklamayla geçebilir ("Devam etmeden önce sana bir şey soracağım.").
+  Bölüm sonu merak bırakır ve sonraki bölüme köprü kurar.
+- **Azaltılacaklar:**
+  - "Bu olay bize şunu gösteriyordu", "Asıl önemli ders buydu" gibi açıklama kalıpları,
+  - aynı değerin farklı cümlelerle tekrarı,
+  - hikâyeye bir şey katmayan, sırf ders olsun diye eklenen hayat dersi,
+  - "-meliydi / -malıydı" öğütleri,
+  - yazara ya da üretime ait ifadeler ("Sonraki olayları anlatırken…").
+
+  Dersin asıl yeri Ne Öğrendik ve Seçimini Karşılaştır'dır. Hikâye içinde
+  ders yasak değildir; ölçüt aşağıda ("Gerçek hayat örneği ve hayat dersi").
+- **Vaaz ve sevimlileştirme yok.** Peygamberler "çok sevimli bir abi" gibi
+  anlatılmaz. Mizah anlatıcıdan, Işıl'dan ya da durumdan gelir; peygamberlerden
+  gelmez.
+
+**Yardımcı katmanlar: gerektiğinde**
+
+Sayı sınırı yoktur. Ölçüt şudur: Satır çıkarıldığında bir şey eksiliyor mu?
+Eksilmiyorsa yazılmaz.
+
+- **Işıl** çocuğun aklındaki soruyu sorar ("Neden tam on bir?"), şaşırır,
+  sevinir, kısa tepki ve yorum yapar. Cevabı ve açıklamayı anlatıcı verir.
+  - Bir iki kısa cümle; cümle en fazla 12 kelime (PROJE-MODELI 3.10.5).
+  - Okurla ve anlatıcıyla konuşur. Hikâyedeki kişilerle konuşmaz, olayın
+    içinde yer almaz.
+  - Dinî hüküm vermez, ayet yorumlamaz; bunlar anlatıcının işidir. Yaygın bir
+    yanlışı Işıl dile getirebilir ("Hz. Havva kandırdı, değil mi?"); düzeltmeyi
+    anlatıcı yapar.
+  - Peygamberler hakkında küçümseyici ya da şakacı konuşmaz.
+- **Soru başlığı** dönüm noktasında çocuğun soracağı sorudur ("Ağaçtan
+  tattıklarında ne oldu?", "Peki şimdi ne olacak?"). Cevabı hemen ardından
+  gelen metindir. 1. kısımda karar sorusunun cevabını ele vermez.
+- **"Biliyor muydun?" kutusu** bugün hikâyeyi durduran kaynak notlarını taşır
+  ("Kur'an o ağacın ne ağacı olduğunu söylemez"), yaygın bir yanlışı düzeltir
+  ya da kısa bir bilgi verir. 1–3 cümledir. Hiçbir yoruma "yanlış" denmez;
+  rivayet için "kesin bilgi değildir" denir (§16/13).
+- **Gerçek hayat örneği ve hayat dersi (REVİZE 22 Ekim 2026, Hasan).** Hikâye
+  içinde kesin yasak yoktur. Ölçüt: Hikâyenin anlamını artırıyor mu? Örnek: Hz.
+  Âdem 7. bölümde Kābil'in öfkesinden sonra Işıl'ın sorusuyla gelen "Dur.
+  Oradan uzaklaş. Güvendiğin bir yetişkinden yardım iste." paragrafı; bölümde
+  bir tehdit geçtiği için güvenlik cümlesi hikâyenin parçasıdır. İki sınır
+  kalır:
+  - **Karar noktasından önce gelmez;** 1. kısımdaki bir gerçek hayat örneği ya
+    da ders doğru cevabı ele verir.
+  - **Sırf ders olsun diye eklenmez;** aynı değeri tekrar eden ya da sahneyi
+    durduran ders cümlesi çıkarılır. Bölüm ders cümlesiyle bitmez (§7.2).
+- **Tanık Sayfası** (§7.5) kitap başına 0 ya da 2–3 kez kullanılmaya devam eder.
+
+**Kurgu ve sınırları (KARAR 21 Ekim 2026, Hasan)**
+
+Çocuğun anlatılanı daha iyi kavramasına yardım ediyorsa kurgu kullanılabilir.
+
+- **Serbest olanlar:**
+  - sahne, doğa ve mekân ayrıntısı,
+  - kişilerin hareketleri ("durdu, baktı, elini oğlunun omzuna koydu"),
+  - peygamberler dahil duygu ve iç ses ("İçlerine soğuk bir pişmanlık yayıldı."),
+  - kısa konuşmalar.
+- **Kur'an ve hadis bilgisi değişmez** (A ve B kademesi, §4.3). Kur'an'da ve
+  hadiste bildirilen olay, söz ve bilgi kurgulanmaz, değiştirilmez; kurgu
+  bunlarla çelişmez. C kademesindeki rivayet de kurgu yoluyla kesin bilgiye
+  dönüşmez.
+- **Allah'ın sözü yalnız ayet mealiyle verilir.** Kur'an'da geçen öteki sözler
+  (peygamberlerin, İblis'in, kişilerin) meal anlamıyla verilir. Anlam Diyanet
+  mealiyle doğrulanır (§16/17).
+- **Kurgu yeni olay, kişi, ad, yer, sayı ya da tarih eklemez** (§16/9–11).
+  Kitabın dışarıda bıraktığı bir rivayeti kurgu kılığında geri getirmez.
+  Kitaba özgü yasaklar ve §16 kararları kurgudan önce gelir.
+- Melek konuşturulmaz (§16/12). Peygamberlerin görünüşü tarif edilmez. Korku
+  ve şiddet ayrıntısı yazılmaz (§12).
+- **İşaretleme:** Teslim dosyasında her kurgu parçası `[[…]]` içinde yazılır,
+  örneğin `[[Bir akşam kendilerini o ağacın dibinde buldular.]]`. İşaret
+  yalnız editör ve denetçi içindir; aktarımda kaldırılır, çocuk görmez.
+
+**Seslendirme**
+
+- Işıl satırlarını anlatıcı daha hafif, ayrı bir tonla okur; bölümün
+  seslendirme notunda belirtilir.
+- Soru başlıkları okunur. Bilgi kutusu "Biliyor muydun?" diye başlayarak
+  okunur.
+
 ---
 
 ## 8. GÖRSEL İÇERİK PAKETİ
@@ -561,6 +795,12 @@ sütunda kaydırılır ve görsel, metin duvarını bölen asıl moladır.
   Seçimini Karşılaştır, Ne Öğrendik ve Bugüne Taşı alanlarına görsel konmaz.
 - **Ritim:** İki görsel art arda gelmez; aralarında en az bir paragraf bulunur.
   Ölçü olarak yaklaşık her 2–3 paragrafta bir görsel düşer.
+- **Yazı duvarı olmaz (Hasan, 22 Ekim 2026).** Görsel, Işıl balonu, soru başlığı
+  ya da bilgi kutusu olmadan akan düz metin yaklaşık 900 karakteri geçmez (Hz.
+  Âdem ölçümü: 842 karakter telefonda 1,2 ekran, tablette 0,75 ekran tutuyor).
+  Geçiyorsa o aralığa sahneye uygun yeni bir görsel eklenir; görselin anahtarı ve
+  brifi teslim dosyasına yazılır, yer tutucusu aktarımda açılır. Görsel sayısı
+  bu yüzden hedefin üstüne çıkabilir.
 - **Her görsel ayrı bir an gösterir.** Aynı kompozisyonu tekrarlama: uzak plan,
   yakın nesne, mekân, ışık değişimi ve iz gibi kadrajları dönüşümlü kullan.
   Sayıyı doldurmak için anlamsız manzara üretme. Gösterilecek ayrı an yoksa alt
@@ -751,7 +991,7 @@ Teslim edilen tek Markdown dosyası aşağıdaki sırayı aynen izlemelidir:
 ## A. KAYNAK DENETİMİ
 ### A1. PDF künyesi
 ### A2. Olay envanteri
-### A3. Rivayet ve doğrulama tablosu
+### A3. Rivayet ve doğrulama tablosu   ← §4.3'teki sütunlarla: kademe A/B/C/D + uygunluk U1–U4
 ### A4. Bölüm kaynak haritası
 ### A5. Kullanılmayan içerikler ve gerekçeleri
 
@@ -803,7 +1043,9 @@ Ses yolu planı:
 Seslendirme notları:
 
 #### HİKÂYE — 1. KISIM
-[Blokları sırayla yaz. İllüstrasyonun metin çapasını yerinde göster.]
+[Blokları sırayla yaz. İllüstrasyonun metin çapasını yerinde göster.
+Kurgu parçalarını `[[…]]` ile işaretle; Işıl, soru başlığı ve bilgi kutusu
+§7.3 biçimiyle. Anlatım tarzı §7.10.]
 
 #### TANIK SAYFASI
 [Yoksa “Bu bölümde yok.”]
@@ -817,7 +1059,7 @@ Doğru seçenek:
 Seçim sonrası nötr not:
 
 #### HİKÂYE DEVAM EDİYOR
-[Bütün seçimlerde aynı metin.]
+[Bütün seçimlerde aynı metin. İşaretler 1. Kısım'daki gibi.]
 
 #### SEÇİMİNİ KARŞILAŞTIR
 A)
@@ -837,13 +1079,15 @@ C)
 1. Kısım'da en az 2, Devam'da en az 2 sahne. 5'e inildiyse gerekçesini yaz.]
 
 #### BÖLÜM İÇ KALİTE ÖZETİ
-Toplam hikâye karakteri:
+Toplam hikâye karakteri (anlatı metni; Işıl, başlık ve kutu ayrı):
 Paragraf sayısı:
 Tahmini diyalog oranı:
 18 kelimeyi aşan cümle var mı?:
 Etkileşimli kelimeler:
 Görsel sayısı (açılış + sahne; 1. Kısım / Devam dağılımı):
 Kaynak dışı bilgi var mı?:
+Kurgu: işaretli parça sayısı; Kur'an ya da hadis bilgisiyle çelişen var mı?:
+Işıl / soru başlığı / bilgi kutusu: sayı ve her biri için tek cümle gerekçe:
 
 ### D2. BÖLÜM 2: ...
 [D1 yapısını hedef bölüm sayısı N'e kadar D2, D3 ... DN olarak tekrarla.]
@@ -886,12 +1130,26 @@ ve alt metin. Bölge sahnesi bu envantere GİRMEZ.]
 Ajan, teslim sonunda her maddeyi `tamam / sorun var` olarak raporlamalıdır:
 
 - [ ] PDF baştan sona analiz edildi ve sayfa aralıkları kaydedildi.
-- [ ] Kullanılan, yumuşatılan, çıkarılan ve doğrulama isteyen bilgiler ayrıldı.
+- [ ] Her bilgi kademe (A/B/C/D) ve uygunlukla (U1–U4) işaretlendi;
+      kullanılan, yumuşatılan, veliye taşınan, çıkarılan ve doğrulama isteyen
+      bilgiler ayrıldı (§4.3). Hikâyenin omurgası A, gerekiyorsa B kademesinde.
 - [ ] Kitap kimliğinin bütün alanları dolu.
 - [ ] Katalogdaki hedef kadar bölüm var; kronoloji ve duygusal ritim dengeli.
 - [ ] Bölüm adları yaklaşık 28 karakteri aşmıyor; özetler 60–110 karakter.
-- [ ] Her bölümün toplam hikâyesi 2.500–4.000 karakter.
-- [ ] Cümle ortalaması 10–14 kelime; hiçbir cümle 18 kelimeyi aşmıyor.
+- [ ] Her bölümün toplam hikâyesi 2.500–4.000 karakter; uzunluk olaydan geliyor
+      (önemli anlar özetle geçilmemiş, bölümler topluca alt sınıra yaslanmamış;
+      §7.2).
+- [ ] Hiçbir cümle 18 kelimeyi aşmıyor; kısa ve orta cümleler karışık.
+- [ ] Anlatım §7.10'a uygun: görünür anlatıcı sesi, sahne, merak bırakan
+      geçişler; açıklama kalıpları ve hikâye ortasında ders yok.
+- [ ] Kurgu parçaları `[[…]]` ile işaretli. Hiçbiri Kur'an ya da hadis
+      bilgisini değiştirmiyor; yeni olay, kişi, ad, yer veya sayı eklemiyor;
+      Allah'ın sözü yalnız meal.
+- [ ] Işıl satırları gerçekten gerekli; Işıl hikâyedeki kişilerle konuşmuyor,
+      dinî hüküm vermiyor.
+- [ ] Soru başlıkları ve bilgi kutuları karar sorusunun cevabını ele vermiyor;
+      hikâye içindeki gerçek hayat örneği ya da ders anlamı artırıyor ve
+      karar noktasından sonra geliyor (§7.10).
 - [ ] Her bölüm iki parçalı ve ilk parça gerçek karar anında bitiyor.
 - [ ] Hikâye dallanmıyor; devam metni bütün seçimler için aynı.
 - [ ] Her bölümde 1 Sen Olsaydın, 3 seçenek ve 3 karşılaştırma metni var.
@@ -907,7 +1165,8 @@ Ajan, teslim sonunda her maddeyi `tamam / sorun var` olarak raporlamalıdır:
       başka kitapta kutulanmış terim bu kitapta düz metin bırakıldı.
 - [ ] Her bölümde 6 görsel var (1 açılış + 5 sahne); 5'e inilen bölümün
       gerekçesi yazılı. 1. Kısım ve Devam'da en az 2'şer sahne; art arda iki
-      görsel yok; aynı kompozisyon tekrar etmiyor.
+      görsel yok; aynı kompozisyon tekrar etmiyor; görselsiz düz metin aralığı
+      yaklaşık 900 karakteri geçmiyor (§8.3).
 - [ ] Her içerik görselinin TEK 16:9 brifi var (dikey varyant üretilmez).
 - [ ] Ortak stil bloğu, ortak negatif prompt ve rozet sembol stili bloğu
       İngilizce yazıldı; her sahne, rozet ve madalyada Türkçe + İngilizce
@@ -922,6 +1181,11 @@ Ajan, teslim sonunda her maddeyi `tamam / sorun var` olarak raporlamalıdır:
 - [ ] Hassas konular veli alanında karşılandı ve çocuk metninde yumuşatıldı.
 - [ ] Rozet adları `ROZET-MATRISI.md` §2 diziniyle çakışmıyor.
 - [ ] Uzun alıntı, kaynak dışı olay, kesinleştirilmiş belirsiz rivayet yok.
+- [ ] Her C bilgisi çocuk metninde kendi rivayet kalıbını taşıyor; her hadisin
+      künyesi kaynak notunda, bulunamayan hadis karar sorusu olarak açıldı
+      (§16/17b).
+- [ ] Âyet ve hadis alıntılarının içinde rivayet bilgisi yok; alıntı anlamı
+      değiştirecek yerden kesilmedi; iki hadis birleştirilmedi (§16/17c).
 - [ ] Açık editör soruları teslimin sonunda ayrıca listelendi.
 
 ---
@@ -989,14 +1253,18 @@ konuları **yeniden soru olarak sormaz; uygular ve uyguladığını gösterir.**
    tek cümlelik rivayette "Anlatılanlara göre…" da olur. *(İdrîs, Nûh 9, Musa 7a)*
 9. **Sayılar:** yalnız Kur'an'daki sayılar, "Kur'an'da bildirildiğine göre"
    ile verilir (950 yıl, sekiz ya da on yıl, dokuz âyet). Yaş, yıl, ömür,
-   nüfus, ordu, ölçü, süre verilmez. *(İdrîs, Nûh 6, Musa, Eyyûb)*
+   nüfus, ordu, ölçü, süre verilmez. *(İdrîs, Nûh 6, Musa, Eyyûb)* Hadiste
+   geçen sayılar da çocuk metnine girmez; gerekiyorsa veli raporunda,
+   künyesiyle verilir. *(KARAR 22 Ekim 2026)*
 10. **Adlar:** Kur'an'daki adlar ve yaygın-güvenli adlar verilir (Âsiye, Nil,
     Hârûn). Rivayet kaynaklı aile adları gerekmiyorsa verilmez; gerekiyorsa
     bir kez, rivayet kalıbıyla. Romancının uydurduğu adlar hiç verilmez.
     *(Nûh 4, Musa 7b, Eyyûb 4)*
 11. **Romancının kurgusu alınmaz:** uydurma kişiler ve olay örgüleri
     (entrika, casus, kötü karakter zinciri) hikâyeye girmez; dönemin havası
-    için en fazla fikir düzeyinde kullanılır. *(Nûh 4, Eyyûb A5)*
+    için en fazla fikir düzeyinde kullanılır. *(Nûh 4, Eyyûb A5)* Bu madde
+    kaynak kitabın kişi ve olay kurgusu içindir; bizim anlatım kurgumuz (sahne,
+    duygu, iç ses, kısa konuşma) §7.10'dadır *(22 Ekim 2026)*.
 12. **Melek ve vahiy:** melek konuşturulmaz, sahneye çıkmaz. Vahiy "Allah
     bildirdi" / "ağacın yanından seslenildi" düzeyinde; sesin ve ışığın
     niteliği tarif edilmez. *(Musa 7h, Nûh 7g, Eyyûb 2)*
@@ -1016,6 +1284,29 @@ konuları **yeniden soru olarak sormaz; uygular ve uyguladığını gösterir.**
     anlamı ve numarası. Yeni olay veya ayrıntı eklenmez. Kaynak kitaptaki âyet
     numaraları yanlış olabilir; çocuk metnine giren her âyet buradan kontrol
     edilir ve kaynak notuna yazılır. *(Musa, Eyyûb 7)*
+
+17b. **Hadis doğrulaması** (B kademesi, §4.3). Çocuk metnine ya da veli
+    raporuna giren her hadis Diyanet *Hadislerle İslâm*
+    (hadislerleislam.diyanet.gov.tr) ya da Buhârî/Müslim künyesiyle
+    doğrulanır; kitap, bölüm ve numara kaynak notuna yazılır. Kaynak kitaptaki
+    hadis künyeleri yanlış ya da eksik olabilir. **Ajan hadis derecesine hüküm
+    vermez.** Bu iki kaynakta bulunamayan hadis "doğrulanmalı" diye işaretlenir
+    ve Faz 1 karar sorusu olur; Hasan güvendiği bir hocaya danışır, cevap
+    kitabın karar kaydına yazılır. Zayıf olduğu bilinen hadis "Peygamberimiz
+    buyurdu" diye verilmez; içeriği yaygın ve zararsızsa C gibi, değilse D
+    kademesinde işlem görür. *(KARAR 22 Ekim 2026)*
+
+17c. **Alıntı kuralları.** (1) Âyet ve hadis alıntısının içine rivayet bilgisi
+    konmaz: hadis "Âdem'in ilk oğlu" der, parantez içinde "(Kābil)" eklenmez;
+    isim gerekiyorsa alıntının dışında, rivayet kalıbıyla verilir. (2) Kısaltılan
+    alıntı anlamı taşıyan kısmı düşürmez: Mâide 5/32 "Bundan dolayı
+    İsrailoğullarına şunu yazdık" diye başlar; bu kısım atlanacaksa bağlam
+    anlatıcı cümlesiyle verilir. (3) İki ayrı hadis tek alıntıda birleştirilmez.
+    (4) Rivayet kalıbı her cümlede kendi başına durur: aynı paragrafta A ya da B
+    bilgisinin ardından gelen C bilgisi de kendi kalıbını taşır. (5) Müfessir
+    yorumu kesin hüküm gibi yazılmaz; birden fazla görüş varsa §16/13.
+    *(KARAR 22 Ekim 2026; Lopus Hz. Âdem kitabı ve bir AI sohbetinde görülen
+    hatalardan)*
 
 ### C. Kitaplar arası ve yapı
 

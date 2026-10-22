@@ -1584,11 +1584,14 @@ oğulun "soyumuzdan bir peygamber gönder" duasının (Bakara 129) Hz. Muhammed'
 inanır.
 
 **"Zemzem neden 'zemzem'? Su nasıl kaynadı?"**
-Kitap suyun "Allah'ın izniyle" kaynadığını söyler. Buhârî'deki rivayette suyun bir meleğin
-toprağı kazımasıyla çıktığı, halk anlatılarında ise bebek Hz. İsmail'in topuğunu yere vurduğu
+Kitap suyun "Allah'ın izniyle" kaynadığını söyler. Buhârî'deki rivayette (Enbiyâ 9) suyun bir
+meleğin toprağı kazımasıyla çıktığı, halk anlatılarında ise bebek Hz. İsmail'in topuğunu yere vurduğu
 anlatılır; kitap melek tasviri yapmama kuralı gereği bunları almadı. "Zemzem" adının, Hâcer'in
 taşan suya "Zem zem!" yani "Dur dur!" demesinden geldiği bir halk anlatısıdır. Bir hadiste, Hâcer
-suyun çevresini çevirmeseydi zemzemin akan bir dere olacağı bildirilir.
+suyun çevresini çevirmekte acele etmeseydi zemzemin akan bir pınar olacağı bildirilir (Buhârî,
+Enbiyâ 9). *(22 Ekim 2026, brif §16/17b: "akan pınar" hadisi Diyanet Hadislerle İslâm c. 2 s. 381'de
+B3362 Buhârî, Enbiyâ 9 künyesiyle doğrulandı; meleğin toprağı kazması aynı bölümdeki uzun
+İbn Abbas rivayetidir ve Hadislerle İslâm c. 2'de geçer.)*
 
 ---
 

@@ -1793,10 +1793,12 @@ hatırlattığı için sevdiği ve geri getirip sıvazladığı anlamını.
 
 **"Hz. Süleyman'ın iki anne arasındaki davayı çözdüğünü duydum. Kitapta neden yok? Sebe melikesi sonra onunla evlendi mi?"**
 Bir hadiste, iki annenin bir çocuk için anlaşmazlığa düştüğü ve Hz. Süleyman'ın gerçek
-annenin şefkatini ortaya çıkaran bir yol bulduğu anlatılır (Buhârî). Hikâyede bir bebeğin
+annenin şefkatini ortaya çıkaran bir yol bulduğu anlatılır (Buhârî, Enbiyâ 40; Müslim, Akdiye
+20). Hikâyede bir bebeğin
 kaybı ve bıçakla ilgili bir an geçtiği için kitap bu davayı çocuk metnine almadı; aynı
 değeri birinci bölümdeki bağ davası taşıyor. Melikenin daha sonra kiminle evlendiğini ise
 Kur'an bildirmez; tefsirlerde farklı görüşler vardır ve kitap bu konuya girmedi.
+*(Künye 22 Ekim 2026'da Diyanet Hadislerle İslâm c. 5 s. 403'ten doğrulandı, brif §16/17b.)*
 
 ---
 

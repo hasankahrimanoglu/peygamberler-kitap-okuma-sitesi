@@ -94,8 +94,8 @@ listeyle karşılaştırılır.**
 
 | # | Terim | Tanım | İlk geçtiği yer | Durum |
 |---:|---|---|---|---|
-| 1 | emanet | Korumamız ve özen göstermemiz için bize güvenilerek verilen şeydir. | Hz. Âdem · 8 | **Kanonik** |
-| 2 | secde | Allah'ın emriyle yapılan, derin saygıyı gösteren özel bir davranıştır. | Hz. Âdem · 1 | Kanonik |
+| 1 | emanet | Korumamız ve özen göstermemiz için bize güvenilerek verilen şeydir. | Hz. Âdem · 1 | **Kanonik** |
+| 2 | secde | Allah'ın emriyle yapılan, derin saygıyı gösteren özel bir davranıştır. | Hz. Âdem · 2 | Kanonik |
 | 3 | nimet | Allah'ın insanlara verdiği yiyecek, sağlık, sevgi ve benzeri güzelliklerin her biridir. | Hz. Âdem · 3 | Kanonik |
 | 4 | vesvese | İnsanın içine doğan ve onu yanlış bir davranışa çağıran rahatsız edici düşüncedir. | Hz. Âdem · 4 | Kanonik |
 | 5 | tövbe | Yaptığımız bir yanlıştan pişman olup Allah'tan bağışlanma istemek ve o yanlışı bırakmaktır. | Hz. Âdem · 5 | Kanonik |
@@ -404,6 +404,7 @@ sicil, sonra `demoChapters.ts` güncellenir.
 |---|---|---|---|
 | 25 Tem 2026 | emanet | Üç yerde, iki farklı tanım: Hz. Âdem (onaylı), Hz. Şît demo, `demoChapters.ts`. Çocuk Kelime Defterim'de aynı kelimeyi iki anlamla görüyordu. | Hz. Âdem'in tanımı kanonik kabul edildi. `demoChapters.ts` eşitlendi. Hz. Şît'teki ikinci kutu **düz metne** çevrildi (cümle korundu). |
 | 10 Ağu 2026 | emanet | Nihai Hz. Şît içeriğinde terim yine geçiyor (Bölüm 4, birkaç kez). | Sicil §3 gereği ikinci kez kutulanmadı; düz `text` olarak aktarıldı. Çakışma oluşmadı. |
+| 22 Eki 2026 | emanet, secde | §3'te Hz. Âdem bölüm numaraları yanlıştı (emanet 8, secde 1 yazıyordu); metinde emanet Bölüm 1'de, secde Bölüm 2'de. | Hz. Âdem v2 aktarımında §3 düzeltildi. Tanımlar ve kutu yerleri değişmedi. |
 | 25 Tem 2026 | tevekkül | Eski Hz. Nuh demo verisindeki tanım brif §11'deki sabit tanımdan farklıydı. | Ölü demo verisi `books.ts`'ten silindi; sapma ortadan kalktı. Terim henüz hiçbir yayımlanmış kitapta kutulanmıyor. |
 
 ---

@@ -116,6 +116,14 @@ Tam üretim promptları: `kitap-icerikleri/HZ-ADEM-GORSEL-PROMPTLARI.md`.
 > `buyuyen-yurt` (sakal/yanak kenarları silindi, yüzü sızan iki yan figür sahneden çıkarıldı).
 > **Hasan'a not:** `buyuyen-yurt`'ta iki oğlanın sarık altından arkadan kulak/ense kenarı
 > seçiliyor (yüz yok, figür ~60 px). Ana dosyalar `gorsel-kaynaklari/adem-yeniden-uretim/`.
+>
+> **Karma tarz metni (v2) aktarıldı (22 Eki 2026):** Hikâye metni yeniden yazıldı, görsel
+> dosyaları ve `alt` metinleri değişmedi; yeni görsel yok. Yalnız yerler değişti:
+> `bolum-5/donus-sozleri` 1. Kısım'dan Devam'a geçti (dua artık karar sorusundan sonra);
+> `bolum-1/ogrenme-alemi` 1. Kısım'da ikinci paragrafın ardına alındı; Bölüm 7'de görseller
+> anlattıkları paragrafın ardında. **Görsel turu için not:** `bolum-7/duran-yol`'da yol
+> çatalının önündeki koyu, oval toprak lekesi olaydan önce çukur gibi okunabilir
+> (içerik denetçisi, 22 Eki 2026).
 
 ### Bölüm 1 — Beklenen Misafir
 
@@ -163,7 +171,7 @@ Tam üretim promptları: `kitap-icerikleri/HZ-ADEM-GORSEL-PROMPTLARI.md`.
 |---|---|---|---|---|
 | `hz-adem/bolum-5/kapak.jpg` | Açılış | A | ✅ Hazır | Şafak sökerken bulutların aralanmasıyla yeryüzüne inen ışık huzmesi |
 | `hz-adem/bolum-5/iki-yol-ayrimi.jpg` | 1. Kısım | A | ✅ Hazır | Biri sarp kayalığa, diğeri yumuşak toprağa uzanan iki ayrı patika |
-| `hz-adem/bolum-5/donus-sozleri.jpg` | 1. Kısım | A | ✅ Hazır | Şafakta çiyli toprakta yeni açılmış küçük bir su yolu; ötesinde doğan güneşe dönük, yan yana diz çökmüş, arkası dönük bir adam ve bir kadın *(figürlü — set stiline yeniden üretim, 17 Eki 2026)* |
+| `hz-adem/bolum-5/donus-sozleri.jpg` | Devam | A | ✅ Hazır | Şafakta çiyli toprakta yeni açılmış küçük bir su yolu; ötesinde doğan güneşe dönük, yan yana diz çökmüş, arkası dönük bir adam ve bir kadın *(figürlü — set stiline yeniden üretim, 17 Eki 2026)* |
 | `hz-adem/bolum-5/acilan-kapi.jpg` | Devam | B | ✅ Hazır | Kayaların arasından aydınlığa açılan geniş bir geçit |
 | `hz-adem/bolum-5/umudun-isigi.jpg` | Devam | B | ✅ Hazır | Yağmur sonrası bulutların aralanmasıyla ıslak toprağa vuran ilk ışık |
 

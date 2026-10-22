@@ -225,9 +225,11 @@ ana ekranda "Sıradaki bölümün" kartı ("Kaldığın yer" DEĞİL — tamamla
 sayısından); okuma ekranı tamamen açık zemin, adım çubuğu, rozetten sonra doğrudan
 sıradaki bölüm; mekân metaforları (İskele/Rota/Kapı/Durak/Atlas) arayüz metninden
 çıkar, "Kazanımlarım → Ödüllerim"; rehber karakter **Işıl** (ateşböceği, yalnız
-metin balonu, hikâyede ve dinî yorumda asla; ana ekranda okunan kitabın yanında
-"Buradasın"; sözlük kelimesine dokununca anlam kartını uçarak getirir — tanımı
-kendisi söylemez, tanım içerik verisidir). Okuma açılışında künye, bölüm adı ve
+metin balonu; ana ekranda okunan kitabın yanında "Buradasın"; sözlük kelimesine
+dokununca anlam kartını uçarak getirir — tanımı kendisi söylemez, tanım içerik
+verisidir; **REVİZE 22 Eki 2026:** hikâye akışında da gerektiğinde soran ya da
+konuşan balon olarak girer, hikâyedeki kişilerle konuşmaz, dinî hüküm vermez —
+PROJE-MODELI 3.10.5, içerik brifi §7.10). Okuma açılışında künye, bölüm adı ve
 (< 1024 px) rozet kapak görselinin ortasındadır (REVİZE 12 Eki 2026). Hamburger menü yerine profil kartı; ayrı bölüm rotası sayfası yerine
 alttan sayfa / sağ panel; okunan yol altın ışık izi, durak halkası = kitap ilerlemesi;
 rota arka planı boyalı, dikişsiz alt alta tekrar eden çayır görseli
@@ -286,6 +288,21 @@ Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
 - **Tanık Sayfası:** okuma akışına giren el yazısı/defter görünümlü sayfa tipi
   (kullanılan kitaplarda 2-3 kez; her kitapta olmayabilir). Alanlar: witnessName,
   witnessLabel, body, isFictional.
+- **Karma anlatım tarzı (KARAR 21–22 Eki 2026 — PROJE-MODELI 4.1/20):** bütün
+  kitapların hikâyeleri içerik brifi §7.10'a göre yazılır: görünür, sıcak
+  anlatıcı; sahne kurma; merak kancaları. Kurgu (peygamberlerin iç sesi,
+  duyguları, kısa konuşmalar dahil) serbesttir, ama Kur'an ve hadis bilgisini
+  değiştirmez; Allah'ın sözü yalnız mealdir. Teslim dosyasında kurgu `[[…]]` ile
+  işaretlenir, aktarımda işaret kaldırılır. Onaylı örnekler:
+  `kitap-icerikleri/ORNEK-KARMA-TARZ.md`. Yayındaki kitaplar bu karardan önce
+  yazıldı; sırayla yeniden yazılıyor. Hz. Âdem 22 Eki 2026'da aktarıldı (hikâye
+  metni `KITAP-HZ-ADEM-ICERIK-v2.md`).
+- **Hikâye içi yardımcı bloklar (KARAR ve uygulama 22 Eki 2026 — PROJE-MODELI
+  5.1):** Işıl balonu (`isil`), soru başlığı (`soru_basligi`), "Biliyor
+  muydun?" kutusu (`bilgi_kutusu`); `books.ts` türleri, `AtlasScrollReader`'da
+  çizim. Önizleme `/tasarim/okuma?bolum=adem-4&ornek=karma` (ve `yusuf-1`); örnek
+  metin `src/data/karmaOrnek.ts` yalnız önizlemedir, ürün içeriği değildir.
+  Veli bilgi notu Gelişim Raporu → Kitaplar'ın altında ("kurgu" kelimesi yok).
 
 ---
 
@@ -335,6 +352,9 @@ Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
       olan terim düz `text` olarak aktarıldı, ikinci kez kutulanmadı
 - [ ] Bölüm sayısı `KITAP-KATALOGU-VE-URETIM-PLANI.md`'deki hedefle aynı
 - [ ] Doldurulmuş içerik `src/data/books.ts` formatına eklendi
+- [ ] Kurgu işaretleri (`[[…]]`) metinden kaldırıldı; `[IŞIL]`, `[SORU BAŞLIĞI]`,
+      `[BİLİYOR MUYDUN]` blokları `isil` / `soru_basligi` / `bilgi_kutusu`
+      olarak aktarıldı (PROJE-MODELI 5.1)
 - [ ] **Final testi soruları `src/data/quizzes.ts`'e eklendi ve `quizConfig`'e
       kitap anahtarı tanımlandı** (unutulmaya en açık adım)
 - [ ] Bölüm sayısı = rozet sayısı = final testi soru sayısı; **N. soru N. bölümden**

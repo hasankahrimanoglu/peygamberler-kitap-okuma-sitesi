@@ -1050,12 +1050,34 @@ Bugüne Taşı, Büyük Final Testi. "Kazanımlarım → Ödüllerim" gerekçesi
   gider — REVİZE 12 Eki 2026, Hasan)**, "Sen Olsaydın" girişi, rozet ve madalya anı (konuşmaz, rozetin yanında
   uçar), yeni kitap duyurusu (bir kez), yolun ucu, boş ekranlar ve **ana ekranda
   çocuğun okuduğu kitabın yanında "Buradasın"** (12 Eki 2026). Cümle en fazla
-  12 kelimedir.
-- **Kesin sınırlar:** hikâye metninin içinde görünmez (anlam kartı hikâye
+  12 kelimedir. *(REVİZE 22 Eki 2026: bunlara ek olarak hikâye akışında,
+  gerektiğinde; kuralları aşağıda.)*
+- ~~**Kesin sınırlar:** hikâye metninin içinde görünmez (anlam kartı hikâye
   metninin dışında ayrı bir yüzeydir; Işıl kartı getirir, tanımı kendisi
   söylemez — tanım içerik verisidir); peygamberler ve dinî
   konular hakkında yorum yapmaz; doğru/yanlış söylemez; çocuğu övmez veya
-  derecelendirmez; okuma sırasında ekranda durmaz.
+  derecelendirmez; okuma sırasında ekranda durmaz.~~
+  **REVİZE — 21–22 Ekim 2026 (Hasan: "hikâyeye göre hem konuşan hem soran
+  olabilir… gerçekten gerekliyse kullanılmalı"):** Işıl **hikâye akışına da
+  girer.** Paragraflar arasında, hikâye metninden ayrı bir balonda çocuğun
+  aklındaki soruyu sorar ("Neden tam on bir?"), şaşırır, sevinir, kısa tepki
+  ve yorum yapar. Cevabı ve açıklamayı anlatıcı verir.
+  - Sayı sınırı yoktur. Ölçüt: Satır çıkarıldığında bir şey eksiliyor mu?
+    Eksilmiyorsa Işıl girmez.
+  - Okurla ve anlatıcıyla konuşur. Hikâyedeki kişilerle konuşmaz, olayın
+    içinde yer almaz.
+  - Dinî hüküm vermez, ayet yorumlamaz; bunlar anlatıcının işidir. Yaygın
+    bir yanlışı dile getirebilir ("Hz. Havva kandırdı, değil mi?"); düzeltmeyi
+    anlatıcı yapar. Peygamberler hakkında küçümseyici ya da şakacı konuşmaz.
+  - Değişmeyenler: çocuğun "Sen Olsaydın" seçimi için doğru/yanlış söylemez;
+    çocuğu övmez veya derecelendirmez; okuma sırasında sabit ya da yüzen
+    olarak ekranda durmaz, yalnız akıştaki balonda görünür. Anlam kartında
+    tanımı kendisi söylemez; tanım içerik verisidir.
+  - **Seslendirme:** Arayüz anlarındaki Işıl satırları seslendirilmez (12 Ekim
+    kararı aynen). Hikâye akışındaki Işıl satırları bölümün sesli anlatımına
+    girer; anlatıcı daha hafif, ayrı bir tonla okur.
+  - İçerik kuralları: içerik brifi §7.10; veri bloğu 5.1. Okuma ekranında
+    uygulandı (22 Eki 2026); yayındaki kitaplarda henüz Işıl satırı yok.
 - ~~Çizim Hasan'dadır: en az üç poz, 512×512 şeffaf PNG.~~ **REVİZE — 12 Ekim
   2026 (Faz D, Hasan: "bu Işıl karakterini çok güzel yapalım ve
   animasyonlaştıralım"):** Işıl görsel dosya değildir; **kodla çizilir ve
@@ -1372,6 +1394,8 @@ bağlanmış cihaz erişir.**
 | 17 | "Bugüne Taşı" görev takibi (KARAR 15 Tem 2026) | Görev KOŞULLUDUR (her bölümde değil; kitabın yaklaşık %40–50'sinde görev bulunması editoryal hedeftir, teknik sınır olarak kodlanmaz) ve GÖNÜLLÜDÜR. Çocuk görevde "Görevi Listeme Ekle / Şimdilik Değil" seçer; eklediği görevleri "Görevlerim" ekranında görür, "Görevi Tamamladım" ile işaretler; Tamamlandı/Tamamlanmadı durumu KALICI saklanır (öz bildirim yeterli, kanıt istenmez). Görev; bölüm rozetinin, madalyanın, sonraki kitabın veya ilerlemenin ŞARTI DEĞİLDİR. Son tarih, ceza, seri YOK | Yeni tablo (bkz. 7.3 — Faz 6.1) |
 | 18 | Veli tarafında görev görünürlüğü (KARAR 15 Tem 2026 akşam) | Veli, çocuğun aldığı TÜM görevleri ve durumlarını Gelişim Raporu'ndaki **Görevler sekmesinden** görür (Alındı / Tamamlandı, hangi kitap-bölüm, tarih). Ana Sayfa kartı ise yalnız EN GÜNCEL tek görevi durum çipiyle ("Alındı"/"Tamamlandı") gösterir — tam liste değil. Veli görevleri yalnız GÖRÜR, düzenlemez/tamamlamaz (öz bildirim çocuğundur). Rapor dili gözlem bildirir; tamamlanmamış görev eksiklik/başarısızlık olarak sunulmaz | Yok — `profile_tasks`'tan türetilir |
 | 19 | Bölüm bölüm veli sohbeti (KARAR 19 Eki 2026) | Gelişim Raporu → Sohbet Önerileri'nde **okunan** (başlanmış, finali bitmemiş) her kitap için bir kart: kitapta ulaşılan son bölüm (numara, ad, `ozet`), o bölümün "Sen Olsaydın" sorusu ("Bu bölümde düşündüğü soru") ve sabit öneri ("Akşam sohbeti için: Bu soruyu ona siz de sorun ve cevabını dinleyin. Sonra hikâyede ne olduğunu birlikte hatırlayabilirsiniz."). Bölüm tamamlanan bölüm sayısından türer; kaydırma konumuna bakılmaz ("Kaldığın yer" değildir), tekrar okunan eski bölüm gösterilmez. **Yalnız son bölüm** gösterilir. **Çocuğun seçtiği şık gösterilmez** — özellik S5'e bağlı değildir; veli göreceğini bilen çocuk "beklenen" şıkkı seçer. Kitabın "Çocuğunuz Sorarsa" yönlendirmeleri kitap okunurken de görünür (zor soru kitabın ortasında gelir); okunan ve biten kitapta **kapalı açılır liste**dir. Kitaplar sekmesi okunan kitapları da listeler (kapak, ilerleme, kitapta gelinen bölüm, son okuma; bölümleri biten ama finali kalan kitapta "Büyük Final Testi kaldı"). Ana Sayfa kartı değişmez (3.8). Girişsiz önizleme: `/tasarim/veli-rapor` | Yok — books.ts + user_progress |
+| 20 | Karma anlatım ve hikâye içi bloklar (KARAR 21–22 Eki 2026) | Bütün kitapların hikâyeleri karma tarzda yazılır (içerik brifi §7.10): görünür, sıcak anlatıcı; sahne kurma; merak kancaları; Kur'an ve hadis bilgisini değiştirmeyen kurgu. Okuma ekranına üç blok eklenir: Işıl balonu, soru başlığı, "Biliyor muydun?" kutusu (5.1). **Veli bilgi notu:** veli tarafında tek cümle: "Hikâyeler, çocukların daha iyi anlaması için canlı bir anlatımla yazılmıştır; Kur'an ve hadislerde bildirilen bilgiler değiştirilmeden aktarılır." "Kurgu" kelimesi kullanılmaz; veli bunu uydurma bilgi gibi algılayabilir (Hasan, 22 Eki 2026). Önerilen yer: Gelişim Raporu'nun Kitaplar sekmesinin altında tek satır. **Sıra:** okuma ekranına bloklar → Hz. Âdem'in yeniden yazımı (`-ICERIK-v2.md`) → diğer 13 kitabın taraması ve yeniden yazımı. Bir kitabın metni kesinleşmeden o kitap seslendirilmez | Yok — `books.ts` |
+| 21 | İki eksenli kaynak ölçeği (KARAR 22 Eki 2026) | İçerik üretiminde her dinî/tarihî bilgi iki soruyla sınıflanır (içerik brifi §4.3): **kaynak kademesi** (A Kur'an · B sahih hadis · C yaygın rivayet ve müfessir yorumu · D kullanılmaz) ve **8–11 yaşa uygunluk** (U1 uygun · U2 yumuşatılarak · U3 veli raporu · U4 hiçbir yerde). Hikâyenin omurgası A, gerekirse B; C az ve rivayet kalıbıyla. Hadis Diyanet *Hadislerle İslâm* ya da Buhârî/Müslim künyesiyle doğrulanır, ajan derece hükmü vermez (§16/17b). Âyet/hadis alıntısına rivayet eklenmez, alıntı anlamı değiştirecek yerden kesilmez (§16/17c). Katalogdaki K1–K4 kitabın, bu ölçek tek tek bilginin kaynak durumunu tarif eder. Yayındaki kitaplara geriye dönük toplu tarama yok; karma tarz yeniden yazımında uygulanır | Yok — içerik kuralı |
 
 ### 4.2 SONRAYA BIRAKILDI (ayrı fazlarda)
 
@@ -1382,6 +1406,7 @@ bağlanmış cihaz erişir.**
 | S3 | Hesap aktivasyon akışı (şifre maili yerine tek kullanımlık bağlantı) | Çalışan Shopier akışını bozmadan, kendi fazında. *(ÇÖZÜLDÜ — 20 Eki 2026, Faz 7 3. adım: `/sifre-belirle` bağlantısı, Şifremi unuttum; Bölüm 8)* | E-posta şablonu + token akışı |
 | S4 | Çocuk girişi PIN'e geçiş + parola güvenliği | S3 ile birlikte ele alınır (bkz. Bölüm 8). *(ÇÖZÜLDÜ — 19 Eki 2026, 3.11: çocuk hesabı kalktı; ortak cihazda isteğe bağlı profil şifresi, kendi cihazında eşleme kodu)* | Şema + RLS değişikliği |
 | S5 | "Sen Olsaydın" cevaplarının **kalıcı** kaydı (geçmiş cevapların saklanması + veli raporunda `high/mixed/low` özet seçimi) | Değerli ama zorunlu değil. **İki ihtiyaç karıştırılmamalı:** seçimin AYNI OKUMA OTURUMUNDA tutulup bölüm sonunda "Seçimini Karşılaştır"da kullanılması S5 DEĞİLDİR — okuma akışının temel parçasıdır (4.1/16, Faz 6.1; oturum içi state, tablo gerektirmez). S5 yalnızca veritabanına kalıcı kayıttır. *(UYGULANIYOR — KARAR 20 Eki 2026, Hasan: kitap sonu veli özeti seçim verisi olmadan her çocukta aynı "mixed" metni gösteriyor, gözlem gibi okunuyordu. Kurallar aşağıdaki notta.)* | Yeni tablo `sen_olsaydin_secimleri` |
+| S6 | Peygamber sıfatları ve melekler: set düzeyi bilgi (22 Eki 2026) | Peygamberlerin ortak sıfatları (Sıdk, Emanet, İsmet, Fetânet, Tebliğ) ve meleklerin tanıtımı hiçbir kitapta yok; müfredatta standart olduğu için velinin beklediği bir konu. Tek bir kitabın içine değil, set düzeyinde bir yere aittir; hangi ekran (veli paneli, Kelimelerim, "Peygamber nedir?" sayfası) olacağı ayrı karar. "İsmet"in zelle ayrıntısı 8–11 yaşa sadeleştirilmeli | Ekran kararı + içerik (iki eksenli ölçekle) |
 
 > **Not (değişken veli özeti — REVİZE 20 Eki 2026, Hasan; S5):** İçerik
 > şablonunda veli özeti üç varyant olarak yazılır (`high` / `mixed` / `low`) ve
@@ -1501,6 +1526,23 @@ Okuma ekranı düzeni (**REVİZE — 26 Temmuz 2026, Hasan onayı; Faz 6.2**):
   noktasından sonra; her kitapta bulunmak zorunda değildir (Hz. Âdem'de yoktur). Veri alanları: `witnessName`,
   `witnessLabel`, `body`, `isFictional` (kurgusal karakterde sayfa altına "Bu
   sayfadaki çocuk hayalîdir; anlattığı olaylar gerçektir." notu gösterilir).
+- **Hikâye içi yardımcı bloklar (KARAR — 22 Ekim 2026, Hasan; UYGULANDI 22 Eki
+  2026, `AtlasScrollReader` + `okuma-akisi.module.css`; önizleme
+  `/tasarim/okuma?bolum=adem-4&ornek=karma`, `yusuf-1` de var — örnek metin
+  `src/data/karmaOrnek.ts`, yalnız önizleme):** karma anlatım tarzının (içerik
+  brifi §7.10) üç bloğu.
+  Hikâyenin iki parçasında, metin blokları arasında durur. Okuma zemini krem
+  kalır; renkler token'dan gelir.
+  - **Işıl balonu:** `{ type: "isil"; text; poz?: "konusma" | "durus" | "kutlama" }`.
+    Kodla çizilmiş `Isil` bileşeni (3.10.5) ve ilk sözlük kelimesindeki balon
+    deseni kullanılır. Hikâye metninden görsel olarak ayrıdır.
+  - **Soru başlığı:** `{ type: "soru_basligi"; text }`. Dönüm noktasında kısa
+    başlık.
+  - **Bilgi kutusu:** `{ type: "bilgi_kutusu"; baslik?; text }`. Varsayılan
+    başlık "Biliyor muydun?".
+  - Kelimelerim ve sözlük türetmesi bu blokları okumaz. Sesli anlatım Model A
+    olarak kalır (Işıl satırları anlatıcının sesinde, 3.10.5).
+  - Teslim dosyasındaki `[[…]]` kurgu işareti veri değildir; aktarımda kaldırılır.
 - **Sesli anlatım (KARAR — Model A):** Play'e basıldığında **bölümün tamamı**
   baştan sona kesintisiz çalar; ses, metin kaydırmasına bağlı DEĞİLDİR (çocuk
   dinlerken metni kendi takip eder veya sadece dinler). Bu, "telefon =
@@ -2365,11 +2407,106 @@ Kurallar:
       talimat "önce ana ekrana ekle, sonra simgeden aç" sırasına geçer;
       uygulama içinde not çıkmaz; bağlı cihaz `/cihaz-bagla`'dan haritaya gider.
 
+### 22 Ekim 2026 (karma anlatım tarzı ve Işıl'ın hikâyedeki yeri — Hasan onayı, bkz. 3.10.5, 4.1/20, 5.1 ve içerik brifi §7.10)
+
+- [x] **Sorun:** Yazılmış 14 kitabın hikâyeleri çocuk hikâyesinden çok ders
+      anlatımına yakındı; en belirgin örnek Hz. Âdem (ders anlatımı kalıpları
+      diğer kitapların 3–6 katı). Beş tarz denemesi yapıldı, Hasan karma tarzı
+      seçti: ses "Masalcı Ses"ten, sahne kurma "Sahnenin İçinde"den; Işıl,
+      soru başlığı ve "Biliyor muydun?" kutusu gerektiğinde.
+- [x] **Kurgu (21 Ekim):** Çocuğun anlamasına yardım ediyorsa serbest; buna
+      peygamberlerin iç sesi, duyguları ve kısa konuşmaları da dahil. Kur'an'da
+      ve hadiste bildirilen bilgi kurgulanmaz, değiştirilmez. Allah'ın sözü
+      yalnız mealdir. Kurgu parçaları teslim dosyasında `[[…]]` ile işaretlenir.
+- [x] **Işıl (21 Ekim):** hikâyeye göre hem soran hem konuşan; sayı sınırı
+      yok, ölçüt "gerçekten gerekli mi". 3.10.5'in eski "hikâyede görünmez"
+      sınırı revize edildi.
+- [x] **Brif değişti:** §7.10 eklendi; §4.4'teki konuşma yasağı, §7.2'deki
+      "ortalama 10–14 kelime" ve "en fazla 1–2 kez sen" kuralları kalktı;
+      §7.3'e üç blok, §13 ve §14'e kurgu ve Işıl maddeleri eklendi. Onaylı
+      örnekler: `kitap-icerikleri/ORNEK-KARMA-TARZ.md`. İçerik denetçisi
+      (`.claude/agents/icerik-denetcisi.md`) ve `icerik-faz2` / `aktarim`
+      becerileri aynı kurallara hizalandı.
+- [x] Okuma ekranına üç blok (5.1) ve veli bilgi notu (4.1/20; Gelişim
+      Raporu → Kitaplar sekmesinin altında, "kurgu" kelimesi yok — Hasan).
+      Önizleme `/tasarim/okuma?bolum=adem-4&ornek=karma`; lint ve build temiz.
+- [x] Hz. Âdem'in 8 bölümünün karma tarzda yeniden yazımı
+      (`kitap-icerikleri/KITAP-HZ-ADEM-ICERIK-v2.md`; mevcut dosya onaya kadar
+      kalır), ardından aktarım. *22 Eki: yazıldı ve içerik denetçisinden geçti
+      (kritik 0); Hasan onayı ve dört karar bekliyor (dosyanın sonundaki notlar).
+      Aynı gün 1. ve 7. bölüm ikinci turda yeniden yazıldı; Hasan okudu, v2 ile
+      devam kararı verdi.*
+- [x] **Bölüm uzunluğu hikâyeden gelir (22 Ekim, Hasan):** 2.500–4.000
+      karakter hedef değil, sınırdır; uzunluğu önemli anların sahne olarak
+      anlatılması belirler. Gerekçe 8–11 yaş okuma süresidir (brif §7.2). Hz.
+      Âdem v2'nin bölümleri alt sınıra yakın kaldı; bu kitap için kabul edildi,
+      sonraki kitaplarda tekrarlanmaz. İçerik denetçisi "kırpılmış" bölümü
+      bulgu olarak yazar.
+- [x] **Hikâye içinde hayat dersi (22 Ekim, Hasan):** kesin yasak yok;
+      hikâyenin anlamını artırıyorsa yer alır, karar noktasından önce gelmez,
+      sırf ders olsun diye eklenmez (brif §7.10). Örnek: Hz. Âdem 7. bölümdeki
+      öfke ve güvenlik paragrafı.
+- [x] **Yazı duvarı olmaz (22 Ekim, Hasan):** görsel, Işıl, soru başlığı ya da
+      kutu olmadan akan düz metin yaklaşık 900 karakteri geçerse sahneye uygun
+      yeni görsel eklenir (brif §8.3). Hz. Âdem v2'de en uzun aralık 842
+      karakter; yeni görsel gerekmedi.
+- [x] Hz. Âdem v2'nin dört açık kararı verildi (dosyanın sonundaki notlar):
+      "buğday" kutuda kalır, görsel dağılımı kalır, 7. bölüm güvenlik paragrafı
+      kalır, Hz. Şît "(a.s.)" olmadan kalır.
+- [x] **Hz. Âdem v2 aktarıldı (22 Ekim):** sekiz bölümün `paragraphs` ve
+      `continuationParagraphs` alanları `books.ts`'te v2 ile birebir; Sen
+      Olsaydın, karşılaştırma, Ne Öğrendik, görevler, final testi ve veli raporu
+      değişmedi. Geçici `ademV2Onizleme.ts` ve önizlemenin `ornek=v2` seçeneği
+      silindi. `SOZLUKCE-SICILI` §3'teki emanet/secde bölüm numaraları ve
+      `ICERIK-GORSEL-SICILI`'nde `bolum-5/donus-sozleri`'nin yeri düzeltildi.
+      Yayına çıkması `main`'e geçişle olur. **Ses:** `hz-adem-bolum-1.mp3`
+      gerçek kayıttır (16 Tem 2026) ve eski metni okur; yeniden kaydedilmeli.
+      `kitap-denetle` onu yer tutucu saymaz (öteki 7 bölüm ve bütün yer
+      tutucular bu kaydın kopyası).
+- [ ] Diğer 13 kitabın taraması ve sırayla yeniden yazımı. Ses kaydı hiçbir
+      kitapta yok; bir kitabın metni kesinleşmeden o kitap seslendirilmez.
+
+### 22 Ekim 2026 (iki eksenli kaynak ölçeği — Hasan onayı, bkz. 4.1/21 ve içerik brifi §4.3, §16/17b–c)
+
+- [x] **Sorun:** Kaynak PDF'ler (Bahar Yayınları, A. C. Akıncı, *Peygamberler
+      Tarihi* roman dizisi) Kur'an ve hadisi, klasik rivayeti ve romancının
+      kurgusunu bir arada taşıyor. Brif §4.3 bunları üç gruba ayırıyordu ama
+      hadisin yeri ve bilginin çocuğa uygunluğu ayrı tanımlı değildi; hadis
+      için doğrulama yolu yoktu (Hz. Âdem'de sahih hadis hiç kullanılmadı).
+      Başka bir yayınevinin Hz. Âdem kitabı ve bir AI sohbeti aynı hataları
+      gösterdi: rivayeti kesin bilgi gibi yazmak, hadis alıntısına rivayetten
+      gelen ismi eklemek, iki hadisi birleştirmek, âyeti bağlamından kesmek.
+- [x] **Karar:** iki eksenli ölçek (4.1/21). Dört karar: (1) hadisteki sayılar
+      çocuk metnine girmez, gerekiyorsa veli raporunda (§16/9); (2) hadis
+      derecesine ajan hüküm vermez, bulunamayan hadis için Hasan bir hocaya
+      danışır (§16/17b); (3) yayındaki kitaplar toplu taranmaz, karma tarz
+      yeniden yazımında uygulanır; (4) Hz. Âdem için önerilen üç ek ayrı bir
+      içerik turu olur.
+- [x] **Değişen dosyalar:** içerik brifi (§4.3 yeniden yazıldı; §7.10, §13 A3,
+      §14, §16/9 güncellendi; §16/17b–c eklendi), içerik denetçisi,
+      `icerik-faz1` ve `icerik-faz2` becerileri, katalog §10 notu.
+- [x] Hz. Âdem'e altı ek (Hasan onayıyla 22 Eki 2026'da v2, final.md veli
+      raporu ve `books.ts`'e aktarıldı; kayıt v2'nin sonundaki "Ekler"
+      notunda; `kitap-denetle adem` 0 hata, önizlemede doğrulandı. Bölüm 1
+      değişmediği için gerçek ses kaydı geçerli kalır): Hucurât 49/13 kutusu
+      Bölüm 2'ye; karga dersi (anlatıcı cümlesi) ve Mâide 5/32'nin olumlu
+      yarısı Bölüm 7'ye; "güzel bir işe öncülük" hadisi (Müslim, İlim 15)
+      Bölüm 8'e; "kendin için istediğini" hadisi (Buhârî, Îmân 7) ve ilk
+      cinayetin günah payı hadisi (Buhârî, Enbiyâ 1; Müslim, Kasâme 27) veli
+      raporuna. Künyeler Diyanet *Hadislerle İslâm*'dan doğrulandı.
+- [ ] **Sonraya bırakılan içerik fikirleri** (Lopus Hz. Âdem incelemesi, 22 Eki
+      2026; her biri ilgili kitabın Faz 1'inde iki eksenli ölçekle
+      değerlendirilir): "Allah için verirken en iyisini vermek" (Âl-i İmrân
+      3/92) kurban ya da sadaka geçen bir kitaba; gösteriş ve ihlas (üç kişi
+      hadisi; künye Faz 1'de doğrulanır) Hz. İsmail ya da Hz. İbrahim'e;
+      anne-baba hakkı (İsrâ 17/23) Hz. Yusuf–Yâkub ya da Hz. İbrahim–İsmail'e.
+      Peygamber sıfatları ve melekler set düzeyindedir (4.2/S6).
+
 ## 11. İçerik Durumu
 
 | Kitap | Durum |
 |---|---|
-| Hz. Âdem | ✅ Yeni içerik yazıldı ve **dini doğruluk onayı verildi (Hasan, 15 Tem 2026)** — **8 bölüm + Büyük Final Testi**. **Geçerli tek kaynak dosya: `kitap-icerikleri/KITAP-HZ-ADEM-ICERIK-final.md`** (eski `KITAP-HZ-ADEM-ICERIK.md` 12 Eki 2026'da silindi). Yeni bölüm akışıyla: iki parçalı hikâye + Seçimini Karşılaştır. Hâbil-Kâbil kıssası **Bölüm 7** olarak dahil — Mâide 5/27-31 merkezli, şiddet ayrıntısı gösterilmeden (kitaba özgü karar, genel kural değil). **4 koşullu "Bugüne Taşı" görevi** (Bölüm 2, 3, 5, 7). **`books.ts`'e + final testine + veli raporuna Faz 6.1'de aktarıldı (birebir).** |
+| Hz. Âdem | ✅ Yeni içerik yazıldı ve **dini doğruluk onayı verildi (Hasan, 15 Tem 2026)** — **8 bölüm + Büyük Final Testi**. **Geçerli tek kaynak dosya: `kitap-icerikleri/KITAP-HZ-ADEM-ICERIK-final.md`** (eski `KITAP-HZ-ADEM-ICERIK.md` 12 Eki 2026'da silindi). **22 Eki 2026:** hikâye metinleri karma tarzda yeniden yazıldı ve aktarıldı; geçerli hikâye metni `KITAP-HZ-ADEM-ICERIK-v2.md`, final testi, veli raporu ve sözlükçe yine `-final.md`. Yeni bölüm akışıyla: iki parçalı hikâye + Seçimini Karşılaştır. Hâbil-Kâbil kıssası **Bölüm 7** olarak dahil — Mâide 5/27-31 merkezli, şiddet ayrıntısı gösterilmeden (kitaba özgü karar, genel kural değil). **4 koşullu "Bugüne Taşı" görevi** (Bölüm 2, 3, 5, 7). **`books.ts`'e + final testine + veli raporuna Faz 6.1'de aktarıldı (birebir).** |
 | Hz. Şît | ✅ Kaynaklı içerik yazıldı ve **`books.ts` + `quizzes.ts` + veli raporuna aktarıldı (10 Ağu 2026)** — **4 bölüm + Büyük Final Testi (4 soru)**. **Geçerli tek kaynak dosya: `kitap-icerikleri/KITAP-HZ-SIT-FINAL.md`.** Kaynak sınıfı **K3** (adı Kur'an'da geçmez): rivayetler "anlatılanlara göre" çerçevesinde verilir; ömür/yaş/sahife rakamı ve defin yeri metinde hiç geçmez. **2 koşullu "Bugüne Taşı" görevi** (Bölüm 2, 3). Tanık Sayfası kullanılmadı (0). Geçici demo içeriği ve `localStorage` ilerleme altyapısı kaldırıldı; ilerleme Supabase'e yazılır. |
 | Hz. İdrîs | ✅ Kaynaklı içerik yazıldı, **`books.ts` + `quizzes.ts` + veli raporuna aktarıldı (5 Eyl 2026)**; **dinî doğruluk ve editoryal onay verildi (Hasan, 12 Eki 2026)** — **4 bölüm + Büyük Final Testi (4 soru)**. **Geçerli tek kaynak dosya: `kitap-icerikleri/KITAP-HZ-IDRIS-ICERIK-final.md`**; kaynak denetimi (Faz 1) `KITAP-HZ-IDRIS-KAYNAK-DENETIMI.md`. Kaynak sınıfı **K2**: icat rivayetleri "İslam inancına ve tarihî rivayetlere göre" kalıbıyla verilir; yaş, yıl, ömür ve sahife sayısı metinde geçmez. **2 koşullu "Bugüne Taşı" görevi** (Bölüm 2, 3). Tanık Sayfası kullanılmadı (0). |
 | Hz. Nuh, Hz. Ebû Bekir, Hz. Ömer | Önceki demo bölüm/okuyucu akışları ürün rotalarından kaldırıldı. Keşif Atlası'nda uygun bölgelerinde yalnız **Hazırlanıyor** görünür. |
@@ -2379,6 +2516,10 @@ Kurallar:
 (peygamber adlarında "(a.s.)" ilk geçişte; kaynak dışına taşan kesin ifade yok;
 abartısız, sıcak, 8-11 yaş dili; görsellerde peygamber, yakınları ve saygın
 müminlerin yüzü gösterilmez — tasvir kuralı 6.4, REVİZE 16 Ekim 2026).
+**Anlatım tarzı (KARAR 21–22 Ekim 2026):** karma tarz, içerik brifi §7.10.
+Kurgu Kur'an ve hadis bilgisini değiştirmeden serbesttir. Yukarıdaki kitapların
+metinleri bu kuraldan önce yazıldı; sırayla yeniden yazılacak, ilk kitap Hz. Âdem
+(4.1/20).
 Kitaba özgü kıssa/rivayet kararları (hangi rivayet kullanılmaz, hassas kıssa
 nasıl çerçevelenir) genel kural DEĞİLDİR; her kitabın kimliğindeki "Kitaba özgü
 kararlar" alanında tutulur. Örnek: Hz. Âdem'de Hâbil-Kâbil'in Mâide merkezli,

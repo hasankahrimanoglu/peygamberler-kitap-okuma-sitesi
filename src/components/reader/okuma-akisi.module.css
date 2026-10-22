@@ -1038,9 +1038,9 @@
 /* --------------------------------------------------------------- IŞIL */
 
 /*
- * Işıl yalnız konuşma balonuyla görünür (3.10.5): ilk sözlük kelimesinde ve
- * "Sen olsaydın?" girişinde. Hikâye metninin parçası değildir; balon ayrı
- * yüzeydedir.
+ * Işıl yalnız konuşma balonuyla görünür (3.10.5): ilk sözlük kelimesinde,
+ * "Sen olsaydın?" girişinde ve (REVİZE 22 Eki 2026) hikâye akışında içerik
+ * gerektirdiğinde. Hikâye metninin parçası değildir; balon ayrı yüzeydedir.
  */
 .isilBalonu {
   display: flex;
@@ -1063,6 +1063,92 @@
   font-size: 15.5px;
   font-weight: 750;
   line-height: 1.4;
+}
+
+/*
+ * Hikâye içi Işıl (REVİZE 22 Eki 2026 — 3.10.5): aynı balon, ama yazı hikâyenin
+ * "Aa" boyutuyla büyür ve 16px'in altına inmez (3.5). Balon altın kenarla
+ * hikâye paragrafından ayrışır.
+ */
+.hikayeIsili {
+  align-items: flex-start;
+}
+
+.hikayeIsili .isilResmi {
+  margin: 2px 0 0;
+}
+
+.hikayeIsili p {
+  min-width: 0;
+  border-color: color-mix(in srgb, var(--altin) 55%, var(--cizgi));
+  font-size: max(16px, calc(var(--story-size) * 0.92));
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.isilAdi {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--altin-metin);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------- SORU BAŞLIĞI · BİLGİ KUTUSU */
+
+/*
+ * Karma anlatım tarzının yardımcı blokları (KARAR 22 Eki 2026 — PROJE-MODELI
+ * 5.1, içerik brifi §7.10). Soru başlığı dönüm noktasında merak açar; üstündeki
+ * kısa altın çizgi bölüm başlıklarının yankısıdır.
+ */
+.soruBasligi {
+  margin-top: 10px;
+  color: var(--metin);
+  font-family: var(--font-baloo), Arial, sans-serif;
+  font-size: calc(var(--story-size) * 1.22);
+  font-weight: 750;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.soruBasligi::before {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 3px;
+  margin-bottom: 10px;
+  border-radius: 2px;
+  background: var(--altin);
+}
+
+.bilgiKutusu {
+  display: grid;
+  gap: 6px;
+  padding: 14px 16px;
+  border: 1px solid color-mix(in srgb, var(--eylem) 22%, transparent);
+  border-radius: 14px;
+  background: var(--yesil-yumusak);
+}
+
+.bilgiKutusuBasligi {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--yesil-metin);
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.bilgiKutusuMetni {
+  color: var(--metin);
+  font-size: max(16px, calc(var(--story-size) * 0.94));
+  font-weight: 600;
+  line-height: 1.55;
+  text-wrap: pretty;
 }
 
 /* ------------------------------------------------------ BAŞLIKLI BÖLÜMLER */

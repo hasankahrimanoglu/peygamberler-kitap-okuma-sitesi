@@ -36,7 +36,9 @@ Kurallar bu dosyada **tekrar yazılmaz**; belgelerin diskteki güncel hâli geç
 Oku: `YENI-KITAP-ICERIK-URETIM-BRIFI.md` (tamamı), katalog belgesinde kitabın
 satırı + §10 sınıfı + §11.2, `ROZET-MATRISI.md`, `SOZLUKCE-SICILI.md`,
 `ICERIK-GORSEL-SICILI.md`, onaylı Faz 1 taslağı, kaynak PDF
-(`kaynak-pdfler/`), biçim örneği olarak son yayımlanmış kitabın içerik dosyası.
+(`kaynak-pdfler/`), anlatım örneği olarak `kitap-icerikleri/ORNEK-KARMA-TARZ.md`
+(brif §7.10), biçim örneği olarak son yayımlanmış kitabın içerik dosyası.
+Önceki kitaplar karma tarzdan önce yazıldı; anlatım tarzını onlardan alma.
 
 Brifin **§13 iskeletini eksiksiz** doldur; teslimi brif §14 kalite kontrolüyle
 bitir. Brif §15 durumlarından biri oluşursa dur ve sor.
@@ -55,13 +57,16 @@ Bulguları ikiye ayır (KARAR 16 Ekim 2026 — Hasan):
 değiştirmeyen biçim sorunları: 18 kelimeyi aşan cümle, karakter/paragraf
 sınırı, bölüm adı ve özet uzunluğu, yazım ve Türkçe karakter, eksik zorunlu
 alan, A/B/C doğru şık dağılımı, iskelet biçimi, sicildeki ad/terimle yazım
-farkı. Düzeltmeyi yalnız Faz 2 dosyasına yaz; cümleyi bölerken anlamı ve
-kaynak sınırını koru.
+farkı, işaretlenmemiş kurgu parçasına `[[…]]` eklemek, blok biçimi (§7.3).
+Düzeltmeyi yalnız Faz 2 dosyasına yaz; cümleyi bölerken anlamı ve kaynak
+sınırını koru.
 
-**b) Karar gerektiren bulgular — düzeltme, Hasan'a sor.** Tasvir, kaynakta
-olmayan iddia, hassas konu dili, rivayet çerçevesi, Faz 1 kararından sapma,
-sicil çakışması, değer veya olay değişikliği gerektiren her şey. Emin
-değilsen bu gruba koy.
+**b) Karar gerektiren bulgular — düzeltme, Hasan'a sor.** Tasvir, Kur'an ya da
+hadis bilgisini değiştiren kurgu, kaynakta olmayan olay/kişi/ad/sayı, Allah'a
+meal dışında söz, Işıl kuralı (brif §7.10), hassas konu dili, rivayet çerçevesi,
+kaynak kademesi ve alıntı kuralları (brif §4.3, §16/17b–c),
+Faz 1 kararından sapma, sicil çakışması, değer veya olay değişikliği gerektiren
+her şey. Emin değilsen bu gruba koy.
 
 Hasan'a raporu **hiçbir bulguyu atlamadan, önem sırasıyla ve sade dille** sun:
 1. **Karar bekleyenler** — Kritik önce, sonra Önemli, sonra Küçük.

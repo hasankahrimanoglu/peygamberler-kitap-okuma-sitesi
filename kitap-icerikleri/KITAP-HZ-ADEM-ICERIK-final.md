@@ -1,5 +1,12 @@
 # KİTAP: Hz. Âdem
 
+> **Not (22 Ekim 2026):** Sekiz bölümün **hikâye metinleri** karma anlatım tarzında
+> yeniden yazıldı ve `src/data/books.ts`'e aktarıldı. Geçerli hikâye metni
+> `KITAP-HZ-ADEM-ICERIK-v2.md`'dedir; bu dosyadaki "Hikâye — 1. Kısım" ve "Hikâye
+> Devam Ediyor" bölümleri eski hâldir. Sen Olsaydın, Seçimini Karşılaştır, Ne
+> Öğrendik, Bugüne Taşı, Büyük Final Testi, veli raporu ve sözlükçe değişmedi; onlar
+> için bu dosya geçerlidir.
+
 Alt başlık: İlk insan, ilk yolculuk
 
 Tanıtım: Hz. Âdem'in yaratılışını, bilgiyle değer kazanmasını, tövbesini, ailesindeki ilk büyük sınavı ve yeryüzündeki sorumluluk yolculuğunu anlatan umut dolu bir keşif.
@@ -1005,13 +1012,19 @@ Yaklaşım: Sakin ve güven veren bir dille her insanın dünya hayatının bir 
 
 Soru: Ben de bazen kardeşimi veya arkadaşımı kıskanıyorum. Bu, benim kötü biri olduğum anlamına mı gelir?
 
-Yaklaşım: Kıskançlık ve öfke gibi duyguların zaman zaman herkesin kalbine gelebileceğini açıklayın. Bir duyguyu hissetmenin, o duyguyla zarar verici bir davranışta bulunmakla aynı olmadığını vurgulayın. Çocuğun duygusunu anlatmasını teşvik edin; sakinleşme ve yardım isteme adımlarını birlikte hatırlayın.
+Yaklaşım: Kıskançlık ve öfke gibi duyguların zaman zaman herkesin kalbine gelebileceğini açıklayın. Bir duyguyu hissetmenin, o duyguyla zarar verici bir davranışta bulunmakla aynı olmadığını vurgulayın. Çocuğun duygusunu anlatmasını teşvik edin; sakinleşme ve yardım isteme adımlarını birlikte hatırlayın. Peygamberimizin (s.a.v.) “Sizden biri, kendisi için istediğini (Müslüman) kardeşi için de istemedikçe (gerçek anlamda) iman etmiş olamaz.” sözünü (Buhârî, Îmân 7) bir uyarı olarak değil, kıskançlığı iyi dileğe çevirmenin yolu olarak konuşabilirsiniz: Kıskandığı kişi için de güzel bir şey dilemeyi birlikte deneyin.
 
 Çocuğunuz sorarsa 7:
 
 Soru: Hâbil karşılık vermediyse biri beni tehdit ettiğinde ben de hiçbir şey yapmadan beklemeli miyim?
 
 Yaklaşım: Hayır. Hâbil'in sözlerinin kötülüğe aynı kötülükle cevap vermemeyi anlattığını, tehlikeli bir yerde kalmayı öğütlemediğini açıklayın. Çocuğa tehdit karşısında hemen uzaklaşmasını, güvenli bir yere geçmesini ve güvendiği bir yetişkine haber vermesini söyleyin. Acil tehlikede çevredeki yetişkinlerden ve gerekli yardım birimlerinden destek istenmelidir.
+
+Çocuğunuz sorarsa 8:
+
+Soru: Kābil'e ne oldu? Yaptığı kötülüğün bir sonucu oldu mu?
+
+Yaklaşım: Kur'an, Kābil'in yaptığına pişman olduğunu bildirir (Mâide 5/31). Peygamberimiz (s.a.v.) de haksız yere öldürülen her insanın günahından Âdem'in ilk oğluna bir pay ayrıldığını, çünkü bu kötü yolu ilk açanın o olduğunu haber vermiştir (Buhârî, Enbiyâ 1; Müslim, Kasâme 27). Bunu bir korku konusu yapmayın; başlattığımız iyi ya da kötü işlerin başkalarını da etkilediğini anlatmak için kullanın. Bölüm 8'deki “güzel bir işe öncülük” hadisiyle birlikte konuşmak dengeyi kurar.
 
 ---
 

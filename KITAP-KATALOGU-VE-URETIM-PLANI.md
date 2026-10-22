@@ -269,6 +269,14 @@ Planlanan sınıflandırma:
 Bu sınıflar bir kişinin değerini veya önemini derecelendirmez; yalnız içerik
 üretirken elimizdeki ayrıntıların kaynak durumunu tarif eder.
 
+**Kitap sınıfı ve bilgi kademesi (KARAR 22 Ekim 2026):** K1–K4 kitabın
+bütününün kaynak durumunu tarif eder. Tek tek bilginin kademesi (A Kur'an ·
+B sahih hadis · C yaygın rivayet · D kullanılmaz) ve 8–11 yaşa uygunluğu
+içerik brifi §4.3'teki iki eksenli ölçekle belirlenir. K2 ve K3 kitaplarda C
+kademesi ağırlık kazanacağı için "omurga A, gerekirse B" kuralı özellikle
+gözetilir; omurga kurulamıyorsa §11.1'deki gibi ajan metin üretmez, bulgusunu
+bildirir.
+
 ---
 
 ## 11. ÜRETİM TAKVİMİ VE DOSYALAMA

@@ -156,6 +156,12 @@ export function RaporKitaplarSekmesi({
           })}
         </section>
       ) : null}
+
+      {/* Veli bilgi notu (PROJE-MODELI 4.1/20): "kurgu" kelimesi bilerek kullanılmaz. */}
+      <p className="text-sm font-medium leading-6 text-murekkep-soluk">
+        Hikâyeler, çocukların daha iyi anlaması için canlı bir anlatımla yazılmıştır; Kur&apos;an ve
+        hadislerde bildirilen bilgiler değiştirilmeden aktarılır.
+      </p>
     </div>
   );
 }

@@ -203,6 +203,39 @@ function AkisBlogu({
     );
   }
 
+  if (block.type === "isil") {
+    /*
+     * Hikâye içi Işıl (REVİZE 22 Eki 2026, Hasan — PROJE-MODELI 3.10.5):
+     * çocuğun aklındaki soruyu sorar ya da kısa tepki verir; cevabı sonraki
+     * paragrafta anlatıcı verir. Balon hikâye metninden ayrı yüzeydedir.
+     */
+    return (
+      <aside className={`${styles.isilBalonu} ${styles.hikayeIsili}`} aria-label="Işıl">
+        <Isil poz={block.poz ?? "konusma"} boyut={56} className={styles.isilResmi} />
+        <p>
+          <span className={styles.isilAdi}>Işıl</span>
+          {block.text}
+        </p>
+      </aside>
+    );
+  }
+
+  if (block.type === "soru_basligi") {
+    return <h3 className={styles.soruBasligi}>{block.text}</h3>;
+  }
+
+  if (block.type === "bilgi_kutusu") {
+    return (
+      <aside className={styles.bilgiKutusu}>
+        <p className={styles.bilgiKutusuBasligi}>
+          <Ikon ad="fener" boyut={16} />
+          {block.baslik ?? "Biliyor muydun?"}
+        </p>
+        <p className={styles.bilgiKutusuMetni}>{block.text}</p>
+      </aside>
+    );
+  }
+
   return (
     <p
       className={`${styles.storyParagraph} ${

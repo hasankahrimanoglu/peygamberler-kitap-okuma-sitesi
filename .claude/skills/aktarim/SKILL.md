@@ -33,6 +33,12 @@ CLAUDE.md "YENİ KİTAP EKLERKEN HIZLI KONTROL" listesinin **ilk iki maddesi**:
   **Çakışma varsa aktarım yapılmaz;** Hasan'a ad değişikliği sorulur.
 - Etkileşimli kelimeler → `SOZLUKCE-SICILI.md` §2–§3. Akış: aynı belgenin §5'i.
   Sicilde olan terim bu kitapta düz `text` olur.
+- Hikâye içi yardımcı bloklar (brif §7.3): `[IŞIL]` → `{ type: "isil", text }`
+  (poz yazılmışsa `poz`), `[SORU BAŞLIĞI]` → `{ type: "soru_basligi", text }`,
+  `[BİLİYOR MUYDUN]` → `{ type: "bilgi_kutusu", text }` (başlık yazılmışsa
+  `baslik`). Bloğun yeri teslim dosyasındaki sırasıdır (PROJE-MODELI 5.1).
+- Kurgu işaretleri (`[[…]]`, brif §7.10) metne girmez; aktarımda yalnız köşeli
+  parantezler silinir, aradaki metin kalır.
 
 ## 4. Aktar
 

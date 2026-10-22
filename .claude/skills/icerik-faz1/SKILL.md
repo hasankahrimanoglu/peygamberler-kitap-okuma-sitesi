@@ -53,6 +53,10 @@ A bölümü). Rozet adlarını `ROZET-MATRISI.md` §2–§3'e, yeni terimleri
 Brif **§16 yerleşik kararlarını** uygula: o konuları yeniden soru olarak sorma,
 uyguladığın her kararı olay bazında kaydet. Emsal kitaba uymuyorsa soru aç.
 
+Rivayet ve doğrulama tablosunda (§13 A3) her bilgiyi brif **§4.3'teki iki
+eksenle** işaretle: kaynak kademesi (A/B/C/D) ve çocuğa uygunluk (U1–U4).
+Hadisleri §16/17b'ye göre künyele; bulunamayan hadis karar sorusu olur.
+
 Brif §15'teki durma durumlarından biri oluşursa metni doldurma; bulguyu ve
 1–3 karar sorusunu yaz.
 

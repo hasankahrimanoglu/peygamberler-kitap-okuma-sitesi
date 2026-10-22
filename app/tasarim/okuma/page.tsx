@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { adaptDataChapter, type ChapterData } from "../../../src/data/demoChapters";
+import { KARMA_ORNEKLERI } from "../../../src/data/karmaOrnek";
 import { AtlasScrollReader } from "../../../src/components/reader/AtlasScrollReader";
 import { FINAL_DONUS_PARAMETRESI, FINAL_SONUC_PARAMETRESI, adresteVar } from "../../../src/lib/child/finalSonucu";
 
@@ -16,6 +17,9 @@ import { FINAL_DONUS_PARAMETRESI, FINAL_SONUC_PARAMETRESI, adresteVar } from "..
  *   /tasarim/okuma?bolum=adem-2&hata=1   → kayıt hatası ve "Tekrar Dene"
  *   /tasarim/okuma?bolum=yunus-2&tekrar=1&donus=final → final sonucundan gelindi:
  *     geri ve bölüm sonu `/tasarim/final?kitap=yunus&sonuc=1`'e döner
+ *   /tasarim/okuma?bolum=adem-4&ornek=karma → karma anlatım tarzının onaylı
+ *     örneği (Işıl balonu, soru başlığı, bilgi kutusu); `yusuf-1` de var.
+ *     Hikâye metni `karmaOrnek.ts`'ten, bölümün geri kalanı `books.ts`'ten gelir
  */
 export default function OkumaOnizleme() {
   const [ayar, setAyar] = useState<{
@@ -28,8 +32,12 @@ export default function OkumaOnizleme() {
   useEffect(() => {
     queueMicrotask(() => {
       const parametreler = new URLSearchParams(window.location.search);
-      const chapter = adaptDataChapter(parametreler.get("bolum") ?? "adem-2");
-      if (!chapter) return;
+      const bolum = parametreler.get("bolum") ?? "adem-2";
+      const veriBolumu = adaptDataChapter(bolum);
+      if (!veriBolumu) return;
+      const ornek =
+        parametreler.get("ornek") === "karma" ? KARMA_ORNEKLERI[bolum] : undefined;
+      const chapter = ornek ? { ...veriBolumu, ...ornek } : veriBolumu;
       setAyar({
         chapter,
         tekrar: parametreler.get("tekrar") === "1",
