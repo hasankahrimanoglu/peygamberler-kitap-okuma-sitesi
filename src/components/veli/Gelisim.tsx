@@ -3,10 +3,11 @@
 import { madalyaVitrini, rozetVitrini, unvanVitrini } from "../../lib/derive";
 import { formatReportDate } from "../../lib/parent/report";
 import { Ikon, OdulIkonu } from "../ui";
-import { useSeciliCocuk, useTaslak, type GelisimSekmesi } from "./baglam";
+import { useSeciliCocuk, useVeliPaneli, type GelisimSekmesi } from "./baglam";
 import {
   BolumBasligi,
   BolumYolu,
+  BosAile,
   Cip,
   CocukSecici,
   CocukYuzu,
@@ -14,19 +15,31 @@ import {
   Kapak,
   SayfaBasligi,
   Sekmeler,
+  Yukleniyor,
   Yuzey,
 } from "./parcalar";
 import { okumaZamani, type CocukGorunumu, type Yolculuk } from "./veriler";
 
 /**
- * Gelişim (TASLAK) — canlı paneldeki Gelişim Raporu ile Ödüller sayfasını
+ * Gelişim (PROJE-MODELI 3.9) — eski Gelişim Raporu ile Ödüller sayfasını
  * çocuk başına tek yerde toplar: Kitaplar · Ödüller · Görevler. Sohbet
  * önerileri kendi sayfasına taşındı. Rapor dili gözlem bildirir.
  */
 export function Gelisim() {
-  const { gelisimSekmesi, setGelisimSekmesi, aile } = useTaslak();
+  const { gelisimSekmesi, setGelisimSekmesi, aile, yukleniyor } = useVeliPaneli();
   const secim = useSeciliCocuk();
-  if (!secim) return null;
+  if (yukleniyor) return <Yukleniyor />;
+  if (!secim) {
+    return (
+      <div>
+        <SayfaBasligi baslik="Gelişim" aciklama="Kitap yolculuğu, ödüller ve görevler." />
+        <BosAile
+          baslik="Önce bir çocuk profili"
+          metin="Profil eklendikten sonra çocuğunuzun okuduğu kitaplar, rozetleri ve görevleri burada görünür."
+        />
+      </div>
+    );
+  }
   const { cocuk, gorunum } = secim;
   const ilerleme = aile.ilerleme[cocuk.id] ?? [];
   const rozetSayisi = rozetVitrini(aile.kitaplar, ilerleme).filter((r) => r.kazanildi).length;
@@ -61,7 +74,7 @@ export function Gelisim() {
 }
 
 function ProfilSeridi({ g }: { g: CocukGorunumu }) {
-  const { perdeAc } = useTaslak();
+  const { perdeAc } = useVeliPaneli();
   const sonOkuma = okumaZamani(g.ozet.sonAktiviteZamani);
   const unvanlar = unvanVitrini(g.ozet.tamamlananKitap);
   const guncel = unvanlar.find((u) => u.guncelMi);
@@ -74,10 +87,18 @@ function ProfilSeridi({ g }: { g: CocukGorunumu }) {
         <div className="flex items-center gap-4 sm:gap-5">
           <CocukYuzu cocuk={g.cocuk} boyut={76} halka="yok" />
           <div className="min-w-0">
-            <h2 className="font-vt-baslik text-[1.875rem] font-medium leading-none tracking-[-0.01em] text-murekkep">
+            <h2 className="flex flex-wrap items-center gap-x-3 gap-y-1 font-veli-baslik text-[1.875rem] font-medium leading-none tracking-[-0.01em] text-murekkep">
               {g.cocuk.isim}
+              <button
+                type="button"
+                onClick={() => perdeAc({ tur: "profil", cocukId: g.cocuk.id })}
+                className="inline-flex min-h-11 items-center gap-1.5 rounded-full px-2 font-veli-govde text-[0.875rem] font-semibold tracking-normal text-murekkep-soluk transition-colors hover:bg-murekkep/5 hover:text-murekkep"
+              >
+                <Ikon ad="kalem" boyut={15} />
+                Profili düzenle
+              </button>
             </h2>
-            <p className="mt-2 text-[0.9375rem] leading-6 text-vt-govde">
+            <p className="mt-2 text-[0.9375rem] leading-6 text-veli-govde">
               {yolAldigi > 0
                 ? `${yolAldigi} kitapta yol aldı${g.ozet.tamamlananKitap > 0 ? `, ${g.ozet.tamamlananKitap} kitabı bitirdi` : ""}.`
                 : "Henüz bir kitaba başlamadı."}
@@ -103,8 +124,8 @@ function ProfilSeridi({ g }: { g: CocukGorunumu }) {
           >
             <OdulIkonu tip="unvan" anahtar={guncel.iconKey} boyut={64} alt="" />
             <span>
-              <span className="block text-[0.8125rem] font-semibold text-vt-altin-metin">Güncel unvanı</span>
-              <span className="block font-vt-baslik text-[1.25rem] font-medium leading-tight text-murekkep">
+              <span className="block text-[0.8125rem] font-semibold text-veli-altin-metin">Güncel unvanı</span>
+              <span className="block font-veli-baslik text-[1.25rem] font-medium leading-tight text-murekkep">
                 {guncel.unvan}
               </span>
               {siradaki ? (
@@ -132,8 +153,8 @@ function KitaplarSekmesi({ g }: { g: CocukGorunumu }) {
         <span className="mx-auto block w-fit">
           <IkonKutusu ikon="kitap" ton="gece" boyut={56} />
         </span>
-        <h3 className="mt-5 font-vt-baslik text-[1.5rem] font-medium text-murekkep">Yolculuk henüz başlamadı</h3>
-        <p className="mx-auto mt-2 max-w-md text-base leading-7 text-vt-govde">
+        <h3 className="mt-5 font-veli-baslik text-[1.5rem] font-medium text-murekkep">Yolculuk henüz başlamadı</h3>
+        <p className="mx-auto mt-2 max-w-md text-base leading-7 text-veli-govde">
           {g.cocuk.isim} ilk bölümü bitirdiğinde okuduğu kitap, geldiği bölüm ve rozetleri burada görünür.
         </p>
       </Yuzey>
@@ -184,10 +205,10 @@ function OkunanKitap({ y }: { y: Yolculuk }) {
         <div className="min-w-0">
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
-              <h3 className="font-vt-baslik text-[1.375rem] font-medium leading-tight text-murekkep">{y.baslik}</h3>
+              <h3 className="font-veli-baslik text-[1.375rem] font-medium leading-tight text-murekkep">{y.baslik}</h3>
               <p className="text-[0.9375rem] text-murekkep-soluk">{y.altBaslik}</p>
             </div>
-            <span className="shrink-0 pt-1 text-[0.9375rem] font-semibold tabular-nums text-vt-govde">
+            <span className="shrink-0 pt-1 text-[0.9375rem] font-semibold tabular-nums text-veli-govde">
               {y.tamamlanan} / {y.toplam}
             </span>
           </div>
@@ -204,7 +225,7 @@ function OkunanKitap({ y }: { y: Yolculuk }) {
             {y.siradaki ? (
               <div className="flex gap-1.5">
                 <dt className="shrink-0 text-murekkep-soluk">Sıradaki:</dt>
-                <dd className="text-vt-govde">
+                <dd className="text-veli-govde">
                   {y.siradaki.no}. {y.siradaki.baslik}
                 </dd>
               </div>
@@ -240,7 +261,7 @@ function OkunanKitap({ y }: { y: Yolculuk }) {
                   <OdulIkonu tip="rozet" anahtar={b.rozetAnahtari} boyut={36} alt="" />
                 </span>
                 <span className="min-w-0 flex-1">
-                  <span className={`block text-[0.9375rem] leading-snug ${bitti ? "font-semibold text-murekkep" : "text-vt-govde"}`}>
+                  <span className={`block text-[0.9375rem] leading-snug ${bitti ? "font-semibold text-murekkep" : "text-veli-govde"}`}>
                     {b.no}. {b.baslik}
                   </span>
                   {bitti ? <span className="block text-[0.8125rem] text-murekkep-soluk">{b.rozetAdi}</span> : null}
@@ -268,12 +289,12 @@ function BitenKitap({ y, g }: { y: Yolculuk; g: CocukGorunumu }) {
           <OdulIkonu tip="madalya" anahtar={`hz-${y.bookKey}`} boyut={96} alt={`${y.baslik} Yolculuk Madalyası`} />
         </div>
         <div className="min-w-0">
-          <p className="text-sm font-semibold text-vt-altin-metin">{y.baslik} Yolculuk Madalyası</p>
-          <h3 className="mt-0.5 font-vt-baslik text-[1.5rem] font-medium leading-tight text-murekkep">{y.baslik}</h3>
+          <p className="text-sm font-semibold text-veli-altin-metin">{y.baslik} Yolculuk Madalyası</p>
+          <h3 className="mt-0.5 font-veli-baslik text-[1.5rem] font-medium leading-tight text-murekkep">{y.baslik}</h3>
           <p className="mt-1 text-[0.9375rem] text-murekkep-soluk">
             {y.toplam} bölüm · {formatReportDate(y.sonOkuma)}
             {rapor?.finalScore !== null && rapor?.finalScore !== undefined
-              ? ` · Büyük Final Testi: ${rapor.totalQuestions} sorudan ${rapor.finalScore}`
+              ? ` · Büyük Final Testi: ${rapor.finalScore} / ${rapor.totalQuestions} doğru`
               : ""}
           </p>
           {rapor?.parentMessage ? (
@@ -291,7 +312,7 @@ function BitenKitap({ y, g }: { y: Yolculuk; g: CocukGorunumu }) {
 // --- Ödüller ---
 
 function OdullerSekmesi({ g }: { g: CocukGorunumu }) {
-  const { aile, perdeAc } = useTaslak();
+  const { aile, perdeAc } = useVeliPaneli();
   const ilerleme = aile.ilerleme[g.cocuk.id] ?? [];
   const rozetler = rozetVitrini(aile.kitaplar, ilerleme);
   const madalyalar = madalyaVitrini(aile.kitaplar, ilerleme);
@@ -379,7 +400,7 @@ function OdullerSekmesi({ g }: { g: CocukGorunumu }) {
       <section aria-labelledby="rozetler">
         <BolumBasligi id="rozetler" baslik="Rozetler" aciklama="Her bölüm bitince bir rozet." />
         {baslananlar.length === 0 ? (
-          <Yuzey className="p-6 text-base leading-7 text-vt-govde">İlk rozet, ilk bölüm bitince burada görünür.</Yuzey>
+          <Yuzey className="p-6 text-base leading-7 text-veli-govde">İlk rozet, ilk bölüm bitince burada görünür.</Yuzey>
         ) : (
           <div className="space-y-5">
             {g.yolculuklar.map((y) => {
@@ -387,8 +408,8 @@ function OdullerSekmesi({ g }: { g: CocukGorunumu }) {
               return (
                 <Yuzey key={y.bookKey} className="p-5 sm:p-6">
                   <div className="mb-4 flex items-baseline justify-between gap-3">
-                    <h3 className="font-vt-baslik text-[1.25rem] font-medium text-murekkep">{y.baslik}</h3>
-                    <span className="text-[0.9375rem] font-semibold tabular-nums text-vt-govde">
+                    <h3 className="font-veli-baslik text-[1.25rem] font-medium text-murekkep">{y.baslik}</h3>
+                    <span className="text-[0.9375rem] font-semibold tabular-nums text-veli-govde">
                       {y.tamamlanan} / {y.toplam} rozet
                     </span>
                   </div>
@@ -445,8 +466,8 @@ function GorevlerSekmesi({ g }: { g: CocukGorunumu }) {
         <span className="mx-auto block w-fit">
           <IkonKutusu ikon="fidan" ton="eylem" boyut={56} />
         </span>
-        <h3 className="mt-5 font-vt-baslik text-[1.5rem] font-medium text-murekkep">Listede görev yok</h3>
-        <p className="mx-auto mt-2 max-w-md text-base leading-7 text-vt-govde">
+        <h3 className="mt-5 font-veli-baslik text-[1.5rem] font-medium text-murekkep">Listede görev yok</h3>
+        <p className="mx-auto mt-2 max-w-md text-base leading-7 text-veli-govde">
           &quot;Bugüne Taşı&quot; görevleri gönüllüdür. {g.cocuk.isim} okurken bir görevi listesine eklerse burada
           durumuyla birlikte görünür.
         </p>
@@ -465,11 +486,11 @@ function GorevlerSekmesi({ g }: { g: CocukGorunumu }) {
               <Yuzey as="article" key={gorev.gorev.id} className="flex gap-4 p-5 sm:p-6">
                 <IkonKutusu ikon={bitti ? "onay" : "fidan"} ton="eylem" boyut={48} />
                 <div className="min-w-0 flex-1">
-                  <h3 className="font-vt-baslik text-[1.1875rem] font-medium leading-snug text-murekkep">{gorev.gorev.ad}</h3>
+                  <h3 className="font-veli-baslik text-[1.1875rem] font-medium leading-snug text-murekkep">{gorev.gorev.ad}</h3>
                   <p className="mt-0.5 text-[0.875rem] text-murekkep-soluk">
                     {gorev.bookTitle} · {gorev.bolumNo}. bölüm · {gorev.gorev.kategori}
                   </p>
-                  <p className="mt-3 text-[0.9375rem] leading-6 text-vt-govde">{gorev.gorev.aciklama.split("\n")[0]}</p>
+                  <p className="mt-3 text-[0.9375rem] leading-6 text-veli-govde">{gorev.gorev.aciklama.split("\n")[0]}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     <Cip ton={bitti ? "eylem" : "notr"} ikon={bitti ? "onay" : "saat"}>
                       {bitti && gorev.completedAt

@@ -1,8 +1,9 @@
 /*
-  Veli paneli taslağı — renk dünyası (TASLAK, 22 Eki 2026).
-  Canlı panelin .tema-veli değerlerine dokunmaz; yalnız /tasarim/veli-panel
-  altında geçerlidir. Bileşenler aynı semantik değişkenleri kullandığı için
-  (bg-zemin, text-murekkep …) taslak onaylanırsa değerler .tema-veli'ye taşınır.
+  Veli paneli — renk dünyası (PROJE-MODELI 3.1, REVİZE 22 Eki 2026).
+  Tek kaynak: canlı panel (/dashboard) ve önizleme (/tasarim/veli-panel) bu
+  sınıfı kullanır. Bileşenler ortak semantik değişkenleri (bg-zemin,
+  text-murekkep …) burada panelin değerleriyle okur; giriş ve tanıtım sayfaları
+  .tema-veli'de kalır. Panele özgü renkler Tailwind'de `veli-*`.
 
   Kontrast (WCAG): murekkep kartta 16,1 · govde 10,4 · soluk 6,3 · altin-metin
   5,3 · sohbet 5,8 · gece-metin gece zemininde 13,2 · gece-soluk 8,4.
@@ -23,20 +24,20 @@
   --eylem-yumusak: #e6f1e9;
   --okuma-yuzey: #fffdf9;
 
-  --vt-govde: #4a3c31;
-  --vt-altin-metin: #8a6416;
-  --vt-gece: #172350;
-  --vt-gece-2: #22306a;
-  --vt-gece-cizgi: #34427f;
-  --vt-gece-metin: #f5efe2;
-  --vt-gece-soluk: #b7c0e2;
-  --vt-altin-acik: #ebc26a;
-  --vt-sohbet: #a4492d;
-  --vt-sohbet-yumusak: #f8e9df;
+  --veli-govde: #4a3c31;
+  --veli-altin-metin: #8a6416;
+  --veli-gece: #172350;
+  --veli-gece-2: #22306a;
+  --veli-gece-cizgi: #34427f;
+  --veli-gece-metin: #f5efe2;
+  --veli-gece-soluk: #b7c0e2;
+  --veli-altin-acik: #ebc26a;
+  --veli-sohbet: #a4492d;
+  --veli-sohbet-yumusak: #f8e9df;
 
   background: var(--zemin);
   color: var(--murekkep);
-  font-family: var(--font-vt-govde), system-ui, sans-serif;
+  font-family: var(--font-veli-govde), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -51,7 +52,7 @@
     radial-gradient(120% 90% at 85% 115%, rgb(235 194 106 / 0.28) 0%, transparent 55%),
     radial-gradient(80% 60% at 10% -10%, rgb(90 110 200 / 0.35) 0%, transparent 60%),
     linear-gradient(160deg, #1b2a62 0%, #172350 45%, #121b40 100%);
-  color: var(--vt-gece-metin);
+  color: var(--veli-gece-metin);
 }
 
 .gokyuzu::before {
@@ -142,10 +143,10 @@
 
 /* Büyük tırnak — sohbet sorusunun önünde. */
 .tirnak {
-  font-family: var(--font-vt-baslik), Georgia, serif;
+  font-family: var(--font-veli-baslik), Georgia, serif;
   font-size: 5.5rem;
   line-height: 0.6;
-  color: var(--vt-sohbet);
+  color: var(--veli-sohbet);
   opacity: 0.25;
 }
 
@@ -170,7 +171,7 @@
   background:
     radial-gradient(140% 50% at 0% 100%, rgb(235 194 106 / 0.14) 0%, transparent 60%),
     linear-gradient(180deg, #1a275b 0%, #152049 100%);
-  color: var(--vt-gece-metin);
+  color: var(--veli-gece-metin);
 }
 
 /* Bölüm yolu: her bölüm bir parça; biten parçalar altın, sıradaki ince çizgili. */

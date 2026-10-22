@@ -22,8 +22,10 @@ import { formatReportDate } from "../../../src/lib/parent/report";
 import { cocukSifresiHataMetni } from "../../../src/components/dashboard/cocukSifresiMetni";
 import { PinGirdisi, VeliPinBelirlemeAkisi } from "../../../src/components/dashboard/VeliPinFormu";
 import { CihazBaglandiKarti, EslesmeKoduKarti } from "../../../src/components/dashboard/AnaEkranNotu";
-import { VeliSayfaBasligi } from "../../../src/components/dashboard/VeliSayfaBasligi";
-import { Buton, CocukAvatari, Ikon, Kart } from "../../../src/components/ui";
+import { useVeliPaneli } from "../../../src/components/veli/baglam";
+import { Durum, Grup, NasilCalisir } from "../../../src/components/veli/Aile";
+import { Anahtar, CocukYuzu, IkonKutusu, Satir, SayfaBasligi, Yuzey } from "../../../src/components/veli/parcalar";
+import { Buton, Ikon } from "../../../src/components/ui";
 
 type BagliCihaz = {
   id: string;
@@ -39,19 +41,31 @@ type PinYonlendirmesi = { profil: string | null; hedef: string | null };
 /** Olay işleyicilerinde şimdiki zaman (çizim sırasında çağrılmaz). */
 const simdikiZaman = () => Date.now();
 
+/** Satırlardaki küçük çocuk yüzü (fotoğraf varsa fotoğraf). */
+function yuz(profil: ChildProfile) {
+  return (
+    <CocukYuzu
+      cocuk={{ id: profil.id, isim: profil.isim, avatar_tipi: profil.avatar_tipi, avatar_url: profil.avatar_url ?? null }}
+      boyut={48}
+      halka="yok"
+    />
+  );
+}
+
 /**
- * Aile ve Güvenlik (Faz 7 — PROJE-MODELI 3.11): veli PIN'i, profil şifresi
- * ayarı ve çocuk şifreleri, çocuğun kendi cihazını bağlama ve bağlı cihazlar,
- * bu cihazdaki çocuk modu. `?pin=gerekli&profil=…&hedef=…` ile gelinirse
- * (çocuk ekranı PIN'siz açılmak istendi) önce PIN belirletilir, sonra çocuk
- * ekranına geçilir.
+ * Aile ve Güvenlik (Faz 7 — PROJE-MODELI 3.11; görünüm REVİZE 22 Eki 2026, 3.9):
+ * çocuk profilleri, bu cihaz, çocuğun kendi cihazı, profil şifresi, veli PIN'i,
+ * hesap. Akışların mantığı Faz 7'deki gibidir; yalnız görünüm yeni panel
+ * dilindedir (`src/components/veli/`). `?pin=gerekli&profil=…&hedef=…` ile
+ * gelinirse (çocuk ekranı PIN'siz açılmak istendi) önce PIN belirletilir, sonra
+ * çocuk ekranına geçilir.
  */
 export default function AileVeGuvenlikSayfasi() {
   const router = useRouter();
-  const { profiles, isLoading } = useParentData();
+  const { profiles, profileLimit, isLoading } = useParentData();
+  const { aile, bildir, perdeAc, cikisYap } = useVeliPaneli();
   const [durum, setDurum] = useState<AileGuvenlikDurumu | null>(null);
   const [cihazlar, setCihazlar] = useState<BagliCihaz[]>([]);
-  const [mesaj, setMesaj] = useState<string | null>(null);
   const [pinAkisiAcik, setPinAkisiAcik] = useState(false);
   const [pinYonlendirmesi, setPinYonlendirmesi] = useState<PinYonlendirmesi | null>(null);
   const [cocukModu, setCocukModu] = useState(false);
@@ -84,7 +98,7 @@ export default function AileVeGuvenlikSayfasi() {
 
   function pinKaydedildi() {
     setPinAkisiAcik(false);
-    setMesaj("Veli PIN'i kaydedildi.");
+    bildir("Veli PIN'i kaydedildi.");
     void yenile();
 
     // PIN, cihaz çocuğa verilirken istendi: şimdi çocuk moduna geçilir.
@@ -100,131 +114,192 @@ export default function AileVeGuvenlikSayfasi() {
     }
   }
 
-  return (
-    <div className="mx-auto max-w-4xl">
-      <VeliSayfaBasligi
-        baslik="Aile ve Güvenlik"
-        aciklama="Veli PIN'i, profil şifreleri ve çocuklarınızın kendi cihazları."
-      />
+  const sifreli = new Set(durum?.sifresiOlanProfiller ?? []);
+  const kalanHak = profileLimit - profiles.length;
+  const bagliSayisi = (profilId: string) => cihazlar.filter((c) => c.profile_id === profilId).length;
 
-      {mesaj ? (
-        <p
-          role="status"
-          className="mb-5 rounded-kart border border-eylem/30 bg-eylem-yumusak px-4 py-3 text-base font-semibold text-eylem-koyu"
-        >
-          {mesaj}
-        </p>
-      ) : null}
-
-      <div className="space-y-5">
-        {/* Veli PIN'i */}
-        <Kart className={pinYonlendirmesi ? "border-vurgu/50" : ""}>
-          <BolumBasligi ikon="kilit" baslik="Veli PIN'i" />
-          {pinYonlendirmesi ? (
-            <p className="mt-3 text-base font-semibold leading-7 text-murekkep">
-              Cihazı çocuğa vermeden önce 4 haneli bir veli PIN&apos;i belirleyin. Çocuğa verilen
-              cihazda veli paneli bu PIN&apos;le açılır.
-            </p>
-          ) : (
-            <p className="mt-3 text-base font-medium leading-7 text-murekkep-soluk">
-              {durum?.veliPinVar
-                ? "Belirlendi. Çocuğa verilen cihazda veli paneli bu PIN'le açılır."
-                : "Henüz belirlenmedi. Bir cihazı ilk kez çocuğa verirken istenir."}
-            </p>
-          )}
-
-          {pinAkisiAcik ? (
-            <div className="mt-4 rounded-kart border border-cizgi bg-yuzey-2 p-4">
-              <VeliPinBelirlemeAkisi
-                baslik={durum?.veliPinVar ? "PIN'i değiştir" : "PIN belirle"}
-                aciklama="Önce hesap şifrenizi girin. PIN çocuklarınızın şifresinden farklı olmalı."
-                onBitti={pinKaydedildi}
-                onVazgec={pinYonlendirmesi ? undefined : () => setPinAkisiAcik(false)}
-              />
-            </div>
-          ) : (
-            <Buton varyant="cerceve" boyut="kucuk" className="mt-4" onClick={() => setPinAkisiAcik(true)}>
-              {durum?.veliPinVar ? "PIN'i Değiştir" : "PIN Belirle"}
+  const pinGrubu = (
+    <Grup
+      baslik="Veli PIN'i"
+      aciklama={
+        pinYonlendirmesi
+          ? "Cihazı çocuğa vermeden önce 4 haneli bir veli PIN'i belirleyin. Çocuğa verilen cihazda veli paneli bu PIN'le açılır."
+          : undefined
+      }
+    >
+      <Satir
+        sol={<IkonKutusu ikon="kalkan" ton={durum?.veliPinVar ? "eylem" : "notr"} boyut={48} />}
+        baslik={durum === null ? "Durum okunuyor…" : durum.veliPinVar ? "Belirlendi" : "Henüz belirlenmedi"}
+        alt={
+          durum?.veliPinVar
+            ? "Çocuğa verilen cihazda veli paneli bu PIN'le açılır."
+            : "Bir cihazı ilk kez çocuğa verirken istenir."
+        }
+        sag={
+          pinAkisiAcik ? undefined : (
+            <Buton varyant="cerceve" boyut="kucuk" onClick={() => setPinAkisiAcik(true)}>
+              {durum?.veliPinVar ? "Değiştir" : "Belirle"}
             </Buton>
-          )}
-        </Kart>
+          )
+        }
+      />
+      {pinAkisiAcik ? (
+        <div className="bg-yuzey-2/60 p-4 sm:p-5">
+          <VeliPinBelirlemeAkisi
+            baslik={durum?.veliPinVar ? "PIN'i değiştir" : "PIN belirle"}
+            aciklama="Önce hesap şifrenizi girin. PIN çocuklarınızın şifresinden farklı olmalı."
+            onBitti={pinKaydedildi}
+            onVazgec={pinYonlendirmesi ? undefined : () => setPinAkisiAcik(false)}
+          />
+        </div>
+      ) : null}
+    </Grup>
+  );
 
-        {/* Profil şifresi */}
-        <ProfilSifresiBolumu
-          profiller={profiles}
-          durum={durum}
-          yukleniyor={isLoading}
-          onDegisti={(metin) => {
-            setMesaj(metin);
-            void yenile();
-          }}
+  return (
+    <div>
+      <SayfaBasligi baslik="Aile ve Güvenlik" aciklama="Çocuk profilleri, cihazlar ve güvenlik ayarları." />
+
+      <Yuzey className="mb-8 grid grid-cols-1 divide-y divide-cizgi sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+        <Durum
+          ikon="kalkan"
+          etiket="Veli PIN'i"
+          deger={durum === null ? "…" : durum.veliPinVar ? "Belirlendi" : "Belirlenmedi"}
+          iyi={Boolean(durum?.veliPinVar)}
         />
-
-        {/* Çocuğun kendi cihazı */}
-        <CihazBolumu
-          profiller={profiles}
-          cihazlar={cihazlar}
-          yenile={yenile}
-          onMesaj={setMesaj}
+        <Durum
+          ikon="kilit"
+          etiket="Profil şifresi"
+          deger={durum === null ? "…" : durum.profilSifresiAcik ? "Açık" : "Kapalı"}
+          iyi={Boolean(durum?.profilSifresiAcik)}
         />
+        <Durum
+          ikon="tablet"
+          etiket="Bağlı cihaz"
+          deger={cihazlar.length > 0 ? `${cihazlar.length} cihaz` : "Yok"}
+          iyi={cihazlar.length > 0}
+        />
+      </Yuzey>
 
-        {/* Bu cihaz */}
-        <Kart>
-          <BolumBasligi ikon="hesap" baslik="Bu cihaz" />
-          {cocukModu ? (
-            <>
-              <p className="mt-3 text-base font-medium leading-7 text-murekkep-soluk">
-                Bu cihaz çocuğunuza verildi: veli paneli burada PIN ister. Bu cihazı yalnız siz
-                kullanıyorsanız çocuk modunu kapatabilirsiniz.
-              </p>
-              <Buton
-                varyant="cerceve"
-                boyut="kucuk"
-                className="mt-4"
-                onClick={() => {
-                  cocukModunuKapat();
-                  setCocukModu(false);
-                  setMesaj("Bu cihazda çocuk modu kapatıldı.");
-                }}
-              >
-                Çocuk Modunu Kapat
-              </Buton>
-            </>
-          ) : (
-            <>
-              <p className="mt-3 text-base font-medium leading-7 text-murekkep-soluk">
-                Bu cihaz sizde: veli paneli PIN istemez. Evdeki tablet gibi çocuğunuzun da
-                kullanacağı bir cihazsa çocuğa verin; panel PIN&apos;le kilitlenir, çocuklar
-                &quot;Kim okuyor?&quot; ekranından kendi profillerine girer.
-              </p>
-              <Buton
-                varyant="eylem"
-                boyut="kucuk"
-                className="mt-4"
-                disabled={cihazVeriliyor}
-                onClick={() => {
-                  setCihazVeriliyor(true);
-                  void cihaziCocugaVer(router);
-                }}
-              >
-                {cihazVeriliyor ? "Hazırlanıyor…" : "Bu Cihazı Çocuğa Ver"}
-              </Buton>
-            </>
-          )}
-        </Kart>
+      <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_340px] xl:items-start">
+        <div className="space-y-8">
+          {pinYonlendirmesi ? pinGrubu : null}
+
+          <Grup baslik="Çocuklar">
+            {isLoading ? (
+              <Satir baslik="Profiller yükleniyor…" />
+            ) : (
+              profiles.map((profil) => {
+                const bagli = bagliSayisi(profil.id);
+                return (
+                  <Satir
+                    key={profil.id}
+                    sol={yuz(profil)}
+                    baslik={profil.isim}
+                    alt={[
+                      sifreli.has(profil.id) ? "Profil şifresi var" : "Profil şifresi yok",
+                      bagli > 0 ? `${bagli} bağlı cihaz` : null,
+                    ]
+                      .filter(Boolean)
+                      .join(" · ")}
+                    onClick={() => perdeAc({ tur: "profil", cocukId: profil.id })}
+                  />
+                );
+              })
+            )}
+            {!isLoading && kalanHak > 0 ? (
+              <Satir
+                sol={<IkonKutusu ikon="arti" ton="eylem" boyut={48} />}
+                baslik="Çocuk profili ekle"
+                alt={`${kalanHak} profil hakkınız kaldı`}
+                onClick={() => router.push("/dashboard/profil-ekle")}
+              />
+            ) : null}
+          </Grup>
+
+          <Grup baslik="Bu cihaz">
+            <div className="flex items-start gap-4 px-4 py-4 sm:px-5">
+              <IkonKutusu ikon="tablet" ton="gece" boyut={48} />
+              <div className="min-w-0 flex-1">
+                <p className="font-semibold leading-6 text-murekkep">
+                  {cocukModu ? "Bu cihaz çocuğunuza verildi" : "Bu cihaz sizde"}
+                </p>
+                <p className="mt-0.5 text-[0.9375rem] leading-6 text-murekkep-soluk">
+                  {cocukModu
+                    ? "Veli paneli burada PIN ister. Bu cihazı yalnız siz kullanıyorsanız çocuk modunu kapatabilirsiniz."
+                    : "Veli paneli PIN istemez. Evdeki tablet gibi çocuğunuzun da kullanacağı bir cihazsa çocuğa verin; panel PIN'le kilitlenir, çocuklar “Kim okuyor?” ekranından kendi profillerine girer."}
+                </p>
+                <div className="mt-4">
+                  {cocukModu ? (
+                    <Buton
+                      varyant="cerceve"
+                      boyut="kucuk"
+                      onClick={() => {
+                        cocukModunuKapat();
+                        setCocukModu(false);
+                        bildir("Bu cihazda çocuk modu kapatıldı.");
+                      }}
+                    >
+                      Çocuk Modunu Kapat
+                    </Buton>
+                  ) : (
+                    <Buton
+                      varyant="eylem"
+                      boyut="kucuk"
+                      disabled={cihazVeriliyor}
+                      onClick={() => {
+                        setCihazVeriliyor(true);
+                        void cihaziCocugaVer(router);
+                      }}
+                    >
+                      <Ikon ad="tablet" boyut={17} />
+                      {cihazVeriliyor ? "Hazırlanıyor…" : "Bu Cihazı Çocuğa Ver"}
+                    </Buton>
+                  )}
+                </div>
+              </div>
+            </div>
+          </Grup>
+
+          <CihazBolumu profiller={profiles} cihazlar={cihazlar} yenile={yenile} onMesaj={bildir} />
+
+          <ProfilSifresiBolumu
+            profiller={profiles}
+            durum={durum}
+            yukleniyor={isLoading}
+            onDegisti={(metin) => {
+              bildir(metin);
+              void yenile();
+            }}
+          />
+
+          {pinYonlendirmesi ? null : pinGrubu}
+
+          <Grup baslik="Hesap">
+            <Satir sol={<IkonKutusu ikon="hesap" boyut={48} />} baslik="E-posta" alt={aile.eposta || "—"} />
+            <Satir
+              sol={<IkonKutusu ikon="kilit" boyut={48} />}
+              baslik="Şifre Değiştir"
+              onClick={() => perdeAc({ tur: "sifre" })}
+            />
+            <Satir
+              sol={
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-tehlike/10 text-tehlike">
+                  <Ikon ad="cikis" boyut={20} />
+                </span>
+              }
+              baslik="Çıkış Yap"
+              tehlike
+              onClick={cikisYap}
+            />
+          </Grup>
+        </div>
+
+        <aside className="xl:sticky xl:top-10">
+          <NasilCalisir />
+        </aside>
       </div>
     </div>
-  );
-}
-
-function BolumBasligi({ ikon, baslik }: { ikon: "kilit" | "hesap" | "harita"; baslik: string }) {
-  return (
-    <h2 className="flex items-center gap-2 font-baslik text-xl font-bold text-murekkep">
-      <span className="grid h-9 w-9 place-items-center rounded-full bg-vurgu-yumusak text-vurgu">
-        <Ikon ad={ikon} boyut={18} />
-      </span>
-      {baslik}
-    </h2>
   );
 }
 
@@ -262,60 +337,49 @@ function ProfilSifresiBolumu({
   }
 
   return (
-    <Kart>
-      <BolumBasligi ikon="kilit" baslik="Ortak tablette profil şifresi" />
-      <div className="mt-4 flex items-start justify-between gap-4">
-        <p className="text-base font-medium leading-7 text-murekkep-soluk">
-          Açıkken her çocuk &quot;Kim okuyor?&quot; ekranında kendi profiline 4 rakamlı şifresiyle
-          girer; kardeşinin profilinde okuyamaz. Açık profil 30 dakika kullanılmazsa kapanır.
-        </p>
-        <button
-          type="button"
-          role="switch"
-          aria-checked={acik}
-          aria-label="Profillere girerken şifre sorulsun"
-          disabled={degisiyor || durum === null}
-          onClick={() => void ayariDegistir()}
-          className={`relative inline-flex h-8 w-14 shrink-0 items-center rounded-full border transition-colors disabled:opacity-50 ${
-            acik ? "border-eylem bg-eylem" : "border-cizgi bg-yuzey-2"
-          }`}
-        >
-          <span
-            className={`inline-block h-6 w-6 rounded-full bg-yuzey shadow transition-transform ${
-              acik ? "translate-x-7" : "translate-x-1"
-            }`}
+    <Grup
+      baslik="Ortak tablette profil şifresi"
+      aciklama="Açıkken her çocuk “Kim okuyor?” ekranında kendi profiline 4 rakamlı şifresiyle girer; kardeşinin profilinde okuyamaz. Açık profil 30 dakika kullanılmazsa kapanır."
+    >
+      <Satir
+        sol={<IkonKutusu ikon="kilit" ton={acik ? "eylem" : "notr"} boyut={48} />}
+        baslik="Profil şifresi"
+        alt={durum === null ? "Durum okunuyor…" : acik ? "Açık" : "Kapalı"}
+        sag={
+          <Anahtar
+            etiket="Profillere girerken şifre sorulsun"
+            acik={acik}
+            disabled={degisiyor || durum === null}
+            onDegis={() => void ayariDegistir()}
           />
-        </button>
-      </div>
-      {hata ? <p role="alert" className="mt-3 text-sm font-semibold text-tehlike">{hata}</p> : null}
-
-      <ul className="mt-4 divide-y divide-cizgi rounded-kart border border-cizgi">
-        {yukleniyor ? (
-          <li className="p-4 text-base font-medium text-murekkep-soluk">Profiller yükleniyor…</li>
-        ) : profiller.length === 0 ? (
-          <li className="p-4 text-base font-medium text-murekkep-soluk">Henüz çocuk profili yok.</li>
-        ) : (
-          profiller.map((profil) => (
-            <li key={profil.id} className="p-4">
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-full border border-cizgi bg-yuzey-2">
-                  <CocukAvatari avatarTipi={profil.avatar_tipi} fotografUrl={profil.avatar_url} boyut={42} alt="" />
-                </span>
-                <span className="min-w-0 flex-1 font-baslik text-lg font-bold text-murekkep">{profil.isim}</span>
-                <span
-                  className={`rounded-full px-3 py-1 text-sm font-bold ${
-                    sifreli.has(profil.id) ? "bg-eylem-yumusak text-eylem" : "bg-yuzey-2 text-murekkep-soluk"
-                  }`}
-                >
-                  {sifreli.has(profil.id) ? "Şifre belirlendi" : "Şifre yok"}
-                </span>
-                {duzenlenen !== profil.id ? (
+        }
+      />
+      {hata ? (
+        <p role="alert" className="px-4 py-3 text-[0.9375rem] font-semibold text-tehlike sm:px-5">
+          {hata}
+        </p>
+      ) : null}
+      {yukleniyor ? (
+        <Satir baslik="Profiller yükleniyor…" />
+      ) : profiller.length === 0 ? (
+        <Satir baslik="Henüz çocuk profili yok." />
+      ) : (
+        profiller.map((profil) => (
+          <div key={profil.id}>
+            <Satir
+              sol={yuz(profil)}
+              baslik={profil.isim}
+              alt={sifreli.has(profil.id) ? "Şifre belirlendi" : "Şifre yok"}
+              sag={
+                duzenlenen !== profil.id ? (
                   <Buton varyant="cerceve" boyut="kucuk" onClick={() => setDuzenlenen(profil.id)}>
-                    {sifreli.has(profil.id) ? "Değiştir" : "Şifre Belirle"}
+                    {sifreli.has(profil.id) ? "Değiştir" : "Belirle"}
                   </Buton>
-                ) : null}
-              </div>
-              {duzenlenen === profil.id ? (
+                ) : undefined
+              }
+            />
+            {duzenlenen === profil.id ? (
+              <div className="px-4 pb-4 sm:px-5">
                 <CocukSifresiFormu
                   profil={profil}
                   onVazgec={() => setDuzenlenen(null)}
@@ -324,12 +388,12 @@ function ProfilSifresiBolumu({
                     onDegisti(`${profil.isim} için profil şifresi kaydedildi.`);
                   }}
                 />
-              ) : null}
-            </li>
-          ))
-        )}
-      </ul>
-    </Kart>
+              </div>
+            ) : null}
+          </div>
+        ))
+      )}
+    </Grup>
   );
 }
 
@@ -369,15 +433,19 @@ function CocukSifresiFormu({
   }
 
   return (
-    <form onSubmit={gonder} className="mt-4 space-y-4 rounded-kart border border-cizgi bg-yuzey-2 p-4">
-      <p className="text-sm font-medium leading-6 text-murekkep-soluk">
+    <form onSubmit={gonder} className="space-y-4 rounded-[1.25rem] bg-yuzey-2/70 p-4">
+      <p className="text-[0.9375rem] leading-6 text-veli-govde">
         Şifreyi {profil.isim} ile birlikte seçin. Eski şifre gösterilmez; yenisi hemen geçerli olur.
       </p>
       <div className="grid gap-4 sm:grid-cols-2">
         <PinGirdisi etiket="Yeni şifre" deger={sifre} onDegis={setSifre} />
         <PinGirdisi etiket="Şifreyi tekrar yazın" deger={tekrar} onDegis={setTekrar} />
       </div>
-      {hata ? <p role="alert" className="text-sm font-semibold text-tehlike">{hata}</p> : null}
+      {hata ? (
+        <p role="alert" className="text-[0.9375rem] font-semibold text-tehlike">
+          {hata}
+        </p>
+      ) : null}
       <div className="flex gap-3">
         <Buton type="button" varyant="cerceve" tamGenislik onClick={onVazgec}>
           Vazgeç
@@ -457,77 +525,84 @@ function CihazBolumu({
   const adres = typeof window === "undefined" ? "/cihaz-bagla" : `${window.location.host}/cihaz-bagla`;
 
   return (
-    <Kart>
-      <BolumBasligi ikon="harita" baslik="Çocuğun kendi cihazı" />
-      <p className="mt-3 text-base font-medium leading-7 text-murekkep-soluk">
-        Çocuğunuzun kendi tableti ya da telefonu varsa bir kodla bağlayın. O cihazda yalnız o
-        çocuğun profili açılır; veli paneli açılmaz. Hesap şifreniz o cihaza girilmez.
-      </p>
-      {hata ? <p role="alert" className="mt-3 text-sm font-semibold text-tehlike">{hata}</p> : null}
+    <Grup
+      baslik="Çocuğun kendi cihazı"
+      aciklama="Çocuğunuzun kendi tableti ya da telefonu varsa bir kodla bağlayın. O cihazda yalnız o çocuğun profili açılır; veli paneli açılmaz. Hesap şifreniz o cihaza girilmez."
+    >
+      {hata ? (
+        <p role="alert" className="px-4 py-3 text-[0.9375rem] font-semibold text-tehlike sm:px-5">
+          {hata}
+        </p>
+      ) : null}
 
       {kod ? (
-        <EslesmeKoduKarti
-          isim={isim(kod.profilId)}
-          kod={kod.kod}
-          kalanSaniye={kalan}
-          adres={adres}
-          onKapat={() => setKod(null)}
-          onYeniKod={() => void kodUret(kod.profilId)}
-        />
-      ) : baglanan ? (
-        <CihazBaglandiKarti
-          isim={isim(baglanan.profilId)}
-          cihazAdi={baglanan.cihazAdi}
-          onTamam={() => setBaglanan(null)}
-        />
-      ) : (
-        <div className="mt-4 flex flex-wrap gap-2">
-          {profiller.map((profil) => (
-            <Buton key={profil.id} varyant="cerceve" boyut="kucuk" onClick={() => void kodUret(profil.id)}>
-              {profil.isim} için cihaz bağla
-            </Buton>
-          ))}
+        <div className="px-4 pb-4 sm:px-5">
+          <EslesmeKoduKarti
+            isim={isim(kod.profilId)}
+            kod={kod.kod}
+            kalanSaniye={kalan}
+            adres={adres}
+            onKapat={() => setKod(null)}
+            onYeniKod={() => void kodUret(kod.profilId)}
+          />
         </div>
-      )}
+      ) : baglanan ? (
+        <div className="px-4 pb-4 sm:px-5">
+          <CihazBaglandiKarti
+            isim={isim(baglanan.profilId)}
+            cihazAdi={baglanan.cihazAdi}
+            onTamam={() => setBaglanan(null)}
+          />
+        </div>
+      ) : null}
 
-      <h3 className="mt-6 text-base font-bold text-murekkep">Bağlı cihazlar</h3>
-      {cihazlar.length === 0 ? (
-        <p className="mt-2 text-base font-medium text-murekkep-soluk">Henüz bağlı cihaz yok.</p>
-      ) : (
-        <ul className="mt-2 divide-y divide-cizgi rounded-kart border border-cizgi">
-          {cihazlar.map((cihaz) => (
-            <li key={cihaz.id} className="flex flex-wrap items-center gap-3 p-4">
-              <div className="min-w-0 flex-1">
-                <p className="font-semibold text-murekkep">
-                  {isim(cihaz.profile_id)} · {cihaz.cihaz_adi ?? "Cihaz"}
-                </p>
-                <p className="text-sm font-medium text-murekkep-soluk">
-                  Bağlandı: {formatReportDate(cihaz.baglandi)}
-                </p>
-              </div>
-              {kaldirilacak === cihaz.id ? (
-                <div className="flex gap-2">
-                  <Buton varyant="cerceve" boyut="kucuk" onClick={() => setKaldirilacak(null)}>
-                    Vazgeç
-                  </Buton>
-                  <Buton varyant="tehlike" boyut="kucuk" onClick={() => void kaldir(cihaz.id, cihaz.profile_id)}>
-                    Evet, Kaldır
-                  </Buton>
-                </div>
-              ) : (
-                <Buton
-                  varyant="cerceve"
-                  boyut="kucuk"
-                  className="!border-tehlike/40 !text-tehlike"
-                  onClick={() => setKaldirilacak(cihaz.id)}
-                >
-                  Kaldır
-                </Buton>
-              )}
-            </li>
-          ))}
-        </ul>
-      )}
-    </Kart>
+      {profiller.map((profil) => {
+        const bagli = cihazlar.filter((c) => c.profile_id === profil.id).length;
+        return (
+          <Satir
+            key={profil.id}
+            sol={yuz(profil)}
+            baslik={profil.isim}
+            alt={bagli > 0 ? `${bagli} bağlı cihaz` : "Bağlı cihaz yok"}
+            sag={
+              <Buton varyant="ikincil" boyut="kucuk" onClick={() => void kodUret(profil.id)}>
+                Cihaz Bağla
+              </Buton>
+            }
+          />
+        );
+      })}
+
+      {cihazlar.map((cihaz) => (
+        <div key={cihaz.id} className="flex flex-wrap items-center gap-4 px-4 py-3 sm:px-5">
+          <IkonKutusu ikon="tablet" boyut={48} />
+          <div className="min-w-0 flex-1">
+            <p className="font-semibold leading-6 text-murekkep">
+              {isim(cihaz.profile_id)} · {cihaz.cihaz_adi ?? "Cihaz"}
+            </p>
+            <p className="text-[0.9375rem] leading-6 text-murekkep-soluk">Bağlandı: {formatReportDate(cihaz.baglandi)}</p>
+          </div>
+          {kaldirilacak === cihaz.id ? (
+            <div className="flex gap-2">
+              <Buton varyant="cerceve" boyut="kucuk" onClick={() => setKaldirilacak(null)}>
+                Vazgeç
+              </Buton>
+              <Buton varyant="tehlike" boyut="kucuk" onClick={() => void kaldir(cihaz.id, cihaz.profile_id)}>
+                Evet, Kaldır
+              </Buton>
+            </div>
+          ) : (
+            <Buton
+              varyant="cerceve"
+              boyut="kucuk"
+              className="!border-tehlike/40 !text-tehlike"
+              onClick={() => setKaldirilacak(cihaz.id)}
+            >
+              Kaldır
+            </Buton>
+          )}
+        </div>
+      ))}
+    </Grup>
   );
 }

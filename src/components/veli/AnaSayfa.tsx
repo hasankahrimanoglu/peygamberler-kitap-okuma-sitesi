@@ -1,10 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import { Buton, Ikon, OdulIkonu } from "../ui";
 import { bolumKapagi } from "../../lib/varlikYollari";
 import { katalogKitaplari } from "../../lib/derive";
-import { useTaslak } from "./baglam";
+import { useVeliPaneli } from "./baglam";
 import {
   BolumBasligi,
   BolumYolu,
@@ -14,6 +14,7 @@ import {
   IkonKutusu,
   Kapak,
   Sahne,
+  Yukleniyor,
   Yuzey,
 } from "./parcalar";
 import {
@@ -26,26 +27,28 @@ import {
   sonGelismeler,
   type CocukGorunumu,
 } from "./veriler";
-import styles from "./veliTaslak.module.css";
+import styles from "./veliPaneli.module.css";
 
 /** Bütün bölümlerde aynı sabit öneri (PROJE-MODELI 4.1/19) — canlı panelle aynı metin. */
 export const SOHBET_ONERISI =
   "Bu soruyu ona siz de sorun ve cevabını dinleyin. Sonra hikâyede ne olduğunu birlikte hatırlayabilirsiniz.";
 
 /**
- * Ana Sayfa (TASLAK). Sıra velinin dört sorusunu izler (PROJE-MODELI 3.8):
+ * Veli Ana Sayfası (PROJE-MODELI 3.8). Sıra velinin dört sorusunu izler:
  * ne oldu (karşılama) → nerede kaldı, sıradaki ne (çocuk kartı) → bu akşam
  * ne konuşalım (sohbet) → son kazanımı ne (gelişmeler). Puan, oran ve kardeş
- * kıyası yok.
+ * kıyası yok. `ek`: canlıda karşılamanın altına giren hatırlatma (profil şifresi).
  */
-export function AnaSayfa() {
-  const { aile, gorunumler } = useTaslak();
+export function AnaSayfa({ ek }: { ek?: ReactNode }) {
+  const { aile, gorunumler, yukleniyor } = useVeliPaneli();
 
+  if (yukleniyor) return <Yukleniyor metin="Çocuk profilleri yükleniyor…" />;
   if (aile.cocuklar.length === 0) return <IlkKurulum />;
 
   return (
     <div className="space-y-8 lg:space-y-10">
       <Karsilama />
+      {ek}
 
       <section aria-labelledby="cocuklar-baslik">
         <BolumBasligi id="cocuklar-baslik" baslik={gorunumler.length > 1 ? "Çocuklarınız" : "Okuma yolculuğu"} />
@@ -74,7 +77,7 @@ export function AnaSayfa() {
 // --- Karşılama ---
 
 function Karsilama() {
-  const { gorunumler, perdeAc } = useTaslak();
+  const { gorunumler, perdeAc } = useVeliPaneli();
   const cumleler = aileCumleleri(gorunumler);
 
   // Sağdaki raf: çocukların en son okuduğu kitaplar (tekrarsız, en fazla üç).
@@ -97,14 +100,14 @@ function Karsilama() {
       <span className={`${styles.hilal} ${raf.length > 0 ? "md:hidden" : ""}`} style={{ top: 26, right: 26 }} aria-hidden="true" />
       <div className="relative grid items-center gap-8 md:grid-cols-[minmax(0,1fr)_auto]">
         <div className="min-w-0">
-          <p className="text-[0.9375rem] font-medium text-vt-gece-soluk first-letter:uppercase">{bugununTarihi()}</p>
-          <h1 className="mt-2 font-vt-baslik text-[2.625rem] font-normal leading-[1.02] tracking-[-0.025em] sm:text-[3.25rem] lg:text-[3.75rem]">
+          <p className="text-[0.9375rem] font-medium text-veli-gece-soluk first-letter:uppercase">{bugununTarihi()}</p>
+          <h1 className="mt-2 font-veli-baslik text-[2.625rem] font-normal leading-[1.02] tracking-[-0.025em] sm:text-[3.25rem] lg:text-[3.75rem]">
             {selamlama()}
-            <span className="text-vt-altin-acik">.</span>
+            <span className="text-veli-altin-acik">.</span>
           </h1>
           <ul className="mt-5 max-w-xl space-y-3">
             {gorunumler.map((g, i) => (
-              <li key={g.cocuk.id} className="flex items-start gap-3 text-[1.0625rem] leading-7 text-vt-gece-metin/95">
+              <li key={g.cocuk.id} className="flex items-start gap-3 text-[1.0625rem] leading-7 text-veli-gece-metin/95">
                 <span className="mt-0.5">
                   <CocukYuzu cocuk={g.cocuk} boyut={28} halka="yok" />
                 </span>
@@ -125,7 +128,7 @@ function Karsilama() {
             <button
               type="button"
               onClick={() => perdeAc({ tur: "cihaz" })}
-              className="inline-flex h-12 items-center gap-2 rounded-buton px-5 text-base font-semibold text-vt-gece-metin shadow-[inset_0_0_0_1px_rgb(245_239_226/0.28)] transition-colors hover:bg-white/10 lg:hidden"
+              className="inline-flex h-12 items-center gap-2 rounded-buton px-5 text-base font-semibold text-veli-gece-metin shadow-[inset_0_0_0_1px_rgb(245_239_226/0.28)] transition-colors hover:bg-white/10 lg:hidden"
             >
               <Ikon ad="tablet" boyut={19} />
               Çocuk Ekranına Geç
@@ -135,7 +138,7 @@ function Karsilama() {
 
         {raf.length > 0 ? (
           <div aria-hidden="true" className="relative mx-auto hidden h-[230px] w-[260px] md:block lg:h-[260px] lg:w-[300px]">
-            <span className="absolute inset-x-6 bottom-2 h-16 rounded-full bg-vt-altin-acik/30 blur-2xl" />
+            <span className="absolute inset-x-6 bottom-2 h-16 rounded-full bg-veli-altin-acik/30 blur-2xl" />
             {raf.map((y, i) => {
               const konum = [
                 "left-1/2 top-0 z-30 -translate-x-1/2 rotate-0",
@@ -158,7 +161,7 @@ function Karsilama() {
 // --- Çocuk kartı ---
 
 function CocukKarti({ g }: { g: CocukGorunumu }) {
-  const { perdeAc, git } = useTaslak();
+  const { perdeAc, git } = useVeliPaneli();
   const { cocuk, ozet, aktif, guncelGorev } = g;
   const sonOkuma = okumaZamani(ozet.sonAktiviteZamani);
   const ilk = ilkKitap();
@@ -177,8 +180,8 @@ function CocukKarti({ g }: { g: CocukGorunumu }) {
         <div className="absolute inset-x-4 bottom-4 flex items-end gap-3.5 sm:inset-x-5 sm:bottom-5 lg:inset-x-6 lg:bottom-6">
           <CocukYuzu cocuk={cocuk} boyut={60} />
           <div className="min-w-0 pb-0.5 text-white">
-            <h3 className="font-vt-baslik text-[1.875rem] font-medium leading-none tracking-[-0.01em]">{cocuk.isim}</h3>
-            <p className="mt-1.5 flex items-center gap-1.5 text-[0.9375rem] font-semibold text-vt-altin-acik">
+            <h3 className="font-veli-baslik text-[1.875rem] font-medium leading-none tracking-[-0.01em]">{cocuk.isim}</h3>
+            <p className="mt-1.5 flex items-center gap-1.5 text-[0.9375rem] font-semibold text-veli-altin-acik">
               <Ikon ad="yildiz" boyut={14} />
               {ozet.unvan}
             </p>
@@ -193,14 +196,14 @@ function CocukKarti({ g }: { g: CocukGorunumu }) {
               {aktif.bitti ? "En son bitirdiği kitap" : "Şu an okuduğu kitap"}
             </p>
             <div className="mt-1 flex items-baseline justify-between gap-3">
-              <h4 className="font-vt-baslik text-[1.625rem] font-medium leading-tight text-murekkep">{aktif.baslik}</h4>
-              <span className="shrink-0 text-[0.9375rem] font-semibold tabular-nums text-vt-govde">
+              <h4 className="font-veli-baslik text-[1.625rem] font-medium leading-tight text-murekkep">{aktif.baslik}</h4>
+              <span className="shrink-0 text-[0.9375rem] font-semibold tabular-nums text-veli-govde">
                 {aktif.tamamlanan} / {aktif.toplam} bölüm
               </span>
             </div>
             <p className="text-[0.9375rem] text-murekkep-soluk">{aktif.altBaslik}</p>
             <BolumYolu toplam={aktif.toplam} tamamlanan={aktif.tamamlanan} className="mt-4" />
-            <div className="mt-3 text-[0.9375rem] leading-6 text-vt-govde">
+            <div className="mt-3 text-[0.9375rem] leading-6 text-veli-govde">
               {aktif.finalBekliyor ? (
                 <Cip ton="altin" ikon="madalya" className="whitespace-normal !leading-snug">
                   Bütün bölümler bitti · Büyük Final Testi sırada
@@ -242,7 +245,7 @@ function CocukKarti({ g }: { g: CocukGorunumu }) {
               <Buton
                 varyant="eylem"
                 className="whitespace-nowrap sm:flex-1"
-                onClick={() => perdeAc({ tur: "cihaz", cocukId: cocuk.id, hedef: `${aktif.baslik} kitabı` })}
+                onClick={() => perdeAc({ tur: "cihaz", cocukId: cocuk.id, adres: "/map", etiket: `${aktif.baslik} kitabı` })}
               >
                 <Ikon ad="kitap" boyut={19} />
                 Okumaya Devam Et
@@ -256,10 +259,10 @@ function CocukKarti({ g }: { g: CocukGorunumu }) {
         ) : (
           <>
             <p className="text-sm font-semibold text-murekkep-soluk">İlk yolculuk</p>
-            <h4 className="mt-1 font-vt-baslik text-[1.625rem] font-medium leading-tight text-murekkep">
+            <h4 className="mt-1 font-veli-baslik text-[1.625rem] font-medium leading-tight text-murekkep">
               {ilk ? `${ilk.baslik} ile başlayabilir` : "Kütüphane hazır"}
             </h4>
-            <p className="mt-2 text-base leading-7 text-vt-govde">
+            <p className="mt-2 text-base leading-7 text-veli-govde">
               {cocuk.isim} ilk bölümü bitirdiğinde burada nerede kaldığı, rozeti ve bu akşam için bir sohbet sorusu
               görünür. Kitapları dilediği sırayla okuyabilir.
             </p>
@@ -267,7 +270,7 @@ function CocukKarti({ g }: { g: CocukGorunumu }) {
               <Buton
                 varyant="altin"
                 className="sm:flex-1"
-                onClick={() => perdeAc({ tur: "cihaz", cocukId: cocuk.id, hedef: "Okuma rotası" })}
+                onClick={() => perdeAc({ tur: "cihaz", cocukId: cocuk.id, adres: "/map", etiket: "Okuma rotası" })}
               >
                 Yolculuğa Başla
               </Buton>
@@ -285,7 +288,7 @@ function CocukKarti({ g }: { g: CocukGorunumu }) {
 // --- Bu akşamın sohbeti ---
 
 function BuAksamSohbeti() {
-  const { gorunumler, git, cocukSec } = useTaslak();
+  const { gorunumler, git, cocukSec } = useVeliPaneli();
   const adaylar = gorunumler.filter((g) => g.aktif?.sonBolum?.soru);
   const [seciliId, setSeciliId] = useState<string | null>(null);
   const secili = adaylar.find((g) => g.cocuk.id === seciliId) ?? adaylar[0];
@@ -295,9 +298,9 @@ function BuAksamSohbeti() {
       <Yuzey className={`${styles.sohbetZemin} h-full p-6 sm:p-8`}>
         <div className="flex items-center gap-3">
           <IkonKutusu ikon="sohbet" ton="sohbet" />
-          <h2 className="font-vt-baslik text-[1.375rem] font-medium text-murekkep">Bu akşamın sohbeti</h2>
+          <h2 className="font-veli-baslik text-[1.375rem] font-medium text-murekkep">Bu akşamın sohbeti</h2>
         </div>
-        <p className="mt-5 text-base leading-7 text-vt-govde">
+        <p className="mt-5 text-base leading-7 text-veli-govde">
           İlk bölüm bitince o bölümün sorusu burada akşam sohbeti için bir başlangıca dönüşür.
         </p>
       </Yuzey>
@@ -313,7 +316,7 @@ function BuAksamSohbeti() {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3">
           <IkonKutusu ikon="sohbet" ton="sohbet" />
-          <h2 id="bu-aksam-baslik" className="font-vt-baslik text-[1.375rem] font-medium text-murekkep">
+          <h2 id="bu-aksam-baslik" className="font-veli-baslik text-[1.375rem] font-medium text-murekkep">
             Bu akşamın sohbeti
           </h2>
         </div>
@@ -327,7 +330,7 @@ function BuAksamSohbeti() {
                 aria-checked={a.cocuk.id === cocuk.id}
                 onClick={() => setSeciliId(a.cocuk.id)}
                 className={`flex min-h-11 items-center gap-2 rounded-full py-1 pl-1 pr-3.5 text-[0.9375rem] font-semibold transition-colors ${
-                  a.cocuk.id === cocuk.id ? "bg-yuzey text-murekkep shadow-sm" : "text-vt-govde"
+                  a.cocuk.id === cocuk.id ? "bg-yuzey text-murekkep shadow-sm" : "text-veli-govde"
                 }`}
               >
                 <CocukYuzu cocuk={a.cocuk} boyut={30} halka="yok" />
@@ -338,25 +341,25 @@ function BuAksamSohbeti() {
         ) : null}
       </div>
 
-      <p className="mt-6 text-[0.9375rem] font-semibold text-vt-sohbet">
+      <p className="mt-6 text-[0.9375rem] font-semibold text-veli-sohbet">
         {ilgiEki(cocuk.isim)} {zaman ? `${zaman} okuduğu` : "son okuduğu"} bölümden · {aktif.baslik}, {bolum.no}. bölüm
       </p>
       <blockquote className="relative mt-3">
         <span className={`${styles.tirnak} absolute -left-1 -top-1 select-none`} aria-hidden="true">
           “
         </span>
-        <p className="relative pl-1 pt-5 font-vt-baslik text-[1.5rem] font-normal leading-[1.35] tracking-[-0.01em] text-murekkep sm:text-[1.75rem]">
+        <p className="relative pl-1 pt-5 font-veli-baslik text-[1.5rem] font-normal leading-[1.35] tracking-[-0.01em] text-murekkep sm:text-[1.75rem]">
           {bolum.soru}
         </p>
       </blockquote>
       {bolum.ozet ? (
-        <p className="mt-4 text-base leading-7 text-vt-govde">
+        <p className="mt-4 text-base leading-7 text-veli-govde">
           <span className="font-semibold text-murekkep">Bölümde: </span>
           {bolum.ozet}
         </p>
       ) : null}
-      <p className="mt-5 flex gap-3 rounded-2xl bg-white/65 p-4 text-[0.9375rem] leading-6 text-vt-govde">
-        <Ikon ad="kalp" boyut={18} className="mt-0.5 text-vt-sohbet" />
+      <p className="mt-5 flex gap-3 rounded-2xl bg-white/65 p-4 text-[0.9375rem] leading-6 text-veli-govde">
+        <Ikon ad="kalp" boyut={18} className="mt-0.5 text-veli-sohbet" />
         {SOHBET_ONERISI}
       </p>
       <div className="mt-auto pt-5">
@@ -377,7 +380,7 @@ function BuAksamSohbeti() {
 // --- Son gelişmeler ---
 
 function SonGelismeler() {
-  const { gorunumler, git } = useTaslak();
+  const { gorunumler, git } = useVeliPaneli();
   const liste = sonGelismeler(gorunumler, 5);
   const coklu = gorunumler.length > 1;
 
@@ -385,7 +388,7 @@ function SonGelismeler() {
     <Yuzey as="section" aria-labelledby="gelismeler-baslik" className="flex h-full flex-col p-6 sm:p-8">
       <BolumBasligi id="gelismeler-baslik" baslik="Son gelişmeler" aciklama="Rozet, madalya ve görevler" />
       {liste.length === 0 ? (
-        <p className="text-base leading-7 text-vt-govde">İlk rozet, ilk bölüm bitince burada görünür.</p>
+        <p className="text-base leading-7 text-veli-govde">İlk rozet, ilk bölüm bitince burada görünür.</p>
       ) : (
         <ul className="-my-1 divide-y divide-cizgi">
           {liste.map((g) => (
@@ -419,7 +422,7 @@ function SonGelismeler() {
 // --- Son eklenen kitaplar ---
 
 function SonEklenenler() {
-  const { git } = useTaslak();
+  const { git } = useVeliPaneli();
   const kitaplar = katalogKitaplari()
     .filter((k) => k.availability === "published" && k.yayinTarihi)
     .sort((a, b) => Date.parse(b.yayinTarihi!) - Date.parse(a.yayinTarihi!))
@@ -431,11 +434,11 @@ function SonEklenenler() {
     <Yuzey as="section" aria-labelledby="yeni-baslik" className="overflow-hidden">
       <div className="grid items-center gap-6 p-6 sm:p-8 md:grid-cols-[minmax(0,1fr)_auto]">
         <div>
-          <p className="text-sm font-semibold text-vt-altin-metin">Kütüphane</p>
-          <h2 id="yeni-baslik" className="mt-1 font-vt-baslik text-[1.375rem] font-medium leading-tight text-murekkep">
+          <p className="text-sm font-semibold text-veli-altin-metin">Kütüphane</p>
+          <h2 id="yeni-baslik" className="mt-1 font-veli-baslik text-[1.375rem] font-medium leading-tight text-murekkep">
             Son eklenen kitaplar
           </h2>
-          <p className="mt-2 max-w-lg text-base leading-7 text-vt-govde">
+          <p className="mt-2 max-w-lg text-base leading-7 text-veli-govde">
             {adlar.join(" ve ")} yayında. Yeni kitaplar çocuğunuzun okuma rotasına kendiliğinden eklenir.
           </p>
           <div className="mt-3 hidden md:block">
@@ -464,7 +467,7 @@ function SonEklenenler() {
 }
 
 function ProfilEkleSatiri() {
-  const { aile, perdeAc } = useTaslak();
+  const { aile, perdeAc } = useVeliPaneli();
   const kalan = aile.profilHakki - aile.cocuklar.length;
   if (kalan <= 0) return null;
   return (
@@ -490,7 +493,7 @@ function ProfilEkleSatiri() {
 // --- İlk kurulum (hiç profil yok) ---
 
 function IlkKurulum() {
-  const { perdeAc } = useTaslak();
+  const { perdeAc } = useVeliPaneli();
   const adimlar = [
     {
       ikon: "aile" as const,
@@ -513,11 +516,11 @@ function IlkKurulum() {
       <section className={`${styles.gokyuzu} rounded-[1.75rem] px-5 py-9 sm:px-10 sm:py-12 lg:px-14 lg:py-16`}>
         <span className={styles.hilal} style={{ top: 32, right: 36 }} aria-hidden="true" />
         <div className="relative max-w-2xl">
-          <p className="text-[0.9375rem] font-medium text-vt-gece-soluk">Keşif Dünyası&apos;na hoş geldiniz</p>
-          <h1 className="mt-2 font-vt-baslik text-[2.5rem] font-normal leading-[1.05] tracking-[-0.025em] sm:text-[3.25rem]">
-            Yolculuk bir profille başlar<span className="text-vt-altin-acik">.</span>
+          <p className="text-[0.9375rem] font-medium text-veli-gece-soluk">Keşif Dünyası&apos;na hoş geldiniz</p>
+          <h1 className="mt-2 font-veli-baslik text-[2.5rem] font-normal leading-[1.05] tracking-[-0.025em] sm:text-[3.25rem]">
+            Yolculuk bir profille başlar<span className="text-veli-altin-acik">.</span>
           </h1>
-          <p className="mt-4 text-[1.0625rem] leading-7 text-vt-gece-metin/90">
+          <p className="mt-4 text-[1.0625rem] leading-7 text-veli-gece-metin/90">
             Çocuğunuz okudukça burada nerede kaldığını, kazandığı rozetleri ve akşam sohbeti için soruları
             göreceksiniz.
           </p>
@@ -535,10 +538,10 @@ function IlkKurulum() {
             <Yuzey className="h-full p-6">
               <div className="flex items-center gap-3">
                 <IkonKutusu ikon={a.ikon} ton="gece" />
-                <span className="font-vt-baslik text-[1.75rem] font-normal tabular-nums text-cizgi">{i + 1}</span>
+                <span className="font-veli-baslik text-[1.75rem] font-normal tabular-nums text-cizgi">{i + 1}</span>
               </div>
-              <h2 className="mt-4 font-vt-baslik text-[1.25rem] font-medium leading-snug text-murekkep">{a.baslik}</h2>
-              <p className="mt-2 text-base leading-7 text-vt-govde">{a.metin}</p>
+              <h2 className="mt-4 font-veli-baslik text-[1.25rem] font-medium leading-snug text-murekkep">{a.baslik}</h2>
+              <p className="mt-2 text-base leading-7 text-veli-govde">{a.metin}</p>
             </Yuzey>
           </li>
         ))}

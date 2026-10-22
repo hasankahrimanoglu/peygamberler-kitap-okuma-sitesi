@@ -108,7 +108,10 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
 ## KOD DOKUNURKEN KURALLAR
 - **İki görsel dünya, karıştırma (Bölüm 3.1):**
   - Veli tarafı: krem zemin (#FAF6ED), nane/yeşil aksiyon (#2E7D5B), sıcak kahve
-    başlık, altın vurgu. Sakin.
+    başlık, altın vurgu. Sakin. **Veli paneli (REVİZE 22 Eki 2026):** kendi
+    paleti `src/components/veli/veliPaneli.module.css` `.tema` (Tailwind
+    `veli-*`), gece mavisi karşılama/yan menü, başlık Literata + arayüz Figtree
+    (PROJE-MODELI 3.1, 3.2). Giriş/tanıtım sayfaları `.tema-veli`'de kalır.
   - Çocuk tarafı: koyu lacivert + yıldız (#0E1A34), altın (#E8B84B) + yeşil
     vurgu; uzun okuma metni **daima krem açık zemin** üzerinde.
   - Renkler Tailwind token'ı olarak tek kaynaktan yönetilir; **sayfaya gömülü hex
@@ -202,9 +205,12 @@ gözlem testi var. Ana ekran bileşenleri `src/components/cocuk/`, veri modeli
 `src/lib/child/yolculuk.ts`, girişsiz önizlemeler `/tasarim/ana-ekran`,
 `/tasarim/okuma?bolum=adem-2` (rozet kaydı Supabase'e gitmez), `/tasarim/final?kitap=yunus`
 (Büyük Final Testi; kayıt yok), `/tasarim/oduller`, `/tasarim/kelimeler`, `/tasarim/gorevler`
-(`?durum=bos`) ve `/tasarim/isil`. Veli tarafının girişsiz önizlemesi
-`/tasarim/veli-rapor` (Gelişim Raporu'nun Kitaplar ve Sohbet Önerileri sekmeleri;
-`?durum=bos|tek`, `?sekme=kitaplar`; görünüm `src/components/dashboard/Rapor*Sekmesi.tsx`).
+(`?durum=bos`) ve `/tasarim/isil`. Veli panelinin girişsiz önizlemesi
+`/tasarim/veli-panel` (örnek aile; `?ekran=ana|sohbet|gelisim|kutuphane|aile`,
+`?durum=tek|yeni|bos`, `?sekme=oduller|gorevler`). Canlı panel ve önizleme aynı
+ekranları kullanır: görünüm `src/components/veli/`, canlı veri/eylem
+`VeliPaneliCanli.tsx`, önizleme `VeliPaneliOnizleme.tsx` (REVİZE 22 Eki 2026 —
+gezinme Ana Sayfa · Sohbet · Gelişim · Kütüphane · Aile, PROJE-MODELI 3.8–3.9, 5.2).
 Beklenmedik hata ekranı `app/error.tsx` (dünya adresten seçilir; görünüm `src/components/ui/HataEkrani.tsx`), önizlemesi `/tasarim/hata` (`?dunya=veli`; `?gercek=1` bilerek hata verir). "Kim okuyor?" önizlemesi `/tasarim/kim-okuyor` (`?sifre=1`; örnek şifre 1234;
 `?kurulum=1` ana ekran notu); "Bu cihazı çocuğunuz kullanacak mı?" sorusu
 `/tasarim/cihaz-sorusu` (`?durum=baglandi`). Giriş sayfası açık oturumu tanır
@@ -302,7 +308,7 @@ Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
   muydun?" kutusu (`bilgi_kutusu`); `books.ts` türleri, `AtlasScrollReader`'da
   çizim. Önizleme `/tasarim/okuma?bolum=adem-4&ornek=karma` (ve `yusuf-1`); örnek
   metin `src/data/karmaOrnek.ts` yalnız önizlemedir, ürün içeriği değildir.
-  Veli bilgi notu Gelişim Raporu → Kitaplar'ın altında ("kurgu" kelimesi yok).
+  Veli bilgi notu Gelişim → Kitaplar'ın altında ve Sohbet sayfasında ("kurgu" kelimesi yok).
 
 ---
 

@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { Ekran, GelisimSekmesi } from "../../../src/components/veli-taslak/baglam";
-import type { AileDurumu } from "../../../src/components/veli-taslak/ornekAile";
-import { VeliPanelTaslagi } from "../../../src/components/veli-taslak/VeliPanelTaslagi";
+import type { Ekran, GelisimSekmesi } from "../../../src/components/veli/baglam";
+import type { AileDurumu } from "../../../src/components/veli/ornekAile";
+import { VeliPaneliOnizleme } from "../../../src/components/veli/VeliPaneliOnizleme";
 
 /**
- * Veli paneli yeniden tasarım TASLAĞI (22 Eki 2026) — giriş gerektirmez,
- * Supabase'e bağlanmaz, canlı paneli değiştirmez. Gerçek panel `/dashboard`.
+ * Veli paneli önizlemesi — giriş gerektirmez, Supabase'e bağlanmaz. Canlı
+ * panel (`/dashboard`) aynı ekranları gerçek veriyle çizer (PROJE-MODELI 5.2).
  *   ?ekran=ana|sohbet|gelisim|kutuphane|aile
  *   ?durum=tek|yeni|bos     (varsayılan: iki çocuk)
  *   ?cocuk=elif|omer        ?sekme=kitaplar|oduller|gorevler
@@ -16,10 +16,10 @@ const EKRANLAR: Ekran[] = ["ana", "sohbet", "gelisim", "kutuphane", "aile"];
 const DURUMLAR: AileDurumu[] = ["iki", "tek", "yeni", "bos"];
 const SEKMELER: GelisimSekmesi[] = ["kitaplar", "oduller", "gorevler"];
 
-export default function VeliPaneliTaslagiSayfasi() {
+export default function VeliPaneliOnizlemeSayfasi() {
   // Örnek tarihler ("dün", "3 saat önce") ve selamlama saate bağlı; sunucu
   // çiziminden farklı çıkmasın diye taslak yalnız tarayıcıda kurulur.
-  const [baslangic, setBaslangic] = useState<Parameters<typeof VeliPanelTaslagi>[0]["baslangic"] | null>(null);
+  const [baslangic, setBaslangic] = useState<Parameters<typeof VeliPaneliOnizleme>[0]["baslangic"] | null>(null);
 
   useEffect(() => {
     queueMicrotask(() => {
@@ -36,5 +36,5 @@ export default function VeliPaneliTaslagiSayfasi() {
   }, []);
 
   if (!baslangic) return <div className="min-h-svh bg-[#f7f2e9]" />;
-  return <VeliPanelTaslagi baslangic={baslangic} />;
+  return <VeliPaneliOnizleme baslangic={baslangic} />;
 }

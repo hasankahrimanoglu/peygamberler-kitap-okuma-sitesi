@@ -2,11 +2,11 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, type HTMLAttributes, type ReactNode } from "react";
-import { CocukAvatari, Ikon, YedekliGorsel, type IkonAdi } from "../ui";
+import { Buton, CocukAvatari, Ikon, YedekliGorsel, type IkonAdi } from "../ui";
 import { kitapKapagi, YEDEK } from "../../lib/varlikYollari";
-import { useTaslak } from "./baglam";
-import type { TaslakCocuk } from "./ornekAile";
-import styles from "./veliTaslak.module.css";
+import { useVeliPaneli } from "./baglam";
+import type { VeliCocuk } from "./tipler";
+import styles from "./veliPaneli.module.css";
 
 /** Sayfa başlığı: küçük üst satır + serif başlık + tek cümle açıklama. */
 export function SayfaBasligi({
@@ -23,12 +23,12 @@ export function SayfaBasligi({
   return (
     <header className="mb-6 flex flex-col gap-4 lg:mb-8 lg:flex-row lg:items-end lg:justify-between">
       <div className="min-w-0">
-        {ust ? <p className="text-sm font-semibold text-vt-altin-metin">{ust}</p> : null}
-        <h1 className="mt-1 font-vt-baslik text-[2rem] font-medium leading-[1.1] tracking-[-0.015em] text-murekkep sm:text-[2.5rem]">
+        {ust ? <p className="text-sm font-semibold text-veli-altin-metin">{ust}</p> : null}
+        <h1 className="mt-1 font-veli-baslik text-[2rem] font-medium leading-[1.1] tracking-[-0.015em] text-murekkep sm:text-[2.5rem]">
           {baslik}
         </h1>
         {aciklama ? (
-          <p className="mt-2 max-w-2xl text-base leading-7 text-vt-govde">{aciklama}</p>
+          <p className="mt-2 max-w-2xl text-base leading-7 text-veli-govde">{aciklama}</p>
         ) : null}
       </div>
       {sag ? <div className="shrink-0">{sag}</div> : null}
@@ -51,7 +51,7 @@ export function BolumBasligi({
   return (
     <div className="mb-4 flex items-end justify-between gap-4">
       <div className="min-w-0">
-        <h2 id={id} className="font-vt-baslik text-[1.375rem] font-medium leading-tight tracking-[-0.01em] text-murekkep">
+        <h2 id={id} className="font-veli-baslik text-[1.375rem] font-medium leading-tight tracking-[-0.01em] text-murekkep">
           {baslik}
         </h2>
         {aciklama ? <p className="mt-1 text-[0.9375rem] leading-6 text-murekkep-soluk">{aciklama}</p> : null}
@@ -73,9 +73,9 @@ export function DevamBaglantisi({
 }) {
   const renk =
     ton === "sohbet"
-      ? "text-vt-sohbet hover:bg-vt-sohbet/10"
+      ? "text-veli-sohbet hover:bg-veli-sohbet/10"
       : ton === "gece"
-        ? "text-vt-gece-metin hover:bg-white/10"
+        ? "text-veli-gece-metin hover:bg-white/10"
         : "text-murekkep hover:bg-murekkep/5";
   return (
     <button
@@ -117,7 +117,7 @@ export function CocukYuzu({
   boyut = 40,
   halka = "beyaz",
 }: {
-  cocuk: TaslakCocuk;
+  cocuk: VeliCocuk;
   boyut?: number;
   halka?: "beyaz" | "altin" | "yok";
 }) {
@@ -125,14 +125,20 @@ export function CocukYuzu({
     halka === "beyaz"
       ? "ring-2 ring-white"
       : halka === "altin"
-        ? "ring-2 ring-vt-altin-acik ring-offset-2 ring-offset-vt-gece"
+        ? "ring-2 ring-veli-altin-acik ring-offset-2 ring-offset-veli-gece"
         : "";
   return (
     <span
       className={`grid shrink-0 place-items-center overflow-hidden rounded-full bg-yuzey-2 ${halkaSinifi}`}
       style={{ width: boyut, height: boyut }}
     >
-      <CocukAvatari avatarTipi={cocuk.avatar_tipi} boyut={boyut} alt="" className="rounded-full" />
+      <CocukAvatari
+        avatarTipi={cocuk.avatar_tipi}
+        fotografUrl={cocuk.avatar_url}
+        boyut={boyut}
+        alt=""
+        className="h-full w-full rounded-full object-cover"
+      />
     </span>
   );
 }
@@ -142,7 +148,7 @@ export function CocukYuzu({
  * (araştırma: tek çocukta seçici gürültüdür). Seçim ekranlar arasında korunur.
  */
 export function CocukSecici({ ton = "acik" }: { ton?: "acik" | "gece" }) {
-  const { aile, seciliCocukId, cocukSec } = useTaslak();
+  const { aile, seciliCocukId, cocukSec } = useVeliPaneli();
   if (aile.cocuklar.length < 2) return null;
   const secili = seciliCocukId ?? aile.cocuklar[0]?.id;
 
@@ -166,10 +172,10 @@ export function CocukSecici({ ton = "acik" }: { ton?: "acik" | "gece" }) {
             className={`flex min-h-12 shrink-0 items-center gap-2 rounded-full py-1.5 pl-1.5 pr-4 text-[0.9375rem] font-semibold transition-all ${
               aktif
                 ? ton === "gece"
-                  ? "bg-vt-gece-metin text-vt-gece shadow-sm"
+                  ? "bg-veli-gece-metin text-veli-gece shadow-sm"
                   : "bg-yuzey text-murekkep shadow-[0_1px_3px_rgb(39_30_23/0.12)]"
                 : ton === "gece"
-                  ? "text-vt-gece-soluk hover:text-vt-gece-metin"
+                  ? "text-veli-gece-soluk hover:text-veli-gece-metin"
                   : "text-murekkep-soluk hover:text-murekkep"
             }`}
           >
@@ -255,12 +261,12 @@ export function Sahne({ src, alt = "", className = "" }: { src: string; alt?: st
 type CipTonu = "notr" | "eylem" | "altin" | "sohbet" | "cam" | "gece";
 
 const cipTonlari: Record<CipTonu, string> = {
-  notr: "bg-yuzey-2 text-vt-govde",
+  notr: "bg-yuzey-2 text-veli-govde",
   eylem: "bg-eylem-yumusak text-eylem-koyu",
-  altin: "bg-vurgu-yumusak text-vt-altin-metin",
-  sohbet: "bg-vt-sohbet-yumusak text-vt-sohbet",
+  altin: "bg-vurgu-yumusak text-veli-altin-metin",
+  sohbet: "bg-veli-sohbet-yumusak text-veli-sohbet",
   cam: `${styles.cam} text-white`,
-  gece: "bg-white/10 text-vt-gece-metin",
+  gece: "bg-white/10 text-veli-gece-metin",
 };
 
 export function Cip({
@@ -295,11 +301,11 @@ export function IkonKutusu({
   boyut?: number;
 }) {
   const renk = {
-    notr: "bg-yuzey-2 text-vt-govde",
+    notr: "bg-yuzey-2 text-veli-govde",
     eylem: "bg-eylem-yumusak text-eylem-koyu",
-    altin: "bg-vurgu-yumusak text-vt-altin-metin",
-    sohbet: "bg-vt-sohbet-yumusak text-vt-sohbet",
-    gece: "bg-vt-gece text-vt-altin-acik",
+    altin: "bg-vurgu-yumusak text-veli-altin-metin",
+    sohbet: "bg-veli-sohbet-yumusak text-veli-sohbet",
+    gece: "bg-veli-gece text-veli-altin-acik",
   }[ton];
   return (
     <span className={`grid shrink-0 place-items-center rounded-full ${renk}`} style={{ width: boyut, height: boyut }}>
@@ -351,10 +357,12 @@ export function Anahtar({
   acik,
   onDegis,
   etiket,
+  disabled = false,
 }: {
   acik: boolean;
   onDegis: (acik: boolean) => void;
   etiket: string;
+  disabled?: boolean;
 }) {
   return (
     <button
@@ -362,8 +370,9 @@ export function Anahtar({
       role="switch"
       aria-checked={acik}
       aria-label={etiket}
+      disabled={disabled}
       onClick={() => onDegis(!acik)}
-      className={`${styles.anahtar} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vurgu`}
+      className={`${styles.anahtar} focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vurgu disabled:cursor-not-allowed disabled:opacity-50`}
     />
   );
 }
@@ -400,7 +409,7 @@ export function Sekmeler<T extends string>({
             {s.etiket}
             {s.sayi !== undefined ? (
               <span
-                className={`rounded-full px-1.5 text-[0.8125rem] tabular-nums ${secili ? "bg-yuzey-2 text-vt-govde" : "text-murekkep-soluk"}`}
+                className={`rounded-full px-1.5 text-[0.8125rem] tabular-nums ${secili ? "bg-yuzey-2 text-veli-govde" : "text-murekkep-soluk"}`}
               >
                 {s.sayi}
               </span>
@@ -478,8 +487,8 @@ export function PerdeKabugu({
             <div className="mx-auto mt-2.5 h-1.5 w-10 shrink-0 rounded-full bg-murekkep/15 lg:hidden" aria-hidden="true" />
             <div className="flex shrink-0 items-start justify-between gap-4 px-5 pb-3 pt-3 sm:px-6 lg:pt-7">
               <div className="min-w-0">
-                {ust ? <p className="text-sm font-semibold text-vt-altin-metin">{ust}</p> : null}
-                <h2 className="font-vt-baslik text-[1.625rem] font-medium leading-tight tracking-[-0.01em] text-murekkep">
+                {ust ? <p className="text-sm font-semibold text-veli-altin-metin">{ust}</p> : null}
+                <h2 className="font-veli-baslik text-[1.625rem] font-medium leading-tight tracking-[-0.01em] text-murekkep">
                   {baslik}
                 </h2>
               </div>
@@ -487,7 +496,7 @@ export function PerdeKabugu({
                 type="button"
                 onClick={onKapat}
                 aria-label="Kapat"
-                className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-yuzey-2 text-vt-govde transition-colors hover:bg-cizgi"
+                className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-yuzey-2 text-veli-govde transition-colors hover:bg-cizgi"
               >
                 <Ikon ad="kapat" boyut={18} />
               </button>
@@ -505,11 +514,15 @@ export function PerdeKabugu({
   );
 }
 
-/** Önizleme bildirimi: gerçek işlem yerine ne olacağını söyler. */
-export function Bildirim({ metin }: { metin: string | null }) {
+/**
+ * Bildirim: işlem sonucu ("Elif profili güncellendi.") ya da önizlemede
+ * gerçek işlem yerine ne olacağı. Hata tonu kırmızı ikonla ayrılır.
+ */
+export function Bildirim({ metin, ton = "bilgi" }: { metin: string | null; ton?: "bilgi" | "hata" }) {
   return (
     <div
       aria-live="polite"
+      role="status"
       className="pointer-events-none fixed inset-x-0 bottom-[calc(88px+env(safe-area-inset-bottom))] z-[70] flex justify-center px-4 lg:bottom-8"
     >
       <AnimatePresence>
@@ -519,13 +532,49 @@ export function Bildirim({ metin }: { metin: string | null }) {
             initial={{ opacity: 0, y: 12, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 8 }}
-            className="flex max-w-md items-start gap-2.5 rounded-2xl bg-vt-gece px-4 py-3 text-[0.9375rem] font-medium leading-6 text-vt-gece-metin shadow-[0_18px_40px_-16px_rgb(18_27_64/0.7)]"
+            className="flex max-w-md items-start gap-2.5 rounded-2xl bg-veli-gece px-4 py-3 text-[0.9375rem] font-medium leading-6 text-veli-gece-metin shadow-[0_18px_40px_-16px_rgb(18_27_64/0.7)]"
           >
-            <Ikon ad="bilgi" boyut={18} className="mt-0.5 text-vt-altin-acik" />
+            <Ikon
+              ad={ton === "hata" ? "bilgi" : "onay"}
+              boyut={18}
+              className={`mt-0.5 ${ton === "hata" ? "text-[#ff9b8f]" : "text-veli-altin-acik"}`}
+            />
             {metin}
           </motion.p>
         ) : null}
       </AnimatePresence>
     </div>
+  );
+}
+
+/** Veri gelirken: sayfanın iskeleti, yanıp sönmeden sakin bir dolgu. */
+export function Yukleniyor({ metin = "Yükleniyor…" }: { metin?: string }) {
+  return (
+    <div aria-busy="true" className="space-y-5">
+      <span className="sr-only">{metin}</span>
+      <div className={`${styles.gokyuzu} h-48 rounded-[1.75rem] opacity-90 sm:h-56`} />
+      <div className={`${styles.kart} h-72 animate-pulse motion-reduce:animate-none`} />
+      <div className={`${styles.kart} h-40 animate-pulse motion-reduce:animate-none`} />
+    </div>
+  );
+}
+
+/** Hiç çocuk profili yokken Sohbet, Gelişim ve Kütüphane'nin boş durumu. */
+export function BosAile({ baslik, metin }: { baslik: string; metin: string }) {
+  const { perdeAc } = useVeliPaneli();
+  return (
+    <Yuzey className="p-8 text-center sm:p-12">
+      <span className="mx-auto block w-fit">
+        <IkonKutusu ikon="aile" ton="gece" boyut={56} />
+      </span>
+      <h2 className="mt-5 font-veli-baslik text-[1.5rem] font-medium text-murekkep">{baslik}</h2>
+      <p className="mx-auto mt-2 max-w-md text-base leading-7 text-veli-govde">{metin}</p>
+      <div className="mt-6 flex justify-center">
+        <Buton varyant="altin" onClick={() => perdeAc({ tur: "profil-ekle" })}>
+          <Ikon ad="arti" boyut={19} />
+          Çocuk Profili Ekle
+        </Buton>
+      </div>
+    </Yuzey>
   );
 }

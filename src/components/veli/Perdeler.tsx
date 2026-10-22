@@ -1,33 +1,39 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useState } from "react";
 import { kutuphaneListesi } from "../../lib/derive";
 import { Buton, Ikon, OdulIkonu } from "../ui";
-import { useTaslak, type Perde } from "./baglam";
+import { yolculukKitaplari } from "../../lib/child/yolculuk";
+import { useVeliPaneli, type Perde, type PerdeIcerigi } from "./baglam";
 import { BolumYolu, Cip, CocukYuzu, Kapak, PerdeKabugu } from "./parcalar";
-import { cocukGorunumu, ilgiEki, katalogBilgisi, yonelmeEki } from "./veriler";
+import { ilgiEki, katalogBilgisi, yonelmeEki } from "./veriler";
 
-type Baglam = ReturnType<typeof useTaslak>;
-type Icerik = { baslik: string; ust?: string; govde: ReactNode; alt?: ReactNode };
+type Baglam = ReturnType<typeof useVeliPaneli>;
+type Icerik = PerdeIcerigi;
 
-/** Açık perdenin içeriği. Önizlemede hiçbir işlem Supabase'e gitmez. */
+/**
+ * Açık perdenin içeriği. Canlıda profil düzenleme ve şifre gerçek formla
+ * gelir (`ozelPerde`, VeliPaneliCanli); önizlemede hiçbir işlem Supabase'e gitmez.
+ */
 export function Perdeler({ perde }: { perde: Perde | null }) {
-  const ctx = useTaslak();
+  const ctx = useVeliPaneli();
   const { perdeKapat } = ctx;
   const acik = perde !== null;
 
   // İçerik kurucuları bileşen değil, düz fonksiyondur; bağlam bir kez okunup
   // verilir (hook sırası perdeden perdeye değişmesin).
-  let icerik: Icerik | null = null;
-  if (perde?.tur === "cihaz") icerik = CihazPerdesi(ctx, perde);
-  if (perde?.tur === "kitap") icerik = KitapPerdesi(ctx, perde);
-  if (perde?.tur === "odul") icerik = OdulPerdesi(perde);
-  if (perde?.tur === "profil") icerik = ProfilPerdesi(ctx, perde);
-  if (perde?.tur === "profil-ekle") icerik = ProfilPerdesi(ctx, null);
-  if (perde?.tur === "eslesme") icerik = EslesmePerdesi(ctx, perde);
-  if (perde?.tur === "sifre") icerik = SifrePerdesi(ctx, "sifre");
-  if (perde?.tur === "pin") icerik = SifrePerdesi(ctx, "pin");
-  if (perde?.tur === "cocuk-sifresi") icerik = SifrePerdesi(ctx, "cocuk", perde.cocukId);
+  let icerik: Icerik | null = perde ? ctx.ozelPerde?.(perde) ?? null : null;
+  if (icerik || !perde) {
+    // canlı form ya da kapalı perde
+  } else if (perde.tur === "cihaz") icerik = CihazPerdesi(ctx, perde);
+  else if (perde.tur === "kitap") icerik = KitapPerdesi(ctx, perde);
+  else if (perde.tur === "odul") icerik = OdulPerdesi(perde);
+  else if (perde.tur === "profil") icerik = ProfilPerdesi(ctx, perde);
+  else if (perde.tur === "profil-ekle") icerik = ProfilPerdesi(ctx, null);
+  else if (perde.tur === "eslesme") icerik = EslesmePerdesi(ctx, perde);
+  else if (perde.tur === "sifre") icerik = SifrePerdesi(ctx, "sifre");
+  else if (perde.tur === "pin") icerik = SifrePerdesi(ctx, "pin");
+  else if (perde.tur === "cocuk-sifresi") icerik = SifrePerdesi(ctx, "cocuk", perde.cocukId);
 
   return (
     <PerdeKabugu acik={acik && icerik !== null} onKapat={perdeKapat} baslik={icerik?.baslik ?? ""} ust={icerik?.ust} alt={icerik?.alt}>
@@ -48,11 +54,11 @@ function CihazPerdesi(ctx: Baglam, perde: Extract<Perde, { tur: "cihaz" }>) {
   }
 
   return {
-    ust: cocuk ? `${cocuk.isim} · ${perde.hedef ?? "Okuma rotası"}` : "Çocuk ekranı",
+    ust: cocuk ? `${cocuk.isim} · ${perde.etiket ?? "Okuma rotası"}` : "Çocuk ekranı",
     baslik: "Bu cihazı çocuğunuz kullanacak mı?",
     govde: (
       <div className="space-y-3 pt-1">
-        <p className="text-base leading-7 text-vt-govde">Seçiminize göre veli paneli bu cihazda kilitlenir ya da açık kalır.</p>
+        <p className="text-base leading-7 text-veli-govde">Seçiminize göre veli paneli bu cihazda kilitlenir ya da açık kalır.</p>
         <button
           type="button"
           onClick={() =>
@@ -99,8 +105,12 @@ function KitapPerdesi(ctx: Baglam, perde: Extract<Perde, { tur: "kitap" }>) {
   const kitap = kutuphaneListesi(aile.kitaplar, cocuk ? aile.ilerleme[cocuk.id] ?? [] : []).find(
     (k) => k.bookKey === perde.bookKey,
   );
-  const yolculuk = cocuk ? cocukGorunumu(aile, cocuk).yolculuklar.find((y) => y.bookKey === perde.bookKey) : undefined;
-  const bolumler = yolculuk?.bolumler ?? [];
+  // Bölüm listesi ve final adresi çocuk tarafının kitap modelinden (başlanmamış kitaplar dahil).
+  const yolculuk = yolculukKitaplari(aile.kitaplar, cocuk ? aile.ilerleme[cocuk.id] ?? [] : []).find(
+    (k) => k.key === perde.bookKey,
+  );
+  const bolumler = yolculuk?.bolumler.map((b) => ({ no: b.no, baslik: b.ad })) ?? [];
+  const finalYolu = yolculuk?.finalYolu ?? null;
   if (!katalog || !kitap) return null;
 
   // Bütün bölümler bitti, final kaldı: altın = final (PROJE-MODELI 3.3).
@@ -119,7 +129,7 @@ function KitapPerdesi(ctx: Baglam, perde: Extract<Perde, { tur: "kitap" }>) {
             <Kapak bookKey={perde.bookKey} alt={`${katalog.title} kapağı`} />
           </div>
           <div className="min-w-0">
-            <p className="font-vt-baslik text-[1.125rem] italic leading-snug text-vt-govde">{katalog.subtitle}</p>
+            <p className="font-veli-baslik text-[1.125rem] italic leading-snug text-veli-govde">{katalog.subtitle}</p>
             {cocuk ? (
               <div className="mt-4">
                 <p className="flex items-center gap-2 text-[0.875rem] font-semibold text-murekkep-soluk">
@@ -138,7 +148,7 @@ function KitapPerdesi(ctx: Baglam, perde: Extract<Perde, { tur: "kitap" }>) {
                   ) : kitap.durum === "devam" ? (
                     <>
                       <BolumYolu toplam={kitap.toplam} tamamlanan={kitap.tamamlanan} />
-                      <p className="mt-1.5 text-[0.875rem] tabular-nums text-vt-govde">
+                      <p className="mt-1.5 text-[0.875rem] tabular-nums text-veli-govde">
                         {kitap.tamamlanan} / {kitap.toplam} bölüm
                       </p>
                     </>
@@ -150,11 +160,11 @@ function KitapPerdesi(ctx: Baglam, perde: Extract<Perde, { tur: "kitap" }>) {
             ) : null}
           </div>
         </div>
-        {katalog.description ? <p className="mt-6 text-base leading-7 text-vt-govde">{katalog.description}</p> : null}
+        {katalog.description ? <p className="mt-6 text-base leading-7 text-veli-govde">{katalog.description}</p> : null}
 
         {bolumler.length > 0 ? (
           <>
-            <h3 className="mt-7 font-vt-baslik text-[1.125rem] font-medium text-murekkep">Bölümler</h3>
+            <h3 className="mt-7 font-veli-baslik text-[1.125rem] font-medium text-murekkep">Bölümler</h3>
             <ol className="mt-2 divide-y divide-cizgi">
               {bolumler.map((b) => {
                 const bitti = b.no <= kitap.tamamlanan;
@@ -167,7 +177,7 @@ function KitapPerdesi(ctx: Baglam, perde: Extract<Perde, { tur: "kitap" }>) {
                     >
                       {bitti ? <Ikon ad="onay" boyut={15} /> : b.no}
                     </span>
-                    <span className={`text-[0.9375rem] leading-snug ${bitti ? "font-semibold text-murekkep" : "text-vt-govde"}`}>
+                    <span className={`text-[0.9375rem] leading-snug ${bitti ? "font-semibold text-murekkep" : "text-veli-govde"}`}>
                       {b.baslik}
                     </span>
                   </li>
@@ -186,7 +196,8 @@ function KitapPerdesi(ctx: Baglam, perde: Extract<Perde, { tur: "kitap" }>) {
           perdeAc({
             tur: "cihaz",
             cocukId: cocuk.id,
-            hedef: finalSirada ? `${katalog.title} · Büyük Final Testi` : `${katalog.title} kitabı`,
+            adres: finalSirada && finalYolu ? finalYolu : `/kitap/${perde.bookKey}`,
+            etiket: finalSirada ? `${katalog.title} · Büyük Final Testi` : `${katalog.title} kitabı`,
           })
         }
       >
@@ -213,13 +224,13 @@ function OdulPerdesi(perde: Extract<Perde, { tur: "odul" }>) {
       <div className="flex flex-col items-center pb-4 pt-2 text-center">
         <span className="relative grid place-items-center">
           {perde.kazanildi ? (
-            <span className="absolute h-40 w-40 rounded-full bg-vt-altin-acik/35 blur-3xl" aria-hidden="true" />
+            <span className="absolute h-40 w-40 rounded-full bg-veli-altin-acik/35 blur-3xl" aria-hidden="true" />
           ) : null}
           <span className={`relative ${perde.kazanildi ? "" : "opacity-40 saturate-50"}`}>
             <OdulIkonu tip={perde.odul} anahtar={perde.anahtar} boyut={180} alt="" />
           </span>
         </span>
-        <p className="mt-5 text-base text-vt-govde">{perde.alt}</p>
+        <p className="mt-5 text-base text-veli-govde">{perde.alt}</p>
         <div className="mt-4">
           {perde.kazanildi ? (
             <Cip ton="eylem" ikon="onay">
@@ -265,7 +276,7 @@ function ProfilPerdesi(ctx: Baglam, perde: Extract<Perde, { tur: "profil" }> | n
 }
 
 function ProfilFormu({ isim, avatar, duzenleme }: { isim: string; avatar: string; duzenleme: boolean }) {
-  const { bildir } = useTaslak();
+  const { bildir } = useVeliPaneli();
   const [ad, setAd] = useState(isim);
   const [secili, setSecili] = useState(avatar);
   const [silOnay, setSilOnay] = useState(false);
@@ -356,10 +367,10 @@ function EslesmePerdesi(ctx: Baglam, perde: Extract<Perde, { tur: "eslesme" }>) 
     baslik: `${ilgiEki(cocuk.isim)} cihazını bağlayın`,
     govde: (
       <div className="pt-1">
-        <div className="rounded-[1.5rem] bg-vt-gece px-5 py-7 text-center text-vt-gece-metin">
-          <p className="text-[0.9375rem] text-vt-gece-soluk">Bağlama kodu</p>
-          <p className="mt-2 font-vt-baslik text-[3.25rem] font-medium tabular-nums tracking-[0.18em]">482 913</p>
-          <p className="mt-2 inline-flex items-center gap-1.5 text-[0.875rem] text-vt-altin-acik">
+        <div className="rounded-[1.5rem] bg-veli-gece px-5 py-7 text-center text-veli-gece-metin">
+          <p className="text-[0.9375rem] text-veli-gece-soluk">Bağlama kodu</p>
+          <p className="mt-2 font-veli-baslik text-[3.25rem] font-medium tabular-nums tracking-[0.18em]">482 913</p>
+          <p className="mt-2 inline-flex items-center gap-1.5 text-[0.875rem] text-veli-altin-acik">
             <Ikon ad="saat" boyut={15} />
             10 dakika ve yalnız bir kez geçerli
           </p>
@@ -371,10 +382,10 @@ function EslesmePerdesi(ctx: Baglam, perde: Extract<Perde, { tur: "eslesme" }>) 
             "Bu kodu yazın; cihaz yalnız bu profile bağlanır.",
           ].map((adim, i) => (
             <li key={adim} className="flex gap-3.5">
-              <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-yuzey-2 text-[0.875rem] font-semibold tabular-nums text-vt-govde">
+              <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-yuzey-2 text-[0.875rem] font-semibold tabular-nums text-veli-govde">
                 {i + 1}
               </span>
-              <span className="pt-1 text-base leading-7 text-vt-govde">{adim}</span>
+              <span className="pt-1 text-base leading-7 text-veli-govde">{adim}</span>
             </li>
           ))}
         </ol>

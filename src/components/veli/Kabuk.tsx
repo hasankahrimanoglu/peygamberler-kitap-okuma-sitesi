@@ -1,15 +1,16 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Ikon } from "../ui";
-import { EKRANLAR, useTaslak, type Ekran } from "./baglam";
+import { EKRANLAR, useVeliPaneli, type Ekran } from "./baglam";
 import { CocukYuzu } from "./parcalar";
 import { okumaZamani } from "./veriler";
-import styles from "./veliTaslak.module.css";
+import styles from "./veliPaneli.module.css";
 
 /**
- * Veli paneli kabuğu (TASLAK). Gezinme beş hedeftir; hamburger yok.
+ * Veli paneli kabuğu (PROJE-MODELI 5.2). Gezinme beş hedeftir; hamburger yok.
  *   < 1024px  : üstte sade bar, altta sabit sekme çubuğu (başparmak bölgesi)
  *   1024–1279 : solda ikon + etiketli dar ray (tablet yatay)
  *   ≥ 1280    : solda gece mavisi geniş menü + çocuklar listesi
@@ -33,7 +34,7 @@ function Marka({ kucuk = false }: { kucuk?: boolean }) {
   return (
     <span className="flex items-center gap-3">
       <span
-        className={`grid shrink-0 place-items-center rounded-[0.9rem] bg-gradient-to-br from-[#2a3a7a] to-vt-gece text-vt-altin-acik shadow-[inset_0_0_0_1px_rgb(235_194_106/0.35)] ${
+        className={`grid shrink-0 place-items-center rounded-[0.9rem] bg-gradient-to-br from-[#2a3a7a] to-veli-gece text-veli-altin-acik shadow-[inset_0_0_0_1px_rgb(235_194_106/0.35)] ${
           kucuk ? "h-10 w-10" : "h-11 w-11"
         }`}
       >
@@ -43,8 +44,36 @@ function Marka({ kucuk = false }: { kucuk?: boolean }) {
   );
 }
 
+/** Canlıda gerçek bağlantı (yeni sekmede açılabilir), önizlemede durum değiştiren düğme. */
+function Hedef({
+  ekran,
+  aktif,
+  className,
+  children,
+}: {
+  ekran: Ekran;
+  aktif: boolean;
+  className: string;
+  children: ReactNode;
+}) {
+  const { mod, git } = useVeliPaneli();
+  const rota = EKRANLAR.find((o) => o.ekran === ekran)?.rota ?? "/dashboard";
+  if (mod === "canli") {
+    return (
+      <Link href={rota} aria-current={aktif ? "page" : undefined} className={className}>
+        {children}
+      </Link>
+    );
+  }
+  return (
+    <button type="button" onClick={() => git(ekran)} aria-current={aktif ? "page" : undefined} className={className}>
+      {children}
+    </button>
+  );
+}
+
 function YanMenu() {
-  const { ekran, git, aile, gorunumler } = useTaslak();
+  const { ekran, git, aile, gorunumler } = useVeliPaneli();
 
   return (
     <aside
@@ -54,8 +83,8 @@ function YanMenu() {
       <div className="flex items-center justify-center gap-3 px-1 xl:justify-start">
         <Marka />
         <span className="hidden min-w-0 leading-tight xl:block">
-          <span className="block font-vt-baslik text-[1.1875rem] font-medium text-vt-gece-metin">Keşif Dünyası</span>
-          <span className="block text-[0.8125rem] font-medium text-vt-gece-soluk">Veli Paneli</span>
+          <span className="block font-veli-baslik text-[1.1875rem] font-medium text-veli-gece-metin">Keşif Dünyası</span>
+          <span className="block text-[0.8125rem] font-medium text-veli-gece-soluk">Veli Paneli</span>
         </span>
       </div>
 
@@ -63,33 +92,32 @@ function YanMenu() {
         {EKRANLAR.map((oge) => {
           const aktif = oge.ekran === ekran;
           return (
-            <button
+            <Hedef
               key={oge.ekran}
-              type="button"
-              onClick={() => git(oge.ekran)}
-              aria-current={aktif ? "page" : undefined}
+              ekran={oge.ekran}
+              aktif={aktif}
               className={`group relative flex min-h-[60px] flex-col items-center justify-center gap-1 rounded-2xl px-2 text-[0.75rem] font-semibold transition-colors xl:min-h-12 xl:flex-row xl:justify-start xl:gap-3.5 xl:px-3.5 xl:text-[0.9375rem] ${
                 aktif
-                  ? "bg-white/[0.09] text-vt-gece-metin"
-                  : "text-vt-gece-soluk hover:bg-white/[0.05] hover:text-vt-gece-metin"
+                  ? "bg-white/[0.09] text-veli-gece-metin"
+                  : "text-veli-gece-soluk hover:bg-white/[0.05] hover:text-veli-gece-metin"
               }`}
             >
               {aktif ? (
                 <span
                   aria-hidden="true"
-                  className="absolute left-0 top-1/2 h-6 w-[3px] -translate-x-3 -translate-y-1/2 rounded-full bg-vt-altin-acik xl:-translate-x-5"
+                  className="absolute left-0 top-1/2 h-6 w-[3px] -translate-x-3 -translate-y-1/2 rounded-full bg-veli-altin-acik xl:-translate-x-5"
                 />
               ) : null}
-              <Ikon ad={oge.ikon} boyut={22} className={aktif ? "text-vt-altin-acik" : ""} />
+              <Ikon ad={oge.ikon} boyut={22} className={aktif ? "text-veli-altin-acik" : ""} />
               {oge.etiket}
-            </button>
+            </Hedef>
           );
         })}
       </nav>
 
       {aile.cocuklar.length > 0 ? (
         <div className="mt-8 hidden border-t border-white/10 pt-6 xl:block">
-          <p className="px-3.5 text-[0.8125rem] font-semibold text-vt-gece-soluk">Çocuklar</p>
+          <p className="px-3.5 text-[0.8125rem] font-semibold text-veli-gece-soluk">Çocuklar</p>
           <ul className="mt-2 space-y-1">
             {gorunumler.map((g) => {
               const zaman = okumaZamani(g.ozet.sonAktiviteZamani);
@@ -102,8 +130,8 @@ function YanMenu() {
                   >
                     <CocukYuzu cocuk={g.cocuk} boyut={36} halka="yok" />
                     <span className="min-w-0">
-                      <span className="block truncate text-[0.9375rem] font-semibold text-vt-gece-metin">{g.cocuk.isim}</span>
-                      <span className="block truncate text-[0.8125rem] text-vt-gece-soluk">
+                      <span className="block truncate text-[0.9375rem] font-semibold text-veli-gece-metin">{g.cocuk.isim}</span>
+                      <span className="block truncate text-[0.8125rem] text-veli-gece-soluk">
                         {zaman ? `Son okuma ${zaman}` : "Henüz başlamadı"}
                       </span>
                     </span>
@@ -125,14 +153,14 @@ function YanMenu() {
 
 /** Çocuk ekranına geçiş: canlı panelde `useCocukEkraniGecisi` sorusunu açar. */
 function CocukEkraniDugmesi() {
-  const { gorunumler, perdeAc } = useTaslak();
+  const { gorunumler, perdeAc } = useVeliPaneli();
   if (gorunumler.length === 0) return null;
   return (
     <button
       type="button"
       onClick={() => perdeAc({ tur: "cihaz" })}
       title="Çocuk ekranına geç"
-      className="flex min-h-12 items-center justify-center gap-2.5 rounded-2xl border border-vt-altin-acik/40 px-3 text-[0.9375rem] font-semibold text-vt-altin-acik transition-colors hover:bg-vt-altin-acik/10"
+      className="flex min-h-12 items-center justify-center gap-2.5 rounded-2xl border border-veli-altin-acik/40 px-3 text-[0.9375rem] font-semibold text-veli-altin-acik transition-colors hover:bg-veli-altin-acik/10"
     >
       <Ikon ad="tablet" boyut={20} />
       <span className="hidden xl:inline">Çocuk Ekranına Geç</span>
@@ -148,7 +176,7 @@ function UstBar() {
       <span className="flex items-center gap-3">
         <Marka kucuk />
         <span className="leading-tight">
-          <span className="block font-vt-baslik text-[1.0625rem] font-medium text-murekkep">Keşif Dünyası</span>
+          <span className="block font-veli-baslik text-[1.0625rem] font-medium text-murekkep">Keşif Dünyası</span>
           <span className="block text-[0.75rem] font-medium text-murekkep-soluk">Veli Paneli</span>
         </span>
       </span>
@@ -158,7 +186,7 @@ function UstBar() {
 }
 
 function AltMenu() {
-  const { ekran, git } = useTaslak();
+  const { ekran } = useVeliPaneli();
   return (
     <nav
       aria-label="Veli paneli menüsü"
@@ -167,24 +195,23 @@ function AltMenu() {
       {EKRANLAR.map((oge) => {
         const aktif = oge.ekran === ekran;
         return (
-          <button
+          <Hedef
             key={oge.ekran}
-            type="button"
-            onClick={() => git(oge.ekran)}
-            aria-current={aktif ? "page" : undefined}
+            ekran={oge.ekran}
+            aktif={aktif}
             className={`flex min-h-[60px] flex-col items-center justify-center gap-1 pb-1.5 text-[0.75rem] font-semibold transition-colors ${
               aktif ? "text-murekkep" : "text-murekkep-soluk"
             }`}
           >
             <span
               className={`grid h-8 w-14 place-items-center rounded-full transition-colors ${
-                aktif ? "bg-vurgu-yumusak text-vt-altin-metin" : ""
+                aktif ? "bg-vurgu-yumusak text-veli-altin-metin" : ""
               }`}
             >
               <Ikon ad={oge.ikon} boyut={22} />
             </span>
             {oge.etiket}
-          </button>
+          </Hedef>
         );
       })}
     </nav>
@@ -193,10 +220,10 @@ function AltMenu() {
 
 /** Hesap: e-posta, Aile ve Güvenlik, Şifre Değiştir, Çıkış (PROJE-MODELI 5.2). */
 function HesapDugmesi({ yerlesim }: { yerlesim: "yan" | "ust" }) {
-  const { aile, git, perdeAc, bildir } = useTaslak();
+  const { aile, git, perdeAc, cikisYap } = useVeliPaneli();
   const [acik, setAcik] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const bas = aile.eposta.charAt(0).toLocaleUpperCase("tr-TR");
+  const bas = (aile.eposta.charAt(0) || "V").toLocaleUpperCase("tr-TR");
 
   useEffect(() => {
     if (!acik) return undefined;
@@ -225,7 +252,7 @@ function HesapDugmesi({ yerlesim }: { yerlesim: "yan" | "ust" }) {
     >
       <div className="border-b border-cizgi px-4 py-3">
         <p className="text-[0.8125rem] text-murekkep-soluk">Hesap</p>
-        <p className="truncate text-[0.9375rem] font-semibold">{aile.eposta}</p>
+        <p className="truncate text-[0.9375rem] font-semibold">{aile.eposta || "—"}</p>
       </div>
       {[
         { etiket: "Aile ve Güvenlik", ikon: "kalkan" as const, is: () => git("aile") },
@@ -245,7 +272,7 @@ function HesapDugmesi({ yerlesim }: { yerlesim: "yan" | "ust" }) {
       <button
         type="button"
         role="menuitem"
-        onClick={() => sec(() => bildir("Önizleme: burada oturum kapanır ve giriş sayfası açılır."))}
+        onClick={() => sec(cikisYap)}
         className="flex min-h-12 w-full items-center gap-3 border-t border-cizgi px-4 text-left text-[0.9375rem] font-semibold text-tehlike transition-colors hover:bg-yuzey-2"
       >
         <Ikon ad="cikis" boyut={18} />
@@ -265,14 +292,14 @@ function HesapDugmesi({ yerlesim }: { yerlesim: "yan" | "ust" }) {
           aria-label="Hesap menüsü"
           className="flex min-h-14 w-full items-center justify-center gap-3 rounded-2xl px-2 text-left transition-colors hover:bg-white/[0.05] xl:justify-start xl:px-3"
         >
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-vt-gece-metin font-vt-baslik text-[0.9375rem] font-semibold text-vt-gece">
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-veli-gece-metin font-veli-baslik text-[0.9375rem] font-semibold text-veli-gece">
             {bas}
           </span>
           <span className="hidden min-w-0 flex-1 xl:block">
-            <span className="block truncate text-[0.875rem] font-semibold text-vt-gece-metin">{aile.eposta}</span>
-            <span className="block text-[0.8125rem] text-vt-gece-soluk">Hesap</span>
+            <span className="block truncate text-[0.875rem] font-semibold text-veli-gece-metin">{aile.eposta}</span>
+            <span className="block text-[0.8125rem] text-veli-gece-soluk">Hesap</span>
           </span>
-          <Ikon ad="asagi" boyut={16} className="hidden rotate-180 text-vt-gece-soluk xl:block" />
+          <Ikon ad="asagi" boyut={16} className="hidden rotate-180 text-veli-gece-soluk xl:block" />
         </button>
       ) : (
         <button
@@ -281,7 +308,7 @@ function HesapDugmesi({ yerlesim }: { yerlesim: "yan" | "ust" }) {
           aria-haspopup="menu"
           aria-expanded={acik}
           aria-label="Hesap menüsü"
-          className="grid h-11 w-11 place-items-center rounded-full bg-vt-gece font-vt-baslik text-base font-semibold text-vt-gece-metin"
+          className="grid h-11 w-11 place-items-center rounded-full bg-veli-gece font-veli-baslik text-base font-semibold text-veli-gece-metin"
         >
           {bas}
         </button>
@@ -291,4 +318,3 @@ function HesapDugmesi({ yerlesim }: { yerlesim: "yan" | "ust" }) {
   );
 }
 
-export type { Ekran };

@@ -1,8 +1,9 @@
 import { katalogKitaplari, type DeriveBookRow, type DeriveProgressRow, type GorevDurumSatiri } from "../../lib/derive";
 import type { SecimKaydi } from "../../lib/parent/report";
+import type { VeliAile, VeliCocuk } from "./tipler";
 
 /**
- * Veli paneli taslağının (`/tasarim/veli-panel`) örnek ailesi. Gerçek Supabase
+ * Veli paneli önizlemesinin (`/tasarim/veli-panel`) örnek ailesi. Gerçek Supabase
  * satırlarının biçimindedir; ekranlar canlı panelle aynı türetme
  * fonksiyonlarından (`cocukOzeti`, `buildChildReport`, `kutuphaneListesi` …)
  * geçer. Supabase'e hiçbir şey yazılmaz.
@@ -14,26 +15,7 @@ import type { SecimKaydi } from "../../lib/parent/report";
  */
 export type AileDurumu = "iki" | "tek" | "yeni" | "bos";
 
-export type TaslakCocuk = {
-  id: string;
-  isim: string;
-  avatar_tipi: string;
-  /** Aile ve Güvenlik ekranı için örnek durum */
-  sifresiVar: boolean;
-  bagliCihaz: string | null;
-};
-
-export type TaslakAile = {
-  eposta: string;
-  profilHakki: number;
-  cocuklar: TaslakCocuk[];
-  kitaplar: DeriveBookRow[];
-  ilerleme: Record<string, DeriveProgressRow[]>;
-  gorevler: Record<string, GorevDurumSatiri[]>;
-  secimler: Record<string, SecimKaydi[]>;
-  veliPinVar: boolean;
-  profilSifresiAcik: boolean;
-};
+export type { VeliAile, VeliCocuk } from "./tipler";
 
 /**
  * Örnek tarihler takvime göre kurulur ("dün akşam 20.15") ki ekranda doğal
@@ -76,7 +58,7 @@ function satir(
   };
 }
 
-const ELIF: TaslakCocuk = {
+const ELIF: VeliCocuk = {
   id: "ornek-elif",
   isim: "Elif",
   avatar_tipi: "avatar-2",
@@ -84,7 +66,7 @@ const ELIF: TaslakCocuk = {
   bagliCihaz: "Elif'in tableti",
 };
 
-const OMER: TaslakCocuk = {
+const OMER: VeliCocuk = {
   id: "ornek-omer",
   isim: "Ömer",
   avatar_tipi: "avatar-1",
@@ -92,7 +74,7 @@ const OMER: TaslakCocuk = {
   bagliCihaz: null,
 };
 
-export function ornekAile(durum: AileDurumu): TaslakAile {
+export function ornekAile(durum: AileDurumu): VeliAile {
   const temel = {
     eposta: "aile@ornek.com",
     profilHakki: 3,

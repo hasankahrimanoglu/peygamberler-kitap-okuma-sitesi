@@ -29,7 +29,7 @@ export default function HataOnizleme() {
   const donus =
     ayar.dunya === "cocuk"
       ? { adres: "/tasarim/ana-ekran", etiket: "Haritaya Dön" }
-      : { adres: "/tasarim/veli-rapor", etiket: "Veli Paneline Dön" };
+      : { adres: "/tasarim/veli-panel", etiket: "Veli Paneline Dön" };
 
   return (
     <HataEkrani

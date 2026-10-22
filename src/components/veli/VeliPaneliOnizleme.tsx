@@ -13,7 +13,7 @@ import { Bildirim } from "./parcalar";
 import { Perdeler } from "./Perdeler";
 import { Sohbet } from "./Sohbet";
 import { cocukGorunumu } from "./veriler";
-import styles from "./veliTaslak.module.css";
+import styles from "./veliPaneli.module.css";
 
 type Baslangic = {
   durum: AileDurumu;
@@ -23,10 +23,13 @@ type Baslangic = {
 };
 
 /**
- * Veli paneli taslağının kökü. Ekranlar arası geçiş adres çubuğuna yazılır
- * (`?ekran=sohbet`), böylece her ekranın bağlantısı paylaşılabilir.
+ * Veli paneli ÖNİZLEMESİNİN kökü (`/tasarim/veli-panel`): canlı panelle aynı
+ * ekranlar, örnek aileyle. Hiçbir işlem Supabase'e gitmez; işlem yerine ne
+ * olacağı kısa bir notla söylenir. Ekranlar arası geçiş adres çubuğuna yazılır
+ * (`?ekran=sohbet`), böylece her ekranın bağlantısı paylaşılabilir. Canlı kök:
+ * `VeliPaneliCanli.tsx`.
  */
-export function VeliPanelTaslagi({ baslangic }: { baslangic: Baslangic }) {
+export function VeliPaneliOnizleme({ baslangic }: { baslangic: Baslangic }) {
   const aile = useMemo(() => ornekAile(baslangic.durum), [baslangic.durum]);
   const gorunumler = useMemo(() => aile.cocuklar.map((c) => cocukGorunumu(aile, c)), [aile]);
 
@@ -36,12 +39,12 @@ export function VeliPanelTaslagi({ baslangic }: { baslangic: Baslangic }) {
   );
   const [gelisimSekmesi, setGelisimSekmesi] = useState<GelisimSekmesi>(baslangic.sekme);
   const [perde, setPerde] = useState<Perde | null>(null);
-  const [bildirim, setBildirim] = useState<string | null>(null);
-  const [ayarlar, setAyarlar] = useState({ profilSifresiAcik: aile.profilSifresiAcik, buCihazCocukta: false });
+  const [bildirim, setBildirim] = useState<{ metin: string; ton: "bilgi" | "hata" } | null>(null);
+  const [ayarlar, setAyarlar] = useState({ profilSifresiAcik: Boolean(aile.profilSifresiAcik), buCihazCocukta: false });
   const zamanlayici = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const bildir = useCallback((metin: string) => {
-    setBildirim(metin);
+  const bildir = useCallback((metin: string, ton: "bilgi" | "hata" = "bilgi") => {
+    setBildirim({ metin, ton });
     if (zamanlayici.current) clearTimeout(zamanlayici.current);
     zamanlayici.current = setTimeout(() => setBildirim(null), 3800);
   }, []);
@@ -70,8 +73,10 @@ export function VeliPanelTaslagi({ baslangic }: { baslangic: Baslangic }) {
 
   const deger = useMemo(
     () => ({
+      mod: "onizleme" as const,
       aile,
       gorunumler,
+      yukleniyor: false,
       ekran,
       git,
       seciliCocukId,
@@ -81,6 +86,7 @@ export function VeliPanelTaslagi({ baslangic }: { baslangic: Baslangic }) {
       perdeAc: setPerde,
       perdeKapat: () => setPerde(null),
       bildir,
+      cikisYap: () => bildir("Önizleme: burada oturum kapanır ve giriş sayfası açılır."),
       ayarlar,
       setAyarlar,
     }),
@@ -99,8 +105,8 @@ export function VeliPanelTaslagi({ baslangic }: { baslangic: Baslangic }) {
     <Baglam.Provider value={deger}>
       <div
         className={styles.tema}
-        // Ortak bileşenler (Buton …) başlık fontunu --font-baloo'dan alır; taslakta arayüz fontuna bağlanır.
-        style={{ "--font-baloo": "var(--font-vt-govde)" } as CSSProperties}
+        // Ortak bileşenler (Buton …) başlık fontunu --font-baloo'dan alır; panelde arayüz fontuna bağlanır.
+        style={{ "--font-baloo": "var(--font-veli-govde)" } as CSSProperties}
       >
         <Kabuk>
           <AnimatePresence mode="wait" initial={false}>
@@ -116,7 +122,7 @@ export function VeliPanelTaslagi({ baslangic }: { baslangic: Baslangic }) {
           </AnimatePresence>
         </Kabuk>
         <Perdeler perde={perde} />
-        <Bildirim metin={bildirim} />
+        <Bildirim metin={bildirim?.metin ?? null} ton={bildirim?.ton} />
       </div>
     </Baglam.Provider>
   );

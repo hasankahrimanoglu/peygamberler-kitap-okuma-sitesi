@@ -10,10 +10,10 @@ import {
 import { buildChildReport, type ChildReport } from "../../lib/parent/report";
 import { parentReportBooks, type ParentFaqItem } from "../../data/books";
 import { bolumKapagi } from "../../lib/varlikYollari";
-import type { TaslakAile, TaslakCocuk } from "./ornekAile";
+import type { VeliAile, VeliCocuk } from "./tipler";
 
 /**
- * Taslak ekranlarının görünüm modeli. Hepsi canlı panelin kullandığı saf
+ * Veli paneli ekranlarının görünüm modeli. Hepsi panelin eskiden beri kullandığı saf
  * türetmelerin üstüne kurulur; yeni bir veri kaynağı yoktur. Çocuğun seçtiği
  * şık, oran veya puan hiçbir yerde taşınmaz (PROJE-MODELI 3.8, S5).
  */
@@ -45,7 +45,7 @@ export type Yolculuk = {
 };
 
 export type CocukGorunumu = {
-  cocuk: TaslakCocuk;
+  cocuk: VeliCocuk;
   ozet: CocukOzeti;
   rapor: ChildReport;
   aktif: Yolculuk | null;
@@ -58,7 +58,7 @@ function temizBaslik(metin: string) {
   return metin.replace(/\s+/g, " ").trim();
 }
 
-export function cocukGorunumu(aile: TaslakAile, cocuk: TaslakCocuk): CocukGorunumu {
+export function cocukGorunumu(aile: VeliAile, cocuk: VeliCocuk): CocukGorunumu {
   const ilerleme = aile.ilerleme[cocuk.id] ?? [];
   const ozet = cocukOzeti(ilerleme, aile.kitaplar);
   const rapor = buildChildReport(cocuk, ilerleme, aile.kitaplar, aile.secimler[cocuk.id] ?? []);
@@ -197,7 +197,7 @@ export function aileCumleleri(gorunumler: CocukGorunumu[]): string[] {
 
 export type Gelisme = {
   anahtar: string;
-  cocuk: TaslakCocuk;
+  cocuk: VeliCocuk;
   tip: "rozet" | "madalya" | "gorev";
   baslik: string;
   alt: string;
@@ -254,7 +254,7 @@ export type SohbetKitabi = {
   baslik: string;
   bitti: boolean;
   sonOkuma: string | null;
-  /** Bitirilmiş bölümler, en yeni önce */
+  /** Bitirilmiş bölümler, en yeni önce (ekranda yalnız ilki — 4.1/19) */
   bolumler: BolumOzeti[];
   kitapSonuSorulari: string[];
   gozlem: string | null;

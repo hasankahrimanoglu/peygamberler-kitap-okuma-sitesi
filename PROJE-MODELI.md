@@ -126,6 +126,22 @@ Görsel dosyası gerekmez: anahtar unvan adından türetilir ve yol
   normal metin için erişilebilirlik sınırı 4,5:1. Yeni değer zeminde 4,98,
   kartta 5,29, bej panelde 4,61. E-posta şablonundaki aynı renk de değişti.)*
 
+> **REVİZE — 22 Eki 2026 (Hasan, veli paneli yeniden tasarımı; bkz. 3.8, 3.9,
+> 5.2 ve Karar Kaydı):** veli paneli (`/dashboard`) kendi kalibre edilmiş
+> paletini kullanır; değerler `src/components/veli/veliPaneli.module.css`
+> `.tema` sınıfındadır (tek kaynak), Tailwind'de `veli-*` renkleri olarak
+> çağrılır. Krem–yeşil–altın kimliği korunur; üç fark vardır:
+> - **Gece mavisi köprü** (#172350): karşılama kartı ve ≥1024 px yan menü.
+>   Çocuk dünyasının gecesiyle aynı aile, panelde yalnız çerçeve/vurgu alanı.
+> - **Daha net mürekkep:** başlık #271E17, gövde #4A3C31, ikincil #6E5C4D
+>   (kartta 6,3:1). Altın (#C9982E) krem üstünde yalnız ikon ve çizgidir;
+>   altın renkli metin #8A6416'dır (5,3:1).
+> - **Sohbet tonu** (kiremit #A4492D + açık zemin): yalnız aile sohbeti
+>   alanlarında. Renk tek başına anlam taşımaz; her tonun yanında ikon vardır.
+> - Kenar çizgisi yerine iki katlı yumuşak gölge; kart içinde kart yok.
+> Giriş, şifre ve tanıtım sayfaları `.tema-veli` değerlerinde kalır (tonlar
+> yakın); birleştirme ayrı bir karardır.
+
 **Tailwind opaklık eki (DÜZELTME — 20 Eki 2026).** Tema renkleri `var(--x)`
 olduğu için Tailwind 3 `border-eylem/30` gibi sınıfları hiç üretmiyordu: veli
 panelinde 24 sınıf boştu (metin kutularında varsayılan **mavi** odak halkası,
@@ -210,6 +226,11 @@ sayfa içine gömülü hex değeri bırakılmaz.
   aynı gölge mantığı, aynı rozet/madalya çizim stili.
 - Başlıklarda yuvarlak hatlı font; paragraf ve hikâye metninde okunabilirliği
   yüksek sade bir font. Her yerde dekoratif font KULLANILMAZ.
+  *(REVİZE 22 Eki 2026 — Hasan: **veli paneli** başlıkları Literata'nın optik
+  boyutlu kesimi (tanıtım sayfası başlıklarıyla ve hikâye yazısıyla aynı aile),
+  arayüz metni Figtree. Yuvarlak başlık fontu çocuk dünyasında kalır. Fraunces
+  ve Newsreader Türkçede "fi" harflerini bitiştirip ı/i farkını bozduğu için
+  elendi. Yazılar `src/components/veli/yazilar.ts`'te tanımlıdır.)*
 - Dekorasyon (kandil, yıldız, süsleme) bölüm kapağında güçlü, hikâye
   sayfalarında hafif. Odak daima içerik.
 
@@ -680,6 +701,25 @@ değildir; çocuk başına **okuma yolculuğu özeti** gösterir:
   menü daha büyük masaüstünde açılır. İşlevsel etiketler okunabilir boyutta,
   dokunma alanları Bölüm 3.5 standardında kalır.
 
+> **REVİZE — 22 Eki 2026 (Hasan, veli paneli yeniden tasarımı).** Yukarıdaki
+> ilkeler (çocuk başına yolculuk özeti, puan/KPI/kardeş kıyası yok, dört soru)
+> korunur; düzen değişti. Ana Sayfa sırası velinin sorularını izler:
+> 1. **Karşılama kartı** (gece mavisi): günün saatine göre selam, her çocuk için
+>    tek gözlem cümlesi ("Elif dün akşam Hz. İbrahim kitabının 3. bölümünü
+>    bitirdi"), "Bu Akşamın Sohbeti" düğmesi; geniş ekranda çocukların okuduğu
+>    kitapların kapakları.
+> 2. **Çocuk kartı:** üstte son bitirilen bölümün açılış sahnesi (16:9) ve
+>    üzerinde avatar + ad + unvan; altında kitap, **bölüm yolu** (her bölüm bir
+>    parça, yüzde yok), sıradaki bölüm, son rozet, güncel görev ve "Okumaya
+>    Devam Et". Tablet yatay ve masaüstünde sahne solda, bilgi sağda; mobilde alt
+>    alta. "Profili Düzenle" karttan Aile sayfasına taşındı.
+> 3. **Bu akşamın sohbeti:** son bitirilen bölümün "Sen Olsaydın" sorusu, bölüm
+>    özeti ve sabit sohbet önerisi (4.1/19). Çocuğun seçtiği şık gösterilmez.
+> 4. **Son gelişmeler:** zamanı bilinen rozet, madalya ve görev olayları,
+>    yeniden eskiye (en fazla 5). Sıralama zamana göredir, çocuklara göre değil.
+> 5. **Son eklenen kitaplar** ve kompakt "Çocuk profili ekle" satırı.
+> Zaman her yerde aynı dille yazılır: "bu sabah", "dün akşam", "4 gün önce".
+
 ### 3.9 Veli alt sayfaları görsel tutarlılığı (ONAY — 18 Temmuz 2026)
 
 Kütüphane, Ödüller ve Gelişim Raporları ana sayfadaki sakin ve geniş kart
@@ -705,6 +745,35 @@ etmez:
 - İşlevsel gövde metni 16px hedefini, buton ve dokunma alanları Bölüm 3.5'i
   korur. Rapor metinleri gözlem bildirir; başarı puanı veya kesin çocuk
   değerlendirmesi üretmez.
+
+> **REVİZE — 22 Eki 2026 (Hasan, veli paneli yeniden tasarımı).** Alt sayfalar:
+> - **Sohbet** (`/dashboard/sohbet`, YENİ ana menü öğesi): raporun beşinci
+>   sekmesindeki Sohbet Önerileri buraya taşındı. Öne çıkan "Bu akşam için"
+>   kartı (en son okunan kitabın son bitirilen bölümü: sahne, özet, soru, sabit
+>   öneri, "Çocuğunuz sorarsa"), okuduğu diğer kitapların yine yalnız son
+>   bölümü (KARAR 19 Eki 2026 korunur: "yalnız son bölüm gösterilir"), biten
+>   kitaplar için kitap sonu soruları ve gözlem notu.
+> - **Gelişim** (`/dashboard/gelisim`): Gelişim Raporu ile Ödüller birleşti.
+>   Profil şeridi (avatar, tek cümle özet, güncel unvan + sıradaki unvan) ve
+>   üç sekme: **Kitaplar** (okuduğu kitaplar bölüm yoluyla; bitirdikleri
+>   madalya, Büyük Final Testi sonucu ve kitap sonu gözlemiyle; veli bilgi notu
+>   altta) · **Ödüller** (unvan yolu, başlanan kitapların madalyaları, başlanan
+>   kitapların rozetleri — 216 kilitli rozetlik duvar yok) · **Görevler**
+>   (Listesinde / Tamamladı). "Genel Bakış" sekmesi kalktı; özeti profil şeridi
+>   ve Ana Sayfa verir.
+> - **Kütüphane**: tek sütun liste yerine **kapak rafı** (mobil 2, tablet 3–4,
+>   masaüstü 5 sütun). Kapak, ad, alt başlık ve durum (bölüm yolu çubuğu /
+>   Tamamlandı / Final Testi kaldı / bölüm sayısı). "Yeni" etiketi çocuk
+>   tarafıyla aynı kuraldan gelir. Kitaba dokununca ayrıntı ve eylem alttan
+>   (geniş ekranda sağdan) açılır; eylem durum diline uyar (3.4). Filtre:
+>   Tümü · Devam Eden · Tamamlanan · Başlanmamış. 12 kitapta arama kutusu
+>   gereksiz olduğu için kalktı.
+> - **Aile ve Güvenlik** (`/dashboard/ayarlar`, ana menüde "Aile"): üstte üç
+>   durum (veli PIN'i, profil şifresi, bağlı cihaz), sonra Çocuklar (profil
+>   düzenleme buradan açılır) · Bu cihaz · Çocuğun kendi cihazı · Ortak
+>   tablette profil şifresi · Veli PIN'i · Hesap. Geniş ekranda yanda "Aile
+>   cihazları nasıl çalışır?" kartı. Kurallar 3.11 ile aynıdır.
+> - Çocuk seçici tek çocukta görünmez; seçim sayfalar arasında korunur.
 
 ### 3.10 Çocuk arayüzü sadeleştirme (KARAR — 11–12 Ekim 2026, Hasan)
 
@@ -1393,7 +1462,7 @@ bağlanmış cihaz erişir.**
 | 16 | Bölüm içi karar akışı (KARAR 15 Tem 2026) | "Sen Olsaydın" bağımsız bir bölüm sonu sorusu DEĞİLDİR; hikâyenin karar/doruk noktasına yerleşir. Akış: **Hikâye — 1. Kısım → Sen Olsaydın → Hikâye Devam Ediyor → Seçimini Karşılaştır**. Seçim hikâyeyi DALLANDIRMAZ (tek hikâye); doğru cevap seçim anında AÇIKLANMAZ; hikâye devamı bittikten sonra yalnızca **seçilen şıkkın** karşılaştırma metni gösterilir (her şık için ayrı metin içerikte hazır). Seçim aynı okuma oturumu içinde tutulur (kalıcı kayıt ayrı iştir — bkz. S5). *(REVİZE 20 Eki 2026, Hasan: seçim yalnız **sayfa yenilenince** korunur; bölüm haritadan ("Tekrar Oku") ya da başka bölümden açılınca soru yeniden cevaplanır — ilk seçim S5 kaydında kalır, çocuk karar anında yeniden düşünebilir)* | Yok — books.ts + oturum içi state |
 | 17 | "Bugüne Taşı" görev takibi (KARAR 15 Tem 2026) | Görev KOŞULLUDUR (her bölümde değil; kitabın yaklaşık %40–50'sinde görev bulunması editoryal hedeftir, teknik sınır olarak kodlanmaz) ve GÖNÜLLÜDÜR. Çocuk görevde "Görevi Listeme Ekle / Şimdilik Değil" seçer; eklediği görevleri "Görevlerim" ekranında görür, "Görevi Tamamladım" ile işaretler; Tamamlandı/Tamamlanmadı durumu KALICI saklanır (öz bildirim yeterli, kanıt istenmez). Görev; bölüm rozetinin, madalyanın, sonraki kitabın veya ilerlemenin ŞARTI DEĞİLDİR. Son tarih, ceza, seri YOK | Yeni tablo (bkz. 7.3 — Faz 6.1) |
 | 18 | Veli tarafında görev görünürlüğü (KARAR 15 Tem 2026 akşam) | Veli, çocuğun aldığı TÜM görevleri ve durumlarını Gelişim Raporu'ndaki **Görevler sekmesinden** görür (Alındı / Tamamlandı, hangi kitap-bölüm, tarih). Ana Sayfa kartı ise yalnız EN GÜNCEL tek görevi durum çipiyle ("Alındı"/"Tamamlandı") gösterir — tam liste değil. Veli görevleri yalnız GÖRÜR, düzenlemez/tamamlamaz (öz bildirim çocuğundur). Rapor dili gözlem bildirir; tamamlanmamış görev eksiklik/başarısızlık olarak sunulmaz | Yok — `profile_tasks`'tan türetilir |
-| 19 | Bölüm bölüm veli sohbeti (KARAR 19 Eki 2026) | Gelişim Raporu → Sohbet Önerileri'nde **okunan** (başlanmış, finali bitmemiş) her kitap için bir kart: kitapta ulaşılan son bölüm (numara, ad, `ozet`), o bölümün "Sen Olsaydın" sorusu ("Bu bölümde düşündüğü soru") ve sabit öneri ("Akşam sohbeti için: Bu soruyu ona siz de sorun ve cevabını dinleyin. Sonra hikâyede ne olduğunu birlikte hatırlayabilirsiniz."). Bölüm tamamlanan bölüm sayısından türer; kaydırma konumuna bakılmaz ("Kaldığın yer" değildir), tekrar okunan eski bölüm gösterilmez. **Yalnız son bölüm** gösterilir. **Çocuğun seçtiği şık gösterilmez** — özellik S5'e bağlı değildir; veli göreceğini bilen çocuk "beklenen" şıkkı seçer. Kitabın "Çocuğunuz Sorarsa" yönlendirmeleri kitap okunurken de görünür (zor soru kitabın ortasında gelir); okunan ve biten kitapta **kapalı açılır liste**dir. Kitaplar sekmesi okunan kitapları da listeler (kapak, ilerleme, kitapta gelinen bölüm, son okuma; bölümleri biten ama finali kalan kitapta "Büyük Final Testi kaldı"). Ana Sayfa kartı değişmez (3.8). Girişsiz önizleme: `/tasarim/veli-rapor` | Yok — books.ts + user_progress |
+| 19 | Bölüm bölüm veli sohbeti (KARAR 19 Eki 2026) | Gelişim Raporu → Sohbet Önerileri'nde **okunan** (başlanmış, finali bitmemiş) her kitap için bir kart: kitapta ulaşılan son bölüm (numara, ad, `ozet`), o bölümün "Sen Olsaydın" sorusu ("Bu bölümde düşündüğü soru") ve sabit öneri ("Akşam sohbeti için: Bu soruyu ona siz de sorun ve cevabını dinleyin. Sonra hikâyede ne olduğunu birlikte hatırlayabilirsiniz."). Bölüm tamamlanan bölüm sayısından türer; kaydırma konumuna bakılmaz ("Kaldığın yer" değildir), tekrar okunan eski bölüm gösterilmez. **Yalnız son bölüm** gösterilir. **Çocuğun seçtiği şık gösterilmez** — özellik S5'e bağlı değildir; veli göreceğini bilen çocuk "beklenen" şıkkı seçer. Kitabın "Çocuğunuz Sorarsa" yönlendirmeleri kitap okunurken de görünür (zor soru kitabın ortasında gelir); okunan ve biten kitapta **kapalı açılır liste**dir. Kitaplar sekmesi okunan kitapları da listeler (kapak, ilerleme, kitapta gelinen bölüm, son okuma; bölümleri biten ama finali kalan kitapta "Büyük Final Testi kaldı"). Ana Sayfa kartı değişmez (3.8). Girişsiz önizleme: `/tasarim/veli-rapor`. *(REVİZE 22 Eki 2026: Sohbet Önerileri kendi sayfasına (`/dashboard/sohbet`) taşındı, son bölümün sorusu Ana Sayfa'da da "Bu akşamın sohbeti" olarak görünür; "yalnız son bölüm" kuralı aynen geçerli; önizleme `/tasarim/veli-panel?ekran=sohbet` — 3.8, 3.9.)* | Yok — books.ts + user_progress |
 | 20 | Karma anlatım ve hikâye içi bloklar (KARAR 21–22 Eki 2026) | Bütün kitapların hikâyeleri karma tarzda yazılır (içerik brifi §7.10): görünür, sıcak anlatıcı; sahne kurma; merak kancaları; Kur'an ve hadis bilgisini değiştirmeyen kurgu. Okuma ekranına üç blok eklenir: Işıl balonu, soru başlığı, "Biliyor muydun?" kutusu (5.1). **Veli bilgi notu:** veli tarafında tek cümle: "Hikâyeler, çocukların daha iyi anlaması için canlı bir anlatımla yazılmıştır; Kur'an ve hadislerde bildirilen bilgiler değiştirilmeden aktarılır." "Kurgu" kelimesi kullanılmaz; veli bunu uydurma bilgi gibi algılayabilir (Hasan, 22 Eki 2026). Önerilen yer: Gelişim Raporu'nun Kitaplar sekmesinin altında tek satır. **Sıra:** okuma ekranına bloklar → Hz. Âdem'in yeniden yazımı (`-ICERIK-v2.md`) → diğer 13 kitabın taraması ve yeniden yazımı. Bir kitabın metni kesinleşmeden o kitap seslendirilmez | Yok — `books.ts` |
 | 21 | İki eksenli kaynak ölçeği (KARAR 22 Eki 2026) | İçerik üretiminde her dinî/tarihî bilgi iki soruyla sınıflanır (içerik brifi §4.3): **kaynak kademesi** (A Kur'an · B sahih hadis · C yaygın rivayet ve müfessir yorumu · D kullanılmaz) ve **8–11 yaşa uygunluk** (U1 uygun · U2 yumuşatılarak · U3 veli raporu · U4 hiçbir yerde). Hikâyenin omurgası A, gerekirse B; C az ve rivayet kalıbıyla. Hadis Diyanet *Hadislerle İslâm* ya da Buhârî/Müslim künyesiyle doğrulanır, ajan derece hükmü vermez (§16/17b). Âyet/hadis alıntısına rivayet eklenmez, alıntı anlamı değiştirecek yerden kesilmez (§16/17c). Katalogdaki K1–K4 kitabın, bu ölçek tek tek bilginin kaynak durumunu tarif eder. Yayındaki kitaplara geriye dönük toplu tarama yok; karma tarz yeniden yazımında uygulanır | Yok — içerik kuralı |
 
@@ -1553,28 +1622,40 @@ Okuma ekranı düzeni (**REVİZE — 26 Temmuz 2026, Hasan onayı; Faz 6.2**):
 
 | Rota | Ekran | Not |
 |---|---|---|
-| `/dashboard` | Ana Sayfa (çocuk kartları + kısa bakış) | Sekme yapısının merkezi |
-| `/dashboard/kutuphane` | Kütüphane | Filtre: çocuk + durum; arama |
-| `/dashboard/oduller` | Ödüller | Rozetler / Madalyalar / Unvanlar sekmeleri |
-| `/dashboard/rapor/[profileId]` | Gelişim Raporu | Tam sayfa, sekmeli: Genel Bakış · Kitaplar · Ödüller · **Görevler** · Sohbet Önerileri |
-| `/dashboard/ayarlar` | Aile ve Güvenlik | YENİ (Faz 7, 3.11) — veli PIN'i, profil şifresi ayarı ve çocuk şifreleri, cihaz bağlama ve bağlı cihazlar, bu cihazda çocuk modu. Hesap menüsünden açılır |
+| `/dashboard` | Ana Sayfa | **REVİZE 22 Eki 2026:** karşılama kartı, çocuk kartları, bu akşamın sohbeti, son gelişmeler (3.8) |
+| `/dashboard/sohbet` | Aile Sohbeti | **YENİ 22 Eki 2026** — bölüm bölüm sohbet soruları ve kitap sonu sohbeti (3.9) |
+| `/dashboard/gelisim` | Gelişim | **YENİ 22 Eki 2026** — Kitaplar · Ödüller · Görevler; `?cocuk={profilId}`, `?sekme=oduller\|gorevler` (3.9) |
+| `/dashboard/kutuphane` | Kütüphane | Kapak rafı + durum filtresi; kitap ayrıntısı alttan/sağdan açılır (3.9) |
+| `/dashboard/ayarlar` | Aile ve Güvenlik | YENİ (Faz 7, 3.11) — veli PIN'i, profil şifresi ayarı ve çocuk şifreleri, cihaz bağlama ve bağlı cihazlar, bu cihazda çocuk modu. **REVİZE 22 Eki 2026:** ana menüde "Aile"; çocuk profilleri ve profil düzenleme de burada. Adres değişmedi (`?pin=gerekli` akışı buraya gelir) |
+| `/dashboard/profil-ekle` | Çocuk profili ekle | Aile sayfasından ve Ana Sayfa'daki ekleme satırından açılır |
+| ~~`/dashboard/oduller`~~, ~~`/dashboard/rapor`~~, ~~`/dashboard/rapor/[profileId]`~~ | — | **22 Eki 2026:** Gelişim'e yönlendirir (eski bağlantılar kırılmasın) |
 | `/login` | Veli girişi | **REVİZE — 20 Eki 2026 (Hasan):** hesap sayfalarıyla (`/sifre-belirle`, `/sifremi-unuttum`) aynı çerçeve: krem zemin, logo, ortada tek kart, "siz" dili. Kartta "Veli Girişi", e-posta, şifre, yeşil "Giriş Yap", "Şifremi unuttum". Eski iki eşit kart ("Yönetim Paneli" + "Keşif Haritası") kalktı: gelenlerin çoğu giriş yapacak veli; tableti çocuğa verme açıklaması gereksizdi (giriş sonrası "Bu cihazı çocuğunuz kullanacak mı?" sorusu bunu yapar). Çocuğun kendi cihazı için kartın altında ikincil satır ve çerçeve düğme **Cihaz Kodunu Gir** (`/cihaz-bagla`). Altta "Ana sayfaya dön". Açık oturumu tanıyıp yönlendirme ve `?cocuk=1` notu aynen kalır (3.11) |
 | `/sifre-belirle` | Şifre belirleme | YENİ (Faz 7, 3. adım) — e-postadaki tek kullanımlık bağlantı; süresi dolmuşsa yenisi istenir |
 | `/sifremi-unuttum` | Şifremi unuttum | YENİ (Faz 7, 3. adım) — giriş sayfasından; "e-postayı yeniden gönder" de budur |
 | `/yonetim` | Yönetim (satışlar) | YENİ (Faz 7, 3. adım) — yalnız yönetici; elden satış + son siparişler; sitede bağlantısı yok |
 
-**Profili Düzenle penceresi (`/dashboard` çocuk kartı → Profili Düzenle):**
+**Profili Düzenle penceresi (`/dashboard` çocuk kartı → Profili Düzenle;
+REVİZE 22 Eki 2026: Aile ve Güvenlik → Çocuklar → çocuğun satırı, alttan/sağdan
+açılan panel; avatar seçimi de eklendi):**
 çocuğun **ismi**, çocuk kullanıcı adı ve şifresi, **profil fotoğrafı** ve profil
 silme tek pencerede toplanır (GENİŞLETİLDİ — 8 Ağustos 2026, Hasan). Önceden
 yalnız kullanıcı adı ve şifre değiştirilebiliyordu; isim yanlış girildiğinde
 profili silip yeniden kurmak gerekiyordu. Kaydet tek işlemdir: fotoğraf da isim
 de aynı anda yazılır, Vazgeç hiçbir şeyi değiştirmez.
 
-Navigasyon:
-- **Masaüstü/tablet yatay:** sol dikey menü (tablette daraltılabilir).
-- **Mobil:** alt sabit navigasyon, en fazla 5 sekme: Ana Sayfa, Kütüphane,
-  Ödüller, Raporlar, Hesap.
-- Sağ üst hesap menüsü: Hesap Bilgileri, Şifre Değiştir, Çıkış.
+Navigasyon *(REVİZE 22 Eki 2026 — Hasan)*:
+- **Beş hedef:** Ana Sayfa · Sohbet · Gelişim · Kütüphane · Aile. Hamburger yok.
+- **< 1024 px:** üstte sade bar (marka + hesap düğmesi), altta sabit sekme
+  çubuğu; etkin sekme altın zeminli ikonla gösterilir.
+- **1024–1279 px (tablet yatay):** solda ikon + etiketli dar ray (96 px).
+- **≥ 1280 px:** solda gece mavisi yan menü (272 px): marka, beş hedef,
+  çocukların kısa listesi (son okuma), "Çocuk Ekranına Geç", hesap.
+- Hesap menüsü: e-posta, Aile ve Güvenlik, Şifre Değiştir, Çıkış Yap.
+- Çocuk ekranına her geçiş `useCocukEkraniGecisi` sorusundan geçer (3.11).
+- Önizleme (giriş gerektirmez, örnek aile, Supabase'e yazmaz):
+  `/tasarim/veli-panel` (`?ekran=ana|sohbet|gelisim|kutuphane|aile`,
+  `?durum=tek|yeni|bos`). Canlı panel ve önizleme aynı ekran bileşenlerini
+  kullanır (`src/components/veli/`); sayfalar yalnız veri ve eylem bağlar.
 
 ### 5.3 Ekran metni düzeltmeleri
 
@@ -2502,6 +2583,32 @@ Kurallar:
       hadisi; künye Faz 1'de doğrulanır) Hz. İsmail ya da Hz. İbrahim'e;
       anne-baba hakkı (İsrâ 17/23) Hz. Yusuf–Yâkub ya da Hz. İbrahim–İsmail'e.
       Peygamber sıfatları ve melekler set düzeyindedir (4.2/S6).
+
+### 22 Ekim 2026 (veli paneli yeniden tasarımı — Hasan onayı, bkz. 3.1, 3.2, 3.8, 3.9, 5.2)
+
+- [x] **Sorun:** her şey aynı kenarlıklı kartta, iç içe kartlar; göze çarpan
+      odak yoktu. Baloo başlıklar yetişkin paneline çocuk ekranı havası
+      veriyordu. Ürünün asıl farkı aile sohbeti raporun beşinci sekmesinde,
+      Aile ve Güvenlik hesap menüsünde saklıydı. Kütüphane, Ödüller ve
+      Raporlar'da ayrı ayrı çocuk seçiliyordu. Bölüm sahneleri ve kapaklar
+      panelde kullanılmıyordu.
+- [x] **Karar:** taslak `/tasarim/veli-panel`'de sunuldu, Hasan onayladı ve
+      canlıya alınmasını istedi. Beş hedefli gezinme (Ana Sayfa · Sohbet ·
+      Gelişim · Kütüphane · Aile); Literata + Figtree; krem + gece mavisi +
+      altın; bölüm yolu (yüzde yok); Kütüphane kapak rafı; Gelişim = rapor +
+      ödüller. Tasarım araştırması: Oura, Google Family Link, Epic, Lingokids,
+      NN/g pano ve gezinme araştırmaları (ilk blok tek özet; ilerleme uzunlukla,
+      puanla değil; ayarlarda her satır kendi durumunu söyler).
+- [x] **Uygulama:** ekranlar `src/components/veli/` (görünüm), canlı veri ve
+      eylemler `VeliPaneliCanli.tsx` (ParentDataProvider + gerçek akışlar),
+      önizleme `VeliPaneliOnizleme.tsx` (örnek aile). Güvenlik akışlarının
+      (veli PIN'i, çocuk şifresi, eşleme kodu, cihazı çocuğa verme) mantığı
+      değişmedi, yalnız görünümü. Eski adresler Gelişim'e yönlenir. Eski
+      bileşenler (`VeliKabuk`, `VeliNav`, `HesapMenusu`, `CocukKarti`,
+      `VeliCocukSecici`, `VeliSayfaBasligi`, `Rapor*Sekmesi`) ve
+      `/tasarim/veli-rapor` kaldırıldı.
+- [x] **Küçük yenilikler:** profil düzenlemede avatar seçimi; sabit sohbet
+      önerisi metni değişmedi; zaman dili ("dün akşam") tek fonksiyondan.
 
 ## 11. İçerik Durumu
 

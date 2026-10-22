@@ -2,18 +2,19 @@
 
 import type { ReactNode } from "react";
 import { Buton, Ikon } from "../ui";
-import { useTaslak } from "./baglam";
+import { useVeliPaneli } from "./baglam";
 import { Anahtar, CocukYuzu, IkonKutusu, Satir, SayfaBasligi, Yuzey } from "./parcalar";
-import styles from "./veliTaslak.module.css";
+import styles from "./veliPaneli.module.css";
 
 /**
- * Aile ve Güvenlik (TASLAK). Canlı panelde hesap menüsünün içindeydi; burada
- * ana gezinmede. Gruplar velinin zihnindeki sırayla: çocuklar → cihazlar →
- * güvenlik → hesap. Her satır kendi durumunu söyler ("Belirlendi", "Kapalı").
- * İçerik ve kurallar PROJE-MODELI 3.11 ile aynıdır.
+ * Aile ve Güvenlik — ÖNİZLEME sürümü (örnek aile, işlem yok). Canlı sayfa
+ * `app/dashboard/ayarlar/page.tsx`'tir: aynı gruplar (`Grup`, `Durum`,
+ * `NasilCalisir`) gerçek PIN, şifre ve eşleme akışlarıyla. Gruplar velinin
+ * zihnindeki sırayla: çocuklar → cihazlar → güvenlik → hesap. Her satır kendi
+ * durumunu söyler ("Belirlendi", "Kapalı"). Kurallar PROJE-MODELI 3.11.
  */
 export function Aile() {
-  const { aile, perdeAc, ayarlar, setAyarlar, bildir } = useTaslak();
+  const { aile, perdeAc, ayarlar, setAyarlar, bildir } = useVeliPaneli();
   const bagliSayisi = aile.cocuklar.filter((c) => c.bagliCihaz).length;
   const kalanHak = aile.profilHakki - aile.cocuklar.length;
 
@@ -26,7 +27,7 @@ export function Aile() {
           ikon="kalkan"
           etiket="Veli PIN'i"
           deger={aile.veliPinVar ? "Belirlendi" : "Belirlenmedi"}
-          iyi={aile.veliPinVar}
+          iyi={Boolean(aile.veliPinVar)}
         />
         <Durum
           ikon="kilit"
@@ -198,7 +199,7 @@ export function Aile() {
   );
 }
 
-function Durum({
+export function Durum({
   ikon,
   etiket,
   deger,
@@ -213,7 +214,7 @@ function Durum({
     <div className="flex items-center gap-3.5 p-4 sm:p-5">
       <span
         className={`grid h-11 w-11 shrink-0 place-items-center rounded-full ${
-          iyi ? "bg-eylem-yumusak text-eylem-koyu" : "bg-yuzey-2 text-vt-govde"
+          iyi ? "bg-eylem-yumusak text-eylem-koyu" : "bg-yuzey-2 text-veli-govde"
         }`}
       >
         <Ikon ad={ikon} boyut={20} />
@@ -226,10 +227,10 @@ function Durum({
   );
 }
 
-function Grup({ baslik, aciklama, children }: { baslik: string; aciklama?: string; children: ReactNode }) {
+export function Grup({ baslik, aciklama, children }: { baslik: string; aciklama?: string; children: ReactNode }) {
   return (
     <section>
-      <h2 className="px-1 font-vt-baslik text-[1.25rem] font-medium text-murekkep">{baslik}</h2>
+      <h2 className="px-1 font-veli-baslik text-[1.25rem] font-medium text-murekkep">{baslik}</h2>
       {aciklama ? <p className="mt-1 px-1 text-[0.9375rem] leading-6 text-murekkep-soluk">{aciklama}</p> : null}
       <Yuzey className="mt-3 divide-y divide-cizgi overflow-hidden">{children}</Yuzey>
     </section>
@@ -237,7 +238,7 @@ function Grup({ baslik, aciklama, children }: { baslik: string; aciklama?: strin
 }
 
 /** Aile cihaz modeli üç cümlede (PROJE-MODELI 3.11). */
-function NasilCalisir() {
+export function NasilCalisir() {
   const adimlar = [
     {
       ikon: "hesap" as const,
@@ -258,18 +259,18 @@ function NasilCalisir() {
   ];
   return (
     <section aria-labelledby="nasil" className={`${styles.gokyuzu} rounded-[1.5rem] p-6 sm:p-7`}>
-      <h2 id="nasil" className="font-vt-baslik text-[1.375rem] font-medium leading-tight">
+      <h2 id="nasil" className="font-veli-baslik text-[1.375rem] font-medium leading-tight">
         Aile cihazları nasıl çalışır?
       </h2>
       <ol className="mt-5 space-y-5">
         {adimlar.map((a) => (
           <li key={a.baslik} className="flex gap-3.5">
-            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/10 text-vt-altin-acik">
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/10 text-veli-altin-acik">
               <Ikon ad={a.ikon} boyut={19} />
             </span>
             <span>
-              <span className="block font-semibold text-vt-gece-metin">{a.baslik}</span>
-              <span className="mt-0.5 block text-[0.9375rem] leading-6 text-vt-gece-soluk">{a.metin}</span>
+              <span className="block font-semibold text-veli-gece-metin">{a.baslik}</span>
+              <span className="mt-0.5 block text-[0.9375rem] leading-6 text-veli-gece-soluk">{a.metin}</span>
             </span>
           </li>
         ))}
