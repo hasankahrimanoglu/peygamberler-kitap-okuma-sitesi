@@ -73,9 +73,10 @@
 > **22 Ekim 2026 — karma tarz yeniden yazımı:** beş bölümün hikâye metni
 > `KITAP-HZ-SALIH-ICERIK-v2.md`'de yeniden yazıldı (Hasan'ın altı kararı; ayrıntı
 > `KITAP-HZ-SALIH-KARMA-AYRINTI-TABLOSU.md`). Hasan'ın okuması bekleniyor, `books.ts`'e
-> **aktarılmadı.** Bu dosyada v2 kararlarına göre değişenler yalnız F5 "Çocuğunuz
-> Sorarsa"dır: 8 (kaya ve süt cevabı), 9 (kuyunun suyu çıktı), 10 (Tebük künyesi ve
-> "sırasında"), yeni 11 ("Semûd'un evleri bugün duruyor mu?"); göç sorusu 12 oldu.
+> **aktarılmadı.** Bu dosyada v2 kararlarına göre değişenler: F5 "Çocuğunuz Sorarsa"
+> 8 (kaya ve süt cevabı), 9 (kuyunun suyu çıktı), 10 (Tebük künyesi ve "sırasında"),
+> yeni 11 ("Semûd'un evleri bugün duruyor mu?"), göç sorusu 12 oldu; final testi 5. soru
+> C şıkkı (A'râf 79'a göre, Hasan onayı 23 Ekim 2026); G1 *mucize* satırı.
 > Aşağıdaki B bölümündeki kaynak ilkeleri, kitaba özgü yasaklar ve halkalar ile D
 > bölümündeki hikâye metinleri eski hâlidir; v2 kabul edilirse geçerli hikâye kaynağı v2
 > olur (kitaba özgü kararların güncel hâli v2'nin başında).
@@ -1371,11 +1372,12 @@ Soru türü: değer
 Soru 5: Uyarılarını dinlemeyen kavminin ıssız evlerine bakan Hz. Sâlih ne yaptı?
 A) Haklı çıktığı için sevinip kutlama yaptı.
 B) Hemen o evlerden birine yerleşti.
-C) Hüzünlendi ve onlara öğüt verdiğini söyledi.
+C) Onlardan uzaklaştı ve onlara öğüt verdiğini söyledi.
 Doğru seçenek: C
 Kaynak bölüm: 5
 Kaynak PDF sayfası: 293 (A'râf 79; Diyanet sırasına göre helâktan sonra)
 Soru türü: olay
+REVİZE 22–23 Ekim 2026 (v2, Hasan onayı): C şıkkı A'râf 79'a göre ("yüz çevirdi … öğüt verdim") değişti; eski hâli "Hüzünlendi ve onlara öğüt verdiğini söyledi." idi ("hüzün" v2'de kurgu olarak işaretli). v2 B5 Devam "ıssız evlerden yüzünü çevirdi ve oradan uzaklaştı" der.
 ```
 
 ---
@@ -1476,8 +1478,8 @@ anlatabilirsiniz.
 Kur'an devenin "Allah'ın devesi" olduğunu ve onlara açık bir işaret, bir mucize olarak
 gönderildiğini bildirir (A'râf 73, Hûd 64, İsrâ 59); nereden ve nasıl geldiğini anlatmaz.
 Kitaptaki sahne, tefsir ve tarih kaynaklarında geçen yaygın bir rivayettir: kavmin ileri
-gelenleri sert bir kayayı gösterip ondan bir deve çıkarsa inanacaklarını söyler, Hz. Sâlih
-dua eder ve Allah'ın izniyle kaya yarılır. Devenin su gününde bütün halkın içtiği kadar su
+gelenleri sert bir kayayı gösterip ondan bir deve çıkarsa inanacaklarını söyler ve Allah'ın
+izniyle kaya yarılır. Devenin su gününde bütün halkın içtiği kadar su
 içip o kadar süt vermesi de böyle bir rivayettir (TDV İslâm Ansiklopedisi, "Sâlih"). Kitap
 ikisini de "Anlatılanlara göre" diye anar. Mucize, Allah'ın izniyle peygamberlerin
 gösterdiği olağanüstü olaydır; Kur'an'a göre mucizeler insanları uyarmak için gönderilir

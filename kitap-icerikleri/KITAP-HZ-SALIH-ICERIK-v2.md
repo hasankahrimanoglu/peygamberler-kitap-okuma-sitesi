@@ -2,7 +2,7 @@
 
 > **Durum:** Yazıldı (22 Ekim 2026) ve içerik denetçisinden geçti (0 kritik,
 > 6 önemli, 15 küçük bulgu; düzeltmeler dosyanın sonundaki "Yazım notları"nda).
-> Hasan'ın okuması ve iki açık kararı bekleniyor. **Aktarılmadı.** Beş bölümün
+> Hasan üç açık kararı verdi (23 Ekim 2026; yazım notları). **Aktarılmadı.** Beş bölümün
 > hikâye metninin önerilen yeni kaynağı bu dosyadır. Büyük Final Testi, veli
 > raporu, sözlükçe ve kaynak notları `KITAP-HZ-SALIH-ICERIK-final.md`'de kalır;
 > veli raporunun v2'ye bağlı maddeleri orada güncellendi (F5/8–11).
@@ -33,7 +33,7 @@ Bölüm sayısı: 5
 
 Ana değerler: emanet, ölçülülük, sözünde durma, saygı, merhamet
 
-Kitaba özgü kararlar: Melek görünmez ve konuşmaz; peygamberlik "Allah onu seçti" düzeyindedir. B1–B2'de *mucize* kelimesi yoktur; kutu B3'ün açılışındaki talepte, kitaptaki ilk geçiştedir. Devenin öldürülmesi tek cümledir; öldüren adsızdır ("kavmin en azılısı"). Gece planında "öldürmek" kelimesi, mağara, taş yağması ve elebaşlarının ölüm biçimi yoktur. Son tek cümledir; renkli yüzler, yavru deve, kefen yoktur. Göç yer adı vermeden tek cümledir; Mekke, Kâbe, yaş ve kabir yoktur; Tebük yalnız veli raporundadır. **v2 (Hasan onayı, 22 Ekim 2026):** B1'e Semûd'un Hz. Nûh'un soyundan gelmesi ve en eski dedelerinin yalnız Allah'a inanması (rivayet), Hz. Sâlih'in hastaları ve yoksulları gözetmesi (rivayet; örnek sahne isimsiz) ve "Hicr halkı" kutusu girdi. B3'te devenin gelişi kısa bir rivayet sahnesi oldu (gösterilen kaya, "inanırız" sözü, dua, Allah'ın izniyle yarılan kaya); bayram, putlarla yarış, gebe deve ve namaz yoktur; görselde yarılma anı yine çizilmez. Devenin bütün halkın içtiği kadar su içip o kadar süt vermesi B3 Devam'a tek rivayet olarak girdi. B4'e Şems 91/12–14 ve Kamer 54/29 kutusu girdi (yalnız âyetlerin ifadesiyle, yorum cümlesi yok); Şems 91/13'teki uyarı B4 1. kısımda. Dokuz kişilik grubun halkı kışkırtması B4'te rivayet kalıbıyla verilir. Rivayet kalıbı kısa: "Anlatılanlara göre".
+Kitaba özgü kararlar: Melek görünmez ve konuşmaz; peygamberlik "Allah onu seçti" düzeyindedir. B1–B2'de *mucize* kelimesi yoktur; kutu B3'ün açılışındaki talepte, kitaptaki ilk geçiştedir. Devenin öldürülmesi tek cümledir; öldüren adsızdır ("kavmin en azılısı"). Gece planında "öldürmek" kelimesi, mağara, taş yağması ve elebaşlarının ölüm biçimi yoktur. Son tek cümledir; renkli yüzler, yavru deve, kefen yoktur. Göç yer adı vermeden tek cümledir; Mekke, Kâbe, yaş ve kabir yoktur; Tebük yalnız veli raporundadır. **v2 (Hasan onayı, 22 Ekim 2026):** B1'e Semûd'un Hz. Nûh'un soyundan gelmesi ve en eski dedelerinin yalnız Allah'a inanması (rivayet), Hz. Sâlih'in hastaları ve yoksulları gözetmesi (rivayet; örnek sahne isimsiz) ve "Hicr halkı" kutusu girdi. B3'te devenin gelişi kısa bir rivayet sahnesi oldu (gösterilen kaya, "inanırız" sözü, Allah'ın izniyle yarılan kaya); bayram, putlarla yarış, gebe deve, namaz ve dua sahnesi yoktur; görselde yarılma anı yine çizilmez. Devenin bütün halkın içtiği kadar su içip o kadar süt vermesi B3 Devam'a tek rivayet olarak girdi. B4'e Şems 91/12–14 ve Kamer 54/29 kutusu girdi (yalnız âyetlerin ifadesiyle, yorum cümlesi yok); Şems 91/13'teki uyarı B4 1. kısımda. Dokuz kişilik grubun halkı kışkırtması B4'te rivayet kalıbıyla verilir. Rivayet kalıbı kısa: "Anlatılanlara göre".
 
 Ekim-kapanış halkaları: (1) B1'de içinde kendilerini güvende hissettikleri kaya evler, B5'te ıssız kalır; insanları kaya değil, Allah'ın rahmeti korur. (2) B1 "Sen aramızda kendisinden iyi şeyler beklenen biriydin" → B5 "Size öğüt verdim; ama siz öğüt verenleri sevmiyorsunuz". (3) B1 "Aşırı gidenlerin peşinden gitmeyin" → B4 kalabalık elebaşlarını dinler. (4) B2 "uğursuz" suçlaması → B2 "siz sınanan bir topluluksunuz". (5) B3 "Ona dokunmayın" → B4 sınır aşılır. (6) Kuyu başı: B1'de çağrı, B3'te paylaşım, B4'te boş kuyu. **v2:** (7) B2 sonunda "İstedikleri gelirse inanacaklar mıydı?" sorusu → B3'te kaya önünde verilen "inanırız" sözü → B4'te tutulmayan söz. (8) B1'de hastaların kapısını çalan Hz. Sâlih, B1 sonunda aynı kapılara artık Allah'ı da anlatmaya gider.
 
@@ -305,7 +305,7 @@ Rozet: Sınıra Saygı Rozeti
 
 Rozet sembolü: Yan yana iki su kâsesi
 
-Kaynak: Şuarâ 26/154–156; Hûd 11/63–64; A'râf 7/73; İsrâ 17/59; Kamer 54/27–28; Şems 91/13. Rivayet: gösterilen kaya, "inanırız" sözü, dua ve kayadan çıkış; devenin su ve sütü (TDV İslâm Ansiklopedisi, "Sâlih", "Semûd").
+Kaynak: Şuarâ 26/154–156; Hûd 11/63–64; A'râf 7/73; İsrâ 17/59; Kamer 54/27–28; Şems 91/13. Rivayet: gösterilen kaya, "inanırız" sözü ve kayadan çıkış; devenin su ve sütü (TDV İslâm Ansiklopedisi, "Sâlih", "Semûd").
 
 ### HİKÂYE — 1. KISIM
 
@@ -332,7 +332,7 @@ Hz. Sâlih onlara sakin bir sesle cevap verdi:
 
 Anlatılanlara göre ileri gelenler vadinin kenarındaki büyük, sert bir kayayı gösterdi. Bu kayadan bir dişi deve çıkarsa Hz. Sâlih'e inanacaklarına söz verdiler. [[Kalabalıktan alaycı gülüşler yükseldi. Taştan bir canlı çıkabilir miydi hiç?]]
 
-Hz. Sâlih Rabbine yöneldi ve dua etti. [[Vadiye derin bir sessizlik çöktü.]] Derken Allah'ın izniyle o sert kaya yarıldı ve içinden bir dişi deve çıktı.
+[[Vadiye derin bir sessizlik çöktü.]] Derken Allah'ın izniyle o sert kaya yarıldı ve içinden bir dişi deve çıktı.
 
 ```text
 [IŞIL]
@@ -646,7 +646,7 @@ Seçimden sonra: Cevabını aklında tut. Hikâyenin devamında neler olduğunu 
 [SORU BAŞLIĞI] Hz. Sâlih sevindi mi?
 ```
 
-[[Hz. Sâlih sevinmedi; kalbi hüzünle doldu.]] Sonra ıssız evlerden yüzünü çevirdi ve [[alçak bir sesle]] şöyle dedi:
+[[Hz. Sâlih sevinmedi; kalbi hüzünle doldu.]] Sonra ıssız evlerden yüzünü çevirdi ve oradan uzaklaştı. Giderken [[alçak bir sesle]] şöyle dedi:
 
 — Ey kavmim, Rabbimin bana bildirdiklerini size ulaştırdım ve size öğüt verdim.
 — Ama siz öğüt verenleri sevmiyorsunuz.
@@ -687,7 +687,8 @@ C) “Söylemiştim” demek insanın içinden gelebilir. Hz. Sâlih ise haklı 
 
 **Hasan'ın altı kararı (22 Ekim 2026, öneriler kabul) nasıl uygulandı:**
 1. **Devenin gelişi (B3 1. kısım):** ileri gelenler sert bir kayayı gösterir, deve
-   çıkarsa inanacaklarına söz verir; Hz. Sâlih dua eder; Allah'ın izniyle kaya yarılır.
+   çıkarsa inanacaklarına söz verir; Allah'ın izniyle kaya yarılır (dua cümlesi 23 Ekim'de
+   çıktı, aşağıda).
    Tek kalıp ("Anlatılanlara göre") sahnenin başında. Bayram, putlarla yarış, gebe deve,
    namaz yok; görsel değişmedi (`salih-3-vadideki-deve`, yarılma anı yok). Söz B4'te
    kalıpla hatırlatılır ve tutulmaz.
@@ -727,10 +728,8 @@ rahmeti korumuştu"; Hûd 66).
   söylediler"; "sert bir kayadan canlı bir hayvan olarak çıkarılması"), "Semûd"; video
   07:56–09:07. Diyanet Kur'an Yolu tefsiri A'râf 73–79'da "verdikleri sözü çiğneyerek
   deveyi kestiler" der.
-- **Hasan'ın dikkatine — dua:** "Hz. Sâlih Rabbine yöneldi ve dua etti" videodan geliyor
-  (08:42); PDF'te iki rekât namaz (Faz 1'de çıktı), TDV'de yok. Değişmez alana dokunmuyor
-  (mucizeyi yapan Allah'tır, metin "Allah'ın izniyle" der), sahnenin ana olayı değil.
-  İstenirse cümle çıkar, sahne bozulmaz.
+- Dua: videodan geliyordu (08:42); PDF'te iki rekât namaz (Faz 1'de çıktı), TDV'de yok.
+  Hasan'ın 23 Ekim kararıyla çıktı (aşağıda, karar 3).
 - B3 su ve süt: TDV "Sâlih" ("bütün kavmin tükettiği miktarda su içmesi ve içtiği su
   kadar süt vermesi", Sâbûnî); PDF s. 311–314; video 10:11–10:26.
 - B4 kışkırtma: TDV "Sâlih" ("bir grup inkârcı deveyi öldürme planları yapmaya
@@ -762,9 +761,9 @@ yok; Hz. Dâvûd'un düz metni bozulmuyor. Hiçbir terim kutusundan önce geçmi
 |---|---:|---:|---:|---:|---:|
 | 1 | 3.941 | 2 | 2 | 1 | 767 |
 | 2 | 2.727 | 1 | 2 | — | 539 |
-| 3 | 3.341 | 2 | 1 | — | 672 |
+| 3 | 3.302 | 2 | 1 | — | 672 |
 | 4 | 2.704 | 1 | 2 | 1 | 676 |
-| 5 | 2.608 | 2 | 1 | — | 571 |
+| 5 | 2.635 | 2 | 1 | — | 571 |
 
 Yayındaki metin: 3.369 · 2.761 · 2.798 · 2.577 · 2.592. 18 kelimeyi aşan cümle yok;
 Işıl'ın en uzun cümlesi 7 kelime. `scripts/v2-onizleme-uret.mjs` dosyayı hatasız
@@ -802,23 +801,24 @@ ayrıştırıyor (beş bölüm, bütün görseller `books.ts`'te bulundu).
   meali buna dayanıyor), "yalak" kelimesi (bağlamdan anlaşılıyor), B5'teki "Kayalara
   oyulmuş evlerin hikâyesi böylece sona erdi." (anlatıcının kapanışı), F5/8'e ek cümle.
 
-**Açık kararlar (Hasan):**
-1. **B4 kutusunda âlimlerin açıklaması.** Notunda "neden çoğul" açıklamasının "âlimler
-   bunu şöyle açıklar" diye kaynağına bağlanmasını istemiştin. Bu yorumu ("o işe razı
-   olanlar da ortak sayılır") doğrulayan kaynaklarda bulamadım: Diyanet Kur'an Yolu
-   tefsiri Şems 11–15'te felaketi peygamberi yalanlamalarına bağlıyor, A'râf 73–79'da
-   "verdikleri sözü çiğneyerek deveyi kestiler" diyor; TDV maddelerinde yok. Klasik
-   tefsirlerde geçtiğini biliyorum ama bu oturumda doğrulayamadım. Kutu bu yüzden yalnız
-   âyetlerle yazıldı. *Önerim:* böyle kalsın; çocuk iki âyeti yan yana görüp sonucu
-   kendisi çıkarıyor, Seçimini Karşılaştır A da bunu söylüyor. Bir hoca doğrularsa
-   kutunun sonuna "Âlimler bunu, o işe razı olanların da ona ortak sayılması diye
-   açıklar." cümlesi eklenir.
-2. **Final testi 5. soru (açık öneri).** Doğru şık "Hüzünlendi ve onlara öğüt verdiğini
-   söyledi". "Hüzünlendi" v2'de kurgu olarak işaretli (A'râf 79 yalnız yüz çevirip öğüt
-   verdiğini söylediğini bildirir). *Önerim:* soru "değer" sorusu olarak etiketlensin
-   (Nûh'taki 1. soru önerisi gibi); şık değişmesin. Aynı not Ne Öğrendik B2/3'teki
-   "öfkelenmedi" için geçerli; o da Kur'an'daki cevabın tonundan çıkarılmış bir anlatım,
-   kalabilir.
+**Hasan'ın üç kararı (23 Ekim 2026, öneriler kabul):**
+1. **B4 kutusu yalnız âyetlerle kalır** (Şems 91/12, 14; Kamer 54/29). "Neden çoğul"
+   açıklamasını ("o işe razı olanlar da ortak sayılır") doğrulayan bir kaynak bu
+   oturumda bulunamadı: Diyanet Kur'an Yolu tefsiri Şems 11–15'te felaketi peygamberi
+   yalanlamalarına bağlıyor, A'râf 73–79'da "verdikleri sözü çiğneyerek deveyi kestiler"
+   diyor; TDV maddelerinde yok. **Açık not:** bir hoca doğrularsa kutunun sonuna "Âlimler
+   bunu, o işe razı olanların da ona ortak sayılması diye açıklar." cümlesi eklenebilir.
+2. **Final testi 5. soru:** "değer" etiketi verilmedi; soru "olay" sorusu olarak kalır ve
+   C şıkkı A'râf 79'a göre değişti: "Onlardan uzaklaştı ve onlara öğüt verdiğini söyledi."
+   ("yüz çevirdi … öğüt verdim"). Eski "Hüzünlendi…" şıkkı v2'de kurgu olarak işaretli
+   bir duyguyu ölçüyordu. B5 Devam artık "ıssız evlerden yüzünü çevirdi ve oradan
+   uzaklaştı" diyor ve hemen ardından öğüt sözü geliyor; soru metinden cevaplanıyor.
+   Hüzün kurgusu kalıyor ama sorunun dayanağı değil. final.md §E güncellendi. Ne
+   Öğrendik B2/3'teki "öfkelenmedi" değişmedi.
+3. **B3'teki dua cümlesi çıktı** ("Hz. Sâlih Rabbine yöneldi ve dua etti"; tek kaynak:
+   video). Sahne şimdi: kaya gösterilir, söz verilir, alaycı gülüşler, sessizlik, "Allah'ın
+   izniyle" kaya yarılır. Yeni bir "nasıl" eklenmedi. final.md F5/8'deki "Hz. Sâlih dua
+   eder" ifadesi de çıktı; ayrıntı tablosunda dua "girmeyenler"e taşındı (#38).
 
 **Aktarım için:**
 - `paragraphs` ve `continuationParagraphs` v2'den alınır; `[[`/`]]` silinir. KELİME
@@ -832,7 +832,9 @@ ayrıştırıyor (beş bölüm, bütün görseller `books.ts`'te bulundu).
 - final.md D bölümündeki seslendirme notları eski metne göre yazıldı; v2 aktarılınca
   Işıl satırlarının hafif tonu ve B3'teki kaya sahnesi için güncellenmeli. Sesler hâlâ
   yer tutucu; metin kesinleşmeden kayıt yapılmaz.
-- Açık karar 2 kabul edilirse `quizzes.ts` 5. sorunun yalnız etiketi değişir.
+- `quizzes.ts` salih 5. soru, C şıkkı (doğru seçenek, harf aynı kalır): **"Onlardan
+  uzaklaştı ve onlara öğüt verdiğini söyledi."** (eski: "Hüzünlendi ve onlara öğüt
+  verdiğini söyledi."). Soru metni, A ve B şıkları değişmez.
 - Önizleme: `node scripts/v2-onizleme-uret.mjs src/data/books.ts
   kitap-icerikleri/KITAP-HZ-SALIH-ICERIK-v2.md salih src/data/salihV2Onizleme.ts`
   (ana oturumun işi; bu oturum `src/`'ye yazmadı).
