@@ -2487,8 +2487,9 @@ Kurallar:
       `icerik-faz1` ve `icerik-faz2` becerileri, katalog §10 notu.
 - [x] Hz. Âdem'e altı ek (Hasan onayıyla 22 Eki 2026'da v2, final.md veli
       raporu ve `books.ts`'e aktarıldı; kayıt v2'nin sonundaki "Ekler"
-      notunda; `kitap-denetle adem` 0 hata, önizlemede doğrulandı. Bölüm 1
-      değişmediği için gerçek ses kaydı geçerli kalır): Hucurât 49/13 kutusu
+      notunda; `kitap-denetle adem` 0 hata, önizlemede doğrulandı. Ekler
+      Bölüm 1'e dokunmadı; ama Bölüm 1'in gerçek ses kaydı v2'den önceki
+      metni okur, v2 yüzünden yeniden kaydedilmeli — yukarıdaki not): Hucurât 49/13 kutusu
       Bölüm 2'ye; karga dersi (anlatıcı cümlesi) ve Mâide 5/32'nin olumlu
       yarısı Bölüm 7'ye; "güzel bir işe öncülük" hadisi (Müslim, İlim 15)
       Bölüm 8'e; "kendin için istediğini" hadisi (Buhârî, Îmân 7) ve ilk
