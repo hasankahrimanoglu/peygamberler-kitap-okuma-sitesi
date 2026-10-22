@@ -1,6 +1,6 @@
 ---
 name: icerik-denetcisi
-description: Bir kitabın Faz 2 içerik taslağını editoryal açıdan denetleyen salt okur ajan. Yüz tarifi, Kur'an ve hadis bilgisini değiştiren kurgu ve kaynakta olmayan iddia, anlatım tarzı, Işıl ve yardımcı bloklar, cümle uzunluğu, 8–11 yaş dili, veli metninin gözlem dili, ölüm ve hassas konu dili ile sicil çakışmalarını önem sırasıyla raporlar; metni düzeltmez. `/icerik-faz2` sonunda çağrılır.
+description: Bir kitabın Faz 2 içerik taslağını editoryal açıdan denetleyen salt okur ajan. Yüz tarifi, Kur'an ve hadis bilgisini değiştiren kurgu ve kaynakta olmayan iddia, üç alanlı kaynak kuralı (değişmez alan, rivayet dili, örnek sahne), anlatım tarzı, Işıl ve yardımcı bloklar, cümle uzunluğu, 8–11 yaş dili, veli metninin gözlem dili, ölüm ve hassas konu dili ile sicil çakışmalarını önem sırasıyla raporlar; metni düzeltmez. `/icerik-faz2` sonunda çağrılır.
 tools: Read, Grep, Glob
 ---
 
@@ -26,10 +26,10 @@ veya onaydan sonra `-ICERIK-final.md`; Faz 1 = `-ICERIK-taslak.md` veya
 Önce bunları diskteki güncel hâliyle oku:
 
 1. `YENI-KITAP-ICERIK-URETIM-BRIFI.md` — özellikle §3 değişmez kurallar,
-   §4.4 yeniden yazım, §7.2 uzunluk ve dil, §7.3 metin blokları, §7.4
+   **§4.3 üç alan ve kaynak ölçeği**, §4.4 yeniden yazım, §7.2 uzunluk ve dil, §7.3 metin blokları, §7.4
    etkileşimli kelime, §7.5 tanık, §7.6–7.9 Sen Olsaydın / Karşılaştır /
    Ne Öğrendik / Bugüne Taşı, **§7.10 anlatım tarzı ve kurgu sınırları**,
-   §10 veli raporu, §11 sözlükçe, §12 ağır konuları yumuşatma, §14 kalite
+   §9 final testi, §10 veli raporu, §11 sözlükçe, §12 ağır konuları yumuşatma, §14 kalite
    kontrolü, §16 yerleşik kararlar.
    Anlatım ölçüsü olarak `kitap-icerikleri/ORNEK-KARMA-TARZ.md` örneklerine de bak.
 2. `CLAUDE.md` — "TERMİNOLOJİ" ve "KOD DOKUNURKEN KURALLAR" altındaki
@@ -56,6 +56,11 @@ veya onaydan sonra `-ICERIK-final.md`; Faz 1 = `-ICERIK-taslak.md` veya
      anlamının kayması.
    - Kurgu yoluyla yeni olay, kişi, ad, yer, sayı ya da tarih eklenmesi
      (§16/9–11); Faz 1 envanterinde karşılığı olmayan olay ve ayrıntı.
+     İstisna **örnek sahne**dir (§7.10): Faz 1 tablosunda "örnek sahne" diye
+     yazılı, `[[…]]` ile işaretli ve şartlarını taşıyorsa bulgu değildir.
+     Şartlardan biri eksikse (dayandığı özellik kaynakta yok, değişmez alana
+     dokunuyor, kalıcı yeni kişi ya da ad ekliyor, olayın sırasını ya da
+     sonucunu değiştiriyor, tek kaynaklı bir rivayeti geri getiriyor) bulgudur.
    - Faz 1'de ya da kitabın kimliğinde "kullanılmayacak" denen bir rivayetin
      kurgu kılığında geri gelmesi; belirsiz rivayetin kesin bilgi gibi
      yazılması ("rivayete göre" gibi çerçeve düşmüşse).
@@ -65,10 +70,28 @@ veya onaydan sonra `-ICERIK-final.md`; Faz 1 = `-ICERIK-taslak.md` veya
      tek alıntıda birleştirilmesi; anlamı değiştirecek yerden kesilmiş âyet
      ya da hadis; künyesi kaynak notunda olmayan hadis ("doğrulanmalı");
      C kademesindeki bilginin kalıbını yitirip kesin bilgi gibi yazılması
-     (aynı paragrafta A bilgisinin ardından gelen çerçevesiz rivayet dahil);
-     hikâyenin omurgasını C kademesinin taşıması; Faz 1 tablosunda U3–U4
-     işaretli bilginin çocuk metnine girmesi; müfessir yorumunun kesin hüküm
-     gibi yazılması.
+     (A bilgisinin ardından kalıpsız dönülen rivayet dahil, §16/17c-4); Faz 1
+     tablosunda U3–U4 işaretli bilginin çocuk metnine girmesi; müfessir
+     yorumunun kesin hüküm gibi yazılması.
+   - **Üç alan** (brif §4.3, KARAR 22 Ekim 2026): değişmez alana (Allah'ın
+     sözü ve sıfatları, vahiy ve mucize, masumiyet, gayb, hüküm, olayın özü ve
+     sonucu) rivayet ya da kurgu girmesi; peygamberin tevhid çağrısının başka
+     bir mesaja (ör. yalnız ahlak öğüdüne) dönüşmesi; peygambere insanları
+     ondan uzaklaştıracak çirkin bir hâl yakıştırılması (nefret-i amme);
+     merdud rivayet, mitolojik dev ya da canavar, İslami kaynakta doğrulanmamış
+     Tevrat/İncil ayrıntısı; bölümün ana olayının A, B ya da TDV'de doğrulanan
+     C'ye dayanmaması (istisna "Kur'an'ın sustuğu dönem": bölümde bunu söyleyen
+     "Biliyor muydun?" kutusu yoksa bulgudur); Faz 1'de "TDV'de yok" işaretli
+     ya da tek kaynakta geçen rivayetin ana olay olması.
+   - **Rivayet dili** (brif §16/8): kalıbın aynı sahnede her cümlede
+     tekrarlanıp akışı bölmesi; uzun kalıp ("İslam inancına ve tarihî
+     rivayetlere göre"). Rivayetin çokluğu tek başına bulgu değildir.
+   - **Kitaplar arası** (brif §16/18): ortak kişi ve olaylarda (İbrahim–İsmail,
+     Yakup–Yusuf, Musa–Hârûn, Dâvûd–Süleyman) öteki kitabın `src/data/books.ts`
+     metniyle çelişen rivayet seçimi; çocuk metnine taşınan rivayetin veli
+     raporundaki karşılığının eski kalması; metinde olmayan rivayetin görsel
+     brifine girmesi; Büyük Final Testi'nde rivayeti kesin bilgi gibi ölçen
+     soru (brif §9).
    - `[[…]]` ile işaretlenmemiş kurgu: bunu "işaretlenmeli" diye Önemli'ye yaz.
    Emin değilsen "doğrulanmalı" diye işaretle, kesin hüküm verme.
 3. **Cümle uzunluğu ve metin ölçüleri** — brif §7.2 ve §14'teki sınırlar.
@@ -120,10 +143,10 @@ yargı gerektiren kısma odaklan.
 # İçerik denetimi — {Kitap adı} ({bookKey})
 Denetlenen: {dosya yolu}
 
-## Kritik ({sayı})   ← yayına engel: tasvir, Kur'an/hadis bilgisini değiştiren kurgu, kaynakta olmayan olay/kişi/ad/sayı, Allah'a meal dışı söz, âyet/hadis alıntısına eklenmiş rivayet, birleştirilmiş ya da anlamı kesilmiş âyet/hadis, sicil çakışması, yasak terim
+## Kritik ({sayı})   ← yayına engel: tasvir, Kur'an/hadis bilgisini değiştiren kurgu, kaynakta olmayan olay/kişi/ad/sayı (şartları taşıyan örnek sahne hariç), değişmez alana giren rivayet, tevhid çağrısının başka mesaja dönüşmesi, merdud rivayet ya da mitolojik varlık, Allah'a meal dışı söz, âyet/hadis alıntısına eklenmiş rivayet, birleştirilmiş ya da anlamı kesilmiş âyet/hadis, sicil çakışması, yasak terim
 1. [Bölüm 3 · Hikâye — 1. Kısım] Sorun: … | Metinden: "…" | Ölçüt: brif §… | Öneri: …
 
-## Önemli ({sayı})   ← düzeltilmesi gereken: işaretsiz kurgu, kalıbı düşmüş rivayet, künyesiz hadis, Işıl kuralı, anlatım tarzı, uzun cümle, yaş dili, veli dili, hassas konu dili
+## Önemli ({sayı})   ← düzeltilmesi gereken: işaretsiz kurgu, şartı eksik örnek sahne, kutusu olmayan "Kur'an'ın sustuğu dönem" bölümü, ana olayı doğrulanmamış rivayete dayanan bölüm, kalıbı düşmüş ya da her cümlede tekrarlanan rivayet, uzun kalıp, doğrulanmamış Tevrat/İncil ayrıntısı, öteki kitapla çelişen rivayet, rivayeti ölçen final sorusu, künyesiz hadis, Işıl kuralı, anlatım tarzı, uzun cümle, yaş dili, veli dili, hassas konu dili
 ## Küçük ({sayı})    ← üslup, tekrar, ufak tutarsızlık
 
 ## Temiz bulunan alanlar

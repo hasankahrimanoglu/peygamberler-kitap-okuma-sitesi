@@ -53,8 +53,16 @@ A bölümü). Rozet adlarını `ROZET-MATRISI.md` §2–§3'e, yeni terimleri
 Brif **§16 yerleşik kararlarını** uygula: o konuları yeniden soru olarak sorma,
 uyguladığın her kararı olay bazında kaydet. Emsal kitaba uymuyorsa soru aç.
 
-Rivayet ve doğrulama tablosunda (§13 A3) her bilgiyi brif **§4.3'teki iki
-eksenle** işaretle: kaynak kademesi (A/B/C/D) ve çocuğa uygunluk (U1–U4).
+Rivayet ve doğrulama tablosunda (§13 A3) her bilgiyi brif **§4.3'teki üç alan
+ve iki eksenle** işaretle: alan (değişmez / rivayet / örnek sahne), kaynak
+kademesi (A/B/C/D) ve çocuğa uygunluk (U1–U4); her rivayet ve örnek sahne için
+§4.3'teki kontrol listesini uygula. Değişmez alanda yalnız Kur'an ve sahih hadis
+kullanılır; rivayet TDV İslâm Ansiklopedisi'yle doğrulanır, TDV'de yoksa
+"TDV'de yok — PDF + video" diye işaretlenir ve bölümün ana olayı olamaz.
+Her bölümün ana olayının dayanağını bölüm planında yaz; Kur'an'ın sustuğu bir
+dönemi anlatan bölümü karar sorusu yap. Hasan kitap için bir video ve
+transkript verdiyse transkripti oku, ayrıntı adaylarını tabloya "videoda"
+bilgisiyle al; video doğrulama ve görsel referans değildir.
 Hadisleri §16/17b'ye göre künyele; bulunamayan hadis karar sorusu olur.
 
 Brif §15'teki durma durumlarından biri oluşursa metni doldurma; bulguyu ve

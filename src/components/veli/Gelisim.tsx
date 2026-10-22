@@ -188,7 +188,8 @@ function KitaplarSekmesi({ g }: { g: CocukGorunumu }) {
       <p className="flex gap-2.5 text-[0.875rem] leading-6 text-murekkep-soluk">
         <Ikon ad="bilgi" boyut={17} className="mt-0.5" />
         Hikâyeler, çocukların daha iyi anlaması için canlı bir anlatımla yazılmıştır; Kur&apos;an ve hadislerde
-        bildirilen bilgiler değiştirilmeden aktarılır.
+        bildirilen bilgiler değiştirilmeden aktarılır; yaygın rivayetler “anlatılanlara göre” diye
+        belirtilir.
       </p>
     </div>
   );

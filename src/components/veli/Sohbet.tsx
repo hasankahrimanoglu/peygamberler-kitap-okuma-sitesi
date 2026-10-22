@@ -140,7 +140,8 @@ export function Sohbet() {
             )}
             <p className="px-1 text-[0.875rem] leading-6 text-murekkep-soluk">
               Hikâyeler, çocukların daha iyi anlaması için canlı bir anlatımla yazılmıştır; Kur&apos;an ve hadislerde
-              bildirilen bilgiler değiştirilmeden aktarılır.
+              bildirilen bilgiler değiştirilmeden aktarılır; yaygın rivayetler “anlatılanlara göre”
+              diye belirtilir.
             </p>
           </aside>
         </div>

@@ -1463,8 +1463,8 @@ bağlanmış cihaz erişir.**
 | 17 | "Bugüne Taşı" görev takibi (KARAR 15 Tem 2026) | Görev KOŞULLUDUR (her bölümde değil; kitabın yaklaşık %40–50'sinde görev bulunması editoryal hedeftir, teknik sınır olarak kodlanmaz) ve GÖNÜLLÜDÜR. Çocuk görevde "Görevi Listeme Ekle / Şimdilik Değil" seçer; eklediği görevleri "Görevlerim" ekranında görür, "Görevi Tamamladım" ile işaretler; Tamamlandı/Tamamlanmadı durumu KALICI saklanır (öz bildirim yeterli, kanıt istenmez). Görev; bölüm rozetinin, madalyanın, sonraki kitabın veya ilerlemenin ŞARTI DEĞİLDİR. Son tarih, ceza, seri YOK | Yeni tablo (bkz. 7.3 — Faz 6.1) |
 | 18 | Veli tarafında görev görünürlüğü (KARAR 15 Tem 2026 akşam) | Veli, çocuğun aldığı TÜM görevleri ve durumlarını Gelişim Raporu'ndaki **Görevler sekmesinden** görür (Alındı / Tamamlandı, hangi kitap-bölüm, tarih). Ana Sayfa kartı ise yalnız EN GÜNCEL tek görevi durum çipiyle ("Alındı"/"Tamamlandı") gösterir — tam liste değil. Veli görevleri yalnız GÖRÜR, düzenlemez/tamamlamaz (öz bildirim çocuğundur). Rapor dili gözlem bildirir; tamamlanmamış görev eksiklik/başarısızlık olarak sunulmaz | Yok — `profile_tasks`'tan türetilir |
 | 19 | Bölüm bölüm veli sohbeti (KARAR 19 Eki 2026) | Gelişim Raporu → Sohbet Önerileri'nde **okunan** (başlanmış, finali bitmemiş) her kitap için bir kart: kitapta ulaşılan son bölüm (numara, ad, `ozet`), o bölümün "Sen Olsaydın" sorusu ("Bu bölümde düşündüğü soru") ve sabit öneri ("Akşam sohbeti için: Bu soruyu ona siz de sorun ve cevabını dinleyin. Sonra hikâyede ne olduğunu birlikte hatırlayabilirsiniz."). Bölüm tamamlanan bölüm sayısından türer; kaydırma konumuna bakılmaz ("Kaldığın yer" değildir), tekrar okunan eski bölüm gösterilmez. **Yalnız son bölüm** gösterilir. **Çocuğun seçtiği şık gösterilmez** — özellik S5'e bağlı değildir; veli göreceğini bilen çocuk "beklenen" şıkkı seçer. Kitabın "Çocuğunuz Sorarsa" yönlendirmeleri kitap okunurken de görünür (zor soru kitabın ortasında gelir); okunan ve biten kitapta **kapalı açılır liste**dir. Kitaplar sekmesi okunan kitapları da listeler (kapak, ilerleme, kitapta gelinen bölüm, son okuma; bölümleri biten ama finali kalan kitapta "Büyük Final Testi kaldı"). Ana Sayfa kartı değişmez (3.8). Girişsiz önizleme: `/tasarim/veli-rapor`. *(REVİZE 22 Eki 2026: Sohbet Önerileri kendi sayfasına (`/dashboard/sohbet`) taşındı, son bölümün sorusu Ana Sayfa'da da "Bu akşamın sohbeti" olarak görünür; "yalnız son bölüm" kuralı aynen geçerli; önizleme `/tasarim/veli-panel?ekran=sohbet` — 3.8, 3.9.)* | Yok — books.ts + user_progress |
-| 20 | Karma anlatım ve hikâye içi bloklar (KARAR 21–22 Eki 2026) | Bütün kitapların hikâyeleri karma tarzda yazılır (içerik brifi §7.10): görünür, sıcak anlatıcı; sahne kurma; merak kancaları; Kur'an ve hadis bilgisini değiştirmeyen kurgu. Okuma ekranına üç blok eklenir: Işıl balonu, soru başlığı, "Biliyor muydun?" kutusu (5.1). **Veli bilgi notu:** veli tarafında tek cümle: "Hikâyeler, çocukların daha iyi anlaması için canlı bir anlatımla yazılmıştır; Kur'an ve hadislerde bildirilen bilgiler değiştirilmeden aktarılır." "Kurgu" kelimesi kullanılmaz; veli bunu uydurma bilgi gibi algılayabilir (Hasan, 22 Eki 2026). Önerilen yer: Gelişim Raporu'nun Kitaplar sekmesinin altında tek satır. **Sıra:** okuma ekranına bloklar → Hz. Âdem'in yeniden yazımı (`-ICERIK-v2.md`) → diğer 13 kitabın taraması ve yeniden yazımı. Bir kitabın metni kesinleşmeden o kitap seslendirilmez | Yok — `books.ts` |
-| 21 | İki eksenli kaynak ölçeği (KARAR 22 Eki 2026) | İçerik üretiminde her dinî/tarihî bilgi iki soruyla sınıflanır (içerik brifi §4.3): **kaynak kademesi** (A Kur'an · B sahih hadis · C yaygın rivayet ve müfessir yorumu · D kullanılmaz) ve **8–11 yaşa uygunluk** (U1 uygun · U2 yumuşatılarak · U3 veli raporu · U4 hiçbir yerde). Hikâyenin omurgası A, gerekirse B; C az ve rivayet kalıbıyla. Hadis Diyanet *Hadislerle İslâm* ya da Buhârî/Müslim künyesiyle doğrulanır, ajan derece hükmü vermez (§16/17b). Âyet/hadis alıntısına rivayet eklenmez, alıntı anlamı değiştirecek yerden kesilmez (§16/17c). Katalogdaki K1–K4 kitabın, bu ölçek tek tek bilginin kaynak durumunu tarif eder. Yayındaki kitaplara geriye dönük toplu tarama yok; karma tarz yeniden yazımında uygulanır | Yok — içerik kuralı |
+| 20 | Karma anlatım ve hikâye içi bloklar (KARAR 21–22 Eki 2026) | Bütün kitapların hikâyeleri karma tarzda yazılır (içerik brifi §7.10): görünür, sıcak anlatıcı; sahne kurma; merak kancaları; Kur'an ve hadis bilgisini değiştirmeyen kurgu. Okuma ekranına üç blok eklenir: Işıl balonu, soru başlığı, "Biliyor muydun?" kutusu (5.1). **Veli bilgi notu:** veli tarafında tek cümle: "Hikâyeler, çocukların daha iyi anlaması için canlı bir anlatımla yazılmıştır; Kur'an ve hadislerde bildirilen bilgiler değiştirilmeden aktarılır." *(EK — 22 Eki 2026, Hasan; kaynak kuralı 4.1/21: cümlenin sonuna "; yaygın rivayetler 'anlatılanlara göre' diye belirtilir" eklendi; Gelişim → Kitaplar ve Sohbet sayfasında.)* "Kurgu" kelimesi kullanılmaz; veli bunu uydurma bilgi gibi algılayabilir (Hasan, 22 Eki 2026). Önerilen yer: Gelişim Raporu'nun Kitaplar sekmesinin altında tek satır. **Sıra:** okuma ekranına bloklar → Hz. Âdem'in yeniden yazımı (`-ICERIK-v2.md`) → diğer 13 kitabın taraması ve yeniden yazımı. Bir kitabın metni kesinleşmeden o kitap seslendirilmez | Yok — `books.ts` |
+| 21 | İki eksenli kaynak ölçeği (KARAR 22 Eki 2026) | İçerik üretiminde her dinî/tarihî bilgi iki soruyla sınıflanır (içerik brifi §4.3): **kaynak kademesi** (A Kur'an · B sahih hadis · C yaygın rivayet ve müfessir yorumu · D kullanılmaz) ve **8–11 yaşa uygunluk** (U1 uygun · U2 yumuşatılarak · U3 veli raporu · U4 hiçbir yerde). ~~Hikâyenin omurgası A, gerekirse B; C az ve rivayet kalıbıyla.~~ Hadis Diyanet *Hadislerle İslâm* ya da Buhârî/Müslim künyesiyle doğrulanır, ajan derece hükmü vermez (§16/17b). Âyet/hadis alıntısına rivayet eklenmez, alıntı anlamı değiştirecek yerden kesilmez (§16/17c). Katalogdaki K1–K4 kitabın, bu ölçek tek tek bilginin kaynak durumunu tarif eder. Yayındaki kitaplara geriye dönük toplu tarama yok; karma tarz yeniden yazımında uygulanır. **REVİZE — üç alan (22 Eki 2026, Hasan onayı; karar kaydı Bölüm 10, brif §4.3):** önce bilginin konusuna bakılır. Değişmez alanda (Allah'ın sözü, vahiy ve mucize, tevhid çağrısı, masumiyet ve nefret-i amme, gayb, hüküm, olayın özü) yalnız A/B; öteki konularda yaygın rivayet serbest, "C az / omurga olamaz" kalkar; bölümün ana olayı Kur'an, sahih hadis ya da TDV'de doğrulanan rivayettir; rivayet kalıbı olayın başında bir kez, uzun kalıp kullanılmaz; "örnek sahne" eklenir. Dayanak Buhârî, Enbiyâ 50 ve İ'tisâm 25 (*Hadislerle İslâm* 6/133, 1/541). Kapsam önceki peygamberlerdir; Hz. Muhammed ve halifeler kitaplarının (K4) ölçüsü ayrıca belirlenir | Yok — içerik kuralı |
 
 ### 4.2 SONRAYA BIRAKILDI (ayrı fazlarda)
 
@@ -2546,6 +2546,19 @@ Kurallar:
       tutucular bu kaydın kopyası).
 - [ ] Diğer 13 kitabın taraması ve sırayla yeniden yazımı. Ses kaydı hiçbir
       kitapta yok; bir kitabın metni kesinleşmeden o kitap seslendirilmez.
+      *22 Eki: 11 lansman kitabı tarandı (betikle ölçüm, eski ve yeni Hz.
+      Âdem ile ayarlı; örnek bölümler okundu). Şît ve İdrîs (gizli)
+      taranmadı. Hiçbiri eski Hz. Âdem gibi baştan yazım istemiyor: ders
+      cümlesi 79 bölümde 15 kadar (eski Âdem'in 8 bölümünde 27). Ortak eksik
+      anlatıcının sesi: 79 bölümde çocuğa 20 hitap; Işıl, soru başlığı ve
+      bilgi kutusu yok. **Hafif** (ses ve bloklar eklenir, cümlelerin çoğu
+      kalır): Sâlih, İsmail, Yusuf (1. bölüm `ORNEK-KARMA-TARZ.md`'de hazır),
+      Musa, Yunus, Îsâ. **Orta** (ek olarak rivayet kalıbı seyrelir, ders
+      cümlesiyle biten bölüm sonları yeniden kurulur): İbrahim, Eyyûb,
+      Dâvûd, Süleyman. **Hz. Nûh:** anlatıcı 8 bölümde çocuğa hiç seslenmiyor;
+      1. bölümün omurgası roman sahnesi; kaynak kuralına göre "Kur'an'ın
+      sustuğu dönem" olarak kalır ve bir kutu alır. Kaynak kuralı onaylandı
+      (bu bölümün sonunda); yazım Hz. Nûh pilotuyla başlar.*
 
 ### 22 Ekim 2026 (iki eksenli kaynak ölçeği — Hasan onayı, bkz. 4.1/21 ve içerik brifi §4.3, §16/17b–c)
 
@@ -2583,6 +2596,10 @@ Kurallar:
       hadisi; künye Faz 1'de doğrulanır) Hz. İsmail ya da Hz. İbrahim'e;
       anne-baba hakkı (İsrâ 17/23) Hz. Yusuf–Yâkub ya da Hz. İbrahim–İsmail'e.
       Peygamber sıfatları ve melekler set düzeyindedir (4.2/S6).
+- [x] **REVİZE (22 Ekim 2026, Hasan onayı):** C kademesinin yeri ve rivayet
+      kalıbı üç alanlı kuralla değişti; bkz. bu bölümün sonundaki "kaynak
+      kuralı üç alana ayrıldı". Bu bölümün öteki kararları (hadis doğrulaması,
+      alıntı kuralları, uygunluk ekseni) geçerlidir.
 
 ### 22 Ekim 2026 (veli paneli yeniden tasarımı — Hasan onayı, bkz. 3.1, 3.2, 3.8, 3.9, 5.2)
 
@@ -2609,6 +2626,177 @@ Kurallar:
       `/tasarim/veli-rapor` kaldırıldı.
 - [x] **Küçük yenilikler:** profil düzenlemede avatar seçimi; sabit sohbet
       önerisi metni değişmedi; zaman dili ("dün akşam") tek fonksiyondan.
+
+### 22 Ekim 2026 (kaynak kuralı üç alana ayrıldı — Hasan onayı; bkz. 4.1/21 ve içerik brifi §4.3, §7.10, §9, §16/8–11, §16/18)
+
+> Hasan aynı gün onayladı. Hadis künyeleri Diyanet *Hadislerle İslâm*'dan
+> doğrulandı; içerik brifi (§4.3, §7.10, §9, §14, §16/8, §16/10, §16/11,
+> §16/17c, §16/18), içerik denetçisi, `icerik-faz1` / `icerik-faz2` becerileri
+> ve veli bilgi notu (4.1/20) hizalandı.
+
+- [x] **Sorun (Hasan, 22 Ekim):** Kur'an peygamberlerin hayatını birebir
+      anlatmaz; olayın özünü ve mesajını verir. Yalnız Kur'an'a dayanan çocuk
+      hikâyesi boş kalır; ailelerin bildiği hikâyelerin çoğu yaygın
+      rivayettir. Aynı gün yazılan iki eksenli ölçekteki "C omurga olamaz" ve
+      "C azdır" kuralları bu malzemeyi fazla kısıyor: Hz. Âdem v2'nin
+      bölümleri uzunluk sınırının alt ucunda kaldı; Arafat'ta buluşma gibi
+      yaygın ve zararsız bir rivayet çocuk metninden çıkıp veli raporuna
+      gitti. Lansman kitaplarının taraması (yukarıda) da asıl sorunun
+      rivayetin çokluğu değil, her cümlede "anlatılanlara göre" denmesi
+      olduğunu gösterdi.
+- [x] **İlke:** Klasik âlimlerin İsrâiliyat ölçüsü esas alınır. Rivayet üç
+      gruptur: Kur'an ve sahih hadisin doğruladığı (makbul) alınır; onlarla,
+      inanç esaslarıyla ya da peygamberin masumiyetiyle çelişen (merdud)
+      alınmaz; doğruluğu da yanlışlığı da bilinmeyen (meskût anh) "ne
+      doğrulanır ne yalanlanır", anlatılabilir ama dinî hükme dayanak
+      yapılmaz. Dayanakları iki hadistir (künyeler Diyanet *Hadislerle
+      İslâm*'dan doğrulandı, §16/17b): "İsrâiloğulları'ndan nakilde
+      bulunabilirsiniz. Bunda bir sakınca yoktur." (Buhârî, Enbiyâ, 50, no.
+      3461; *Hadislerle İslâm* 6/133) ve "Siz Ehl-i kitabı ne tasdik edin ne de
+      yalanlayın. (Ancak) şöyle deyin: 'Biz, bize indirilene de size indirilene
+      de iman ettik.'" (Buhârî, İ'tisâm, 25, no. 7362; *Hadislerle İslâm*
+      1/541). **Yaygın olmak tek başına ölçü değildir:** en çok
+      anlatılan hikâyelerin bir kısmı merdud gruptadır.
+- [x] **Kapsam:** Bu ilke ve üç alanlı kural önceki peygamberlerin kıssaları
+      içindir (lansmandaki 12 kitap, Şît ve İdrîs, katalogdaki öteki
+      peygamber kitapları). Hadisteki izin İsrâiloğullarından gelen anlatılara
+      dairdir. Hz. Muhammed (s.a.v.) ve Dört Büyük Halife kitaplarının (katalog
+      sıra 28–35, kaynak sınıfı K4) kaynağı siyer rivayetidir; orada sahih
+      hadisin ağırlığı ve rivayetin ölçüsü farklıdır. Bu kitapların kaynak
+      ölçüsü, ilk kitabın (Hz. Muhammed — İlk Yıllar) Faz 1'inden önce ayrıca
+      belirlenir; o zamana kadar bu kitaplara üç alanlı kural uygulanmaz.
+- [x] **Anlatım değişmez:** karma tarz (§7.10, Hz. Âdem v2,
+      `kitap-icerikleri/ORNEK-KARMA-TARZ.md`) aynen kalır. Değişen yalnız
+      kaynak kuralıdır.
+- [x] **Üç alan.** Bir bilginin hangi kaynaktan gelebileceğini önce konusu
+      belirler:
+      1. **Değişmez alan — yalnız Kur'an (A) ve sahih hadis (B):** Allah'ın
+         sözü (yalnız meal) ve sıfatları; vahiy, peygamberlik görevi ve
+         mucizenin kendisi (rivayet yeni mucize eklemez); peygamberin
+         çağrısının özü (tevhid; başka bir mesaja, ör. yalnız ahlak öğüdüne
+         dönüştürülmez); peygamberin masumiyeti (günah, yalan, şirk, kötü huy
+         isnat edilmez; insanları ondan uzaklaştıracak çirkin bir hâl de
+         yakıştırılmaz, âlimlerin "nefret-i amme" dediği ilke; Kur'an'ın
+         bildirdiği hata Kur'an'ın ifadesiyle anlatılır); gayb ve inanç
+         konuları (melek, cin, İblis, cennet, cehennem, ahiret, kader); hüküm
+         (helal-haram, ibadet biçimi, fetva); Kur'an'daki olayın özü, sırası
+         ve sonucu (kim inandı, kim kurtuldu, ne oldu).
+      2. **Rivayet alanı — yaygın rivayet (C, âlimlerin "meskût anh" dediği)
+         serbest:** Klasik tefsir, tarih ve kısas geleneğinde yaygın olan,
+         değişmez alanla çelişmeyen ve ona dokunmayan bilgi hikâyenin içinde
+         anlatılır: kişi adları (hikâyeye yardım ettiğinde, ilk geçişte
+         rivayet kalıbıyla; §16/10 gevşer), meslek, mekân, yol, dönemin
+         hayatı; Kur'an'daki olayın Kur'an'da anlatılmayan "nasıl"ı (Hz.
+         İbrahim'in mancınıkla atılması) ve Kur'an'daki mucizenin görünüşü
+         (ateşin içinin bahçe gibi olması); yan olaylar (Hz. Âdem ile Hz.
+         Havva'nın Arafat'ta buluşması). "C omurga olamaz" ve "C azdır"
+         kuralları kalkar; rivayet olayın içini ve akışını doldurur. **Bölümün
+         ana olayı**, yani karar noktasına götüren dönüm noktası, Kur'an'da,
+         sahih hadiste ya da TDV İslâm Ansiklopedisi'nde (veya onun andığı
+         klasik kaynakta) doğrulanan yaygın bir rivayette bulunur. Tartışmalı
+         bir rivayet bölümün ana olayını belirliyorsa ajan yine durur ve sorar
+         (§15).
+      3. **Anlatım alanı — bizim kurgumuz:** §7.10 aynen: sahne, doğa, mekân
+         ve eşya ayrıntısı, duygu, iç ses, kısa konuşma; bunlar kaynak
+         istemez. Yeni: **örnek sahne**, kaynakta bilinen bir özelliği ya da
+         durumu göstermek için kurulan küçük sahne. Şartları: dayandığı
+         özellik ya da durum A, B ya da C'de vardır; değişmez alana dokunmaz
+         (yeni mucize, vahiy, Allah sözü, günah ya da hüküm yok); kalıcı yeni
+         kişi ya da ad eklemez (isimsiz komşu, isimsiz yolcu olur); Kur'an'daki
+         olayın sırasını ve sonucunu değiştirmez; teslim dosyasında `[[…]]`
+         ile işaretlenir, Faz 1 tablosunda "örnek sahne" diye yazılır. Örnek
+         sahne bölümün ana olayı olamaz. **Tek istisna, Kur'an'ın sustuğu
+         dönemdir:** Kur'an'ın anlatmadığı ve yaygın rivayette ana olayı
+         bulunmayan bir dönemi (ör. bir peygamberin çocukluğu) anlatan bölüm
+         kitaba özgü karar olarak yazılır; ana olayı örnek sahne olabilir ve
+         bölümdeki bir
+         "Biliyor muydun?" kutusu bunu çocuğa söyler. Örnek: Hz. Nûh 1. bölüm
+         (komşuların ondan put oymasını istemesi; gelenek peygamberlerin
+         putlara eğilmediğini, rivayet Hz. Nûh'un marangoz olduğunu söyler;
+         kutu: "Kur'an Hz. Nûh'un çocukluğunu ve gençliğini anlatmaz…").
+         Romancının kişi ve olay örgüsü (adlandırılmış uydurma kişiler,
+         entrika, kötü karakter zinciri) yine girmez (§16/11); romandaki
+         küçük bir sahne ancak örnek sahne şartlarını karşılarsa kullanılır.
+- [x] **Her durumda girmeyenler:** merdud rivayet, yani Kur'an'la, sahih
+      hadisle ya da peygamberin masumiyetiyle çelişen ve âlimlerin çoğunun
+      reddettiği anlatılar (ör. Hz. Dâvûd ve komutanının eşi, Hz. Süleyman'ın
+      yüzüğünü çalıp tahtına oturan cin, Hz. Eyyûb'un vücudunu saran kurtlar;
+      ölçü TDV İslâm Ansiklopedisi'nin ilgili maddeleridir, Faz 1'de o
+      maddelerle doğrulanır); mitolojik dev ve canavarlar (ör. Ûc b. Unuk);
+      Tevrat ya da İncil'den gelip İslami kaynakta (TDV ya da klasik tefsir)
+      geçtiği doğrulanmayan ayrıntı (ör. güvercin ve zeytin dalı, doğrulanana
+      kadar); gayb konusunda rivayet ayrıntısı (ör. yılanın İblis'i cennete
+      taşıması); yaygın yanlışlar (ör. "Hz. Havva kandırdı" — yalnız Işıl'ın
+      sorusu ve anlatıcının düzeltmesiyle anılır, brif §4.3 kural 4); korku
+      ve şiddet ayrıntısı, cinsellik (U4); melek konuşturmak (§16/12); yaş,
+      yıl, ömür gibi sayılar (§16/9).
+- [x] **Çocuk metninde dil:** Kesin dil yalnız Kur'an ve sahih hadis
+      içindir; rivayet kesinleştirilmez. Rivayet kalıbı, rivayete dayanan
+      olayın başında **bir kez** kullanılır, aynı sahnede her cümlede
+      tekrarlanmaz. Kısa kalıplar kullanılır ("Anlatılanlara göre…",
+      "Anlatıldığına göre…"); uzun kalıp ("İslam inancına ve tarihî
+      rivayetlere göre…") yeni yazımda kullanılmaz: kulakta ağırdır, Hz.
+      Âdem v2'de hiç yoktur (§16/8 revize). Kalıbın yerine "Biliyor
+      muydun?" kutusu da olur ("Kur'an ateşin içinde ne olduğunu anlatmaz;
+      anlatılanlara göre…"). Kur'an bilgisi kesin dille anlatılır; "Kur'an'a
+      göre" yalnız rivayetle yan yana gelip ayrımın önemli olduğu yerde
+      yazılır. Uygunluk ekseni (U1–U4) ve karar tablosu aynen kalır.
+- [x] **Kaynaklar:** Ayrıntı getiren kaynaklar Hasan'ın verdikleridir:
+      kitabın kaynak PDF'i ve Hasan'ın güvendiği video kanalının ilgili
+      videosu (transkriptiyle). Doğrulayan kaynaklar Diyanet meali,
+      *Hadislerle İslâm* ve TDV İslâm Ansiklopedisi'dir; bunlar yeni olay
+      getirmez. Bilgi olarak verilen rivayet (ad, olay, olayın "nasıl"ı)
+      TDV İslâm Ansiklopedisi'nde ya da onun andığı klasik kaynakta
+      geçiyorsa kullanılır. TDV'de bulunmayan ama hem PDF'te hem videoda
+      geçen ve değişmez alana dokunmayan rivayet Faz 1 tablosunda "TDV'de
+      yok" diye işaretlenerek kullanılabilir; bölümün ana olayı olamaz.
+      Tevrat ya da İncil kaynaklı ayrıntı için bu yol kapalıdır (girmeyenler
+      maddesi). Tek kaynakta geçen rivayet kullanılmaz; örnek sahne
+      kılığında da girmez.
+      Sahne ayrıntısı (eşya, mekân, ışık) anlatım alanındadır, kaynak
+      istemez. Video yalnız içerik içindir: yaygınlık göstergesi ve ayrıntı
+      adayı; görsel referans değildir (telif ve tasvir kuralı, 6.4),
+      cümleleri kopyalanmaz (brif §4.4).
+- [x] **Kontrol listesi** (içerik ajanı her rivayet ve örnek sahne için
+      sorar; cevaplar Faz 1 tablosuna yazılır):
+      1. Değişmez alanda mı? Öyleyse yalnız Kur'an ve sahih hadis.
+      2. Kaynağı ne (A / B / C / D)? C ise hangi kaynaklarda geçiyor?
+      3. Kur'an'a, sahih hadise ya da peygamberin masumiyetine aykırı mı?
+      4. Çocukta korku, tiksinti ya da şüphe uyandırır mı (U1–U4)?
+      5. Hikâyeye bir şey katıyor mu? Çıkarılınca eksilmiyorsa yazılmaz.
+- [x] **Bağlı kurallar:**
+      - Büyük Final Testi rivayeti kesin bilgi gibi ölçmez; sorular Kur'an
+        bilgisine ya da hikâyedeki değere dayanır (brif §9).
+      - Bir rivayet veli raporundan çocuk metnine taşınırsa veli raporundaki
+        karşılığı ("Çocuğunuz Sorarsa") aynı turda güncellenir.
+      - Görsel yalnız çocuk metninde anlatılanı çizer; metne girmeyen
+        rivayet görsele de girmez.
+      - Ortak kişi ve olaylarda (İbrahim–İsmail, Yakup–Yusuf, Musa–Hârûn,
+        Dâvûd–Süleyman) rivayet seçimi kitaplar arasında aynı tutulur;
+        içerik denetçisi öteki kitabın metnine de bakar (§16/18).
+- [x] **Etkisi:** Hz. Âdem v2 yeniden yazılmaz; Hz. Nûh pilotundan sonra,
+      ses kaydından önce hafif bir zenginleştirme turu alır (Faz 1'deki
+      "kullanılmayan rivayetler" listesi yeni kurala göre yeniden geçilir;
+      ör. Arafat buluşması çocuk metnine girerse veli raporundaki karşılığı
+      da değişir). Hz. Nûh 1. bölüm "Kur'an'ın sustuğu dönem" olarak yerinde
+      kalır ve bir kutu alır; görselleri, Sen Olsaydın sorusu ve final
+      testindeki sorusu değişmez. Yayındaki kitaplardaki rivayetler silinmez;
+      yeniden yazımda kalıp seyreltilir, uzun kalıp kısalır. Taramadaki
+      "orta" kitapların işi azalır.
+- [ ] **Uygulama sırası:** (1) ✅ Hasan taslağı ve açık soruları onayladı;
+      (2) ✅ içerik brifi, içerik denetçisi ve `icerik-faz1` / `icerik-faz2`
+      becerileri hizalandı (`aktarim` kaynak kuralına değinmiyor, değişmedi);
+      (3) Hz. Nûh pilotu: video ve transkript →
+      ayrıntı tablosu (ayrıntı · videoda · PDF'te · TDV'de · alan · karar) →
+      yazım → içerik denetçisi → Hasan okuması; (4) kural ve Hz. Nûh pilotu
+      bir hocaya gösterilir (Hasan); (5) Hz. Âdem zenginleştirme turu;
+      (6) kalan 10 lansman kitabı, rota sırasıyla.
+- [x] **İki karar (Hasan, öneriler kabul):**
+      - Veli bilgi notunun (4.1/20) sonuna "; yaygın rivayetler 'anlatılanlara
+        göre' diye belirtilir" eklendi (`src/components/veli/Gelisim.tsx`,
+        `Sohbet.tsx`).
+      - Sayılar kuralı (§16/9) aynen kalır; yaş, ömür ve ölçü rakamı çocuk
+        metnine girmez.
 
 ## 11. İçerik Durumu
 

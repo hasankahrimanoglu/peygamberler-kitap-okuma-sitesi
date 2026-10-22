@@ -303,6 +303,15 @@ Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
   `kitap-icerikleri/ORNEK-KARMA-TARZ.md`. Yayındaki kitaplar bu karardan önce
   yazıldı; sırayla yeniden yazılıyor. Hz. Âdem 22 Eki 2026'da aktarıldı (hikâye
   metni `KITAP-HZ-ADEM-ICERIK-v2.md`).
+- **Kaynak kuralı: üç alan (KARAR 22 Eki 2026 — PROJE-MODELI 4.1/21, brif
+  §4.3):** değişmez alanda (Allah'ın sözü, vahiy ve mucize, tevhid çağrısı,
+  masumiyet, gayb, hüküm, olayın özü) yalnız Kur'an ve sahih hadis; öteki
+  konularda yaygın rivayet serbest, kalıp ("Anlatılanlara göre…") olayın
+  başında bir kez. Bölümün ana olayı Kur'an, sahih hadis ya da TDV'de
+  doğrulanan rivayettir; "örnek sahne" şartlıdır (brif §7.10). Ayrıntıyı kaynak
+  PDF ve Hasan'ın verdiği video getirir, doğrulamayı Diyanet meali, *Hadislerle
+  İslâm* ve TDV yapar. Kapsam önceki peygamberler; Hz. Muhammed ve halifeler
+  kitaplarının ölçüsü ilk kitabın Faz 1'inden önce ayrıca belirlenir.
 - **Hikâye içi yardımcı bloklar (KARAR ve uygulama 22 Eki 2026 — PROJE-MODELI
   5.1):** Işıl balonu (`isil`), soru başlığı (`soru_basligi`), "Biliyor
   muydun?" kutusu (`bilgi_kutusu`); `books.ts` türleri, `AtlasScrollReader`'da

@@ -64,7 +64,8 @@ sınırını koru.
 **b) Karar gerektiren bulgular — düzeltme, Hasan'a sor.** Tasvir, Kur'an ya da
 hadis bilgisini değiştiren kurgu, kaynakta olmayan olay/kişi/ad/sayı, Allah'a
 meal dışında söz, Işıl kuralı (brif §7.10), hassas konu dili, rivayet çerçevesi,
-kaynak kademesi ve alıntı kuralları (brif §4.3, §16/17b–c),
+kaynak kademesi, üç alan, örnek sahne ve alıntı kuralları (brif §4.3, §7.10,
+§16/17b–c), öteki kitapla çelişen rivayet (§16/18),
 Faz 1 kararından sapma, sicil çakışması, değer veya olay değişikliği gerektiren
 her şey. Emin değilsen bu gruba koy.
 
