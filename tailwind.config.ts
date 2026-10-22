@@ -51,6 +51,19 @@ const config: Config = {
           yumusak: token("eylem-yumusak"),
         },
         "okuma-yuzey": token("okuma-yuzey"),
+        // Veli paneli taslağı (/tasarim/veli-panel) — değerleri veliTaslak.module.css .tema verir
+        vt: {
+          govde: token("vt-govde"),
+          "altin-metin": token("vt-altin-metin"),
+          gece: token("vt-gece"),
+          "gece-2": token("vt-gece-2"),
+          "gece-cizgi": token("vt-gece-cizgi"),
+          "gece-metin": token("vt-gece-metin"),
+          "gece-soluk": token("vt-gece-soluk"),
+          "altin-acik": token("vt-altin-acik"),
+          sohbet: token("vt-sohbet"),
+          "sohbet-yumusak": token("vt-sohbet-yumusak"),
+        },
         // Sabit paletler (tema dışı özel kullanımlar için)
         gece: {
           700: "#1e2f52",
@@ -73,6 +86,9 @@ const config: Config = {
         // Okuma ekranının hikâye yazısı; tanıtım sayfasında başlık yazısı olarak da kullanılır.
         edebi: ["var(--font-literata)", "Georgia", "serif"],
         elyazi: ["var(--font-elyazi)", "cursive"],
+        // Veli paneli taslağı: başlık serif + arayüz sans (app/tasarim/veli-panel/layout.tsx)
+        "vt-baslik": ["var(--font-vt-baslik)", "Georgia", "serif"],
+        "vt-govde": ["var(--font-vt-govde)", "system-ui", "sans-serif"],
       },
       borderRadius: {
         kart: "1.25rem",

@@ -31,7 +31,16 @@ export type IkonAdi =
   | "fotograf"
   | "gorev"
   | "asagi"
-  | "saat";
+  | "saat"
+  | "ev"
+  | "sohbet"
+  | "gelisim"
+  | "aile"
+  | "kalkan"
+  | "tablet"
+  | "arti"
+  | "kalem"
+  | "bilgi";
 
 type IkonProps = {
   ad: IkonAdi;
@@ -237,6 +246,66 @@ const ikonlar: Record<IkonAdi, ReactNode> = {
     <>
       <circle {...cizgi} cx="12" cy="12" r="8" />
       <path {...cizgi} d="M12 8v4.3l2.8 1.7" />
+    </>
+  ),
+  // Veli paneli taslağının gezinme ikonları (22 Eki 2026) — aynı aile:
+  // 24 viewBox, 2px yuvarlak uçlu kontur.
+  ev: (
+    <>
+      <path {...cizgi} d="M4 10.6 12 4l8 6.6V19a1 1 0 0 1-1 1h-4.5v-5.5h-5V20H5a1 1 0 0 1-1-1v-8.4Z" />
+    </>
+  ),
+  sohbet: (
+    <>
+      <path
+        {...cizgi}
+        d="M14.5 4.5h-9a2 2 0 0 0-2 2v5.6a2 2 0 0 0 2 2h1v3l3.4-3h4.6a2 2 0 0 0 2-2V6.5a2 2 0 0 0-2-2Z"
+      />
+      <path {...cizgi} d="M16.5 9h2a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-1v2.5l-2.9-2.5h-3.1" />
+    </>
+  ),
+  gelisim: (
+    <>
+      <path {...cizgi} d="M4 19.5h16" />
+      <path {...cizgi} d="M6.5 15.5 10 12l3 2.5 4.5-5.5" />
+      <path
+        fill="currentColor"
+        d="M18.5 3.5c.3 1.9 1 2.9 3 3.3-2 .4-2.7 1.4-3 3.3-.3-1.9-1-2.9-3-3.3 2-.4 2.7-1.4 3-3.3Z"
+      />
+    </>
+  ),
+  aile: (
+    <>
+      <circle {...cizgi} cx="9" cy="8" r="3.2" />
+      <path {...cizgi} d="M3.2 19.5c.7-3.4 2.9-5.2 5.8-5.2s5.1 1.8 5.8 5.2" />
+      <circle {...cizgi} cx="17" cy="10" r="2.4" />
+      <path {...cizgi} d="M16.6 14.4c2.3.1 3.7 1.6 4.2 4" />
+    </>
+  ),
+  kalkan: (
+    <>
+      <path {...cizgi} d="M12 3.5 19 6v5.6c0 4.3-2.9 7.6-7 8.9-4.1-1.3-7-4.6-7-8.9V6l7-2.5Z" />
+      <path {...cizgi} d="m9 12 2.2 2.2L15.2 10" />
+    </>
+  ),
+  tablet: (
+    <>
+      <rect {...cizgi} x="5" y="3" width="14" height="18" rx="2.5" />
+      <path {...cizgi} d="M10.5 17.5h3" />
+    </>
+  ),
+  arti: <path {...cizgi} d="M12 5v14M5 12h14" />,
+  kalem: (
+    <>
+      <path {...cizgi} d="M15.5 4.8a2 2 0 0 1 2.8 0l.9.9a2 2 0 0 1 0 2.8L9 18.7l-4 1 1-4L15.5 4.8Z" />
+      <path {...cizgi} d="m13.8 6.5 3.7 3.7" />
+    </>
+  ),
+  bilgi: (
+    <>
+      <circle {...cizgi} cx="12" cy="12" r="8.5" />
+      <path {...cizgi} d="M12 11v5.2" />
+      <circle cx="12" cy="7.8" r="1.2" fill="currentColor" />
     </>
   ),
 };
