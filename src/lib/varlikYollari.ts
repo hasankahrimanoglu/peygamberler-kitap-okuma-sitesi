@@ -9,6 +9,7 @@
  *
  *   public/kitaplar/hz-{bookKey}/kapak.png             ← kitap kapağı
  *   public/kitaplar/hz-{bookKey}/bolum-{n}/kapak.jpg   ← bölüm açılış sahnesi (16:9)
+ *   public/kitaplar/hz-{bookKey}/bolum-{n}/kapak.mp4   ← açılış sahnesinin videosu (DENEME, 6.6)
  *   public/kitaplar/hz-{bookKey}/bolum-{n}/{ad}.jpg    ← bölüm içi sahneler (16:9)
  *   public/rozetler/hz-{bookKey}/bolum-{n}.png
  *   public/madalyalar/hz-{bookKey}.png
@@ -27,6 +28,8 @@
  * hem kalite kaybı demekti. Yedek (placeholder) dosyalar SVG kalır — onlar
  * ayrı dosyalardır ve her zaman çözülür.
  */
+
+import kapakVideolari from "../data/kapakVideolari.json";
 
 /** Kitap klasörü adı. `sesli-anlatim/hz-adem` ile aynı kalıbı izler. */
 export function kitapKlasoru(bookKey: string) {
@@ -63,6 +66,16 @@ export function bolumKlasoru(bookKey: string, bolumNo: number) {
 /** Bölümün açılış sahnesi (Bölüm Kapısı'ndaki büyük görsel). */
 export function bolumKapagi(bookKey: string, bolumNo: number) {
   return `${bolumKlasoru(bookKey, bolumNo)}/kapak.jpg`;
+}
+
+/**
+ * Açılış sahnesinin videosu (DENEME — 23 Eki 2026, PROJE-MODELI 6.6). Görselin
+ * aksine çoğu bölümde yoktur; 404 isteği yapmamak için yalnız
+ * `npm run kapak-video` betiğinin yazdığı listedeki bölümlerde yol döner.
+ */
+export function bolumKapakVideosu(bookKey: string, bolumNo: number): string | null {
+  const bolumler: number[] | undefined = (kapakVideolari as Record<string, number[]>)[bookKey];
+  return bolumler?.includes(bolumNo) ? `${bolumKlasoru(bookKey, bolumNo)}/kapak.mp4` : null;
 }
 
 /** Bölüm içindeki bir sahne: `bolumGorseli("adem", 1, "toprak-isik")`. */

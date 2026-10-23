@@ -1684,6 +1684,7 @@ public/
       harita-durak.png                 rota durağı: iç sahne + ortak halka (`odul-cerceve -- durak`)
       bolum-{n}/
         kapak.jpg                      bölüm açılış sahnesi (16:9)
+        kapak.mp4                      açılış sahnesinin hareketli hâli (DENEME, yalnız Hz. Yusuf — 6.6)
         {kisa-ad}.jpg                  bölüm içi sahneler (16:9)
   rozetler/
     hz-{bookKey}/bolum-{n}.png         bölüm başına bir rozet
@@ -1982,6 +1983,43 @@ ileride istenirse eklenmesi kolaydır.)
   lansmandan önce bütün yer tutucular gerçek kayıtla değiştirilmiş olmalıdır.
 - Dosya bulunamazsa ses kontrolü hiç çizilmez; ekran bozulmaz.
 - Çalma davranışı 5.1'deki **Model A** ile aynıdır (bölümün tamamı baştan sona).
+
+### 6.6 Bölüm kapak videosu (DENEME — 23 Ekim 2026, Hasan)
+
+Bölümün açılış kapağı, görselin hareketlendirilmiş hâliyle (yapay zekâ ile
+üretilmiş 10 sn'lik kamera hareketi) oynayabilir. **Deneme yalnız Hz. Yusuf'un
+10 bölümündedir**; set geneline yayılması çocuk gözlem testinden sonra ayrıca
+kararlaştırılır. Videolar yeniden üretilmeden olduğu gibi kullanılır (Hasan):
+7. bölümde buğday tarlasında kayan bir leke, 9. bölümde ~4. saniyede beliren
+yarı saydam bir ağaç vardır; bilinerek kabul edildi.
+
+- **Yalnız okuma ekranının açılış kapağında.** Veli paneli, rozet anından sonraki
+  "sıradaki bölüm" kartı ve hikâye içi sahneler görsel kalır; hikâye akışındaki
+  hareket okumayı böler.
+- **Bir kez oynar, son karede durur.** Döngü yoktur: kamera hareket ettiği için
+  son kare ilk kareye benzemez, döngü başa sıçrardı. Kapak ekrandan çıkınca
+  durur, geri gelince kaldığı yerden sürer (pil). Ses yoktur (sesli anlatımla
+  çakışır; tarayıcı sesli videoyu kendiliğinden oynatmaz).
+- **Görsel her zaman altında durur.** `kapak.jpg` önce görünür; video oynamaya
+  başlayınca üstüne yumuşakça belirir (videonun ilk karesi görselle aynı
+  kompozisyondur). İşletim sisteminde "hareketi azalt" açıksa, veri tasarrufu
+  açıksa ya da tarayıcı oynatmayı reddederse (iOS Düşük Güç modu) video hiç
+  inmez, görsel kalır.
+- **Dosya:** `public/kitaplar/hz-{bookKey}/bolum-{n}/kapak.mp4` — 1280×720,
+  30 kare/sn, H.264, sessiz, ~0,5–2 MB. Ölçümde 720p orijinalden gözle ayırt
+  edilmiyor (VMAF 92–97); 540p tablette yumuşuyor (VMAF ~85). Üretim
+  videoları 24 kare/sn'dir; 60 Hz ekranda hızlı kamera hareketinde takılır,
+  betik ara kare üretip 30 kare/sn'ye çıkarır.
+- **Akış:** Hasan üretilen videoları
+  `gorsel-kaynaklari/kitaplar/hz-{bookKey}/bölüm kapak videoları/` klasörüne
+  koyar (ad `…bolum{n}-kapak.mp4` ya da `…bolum-{n}-kapak.mp4` biçiminde
+  olmalı; başka adlı dosyalar atlanır) ve `npm run kapak-video -- {bookKey}`
+  çalıştırır. Betik sitedeki kopyayı yazar ve `src/data/kapakVideolari.json`
+  listesini `public/`'teki dosyalara göre yeniden üretir. Liste elle
+  değiştirilmez.
+- Yol yalnız `varlikYollari.ts:bolumKapakVideosu()` ile üretilir; listede olmayan
+  bölüm için `null` döner ve ekran yalnız görseli çizer (404 isteği yapılmaz).
+  `books.ts`'te video alanı **yoktur**.
 
 ---
 

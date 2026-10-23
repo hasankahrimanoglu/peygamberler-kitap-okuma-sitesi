@@ -530,6 +530,26 @@
   background: var(--kagit-koyu);
 }
 
+/* Kapak videosu (DENEME — PROJE-MODELI 6.6) görselin üstüne serilir; oynamaya
+   başlayana kadar görünmez, böylece inmezse ya da oynamazsa görsel kalır. İlk
+   karesi görselle aynı kompozisyon olduğu için geçiş kısa bir belirmedir. */
+.acilisVideosu {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 400ms ease;
+  pointer-events: none;
+}
+
+.acilisVideosuOynuyor {
+  opacity: 1;
+}
+
 .kapakCerceve::after {
   content: "";
   position: absolute;
@@ -2584,6 +2604,11 @@
 @media (prefers-reduced-motion: reduce) {
   .sahne {
     animation: none !important;
+  }
+
+  /* Bileşen bu durumda videoyu hiç oynatmaz; ayar okuma sırasında açılırsa da gizlenir. */
+  .acilisVideosu {
+    display: none;
   }
 
   .sayfa *,

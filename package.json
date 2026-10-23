@@ -11,7 +11,8 @@
     "kitap-denetle": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/kitap-denetle.mjs",
     "tanitim-gorselleri": "node scripts/tanitim-gorselleri.mjs",
     "odul-cerceve": "node scripts/odul-cerceveleri.mjs",
-    "gorsel-sikistir": "node scripts/gorsel-sikistir.mjs"
+    "gorsel-sikistir": "node scripts/gorsel-sikistir.mjs",
+    "kapak-video": "node scripts/kapak-video.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.2",

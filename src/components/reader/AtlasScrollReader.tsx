@@ -13,7 +13,8 @@ import { adimIdsi, okumaAdimlari, okumaAkisiniOlustur, type AdimId, type OkumaAk
 import { AdimCubugu } from "./AdimCubugu";
 import { RozetKutlamasi, type RozetDurumu } from "./RozetKutlamasi";
 import styles from "./okuma-akisi.module.css";
-import { kitapKapagi, rozetGorseli, YEDEK } from "../../lib/varlikYollari";
+import { bolumKapakVideosu, kitapKapagi, rozetGorseli, YEDEK } from "../../lib/varlikYollari";
+import { KapakVideosu } from "./KapakVideosu";
 
 type YaziDuzeyi = 0 | 1 | 2;
 
@@ -656,6 +657,7 @@ export function AtlasScrollReader({
   function bolumuCiz(bolum: OkumaAkisBolumu) {
     if (bolum.type === "acilis") {
       const kapak = chapter.coverIllustration;
+      const kapakVideosu = kapak ? bolumKapakVideosu(bookKey, bolumNo) : null;
       return (
         <header className={styles.kapakAcilis}>
           <div className={styles.kapakCerceve}>
@@ -667,6 +669,14 @@ export function AtlasScrollReader({
               height={675}
               className={styles.acilisResmi}
             />
+            {kapakVideosu && (
+              <KapakVideosu
+                key={kapakVideosu}
+                src={kapakVideosu}
+                className={styles.acilisVideosu}
+                oynuyorClassName={styles.acilisVideosuOynuyor}
+              />
+            )}
             <div className={styles.kapakYazisi}>
               <p className={styles.kapakKunye}>{kunye}</p>
               <h1>{bolumAdi}</h1>
