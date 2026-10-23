@@ -2173,9 +2173,10 @@ Kaynak dışı bilgi var mı?: Hayır. İkinci olay onaylı (b) diliyle, adı ko
 
 ## E. BÜYÜK FİNAL TESTİ
 
-> **v2 (23 Ekim 2026, Hasan onayı; ayrıntı tablosu karar 5):** 1, 2, 5, 6, 7, 9 ve 10. sorularda
-> şıklar dengelendi (doğru şık artık uzunluğundan tahmin edilmiyor); 9. sorunun metni "ne
-> söyledi?" oldu, şıklar alıntı değil anlam. Doğru harfler ve dayanılan âyetler aynı.
+> **v2 (23 Ekim 2026, Hasan onayı; ayrıntı tablosu karar 5, denetim sonrası açık soru 7):** 1,
+> 2, 4, 5, 6, 7, 9 ve 10. sorularda şıklar dengelendi (doğru şık artık uzunluğundan ya da
+> çeldiricilerin ortak bitişinden tahmin edilmiyor); 9. sorunun metni "ne söyledi?" oldu,
+> şıklar alıntı değil anlam. Doğru harfler ve dayanılan âyetler aynı.
 
 ```text
 Soru 1: Hz. Musa'nın annesi bebeğini neden bir sandıkla nehre bıraktı?
@@ -2192,7 +2193,7 @@ Soru türü: olay
 Soru 2: Hz. Musa'nın ablasının sarayda yaptığından ne öğreniriz?
 A) Doğru sözü doğru zamanda söylemenin işe yaradığını
 B) Zor bir durumda hiç konuşmadan beklemek gerektiğini
-C) Yardım etmek için her şeyi bir anda anlatmak gerektiğini
+C) Yardım etmek için her şeyi bir anda anlatmanın iyi olduğunu
 Doğru seçenek: A
 Kaynak bölüm: 2
 Kaynak PDF sayfası: MH 103–108 (Kasas 12–13)
@@ -2214,7 +2215,7 @@ Soru türü: olay
 Soru 4: Hz. Musa'nın Medyen'deki kuyunun başında yaptığı iyilik bize ne anlatır?
 A) Yorgun olsak bile karşılık beklemeden yardım etmenin değerini
 B) Yardım ettikten sonra mutlaka karşılık istemek gerektiğini
-C) Yorgunken kimseye yardım etmemek gerektiğini
+C) Yorgunken kimseye yardım etmemenin daha doğru olduğunu
 Doğru seçenek: A
 Kaynak bölüm: 4
 Kaynak PDF sayfası: EZŞ 246 (Kasas 24)
@@ -2225,7 +2226,7 @@ Soru türü: değer
 Soru 5: Hz. Musa vadideki duasında Allah'tan ne istedi?
 A) Çok zengin olmayı ve sarayda bir hükümdar gibi yaşamayı
 B) Mısır'a hiç dönmeden Medyen'de çoban olarak kalmayı
-C) Dilindeki düğümün çözülmesini ve Hârûn'un yardımını
+C) Dilindeki düğümün çözülmesini ve Hz. Hârûn'un yardımını
 Doğru seçenek: C
 Kaynak bölüm: 5
 Kaynak PDF sayfası: MH 168–169 (Tâhâ 25–36)
@@ -2321,8 +2322,8 @@ vardığını görmesine yardımcı olabilir.
 
 ### F5. Çocuğunuz Sorarsa
 
-> **v2 (23 Ekim 2026, Hasan onayı):** madde 1, 2, 5 ve 6 güncellendi; 4 ("Sihirbazlara ne
-> oldu?") ve 8 ("Âşûrâ") yeni. Sıra hassasiyete göre (brif §10.3). Kitaptan alıntılar
+> **v2 (23 Ekim 2026, Hasan onayı):** madde 1, 2, 6 ve 7 güncellendi; 4 ("Sihirbazlara ne
+> oldu?"), 5 ("Âsiye'ye ne oldu?") ve 9 ("Âşûrâ") yeni. Her cevap en fazla beş cümle. Sıra hassasiyete göre (brif §10.3). Kitaptan alıntılar
 > `KITAP-HZ-MUSA-ICERIK-v2.md` ile birebir.
 
 **"Firavun bebeklere neden böyle bir emir verdi? Hz. Musa'nın annesi bebeğini neden nehre bıraktı?"**
@@ -2358,10 +2359,17 @@ güvenenlere geldiğini anlatmak yeterlidir.
 **"Sihirbazlara ne oldu?"**
 Kur'an, Firavun'un iman eden sihirbazları çok ağır cezalarla tehdit ettiğini ve onların
 "Zararı yok; nasıl olsa hepimiz Rabbimize döneceğiz" diye cevap verdiğini bildirir (A'râf
-124–126; Tâhâ 71–73; Şuarâ 49–51). Tehdidin uygulandığını açıkça söylemez. Tefsirlerde ve
+124–126; Tâhâ 71–73; Şuarâ 49–51). Tehdidin uygulandığını açıkça söylemez; tefsirlerde ve
 *Hadislerle İslâm*'ın anlatımında (6/72) sihirbazların o gün şehit edildiği aktarılır. Kitap
-bunu çocuk metnine almadı. Çocuğunuz sorarsa, sihirbazların gördükleri gerçeği korkuya
-rağmen bırakmadığını anlatmak yeterlidir.
+bunu çocuk metnine almadı. Çocuğunuz doğrudan “Ne oldu?” diye sorarsa “Kur'an bunu
+anlatmıyor; ama onların gerçeği bırakmadığını biliyoruz” diyebilirsiniz.
+
+**"Âsiye'ye ne oldu?"**
+Kur'an Âsiye'yi inananlara örnek gösterir ve duasını bildirir (Tahrîm 11), ama hayatının
+sonunu anlatmaz. Peygamberimiz (s.a.v.) onu imanıyla en yüksek dereceye ulaşmış kadınlardan
+biri olarak anmıştır (Buhârî, Enbiyâ, 32). Nasıl vefat ettiğine dair çok bilinen anlatımlar
+rivayettir ve kitapta yer almadı; bazıları çocuklar için ağırdır. Çocuğunuz sorarsa, Kur'an'ın
+onu nasıl andığını ve duasını anlatmak yeterlidir.
 
 **"Hızır gemiyi neden deldi? Kitapta 'ikinci olay' denen şey neydi?"**
 Kur'an'a göre Hızır diye bilinen kul gemiyi, zorba bir kral ele geçirmesin diye kusurlu
@@ -2382,10 +2390,9 @@ bunları ayırmak için bu kalıbı kullanır. Hz. Musa'nın adının anlamı, k
 Medyen'deki yaşlı babanın Hz. Şuayb olması rivayettir; Kur'an yaşlı babanın adını vermez,
 bazı âlimler onun Hz. Şuayb'ın yeğeni olduğunu söyler. Hızır'ın adı ve serçenin damlası ise
 Peygamberimizin (s.a.v.) bu yolculuğu anlattığı hadiste geçer (Buhârî, İlim, 44; *Hadislerle
-İslâm* 6/108). Kekemeliğin bir bebeklik olayından kaldığına dair anlatı ile Âsiye'nin nasıl
-vefat ettiğine dair anlatımlar da rivayettir ve kitapta yer almadı; Kur'an yalnızca Hz.
-Musa'nın "dilimdeki düğümü çöz" diye dua ettiğini (Tâhâ 27) ve Âsiye'nin imanını ve duasını
-(Tahrîm 11) bildirir. Kesin bilinen ile anlatılagelen arasındaki farkı görmek, çocuğunuz
+İslâm* 6/108). Kekemeliğin bir bebeklik olayından kaldığına dair çok bilinen anlatı da
+rivayettir ve kitapta yer almadı; Kur'an yalnızca Hz. Musa'nın "dilimdeki düğümü çöz" diye
+dua ettiğini bildirir (Tâhâ 27). Kesin bilinen ile anlatılagelen arasındaki farkı görmek, çocuğunuz
 için güzel bir düşünme alışkanlığıdır.
 
 **"Hz. Musa'nın asası sihirli miydi? Ben de denizi ikiye ayırabilir miyim?"**

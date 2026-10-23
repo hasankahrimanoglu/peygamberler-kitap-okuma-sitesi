@@ -1,8 +1,9 @@
 # KİTAP: Hz. Musa — v2 (karma anlatım tarzı)
 
 > **Durum:** Yazıldı ve içerik denetçisinden geçti (23 Ekim 2026; 0 kritik, 10 önemli, 17
-> küçük). Mekanik bulgular düzeltildi; Hasan'a bırakılan sekiz soru "Yazım notları"nın
-> sonunda. Hasan'ın okuması bekleniyor; aktarılmadı.
+> küçük). Mekanik bulgular düzeltildi; denetim sonrası sekiz soruda Hasan önerileri kabul
+> etti (23 Ekim 2026), işlendi ("Yazım notları" sonu). Hasan'ın okuması bekleniyor;
+> aktarılmadı.
 > On bölümün hikâye metninin kaynağı bu dosyadır. Büyük Final Testi, veli raporu,
 > sözlükçe, görsel briefleri ve kaynak notları `KITAP-HZ-MUSA-ICERIK-final.md`'de kalır;
 > veli raporunun ve final testinin v2'ye bağlı maddeleri orada güncellendi (E, F5).
@@ -12,8 +13,9 @@
 > `KITAP-HZ-MUSA-KARMA-AYRINTI-TABLOSU.md` (Hasan onayı, 23 Ekim 2026). Sen Olsaydın
 > soruları, şıklar, Seçimini Karşılaştır, Ne Öğrendik, Bugüne Taşı görevleri, sözlük
 > kelimeleri, görseller ve Tanık Sayfaları **`books.ts`'teki canlı hâlinden** alındı ve
-> değişmedi. Değişen sabit alan yalnız final testi (1, 2, 5, 6, 7, 9 ve 10. sorunun
-> şıkları, 9. sorunun metni; karar 5); final.md E'de ve "Aktarım için"de.
+> değişmedi. Değişen sabit alan yalnız final testi (1, 2, 4, 5, 6, 7, 9 ve 10. sorunun
+> şıkları, 9. sorunun metni; karar 5 ve denetim sonrası karar 7); final.md E'de ve
+> "Aktarım için"de.
 >
 > **İşaretler:** `[[…]]` kurgu parçasıdır (Kur'an'da, hadiste ve rivayette yoktur;
 > aktarımda köşeli parantezler silinir). `[GÖRSEL — musa-N-ad]` görselin metindeki
@@ -35,7 +37,7 @@ Bölüm sayısı: 10
 
 Ana değerler: cesaret, özgürlük, adalet, güven
 
-Kitaba özgü kararlar: Kur'an çekirdeği Kasas, Tâhâ, Şuarâ, A'râf, Yûnus, Zuhruf ve Kehf'tir; Kur'an bilgisi kesin dille, Allah'ın sözü meal anlamıyla verilir. Erkek bebeklere dair emir B1'de tek cümle (Faz 1 karar 2a). Kavgadaki ölüm (B3) ve ordunun sonu (B9) tek, sakin ve sahnesiz cümle; Firavun'un son anda "inandım" demesi ve bedeni çocuk metninde yok (Faz 1 karar 2b). Sihirbazlara tehdit ayrıntısız, akıbetleri yok; veli raporunda (Faz 1 karar 2c; v2 F5/4). Hızır'daki ikinci olay adı konmadan (Faz 1 karar 1; §16/15). "Ceza, azap, gazap" yok. Melek görünmez ve konuşmaz; görevlendirmede ses ve ışığın niteliği yok (Faz 1 karar 7h). Kekemeliğin sebebi yok, yalnız "dildeki düğüm" (§16/14). Tek Firavun, adsız; Hâmân yok. Anne, abla, baba, kızlar ve genç yol arkadaşının adı verilmez; Hz. Hârûn'un yaşı ve ağabeyliği verilmez (İslami kaynakta doğrulanmadı; tablo #26). Kur'an'daki "sekiz ya da on yıl" (B4) ve "dokuz işaret" (B8) dışında sayı yok. Nur sütunu, on iki yol, cam su duvarları, Hızır'ın yeşil kürkü, hayat suyu, Firavun'un rüyası, yolda doğum, Hz. Yusuf'un naaşı yok. Asa "süper güç" değildir; her işaret "Allah'ın izniyle". **v2 (Hasan onayı, 23 Ekim 2026):** Âsiye'nin imanı ve duası B8'de (Tahrîm 11), Peygamberimizin övgüsü kutuda; imanın zamanı, işkencesi ve ölümü yok (karar 1). B10 Peygamberimizin anlattığı hadisle açılır ("İnsanların en bilgilisi kim?"), Hızır'ın "Allah sana bir bilgi öğretmiştir…" sözü (karar 2); serçe ve Hızır adı hadis olarak, kalıpsız. B10'da güvenlik paragrafı (karar 3). B9'da Âşûrâ, B10'da "Allah, Musa'ya rahmet eylesin…" kutusu (karar 4). B3'te ölüm cümlesi Kur'an'ın anlatımıyla, Işıl'ın sorusu ve anlatıcının cevabıyla (karar 6).
+Kitaba özgü kararlar: Kur'an çekirdeği Kasas, Tâhâ, Şuarâ, A'râf, Yûnus, Zuhruf ve Kehf'tir; Kur'an bilgisi kesin dille, Allah'ın sözü meal anlamıyla verilir. Erkek bebeklere dair emir B1'de tek cümle (Faz 1 karar 2a). Kavgadaki ölüm (B3) ve ordunun sonu (B9) tek, sakin ve sahnesiz cümle; Firavun'un son anda "inandım" demesi ve bedeni çocuk metninde yok (Faz 1 karar 2b). Sihirbazlara tehdit ayrıntısız, akıbetleri yok; veli raporunda (Faz 1 karar 2c; v2 F5/4). Hızır'daki ikinci olay adı konmadan (Faz 1 karar 1; §16/15). "Ceza, azap, gazap" yok. Melek görünmez ve konuşmaz; görevlendirmede ses ve ışığın niteliği yok (Faz 1 karar 7h). Kekemeliğin sebebi yok, yalnız "dildeki düğüm" (§16/14). Tek Firavun, adsız; Hâmân yok. Anne, abla, baba, kızlar ve genç yol arkadaşının adı verilmez; Hz. Hârûn'un yaşı ve ağabeyliği verilmez (İslami kaynakta doğrulanmadı; tablo #26). Kur'an'daki "sekiz ya da on yıl" (B4) ve "dokuz işaret" (B8) dışında sayı yok. Nur sütunu, on iki yol, cam su duvarları, Hızır'ın yeşil kürkü, hayat suyu, Firavun'un rüyası, yolda doğum, Hz. Yusuf'un naaşı yok. Asa "süper güç" değildir; her işaret "Allah'ın izniyle". **v2 (Hasan onayı, 23 Ekim 2026):** Âsiye'nin imanı ve duası B8'de (Tahrîm 11), Peygamberimizin övgüsü kutuda; imanın zamanı, işkencesi ve ölümü yok (karar 1). B10 Peygamberimizin anlattığı hadisle açılır ("İnsanların en bilgilisi kim?"), Hızır'ın "Allah sana bir bilgi öğretmiştir…" sözü (karar 2); serçe ve Hızır adı hadis olarak, kalıpsız. B10'da güvenlik paragrafı (karar 3). B9'da Âşûrâ, B10'da "Allah, Musa'ya rahmet eylesin…" kutusu (karar 4). B3'te ölüm cümlesi Kur'an'ın anlatımıyla, Işıl'ın sorusu ve anlatıcının cevabıyla (karar 6). **Denetim sonrası (Hasan, 23 Ekim 2026):** B7 sihirbazların kalbindeki değerle biter; Yûnus 83 zamansız; B3'te "istememişti" bir kez; B9 "deniz hemen yarıldı"; iki kutunun dili; veli raporu 9 madde.
 
 Ekim-kapanış halkaları: (1) **"Korkma."** B1 anneye "Korkma ve üzülme" → B4 "Korkma, artık o zalim topluluktan kurtuldun" → B5 "Beri gel, korkma; çünkü sen güvende olanlardansın" → B6 "Korkmayın, ben sizinle beraberim" → B7 "Korkma, üstün gelecek olan sensin" → B9 "Asla, Rabbim benimle beraberdir". (2) **Su.** B1 nehir sandığı taşır → B4 kuyu yeni bir yuva açar → B9 deniz yol olur → B10 iki denizin buluştuğu yer öğrenmenin kapısıdır; serçenin damlası. (3) **Değnek → asa.** B4 çobanın değneği → B5 asa adını ve işaretini alır → B7 iplerin arasında gerçeği gösterir → B9 denize vurulur. (4) **Dildeki düğüm.** B5 "Dilimdeki düğümü çöz" → B6 Hz. Hârûn'la birlikte konuşur → B8 Firavun'un alayı. (5) **Söz.** B3 "suçluların yanında durmayacağım" ve ertesi sabah tutulması → B4 sözleşme ve B5'te tamamlanması → B8 tutulmayan sözler → B10 Hz. Musa'nın Hızır'a verdiği söz. (6) **Göz aydınlığı.** B2 Âsiye "gözümüzün aydınlığı olsun" → B8 Âsiye'nin imanı ("Şimdi kalbi de aydınlanmıştı"). (7) **Firavun'un korktuğu şey.** B1 "onlardan gelecek bir şeyden korkuyordu" → B2 "Firavun'un korktuğu şey, şimdi kendi sarayında" → B9 deniz. (8) **Sandıktan yola.** B1 sandık → B5 Allah'ın hatırlattığı iyilikler → B9 "Her şey, nehre bırakılan küçük bir sandıkla başlamıştı". (B10 kitabı Hz. Musa'nın sabır üzerine iç sesiyle kapatır; denetim sonrası.) (9) **Bilgi.** B3 "bilgi ve hikmet verdi" → B10 "İnsanların en bilgilisi kim?" ve "Allah sana bir bilgi öğretmiştir…".
 
@@ -270,7 +272,7 @@ Rozet: Doğru Taraf Rozeti
 
 Rozet sembolü: İkiye ayrılan yolda aydınlık olan taraf
 
-Kaynak: Kasas 28/14 (hikmet ve ilim; "iyilik yapanları böyle mükâfatlandırırız" kesin dille, tablo #22), 28/15–21; Şuarâ 26/20–21 (olayın peygamberlikten önce olması). Ölüm tek cümle, sahnesiz; "istemeden" anlamı ölüm cümlesinin ardında ve anlatıcının cevabında (onaylı karar 6 metni; TDV "MÛSÂ": "Kur'an'a göre … bir kastı olmaksızın"; v2 karar 6). Kasas 19'da konuşanın kimliği nötr: "adamlardan biri" (§16/13, tablo #24). Kurgu: öğle sessizliği, uykusuz gece, sabah sesi, kapıdan çıkış.
+Kaynak: Kasas 28/14 (hikmet ve ilim; "iyilik yapanları böyle mükâfatlandırırız" kesin dille, tablo #22), 28/15–21; Şuarâ 26/20–21 (olayın peygamberlikten önce olması). Ölüm tek cümle, sahnesiz; "istemeden" anlamı bir kez, Işıl'ın sorusuna anlatıcının cevabında (karar 6; denetim sonrası açık soru 3; TDV "MÛSÂ": "Kur'an'a göre … bir kastı olmaksızın"; v2 karar 6). Kasas 19'da konuşanın kimliği nötr: "adamlardan biri" (§16/13, tablo #24). Kurgu: öğle sessizliği, uykusuz gece, sabah sesi, kapıdan çıkış.
 
 ### HİKÂYE — 1. KISIM
 
@@ -291,7 +293,7 @@ Bir gün Hz. Musa, insanların pek ortalıkta olmadığı sakin bir saatte şehr
 
 **[GÖRSEL — musa-3-dar-sokak]**
 
-Kendi halkından olan adam Hz. Musa'yı görünce bağırarak ondan yardım istedi. Hz. Musa onu korumak için öteki adama bir yumruk vurdu ve adamın ölümüne sebep oldu. Onu öldürmek istememişti.
+Kendi halkından olan adam Hz. Musa'yı görünce bağırarak ondan yardım istedi. Hz. Musa onu korumak için öteki adama bir yumruk vurdu ve adamın ölümüne sebep oldu.
 
 [[Hz. Musa olduğu yerde donup kaldı. Olanın ne kadar ağır olduğunu hemen anladı.]]
 
@@ -778,7 +780,7 @@ Rozet: Gerçeği Kabul Rozeti
 
 Rozet sembolü: Dağınık iplerin ortasında dimdik duran asa
 
-Kaynak: A'râf 7/113–126, Tâhâ 20/58–73, Şuarâ 26/38–51, Yûnus 10/83 ("az sayıda kişi", *Kur'an Yolu* "az sayıda insan"; Faz 2 §I8). Tehdit ayrıntısız (§16/4; "ceza" kelimesi yok, Faz 2 denetim bulgusu 11); sihirbazların akıbeti çocuk metninde yok, veli raporunda (tablo #13). Tanık Sayfası `books.ts`'teki gibi, 1. kısmın son bloğu. Kurgu: meydanın kalabalığı, sihirbazların içinden geçenler, akşam ve ilk yıldız.
+Kaynak: A'râf 7/113–126, Tâhâ 20/58–73, Şuarâ 26/38–51, Yûnus 10/83 ("az sayıda kişi", *Kur'an Yolu* "az sayıda insan"; Faz 2 §I8). Tehdit ayrıntısız (§16/4; "ceza" kelimesi yok, Faz 2 denetim bulgusu 11); sihirbazların akıbeti çocuk metninde yok, veli raporunda (tablo #13). Yûnus 83 zaman vermeden: "Firavun'dan korktukları için Hz. Musa'ya kavminden ancak az sayıda kişi inandı." (denetim sonrası açık soru 2). Bölüm sihirbazların kalbindeki değerle biter (açık soru 1). Tanık Sayfası `books.ts`'teki gibi, 1. kısmın son bloğu. Kurgu: meydanın kalabalığı, sihirbazların içinden geçenler, akşam ve ilk yıldız.
 
 ### HİKÂYE — 1. KISIM
 
@@ -876,9 +878,9 @@ Sonra ellerini açıp hep birlikte dua ettiler:
 
 — Rabbimiz, üzerimize sabır yağdır!
 
-O gün meydandakilerin çoğu Firavun'dan korktuğu için sustu. Hz. Musa'nın kavminden ise az sayıda kişi, korkularına rağmen ona inandı.
+Firavun'dan korktukları için Hz. Musa'ya kavminden ancak az sayıda kişi inandı.
 
-[[Akşam olduğunda meydan boşalmıştı. Şehrin düz damlarının üstünde ilk yıldız parladı.]] Sihirbazlar o sabah meydana bir ödül için gelmişti. Şimdi kalplerinde bütün ödüllerden daha değerli bir şey vardı. [[Ama Firavun'un öfkesi henüz dinmemişti.]]
+[[Akşam olduğunda meydan boşalmıştı. Şehrin düz damlarının üstünde ilk yıldız parladı.]] Sihirbazlar o sabah meydana bir ödül için gelmişti. Şimdi kalplerinde bütün ödüllerden daha değerli bir şey vardı.
 
 **[GÖRSEL — musa-7-ilk-yildiz]**
 
@@ -989,7 +991,7 @@ Evet, o. Bir zamanlar “Gözümüzün aydınlığı olsun” demişti. [[Şimdi
 
 ```text
 [BİLİYOR MUYDUN]
-Metin: Peygamberimiz (s.a.v.), Firavun'un eşi Âsiye'yi olgunluğa ermiş kadınlardan biri olarak anmıştır. Onunla birlikte Hz. Meryem'i de anmıştır.
+Metin: Peygamberimiz (s.a.v.), Firavun'un eşi Âsiye'yi imanıyla en yüksek dereceye ulaşmış kadınlardan biri olarak anmıştır. Onunla birlikte Hz. Meryem'i de anmıştır.
 ```
 
 [[Mısır'da günler böyle geçiyordu.]] Sabırla bekleyen inananları, çok yakında hiç unutamayacakları bir yolculuk bekliyordu.
@@ -1037,7 +1039,7 @@ Rozet: Açılan Yol Rozeti
 
 Rozet sembolü: İki su duvarı arasında uzanan kuru yol
 
-Kaynak: Şuarâ 26/52–68, Tâhâ 20/77–79, Sâffât 37/114–120 ("Musa'ya ve Hârûn'a selam olsun", Faz 2 karar 5). Firavun ve ordusunun sonu tek cümle (Faz 1 karar 2b; Yûnus 90–92 veli raporunda). Hz. Musa'nın sözü final testi 9, Karşılaştır B ve Ne Öğrendik 2 ile birebir. "Her parçası koca bir dağ gibi" Şuarâ 63. Kutu: Âşûrâ (Müslim, Sıyâm, 128; Buhârî, Menâkıbü'l-ensâr, 52; *Hadislerle İslâm* 6/65, 6/75; TDV "FİRAVUN"; "Yahudiler" ve karşılaştırma sözü yok, orucun hükmü yok; v2 karar 4a). Tanık Sayfası `books.ts`'teki gibi, 1. kısmın son bloğu. Kurgu: gece yürüyüşü, kafiledeki korku, su duvarlarındaki ışık, karşı kıyıdaki sabah.
+Kaynak: Şuarâ 26/52–68, Tâhâ 20/77–79, Sâffât 37/114–120 ("Musa'ya ve Hârûn'a selam olsun", Faz 2 karar 5). Firavun ve ordusunun sonu tek cümle (Faz 1 karar 2b; Yûnus 90–92 veli raporunda). Hz. Musa'nın sözü final testi 9, Karşılaştır B ve Ne Öğrendik 2 ile birebir. "Her parçası koca bir dağ gibi" Şuarâ 63; "ikiye" yok, âyet yalnız "yarıldı" der (denetim sonrası açık soru 4). Kutu: Âşûrâ (Müslim, Sıyâm, 128; Buhârî, Menâkıbü'l-ensâr, 52; *Hadislerle İslâm* 6/65, 6/75; TDV "FİRAVUN"; "Yahudiler" ve karşılaştırma sözü yok, orucun hükmü yok; v2 karar 4a). Tanık Sayfası `books.ts`'teki gibi, 1. kısmın son bloğu. Kurgu: gece yürüyüşü, kafiledeki korku, su duvarlarındaki ışık, karşı kıyıdaki sabah.
 
 ### HİKÂYE — 1. KISIM
 
@@ -1104,7 +1106,7 @@ Hz. Musa hiç tereddüt etmeden, herkesin duyacağı sakin bir sesle cevap verdi
 
 — Asla, Rabbim benimle beraberdir; O bana bir çıkış yolu gösterecektir! dedi.
 
-[[Bu söz, korkuyla titreyen kafileye güç verdi. Herkes gözünü Hz. Musa'ya dikti.]] O anda Allah, ona asasıyla denize vurmasını bildirdi. Hz. Musa asasını kaldırıp denize vurdu ve deniz hemen ikiye yarıldı. Her parçası koca bir dağ gibi yükseldi ve ortada kupkuru bir yol açıldı.
+[[Bu söz, korkuyla titreyen kafileye güç verdi. Herkes gözünü Hz. Musa'ya dikti.]] O anda Allah, ona asasıyla denize vurmasını bildirdi. Hz. Musa asasını kaldırıp denize vurdu ve deniz hemen yarıldı. Her parçası koca bir dağ gibi yükseldi ve ortada kupkuru bir yol açıldı.
 
 **[GÖRSEL — musa-9-acilan-yol]**
 
@@ -1123,7 +1125,7 @@ Firavun ve ordusu da onların peşinden aynı yola girdi. İnananların hepsi ka
 
 ```text
 [BİLİYOR MUYDUN]
-Metin: Peygamberimiz (s.a.v.) Medine'ye geldiğinde bazı insanların bir gün oruç tuttuğunu gördü. Bu, Allah'ın Hz. Musa'yı ve yanındakileri kurtardığı gündü. Peygamberimiz de o gün oruç tuttu. Bu güne Âşûrâ denir.
+Metin: Peygamberimiz (s.a.v.) Medine'ye geldiğinde bazı insanların bir gün oruç tuttuğunu gördü. Bu, Allah'ın Hz. Musa'yı ve yanındakileri kurtardığı gündü. Peygamberimiz de o gün oruç tuttu; bu güne Âşûrâ denir.
 ```
 
 Hatırlıyor musun? Her şey, nehre bırakılan küçük bir sandıkla başlamıştı. Şimdi o yolculuk, denizde açılan bir yolla yeni bir sabaha ulaşmıştı.
@@ -1334,7 +1336,7 @@ Profil eylemi: Görevi Listeme Ekle / Şimdilik Değil
    sabredemezsin"den önce, onaylı metinle. Künyeler B10 kaynak notunda.
 3. **B10 güvenlik paragrafı** Hızır'ın "Bunları kendiliğimden yapmadım" sözünden ve 4(b)
    kutusundan sonra, `ayrilan-yollar` görselinden önce; Işıl ve anlatıcı onaylı metinle
-   harfiyen. F5/5'in son cümlesi bunu haber veriyor.
+   harfiyen. F5/6'nın son cümlesi bunu haber veriyor.
 4. **(a) B9 Âşûrâ kutusu** şükür paragrafından sonra, onaylı metinle ("Yahudiler",
    karşılaştırma sözü ve hüküm yok). **(b) B10 kutusu** onaylı metinle (hadisteki parantezli
    "aralarında başka olaylar geçseydi" yok). B10'da hadise dayanan yerler: açılış çerçevesi,
@@ -1343,10 +1345,11 @@ Profil eylemi: Görevi Listeme Ekle / Şimdilik Değil
    ("Peygamberimizin anlattığına göre gemidekiler Hızır'ı tanıyıp…"; serçe aynı sahnede,
    ayrı işaretsiz). Kur'an'dan gelen konuşmalar işaretsiz (§16/17c-4).
 5. **Final testi** final.md E'de onaylı şıklarla; 9. soru "ne söyledi?"; doğru harfler aynı
-   (C-A-B-A-C-B-A-C-B-A). B9 metnindeki söz birebir: "— Asla, Rabbim benimle beraberdir; O
+   (C-A-B-A-C-B-A-C-B-A). Denetim sonrası karar 7 ile 2/C, 4/C ve 5/C de değişti. B9 metnindeki söz birebir: "— Asla, Rabbim benimle beraberdir; O
    bana bir çıkış yolu gösterecektir! dedi." `quizzes.ts` metni "Aktarım için"de.
 6. **B3.** "Hz. Musa onu korumak için öteki adama bir yumruk vurdu ve adamın ölümüne sebep
-   oldu. Onu öldürmek istememişti." Işıl "Hz. Musa şimdi kötü biri mi oldu?" ⚑ Anlatıcı:
+   oldu." (Onaylı metnin "Onu öldürmek istememişti." cümlesi denetim sonrası karar 3 ile
+   çıktı; bilgi anlatıcının cevabında bir kez.) Işıl "Hz. Musa şimdi kötü biri mi oldu?" ⚑ Anlatıcı:
    "Hayır. Hz. Musa o gün henüz peygamber değildi. Adamın ölmesini istememişti. Hemen
    Rabbinden bağışlanma diledi ve Allah onu bağışladı." ("yine de olanı saklamadı" yok.)
    **Yer:** Işıl, Hz. Musa'nın "Rabbim, ben kendime yazık ettim, beni bağışla" duasının
@@ -1368,8 +1371,8 @@ Profil eylemi: Görevi Listeme Ekle / Şimdilik Değil
   korktuğu şey, şimdi kendi sarayında…]]" (Kasas 8–9).
 - **#11** B6 Işıl "Firavun'a bile mi yumuşak konuşacaklar?" ve anlatıcının cevabı
   (*Hadislerle İslâm* 3/385).
-- **#13–15** veli raporu: F5/4 "Sihirbazlara ne oldu?" (yeni), F5/5 Hızır'ın kim olduğu,
-  gencin hadisteki adı, güvenlik kuralının kitapta da bulunduğu, F5/6 yaşlı babanın kimliğinde
+- **#13–15** veli raporu: F5/4 "Sihirbazlara ne oldu?" (yeni), F5/6 Hızır'ın kim olduğu,
+  gencin hadisteki adı, güvenlik kuralının kitapta da bulunduğu, F5/7 yaşlı babanın kimliğinde
   ikinci görüş.
 - **#16** Tâhâ 51–52 (isteğe bağlıydı) girmedi: B6 zaten bölümlerin en uzunlarından.
 - **#17** B5 Kasas 31: "— Ey Musa! Beri gel, korkma; çünkü sen güvende olanlardansın. Tut onu
@@ -1404,7 +1407,7 @@ Profil eylemi: Görevi Listeme Ekle / Şimdilik Değil
   paragrafın ders kısmı, B10 son iki paragrafın ders kısmı. Bölüm sonları: sandık ve soru
   (B1), "Bunu henüz saraydaki hiç kimse bilmiyordu" (B2), çöl yolu (B3), "bir gece onu
   bambaşka bir şey bekliyordu" (B4), "Firavun'un sarayı" (B5), "Ziynet Günü yaklaşıyordu"
-  (B6), ilk yıldız ve "Firavun'un öfkesi henüz dinmemişti" (B7; açık soru 1), yolculuk
+  (B6), ilk yıldız ve sihirbazların kalbindeki değer (B7; denetim sonrası karar 1), yolculuk
   köprüsü (B8), sandık halkası (B9), Hz. Musa'nın sabır üzerine iç sesi (B10).
 - **#34** B4 Kasas 27 teklifi yaşlı babanın kendi sözü olarak; "sekiz yıl / on yıl" Kur'an'ın
   aktardığı konuşmanın içinde.
@@ -1439,13 +1442,13 @@ işaretleri sayılmadı; `scripts/v2-onizleme-uret.mjs` çıktısından betikle)
 |---|---:|---:|---:|---:|---:|---:|
 | 1 | 3.011 (2.039 + 972) | 3.094 | 2 | 1 | — | 794 |
 | 2 | 2.824 (1.731 + 1.093) | 2.732 | 2 | — | — | 578 |
-| 3 | 2.965 (1.674 + 1.291) | 3.032 | 2 | — | — | 553 |
+| 3 | 2.939 (1.648 + 1.291) | 3.032 | 2 | — | — | 553 |
 | 4 | 2.866 (1.235 + 1.631) | 2.990 | 1 | — | — | 626 |
 | 5 | 3.407 (2.239 + 1.168) | 3.198 | 1 | — | — | 830 |
 | 6 | 3.426 (1.351 + 2.075) | 3.272 | 2 | 1 | — | 641 |
-| 7 | 3.081 (1.768 + 1.313) | 2.910 | 1 | 1 | — | 724 |
+| 7 | 2.987 (1.768 + 1.219) | 2.910 | 1 | 1 | — | 724 |
 | 8 | 2.813 (1.518 + 1.295) | 2.853 | 1 | — | 1 | 760 |
-| 9 | 3.134 (1.684 + 1.450) | 2.904 | 1 | 1 | 1 | 647 |
+| 9 | 3.128 (1.684 + 1.444) | 2.904 | 1 | 1 | 1 | 647 |
 | 10 | 3.963 (2.201 + 1.762) | 3.755 | 2 | — | 1 | 735 |
 
 **Meal notları:** Diyanet Vakfı meali (kuran.diyanet.gov.tr) bu oturumda Tâhâ 14, Kasas 6, 8,
@@ -1504,56 +1507,28 @@ alıntılarının v2 ile birebirliği doğrulandı. **Mekanik bulgular düzeltil
   için"de (Küçük 14). final.md'nin başına ve eski Âsiye kuralının iki yerine v2 notu (Küçük
   15). B3 Devam'daki duraklama kısa bir iç sesle sahneye çevrildi (Küçük 16).
 
-**Açık sorular (Hasan; denetçinin Hasan'a bıraktığı bulgular, uygulanmadı):**
-1. **B7'nin kapanışı.** Bugün "[[Ama Firavun'un öfkesi henüz dinmemişti.]]" ile bitiyor;
-   denetçi: bölüm, kitabın bilerek almadığı sihirbazların akıbetine götüren bir korku
-   notasıyla bitiyor. *Önerim:* Cümle çıksın; bölüm "Şimdi kalplerinde bütün ödüllerden
-   daha değerli bir şey vardı." ile biter. Öbür yol: B8'e köprü "[[Ama Mısır'da inananlar
-   için zor günler başlıyordu.]]"
-2. **B7'de Yûnus 83.** Bugün (Faz 2'den): "O gün meydandakilerin çoğu Firavun'dan korktuğu
-   için sustu. Hz. Musa'nın kavminden ise az sayıda kişi, korkularına rağmen ona inandı."
-   Âyet zaman vermez ("o gün") ve "sustu" değil "iman etmedi" der; "sustu" çocukta "içinden
-   inandı ama söylemedi" diye anlaşılabilir (kim inandı, değişmez alan). *Önerim:*
-   "Firavun'dan korktukları için Hz. Musa'ya kavminden ancak az sayıda kişi inandı."
-3. **B3'teki ikinci "istememişti".** Ölüm cümlesinin ardından "Onu öldürmek istememişti.",
-   Işıl'dan sonra anlatıcının cevabında "Adamın ölmesini istememişti." Denetçi: "yine de
-   olanı saklamadı" çıkınca cevabın dört cümlesinden üçü Hz. Musa'yı aklıyor; tablo #23'teki
-   "savunmaya dönüyor" kaygısı kısmen geri geliyor. *Önerim:* Ölüm cümlesinin ardındaki "Onu
-   öldürmek istememişti." çıksın; Kur'an'ın ifadesi ("Bu, şeytanın işidir", "kendime yazık
-   ettim") önde kalır, "istememişti" anlatıcının cevabında bir kez geçer.
-4. **B9 "deniz hemen ikiye yarıldı".** "İkiye" Kur'an'da yok (Şuarâ 63 "yarıldı, her
-   parçası … dağ gibi"); yayındaki metinden geliyor. Görseller ve rozet iki su duvarı
-   gösteriyor. *Önerim:* "deniz hemen yarıldı" ("ikiye" çıksın); Ne Öğrendik 3 zaten
-   "deniz yarıldı" diyor; görseller bununla çelişmiyor.
-5. **İki onaylı kutunun dili.** (a) B8 "olgunluğa ermiş kadınlardan biri": çocuk "büyümüş
-   kadın" diye anlayabilir. *Önerim:* "Peygamberimiz (s.a.v.), Firavun'un eşi Âsiye'yi
-   imanıyla en yüksek dereceye ulaşmış kadınlardan biri olarak anmıştır. Onunla birlikte Hz.
-   Meryem'i de anmıştır." (Hadisteki "kemal", TDV "en yüksek kemale ermiş".) (b) B9 Âşûrâ
-   kutusu dört cümle (brif 1–3). *Önerim:* son iki cümle birleşsin: "Peygamberimiz de o
-   gün oruç tuttu; bu güne Âşûrâ denir."
-6. **Veli raporuna Âsiye maddesi ve F5/4'e bir cümle.** "Cennette bir ev" duası bazı
-   çocuklara ölümü düşündürebilir; F5'te Âsiye yalnız bir bilgi cümlesi. *Önerim:* yeni
-   madde (F5 dokuz madde olur; Âsiye cümlesi 6. maddeden çıkar):
-   "**"Âsiye'ye ne oldu?"** Kur'an Âsiye'yi inananlara örnek gösterir ve duasını bildirir
-   (Tahrîm 11), ama hayatının sonunu anlatmaz. Peygamberimiz (s.a.v.) onu en yüksek
-   dereceye ulaşmış kadınlardan biri olarak anmıştır (Buhârî, Enbiyâ, 32). Nasıl vefat
-   ettiğine dair çok bilinen anlatımlar rivayettir ve kitapta yer almadı; bazıları çocuklar
-   için ağırdır. Çocuğunuz sorarsa, Kur'an'ın onu nasıl andığını ve duasını anlatmak
-   yeterlidir." Ayrıca F5/4'e (sihirbazlar) son cümleden önce: "Çocuğunuz doğrudan “Ne
-   oldu?” diye sorarsa “Kur'an bunu anlatmıyor; ama onların gerçeği bırakmadığını
-   biliyoruz” diyebilirsiniz." Hızır'ın kimliği için ayrı madde gerekmiyor (F5/5 beş
-   cümleye indi).
-7. **Final testi (sabit alan).** (a) 5/C "Dilindeki düğümün çözülmesini ve Hârûn'un
-   yardımını": canlıda "Hz. Hârûn" vardı. *Önerim:* "…ve Hz. Hârûn'un yardımını" (55
-   karakter; öbür şıklar 55 ve 51). (b) 2. ve 4. soruda iki çeldirici "…gerektiğini" diye,
-   doğru şık başka biçimde bitiyor (ipucu). *Önerim:* 2/C "Yardım etmek için her şeyi bir
-   anda anlatmanın iyi olduğunu" (54); 4/C "Yorgunken kimseye yardım etmemenin daha doğru
-   olduğunu" (52). 10. soruda çeldiriciler zaten farklı bitiyor.
-8. **B10 görsellerinde Hızır "yeşil cüppeli"** (`kiyidaki-izler`, `duzelen-duvar` alt
-   metni). Denetçi: kitap kararı "Hızır'ın yeşil kürkü yok"; §16/18 "metne girmeyen rivayet
-   görsele girmez". *Önerim:* Görsel ve alt metin kalır: renk bir rivayet olayı anlatmıyor,
-   yüz yok; adının "yeşil" anlamına geldiğini Peygamberimiz bildirir (*Hadislerle İslâm*
-   6/105). Değişecekse bu v2'nin değil görsel oturumunun işi.
+**Hasan'ın denetim sonrası sekiz kararı (23 Ekim 2026; sekizinde de öneri kabul).** Hasan'ın
+sözü: "Musa: sekiz kararda öneriler kabul." Uygulama:
+1. **B7 kapanışı:** "[[Ama Firavun'un öfkesi henüz dinmemişti.]]" çıktı; bölüm "Şimdi
+   kalplerinde bütün ödüllerden daha değerli bir şey vardı." ile biter.
+2. **B7 Yûnus 83:** "Firavun'dan korktukları için Hz. Musa'ya kavminden ancak az sayıda kişi
+   inandı." ("O gün" ve "sustu" yok.)
+3. **B3:** ölüm cümlesinin ardındaki "Onu öldürmek istememişti." çıktı; "istememişti" yalnız
+   anlatıcının Işıl'a cevabında. Özet, Ne Öğrendik 2 ve final 3'teki "istemeden" aynı.
+4. **B9:** "deniz hemen yarıldı" ("ikiye" yok; Ne Öğrendik 3 ile aynı ifade).
+5. **Kutular:** B8 "Peygamberimiz (s.a.v.), Firavun'un eşi Âsiye'yi imanıyla en yüksek dereceye
+   ulaşmış kadınlardan biri olarak anmıştır. Onunla birlikte Hz. Meryem'i de anmıştır." B9
+   Âşûrâ üç cümle: "…Peygamberimiz de o gün oruç tuttu; bu güne Âşûrâ denir."
+6. **Veli raporu 9 madde:** F5/5 "Âsiye'ye ne oldu?" (yeni; dört cümle, "en yüksek dereceye
+   ulaşmış" ifadesi kutuyla aynı); F5/7'den Âsiye cümlesi çıktı. F5/4'e "Çocuğunuz doğrudan
+   “Ne oldu?” diye sorarsa “Kur'an bunu anlatmıyor; ama onların gerçeği bırakmadığını
+   biliyoruz” diyebilirsiniz." Beş cümle sınırı için iki cümle birleşti ve aynı şeyi söyleyen
+   eski son cümle ("Çocuğunuz sorarsa, sihirbazların gördükleri gerçeği korkuya rağmen
+   bırakmadığını anlatmak yeterlidir.") çıktı.
+7. **Final testi:** 2/C "Yardım etmek için her şeyi bir anda anlatmanın iyi olduğunu"; 4/C
+   "Yorgunken kimseye yardım etmemenin daha doğru olduğunu"; 5/C "Dilindeki düğümün çözülmesini
+   ve Hz. Hârûn'un yardımını". final.md E ve aşağıdaki TS metni güncellendi.
+8. **B10 görselleri** ("yeşil cüppeli" Hızır) değişmedi.
 
 **Aktarım için:**
 - `paragraphs` ve `continuationParagraphs` v2'den alınır; `[[`/`]]` silinir. Yeni bloklar:
@@ -1565,8 +1540,8 @@ alıntılarının v2 ile birebirliği doğrulandı. **Mekanik bulgular düzeltil
   değişenler:** B2 sütanne (öncesi "Ama bebek acıkmıştı ve durmadan ağlıyordu. Onu emzirmesi için saraya hemen bir ", sonrası " çağrıldı, ama bebek onun sütünü emmedi. Bir başkası geldi, sonra bir başkası daha; bebek hiçbirini istemedi."); B3 hikmet (öncesi "Hz. Musa olgunluk çağına erişince Allah ona bilgi ve ", sonrası " verdi. Allah, iyilik yapanları işte böyle ödüllendirir."); B4 sözleşme (öncesi "Hz. Musa teklifi kabul etti ve bunun ikisi arasında bir ", sonrası " olduğunu söyledi."); B7 iman (öncesi "Gördükleri gerçek, kalplerindeki her şeyi bir anda değiştirmişti. Allah'a ve O'nun bildirdiklerine yürekten inanmaya ", sonrası " denir. Sihirbazlar artık Firavun'un ödülünü hiç düşünmüyordu."); B9 özgürlük (öncesi "Kafiledekiler yıllardır başkalarının emriyle yaşamış ve hep en ağır işlerde çalışmıştı. Şimdi ilk kez kendi yollarını seçebilecekleri bir hayata doğru yürüyorlardı. İnsanın baskı altında kalmadan kendi seçimini yapabilmesine ", sonrası " denir. Onlar bunu hiç bu kadar yakın hissetmemişti."); B10 ilim (öncesi "Hz. Musa ", sonrası " öğrenmeyi çok severdi. Yanına genç bir yol arkadaşı aldı."). Öteki kelimelerin çevre metni aynı.
 - **Sabit alanlar:** özetler, Sen Olsaydın, şıklar, Seçimini Karşılaştır, Ne Öğrendik ve
   görevler değişmedi.
-- **`quizzes.ts` `musaQuizQuestions`** 1, 2, 5, 6, 7, 9 ve 10. soru (final.md E ile aynı; 3,
-  4 ve 8 değişmedi; doğru harfler aynı):
+- **`quizzes.ts` `musaQuizQuestions`** 1, 2, 4, 5, 6, 7, 9 ve 10. soru, son hâliyle (final.md E
+  ile aynı; 3 ve 8 değişmedi; doğru harfler aynı):
   ```ts
   {
     id: 1,
@@ -1585,7 +1560,17 @@ alıntılarının v2 ile birebirliği doğrulandı. **Mekanik bulgular düzeltil
     options: [
       { id: "a", text: "Doğru sözü doğru zamanda söylemenin işe yaradığını" },
       { id: "b", text: "Zor bir durumda hiç konuşmadan beklemek gerektiğini" },
-      { id: "c", text: "Yardım etmek için her şeyi bir anda anlatmak gerektiğini" },
+      { id: "c", text: "Yardım etmek için her şeyi bir anda anlatmanın iyi olduğunu" },
+    ],
+  },
+  {
+    id: 4,
+    question: "Hz. Musa'nın Medyen'deki kuyunun başında yaptığı iyilik bize ne anlatır?",
+    correctOption: "a",
+    options: [
+      { id: "a", text: "Yorgun olsak bile karşılık beklemeden yardım etmenin değerini" },
+      { id: "b", text: "Yardım ettikten sonra mutlaka karşılık istemek gerektiğini" },
+      { id: "c", text: "Yorgunken kimseye yardım etmemenin daha doğru olduğunu" },
     ],
   },
   {
@@ -1595,7 +1580,7 @@ alıntılarının v2 ile birebirliği doğrulandı. **Mekanik bulgular düzeltil
     options: [
       { id: "a", text: "Çok zengin olmayı ve sarayda bir hükümdar gibi yaşamayı" },
       { id: "b", text: "Mısır'a hiç dönmeden Medyen'de çoban olarak kalmayı" },
-      { id: "c", text: "Dilindeki düğümün çözülmesini ve Hârûn'un yardımını" },
+      { id: "c", text: "Dilindeki düğümün çözülmesini ve Hz. Hârûn'un yardımını" },
     ],
   },
   {
@@ -1639,11 +1624,12 @@ alıntılarının v2 ile birebirliği doğrulandı. **Mekanik bulgular düzeltil
     ],
   },
   ```
-- `parentReportBooks` Musa `parent_faq` final.md F5'teki 8 maddeye göre güncellenir (açık
-  soru 6 kabul edilirse 9): 1 (emrin sebebi Kasas 4 ve 6 birlikte, rüya rivayeti), 2 (Işıl'ı
-  haber veren satır), 3 aynı, 4 "Sihirbazlara ne oldu?" (yeni), 5 Hızır (kimliği, Hz. Yûşa,
-  alıntı "Bunları kendiliğimden yapmadım", güvenlik satırı), 6 "anlatılanlara göre" (liste
-  yenilendi, Âsiye), 7 asa (aynı), 8 "Âşûrâ günü nedir? Aşureyle ilgisi var mı?" (yeni).
+- `parentReportBooks` Musa `parent_faq` final.md F5'teki 9 maddeye göre güncellenir: 1 (emrin
+  sebebi Kasas 4 ve 6 birlikte, rüya rivayeti), 2 (Işıl'ı haber veren satır), 3 aynı, 4
+  "Sihirbazlara ne oldu?" (yeni; "Ne oldu?" cümlesiyle), 5 "Âsiye'ye ne oldu?" (yeni), 6 Hızır
+  (kimliği, Hz. Yûşa, alıntı "Bunları kendiliğimden yapmadım", güvenlik satırı), 7
+  "anlatılanlara göre" (liste yenilendi; Âsiye 5. maddeye geçti), 8 asa (aynı), 9 "Âşûrâ
+  günü nedir? Aşureyle ilgisi var mı?" (yeni).
   Her cevap en fazla beş cümle. Özetler ve aile sohbet soruları aynı.
 - `SOZLUKCE-SICILI.md` ve `ICERIK-GORSEL-SICILI.md`: kutu ve görsel yerleri aynı; güncelleme
   gerekmiyor.
