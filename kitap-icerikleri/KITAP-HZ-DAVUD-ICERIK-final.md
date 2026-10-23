@@ -1,5 +1,21 @@
 # KİTAP: HZ. DÂVÛD (a.s.) — FAZ 2 İÇERİK PAKETİ
 
+> **v2 notu (24 Ekim 2026):** Altı bölümün hikâye metni karma tarzda ve üç alanlı kaynak
+> kuralıyla yeniden yazıldı: `KITAP-HZ-DAVUD-ICERIK-v2.md` (kararlar
+> `KITAP-HZ-DAVUD-KARMA-AYRINTI-TABLOSU.md`'de). Aşağıdaki D bölümlerindeki hikâye parçaları
+> ve Ne Öğrendik B1-3, B3-3, B4-3 artık geçerli değildir; geçerli metin v2'dedir. Faz 1
+> karar 3 ("hadis eklenmez") v2'de değişti: oruç, gece ibadeti ve el emeği hadisle; güzel ses,
+> Hz. Dâvûd'un duası ve çobanlık kutularda. B1'de babanın orduda olması ve "yaşın küçük"
+> konuşması, B4'te ücret almama, B5'te "mabette yalnızdı", B6'da evlat duası, hastalık ve
+> "bazıları genç buldu" yok (yalnız kaynak PDF'te). Bu dosyada v2'ye göre güncellenen
+> yerler: E (S3, S6; S4'ün kaynak satırı) ve F5 (1, 2, 4, 6, 7, 8, 10); D1 `karsi-kiyi`
+> figür notundan baba çıktı. Kelime tanımları, rozet ve madalya, görsellerin kendisi ve
+> öteki alanlar değişmedi. **Eski kalanlar:** D bölümlerindeki görsel "metin çapaları",
+> seslendirme notları ve G1'deki KELİME bloklarının önündeki ve arkasındaki metin eski
+> hikâyeye göredir; *azık, sapan, Zebur, zırh, adalet* bloklarının v2 metni v2 dosyasının
+> "Aktarım için" bölümündedir. §I8'deki Faz 2 kayıtları (ör. K22'deki baba notu) o günün
+> kaydı olarak bırakıldı.
+
 > **Durum:** Nihai — **Faz 2 onaylandı (21 Ekim 2026, Hasan'ın yetkisiyle ana oturum; aşağıdaki
 > karar kaydı).** Aktarım yapılmadı; `src/`, `app/`, `public/`, `supabase/`, katalog ve siciller
 > bu oturumda **değişmedi**. Faz 2 sırasındaki adı `KITAP-HZ-DAVUD-ICERIK-FAZ2-taslak.md`'ydi;
@@ -598,7 +614,7 @@ Alt metin: Öğleden sonra ışığında nehrin karşı kıyısına çıkıp yam
 Ana üretim promptu: Öğleden sonranın sıcak, altın ışığı. Orta planda, nehrin bu yakasında, sığ sudan yeni çıkmış, yün giysili küçük bir topluluk yamaca doğru, izleyiciden uzaklaşarak tırmanıyor; figürler küçük, yüzleri seçilmiyor. Arkalarında, nehrin öbür kıyısında, gölgelerde ve suyun içinde dinlenen, sayısı belirsiz büyük bir kalabalık; uzak ve küçük. Nehir ortadan yatay geçiyor; sazlar rüzgârda hafifçe eğilmiş.
 Ana üretim promptu (EN): The warm, golden light of the afternoon. In the middle ground, on this side of the river, a small group of people in woollen clothes, just out of the shallow water, climbs the slope away from the viewer; the figures are small and their faces cannot be made out. Behind them, on the far bank of the river, a large crowd of uncertain number rests in the shade and in the water, far away and small. The river crosses the middle of the frame horizontally; the reeds bend slightly in the breeze.
 Kadraj notu: 16:9; küçük topluluk sağ orta planda, yamaçta, küçük ve izleyiciden uzaklaşan; nehir orta bantta; öbür kıyıdaki kalabalık sol arka planda küçük ve belirsiz; sayılabilir değil.
-Figür: Tâlût'un yanında kalan askerler — Katman 3, sakin, küçük. Hikâyeye göre Hz. Dâvûd'un babası ve ağabeyleri (Katman 1) bu toplulukta olabilir; bu yüzden hiçbir yüz seçilmez. Tâlût ve Hz. Dâvûd ayrıca seçilmez.
+Figür: Tâlût'un yanında kalan askerler — Katman 3, sakin, küçük. Hikâyeye göre Hz. Dâvûd'un ağabeyleri (Katman 1) bu toplulukta olabilir (v2: babası orduda değil); bu yüzden hiçbir yüz seçilmez. Tâlût ve Hz. Dâvûd ayrıca seçilmez.
 Negatif prompt/kesin yasaklar: detailed faces, close-up faces, figures turning toward the viewer, weapons raised, swords drawn, battle, banners, flags, a single central leader figure, birds
 ```
 
@@ -1576,7 +1592,7 @@ Soru türü: değer
 
 ```text
 Soru 3: Kur'an'a göre sabah akşam Hz. Dâvûd ile birlikte kimler tesbih ederdi?
-A) Dağlar ve kuşlar
+A) Dağlar ve toplanıp gelen kuşlar
 B) Sarayda çalışan bütün insanlar
 C) Denizdeki balıklar ve dalgalar
 Doğru seçenek: A
@@ -1592,7 +1608,7 @@ B) Elinin emeğiyle geçinmenin değerli bir şey olduğunu
 C) Demircilik işinin herkes için en kolay iş olduğunu
 Doğru seçenek: B
 Kaynak bölüm: 4
-Kaynak PDF sayfası: YD 177, 275, 283
+Kaynak PDF sayfası: YD 177, 275, 283 · v2: Buhârî, Büyû', 15 (Hadislerle İslâm 6/83)
 Soru türü: değer
 ```
 
@@ -1608,7 +1624,7 @@ Soru türü: olay
 ```
 
 ```text
-Soru 6: Hz. Dâvûd'un genç oğlu Hz. Süleyman'a güvenip ona yol açması bize ne anlatır?
+Soru 6: Hikâyede Hz. Dâvûd'un genç oğlu Hz. Süleyman'a güvenip ona yol açması bize ne anlatır?
 A) Küçük olmanın değersiz olmak demek olmadığını
 B) Gençlerin her işi kimseye sormadan yapması gerektiğini
 C) Yaşça büyük olanın her zaman haklı olduğunu
@@ -1621,6 +1637,11 @@ Soru türü: değer
 > **Sıra:** N. soru N. bölümden (brif §9; "Tekrar bakmak istersen" bağlantısı). Olay 3 (S1,
 > S3, S5) · değer 3 (S2, S4, S6). Doğru harfler B · C · A · B · C · A → A 2 · B 2 · C 2; aynı
 > harf art arda gelmiyor. Hz. Dâvûd'un vefatı ve Câlût'un ölümü bilerek soru yapılmadı.
+>
+> **v2 (Hasan onayı, 24 Ekim 2026; ayrıntı tablosu karar 6):** S3'ün doğru şıkkı "Dağlar ve
+> toplanıp gelen kuşlar" oldu (şık dengesi: 31/30/30 karakter; Sâd 19 "toplu hâlde kuşları
+> da"). S6 rivayete (halefi Hz. Dâvûd'un kendisinin bildirmesi) dayandığı için "Hikâyede…"
+> ile başlıyor (S4 emsali). Doğru harfler aynı.
 
 ---
 
@@ -1661,9 +1682,8 @@ düşünmesine yardımcı olabilir.
 
 **"Hz. Dâvûd, Câlût'u öldürdü mü? Savaş iyi bir şey mi?"**
 Kur'an bu olayı tek cümleyle anlatır: "Sonunda Allah'ın izniyle onları yendiler, Dâvûd da
-Câlût'u öldürdü." (Bakara 251). Kitap da bu cümleyi bir kez verdi; nasıl olduğunu anlatmadı.
-Kaynak kitaptaki ayrıntılı savaş anlatımları eski rivayetlerdir ve çocuk metnine alınmadı.
-Kur'an'ın aynı âyetin devamında, Allah'ın insanların bir kısmını öbürüyle engellemesi
+Câlût'u öldürdü." (Bakara 251). Kitap da bu cümleyi bir kez verdi; nasıl olduğunu ve eski
+rivayetlerdeki savaş ayrıntılarını anlatmadı. Kur'an'ın aynı âyetin devamında, Allah'ın insanların bir kısmını öbürüyle engellemesi
 olmasaydı yeryüzünde düzenin bozulacağını bildirdiğini söyleyebilirsiniz. Savaşın acı bir şey
 olduğunu, kitabın bir kahramanlık değil Allah'a güven hikâyesi anlattığını ve Hz. Dâvûd'un
 sonra demiri insanları korumak için kullandığını hatırlatın. Çocuğunuz haberlerdeki savaşlardan
@@ -1676,7 +1696,8 @@ başkasına zarar verildiğini gördüğünde ondan uzaklaşmasını, güvenli b
 güvendiği bir yetişkine (öğretmen, okul görevlisi, aile) haber vermesini söyleyin. Arkadaşlarını
 toplayıp yüzleşmenin bir kavgaya dönüşebileceğini anlatın. Kitaptaki cesaret, korkuya rağmen
 doğrunun yanında durmak ve yardım istemektir; ikinci bölümdeki "Sen Olsaydın" sorusu da bunu
-sordu.
+sordu. Kitapta Işıl da bu soruyu soruyor; anlatıcı çocuğa uzaklaşmasını ve hemen güvendiği
+bir büyüğüne anlatmasını söylüyor.
 
 **"Hz. Dâvûd öldü mü? Benim dedem/ninem de ölecek mi?"**
 Kitap Hz. Dâvûd'un vefatını son bölümde tek ve sakin bir cümleyle verir; Kur'an, oğlu
@@ -1687,16 +1708,17 @@ yolu olduğunu söyleyebilirsiniz; Hz. Süleyman da babasının öğütleriyle y
 Süleyman kitabı bu hikâyenin devamını anlatır.
 
 **"Hz. Dâvûd neden bağışlanma diledi? Ne yanlış yaptı?"**
-Kur'an, davacılardan sonra Hz. Dâvûd'un "kendisini sınadığımızı anladı" diye bildirir ve
-onun bağışlanma dilediğini, Allah'ın da onu bağışladığını anlatır (Sâd 24–25); sınavın ne
-olduğunu ise ayrıntısıyla anlatmaz. Âlimler bu konuda farklı yorumlar yapmıştır; kaynak
-kitabımız, davacıların aslında kötü bir niyetle geldiğini ve Hz. Dâvûd'un bunu sezdiğini
-düşünür. Bazı eski anlatımlarda olay peygambere yakışmayan bir hikâyeyle açıklanır; kaynak
-kitabımız bu anlatımları kabul etmez, kitap da onlara yer vermedi. Çocuğunuz sorarsa ona "Kur'an
-bunun ne olduğunu söylemiyor; bildiğimiz, onun hemen Rabbine döndüğü ve Allah'ın onu
-bağışladığıdır." diyebilirsiniz. Ona Kur'an'da başka
-peygamberlerin de Rablerine yönelip bağışlanma dilediğini (ör. Hz. Âdem, Hz. Musa) ve bunun
-Allah'a yönelmenin güzel bir yolu olduğunu anlatabilirsiniz.
+Kur'an, davacılardan sonra Hz. Dâvûd'un sınandığını anladığını, bağışlanma dileyip secdeye
+kapandığını ve Allah'ın onu bağışladığını bildirir; sınavın ne olduğunu söylemez (Sâd 24–25).
+Âlimlerin çoğuna göre davacılar aslında ona zarar vermek için gelmişti; Hz. Dâvûd bir an
+içinden geçen öfke ya da onlar hakkındaki bir şüphe için bağışlanma diledi; bir başka yoruma
+göre de yalnız bir tarafı dinleyip hüküm verdiği için (TDV "DÂVÛD"). Bazı eski anlatımlar olayı
+peygambere yakışmayan bir hikâyeyle açıklar; Diyanet bunun sahih olmadığını ve Kur'an'ın
+övgüyle andığı Hz. Dâvûd'un şahsiyetiyle bağdaşmadığını belirtir (*Hadislerle İslâm* 6/81–82),
+kitap da ona yer vermedi. Çocuğunuz sorarsa ona "Kur'an bunun ne olduğunu söylemiyor;
+bildiğimiz, onun hemen Rabbine döndüğü ve Allah'ın onu bağışladığıdır." diyebilirsiniz.
+Peygamberimiz (s.a.v.) de onu insanların Allah'a en çok ibadet edeni olarak anmıştır
+(Tirmizî, Deavât, 72; kitabın son bölümündeki kutu).
 
 **"Tâlût'a ne oldu? Hikâyede neden bir daha görünmüyor?"**
 Kur'an, Tâlût'u Allah'ın seçtiği ve ilimde, bedende güçlü kıldığı bir hükümdar olarak anar
@@ -1710,23 +1732,27 @@ birlikte konuşabilirsiniz.
 Kur'an yalnızca bunun "Allah'ın izniyle" olduğunu söyler. Kaynak kitaptaki yolda konuşan
 taşlar, zırhın yalnız Hz. Dâvûd'a uyması gibi ayrıntılar eski anlatımlardır ve güvenilirlikleri
 zayıftır; bu yüzden kitapta yer almadı. Sapan da Kur'an'da değil, rivayetlerde geçer; kitap
-onu bir kez, rivayet kalıbıyla ("Aynı anlatıma göre") andı. Asıl önemli olanın zaferin Allah'tan gelmesi
+onu bir kez, rivayet kalıbıyla ("Anlatılanlara göre") açılan bir sahnede andı. Asıl önemli olanın zaferin Allah'tan gelmesi
 olduğunu hatırlatın.
 
 **"Dağlar ve kuşlar nasıl tesbih eder? Demir onun elinde nasıl yumuşadı?"**
 Kur'an, dağların ve kuşların Hz. Dâvûd'la birlikte Allah'ı tesbih ettiğini ve Allah'ın onun
 için demiri yumuşattığını, Allah'ın ona verdiği özel bir lütuf olarak anlatır (Sâd 18–19,
 Sebe 10, Enbiyâ 79–80). Bunların nasıl olduğunu Kur'an anlatmaz; bunlar Allah'ın izniyle olan
-olağanüstü olaylar, yani mucizelerdir. Demirin "mum gibi" yumuşaması kaynak kitaptaki bir
-anlatımdır. Çocuğunuza her şeyin bilinmek zorunda olmadığını, bazı soruların cevabını yalnız
+olağanüstü olaylar, yani mucizelerdir. Demirin "mum gibi" yumuşaması eski anlatımlardandır;
+kitap onu "anlatılanlara göre" diye verdi. Kitapta Işıl dağların nasıl tesbih ettiğini soruyor;
+anlatıcı İsrâ 44'le cevaplıyor: Allah'ı tesbih etmeyen hiçbir şey yoktur, ama biz onların
+tesbihini anlamayız. Çocuğunuza her şeyin bilinmek zorunda olmadığını, bazı soruların cevabını yalnız
 Allah'ın bildiğini sakin bir dille söyleyebilirsiniz.
 
 **"Hz. Dâvûd bir gün oruç tutup bir gün tutmuyormuş. Ben de böyle mi yapmalıyım?"**
-Kitap bunu kaynak kitaptaki bir anlatım olarak, "Anlatılanlara göre" diye ve süre ya da oran
-vermeden anlattı; amacı, ibadeti ve günlük işleri dengeli yürütme fikridir. Çocuklara oruç
-farz değildir; ibadete alışmak isteyen bir çocuk için bile ölçü, sağlığı ve yaşı gözetilerek
-aileyle birlikte belirlenir. Bölümün mesajının "her şeyi bir anda yapmak" değil, "iyi bir
-alışkanlığı ölçülü ve bırakmadan sürdürmek" olduğunu anlatın.
+Kitap bunu Peygamberimizin (s.a.v.) anlattığı hadise dayanarak verdi (Müslim, Sıyâm, 190;
+*Hadislerle İslâm* 6/79); hadisteki gece ölçüleri çocuk metnine alınmadı. Peygamberimiz bu
+orucu, her gün oruç tutup her gece namaz kılmak isteyen bir sahabeye ölçülü olmayı öğretmek
+için örnek göstermiştir (Müslim, Sıyâm, 186; *Hadislerle İslâm* 4/424). Çocuklara oruç farz
+değildir; ibadete alışmak isteyen bir çocuk için bile ölçü, sağlığı ve yaşı gözetilerek
+aileyle birlikte belirlenir. Bölümün mesajı "her şeyi bir anda yapmak" değil, iyi bir
+alışkanlığı ölçülü ve bırakmadan sürdürmektir.
 
 **"Tâlût nasıl seçildi? Kur'an'da geçen sandık nedir?"**
 Kur'an'a göre peygamberleri, Allah'ın Tâlût'u seçtiğini ve onu ilimde ve bedende güçlü
@@ -1737,13 +1763,12 @@ bölümün odağının Hz. Dâvûd olması için sandığı anlatmadı. Sandığ
 hakkında tefsirlerde farklı görüşler vardır.
 
 **"Zebur bugün nerede? Onu okuyabilir miyiz?"**
-Kur'an, Allah'ın Hz. Dâvûd'a Zebur'u verdiğini bildirir (Nisâ 163, İsrâ 55). Kaynak kitap,
-Zebur'un öğütlerden ve Allah'ı yücelten sözlerden oluştuğunu anlatır. Zebur'un ilk hâliyle
-bugüne ulaşmadığı kabul edilir; Kitab-ı Mukaddes'teki Mezmurlar bölümü onunla
-ilişkilendirilse de bu bölümün Zebur'un kendisi olduğu söylenemez. Bu yüzden kitap, kaynak
-kitapta yer alan Mezmur metinlerini Hz. Dâvûd'a söyletmedi. Müslümanların Kur'an'ın yanı sıra
-Allah'ın indirdiği önceki kitaplara, bu arada asıl Zebur'a da inandığını ve bunun imanın bir
-parçası olduğunu anlatabilirsiniz. "Okuyabilir miyiz?" sorusunun dürüst
+Kur'an, Allah'ın Hz. Dâvûd'a Zebur'u verdiğini bildirir (Nisâ 163, İsrâ 55). Âlimler Zebur'un
+dua, öğüt ve Allah'ı öven sözlerden oluştuğunu, helal-haram hükümleri içermediğini söyler
+(TDV "ZEBÛR"). Zebur'un ilk hâliyle bugüne ulaşmadığı kabul edilir; Kitab-ı Mukaddes'teki
+Mezmurlar bölümü onunla ilişkilendirilse de Zebur'un kendisi olduğu söylenemez, bu yüzden
+kitap Mezmur metinlerini Hz. Dâvûd'a söyletmedi. Müslümanların Kur'an'ın yanı sıra Allah'ın
+indirdiği önceki kitaplara, bu arada asıl Zebur'a da inandığını anlatabilirsiniz. "Okuyabilir miyiz?" sorusunun dürüst
 cevabı şudur: Bugün elimizde "işte Zebur" diyebileceğimiz bir kitap yok; Zebur hakkında
 bildiklerimizi Kur'an'dan öğreniyoruz.
 

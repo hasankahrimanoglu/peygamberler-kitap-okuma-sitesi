@@ -1,7 +1,32 @@
 # HZ. DÂVÛD (a.s.) — KARMA TARZ YENİDEN YAZIMI: AYRINTI TABLOSU
 
-> **Tarih:** 24 Ekim 2026 · **Durum:** Hasan'ın altı karar sorusuna cevabı bekleniyor; v2
-> yazılmadı.
+> **Tarih:** 24 Ekim 2026 · **Durum:** Hasan altı karar sorusunda önerileri kabul etti (24
+> Ekim 2026; iki şartla, ⚑). Hasan'ın sözü: "Dâvûd: altı kararda senin önerilerin kabul (1b
+> kutusu bağlamıyla; 1c Tirmizî hadisi Hadislerle İslâm'da yoksa yalnız veli raporuna). v2'yi
+> yazsın." (1) (a) B3 oruç ve gece ibadeti, B4 el emeği hadisle, hadisteki sayılar yok; Ne
+> Öğrendik B3-3 ve B4-3 önerilen metinlerle; F5/8 buna göre. ⚑ (b) B3 güzel ses kutusu
+> **bağlamıyla:** Peygamberimizin bunu Kur'an'ı güzel okuyan bir arkadaşına söylediği belli.
+> ⚑ (c) B6 dua kutusu yalnız *Hadislerle İslâm*'da bulunursa çocuk metnine: **bulundu**
+> (6/79, Ebu'd-Derdâ rivayeti, Tirmizî, Deavât, 72, no. 3490; ayrıca 6/82), kutu çocuk
+> metninde, "serin su" halkasıyla. (d) B1 çobanlık kutusu. (2) B1 TDV/Taberî sürümü, Ne
+> Öğrendik B1-3 önerilen metinle. (3) B4 maaş teklifi işaretli örnek sahne; "ücret almaz"
+> çıktı. (4) B6 hastalık, evlat duası ve "bazıları fazla genç buldu" çıktı; gerilim iç sesle.
+> (5) B2 güvenlik paragrafı onaylı metinle. (6) Final S6 "Hikâyede…", S3 "Dağlar ve toplanıp
+> gelen kuşlar". Soru gerektirmeyen değişiklikler ve tablodaki öteki öneriler de uygulandı;
+> Süleyman'daki "bağ / ekin tarlası" notu Süleyman turuna bırakıldı. v2 metni
+> `KITAP-HZ-DAVUD-ICERIK-v2.md`; final testi (E) ve veli raporu (F5) `final.md`'de.
+>
+> **İçerik denetimi sonrası (24 Ekim 2026; 0 kritik, 6 önemli, 21 küçük):** mekanik
+> bulgular düzeltildi (v2 "Yazım notları"). Tablodan sapan ya da tabloya eklenen noktalar:
+> (1) B2'de Câlût'un meydan okuması v2'de eklendi (TDV "DÂVÛD": Taberî I, 476–478; tabloda
+> yoktu) ve rivayet kalıbı bu cümlede açılıyor; kalıp tablodaki #18'deki gibi sapan
+> cümlesinde değil (açık soru 1). (2) B4'te ikinci örnek sahne: zırhın isimsiz bir gence
+> verilmesi (`zirhi-veren`; açık soru 2). (3) B1 Devam'da Bakara 249'dan sonra rivayete dönüş
+> kalıpla ("Anlatıldığına göre … ağabeylerine yetişti"); kalıp sayısı 10. (4) B5'te Sâd 22
+> Diyanet Vakfı mealine döndü ("Biz birbirine hasım iki davacıyız"); *mabet* anlatıda 3 kez.
+> (5) F5/6 kalıp alıntısı "açılan bir sahnede". Beş açık soru v2 "Yazım notları"nın sonunda:
+> B2 meydan okuma; B4 ikinci örnek sahne ve tekrarlar; B3 ses ve "eşlik" cümleleri; B2, B3,
+> B5 tekrarları; B6 mescit tepesi ve "örs". Ölçüler 2.697–3.195.
 > **Kural:** brif §4.3 (üç alan, kaynak ölçeği), §7.2 (ölçüler), §7.10 (karma tarz,
 > örnek sahne), §16 (yerleşik kararlar; §16/1 ölüm, §16/6 kahramanlaştırma, §16/8 kalıp,
 > §16/9 sayılar, §16/12 melek ve vahiy, §16/13 iki yorum, §16/17b–c hadis ve alıntı,
