@@ -25,6 +25,13 @@
 > Taşı B1 ve B3 · beş bölüm adı, beş rozet ve altı yeni terim (cömert, sabır, musibet,
 > vefa, imtihan, şifa) onaylı.
 >
+> **v2 (23 Ekim 2026, Hasan onayı):** Beş bölümün hikâye metni karma tarzda yeniden yazıldı;
+> geçerli hikâye metni `KITAP-HZ-EYYUB-ICERIK-v2.md`, kararlar
+> `KITAP-HZ-EYYUB-KARMA-AYRINTI-TABLOSU.md`. Bu dosyanın D bölümündeki hikâye parçaları
+> ve seslendirme notları eski metne göredir. v2'ye bağlı olarak final testinin 3. ve 4.
+> sorusu (E) ve veli raporunun "Çocuğunuz Sorarsa" maddeleri (F5: 1–6 güncellendi, 7
+> yeni) bu dosyada değişti; B4 Ne Öğrendik 2 v2 dosyasında.
+>
 > **Kitap kapağı ve harita durağı görseli bu teslimde VARDIR** (`public/kitaplar/hz-eyyub/`
 > klasörü yok; §C1, §C2).
 
@@ -177,6 +184,12 @@ mealiyle kontrol edildi. Roman kurgusu kullanılmadı; kurgudan gelen tek ayrın
   (katalog notu).
 - Görsellerde hasta beden, yıkıntı, mezar, sel, yangın, ölü hayvan, altın yağmuru,
   çekirge, put, tapınak, kubbe ve minare yok.
+- **v2 (23 Ekim 2026):** B4'te genç dost yok (yalnız PDF'te; Ahd-i Atîk'teki Elihu
+  motifi). B3'te bulaşma korkusu, köy halkının çıkma talebi ve "Bu onların hakkı" yok;
+  hastalık insanları kaçıran bir hâl gibi gösterilmez (TDV "EYYÛB"). Altın çekirgeler
+  B5'te hadis olarak bir "Biliyor muydun?" kutusunda (Buhârî, Tevhîd, 35); eşin
+  dinçleşmesi ve halkın iman etmesi yok. Sâd 41 Diyanet Vakfı mealiyle ("yorgunluk ve
+  eziyet"). Kalıp "İslam inancına ve tarihî rivayetlere göre" kullanılmaz.
 
 **Duygusal yay.** Huzur ve bolluk (1) → şok, kayıp, yas ve ilk anda sabır (2) →
 yalnızlık ama vefanın sıcaklığı (3) → kırılma, sonra umut dolu dua (4) → şifa, sevinç ve
@@ -1234,25 +1247,25 @@ Soru türü: değer
 ```
 
 ```text
-Soru 3: Hz. Eyyûb hastalanıp "Sen de git, kendini yorma" dediğinde eşi ne yaptı?
-A) Yanından ayrılmadı; her gün su taşıyıp yemeğini hazırladı
+Soru 3: Hikâyede, herkes uzaklaşınca Hz. Eyyûb'un eşi ne yaptı?
+A) Yanından ayrılmadı; ona bakmayı sürdürdü
 B) Köye dönüp onu bir daha görmeye gelmedi
 C) Hekim bulmak için uzak bir şehre gitti
 Doğru seçenek: A
 Kaynak bölüm: 3
-Kaynak PDF sayfası: EZŞ 114, 117, 120
+Kaynak PDF sayfası: EZŞ 114, 117 (v2: "Hikâyede" çerçevesi, eşin bakımı rivayettir — brif §9; v2 karar 2c)
 Soru türü: olay
 ```
 
 ```text
-Soru 4: Genç dostun, Hz. Eyyûb'u suçlayan arkadaşlarına verdiği cevaptan ne öğreniriz?
-A) Hasta birini hiç ziyaret etmemek gerektiğini
-B) Kırıcı bir sözü herkesin önünde tekrar etmek gerektiğini
-C) Zor durumdaki birini suçlamak yerine onun yanında durmak gerektiğini
+Soru 4: Hz. Eyyûb derdini kime açtı ve nasıl dua etti?
+A) Dostlarına kızıp onlarla tartıştı
+B) Derdini kimseye açmadı, içinde tuttu
+C) Allah'a açtı: "Rabbim, bana bu dert dokundu; sen merhametlilerin en merhametlisisin" dedi
 Doğru seçenek: C
 Kaynak bölüm: 4
-Kaynak PDF sayfası: EZŞ 118–119
-Soru türü: değer
+Kaynak PDF sayfası: EZŞ 139–140 (Enbiyâ 83; duanın sözü v2 B4'te aynı kelimelerle; v2 karar 1c)
+Soru türü: olay
 ```
 
 ```text
@@ -1300,20 +1313,26 @@ farklı seçenekleri birlikte düşünmesine yardımcı olabilir.
 
 ### F5. Çocuğunuz Sorarsa
 
+*(v2, 23 Ekim 2026: 1–6 güncellendi, 7 yeni. Kitaptan alıntılar v2 ile birebir.)*
+
 **"Hz. Eyyûb'un çocukları neden öldü? Bizim evimiz de yıkılır mı?"**
 Kur'an ölümün nasıl olduğunu anlatmaz; Hz. Eyyûb'a "ailesinin ve onlarla birlikte bir o
 kadarının" verildiğini kısaca bildirir (Enbiyâ 84, Sâd 43). Kitap, kaynağımızdaki
 anlatıma dayanarak ölümü tek ve sakin bir cümleyle verir, sahne anlatmaz. Neden böyle
 olduğunu en iyi Allah bilir; kitabın açıkça söylediği gibi bu bir ceza değildi ve Hz.
-Eyyûb çocuklarını hep sevgiyle andı. Çocuğunuz kendi evi için kaygılanırsa evinizde
-güvenlik için neler yapıldığını ve bir afet anında ailece ne yapacağınızı (güvenli yer,
-buluşma noktası, büyüklerin yanında kalmak) sakin bir dille konuşun; onu koruyan
-yetişkinlerin hep yanında olduğunu hatırlatın.
+Eyyûb çocuklarını hep sevgiyle andı. Kitapta bu haberden sonra çocuğa, aklına takılanı
+güvendiği bir büyüğüne anlatmasını söyleyen kısa bir paragraf vardır. Çocuğunuz kendi evi
+için kaygılanırsa evinizde güvenlik için neler yapıldığını ve bir afet anında ailece ne
+yapacağınızı (güvenli yer, buluşma noktası, büyüklerin yanında kalmak) sakin bir dille
+konuşun; onu koruyan yetişkinlerin hep yanında olduğunu hatırlatın.
 
 **"Hz. Eyyûb kötü bir şey mi yaptı da hastalandı? Hastalık bir ceza mı?"**
 Kitap bunu açıkça söyler: Hz. Eyyûb'un başına gelenler bir ceza değildi. Kur'an onun için
-"Biz onu sabırlı bulduk; o ne güzel bir kuldu" der (Sâd 44). Hikâyede onu suçlayan iki
-dosta genç bir arkadaşın "Bu dert ona bir ceza olarak değil, bir hayır olarak verildi" diye karşılık verdiğini
+"Gerçekten biz Eyyûb'u sabırlı bir kul bulmuştuk. O, ne iyi kuldu!" der (Sâd 44, Diyanet
+Vakfı meali). Peygamberimiz (s.a.v.) de en
+büyük sıkıntıları peygamberlerin ve iyi insanların yaşadığını bildirmiştir (İbn Hanbel,
+Müsned I, 173; Hadislerle İslâm 7/445). Hikâyede bir dostu Hz. Eyyûb'u suçladıktan sonra
+anlatıcının "Bir insanın hastalanması, onun kötü biri olduğunu göstermez" dediğini
 birlikte hatırlayabilirsiniz. Çevrenizde hasta biri varsa, hastalığın kimsenin suçu
 olmadığını ve hastaya en çok sevginin, yakınlığın iyi geldiğini konuşmak güzel olur.
 
@@ -1323,31 +1342,53 @@ Kitap, Hz. Eyyûb'un iyileşmesini ve ona verilenleri bir kural olarak değil, A
 ve yalnız olmadığımızı hissetmektir; karşılığı her zaman istediğimiz biçimde ve zamanda
 gelmeyebilir, hastalıkta doktora gitmek ve tedavi olmak da gerekir. Kur'an'ın ailesiyle
 ilgili ifadesi kısadır (Sâd 43); kaynağımızdaki anlatıma göre Hz. Eyyûb'un yeniden
-çocukları oldu. Altın çekirgeler de bir rivayettir; kaynağımızdaki bir konuşmada bunun
-maddî bir ödül olarak değil, kalbe gelen huzur olarak anlaşılması gerektiği söylenir.
+çocukları oldu. Peygamberimiz (s.a.v.), müminin sevinçli günde şükrettiğini, sıkıntılı
+günde sabrettiğini ve ikisinin de onun için hayır olduğunu bildirir (Müslim, Zühd, 64;
+Hadislerle İslâm 7/445). Altın çekirgeler, Peygamberimizin (s.a.v.) anlattığı bir
+olaydır (Buhârî, Tevhîd, 35; Hadislerle İslâm 6/126–127). Hz. Eyyûb'un bu nimeti geri
+çevirmeyip Rabbinin bereketine her zaman ihtiyaç duyduğunu söylemesi, Hadislerle
+İslâm'da her nimetin Allah'tan geldiğini kabul etmek diye açıklanır. Kitap bunu bir ödül
+kuralı olarak değil, şükrün bir örneği olarak verir.
 
 **"Şeytan Hz. Eyyûb'a ne yaptı?"**
-Kur'an'da Hz. Eyyûb'un "Şeytan bana bir yorgunluk ve azap dokundurdu" diye Rabbine
-seslendiği bildirilir (Sâd 41); kitap "azap" yerine "sıkıntı" kelimesini kullandı. Bazı
-rivayetlerde şeytanın, Hz. Eyyûb'un yalnızca iyi günlerde Allah'a bağlı olduğunu iddia
-ettiği anlatılır; kitap bu anlatımı almadı. Çocuğunuza, şeytanın insanın içine umutsuzluk
-ve yorgunluk sokmaya çalışabileceğini, Hz. Eyyûb'un ise bunu da Rabbine anlatarak O'na
-sığındığını söyleyebilirsiniz.
+Kur'an'da Hz. Eyyûb'un "Doğrusu şeytan bana bir yorgunluk ve eziyet verdi" diye Rabbine
+seslendiği bildirilir (Sâd 41, Diyanet Vakfı meali; Kur'an Yolu meali "yorgunluk ve azap"
+der). Kitap bu sözü Hz. Eyyûb'un kendi sözü olarak verir. Bazı rivayetlerde şeytanın,
+Hz. Eyyûb'un yalnızca iyi günlerde Allah'a bağlı olduğunu iddia ettiği ve onunla
+konuştuğu anlatılır; bunlar gayb konusudur, Kur'an'da yoktur ve kitap bu anlatımları
+almadı. Çocuğunuza, şeytanın insanın içine umutsuzluk ve yorgunluk sokmaya
+çalışabileceğini, Hz. Eyyûb'un ise bunu da Rabbine anlatarak O'na sığındığını
+söyleyebilirsiniz.
 
 **"Hz. Eyyûb bir yemin mi etmişti?"**
-Kur'an'da Allah'ın Hz. Eyyûb'a "Eline bir demet sap al, onunla vur ve yeminini bozma"
-dediği bildirilir (Sâd 44). Yeminin sebebini Kur'an bildirmez; anlatılanlar farklıdır ve
-kitap bu konuyu çocuk metnine almadı. Âyet, Allah'ın Hz. Eyyûb'a kimseyi incitmeden
-sözünü tutmanın yolunu gösterdiği biçiminde anlaşılır. Bu konu, sözümüzü düşünerek vermeyi ve
-verdiğimiz sözü tutmayı konuşmak için bir fırsat olabilir.
+Kur'an'da Allah'ın Hz. Eyyûb'a "Eline bir demet sap al da onunla vur, yeminini böyle
+yerine getir" dediği bildirilir (Sâd 44, Diyanet Vakfı meali). Âyet yeminin sebebini ve kime olduğunu söylemez.
+Tefsirlerde bunun Hz. Eyyûb'un hastalığı sırasında eşine dair ettiği bir yemin olduğu
+anlatılır; sebebi konusundaki rivayetler farklıdır. Müfessirler âyeti, Allah'ın Hz.
+Eyyûb'a hem yeminini yerine getirmenin hem de kimseyi incitmemenin yolunu gösterdiği
+biçiminde açıklar. Kitap bu konuyu, çocuklar için şiddet çağrışımı taşıdığından hikâyeye
+almadı. Bu konu, sözümüzü düşünerek vermeyi ve verdiğimiz sözü tutmayı konuşmak için bir
+fırsat olabilir.
 
 **"İnsanlar Hz. Eyyûb'dan neden uzaklaştı? Hasta birinin yanına gitmemek kötü mü?"**
-Kitap, köy halkının hastalığın kendilerine geçmesinden korktuğunu anlatır ve onları "kötü"
-diye göstermez; Hz. Eyyûb da "Bu onların hakkı" der. Bulaşıcı bir hastalıkta uzak durmak
+Rivayetlerde, Hz. Eyyûb'un uzun süren hastalığında birkaç dostu dışında akrabalarının ve
+arkadaşlarının ondan uzaklaştığı anlatılır (Taberânî, el-Mu'cemü'l-kebîr XXV, 283;
+Hadislerle İslâm 7/446). Kitap uzaklaşanları "kötü" diye göstermez ve neden
+uzaklaştıklarını kesinleştirmez. Bazı anlatımlarda Hz. Eyyûb'un hastalığı insanları
+ondan kaçıracak kadar ağır tarif edilir; bu tarif Kur'an'da ve güvenilir hadis
+kaynaklarında yoktur, TDV İslâm Ansiklopedisi de bu bilgilerin bir peygamberin
+saygınlığıyla bağdaşmadığını belirtir ("EYYÛB"). Bulaşıcı bir hastalıkta uzak durmak
 bazen doğru ve gerekli bir önlemdir; bunu doktorların ve büyüklerin söylediklerine göre
-yaparız. Vefa, kuralları çiğnemek değil, uzaktan da olsa sevdiğimizi yalnız bırakmamaktır:
-telefonla aramak, bir kart göndermek, dua etmek gibi. Üçüncü bölümdeki Bugüne Taşı görevi
-de bu fikre dayanır.
+yaparız. Vefa, kuralları çiğnemek değil, uzaktan da olsa sevdiğimizi yalnız
+bırakmamaktır: telefonla aramak, bir kart göndermek, dua etmek gibi. Üçüncü bölümdeki
+Bugüne Taşı görevi de bu fikre dayanır.
+
+**"Hz. Eyyûb'un yaralarını kurtların sardığı doğru mu?"**
+Halk anlatılarında ve bazı ilahilerde geçen bu tarif Kur'an'da ve güvenilir hadis
+kaynaklarında yoktur. TDV İslâm Ansiklopedisi, Hz. Eyyûb'un hastalığını insanları ondan
+uzaklaştıracak kadar ağır ve tiksindirici gösteren bilgilerin İsrâilî kaynaklardan
+geldiğini ve bir peygamberin saygınlığıyla bağdaşmadığını belirtir ("EYYÛB"). Kitap
+hastalığı bedenle anlatmaz; Hz. Eyyûb'un gücünün azalmasını, sabrını ve duasını anlatır.
 
 ---
 

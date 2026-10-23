@@ -1,7 +1,34 @@
 # HZ. EYYÛB (a.s.) — KARMA TARZ YENİDEN YAZIMI: AYRINTI TABLOSU
 
-> **Tarih:** 23 Ekim 2026 · **Durum:** 1. aşama. Hasan'ın altı karar sorusuna cevabı
-> bekleniyor; v2 yazılmadı.
+> **Tarih:** 23 Ekim 2026 · **Durum:** Hasan altı karar sorusunda önerileri kabul etti (23
+> Ekim 2026; iki yerde ana oturumun farkıyla, ⚑). Hasan'ın sözü: "Eyyûb: altı kararda senin
+> önerilerin kabul (final 3 'Hikâyede' çerçevesiyle; Sâd 44 yalnız veli raporunda ve brif
+> §16/14 tek satırla netleşsin). v2'yi yazsın." (1) B4: suçlama kalır, kalıpla, sayısız
+> ("içlerinden biri"); genç dost çıkar; yerine Hz. Eyyûb'un sakin cevabı (kurgu), Işıl'ın
+> sorusu ve hadisli anlatıcı cevabı; Ne Öğrendik 4/2 ve final 4 önerilen metinlerle; ⚑ final
+> 4'ün doğru şıkkındaki Enbiyâ 83 duası B4 metninde aynı kelimelerle geçer; F5/2 hadisle.
+> (2) B3: uzaklaşma kalır (kalıpla); bulaşma korkusu, çıkma talebi, "Bu onların hakkı" ve
+> B4'teki "gördükleri karşısında korku" çıkar; taşınma kimin istediği söylenmeden; ⚑ **final
+> 3 "Hikâyede" çerçevesiyle:** "Hikâyede, herkes uzaklaşınca Hz. Eyyûb'un eşi ne yaptı?"
+> (brif §9: final testi rivayeti kesin bilgi gibi ölçmez); F5/6 önerilen metinle. (3) B5:
+> altın çekirgeler kutuya, önerilen metinle; eşin dinçleşmesi çıkar; F5/3 düzelir. (4)
+> Halkın imanı çıkar; yerine önerilen iki cümle. (5) Sâd 44 çocuk metnine girmez; F5/5
+> Diyanet Vakfı mealiyle; brif §16/14'teki çelişkiyi ana oturum düzeltiyor. (6) B2 güvence
+> paragrafı ("deprem" yok, söz verilmez; Işıl satırı doğal Türkçeyle); F5/1'e haber veren
+> satır. Soru gerektirmeyen değişiklikler ve tablodaki öteki öneriler de (isteğe bağlılar
+> dahil: #6 ad kutusu, #9 yerine "birkaç dostu", #10 Müslim Zühd 64) uygulandı. v2 metni
+> `KITAP-HZ-EYYUB-ICERIK-v2.md`; final testi (E) ve veli raporu (F5) `final.md`'de.
+>
+> **İçerik denetimi sonrası (23 Ekim 2026; 0 kritik, 11 önemli, 22 küçük):** mekanik bulgular
+> düzeltildi (v2 "Yazım notları"). Tablodan sapan ya da tabloya eklenen noktalar: (1) B3
+> uzaklaşma kalıbı karar 2(a) metnine döndü; metindeki kalıp **5** (#22'deki "(4)" sayımı
+> yanlıştı). (2) B2'de "Rabbine sığındı" ilk cevaba ve nakarata geri kondu (Karşılaştır A–B).
+> (3) Sâd 44 kapanışı tek mealle (Diyanet Vakfı); F5/2 de. (4) B4'teki "Dikkat edersen… 'Beni
+> iyileştir' bile demedi" çıktı (#5 tek cümle). (5) Karar 6'nın anlatıcı metni "iç" tekrarı
+> yüzünden "Senin de üzülmen çok doğal. Böyle haberler insanın kalbini acıtır." diye başlar. (6)
+> B5'te eşin ayrı şükür sözü çıktı (Faz 1 karar 4 sınırı); "birlikte şükür" kaldı. Altı açık
+> soru v2 yazım notlarının sonunda: B1'de ikinci kalıp, B2 açılış cümlesi, final 1 ve final 4
+> şıkları, `ziyaret-patikasi` alt metni, Ne Öğrendik 4/2 uzunluğu, F5 madde uzunlukları.
 > **Kural:** brif §4.3 (üç alan, kaynak ölçeği), §7.2 (ölçüler), §7.10 (karma tarz, örnek
 > sahne), §16 (yerleşik kararlar; §16/1 ölüm, §16/8 kalıp, §16/9 sayılar, §16/13 iki yorum,
 > §16/14–15 veli raporu, §16/16 maddî ödül, §16/17b–c hadis ve alıntı, §16/18 ortak olay).
