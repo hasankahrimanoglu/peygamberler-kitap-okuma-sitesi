@@ -33,9 +33,9 @@ Bölüm sayısı: 9
 
 Ana değerler: tevhid, cesaret, teslimiyet, misafirperverlik
 
-Kitaba özgü kararlar: Melek görünmez ve konuşturulmaz; vahiy "Allah bildirdi / buyurdu" düzeyindedir. B9'daki elçilerin sözleri dolaylı anlatımladır; tırnaklı tek sözleri "Selam!"dır; ad, sayı, görünüş yok. "Ben hastayım" (Sâffât 89), "kız kardeşimdir" sözü, Mısır olayı ve Cebrâil'in ateşteki teklifi çocuk metninde yoktur (veli raporunda). Kurban, zemzem, Safa–Merve ve Kâbe'nin yapımı Hz. İsmail kitabında, Lût kavminin helaki Hz. Lût kitabında, Sâre'nin müjdeye şaşırması Hz. İshak kitabında anlatılır; burada birer cümlelik köprüdür. Âzer'in tehdidi ayrıntısızdır; ateşin hazırlanışında şiddet, kralın infazı, yanan canlılar ve "azap, ceza, gazap" kelimeleri yoktur. Yaş, yıl, sayı ve ölçü verilmez; doğum yerine ad verilmez. Sözlük disiplini: *hikmet, ibret, imtihan, musibet, vefa, zulüm, şifa, iman, müjde, hicret* kullanılmaz. **v2 (Hasan onayı, 23 Ekim 2026):** B6'daki romancıya ait dua çıktı; yerine "Allah bize yeter. O ne güzel vekildir!" girdi (İbn Abbas'ın sözü, Buhârî 4563; kalıp "Anlatıldığına göre"; "vekil" anlatıcının cümlesiyle açılır). B8 Devam'da Hâcer birkaç kez "nereye gidiyorsun?" diye sorar, cevap alamaz, sonra "Allah mı emretti?" der (Buhârî 3364); "dönüp bakmadı" yazılmaz, sessizliğe sebep uydurulmaz. B9'da Hz. İbrahim'in "Rabbinin rahmetinden, yolunu şaşıranlardan başka kim ümit keser?" sözü (Hicr 54–56) girdi; elçilerin sözü dolaylıdır. B4'te yemeklerin konma nedeni çıktı (yemekler Sâffât 91'de). B9'da "misafirsiz sofraya oturmazdı" çıktı; yerine "misafirlerin babası" lakabı (TDV) girdi, "ilk başlatan" ifadesi yoktur. B9'a Nisâ 125 ve "Halil İbrahim bereketi" kutusu, B1'e Nahl 120 kutusu, B5'e Nemrud adı kutusu, B6'ya ateşin içi kutusu girdi. B7'de varılan topraklara tek kelimeyle ad verilir: Kenan (Filistin ve Şam yoktur). B2 ve B7'deki "babası için duayı hiç bırakmadı" cümleleri Tevbe 114'e göre çıktı. B8'de vadide yaşlı bir akasya vardır (Buhârî'de "büyük bir ağaç"; "akasya" türü Hz. İsmail B1 ile ortak sahne seçimidir). Rivayet kalıbı kısa: "Anlatılanlara göre"; uzun kalıp yoktur.
+Kitaba özgü kararlar: Melek görünmez ve konuşturulmaz; vahiy "Allah bildirdi / buyurdu" düzeyindedir. B9'daki elçilerin sözleri dolaylı anlatımladır; tırnaklı tek sözleri "Selam!"dır; ad, sayı, görünüş yok. "Ben hastayım" (Sâffât 89), "kız kardeşimdir" sözü, Mısır olayı ve Cebrâil'in ateşteki teklifi çocuk metninde yoktur (veli raporunda). Kurban, zemzem, Safa–Merve ve Kâbe'nin yapımı Hz. İsmail kitabında, Lût kavminin helaki Hz. Lût kitabında, Sâre'nin müjdeye şaşırması Hz. İshak kitabında anlatılır; burada birer cümlelik köprüdür. Âzer'in tehdidi ayrıntısızdır; ateşin hazırlanışında şiddet, kralın infazı, yanan canlılar ve "azap, ceza, gazap" kelimeleri yoktur. Yaş, yıl, sayı ve ölçü verilmez; doğum yerine ad verilmez. Sözlük disiplini: *hikmet, ibret, imtihan, musibet, vefa, zulüm, şifa, iman, müjde, hicret* kullanılmaz. **v2 (Hasan onayı, 23 Ekim 2026):** B6'daki romancıya ait dua çıktı; yerine "Allah bize yeter. O ne güzel vekildir!" girdi (İbn Abbas'ın sözü, Buhârî 4563; kalıp "Anlatıldığına göre"; "vekil" anlatıcının cümlesiyle açılır). B8 Devam'da Hâcer birkaç kez "nereye gidiyorsun?" diye sorar, cevap alamaz, sonra "Allah mı emretti?" der (Buhârî 3364); "dönüp bakmadı" yazılmaz, sessizliğe sebep uydurulmaz. B9'da Hz. İbrahim'in "Rabbinin rahmetinden, yolunu şaşıranlardan başka kim ümit keser?" sözü (Hicr 54–56) girdi; elçilerin sözü dolaylıdır. B4'te yemeklerin konma nedeni çıktı (yemekler Sâffât 91'de). B9'da "misafirsiz sofraya oturmazdı" çıktı; yerine "misafirlerin babası" lakabı (TDV) girdi, "ilk başlatan" ifadesi yoktur. B9'a Nisâ 125 ve "Halil İbrahim bereketi" kutusu, B1'e Nahl 120 kutusu, B5'e Nemrud adı kutusu, B6'ya ateşin içi kutusu girdi. B7'de varılan topraklara tek kelimeyle ad verilir: Kenan (Filistin ve Şam yoktur). B2 ve B7'deki "babası için duayı hiç bırakmadı" cümleleri Tevbe 114'e göre çıktı. **Hasan'ın dört kararı (23 Ekim 2026, denetim sonrası):** Hz. Lût'un inanması B3'ten B7'ye taşındı (Ankebût 26: ateş anlatısından sonra gelir; Kur'an'daki olayın sırası değişmez alandadır); B3'te Hz. Lût yalnız dinleyen yeğendir. B7, Ankebût 26 ile açılır: "Ama Hz. Lût ona inandı" ve Hz. İbrahim'in "Ben Rabbime göç ediyorum…" sözü (Diyanet İşleri meali; *hicret, hikmet, iman* yerine kitabın sözlük disiplini gereği "göç", "her işi yerinde yapar", "inandı"). B1 Seçimini Karşılaştır B "Rabbine yöneldi". Uzunluklar ve B8 görseli olduğu gibi kalır. B8'de vadide yaşlı bir akasya vardır (Buhârî'de "büyük bir ağaç"; "akasya" türü Hz. İsmail B1 ile ortak sahne seçimidir). Rivayet kalıbı kısa: "Anlatılanlara göre"; uzun kalıp yoktur.
 
-Ekim-kapanış halkaları: (1) **Güneş:** B1 batan güneş, "Batanları sevmem" → B5 "Allah güneşi doğudan getiriyor" (B5 bu anıyı açıkça hatırlatır). (2) **Yıldız:** B1 parlak yıldız → B6 dumanın üstündeki tek yıldız → B7 yolculukta aynı yıldızlar → B9 sabah yıldızı ve "yıldızlara bakıp düşünen o genç". (3) **Baba:** B2 "Babacığım" ve kırıcı söz söylememe → B7 "Esen kal, Rabbimden senin için bağışlanma dileyeceğim!" (v2: "hiç bırakmadı" çıktı). (4) **Lût:** B3 ilk inanan → B7 yol arkadaşı → B9 Hz. İbrahim, Lût'un şehri için elçilerle konuşur. (5) **Sığınma ve yol:** B6 "Allah bize yeter" → B7 "Ben Rabbime gidiyorum, O bana yol gösterecektir." (6) **Teslim:** B1 "Teslim ol — Âlemlerin Rabbine teslim oldum" → B9 Bakara 124. (7) **Sofra:** B3 "Beni yediren ve içiren O'dur" → B9 Rabbinin verdiğini misafirle paylaşır. **v2:** (8) **Dua ve ümit:** B7 sonunda "yıllardır taşıdığı bir dilek" → B8 "Rabbim duaları gerçekten işitendir" → B9 "Rabbinin rahmetinden … kim ümit keser?" (9) **Akasya:** B8'de Hâcer ile bebeğin bırakıldığı yaşlı akasya → Hz. İsmail B1'in açılışı.
+Ekim-kapanış halkaları: (1) **Güneş:** B1 batan güneş, "Batanları sevmem" → B5 "Allah güneşi doğudan getiriyor" (B5 bu anıyı açıkça hatırlatır). (2) **Yıldız:** B1 parlak yıldız → B6 dumanın üstündeki tek yıldız → B7 yolculukta aynı yıldızlar → B9 sabah yıldızı ve "yıldızlara bakıp düşünen o genç". (3) **Baba:** B2 "Babacığım" ve kırıcı söz söylememe → B7 "Esen kal, Rabbimden senin için bağışlanma dileyeceğim!" (v2: "hiç bırakmadı" çıktı). (4) **Lût:** B3 sözleri baştan sona dinleyen yeğen → B7 "Ama Hz. Lût ona inandı" (Ankebût 26) ve yol arkadaşı → B9 Hz. İbrahim, Lût'un şehri için elçilerle konuşur. (5) **Sığınma ve yol:** B6 "Allah bize yeter" → B7 "Ben Rabbime gidiyorum, O bana yol gösterecektir." (6) **Teslim:** B1 "Teslim ol — Âlemlerin Rabbine teslim oldum" → B9 Bakara 124. (7) **Sofra:** B3 "Beni yediren ve içiren O'dur" → B9 Rabbinin verdiğini misafirle paylaşır. **v2:** (8) **Dua ve ümit:** B7 sonunda "yıllardır taşıdığı bir dilek" → B8 "Rabbim duaları gerçekten işitendir" → B9 "Rabbinin rahmetinden … kim ümit keser?" (9) **Akasya:** B8'de Hâcer ile bebeğin bırakıldığı yaşlı akasya → Hz. İsmail B1'in açılışı.
 
 Etkileşim kararı: Dokuz karar anı tek bir ekseni taşır: doğruyu bulmak ve onu güzellikle yaşamak. B1 cevabı aramayı sürdürmek, B2 sevilen bir büyüğe saygıyla doğruyu söylemek, B3 "herkes böyle yapıyor" baskısında düşünmek, B4 yanlış bir inancı soruyla düşündürmek, B5 güçlü biri övünürken sakin ve açık konuşmak, B6 korkuya hazırlık ve güven, B7 bir gruptan kimseyi kırmadan ayrılmak, B8 ayrılığı duayla karşılamak, B9 yeni gelene kapıyı açmak. Çocuğun seçimi hikâyeyi değiştirmez; doğru cevap seçim anında açıklanmaz; sistem yalnızca seçilen şıkkın karşılaştırma metnini gösterir. **v2:** Işıl, çocuğun aklındaki soruyu sorduğu yerlerde hikâye akışına girer; cevabı anlatıcı verir. B4'te Işıl "yalan mı?" sorusunu sormaz (Faz 1 KARAR 2a: veli raporu).
 
@@ -149,7 +149,7 @@ Rabbi ona "Teslim ol" buyurduğunda, Hz. İbrahim hiç duraksamadan ve bütün k
 
 A) Zamanı iyi kullanmak istemen anlaşılır. Hz. İbrahim ise cevabı hemen bulamayınca aramayı bırakmadı; sabaha kadar düşünmeyi sürdürdü.
 
-B) Cevabı öğretmeninden öğrenmek de bir yol. Hz. İbrahim ise cevabı kendisi düşünerek aradı ve sonunda hiç batmayan Rabbini buldu.
+B) Cevabı öğretmeninden öğrenmek de bir yol. Hz. İbrahim ise cevabı kendisi düşünerek aradı ve sonunda hiç batmayan Rabbine yöneldi.
 
 C) Sen de Hz. İbrahim gibi davrandın. O da cevabı hemen bulamadı, ama aramayı sürdürdü ve hiç batmayan Rabbine yöneldi.
 
@@ -299,13 +299,13 @@ Profil eylemi: Görevi Listeme Ekle / Şimdilik Değil
 ---
 ## BÖLÜM 3: Sizi Duyuyorlar mı?
 
-Özet: Hz. İbrahim kavmine putların duymadığını anlatır; çoğu “atalarımız böyle yaptı” der, Hz. Lût ise ona inanır.
+Özet: Hz. İbrahim kavmine putların duymadığını anlatır; çoğu “atalarımız böyle yaptı” der, o ise ertesi gün yine meydana çıkıp anlatmayı sürdürür. *(v2 önerisi, Hasan onayı bekliyor. Eski: "…, Hz. Lût ise ona inanır." Hz. Lût'un inanması B7'ye taşındı.)*
 
 Rozet: Düşünerek İnanma Rozeti
 
 Rozet sembolü: Yarısı aydınlanmış yol işareti taşı
 
-Kaynak: Şuarâ 26/69–80; Ankebût 29/26. Rivayet: Hz. Lût'un yeğen olması (TDV "İbrâhim").
+Kaynak: Şuarâ 26/69–80. Rivayet: Hz. Lût'un yeğen olması (TDV "İbrâhim"). Hz. Lût'un inanması B7'de (Ankebût 26; Hasan kararı, 23 Ekim 2026).
 
 ### HİKÂYE — 1. KISIM
 
@@ -383,11 +383,11 @@ Metin: Ekmek, su, iyileşmek... Hepsi O'ndan mı?
 
 Hepsi. Hz. İbrahim'in anlattığı Rab, insanın her ihtiyacını bilen ve onu hiç unutmayan Rabdi. Senin acıktığını, susadığını, üşüdüğünü bilen bir Rab. Putlar ise ne duyabiliyor ne konuşabiliyordu. Kendilerini bile koruyamıyorlardı.
 
-Kalabalığın çoğu yine yüz çevirdi. Ama bu sözleri baştan sona dinleyen biri vardı: Hz. Lût (a.s.). Anlatılanlara göre Hz. İbrahim'in yeğeniydi. [[Herkes dağılırken o olduğu yerde kaldı, sonra yavaşça yanına geldi.]] Hz. Lût, Hz. İbrahim'e inandı ve onun yanında yer aldı. [[Onun gelişi Hz. İbrahim'in yüreğine su serpti.]]
+Kalabalığın çoğu yine yüz çevirdi. Ama bu sözleri baştan sona dinleyen biri vardı: Hz. Lût (a.s.). Anlatılanlara göre Hz. İbrahim'in yeğeniydi. [[Herkes dağılırken o olduğu yerde kaldı, sonra yavaşça yanına geldi.]]
 
 **[GÖRSEL — ibrahim-3-iki-arkadas]**
 
-[[O akşam ikisi meydanda yan yana durdu. Hz. İbrahim ona Rabbini anlattı; Hz. Lût dikkatle dinledi.]] Hz. İbrahim artık yalnız değildi; yanında aynı yolda yürüyecek bir arkadaşı vardı.
+[[O akşam ikisi meydanda yan yana durdu. Hz. İbrahim ona Rabbini anlattı; Hz. Lût dikkatle dinledi. Arada bir soru soruyor, sonra yine susup dinliyordu.]]
 
 Kalabalık ise atalarının yolunu bırakmadı. [[Hz. İbrahim'in aklında ise bir fikir vardı.]] Putların kendilerini bile koruyamadığını yakında bütün şehir kendi gözüyle görecekti.
 
@@ -405,7 +405,7 @@ C) Tartışmadan uzak durmak bazen iyi gelir. Hz. İbrahim ise ertesi gün yine 
 
 1. Bir şey çok kişi tarafından yapılıyor diye doğru olmaz; düşünerek karar vermek gerekir.
 2. Hz. İbrahim kavmine putların onları duyup duymadığını ve onlara yarar verip vermediğini sordu.
-3. Kalabalığın çoğu “atalarımız böyle yaptı” deyip dağıldı; Hz. Lût ise Hz. İbrahim'e inandı.
+3. Kalabalığın çoğu “atalarımız böyle yaptı” deyip dağıldı; Hz. İbrahim ise ertesi gün yine meydana çıkıp anlatmayı sürdürdü. *(v2 önerisi, Hasan onayı bekliyor. Eski: "…; Hz. Lût ise Hz. İbrahim'e inandı.")*
 
 ---
 ## BÖLÜM 4: Kırık Putlar, Büyük Soru
@@ -789,7 +789,7 @@ Rozet: Yola Çıkan İman Rozeti
 
 Rozet sembolü: Ufka uzanan yol ve asa
 
-Kaynak: Ankebût 29/24, 26, 28; Meryem 19/46–48; Sâffât 37/99; Enbiyâ 21/71; Nahl 16/121. Hadislerle İslâm 6/42 (ateşten sonra babasına yeniden gitmesi). Rivayet: Sâre'nin yolculukta olması (TDV "İbrâhim"; Hadislerle İslâm 6/43), toprakların adı Kenan (TDV "Hâcer").
+Kaynak: Ankebût 29/24, 26 (Hz. Lût'un inanması ve Hz. İbrahim'in "Rabbime göç ediyorum" sözü; Diyanet İşleri meali), 28; Meryem 19/46–48; Sâffât 37/99; Enbiyâ 21/71; Nahl 16/121. Hadislerle İslâm 6/42 (ateşten sonra babasına yeniden gitmesi). Rivayet: Sâre'nin yolculukta olması (TDV "İbrâhim"; Hadislerle İslâm 6/43), toprakların adı Kenan (TDV "Hâcer").
 
 ### HİKÂYE — 1. KISIM
 
@@ -797,7 +797,15 @@ Kaynak: Ankebût 29/24, 26, 28; Meryem 19/46–48; Sâffât 37/99; Enbiyâ 21/71
 
 Böyle büyük bir olayı gören herkes inanır mı sence? Hz. İbrahim (a.s.) ateşten sağ salim çıkmıştı. Ama şehrin insanları yine de ona inanmadı.
 
-Gördükleri büyük olaya rağmen putlarına tapmayı sürdürdüler. [[Pazarda yine putlar satılıyor, tapınağa yine yemekler taşınıyordu.]] Hz. İbrahim ise onları Allah'a çağırmaktan vazgeçmedi. Bir gün babasının evine gitti. [[Akşam olmuştu. Kapı aralandı, ama Âzer dışarı çıkmadı; kapının ardında durdu.]] Hz. İbrahim ona bir kez daha bütün sevgisiyle seslendi. Putları bırakıp tek olan Allah'a inanmasını, yine yumuşak bir dille istedi.
+Gördükleri büyük olaya rağmen putlarına tapmayı sürdürdüler. [[Pazarda yine putlar satılıyor, tapınağa yine yemekler taşınıyordu.]]
+
+Ama Hz. Lût (a.s.) ona inandı. [[Meydanda dinlediği o sözleri hiç unutmamıştı.]] Hz. İbrahim de şöyle dedi:
+
+— Ben Rabbime göç ediyorum. Çünkü O'nun gücü her şeye yeter; O her işi yerinde yapar.
+
+Hz. İbrahim artık yalnız değildi; yanında aynı yolda yürüyecek bir arkadaşı vardı.
+
+Yola çıkmadan önce Hz. İbrahim babasının evine gitti. [[Akşam olmuştu. Kapı aralandı, ama Âzer dışarı çıkmadı; kapının ardında durdu.]] Hz. İbrahim ona bir kez daha bütün sevgisiyle seslendi. Putları bırakıp tek olan Allah'a inanmasını, yine yumuşak bir dille istedi.
 
 **[GÖRSEL — ibrahim-7-baba-evi]**
 
@@ -846,7 +854,7 @@ Sonra yavaşça şunu da ekledi:
 
 [[Kapı yavaşça kapandı. Hz. İbrahim bir süre eşikte bekledi, sonra yürüyüp gitti.]]
 
-Hz. İbrahim yola çıkmak için hazırlandı. Hz. Lût (a.s.) da onunla gelecekti. Anlatılanlara göre eşi Sâre de bu yolculukta onlarla birlikteydi. [[Yükler bağlandı, hayvanlar sıraya dizildi.]] [[Yola çıkarken Hz. İbrahim şehre son kez baktı]] ve şöyle dedi:
+Hz. İbrahim yola çıkmak için hazırlandı. Hz. Lût da onunla gelecekti. Anlatılanlara göre eşi Sâre de bu yolculukta onlarla birlikteydi. [[Yükler bağlandı, hayvanlar sıraya dizildi.]] [[Yola çıkarken Hz. İbrahim şehre son kez baktı]] ve şöyle dedi:
 
 — Ben Rabbime gidiyorum, O bana yol gösterecektir.
 
@@ -1256,11 +1264,11 @@ kutusundan önce geçmiyor.
 |---|---:|---:|---:|---:|---:|
 | 1 | 2.914 (1.854 + 1.060) | 1 | 2 | 1 | 665 |
 | 2 | 2.799 (1.435 + 1.364) | 1 | 1 | — | 634 |
-| 3 | 2.776 (1.543 + 1.233) | 1 | 1 | — | 822 |
+| 3 | 2.643 (1.543 + 1.100) | 1 | 1 | — | 822 |
 | 4 | 2.892 (1.726 + 1.166) | 2 | 1 | — | 675 |
 | 5 | 2.773 (1.359 + 1.414) | 1 | 2 | 1 | 613 |
 | 6 | 2.787 (1.253 + 1.534) | 2 | 1 | 1 | 744 |
-| 7 | 2.724 (990 + 1.734) | 1 | 1 | — | 688 |
+| 7 | 2.954 (1.227 + 1.727) | 1 | 1 | — | 801 |
 | 8 | 2.824 (1.566 + 1.258) | 2 | 1 | — | 746 |
 | 9 | 2.919 (991 + 1.928) | 1 | 3 | 1 | 577 |
 
@@ -1330,27 +1338,36 @@ birebir olduğu doğrulandı. Mekanik bulgular düzeltildi:
 - Ölçüler düzeltmelerden sonra yeniden alındı (yukarıdaki tablo); kısalan dört bölüm
   (B2, B3, B5, B6) sahne cümleleriyle 2.770'in üstüne çıktı.
 
-**Açık kararlar (Hasan):**
-1. **Hz. Lût'un inanma zamanı (denetim, önemli 1).** Kitap Hz. Lût'un inanmasını B3'te,
-   putlar kırılmadan önce anlatıyor (Faz 1 kararı; B3 özeti ve Ne Öğrendik 3 buna bağlı).
-   Kur'an Ankebût 26'da "Bunun üzerine Lût ona iman etti" der; bu âyet ateş anlatısından
-   (24) ve Hz. İbrahim'in konuşmasından (25) sonra gelir. TDV "Lût" yalnız "İbrâhim'in
-   tebliğini kabul ettiği (Ankebût 29/26)" der, zaman vermez. Sıra kalsın mı?
-   *Önerim:* Şimdilik kalsın; ifade yumuşatıldı ("Ama bu sözleri baştan sona dinleyen biri
-   vardı: Hz. Lût"; "doğruyu kendi kalbiyle seçmişti" çıktı). Kur'an'ın sırası kesin bir
-   zaman bildirmiyor, TDV de vermiyor. Bir hoca "ateşten sonra" derse sonraki turda B3'ten
-   B6/B7'ye taşınır; o zaman B3 özeti ve Ne Öğrendik 3 de değişir.
-2. **Bölüm uzunlukları (denetim, küçük 18).** Dokuz bölüm 2.724–2.919 karakter arasında,
-   dar bir bantta; birden çok dönüm noktası olan B4, B6, B8 ve B9 da 3.000'in altında.
-   *Önerim:* Kalsın. Dönüm noktaları sahneyle anlatılıyor; uzatmak için eklenecek her şey
-   ya yeni kurgu ya da dolgu olur. Sesli anlatımda bölüm başına yaklaşık 4 dakika.
-3. **B1 Seçimini Karşılaştır B (sabit alan).** "Hz. İbrahim ise cevabı kendisi düşünerek
-   aradı ve sonunda hiç batmayan Rabbini buldu." Denetçiye göre "sonunda … buldu" iki
-   tefsir görüşünden birine (düşünme yolculuğu) yaslanıyor; hikâye metni artık nötr.
-   *Önerim:* Aktarımda "… ve hiç batmayan Rabbine yöneldi" olsun (C şıkkının ifadesiyle
-   aynı); küçük bir değişiklik.
-4. **Bilgi:** B8 görseli `vadide-aksam` (yayında) akasyanın dibinde küçük bir kandil
-   gösteriyor; metinden kandil çıktı. Görsel değişmeden kalabilir.
+**Hasan'ın dört kararı (23 Ekim 2026, denetim sonrası):**
+1. **Hz. Lût'un inanması B7'ye taşındı** (Ankebût 26 ateş anlatısından sonra gelir; Kur'an'daki
+   olayın sırası değişmez alanda). B3'te Hz. Lût yalnız dinleyen yeğen: "Ama bu sözleri baştan
+   sona dinleyen biri vardı: Hz. Lût (a.s.)…", görselin yanında "Hz. İbrahim ona Rabbini
+   anlattı; Hz. Lût dikkatle dinledi. Arada bir soru soruyor, sonra yine susup dinliyordu."
+   "Onun yanında yer aldı", "artık yalnız değildi" ve "yüreğine su serpti" B3'ten çıktı. B7
+   Ankebût 26 ile açılır: "Ama Hz. Lût (a.s.) ona inandı. [[Meydanda dinlediği o sözleri hiç
+   unutmamıştı.]] Hz. İbrahim de şöyle dedi: — Ben Rabbime göç ediyorum. Çünkü O'nun gücü her
+   şeye yeter; O her işi yerinde yapar." Ardından "Hz. İbrahim artık yalnız değildi…" ve "Yola
+   çıkmadan önce Hz. İbrahim babasının evine gitti." Meal: Diyanet İşleri ("Bunun üzerine Lût
+   ona iman etti ve (İbrahim) dedi ki: Ben Rabbime (O'nun emrettiği yere) göç ediyorum.
+   Şüphesiz O mutlak güç sahibidir, hüküm ve hikmet sahibidir."); *Kur'an Yolu* "hicret
+   ediyorum" der. Kitabın sözlük disiplini *iman, hicret, hikmet* kelimelerini kullanmadığı
+   için "inandı", "göç ediyorum", "her işi yerinde yapar" (hakîm) seçildi; alıntının ikinci
+   cümlesi kesilmedi. "Bunun üzerine" yerine "Ama" denildi, çünkü önceki cümle halkın
+   inanmadığını söylüyor; sıra Kur'an'daki gibi ateşten sonra. Hz. Lût'un ilk geçişindeki
+   (a.s.) B7 1. kısma geçti. Sen Olsaydın B7 (göç kararından sonra "nasıl ayrılacak")
+   sırasına uyuyor; karşılaştırma B ("yolda Hz. Lût da yanındaydı") kalıyor. Sabit alanlar
+   (B3 özet, Ne Öğrendik 3) için öneri aşağıda, "Aktarım için"de.
+   **§16/18 kontrolü:** Final testinde Lût yok; F5 Lût maddesi yalnız B9'u anıyor ("ona inanan
+   ailesi"); `iki-arkadas` alt metni ("yan yana duran Hz. İbrahim ve Hz. Lût") iman demiyor;
+   Hz. İsmail kitabında (books.ts ve final.md) Lût'un imanı geçmiyor. `final.md`'de dört eski
+   kayıt not düşülerek işaretlendi: §B halka 4, D3 özet ve "Ana olay", D3 Ne Öğrendik 3,
+   `iki-arkadas` görsel brifinin "Sahnenin amacı" satırı, §I8 Ankebût 26 satırı.
+   `ICERIK-GORSEL-SICILI.md` ve `ROZET-MATRISI.md`'de Lût'un B3'te inandığını söyleyen yer yok.
+2. **Uzunluklar kalır;** Hasan okurken B6, B8, B9'a bakacak.
+3. **B1 Seçimini Karşılaştır B:** "…ve sonunda hiç batmayan Rabbine yöneldi." v2'de güncellendi.
+4. **B8 `vadide-aksam` görseli kalır.**
+Denetimden sonra kendiliğinden uygulanan üç değişiklik (B6 ateşin içi kurgu cümlesi, Işıl
+tonu, B8 kandil) Hasan'a bildirildi; kalıyor.
 
 **Aktarım için:**
 - `paragraphs` ve `continuationParagraphs` v2'den alınır; `[[`/`]]` silinir. KELİME
@@ -1361,8 +1378,20 @@ birebir olduğu doğrulandı. Mekanik bulgular düzeltildi:
   (vadi), 7 (babası), 8 (putlar; soru metni "Bu işi şu büyükleri yapmıştır" oldu), 9
   (yıldız) final.md F5'teki yeni hâliyle değişir; 6'dan sonra yeni madde "Kral ne oldu?"
   girer (toplam 10).
-- `quizzes.ts`, Sen Olsaydın, karşılaştırmalar, Ne Öğrendik, görevler değişmez (açık karar
-  3 kabul edilirse B1 karşılaştırma B).
+- **Sabit alanlarda üç değişiklik:**
+  - B1 Seçimini Karşılaştır B (Hasan onayladı): "Cevabı öğretmeninden öğrenmek de bir yol. Hz.
+    İbrahim ise cevabı kendisi düşünerek aradı ve sonunda hiç batmayan Rabbine yöneldi."
+    (eski: "…ve sonunda hiç batmayan Rabbini buldu.")
+  - B3 `ozet` (**öneri, Hasan onayı bekliyor**): "Hz. İbrahim kavmine putların duymadığını
+    anlatır; çoğu “atalarımız böyle yaptı” der, o ise ertesi gün yine meydana çıkıp anlatmayı
+    sürdürür." (eski: "…, Hz. Lût ise ona inanır.")
+  - B3 Ne Öğrendik 3 (**öneri, Hasan onayı bekliyor**): "Kalabalığın çoğu “atalarımız böyle
+    yaptı” deyip dağıldı; Hz. İbrahim ise ertesi gün yine meydana çıkıp anlatmayı sürdürdü."
+    (eski: "…; Hz. Lût ise Hz. İbrahim'e inandı.") İkisi de B3'ün kendi olayına (Şuarâ 74 ve
+    ertesi gün yeniden anlatma; Sen Olsaydın C karşılaştırması) dayanıyor; final testi 3. soru
+    "atalarımız" kısmına bağlı, bozulmuyor.
+- `quizzes.ts`, Sen Olsaydın soruları, öteki karşılaştırmalar, Ne Öğrendik maddeleri ve
+  görevler değişmez.
 - `SOZLUKCE-SICILI.md` §3'teki İbrahim notu geçerli (kutu yerleri ve ekler aynı);
   güncelleme gerekmiyor. `ICERIK-GORSEL-SICILI.md`'de yer değişikliği yok.
 - final.md D bölümündeki seslendirme notları eski metne göre yazıldı; v2 aktarılınca Işıl

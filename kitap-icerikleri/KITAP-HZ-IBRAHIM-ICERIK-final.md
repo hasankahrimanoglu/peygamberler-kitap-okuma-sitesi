@@ -38,8 +38,9 @@
 > `KITAP-HZ-IBRAHIM-ICERIK-v2.md`'de yeniden yazıldı (Hasan'ın altı kararı; ayrıntı
 > `KITAP-HZ-IBRAHIM-KARMA-AYRINTI-TABLOSU.md`). **Aktarılmadı.** Bu dosyada v2'ye göre
 > değişen: F5 "Çocuğunuz Sorarsa" (ateş, Lût, vadi, babası, putlar ve yıldız cevapları;
-> yeni "Kral ne oldu?" maddesi; 10 soru) ve §B'deki yer adı kuralı (Kenan). Final testi
-> değişmedi. Aşağıdaki D bölümündeki hikâye metinleri eski hâlidir; v2 aktarılınca geçerli
+> yeni "Kral ne oldu?" maddesi; 10 soru) ve §B'deki yer adı kuralı (Kenan). Hz. Lût'un
+> inanması B7'ye taşındı (Ankebût 26); B3 özeti ve Ne Öğrendik 3 için v2 önerisi D3'te (Hasan
+> onayı bekliyor). Final testi değişmedi. Aşağıdaki D bölümündeki hikâye metinleri eski hâlidir; v2 aktarılınca geçerli
 > hikâye kaynağı v2 olur. Kitaba özgü kararların güncel hâli v2'nin başındadır.
 
 ---
@@ -215,6 +216,8 @@ vadide kaynayan suyun haberiyle kapanır.
 3. **Baba.** B2 "Babacığım" ve "bağışlanma dilemeyi bırakmayacaktı" → B7 "Esen kal,
    Rabbimden senin için bağışlanma dileyeceğim."
 4. **Lût.** B3 ilk inanan → B7 yol arkadaşı → B9 İbrahim, Lût'un şehri için elçilerle konuşur.
+   **v2 (23 Ekim 2026, Hasan):** B3 dinleyen yeğen → B7 Ankebût 26 ile inanır ve yol
+   arkadaşı olur → B9.
 5. **Sığınma ve yol.** B6 "Senin yardımın bana yeter" → B7 "Ben Rabbime gidiyorum, O bana
    yol gösterecektir."
 6. **Teslim.** B1 "Teslim ol — Âlemlerin Rabbine teslim oldum" → B9 Bakara 124: Rabbi onu
@@ -671,6 +674,9 @@ Bölüm no: 3
 Bölüm ID: 3
 Özet: Hz. İbrahim kavmine putların duymadığını anlatır; çoğu "atalarımız böyle yaptı" der, Hz. Lût ise ona inanır.
 Ana olay: Kavme davet ve Lût'un inanması
+**v2 önerisi (23 Ekim 2026; Hasan onayı bekliyor):** Hz. Lût'un inanması B7'ye taşındı
+(Ankebût 26). Özet: "Hz. İbrahim kavmine putların duymadığını anlatır; çoğu “atalarımız böyle
+yaptı” der, o ise ertesi gün yine meydana çıkıp anlatmayı sürdürür." Ana olay: Kavme davet.
 Ana değer: Taklitle değil, düşünerek inanmak
 Kaynak PDF sayfaları: İB 173–175 (Şuarâ 71–88, En'âm 80–81), 180 (Ankebût 26), 197, 199 (Enbiyâ 52–56); Diyanet: Şuarâ 70–80, Ankebût 26
 Rozet adı: **Düşünerek İnanma Rozeti**
@@ -748,6 +754,8 @@ C) Tartışmadan uzak durmak bazen iyi gelir. Hz. İbrahim ise ertesi gün yine 
 1. Bir şey çok kişi tarafından yapılıyor diye doğru olmaz; düşünerek karar vermek gerekir.
 2. Hz. İbrahim kavmine putların onları duyup duymadığını ve onlara yarar verip vermediğini sordu.
 3. Kalabalığın çoğu "atalarımız böyle yaptı" deyip dağıldı; Hz. Lût ise Hz. İbrahim'e inandı.
+   *(v2 önerisi, Hasan onayı bekliyor: "…; Hz. İbrahim ise ertesi gün yine meydana çıkıp
+   anlatmayı sürdürdü.")*
 
 #### BUGÜNE TAŞI
 Bu bölümde yok.
@@ -809,7 +817,7 @@ Negatif prompt/kesin yasaklar: human figure, person, wine, cups of wine, meat, i
 ```text
 Görsel ID: ibrahim-3-iki-arkadas
 Metin çapası: "Kalabalığın çoğu yüz çevirmişti…" paragrafından sonra
-Sahnenin amacı: Hz. Lût'un inanmasını ve "artık yalnız değil" duygusunu göstermek: akşam meydanında yan yana duran Hz. İbrahim ve Hz. Lût, arkadan ve uzak planda (Lût halkasının başlangıcı).
+Sahnenin amacı: Hz. Lût'un inanmasını ve "artık yalnız değil" duygusunu göstermek: akşam meydanında yan yana duran Hz. İbrahim ve Hz. Lût, arkadan ve uzak planda (Lût halkasının başlangıcı). *(v2, 23 Ekim 2026: metinde Hz. Lût burada yalnız dinler, inanması B7'de; görsel ve alt metni değişmez.)*
 Dosya: bolum-3/iki-arkadas.jpg
 Alt metin: Akşam ışığında boşalan meydanda, hurma ağacının yanında yan yana duran Hz. İbrahim ve Hz. Lût, arkadan; yakındaki duvar oyuğunda yanan bir kandil.
 Ana üretim promptu: Akşam, kerpiç evlerle çevrili meydan boşalıyor; gökyüzü turuncudan laciverde dönüyor. Meydanın kenarında, yaşlı hurma ağacının yanında yan yana duran iki figür, izleyiciye arkası dönük: daha uzun boylu Hz. İbrahim ve ondan biraz kısa, genç Hz. Lût; ikisi de şehrin üstündeki akşam göğüne bakıyor; yalnız sırtları ve örtülü başları görünüyor. Yakındaki kerpiç duvarın düz kenarlı oyuğunda sakin sakin yanan tek bir kil kandil.
@@ -2648,7 +2656,7 @@ kontrol edildi (16 Ekim 2026).
 | Meryem 42–43 (B2) | "Babacığım! Duymayan, görmeyen ve sana hiçbir fayda sağlamayan bir şeye niçin taparsın?" · "Sana gelmeyen bir bilgi … bana geldi, … bana uy ki seni düz yola çıkarayım" | Aynı anlam; "düz yola çıkarayım" → "doğru yola götüreyim" |
 | Meryem 45 (B2) | "Allah'ın azabına uğramandan … korkuyorum" | Anlatıcı diliyle: "babasının başına kötü bir şey gelmesinden korkuyordu" (*azap* yok) |
 | Şuarâ 70–74, 78–80 (B3) | "Neye tapıyorsunuz?" · "Putlara tapıyoruz ve onlara tapmaya devam edeceğiz" · "dua ettiğinizde onlar sizi işitiyorlar mı? Yahut size fayda veya zarar verebiliyorlar mı?" · "Hayır ama biz atalarımızı böyle yapar bulduk" · "beni yaratan ve bana doğru yolu gösteren … yediren ve içiren … hastalandığım zaman bana şifa veren" | Aynı anlam; "şifa veren" → "iyileştiren" (*şifa* kutusu rota sırasında sonra) |
-| Ankebût 26 (B3) | "Bunun üzerine Lût ona iman etti" | "Lût, İbrahim'in anlattıklarına yürekten inandı" (*iman* kutusu rota sırasında sonra) |
+| Ankebût 26 (B3; v2'de B7) | "Bunun üzerine Lût ona iman etti" | "Lût, İbrahim'in anlattıklarına yürekten inandı" (*iman* kutusu rota sırasında sonra) |
 | Enbiyâ 57 (B4) | "(içinden şöyle geçirdi) … putlarınıza bir oyun oynayacağım" | Aynı |
 | Sâffât 91–93 (B4) | "Niçin bir şeyler yemiyorsunuz? Neyiniz var, niçin konuşmuyorsunuz?" · "güçlü darbeler indirmeye başladı" | Aynı soru; darbe tarifi yok (kitapta "En'âm 91–93" → **Sâffât**) |
 | Enbiyâ 58–67 (B4) | "paramparça etti, belki ona başvururlar diye büyük putu bıraktı" · "Bunu tanrılarımıza kim yaptı?" · "İbrâhim denen bir genç" · "Bunu ilâhlarımıza sen mi yaptın, ey İbrâhim?" · "**Hayır**, bu işi şu büyükleri yapmıştır. Konuşabiliyorlarsa onlara sorun!" · "Asıl haktan ayrılanlar sizlersiniz!" · "Bunların konuşamayacağını pekâlâ biliyorsun" · "size ne fayda ne de zarar veremeyen şeylere mi tapıyorsunuz? … yuf olsun! Siz aklınızı kullanmaz mısınız?" | Aynı; Enbiyâ 63'ün başındaki "Hayır" alınmadı (editör sorusu 2); "yuf olsun" alınmadı; Enbiyâ 64 "haktan ayrılanlar" → "yanlış yolda olanlar" (denetim Ö10) |

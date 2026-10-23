@@ -21,6 +21,16 @@
 > Lût'un inanma zamanı (Ankebût 26 ateşten sonra geliyor), bölüm uzunluk bandı, B1
 > Seçimini Karşılaştır B'deki "sonunda … buldu" ifadesi, B8 görselindeki kandil (bilgi).
 >
+> **Hasan'ın dört kararı (23 Ekim 2026, denetim sonrası açık kararlar):** (1) Hz. Lût'un
+> inanması B3'ten B7'ye taşındı (Ankebût 26 ateş anlatısından sonra gelir); B3'te Hz. Lût
+> yalnız dinleyen yeğen, B7 "Ama Hz. Lût ona inandı" ve "Ben Rabbime göç ediyorum…" ile
+> açılır. B3 özeti ve Ne Öğrendik 3 için yeni metin önerildi, Hasan onayı bekliyor (v2
+> "Aktarım için"). Bu karar tablodaki ortak olay satırını (Hz. Lût: "B3 yeğen + iman")
+> değiştirir. (2) Uzunluklar kalır; Hasan okurken B6, B8, B9'a bakacak. (3) B1 Seçimini
+> Karşılaştır B: "…hiç batmayan Rabbine yöneldi". (4) B8 `vadide-aksam` görseli kalır.
+> Denetim sonrası kendiliğinden uygulanan üç değişiklik (B6 ateşin içi kurgusu, Işıl tonu,
+> B8 kandil) kalıyor.
+>
 > **Aktarılmadı.**
 > **Kural:** brif §4.3 (üç alan, kaynak ölçeği), §7.2 (ölçüler), §7.10 (karma
 > tarz, örnek sahne), §16 (yerleşik kararlar; §16/18 ortak olay). Kitabın Faz 1
