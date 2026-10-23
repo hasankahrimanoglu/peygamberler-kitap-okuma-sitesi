@@ -28,7 +28,9 @@
 >
 > **v2 (23 Ekim 2026):** hikâye metninin kaynağı artık `KITAP-HZ-MUSA-ICERIK-v2.md`;
 > bu dosyanın D bölümündeki hikâye parçaları eski metindir. Final testi (E) ve veli
-> raporu (F5) v2'ye göre güncellendi. Âsiye'nin imanı ve duası v2'de B8'de.
+> raporu (F5) v2'ye göre güncellendi. Âsiye'nin imanı ve duası v2'de B8'de. **Hasan
+> onayladı, aktarıldı (23 Ekim 2026):** hikâye metni `books.ts`'e, final testinin 1, 2,
+> 4, 5, 6, 7, 9 ve 10. sorusu `quizzes.ts`'e, F5'in 9 maddesi veli raporuna.
 >
 > **Kitap kapağı ve harita durağı görseli bu teslimde VARDIR** (`public/kitaplar/hz-musa/`
 > klasörü yok; §C1, §C2).

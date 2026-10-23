@@ -664,7 +664,7 @@ const musaQuizQuestions: QuizQuestion[] = [
     options: [
       { id: "a", text: "Bebeğin nehirde yüzmeyi öğrenmesini istediği için" },
       { id: "b", text: "Sandığı uzaktaki bir şehre göndermek istediği için" },
-      { id: "c", text: "Bebeğini korumak istediği ve Allah'ın vaadine güvendiği için" },
+      { id: "c", text: "Allah'ın vaadine güvenip onu korumak istediği için" },
     ],
   },
   {
@@ -672,9 +672,9 @@ const musaQuizQuestions: QuizQuestion[] = [
     question: "Hz. Musa'nın ablasının sarayda yaptığından ne öğreniriz?",
     correctOption: "a",
     options: [
-      { id: "a", text: "Doğru sözü sakin bir dille ve doğru zamanda söylemenin işe yaradığını" },
+      { id: "a", text: "Doğru sözü doğru zamanda söylemenin işe yaradığını" },
       { id: "b", text: "Zor bir durumda hiç konuşmadan beklemek gerektiğini" },
-      { id: "c", text: "Yardım etmek için her şeyi bir anda anlatmak gerektiğini" },
+      { id: "c", text: "Yardım etmek için her şeyi bir anda anlatmanın iyi olduğunu" },
     ],
   },
   {
@@ -694,7 +694,7 @@ const musaQuizQuestions: QuizQuestion[] = [
     options: [
       { id: "a", text: "Yorgun olsak bile karşılık beklemeden yardım etmenin değerini" },
       { id: "b", text: "Yardım ettikten sonra mutlaka karşılık istemek gerektiğini" },
-      { id: "c", text: "Yorgunken kimseye yardım etmemek gerektiğini" },
+      { id: "c", text: "Yorgunken kimseye yardım etmemenin daha doğru olduğunu" },
     ],
   },
   {
@@ -702,9 +702,9 @@ const musaQuizQuestions: QuizQuestion[] = [
     question: "Hz. Musa vadideki duasında Allah'tan ne istedi?",
     correctOption: "c",
     options: [
-      { id: "a", text: "Çok zengin ve güçlü bir hükümdar olmayı" },
-      { id: "b", text: "Mısır'a bir daha hiç dönmemeyi" },
-      { id: "c", text: "Dilindeki düğümün çözülmesini ve kardeşi Hz. Hârûn'un yardımcı olmasını" },
+      { id: "a", text: "Çok zengin olmayı ve sarayda bir hükümdar gibi yaşamayı" },
+      { id: "b", text: "Mısır'a hiç dönmeden Medyen'de çoban olarak kalmayı" },
+      { id: "c", text: "Dilindeki düğümün çözülmesini ve Hz. Hârûn'un yardımını" },
     ],
   },
   {
@@ -712,9 +712,9 @@ const musaQuizQuestions: QuizQuestion[] = [
     question: "Hz. Musa ile Hz. Hârûn korktukları hâlde Firavun'un sarayına neden gittiler?",
     correctOption: "b",
     options: [
-      { id: "a", text: "Firavun'dan bir ödül almak istedikleri için" },
+      { id: "a", text: "Firavun'dan büyük bir ödül ve makam almak istedikleri için" },
       { id: "b", text: "Allah'ın “Korkmayın, ben sizinle beraberim” sözüne güvendikleri için" },
-      { id: "c", text: "Sarayda büyüdükleri odaları yeniden görmek istedikleri için" },
+      { id: "c", text: "Hz. Musa'nın büyüdüğü sarayı yeniden görmek istedikleri için" },
     ],
   },
   {
@@ -723,8 +723,8 @@ const musaQuizQuestions: QuizQuestion[] = [
     correctOption: "a",
     options: [
       { id: "a", text: "Asa, sihirbazların uydurduklarını yakalayıp yuttu" },
-      { id: "b", text: "Asa havaya yükselip gözden kayboldu" },
-      { id: "c", text: "Sihirbazların ipleri daha da çoğaldı" },
+      { id: "b", text: "Asa havaya yükselip bir anda gözden kayboldu" },
+      { id: "c", text: "Sihirbazların ipleri ve değnekleri daha da çoğaldı" },
     ],
   },
   {
@@ -739,12 +739,12 @@ const musaQuizQuestions: QuizQuestion[] = [
   },
   {
     id: 9,
-    question: "Firavun'un ordusu yetişince Hz. Musa korkan insanlara ne dedi?",
+    question: "Firavun'un ordusu yetişince Hz. Musa korkan insanlara ne söyledi?",
     correctOption: "b",
     options: [
-      { id: "a", text: "“Hemen geri dönüp teslim olalım.”" },
-      { id: "b", text: "“Asla, Rabbim benimle beraberdir; O bana bir çıkış yolu gösterecektir.”" },
-      { id: "c", text: "“Herkes kendi başının çaresine baksın.”" },
+      { id: "a", text: "Hemen geri dönüp Firavun'a teslim olmaları gerektiğini" },
+      { id: "b", text: "Rabbinin kendisiyle beraber olduğunu ve yol göstereceğini" },
+      { id: "c", text: "Herkesin kendi başının çaresine bakması gerektiğini" },
     ],
   },
   {
@@ -752,7 +752,7 @@ const musaQuizQuestions: QuizQuestion[] = [
     question: "Hz. Musa'nın Hızır'la yolculuğu bize ne anlatır?",
     correctOption: "a",
     options: [
-      { id: "a", text: "Bilmediğimiz şeyler karşısında sabredip öğrenmeye açık olmanın önemini" },
+      { id: "a", text: "Sabredip öğrenmeye her zaman açık olmanın önemini" },
       { id: "b", text: "Çok şey bilen birinin artık öğrenmesine gerek olmadığını" },
       { id: "c", text: "Sebebini bilmediğimiz her şeye hemen kızmamız gerektiğini" },
     ],

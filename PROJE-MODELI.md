@@ -2681,6 +2681,30 @@ Kurallar:
       `SOZLUKCE-SICILI` değişmedi (kutu yerleri aynı). `kitap-denetle eyyub` 0
       hata (uyarı: 5 ses yer tutucu). Yayına çıkması `main`'e geçişle olur.
       Sırada Hz. Musa.*
+      *23 Eki: **Hz. Musa v2 aktarıldı** (Hasan onayı). On bölümün hikâye
+      metni `books.ts`'te `KITAP-HZ-MUSA-ICERIK-v2.md` ile birebir (50 sahne
+      görseli, 10 sözlük kelimesi ve B7, B9 Tanık Sayfaları aynı parçada, aynı
+      sırada; altı kelimenin yalnız çevre metni değişti). Âsiye'nin imanı B8'de
+      Tahrîm 11 ve Peygamberimizin övgüsünü anlatan kutuyla; imanın zamanı,
+      işkencesi ve ölümü yok. B10 Peygamberimizin anlattığı hadisle açılıyor
+      ("İnsanların en bilgilisi kim?") ve Hızır'ın "Allah sana bir bilgi
+      öğretmiştir…" sözünü taşıyor; bölümün sonunda Işıl ve anlatıcıyla güvenlik
+      paragrafı ("Sebebini sonra anlarsın" diyen birini hemen bir büyüğe
+      anlatmak). B9'da Âşûrâ, B10'da "Allah, Musa'ya rahmet eylesin…"
+      kutusu. B3'te kıptînin ölümü Kur'an'ın ifadesiyle, Işıl'ın "Hz. Musa
+      şimdi kötü biri mi oldu?" sorusu ve anlatıcının cevabıyla. Serçe ve
+      Hızır'ın adı rivayet değil hadis olarak, kalıpsız. Hz. Hârûn'un
+      ağabeyliği İslami kaynakta doğrulanamadığı için yaş ve ağabeylik
+      verilmedi. Yeni bloklar: Işıl 15, soru başlığı 4, "Biliyor muydun?"
+      kutusu 3. Sabit alanlar değişmedi; final testinde şık dengesi için 1, 2,
+      4, 5, 6, 7, 9 ve 10. sorunun şıkları (9'un metni de) değişti, doğru
+      harfler aynı. Veli raporunun "Çocuğunuz Sorarsa" bölümü final.md F5'e
+      göre 9 madde oldu (1, 2, 6, 7 güncellendi; 4 sihirbazlar, 5 Âsiye, 9
+      Âşûrâ yeni). Kararlar v2 yazım notları ve `-KARMA-AYRINTI-TABLOSU.md`'de.
+      Geçici `musaV2Onizleme.ts` silindi; `SOZLUKCE-SICILI` ve
+      `ICERIK-GORSEL-SICILI` değişmedi (kutu ve görsel yerleri aynı).
+      `kitap-denetle musa` 0 hata (uyarı: 10 ses yer tutucu). Yayına çıkması
+      `main`'e geçişle olur. Sırada Hz. Dâvûd.*
 
 ### 22 Ekim 2026 (iki eksenli kaynak ölçeği — Hasan onayı, bkz. 4.1/21 ve içerik brifi §4.3, §16/17b–c)
 

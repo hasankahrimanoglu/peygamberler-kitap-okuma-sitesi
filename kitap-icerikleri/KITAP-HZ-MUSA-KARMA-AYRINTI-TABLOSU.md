@@ -34,6 +34,7 @@
 > biri"; Âşûrâ kutusu üç cümle. (6) Veli raporu 9 madde: "Âsiye'ye ne oldu?" yeni,
 > sihirbazlar maddesine "Ne oldu?" cümlesi. (7) Final testi 2/C, 4/C, 5/C ("Hz. Hârûn").
 > (8) B10 görselleri değişmedi. Ölçüler 2.813–3.963 (v2 yazım notları).
+> **Hasan onayladı, aktarıldı (23 Ekim 2026).**
 > **Kural:** brif §4.3 (üç alan, kaynak ölçeği), §7.2 (ölçüler), §7.10 (karma tarz,
 > örnek sahne), §16 (yerleşik kararlar; §16/2 Âsiye'nin akıbeti, §16/4 ağır tehdit,
 > §16/9 sayılar, §16/12 vahiy, §16/13 iki yorum, §16/14 kekemelik, §16/15 Hızır'daki
