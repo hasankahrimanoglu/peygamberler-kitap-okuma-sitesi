@@ -2,7 +2,7 @@
 
 > **Durum:** Yazıldı (22 Ekim 2026) ve içerik denetçisinden geçti (0 kritik,
 > 6 önemli, 15 küçük bulgu; düzeltmeler dosyanın sonundaki "Yazım notları"nda).
-> Hasan üç açık kararı verdi (23 Ekim 2026; yazım notları). **Aktarılmadı.** Beş bölümün
+> Hasan üç açık kararı verdi (23 Ekim 2026; yazım notları). **Aktarıldı (23 Ekim 2026).** Beş bölümün
 > hikâye metninin önerilen yeni kaynağı bu dosyadır. Büyük Final Testi, veli
 > raporu, sözlükçe ve kaynak notları `KITAP-HZ-SALIH-ICERIK-final.md`'de kalır;
 > veli raporunun v2'ye bağlı maddeleri orada güncellendi (F5/8–11).

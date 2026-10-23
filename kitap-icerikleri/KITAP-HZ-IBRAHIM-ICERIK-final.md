@@ -36,11 +36,11 @@
 >
 > **23 Ekim 2026 — karma tarz yeniden yazımı:** dokuz bölümün hikâye metni
 > `KITAP-HZ-IBRAHIM-ICERIK-v2.md`'de yeniden yazıldı (Hasan'ın altı kararı; ayrıntı
-> `KITAP-HZ-IBRAHIM-KARMA-AYRINTI-TABLOSU.md`). **Aktarılmadı.** Bu dosyada v2'ye göre
+> `KITAP-HZ-IBRAHIM-KARMA-AYRINTI-TABLOSU.md`). **Hasan onayladı, `books.ts`'e aktarıldı (23 Ekim 2026).** Bu dosyada v2'ye göre
 > değişen: F5 "Çocuğunuz Sorarsa" (ateş, Lût, vadi, babası, putlar ve yıldız cevapları;
 > yeni "Kral ne oldu?" maddesi; 10 soru) ve §B'deki yer adı kuralı (Kenan). Hz. Lût'un
-> inanması B7'ye taşındı (Ankebût 26); B3 özeti ve Ne Öğrendik 3 için v2 önerisi D3'te (Hasan
-> onayı bekliyor). Final testi değişmedi. Aşağıdaki D bölümündeki hikâye metinleri eski hâlidir; v2 aktarılınca geçerli
+> inanması B7'ye taşındı (Ankebût 26); B3 özeti ve Ne Öğrendik 3'ün yeni metni D3'te
+> (onaylandı, 23 Ekim 2026); B1 Seçimini Karşılaştır B "Rabbine yöneldi" oldu. Final testi değişmedi. Aşağıdaki D bölümündeki hikâye metinleri eski hâlidir; v2 aktarılınca geçerli
 > hikâye kaynağı v2 olur. Kitaba özgü kararların güncel hâli v2'nin başındadır.
 
 ---
@@ -371,7 +371,7 @@ Hz. İbrahim gökyüzüne her bakışında aynı şeyi düşünür, gördükleri
 #### SEÇİMİNİ KARŞILAŞTIR
 
 A) Zamanı iyi kullanmak istemen anlaşılır. Hz. İbrahim ise cevabı hemen bulamayınca aramayı bırakmadı; sabaha kadar düşünmeyi sürdürdü.
-B) Cevabı öğretmeninden öğrenmek de bir yol. Hz. İbrahim ise cevabı kendisi düşünerek aradı ve sonunda hiç batmayan Rabbini buldu.
+B) Cevabı öğretmeninden öğrenmek de bir yol. Hz. İbrahim ise cevabı kendisi düşünerek aradı ve sonunda hiç batmayan Rabbine yöneldi. *(v2, onaylandı, 23 Ekim 2026. Eski: "…Rabbini buldu.")*
 C) Sen de Hz. İbrahim gibi davrandın. O da cevabı hemen bulamadı, ama aramayı sürdürdü ve hiç batmayan Rabbine yöneldi.
 
 #### NE ÖĞRENDİK
@@ -672,11 +672,10 @@ Kaynak dışı bilgi var mı?: Hayır. "Tertemiz bir kalple" Sâffât 84; davet 
 
 Bölüm no: 3
 Bölüm ID: 3
-Özet: Hz. İbrahim kavmine putların duymadığını anlatır; çoğu "atalarımız böyle yaptı" der, Hz. Lût ise ona inanır.
-Ana olay: Kavme davet ve Lût'un inanması
-**v2 önerisi (23 Ekim 2026; Hasan onayı bekliyor):** Hz. Lût'un inanması B7'ye taşındı
-(Ankebût 26). Özet: "Hz. İbrahim kavmine putların duymadığını anlatır; çoğu “atalarımız böyle
-yaptı” der, o ise ertesi gün yine meydana çıkıp anlatmayı sürdürür." Ana olay: Kavme davet.
+Özet: Hz. İbrahim kavmine putların duymadığını anlatır; çoğu "atalarımız böyle yaptı" der, Hz. İbrahim ise anlatmaktan vazgeçmez.
+Ana olay: Kavme davet (v2: Hz. Lût'un imanı B7'de, Ankebût 26)
+**v2 (onaylandı, 23 Ekim 2026):** Hz. Lût'un inanması B7'ye taşındı (Ankebût 26). Özet
+yukarıdaki hâliyle onaylandı (eski: "…, Hz. Lût ise ona inanır."). Ana olay: Kavme davet.
 Ana değer: Taklitle değil, düşünerek inanmak
 Kaynak PDF sayfaları: İB 173–175 (Şuarâ 71–88, En'âm 80–81), 180 (Ankebût 26), 197, 199 (Enbiyâ 52–56); Diyanet: Şuarâ 70–80, Ankebût 26
 Rozet adı: **Düşünerek İnanma Rozeti**
@@ -753,9 +752,8 @@ C) Tartışmadan uzak durmak bazen iyi gelir. Hz. İbrahim ise ertesi gün yine 
 
 1. Bir şey çok kişi tarafından yapılıyor diye doğru olmaz; düşünerek karar vermek gerekir.
 2. Hz. İbrahim kavmine putların onları duyup duymadığını ve onlara yarar verip vermediğini sordu.
-3. Kalabalığın çoğu "atalarımız böyle yaptı" deyip dağıldı; Hz. Lût ise Hz. İbrahim'e inandı.
-   *(v2 önerisi, Hasan onayı bekliyor: "…; Hz. İbrahim ise ertesi gün yine meydana çıkıp
-   anlatmayı sürdürdü.")*
+3. Kalabalığın çoğu "atalarımız böyle yaptı" deyip dağıldı; Hz. İbrahim ise doğru bildiğini anlatmaktan vazgeçmedi.
+   *(v2, onaylandı, 23 Ekim 2026. Eski: "…; Hz. Lût ise Hz. İbrahim'e inandı.")*
 
 #### BUGÜNE TAŞI
 Bu bölümde yok.

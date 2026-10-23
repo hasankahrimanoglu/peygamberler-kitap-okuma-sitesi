@@ -28,7 +28,7 @@
 > ve onlara öğüt verdiğini söyledi." oldu, B5 metni bunu açıkça söylüyor. (3) B3'teki
 > dua cümlesi çıktı (#38), veli raporundaki karşılığı da düzeldi.
 >
-> **Aktarılmadı.**
+> **Aktarıldı (23 Ekim 2026).**
 > **Kural:** brif §4.3 (üç alan, kaynak ölçeği), §7.10 (karma tarz, örnek
 > sahne), §16 (yerleşik kararlar). Kitabın Faz 1 kararları
 > (`KITAP-HZ-SALIH-KAYNAK-DENETIMI.md`, karar kaydı 21 Ekim 2026) yeni kurala

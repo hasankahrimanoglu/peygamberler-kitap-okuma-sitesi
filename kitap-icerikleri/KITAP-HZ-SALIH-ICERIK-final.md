@@ -2,8 +2,8 @@
 
 > **Durum:** Nihai — Faz 2 **onaylandı, Hasan, 21 Ekim 2026** ("Sâlih Faz 2'yi uygulanan
 > önerilerle onaylıyorum."). Onay bu içerik oturumunda, aşağıdaki 22 öneriyle birlikte verildi.
-> Katalog §11.3'e göre dosya `KITAP-HZ-SALIH-ICERIK-final.md` adını aldı. **Aktarılmadı:**
-> sıradaki adım ayrı bir kod oturumunda `/aktarim salih` (yapılacaklar §I11). Faz 1, 21 Ekim
+> Katalog §11.3'e göre dosya `KITAP-HZ-SALIH-ICERIK-final.md` adını aldı. **Aktarıldı**
+> (21 Ekim 2026; v2 hikâye metni ve F5 değişiklikleri 23 Ekim 2026). Faz 1, 21 Ekim
 > 2026'da onaylandı; Faz 1 kaydı:
 > `KITAP-HZ-SALIH-KAYNAK-DENETIMI.md`. Bu dosya o kaydın başındaki **KARAR KAYDI** ile yazıldı
 > ("Önerilerini uygula. Nasıl yapmak istiyorsan, doğrusu nasıl olur dersen öyle yap."); karar

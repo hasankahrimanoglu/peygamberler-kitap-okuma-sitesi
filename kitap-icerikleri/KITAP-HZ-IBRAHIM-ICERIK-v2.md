@@ -2,8 +2,8 @@
 
 > **Durum:** Yazıldı (23 Ekim 2026) ve içerik denetçisinden geçti (0 kritik, 7 önemli,
 > 18 küçük bulgu; düzeltmeler ve dört açık karar dosyanın sonundaki "Yazım notları"nda).
-> **Aktarılmadı.** Dokuz bölümün hikâye metninin
-> önerilen yeni kaynağı bu dosyadır. Büyük Final Testi, veli raporu, sözlükçe,
+> Hasan onayladı, `src/data/books.ts`'e aktarıldı (23 Ekim 2026). Dokuz bölümün hikâye metninin
+> kaynağı bu dosyadır. Büyük Final Testi, veli raporu, sözlükçe,
 > görsel briefleri ve kaynak notları `KITAP-HZ-IBRAHIM-ICERIK-final.md`'de kalır;
 > veli raporunun v2'ye bağlı maddeleri orada güncellendi (F5).
 >
@@ -299,7 +299,7 @@ Profil eylemi: Görevi Listeme Ekle / Şimdilik Değil
 ---
 ## BÖLÜM 3: Sizi Duyuyorlar mı?
 
-Özet: Hz. İbrahim kavmine putların duymadığını anlatır; çoğu “atalarımız böyle yaptı” der, o ise ertesi gün yine meydana çıkıp anlatmayı sürdürür. *(v2 önerisi, Hasan onayı bekliyor. Eski: "…, Hz. Lût ise ona inanır." Hz. Lût'un inanması B7'ye taşındı.)*
+Özet: Hz. İbrahim kavmine putların duymadığını anlatır; çoğu “atalarımız böyle yaptı” der, Hz. İbrahim ise anlatmaktan vazgeçmez. *(v2, onaylandı, 23 Ekim 2026. Eski: "…, Hz. Lût ise ona inanır." Hz. Lût'un inanması B7'ye taşındı.)*
 
 Rozet: Düşünerek İnanma Rozeti
 
@@ -405,7 +405,7 @@ C) Tartışmadan uzak durmak bazen iyi gelir. Hz. İbrahim ise ertesi gün yine 
 
 1. Bir şey çok kişi tarafından yapılıyor diye doğru olmaz; düşünerek karar vermek gerekir.
 2. Hz. İbrahim kavmine putların onları duyup duymadığını ve onlara yarar verip vermediğini sordu.
-3. Kalabalığın çoğu “atalarımız böyle yaptı” deyip dağıldı; Hz. İbrahim ise ertesi gün yine meydana çıkıp anlatmayı sürdürdü. *(v2 önerisi, Hasan onayı bekliyor. Eski: "…; Hz. Lût ise Hz. İbrahim'e inandı.")*
+3. Kalabalığın çoğu “atalarımız böyle yaptı” deyip dağıldı; Hz. İbrahim ise doğru bildiğini anlatmaktan vazgeçmedi. *(v2, onaylandı, 23 Ekim 2026. Eski: "…; Hz. Lût ise Hz. İbrahim'e inandı.")*
 
 ---
 ## BÖLÜM 4: Kırık Putlar, Büyük Soru
@@ -1382,12 +1382,13 @@ tonu, B8 kandil) Hasan'a bildirildi; kalıyor.
   - B1 Seçimini Karşılaştır B (Hasan onayladı): "Cevabı öğretmeninden öğrenmek de bir yol. Hz.
     İbrahim ise cevabı kendisi düşünerek aradı ve sonunda hiç batmayan Rabbine yöneldi."
     (eski: "…ve sonunda hiç batmayan Rabbini buldu.")
-  - B3 `ozet` (**öneri, Hasan onayı bekliyor**): "Hz. İbrahim kavmine putların duymadığını
-    anlatır; çoğu “atalarımız böyle yaptı” der, o ise ertesi gün yine meydana çıkıp anlatmayı
-    sürdürür." (eski: "…, Hz. Lût ise ona inanır.")
-  - B3 Ne Öğrendik 3 (**öneri, Hasan onayı bekliyor**): "Kalabalığın çoğu “atalarımız böyle
-    yaptı” deyip dağıldı; Hz. İbrahim ise ertesi gün yine meydana çıkıp anlatmayı sürdürdü."
-    (eski: "…; Hz. Lût ise Hz. İbrahim'e inandı.") İkisi de B3'ün kendi olayına (Şuarâ 74 ve
+  - B3 `ozet` (**onaylandı, 23 Ekim 2026**): "Hz. İbrahim kavmine putların duymadığını
+    anlatır; çoğu “atalarımız böyle yaptı” der, Hz. İbrahim ise anlatmaktan vazgeçmez."
+    (eski: "…, Hz. Lût ise ona inanır.")
+  - B3 Ne Öğrendik 3 (**onaylandı, 23 Ekim 2026**): "Kalabalığın çoğu “atalarımız böyle
+    yaptı” deyip dağıldı; Hz. İbrahim ise doğru bildiğini anlatmaktan vazgeçmedi."
+    (eski: "…; Hz. Lût ise Hz. İbrahim'e inandı.") Önerilen "ertesi gün yine meydana çıkıp…"
+    ifadesi kullanılmadı; Hasan yukarıdaki metni onayladı. İkisi de B3'ün kendi olayına (Şuarâ 74 ve
     ertesi gün yeniden anlatma; Sen Olsaydın C karşılaştırması) dayanıyor; final testi 3. soru
     "atalarımız" kısmına bağlı, bozulmuyor.
 - `quizzes.ts`, Sen Olsaydın soruları, öteki karşılaştırmalar, Ne Öğrendik maddeleri ve

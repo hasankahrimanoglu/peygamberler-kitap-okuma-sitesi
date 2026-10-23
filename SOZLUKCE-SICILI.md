@@ -256,7 +256,10 @@ listeyle karşılaştırılır.**
 > "ta", *delil* + "di", *bereket* + "li", *vadi* + "ye"). **Sonraki aktarımlar
 > için:** *vadi* ve *bereket* Hz. İsmail'de düz metin kalır; *Rab, davet, taklit,
 > tapınak, delil, esenlik, misafirperver* de artık hiçbir kitapta ikinci kez
-> kutulanmaz.
+> kutulanmaz. (v2 aktarımı, 23 Eki 2026: kutu yerleri, tanımlar ve ekler değişmedi;
+> yalnız kutuların çevre cümleleri değişti. B2 artık büyük başlangıç harfli bir `text`
+> bloğuyla açılır, *davet* kutusu ikinci bloktur; aşağıdaki "Hz. İbrahim B2 emsali" v2
+> öncesi hâldir. *rahmet* (Hz. Yunus · 4'te kutulu) B9'da Hicr 56 alıntısında düz metindir.)
 
 > **16 Eki 2026 — Hz. Yusuf'ta on bir kutu var** (kitap katalogda henüz
 > "preparing"). Hepsi yeni terim ve Faz 1'de Hasan tarafından onaylandı: *haset* (1),

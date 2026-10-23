@@ -2576,6 +2576,17 @@ Kurallar:
       `bolum-1/su-basi`'nin yeri güncellendi. `kitap-denetle salih` 0 hata
       (uyarı: 5 ses yer tutucu). Yayına çıkması `main`'e geçişle olur. Sırada
       Hz. İbrahim.*
+      *23 Eki: **Hz. İbrahim v2 aktarıldı** (Hasan onayı). Dokuz bölümün hikâye
+      metni `books.ts`'te `KITAP-HZ-IBRAHIM-ICERIK-v2.md` ile birebir (45 görsel
+      ve 9 sözlük kelimesi aynı parçada, aynı sırada). Ayrıca B1 Seçimini Karşılaştır B
+      ("…Rabbine yöneldi"), B3 özeti ve Ne Öğrendik 3 ("Hz. İbrahim ise
+      anlatmaktan vazgeçmedi"; Hz. Lût'un inanması Ankebût 26'ya göre B7'ye
+      taşındı) ve veli raporunun "Çocuğunuz Sorarsa" maddeleri değişti (10
+      madde; 7 yeni: "Kral ne oldu?"). Kararlar v2 yazım notları ve
+      `-KARMA-AYRINTI-TABLOSU.md`'de. Geçici `ibrahimV2Onizleme.ts` silindi;
+      `SOZLUKCE-SICILI` §3 İbrahim notuna v2 satırı eklendi. `kitap-denetle
+      ibrahim` 0 hata (uyarı: 9 ses yer tutucu). Yayına çıkması `main`'e
+      geçişle olur. Sırada Hz. İsmail.*
 
 ### 22 Ekim 2026 (iki eksenli kaynak ölçeği — Hasan onayı, bkz. 4.1/21 ve içerik brifi §4.3, §16/17b–c)
 
