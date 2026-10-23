@@ -12,12 +12,12 @@
 > **v2 (23 Ekim 2026):** Altı bölümün hikâye metni karma tarzda ve üç alanlı kaynak kuralıyla
 > yeniden yazıldı: `KITAP-HZ-ISMAIL-ICERIK-v2.md` (kararlar `-KARMA-AYRINTI-TABLOSU.md`'de). Bu
 > dosyanın D bölümündeki hikâye metinleri ve seslendirme notları, B1 ile B4 özetleri, B4 Ne
-> Öğrendik 2, E bölümündeki 4. soru ve §B "Kaynak ilkeleri" / "Kitaba özgü yasaklar"daki eski
+> Öğrendik 2, B5 Seçimini Karşılaştır B ve §B "Kaynak ilkeleri" / "Kitaba özgü yasaklar"daki eski
 > kalıp ve "yedi kez" kayıtları, Faz 1 karar 2a'nın "Hz. Muhammed'in ve sahabenin sözleri çocuk
 > metnine girmez" kaydı (bu başlığın aşağısında ve §B) ve D bölümündeki görsel alt metni
 > `ismail-3-otlayan-koc` (eski "otlayan"; alt metin bu dosyada "duran" yapıldı, `books.ts`'te aktarımda) v2'nin
 > "Aktarım için" listesiyle geçersizdir. Veli raporu (F5)
-> v2'ye göre güncellendi.
+> v2'ye göre güncellendi; E bölümündeki 4. soru Hasan'ın kararıyla (23 Ekim 2026) değişti.
 >
 > **Onay kapısı:** Faz 1, 16 Ekim 2026'da Hasan tarafından onaylandı (karar kaydı
 > `KITAP-HZ-ISMAIL-ICERIK-taslak.md` başında, "Önerilerini uygula."). Faz 2'nin başlatılması
@@ -1449,7 +1449,7 @@ Soru türü: olay
 ```
 
 ```text
-Soru 4: İkinci ziyarette Hz. İbrahim'i en çok sevindiren ne oldu?
+Soru 4: Hz. İbrahim oğlunun evine yeniden geldiğinde onu en çok sevindiren ne oldu?
 A) Hz. İsmail'in eşinin onu güler yüzle karşılayıp Allah'a hamd ederek konuşması
 B) Evin çok büyük ve süslü olması
 C) Hz. İsmail'in evde onu beklemesi
