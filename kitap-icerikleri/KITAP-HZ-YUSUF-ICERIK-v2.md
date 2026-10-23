@@ -1,8 +1,8 @@
 # KİTAP: Hz. Yusuf — v2 (karma anlatım tarzı)
 
 > **Durum:** Yazıldı ve içerik denetçisinden geçti (23 Ekim 2026; 0 kritik). Mekanik bulgular
-> düzeltildi; denetçinin Hasan'a bıraktığı sekiz soru "Yazım notları"nın sonunda. Hasan okuması
-> ve aktarım bekleniyor.
+> düzeltildi; denetim sonrası sekiz soruda Hasan önerileri kabul etti (23 Ekim 2026; 3. soruda
+> "Kolay değil." çıktı), işlendi ("Yazım notları" sonu). Hasan okuması ve aktarım bekleniyor.
 > On bölümün hikâye metninin kaynağı bu dosyadır. Büyük Final Testi, veli raporu,
 > sözlükçe, görsel briefleri ve kaynak notları `KITAP-HZ-YUSUF-ICERIK-final.md`'de kalır;
 > veli raporunun v2'ye bağlı maddeleri orada güncellendi (F5).
@@ -51,7 +51,7 @@ Rozet: Doğru Kişiye Danışma Rozeti
 
 Rozet sembolü: Gece göğünde on bir yıldız, güneş ve ay
 
-Kaynak: Yûsuf 12/3–8 (*Kur'an Yolu* meali, Faz 1 §F). Rivayet kalıbıyla: Kenan adı (TDV "YÛSUF SÛRESİ"; *Hadislerle İslâm* 6/58, 6/61; Hz. İbrahim v2 B7 ile aynı kelimeler), Bünyamin adı (TDV "BÜNYÂMİN"). Kutu: Yûsuf 12/3 ("kıssaların en güzeli"), 12/7. Onaylı örnek: `ORNEK-KARMA-TARZ.md` (Hz. Yusuf 1. bölüm).
+Kaynak: Yûsuf 12/3–8 (*Kur'an Yolu* meali, Faz 1 §F). Rivayet kalıbıyla: Kenan adı (TDV "YÛSUF SÛRESİ"; *Hadislerle İslâm* 6/58, 6/61; Hz. İbrahim v2 B7 ile aynı kelimeler), Bünyamin adı (TDV "BÜNYÂMİN"). Kutu: Yûsuf 12/3 (Diyanet meali "Sana bu Kur'an'ı vahyetmekle kıssaların en güzelini anlatıyoruz"; alıntı "bu Kur'an'ı vahyetmekle" kısmı olmadan), 12/7. Onaylı örnek: `ORNEK-KARMA-TARZ.md` (Hz. Yusuf 1. bölüm).
 
 ### HİKÂYE — 1. KISIM
 
@@ -142,7 +142,7 @@ Bir gün otlakta bir araya geldiler. [[Öğle sıcağıydı; sürüler akasyanı
 
 ```text
 [BİLİYOR MUYDUN]
-Metin: Kur'an, Hz. Yusuf'un hikâyesini baştan sona bir arada, Yûsuf suresinde anlatır ve ona “kıssaların en güzeli” der. Aynı surede, bu hikâyede soranlar için dersler olduğu da söylenir.
+Metin: Kur'an, Hz. Yusuf'un hikâyesini baştan sona Yûsuf suresinde anlatır. Hikâyeye başlamadan önce de “Sana kıssaların en güzelini anlatıyoruz” der; kıssa, hikâye demektir. Aynı surede, bu hikâyede soranlar için dersler olduğu da söylenir.
 ```
 
 Hz. Yusuf bu konuşmalardan habersizdi; o kardeşlerini içtenlikle seviyordu. Ama otlakta söylenen bu sözler, ailenin önüne uzun ve zor bir yol açacaktı. Ve o yolun sonunda, bir gece görülen o rüya gerçek olacaktı.
@@ -200,14 +200,16 @@ Kaynak: Yûsuf 12/9–15 (*Kur'an Yolu*): kardeşlerin konuşması ve "sonra iyi
 
 Kıskançlık küçük bir kıvılcım gibi başlar. Üstüne kuru bir dal atarsın, biraz büyür. Bir dal daha atarsın, biraz daha… Hz. Yusuf'un (a.s.) kardeşlerinin kalbindeki kıvılcım da böyle büyüyordu.
 
-O günden sonra kardeşler, Hz. Yusuf hakkında kendi aralarında sık sık konuştu. Babalarının sevgisinin yalnız kendilerine kalmasını istiyorlardı. İçlerinden bazıları, Hz. Yusuf'u babasından uzaklaştırmak için çok ağır şeyler bile söyledi. Bazıları da “Sonra iyi insanlar oluruz” diyordu.
+O günden sonra kardeşler, Hz. Yusuf hakkında kendi aralarında sık sık konuştu. Babalarının sevgisinin yalnız kendilerine kalmasını istiyorlardı. İçlerinden bazıları, Hz. Yusuf'u babasından uzaklaştırmak için çok ağır şeyler bile söyledi. Ardından da “Sonra iyi insanlar oluruz” diyorlardı.
 
 ```text
 [IŞIL]
 Metin: Önce yanlış yapıp sonra iyi olunur mu ki?
 ```
 
-Bunu kardeşler yıllar sonra, çok uzak bir yerde öğrenecekti. Şimdilik onlardan biri, ötekileri durdurmaya çalıştı:
+Bile bile yapılan bir yanlışın acısı yıllarca sürebilir. Kardeşler de bunu yıllar sonra, çok uzak bir yerde öğrenecekti.
+
+Şimdilik onlardan biri, ötekileri durdurmaya çalıştı:
 
 ```text
 [KELİME]
@@ -318,16 +320,7 @@ Kaynak: Yûsuf 12/16–22 (*Kur'an Yolu*). Köprü (Faz 1 karar 1): 16–18 ("uy
 
 *(Başlangıç harfi: büyük)*
 
-Kuyunun başından ayrıldıkları akşam kardeşler, Hz. Yusuf (a.s.) olmadan ağlayarak eve döndü. Babalarına onu kurdun yediğini söylediler. Gömleğine sürdükleri uydurma bir kanı da gösterdiler; bu bir yalandı.
-
-[[Hz. Yakup (a.s.) gömleğe uzun uzun baktı.]] Anlatılanlara göre gömlekte tek bir yırtık bile yoktu.
-
-```text
-[IŞIL]
-Metin: Kurt yemiş de gömlek sapasağlam mı kalmış?
-```
-
-Hz. Yakup onlara inanmadı. “Bana düşen güzel bir sabırdır” dedi ve Allah'a sığındı.
+Kuyunun başından ayrıldıkları akşam kardeşler, Hz. Yusuf (a.s.) olmadan ağlayarak eve döndü. Babalarına onu kurdun yediğini söyleyip gömleğine sürdükleri uydurma bir kanı gösterdiler; bu bir yalandı. Anlatılanlara göre gömlekte tek bir yırtık bile yoktu. Hz. Yakup (a.s.) onlara inanmadı, “Bana düşen güzel bir sabırdır” dedi ve Allah'a sığındı.
 
 [[O sırada Hz. Yusuf hâlâ kuyunun dibindeydi.]] Bir sabah kuyunun yanındaki yolda, uzaklardan gelen bir kervan mola verdi. Yolcular su almak için içlerinden birini kuyuya gönderdi. Adam kovasını kuyuya sarkıttı ve ipi yavaş yavaş yukarı çekmeye başladı.
 
@@ -460,7 +453,7 @@ Bir gün evin hanımı, Hz. Yusuf'tan Allah'ın razı olmayacağı yanlış bir 
 
 Bu, hiç beklemediği bir andı. Karşısındaki kişi, hizmet ettiği evin hanımıydı. Ona “hayır” demek hiç de kolay değildi. [[Belki kızacak, belki de başına büyük bir iş açacaktı.]]
 
-Ama istenen şey yanlıştı ve Hz. Yusuf bunu çok iyi biliyordu. [[Kapılar kapalıydı. Oda sessizdi.]] Şimdi hemen bir karar vermesi gerekiyordu. Hz. Yusuf ne yapacaktı?
+Ama istenen şey yanlıştı ve Hz. Yusuf bunu çok iyi biliyordu. Şimdi hemen bir karar vermesi gerekiyordu. Hz. Yusuf ne yapacaktı?
 
 ### SEN OLSAYDIN
 
@@ -632,16 +625,16 @@ Ama yorumdan önce, onlara çok daha önemli bir şey anlatmak istiyordu:
 
 — Ben atalarım İbrahim'in, İshak'ın ve Yakup'un yoluna uydum. Biz, Allah'a hiçbir şeyi ortak koşmayız.
 
-```text
-[BİLİYOR MUYDUN]
-Metin: Peygamberimiz (s.a.v.) şöyle buyurmuştur: “Kerim oğlu kerim oğlu kerim oğlu kerim; İbrahim'in oğlu İshak'ın oğlu Yakup'un oğlu Yusuf.” Kerim, değerli ve cömert insan demektir. Dördü de peygamberdi.
-```
-
 Sonra onlara, düşünmeleri için önemli bir soru sordu:
 
 — Ey zindan arkadaşlarım, birçok ayrı ilah mı iyidir, yoksa her şeye gücü yeten tek Allah mı?
 
 Hz. Yusuf onlara, Allah'tan başka taptıkları şeylerin yalnızca insanların taktığı adlar olduğunu anlattı. Her şeye karar veren yalnız Allah'tı ve O, yalnızca kendisine ibadet edilmesini emretmişti. Doğru yol buydu, ama insanların çoğu bunu bilmiyordu.
+
+```text
+[BİLİYOR MUYDUN]
+Metin: Peygamberimiz (s.a.v.) şöyle buyurmuştur: “Kerim oğlu kerim oğlu kerim oğlu kerim; İbrahim'in oğlu İshak'ın oğlu Yakup'un oğlu Yusuf.” Kerim, değerli ve cömert insan demektir. Dördü de peygamberdi.
+```
 
 **[GÖRSEL — yusuf-5-yildizli-pencere]**
 
@@ -1187,7 +1180,7 @@ Standart sözlükçede mevcut mu?: evet (Hz. Yusuf)
 
 **[GÖRSEL — yusuf-9-paylasilan-sofra]**
 
-[[Kardeşlerden biri sessizce ağlamaya başladı, sonra bir başkası. Hz. Yusuf kardeşlerini bir süre yanında konuk etti ve onları güzelce ağırladı.]] Yıllar önce kuyunun başında başlayan kırgınlık, o gün böylece sona erdi. [[Kardeşler hem utanıyor hem de içten içe rahatlıyordu; artık aralarında kin kalmamıştı.]]
+[[Kardeşlerden biri sessizce ağlamaya başladı, sonra bir başkası. Hz. Yusuf kardeşlerini bir süre yanında konuk etti ve onları güzelce ağırladı. Yüklerini de eksiksiz doldurttu.]] Yıllar önce kuyunun başında başlayan kırgınlık, o gün böylece sona erdi. [[Kardeşler hem utanıyor hem de içten içe rahatlıyordu; artık aralarında kin kalmamıştı.]]
 
 Sonra Hz. Yusuf kardeşlerinden babasının hâlini öğrendi: Babasının gözleri üzüntüden artık görmüyordu. [[Hz. Yusuf'un aklı artık yalnız babasındaydı.]] Ona bir an önce sevinç götürmenin yolunu düşünmeye başladı.
 
@@ -1387,13 +1380,14 @@ C) Sen de Hz. Yusuf gibi davrandın. O da sevinç anında kimseyi suçlamadan Al
    Mâtürîdî), *Hadislerle İslâm* 6/61 ("eğilip diz çöktüler"). "Bizim için" sınırı Hz. Âdem
    kitabındaki meleklerin secdesiyle çelişmez. F5/5'teki kitap alıntısı bu metinle değişti.
 5. **İki rivayet:** (a) B3 köprüsü: "Anlatılanlara göre gömlekte tek bir yırtık bile yoktu."
-   Ardından Işıl "Kurt yemiş de gömlek sapasağlam mı kalmış?"; köprü yine kısa, üzerine görsel
-   ya da etkileşim kurulmadı; "yalan" kitapta yine bir kez. Gömlek halkası B10'da Işıl ve
+   Köprü dört cümle; Işıl satırı ve "Hz. Yakup gömleğe uzun uzun baktı" denetim sonrası karar
+   2 ile çıktı, üzerine görsel ya da etkileşim kurulmadı; "yalan" kitapta yine bir kez. Gömlek halkası B10'da Işıl ve
    anlatıcıyla kapanıyor ("Bir gömlek Hz. Yakup'u kuşkulandırmıştı, bir gömlek Hz. Yusuf'un
    suçsuzluğunu göstermişti. Bu gömlek ise sevinç götürüyordu."; "yalan" kelimesi yine yalnız B3'te). (b) B7 Devam: "Anlatılanlara göre kardeşler, Aziz'e yaşlı
    babalarından ve evde kalan bir kardeşlerinden de söz ettiler." Casus sorgusu, kardeş sayısı
    ve "küçük" sıfatı yok.
-6. **(a) B5 kutusu**, Hz. Yusuf'un 12/38'deki sözünden hemen sonra: "Peygamberimiz (s.a.v.)
+6. **(a) B5 kutusu**, Hz. Yusuf'un tevhid konuşmasının sonunda (12/40 paragrafından sonra,
+   `yildizli-pencere` görselinden önce; denetim sonrası karar 5): "Peygamberimiz (s.a.v.)
    şöyle buyurmuştur: “Kerim oğlu kerim oğlu kerim oğlu kerim; İbrahim'in oğlu İshak'ın oğlu
    Yakup'un oğlu Yusuf.” Kerim, değerli ve cömert insan demektir. Dördü de peygamberdi."
    (Buhârî, Enbiyâ 19, no. 3390; *Hadislerle İslâm* 6/51.) Onaylanan metindeki ilk cümle
@@ -1408,9 +1402,10 @@ C) Sen de Hz. Yusuf gibi davrandın. O da sevinç anında kimseyi suçlamadan Al
 - **#3** B5: kalıplı cümle genişledi: "Anlatılanlara göre ikisi de kralın sarayında çalışıyordu:
   Biri kralın içeceklerini sunar, öteki ekmeğini pişirirdi." Işıl "Rüyaları da tıpkı işlerine
   benziyor!" ("şarap" yerine "içecek", Faz 1).
-- **#9** B2: "Bazıları da “Sonra iyi insanlar oluruz” diyordu." (12/9; "öldürün" yine diyaloğa
-  dökülmedi). Işıl "Önce yanlış yapıp sonra iyi olunur mu ki?"; anlatıcı cevabı B9'a köprü
-  kuruyor, ders cümlesi değil.
+- **#9** B2: "Ardından da “Sonra iyi insanlar oluruz” diyorlardı." (12/9; söz aynı kişilere
+  bağlı, "öldürün" yine diyaloğa dökülmedi). Işıl "Önce yanlış yapıp sonra iyi olunur mu ki?";
+  anlatıcı "Bile bile yapılan bir yanlışın acısı yıllarca sürebilir. Kardeşler de bunu yıllar
+  sonra, çok uzak bir yerde öğrenecekti." (denetim sonrası karar 3).
 - **#10** B7: 12/59 tam ("…ben ölçeği tam veriyorum ve ben konuk ağırlayanların en
   iyisiyim."); B9'daki konuk etme bu özelliğe dayanan örnek sahne olarak `[[…]]` içinde.
 - **#11** B3 Devam: "[[Zamanla bu ülkenin dilini ve âdetlerini de öğrendi.]]"; 1. kısım
@@ -1436,7 +1431,8 @@ C) Sen de Hz. Yusuf gibi davrandın. O da sevinç anında kimseyi suçlamadan Al
   çoktan otlağa gitmişti. Babası çadırında sabah ibadetini yeni bitirmişti."). ORNEK'teki
   "küçük Bünyamin" kaldı: Faz 1'in "büyük/küçük denmez" kaydı Bünyamin'i Hz. Yusuf'tan büyük
   sayan PDF'e karşıydı; Faz 2 görselleri onu küçük kardeş çizdi ("staying close beside his
-  older brother"), *Hadislerle İslâm* 6/58 "küçük kardeşleri Bünyamin" der.
+  older brother"), *Hadislerle İslâm* 6/58 "küçük kardeşleri Bünyamin" der. Denetim sonrası karar 4: "küçük" kalır;
+  Faz 1 kaydı "Bünyamin Hz. Yusuf'tan büyük gösterilmez; küçük kardeş denebilir" diye daraldı.
 - **#19** Anlatıcı bölümleri kendi sesiyle açıyor ya da sahneye çocuğu çağırıyor: B2 "Kıskançlık
   küçük bir kıvılcım gibi başlar…", B6 "Bir kişi hariç: kral.", B9 "Bir kişi hariç…", B10 "Dikkat
   edersen…", "Hatırlıyor musun?"; karar duraklaması ("Devam etmeden önce sana bir şey
@@ -1460,7 +1456,7 @@ C) Sen de Hz. Yusuf gibi davrandın. O da sevinç anında kimseyi suçlamadan Al
 kutusu ile çelişki yok (#4). Hz. Yakup'un Kenan sahneleri dört köprüde kısa kaldı (B3, B8,
 B9, B10); "güzel sabır" yalnız B3'te, "rahmetten ümit kesmeyin" yalnız B9 köprüsünde.
 
-**Işıl ve yardımcı bloklar:** Işıl 19 (B1 2, B2 2, B3 1, B4 2, B5 2, B6 2, B7 2, B8 2, B9 1, B10
+**Işıl ve yardımcı bloklar:** Işıl 18 (B1 2, B2 2, B3 —, B4 2, B5 2, B6 2, B7 2, B8 2, B9 1, B10
 3), soru başlığı 10, bilgi kutusu 2 (B1 Yûsuf suresi, B5 kerim hadisi). Işıl'ın en uzun cümlesi
 8 kelime; hikâyedeki kişilerle konuşmuyor, hüküm vermiyor (B10'daki hükmü anlatıcı veriyor).
 B4'te yalnız güvenlik sorusu; B2'de korku ya da karanlık ayrıntısı sormuyor.
@@ -1472,32 +1468,32 @@ Tanık Sayfaları (B7, B10) `books.ts`'teki yerlerinde ve metinleriyle.
 
 **Ölçüler** (anlatı metni, KELİME blokları dahil; Işıl, soru başlığı, kutu ve Tanık Sayfası
 ayrı; kurgu işaretleri sayılmadı; `scripts/v2-onizleme-uret.mjs` çıktısından betikle,
-denetim düzeltmelerinden sonra):
+denetim sonrası sekiz karardan sonra):
 
 | Bölüm | Anlatı (1. kısım + Devam) | Yayındaki | Işıl | Soru başlığı | Kutu | En uzun düz metin aralığı |
 |---|---:|---:|---:|---:|---:|---:|
 | 1 | 2.985 (1.414 + 1.571) | 2.710 | 2 | 2 | 1 | 635 |
-| 2 | 3.521 (2.171 + 1.350) | 3.304 | 2 | 1 | — | 809 |
-| 3 | 2.962 (1.778 + 1.184) | 2.889 | 1 | 1 | — | 683 |
-| 4 | 3.223 (887 + 2.336) | 3.017 | 2 | 1 | — | 723 |
-| 5 | 2.865 (1.201 + 1.664) | 2.809 | 2 | 1 | 1 | 498 |
+| 2 | 3.583 (2.233 + 1.350) | 3.304 | 2 | 1 | — | 868 |
+| 3 | 2.923 (1.739 + 1.184) | 2.889 | — | 1 | — | 761 |
+| 4 | 3.190 (854 + 2.336) | 3.017 | 2 | 1 | — | 723 |
+| 5 | 2.865 (1.201 + 1.664) | 2.809 | 2 | 1 | 1 | 737 |
 | 6 | 3.000 (1.794 + 1.206) | 2.816 | 2 | 1 | — | 547 |
 | 7 | 2.894 (1.540 + 1.354) | 2.786 | 2 | 1 | — | 866 |
 | 8 | 3.131 (1.737 + 1.394) | 3.190 | 2 | 1 | — | 728 |
-| 9 | 3.160 (1.564 + 1.596) | 2.700 | 1 | 1 | — | 697 |
+| 9 | 3.193 (1.564 + 1.629) | 2.700 | 1 | 1 | — | 697 |
 | 10 | 3.366 (1.653 + 1.713) | 2.695 | 3 | 0 | — | 637 |
 
-Bant 2.865–3.521 (yayında 2.695–3.304). Uzunluk hikâyeden geliyor: en uzun bölümler dönüm
+Bant 2.865–3.583 (yayında 2.695–3.304). Uzunluk hikâyeden geliyor: en uzun bölümler dönüm
 noktası çok olanlar (B2 plan, izin, kuyu, bildirim ve bekleyiş; B10 gömlek, kavuşma, yere kapanma,
 rüyanın yorumu ve dua); B1 tek sahneli, sakin bölüm (onaylı örnek). B4'ün 1. kısmı bilerek kısa:
 isteğin kendisi sahnelenmiyor (Faz 1 karar 2), uzunluk Devam'daki sığınma, kaçış, gömlek ve
 aklanmadan geliyor. 18 kelimeyi aşan cümle yok (betiğin işaretlediği iki yer, tırnak sonunda
 bölünmeyen iki ayrı cümle: B2 13 + 9, B5 kutusu 18 + 6). Işıl satırları en çok 8 kelime. Önizleme
 betiği dosyayı hatasız ayrıştırıyor (on bölüm); çıktı repoya konmadı. **Tanık Sayfası** kod
-bloğu betikte tanınmadığı için önizlemede görünmez (ana oturumun notu).
+bloğu bu worktree'deki betikte atlanıyor; ana oturumdaki güncel betik onu canlı `books.ts`'ten alıyor.
 
 **Meal notları:** Yeni ya da değişen âyet cümleleri: 12/3 Diyanet meali "Sana bu Kur'an'ı
-vahyetmekle kıssaların en güzelini anlatıyoruz" (B1 kutusu yayındaki gibi; açık soru 6); 12/9
+vahyetmekle kıssaların en güzelini anlatıyoruz" (B1 kutusu, denetim sonrası karar 6); 12/9
 "Ondan sonra da iyi kimseler olursunuz" → "Sonra iyi insanlar oluruz" (TDV "YÛSUF": "tövbe edip
 iyi kullar olacaklarını vaad ederler"); 12/15 *Kur'an Yolu* "Onlar farkında değilken biz de
 Yûsuf'a vahyettik ki…" (dolaylı anlatım); 12/23 sözün kendisi yayındaki gibi ("zalimler" →
@@ -1546,7 +1542,14 @@ olduğu, F5 alıntılarının v2 ile birebir olduğu doğrulandı. **Mekanik bul
   F5/12 "Mekke'de kendisine yıllarca eziyet edenleri" (bir şehrin halkı toptan nitelenmesin);
   final.md başına v2 notu, §B "Kitaba özgü yasaklar"a v2 notu.
 
-*Denetim sonrası sorular (Hasan; uygulanmadı, metin bugünkü hâliyle):*
+*Denetim sonrası sorular ve Hasan'ın kararları (23 Ekim 2026).* Hasan'ın sözü: "Yusuf: sekiz kararda
+öneriler kabul (3'te "Kolay değil" çıksın)." Sekizi de metne işlendi: (1) B4'te "[[Kapılar
+kapalıydı. Oda sessizdi.]]" çıktı; kapıya koşma (12/25) yerinde. (2) B3 köprüsü önerilen dört
+cümle; Işıl satırı ve "gömleğe uzun uzun baktı" çıktı. (3) B2 "Ardından da … diyorlardı"; anlatıcı
+"Bile bile yapılan bir yanlışın acısı yıllarca sürebilir. Kardeşler de bunu yıllar sonra, çok uzak
+bir yerde öğrenecekti." ("Kolay değil." yok). (4) "küçük Bünyamin" kaldı; Faz 1 kaydı daraldı. (5)
+B5 kutusu konuşmanın sonunda. (6) B1 kutusu önerilen metinle. (7) B9 "Yüklerini de eksiksiz
+doldurttu." (8) F5/11 ve F5/9 önerilen metinlerle. Aşağıda soruların ilk hâli kayıt için duruyor.
 1. **B4 1. kısım: "[[Kapılar kapalıydı. Oda sessizdi.]]"** (denetçi Önemli 9). Bu kurgu cümleleri
    isteğin yapıldığı anı sahneliyor; kapalı ve sessiz oda imgesi yetişkin okurda mahremiyet
    çağrıştırabilir. Canlı metinde yoktu. Çıksın mı?
@@ -1610,10 +1613,10 @@ olduğu, F5 alıntılarının v2 ile birebir olduğu doğrulandı. **Mekanik bul
    konusunda da farklıdır)".
 
 **Aktarım için:**
-- `paragraphs` ve `continuationParagraphs` v2'den alınır; `[[`/`]]` silinir. Yeni bloklar: Işıl 19,
+- `paragraphs` ve `continuationParagraphs` v2'den alınır; `[[`/`]]` silinir. Yeni bloklar: Işıl 18,
   soru başlığı 10, "Biliyor muydun?" kutusu 2 (B1 Yûsuf suresi, onaylı ORNEK'ten; B5 kerim hadisi).
-- Elli sahne görseli aynı bölümde, aynı parçada, aynı sırada; alt metinler değişmedi (açık soru 5
-  kabul edilirse B5 kutusu görselden önceye geçer, görsel sırası yine aynı).
+- Elli sahne görseli aynı bölümde, aynı parçada, aynı sırada; alt metinler değişmedi (B5 kutusu `yildizli-pencere`
+  görselinden hemen önce; görsel sırası aynı).
 - **Tanık Sayfaları** (B7, B10): v2'de ` ```text ` bloğunda `[TANIK]` işaretiyle, alanlar `Ad:`
   (boş) · `Etiket:` · `Kurgusal:` · `Metin:`. `books.ts`'teki `witness` blokları (1. kısmın son
   bloğu) değişmeden kalır. `scripts/v2-onizleme-uret.mjs` bu bloğu tanımıyor; önizlemede görünmez.
@@ -1625,13 +1628,13 @@ olduğu, F5 alıntılarının v2 ile birebir olduğu doğrulandı. **Mekanik bul
   *kefil* (öncesi; sonrası "dedi görevli"), *af* (sonrası), *hasret* (öncesi ve sonrası). Tam
   metinler v2'deki bloklarda.
 - **Sabit alanlar değişmedi:** özetler, Sen Olsaydın, Seçimini Karşılaştır, Ne Öğrendik, görevler ve
-  final testi (`quizzes.ts`). Açık soru 7 kabul edilirse yalnız B9 hikâye metnine bir cümle girer.
+  final testi (`quizzes.ts`). B9'daki "Yüklerini de eksiksiz doldurttu." hikâye metnindedir (denetim sonrası karar 7).
 - `parentReportBooks` Yusuf `parent_faq` final.md F5'teki 12 maddeye göre güncellenir: 1 (adın
   bilgisi, burhan, güvenlik paragrafını haber veren satır), 2 ("Müfessirlerin çoğuna göre"), 5 (yere
   kapanma: Işıl'ın sorusu ve anlatıcının cevabı, Fussilet 41/37, güneş ile ay), 6 (güzelliğin yarısı
   hadisi, alıntı "o iffetini korudu"), 9 (12/76 kralın kanunu, Işıl'ın sorusu, derece hükmü çıktı)
   değişti; 11 ("Hz. Yusuf neden hemen zindandan çıkmadı?") ve 12 ("Hz. Yusuf kardeşlerine neden
-  kızmadı?") yeni; 3, 4, 7, 8, 10 aynı. Açık soru 8 kabul edilirse 9 ve 11 o metinle.
+  kızmadı?") yeni; 3, 4, 7, 8, 10 aynı. 9 ve 11 denetim sonrası karar 8'deki metinlerle (F5'te yapıldı).
 - `SOZLUKCE-SICILI.md`: kutu yerleri aynı; güncelleme gerekmiyor. `ICERIK-GORSEL-SICILI.md`'de
   değişiklik yok.
 - final.md D bölümündeki hikâye parçaları ve seslendirme notları eski metne göre; v2 aktarılınca Işıl

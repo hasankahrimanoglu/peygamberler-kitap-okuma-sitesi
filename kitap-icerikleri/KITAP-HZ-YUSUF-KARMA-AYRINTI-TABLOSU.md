@@ -23,6 +23,18 @@
 > B3 köprüsünün uzunluğu ve Işıl'ı, B2 Işıl sorusunun cevabı ve "Bazıları da", "küçük Bünyamin",
 > B5 kutusunun yeri, B1 kutusundaki 12/3 ifadesi, B9'da yardım cümlesi, F5/9 ve F5/11'deki iki
 > künye.
+>
+> **Hasan'ın sekiz kararı (23 Ekim 2026, denetim sonrası; sekizinde de öneri kabul, 3'te tek
+> düzeltme):** (1) B4 "[[Kapılar kapalıydı. Oda sessizdi.]]" çıktı. (2) B3 köprüsü dört cümle;
+> Işıl satırı ve "gömleğe uzun uzun baktı" çıktı. (3) B2 "Ardından da “Sonra iyi insanlar
+> oluruz” diyorlardı."; anlatıcı "Bile bile yapılan bir yanlışın acısı yıllarca sürebilir.
+> Kardeşler de bunu yıllar sonra, çok uzak bir yerde öğrenecekti." ("Kolay değil." çıktı). (4)
+> "küçük Bünyamin" kalır; Faz 1 kaydı "Bünyamin Hz. Yusuf'tan büyük gösterilmez; küçük kardeş
+> denebilir" diye daraldı. (5) B5 kerim kutusu tevhid konuşmasının sonunda, `yildizli-pencere`
+> görselinden önce. (6) B1 kutusu 12/3 mealiyle ("Sana kıssaların en güzelini anlatıyoruz";
+> "kıssa, hikâye demektir"). (7) B9 "[[Yüklerini de eksiksiz doldurttu.]]". (8) F5/11'de Müsned
+> sözü ve *Hadislerle İslâm* 6/57 açıklaması ayrı; F5/9 "halasının ya da teyzesinin kuşağı …
+> anlatımlar kişi konusunda da farklıdır". Ölçüler 2.865–3.583 (v2 yazım notları).
 > **Kural:** brif §4.3 (üç alan, kaynak ölçeği), §7.2 (ölçüler), §7.10 (karma
 > tarz, örnek sahne), §16 (yerleşik kararlar; §16/9 hadisteki sayılar, §16/13 iki
 > yorum, §16/17b–c hadis ve alıntı, §16/18 ortak olay). Kitabın Faz 1 kararları

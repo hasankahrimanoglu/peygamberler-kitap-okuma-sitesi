@@ -2497,7 +2497,8 @@ Yusuf'un kendisinin kimseyi suçladığı anlatılmaz ve sonunda kardeşi yanın
 Kitapta bu soruyu Işıl soruyor, anlatıcı Kur'an'ın bu bilgisiyle cevap veriyor. Bazı
 anlatımlara göre Hz. Yusuf planı kardeşine önceden söylemişti; kitapta bu, rivayet olduğu
 belirtilerek tek cümleyle verildi. Kardeşlerin "onun kardeşi de çalmıştı" sözü (Yûsuf 77) için
-rivayetlerde farklı açıklamalar vardır (teyzesinin kuşağı, bir putun kırılması gibi); Kur'an
+rivayetlerde farklı açıklamalar vardır (halasının ya da teyzesinin kuşağı, bir putun kırılması
+gibi; anlatımlar kişi konusunda da farklıdır); Kur'an
 hangisi olduğunu söylemediği ve anlatımlar birbirinden farklı olduğu için kitap bunlardan
 birini seçmedi. Hz. Yusuf bu haksız söze karşılık vermemiş, sabretmiştir.
 
@@ -2512,8 +2513,9 @@ olduğunu, Hz. Yusuf'un bu bekleyişte de iyilik yapmayı sürdürdüğünü kon
 **"Hz. Yusuf neden hemen zindandan çıkmadı?"**
 Kur'an, kral onu çağırdığında Hz. Yusuf'un önce suçsuzluğunun ortaya çıkmasını istediğini
 bildirir (Yûsuf 50–52). Peygamberimiz (s.a.v.) bu konuda "Ben olsaydım hemen kabul eder,
-(aklanmaya) gerekçe aramazdım" buyurmuş ve Hz. Yusuf'un sabrına hayret ettiğini belirtmiştir
-(İbn Hanbel, Müsned, II, 346; Hadislerle İslâm 6/51, 6/57). Çocuğunuzla, haksız bir suçlamanın
+(aklanmaya) gerekçe aramazdım" buyurmuştur (İbn Hanbel, Müsned, II, 346; Hadislerle İslâm 6/51).
+Hadislerle İslâm bu sözü, Peygamberimizin Hz. Yusuf'un sabrına duyduğu hayretin ifadesi olarak
+açıklar (6/57). Çocuğunuzla, haksız bir suçlamanın
 sakin ve dürüst bir yolla temizlenmesini istemenin ne demek olduğunu, bunun için beklemenin
 neden zor olabileceğini konuşabilirsiniz.
 

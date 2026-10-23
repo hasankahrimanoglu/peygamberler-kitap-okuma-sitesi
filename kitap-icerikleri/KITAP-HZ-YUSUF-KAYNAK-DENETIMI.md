@@ -22,6 +22,8 @@
 >
 > **Faz 2 bu kararlarla üretilir.**
 >
+> *v2 notu (Hasan, 23 Ekim 2026): "büyük/küçük denmez" kaydı daraldı: Bünyamin Hz. Yusuf'tan büyük gösterilmez; küçük kardeş denebilir (`KITAP-HZ-YUSUF-ICERIK-v2.md`).*
+>
 > **Tarih:** 16 Ekim 2026 · **Oturum:** içerik oturumu (paralel Faz 1 — İbrahim,
 > Yunus, Süleyman, Îsâ ile aynı anda yazıldı).
 >
