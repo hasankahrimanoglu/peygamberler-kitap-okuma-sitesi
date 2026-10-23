@@ -3,10 +3,10 @@
 > **Durum:** Nihai — Faz 2 **onaylandı, Hasan, 15 Ekim 2026.** Faz 1, 13 Ekim 2026'da
 > onaylandı. Editoryal denetim yapıldı (0 kritik · 11 önemli · 12 küçük); Hasan'ın
 > "Hepsinde kararı sana bırakıyorum, doğrusu neyse o şekilde yap" talimatıyla 23 bulgunun
-> hepsi düzeltildi ve üç editör sorusu karara bağlandı (§I8). **Aktarım bekliyor**
-> (`/aktarim eyyub`). Faz 1 kaydı: `KITAP-HZ-EYYUB-KAYNAK-DENETIMI.md`. Bu dosya, o
-> dosyanın başındaki **Karar kaydı** ile yazıldı; karar kaydı Faz 1'deki "Önerim"
-> ifadelerinin önüne geçer.
+> hepsi düzeltildi ve üç editör sorusu karara bağlandı (§I8). **Aktarıldı**
+> (15 Ekim 2026; v2 hikâye metni, final testi ve F5 değişiklikleri 23 Ekim 2026). Faz 1
+> kaydı: `KITAP-HZ-EYYUB-KAYNAK-DENETIMI.md`. Bu dosya, o dosyanın başındaki **Karar
+> kaydı** ile yazıldı; karar kaydı Faz 1'deki "Önerim" ifadelerinin önüne geçer.
 >
 > **Kaynak:** Ahmet Cemil Akıncı, *Hz. Eyyûb (a.s.) – Hz. Zülkifl (Bişr) (a.s.) – Hz. Şuayb
 > (a.s.)* (EZŞ), Bahar Yayınları, Ekim 2025 — **yalnız Hz. Eyyûb kısmı, s. 9–146.**
@@ -27,8 +27,9 @@
 >
 > **v2 (23 Ekim 2026, Hasan onayı):** Beş bölümün hikâye metni karma tarzda yeniden yazıldı;
 > geçerli hikâye metni `KITAP-HZ-EYYUB-ICERIK-v2.md`, kararlar
-> `KITAP-HZ-EYYUB-KARMA-AYRINTI-TABLOSU.md`. Bu dosyanın D bölümündeki hikâye parçaları
-> ve seslendirme notları eski metne göredir. v2'ye bağlı olarak final testinin 3. ve 4.
+> `KITAP-HZ-EYYUB-KARMA-AYRINTI-TABLOSU.md`. **Hasan onayladı, `books.ts`'e aktarıldı (23 Ekim
+> 2026).** Bu dosyanın D bölümündeki hikâye parçaları
+> ve seslendirme notları eski metne göredir. v2'ye bağlı olarak final testinin 1., 3. ve 4.
 > sorusu (E) ve veli raporunun "Çocuğunuz Sorarsa" maddeleri (F5: 1–6 güncellendi, 7
 > yeni) bu dosyada değişti; B4 Ne Öğrendik 2 v2 dosyasında.
 >
@@ -969,7 +970,7 @@ Görsel ID: eyyub-4-ziyaret-patikasi
 Metin çapası: "Bir gün iki dostu ve onlardan daha genç bir arkadaşları yine çıkageldi…" paragrafından sonra
 Sahnenin amacı: Ziyaretçilerin gelişini figürsüz, patikadaki taze ayak izleriyle göstermek.
 Dosya: bolum-4/ziyaret-patikasi.jpg
-Alt metin: Kuru otların arasından tepedeki zeytin ağacına uzanan patikada yürüyen iki yaşlı ve bir genç adam; arkadan görünüyorlar.
+Alt metin: Kuru otların arasından tepedeki zeytin ağacına uzanan patikada yürüyen üç adam; arkadan görünüyorlar.
 Ana üretim promptu: Kuru otların arasından tepedeki zeytin ağacına doğru kıvrılan dar bir toprak patika. Patikanın tozunda, aynı yöne giden farklı boylarda üç sıra taze ayak izi. Yanda alçak bir taş duvar ve duvarın üstünde birkaç yabani çiçek. Sabahın geç saatlerinin parlak ışığı.
 Ana üretim promptu (EN): A narrow dirt path winds through dry grass toward the olive tree on the hill. In the dust of the path are three lines of fresh footprints of different sizes, all heading the same way. A low stone wall runs alongside, with a few wildflowers on top. Bright late-morning light.
 Kadraj notu: 16:9; ayak izleri ön planda net, patika arka plandaki ağaca doğru daralıyor.
@@ -1550,7 +1551,7 @@ klasörü yok). Bölge sahnesi envantere girmez. Sahnelerin bölüm klasörleri
 | 17 | `kitaplar/hz-eyyub/bolum-3/dolu-testi.jpg` | Devam | Zeytin ağacının gölgesinde, hasırın yanında ağzına kadar su dolu bir toprak testi ve üzeri örtülü küçük bir ekmek sepeti. |
 | 18 | `kitaplar/hz-eyyub/bolum-3/huzurlu-safak.jpg` | Devam | Şafakta zeytin ağacının ardından doğan güneş; dalların arasından süzülen ilk ışık hasıra düşüyor. |
 | 19 | `kitaplar/hz-eyyub/bolum-4/kapak.jpg` | Açılış | Öğle güneşinde kuru otlu tepeler, taş duvarlar ve tepede tek başına duran küçük bir zeytin ağacı. |
-| 20 | `kitaplar/hz-eyyub/bolum-4/ziyaret-patikasi.jpg` | 1. Kısım | Kuru otların arasından tepedeki zeytin ağacına uzanan patikada yürüyen iki yaşlı ve bir genç adam; arkadan görünüyorlar. |
+| 20 | `kitaplar/hz-eyyub/bolum-4/ziyaret-patikasi.jpg` | 1. Kısım | Kuru otların arasından tepedeki zeytin ağacına uzanan patikada yürüyen üç adam; arkadan görünüyorlar. |
 | 21 | `kitaplar/hz-eyyub/bolum-4/kirik-dal.jpg` | 1. Kısım | Bulutlu gökyüzü önünde, zeytin ağacının kırılıp sarkmış ama yaprakları hâlâ yeşil bir dalı. |
 | 22 | `kitaplar/hz-eyyub/bolum-4/genc-fidan.jpg` | Devam | Kalın gövdeli yaşlı zeytin ağacının hemen yanında dimdik yükselen ince, genç bir fidan. |
 | 23 | `kitaplar/hz-eyyub/bolum-4/tas-sekiler.jpg` | Devam | Zeytin ağacının gölgesinde, ziyaretçilerin oturduğu ve şimdi boş kalan, yarım daire biçiminde üç düz taş. |

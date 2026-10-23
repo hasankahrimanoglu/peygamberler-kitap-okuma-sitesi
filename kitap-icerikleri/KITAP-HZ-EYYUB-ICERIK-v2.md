@@ -2,7 +2,8 @@
 
 > **Durum:** Yazıldı ve içerik denetçisinden geçti (23 Ekim 2026; 0 kritik, 11 önemli, 22
 > küçük). Mekanik bulgular düzeltildi; denetim sonrası altı soruda Hasan önerileri kabul etti
-> (23 Ekim 2026), işlendi ("Yazım notları" sonu). Aktarılmadı.
+> (23 Ekim 2026), işlendi ("Yazım notları" sonu). Hasan onayladı, `src/data/books.ts`'e
+> aktarıldı (23 Ekim 2026).
 > Beş bölümün hikâye metninin kaynağı bu dosyadır. Büyük Final Testi, veli raporu,
 > sözlükçe, görsel briefleri ve kaynak notları `KITAP-HZ-EYYUB-ICERIK-final.md`'de kalır;
 > veli raporunun ve final testinin v2'ye bağlı maddeleri orada güncellendi (E, F5).
@@ -663,7 +664,7 @@ C) Korkunun bir süre sürmesi anlaşılır bir şey. Hz. Eyyûb ise zor günler
    Kur'an anlatmaz. [[Ama Hz. Eyyûb onlar için umudunu hiç kaybetmemişti.]]"
 5. **Sâd 44** çocuk metninde yok; kapanış âyetin ikinci yarısı. F5/5 Diyanet Vakfı mealiyle,
    yorum müfessirlere bağlı, eşle ilgili tefsir bilgisi açık. Brife dokunulmadı (§16/14 ana
-   oturumun işi).
+   oturumun işiydi; yapıldı, 5a49f0e).
 6. **B2 güvence paragrafı** Hz. Eyyûb'un Rabbine sığındığı ve eşi için dua ettiği yerden sonra,
    `tek-kandil` görselinden önce. Işıl satırı doğal Türkçe için "İçim sızladı" yerine "İçim
    burkuldu". Anlatıcının ilk iki cümlesi denetimde "iç" tekrarı yüzünden sadeleşti: "Senin de

@@ -2660,6 +2660,27 @@ Kurallar:
       değişmedi (kutu ve görsel yerleri aynı). `kitap-denetle yusuf` 0 hata
       (uyarı: 10 ses yer tutucu). Yayına çıkması `main`'e geçişle olur. Sırada
       Hz. Eyyûb.*
+      *23 Eki: **Hz. Eyyûb v2 aktarıldı** (Hasan onayı). Beş bölümün hikâye
+      metni `books.ts`'te `KITAP-HZ-EYYUB-ICERIK-v2.md` ile birebir (25 sahne
+      görseli ve 6 sözlük kelimesi aynı parçada, aynı sırada; yalnız
+      `bolum-4/ziyaret-patikasi` alt metninde "iki yaşlı ve bir genç adam" → "üç
+      adam"). B4'teki genç dost çıktı (yalnız kaynak PDF'te, Tevrat kaynaklı
+      motif); suçlama rivayet kalıbıyla, sayı verilmeden; hastalığın ceza
+      olmadığını Işıl'ın sorusuna anlatıcı hadisle cevaplıyor. B3'te nefret-i
+      amme gereği bulaşma korkusu ve köyden çıkarılma talebi çıktı; uzaklaşma
+      kalıpla, taşınma kimin istediği söylenmeden. Altın çekirgeler Buhârî'deki
+      hadisle B5'te "Biliyor muydun?" kutusunda; eşin gençleşmesi ve halkın iman
+      etmesi çıktı ("Köydekilerin sonra ne yaptığını Kur'an anlatmaz"). Sâd 44
+      (yemin ve demet sap) yalnız veli raporunda; brif §16/14 netleşti
+      (5a49f0e). B2'de en ağır haberden sonra Işıl ve anlatıcıyla kısa güvence
+      paragrafı. Sabit alanlarda B4 Ne Öğrendik 2 ve final testi 1., 3. ve 4.
+      soru değişti; veli raporunun "Çocuğunuz Sorarsa" bölümü final.md F5'e göre
+      7 madde oldu (1–6 güncellendi; 7 yeni: kurt rivayeti). Kararlar v2 yazım
+      notları ve `-KARMA-AYRINTI-TABLOSU.md`'de. Geçici `eyyubV2Onizleme.ts`
+      silindi; `ICERIK-GORSEL-SICILI`'nde patika alt metni güncellendi,
+      `SOZLUKCE-SICILI` değişmedi (kutu yerleri aynı). `kitap-denetle eyyub` 0
+      hata (uyarı: 5 ses yer tutucu). Yayına çıkması `main`'e geçişle olur.
+      Sırada Hz. Musa.*
 
 ### 22 Ekim 2026 (iki eksenli kaynak ölçeği — Hasan onayı, bkz. 4.1/21 ve içerik brifi §4.3, §16/17b–c)
 

@@ -718,6 +718,11 @@ metnini kaydeder. Bölüm başına 1 açılış + 5 sahne (1. Kısım 2 / Devam 
 > dosyalar `gorsel-kaynaklari/eyyub-yeniden-uretim/`. `books.ts` alt metinleri ve final MD
 > (Alt metin + Figür, §H tablosu) bu tabloyla eşitlendi.
 
+> **Karma tarz metni (v2) aktarıldı (23 Eki 2026):** Hikâye metni yeniden yazıldı, görsel
+> dosyaları değişmedi; yeni görsel yok, yirmi beş sahne aynı bölümde, aynı parçada ve aynı
+> sırada. Tek `alt` değişikliği: `bolum-4/ziyaret-patikasi` "iki yaşlı ve bir genç adam" →
+> "üç adam" (metinde genç dost artık yok; dosya adı aynı).
+
 ### Kitap kapağı ve harita durağı
 
 | Dosya | Biçim | Durum | Görsel brifi |
@@ -763,7 +768,7 @@ metnini kaydeder. Bölüm başına 1 açılış + 5 sahne (1. Kısım 2 / Devam 
 | Dosya | Akıştaki yer | Öncelik | Durum | Görsel brifi |
 |---|---|---|---|---|
 | `hz-eyyub/bolum-4/kapak.jpg` | Açılış | A | ✅ Hazır | Öğle güneşinde kuru otlu tepeler, taş duvarlar ve tepede tek başına duran küçük bir zeytin ağacı |
-| `hz-eyyub/bolum-4/ziyaret-patikasi.jpg` | 1. Kısım | A | ✅ Hazır | Kuru otların arasından tepedeki zeytin ağacına uzanan patikada yürüyen iki yaşlı ve bir genç adam; arkadan görünüyorlar *(figürlü yeniden üretim, 17 Eki 2026)* |
+| `hz-eyyub/bolum-4/ziyaret-patikasi.jpg` | 1. Kısım | A | ✅ Hazır | Kuru otların arasından tepedeki zeytin ağacına uzanan patikada yürüyen üç adam; arkadan görünüyorlar *(figürlü yeniden üretim, 17 Eki 2026)* |
 | `hz-eyyub/bolum-4/kirik-dal.jpg` | 1. Kısım | A | ✅ Hazır | Bulutlu gökyüzü önünde, zeytin ağacının kırılıp sarkmış ama yaprakları hâlâ yeşil bir dalı |
 | `hz-eyyub/bolum-4/genc-fidan.jpg` | Devam | B | ✅ Hazır | Kalın gövdeli yaşlı zeytin ağacının hemen yanında dimdik yükselen ince, genç bir fidan |
 | `hz-eyyub/bolum-4/tas-sekiler.jpg` | Devam | B | ✅ Hazır | Zeytin ağacının gölgesinde, ziyaretçilerin oturduğu ve şimdi boş kalan, yarım daire biçiminde üç düz taş |

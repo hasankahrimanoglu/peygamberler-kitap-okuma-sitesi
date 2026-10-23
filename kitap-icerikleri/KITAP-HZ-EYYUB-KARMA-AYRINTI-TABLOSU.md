@@ -38,6 +38,7 @@
 > kalktı). (5) Ne Öğrendik 4/2 "Hz. Eyyûb'un yaşadıkları bir ceza değildi; Allah'tan gelen bir
 > imtihandı." (6) F5/3, 5, 6 beşer cümle; F5/3'teki Müslim, Zühd, 64 cümlesi (#10) çıktı. Brif
 > §16/14 netleştirmesi ana oturumda (5a49f0e). Ölçüler 2.654–3.266.
+> **Hasan onayladı, aktarıldı (23 Ekim 2026).**
 > **Kural:** brif §4.3 (üç alan, kaynak ölçeği), §7.2 (ölçüler), §7.10 (karma tarz, örnek
 > sahne), §16 (yerleşik kararlar; §16/1 ölüm, §16/8 kalıp, §16/9 sayılar, §16/13 iki yorum,
 > §16/14–15 veli raporu, §16/16 maddî ödül, §16/17b–c hadis ve alıntı, §16/18 ortak olay).

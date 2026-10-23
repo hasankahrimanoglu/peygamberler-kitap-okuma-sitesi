@@ -2,9 +2,11 @@
 // Kullanım: node scripts/v2-onizleme-uret.mjs src/data/books.ts kitap-icerikleri/KITAP-HZ-NUH-ICERIK-v2.md nuh src/data/nuhV2Onizleme.ts
 // Çıkan dosya yalnız `/tasarim/okuma?bolum={bookKey}-N&ornek=v2` önizlemesi içindir; aktarımda silinir.
 import { pathToFileURL } from "node:url";
+import { basename, dirname, join } from "node:path";
 import { copyFileSync, unlinkSync, readFileSync, writeFileSync } from "node:fs";
 const [, , booksYolu, mdYolu, anahtar, cikti] = process.argv;
-const tmp = booksYolu.replace(/\.ts$/, "") + "_o" + Date.now() + ".ts";
+// Geçici kopya gizli adla yazılır: açık dev sunucusunda Tailwind onu tarayıp silinince takılmasın.
+const tmp = join(dirname(booksYolu), "." + basename(booksYolu, ".ts") + "_o" + Date.now() + ".ts");
 copyFileSync(booksYolu, tmp);
 const { books } = await import(pathToFileURL(tmp).href);
 unlinkSync(tmp);

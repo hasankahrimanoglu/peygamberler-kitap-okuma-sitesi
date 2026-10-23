@@ -606,7 +606,7 @@ const yusufQuizQuestions: QuizQuestion[] = [
 const eyyubQuizQuestions: QuizQuestion[] = [
   {
     id: 1,
-    question: "Hz. Eyyûb, kapısına gelen konuklara ve açlara nasıl davranırdı?",
+    question: "Hikâyede Hz. Eyyûb, kapısına gelen konuklara ve açlara nasıl davranırdı?",
     correctOption: "c",
     options: [
       { id: "a", text: "Onları başka bir köye gönderirdi" },
@@ -626,22 +626,22 @@ const eyyubQuizQuestions: QuizQuestion[] = [
   },
   {
     id: 3,
-    question: "Hz. Eyyûb hastalanıp “Sen de git, kendini yorma” dediğinde eşi ne yaptı?",
+    question: "Hikâyede, herkes uzaklaşınca Hz. Eyyûb'un eşi ne yaptı?",
     correctOption: "a",
     options: [
-      { id: "a", text: "Yanından ayrılmadı; her gün su taşıyıp yemeğini hazırladı" },
+      { id: "a", text: "Yanından ayrılmadı; ona bakmayı sürdürdü" },
       { id: "b", text: "Köye dönüp onu bir daha görmeye gelmedi" },
       { id: "c", text: "Hekim bulmak için uzak bir şehre gitti" },
     ],
   },
   {
     id: 4,
-    question: "Genç dostun, Hz. Eyyûb'u suçlayan arkadaşlarına verdiği cevaptan ne öğreniriz?",
+    question: "Hz. Eyyûb derdini kime açtı ve nasıl dua etti?",
     correctOption: "c",
     options: [
-      { id: "a", text: "Hasta birini hiç ziyaret etmemek gerektiğini" },
-      { id: "b", text: "Kırıcı bir sözü herkesin önünde tekrar etmek gerektiğini" },
-      { id: "c", text: "Zor durumdaki birini suçlamak yerine onun yanında durmak gerektiğini" },
+      { id: "a", text: "Dostlarına kızdı ve onlarla uzun uzun tartıştı" },
+      { id: "b", text: "Derdini kimseye açmadı, hepsini sessizce içinde tuttu" },
+      { id: "c", text: "Allah'a açtı: “Rabbim, bana bu dert dokundu; sen merhametlilerin en merhametlisisin” dedi" },
     ],
   },
   {
