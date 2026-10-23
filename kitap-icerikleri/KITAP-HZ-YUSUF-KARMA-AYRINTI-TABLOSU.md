@@ -1,7 +1,28 @@
 # HZ. YUSUF (a.s.) — KARMA TARZ YENİDEN YAZIMI: AYRINTI TABLOSU
 
-> **Tarih:** 23 Ekim 2026 · **Durum:** 1. aşama. Hasan'ın altı karar sorusuna cevabı
-> bekleniyor; v2 yazılmadı.
+> **Tarih:** 23 Ekim 2026 · **Durum:** Hasan altı karar sorusunda önerileri kabul etti
+> (23 Ekim 2026; iki yerde ana oturumun farkıyla, ⚑): (1) kadının adı verilmez. (2) B4 Devam'da,
+> zindan duasının kabulünden sonra Işıl'ın sorusu ve anlatıcının güvenlik cevabı önerilen metinle;
+> olayın niteliği açılmaz; ⚑ **veli raporuna (F5) bu paragrafı haber veren bir satır** eklenir.
+> (3) B10'da 12/100'den sonra "Âlimler bunu şöyle açıklar: On bir yıldız, Hz. Yusuf'un
+> kardeşleriydi. Güneş ile ay ise anne babası."; tek tek eşleştirme ve teyze rivayeti yok; B1'deki
+> kanca kalır. (4) B10 yere kapanma Işıl'ın sorusuyla, önerilen metin; "secde" kelimesi
+> kullanılmaz; dayanak notunda Fussilet 41/37. (5) İki rivayet girer (B3 gömlek, B7 kardeşlerin
+> sözü). (6a) B5 kerim kutusu; ⚑ **(6b) Mekke'deki "Bugün size kınama yok" çocuk metnine girmez,
+> yalnız veli raporuna** künyesiyle. Soru gerektirmeyen değişiklikler de uygulandı. v2 metni
+> `KITAP-HZ-YUSUF-ICERIK-v2.md`; veli raporu `final.md` F5 (12 madde).
+>
+> **İçerik denetimi sonrası (23 Ekim 2026; 0 kritik, 12 önemli, 18 küçük):** mekanik bulgular
+> düzeltildi (v2 "Yazım notları"). Tablodan sapan ya da tabloya eklenen noktalar: (1) B10 gömlek
+> halkasında "yalan" ikinci kez geçmesin diye "Bir gömlek Hz. Yakup'u kuşkulandırmıştı…". (2) B5
+> kutusunun ilk cümlesi 18 kelime sınırı için "Peygamberimiz (s.a.v.) şöyle buyurmuştur: “…”"
+> oldu (üç cümle, hadis metni aynı). (3) B3 özenli hizmet örnek sahne olarak işaretlendi (dayanağı
+> 12/22, 36, 78). (4) B9'da Işıl'ın peygamberin sözünü tekrarladığı satır ve "Bir düşün"
+> paragrafı çıktı. (5) F5/2 "Müfessirlerin çoğuna göre"; F5/12 "Mekke'de kendisine yıllarca eziyet
+> edenleri". Sekiz açık soru v2 yazım notlarının sonunda: B4 "Kapılar kapalıydı. Oda sessizdi.",
+> B3 köprüsünün uzunluğu ve Işıl'ı, B2 Işıl sorusunun cevabı ve "Bazıları da", "küçük Bünyamin",
+> B5 kutusunun yeri, B1 kutusundaki 12/3 ifadesi, B9'da yardım cümlesi, F5/9 ve F5/11'deki iki
+> künye.
 > **Kural:** brif §4.3 (üç alan, kaynak ölçeği), §7.2 (ölçüler), §7.10 (karma
 > tarz, örnek sahne), §16 (yerleşik kararlar; §16/9 hadisteki sayılar, §16/13 iki
 > yorum, §16/17b–c hadis ve alıntı, §16/18 ortak olay). Kitabın Faz 1 kararları

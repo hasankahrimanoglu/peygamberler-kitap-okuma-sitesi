@@ -8,6 +8,13 @@
 > bağlandı (§I8 "Faz 2 karar kaydı"; bütün sorularda önerilen seçenek). **Aktarım bekliyor**
 > (`/aktarim yusuf`, ayrı kod oturumunda).
 >
+> **v2 (23 Ekim 2026):** On bölümün hikâye metninin kaynağı artık
+> `KITAP-HZ-YUSUF-ICERIK-v2.md`'dir (karma tarz, üç alanlı kaynak kuralı; kararlar
+> `KITAP-HZ-YUSUF-KARMA-AYRINTI-TABLOSU.md`). Aşağıdaki D bölümündeki hikâye parçaları ve
+> seslendirme notları v2'den önceki metne aittir. Sabit alanlar (Sen Olsaydın, karşılaştırma,
+> Ne Öğrendik, görevler), görseller, sözlük ve final testi değişmedi. F5 v2'ye göre
+> güncellendi (12 madde).
+>
 > **Onay kapısı (skill §2):** Hasan'ın koordinasyon oturumunda yazdığı onay, aynen:
 > "5'inin de Faz 1'i onaylandı, Faz 2'yi yazsınlar." Beş lansman kitabı (İbrahim, Yusuf,
 > Yunus, Süleyman, Îsâ) için açık "evet" sayıldı.
@@ -193,7 +200,11 @@ zindandaki iyilikleri (s. 338–339), bereket yıllarında ürünün başağıyl
 kardeşleri konuk etmesi (s. 393) ve ailesini karşılamaya çıkması (s. 402). Hiçbir kurgu
 kişi, ad, sayı veya konuşma alınmadı. Kurgusal tanık (B7, B10) açıkça işaretlendi.
 
-**Kitaba özgü yasaklar.**
+**Kitaba özgü yasaklar.** *(v2, 23 Ekim 2026: üç madde değişti. Rüyadaki yıldız, güneş ve ay
+B10'da âlimlerin toplu açıklamasıyla anılır, tek tek eşleştirilmez (v2 karar 3). Yere kapanmanın
+açıklaması Işıl'ın sorusu ve "Âlimlerin çoğuna göre…" kalıbıyla verilir (v2 karar 4). "Güzelliğin
+yarısı" hadisi çocuk metninde yok, yalnız F5/6'da künyesiyle. Hikâye metninin kaynağı
+`KITAP-HZ-YUSUF-ICERIK-v2.md`.)*
 - Hz. Yusuf'un görünüşü hiçbir yerde tarif edilmez; "güzel, yakışıklı, nur yüzlü" gibi
   nitelemeler ve "güzelliğin yarısı" anlatısı yok (KARAR 3). Kadınların ellerini kesmesi
   yalnız şaşkınlıkla açıklanır.
@@ -2393,17 +2404,23 @@ kaldığı anları birlikte hatırlamak, seçimlerin nereye vardığını görme
 
 ### F5. Çocuğunuz Sorarsa
 
-*(10 soru; brif §10.3 gereği 8'i aştığı için en hassas konudan başlayarak sıralandı.)*
+*(12 soru; brif §10.3 gereği 8'i aştığı için en hassas konudan başlayarak sıralandı.
+**v2 (23 Ekim 2026):** 1, 5, 6 ve 9 güncellendi; 11 ve 12 yeni. Kitaptan alıntılar
+`KITAP-HZ-YUSUF-ICERIK-v2.md` ile birebir.)*
 
 **"Evin hanımı Hz. Yusuf'tan ne istedi?"**
 Kur'an, Aziz'in karısının Hz. Yusuf'tan uygunsuz bir yakınlık istediğini ve onun bunu
-reddettiğini anlatır (Yûsuf 23–24); kitapta bu, "Allah'ın razı olmayacağı yanlış bir istek"
-olarak verildi. Kaynak kitaptaki yetişkin ayrıntıları, Hz. Yusuf'un gördüğü "burhan"a (işarete)
-dair rivayetler ve kadının rivayetlerdeki adı (Züleyha ya da Zeliha) kullanılmadı. Çocuğunuzla
-"Biri senden gizli ve yanlış bir şey isterse, 'kimse bilmeyecek' derse ne yaparsın?" sorusu
-üzerinden konuşabilirsiniz: hayır demek, oradan uzaklaşmak ve hemen güvendiği bir yetişkine
-anlatmak. Bedeniyle ilgili ya da "kimseye söyleme" denilen bir durumu size anlattığında asla
-kızılmayacağını açıkça söylemeniz önemlidir.
+reddettiğini anlatır (Yûsuf 23–24); kitapta bu, "Allah'ın razı olmayacağı yanlış bir şey"
+olarak verildi. Kaynak kitaptaki yetişkin ayrıntıları ve Hz. Yusuf'un gördüğü "burhan"a
+(işarete) dair rivayetler kullanılmadı; Taberî de burhan konusunda kesin bir şey
+söylenemeyeceğini belirtir (TDV "YÛSUF SÛRESİ"). Kur'an kadının adını vermez; rivayetlerde
+Zelîha, Züleyha ya da Râil diye anılır, kitapta bu ad kullanılmadı (TDV "ZÜLEYHA"). Kitap bu
+bölümde çocuğa doğrudan da sesleniyor: Biri ondan gizli ve yanlış bir şey isterse "hayır"
+demesini, oradan uzaklaşmasını ve "kimseye söyleme" dense bile güvendiği bir büyüğe
+anlatmasını söylüyor. Çocuğunuz bu konuda bir soruyla ya da yaşadığı bir şeyle gelirse sözünü
+kesmeden, sakin ve suçlamadan dinlemeniz ona güven verir. Bedeniyle ilgili ya da "kimseye
+söyleme" denilen bir durumu size anlattığında asla kızılmayacağını açıkça söylemeniz
+önemlidir.
 
 **"Zindandaki genç öldü mü?"**
 Kur'an, Hz. Yusuf'un iki gençten birinin rüyasını onun hayatını kaybedeceği şeklinde
@@ -2411,7 +2428,7 @@ yorumladığını ve bu işin kesinleştiğini bildirir (Yûsuf 41); yani o gen�
 Kitap bunu tek ve sakin bir cümleyle verdi; Kur'an'daki asılma ve kuşlarla ilgili ayrıntıyı
 anlatmadı. Ölüm konusunda çocuğunuzun sorularını sakin ve dürüst cevaplamak, asıl merak ettiği
 ya da korktuğu şeyi dinlemek iyi olur. Kitabın son bölümündeki "Vakti geldiğinde canımı
-Müslüman olarak al" duası da ölümle ilgilidir: Hz. Yusuf o an ölmek istememiş, hayatı sona
+Müslüman olarak al" duası da ölümle ilgilidir: Müfessirlerin çoğuna göre Hz. Yusuf o an ölmek istememiş, hayatı sona
 erdiğinde Allah'a inanan biri olarak ölmeyi dilemiştir.
 
 **"Kardeşleri Hz. Yusuf'u neden kuyuya bıraktı? Onu hiç mi sevmiyorlardı?"**
@@ -2433,22 +2450,26 @@ bir görevliye başvurmak) birlikte konuşmak güven verir. Hikâyede Allah'ın 
 yalnız bırakmadığını ve ailenin sonunda kavuştuğunu da hatırlatabilirsiniz.
 
 **"Herkes Hz. Yusuf'un önünde yere kapandı. Secde yalnız Allah'a yapılmaz mı? Annesi nereden geldi?"**
-İslam'da secde yalnız Allah'a yapılır. Kur'an'da anlatılan bu yere kapanma, tefsirlerin
-yaygın görüşüne göre o dönemde gösterilen bir saygı ve selam biçimiydi; kitap bunu "o zamanlar
-saygı ve selam böyle gösterilirdi" diye açıkladı ve "secde" kelimesini kullanmadı. Kur'an, Hz.
+İslam'da secde yalnız Allah'a yapılır (Fussilet 41/37). Kur'an'da anlatılan bu yere kapanma,
+tefsirlerin yaygın görüşüne göre o dönemde gösterilen bir saygı ve selam biçimiydi (TDV "YÛSUF
+SÛRESİ": "tâzim"). Kitapta bu soruyu Işıl soruyor; anlatıcı "Bizim için öyle: Biz yalnız
+Allah'ın önünde yere kapanırız. Âlimlerin çoğuna göre Hz. Yusuf'un zamanında ise saygı ve
+selam böyle gösterilirdi" diye cevap veriyor ve "secde" kelimesini kullanmıyor. Kur'an, Hz.
 Yusuf'un "anne babasını" tahtın üzerine oturttuğunu söyler (Yûsuf 99–100). Bazı müfessirlere
 göre annesi o gün hayattaydı; bazılarına göre ise annesi daha önce vefat etmişti ve burada
 anılan, Hz. Yusuf'u büyüten teyzesidir (kitabın kaynağı da bu görüştedir). Kitap Kur'an'ın
-ifadesini korudu; iki görüş de anlatılabilir.
+ifadesini korudu; rüyadaki güneş ile ayı da âlimlerin açıklamasıyla "anne babası" diye andı,
+hangisinin kim olduğunu ayırmadı. İki görüş de anlatılabilir.
 
 **"Kadınlar neden ellerini kesti? Hz. Yusuf çok mu güzeldi?"**
 Kur'an, kadınların Hz. Yusuf'u görünce çok etkilenip ellerindeki bıçaklarla ellerini
 kestiklerini anlatır (Yûsuf 31); meallerde ve tefsirlerde bu şaşkınlık onun güzelliğine
-bağlanır. Kitapta Hz. Yusuf'un görünüşü tarif edilmedi; peygamberlerin yüzü ve görünüşü bu
-uygulamada anlatılmaz ve çizilmez. Kitabın vurgusu, kadının "O iffetini korudu" itirafıdır:
-Hz. Yusuf'u değerli kılan doğruluğu ve kendini korumasıdır. Olay kitapta kısa ve ayrıntısız
-anlatıldı; çocuğunuz kesik ellerden etkilendiyse bunun bir şaşkınlık anı olarak anlatıldığını
-hatırlatabilirsiniz.
+bağlanır. Bir hadiste Peygamberimiz (s.a.v.), Hz. Yusuf'a güzelliğin yarısının verildiğini
+bildirir (İbn Hanbel, Müsned, III, 287; Hadislerle İslâm 6/55). Kitapta Hz. Yusuf'un görünüşü
+tarif edilmedi; peygamberlerin yüzü ve görünüşü bu uygulamada anlatılmaz ve çizilmez. Kitabın
+vurgusu, kadının "o iffetini korudu" itirafıdır: Hz. Yusuf'u değerli kılan doğruluğu ve
+kendini korumasıdır. Olay kitapta kısa ve ayrıntısız anlatıldı; çocuğunuz kesik ellerden
+etkilendiyse bunun bir şaşkınlık anı olarak anlatıldığını hatırlatabilirsiniz.
 
 **"Kıtlık olursa biz de aç kalır mıyız?"**
 Kitap, yağmurun yağmadığı ve tarlaların kuruduğu yedi zor yılı ayrıntıya girmeden anlatır
@@ -2469,14 +2490,16 @@ Yakup'un hüznünü Allah'a açması ve umudunu hiç kaybetmemesi, bu konuyu kon
 kapıdır.
 
 **"Hz. Yusuf kardeşini alıkoymak için su kabını onun yüküne koydu. Bu hile değil mi? 'Onun kardeşi de çalmıştı' ne demek?"**
-Kur'an bu tedbirin Allah'ın Hz. Yusuf'a öğrettiği bir yol olduğunu bildirir (Yûsuf 76); amaç
-kimseyi suçlamak değil, öz kardeşini yanında tutmaktı. "Siz hırsızsınız" çağrısını Kur'an bir
-görevliye bağlar; Hz. Yusuf'un kendisinin kimseyi suçladığı anlatılmaz ve sonunda kardeşi
-yanında güvendeydi. Bazı anlatımlara göre Hz. Yusuf planı kardeşine önceden söylemişti;
-kitapta bu, rivayet olduğu belirtilerek tek cümleyle verildi. Kardeşlerin "onun kardeşi de
-çalmıştı" sözü (Yûsuf 77) için rivayetlerde farklı açıklamalar vardır (teyzesinin kuşağı, bir
-putun kırılması gibi); bunlar zayıf ya da tartışmalı olduğu için kitapta kullanılmadı. Hz.
-Yusuf bu haksız söze karşılık vermemiş, sabretmiştir.
+Kur'an bu tedbirin Allah'ın Hz. Yusuf'a öğrettiği bir yol olduğunu bildirir; kralın kanununa
+göre Hz. Yusuf kardeşini yanında tutamazdı (Yûsuf 76). Amaç kimseyi suçlamak değil, öz
+kardeşini yanında tutmaktı. "Siz hırsızsınız" çağrısını Kur'an bir görevliye bağlar; Hz.
+Yusuf'un kendisinin kimseyi suçladığı anlatılmaz ve sonunda kardeşi yanında güvendeydi.
+Kitapta bu soruyu Işıl soruyor, anlatıcı Kur'an'ın bu bilgisiyle cevap veriyor. Bazı
+anlatımlara göre Hz. Yusuf planı kardeşine önceden söylemişti; kitapta bu, rivayet olduğu
+belirtilerek tek cümleyle verildi. Kardeşlerin "onun kardeşi de çalmıştı" sözü (Yûsuf 77) için
+rivayetlerde farklı açıklamalar vardır (teyzesinin kuşağı, bir putun kırılması gibi); Kur'an
+hangisi olduğunu söylemediği ve anlatımlar birbirinden farklı olduğu için kitap bunlardan
+birini seçmedi. Hz. Yusuf bu haksız söze karşılık vermemiş, sabretmiştir.
 
 **"Hz. Yusuf neden zindanda unutuldu?"**
 Kur'an, Hz. Yusuf'un kurtulacağını bildiği gence "Efendinin yanında beni an" dediğini, ama
@@ -2485,6 +2508,24 @@ Kur'an, Hz. Yusuf'un kurtulacağını bildiği gence "Efendinin yanında beni an
 an bir insandan yardım beklediğini söyler; kitap ilk okumayı izledi ve hiçbir yorumu yanlış
 saymadı. Çocuğunuzla, bazen bize verilen sözlerin unutulabileceğini ve beklemenin zor
 olduğunu, Hz. Yusuf'un bu bekleyişte de iyilik yapmayı sürdürdüğünü konuşabilirsiniz.
+
+**"Hz. Yusuf neden hemen zindandan çıkmadı?"**
+Kur'an, kral onu çağırdığında Hz. Yusuf'un önce suçsuzluğunun ortaya çıkmasını istediğini
+bildirir (Yûsuf 50–52). Peygamberimiz (s.a.v.) bu konuda "Ben olsaydım hemen kabul eder,
+(aklanmaya) gerekçe aramazdım" buyurmuş ve Hz. Yusuf'un sabrına hayret ettiğini belirtmiştir
+(İbn Hanbel, Müsned, II, 346; Hadislerle İslâm 6/51, 6/57). Çocuğunuzla, haksız bir suçlamanın
+sakin ve dürüst bir yolla temizlenmesini istemenin ne demek olduğunu, bunun için beklemenin
+neden zor olabileceğini konuşabilirsiniz.
+
+**"Hz. Yusuf kardeşlerine neden kızmadı? Ben olsam affedemezdim."**
+Kur'an, Hz. Yusuf'un kardeşlerine "Bugün size hiçbir kınama yok; Allah sizi bağışlasın"
+dediğini bildirir (Yûsuf 92). Yüzyıllar sonra Peygamberimiz (s.a.v.) de Mekke'de kendisine
+yıllarca eziyet edenleri affettiği gün aynı sözü hatırlatmış ve "Tıpkı Yusuf Peygamber gibi ben
+de 'Bugün size kınama yok' diyorum" buyurmuştur (Beyhakî, es-Sünenü'l-kübrâ, IX, 195; Nesâî,
+es-Sünenü'l-kübrâ, VI, 382; Hadislerle İslâm 3/320, 7/40). Kitap affı "bize yanlış yapan birini
+bağışlayıp ona kin tutmamak" diye tanımlar. Çocuğunuzla affetmenin her zaman hemen olmayabileceğini,
+kırgınlığı söylemenin de doğal olduğunu; affetmenin olanı unutmak değil, kin tutmamak olduğunu
+konuşabilirsiniz.
 
 ---
 
