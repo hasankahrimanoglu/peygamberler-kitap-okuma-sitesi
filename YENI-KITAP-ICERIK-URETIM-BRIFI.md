@@ -1391,8 +1391,11 @@ konuları **yeniden soru olarak sormaz; uygular ve uyguladığını gösterir.**
     kurulur; hiçbir yoruma "yanlış" denmez, farklı anlatımlar veli raporunda.
     *(Nûh 3)*
 14. **Bilinen ama çocuğa uygun olmayan ya da zayıf rivayet** çocuk metninden
-    çıkar, veli raporunun "Çocuğunuz Sorarsa" alanına taşınır (ör. yemin ve
-    demet sap, kekemeliğin sebebi, aşure). *(Eyyûb 3, Musa 9, Nûh 8)*
+    çıkar, veli raporunun "Çocuğunuz Sorarsa" alanına taşınır (ör.
+    kekemeliğin sebebi, aşure). *(Eyyûb 3, Musa 9, Nûh 8)* **Netleştirme (23 Eki
+    2026, Hasan):** Sâd 38/44'teki yemin ve demet sap rivayet değil, Kur'an'dır;
+    uygunlukta U4 sayılır (§4.3 karar tablosu, A satırı): çocuk metnine girmez,
+    veli raporunda meal ve müfessir yorumuyla anılır (Hz. Eyyûb v2).
 15. **Kur'an'da olup çocuğa ağır gelen olay** saklanmaz: adı konmadan,
     ayrıntısız anılır; tam anlatım veli raporunda (ör. Hızır kıssasındaki
     çocuk). *(Musa 1)*
