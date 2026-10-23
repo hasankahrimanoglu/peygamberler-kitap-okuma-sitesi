@@ -1,8 +1,8 @@
 # KİTAP: Hz. Eyyûb — v2 (karma anlatım tarzı)
 
 > **Durum:** Yazıldı ve içerik denetçisinden geçti (23 Ekim 2026; 0 kritik, 11 önemli, 22
-> küçük). Mekanik bulgular düzeltildi; Hasan'ın kararını gerektiren altı soru "Yazım
-> notları"nın sonunda. Aktarılmadı.
+> küçük). Mekanik bulgular düzeltildi; denetim sonrası altı soruda Hasan önerileri kabul etti
+> (23 Ekim 2026), işlendi ("Yazım notları" sonu). Aktarılmadı.
 > Beş bölümün hikâye metninin kaynağı bu dosyadır. Büyük Final Testi, veli raporu,
 > sözlükçe, görsel briefleri ve kaynak notları `KITAP-HZ-EYYUB-ICERIK-final.md`'de kalır;
 > veli raporunun ve final testinin v2'ye bağlı maddeleri orada güncellendi (E, F5).
@@ -12,8 +12,9 @@
 > `KITAP-HZ-EYYUB-KARMA-AYRINTI-TABLOSU.md` (Hasan onayı, 23 Ekim 2026). Sen Olsaydın
 > soruları, şıklar, Seçimini Karşılaştır, Bugüne Taşı görevleri, sözlük kelimeleri ve
 > görseller **`books.ts`'teki canlı hâlinden** alındı ve değişmedi. Değişen sabit alan:
-> B4 Ne Öğrendik 2 (karar 1c); final testi 3. ve 4. soru (karar 1c, 2c) final.md E'de ve
-> "Aktarım için"de.
+> B4 Ne Öğrendik 2 (karar 1c); final testi 1., 3. ve 4. soru (karar 1c, 2c; denetim sonrası
+> karar 3) final.md E'de ve "Aktarım için"de; `ziyaret-patikasi` alt metni (denetim sonrası
+> karar 4).
 >
 > **İşaretler:** `[[…]]` kurgu parçasıdır (Kur'an'da, hadiste ve rivayette yoktur;
 > aktarımda köşeli parantezler silinir). `[GÖRSEL — eyyub-N-ad]` görselin metindeki
@@ -50,7 +51,7 @@ Rozet: Paylaşılan Nimet Rozeti
 
 Rozet sembolü: İkiye bölünmüş ekmek ve üzüm salkımı
 
-Kaynak: Nisâ 4/163, En'âm 6/84 (peygamberlik). Rivayet kalıbıyla, bir kez: yurdun Şam tarafları olması (TDV "EYYÛB": "Şam bölgesinde yaşadığını"; PDF s. 19, 44; iki videoda); bölümün bereket ve cömertlik anlatısı bu kalıbın altındadır: sürüler, bağlar, kalabalık aile; konuksuz gecelememesi, açları doyurmadan yememesi (PDF s. 46–47, Asım Köksal I, 307; iki videoda); dullara, yetimlere ve yolculara yardım (TDV: "dulları ve yetimleri kollayan, misafire ikram eden, yolcunun yardımına koşan"); çok az kişinin inanması (TDV: üç kişi; PDF; V1). Tevhid çağrısı her peygamberin çağrısının özüdür; put cümlesi çıktı (ayrıntı tablosu #20). **Örnek sahne:** kapıya gelen yolcuyu karşılaması ve o doymadan yememesi (dayandığı özellik C kademesinde: konuksuz gecelememesi, açları doyurmadan yememesi; TDV "misafire ikram eden, yolcunun yardımına koşan"; isimsiz yolcu, değişmez alana dokunmaz). Kurgu: ambar kapısındaki an, sofra ve meydan sahneleri.
+Kaynak: Nisâ 4/163, En'âm 6/84 (peygamberlik). Rivayet kalıbıyla, iki kez (denetim sonrası karar 1; §16/17c-4: Kur'an bilgisinden sonra rivayete dönülürken kalıp yeniden açılır): yurdun Şam tarafları olması (TDV "EYYÛB": "Şam bölgesinde yaşadığını"; PDF s. 19, 44; iki videoda); sürüler, bağlar, kalabalık aile; peygamberlikten sonra ikinci kalıp: çok az kişinin inanması ve ardından gelen ambar ve cömertlik anlatısı: konuksuz gecelememesi, açları doyurmadan yememesi (PDF s. 46–47, Asım Köksal I, 307; iki videoda); dullara, yetimlere ve yolculara yardım (TDV: "dulları ve yetimleri kollayan, misafire ikram eden, yolcunun yardımına koşan"); çok az kişinin inanması (TDV: üç kişi; PDF; V1). Tevhid çağrısı her peygamberin çağrısının özüdür; put cümlesi çıktı (ayrıntı tablosu #20). **Örnek sahne:** kapıya gelen yolcuyu karşılaması ve o doymadan yememesi (dayandığı özellik C kademesinde: konuksuz gecelememesi, açları doyurmadan yememesi; TDV "misafire ikram eden, yolcunun yardımına koşan"; isimsiz yolcu, değişmez alana dokunmaz). Kurgu: ambar kapısındaki an, sofra ve meydan sahneleri.
 
 ### HİKÂYE — 1. KISIM
 
@@ -66,7 +67,7 @@ Ama Hz. Eyyûb bu bolluğa bakıp hiçbir zaman “Bunlar benim” demezdi. Ona 
 
 Bir gün Allah, Hz. Eyyûb'u peygamber olarak seçti. Hz. Eyyûb da insanları yalnız Allah'a inanmaya çağırdı. [[Çok umutluydu; insanların Rabbini hemen tanıyacağını düşünüyordu.]]
 
-Köyün meydanında insanlara tatlı bir dille Allah'ı anlatırdı. Yolda karşılaştığı yolcularla da durup konuşurdu. Ne var ki ona çok az kişi inandı. [[Bazıları onu dinlememek için başını çevirip yoluna devam ediyordu.]]
+Köyün meydanında insanlara tatlı bir dille Allah'ı anlatırdı. Yolda karşılaştığı yolcularla da durup konuşurdu. Ne var ki anlatılanlara göre ona çok az kişi inandı. [[Bazıları onu dinlememek için başını çevirip yoluna devam ediyordu.]]
 
 ```text
 [IŞIL]
@@ -174,7 +175,7 @@ Kaynak: Enbiyâ 21/83–84, Sâd 38/41 (dert dokunması); kutu: dertlerin neler 
 
 *(Başlangıç harfi: büyük)*
 
-Bazı sabahlar her zamanki gibi başlar; o gün neler olacağını kimse bilmez. Hz. Eyyûb (a.s.) o sabah da gün ağarırken kalkmıştı. Çobanlar sürüleri ovalara çıkarmış, tarlalarda iş çoktan başlamıştı.
+O sabah da her zamanki gibi başlamıştı; kimse neler olacağını bilmiyordu. Hz. Eyyûb (a.s.) gün ağarırken kalkmıştı. Çobanlar sürüleri ovalara çıkarmış, tarlalarda iş çoktan başlamıştı.
 
 Evin avlusuna fırından yeni çıkmış ekmeklerin sıcak kokusu yayılıyordu. Hz. Eyyûb günün işlerine başlamadan önce Rabbine şükretti. Sonra bağdaki çardağın altına oturup o gün yapılacak işleri düşünmeye başladı.
 
@@ -503,7 +504,7 @@ C) Kırgınken uzak durmak istemek anlaşılır. Hz. Eyyûb ise kırıldığın�
 
 1. Kırıldığımızda derdimizi en merhametli olan Allah'a açabilir, umudumuzu O'na bağlayabiliriz.
 
-2. Hz. Eyyûb'un yaşadıkları bir ceza değil, bir imtihandı.
+2. Hz. Eyyûb'un yaşadıkları bir ceza değildi; Allah'tan gelen bir imtihandı.
 
 3. Hz. Eyyûb, “Rabbim, bana bu dert dokundu; sen merhametlilerin en merhametlisisin” diye dua etti.
 
@@ -657,7 +658,7 @@ C) Korkunun bir süre sürmesi anlaşılır bir şey. Hz. Eyyûb ise zor günler
    yıkanıp dinçleşmesi çıktı; yerine eşin pınara varışı (patikadan akan su onu pınara getirir;
    videodaki tanımama sahnesi yok), sevinci, birlikte şükür ve testilerin doldurulması
    (`iki-testi` görseli yerinde). Hz. Eyyûb'un kendi şifası ve "hiçbir iz kalmamıştı" kaldı.
-   F5/3 önerilen metinle; isteğe bağlı Müslim, Zühd, 64 cümlesi de eklendi (tablo #10).
+   F5/3 önerilen metinle; isteğe bağlı Müslim, Zühd, 64 cümlesi önce eklendi (tablo #10), denetim sonrası karar 6 ile çıktı.
 4. **Halkın imanı** çıktı; `yeseren-bag` görselinden önce: "Köydekilerin sonra ne yaptığını
    Kur'an anlatmaz. [[Ama Hz. Eyyûb onlar için umudunu hiç kaybetmemişti.]]"
 5. **Sâd 44** çocuk metninde yok; kapanış âyetin ikinci yarısı. F5/5 Diyanet Vakfı mealiyle,
@@ -680,7 +681,7 @@ C) Korkunun bir süre sürmesi anlaşılır bir şey. Hz. Eyyûb ise zor günler
 - **#6** B5 ad kutusu (isteğe bağlıydı): "Anlatılanlara göre Eyyûb adı “dönüp gelen, yönelen”
   anlamına gelir." Kapanış âyetinden önce; âyetin "Daima Allah'a yönelirdi" sözü halkayı kapatır.
 - **#8, #9, #10** Veli raporu: F5/7 kurt rivayeti; F5/6 Taberânî künyesi, süre verilmedi;
-  F5/3 Müslim, Zühd, 64.
+  F5/3 Müslim, Zühd, 64 (denetim sonrası çıktı).
 - **#17** Sâd 41 Hz. Eyyûb'un sözü olarak, Diyanet Vakfı mealiyle: "— Rabbim, şeytan bana bir
   yorgunluk ve eziyet verdi." Enbiyâ 83 ayrı cümle. F5/4 meal adıyla güncellendi.
 - **#18** "— Ayağını yere vur! İşte yıkanacak ve içilecek soğuk bir su." (Diyanet Vakfı;
@@ -691,7 +692,7 @@ C) Korkunun bir süre sürmesi anlaşılır bir şey. Hz. Eyyûb ise zor günler
 - **#20** B1 put cümlesi ve "putları bırakıp" çıktı; tevhid çağrısı kaldı.
 - **#21** "giydirmeden giymezdi" ve "tek bir yoksul bile kalmamıştı" çıktı; yerine "Dullara,
   yetimlere ve yolda kalmış yolculara kendisi yardım eder…" (TDV).
-- **#22** Kalıp: metinde **5** (B1 yurt; B3 eşin adı, uzaklaşma, hamd; B4 suçlama). İki kutu
+- **#22** Kalıp: metinde **6** (B1 yurt ve "çok az kişi inandı"; B3 eşin adı, uzaklaşma, hamd; B4 suçlama; B1'deki ikincisi denetim sonrası karar 1). İki kutu
   rivayeti kalıpla açar (B2 dertler, B5 ad). "Kur'an'a göre", "Kur'an'da bildirildiğine göre"
   ve uzun kalıp yok. Tablodaki "(4)" sayımı yanlıştı; ayrıca uzaklaşma kalıbı denetimde karar
   metnine döndü (ilk taslakta B3'ün tek kalıbı adı da uzaklaşmayı da taşıyordu).
@@ -738,13 +739,13 @@ işaretleri sayılmadı; `scripts/v2-onizleme-uret.mjs` çıktısından betikle,
 
 | Bölüm | Anlatı (1. kısım + Devam) | Yayındaki | Işıl | Soru başlığı | Kutu | En uzun düz metin aralığı |
 |---|---:|---:|---:|---:|---:|---:|
-| 1 | 2.966 (1.647 + 1.319) | 3.086 | 2 | — | — | 762 |
-| 2 | 3.278 (1.184 + 2.094) | 3.282 | 1 | — | 1 | 766 |
+| 1 | 2.985 (1.666 + 1.319) | 3.086 | 2 | — | — | 762 |
+| 2 | 3.266 (1.172 + 2.094) | 3.282 | 1 | — | 1 | 766 |
 | 3 | 2.871 (1.548 + 1.323) | 2.998 | 2 | — | — | 745 |
 | 4 | 2.654 (1.148 + 1.506) | 2.832 | 1 | 1 | — | 518 |
 | 5 | 3.112 (1.455 + 1.657) | 2.755 | 2 | 1 | 2 | 641 |
 
-Bant 2.654–3.278 (yayında 2.755–3.282). Uzunluk hikâyeden geliyor: en uzunlar iki dönüm noktalı
+Bant 2.654–3.266 (yayında 2.755–3.282; denetim sonrası kararlardan sonra yeniden ölçüldü). Uzunluk hikâyeden geliyor: en uzunlar iki dönüm noktalı
 bölümler (B2 ilk haber ve en ağır haber; B5 pınar ve eşin gelişi). İlk taslakta B4 ve B5 alt
 sınırın altındaydı (2.328, 2.279); pınar anı, eşin pınara varışı, gece duası ve ilk haberdeki
 sükûnet sahne olarak açıldı. Denetimden sonra tekrarlar çıkınca B4 kısaldı; bölümün iki ana anı
@@ -797,10 +798,21 @@ kalmamıştı" (KELİME *şifa* sonrası, canlı metindeki gibi): Enbiyâ 84 "ke
 varsa gidermiştik" der; Kur'an bilgisinin sade karşılığı, kalıp gerekmez. (c) B5'te eşin
 "birlikte şükür"ü karar 3(b) metnindendir; Faz 1 karar 4 eşin inancını konu etmiyordu. Bu sınıra
 dokunduğu için eşin ayrıca söylediği "Rabbimize şükürler olsun!" sözü çıktı; "birlikte şükretti"
-onaylı metin olarak kaldı. (d) Brif §16/14 hâlâ "yemin ve demet sap"ı örnek veriyor (ana
-oturumun işi).
+onaylı metin olarak kaldı. (d) Brif §16/14'teki Sâd 44 netleştirmesi ana oturumda yapıldı
+(commit 5a49f0e, `icerik-lansman`).
 
-**Açık sorular (Hasan; denetim sonrası):**
+**Denetim sonrası sorular ve Hasan'ın kararları (23 Ekim 2026).** Hasan'ın sözü: "Eyyûb: altı
+kararda öneriler kabul. Yan oturum düzeltsin, önizlemeyi yenile; sonra okuyacağım." Altısı da
+işlendi: (1) B1 "Ne var ki anlatılanlara göre ona çok az kişi inandı." (metindeki kalıp 6). (2) B2
+açılışı "O sabah da her zamanki gibi başlamıştı; kimse neler olacağını bilmiyordu. Hz. Eyyûb (a.s.)
+gün ağarırken kalkmıştı." (3) Final 1 "Hikâyede Hz. Eyyûb, kapısına gelen konuklara ve açlara nasıl
+davranırdı?" (şıklar ve doğru harf aynı); final 4 çeldiricileri a) "Dostlarına kızdı ve onlarla uzun
+uzun tartıştı" · b) "Derdini kimseye açmadı, hepsini sessizce içinde tuttu" (final.md E). (4)
+`ziyaret-patikasi` alt metni "Kuru otların arasından tepedeki zeytin ağacına uzanan patikada yürüyen
+üç adam; arkadan görünüyorlar." ("Aktarım için"). (5) B4 Ne Öğrendik 2 "Hz. Eyyûb'un yaşadıkları bir
+ceza değildi; Allah'tan gelen bir imtihandı." (6) F5/3 (Müslim cümlesi çıktı, son iki cümle
+birleşti), F5/5 (2. ve 3. cümle birleşti), F5/6 (son iki cümle birleşti) beşer cümle. Aşağıda
+soruların ilk hâli kayıt için duruyor.
 1. **B1'de ikinci kalıp** (Önemli 2). B1'in tek kalıbı ("Anlatılanlara göre onun yurdu Şam
    taraflarındaydı") peygamberlik cümlesinden önce kalıyor. Kur'an bilgisinden ("Bir gün Allah,
    Hz. Eyyûb'u peygamber olarak seçti") sonra rivayete dönülürken kalıp yeniden açılmıyor; "çok
@@ -842,21 +854,34 @@ oturumun işi).
 **Aktarım için:**
 - `paragraphs` ve `continuationParagraphs` v2'den alınır; `[[`/`]]` silinir. Yeni bloklar: Işıl 8,
   soru başlığı 2, "Biliyor muydun?" kutusu 3 (B2 dertler, B5 altın çekirgeler ve ad).
-- Yirmi beş sahne görseli aynı bölümde, aynı parçada, aynı sırada; alt metinler değişmedi (açık
-  soru 4 kabul edilirse `ziyaret-patikasi` alt metni ve `ICERIK-GORSEL-SICILI.md` satırı değişir).
+- Yirmi beş sahne görseli aynı bölümde, aynı parçada, aynı sırada. **Alt metin değişen tek
+  görsel** `bolum-4/ziyaret-patikasi.jpg` (denetim sonrası karar 4): "Kuru otların arasından
+  tepedeki zeytin ağacına uzanan patikada yürüyen üç adam; arkadan görünüyorlar." (canlıda "…iki
+  yaşlı ve bir genç adam; arkadan görünüyorlar."). `ICERIK-GORSEL-SICILI.md`'deki satır da aynı
+  metne güncellenir. Görsel dosyası değişmez.
 - Altı sözlük kelimesi aynı bölümlerde, aynı parçada, aynı tanımlarla. **KELİME çevre metni
   değişenler:** *cömert* öncesi "Hz. Eyyûb ambarlarını kilitlemedi; tersine kapısını ardına kadar
   açtı. Yanında bir konuk olmadan geceyi geçirmez, açları doyurmadan kendisi tek lokma yemezdi.
   Bu yüzden herkes onu "; *musibet* öncesi "Hz. Eyyûb'un başına art arda gelecek "; *imtihan*
   öncesi "Hz. Eyyûb'un yaşadıkları, Allah'tan gelen bir ", sonrası "dı.". *sabır, vefa, şifa*
   aynı.
-- **Sabit alanlar:** B4 Ne Öğrendik 2 → "Hz. Eyyûb'un yaşadıkları bir ceza değil, bir
-  imtihandı." (açık soru 5 kabul edilirse "Hz. Eyyûb'un yaşadıkları bir ceza değildi; Allah'tan
-  gelen bir imtihandı."). Özetler, Sen Olsaydın, şıklar, Seçimini Karşılaştır, öteki Ne Öğrendik
+- **Sabit alanlar:** B4 Ne Öğrendik 2 → "Hz. Eyyûb'un yaşadıkları bir ceza değildi; Allah'tan
+  gelen bir imtihandı." (canlıda "Genç bir dost, zorluğun bir ceza değil bir imtihan olduğunu
+  söyleyerek Hz. Eyyûb'u savundu."). Özetler, Sen Olsaydın, şıklar, Seçimini Karşılaştır, öteki Ne Öğrendik
   maddeleri ve görevler değişmedi (B4 özeti "Dostlarının kırıcı sözü" v2 ile uyumlu).
-- **`quizzes.ts` `eyyubQuizQuestions`** 3. ve 4. soru (final.md E ile aynı; açık soru 3
-  kabul edilirse 1. sorunun metni ve 4. sorunun a, b şıkları da değişir):
+- **`quizzes.ts` `eyyubQuizQuestions`** 1., 3. ve 4. soru, son hâliyle (final.md E ile aynı;
+  2. ve 5. soru değişmedi; doğru harfler C-B-A-C-B aynı):
   ```ts
+  {
+    id: 1,
+    question: "Hikâyede Hz. Eyyûb, kapısına gelen konuklara ve açlara nasıl davranırdı?",
+    correctOption: "c",
+    options: [
+      { id: "a", text: "Onları başka bir köye gönderirdi" },
+      { id: "b", text: "Yalnızca tanıdıklarını sofrasına alırdı" },
+      { id: "c", text: "Kimseyi geri çevirmez, sofrasını onlarla paylaşırdı" },
+    ],
+  },
   {
     id: 3,
     question: "Hikâyede, herkes uzaklaşınca Hz. Eyyûb'un eşi ne yaptı?",
@@ -872,18 +897,18 @@ oturumun işi).
     question: "Hz. Eyyûb derdini kime açtı ve nasıl dua etti?",
     correctOption: "c",
     options: [
-      { id: "a", text: "Dostlarına kızıp onlarla tartıştı" },
-      { id: "b", text: "Derdini kimseye açmadı, içinde tuttu" },
+      { id: "a", text: "Dostlarına kızdı ve onlarla uzun uzun tartıştı" },
+      { id: "b", text: "Derdini kimseye açmadı, hepsini sessizce içinde tuttu" },
       { id: "c", text: "Allah'a açtı: “Rabbim, bana bu dert dokundu; sen merhametlilerin en merhametlisisin” dedi" },
     ],
   },
   ```
 - `parentReportBooks` Eyyûb `parent_faq` final.md F5'teki 7 maddeye göre güncellenir: 1 (güvence
-  paragrafını haber veren satır), 2 (Sâd 44 Diyanet Vakfı, hadis, v2 alıntısı), 3 (Müslim Zühd 64,
-  altın çekirge hadisi; romandaki "kalbe gelen huzur" yorumu çıktı), 4 (Sâd 41 Diyanet Vakfı,
+  paragrafını haber veren satır), 2 (Sâd 44 Diyanet Vakfı, hadis, v2 alıntısı), 3 (altın çekirge
+  hadisi; romandaki "kalbe gelen huzur" yorumu çıktı; Müslim cümlesi denetim sonrası çıktı), 4 (Sâd 41 Diyanet Vakfı,
   rivayetler gayb), 5 (Sâd 44 Diyanet Vakfı, eşle ilgili tefsir bilgisi, yorum müfessirlere), 6
   (Taberânî künyesi, TDV, "Bu onların hakkı" alıntısı çıktı) değişti; 7 ("Hz. Eyyûb'un yaralarını
-  kurtların sardığı doğru mu?") yeni. Açık soru 6 kabul edilirse 3, 5, 6 kısalır. Özetler ve aile
+  kurtların sardığı doğru mu?") yeni; 3, 5, 6 denetim sonrası karar 6 ile beşer cümle. Özetler ve aile
   sohbet soruları aynı.
 - `SOZLUKCE-SICILI.md`: kutu yerleri aynı; güncelleme gerekmiyor (*imtihan*'ın çevre cümlesi
   değişti, kutu yeri aynı).
