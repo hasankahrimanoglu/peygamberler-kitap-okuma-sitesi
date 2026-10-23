@@ -1,7 +1,24 @@
 # HZ. İSMAİL (a.s.) — KARMA TARZ YENİDEN YAZIMI: AYRINTI TABLOSU
 
-> **Tarih:** 23 Ekim 2026 · **Durum:** 1. aşama. Hasan'ın beş karar sorusuna cevabı
-> bekleniyor; v2 yazılmadı.
+> **Tarih:** 23 Ekim 2026 · **Durum:** Hasan beş karar sorusunda önerileri kabul etti
+> (23 Ekim 2026; iki yerde ana oturumun farkıyla, ⚑): (1) "yedi kez" ve ⚑ **"iki kez" de**
+> çocuk metninden çıkar; B1 ve B4 özeti, B4 Ne Öğrendik 2 değişir, final testinde "iki" geçen
+> yer listelenir; sayı ve sa'y künyesiyle veli raporunda. (2a) "toprak" çıkar: "bir torba hurma
+> ile bir kap su"; görseller ve alt metinleri kalır. (2b) 1. kısımdaki güven cümlesi çıkar; ⚑
+> **söz Safa'da yeni söz gibi söylenmez,** Hâcer'in Hz. İbrahim'e söylediği söz olarak
+> hatırlanır ("Öyleyse Allah bizi sahipsiz bırakmaz"). (3) B3'te Işıl'ın sorusu ve anlatıcının
+> güvenlik cevabı, önerilen metinle. (4) Peygamberimiz iki yerde (B5 soy, B1 sa'y); ok hadisi
+> girmez. (5) İki kutu (B1 zemzem adı, sözlük kutusundan sonra; B5 İbrahim'in makamı). Soru
+> gerektirmeyen değişiklikler de uygulandı. v2 metni `KITAP-HZ-ISMAIL-ICERIK-v2.md`.
+>
+> **İçerik denetimi sonrası (23 Ekim 2026; 0 kritik, 8 önemli, 19 küçük):** mekanik bulgular
+> düzeltildi (v2 "Yazım notları"). Tablodan sapan ya da tabloya eklenen noktalar: (1) #13'teki
+> alt metin önerisi uygulandı ("otlayan" → "duran", final.md'de; `books.ts`'te aktarımda). (2)
+> #2/#18'deki tevhid cümlesinde "kendisine" → "Rabbine". (3) B6 1. kısım sonu "Hz. İsmail şimdi
+> ne yapacaktı?" (yayındaki soru doğru şıkkı ele veriyordu). (4) #12 bilgi notu: toprak kap
+> görselleri ve alt metinleri kalıyor, görselin gösterdiğini anlattıkları için. Altı açık karar
+> v2 yazım notlarının sonunda: final testi 4. soru metni, B6 "Bu ev … kalacak" cümlesi, B3 "Ona
+> da, Rabbine de" güveni, dört küçük ifade, B5 Seçimini Karşılaştır B, B4 açılış sırası.
 > **Kural:** brif §4.3 (üç alan, kaynak ölçeği), §7.2 (ölçüler), §7.10 (karma
 > tarz, örnek sahne), §16 (yerleşik kararlar; §16/9 hadisteki sayılar, §16/18 ortak
 > olay). Kitabın Faz 1 kararları (`KITAP-HZ-ISMAIL-KAYNAK-DENETIMI.md`, karar kaydı

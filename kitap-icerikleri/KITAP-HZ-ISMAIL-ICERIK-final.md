@@ -9,6 +9,16 @@
 > Editoryal denetim yapıldı (ilk tur: 1 kritik · 9 önemli · 16 küçük; ikinci turda yeni kritik/önemli
 > bulgu yok); mekanik düzeltmeler ve karar kaydı §I8 sonunda.
 >
+> **v2 (23 Ekim 2026):** Altı bölümün hikâye metni karma tarzda ve üç alanlı kaynak kuralıyla
+> yeniden yazıldı: `KITAP-HZ-ISMAIL-ICERIK-v2.md` (kararlar `-KARMA-AYRINTI-TABLOSU.md`'de). Bu
+> dosyanın D bölümündeki hikâye metinleri ve seslendirme notları, B1 ile B4 özetleri, B4 Ne
+> Öğrendik 2, E bölümündeki 4. soru ve §B "Kaynak ilkeleri" / "Kitaba özgü yasaklar"daki eski
+> kalıp ve "yedi kez" kayıtları, Faz 1 karar 2a'nın "Hz. Muhammed'in ve sahabenin sözleri çocuk
+> metnine girmez" kaydı (bu başlığın aşağısında ve §B) ve D bölümündeki görsel alt metni
+> `ismail-3-otlayan-koc` (eski "otlayan"; alt metin bu dosyada "duran" yapıldı, `books.ts`'te aktarımda) v2'nin
+> "Aktarım için" listesiyle geçersizdir. Veli raporu (F5)
+> v2'ye göre güncellendi.
+>
 > **Onay kapısı:** Faz 1, 16 Ekim 2026'da Hasan tarafından onaylandı (karar kaydı
 > `KITAP-HZ-ISMAIL-ICERIK-taslak.md` başında, "Önerilerini uygula."). Faz 2'nin başlatılması
 > koordinasyon oturumundaki şu sözle onaylandı: "Varsayılanlar uygun: önce kontrol noktası
@@ -819,7 +829,7 @@ Görsel ID: ismail-3-otlayan-koc
 Metin çapası: "Allah, Hz. İsmail'in yerine bedel olarak iri bir kurbanlık…" paragrafından sonra
 Sahnenin amacı: Allah'ın iyiliğini, sakin ve canlı bir koçla göstermek: sabah ışığında kayaların arasında otlayan iri bir koç.
 Dosya: bolum-3/otlayan-koc.jpg
-Alt metin: Sabah ışığında yamaçta, kayaların arasında sakin sakin otlayan, kıvrık boynuzlu, kalın beyaz yünlü iri bir koç.
+Alt metin: Sabah ışığında yamaçta, kayaların arasında sakin sakin duran, kıvrık boynuzlu, kalın beyaz yünlü iri bir koç.
 Ana üretim promptu: Sabah ışığı, aynı taşlı yamacın biraz aşağısı. Kayaların ve yeşil çalıların arasında sakin sakin otlayan iri, sağlıklı bir koç: kalın, kıvırcık beyaz yünü, geniş ve kıvrık boynuzları güneşte parlıyor. Koç başını otlara eğmiş, huzurlu. Arkada yumuşak ışıkta uzanan tepeler.
 Ana üretim promptu (EN): Morning light, a little further down the same stony slope. Among the rocks and green bushes, a large, healthy ram grazes calmly: its thick, curly white fleece and its wide, curving horns shine in the sun. The ram has lowered its head to the grass, peaceful. Behind, hills stretching away in soft light.
 Kadraj notu: 16:9; koç orta planda, yandan, kadrajın yaklaşık üçte biri; arka plan yumuşak odakta.
@@ -1516,10 +1526,10 @@ açıkça söyleyin: **Allah adına kimse bir çocuktan kendine zarar verecek bi
 bir şey duyan çocuk hemen güvendiği bir yetişkine söyler.** Peygamberlerin rüyası Allah'tan gelen bir
 bildirimdir; bizim rüyalarımız ise emir değildir, korkutan bir rüya görürse bunu size anlatabilir.
 Büyüklere saygı göstermek de kendine zarar verecek bir isteğe "evet" demek anlamına gelmez. Olayın merkezinde korku değil, baba
-ile oğlun birbirine güveni ve Allah'ın onları koruması vardır.
+ile oğlun birbirine güveni ve Allah'ın onları koruması vardır. Kitap olayın ardından çocuğa da açıkça söyler: Bu, Allah'ın yalnız bir peygambere, bir kez verdiği özel bir imtihandı; İslam'da bir çocuğa zarar vermek yasaktır; bizim gördüğümüz rüyalar emir değildir. Diyanet'in *Hadislerle İslâm* eserinde, Allah'ın bu imtihanla insanlar arasındaki evlat kurban etme inancını tamamen ortadan kaldırdığı belirtilir (c. 6, s. 45).
 
 **"Hâcer öldü mü? Hz. İsmail de öldü mü?"**
-Kitap, Hâcer'in hastalanıp vefat ettiğini ve Hz. İsmail'in uzun yıllar sonra vefat ettiğini
+Kitap, Hâcer'in vefat ettiğini ve Hz. İsmail'in uzun bir ömrün sonunda vefat ettiğini
 birer sakin cümleyle anlatır; sebep, yaş ve ayrıntı verilmez. Anlatılanlara göre Hz. İsmail,
 annesinin yanına defnedilmiştir. Çocuğunuz soruyorsa, her canlının bir gün öleceğini, ama bunun
 çoğu zaman uzun bir ömrün sonunda geldiğini sakin bir dille söyleyebilirsiniz. Kendi aileniz için
@@ -1528,8 +1538,8 @@ ve duayla anmanın güzel bir yol olduğunu ekleyin.
 
 **"Hâcer ile bebeği çölde neden yalnız kaldı? Su bulunmasaydı ne olacaktı?"**
 Hz. İbrahim'in onları Allah'ın emriyle vadiye bıraktığı ve dua ederek ayrıldığı Hz. İbrahim
-kitabında anlatılır (İbrâhim 37; Buhârî'deki İbn Abbas rivayeti). Bu kitap, Hâcer'in umudunu
-kaybetmeden yardım aradığını ve Allah'ın onları susuz bırakmadığını anlatır; hikâyenin merkezinde
+kitabında anlatılır (İbrâhim 37; Buhârî'deki İbn Abbas rivayeti). Bu kitap, Hâcer'in Hz. İbrahim'e söylediği "Öyleyse Allah bizi sahipsiz bırakmaz" sözünü
+su bitip Safa'ya tırmanırken hatırladığını, umudunu kaybetmeden yardım aradığını ve Allah'ın onları susuz bırakmadığını anlatır; hikâyenin merkezinde
 çaresizlik değil, çaba ve güven vardır. Çocuğunuz kendisi için kaygılanırsa, bunun bir peygambere
 verilmiş özel bir emir olduğunu ve onu hiçbir zaman sahipsiz bırakmayacağınızı söyleyin. Zor bir
 anda yardım istemenin ve büyüklere haber vermenin doğru olduğunu da ekleyebilirsiniz.
@@ -1555,9 +1565,10 @@ acı çektirmemek esastır ve çocuğun kesimi izlemesi gerekmez. Bayramın payl
 Kur'an bıçaktan, bağlamaktan ya da başka bir ayrıntıdan söz etmez; yalnız ikisinin de Allah'ın
 emrine teslim olduğunu, Allah'ın seslendiğini ve bir kurbanlık verdiğini bildirir (Sâffât
 103–107). Bıçağın kesmediği, Hz. İsmail'in babasından bazı isteklerde bulunduğu, rüyanın üç gece
-tekrarlandığı ve Terviye, Arefe gibi günlerin adlarının buradan geldiği yaygın anlatımlardır;
-kaynakları zayıf ya da belirsiz olduğu için ve korkutucu ayrıntılar içerdiği için kitap bunları
-almadı. Çocuğunuza Kur'an'ın anlattığını ve olayın sonundaki rahmeti hatırlatmanız yeterlidir.
+tekrarlandığı ve Terviye, Arefe gibi günlerin adlarının buradan geldiği yaygın anlatımlardır.
+Bunlar Kur'an'da ve sahih hadis kitaplarında geçmez; tefsir kitaplarındaki rivayetlerdir (ör.
+Taberî). Bıçağın kesmemesi Kur'an'da olmayan bir mucize eklediği, öteki ayrıntılar da korkutucu
+olduğu için kitap bunları almadı. Çocuğunuza Kur'an'ın anlattığını ve olayın sonundaki rahmeti hatırlatmanız yeterlidir.
 
 **"Kurban edilmek istenen İsmail mi, İshak mı?"**
 Kur'an bu olayda oğlun adını vermez (Sâffât 101–107); hemen ardından Hz. İshak'ın müjdesini
@@ -1566,28 +1577,38 @@ Hz. İshak olduğunu düşünür. Kitap, çoğunluğun görüşüne göre Hz. İ
 peygamberdir ve bu konuda farklı düşünenlere "yanlış" demeden konuşabilirsiniz.
 
 **"Hacılar şeytanı neden taşlar?"**
-Kitap bu konuyu anlatmaz. İslam inancına ve tarihî rivayetlere göre şeytan, Hz. İbrahim'i bu
-imtihandan vazgeçirmeye çalışmış, o da onu taş atarak uzaklaştırmıştır; hacılar bu hatırayla
+Kitap bu konuyu anlatmaz. Anlatılanlara göre şeytan, Hz. İbrahim'i bu imtihandan vazgeçirmeye
+çalışmış, o da onu taş atarak uzaklaştırmıştır; hacılar bu hatırayla
 belirli yerlere taş atarak kötülüğe karşı kararlılıklarını gösterir. Bazı anlatımlarda Hâcer'in
-ve Hz. İsmail'in de aynı şekilde davrandığı anlatılır. Çocuğunuza bunun bir hatıra ve sembol
+ve Hz. İsmail'in de aynı şekilde davrandığı anlatılır (Taberî; TDV İslâm Ansiklopedisi, "Hâcer").
+Şeytanla ilgili bu ayrıntılar Kur'an'da ve sahih hadiste geçmediği için kitap onları çocuk metnine
+almadı. Çocuğunuza bunun bir hatıra ve sembol
 olduğunu, kimseye zarar vermekle ilgisi bulunmadığını söyleyebilirsiniz.
 
 **"Kâbe'yi ilk kim yaptı? Kâbe'deki siyah taş nedir?"**
 Kur'an'a göre Allah evin yerini Hz. İbrahim'e gösterdi (Hac 26), Hz. İbrahim ile Hz. İsmail
 temellerini birlikte yükseltti (Bakara 127) ve bu ev "insanlar için yapılmış ilk ev"dir (Âl-i İmrân
-96). Bazı âlimler Kâbe'nin daha önce de var olduğunu ve Hz. İbrahim'in onu yeniden yükselttiğini
-söyler, bazıları ilk kez onun kurduğunu düşünür; kitap Kur'an'ın ifadesiyle anlattı (Hz. Şît
-kitabı da Kâbe'yi var olan bir yapı olarak anar). Köşedeki siyah taşın (Hacerü'l-Esved) cennetten
+96). Âyetlerden evin Hz. İbrahim'den önce de var olduğu, zamanla yıkılıp yerinin kaybolduğu
+anlaşılır; ama Kur'an, ondan önce kimin yaptığını söylemez (TDV İslâm Ansiklopedisi, "Kâbe").
+Kitap Kur'an'ın ifadesiyle anlattı. Köşedeki siyah taşın (Hacerü'l-Esved) cennetten
 geldiğine dair rivayetler vardır; kitap onu anlatmadı. Duvar yükselince Hz. İbrahim'in üstüne
-çıktığı taşın bugün "İbrahim'in makamı" diye anılan yer olduğu da rivayettir. Müslümanlar, baba
-oğulun "soyumuzdan bir peygamber gönder" duasının (Bakara 129) Hz. Muhammed'le kabul edildiğine
+çıktığı taşın bugün "İbrahim'in makamı" diye anılan yer olduğu rivayettir; kitap bunu bir
+"Biliyor muydun?" kutusunda, rivayet olarak anar. Kitap, Hz. İsmail'in soyundan Peygamberimiz
+Hz. Muhammed'in geldiğini tek cümleyle söyler (Müslim, Fezâil 1). Müslümanlar, baba oğulun
+"soyumuzdan bir peygamber gönder" duasının (Bakara 129) Hz. Muhammed'le kabul edildiğine
 inanır.
 
 **"Zemzem neden 'zemzem'? Su nasıl kaynadı?"**
-Kitap suyun "Allah'ın izniyle" kaynadığını söyler. Buhârî'deki rivayette (Enbiyâ 9) suyun bir
+Kitap suyun "Allah'ın izniyle" kaynadığını söyler. Buhârî'deki rivayette (Enbiyâ 9, no. 3364) suyun bir
 meleğin toprağı kazımasıyla çıktığı, halk anlatılarında ise bebek Hz. İsmail'in topuğunu yere vurduğu
-anlatılır; kitap melek tasviri yapmama kuralı gereği bunları almadı. "Zemzem" adının, Hâcer'in
-taşan suya "Zem zem!" yani "Dur dur!" demesinden geldiği bir halk anlatısıdır. Bir hadiste, Hâcer
+anlatılır. Kitap melek tasviri yapmadığı için birincisini, sahih rivayetle çeliştiği için
+ikincisini almadı. "Zemzem" adının, Hâcer'in
+taşan suya "Zem zem!" yani "Dur dur!" demesinden geldiği anlatılır; kelimeye "bol su", "su
+sesi" gibi başka anlamlar da verilir (TDV İslâm Ansiklopedisi, "Zemzem"). Kitap bunu bir "Biliyor
+muydun?" kutusunda, farklı görüşler olduğunu söyleyerek anar. Buhârî'deki rivayete göre Hâcer iki tepe
+arasında yedi kez gidip gelmiştir; Peygamberimiz, insanların Safa ile Merve arasında yürümesinin
+(sa'y) buradan geldiğini bildirmiştir (Buhârî, Enbiyâ 9, no. 3364; *Hadislerle İslâm* 2/335).
+Kitap sayı vermeden, Peygamberimizin bu sözüyle anlatır. Bir hadiste, Hâcer
 suyun çevresini çevirmekte acele etmeseydi zemzemin akan bir pınar olacağı bildirilir (Buhârî,
 Enbiyâ 9). *(22 Ekim 2026, brif §16/17b: "akan pınar" hadisi Diyanet Hadislerle İslâm c. 2 s. 381'de
 B3362 Buhârî, Enbiyâ 9 künyesiyle doğrulandı; meleğin toprağı kazması aynı bölümdeki uzun
@@ -1773,7 +1794,7 @@ klasörü yok). Bölge sahnesi envantere girmez. Bölüm klasörleri ve yer tutu
 | 14 | `kitaplar/hz-ismail/bolum-3/birlikte-calisma.jpg` | 1. Kısım | Katman 1 | İkindi ışığında taşlı bir patikada, aralarında taşlarla dolu hasır bir sepeti birlikte taşıyarak yürüyen Hz. İbrahim ve oğlu Hz. İsmail, arkadan. |
 | 15 | `kitaplar/hz-ismail/bolum-3/yildizli-gece.jpg` | 1. Kısım | — | Gece, vadide yıldızlı bir göğün altında duran keçi kılı çadır; aralığından sızan sakin kandil ışığı ve yanında karanlıkta seçilen akasya. |
 | 16 | `kitaplar/hz-ismail/bolum-3/sabah-yamaci.jpg` | Devam | — | Şafakta sessiz, taşlı bir dağ yamacı; tepenin ardından yükselen yumuşak altın ışık yamaca ve kayaların arasındaki küçük bir çalılığa düşüyor. |
-| 17 | `kitaplar/hz-ismail/bolum-3/otlayan-koc.jpg` | Devam | — | Sabah ışığında yamaçta, kayaların arasında sakin sakin otlayan, kıvrık boynuzlu, kalın beyaz yünlü iri bir koç. |
+| 17 | `kitaplar/hz-ismail/bolum-3/otlayan-koc.jpg` | Devam | — | Sabah ışığında yamaçta, kayaların arasında sakin sakin duran, kıvrık boynuzlu, kalın beyaz yünlü iri bir koç. |
 | 18 | `kitaplar/hz-ismail/bolum-3/sevincle-donus.jpg` | Devam | Katman 1 | Gün batımında vadiye inen patikada, yan yana yürüyen Hz. İbrahim ve Hz. İsmail, arkadan ve uzakta; babasının bir eli oğlunun omzunda; aşağıda çadırların ışıkları. |
 | 19 | `kitaplar/hz-ismail/bolum-4/kapak.jpg` | Açılış | — | İkindi ışığında vadide yan yana dizilmiş alçak taş ve kerpiç evler; kapı önlerinde hasır gölgelikler, toprak testiler ve uzakta akasya. |
 | 20 | `kitaplar/hz-ismail/bolum-4/avci-genc.jpg` | 1. Kısım | Katman 1 | Sabahın ilk ışığında vadinin dışına, taşlı kırlara doğru yürüyen, sırtında ahşap bir yay ve deri bir okluk taşıyan genç Hz. İsmail, arkadan. |
