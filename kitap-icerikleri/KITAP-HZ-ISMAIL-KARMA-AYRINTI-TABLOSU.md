@@ -19,6 +19,16 @@
 > görselleri ve alt metinleri kalıyor, görselin gösterdiğini anlattıkları için. Altı açık karar
 > v2 yazım notlarının sonunda: final testi 4. soru metni, B6 "Bu ev … kalacak" cümlesi, B3 "Ona
 > da, Rabbine de" güveni, dört küçük ifade, B5 Seçimini Karşılaştır B, B4 açılış sırası.
+>
+> **Hasan'ın altı kararı (23 Ekim 2026, denetim sonrası; altısında da öneri kabul):** (1) final
+> testi 4. soru "Hz. İbrahim oğlunun evine yeniden geldiğinde onu en çok sevindiren ne oldu?"
+> (şıklar ve doğru cevap A aynı; final.md E güncellendi, `quizzes.ts` aktarımda). (2) B6 "Allah,
+> bu evde yalnız O'na ibadet edilmesini ve evin hep tertemiz tutulmasını istiyordu." (3) B3
+> "Rabbine bütün kalbiyle güveniyordu." (4a) B3 "Hz. İbrahim bir süre sessizce oturdu." (4b) B4
+> "yine o kapının önünde durdu" (4c) B5 sonunda dua tekrarı çıktı, "[[O gün ise gün batarken…]]"
+> (4d) B3 "Çalışırken uzun uzun konuşuyor…" kaldı (4e) B1 özeti "küçük Hz. İsmail'in". (5) B5
+> Seçimini Karşılaştır B "…babasını görünce elindeki işi bıraktı ve yardım isteğine hemen evet
+> dedi."; B2 A kaldı. (6) B4 açılış sırası kaldı. **Aktarılmadı;** Hasan okuyacak.
 > **Kural:** brif §4.3 (üç alan, kaynak ölçeği), §7.2 (ölçüler), §7.10 (karma
 > tarz, örnek sahne), §16 (yerleşik kararlar; §16/9 hadisteki sayılar, §16/18 ortak
 > olay). Kitabın Faz 1 kararları (`KITAP-HZ-ISMAIL-KAYNAK-DENETIMI.md`, karar kaydı

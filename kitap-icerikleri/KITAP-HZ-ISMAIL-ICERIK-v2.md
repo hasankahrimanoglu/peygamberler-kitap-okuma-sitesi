@@ -1,6 +1,8 @@
 # KİTAP: Hz. İsmail — v2 (karma anlatım tarzı)
 
-> **Durum:** Yazıldı (23 Ekim 2026). Hasan'ın okuması ve onayı bekleniyor; aktarılmadı.
+> **Durum:** Yazıldı ve içerik denetçisinden geçti (23 Ekim 2026; 0 kritik). Hasan denetim
+> sonrası altı kararı verdi, işlendi ("Yazım notları" sonu). Hasan'ın okuması bekleniyor;
+> aktarılmadı.
 > Altı bölümün hikâye metninin kaynağı bu dosyadır. Büyük Final Testi, veli raporu,
 > sözlükçe, görsel briefleri ve kaynak notları `KITAP-HZ-ISMAIL-ICERIK-final.md`'de kalır;
 > veli raporunun v2'ye bağlı maddeleri orada güncellendi (F5).
@@ -41,7 +43,7 @@ Bugüne Taşı kararı: Üç görev (Bölüm 1, 4, 6). Görevler isteğe bağlı
 ---
 ## BÖLÜM 1: Safa ile Merve Arasında
 
-Özet: Vadide su bitince Hâcer iki tepe arasında defalarca koşar ve küçük İsmail'in yanında bir su kaynar.
+Özet: Vadide su bitince Hâcer iki tepe arasında defalarca koşar ve küçük Hz. İsmail'in yanında bir su kaynar.
 
 Rozet: Umutla Çaba Rozeti
 
@@ -314,7 +316,7 @@ Hz. İsmail artık babasıyla birlikte iş güç tutacak yaşa gelmişti. [[Baba
 
 [[Bir gece vadi derin bir sessizliğe gömülmüştü. Çadırların ışıkları birer birer sönmüştü.]] Hz. İbrahim o gece rüyasında oğlunu kurban ettiğini gördü. Uyandığında bunun sıradan bir rüya olmadığını biliyordu. Bu rüya, Rabbinden gelen bir emirdi.
 
-[[Hz. İbrahim uzun süre yerinden kalkmadı. Gözünün önüne oğluyla geçirdiği günler geldi: birlikte yürüdükleri yollar, taşıdıkları taşlar, konuştukları akşamlar. Kalbi ağırdı. Ama Rabbine olan güveni hiç sarsılmadı.]]
+[[Hz. İbrahim bir süre sessizce oturdu. Gözünün önüne oğluyla geçirdiği günler geldi: birlikte yürüdükleri yollar, taşıdıkları taşlar, konuştukları akşamlar. Kalbi ağırdı. Ama Rabbine olan güveni hiç sarsılmadı.]]
 
 ```text
 [IŞIL]
@@ -347,7 +349,7 @@ Seçimden sonra: Cevabını aklında tut. Hikâyenin devamında neler olduğunu 
 [SORU BAŞLIĞI] Hz. İsmail ne cevap verdi?
 ```
 
-[[Hz. İsmail babasını sonuna kadar dinledi.]] Babasının Rabbine ne kadar bağlı olduğunu biliyordu. Ona da, Rabbine de bütün kalbiyle güveniyordu. Babasına şöyle cevap verdi:
+[[Hz. İsmail babasını sonuna kadar dinledi.]] Babasının Rabbine ne kadar bağlı olduğunu biliyordu. Rabbine bütün kalbiyle güveniyordu. Babasına şöyle cevap verdi:
 
 — Babacığım, sana buyurulanı yap; inşallah beni sabredenlerden biri olarak bulacaksın.
 
@@ -471,7 +473,7 @@ Akşam Hz. İsmail avdan döndü. Eve girer girmez bir şey olduğunu hissetti. 
 [SORU BAŞLIĞI] Hz. İbrahim bir daha geldi mi?
 ```
 
-Bir süre sonra Hz. İsmail yeniden evlendi ve yeni bir yuva kurdu. Yıllar sonra Hz. İbrahim oğlunu görmek için yine geldi. [[Yine aynı yolu yürüdü, yine aynı taş eşikte durdu.]] Ama Hz. İsmail yine evde değildi. Bu kez onu Hz. İsmail'in yeni eşi karşıladı. Yaşlı misafiri güler yüzle [[içeri davet etti. Ona elindekilerden ikram etmek istedi.]]
+Bir süre sonra Hz. İsmail yeniden evlendi ve yeni bir yuva kurdu. Yıllar sonra Hz. İbrahim oğlunu görmek için yine geldi. [[Yine aynı yolu yürüdü, yine o kapının önünde durdu.]] Ama Hz. İsmail yine evde değildi. Bu kez onu Hz. İsmail'in yeni eşi karşıladı. Yaşlı misafiri güler yüzle [[içeri davet etti. Ona elindekilerden ikram etmek istedi.]]
 
 Hz. İbrahim ona da nasıl yaşadıklarını, geçimlerinin nasıl olduğunu sordu.
 
@@ -633,7 +635,7 @@ Dualarının sonunda Allah'tan bir şey daha istediler: Soylarından, insanlara 
 
 Yüzyıllar sonra Hz. İsmail'in soyundan Peygamberimiz Hz. Muhammed (s.a.v.) dünyaya geldi.
 
-[[Gün batarken baba ile oğul yükselen duvarların önünde durdu ve ellerini açtı.]] En çok da yaptıkları işin Allah katında kabul görmesini istiyorlardı. Ev bitince Hz. İbrahim'e bir görev daha verilecekti: bu vadiden insanlara seslenmek.
+[[O gün ise gün batarken baba ile oğul yükselen duvarların önünde durdu ve ellerini açtı.]] Ev bitince Hz. İbrahim'e bir görev daha verilecekti: bu vadiden insanlara seslenmek.
 
 **[GÖRSEL — ismail-5-dua-ani]**
 
@@ -641,7 +643,7 @@ Yüzyıllar sonra Hz. İsmail'in soyundan Peygamberimiz Hz. Muhammed (s.a.v.) d�
 
 A) Sen de Hz. İsmail gibi davrandın. O da babası yardım isteyince hemen “Yardım ederim” dedi ve iş bitene kadar taş taşıdı.
 
-B) Oyunu yarım bırakmak zor gelebilir. Hz. İsmail ise babası yardım isteyince elindeki işi bıraktı ve hemen ona katıldı.
+B) Oyunu yarım bırakmak zor gelebilir. Hz. İsmail ise babasını görünce elindeki işi bıraktı ve yardım isteğine hemen evet dedi.
 
 C) Büyük bir işe yetişemeyeceğini düşünmek doğal. Hz. İsmail ise taş taşıyarak işin bir parçası oldu ve babasının işini kolaylaştırdı.
 
@@ -690,7 +692,7 @@ Metin: Ama burası çok uzak bir vadi. Sesini kim duyacak?
 
 **[GÖRSEL — ismail-6-uzak-yollar]**
 
-Sonunda Hz. İbrahim'in kendi yurduna dönme vakti geldi. Allah, Hz. İbrahim'e ve Hz. İsmail'e evini ibadet edenler için temiz tutmalarını buyurmuştu. Bu ev, yalnız Allah'a ibadet edilen bir ev olarak kalacak ve hep tertemiz tutulacaktı. [[Hz. İbrahim yola çıkmadan önce bu görevi oğluna emanet etti.]]
+Sonunda Hz. İbrahim'in kendi yurduna dönme vakti geldi. Allah, Hz. İbrahim'e ve Hz. İsmail'e evini ibadet edenler için temiz tutmalarını buyurmuştu. Allah, bu evde yalnız O'na ibadet edilmesini ve evin hep tertemiz tutulmasını istiyordu. [[Hz. İbrahim yola çıkmadan önce bu görevi oğluna emanet etti.]]
 
 [[Babası artık uzaklarda olacaktı. Hz. İsmail'e her gün ne yaptığını soran kimse olmayacaktı. Görev uzundu; belki de bütün bir ömür sürecekti.]] Hz. İsmail şimdi ne yapacaktı? Devam etmeden önce sana bir şey soracağım.
 
@@ -812,7 +814,7 @@ Profil eylemi: Görevi Listeme Ekle / Şimdilik Değil
 - **#2, #18** B5: Hac 26 dolaylı anlatımla, tevhid kısmıyla: "Ona, Rabbine hiçbir şeyi ortak
   koşmamasını ve bu evi ibadet edenler için tertemiz tutmasını buyurmuştu." Âyet doğrudan
   tırnaklanmadı (Allah'ın sözü yalnız meal; *tavaf, kıyam, rükû* 8–11 yaşa ağır). B6'da görevin
-  iki yanı (bkz. açık karar 2).
+  iki yanı (Hasan'ın denetim sonrası kararı 2).
 - **#8** B2: "Arapçayı onlardan öğrendi"; B5: "Yağmur yağınca seller onun sağından solundan
   akıp geçerdi" (ikisi de Buhârî 3364).
 - **#11, #16** Uzun kalıp ve "Kur'an'a göre / bildirildiğine göre" kalktı (yayında 1 + 13).
@@ -868,14 +870,14 @@ işaretleri sayılmadı; `scripts/v2-onizleme-uret.mjs` çıktısından betikle)
 |---|---:|---:|---:|---:|---:|---:|
 | 1 | 3.497 (1.634 + 1.863) | 3.096 | 2 | 1 | 1 | 585 |
 | 2 | 3.016 (1.792 + 1.224) | 3.015 | 1 | 2 | — | 656 |
-| 3 | 3.376 (1.658 + 1.718) | 2.846 | 2 | 1 | — | 781 |
-| 4 | 3.096 (1.195 + 1.901) | 2.808 | 1 | 2 | — | 664 |
-| 5 | 3.065 (1.251 + 1.814) | 2.726 | 2 | — | 1 | 832 |
-| 6 | 2.655 (1.334 + 1.321) | 2.645 | 1 | 1 | — | 512 |
+| 3 | 3.362 (1.655 + 1.707) | 2.846 | 2 | 1 | — | 781 |
+| 4 | 3.097 (1.195 + 1.902) | 2.808 | 1 | 2 | — | 664 |
+| 5 | 3.005 (1.251 + 1.754) | 2.726 | 2 | — | 1 | 832 |
+| 6 | 2.657 (1.336 + 1.321) | 2.645 | 1 | 1 | — | 512 |
 
-Bant 2.655–3.497. Uzunluk hikâyeden geliyor: en uzun bölümler dönüm noktası çok olanlar (B1
+Bant 2.657–3.497 (denetim sonrası altı karardan sonra yeniden ölçüldü). Uzunluk hikâyeden geliyor: en uzun bölümler dönüm noktası çok olanlar (B1
 susuzluk, koşu ve kaynama; B3 rüya, danışma, sesleniş ve güvenlik); B6 sakin, tek sahneli bölüm.
-B3 1. kısım 1.336'dan 1.658'e çıktı (gece ve sabah sahneleri). 18 kelimeyi aşan cümle yok (en
+B3 1. kısım 1.336'dan 1.655'e çıktı (gece ve sabah sahneleri). 18 kelimeyi aşan cümle yok (en
 uzunu 16, B6). "Yayındaki" sütunu bu betikle ölçüldü (KELİME dahil); 1. aşama tablosundaki
 sayılar başka bir sayımla alınmıştı, küçük fark ondan. Önizleme betiği dosyayı hatasız
 ayrıştırıyor (altı bölüm); çıktı repoya konmadı.
@@ -923,7 +925,17 @@ düzeltildi:
   tırmanırken"; final.md başlığındaki geçersiz kayıtlara Faz 1 karar 2a'nın Hz. Muhammed kaydı
   eklendi.
 
-**Açık kararlar (Hasan; denetçinin bıraktıkları, v2'de uygulanmadı):**
+**Hasan'ın altı kararı (23 Ekim 2026, denetim sonrası; altısında da öneri kabul, işlendi).**
+Aşağıdaki maddeler denetçinin bıraktığı sorulardır; her birinin sonunda uygulanan metin var.
+Kısaca: (1) final testi 4. soru "Hz. İbrahim oğlunun evine yeniden geldiğinde onu en çok
+sevindiren ne oldu?" (final.md E güncellendi; `quizzes.ts` "Aktarım için"de); (2) B6 "Allah, bu
+evde yalnız O'na ibadet edilmesini ve evin hep tertemiz tutulmasını istiyordu."; (3) B3 "Rabbine
+bütün kalbiyle güveniyordu."; (4a) B3 "Hz. İbrahim bir süre sessizce oturdu." (4b) B4 "yine o
+kapının önünde durdu" (4c) B5 sonunda "En çok da yaptıkları işin…" çıktı, "[[O gün ise gün
+batarken…]]" (4d) B3 "Çalışırken uzun uzun konuşuyor…" kaldı (4e) B1 özeti "küçük Hz.
+İsmail'in"; (5) B5 Seçimini Karşılaştır B değişti, B2 A kaldı; (6) B4 açılış sırası kaldı.
+
+*Denetim sonrası sorular (karar kaydı):*
 1. **Final testi 4. soru** (karar 1'in sonucu; sabit alan). Bugünkü metin: "İkinci ziyarette Hz.
    İbrahim'i en çok sevindiren ne oldu?" Sıra sayısı da çıksın mı?
    *Önerim:* Evet: "Hz. İbrahim oğlunun evine yeniden geldiğinde onu en çok sevindiren ne oldu?"
@@ -981,25 +993,30 @@ düzeltildi:
   sonrası), *temel* (öncesi: "Kur'an'a göre" kalktı; sonrası), *hac* (öncesi: "Kur'an'a göre"
   kalktı), *zekât* (öncesi ve sonrası).
 - **Sabit alanlar (karar 1):**
-  - B1 `ozet`: "Vadide su bitince Hâcer iki tepe arasında defalarca koşar ve küçük İsmail'in
-    yanında bir su kaynar." (eski: "…iki tepe arasında yedi kez koşar…"; açık karar 4e)
+  - B1 `ozet`: "Vadide su bitince Hâcer iki tepe arasında defalarca koşar ve küçük Hz.
+    İsmail'in yanında bir su kaynar." (eski: "…iki tepe arasında yedi kez koşar ve küçük
+    İsmail'in…"; "Hz." Hasan'ın kararı 4e)
   - B4 `ozet`: "Hz. İsmail büyüyüp evlenir; babası onu görmeye gelir ve kapıda bıraktığı öğütler
     evin huzurunu anlatır." (eski: "…babası iki kez gelir ve kapıda bıraktığı öğüt…")
   - B4 Ne Öğrendik 2 (`learned[1]`): "Hz. İbrahim oğlunu görmeye geldi, onu evde bulamayınca
     kapıda ona öğütler bıraktı." (eski: "Hz. İbrahim oğlunu görmeye iki kez geldi ve her seferinde
     kapıda bir öğüt bıraktı.")
-  - Final testi 4. soru (`quizzes.ts` `ismailQuizQuestions[3]` ve final.md E): açık karar 1
-    onaylanırsa.
+  - Final testi 4. soru (`quizzes.ts` `ismailQuizQuestions[3].question`; final.md E güncellendi):
+    "Hz. İbrahim oğlunun evine yeniden geldiğinde onu en çok sevindiren ne oldu?" (eski: "İkinci
+    ziyarette Hz. İbrahim'i en çok sevindiren ne oldu?"). Şıklar ve doğru cevap (`a`) aynı.
   - "İki" sayısı geçen başka sabit alan yok: B4 Sen Olsaydın, karşılaştırmalar, B4 görevi, veli
     özetleri (F1–F3) ve sohbet soruları temiz.
-  - Açık karar 5 onaylanırsa B5 Seçimini Karşılaştır B.
+  - B5 Seçimini Karşılaştır B (`question.options[1].comparison`): "Oyunu yarım bırakmak zor
+    gelebilir. Hz. İsmail ise babasını görünce elindeki işi bıraktı ve yardım isteğine hemen evet
+    dedi." (eski: "…babası yardım isteyince elindeki işi bıraktı ve hemen ona katıldı.") B2
+    Seçimini Karşılaştır A değişmedi.
 - `parentReportBooks` İsmail `parent_faq` (F5 ile aynı sırada): 1 (kurban: çocuk metnindeki
   güvenlik cevabı ve *Hadislerle İslâm* 6/45), 2 (vefat: "hastalanıp" çıktı), 3 (çöl: Hâcer'in
   sözü), 6 (bıçak: "kaynakları zayıf" yerine kaynak bilgisi), 8 (şeytan: uzun kalıp çıktı,
   kaynak), 9 (Kâbe: Şît göndermesi çıktı, TDV "Kâbe", makam kutusu, soy hadisi), 10 (zemzem:
   künye, "yedi kez" ve sa'y, ad kutusu, topuk anlatısının gerekçesi) final.md F5'teki yeni hâliyle
   değişir. 4, 5, 7 aynı.
-- `quizzes.ts`'te yalnız 4. soru (onaylanırsa). Sen Olsaydın soruları, öteki karşılaştırmalar, öteki
+- `quizzes.ts`'te yalnız 4. sorunun metni. Sen Olsaydın soruları, öteki karşılaştırmalar, öteki
   Ne Öğrendik maddeleri ve görevler değişmez.
 - `SOZLUKCE-SICILI.md`: kutu yerleri aynı; güncelleme gerekmiyor. `ICERIK-GORSEL-SICILI.md`'de yer
   değişikliği yok (yalnız `otlayan-koc` alt metni).
