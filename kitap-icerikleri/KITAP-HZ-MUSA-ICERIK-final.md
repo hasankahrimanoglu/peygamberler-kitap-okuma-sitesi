@@ -26,6 +26,10 @@
 > **yayımlanan** kitapta kalır · on rozet adı, on yeni terim ve dört görev (B4, B5,
 > B8, B10) onaylı. Ayrıntı: `KITAP-HZ-MUSA-KAYNAK-DENETIMI.md` başındaki Karar kaydı.
 >
+> **v2 (23 Ekim 2026):** hikâye metninin kaynağı artık `KITAP-HZ-MUSA-ICERIK-v2.md`;
+> bu dosyanın D bölümündeki hikâye parçaları eski metindir. Final testi (E) ve veli
+> raporu (F5) v2'ye göre güncellendi. Âsiye'nin imanı ve duası v2'de B8'de.
+>
 > **Kitap kapağı ve harita durağı görseli bu teslimde VARDIR** (`public/kitaplar/hz-musa/`
 > klasörü yok; §C1, §C2).
 
@@ -142,7 +146,7 @@ kurgusu kullanılmadı; yalnız kurgusal tanık (B7, B9) açıkça işaretlendi.
   ayrıntısız; öldürüldükleri yok. Hızır'daki ikinci olay adı konmadan anılır.
 - "Ceza, azap, gazap" kelimeleri çocuk metninde yok.
 - Melek görünmez ve konuşmaz; görevlendirmede ses ve ışığın niteliği anlatılmaz.
-- Âsiye B2'den sonra yer almaz; anne, abla, baba, kızlar ve genç yol arkadaşının
+- Âsiye B2'den sonra yer almaz *(v2, 23 Ekim 2026: Âsiye'nin imanı ve duası B8'de; akıbeti yine yok — `KITAP-HZ-MUSA-ICERIK-v2.md`)*; anne, abla, baba, kızlar ve genç yol arkadaşının
   adları verilmez. Tek Firavun, adsız; Hâmân çocuk metninde yok.
 - Kekemeliğin sebebi (ateş–yakut) yok; yalnız "dildeki düğüm".
 - Nur sütunu, on iki yol, cam su duvarları, Hızır'ın yeşil kürkü, hayat suyu yok.
@@ -2169,11 +2173,15 @@ Kaynak dışı bilgi var mı?: Hayır. İkinci olay onaylı (b) diliyle, adı ko
 
 ## E. BÜYÜK FİNAL TESTİ
 
+> **v2 (23 Ekim 2026, Hasan onayı; ayrıntı tablosu karar 5):** 1, 2, 5, 6, 7, 9 ve 10. sorularda
+> şıklar dengelendi (doğru şık artık uzunluğundan tahmin edilmiyor); 9. sorunun metni "ne
+> söyledi?" oldu, şıklar alıntı değil anlam. Doğru harfler ve dayanılan âyetler aynı.
+
 ```text
 Soru 1: Hz. Musa'nın annesi bebeğini neden bir sandıkla nehre bıraktı?
 A) Bebeğin nehirde yüzmeyi öğrenmesini istediği için
 B) Sandığı uzaktaki bir şehre göndermek istediği için
-C) Bebeğini korumak istediği ve Allah'ın vaadine güvendiği için
+C) Allah'ın vaadine güvenip onu korumak istediği için
 Doğru seçenek: C
 Kaynak bölüm: 1
 Kaynak PDF sayfası: MH 63–65, 90–91 (Kasas 7)
@@ -2182,7 +2190,7 @@ Soru türü: olay
 
 ```text
 Soru 2: Hz. Musa'nın ablasının sarayda yaptığından ne öğreniriz?
-A) Doğru sözü sakin bir dille ve doğru zamanda söylemenin işe yaradığını
+A) Doğru sözü doğru zamanda söylemenin işe yaradığını
 B) Zor bir durumda hiç konuşmadan beklemek gerektiğini
 C) Yardım etmek için her şeyi bir anda anlatmak gerektiğini
 Doğru seçenek: A
@@ -2215,9 +2223,9 @@ Soru türü: değer
 
 ```text
 Soru 5: Hz. Musa vadideki duasında Allah'tan ne istedi?
-A) Çok zengin ve güçlü bir hükümdar olmayı
-B) Mısır'a bir daha hiç dönmemeyi
-C) Dilindeki düğümün çözülmesini ve kardeşi Hz. Hârûn'un yardımcı olmasını
+A) Çok zengin olmayı ve sarayda bir hükümdar gibi yaşamayı
+B) Mısır'a hiç dönmeden Medyen'de çoban olarak kalmayı
+C) Dilindeki düğümün çözülmesini ve Hârûn'un yardımını
 Doğru seçenek: C
 Kaynak bölüm: 5
 Kaynak PDF sayfası: MH 168–169 (Tâhâ 25–36)
@@ -2226,9 +2234,9 @@ Soru türü: olay
 
 ```text
 Soru 6: Hz. Musa ile Hz. Hârûn korktukları hâlde Firavun'un sarayına neden gittiler?
-A) Firavun'dan bir ödül almak istedikleri için
+A) Firavun'dan büyük bir ödül ve makam almak istedikleri için
 B) Allah'ın "Korkmayın, ben sizinle beraberim" sözüne güvendikleri için
-C) Sarayda büyüdükleri odaları yeniden görmek istedikleri için
+C) Hz. Musa'nın büyüdüğü sarayı yeniden görmek istedikleri için
 Doğru seçenek: B
 Kaynak bölüm: 6
 Kaynak PDF sayfası: MH 209 (Tâhâ 45–46)
@@ -2238,8 +2246,8 @@ Soru türü: değer
 ```text
 Soru 7: Ziynet Günü'nde Hz. Musa asasını atınca ne oldu?
 A) Asa, sihirbazların uydurduklarını yakalayıp yuttu
-B) Asa havaya yükselip gözden kayboldu
-C) Sihirbazların ipleri daha da çoğaldı
+B) Asa havaya yükselip bir anda gözden kayboldu
+C) Sihirbazların ipleri ve değnekleri daha da çoğaldı
 Doğru seçenek: A
 Kaynak bölüm: 7
 Kaynak PDF sayfası: MH 253–254 (Tâhâ 69, A'râf 117)
@@ -2258,10 +2266,10 @@ Soru türü: değer
 ```
 
 ```text
-Soru 9: Firavun'un ordusu yetişince Hz. Musa korkan insanlara ne dedi?
-A) "Hemen geri dönüp teslim olalım."
-B) "Asla, Rabbim benimle beraberdir; O bana bir çıkış yolu gösterecektir."
-C) "Herkes kendi başının çaresine baksın."
+Soru 9: Firavun'un ordusu yetişince Hz. Musa korkan insanlara ne söyledi?
+A) Hemen geri dönüp Firavun'a teslim olmaları gerektiğini
+B) Rabbinin kendisiyle beraber olduğunu ve yol göstereceğini
+C) Herkesin kendi başının çaresine bakması gerektiğini
 Doğru seçenek: B
 Kaynak bölüm: 9
 Kaynak PDF sayfası: MH 321 (Şuarâ 61–62)
@@ -2270,7 +2278,7 @@ Soru türü: olay
 
 ```text
 Soru 10: Hz. Musa'nın Hızır'la yolculuğu bize ne anlatır?
-A) Bilmediğimiz şeyler karşısında sabredip öğrenmeye açık olmanın önemini
+A) Sabredip öğrenmeye her zaman açık olmanın önemini
 B) Çok şey bilen birinin artık öğrenmesine gerek olmadığını
 C) Sebebini bilmediğimiz her şeye hemen kızmamız gerektiğini
 Doğru seçenek: A
@@ -2313,14 +2321,19 @@ vardığını görmesine yardımcı olabilir.
 
 ### F5. Çocuğunuz Sorarsa
 
+> **v2 (23 Ekim 2026, Hasan onayı):** madde 1, 2, 5 ve 6 güncellendi; 4 ("Sihirbazlara ne
+> oldu?") ve 8 ("Âşûrâ") yeni. Sıra hassasiyete göre (brif §10.3). Kitaptan alıntılar
+> `KITAP-HZ-MUSA-ICERIK-v2.md` ile birebir.
+
 **"Firavun bebeklere neden böyle bir emir verdi? Hz. Musa'nın annesi bebeğini neden nehre bıraktı?"**
-Kur'an'a göre Firavun ülkesinde büyüklük taslıyor ve İsrailoğullarını güçsüz bırakmak
-istiyordu (Kasas 4); emir bu kibirden doğdu. Kitap bunu tek cümleyle verir ve hemen
+Kur'an, Firavun'un ülkesinde büyüklük tasladığını, İsrailoğullarını güçsüz bırakmak
+istediğini ve onlardan gelecek bir şeyden korktuğunu birlikte anlatır (Kasas 4, 6); bazı
+anlatımlardaki rüya hikâyesine kitap yer vermedi. Kitap emri tek cümleyle verir ve hemen
 ardından Allah'ın ezilenlere iyilik etmek istediğini hatırlatır (Kasas 5). Annenin
 davranışı ise bebeğini korumak için yaptığı çok zor bir seçimdir; Allah ona bebeği geri
-döndüreceğini bildirmiş ve sözünü tutmuştur (Kasas 7, 13). Çocuğunuz kaygılanırsa
-bunun çok eski zamanda bir zalimin haksız emri olduğunu, bugün çocukları koruyan
-aileler ve kurallar bulunduğunu, sizin de hep onun yanında olduğunuzu söyleyin.
+döndüreceğini bildirmiş ve sözünü tutmuştur (Kasas 7, 13). Çocuğunuz kaygılanırsa bunun
+çok eski zamanda bir zalimin haksız emri olduğunu, bugün çocukları koruyan aileler ve
+kurallar bulunduğunu, sizin de hep onun yanında olduğunuzu söyleyin.
 
 **"Hz. Musa birini mi öldürdü? Peygamberler de kötü şey yapar mı?"**
 Kur'an'a göre Hz. Musa, henüz peygamber olmadan önce birini korumak için kavgaya
@@ -2330,6 +2343,8 @@ dilemiş ve bağışlanmıştır (Kasas 16). Kitabın mesajı, hatayı kabul edi
 dönmemektir. Bu sohbet, vurmanın istemediğimiz sonuçlar doğurabileceğini ve kavgaya
 karışmak yerine bir yetişkinden yardım istemek gerektiğini konuşmak için de iyi bir
 fırsattır.
+Kitapta Işıl bu soruyu soruyor; anlatıcı Hz. Musa'nın o gün henüz peygamber olmadığını,
+adamın ölmesini istemediğini ve hemen Rabbinden bağışlanma dilediğini söylüyor.
 
 **"Firavun ve askerleri denizde boğuldu mu? Neden?"**
 Kitap bunu tek cümleyle, ayrıntı vermeden anlatır. Kur'an'a göre Firavun yıllarca
@@ -2340,25 +2355,38 @@ bırakıldığını bildirir (Yûnus 90–92); kitap bu kısmı çocuk metnine a
 sorarsa, Allah'ın kapıyı uzun süre açık tuttuğunu ve kurtuluşun en zor anda bile O'na
 güvenenlere geldiğini anlatmak yeterlidir.
 
+**"Sihirbazlara ne oldu?"**
+Kur'an, Firavun'un iman eden sihirbazları çok ağır cezalarla tehdit ettiğini ve onların
+"Zararı yok; nasıl olsa hepimiz Rabbimize döneceğiz" diye cevap verdiğini bildirir (A'râf
+124–126; Tâhâ 71–73; Şuarâ 49–51). Tehdidin uygulandığını açıkça söylemez. Tefsirlerde ve
+*Hadislerle İslâm*'ın anlatımında (6/72) sihirbazların o gün şehit edildiği aktarılır. Kitap
+bunu çocuk metnine almadı. Çocuğunuz sorarsa, sihirbazların gördükleri gerçeği korkuya
+rağmen bırakmadığını anlatmak yeterlidir.
+
 **"Hızır gemiyi neden deldi? Kitapta 'ikinci olay' denen şey neydi?"**
-Kur'an'a göre Hızır diye bilinen kul gemiyi, zorba bir kral ele geçirmesin diye
-kusurlu yaptı (Kehf 79); ikinci olayda ise karşılaştıkları bir genci öldürdü ve
-sebebini, gencin ileride anne babasını inkâra sürükleyeceğinden korkulmasıyla açıkladı
-(Kehf 74, 80–81). Kitap bu olayı ayrıntı vermeden andı. Hızır "Ben bunları kendiliğimden
-yapmadım" der (Kehf 82); yaptıkları Allah'ın ona özel olarak verdiği bilgiye dayanır ve
-kimse "ileride kötü olacak" diye başkasına zarar veremez. Çocuğunuza açık bir güvenlik
-kuralı verin: bir büyük ona zarar veren ya da gizli tutmasını istediği bir şey yapıp
-"Sebebini sonra anlarsın" derse, bunu hemen güvendiği bir yetişkine anlatmalıdır.
+Kur'an'a göre Hızır diye bilinen kul gemiyi, zorba bir kral ele geçirmesin diye kusurlu
+yaptı (Kehf 79); ikinci olayda ise karşılaştıkları bir genci öldürdü ve sebebini, gencin
+ileride anne babasını inkâra sürükleyeceğinden korkulmasıyla açıkladı (Kehf 74, 80–81).
+Kitap bu olayı ayrıntı vermeden andı; Hızır "Bunları kendiliğimden yapmadım" der (Kehf 82),
+yaptıkları Allah'ın ona özel olarak verdiği bilgiye dayanır ve kimse "ileride kötü olacak"
+diye başkasına zarar veremez. Kur'an bu kulun adını vermez; Peygamberimiz (s.a.v.) ondan
+Hızır diye söz eder, peygamber mi velî mi olduğu ise âlimler arasında tartışılmıştır
+(*Hadislerle İslâm* 6/110–112); yol arkadaşı genç hadiste Hz. Yûşa olarak anılır, kitap
+adını vermedi. Çocuğunuza açık bir güvenlik kuralı verin: bir büyük ona zarar veren ya da
+gizli tutmasını istediği bir şey yapıp "Sebebini sonra anlarsın" derse, bunu hemen
+güvendiği bir yetişkine anlatmalıdır; kitap bu kuralı bölümün sonunda çocuğa da söyler.
 
 **"Kitapta bazı şeyler neden 'anlatılanlara göre' diye geçiyor?"**
-Bazı bilgiler Kur'an'da değil, sonradan aktarılan anlatımlarda (rivayetlerde) geçer;
-kitap bunları ayırmak için bu kalıbı kullanır. Hz. Musa'nın adının anlamı, kuyunun ağır
-taşı, Medyen'deki yaşlı babanın Hz. Şuayb olması, Hızır adı ve serçenin damlası
-rivayettir. Kekemeliğin bir bebeklik olayından kaldığına dair çok bilinen anlatı ile
-Âsiye'nin nasıl vefat ettiğine dair anlatımlar da rivayettir ve kitapta yer almadı;
-Kur'an yalnızca Hz. Musa'nın "dilimdeki düğümü çöz" diye dua ettiğini bildirir (Tâhâ
-27). Kesin bilinen ile anlatılagelen arasındaki farkı görmek, çocuğunuz için güzel bir
-düşünme alışkanlığıdır.
+Bazı bilgiler Kur'an'da değil, sonradan aktarılan anlatımlarda (rivayetlerde) geçer; kitap
+bunları ayırmak için bu kalıbı kullanır. Hz. Musa'nın adının anlamı, kuyunun ağır taşı ve
+Medyen'deki yaşlı babanın Hz. Şuayb olması rivayettir; Kur'an yaşlı babanın adını vermez,
+bazı âlimler onun Hz. Şuayb'ın yeğeni olduğunu söyler. Hızır'ın adı ve serçenin damlası ise
+Peygamberimizin (s.a.v.) bu yolculuğu anlattığı hadiste geçer (Buhârî, İlim, 44; *Hadislerle
+İslâm* 6/108). Kekemeliğin bir bebeklik olayından kaldığına dair anlatı ile Âsiye'nin nasıl
+vefat ettiğine dair anlatımlar da rivayettir ve kitapta yer almadı; Kur'an yalnızca Hz.
+Musa'nın "dilimdeki düğümü çöz" diye dua ettiğini (Tâhâ 27) ve Âsiye'nin imanını ve duasını
+(Tahrîm 11) bildirir. Kesin bilinen ile anlatılagelen arasındaki farkı görmek, çocuğunuz
+için güzel bir düşünme alışkanlığıdır.
 
 **"Hz. Musa'nın asası sihirli miydi? Ben de denizi ikiye ayırabilir miyim?"**
 Kitap asayı sıradan bir çoban değneği olarak tanıtır; asa ancak Allah'ın izniyle bir
@@ -2366,6 +2394,13 @@ işarete dönüşür. Sihirbazların yaptıkları göz aldatmasıydı; Hz. Musa'
 ise Allah'ın izniyle gerçekleşen mucizelerdir. Mucizeler insanın kendi gücüyle
 yapabileceği şeyler değildir. Gündelik hayatta bize düşenin çalışmak, dua etmek ve zor
 anlarda büyüklerimizden yardım istemek olduğunu birlikte konuşabilirsiniz.
+
+**"Âşûrâ günü nedir? Aşureyle ilgisi var mı?"**
+Peygamberimiz (s.a.v.) Medine'ye geldiğinde, Allah'ın Hz. Musa'yı ve yanındakileri
+Firavun'dan kurtardığı gün olarak bilinen günde oruç tutulduğunu görmüş, kendisi de o gün
+oruç tutmuştur (Müslim, Sıyâm, 128; *Hadislerle İslâm* 6/65). Bu gün, Muharrem ayının onuncu
+günüdür. Kitap bunu denizden geçişin ardından bir "Biliyor muydun?" kutusunda anlatır. Aşure
+tatlısının Hz. Nûh'a bağlanması ise ayrı bir rivayettir (Hz. Nûh kitabının veli raporu).
 
 ---
 
@@ -2826,7 +2861,7 @@ da `ROZET-MATRISI.md` §2'deki 24 kayıtlı adla ve §2.1'deki serbest adlarla
 | İşaretler | B8'de ölümsüz, sakin sırayla; kan tek ifade, görselde yok; ölü hayvan, hasta insan yok |
 | Ordunun sonu | B9'da onaylı tek cümle; son an ve beden yalnız veli alanında (KARAR 2b) |
 | Hızır'daki ikinci olay | B10'da adı konmadan; tam anlatım ve **güvenlik uyarısı** F5'te (KARAR 1) |
-| Âsiye | B2'den sonra yok; akıbeti rivayet olarak veli alanında (KARAR 2d) |
+| Âsiye | B2'den sonra yok; akıbeti rivayet olarak veli alanında (KARAR 2d). *v2: imanı ve duası B8'de (Tahrîm 11), akıbeti yine yok* |
 | Toptan suçlama, etnik/siyasi dil | Yok; kötülük kişilerin seçimine bağlandı (Faz 1 A1 bulgu 2) |
 | Tasvir | Hz. Musa yalnız 2 sahnede, arkadan ve uzak planda; yüz hiçbir görselde yok; bebek, kadınlar, Hârûn, Şuayb, Firavun, sihirbazlar, ordu ve Hızır hiç gösterilmiyor; melek yok; görevlendirmede ses ve ışık tasvir edilmiyor |
 | Anakronizm | Cami, kubbe, minare, hilal, hiyeroglif/yazı, cam pencere ve metal makine negatif promptta yasak |

@@ -1,7 +1,30 @@
 # HZ. MUSA (a.s.) — KARMA TARZ YENİDEN YAZIMI: AYRINTI TABLOSU
 
-> **Tarih:** 23 Ekim 2026 · **Durum:** Hasan'ın altı karar sorusuna cevabı bekleniyor;
-> v2 yazılmadı.
+> **Tarih:** 23 Ekim 2026 · **Durum:** Hasan altı karar sorusunda önerileri kabul etti
+> (23 Ekim 2026; 6. kararda ana oturumun farkıyla, ⚑). Hasan'ın sözü: "Musa: altı kararda
+> senin önerilerin kabul (6'da "yine de olanı saklamadı" çıksın). v2'yi yazsın." (1) B8'de
+> Âsiye'nin imanı, Tahrîm 66/11 duası, Işıl'ın sorusu, anlatıcının cevabı ve Buhârî kutusu;
+> imanın zamanı, işkencesi ve ölümü yok. (2) B10 "İnsanların en bilgilisi kim?" hadisiyle
+> açılır ("kınadı" yok); Hızır'ın "Allah sana bir bilgi öğretmiştir…" sözü Hz. Musa'nın
+> isteğinden sonra. (3) B10 güvenlik paragrafı. (4) B9 Âşûrâ kutusu; B10 "Allah, Musa'ya
+> rahmet eylesin…" kutusu. (5) Final testinde şık dengesi (1, 2, 5, 6, 7, 9, 10). (6) B3
+> ölüm cümlesi ve Işıl; ⚑ **anlatıcının cevabında "yine de olanı saklamadı" yok** (Kasas
+> 18–21'de Hz. Musa korku içinde şehirden ayrılır; cümle "insanlara itiraf etti" diye
+> okunabilirdi). Soru gerektirmeyen değişiklikler de uygulandı; isteğe bağlı #9 zindan
+> tehdidi ve #16 Tâhâ 51–52 bölüm uzunluğu yüzünden girmedi; #26 doğrulanamadı, Hz.
+> Hârûn'un yaşı verilmedi. v2 metni `KITAP-HZ-MUSA-ICERIK-v2.md`; final testi (E) ve veli
+> raporu (F5, 8 madde) `final.md`'de.
+>
+> **İçerik denetimi sonrası (23 Ekim 2026; 0 kritik, 10 önemli, 17 küçük):** mekanik
+> bulgular düzeltildi (v2 "Yazım notları"). Tablodan sapan ya da tabloya eklenen noktalar:
+> (1) B1'de emir ile Firavun'un korkusu "çünkü" ile bağlanmadı ("Onlardan gelecek bir
+> şeyden de korkuyordu"; Kasas 4 ve 6 ayrı); F5/1 de öyle. (2) B6'da Tâhâ 46'nın "her şeyi"
+> eklemesi ve "rabbinizim"in büyük harfi düzeldi. (3) B10 kitabın kapanışı sandık halkası
+> yerine Hz. Musa'nın sabır üzerine iç sesi (Karşılaştır A'nın dayanağı). (4) B9'da "tek
+> bir inanan bile kalmadı" kurgusu Âsiye'ye dolaylı cevap verdiği için çıktı. Sekiz açık
+> soru v2 yazım notlarının sonunda: B7 kapanışı, B7 Yûnus 83 cümlesi, B3'teki ikinci
+> "istememişti", B9 "ikiye yarıldı", B8 ve B9 kutularının dili, veli raporuna Âsiye maddesi,
+> final testi 2/C, 4/C ve 5/C, B10 görsellerindeki "yeşil cüppe".
 > **Kural:** brif §4.3 (üç alan, kaynak ölçeği), §7.2 (ölçüler), §7.10 (karma tarz,
 > örnek sahne), §16 (yerleşik kararlar; §16/2 Âsiye'nin akıbeti, §16/4 ağır tehdit,
 > §16/9 sayılar, §16/12 vahiy, §16/13 iki yorum, §16/14 kekemelik, §16/15 Hızır'daki
