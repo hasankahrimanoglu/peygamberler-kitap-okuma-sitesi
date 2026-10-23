@@ -1,8 +1,8 @@
 # KİTAP: Hz. İsmail — v2 (karma anlatım tarzı)
 
 > **Durum:** Yazıldı ve içerik denetçisinden geçti (23 Ekim 2026; 0 kritik). Hasan denetim
-> sonrası altı kararı verdi, işlendi ("Yazım notları" sonu). Hasan'ın okuması bekleniyor;
-> aktarılmadı.
+> sonrası altı kararı verdi, işlendi ("Yazım notları" sonu). Hasan onayladı,
+> `src/data/books.ts`'e aktarıldı (23 Ekim 2026).
 > Altı bölümün hikâye metninin kaynağı bu dosyadır. Büyük Final Testi, veli raporu,
 > sözlükçe, görsel briefleri ve kaynak notları `KITAP-HZ-ISMAIL-ICERIK-final.md`'de kalır;
 > veli raporunun v2'ye bağlı maddeleri orada güncellendi (F5).

@@ -1798,6 +1798,11 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 >   eklenecek. Durakta su fışkırır biçimde, brifteki "kabaran" kadar yumuşak değil. 1.5K ana
 >   dosyalar `gorsel-kaynaklari/kitaplar/hz-ismail/`.
 
+> **Karma tarz metni (v2) aktarıldı (23 Eki 2026):** Hikâye metni yeniden yazıldı, görsel
+> dosyaları değişmedi; yeni görsel yok, otuz sahne aynı bölümde, aynı parçada ve aynı sırada.
+> Tek `alt` değişikliği: `bolum-3/otlayan-koc` "sakin sakin otlayan" → "sakin sakin duran"
+> (metin artık koçun otladığını söylemiyor; dosya adı aynı).
+
 ### Kitap kapağı ve harita durağı
 
 | Dosya | Biçim | Durum | Görsel brifi |
@@ -1835,7 +1840,7 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 | `hz-ismail/bolum-3/birlikte-calisma.jpg` | 1. Kısım | A | Hz. İbrahim ve Hz. İsmail — Katman 1; tamamen arkadan, yüz ve profil görünmez. Karakter blokları: Ibrahim (adult); Ismail (boy). | ✅ Hazır | İkindi ışığında taşlı bir patikada, aralarında taşlarla dolu hasır bir sepeti birlikte taşıyarak yürüyen Hz. İbrahim ve oğlu Hz. İsmail, arkadan |
 | `hz-ismail/bolum-3/yildizli-gece.jpg` | 1. Kısım | A | yok | ✅ Hazır | Gece, vadide yıldızlı bir göğün altında duran keçi kılı çadır; aralığından sızan sakin kandil ışığı ve yanında karanlıkta seçilen akasya |
 | `hz-ismail/bolum-3/sabah-yamaci.jpg` | Devam | B | yok (Faz 1 KARAR: teslimiyet anı figürsüz) | ✅ Hazır | Şafakta sessiz, taşlı bir dağ yamacı; tepenin ardından yükselen yumuşak altın ışık yamaca ve kayaların arasındaki küçük bir çalılığa düşüyor |
-| `hz-ismail/bolum-3/otlayan-koc.jpg` | Devam | B | yok | ✅ Hazır | Sabah ışığında yamaçta, kayaların arasında sakin sakin otlayan, kıvrık boynuzlu, kalın beyaz yünlü iri bir koç |
+| `hz-ismail/bolum-3/otlayan-koc.jpg` | Devam | B | yok | ✅ Hazır | Sabah ışığında yamaçta, kayaların arasında sakin sakin duran, kıvrık boynuzlu, kalın beyaz yünlü iri bir koç |
 | `hz-ismail/bolum-3/sevincle-donus.jpg` | Devam | B | Hz. İbrahim ve Hz. İsmail — Katman 1; tamamen arkadan, uzak plan, yüz ve profil görünmez. Karakter blokları: Ibrahim (adult); Ismail (boy). | ✅ Hazır | Gün batımında vadiye inen patikada, yan yana yürüyen Hz. İbrahim ve Hz. İsmail, arkadan ve uzakta; babasının bir eli oğlunun omzunda; aşağıda çadırların ışıkları |
 
 ### Bölüm 4 — Kapı Eşiğindeki Öğüt

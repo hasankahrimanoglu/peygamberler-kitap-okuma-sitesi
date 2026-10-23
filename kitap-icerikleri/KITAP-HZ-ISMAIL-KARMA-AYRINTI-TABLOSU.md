@@ -28,7 +28,7 @@
 > "yine o kapının önünde durdu" (4c) B5 sonunda dua tekrarı çıktı, "[[O gün ise gün batarken…]]"
 > (4d) B3 "Çalışırken uzun uzun konuşuyor…" kaldı (4e) B1 özeti "küçük Hz. İsmail'in". (5) B5
 > Seçimini Karşılaştır B "…babasını görünce elindeki işi bıraktı ve yardım isteğine hemen evet
-> dedi."; B2 A kaldı. (6) B4 açılış sırası kaldı. **Aktarılmadı;** Hasan okuyacak.
+> dedi."; B2 A kaldı. (6) B4 açılış sırası kaldı. **Hasan onayladı, aktarıldı (23 Ekim 2026).**
 > **Kural:** brif §4.3 (üç alan, kaynak ölçeği), §7.2 (ölçüler), §7.10 (karma
 > tarz, örnek sahne), §16 (yerleşik kararlar; §16/9 hadisteki sayılar, §16/18 ortak
 > olay). Kitabın Faz 1 kararları (`KITAP-HZ-ISMAIL-KAYNAK-DENETIMI.md`, karar kaydı

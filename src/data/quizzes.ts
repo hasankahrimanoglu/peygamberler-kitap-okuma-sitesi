@@ -470,7 +470,7 @@ const ismailQuizQuestions: QuizQuestion[] = [
   },
   {
     id: 4,
-    question: "İkinci ziyarette Hz. İbrahim'i en çok sevindiren ne oldu?",
+    question: "Hz. İbrahim oğlunun evine yeniden geldiğinde onu en çok sevindiren ne oldu?",
     correctOption: "a",
     options: [
       { id: "a", text: "Hz. İsmail'in eşinin onu güler yüzle karşılayıp Allah'a hamd ederek konuşması" },

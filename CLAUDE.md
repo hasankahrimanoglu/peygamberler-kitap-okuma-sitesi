@@ -309,8 +309,8 @@ Ayrıntı ve ölçümler 3.10'da; bu kararları yeniden tartışmaya açma.
   işaretlenir, aktarımda işaret kaldırılır. Onaylı örnekler:
   `kitap-icerikleri/ORNEK-KARMA-TARZ.md`. Yayındaki kitaplar bu karardan önce
   yazıldı; sırayla yeniden yazılıyor. Hz. Âdem ve Hz. Nûh 22 Eki 2026'da, Hz.
-  Sâlih ve Hz. İbrahim 23 Eki 2026'da aktarıldı (hikâye metni
-  `KITAP-HZ-{ADEM,NUH,SALIH,IBRAHIM}-ICERIK-v2.md`; Nûh yeni kaynak kuralıyla ve videolu
+  Sâlih, Hz. İbrahim ve Hz. İsmail 23 Eki 2026'da aktarıldı (hikâye metni
+  `KITAP-HZ-{ADEM,NUH,SALIH,IBRAHIM,ISMAIL}-ICERIK-v2.md`; Nûh yeni kaynak kuralıyla ve videolu
   ayrıntı tablosuyla yazılan ilk kitap). Okuma önizlemesi
   için v2 dosyası `node scripts/v2-onizleme-uret.mjs` ile geçici veriye çevrilir,
   aktarımda silinir.

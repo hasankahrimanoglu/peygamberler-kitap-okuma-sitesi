@@ -2625,6 +2625,22 @@ Kurallar:
       `SOZLUKCE-SICILI` §3 İbrahim notuna v2 satırı eklendi. `kitap-denetle
       ibrahim` 0 hata (uyarı: 9 ses yer tutucu). Yayına çıkması `main`'e
       geçişle olur. Sırada Hz. İsmail.*
+      *23 Eki: **Hz. İsmail v2 aktarıldı** (Hasan onayı). Altı bölümün hikâye
+      metni `books.ts`'te `KITAP-HZ-ISMAIL-ICERIK-v2.md` ile birebir (30 sahne
+      görseli ve 8 sözlük kelimesi aynı parçada, aynı sırada; yalnız
+      `bolum-3/otlayan-koc` alt metninde "otlayan" → "duran"). Hadisteki sayılar
+      çocuk metninden çıktı ("yedi kez" ve "iki kez"; sayı ve sa'y künyesi veli
+      raporunda); B1'deki Hâcer sahnesi Hz. İbrahim B8 ile ortak ifadelerle
+      kuruldu; B3'te Işıl'ın sorusu ve anlatıcının güvenlik paragrafı var;
+      Peygamberimiz iki yerde anılır (B1 sa'y, B5 soy); iki "Biliyor muydun?"
+      kutusu eklendi (B1 zemzem adı, B5 Makâm-ı İbrâhim). Sabit alanlarda B1 ve
+      B4 özeti, B4 Ne Öğrendik 2, B5 Seçimini Karşılaştır B ve final testi 4. soru
+      değişti; veli raporunun "Çocuğunuz Sorarsa" maddelerinden 7'si (1, 2, 3, 6,
+      8, 9, 10) final.md F5'e göre güncellendi. Kararlar v2 yazım notları ve
+      `-KARMA-AYRINTI-TABLOSU.md`'de. Geçici `ismailV2Onizleme.ts` silindi;
+      `ICERIK-GORSEL-SICILI`'nde koç alt metni güncellendi, `SOZLUKCE-SICILI`
+      değişmedi (kutu yerleri aynı). `kitap-denetle ismail` 0 hata (uyarı: 6 ses
+      yer tutucu). Yayına çıkması `main`'e geçişle olur. Sırada Hz. Yusuf.*
 
 ### 22 Ekim 2026 (iki eksenli kaynak ölçeği — Hasan onayı, bkz. 4.1/21 ve içerik brifi §4.3, §16/17b–c)
 

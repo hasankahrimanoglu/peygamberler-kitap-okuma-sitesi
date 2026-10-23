@@ -10,7 +10,8 @@
 > bulgu yok); mekanik düzeltmeler ve karar kaydı §I8 sonunda.
 >
 > **v2 (23 Ekim 2026):** Altı bölümün hikâye metni karma tarzda ve üç alanlı kaynak kuralıyla
-> yeniden yazıldı: `KITAP-HZ-ISMAIL-ICERIK-v2.md` (kararlar `-KARMA-AYRINTI-TABLOSU.md`'de). Bu
+> yeniden yazıldı: `KITAP-HZ-ISMAIL-ICERIK-v2.md` (kararlar `-KARMA-AYRINTI-TABLOSU.md`'de).
+> **Hasan onayladı, `books.ts`'e aktarıldı (23 Ekim 2026).** Bu
 > dosyanın D bölümündeki hikâye metinleri ve seslendirme notları, B1 ile B4 özetleri, B4 Ne
 > Öğrendik 2, B5 Seçimini Karşılaştır B ve §B "Kaynak ilkeleri" / "Kitaba özgü yasaklar"daki eski
 > kalıp ve "yedi kez" kayıtları, Faz 1 karar 2a'nın "Hz. Muhammed'in ve sahabenin sözleri çocuk
