@@ -1225,13 +1225,13 @@ Kaynak dışı bilgi var mı?: Hayır. Allah'ın seslenişi Sâd 42 (Diyanet: "A
 ## E. BÜYÜK FİNAL TESTİ
 
 ```text
-Soru 1: Hz. Eyyûb, kapısına gelen konuklara ve açlara nasıl davranırdı?
+Soru 1: Hikâyede Hz. Eyyûb, kapısına gelen konuklara ve açlara nasıl davranırdı?
 A) Onları başka bir köye gönderirdi
 B) Yalnızca tanıdıklarını sofrasına alırdı
 C) Kimseyi geri çevirmez, sofrasını onlarla paylaşırdı
 Doğru seçenek: C
 Kaynak bölüm: 1
-Kaynak PDF sayfası: EZŞ 46–47
+Kaynak PDF sayfası: EZŞ 46–47 (v2: "Hikâyede" çerçevesi, cömertlik rivayettir — brif §9; v2 açık soru 3a)
 Soru türü: olay
 ```
 
@@ -1259,8 +1259,8 @@ Soru türü: olay
 
 ```text
 Soru 4: Hz. Eyyûb derdini kime açtı ve nasıl dua etti?
-A) Dostlarına kızıp onlarla tartıştı
-B) Derdini kimseye açmadı, içinde tuttu
+A) Dostlarına kızdı ve onlarla uzun uzun tartıştı
+B) Derdini kimseye açmadı, hepsini sessizce içinde tuttu
 C) Allah'a açtı: "Rabbim, bana bu dert dokundu; sen merhametlilerin en merhametlisisin" dedi
 Doğru seçenek: C
 Kaynak bölüm: 4
@@ -1313,7 +1313,7 @@ farklı seçenekleri birlikte düşünmesine yardımcı olabilir.
 
 ### F5. Çocuğunuz Sorarsa
 
-*(v2, 23 Ekim 2026: 1–6 güncellendi, 7 yeni. Kitaptan alıntılar v2 ile birebir.)*
+*(v2, 23 Ekim 2026: 1–6 güncellendi, 7 yeni; 3, 5, 6 denetim sonrası 5 cümleye indi. Kitaptan alıntılar v2 ile birebir.)*
 
 **"Hz. Eyyûb'un çocukları neden öldü? Bizim evimiz de yıkılır mı?"**
 Kur'an ölümün nasıl olduğunu anlatmaz; Hz. Eyyûb'a "ailesinin ve onlarla birlikte bir o
@@ -1342,13 +1342,11 @@ Kitap, Hz. Eyyûb'un iyileşmesini ve ona verilenleri bir kural olarak değil, A
 ve yalnız olmadığımızı hissetmektir; karşılığı her zaman istediğimiz biçimde ve zamanda
 gelmeyebilir, hastalıkta doktora gitmek ve tedavi olmak da gerekir. Kur'an'ın ailesiyle
 ilgili ifadesi kısadır (Sâd 43); kaynağımızdaki anlatıma göre Hz. Eyyûb'un yeniden
-çocukları oldu. Peygamberimiz (s.a.v.), müminin sevinçli günde şükrettiğini, sıkıntılı
-günde sabrettiğini ve ikisinin de onun için hayır olduğunu bildirir (Müslim, Zühd, 64;
-Hadislerle İslâm 7/445). Altın çekirgeler, Peygamberimizin (s.a.v.) anlattığı bir
-olaydır (Buhârî, Tevhîd, 35; Hadislerle İslâm 6/126–127). Hz. Eyyûb'un bu nimeti geri
-çevirmeyip Rabbinin bereketine her zaman ihtiyaç duyduğunu söylemesi, Hadislerle
-İslâm'da her nimetin Allah'tan geldiğini kabul etmek diye açıklanır. Kitap bunu bir ödül
-kuralı olarak değil, şükrün bir örneği olarak verir.
+çocukları oldu. Altın çekirgeler, Peygamberimizin (s.a.v.) anlattığı bir olaydır
+(Buhârî, Tevhîd, 35; Hadislerle İslâm 6/126–127). Hadislerle İslâm, Hz. Eyyûb'un bu nimeti
+geri çevirmeyip Rabbinin bereketine her zaman ihtiyaç duyduğunu söylemesini her nimetin
+Allah'tan geldiğini kabul etmek diye açıklar; kitap da bunu bir ödül kuralı olarak değil,
+şükrün bir örneği olarak verir.
 
 **"Şeytan Hz. Eyyûb'a ne yaptı?"**
 Kur'an'da Hz. Eyyûb'un "Doğrusu şeytan bana bir yorgunluk ve eziyet verdi" diye Rabbine
@@ -1362,9 +1360,9 @@ söyleyebilirsiniz.
 
 **"Hz. Eyyûb bir yemin mi etmişti?"**
 Kur'an'da Allah'ın Hz. Eyyûb'a "Eline bir demet sap al da onunla vur, yeminini böyle
-yerine getir" dediği bildirilir (Sâd 44, Diyanet Vakfı meali). Âyet yeminin sebebini ve kime olduğunu söylemez.
-Tefsirlerde bunun Hz. Eyyûb'un hastalığı sırasında eşine dair ettiği bir yemin olduğu
-anlatılır; sebebi konusundaki rivayetler farklıdır. Müfessirler âyeti, Allah'ın Hz.
+yerine getir" dediği bildirilir (Sâd 44, Diyanet Vakfı meali). Âyet yeminin sebebini ve kime olduğunu söylemez;
+tefsirlerde bunun Hz. Eyyûb'un hastalığı sırasında eşine dair ettiği bir yemin olduğu
+anlatılır, sebebi konusundaki rivayetler ise farklıdır. Müfessirler âyeti, Allah'ın Hz.
 Eyyûb'a hem yeminini yerine getirmenin hem de kimseyi incitmemenin yolunu gösterdiği
 biçiminde açıklar. Kitap bu konuyu, çocuklar için şiddet çağrışımı taşıdığından hikâyeye
 almadı. Bu konu, sözümüzü düşünerek vermeyi ve verdiğimiz sözü tutmayı konuşmak için bir
@@ -1380,7 +1378,7 @@ kaynaklarında yoktur, TDV İslâm Ansiklopedisi de bu bilgilerin bir peygamberi
 saygınlığıyla bağdaşmadığını belirtir ("EYYÛB"). Bulaşıcı bir hastalıkta uzak durmak
 bazen doğru ve gerekli bir önlemdir; bunu doktorların ve büyüklerin söylediklerine göre
 yaparız. Vefa, kuralları çiğnemek değil, uzaktan da olsa sevdiğimizi yalnız
-bırakmamaktır: telefonla aramak, bir kart göndermek, dua etmek gibi. Üçüncü bölümdeki
+bırakmamaktır: telefonla aramak, bir kart göndermek, dua etmek gibi; üçüncü bölümdeki
 Bugüne Taşı görevi de bu fikre dayanır.
 
 **"Hz. Eyyûb'un yaralarını kurtların sardığı doğru mu?"**

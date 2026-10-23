@@ -29,6 +29,15 @@
 > B5'te eşin ayrı şükür sözü çıktı (Faz 1 karar 4 sınırı); "birlikte şükür" kaldı. Altı açık
 > soru v2 yazım notlarının sonunda: B1'de ikinci kalıp, B2 açılış cümlesi, final 1 ve final 4
 > şıkları, `ziyaret-patikasi` alt metni, Ne Öğrendik 4/2 uzunluğu, F5 madde uzunlukları.
+>
+> **Hasan'ın denetim sonrası altı kararı (23 Ekim 2026; altısında da öneri kabul):** (1) B1 "Ne
+> var ki anlatılanlara göre ona çok az kişi inandı." (metindeki kalıp 6). (2) B2 açılışı "O sabah
+> da her zamanki gibi başlamıştı; kimse neler olacağını bilmiyordu." (3) Final 1 "Hikâyede…"
+> çerçevesiyle; final 4 çeldiricileri uzadı. (4) `ziyaret-patikasi` alt metni "…patikada yürüyen
+> üç adam; arkadan görünüyorlar." (karar 1'deki "alt metin değişmez" kaydı bu görsel için
+> kalktı). (5) Ne Öğrendik 4/2 "Hz. Eyyûb'un yaşadıkları bir ceza değildi; Allah'tan gelen bir
+> imtihandı." (6) F5/3, 5, 6 beşer cümle; F5/3'teki Müslim, Zühd, 64 cümlesi (#10) çıktı. Brif
+> §16/14 netleştirmesi ana oturumda (5a49f0e). Ölçüler 2.654–3.266.
 > **Kural:** brif §4.3 (üç alan, kaynak ölçeği), §7.2 (ölçüler), §7.10 (karma tarz, örnek
 > sahne), §16 (yerleşik kararlar; §16/1 ölüm, §16/8 kalıp, §16/9 sayılar, §16/13 iki yorum,
 > §16/14–15 veli raporu, §16/16 maddî ödül, §16/17b–c hadis ve alıntı, §16/18 ortak olay).
