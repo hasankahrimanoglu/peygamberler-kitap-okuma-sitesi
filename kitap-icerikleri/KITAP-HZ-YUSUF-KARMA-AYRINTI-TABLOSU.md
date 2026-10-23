@@ -35,6 +35,7 @@
 > "kıssa, hikâye demektir"). (7) B9 "[[Yüklerini de eksiksiz doldurttu.]]". (8) F5/11'de Müsned
 > sözü ve *Hadislerle İslâm* 6/57 açıklaması ayrı; F5/9 "halasının ya da teyzesinin kuşağı …
 > anlatımlar kişi konusunda da farklıdır". Ölçüler 2.865–3.583 (v2 yazım notları).
+> **Hasan onayladı, aktarıldı (23 Ekim 2026).**
 > **Kural:** brif §4.3 (üç alan, kaynak ölçeği), §7.2 (ölçüler), §7.10 (karma
 > tarz, örnek sahne), §16 (yerleşik kararlar; §16/9 hadisteki sayılar, §16/13 iki
 > yorum, §16/17b–c hadis ve alıntı, §16/18 ortak olay). Kitabın Faz 1 kararları

@@ -2,7 +2,8 @@
 
 > **Durum:** Yazıldı ve içerik denetçisinden geçti (23 Ekim 2026; 0 kritik). Mekanik bulgular
 > düzeltildi; denetim sonrası sekiz soruda Hasan önerileri kabul etti (23 Ekim 2026; 3. soruda
-> "Kolay değil." çıktı), işlendi ("Yazım notları" sonu). Hasan okuması ve aktarım bekleniyor.
+> "Kolay değil." çıktı), işlendi ("Yazım notları" sonu). Hasan onayladı, `src/data/books.ts`'e
+> aktarıldı (23 Ekim 2026).
 > On bölümün hikâye metninin kaynağı bu dosyadır. Büyük Final Testi, veli raporu,
 > sözlükçe, görsel briefleri ve kaynak notları `KITAP-HZ-YUSUF-ICERIK-final.md`'de kalır;
 > veli raporunun v2'ye bağlı maddeleri orada güncellendi (F5).
@@ -1490,7 +1491,7 @@ isteğin kendisi sahnelenmiyor (Faz 1 karar 2), uzunluk Devam'daki sığınma, k
 aklanmadan geliyor. 18 kelimeyi aşan cümle yok (betiğin işaretlediği iki yer, tırnak sonunda
 bölünmeyen iki ayrı cümle: B2 13 + 9, B5 kutusu 18 + 6). Işıl satırları en çok 8 kelime. Önizleme
 betiği dosyayı hatasız ayrıştırıyor (on bölüm); çıktı repoya konmadı. **Tanık Sayfası** kod
-bloğu bu worktree'deki betikte atlanıyor; ana oturumdaki güncel betik onu canlı `books.ts`'ten alıyor.
+bloğunu betik (23 Ekim 2026'dan beri) canlı `books.ts`'ten alıyor.
 
 **Meal notları:** Yeni ya da değişen âyet cümleleri: 12/3 Diyanet meali "Sana bu Kur'an'ı
 vahyetmekle kıssaların en güzelini anlatıyoruz" (B1 kutusu, denetim sonrası karar 6); 12/9
@@ -1619,7 +1620,7 @@ doldurttu." (8) F5/11 ve F5/9 önerilen metinlerle. Aşağıda soruların ilk h�
   görselinden hemen önce; görsel sırası aynı).
 - **Tanık Sayfaları** (B7, B10): v2'de ` ```text ` bloğunda `[TANIK]` işaretiyle, alanlar `Ad:`
   (boş) · `Etiket:` · `Kurgusal:` · `Metin:`. `books.ts`'teki `witness` blokları (1. kısmın son
-  bloğu) değişmeden kalır. `scripts/v2-onizleme-uret.mjs` bu bloğu tanımıyor; önizlemede görünmez.
+  bloğu) değişmeden kalır. `scripts/v2-onizleme-uret.mjs` bu bloğu canlı `books.ts`'ten alır (23 Ekim 2026).
 - On bir sözlük kelimesi aynı bölümlerde, aynı parçada, aynı tanımlarla; **KELİME bloklarının hepsinin
   çevre metni değişti:** *haset* (öncesi, ORNEK), *kervan* (öncesi; sonrası "dedi" çıktı), *dirhem*
   (sonrası: "Kur'an'da bildirildiğine göre" ve tekrar çıktı), *Aziz* (öncesi "Yıllar geçti."; sonrası

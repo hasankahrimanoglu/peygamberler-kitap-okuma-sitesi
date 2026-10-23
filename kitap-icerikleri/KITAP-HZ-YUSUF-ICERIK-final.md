@@ -5,12 +5,13 @@
 > dosya o karar kaydıyla yazıldı ve karar kaydı Faz 1'deki "Önerim" ifadelerinin önüne geçer.
 > Üç tur editoryal denetim yapıldı; bulgular ve kendiliğinden yapılan mekanik düzeltmeler
 > §I8'deki denetim kaydındadır. Faz 2 karar soruları Hasan tarafından 16 Ekim 2026'da karara
-> bağlandı (§I8 "Faz 2 karar kaydı"; bütün sorularda önerilen seçenek). **Aktarım bekliyor**
-> (`/aktarim yusuf`, ayrı kod oturumunda).
+> bağlandı (§I8 "Faz 2 karar kaydı"; bütün sorularda önerilen seçenek). **Aktarıldı**
+> (16 Ekim 2026; v2 hikâye metni ve F5 değişiklikleri 23 Ekim 2026).
 >
 > **v2 (23 Ekim 2026):** On bölümün hikâye metninin kaynağı artık
 > `KITAP-HZ-YUSUF-ICERIK-v2.md`'dir (karma tarz, üç alanlı kaynak kuralı; kararlar
-> `KITAP-HZ-YUSUF-KARMA-AYRINTI-TABLOSU.md`). Aşağıdaki D bölümündeki hikâye parçaları ve
+> `KITAP-HZ-YUSUF-KARMA-AYRINTI-TABLOSU.md`). **Hasan onayladı, `books.ts`'e aktarıldı (23 Ekim
+> 2026).** Aşağıdaki D bölümündeki hikâye parçaları ve
 > seslendirme notları v2'den önceki metne aittir. Sabit alanlar (Sen Olsaydın, karşılaştırma,
 > Ne Öğrendik, görevler), görseller, sözlük ve final testi değişmedi. F5 v2'ye göre
 > güncellendi (12 madde).
@@ -2405,7 +2406,7 @@ kaldığı anları birlikte hatırlamak, seçimlerin nereye vardığını görme
 ### F5. Çocuğunuz Sorarsa
 
 *(12 soru; brif §10.3 gereği 8'i aştığı için en hassas konudan başlayarak sıralandı.
-**v2 (23 Ekim 2026):** 1, 5, 6 ve 9 güncellendi; 11 ve 12 yeni. Kitaptan alıntılar
+**v2 (23 Ekim 2026):** 1, 2, 5, 6 ve 9 güncellendi; 11 ve 12 yeni. Kitaptan alıntılar
 `KITAP-HZ-YUSUF-ICERIK-v2.md` ile birebir.)*
 
 **"Evin hanımı Hz. Yusuf'tan ne istedi?"**

@@ -10,9 +10,14 @@ const { books } = await import(pathToFileURL(tmp).href);
 unlinkSync(tmp);
 const kitap = books.find((b) => b.routePrefix === anahtar);
 const altlar = {};
-for (const ch of kitap.chapters)
-  for (const b of [...ch.paragraphs, ...(ch.continuationParagraphs || [])])
+// Tanık Sayfası v2'de değişmez; `[TANIK]` bloğu canlı bölümdeki tanık bloğuyla, sırasıyla doldurulur.
+const taniklar = {};
+kitap.chapters.forEach((ch, i) => {
+  const bloklar = [...ch.paragraphs, ...(ch.continuationParagraphs || [])];
+  taniklar[i + 1] = bloklar.filter((b) => b.type === "witness");
+  for (const b of bloklar)
     if (b.type === "image") altlar[b.src] = { alt: b.alt, portraitSrc: b.portraitSrc };
+});
 
 const md = readFileSync(mdYolu, "utf8");
 const POZ = { "konuşma": "konusma", "duruş": "durus", "kutlama": "kutlama" };
@@ -39,6 +44,11 @@ for (const parca of md.split(/\n## BÖLÜM /).slice(1)) {
         } else if (g.includes("[SORU BAŞLIĞI]"))
           bloklar.push({ type: "soru_basligi", text: g.replace("[SORU BAŞLIĞI]", "").trim() });
         else if (g.includes("[BİLİYOR MUYDUN]")) bloklar.push({ type: "bilgi_kutusu", text: al("Metin") });
+        else if (g.includes("[TANIK]")) {
+          const tanik = taniklar[no].shift();
+          if (!tanik) throw new Error(`${no}. bölümde books.ts'te tanık bloğu yok`);
+          bloklar.push(tanik);
+        }
         continue;
       }
       const gorsel = s.match(/^\*\*\[GÖRSEL — [a-z]+-(\d+)-([a-z0-9-]+)\]\*\*$/);
@@ -50,7 +60,8 @@ for (const parca of md.split(/\n## BÖLÜM /).slice(1)) {
       }
       if (!s.trim() || s.startsWith("*(")) continue;
       const blok = { type: "text", text: temizle(s) };
-      if (ilk && !bloklar.some((b) => b.type === "text")) blok.dropCap = true;
+      // Bölüm sözlük kelimesiyle açılıyorsa büyük harf verilmez (canlı veri de öyle).
+      if (ilk && !bloklar.some((b) => b.type === "text" || b.type === "interactive_word")) blok.dropCap = true;
       bloklar.push(blok);
     }
     return bloklar;

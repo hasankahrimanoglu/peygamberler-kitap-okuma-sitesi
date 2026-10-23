@@ -2641,6 +2641,25 @@ Kurallar:
       `ICERIK-GORSEL-SICILI`'nde koç alt metni güncellendi, `SOZLUKCE-SICILI`
       değişmedi (kutu yerleri aynı). `kitap-denetle ismail` 0 hata (uyarı: 6 ses
       yer tutucu). Yayına çıkması `main`'e geçişle olur. Sırada Hz. Yusuf.*
+      *23 Eki: **Hz. Yusuf v2 aktarıldı** (Hasan onayı). On bölümün hikâye
+      metni `books.ts`'te `KITAP-HZ-YUSUF-ICERIK-v2.md` ile birebir (50 sahne
+      görseli, 11 sözlük kelimesi ve B7, B10 Tanık Sayfaları aynı parçada, aynı
+      sırada). Saraydaki kadının adı verilmedi; B4'te Işıl'ın sorusu ve
+      anlatıcının güvenlik paragrafı var, veli raporu bu paragrafı haber veriyor.
+      On bir yıldızın anlamı B10'da âlimlerin açıklamasıyla verildi; yere kapanma
+      Işıl'ın sorusu ve anlatıcının cevabıyla ("secde" kelimesi yok). Gömleğin
+      yırtılmamış olduğu (B3) ve kardeşlerin Aziz'e ailelerinden söz ettiği (B7)
+      rivayet kalıbıyla; B5'e "Kerim oğlu kerim" kutusu eklendi (B1'deki Yûsuf
+      suresi kutusuyla iki kutu). Peygamberimizin Mekke'deki "Bugün size kınama
+      yok" sözü yalnız veli raporunda. Sabit alanlar ve final testi değişmedi;
+      veli raporunun "Çocuğunuz Sorarsa" bölümü final.md F5'e göre 12 madde oldu
+      (1, 2, 5, 6, 9 güncellendi; 11 ve 12 yeni). Önizleme betiği
+      (`scripts/v2-onizleme-uret.mjs`) Tanık Sayfası'nı artık canlı `books.ts`'ten
+      alıyor. Kararlar v2 yazım notları ve `-KARMA-AYRINTI-TABLOSU.md`'de. Geçici
+      `yusufV2Onizleme.ts` silindi; `SOZLUKCE-SICILI` ve `ICERIK-GORSEL-SICILI`
+      değişmedi (kutu ve görsel yerleri aynı). `kitap-denetle yusuf` 0 hata
+      (uyarı: 10 ses yer tutucu). Yayına çıkması `main`'e geçişle olur. Sırada
+      Hz. Eyyûb.*
 
 ### 22 Ekim 2026 (iki eksenli kaynak ölçeği — Hasan onayı, bkz. 4.1/21 ve içerik brifi §4.3, §16/17b–c)
 
