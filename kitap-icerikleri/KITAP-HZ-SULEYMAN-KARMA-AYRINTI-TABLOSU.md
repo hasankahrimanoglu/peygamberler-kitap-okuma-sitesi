@@ -1,7 +1,22 @@
 # HZ. SÜLEYMAN (a.s.) — KARMA TARZ YENİDEN YAZIMI: AYRINTI TABLOSU
 
-> **Tarih:** 24 Ekim 2026 · **Durum:** 1. aşama. Hasan'ın sekiz karar sorusuna cevabı
-> bekleniyor; v2 yazılmadı.
+> **Tarih:** 24 Ekim 2026 · **Durum:** Hasan sekiz karar sorusunda önerileri kabul etti
+> (24 Ekim 2026; Hasan'ın sözü: "Süleyman: sekiz kararda öneriler kabul. v2'yi yazsın.").
+> (1a) Kur'an'ın kelimesi "ekin" önce, "üzüm bağı" kalıpla; bölüm adı, görseller, final S1
+> aynı. (2a+b) uzun kalıp kalktı, Dâvûd v2 halkası; Beytülmakdis kutusu ve duaya dönen
+> cümle (sayı yok). (3b+c) Sâd 34 çocuk metninde anılmaz; F5 maddesi önerilen cümleyle.
+> (4a) Belkıs bir kez, kalıpla. (5a) atlar kalır, kalıp çıkar, bakım düşer. (6) hüdhüdün
+> suyu bulması tek cümle, kalıpla. (7a+b) vefat cinlerin çalıştığı yerde; Işıl + güvence.
+> (8a+b) Ne Öğrendik B1-2 "Hikâyede…"; F5'e rüzgâr maddesi. Soru gerektirmeyen
+> değişiklikler de uygulandı. v2 metni `KITAP-HZ-SULEYMAN-ICERIK-v2.md`; veli raporu
+> (F5) `final.md`'de, final testi değişmedi.
+>
+> **İçerik denetimi sonrası (24 Ekim 2026; 0 kritik, 12 önemli, 14 küçük):** mekanik
+> bulgular düzeltildi (v2 "Yazım notları"). Tablodan ve onaylı metinden sapan noktalar:
+> Neml 36 cümlesi canlıdaki Faz 2 ifadesinde kaldı (tabloda değişiklik yoktu); B7 güvencesi
+> onaylı 7b metniyle; final S1 ve S5 dayanakları için B1 "Bağ onarılıp…", B5 "ileri
+> gelenlerine danıştı". Üç açık soru v2 "Yazım notları"nın sonunda: Bakara 102'nin öznesi
+> (#23), B2 kutusunun uzunluğu (karar 2b), Neml 44 (#38). Ölçüler 2.515–3.034.
 > **Kural:** `V2-YAZIM-KURALLARI.md` (akış, kaynak, çocuk metni, sabit alanlar); brif §4.3
 > (üç alan), §7.2 (ölçüler), §7.10 (karma tarz, örnek sahne), §16 (yerleşik kararlar). Faz 1
 > kararları (`KITAP-HZ-SULEYMAN-KAYNAK-DENETIMI.md`, karar kaydı 16 Ekim 2026) ve Faz 2 karar
