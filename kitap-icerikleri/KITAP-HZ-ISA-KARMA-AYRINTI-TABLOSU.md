@@ -6,6 +6,16 @@
 > "Allah'ın çocuk edinmesi". v2 metni `KITAP-HZ-ISA-ICERIK-v2.md`; final testi (E) ve veli
 > raporu (F5) `final.md`'de. İçerik denetimi 0 kritik, 10 önemli, 16 küçük; mekanik bulgular
 > uygulandı, dört bulgu Hasan'a bırakıldı (v2 "Yazım notları" sonu).
+>
+> **Hasan'ın denetim sonrası kararları (24 Ekim 2026; dördünde de öneri kabul).** Hasan'ın
+> sözü: "Yunus ve Îsâ: açık kararlarda senin önerilerin kabul. Yan oturumlar düzeltsin,
+> önizlemeyi yenile; sonra okuyacağım." (1) `kuru-kutuk` alt metni aktarımda değişir, görselin
+> rötuşu sonraki görsel turuna. (2) B6 Saf 14 "Allah'ın dininin yardımcıları olun" + "Tıpkı
+> “Biz Allah için yardımcılarız” diyen havariler gibi." Kontrolde *Kur'an Yolu* ve Diyanet Vakfı
+> parantezsiz çıktı; "dininin" Diyanet İşleri'nin eski mealinden. (3) B4 ve B8'e iki "hatırlıyor
+> musun?" satırı. (4) B5 "yaptığı her güzel işi"; final S5 C "Yaptığı işi Allah'a bağladığını".
+> Ek: Meryem 25 *Kur'an Yolu* ile kontrol edildi; kelimesi "hurma ağacını" (yayındaki gibi),
+> "dalını" yalnız Diyanet Vakfı'nda, metin değişmedi. Ölçüler 2.552–2.771.
 > **Kural:** `V2-YAZIM-KURALLARI.md` (akış, kaynak, çocuk metni, sabit alanlar); brif §4.3
 > (üç alan), §7.2 (ölçüler), §7.10 (karma tarz, örnek sahne), §16 (yerleşik kararlar). Faz 1
 > kararları (`KITAP-HZ-ISA-KAYNAK-DENETIMI.md`, karar kaydı 16 Ekim 2026) ve Faz 2 karar

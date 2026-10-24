@@ -1,8 +1,8 @@
 # KİTAP: Hz. Îsâ — v2 (karma anlatım tarzı)
 
 > **Durum:** Yazıldı ve içerik denetçisinden geçti (24 Ekim 2026; 0 kritik, 10 önemli, 16 küçük).
-> Mekanik bulgular düzeltildi; dört bulgu Hasan'ın kararını bekliyor ("Yazım notları" sonu).
-> `books.ts`'e aktarılmadı.
+> Mekanik bulgular düzeltildi; Hasan'a bırakılan dört bulguda kararlar verildi ve işlendi
+> ("Yazım notları" sonu). `books.ts`'e aktarılmadı.
 > Sekiz bölümün hikâye metninin kaynağı bu dosyadır. Büyük Final Testi, veli raporu,
 > sözlükçe, görsel briefleri ve kaynak notları `KITAP-HZ-ISA-ICERIK-final.md`'de kalır;
 > veli raporunun (F5) ve final testinin (E) v2'ye bağlı yerleri orada güncellendi.
@@ -474,7 +474,7 @@ Hz. Îsâ, insanların hepsini aynı kapıya, bir olan Allah'a kulluk etmeye ça
 
 **[GÖRSEL — isa-4-birlesen-yollar]**
 
-Hz. Îsâ, beşikteyken söylediği sözü büyüyünce de unutmadı: “Ben Allah'ın kuluyum.” Kur'an da onun, Allah'ın kendisine nimet verdiği bir kul olduğunu bildirir.
+[[Beşikteki ilk sözünü hatırlıyor musun?]] Hz. Îsâ o sözü büyüyünce de unutmadı: “Ben Allah'ın kuluyum.” Kur'an da onun, Allah'ın kendisine nimet verdiği bir kul olduğunu bildirir.
 
 Kur'an'a göre Hz. Îsâ, Allah'ın gönderdiği bir peygamberdi ve ondan önce de birçok peygamber gelip geçmişti. Annesi dürüst ve inançlı bir kadındı. İkisi de yiyip içen birer insandı.
 
@@ -549,7 +549,7 @@ Seçimden sonra: Cevabını aklında tut. Hikâyenin devamında neler olduğunu 
 
 ### HİKÂYE DEVAM EDİYOR
 
-[[Hz. Îsâ övgülere kapılıp büyüklenmedi.]] Bu işin kendi gücüyle değil, Allah'ın izniyle olduğunu insanlara açıkça söyledi. Kur'an'da onun mucizelerinden söz edilirken hep aynı ifade geçer: “Allah'ın izniyle.” Hz. Îsâ başardığı her güzel işi Allah'a bağlıyor, övgüyü hiçbir zaman kendine almıyordu.
+[[Hz. Îsâ övgülere kapılıp büyüklenmedi.]] Bu işin kendi gücüyle değil, Allah'ın izniyle olduğunu insanlara açıkça söyledi. Kur'an'da onun mucizelerinden söz edilirken hep aynı ifade geçer: “Allah'ın izniyle.” Hz. Îsâ yaptığı her güzel işi Allah'a bağlıyor, övgüyü hiçbir zaman kendine almıyordu.
 
 ```text
 [KELİME]
@@ -700,7 +700,7 @@ Kur'an'a göre Allah, havarilerin kalbine Allah'a ve O'nun peygamberine iman etm
 
 Kur'an, sonrasını da kısaca anlatır: İsrailoğullarından bir kısmı iman etti, bir kısmı da inkâr etti. Allah, iman edenleri destekledi ve onlara güç verdi.
 
-Kur'an bu olayı inananlara güzel bir örnek olarak anlatır ve onlara şöyle seslenir: Allah'ın yardımcıları olun. Tıpkı “Allah'ın yardımcıları biziz” diyen havariler gibi.
+Kur'an bu olayı inananlara güzel bir örnek olarak anlatır ve onlara şöyle seslenir: Allah'ın dininin yardımcıları olun. Tıpkı “Biz Allah için yardımcılarız” diyen havariler gibi.
 
 [[O akşam tarladaki başaklar yeniden rüzgârla dalgalandı. Sabah olunca yol yine önlerinde açıldı. Hz. Îsâ'nın yanında artık ona güvenen ve onunla aynı yolda yürüyen arkadaşlar vardı.]]
 
@@ -892,7 +892,7 @@ Seçimden sonra: Cevabını aklında tut. Hikâyenin devamında neler olduğunu 
 
 ### HİKÂYE DEVAM EDİYOR
 
-[[Hz. Îsâ ise umudunu hiç yitirmedi.]] Bir zamanlar annesine “Tasalanma!” diye seslenilmişti. [[Hz. Îsâ da Rabbinin, kendisine güvenenleri yalnız bırakmayacağına güveniyordu.]]
+[[Hz. Îsâ ise umudunu hiç yitirmedi. Hurma ağacının dibindeki sesi hatırlıyor musun?]] Bir zamanlar annesine “Tasalanma!” diye seslenilmişti. [[Hz. Îsâ da Rabbinin, kendisine güvenenleri yalnız bırakmayacağına güveniyordu.]]
 
 Kur'an'ın bildirdiğine göre onlar tuzak kurdular, Allah da onların tuzaklarını bozdu. Çünkü tuzakları en iyi bozan Allah'tır. [[Gizlice hazırlanan plan, tıpkı çözülen bir ağ gibi dağılıp gitti.]]
 
@@ -954,7 +954,7 @@ C) Kendi kendine sakinleşmeye çalışman güzel. Hz. Îsâ ise tehlike yaklaş
 4. **Güvence (a) + (b).** B3 ve B5'te Işıl'ın sorusu ve onaylı cevap metni birebir. final.md F5'te "İnsanlar Hz. Meryem'e neden kötü sözler söyledi?" ve "Hz. Îsâ ölüleri nasıl diriltti?" maddelerine haber cümlesi.
 5. **Değişmez alan.** (a) B4: "Kur'an, Allah'ın çocuk edinmesinin olacak şey olmadığını da bildirir." (Diyanet İşleri meali kelimesi, anlatıcı dilinde; Hasan). (b) B8 Nisâ 157 bugünkü gibi; "Başkası ona benzer kılındı", *Kur'an Yolu*'nun parantezidir ("(başkası ona benzer kılındığı için) şüphe içine düşürüldüler"); Diyanet Vakfı da aynı anlamı parantezle verir ("fakat (öldürdükleri) onlara İsa gibi gösterildi"). Benzetilenin kim olduğu çocuk metninde yok.
 6. **Veli raporu (a)–(d).** final.md F5: yeni "Arkadaşımın okuduğu İncil, Hz. Îsâ'ya verilen kitap mı?" (3. sıra) ve "Hz. Îsâ çocukken Mısır'a mı götürüldü?" (9. sıra); diriltme maddesine su üstünde yürüme ve Sâm ibaresi ile güvence haberi (beş cümle); Hz. Meryem maddesine güvence haberi. 11 → 13 madde.
-7. **Final testi.** final.md E: S2, S3, S5, S7, S8 şıkları önerilen metinlerle (S5 B denetimden sonra "Herkesin mucize gösterebileceğini"; iki yanlış şık aynı kelimeyle başlamasın diye). Doğru harfler ve soru kökleri aynı. Şık uzunlukları: S2 52/50/48 · S3 44/42/45 · S5 34/33/33 · S7 44/44/36 · S8 50/48/47.
+7. **Final testi.** final.md E: S2, S3, S5, S7, S8 şıkları önerilen metinlerle (S5 B denetimden sonra "Herkesin mucize gösterebileceğini"; iki yanlış şık aynı kelimeyle başlamasın diye). Doğru harfler ve soru kökleri aynı. Şık uzunlukları: S2 52/50/48 · S3 44/42/45 · S5 34/33/31 · S7 44/44/36 · S8 50/48/47.
 
 **Soru gerektirmeyen değişiklikler (ayrıntı tablosu):** #3, #4, #8, #9, #10 Işıl (B1 Âdem misali, B2 "Ona kim seslendi?", B6 "Havariler kimlerdi?", B7 sofra, B8 "şimdi nerede?"); #15, #17, #18, #21 kurgu işaretleri; #16 Meryem 26 meal kelimesi; #19, #23–#25 ders sonları sahneye; #22 Mâide 110'un "hatırla" cümlesi çıktı; #27 1. kısım sonları çeşitlendi (B1, B5, B6, B8 sahne; B2, B3, B4, B7 soru). #12 ve #13 girmedi.
 
@@ -964,18 +964,18 @@ C) Kendi kendine sakinleşmeye çalışman güzel. Hz. Îsâ ise tehlike yaklaş
 
 **Görseller, sözlük:** 40 sahne görselinin hepsi aynı bölümde, aynı parçada, aynı sırada (betikle doğrulandı). On sözlük kelimesi aynı bölümlerde, aynı parçada, aynı tanımlarla; çevre metni yalnız *cüzzam*'da değişti. Hiçbir kutulu kelime kendi kutusundan önce geçmiyor (B1 bölüm adındaki "Mabette … Müjde" canlıdaki gibi).
 
-**Ölçüler** (anlatı metni, KELİME blokları dahil; Işıl ve kutu ayrı; kurgu işaretleri sayılmadı; `scripts/v2-onizleme-uret.mjs` çıktısından betikle):
+**Ölçüler** (Hasan'ın dört kararından sonra; anlatı metni, KELİME blokları dahil; Işıl ve kutu ayrı; kurgu işaretleri sayılmadı; `scripts/v2-onizleme-uret.mjs` çıktısından betikle):
 
 | Bölüm | Yayındaki | v2 (1. kısım + Devam) | Işıl | Kutu | En uzun düz metin aralığı |
 |---|---:|---:|---:|---:|---:|
 | 1 | 2.935 | 2.690 (1.756 + 934) | 1 | 1 | 637 |
 | 2 | 2.711 | 2.594 (1.322 + 1.272) | 1 | — | 502 |
 | 3 | 2.817 | 2.659 (1.198 + 1.461) | 1 | 1 | 735 |
-| 4 | 2.781 | 2.753 (1.494 + 1.259) | 1 | — | 631 |
-| 5 | 2.610 | 2.621 (835 + 1.786) | 1 | — | 736 |
-| 6 | 2.667 | 2.543 (1.132 + 1.411) | 1 | — | 594 |
+| 4 | 2.781 | 2.771 (1.494 + 1.277) | 1 | — | 631 |
+| 5 | 2.610 | 2.619 (835 + 1.784) | 1 | — | 736 |
+| 6 | 2.667 | 2.552 (1.132 + 1.420) | 1 | — | 594 |
 | 7 | 2.520 | 2.566 (961 + 1.605) | 1 | — | 663 |
-| 8 | 2.515 | 2.671 (1.013 + 1.658) | 1 | — | 750 |
+| 8 | 2.515 | 2.719 (1.013 + 1.706) | 1 | — | 750 |
 
 Bütün cümleler ≤18 kelime (betikle ve denetçinin elle sayımıyla; en uzunları 17). Kısalan bölümlerde (B6, B7, B8) dönüm noktası kısa kurgu sahnesine döndü, yeni bilgi yok: B6 havarilerin öne çıktığı an ve Hz. Îsâ'nın yüz çevirenlere kızmaması; B7 duadan önceki sessizlik ve Allah'ın cevabından sonraki an; B8 havarilerin geceleri dua etmesi ve Hz. Îsâ'nın yolundan dönmemesi.
 
@@ -983,10 +983,10 @@ Bütün cümleler ≤18 kelime (betikle ve denetçinin elle sayımıyla; en uzun
 - Meryem 26: *Kur'an Yolu* kelimesine dönüldü: "Ben çok esirgeyici olan Allah'a adakta bulundum; artık bugün hiçbir insanla konuşmayacağım." (yayında "çok merhametli olan Allah'a söz verdim"). Ardından "Hz. Meryem'in adağı, Allah'a verdiği bir sözdü." (B1'deki "adamak" açıklamasıyla bağ; denetim küçük 8).
 - Meryem 35: Diyanet İşleri meali kelimesi "çocuk edinmesi" (karar 5a).
 - Nisâ 157: *Kur'an Yolu* parantezi metne alındı, "düşürüldüler" etken çatıyla "düştüler" (karar 5b).
-- Meryem 25 **kontrol edilmeli:** metin "Hurma ağacını kendine doğru silkele" (canlıdaki gibi). Diyanet Vakfı "Hurma dalını", Arapça kelime "gövde" (*cizʿ*); §I8 *Kur'an Yolu* ifadesini kısaltılmış kaydetmiş. Aktarımdan önce *Kur'an Yolu* ile birebir bakılır.
+- Meryem 25 (kontrol edildi, 24 Ekim 2026): metin "Hurma ağacını kendine doğru silkele" *Kur'an Yolu*'nun kelimesidir ("(Şu) hurma ağacını da kendine doğru silkele ki, üzerine taze, olgun hurma dökülsün"; Diyanet İşleri yeni meali de "Hurma ağacını"). "Hurma dalını" yalnız Diyanet Vakfı mealinde; metin değişmedi. Kaynak: kuranmeali.com âyet karşılaştırma sayfası (kuran.diyanet.gov.tr'nin *Kur'an Yolu* sayfası bu oturumda açılmadı; aynı sayfanın Saf 14 ve Âl-i İmrân 52 karşılıkları §I8 kaydıyla örtüşüyor).
 - Âl-i İmrân 47 "Ben evli değilim" sadeleştirmesi (Faz 2, S4 c); Meryem 31–32 "namazı, zekâtı ve anneme saygılı olmayı emretti" birleştirmesi (Faz 2); Âl-i İmrân 52 "Müslümanlarız" yerine Mâide 111'in "teslim olduk"u (Faz 2).
 - Aynı emir ("ittekullah") Zuhruf 63'te "Allah'a karşı gelmekten sakının", Mâide 112'de "Allah'a saygılı olun"; ikisi de ilgili âyetin *Kur'an Yolu* karşılığı (§I8), bilinçli fark.
-- Saf 14 parantezsiz ("Allah'ın yardımcıları olun"; denetim Ö6, açık karar 2).
+- Saf 14 (Hasan kararı 2): "Allah'ın dininin yardımcıları olun." Kontrolde *Kur'an Yolu* parantezsiz çıktı ("Allah'ın yardımcıları olun … “Allah'ın yardımcıları biziz”"); Diyanet Vakfı da parantezsiz. "dininin" Diyanet İşleri'nin eski mealinde parantezsiz geçer ("Allah'ın dininin yardımcıları olun … “Allah'ın dininin yardımcıları biziz”"); metin bu ifadeyi kullanır (Meryem 35'te olduğu gibi Diyanet İşleri meali). Havarilerin sözü bölümde tek biçimde: "Biz Allah için yardımcılarız" (Âl-i İmrân 52).
 
 **Hadis künyeleri** (derece hükmü verilmedi): B1 kutu Buhârî, "Enbiyâ", 32, 46 (TDV "MERYEM"; *Hadislerle İslâm* 6/91, 6/96). B3 kutu Buhârî, "Enbiyâ", 48; Müslim, "Birr", 7–8 (*Hadislerle İslâm* 6/97 dn. 52; TDV "ÎSÂ").
 
@@ -994,7 +994,7 @@ Bütün cümleler ≤18 kelime (betikle ve denetçinin elle sayımıyla; en uzun
 
 **İçerik denetimi (24 Ekim 2026; 0 kritik, 10 önemli, 16 küçük).** Uygulanan mekanik bulgular: Ö1 bu notlar; Ö3 B5 şifa cümlesi "Kur'an'a göre…" (KELİME çevre metni); Ö4 işaretlenmemiş iç ses ve tanıklık (B1 "anlaması çok zor bir haberdi", "yalnızca anlamak istiyordu"; B3 "Çok üzgündü."; B7 havarilerin şifaya tanıklığı çıktı; B4 "işte orada" çıktı); Ö5 B8 "[[Hz. Îsâ da Rabbinin, kendisine güvenenleri yalnız bırakmayacağına güveniyordu.]]"; Ö7 B7 "Topraktan biten her başak da…", Işıl "Peki o sofra nasıl bir sofraydı?" ve cevap Allah'ın sözüyle açılıyor; Ö8 ders birikimi (B1 itiraz cümlesi, B2 "yalnız bırakmamıştı" ve "Küçük bir hareketti bu…", B4 "her fırsatta yeniden", B6 "Bu dua … gösteriyordu" ve "büyük işler başarmaktan önce", B7 "-meliydi" → "bekleniyordu"); Ö9 B3 ve B8 tekrarları. Küçük 1 (B5 ve B7 sonları), 2, 3 (B6 Işıl duadan sonra, cevap tek cümle), 4, 5, 6, 8, 10, 12 (S4 dayanağı "tek bir Rabbin kullarıydı"; S5 B), 13 (F5 "Hz. Nûh'un oğullarından Sâm'ın", "Kur'an'ın ve hadislerin bildirdiklerini esas aldı"), 14'ün özet ve halka atıfları (final.md A ve B; D bölümündeki çapa ve promptlar v2'den önceki hâliyle kalır, notu A bölümünde) uygulandı. Küçük 7 meal notunda (kontrol), 9 meal notunda, 15 ve 16 uygulanmadı (açıklamasız kelimeler canlıdaki gibi; kısa paragraflar kutu ve Işıl'la bölünen yerlerde). Ölçüleri denetçi elle tahmin etti; bu tablo betikle alındı.
 
-**Hasan'a bırakılan dört bulgu (uygulanmadı):**
+**Hasan'a bırakılan dört bulgu — kararlar (24 Ekim 2026; dördünde de öneri kabul).** Hasan'ın sözü: "Yunus ve Îsâ: açık kararlarda senin önerilerin kabul. Yan oturumlar düzeltsin, önizlemeyi yenile; sonra okuyacağım." Uygulama: (1) `kuru-kutuk` alt metni aktarımda değişir; rötuş görsel turuna ("Aktarım için"). (2) B6 "Allah'ın dininin yardımcıları olun. Tıpkı “Biz Allah için yardımcılarız” diyen havariler gibi." (meal notu yukarıda). (3) B4 ve B8'e iki "hatırlıyor musun?" satırı (kurgu işaretli; B8'de iç ses paragrafının içinde). (4) B5 "yaptığı her güzel işi"; final.md E S5 C "Yaptığı işi Allah'a bağladığını". Ek: Meryem 25 kontrol edildi, metin zaten *Kur'an Yolu* kelimesinde. Bulguların ilk hâli:
 1. **B2 görselleri (Ö2).** Metinden kuruluk çıktı, ama üretilmiş `kuru-kutuk` görseli "kupkuru görünen bir gövde, tepesinde solgun, kurumuş yapraklar" gösteriyor (`kapak` ve `hurmali-agac`'ta da solgun dallar var). Çocuk kuru görünen ağacın hurma verdiğini resimde görür. (a) Görsel kalır, yalnız alt metin sadeleşir (ayrıntı tablosundaki plan). (b) `kuru-kutuk` görsel oturumunda rötuşlanır (yeşil yapraklı, sade bir gövde); `kapak` ve `hurmali-agac` kalır. *Önerim:* (b), yalnız `kuru-kutuk` için; görsel 1. kısımda, *tasa* kutusunun hemen ardında ve karar anından önce duruyor.
 2. **Saf 14 (Ö6).** B6 Devam: "Kur'an bu olayı inananlara güzel bir örnek olarak anlatır ve onlara şöyle seslenir: Allah'ın yardımcıları olun. Tıpkı “Allah'ın yardımcıları biziz” diyen havariler gibi." Parantezsiz hâli 8–11 yaşta "Allah'ın yardıma mı ihtiyacı var?" diye okunabilir; havarilerin sözü bölümde iki biçimde geçiyor. (a) "…onlara şöyle seslenir: Allah'ın dininin yardımcıları olun. Tıpkı “Biz Allah için yardımcılarız” diyen havariler gibi." (b) Bugünkü gibi. *Önerim:* (a); Diyanet meallerinin parantezi ("Allah'ın (dininin) yardımcıları") aktarımdan önce *Kur'an Yolu* ile doğrulanır (bu oturumda sayfa açılmadı).
 3. **Anlatıcının çocuğa seslenmesi (Ö10).** Çocuğa doğrudan seslenme yalnız B3 güvencesinde var (öbür v2'lerde 2–8 kez). İki halka anında kısa soru, yeni bilgi yok:
@@ -1004,7 +1004,8 @@ Bütün cümleler ≤18 kelime (betikle ve denetçinin elle sayımıyla; en uzun
 4. **Final S5'in dayanağı (küçük 11).** B5: "Hz. Îsâ başardığı her güzel işi Allah'a bağlıyor, övgüyü hiçbir zaman kendine almıyordu." Mucizeyi "başardığı iş" diye anmak, aynı paragraftaki "kendi gücüyle değil" vurgusuyla hafif çatışıyor. (a) Kalır. (b) "Hz. Îsâ yaptığı her güzel işi Allah'a bağlıyor…" ve final S5 C "Yaptığı işi Allah'a bağladığını" (33 harf, denge aynı). *Önerim:* (b).
 
 **Aktarım için** (yalnız `scripts/v2-aktar.mjs`'in yazmadıkları):
-- **Görsel alt metni:** `public/kitaplar/hz-isa/bolum-2/kuru-kutuk.jpg` (dosya adı değişmez) — alt: "Yakın planda, kabuğu çatlak bir hurma ağacı gövdesi ve dibindeki taşlar." (yayında "…yaprakları solmuş kupkuru görünen bir hurma ağacı gövdesi…"). Öbür 39 alt metin değişmedi. Karar 1(b) seçilirse görsel oturumu `ICERIK-GORSEL-SICILI.md`'de bu satırı günceller.
+- **Görsel alt metni:** `public/kitaplar/hz-isa/bolum-2/kuru-kutuk.jpg` (dosya adı değişmez) — alt: "Yakın planda, kabuğu çatlak bir hurma ağacı gövdesi ve dibindeki taşlar." (yayında "…yaprakları solmuş kupkuru görünen bir hurma ağacı gövdesi…"). Öbür 39 alt metin değişmedi.
+- **Görsel turu için (Hasan kararı 1):** `isa-2-kuru-kutuk` rötuşlanır: yeşil yapraklı, sade bir hurma gövdesi; kurumuş yaprak ve çatlak "kupkuru" görünüm yok. Dosya adı aynı. `kapak` ve `hurmali-agac` kalır. Görsel oturumu `ICERIK-GORSEL-SICILI.md`'de satırı ve alt metni günceller.
 - Sen Olsaydın, şıklar, Seçimini Karşılaştır, Bugüne Taşı görevleri değişmedi.
 - `SOZLUKCE-SICILI.md`, `ROZET-MATRISI.md`: kutu ve rozet yerleri aynı, güncelleme gerekmiyor. `ICERIK-GORSEL-SICILI.md`: yalnız `isa-2-kuru-kutuk` alt metni.
 - final.md D bölümündeki seslendirme notları ve görsel çapaları v2'den önceki metne göre; seslendirmeden önce güncellenir (V2 kuralı).
