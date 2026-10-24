@@ -2735,6 +2735,16 @@ Kurallar:
       güncellendi, `SOZLUKCE-SICILI` değişmedi (kutu yerleri aynı, mucize
       B3 ve B4'te düz metin). `kitap-denetle davud` 0 hata (uyarı: 6 ses yer
       tutucu). Yayına çıkması `main`'e geçişle olur. Sırada Hz. Süleyman.*
+      *24 Eki: **Hz. Süleyman v2 aktarıldı** (Hasan onayı; ilk kez `scripts/v2-aktar.mjs`
+      ile, yan oturum yalnız `kitap-icerikleri/V2-YAZIM-KURALLARI.md` ve Dâvûd'u okudu).
+      Yedi bölümün hikâye metni v2 ile birebir. Dava "ekin" (Enbiyâ 78) ve kalıplı "üzüm
+      bağı"; mescit Dâvûd v2'ye bağlandı, Beytülmakdis hadisi kutusu; Sâd 34 çocuk metninde
+      anılmaz, yalnız veli raporunda; Belkıs adı bir kez kalıpla; hüdhüdün suyu bulması;
+      Bakara 102'de uyduranlar "insanlar" değil; Neml 44 meal kelimesi ve anlatıcı
+      açıklaması; vefat sahnesi asaya dayanmış hâliyle ve Işıl güvencesiyle; kısalan
+      bölümlerde dönüm noktaları sahneye çevrildi (2.628–3.273). Ne Öğrendik B1-2
+      "Hikâyede…"; veli raporu 9 madde (rüzgâr maddesi); final testi değişmedi.
+      `kitap-denetle suleyman` 0 hata (uyarı: ses yer tutucu). Sırada Hz. Yunus.*
 
 ### 22 Ekim 2026 (iki eksenli kaynak ölçeği — Hasan onayı, bkz. 4.1/21 ve içerik brifi §4.3, §16/17b–c)
 

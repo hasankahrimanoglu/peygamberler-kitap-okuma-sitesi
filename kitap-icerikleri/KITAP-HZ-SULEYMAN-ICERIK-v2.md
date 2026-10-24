@@ -3,8 +3,8 @@
 > **Durum:** Yazıldı ve içerik denetçisinden iki kez geçti (24 Ekim 2026; 1. tur 0 kritik,
 > 12 önemli, 14 küçük; 2. tur, yalnız genişletilen sahneler: 0 kritik, 5 önemli, 8 küçük).
 > Mekanik bulgular düzeltildi. Denetim sonrası üç soruda ve uzunluk talimatında Hasan'ın
-> kararları işlendi ("Yazım notları" sonu). Açık soru yok; Hasan'ın onayı ve aktarım
-> bekleniyor.
+> kararları işlendi ("Yazım notları" sonu). Hasan onayladı, `src/data/books.ts`'e aktarıldı (24 Ekim 2026,
+> `scripts/v2-aktar.mjs`).
 > Yedi bölümün hikâye metninin kaynağı bu dosyadır. Büyük Final Testi, veli raporu,
 > sözlükçe, görsel briefleri ve kaynak notları `KITAP-HZ-SULEYMAN-ICERIK-final.md`'de kalır;
 > veli raporunun v2'ye bağlı maddeleri orada güncellendi (F5). Final testi değişmedi.
