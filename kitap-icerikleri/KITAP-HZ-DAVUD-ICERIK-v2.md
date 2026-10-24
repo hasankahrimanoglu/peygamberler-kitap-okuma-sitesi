@@ -1,8 +1,8 @@
 # KİTAP: Hz. Dâvûd — v2 (karma anlatım tarzı)
 
 > **Durum:** Yazıldı ve içerik denetçisinden geçti (24 Ekim 2026; 0 kritik, 6 önemli, 21
-> küçük). Mekanik bulgular düzeltildi; denetçinin Hasan'a bıraktığı bulgular beş açık soru
-> olarak "Yazım notları"nın sonunda. Hasan okuması ve aktarım bekleniyor.
+> küçük). Mekanik bulgular düzeltildi; denetim sonrası beş soruda Hasan önerileri kabul
+> etti (24 Ekim 2026), işlendi ("Yazım notları" sonu). Hasan okuması ve aktarım bekleniyor.
 > Altı bölümün hikâye metninin kaynağı bu dosyadır. Büyük Final Testi, veli raporu,
 > sözlükçe, görsel briefleri ve kaynak notları `KITAP-HZ-DAVUD-ICERIK-final.md`'de kalır;
 > veli raporunun ve final testinin v2'ye bağlı maddeleri orada güncellendi (E, F5).
@@ -186,7 +186,7 @@ Rozet: Güvenden Doğan Cesaret Rozeti
 
 Rozet sembolü: Çoban değneği ve sabah yıldızı
 
-Kaynak: Bakara 2/250 (dua; üçüncü cümle "bize yardım et" düzeyinde, §16/7, Faz 1), 2/251 (aynen ve bir kez: "Sonunda Allah'ın izniyle onları yendiler, Dâvûd da Câlût'u öldürdü"; hükümranlık ve hikmet); *Kur'an Yolu*, Faz 2. Rivayet, tek kalıpla: Câlût'un meydan okuması ve kimsenin cesaret edememesi (TDV "DÂVÛD": "Câlût meydan okuyunca hiç kimse ona karşı çıkmaya cesaret edemez", Taberî, *Târîḫ* I, 476–478; Sa'lebî, s. 206–207; TDV "TÂLÛT"; v2'de eklendi, tabloda yoktu: denetim sonrası açık soru 1), Hz. Dâvûd'un elinde sapanla öne çıkıp Câlût'un karşısında durması, Câlût'un onu görünce kızması (TDV "DÂVÛD": Taberî, *Târîḫ* I, 473; ayrıntı tablosu #17). Güvenlik paragrafı karar 5 (onaylı metin, harfiyen). Kurgu: ova, toz, inananların korkusu, Hz. Dâvûd'un kararlılığı ve iç sesi, akşam sahnesi.
+Kaynak: Bakara 2/250 (dua; üçüncü cümle "bize yardım et" düzeyinde, §16/7, Faz 1), 2/251 (aynen ve bir kez: "Sonunda Allah'ın izniyle onları yendiler, Dâvûd da Câlût'u öldürdü"; hükümranlık ve hikmet); *Kur'an Yolu*, Faz 2. Rivayet, tek kalıpla: Câlût'un meydan okuması ve kimsenin cesaret edememesi (TDV "DÂVÛD": "Câlût meydan okuyunca hiç kimse ona karşı çıkmaya cesaret edemez", Taberî, *Târîḫ* I, 476–478; Sa'lebî, s. 206–207; TDV "TÂLÛT"; v2'de eklendi, tabloda yoktu; denetim sonrası Hasan kararı 1: kalır, "askerlerden kimse"), Hz. Dâvûd'un elinde sapanla öne çıkıp Câlût'un karşısında durması, Câlût'un onu görünce kızması (TDV "DÂVÛD": Taberî, *Târîḫ* I, 473; ayrıntı tablosu #17). Güvenlik paragrafı karar 5 (onaylı metin, harfiyen). Kurgu: ova, toz, inananların korkusu, Hz. Dâvûd'un kararlılığı ve iç sesi, akşam sahnesi.
 
 ### HİKÂYE — 1. KISIM
 
@@ -215,7 +215,7 @@ Standart sözlükçede mevcut mu?: hayır (yeni terim; kutu Hz. Dâvûd'da)
 
 **[GÖRSEL — davud-2-dua]**
 
-Anlatılanlara göre Câlût, ordusunun önüne çıkıp meydan okudu. Karşısına çıkacak biri var mıydı? Ama inananlardan kimse ona doğru yürümeye cesaret edemedi. [[Askerler birbirine baktı. Kimse yerinden kıpırdamadı. Câlût'un sesi ovanın üstünde bir kez daha duyuldu.]]
+Anlatılanlara göre Câlût, ordusunun önüne çıkıp meydan okudu. Karşısına çıkacak biri var mıydı? Ama askerlerden kimse ona doğru yürümeye cesaret edemedi. [[Askerler birbirine baktı. Kimse yerinden kıpırdamadı. Câlût'un sesi ovanın üstünde bir kez daha duyuldu.]]
 
 ```text
 [IŞIL]
@@ -261,7 +261,7 @@ Sonra Kur'an'ın bildirdiği gibi oldu: “Sonunda Allah'ın izniyle onları yen
 
 [[Toz yavaş yavaş yere indi. Az önce kalabalık olan ova bomboş kalmıştı. İnananlar birbirlerine baktılar ve Rablerine şükrettiler.]]
 
-Bu zafer genç Hz. Dâvûd'un gücünden doğmamıştı, inananların sayısından da doğmamıştı. Onlar dua etmiş, sabretmiş ve yerlerinden ayrılmamıştı. Yardım eden ise Allah'tı. Nehrin kıyısında söylenen söz de gerçekleşmişti: Az bir birlik, Allah'ın izniyle sayıca çok bir birliği yenmişti.
+Bu zafer genç Hz. Dâvûd'un gücünden de inananların sayısından da doğmamıştı. Onlar dua etmiş ve sabretmişti; yardım eden ise Allah'tı. Nehrin kıyısında söylenen söz gerçekleşmişti: Az bir birlik, Allah'ın izniyle sayıca çok bir birliği yenmişti.
 
 ```text
 [IŞIL]
@@ -325,14 +325,14 @@ Standart sözlükçede mevcut mu?: hayır (yeni terim; kutu Hz. Dâvûd'da)
 
 **[GÖRSEL — davud-3-tomar]**
 
-[[Sabahın ilk ışıklarında pencerenin önüne oturur, Zebur'dan okumaya başlardı. O okurken çevresini bir sessizlik kaplardı. Onun sesini duyan, olduğu yerde durup dinlerdi.]]
+[[Sabahın ilk ışıklarında pencerenin önüne oturur, Zebur'dan okumaya başlardı. O okurken çevresini bir sessizlik kaplardı.]]
 
 ```text
 [BİLİYOR MUYDUN]
 Metin: Bir gece Peygamberimiz (s.a.v.), Kur'an'ı çok güzel okuyan bir arkadaşını dinledi. Sonra ona şöyle dedi: “Dâvûd Peygamber'e verilen güzel sesten sana da verilmiş.”
 ```
 
-[[Ama Hz. Dâvûd Rabbini andığında ona eşlik edenler yalnız insanlar değildi.]]
+[[Ama Hz. Dâvûd Rabbini andığında, onunla birlikte Rabbini anan başkaları da vardı.]]
 
 Allah, Kur'an'da onu “güçlü kulumuz” diye anar ve onun için “Yönü hep Allah'a dönüktü.” der. Allah dağları onun emrine vermişti. Sabah akşam Hz. Dâvûd Rabbini andığında, dağlar da onunla birlikte Allah'ı tesbih ederdi. Yani O'nu her eksiklikten uzak tutup yüceltirdi.
 
@@ -373,7 +373,7 @@ Hz. Dâvûd, ikisini birlikte yürütmenin yolunu buldu. Peygamberimiz (s.a.v.) 
 
 [[Gece herkes uyurken küçük kandilini yakar, hasırın üzerinde sessizce namaza dururdu. Penceresinden yıldızlar görünürdü.]] Gündüzleri ise halkının işleriyle ilgilenirdi. [[Kapısına gelen kimseyi boş çevirmezdi.]]
 
-Böylece ne ibadeti için işlerini bıraktı ne de işleri için ibadetini. İkisini de ölçülü yaptı ve hiçbirini bırakmadı. [[Onun ibadeti bir anda parlayıp sönen bir ateş gibi değildi. Her gece aynı yerde sakin sakin yanan bir kandil gibiydi.]]
+Böylece ne ibadeti için işlerini bıraktı ne de işleri için ibadetini; ikisini de ölçülü yaptı. [[Onun ibadeti bir anda parlayıp sönen bir ateş gibi değildi. Her gece aynı yerde sakin sakin yanan bir kandil gibiydi.]]
 
 [[Oruçlu olduğu günlerin akşamında sofrası sadeydi: birkaç hurma, bir parça ekmek ve bir kâse su. Ertesi gün yine yemek yer, gücünü toplardı.]]
 
@@ -410,7 +410,7 @@ Rozet: Alın Teri Rozeti
 
 Rozet sembolü: Örgülü demir halkalar
 
-Kaynak: Sebe 34/10 (demirin yumuşatılması), 34/11 ("Geniş zırhlar imal et, örgüsünü ölçülü yap": *Kur'an Yolu*, Faz 2; devamı "İyi işler yapın. Kuşkusuz ben, yaptıklarınızı görmekteyim": Diyanet Vakfı meali, bu oturumda okundu; ayrıntı tablosu #8), Enbiyâ 21/80 (zırh, savaş darbelerinden koruma, "Artık şükredecek misiniz?"). Hadis: Buhârî, Büyû', 15, no. 2072 (*Hadislerle İslâm* 6/83; "yer idi" → "yerdi"). Rivayet: "mum gibi" (PDF YD s. 224, dn. 29: Sa'lebî, s. 212; İbn Esîr I, 215; Çantay meali parantezi; mucizenin görünüşü, ayrıntı tablosu #21); hükümdarken ülkenin malından pay almaması (TDV "DÂVÛD", "ZIRH"; *Hadislerle İslâm* 6/83 "hükümdar olmasına rağmen"). **Örnek sahne (karar 3):** yakınlarının maaş teklifi; dayanağı yukarıdaki hadis ve TDV; isimsiz kişiler, kalıpsız, `[[…]]`. **İkinci örnek sahne (denetim sonrası açık soru 2):** Hz. Dâvûd'un bitirdiği zırhı isimsiz bir gence vermesi (`zirhi-veren` görselinin sahnesi); dayanağı Enbiyâ 80 (zırh insanları korumak için) ve el emeği hadisi; yeni kişi ve ad yok, değişmez alana dokunmuyor. Çıkan: ücret almama (PDF s. 224–226, TDV "ZIRH" ile çelişir). Kurgu: demir çubuk hitabı, ocak başı, teklif sahnesi, Işıl'a cevaplar, akşam ekmeği.
+Kaynak: Sebe 34/10 (demirin yumuşatılması), 34/11 ("Geniş zırhlar imal et, örgüsünü ölçülü yap": *Kur'an Yolu*, Faz 2; devamı "İyi işler yapın. Kuşkusuz ben, yaptıklarınızı görmekteyim": Diyanet Vakfı meali, bu oturumda okundu; ayrıntı tablosu #8), Enbiyâ 21/80 (zırh, savaş darbelerinden koruma, "Artık şükredecek misiniz?"). Hadis: Buhârî, Büyû', 15, no. 2072 (*Hadislerle İslâm* 6/83; "yer idi" → "yerdi"). Rivayet: "mum gibi" (PDF YD s. 224, dn. 29: Sa'lebî, s. 212; İbn Esîr I, 215; Çantay meali parantezi; mucizenin görünüşü, ayrıntı tablosu #21); hükümdarken ülkenin malından pay almaması (TDV "DÂVÛD", "ZIRH"; *Hadislerle İslâm* 6/83 "hükümdar olmasına rağmen"). **Örnek sahne (karar 3):** yakınlarının maaş teklifi; dayanağı yukarıdaki hadis ve TDV; isimsiz kişiler, kalıpsız, `[[…]]`. **İkinci örnek sahne (denetim sonrası Hasan kararı 2: kalır):** Hz. Dâvûd'un bitirdiği zırhı isimsiz bir gence vermesi (`zirhi-veren` görselinin sahnesi); dayanağı Enbiyâ 80 (zırh insanları korumak için) ve el emeği hadisi; yeni kişi ve ad yok, değişmez alana dokunmuyor. Çıkan: ücret almama (PDF s. 224–226, TDV "ZIRH" ile çelişir). Kurgu: demir çubuk hitabı, ocak başı, teklif sahnesi, Işıl'a cevap, ocak başındaki yorgunluk, akşam ekmeği.
 
 ### HİKÂYE — 1. KISIM
 
@@ -448,7 +448,7 @@ Hz. Dâvûd artık bir hükümdardı. [[Bir gün yakınlarından birkaç kişi o
 
 — [[Sen bir hükümdarsın, dediler. Ülkenin malından kendine bir pay ayır. Bu sıcakta yorulmana ne gerek var?]]
 
-[[Teklif onu ocağın sıcağından ve yorgunluğundan kurtaracaktı. Kimse bir hükümdarın örs başında ter dökmesini beklemiyordu. Hz. Dâvûd elindeki yarım kalmış halkaya baktı. Sonra kapıdakilere döndü…]]
+[[Teklif onu ocağın sıcağından ve yorgunluğundan kurtaracaktı. Kimse bir hükümdarın ocak başında ter dökmesini beklemiyordu. Hz. Dâvûd elindeki yarım kalmış halkaya baktı. Sonra kapıdakilere döndü…]]
 
 ### SEN OLSAYDIN
 
@@ -464,22 +464,17 @@ Seçimden sonra: Cevabını aklında tut. Hikâyenin devamında neler olduğunu 
 
 ### HİKÂYE DEVAM EDİYOR
 
-Hz. Dâvûd teklifi kabul etmedi. Anlatılanlara göre hükümdar olduğu hâlde ülkenin malından kendisine hiç pay almadı. Örsünün başında çalışmayı sürdürdü.
+Hz. Dâvûd teklifi kabul etmedi. Anlatılanlara göre hükümdar olduğu hâlde ülkenin malından kendisine hiç pay almadı. Ocağın başında çalışmayı sürdürdü.
 
 **[GÖRSEL — davud-4-ocak-basinda]**
 
 Peygamberimiz (s.a.v.) de onu anarken şöyle buyurmuştur: “Hiç kimse kendi el emeğinden daha hayırlı bir yiyecek yememiştir. Allah'ın peygamberi Dâvûd da kendi elinin emeğinden yerdi.”
 
-```text
-[IŞIL]
-Metin: Hükümdar ama yine de ocağın başında çalışıyor!
-```
-
-[[Evet. Alnından ter damlar, kolları yorulurdu. Ama yaptığı her zırhın bir insanı koruyacağını bilir, işini yarım bırakmazdı.]]
+[[Ocağın başında ter döker, kolları yorulurdu. Ama yaptığı her zırhın bir insanı koruyacağını bilir, işini yarım bırakmazdı.]]
 
 [[Bir gün demirhanenin kapısına genç bir adam geldi. Hz. Dâvûd yeni bitirdiği zırhı katladı ve ona uzattı. Genç adam zırhı iki eliyle, özenle aldı.]]
 
-[[Akşam olunca tezgâhın kenarında küçük bir ekmek ve toprak bir bardak dururdu. Bu, kendi elinin emeğiyle kazandığı ekmekti.]]
+[[Akşam olunca tezgâhın kenarında küçük bir ekmek ve toprak bir bardak dururdu.]]
 
 **[GÖRSEL — davud-4-zirhi-veren]**
 
@@ -610,7 +605,7 @@ Metin: Nefsin istekleri ne demek?
 
 Hz. Dâvûd, bu öğüde uygun olarak insanlar arasında hakla hükmetti. [[Kapısında sırasını bekleyenler zengin ya da yoksul, tanıdık ya da yabancıydı. Hz. Dâvûd hepsini aynı dikkatle dinler, sonra hükmünü söylerdi.]]
 
-Sınandığını anladığı anda ilk işi Rabbine dönmek olmuştu. Kur'an'ın dediği gibi, onun yönü hep Allah'a dönüktü. [[Akşam olurken yüksek taş duvarların üstünde kuşlar dinleniyordu. Yıllar böyle geçip gidecekti.]]
+Sınandığını anladığı anda ilk işi Rabbine dönmek olmuştu. Kur'an'ın dediği gibi, onun yönü hep Allah'a dönüktü. [[Akşam olurken yüksek taş duvarların üstünde kuşlar dinleniyordu.]]
 
 **[GÖRSEL — davud-5-aksam-zeytin]**
 
@@ -655,7 +650,7 @@ Allah ona bir oğul armağan etmişti: Hz. Süleyman (a.s.). [[Hz. Süleyman bab
 
 Allah, bir ekin davasında Hz. Süleyman'ın meseleyi iyi anlamasını sağlamıştı; babası da bunu kendi gözüyle görmüştü. Anlatıldığına göre Hz. Dâvûd'un gönlünde büyük bir dilek vardı: Allah'a ibadet edilecek büyük bir mescit.
 
-[[Bazı sabahlar şehre bakan kayalık bir tepeye çıkardı. Tepenin kenarında birkaç kesme taş ve uzun bir sedir kirişi duruyordu. Hz. Dâvûd orada durup uzun uzun düşünürdü.]]
+[[Bazı sabahlar şehre bakan kayalık bir tepeye çıkar, orada durup uzun uzun düşünürdü.]]
 
 **[GÖRSEL — davud-6-mescit-tepesi]**
 
@@ -865,7 +860,7 @@ Profil eylemi: Görevi Listeme Ekle / Şimdilik Değil
   B4 "Hz. Dâvûd, bir hükümdarın da alın teriyle…", "Sen de bir işi kendi ellerinle…"; B5 "Bu
   öğüt, hüküm veren herkes içindir…"; B6 "Senden küçük birine bir işi bırakmak…". Bölüm
   sonları: B1 ateşler ve sessizlik, B2 akşam sürüsü ve yeni yol, B3 demir köprüsü, B4 mabet
-  köprüsü, B5 akşam ve "Yıllar böyle geçip gidecekti.", B6 Sâd 17 ve dağlar.
+  köprüsü, B5 akşam ve kuşlar (denetim sonrası karar 4c), B6 Sâd 17 ve dağlar.
 - **#34** *tesbih* âyet mealinde ve bir kez anlatıda, hemen ardından "Yani O'nu her
   eksiklikten uzak tutup yüceltirdi." (sicildeki Yunus 3 tanımıyla uyumlu); öteki yerlerde
   "anmak". *mabet* anlatıda 3 kez (yayında 5): B4'te ilk geçişte "mabede, yani ibadet
@@ -884,8 +879,8 @@ Profil eylemi: Görevi Listeme Ekle / Şimdilik Değil
 **Örnek sahneler ve kurgu konuşmalar:** İki örnek sahne, ikisi de B4'te ve bölümün ana
 olayı değil (ana olay Sebe 10–11 ve el emeği hadisi): maaş teklifi (karar 3; isimsiz
 yakınların tek konuşma satırı kurgudur) ve zırhın isimsiz bir gence verilmesi (`zirhi-veren`
-görselinin sahnesi; dayanağı Enbiyâ 80 ve el emeği hadisi; denetimde kayda geçirildi, açık
-soru 2). Öteki konuşmalar Kur'an'dan (Bakara 246, 249, 250; Sâd 22–24, 26) ya da hadisten.
+görselinin sahnesi; dayanağı Enbiyâ 80 ve el emeği hadisi; denetimde kayda geçirildi, Hasan
+kararı 2 ile kaldı). Öteki konuşmalar Kur'an'dan (Bakara 246, 249, 250; Sâd 22–24, 26) ya da hadisten.
 Kurgu yalnız sahne, eylem ayrıntısı, iç ses ve anlatıcının halka cümleleri (`[[…]]`).
 Kur'an ve hadis bilgisi işaretin dışında. "Genç Hz. Dâvûd orada durdu." (B2) işaretsiz
 kaldı: TDV'deki rivayetin kendisi ("sapanını alıp Câlût'un karşısına dikilir"), aynı rivayet
@@ -901,7 +896,8 @@ Süleyman'da. "Yönü hep Allah'a dönüktü" iki kitapta da Kur'an'ın aynı ke
 Hz. Sâlih 3). Peygamberimiz beş yerde (B1 kutu, B3 anlatı ve kutu, B4 anlatı, B6 kutu);
 siyer ayrıntısı yok; emsal Hz. İsmail, Yusuf, Eyyûb ve Musa v2.
 
-**Işıl ve yardımcı bloklar:** Işıl 9 (B1 2, B2 2, B3 1, B4 2, B5 1, B6 1), soru başlığı 1
+**Işıl ve yardımcı bloklar:** Işıl 8 (B1 2, B2 2, B3 1, B4 1, B5 1, B6 1; B4'teki "Hükümdar ama
+yine de ocağın başında çalışıyor!" denetim sonrası karar 2 ile çıktı), soru başlığı 1
 (B5), "Biliyor muydun?" kutusu 4 (B1 çobanlık, B3 hem peygamber hem hükümdar ve güzel ses,
 B6 dua). Işıl kişilerle konuşmuyor, hüküm vermiyor, kitaba özgü yasak sorulardan hiçbirini
 sormuyor; bütün satırları ≤12 kelime.
@@ -912,16 +908,17 @@ Hiçbir kutulu kelime kendi kutusundan önce geçmiyor. B5 artık anlatıcıyla 
 kutusu 1. kısmın ikinci bloğu.
 
 **Ölçüler** (anlatı metni, KELİME blokları dahil; Işıl, soru başlığı ve kutu ayrı; kurgu
-işaretleri sayılmadı; `scripts/v2-onizleme-uret.mjs` çıktısından betikle; denetim sonrası):
+işaretleri sayılmadı; `scripts/v2-onizleme-uret.mjs` çıktısından betikle; denetim sonrası
+beş karardan sonra):
 
 | Bölüm | Anlatı (1. kısım + Devam) | Yayındaki | Işıl | Soru başlığı | Kutu | En uzun düz metin aralığı |
 |---|---:|---:|---:|---:|---:|---:|
 | 1 | 3.076 (1.983 + 1.093) | 3.138 | 2 | — | 1 | 552 |
-| 2 | 3.195 (1.733 + 1.462) | 2.678 | 2 | — | — | 622 |
-| 3 | 3.028 (1.877 + 1.151) | 2.565 | 1 | — | 2 | 579 |
-| 4 | 2.697 (1.631 + 1.066) | 2.702 | 2 | — | — | 644 |
-| 5 | 2.950 (1.454 + 1.496) | 2.551 | 1 | 1 | — | 768 |
-| 6 | 2.752 (1.406 + 1.346) | 2.644 | 1 | — | 1 | 627 |
+| 2 | 3.158 (1.732 + 1.426) | 2.678 | 2 | — | — | 622 |
+| 3 | 2.964 (1.836 + 1.128) | 2.565 | 1 | — | 2 | 571 |
+| 4 | 2.651 (1.632 + 1.019) | 2.702 | 1 | — | — | 645 |
+| 5 | 2.920 (1.454 + 1.466) | 2.551 | 1 | 1 | — | 768 |
+| 6 | 2.669 (1.323 + 1.346) | 2.644 | 1 | — | 1 | 627 |
 
 Cümlelerin hepsi ≤18 kelime (B3'teki hadis cümlesi denetimde iki cümleye ayrıldı).
 
@@ -975,8 +972,9 @@ testi ve F5'in beş cümle sınırı doğrulandı. **Mekanik bulgular düzeltild
   onaylı, yayındaki F5/8'de de vardı); "Ekim-kapanış halkaları" set boyunca kullanılan terim
   (Faz 1 §B2, Musa v2; Küçük 21); Süleyman B2'deki uzun kalıp Süleyman turunun işi.
 
-**Denetim sonrası açık sorular (Hasan):** Denetçinin "Hasan'a" bıraktığı bulgular
-uygulanmadı; metin bugünkü hâliyle duruyor.
+**Denetim sonrası açık sorular (Hasan):** Denetçinin "Hasan'a" bıraktığı bulgular burada
+soruldu (aşağıdaki "bugün" metinleri soru anındaki hâldir); Hasan'ın kararları ve uygulaması
+bu listenin ardında.
 1. **B2: Câlût'un meydan okuması (Önemli 1).** Yazarken ekledim, ayrıntı tablosunda yoktu.
    Bugünkü metin: "Anlatılanlara göre Câlût, ordusunun önüne çıkıp meydan okudu. Karşısına
    çıkacak biri var mıydı? Ama inananlardan kimse ona doğru yürümeye cesaret edemedi.
@@ -1030,9 +1028,34 @@ uygulanmadı; metin bugünkü hâliyle duruyor.
    "örs"ü bilmeyebilir). (c) B1'deki "lâyık" kalsın (Bakara 247'nin kelimesi). *Önerim:* (a)
    ve (b) evet, (c) kalsın.
 
+**Hasan'ın denetim sonrası beş kararı (24 Ekim 2026; beşinde de öneri kabul).** Hasan'ın
+sözü: "Dâvûd: beş kararda öneriler kabul. Yan oturum düzeltsin, önizlemeyi yenile; sonra
+okuyacağım." Uygulama:
+1. **B2 meydan okuma** kalır, kalıpla; "inananlardan kimse" → "askerlerden kimse".
+2. **B4:** Işıl "Hükümdar ama yine de ocağın başında çalışıyor!" çıktı; anlatıcı cümlesi
+   "[[Ocağın başında ter döker, kolları yorulurdu. Ama yaptığı her zırhın bir insanı
+   koruyacağını bilir, işini yarım bırakmazdı.]]"; zırhın bir gence verildiği sahne işaretli
+   örnek sahne olarak kaldı; "Bu, kendi elinin emeğiyle kazandığı ekmekti." çıktı.
+3. **B3:** "Onun sesini duyan, olduğu yerde durup dinlerdi." çıktı; "[[Ama Hz. Dâvûd Rabbini
+   andığında, onunla birlikte Rabbini anan başkaları da vardı.]]"
+4. (a) **B2:** "Bu zafer genç Hz. Dâvûd'un gücünden de inananların sayısından da doğmamıştı.
+   Onlar dua etmiş ve sabretmişti; yardım eden ise Allah'tı. Nehrin kıyısında söylenen söz
+   gerçekleşmişti: Az bir birlik, Allah'ın izniyle sayıca çok bir birliği yenmişti." (Bakara
+   249'un B1'deki meal ifadesine bağlı: "Nice az birlik … sayıca çok birliği yenmişlerdir.")
+   (b) **B3:** "Böylece ne ibadeti için işlerini bıraktı ne de işleri için ibadetini; ikisini
+   de ölçülü yaptı." (c) **B5:** son cümle "[[Yıllar böyle geçip gidecekti.]]" çıktı; bölüm
+   kuşlarla biter.
+5. (a) **B6:** "Tepenin kenarında birkaç kesme taş ve uzun bir sedir kirişi duruyordu." çıktı;
+   paragraf "[[Bazı sabahlar şehre bakan kayalık bir tepeye çıkar, orada durup uzun uzun
+   düşünürdü.]]" (görsel değişmedi). (b) **B4:** "örs başında" → "ocak başında" (teklif
+   paragrafı), "Örsünün başında" → "Ocağın başında" (Devam). (c) **B1** "lâyık" kaldı.
+   Not: B4 Devam'da "Ocağın başında çalışmayı sürdürdü." ile "Ocağın başında ter döker…"
+   arasında hadis paragrafı ve görsel var; tekrar kısa aralıklı ama iki karar da harfiyen
+   uygulandı.
+
 **Aktarım için:**
 - `paragraphs` ve `continuationParagraphs` v2'den alınır; `[[`/`]]` silinir. Yeni bloklar:
-  Işıl 9, soru başlığı 1, "Biliyor muydun?" kutusu 4. Kutu ve veli metinlerindeki
+  Işıl 8, soru başlığı 1, "Biliyor muydun?" kutusu 4. Kutu ve veli metinlerindeki
   `*Hadislerle İslâm*` yıldızları `books.ts`'e taşınmaz (canlı veli metinlerinde italik yok).
   B5'in ilk bloğu artık düz metin (`dropCap` onda); *adalet* kutusu ikinci blok.
 - Otuz sahne görseli aynı bölümde, aynı parçada, aynı sırada; alt metin değişmedi.
@@ -1076,6 +1099,6 @@ uygulanmadı; metin bugünkü hâliyle duruyor.
 - `SOZLUKCE-SICILI.md` ve `ICERIK-GORSEL-SICILI.md`: kutu ve görsel yerleri aynı; güncelleme
   gerekmiyor. (İsteğe bağlı: sicilin Dâvûd notuna "*mabet* anlatıda azaltıldı, B4'te 'yani
   ibadet ettiği yer' açıklaması" satırı.)
-- Açık sorular (yukarıda) kabul edilirse ölçüler yeniden alınır; "Aktarım için"deki KELİME
-  çevre metinleri bu sorulardan etkilenmez (5b'deki "örs" yalnız düz metinde).
+- Denetim sonrası beş karar işlendi; ölçüler yukarıdaki tabloda. KELİME çevre metinleri bu
+  kararlardan etkilenmedi ("örs" → "ocak" yalnız düz metinde).
 - Geçici önizleme dosyası (`davudV2Onizleme.ts`) repoya konmadı.

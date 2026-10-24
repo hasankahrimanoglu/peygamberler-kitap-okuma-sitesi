@@ -27,6 +27,14 @@
 > (5) F5/6 kalıp alıntısı "açılan bir sahnede". Beş açık soru v2 "Yazım notları"nın sonunda:
 > B2 meydan okuma; B4 ikinci örnek sahne ve tekrarlar; B3 ses ve "eşlik" cümleleri; B2, B3,
 > B5 tekrarları; B6 mescit tepesi ve "örs". Ölçüler 2.697–3.195.
+>
+> **Hasan'ın denetim sonrası beş kararı (24 Ekim 2026; beşinde de öneri kabul):** (1) B2
+> meydan okuma kalır, "askerlerden kimse". (2) B4 Işıl satırı çıktı, "Ocağın başında ter
+> döker", zırh teslim sahnesi örnek sahne olarak kaldı, "Bu, kendi elinin emeğiyle kazandığı
+> ekmekti." çıktı. (3) B3 "Onun sesini duyan…" çıktı; "onunla birlikte Rabbini anan başkaları
+> da vardı". (4) B2 "Bu zafer…" kısaldı; B3 "ikisini de ölçülü yaptı" tek cümle; B5 "Yıllar
+> böyle geçip gidecekti." çıktı. (5) B6 kesme taş ve sedir kirişi cümlesi çıktı; B4 "örs" →
+> "ocak" (iki yer); B1 "lâyık" kaldı. Ölçüler 2.651–3.158 (v2 yazım notları).
 > **Kural:** brif §4.3 (üç alan, kaynak ölçeği), §7.2 (ölçüler), §7.10 (karma tarz,
 > örnek sahne), §16 (yerleşik kararlar; §16/1 ölüm, §16/6 kahramanlaştırma, §16/8 kalıp,
 > §16/9 sayılar, §16/12 melek ve vahiy, §16/13 iki yorum, §16/17b–c hadis ve alıntı,
