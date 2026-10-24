@@ -17,6 +17,13 @@
 > onaylı 7b metniyle; final S1 ve S5 dayanakları için B1 "Bağ onarılıp…", B5 "ileri
 > gelenlerine danıştı". Üç açık soru v2 "Yazım notları"nın sonunda: Bakara 102'nin öznesi
 > (#23), B2 kutusunun uzunluğu (karar 2b), Neml 44 (#38). Ölçüler 2.515–3.034.
+>
+> **Hasan'ın denetim sonrası kararları (24 Ekim 2026; üçünde de öneri kabul):** (1) Bakara
+> 102 "…sözler uyduruldu; bazı insanlar bunlara inandı."; (2) B2 kutusu üç cümle; (3) Neml
+> 44 *Kur'an Yolu* kelimesi "zulmetmişim" + "Yani kendine haksızlık etmişti.". Uzunluk
+> talimatı: kısalan bölümlerde özetle geçilen dönüm noktası sahneye döndü (yedi bölümde
+> birer sahne; liste v2 "Yazım notları"nda). 2. denetim (yalnız değişen yerler): 0 kritik,
+> 5 önemli, 8 küçük, hepsi mekanik, uygulandı. Ölçüler 2.628–3.273; açık soru yok.
 > **Kural:** `V2-YAZIM-KURALLARI.md` (akış, kaynak, çocuk metni, sabit alanlar); brif §4.3
 > (üç alan), §7.2 (ölçüler), §7.10 (karma tarz, örnek sahne), §16 (yerleşik kararlar). Faz 1
 > kararları (`KITAP-HZ-SULEYMAN-KAYNAK-DENETIMI.md`, karar kaydı 16 Ekim 2026) ve Faz 2 karar
