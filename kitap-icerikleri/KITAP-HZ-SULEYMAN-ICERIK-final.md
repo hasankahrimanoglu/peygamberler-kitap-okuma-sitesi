@@ -26,6 +26,12 @@
 > billur, gayb) · Bugüne Taşı B1, B3, B6 · Tanık Sayfası yok · Belkıs adı bir kez · atlar
 > B3 açılışında.
 >
+> **v2 (24 Ekim 2026):** Yedi bölümün hikâye metni karma tarzda yeniden yazıldı:
+> `KITAP-HZ-SULEYMAN-ICERIK-v2.md` (kararlar `KITAP-HZ-SULEYMAN-KARMA-AYRINTI-TABLOSU.md`).
+> Bu dosyada v2'ye göre güncellenenler: F5 (Sâd 34 maddesi, vefat maddesi, yeni "rüzgârda
+> uçar mıydı?" maddesi). Final testi (E) değişmedi. D bölümündeki hikâye metinleri, kalite
+> özetleri ve seslendirme notları v2'den önceki hâlidir; seslendirmeden önce güncellenir.
+>
 > **Kitap kapağı ve harita durağı görseli bu teslimde VARDIR** (`public/kitaplar/hz-suleyman/`
 > klasörü yok; §C1, §C2).
 
@@ -1757,6 +1763,14 @@ Hayvanların da kendi aralarında haberleşme yolları vardır ve onları dikkat
 sert söz sorulursa, Kur'an'ın bir ceza anlatmadığını hatırlatın: hüdhüd açık bir gerekçe
 getirmişti ve Hz. Süleyman onu önce dinleyip sonra haberin doğruluğunu araştırdı.
 
+**"Hz. Süleyman ordusuyla rüzgârda uçar mıydı?"**
+Kur'an, rüzgârın Hz. Süleyman'ın emriyle onun dilediği yere estiğini ve sabah bir aylık,
+akşam bir aylık yol aldığını bildirir (Sebe 12; Sâd 36). Ordunun, atların ya da bir halının
+rüzgârla uçtuğunu Kur'an söylemez; bunlar sonradan anlatılan ve doğruluğu tartışmalı
+rivayetlerdir. Kitap yalnız Kur'an'ın bildirdiğini anlattı. Çocuğunuz bunu uçaklara
+benzetirse, bunun bazı yorumcuların düşüncesi olduğunu, Kur'an'ın böyle bir açıklama
+yapmadığını söyleyebilirsiniz.
+
 **"Hz. Süleyman savaş mı açacaktı? Sebe'de savaş oldu mu?"**
 Kur'an, Hz. Süleyman'ın hediyeleri geri çevirdikten sonra Sebe halkına karşı koyamayacakları
 bir güçle geleceğini bildirdiğini anlatır (Neml 37); kitap bu uyarıyı ayrıntısız verdi.
@@ -1775,18 +1789,19 @@ söyleyebilirsiniz; birinci bölümde Hz. Süleyman'ın babasının yanında din
 birlikte hatırlayabilirsiniz.
 
 **"Hz. Süleyman öldüğünde neden kimse fark etmedi?"**
-Kur'an, onun asasına dayanmış dururken vefat ettiğini ve bunu ancak asayı kemiren bir ağaç
-kurdunun gösterdiğini bildirir (Sebe 14). Bunun ne kadar sürdüğünü Kur'an bildirmez;
+Kur'an, onun öldüğünü ancak asasını kemiren bir ağaç kurdunun gösterdiğini bildirir
+(Sebe 14). Bunun ne kadar sürdüğünü Kur'an bildirmez;
 anlatımlardaki süreler rivayettir ve kitap bunlara yer vermedi. Âyetin anlattığı asıl şey,
-güçlü cinlerin bile gizli olanı, yani gaybı bilmediğidir. Çocuğunuz ölümle ilgili sorular
-sorarsa kısa ve sakin cevaplar verin; Kur'an'ın Hz. Süleyman için "katımızda yüksek bir yakınlık
-derecesi ve güzel bir geleceği vardır" dediğini hatırlatın (Sâd 40).
+güçlü cinlerin bile gizli olanı, yani gaybı bilmediğidir. Kitap bu sahnede Işıl'ın sorusuyla
+kısa ve sakin bir açıklama verir. Çocuğunuz ölümle ilgili sorular sorarsa kısa ve sakin
+cevaplar verin; Kur'an'ın Hz. Süleyman için "katımızda yüksek bir yakınlık derecesi ve güzel
+bir geleceği vardır" dediğini hatırlatın (Sâd 40).
 
 **"Kur'an'da Hz. Süleyman'ın sınandığı söyleniyor. Bu sınav neydi? Atları neden geri istedi?"**
 Kur'an, Allah'ın Hz. Süleyman'ı bir sınavdan geçirdiğini ve "tahtının üstüne bir ceset koyduğunu"
 bildirir, ardından onun Rabbine yönelip dua ettiğini anlatır (Sâd 34–35). Bu "ceset"in ne
-olduğunu Kur'an açıklamaz; âlimler farklı yorumlar yapmıştır, kitap da sınavın adını
-koymadan anlattı. Atlar âyeti (Sâd 31–33) için de farklı yorumlar vardır; bazı tefsirlerde
+olduğunu Kur'an açıklamaz. Bu konuda anlatılan hikâyelerin çoğunu âlimler peygamberlere
+yakıştırmaz; kitap bu yüzden onlara yer vermedi ve sınavı anmadı. Atlar âyeti (Sâd 31–33) için de farklı yorumlar vardır; bazı tefsirlerde
 atlarla ilgilenirken ibadetini geciktirdiği ve atları kestirdiği anlatılır. Kitap, Kur'an'ın
 kendi ifadesini esas aldı: Diyanet'in Kur'an Yolu mealindeki gibi atları Rabbini
 hatırlattığı için sevdiği ve geri getirip sıvazladığı anlamını.
@@ -1798,6 +1813,7 @@ annenin şefkatini ortaya çıkaran bir yol bulduğu anlatılır (Buhârî, Enbi
 kaybı ve bıçakla ilgili bir an geçtiği için kitap bu davayı çocuk metnine almadı; aynı
 değeri birinci bölümdeki bağ davası taşıyor. Melikenin daha sonra kiminle evlendiğini ise
 Kur'an bildirmez; tefsirlerde farklı görüşler vardır ve kitap bu konuya girmedi.
+
 *(Künye 22 Ekim 2026'da Diyanet Hadislerle İslâm c. 5 s. 403'ten doğrulandı, brif §16/17b.)*
 
 ---
