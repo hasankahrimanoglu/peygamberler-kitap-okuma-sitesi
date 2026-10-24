@@ -1,8 +1,10 @@
 # KİTAP: Hz. Süleyman — v2 (karma anlatım tarzı)
 
-> **Durum:** Yazıldı ve içerik denetçisinden geçti (24 Ekim 2026; 0 kritik, 12 önemli, 14
-> küçük). Mekanik bulgular düzeltildi; üç açık soru "Yazım notları" sonunda. Hasan'ın onayı
-> ve aktarım bekleniyor.
+> **Durum:** Yazıldı ve içerik denetçisinden iki kez geçti (24 Ekim 2026; 1. tur 0 kritik,
+> 12 önemli, 14 küçük; 2. tur, yalnız genişletilen sahneler: 0 kritik, 5 önemli, 8 küçük).
+> Mekanik bulgular düzeltildi. Denetim sonrası üç soruda ve uzunluk talimatında Hasan'ın
+> kararları işlendi ("Yazım notları" sonu). Açık soru yok; Hasan'ın onayı ve aktarım
+> bekleniyor.
 > Yedi bölümün hikâye metninin kaynağı bu dosyadır. Büyük Final Testi, veli raporu,
 > sözlükçe, görsel briefleri ve kaynak notları `KITAP-HZ-SULEYMAN-ICERIK-final.md`'de kalır;
 > veli raporunun v2'ye bağlı maddeleri orada güncellendi (F5). Final testi değişmedi.
@@ -104,7 +106,16 @@ Seçimden sonra: Cevabını aklında tut. Hikâyenin devamında neler olduğunu 
 
 ### HİKÂYE DEVAM EDİYOR
 
-[[Hz. Süleyman sonunda saygıyla söz istedi. Babası ona döndü ve gülümseyerek konuşmasını bekledi.]]
+[[Hz. Süleyman sonunda derin bir nefes aldı ve saygıyla söz istedi:]]
+
+[[— Babacığım, izin verirsen aklıma gelen bir şeyi söylemek istiyorum.]]
+
+```text
+[IŞIL]
+Metin: İzin istedi! Babası ne diyecek?
+```
+
+[[Avludakiler başlarını çevirdi. Babası ona döndü ve gülümseyerek konuşmasını bekledi.]]
 
 Hz. Süleyman düşüncesini babasına söyledi. Önerisi şuydu: Bağ bir süre sürü sahibine verilecek, o da bağa bakıp onu eski hâline getirecekti. Sürü de bir süre bağ sahibinde kalacak, o bu sürede koyunların sütünden, yününden ve kuzularından yararlanacaktı.
 
@@ -112,7 +123,9 @@ Hz. Süleyman düşüncesini babasına söyledi. Önerisi şuydu: Bağ bir süre
 
 Bağ onarılıp eski hâline gelince herkes kendi malını geri alacaktı. Böylece bağ sahibinin zararı karşılanacak, sürü sahibi de geçimini kaybetmeyecekti.
 
-[[Hz. Dâvûd bir süre sessizce düşündü.]] Bu öneri onun çok hoşuna gitti ve hükmünü buna göre verdi.
+[[Hz. Dâvûd bir süre sessizce düşündü. Sonra iki adama baktı. Bağ sahibi bağının yeniden yeşereceğini, sürü sahibi koyunlarını kaybetmeyeceğini anlamıştı. İkisinin de yüzü aydınlandı.]]
+
+Bu öneri Hz. Dâvûd'un çok hoşuna gitti ve hükmünü buna göre verdi.
 
 ```text
 [IŞIL]
@@ -182,13 +195,13 @@ Kur'an'a göre Allah, Hz. Dâvûd (a.s.) ile oğlu Hz. Süleyman'a (a.s.) ilim v
 
 Yıllar sonra Hz. Dâvûd vefat etti. Kur'an'a göre Hz. Süleyman onun yerine geçti. [[Babasının bıraktığı yük ağırdı; ama onun öğütleri de yanındaydı.]] Allah onu da babası gibi peygamber olarak seçmişti.
 
-Bir gün Hz. Süleyman Rabbine yöneldi ve içten bir dua etti:
+Bir gün Hz. Süleyman Rabbine yöneldi ve dua etti:
 
 — Rabbim, beni bağışla ve bana, benden sonra hiç kimsenin ulaşamayacağı bir hükümranlık ver.
 
 Hükümranlık, bir ülkeyi yönetme gücü demekti. Allah da duasını kabul etti ve ona pek çok nimet verdi.
 
-Sonra Hz. Süleyman halkını topladı ve onlara şöyle seslendi:
+Sonra Hz. Süleyman halkına şöyle seslendi:
 
 — Ey insanlar! Bize kuş dili öğretildi ve bize her şeyden gerektiği kadar verildi. Doğrusu bu, apaçık bir lütuftur.
 
@@ -242,16 +255,18 @@ Hz. Süleyman şükrünü yalnız sözle bırakmadı; çalışarak gösterdi. An
 
 **[GÖRSEL — suleyman-2-bakir-kazanlar]**
 
-Sonunda mescit tamamlandı ve insanların yalnız Allah'a ibadet edeceği bir yer oldu. Kudüs'teki bu mescidin adı Mescid-i Aksa'dır.
+Sonunda mescit tamamlandı. [[Son taş yerine konduğunda avluya sabah ışığı düşüyordu. İnsanlar ilk kez o geniş avluda sıra sıra dizildi.]]
+
+[[Hz. Süleyman mescidin basamağında durup bir süre avluya baktı. Babası bu günü görememişti; ama dileği işte gerçek olmuştu.]] Burası, insanların yalnız Allah'a ibadet edeceği bir yer oldu. Kudüs'teki bu mescidin adı Mescid-i Aksa'dır.
 
 ```text
 [BİLİYOR MUYDUN]
-Metin: Peygamberimiz (s.a.v.) anlatmıştır: Hz. Süleyman Kudüs'teki mescidi yapınca Allah'tan doğru hüküm verebilmeyi, kendisinden sonra kimseye verilmeyecek bir hükümranlığı ve bu mescide yalnız namaz kılmak için gelen herkesin günahlarından arınmış olarak dönmesini istedi.
+Metin: Peygamberimiz (s.a.v.) anlatmıştır: Hz. Süleyman Kudüs'teki mescidi yapınca Allah'tan bazı şeyler istedi. Doğru hüküm verebilmeyi ve kendisinden sonra kimseye verilmeyecek bir hükümranlığı istedi. Bu mescide yalnız namaz kılmak için gelen herkesin günahlarından arınıp dönmesini de diledi.
 ```
 
 [[Bu dileklerden birini hatırlıyor musun? Hz. Süleyman'ın Rabbine ettiği o duayı?]]
 
-Sonraları bazı insanlar, Hz. Süleyman'ın bu gücü sihirle elde ettiğini uydurdu. Kur'an bu sözlerin doğru olmadığını açıkça bildirir. Bu güç sihir değildi; Allah'ın ona verdiği bir lütuftu.
+Sonraları Hz. Süleyman'ın gücünün sihirle elde edildiğine dair sözler uyduruldu; bazı insanlar bunlara inandı. Kur'an bu sözlerin doğru olmadığını açıkça bildirir. Bu güç sihir değildi; Allah'ın ona verdiği bir lütuftu.
 
 [[Akşam olunca Hz. Süleyman düz bir damın kenarına çıktı. Kuşlar sürü sürü yuvalarına dönüyordu. Esen rüzgâr da mescidin taş duvarları da ona Rabbini hatırlatıyordu.]]
 
@@ -340,15 +355,17 @@ Seçimden sonra: Cevabını aklında tut. Hikâyenin devamında neler olduğunu 
 
 ### HİKÂYE DEVAM EDİYOR
 
-Hz. Süleyman karıncanın sözüne gülümsedi. Karınca yalnız kendini değil, bütün karıncaları uyarmıştı. Ordunun onları ancak farkına varmadan ezebileceğini söylemişti.
+[[Hz. Süleyman başını eğip yere baktı. Toprakta ince, kara bir çizgi kıpır kıpır akıyordu; minik karıncalar birbirinin ardından yuvalarına giriyordu.]]
 
-[[Bir düşün: Sayısız ayak yürüyor, kanatlar çırpılıyor, toz göğe yükseliyor. Bu gürültünün içinde minik bir karıncanın sesi…]] Hz. Süleyman işte o sesi duymuştu.
+Hz. Süleyman karıncanın sözüne gülümsedi. Karınca yalnız kendini değil, bütün karıncaları uyarmıştı. Ordunun onları ancak farkına varmadan ezebileceğini söylemişti.
 
 Sonra Hz. Süleyman Rabbine şöyle dua etti:
 
 — Rabbim, bana ve anne babama verdiğin nimetlere şükretmeyi bana nasip et. Razı olacağın iyi işler yapmamı sağla ve beni iyi kullarının arasına kat.
 
 **[GÖRSEL — suleyman-3-yuvaya-donus]**
+
+[[Bir düşün: Sayısız ayak yürüyor, kanatlar çırpılıyor, toz göğe yükseliyor. Bu gürültünün içinde minik bir karıncanın sesi…]]
 
 [[O anda gücünü düşünmedi. Kuşları, rüzgârı ya da ordusunu saymadı. Dilinden dökülen bir şükür duasıydı. Kendisiyle birlikte anne babasını da andı; onlara verilen nimetleri de unutmadı.]]
 
@@ -432,7 +449,7 @@ Anlatılanlara göre hüdhüd, yerin altındaki suyu bulmakta usta bir kuştu. [
 
 **[GÖRSEL — suleyman-4-bos-dal]**
 
-[[Hüdhüd bir süre ortalarda görünmedi. Kimse onun nereye gittiğini bilmiyordu. Hz. Süleyman'ın canı sıkıldı.]] Kur'an'a göre hüdhüd için çok ciddi bir söz söyledi:
+[[Hüdhüd bir süre ortalarda görünmedi. Kimse onun nereye gittiğini bilmiyordu. Yanındakilere soruldu; onlar da görmemişti. Hz. Süleyman'ın canı sıkıldı.]] Kur'an'a göre hüdhüd için çok ciddi bir söz söyledi:
 
 — Ya bana açık bir gerekçe getirir ya da ona ağır bir ceza veririm.
 
@@ -473,7 +490,9 @@ Hüdhüd, o kadının da halkının da Allah'ı bırakıp güneşe taptığını
 
 Göklerde ve yerde gizli olanı ortaya çıkaranın Allah olduğunu söyledi. İnsanların gizlediğini de açığa vurduğunu da O bilir. Ona göre secde yalnız O'na yapılmalıydı.
 
-[[Hz. Süleyman sonuna kadar dinledi. Hüdhüde hemen kızmadı; ama duyduğu habere de hemen inanıvermedi.]] Sonra şöyle dedi:
+[[Hz. Süleyman sonuna kadar dinledi. Sonra bir süre sustu. Kuşlar da yanındakiler de ona bakıyordu. Hüdhüdü cezalandıracak mıydı, yoksa haberine inanacak mıydı?]]
+
+[[Hüdhüde kızmadı; ama duyduğu habere de hemen inanıvermedi.]] Şöyle dedi:
 
 — Doğru mu söylüyorsun, yoksa yalancılardan biri misin, göreceğiz.
 
@@ -481,7 +500,7 @@ Göklerde ve yerde gizli olanı ortaya çıkaranın Allah olduğunu söyledi. İ
 
 [[Koca bir hükümdar, küçük bir kuştan bilmediği bir şeyi öğrenmişti. Bunu kabul etmek ona hiç zor gelmedi. Az önce canı sıkılmıştı; ama şimdi canının sıkıntısı değil, merakı öndeydi.]]
 
-Önce dinlemişti; şimdi de haberin doğru olup olmadığını araştıracaktı. Bunun için uzak Sebe ülkesine bir haber göndermesi gerekiyordu. [[Güneş batarken güneydeki kum tepelerine uzanan yol kızıla boyanmıştı. Hüdhüd tozlu kanatlarını topladı. Az önce geldiği yol, yeniden önündeydi.]]
+İkisini de yapmadı; haberin doğru olup olmadığını araştıracaktı. Bunun için uzak Sebe ülkesine bir haber göndermesi gerekiyordu. [[Güneş batarken güneydeki kum tepelerine uzanan yol kızıla boyanmıştı. Hüdhüd tozlu kanatlarını topladı. Az önce geldiği yol, yeniden önündeydi.]]
 
 **[GÖRSEL — suleyman-4-guneye-yol]**
 
@@ -588,7 +607,11 @@ Sonra hediyeleri getirenlere geri dönmelerini söyledi ve karşı koyamayacakla
 
 **[GÖRSEL — suleyman-5-geri-donen-kervan]**
 
-[[Kervan uzun yolu yeniden aştı. Hediyeleri getirenler olanları melikeye bir bir anlattı. Melike o akşam pencerenin önünde uzun süre durdu. Malla gönlü kazanılamayan bu hükümdar kimdi?]] Kur'an'a göre çok geçmeden melike de Hz. Süleyman'a doğru yola çıkacaktı.
+[[Kervan uzun yolu yeniden aştı. Sandıklar açılmadan geri gelmişti. Hediyeleri getirenlerden biri melikenin önünde eğildi:]]
+
+[[— Hediyelerimizi geri gönderdi, melikem.]]
+
+[[Melike o akşam pencerenin önünde uzun süre durdu. Malla gönlü kazanılamayan bu hükümdar kimdi?]] Kur'an'a göre çok geçmeden melike de Hz. Süleyman'a doğru yola çıkacaktı.
 
 **[GÖRSEL — suleyman-5-kuzeye-bakan-pencere]**
 
@@ -680,7 +703,11 @@ Sonra yanındakilere bir şey daha söyledi:
 
 **[GÖRSEL — suleyman-6-degisen-taht]**
 
-Çok geçmeden melike geldi. Ona taht gösterildi ve “Senin tahtın da böyle mi?” diye soruldu. Melike dikkatle baktı ve “Tıpkı o!” dedi. Kur'an'a göre daha önce Allah'tan başka taptığı şeyler onu yoldan saptırmıştı.
+Çok geçmeden melike geldi. [[Uzun yolun tozu hâlâ üzerindeydi. Sütunlu salona girdiğinde gözü bir şeye takıldı ve olduğu yerde durdu.]] Ona taht gösterildi ve “Senin tahtın da böyle mi?” diye soruldu.
+
+[[Melike tahta yaklaştı. Oymalı ayaklarına, örtünün altından görünen arkalığına uzun uzun baktı. Kendi sarayında bıraktığı taht nasıl burada olabilirdi?]]
+
+Sonunda “Tıpkı o!” dedi. Kur'an'a göre daha önce Allah'tan başka taptığı şeyler onu yoldan saptırmıştı.
 
 ```text
 [KELİME]
@@ -697,7 +724,9 @@ Standart sözlükçede mevcut mu?: hayır (yeni terim; kutu Hz. Süleyman'da)
 
 [[Yıllardır güneşe secde etmişti. Şimdi bunun da büyük bir yanılgı olduğunu görüyordu.]] Şöyle dedi:
 
-— Rabbim, ben gerçekten kendime yazık etmişim. Artık Süleyman ile birlikte âlemlerin Rabbi olan Allah'a teslim oldum.
+— Rabbim, ben gerçekten kendime zulmetmişim. Artık Süleyman ile birlikte âlemlerin Rabbi olan Allah'a teslim oldum.
+
+Yani kendine haksızlık etmişti.
 
 [[Sabah ışığı köşkün açık kapısından içeri doluyordu.]]
 
@@ -786,6 +815,8 @@ Aslında Hz. Süleyman, asasına dayanmış dururken vefat etmişti. Ama bunu ki
 
 Bu gerçeği gösteren, kimsenin dikkat etmediği minik bir canlı oldu. [[Ne bir kuş ne bir ordu; asanın içinde, sessizce çalışan küçücük bir canlı.]] Kur'an'a göre küçük bir ağaç kurdu asayı kemiriyordu. [[Kimse duymadan, azar azar…]] Sonunda asa dayanamadı ve Hz. Süleyman yere düştü.
 
+[[Asanın kırılan sesiyle işler bir anda durdu.]]
+
 **[GÖRSEL — suleyman-7-kemirilmis-asa]**
 
 ```text
@@ -838,7 +869,7 @@ C) Böyle bir anda bozulmak olabilir. Hikâyede büyük gerçeği küçük bir a
 **Hasan'ın sekiz kararı (24 Ekim 2026; sekizinde de öneri kabul) nasıl uygulandı:**
 1. **Bağ / ekin (a).** B1: Kur'an'ın kelimesi "ekin" önce (*dava* kutusunun paragrafı "biri bir ekinin…"), "Anlatılanlara göre bu ekin, salkımları yeni çıkmış bir üzüm bağıydı." Bölüm adı, özet, görseller ve final S1 aynı.
 2. **Mescit (a) + (b).** B2 Devam: "Anlatıldığına göre Hz. Dâvûd, Kudüs'te yapımına başladığı mescidi bitirmesini oğluna bırakmıştı." + kurgu halkası; ad bir kez ("Kudüs'teki bu mescidin adı Mescid-i Aksa'dır."). Beytülmakdis kutusu ve "[[Bu dileklerden birini hatırlıyor musun? …]]".
-3. **Sâd 34 (b) + (c).** B2 "Bir gün Hz. Süleyman Rabbine yöneldi ve içten bir dua etti:"; sınav anılmıyor. final.md F5 "…sınandığı söyleniyor" maddesi önerilen cümleyle; yüzük cümlesi kaldı.
+3. **Sâd 34 (b) + (c).** B2 "Bir gün Hz. Süleyman Rabbine yöneldi ve dua etti:"; sınav anılmıyor. final.md F5 "…sınandığı söyleniyor" maddesi önerilen cümleyle; yüzük cümlesi kaldı.
 4. **Belkıs (a).** B5: "Anlatılanlara göre bu melikenin adı Belkıs'tı." (tek geçiş). B6 özeti aynı.
 5. **Atlar (a).** B3: "Hz. Süleyman atları çok severdi." (kalıpsız); bakım çıktı; atlar–karınca halkası.
 6. **Hüdhüdün suyu bulması.** B4: "Anlatılanlara göre hüdhüd, yerin altındaki suyu bulmakta usta bir kuştu." Neden arandığı yok.
@@ -849,25 +880,34 @@ C) Böyle bir anda bozulmak olabilir. Hikâyede büyük gerçeği küçük bir a
 
 **Rivayet kalıpları:** 6 (yayında 12): B1 1 (bağ), B2 2 ("Anlatıldığına göre" vasiyet; "Anlatılanlara göre" cinler ve mescit), B4 1 (su), B5 2 (ad; hediyeyle sınama). Uzun kalıp yok.
 
-**Işıl ve yardımcı bloklar:** Işıl 8 (B1 2, öteki bölümler 1); bütün satırlar ≤9 kelime. "Biliyor muydun?" kutusu 1 (B2). Soru başlığı yok.
+**Işıl ve yardımcı bloklar:** Işıl 9 (B1 3, öteki bölümler 1); bütün satırlar ≤9 kelime. "Biliyor muydun?" kutusu 1 (B2). Soru başlığı yok.
 
 **Görseller, sözlük:** 35 sahne görselinin hepsi aynı bölümde, aynı parçada, aynı sırada; yedi sözlük kelimesi aynı bölümlerde, aynı parçada, aynı tanımlarla (betikle doğrulandı). Hiçbir kutulu kelime kendi kutusundan önce geçmiyor; *rahmet, elçi, tesbih, mabet, müjde, şüphe, iftira* çocuk metninde yok.
 
-**Ölçüler** (anlatı metni, KELİME blokları dahil; Işıl ve kutu ayrı; kurgu işaretleri sayılmadı; `scripts/v2-onizleme-uret.mjs` çıktısından betikle; denetim düzeltmelerinden sonra):
+**Ölçüler** (anlatı metni, KELİME blokları dahil; Işıl ve kutu ayrı; kurgu işaretleri sayılmadı; `scripts/v2-onizleme-uret.mjs` çıktısından betikle). "1. tur" ilk denetim düzeltmelerinden sonraki hâl; "son" Hasan'ın uzunluk talimatı ve 2. denetimden sonra:
 
-| Bölüm | Anlatı (1. kısım + Devam) | Yayındaki | Işıl | Kutu | En uzun düz metin aralığı |
-|---|---:|---:|---:|---:|---:|
-| 1 | 2.668 (1.505 + 1.163) | 3.416 | 2 | — | 902 |
-| 2 | 3.034 (1.692 + 1.342) | 3.277 | 1 | 1 | 915 |
-| 3 | 2.515 (1.503 + 1.012) | 2.867 | 1 | — | 808 |
-| 4 | 2.548 (1.325 + 1.223) | 2.789 | 1 | — | 785 |
-| 5 | 2.756 (1.918 + 838) | 3.070 | 1 | — | 764 |
-| 6 | 2.621 (1.272 + 1.349) | 2.854 | 1 | — | 723 |
-| 7 | 2.609 (1.104 + 1.505) | 2.614 | 1 | — | 741 |
+| Bölüm | Yayındaki | 1. tur | Son (1. kısım + Devam) | Işıl | Kutu | En uzun düz metin aralığı |
+|---|---:|---:|---:|---:|---:|---:|
+| 1 | 3.416 | 2.668 | 2.945 (1.505 + 1.440) | 3 | — | 686 |
+| 2 | 3.277 | 3.034 | 3.273 (1.664 + 1.609) | 1 | 1 | 887 |
+| 3 | 2.867 | 2.515 | 2.628 (1.503 + 1.125) | 1 | — | 798 |
+| 4 | 2.789 | 2.548 | 2.698 (1.369 + 1.329) | 1 | — | 785 |
+| 5 | 3.070 | 2.756 | 2.830 (1.918 + 912) | 1 | — | 764 |
+| 6 | 2.854 | 2.621 | 2.890 (1.272 + 1.618) | 1 | — | 723 |
+| 7 | 2.614 | 2.609 | 2.654 (1.104 + 1.550) | 1 | — | 786 |
 
-Anlatı cümlelerinin hepsi ≤18 kelime (betik iki yerde âyet alıntısını ardından gelen cümleyle birleştirip uzun sayıyor; ayrı ayrı 13 ve 17 kelime). Tek aşım B2 kutusu (32 kelime; onaylı metin, açık soru 2). B1 ve B2'de en uzun aralık ~900 sınırında.
+Bütün cümleler ≤18 kelime (betik iki yerde âyet alıntısını ardından gelen cümleyle birleştirip uzun sayıyor; ayrı ayrı 13 ve 17 kelime). B2 kutusu üç cümle (13 / 11 / 13).
 
-**Meal notları:** Âyet cümleleri yayındaki ifadeleriyle (Faz 2'nin *Kur'an Yolu* kontrolü, final.md §I8). Sözlük koordinasyonu gereği sadeleştirmeler (Faz 2'den): Neml 19 "rahmetinle" yok (*rahmet* Hz. Yunus'ta); Neml 35–37 *elçi* yerine "gönderdiklerim", "hediyeleri getirenler" (*elçi* Hz. Yunus'ta); Neml 36'nın son cümlesi Faz 2 K5 ifadesiyle ("Böyle bir hediyeye ancak mala gönül verenler sevinir."; *Kur'an Yolu*: "Bu hediyenizle ancak sizin gibiler sevinir."); Neml 44 "kendime yazık etmişim" (*Kur'an Yolu*: "zulmetmişim"; Faz 2 sadeleştirmesi, açık soru 3); Enbiyâ 79 "dava konusunu" yerine "meseleyi" (*dava* kutusu aynı bölümde önce geçtiği için kullanılabilirdi; anlam aynı). Beytülmakdis hadisi anlatım olarak, "annesinden doğduğu gün gibi" → "günahlarından arınmış olarak".
+**Sahneye çevrilen dönüm noktaları (Hasan'ın uzunluk talimatı, 24 Ekim 2026; dolgu, yeni rivayet ya da tek kaynaklı ayrıntı yok, hepsi `[[…]]`):**
+- B1 Devam: Hz. Süleyman'ın söz istediği an (kısa kurgu konuşma "— Babacığım, izin verirsen…", Işıl, avludakilerin başını çevirmesi) ve Hz. Dâvûd'un öneriyi kabul ettiği an (iki adama bakması, ikisinin yüzünün aydınlanması). Sonuç cümlesi *Hadislerle İslâm* 6/84'ün ifadesiyle aynı.
+- B2 Devam: mescidin tamamlandığı an (son taş, avluda sıra sıra dizilen insanlar, Hz. Süleyman'ın mescidin basamağında babasını hatırlaması; Dâvûd v2 B6 halkası).
+- B3 Devam: Hz. Süleyman'ın sesi duyup başını eğerek karınca yoluna baktığı an (görsel `vadide-toz`'daki duruş); ordu durmuyor (Faz 1 A3).
+- B4: bekleyiş (yanındakilere sorulması) ve Devam'da karar anı (sessizlik, cezalandıracak mı inanacak mı sorusu, âyetten önce; ardından "İkisini de yapmadı; haberin doğru olup olmadığını araştıracaktı.").
+- B5 Devam: kervanın sandıklar açılmadan dönüşü ve isimsiz bir kişinin melikeye tek kurgu satırı ("— Hediyelerimizi geri gönderdi, melikem.").
+- B6 Devam: melikenin sütunlu salona girişi, tahta yaklaşıp bakması ve iç sesi (Neml 42'den önce; Katman 1, yüz yok).
+- B7 Devam: asanın kırıldığı an, sakin ("[[Asanın kırılan sesiyle işler bir anda durdu.]]"; beden tarif edilmez).
+
+**Meal notları:** Âyet cümleleri yayındaki ifadeleriyle (Faz 2'nin *Kur'an Yolu* kontrolü, final.md §I8). Sözlük koordinasyonu gereği sadeleştirmeler (Faz 2'den): Neml 19 "rahmetinle" yok (*rahmet* Hz. Yunus'ta); Neml 35–37 *elçi* yerine "gönderdiklerim", "hediyeleri getirenler" (*elçi* Hz. Yunus'ta); Neml 36'nın son cümlesi Faz 2 K5 ifadesiyle ("Böyle bir hediyeye ancak mala gönül verenler sevinir."; *Kur'an Yolu*: "Bu hediyenizle ancak sizin gibiler sevinir."); Neml 44 *Kur'an Yolu* kelimesiyle "kendime zulmetmişim", ardından anlatıcı "Yani kendine haksızlık etmişti." (Hasan kararı; Faz 2'nin "yazık etmişim"i bırakıldı; *zulüm* düz metin, kutu Hz. Musa'da); Enbiyâ 79 "dava konusunu" yerine "meseleyi" (*dava* kutusu aynı bölümde önce geçtiği için kullanılabilirdi; anlam aynı). Beytülmakdis hadisi anlatım olarak, "annesinden doğduğu gün gibi" → "günahlarından arınmış olarak".
 
 **Hadis künyeleri** (*Hadislerle İslâm*; derece hükmü verilmedi): B2 kutu Nesâî, Mesâcid, 6, no. 694; İbn Mâce, İkâmet, 196, no. 1408 (6/85). Diyanet anlatısı: ekin davasının hükümleri ve vasiyet 6/84 (dn. 36 Hâkim, İbn Mes'ûd); hediye 6/86; cinlerin "günlerce" çalışması 6/87.
 
@@ -875,18 +915,16 @@ Anlatı cümlelerinin hepsi ≤18 kelime (betik iki yerde âyet alıntısını a
 
 **İçerik denetimi (24 Ekim 2026; 0 kritik, 12 önemli, 14 küçük).** Uygulanan mekanik bulgular: Ö1 Neml 36 canlıdaki Faz 2 ifadesine döndü; Ö2 B7 güvencesi onaylı 7b metnine döndü; Ö3 B7 "Günler…" → "Bir süre böyle geçti.", "Kimse duymadan, azar azar…"; Ö4 B1 "Bir yılın emeği" → "Bütün emeği", Işıl "Onca emek, tek bir gecede mi?"; Ö5 "Binlerce" → "Sayısız"; Ö6 karıncanın düşüncesi yerine sözü ("bütün karıncaları uyarmıştı"), atlar davranışla; Ö7 cinlere "dağ gibi taş" yerine "ağır taş"; Ö11 bu notlar; Ö12 final S5 ve S1 dayanağı ("ileri gelenlerine danıştı", "Bağ onarılıp eski hâline gelince"). Küçük 1–10, 12–14 uygulandı (B3 "Bir gün" halkası; B4 güneş ve yol, "taptığını", "O bilir", "Ona göre"; "canının sıkıntısı"; B2 "mescidin taş duvarları", "Sonra Hz. Süleyman halkını topladı"; B5 kalıp önce, tekrar çıktı; B6 ortadaki tekrar çıktı, niyet cümlesi kurgu işaretli; B3 nimet tekrarı çıktı; B1 "[[Hz. Dâvûd bir süre sessizce düşündü.]]"; B7 "Sütunların arasında serin bir loşluk" (görselle uyum, alt metin değişmez); F5 vefat maddesi "Kur'an, onun öldüğünü ancak asasını kemiren bir ağaç kurdunun gösterdiğini bildirir"). Küçük 11'in B1 parçası (KELİME içindeki "İkisi de selam verip karşısına oturdu.") işaretlenemez (betik KELİME bloklarında `[[` silmez); canlıda da aynı, düşük risk.
 
-**Denetim sonrası açık sorular (Hasan):**
-1. **B2 Bakara 102'nin öznesi (Ö8; tablo #23 onaylıydı).** Âyette uyduranlar şeytanlar, uyanlar insanlar; metin uydurmayı insanlara veriyor.
-   > bugün: Sonraları bazı insanlar, Hz. Süleyman'ın bu gücü sihirle elde ettiğini uydurdu.
-   > öneri: Sonraları bu gücün sihirle elde edildiğine dair sözler uyduruldu; bazı insanlar bunlara inandı.
-   *Önerim:* öneri ("şeytan" kelimesi girmeden âyetin öznesine sadık).
-2. **B2 kutusu 32 kelime (Ö9; karar 2b metni).** Brif §7.2 üst sınırı 18.
-   > öneri: Peygamberimiz (s.a.v.) anlatmıştır: Hz. Süleyman Kudüs'teki mescidi yapınca Allah'tan bazı şeyler istedi. Doğru hüküm verebilmeyi ve kendisinden sonra kimseye verilmeyecek bir hükümranlığı istedi. Bu mescide yalnız namaz kılmak için gelen herkesin günahlarından arınıp dönmesini de diledi.
-   *Önerim:* öneri (içerik aynı, üç cümle).
-3. **B6 Neml 44 (Ö10).** *Kur'an Yolu* "Rabbim! Ben gerçekten kendime zulmetmişim"; Faz 2 bilinçli olarak "kendime yazık etmişim" yazdı. *Önerim:* Faz 2 ifadesi kalsın; "zulüm" 8–11 yaşta kendine şiddet gibi okunabilir, anlam aynı. Öbür yol: meal kelimesi + anlatıcı "Yani kendine haksızlık etmişti."
+**Hasan'ın denetim sonrası kararları (24 Ekim 2026; üçünde de öneri kabul).** Hasan'ın sözü: "Süleyman: üç kararda senin önerilerin kabul (Neml 44 meal kelimesi + anlatıcı açıklaması). Bölüm uzunlukları için de: kısalan bölümlerde özetlenen dönüm noktası varsa sahneye dönsün."
+1. B2 Bakara 102: "Sonraları Hz. Süleyman'ın gücünün sihirle elde edildiğine dair sözler uyduruldu; bazı insanlar bunlara inandı." (2. denetimde "bu güç" → "Hz. Süleyman'ın gücü", gösterilen uzakta kaldığı için.)
+2. B2 kutusu üç cümle (önerilen metin).
+3. B6 Neml 44: "— Rabbim, ben gerçekten kendime zulmetmişim. …" + "Yani kendine haksızlık etmişti."
+4. Uzunluk: yukarıdaki "Sahneye çevrilen dönüm noktaları".
+
+**İçerik denetimi, 2. tur (24 Ekim 2026; yalnız değişen yerler; 0 kritik, 5 önemli, 8 küçük, hepsi mekanik, uygulandı):** B2 "Sonra Hz. Süleyman halkına şöyle seslendi:" (kısaltmadan sonra özne Allah'a kayıyordu); B4 "Öteki kuşlara soruldu" → "Yanındakilere soruldu" (kuş konuşmaz); B4 karar sorusu âyetten önceye alındı, "Önce dinlemişti" tekrarı çıktı; B7 "Cinlerin elindeki taşlar bir an havada kaldı; çevredekiler koşarak geldi." çıktı (cinlere el ve yeni olağanüstülük; telaş sahnesi güvenceyle çatışıyordu), yerine "Asanın kırılan sesiyle işler bir anda durdu."; Işıl "İzin istedi! Babası ne diyecek?"; "saf saf" → "sıra sıra", "mescidin basamağında"; B3 "Hz. Süleyman işte o sesi duymuştu." tekrarı çıktı; B5 "olduğu gibi" tekrarı ve kurgu konuşmanın ikinci cümlesi çıktı; B6 ve B7 uzun paragraflar bölündü; bu notlar güncellendi. Denetçinin bilgi notu: B1 "[[Babası ona döndü ve gülümseyerek…]]" davranış bildirir, yüz tarifi değil; görsel brifine yüz ifadesi olarak taşınmaz.
 
 **Aktarım için:**
-- `paragraphs` ve `continuationParagraphs` v2'den alınır; `[[`/`]]` silinir. Yeni bloklar: Işıl 8, "Biliyor muydun?" kutusu 1 (B2). Kutudaki `*Hadislerle İslâm*` yıldızı yok.
+- `paragraphs` ve `continuationParagraphs` v2'den alınır; `[[`/`]]` silinir. Yeni bloklar: Işıl 9, "Biliyor muydun?" kutusu 1 (B2). Kutudaki `*Hadislerle İslâm*` yıldızı yok.
 - 35 sahne görseli aynı bölümde, aynı parçada, aynı sırada; alt metinler değişmedi. (Kapsam dışı not, denetçiden: beş canlı alt metinde Hz. Süleyman için "uzun boylu bir adam" geçiyor — B2 `mescit-avlusu`, `aksam-gogu`; B4 `tas-kolcak` ve bölüm 4 kapağı; B5 `acilmayan-sandiklar`. Boy tarifi; ayrı bir düzeltme kararı.)
 - Yedi sözlük kelimesi aynı bölümlerde, aynı parçada, aynı tanımlarla. **KELİME çevre metni değişenler:** B1 dava (öncesi "Bir gün Hz. Dâvûd'un huzuruna iki adam geldi; biri bir ekinin, öbürü bir koyun sürüsünün sahibiydi. İkisi de selam verip karşısına oturdu. Aralarında bir ", sonrası aynı); B2 cin (sonrası "ler de onun emrinde çalışırdı. Onlar Hz. Süleyman için yüksek binalar, havuz gibi büyük kaplar ve yerinden oynamayan kazanlar yapardı. Kimi de onun için denizin derinliklerine dalardı."); B4 hüdhüd (sonrası " kuşuydu. Hz. Süleyman şaşırarak yanındakilere sordu:"). *sıvazlamak, melike, billur, gayb* aynı.
 - **Sabit alanlar, `learned`:** B1 2. madde: "Hikâyede Hz. Süleyman, farklı fikrini babasına saygıyla söyledi." Özetler, Sen Olsaydın, şıklar, Seçimini Karşılaştır, öteki Ne Öğrendik maddeleri ve görevler değişmedi (betik raporu: yalnız B1 learned[1]).
