@@ -26,6 +26,13 @@
 > Tanık Sayfası yok · Bugüne Taşı B1 ve B4 · beş bölüm adı, beş rozet ve beş yeni terim
 > (elçi, kura, tesbih, rahmet, lakap) onaylı.
 >
+> **v2 (24 Ekim 2026):** Beş bölümün hikâye metni karma tarzda yeniden yazıldı:
+> `KITAP-HZ-YUNUS-ICERIK-v2.md` (kararlar `KITAP-HZ-YUNUS-KARMA-AYRINTI-TABLOSU.md`). Olayların
+> sırası Diyanet'in okumasına göre değişti: Ninova halkı Hz. Yunus balıktan sonra bir defa daha
+> gönderilince iman eder (v2 karar 6b). Bu dosyada v2'ye göre güncellenenler: E (S1, S2, S5) ve
+> F5 (dört madde değişti, iki madde eklendi). D bölümündeki hikâye metinleri, kalite özetleri ve
+> seslendirme notları v2'den önceki hâlidir; seslendirmeden önce güncellenir.
+>
 > **Kitap kapağı ve harita durağı görseli bu teslimde VARDIR** (`public/kitaplar/hz-yunus/`
 > klasörü yok; §C1, §C2).
 
@@ -1200,7 +1207,7 @@ Kaynak dışı bilgi var mı?: Hayır. Dönüş s. 97–98 ve Sâffât 147 (Diya
 ## E. BÜYÜK FİNAL TESTİ
 
 ```text
-Soru 1: Hz. Yunus, Ninova'da insanları Allah'a çağırırken nerelerde konuşurdu?
+Soru 1: Hikâyede Hz. Yunus, Ninova'da insanları Allah'a çağırırken nerelerde konuşurdu?
 A) Meydanlarda, pazarlarda ve yol kenarlarında
 B) Yalnızca kendi evinin bahçesinde
 C) Yalnızca gemilerde, nehrin üstünde
@@ -1211,7 +1218,7 @@ Soru türü: olay
 ```
 
 ```text
-Soru 2: Gemide kura çekilirken Hz. Yunus'un güverteye çıkıp ne yaptığını söylemesi bize ne anlatır?
+Soru 2: Hikâyede Hz. Yunus'un, kura çekilecekken yaptığını kendisi söylemesi bize ne anlatır?
 A) Kalabalıkta susmanın her zaman daha doğru olduğunu
 B) Kurada kendi adının çıkmasını istediğini
 C) Yaptığımızı saklamayıp dürüstçe söylemenin değerini
@@ -1244,10 +1251,10 @@ Soru türü: olay
 ```
 
 ```text
-Soru 5: Hz. Yunus'un, onu yıllarca dinlemeyen Ninova halkını sevgiyle karşılaması bize ne anlatır?
-A) Kırgın olduğumuz kişilerle bir daha hiç konuşmamak gerektiğini
+Soru 5: Hikâyede Hz. Yunus'un, onu yıllarca dinlemeyen Ninova halkını sevgiyle karşılaması bize ne anlatır?
+A) Kırgın olduğumuz kişilere hiç selam vermemenin doğru olduğunu
 B) Eski kırgınlıkları her fırsatta hatırlatmak gerektiğini
-C) Kırgınlığı bırakıp insanlarla yeniden birlikte sevinmek gerektiğini
+C) Kırgınlığı bırakıp insanlarla yeniden birlikte sevinmenin değerini
 Doğru seçenek: C
 Kaynak bölüm: 5
 Kaynak PDF sayfası: 99
@@ -1301,12 +1308,12 @@ sonunda derdini saklamayıp Allah'a açtığını hatırlatabilirsiniz.
 
 **"Gemidekiler onu neden denize attı? Kura nedir?"**
 Kur'an gemide kura çekildiğini ve kuranın Hz. Yunus'a çıktığını bildirir (Sâffât 141);
-geminin başına ne geldiğini ve kuranın neden çekildiğini anlatmaz. Kaynağımızda gemi
-denizin ortasında durur; yaygın anlatımlardaki fırtına kaynağımızda yoktur ve kitap da
-fırtına anlatmadı. Kitap olayı tek cümleyle, "denize bırakıldı" diye verdi. Çocuğunuz
-kaygılanırsa Hz. Yunus'un hemen ardından Allah'ın korumasına kavuştuğunu hatırlatın. Bu
-konu, su kenarında yalnız oynamamak ve büyükler olmadan denize girmemek gibi güvenlik
-kurallarını konuşmak için de bir fırsat olabilir.
+geminin başına ne geldiğini anlatmaz. Diyanet'in Hadislerle İslâm'da aktardığı anlatıma göre
+gemi ilerleyememiş, gemidekiler bir peygamberi denize bırakmaya kıyamayıp kura çekmiştir;
+kitap bunu izledi, yaygın anlatımlarda geçen fırtınaya ise yer vermedi ve olayı "denize
+bırakıldı" diye tek cümleyle verdi. Çocuğunuz kaygılanırsa Hz. Yunus'un hemen ardından
+Allah'ın korumasına kavuştuğunu hatırlatın. Bu konu, su kenarında yalnız oynamamak ve
+büyükler olmadan denize girmemek gibi güvenlik kurallarını konuşmak için de bir fırsat olabilir.
 
 **"Benimle de alay ediyorlar. Hz. Yunus gibi sabredip susmalı mıyım?"**
 Hikâyede Ninova halkı yıllarca Hz. Yunus'a gülüp geçer; o da görevini bırakmaz. Ama bu,
@@ -1327,14 +1334,15 @@ bir yetişkinin olduğunu bilmek de bir o kadar önemlidir.
 Kur'an yalnızca "büyük bir balık" der ve Hz. Yunus'un orada ne kadar kaldığını bildirmez.
 Üç gün, kırk gün gibi farklı rivayetler vardır; kitap bu yüzden süre vermedi. Balığın türü
 de bilinmez; "balina" ya da "yunus balığı" denmesi kesin bilgi değildir. Kitap bu olayı bir
-mucize olarak, Allah'ın Hz. Yunus'u koruması olarak anlatır. "Balığın ona zarar vermediği"
-bilgisi de bir rivayettir.
+mucize olarak, Allah'ın Hz. Yunus'u koruması olarak anlatır. Orada nasıl yaşadığını da
+Kur'an anlatmaz; yalnız balıktan sonra kıyıya sağlığı bozulmuş olarak bırakıldığını bildirir
+(Sâffât 145).
 
 **"Ninova'ya ne olacaktı? Allah insanları korkutur mu?"**
 Kur'an, Hz. Yunus'un halkı iman edince "dünya hayatındaki zillet azabını" üzerlerinden
-kaldırdığını bildirir (Yûnus 98). Kitap bunu "büyük bir sıkıntı" ve "zor bir son" diye
+kaldırdığını bildirir (Yûnus 98). Kitap bunu "büyük bir sıkıntı" diye
 anlattı; nasıl bir sıkıntı olacağını Kur'an bildirmez. Kaynağımızdaki kasırga ve yıkılan
-putlar anlatımı kitaba alınmadı. Bu kıssanın öne çıkan yanı, bir şehrin tövbe edip iman
+putlar anlatımı kitaba alınmadı. Bu kıssanın öne çıkan yanı, bir şehrin iman
 etmesiyle sıkıntının kalkmasıdır; Kur'an bu yüzden Hz. Yunus'un halkını özellikle anar.
 Çocuğunuza Allah'ın kullarına her zaman dönüş kapısı açtığını söyleyebilirsiniz.
 
@@ -1347,24 +1355,38 @@ kendisinin fark edip söylemesi ve Allah'a dönmesidir. Çocuğunuza hata yapman
 olmanın bir parçası olduğunu, önemli olanın onu saklamamak ve düzeltmeye çalışmak
 olduğunu söyleyebilirsiniz.
 
+**"Hz. Yunus halkına beddua etti mi?"**
+Kur'an, Hz. Yunus'un öfkeli bir hâlde ayrıldığını söyler (Enbiyâ 87); halkına beddua
+ettiğini bildirmez. Bazı rivayetlerde ve yaygın anlatımlarda onun, halkı inanmayınca onlar aleyhine
+dua ettiği anlatılır. Kitap Kur'an'ın bildirdiğiyle yetindi ve bu anlatımı almadı.
+
 **"Kur'an'da ve başka kitaplarda Hz. Yunus hakkında başka neler geçiyor?"**
 Kalem suresinin 48. âyetinde Peygamberimize "Rabbinin hükmünü sabırla bekle, balık sahibi
 gibi olma" denir. Âyetin devamı mealler arasında farklı anlaşılır: Diyanet "öfkeli bir
 halde bağırıp çağırmıştı", kaynağımızdaki meal "gamla dolu olarak dua etmişti" der. Âyet,
 zor anda acele etmeden sabırla beklemenin önemini anlatır; kitap bu öğüdü çocuk metnine
-almadı. Kaynağımızdaki asma (kabağın kuruması) hikâyesi ve balık karnındaki uzun şiir bazı
-eski kitaplarda geçer, Kur'an'da yoktur. Dağ keçisinin Hz. Yunus'u sütüyle beslemesi de
-bir rivayettir; kitap onu "Anlatılanlara göre" diye bir kez andı.
+almadı. Bitkinin kuruması ve Allah'ın Hz. Yunus'a bu yüzden sitem etmesi hikâyesi ile
+balık karnındaki uzun şiir bazı eski kitaplarda ve yaygın anlatımlarda geçer, Kur'an'da
+yoktur. Bir dağ keçisinin ya da ceylanın Hz. Yunus'u sütüyle beslediği de anlatılır; kitap
+bu rivayete yer vermedi.
 
-**"Hz. Yunus şehrine geri mi döndü, yoksa başka bir yere mi gönderildi?"**
-Kur'an'da "onu yüz bin ya da daha fazla kişiye gönderdik" denir (Sâffât 147). Bazı mealler
-bunu ilk gönderiliş olarak, Diyanet meali ise balıktan sonraki "bir defa daha" gönderiliş
-olarak anlar. Kaynağımız Hz. Yunus'un Ninova'ya döndüğünü anlatır; kitap da bu anlatımı
-izledi ve sayıyı şehrin büyüklüğü olarak verdi. İki anlayış da Hz. Yunus'un bu büyük
-halkın peygamberi olduğunda birleşir. Kitaptaki "belli bir süreye kadar
-yaşattı" ifadesi (Sâffât 148), Allah'ın onlara ömürlerini tamamlayana kadar yaşama imkânı
-verdiğini anlatır; kitap şehrin sonraki tarihini ve kaynağımızdaki evlilik ve vefat
-anlatımlarını almadı.
+**"Bu duayı okursam her istediğim olur mu?"**
+Peygamberimiz (s.a.v.) Hz. Yunus'un balığın karnındaki duasını ashabına öğretmiş ve şöyle
+buyurmuştur: "Müslüman bir kişi bir şey için bu duayı yaparsa, Allah onun duasını mutlaka
+kabul eder." (Tirmizî, Deavât, 81; Hadislerle İslâm 6/117 ve 6/128). Kitap çocuk metninde
+yalnız Peygamberimizin bu duayı öğrettiğini söyledi; duayı bir görev ya da ödev olarak
+sunmadı. Çocuğunuz "Okudum ama istediğim olmadı" derse, duanın Allah'la konuşmak olduğunu ve
+Allah'ın her duayı işittiğini hatırlatabilirsiniz.
+
+**"Ninova halkı ne zaman iman etti? Hz. Yunus şehrine geri mi döndü?"**
+Kur'an'da "Bir defa daha onu yüz bin ya da daha fazla kişiye elçi olarak gönderdik. Bu defa
+onlar iman ettiler" denir (Sâffât 147–148, Diyanet meali). Kitap bu sırayı izledi: Hz. Yunus
+balıktan sonra halkına döner, halk da o zaman iman eder; Diyanet'in Hadislerle İslâm'daki
+anlatısı da böyledir. Bazı mealler ve Abdullah b. Mes'ûd'dan gelen bir rivayet ise halkın, Hz.
+Yunus aralarından ayrıldıktan sonra tövbe ettiğini anlatır; yaygın anlatımlar da çoğu zaman bu
+sırayı izler. İki görüş de bu büyük halkın iman ettiğinde ve Allah'ın onları belli bir süreye
+kadar yaşattığında birleşir (Sâffât 148). Kitap şehrin sonraki tarihini ve kaynağımızdaki
+evlilik ve vefat anlatımlarını almadı.
 
 ---
 

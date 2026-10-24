@@ -1,7 +1,10 @@
 # HZ. YUNUS (a.s.) — KARMA TARZ YENİDEN YAZIMI: AYRINTI TABLOSU
 
-> **Tarih:** 24 Ekim 2026 · **Durum:** 1. aşama. Hasan'ın sekiz karar sorusu bekleniyor;
-> v2 yazılmadı.
+> **Tarih:** 24 Ekim 2026 · **Durum:** Hasan'ın kararları (24 Ekim 2026): 1a, 2a, 3a, **4b**,
+> 5a, **6b + c2** (Diyanet'in sırası; Ninova'nın imanı B5'te, sayı âyetin kendi ifadesiyle), 7a,
+> 8a/b/c (6b'ye uyarlanmış). v2 metni `KITAP-HZ-YUNUS-ICERIK-v2.md`; final.md E (S1, S2, S5) ve
+> F5 (9 → 11 madde; ilk taslakta "8 madde" diye sayılmıştı, doğrusu 9) güncellendi. İçerik
+> denetimi ve açık kararlar v2 "Yazım notları"nda.
 > **Kural:** `V2-YAZIM-KURALLARI.md` (akış, kaynak, çocuk metni, sabit alanlar); brif §4.3
 > (üç alan), §7.2 (ölçüler), §7.10 (karma tarz). Faz 1 kararları
 > (`KITAP-HZ-YUNUS-KAYNAK-DENETIMI.md`, karar kaydı 16 Ekim 2026) ve Faz 2 kararları
