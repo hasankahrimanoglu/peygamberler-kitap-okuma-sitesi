@@ -1,7 +1,11 @@
 # HZ. ÎSÂ (a.s.) — KARMA TARZ YENİDEN YAZIMI: AYRINTI TABLOSU
 
-> **Tarih:** 24 Ekim 2026 · **Durum:** 1. aşama; Hasan'ın yedi karar sorusundaki cevabı
-> bekleniyor. v2 yazılmadı.
+> **Tarih:** 24 Ekim 2026 · **Durum:** Hasan yedi kararda önerileri kabul etti
+> (Hasan'ın sözü: "Yunus ve Îsâ: senin önerilerin kabul (… Îsâ 5'te Meryem 35 Diyanet
+> "çocuk edinmesi"). v2'leri yazsınlar."). Tek fark 5(a): B4'te Diyanet İşleri meali kelimesi
+> "Allah'ın çocuk edinmesi". v2 metni `KITAP-HZ-ISA-ICERIK-v2.md`; final testi (E) ve veli
+> raporu (F5) `final.md`'de. İçerik denetimi 0 kritik, 10 önemli, 16 küçük; mekanik bulgular
+> uygulandı, dört bulgu Hasan'a bırakıldı (v2 "Yazım notları" sonu).
 > **Kural:** `V2-YAZIM-KURALLARI.md` (akış, kaynak, çocuk metni, sabit alanlar); brif §4.3
 > (üç alan), §7.2 (ölçüler), §7.10 (karma tarz, örnek sahne), §16 (yerleşik kararlar). Faz 1
 > kararları (`KITAP-HZ-ISA-KAYNAK-DENETIMI.md`, karar kaydı 16 Ekim 2026) ve Faz 2 karar
