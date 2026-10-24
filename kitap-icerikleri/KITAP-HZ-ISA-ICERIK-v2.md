@@ -975,7 +975,7 @@ C) Kendi kendine sakinleşmeye çalışman güzel. Hz. Îsâ ise tehlike yaklaş
 | 5 | 2.610 | 2.621 (835 + 1.786) | 1 | — | 736 |
 | 6 | 2.667 | 2.543 (1.132 + 1.411) | 1 | — | 594 |
 | 7 | 2.520 | 2.566 (961 + 1.605) | 1 | — | 663 |
-| 8 | 2.515 | 2.654 (996 + 1.658) | 1 | — | 750 |
+| 8 | 2.515 | 2.671 (1.013 + 1.658) | 1 | — | 750 |
 
 Bütün cümleler ≤18 kelime (betikle ve denetçinin elle sayımıyla; en uzunları 17). Kısalan bölümlerde (B6, B7, B8) dönüm noktası kısa kurgu sahnesine döndü, yeni bilgi yok: B6 havarilerin öne çıktığı an ve Hz. Îsâ'nın yüz çevirenlere kızmaması; B7 duadan önceki sessizlik ve Allah'ın cevabından sonraki an; B8 havarilerin geceleri dua etmesi ve Hz. Îsâ'nın yolundan dönmemesi.
 
