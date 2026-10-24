@@ -4,7 +4,11 @@
 > 5a, **6b + c2** (Diyanet'in sırası; Ninova'nın imanı B5'te, sayı âyetin kendi ifadesiyle), 7a,
 > 8a/b/c (6b'ye uyarlanmış). v2 metni `KITAP-HZ-YUNUS-ICERIK-v2.md`; final.md E (S1, S2, S5) ve
 > F5 (9 → 11 madde; ilk taslakta "8 madde" diye sayılmıştı, doğrusu 9) güncellendi. İçerik
-> denetimi ve açık kararlar v2 "Yazım notları"nda.
+> denetimi (1 kritik, 9 önemli, 17 küçük) v2 "Yazım notları"nda. **Denetim sonrası
+> yedi kararda öneri kabul (Hasan, 24 Ekim 2026):** süreli uyarı kalktı (karar 1'in metni
+> "Allah'a inanmazlarsa başlarına büyük bir sıkıntı gelebilirdi."), B4'te kırgınlığın izi
+> kalır ve Işıl satırı çıkar, gemide uyku çıkar, final S1, S2, S5 şıkları dengelendi, F5 dua
+> maddesi *Hadislerle İslâm* 2/55'teki hadisle (Ebû Dâvûd, Vitr, 23; Müslim, Zikir, 92).
 > **Kural:** `V2-YAZIM-KURALLARI.md` (akış, kaynak, çocuk metni, sabit alanlar); brif §4.3
 > (üç alan), §7.2 (ölçüler), §7.10 (karma tarz). Faz 1 kararları
 > (`KITAP-HZ-YUNUS-KAYNAK-DENETIMI.md`, karar kaydı 16 Ekim 2026) ve Faz 2 kararları

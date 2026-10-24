@@ -1209,8 +1209,8 @@ Kaynak dışı bilgi var mı?: Hayır. Dönüş s. 97–98 ve Sâffât 147 (Diya
 ```text
 Soru 1: Hikâyede Hz. Yunus, Ninova'da insanları Allah'a çağırırken nerelerde konuşurdu?
 A) Meydanlarda, pazarlarda ve yol kenarlarında
-B) Yalnızca kendi evinin bahçesinde
-C) Yalnızca gemilerde, nehrin üstünde
+B) Sarayın salonlarında ve yöneticilerin yanında
+C) Nehirdeki kayıklarda ve gemi iskelelerinde
 Doğru seçenek: A
 Kaynak bölüm: 1
 Kaynak PDF sayfası: 50
@@ -1219,7 +1219,7 @@ Soru türü: olay
 
 ```text
 Soru 2: Hikâyede Hz. Yunus'un, kura çekilecekken yaptığını kendisi söylemesi bize ne anlatır?
-A) Kalabalıkta susmanın her zaman daha doğru olduğunu
+A) Kalabalıkta susup kendini göstermemenin değerini
 B) Kurada kendi adının çıkmasını istediğini
 C) Yaptığımızı saklamayıp dürüstçe söylemenin değerini
 Doğru seçenek: C
@@ -1252,8 +1252,8 @@ Soru türü: olay
 
 ```text
 Soru 5: Hikâyede Hz. Yunus'un, onu yıllarca dinlemeyen Ninova halkını sevgiyle karşılaması bize ne anlatır?
-A) Kırgın olduğumuz kişilere hiç selam vermemenin doğru olduğunu
-B) Eski kırgınlıkları her fırsatta hatırlatmak gerektiğini
+A) Kırgın olduğumuz kişilerden uzak durmanın doğru olduğunu
+B) Eski kırgınlıkları her fırsatta hatırlatmanın önemini
 C) Kırgınlığı bırakıp insanlarla yeniden birlikte sevinmenin değerini
 Doğru seçenek: C
 Kaynak bölüm: 5
@@ -1341,8 +1341,8 @@ Kur'an anlatmaz; yalnız balıktan sonra kıyıya sağlığı bozulmuş olarak b
 **"Ninova'ya ne olacaktı? Allah insanları korkutur mu?"**
 Kur'an, Hz. Yunus'un halkı iman edince "dünya hayatındaki zillet azabını" üzerlerinden
 kaldırdığını bildirir (Yûnus 98). Kitap bunu "büyük bir sıkıntı" diye
-anlattı; nasıl bir sıkıntı olacağını Kur'an bildirmez. Kaynağımızdaki kasırga ve yıkılan
-putlar anlatımı kitaba alınmadı. Bu kıssanın öne çıkan yanı, bir şehrin iman
+anlattı; nasıl bir sıkıntı olacağını ve ne zaman geleceğini Kur'an bildirmez. Kaynağımızdaki
+süreli uyarı, kasırga ve yıkılan putlar anlatımı kitaba alınmadı. Bu kıssanın öne çıkan yanı, bir şehrin iman
 etmesiyle sıkıntının kalkmasıdır; Kur'an bu yüzden Hz. Yunus'un halkını özellikle anar.
 Çocuğunuza Allah'ın kullarına her zaman dönüş kapısı açtığını söyleyebilirsiniz.
 
@@ -1373,10 +1373,14 @@ bu rivayete yer vermedi.
 **"Bu duayı okursam her istediğim olur mu?"**
 Peygamberimiz (s.a.v.) Hz. Yunus'un balığın karnındaki duasını ashabına öğretmiş ve şöyle
 buyurmuştur: "Müslüman bir kişi bir şey için bu duayı yaparsa, Allah onun duasını mutlaka
-kabul eder." (Tirmizî, Deavât, 81; Hadislerle İslâm 6/117 ve 6/128). Kitap çocuk metninde
-yalnız Peygamberimizin bu duayı öğrettiğini söyledi; duayı bir görev ya da ödev olarak
-sunmadı. Çocuğunuz "Okudum ama istediğim olmadı" derse, duanın Allah'la konuşmak olduğunu ve
-Allah'ın her duayı işittiğini hatırlatabilirsiniz.
+kabul eder." (Tirmizî, Deavât, 81; Hadislerle İslâm 6/117 ve 6/128). Başka bir hadiste de
+"Sizden biriniz, 'Dua ettim de duam karşılık görmedi.' deyip acele etmediği müddetçe duası
+karşılık bulur." buyurmuştur (Ebû Dâvûd, Vitr, 23; Müslim, Zikir, 92; Hadislerle İslâm 2/55).
+Diyanet bu hadisi açıklarken, duanın karşılığının bu dünyada verilebileceği gibi âhirete
+de ertelenebileceğini söyler. Kitap çocuk metninde yalnız Peygamberimizin bu duayı
+öğrettiğini söyledi; duayı bir görev ya da ödev olarak sunmadı. Çocuğunuz "Okudum ama
+istediğim olmadı" derse, kabulün her zaman istediğimiz biçimde ve hemen olmadığını, Allah'ın
+her duayı işittiğini hatırlatabilirsiniz.
 
 **"Ninova halkı ne zaman iman etti? Hz. Yunus şehrine geri mi döndü?"**
 Kur'an'da "Bir defa daha onu yüz bin ya da daha fazla kişiye elçi olarak gönderdik. Bu defa
