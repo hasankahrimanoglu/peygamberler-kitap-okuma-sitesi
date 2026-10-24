@@ -60,8 +60,10 @@ uygulanmıştır.
   59, 63–64; Saf 6), mucizeler (Âl-i İmrân 49; Mâide 110), havariler (Âl-i İmrân 52–53;
   Mâide 111; Saf 14), sofra (Mâide 112–115), tuzak ve yükseltilme (Âl-i İmrân 54; Nisâ
   157–158; Enbiyâ 91).
-- Rivayetler onaylı kalıplarla verildi: hurma ağacının kupkuru bir kütüğe benzemesi
-  (B2) ve hastaların Hz. Îsâ'ya getirilmesi (B5) "Anlatılanlara göre".
+- Rivayetler onaylı kalıplarla verildi: hastaların Hz. Îsâ'ya getirilmesi (B5) "Anlatılanlara
+  göre". *(v2, 24 Ekim 2026: B2'deki "kupkuru kütük" rivayeti tek kaynakta kaldığı için
+  çıktı; karma tarz ayrıntı tablosu, karar 1. Bu dosyanın D bölümündeki eski çapa ve
+  prompt metinleri v2'den önceki hâli gösterir.)*
 - Dışarıda kalanlar (Faz 1 §4, 26 madde): Meryem'in çocukluğunun ayrıntısı (Zekeriyyâ
   kitabına); Yahyâ'nın mesh etmesi; Mısır'a kaçış, Herod ve yıldızcılar; çöl orucu ve
   şeytanın sınaması; havari adları ve çağrılış sahneleri; İncil'den alınan bütün adlı
@@ -225,7 +227,7 @@ yoktur; koruyan ve kaldıran Allah'tır.
 2. **"Ben Allah'ın kuluyum."** B1 müjde: "beşikteyken de büyüyünce de insanlarla
    konuşacaktı" → B3 bebeğin ilk sözü → B4 "beşikteyken söylediği sözü büyüyünce de
    unutmadı".
-3. **Su ve hurma.** B2 kupkuru kütükten taze hurma ve su kaynağı → B4 açılışı
+3. **Su ve hurma.** B2 hurma ağacından taze hurma ve su kaynağı → B4 açılışı
    (Mü'minûn 50: kaynak suyu bulunan yüksekçe yer) → B8 kapanış görseli (aynı pınarlı
    tepe) ve madalya (pınarlı tepede hurma dalı).
 4. **Söz ve sükût.** B2 söz orucu → B3 susan Hz. Meryem'in yerine bebeğin konuşması →
@@ -1828,9 +1830,9 @@ Soru türü: olay
 
 ```text
 Soru 2: Hz. Meryem'in çok yorgunken hurma ağacını silkelemesi bize ne anlatır?
-A) Yorgunken hiçbir şey yapmamak gerektiğini
-B) Zor bir anda bile elimizden gelen küçük adımı atmanın değerini
-C) Ağaçların her zaman meyve verdiğini
+A) Yorgun olduğumuzda hiçbir işe başlamamak gerektiğini
+B) Zor bir anda elimizden gelen küçük adımın değerini
+C) Hurma ağaçlarının her mevsim bol meyve verdiğini
 Doğru seçenek: B
 Kaynak bölüm: 2
 Kaynak PDF sayfası: c11 351 (Meryem 25)
@@ -1840,8 +1842,8 @@ Soru türü: değer
 ```text
 Soru 3: Hz. Meryem kucağındaki bebeği işaret edince ne oldu?
 A) Bebek konuştu ve "Ben Allah'ın kuluyum" dedi
-B) Kalabalık hemen dağılıp gitti
-C) Hz. Meryem söz orucunu bozup konuştu
+B) Kalabalık hiçbir şey demeden dağılıp gitti
+C) Hz. Meryem söz orucunu bozup her şeyi anlattı
 Doğru seçenek: A
 Kaynak bölüm: 3
 Kaynak PDF sayfası: c11 352–353 (Meryem 29–30)
@@ -1862,8 +1864,8 @@ Soru türü: değer
 ```text
 Soru 5: Hz. Îsâ'nın her mucizede "Allah'ın izniyle" demesi bize ne anlatır?
 A) Mucizeleri kendi gücüyle yaptığını
-B) Mucizelerin bir oyun olduğunu
-C) Başardığı güzel işi kendine mal etmeyip Allah'a bağladığını
+B) Herkesin mucize gösterebileceğini
+C) Başardığı işi Allah'a bağladığını
 Doğru seçenek: C
 Kaynak bölüm: 5
 Kaynak PDF sayfası: c12 222–223, 280 (Âl-i İmrân 49; Mâide 110)
@@ -1883,9 +1885,9 @@ Soru türü: olay
 
 ```text
 Soru 7: Hz. Îsâ'nın duasına ilk gelenden son gelene kadar herkesi katması bize ne anlatır?
-A) Duanın yalnızca kendimiz için edilmesi gerektiğini
+A) Yalnız kendimiz için dua etmemiz gerektiğini
 B) Bir nimeti herkes için istemenin güzelliğini
-C) Duanın çok uzun olması gerektiğini
+C) Duada uzun cümleler kurmanın önemini
 Doğru seçenek: B
 Kaynak bölüm: 7
 Kaynak PDF sayfası: c12 241 (Mâide 114)
@@ -1894,9 +1896,9 @@ Soru türü: değer
 
 ```text
 Soru 8: Kur'an'a göre Hz. Îsâ'ya kurulan tuzak ne oldu?
-A) Tuzak hiç kurulmadı
-B) Hz. Îsâ tuzağı kendi gücüyle bozdu
-C) Allah tuzağı bozdu ve Hz. Îsâ'yı kendi katına kaldırdı
+A) Tuzak kuranlar planlarından kendiliğinden vazgeçti
+B) Hz. Îsâ tuzağı kendi gücüyle ve tek başına bozdu
+C) Allah tuzağı bozdu ve onu kendi katına kaldırdı
 Doğru seçenek: C
 Kaynak bölüm: 8
 Kaynak PDF sayfası: c12 333–334 (Âl-i İmrân 54; Nisâ 157–158)
@@ -1938,7 +1940,7 @@ seçenekleri konuşmanıza yardımcı olabilir.
 
 ### F5. Çocuğunuz Sorarsa
 
-> 11 soru, hassasiyet sırasına göre (en hassas önce; brif §10.3, REVİZE 16 Ekim 2026).
+> 13 soru, hassasiyet sırasına göre (en hassas önce; brif §10.3, REVİZE 16 Ekim 2026).
 
 **"Hz. Îsâ öldü mü? Şimdi nerede? Geri gelecek mi?"**
 Kur'an, onu ne öldürdüklerini ne de çarmıha gerdiklerini (çarmıh, eski zamanlarda
@@ -1962,6 +1964,16 @@ inanan arkadaşına saygıyla davranmasını, onunla tartışmasına gerek olmad
 küçümsemenin ise doğru olmadığını söyleyebilirsiniz. Merak ederse "Biz Hz. Îsâ'yı Allah'ın sevdiği bir peygamber olarak
 tanırız" demesi yeterlidir.
 
+**"Arkadaşımın okuduğu İncil, Hz. Îsâ'ya verilen kitap mı?"**
+Kur'an, Allah'ın Hz. Îsâ'ya İncil'i verdiğini bildirir (Mâide 46). Bugün Hıristiyanların
+okuduğu İnciller ise Hz. Îsâ'dan sonra, onun hayatını ve sözlerini anlatan kişilerce
+yazılmıştır; Müslümanlar Hz. Îsâ'ya indirilen kitabın aslının bugün elimizde olmadığına
+inanır. İncillerde anlatılan bazı olaylar Kur'an'da yoktur; kitap Kur'an'ın ve hadislerin
+bildirdiklerini esas aldı. Bazı anlatımlarda bu konu belli kişileri ya da toplulukları
+suçlayan sert bir dille anlatılır; kitap bu tartışmaya girmedi. Çocuğunuza arkadaşının kutsal
+kitabına saygı göstermesini, farklı inandığımız konularda tartışmak yerine kendi inancını
+sakin bir dille anlatabileceğini söyleyebilirsiniz.
+
 **"İnsanlar Hz. Meryem'e neden kötü sözler söyledi?"**
 Kur'an, Hz. Meryem bebeğiyle döndüğünde bazılarının ona "Ey Meryem! Gerçekten sen çirkin
 bir şey yaptın! Ey Hârûn'un kız kardeşi! Baban kötü bir adam, annen de iffetsiz değildi"
@@ -1971,7 +1983,9 @@ hitabı, Hz. Meryem'in yüzyıllar önce yaşamış Hz. Hârûn'un kız kardeşi
 gelmez; anlamı için farklı açıklamalar vardır. Çocuğunuz "Neyle suçladılar?" diye sorarsa
 şöyle diyebilirsiniz: "Babası olmadan doğan bir bebeği anlayamadılar ve Hz. Meryem hakkında
 yanlış düşündüler." Birinin yapmadığı bir şeyle suçlanmasının ne kadar incitici olduğunu ve
-böyle bir durumda güvendiği bir büyüğe anlatmasının önemini de konuşabilirsiniz.
+böyle bir durumda güvendiği bir büyüğe anlatmasının önemini de konuşabilirsiniz. Kitap
+bu bölümde Işıl'ın sorusuyla, haksız bir sözü içinde saklamamasını ve güvendiği bir büyüğe
+anlatmasını kısaca söyler.
 
 **"Neden Hz. Îsâ'ya tuzak kurdular? Onlar kötü insanlar mıydı?"**
 Kur'an, Hz. Îsâ'ya tuzak kurulduğunu ve Allah'ın bu tuzağı bozduğunu bildirir (Âl-i İmrân
@@ -2013,6 +2027,14 @@ olduğunu, böyle anlarda dua etmenin ve sevdiği birinden yardım istemenin ins
 söyleyebilirsiniz. Ona, kendisinin de yalnız olmadığını ve yanında güvenebileceği büyüklerin
 bulunduğunu hatırlatın.
 
+**"Hz. Îsâ çocukken Mısır'a mı götürüldü?"**
+Kur'an, Hz. Îsâ'nın çocukluğundan yalnız, Allah'ın onu ve annesini kalmaya elverişli, kaynak
+suyu bulunan yüksekçe bir yere yerleştirdiğini bildirir (Mü'minûn 50). Bu yerin neresi olduğu
+Kur'an'da geçmez; Mısır, Şam ya da Kudüs çevresi diyen farklı rivayetler vardır. Bir
+hükümdarın tehdidi yüzünden Mısır'a gidildiği İncil'de anlatılır, bazı İslami kaynaklarda da
+geçer; kitap bunu almadı, yalnız Kur'an'daki pınarlı tepeyi anlattı. Çocuğunuza Hz. Îsâ'nın
+annesiyle birlikte güvenli bir yerde büyüdüğünü söyleyebilirsiniz.
+
 **"Hz. Meryem'e sonra ne oldu?"**
 Hz. Meryem'in sonraki hayatını ve vefatını Kur'an bildirmez; bu konudaki anlatımlar
 rivayettir. Kitap onu, Kur'an'ın Meryem oğlunu ve annesini bütün insanlar için bir işaret
@@ -2023,14 +2045,14 @@ Rabbine güveniyle bugün de sevgiyle hatırlandığını söyleyebilirsiniz.
 Kur'an, Hz. Îsâ'nın Allah'ın izniyle çamurdan kuş yaptığını, körü ve cüzzamlıyı
 iyileştirdiğini ve ölüleri dirilttiğini bildirir (Âl-i İmrân 49; Mâide 110). Bunlar
 mucizedir: Allah'ın, peygamberinin doğruluğunu göstermek için ona verdiği olağanüstü
-işaretlerdir ve Hz. Îsâ her birini Allah'a bağlamıştır. Bazı mucizeler İncil'de ayrıntılı
-anlatılır; Kur'an bunları genel olarak bildirir, kitap da yalnız Kur'an'daki hâliyle verdi.
-Çocuğunuza, mucizelerin her zaman olan şeyler olmadığını, hastalıkta doktora gitmenin ve
-tedavi olmanın da gerekli olduğunu, dua etmenin ise her zaman mümkün olduğunu
-söyleyebilirsiniz. Yakın zamanda birini kaybettiyse "Dedemi de diriltir mi?" diye
-sorabilir; dedenin bu dünyaya geri gelmeyeceğini sakin bir dille söyleyip mucizelerin
-peygamberlere verilmiş özel işaretler olduğunu, kaybettiklerimizi ise sevgiyle anıp onlar
-için dua ettiğimizi anlatabilirsiniz.
+işaretlerdir ve Hz. Îsâ her birini Allah'a bağlamıştır. Bazı mucizeler İncil'de ve sonraki
+anlatımlarda ayrıntılı anlatılır (su üstünde yürüme, Hz. Nûh'un oğullarından Sâm'ın
+kabrinden diriltilmesi gibi); Kur'an bunlardan söz etmez ya da mucizeleri genel olarak bildirir, kitap
+da yalnız Kur'an'daki hâliyle verdi. Kitap bu bölümde Işıl'ın sorusuyla, bunların
+peygamberlere verilmiş özel mucizeler olduğunu, vefat edenleri sevgiyle anıp onlar için dua
+ettiğimizi ve hastalıkta doktora gidip şifa için dua ettiğimizi kısaca söyler. Yakın zamanda
+birini kaybettiyse "Dedemi de diriltir mi?" diye sorabilir; dedenin bu dünyaya geri
+gelmeyeceğini sakin bir dille söyleyip aynı şeyi siz de anlatabilirsiniz.
 
 **"Cüzzam neydi? Hasta insanlardan uzak mı durmalıyız?"**
 Cüzzam, eskiden insanların çok korktuğu, deride yaralar açan bulaşıcı bir hastalıktır; bugün
