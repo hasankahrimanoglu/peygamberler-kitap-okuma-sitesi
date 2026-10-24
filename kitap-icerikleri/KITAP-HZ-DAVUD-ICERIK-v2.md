@@ -2,7 +2,9 @@
 
 > **Durum:** Yazıldı ve içerik denetçisinden geçti (24 Ekim 2026; 0 kritik, 6 önemli, 21
 > küçük). Mekanik bulgular düzeltildi; denetim sonrası beş soruda Hasan önerileri kabul
-> etti (24 Ekim 2026), işlendi ("Yazım notları" sonu). Hasan okuması ve aktarım bekleniyor.
+> etti (24 Ekim 2026), işlendi ("Yazım notları" sonu). Hasan onayladı, `src/data/books.ts`'e
+> aktarıldı (24 Ekim 2026); aktarımda Hasan kararıyla `bolum-6/mescit-tepesi` görselinin alt
+> metni "Şafakta şehre bakan düz ve kayalık bir tepe." oldu (görsel değişmedi).
 > Altı bölümün hikâye metninin kaynağı bu dosyadır. Büyük Final Testi, veli raporu,
 > sözlükçe, görsel briefleri ve kaynak notları `KITAP-HZ-DAVUD-ICERIK-final.md`'de kalır;
 > veli raporunun ve final testinin v2'ye bağlı maddeleri orada güncellendi (E, F5).
@@ -1058,7 +1060,8 @@ okuyacağım." Uygulama:
   Işıl 8, soru başlığı 1, "Biliyor muydun?" kutusu 4. Kutu ve veli metinlerindeki
   `*Hadislerle İslâm*` yıldızları `books.ts`'e taşınmaz (canlı veli metinlerinde italik yok).
   B5'in ilk bloğu artık düz metin (`dropCap` onda); *adalet* kutusu ikinci blok.
-- Otuz sahne görseli aynı bölümde, aynı parçada, aynı sırada; alt metin değişmedi.
+- Otuz sahne görseli aynı bölümde, aynı parçada, aynı sırada; yalnız `bolum-6/mescit-tepesi` alt metni
+  "Şafakta şehre bakan düz ve kayalık bir tepe." oldu (Hasan kararı, 24 Ekim 2026; görsel aynı).
 - Yedi sözlük kelimesi aynı bölümlerde, aynı parçada, aynı tanımlarla. **KELİME çevre metni
   değişenler:** B1 azık (öncesi "Bir gün babası, ordudaki ağabeylerine götürmesi için ona yiyecek hazırladı. Genç Hz. Dâvûd ", sonrası " torbalarını sırtına aldı ve ordunun ardından yola koyuldu."); B2 sapan (öncesi "O sırada genç Hz. Dâvûd, inananların arasından çıkıp öne yürüdü. Elinde bir çoban ", sonrası "ı vardı. Câlût, karşısına yalnız bir sapanla çıkan bu genci görünce çok kızdı; onunla alay edildiğini düşündü."); B3 Zebur (öncesi "Allah, Hz. Dâvûd'a ", sonrası "'u verdi. Anlatılanlara göre Zebur, Allah'ı öven sözlerle, dualarla ve insanların kalbine seslenen öğütlerle doluydu. Hz. Dâvûd bu sözleri insanlara okur, onlara Rablerini hatırlatırdı."); B4 zırh (öncesi "Allah ona demirden ", sonrası " yapmayı da öğretti ve şöyle buyurdu: “Geniş zırhlar imal et, örgüsünü ölçülü yap.”"); B5 adalet (öncesi "Allah onun hükümdarlığını güçlendirmiş, ona hikmet ve anlaşmazlıkları halletme yeteneği vermişti. İnsanlar bir konuda anlaşamadıklarında ona gelir, aralarında ", sonrası "le hüküm vermesini isterdi."). *sebat* ve *vâris* aynı.
 - **Sabit alanlar, `learned` (Ne Öğrendik):**

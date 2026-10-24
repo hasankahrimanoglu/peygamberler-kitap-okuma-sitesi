@@ -787,7 +787,7 @@ const davudQuizQuestions: QuizQuestion[] = [
     question: "Kur'an'a göre sabah akşam Hz. Dâvûd ile birlikte kimler tesbih ederdi?",
     correctOption: "a",
     options: [
-      { id: "a", text: "Dağlar ve kuşlar" },
+      { id: "a", text: "Dağlar ve toplanıp gelen kuşlar" },
       { id: "b", text: "Sarayda çalışan bütün insanlar" },
       { id: "c", text: "Denizdeki balıklar ve dalgalar" },
     ],
@@ -814,7 +814,7 @@ const davudQuizQuestions: QuizQuestion[] = [
   },
   {
     id: 6,
-    question: "Hz. Dâvûd'un genç oğlu Hz. Süleyman'a güvenip ona yol açması bize ne anlatır?",
+    question: "Hikâyede Hz. Dâvûd'un genç oğlu Hz. Süleyman'a güvenip ona yol açması bize ne anlatır?",
     correctOption: "a",
     options: [
       { id: "a", text: "Küçük olmanın değersiz olmak demek olmadığını" },

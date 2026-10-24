@@ -2082,6 +2082,12 @@ kaydeder. Bölüm başına 1 açılış + 5 sahne (1. Kısım 2 / Devam 3).
 > bağlar, sazlı nehir vadisi, tozlu ova; şehir ve kubbesiz mabet Hz. Süleyman kitabıyla aynı
 > dildedir (kireç taşı, kesme taş avlular, sedir kirişler, sade taş sütunlar).
 
+> **Karma tarz metni (v2) aktarıldı (24 Eki 2026):** Hikâye metni yeniden yazıldı, görsel
+> dosyaları değişmedi; yeni görsel yok, otuz sahne aynı bölümde, aynı parçada ve aynı sırada.
+> Tek `alt` değişikliği (Hasan kararı): `bolum-6/mescit-tepesi` → "Şafakta şehre bakan düz ve
+> kayalık bir tepe." ("kenarında … kesme kireç taşı ve uzun bir sedir kirişi" kısmı çıktı;
+> metinde mabet hazırlığını ima eden taş ve kiriş cümlesi artık yok; dosya ve görsel aynı).
+
 ### Kitap kapağı ve harita durağı
 
 | Dosya | Biçim | Durum | Görsel brifi |
@@ -2097,7 +2103,7 @@ kaydeder. Bölüm başına 1 açılış + 5 sahne (1. Kısım 2 / Devam 3).
 | `hz-davud/bolum-1/azik-yolu.jpg` | 1. Kısım | A | Genç Hz. Dâvûd — Katman 1, arkadan, yüz görünmez; karakter bloğu "Young Dâvûd". | ✅ Hazır | Sırtında yün torbalar, elinde çoban değneğiyle tozlu bir yolda arkası dönük yürüyen genç bir çoban; uzakta önünde bir ordunun bıraktığı toz bulutu. |
 | `hz-davud/bolum-1/irmak-kiyisi.jpg` | 1. Kısım | A | Tâlût — Katman 1 (Allah'ın seçtiği hükümdar; Faz 1 §B6), arkadan, yüz görünmez (karma sahne). Askerler — Katman 3, karşıdan, sakin. | ✅ Hazır (rötuş: fazladan demirhane silindi) | Sazlıklı bir nehrin kıyısında duran yorgun askerler; önlerinde, arkası dönük, geniş omuzlu bir adam elini kaldırmış onlara sesleniyor. |
 | `hz-davud/bolum-1/bir-avuc-su.jpg` | Devam | B | İsimsiz bir asker — Katman 3, yalnız elleri ve kolu; yüz kadraj dışında. | ✅ Hazır | Nehrin kıyısında diz çökmüş bir adamın birleştirdiği avuçlarında parıldayan bir avuç berrak su. |
-| `hz-davud/bolum-1/karsi-kiyi.jpg` | Devam | B | Tâlût'un yanında kalan askerler — Katman 3, sakin, küçük. Hikâyeye göre Hz. Dâvûd'un babası ve ağabeyleri (Katman 1) bu toplulukta olabilir; bu yüzden hiçbir yüz seçilmez. Tâlût ve Hz. Dâvûd ayrıca seçilmez. | ✅ Hazır | Öğleden sonra ışığında nehrin karşı kıyısına çıkıp yamaca tırmanan küçük bir topluluk; arkalarında, öbür kıyıda suyun kenarında dinlenen kalabalık. |
+| `hz-davud/bolum-1/karsi-kiyi.jpg` | Devam | B | Tâlût'un yanında kalan askerler — Katman 3, sakin, küçük. Hikâyeye göre Hz. Dâvûd'un ağabeyleri (Katman 1) bu toplulukta olabilir (v2: babası orduda değil); bu yüzden hiçbir yüz seçilmez. Tâlût ve Hz. Dâvûd ayrıca seçilmez. | ✅ Hazır | Öğleden sonra ışığında nehrin karşı kıyısına çıkıp yamaca tırmanan küçük bir topluluk; arkalarında, öbür kıyıda suyun kenarında dinlenen kalabalık. |
 | `hz-davud/bolum-1/kucuk-ordu.jpg` | Devam | B | Genç Hz. Dâvûd — Katman 1, arkadan, yüz görünmez; karakter bloğu "Young Dâvûd". Kamptaki askerler — Katman 3, uzak ve küçük. | ✅ Hazır | Alacakaranlıkta birkaç küçük ateşin çevresinde oturan az sayıda insan; yamaçtan onlara doğru inen, arkası dönük, sırtı torbalı genç bir çoban. |
 
 ### Bölüm 2 — Câlût'un Karşısında
@@ -2150,7 +2156,7 @@ kaydeder. Bölüm başına 1 açılış + 5 sahne (1. Kısım 2 / Devam 3).
 |---|---|---|---|---|---|
 | `hz-davud/bolum-6/kapak.jpg` | Açılış | A | yok | ✅ Hazır | Sonbahar akşamında, yaprakları altın rengine dönmüş bağlar ve zeytinlikler arasında kıvrılan taş döşeli bir patika. |
 | `hz-davud/bolum-6/baba-ogul.jpg` | 1. Kısım | A | Hz. Dâvûd (yaşlı) — Katman 1, arkadan, yüz görünmez; karakter bloğu "Hz. Dâvûd" (değnek sahneye özgü). Hz. Süleyman (genç) — Katman 1, arkadan, yüz görünmez; karakter bloğu "Young Süleyman". | ✅ Hazır | Öğleden sonra ışığında zeytinlikler arasındaki bir yolda yan yana yürüyen, değneğine dayanan koyu mavi cüppeli yaşlı bir adam ile krem cüppeli genç bir adam; ikisi de arkadan. |
-| `hz-davud/bolum-6/mescit-tepesi.jpg` | 1. Kısım | A | yok | ✅ Hazır | Şafakta şehre bakan düz ve kayalık bir tepe; kenarında üst üste konmuş birkaç kesme kireç taşı ve uzun bir sedir kirişi. |
+| `hz-davud/bolum-6/mescit-tepesi.jpg` | 1. Kısım | A | yok | ✅ Hazır | Şafakta şehre bakan düz ve kayalık bir tepe. |
 | `hz-davud/bolum-6/pencere-onunde.jpg` | Devam | B | Hz. Dâvûd (yaşlı) — Katman 1, arkadan, yüz görünmez; karakter bloğu "Hz. Dâvûd". Hz. Süleyman (genç) — Katman 1, arkadan, yüz görünmez; karakter bloğu "Young Süleyman". | ✅ Hazır | Alacakaranlıkta açık bir pencerenin önünde sedir bir oturakta oturan koyu mavi cüppeli yaşlı bir adam ve yanında, eli oturağın arkasında, ayakta duran krem cüppeli genç bir adam; ikisi de arkadan, dışarıda şehrin ışıkları. |
 | `hz-davud/bolum-6/bos-oturak.jpg` | Devam | B | yok | ✅ Hazır | Akşam ışığında açık bir pencerenin önünde boş duran sedir bir oturak; üzerinde dürülmüş sade bir tomar, dışarıda mor dağlar ve ilk yıldız. |
 | `hz-davud/bolum-6/safak-daglar.jpg` | Devam | B | yok | ✅ Hazır | Şafakta kat kat dağ sırtlarının üzerinde birlikte süzülen kuşlar; ön planda teraslı bir yamaçta yaşlı bir zeytin ağacı ve yanında boy veren genç fidanlar. |
@@ -2172,7 +2178,7 @@ kaydeder. Bölüm başına 1 açılış + 5 sahne (1. Kısım 2 / Devam 3).
 | Hz. Îsâ | 8 | 40 | **48** | 48 | 0 |
 | Hz. İsmail | 6 | 30 | **36** | 36 | 0 |
 | Hz. Sâlih | 5 | 25 | **30** | 30 | 0 |
-| Hz. Dâvûd | 6 | 30 | **36** | 36 | 0 (21 Eki 2026'da üretildi; kitap "preparing") |
+| Hz. Dâvûd | 6 | 30 | **36** | 36 | 0 (21 Eki 2026'da üretildi; kitap 21 Eki 2026'dan beri yayında) |
 | **Genel** | **95** | **458** | **553** | **533** | **21** |
 
 **Bu sicilin dışındakiler:**

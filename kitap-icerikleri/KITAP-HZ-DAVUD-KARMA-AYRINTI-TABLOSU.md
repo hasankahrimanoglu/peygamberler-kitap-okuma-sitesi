@@ -35,6 +35,7 @@
 > da vardı". (4) B2 "Bu zafer…" kısaldı; B3 "ikisini de ölçülü yaptı" tek cümle; B5 "Yıllar
 > böyle geçip gidecekti." çıktı. (5) B6 kesme taş ve sedir kirişi cümlesi çıktı; B4 "örs" →
 > "ocak" (iki yer); B1 "lâyık" kaldı. Ölçüler 2.651–3.158 (v2 yazım notları).
+> **Hasan onayladı, aktarıldı (24 Ekim 2026).**
 > **Kural:** brif §4.3 (üç alan, kaynak ölçeği), §7.2 (ölçüler), §7.10 (karma tarz,
 > örnek sahne), §16 (yerleşik kararlar; §16/1 ölüm, §16/6 kahramanlaştırma, §16/8 kalıp,
 > §16/9 sayılar, §16/12 melek ve vahiy, §16/13 iki yorum, §16/17b–c hadis ve alıntı,

@@ -2705,6 +2705,36 @@ Kurallar:
       `ICERIK-GORSEL-SICILI` değişmedi (kutu ve görsel yerleri aynı).
       `kitap-denetle musa` 0 hata (uyarı: 10 ses yer tutucu). Yayına çıkması
       `main`'e geçişle olur. Sırada Hz. Dâvûd.*
+      *24 Eki: **Hz. Dâvûd v2 aktarıldı** (Hasan onayı). Altı bölümün hikâye
+      metni `books.ts`'te `KITAP-HZ-DAVUD-ICERIK-v2.md` ile birebir (30 sahne
+      görseli ve 7 sözlük kelimesi aynı parçada, aynı sırada; beş kelimenin
+      yalnız çevre metni değişti). Bu kitap için video yoktu; ayrıntılar PDF,
+      TDV ve Hadislerle İslâm ile tartıldı. Yayında "anlatılanlara göre" geçen
+      üç bilgi sahih hadis olarak, kalıpsız: oruç ve gece ibadeti (B3) ve el
+      emeği (B4) anlatıda, güzel ses (B3) kutuda. Yeni kutular: "her peygamber
+      koyun gütmüştür" (B1) ve Hz. Dâvûd'un Allah sevgisini "serin
+      sudan daha sevimli" dilediği dua (B6; Tirmizî, Hadislerle İslâm 6/79),
+      B1'deki susuz orduya bağlanan halkayla. B1'deki ordu sahnesi TDV'nin
+      aktardığı Taberî sürümüyle: ağabeyleri orduda, Hz. Dâvûd koyunların
+      başında, azığı babası hazırlıyor; babanın orduda olması ve "yaşın küçük"
+      konuşması çıktı. Yalnız PDF'te geçen ve Tevrat izli ayrıntılar çıktı:
+      B6'da hastalık, evlat duası ve mabet hazırlığını ima eden taş ve kiriş
+      (B4'te ücret almama da çıktı; maaş teklifi işaretli örnek sahne). Hz.
+      Dâvûd ve komutanının eşi anlatısı hiçbir yerde yok; veli raporunun "Ne
+      yanlış yaptı?" maddesi kaynak kitabın yorumu yerine TDV'ye ve Hadislerle
+      İslâm'a dayanıyor, anlatıyı adlandırmadan. B2'de Câlût'un meydan okuması
+      kalıpla; ardından Işıl'ın sorusu ve anlatıcının güvenlik paragrafı
+      ("ondan uzaklaş… güvendiğin bir büyüğüne anlat"). Yeni bloklar: Işıl 8,
+      soru başlığı 1, "Biliyor muydun?" kutusu 4. Sabit alanlarda Ne Öğrendik
+      B1-3, B3-3 ve B4-3, final testinin 3. ve 6. sorusu değişti (doğru harfler
+      aynı); veli raporunun "Çocuğunuz Sorarsa" bölümünde final.md F5'e göre 7
+      madde güncellendi (1, 2, 4, 6, 7, 8, 10; toplam 10). `bolum-6/mescit-tepesi`
+      alt metni sadeleşti ("Şafakta şehre bakan düz ve kayalık bir tepe.";
+      görsel aynı). Kararlar v2 yazım notları ve `-KARMA-AYRINTI-TABLOSU.md`'de.
+      Geçici `davudV2Onizleme.ts` silindi; `ICERIK-GORSEL-SICILI`'nde alt metin
+      güncellendi, `SOZLUKCE-SICILI` değişmedi (kutu yerleri aynı, mucize
+      B3 ve B4'te düz metin). `kitap-denetle davud` 0 hata (uyarı: 6 ses yer
+      tutucu). Yayına çıkması `main`'e geçişle olur. Sırada Hz. Süleyman.*
 
 ### 22 Ekim 2026 (iki eksenli kaynak ölçeği — Hasan onayı, bkz. 4.1/21 ve içerik brifi §4.3, §16/17b–c)
 

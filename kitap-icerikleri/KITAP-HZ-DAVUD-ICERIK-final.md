@@ -9,18 +9,22 @@
 > konuşması, B4'te ücret almama, B5'te "mabette yalnızdı", B6'da evlat duası, hastalık ve
 > "bazıları genç buldu" yok (yalnız kaynak PDF'te). Bu dosyada v2'ye göre güncellenen
 > yerler: E (S3, S6; S4'ün kaynak satırı) ve F5 (1, 2, 4, 6, 7, 8, 10); D1 `karsi-kiyi`
-> figür notundan baba çıktı. Kelime tanımları, rozet ve madalya, görsellerin kendisi ve
-> öteki alanlar değişmedi. **Eski kalanlar:** D bölümlerindeki görsel "metin çapaları",
-> seslendirme notları ve G1'deki KELİME bloklarının önündeki ve arkasındaki metin eski
+> figür notundan baba çıktı; aktarımda D6 ve H'de `mescit-tepesi` alt metni (Hasan kararı).
+> Kelime tanımları, rozet ve madalya, görsellerin kendisi ve öteki alanlar değişmedi.
+> **Hasan onayladı, aktarıldı (24 Ekim 2026):** hikâye metni ve Ne Öğrendik B1-3, B3-3, B4-3
+> `books.ts`'e, final testinin 3. ve 6. sorusu `quizzes.ts`'e, F5'in 10 maddesi veli raporuna
+> (1, 2, 4, 6, 7, 8, 10 değişti), `mescit-tepesi` alt metni `books.ts`'e.
+> **Eski kalanlar:** D bölümlerindeki görsel "metin çapaları", seslendirme notları ve G1'deki KELİME bloklarının önündeki ve arkasındaki metin eski
 > hikâyeye göredir; *azık, sapan, Zebur, zırh, adalet* bloklarının v2 metni v2 dosyasının
 > "Aktarım için" bölümündedir. §I8'deki Faz 2 kayıtları (ör. K22'deki baba notu) o günün
 > kaydı olarak bırakıldı.
 
 > **Durum:** Nihai — **Faz 2 onaylandı (21 Ekim 2026, Hasan'ın yetkisiyle ana oturum; aşağıdaki
-> karar kaydı).** Aktarım yapılmadı; `src/`, `app/`, `public/`, `supabase/`, katalog ve siciller
-> bu oturumda **değişmedi**. Faz 2 sırasındaki adı `KITAP-HZ-DAVUD-ICERIK-FAZ2-taslak.md`'ydi;
-> katalog §11.3'e göre `KITAP-HZ-DAVUD-ICERIK-final.md` adını aldı. Sıradaki adım: ana
-> oturumun açacağı yeni oturumda aktarım (`/aktarim davud`). Commit atılmadı.
+> karar kaydı).** Faz 2 oturumunda aktarım yapılmadı; `src/`, `app/`, `public/`, `supabase/`,
+> katalog ve siciller o oturumda **değişmedi**. Faz 2 sırasındaki adı
+> `KITAP-HZ-DAVUD-ICERIK-FAZ2-taslak.md`'ydi; katalog §11.3'e göre
+> `KITAP-HZ-DAVUD-ICERIK-final.md` adını aldı. **Aktarıldı** (21 Ekim 2026; v2 hikâye metni,
+> final testi ve F5 değişiklikleri 24 Ekim 2026).
 >
 > **KARAR KAYDI — Faz 2 onayı (21 Ekim 2026)**
 >
@@ -1508,7 +1512,7 @@ Görsel ID: davud-6-mescit-tepesi
 Metin çapası: "Kur'an'a göre Allah, bir ekin davasında…" paragrafından sonra
 Sahnenin amacı: Mescit dileğini figürsüz göstermek: şafakta şehre bakan düz bir tepe ve kenarında bekleyen kesme taşlar.
 Dosya: bolum-6/mescit-tepesi.jpg
-Alt metin: Şafakta şehre bakan düz ve kayalık bir tepe; kenarında üst üste konmuş birkaç kesme kireç taşı ve uzun bir sedir kirişi.
+Alt metin: Şafakta şehre bakan düz ve kayalık bir tepe.
 Ana üretim promptu: Şafak, pembe ve açık mavi bir gök. Aşağıdaki taş evli şehre bakan, düz ve geniş, kayalık bir tepe. Tepenin kenarında üst üste düzgünce konmuş birkaç büyük kesme kireç taşı ve yere uzatılmış uzun bir sedir kirişi; henüz hiçbir yapı yok. İlk güneş ışığı taşların kenarlarını altın renge boyuyor. Sakin ve umutlu bir bekleyiş havası.
 Ana üretim promptu (EN): Dawn, with a pink and pale blue sky. A flat, wide, rocky hilltop overlooks the stone-built town below. At the edge of the hilltop lie a few large cut limestone blocks neatly stacked and a long cedar beam laid on the ground; no building stands there yet. The first sunlight paints the edges of the stones gold. A calm and hopeful feeling of waiting.
 Kadraj notu: 16:9; taşlar ve kiriş sol ön planda; tepe düzlüğü ortada boş; şehir sağ alt arka planda; güneş sağ ufukta.
@@ -1988,7 +1992,7 @@ Yeni bir öneri yoktur.
 | `public/kitaplar/hz-davud/bolum-5/aksam-zeytin.jpg` | B5 · Devam | — | Akşam güneşinde altın renkte parlayan yüksek taş bir duvar; dibinde geniş gövdeli yaşlı bir zeytin ağacı ve duvarın üstünde dinlenen birkaç kuş. |
 | `public/kitaplar/hz-davud/bolum-6/kapak.jpg` | B6 · açılış | — | Sonbahar akşamında, yaprakları altın rengine dönmüş bağlar ve zeytinlikler arasında kıvrılan taş döşeli bir patika. |
 | `public/kitaplar/hz-davud/bolum-6/baba-ogul.jpg` | B6 · 1. Kısım | Hz. Dâvûd (yaşlı) (K1); Hz. Süleyman (genç) (K1) | Öğleden sonra ışığında zeytinlikler arasındaki bir yolda yan yana yürüyen, değneğine dayanan koyu mavi cüppeli yaşlı bir adam ile krem cüppeli genç bir adam; ikisi de arkadan. |
-| `public/kitaplar/hz-davud/bolum-6/mescit-tepesi.jpg` | B6 · 1. Kısım | — | Şafakta şehre bakan düz ve kayalık bir tepe; kenarında üst üste konmuş birkaç kesme kireç taşı ve uzun bir sedir kirişi. |
+| `public/kitaplar/hz-davud/bolum-6/mescit-tepesi.jpg` | B6 · 1. Kısım | — | Şafakta şehre bakan düz ve kayalık bir tepe. |
 | `public/kitaplar/hz-davud/bolum-6/pencere-onunde.jpg` | B6 · Devam | Hz. Dâvûd (yaşlı) (K1); Hz. Süleyman (genç) (K1) | Alacakaranlıkta açık bir pencerenin önünde sedir bir oturakta oturan koyu mavi cüppeli yaşlı bir adam ve yanında, eli oturağın arkasında, ayakta duran krem cüppeli genç bir adam; ikisi de arkadan, dışarıda şehrin ışıkları. |
 | `public/kitaplar/hz-davud/bolum-6/bos-oturak.jpg` | B6 · Devam | — | Akşam ışığında açık bir pencerenin önünde boş duran sedir bir oturak; üzerinde dürülmüş sade bir tomar, dışarıda mor dağlar ve ilk yıldız. |
 | `public/kitaplar/hz-davud/bolum-6/safak-daglar.jpg` | B6 · Devam | — | Şafakta kat kat dağ sırtlarının üzerinde birlikte süzülen kuşlar; ön planda teraslı bir yamaçta yaşlı bir zeytin ağacı ve yanında boy veren genç fidanlar. |
