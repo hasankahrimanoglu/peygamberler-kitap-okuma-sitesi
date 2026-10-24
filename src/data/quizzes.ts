@@ -900,20 +900,20 @@ const suleymanQuizQuestions: QuizQuestion[] = [
 const yunusQuizQuestions: QuizQuestion[] = [
   {
     id: 1,
-    question: "Hz. Yunus, Ninova'da insanları Allah'a çağırırken nerelerde konuşurdu?",
+    question: "Hikâyede Hz. Yunus, Ninova'da insanları Allah'a çağırırken nerelerde konuşurdu?",
     correctOption: "a",
     options: [
       { id: "a", text: "Meydanlarda, pazarlarda ve yol kenarlarında" },
-      { id: "b", text: "Yalnızca kendi evinin bahçesinde" },
-      { id: "c", text: "Yalnızca gemilerde, nehrin üstünde" },
+      { id: "b", text: "Sarayın salonlarında ve yöneticilerin yanında" },
+      { id: "c", text: "Nehirdeki kayıklarda ve gemi iskelelerinde" },
     ],
   },
   {
     id: 2,
-    question: "Gemide kura çekilirken Hz. Yunus'un güverteye çıkıp ne yaptığını söylemesi bize ne anlatır?",
+    question: "Hikâyede Hz. Yunus'un, kura çekilecekken yaptığını kendisi söylemesi bize ne anlatır?",
     correctOption: "c",
     options: [
-      { id: "a", text: "Kalabalıkta susmanın her zaman daha doğru olduğunu" },
+      { id: "a", text: "Kalabalıkta susup kendini göstermemenin değerini" },
       { id: "b", text: "Kurada kendi adının çıkmasını istediğini" },
       { id: "c", text: "Yaptığımızı saklamayıp dürüstçe söylemenin değerini" },
     ],
@@ -940,12 +940,12 @@ const yunusQuizQuestions: QuizQuestion[] = [
   },
   {
     id: 5,
-    question: "Hz. Yunus'un, onu yıllarca dinlemeyen Ninova halkını sevgiyle karşılaması bize ne anlatır?",
+    question: "Hikâyede Hz. Yunus'un, onu yıllarca dinlemeyen Ninova halkını sevgiyle karşılaması bize ne anlatır?",
     correctOption: "c",
     options: [
-      { id: "a", text: "Kırgın olduğumuz kişilerle bir daha hiç konuşmamak gerektiğini" },
-      { id: "b", text: "Eski kırgınlıkları her fırsatta hatırlatmak gerektiğini" },
-      { id: "c", text: "Kırgınlığı bırakıp insanlarla yeniden birlikte sevinmek gerektiğini" },
+      { id: "a", text: "Kırgın olduğumuz kişilerden uzak durmanın doğru olduğunu" },
+      { id: "b", text: "Eski kırgınlıkları her fırsatta hatırlatmanın önemini" },
+      { id: "c", text: "Kırgınlığı bırakıp insanlarla yeniden birlikte sevinmenin değerini" },
     ],
   },
 ];
@@ -966,9 +966,9 @@ const isaQuizQuestions: QuizQuestion[] = [
     question: "Hz. Meryem'in çok yorgunken hurma ağacını silkelemesi bize ne anlatır?",
     correctOption: "b",
     options: [
-      { id: "a", text: "Yorgunken hiçbir şey yapmamak gerektiğini" },
-      { id: "b", text: "Zor bir anda bile elimizden gelen küçük adımı atmanın değerini" },
-      { id: "c", text: "Ağaçların her zaman meyve verdiğini" },
+      { id: "a", text: "Yorgun olduğumuzda hiçbir işe başlamamak gerektiğini" },
+      { id: "b", text: "Zor bir anda elimizden gelen küçük adımın değerini" },
+      { id: "c", text: "Hurma ağaçlarının her mevsim bol meyve verdiğini" },
     ],
   },
   {
@@ -977,8 +977,8 @@ const isaQuizQuestions: QuizQuestion[] = [
     correctOption: "a",
     options: [
       { id: "a", text: "Bebek konuştu ve “Ben Allah'ın kuluyum” dedi" },
-      { id: "b", text: "Kalabalık hemen dağılıp gitti" },
-      { id: "c", text: "Hz. Meryem söz orucunu bozup konuştu" },
+      { id: "b", text: "Kalabalık hiçbir şey demeden dağılıp gitti" },
+      { id: "c", text: "Hz. Meryem söz orucunu bozup her şeyi anlattı" },
     ],
   },
   {
@@ -997,8 +997,8 @@ const isaQuizQuestions: QuizQuestion[] = [
     correctOption: "c",
     options: [
       { id: "a", text: "Mucizeleri kendi gücüyle yaptığını" },
-      { id: "b", text: "Mucizelerin bir oyun olduğunu" },
-      { id: "c", text: "Başardığı güzel işi kendine mal etmeyip Allah'a bağladığını" },
+      { id: "b", text: "Herkesin mucize gösterebileceğini" },
+      { id: "c", text: "Yaptığı işi Allah'a bağladığını" },
     ],
   },
   {
@@ -1016,9 +1016,9 @@ const isaQuizQuestions: QuizQuestion[] = [
     question: "Hz. Îsâ'nın duasına ilk gelenden son gelene kadar herkesi katması bize ne anlatır?",
     correctOption: "b",
     options: [
-      { id: "a", text: "Duanın yalnızca kendimiz için edilmesi gerektiğini" },
+      { id: "a", text: "Yalnız kendimiz için dua etmemiz gerektiğini" },
       { id: "b", text: "Bir nimeti herkes için istemenin güzelliğini" },
-      { id: "c", text: "Duanın çok uzun olması gerektiğini" },
+      { id: "c", text: "Duada uzun cümleler kurmanın önemini" },
     ],
   },
   {
@@ -1026,9 +1026,9 @@ const isaQuizQuestions: QuizQuestion[] = [
     question: "Kur'an'a göre Hz. Îsâ'ya kurulan tuzak ne oldu?",
     correctOption: "c",
     options: [
-      { id: "a", text: "Tuzak hiç kurulmadı" },
-      { id: "b", text: "Hz. Îsâ tuzağı kendi gücüyle bozdu" },
-      { id: "c", text: "Allah tuzağı bozdu ve Hz. Îsâ'yı kendi katına kaldırdı" },
+      { id: "a", text: "Tuzak kuranlar planlarından kendiliğinden vazgeçti" },
+      { id: "b", text: "Hz. Îsâ tuzağı kendi gücüyle ve tek başına bozdu" },
+      { id: "c", text: "Allah tuzağı bozdu ve onu kendi katına kaldırdı" },
     ],
   },
 ];

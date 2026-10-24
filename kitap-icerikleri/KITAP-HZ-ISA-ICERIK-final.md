@@ -633,7 +633,7 @@ Görsel ID: isa-2-kuru-kutuk
 Metin çapası: "Doğum zamanı gelince Hz. Meryem çok zorlandı…" paragrafından sonra
 Sahnenin amacı: Zorluğun ve yalnızlığın en ağır anını, kimseyi göstermeden kuru bir ağaç gövdesiyle anlatmak.
 Dosya: bolum-2/kuru-kutuk.jpg
-Alt metin: Yakın planda, kabuğu çatlak, yaprakları solmuş kupkuru görünen bir hurma ağacı gövdesi ve dibindeki taşlar.
+Alt metin: Yakın planda, kabuğu çatlak bir hurma ağacı gövdesi ve dibindeki taşlar. 
 Ana üretim promptu: Yakın planda, kabuğu çatlamış, kupkuru görünen bir hurma ağacı gövdesi. Tepesinde solgun, kurumuş birkaç yaprak. Dibinde taşlar ve kum. Işık soğuk, gri-mavi ve yumuşak; ufukta sabah öncesinin incecik aydınlığı.
 Ana üretim promptu (EN): A close-up of a date-palm trunk that looks completely dry, with cracked bark. A few pale, withered fronds at its top. Stones and sand at its foot. The light is cool, grey-blue and soft, with the faint brightness of pre-dawn on the horizon.
 Kadraj notu: 16:9; gövde kadrajın sol üçte birinde dikey, sağda boş ve sakin gökyüzü; ağacın dibi alt kenarda.
@@ -2284,7 +2284,7 @@ figür kuralı; §B "Figür kararı"); Hz. Meryem ve Hz. Îsâ hiçbir sahnede y
 | 6 | `kitaplar/hz-isa/bolum-1/aksam-kandilleri.jpg` | Devam | yok | Akşam, sade taş sütunlu mabet avlusunda birer birer yanan kil kandiller; gökyüzü mor ve lacivert. |
 | 7 | `kitaplar/hz-isa/bolum-2/kapak.jpg` | Açılış | yok | Alacakaranlıkta kireç taşı kayalarla çevrili ıssız bir vadi ve vadinin ortasında tek başına duran bir hurma ağacı. |
 | 8 | `kitaplar/hz-isa/bolum-2/tasli-patika.jpg` | 1. Kısım | yok | Kayalık tepelerin arasından ıssız bir vadiye doğru kıvrılarak inen taşlı, dar bir patika. |
-| 9 | `kitaplar/hz-isa/bolum-2/kuru-kutuk.jpg` | 1. Kısım | yok | Yakın planda, kabuğu çatlak, yaprakları solmuş kupkuru görünen bir hurma ağacı gövdesi ve dibindeki taşlar. |
+| 9 | `kitaplar/hz-isa/bolum-2/kuru-kutuk.jpg` | 1. Kısım | yok | Yakın planda, kabuğu çatlak bir hurma ağacı gövdesi ve dibindeki taşlar. |
 | 10 | `kitaplar/hz-isa/bolum-2/dokulen-hurmalar.jpg` | Devam | yok | Hurma ağacının dibinde kumun üstüne dökülmüş taze, parlak hurmalar ve hemen yanından akan berrak su. |
 | 11 | `kitaplar/hz-isa/bolum-2/su-kaynagi.jpg` | Devam | yok | Yakın planda, düz taşların arasından sessizce kaynayan berrak su ve kenarında birkaç hurma. |
 | 12 | `kitaplar/hz-isa/bolum-2/hurmali-agac.jpg` | Devam | yok | Sabah ışığında salkım salkım hurmalarla dolu hurma ağacı, dibinden akan su ve tepelerin arasına uzanan patika. |

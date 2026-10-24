@@ -2745,6 +2745,21 @@ Kurallar:
       bölümlerde dönüm noktaları sahneye çevrildi (2.628–3.273). Ne Öğrendik B1-2
       "Hikâyede…"; veli raporu 9 madde (rüzgâr maddesi); final testi değişmedi.
       `kitap-denetle suleyman` 0 hata (uyarı: ses yer tutucu). Sırada Hz. Yunus.*
+      *24 Eki: **Hz. Yunus ve Hz. Îsâ v2 aktarıldı** (Hasan onayı; iki kitap paralel
+      yazıldı, `scripts/v2-aktar.mjs` ile sırayla aktarıldı). **Yunus:** olay sırası
+      Diyanet'in anlatısına ve Sâffât 145–148'e göre (halkın imanı Hz. Yunus döndükten
+      sonra; öteki görüş veli raporunda), süreli uyarı ve gemide uyku (tek kaynak, Tevrat
+      paraleli) çıktı, dua hadisi kutuda yalnız ilk cümleyle (tamamı veli raporunda),
+      "Yunus'tan hayırlıyım demesin" hadisi; `ninova-gunes` görseli B5'te; 7 sabit alan,
+      final testi 3 soru, veli raporu 11 madde. **Îsâ:** "kupkuru" (tek kaynak) çıktı ve
+      `kuru-kutuk` alt metni sadeleşti (görsel rötuşu görsel turunda); Mısır'a gidiş yalnız
+      veli raporunda; Meryem–Âsiye ve beşikte konuşanlar hadis kutuları; iki güvence
+      paragrafı; Meryem 35 "çocuk edinmesi", Saf 14 meal parantezi; final testi 5 soru,
+      veli raporu 13 madde. `kitap-denetle yunus/isa` 0 hata. **Lansmanın 12 kitabının
+      hepsi v2.** Açık işler: seslendirme notları (final.md D) v2'ye göre güncellenmeli;
+      görsel turu (`isa-2-kuru-kutuk` rötuşu, isteğe bağlı `ismail bos-su-kabi`,
+      Süleyman alt metinlerindeki "uzun boylu"); Hz. Âdem zenginleştirme turu; hoca
+      kontrolü.*
 
 ### 22 Ekim 2026 (iki eksenli kaynak ölçeği — Hasan onayı, bkz. 4.1/21 ve içerik brifi §4.3, §16/17b–c)
 

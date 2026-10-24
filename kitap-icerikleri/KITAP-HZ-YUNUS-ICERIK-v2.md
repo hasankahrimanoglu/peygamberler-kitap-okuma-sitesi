@@ -2,7 +2,7 @@
 
 > **Durum:** Yazıldı ve içerik denetçisinden geçti (24 Ekim 2026; 1 kritik, 9 önemli, 17 küçük);
 > mekanik bulgular düzeltildi; Hasan'a bırakılan yedi bulguda kararlar işlendi ("Yazım notları"
-> sonu). Açık karar yok; Hasan'ın okuması bekleniyor.
+> sonu). Hasan onayladı, `books.ts`'e aktarıldı (24 Ekim 2026).
 > Beş bölümün hikâye metninin kaynağı bu dosyadır. Büyük Final Testi, veli raporu,
 > sözlükçe, görsel briefleri ve kaynak notları `KITAP-HZ-YUNUS-ICERIK-final.md`'de kalır;
 > v2'ye bağlı maddeler orada güncellendi (E: S1, S2, S5; F5).

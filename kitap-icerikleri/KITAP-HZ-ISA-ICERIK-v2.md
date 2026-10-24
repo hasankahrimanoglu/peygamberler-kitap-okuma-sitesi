@@ -2,7 +2,7 @@
 
 > **Durum:** Yazıldı ve içerik denetçisinden geçti (24 Ekim 2026; 0 kritik, 10 önemli, 16 küçük).
 > Mekanik bulgular düzeltildi; Hasan'a bırakılan dört bulguda kararlar verildi ve işlendi
-> ("Yazım notları" sonu). `books.ts`'e aktarılmadı.
+> ("Yazım notları" sonu). Hasan onayladı, `books.ts`'e aktarıldı (24 Ekim 2026).
 > Sekiz bölümün hikâye metninin kaynağı bu dosyadır. Büyük Final Testi, veli raporu,
 > sözlükçe, görsel briefleri ve kaynak notları `KITAP-HZ-ISA-ICERIK-final.md`'de kalır;
 > veli raporunun (F5) ve final testinin (E) v2'ye bağlı yerleri orada güncellendi.

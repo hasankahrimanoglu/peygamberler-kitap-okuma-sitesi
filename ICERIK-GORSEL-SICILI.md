@@ -1516,7 +1516,7 @@ Devam 3); **B3'te 1 açılış + 4 sahne** (1. Kısım 2 / Devam 2).
 | `hz-yunus/bolum-4/issiz-kiyi.jpg` | 1. Kısım | A | yok — Faz 1 §B6: kıyıdaki hasta beden çizilmez | ✅ Hazır | Öğle güneşi altında uçsuz bucaksız kızgın kumlar, havada sıcaktan titreyen bir pus ve ufukta parlayan deniz |
 | `hz-yunus/bolum-4/kabak-yapraklari.jpg` | 1. Kısım | A | yok — Faz 1 §B6: kıyıdaki hasta beden çizilmez | ✅ Hazır | Kumların üstünde yükselen geniş, yuvarlak yapraklı bir kabak sarmaşığı ve altında kum üzerinde serin, koyu bir gölge |
 | `hz-yunus/bolum-4/sabah-cigi.jpg` | Devam | B | yok — Faz 1 §B6: kıyıdaki beden çizilmez; keçi rivayeti görselleştirilmez (karar K11) | ✅ Hazır | Sabah ışığında geniş kabak yapraklarının yakın görünümü; yaprakların üstünde parlayan çiy taneleri ve aralarından görünen sakin deniz |
-| `hz-yunus/bolum-4/ninova-gunes.jpg` | Devam | B | Ninova halkı — Katman 3; yüzleri görünebilir, sakin, umutlu, karikatürsüz. Hz. Yunus bu sahnede yok (kıyıda). | ✅ Hazır | Kerpiç surların önündeki açık alanda bir araya gelmiş Ninova halkı; kimi diz çökmüş, kimi ellerini göğe açmış, üzerlerine berrak bir sabahın güneşi düşüyor |
+| `hz-yunus/bolum-4/ninova-gunes.jpg` | Devam (v2: B5 1. Kısım'da gösterilir, karar 6b) | B | Ninova halkı — Katman 3; yüzleri görünebilir, sakin, umutlu, karikatürsüz. Hz. Yunus bu sahnede yok (kıyıda). | ✅ Hazır | Kerpiç surların önündeki açık alanda bir araya gelmiş Ninova halkı; kimi diz çökmüş, kimi ellerini göğe açmış, üzerlerine berrak bir sabahın güneşi düşüyor |
 | `hz-yunus/bolum-4/kumdaki-izler.jpg` | Devam | B | Hz. Yunus — Katman 1; arkadan, uzak plan, sağlıklı ve yürür hâlde; yüz görünmez. Karakter bloğu: Hz. Yunus (§B) — prompta aynen eklenir. | ✅ Hazır | Gün doğumunda kabak bitkisinin gölgesinden başlayan ayak izleri ve izlerin ucunda, uzakta yeşil tepelere doğru yürüyen, arkası dönük uzun giysili bir adam |
 
 ### Bölüm 5 — Ninova'ya Dönüş
@@ -1647,7 +1647,7 @@ sembol stili bloğu dahil); aşağıdaki tablo dosya adı, akıştaki yer, figü
 |---|---|---|---|---|---|
 | `hz-isa/bolum-2/kapak.jpg` | Açılış | A | yok — mekân/manzara sahnesi | ✅ Hazır | Alacakaranlıkta kireç taşı kayalarla çevrili ıssız bir vadi ve vadinin ortasında tek başına duran bir hurma ağacı |
 | `hz-isa/bolum-2/tasli-patika.jpg` | 1. Kısım | A | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz | ✅ Hazır | Kayalık tepelerin arasından ıssız bir vadiye doğru kıvrılarak inen taşlı, dar bir patika |
-| `hz-isa/bolum-2/kuru-kutuk.jpg` | 1. Kısım | A | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz | ✅ Hazır | Yakın planda, kabuğu çatlak, yaprakları solmuş kupkuru görünen bir hurma ağacı gövdesi ve dibindeki taşlar |
+| `hz-isa/bolum-2/kuru-kutuk.jpg` | 1. Kısım | A | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz | ✅ Hazır | Yakın planda, kabuğu çatlak bir hurma ağacı gövdesi ve dibindeki taşlar. |
 | `hz-isa/bolum-2/dokulen-hurmalar.jpg` | Devam | B | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz | ✅ Hazır | Hurma ağacının dibinde kumun üstüne dökülmüş taze, parlak hurmalar ve hemen yanından akan berrak su |
 | `hz-isa/bolum-2/su-kaynagi.jpg` | Devam | B | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz | ✅ Hazır | Yakın planda, düz taşların arasından sessizce kaynayan berrak su ve kenarında birkaç hurma |
 | `hz-isa/bolum-2/hurmali-agac.jpg` | Devam | B | yok — olayın öznesi Hz. Meryem; Faz 1 S5 gereği figürsüz | ✅ Hazır | Sabah ışığında salkım salkım hurmalarla dolu hurma ağacı, dibinden akan su ve tepelerin arasına uzanan patika |
