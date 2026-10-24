@@ -1,7 +1,8 @@
 # KİTAP: Hz. Yunus — v2 (karma anlatım tarzı)
 
 > **Durum:** Yazıldı ve içerik denetçisinden geçti (24 Ekim 2026; 1 kritik, 9 önemli, 17 küçük);
-> mekanik bulgular düzeltildi, Hasan'a bırakılan yedi bulgu açık ("Yazım notları" sonu ve rapor).
+> mekanik bulgular düzeltildi; Hasan'a bırakılan yedi bulguda kararlar işlendi ("Yazım notları"
+> sonu). Açık karar yok; Hasan'ın okuması bekleniyor.
 > Beş bölümün hikâye metninin kaynağı bu dosyadır. Büyük Final Testi, veli raporu,
 > sözlükçe, görsel briefleri ve kaynak notları `KITAP-HZ-YUNUS-ICERIK-final.md`'de kalır;
 > v2'ye bağlı maddeler orada güncellendi (E: S1, S2, S5; F5).
@@ -33,7 +34,7 @@ Bölüm sayısı: 5
 
 Ana değerler: tövbe, umut, sorumluluk, sabır
 
-Kitaba özgü kararlar: Kur'an çekirdeği Sâffât 139–148, Enbiyâ 87–88, Kalem 48–50 ve Yûnus 98'dir; Kur'an bilgisi kesin dille, Allah'ın sözü meal anlamıyla verilir. Ayrılış Kur'an'ın ifadesiyle ("öfkeli bir hâlde"); sebep Diyanet'in anlatısıyla (halkı ona inanmayınca); hata tek cümle ("Allah'tan izin beklemeden görev yerini bıraktı"), "günah" yok, "hata" var; hatayı Hz. Yunus kendisi fark eder (Faz 1 karar 1, v2 karar 2). Gemide fırtına yok; gemi ilerleyemez olur (Faz 1 karar 2; *Hadislerle İslâm* 6/128). Balığın karnı korku ayrıntısı olmadan; süre yok; balığın türü yok. Ninova halkı Hz. Yunus bir defa daha gönderilince iman eder (Sâffât 147–148, Diyanet meali; v2 karar 6b); öteki görüş veli raporunda. Sayı yalnız Kur'an'ın "yüz bin ya da daha fazla" ifadesi, âyetin kendi cümlesiyle (karar 6c2). Melek yok. Adlar: Kur'an'dakiler (Yunus, Zünnûn) ve kalıpla Ninova, Dicle. Dağ keçisi, balığın zarar vermemesi, bitkinin kuruması, beddua ve yüz rengi alameti yok. **v2 hadisleri:** Zünnûn'un duası (kutu yalnız "öğretti" cümlesiyle; hadisin tamamı veli raporunda, karar 4b) ve "Yunus'tan daha hayırlı olduğumu söylemesin" (B5, karar 7a).
+Kitaba özgü kararlar: Kur'an çekirdeği Sâffât 139–148, Enbiyâ 87–88, Kalem 48–50 ve Yûnus 98'dir; Kur'an bilgisi kesin dille, Allah'ın sözü meal anlamıyla verilir. Ayrılış Kur'an'ın ifadesiyle ("öfkeli bir hâlde"); sebep Diyanet'in anlatısıyla (halkı ona inanmayınca); hata tek cümle ("Allah'tan izin beklemeden görev yerini bıraktı"), "günah" yok, "hata" var; hatayı Hz. Yunus kendisi fark eder (Faz 1 karar 1, v2 karar 2). Gemide fırtına yok; gemi ilerleyemez olur (Faz 1 karar 2; *Hadislerle İslâm* 6/128). Balığın karnı korku ayrıntısı olmadan; süre yok; balığın türü yok. Ninova halkı Hz. Yunus bir defa daha gönderilince iman eder (Sâffât 147–148, Diyanet meali; v2 karar 6b); öteki görüş veli raporunda. Hz. Yunus'un uyarısı süreye bağlanmaz (açık karar 1). Gemide uyku yok (açık karar 4). Sayı yalnız Kur'an'ın "yüz bin ya da daha fazla" ifadesi, âyetin kendi cümlesiyle (karar 6c2). Melek yok. Adlar: Kur'an'dakiler (Yunus, Zünnûn) ve kalıpla Ninova, Dicle. Dağ keçisi, balığın zarar vermemesi, bitkinin kuruması, beddua ve yüz rengi alameti yok. **v2 hadisleri:** Zünnûn'un duası (kutu yalnız "öğretti" cümlesiyle; hadisin tamamı veli raporunda, karar 4b) ve "Yunus'tan daha hayırlı olduğumu söylemesin" (B5, karar 7a).
 
 Ekim-kapanış halkaları: (1) **Nehir kıyısı.** B1 hüzünle şehrin ışıklarına bakan Hz. Yunus → B5 aynı kıyıda inanmış bir şehre bakması ("Birinci bölümdeki o akşamları hatırlıyor musun?"). (2) **Görev.** B1 görevini bırakmadı → B2 görev yerini izin beklemeden bıraktı → B5 Allah onu bir defa daha gönderdi. (3) **Kırgınlık.** B2 kırgınlık ve öfke → B4 halkını yeniden görme isteği → B5 kırgınlığı bırakması (rozet adı). (4) **Karanlık ve ışık.** B2 "Etraf karanlıktı ama Hz. Yunus yalnız değildi." → B3 karanlıklar içinde dua → B5 "Karanlıklarda başlayan yolculuk…". (5) **"İşte biz iman etmiş olanları böyle kurtarırız."** B3 Hz. Yunus için → B5 Ninova için. (6) **Balık.** B2–B3 balık → B5 Zünnûn, "balık sahibi".
 
@@ -52,7 +53,7 @@ Rozet: Görev Bilinci Rozeti
 
 Rozet sembolü: Kıyıda tek başına yanan fener
 
-Kaynak: Sâffât 37/139 ("Kuşkusuz Yûnus da elçilerimizdendi"); *Kur'an Yolu*, Faz 1 A3. Kutu: Yûnus suresinin adı (TDV "YÛNUS"; sure sırası verilmedi). Rivayet (kalıp olayların başında): Ninova ve Dicle (video 02:27; PDF s. 15–16; TDV: Sa'lebî, Kisâî); uzun yıllar davet, çok az kişinin inanması (video 05:11–05:56; PDF s. 50–54, 58; TDV: Sa'lebî; sayısız); Hz. Yunus'un halkını belli bir süreyle uyarması (video 06:59–08:57; PDF s. 57–59; TDV: Sa'lebî; *Hadislerle İslâm* 6/128 dn. 87, İbn Mes'ûd; vahiy cümlesi yok, karar 1a). Çıkan: "fırsat" cümlesi (karar 1a), PDF'e birebir "Hiçbir peygamber…" cümlesi. Kurgu: putlara dair anlatıcı sorusu, kervan konağı, sevgi ve heves, akşam kıyısı, köyler, eve dönüş.
+Kaynak: Sâffât 37/139 ("Kuşkusuz Yûnus da elçilerimizdendi"); *Kur'an Yolu*, Faz 1 A3. Kutu: Yûnus suresinin adı (TDV "YÛNUS"; sure sırası verilmedi). Rivayet (kalıp olayların başında): Ninova ve Dicle (video 02:27; PDF s. 15–16; TDV: Sa'lebî, Kisâî); uzun yıllar davet, çok az kişinin inanması (video 05:11–05:56; PDF s. 50–54, 58; TDV: Sa'lebî; sayısız); Hz. Yunus'un halkını büyük bir sıkıntıyla uyarması (video 06:59–08:57; PDF s. 57–59; TDV: Sa'lebî; *Hadislerle İslâm* 6/128 dn. 87, İbn Mes'ûd; vahiy cümlesi yok, karar 1a; rivayetlerdeki süre verilmedi, açık karar 1). Çıkan: "fırsat" cümlesi (karar 1a), PDF'e birebir "Hiçbir peygamber…" cümlesi. Kurgu: putlara dair anlatıcı sorusu, kervan konağı, sevgi ve heves, akşam kıyısı, köyler, eve dönüş.
 
 ### HİKÂYE — 1. KISIM
 
@@ -116,7 +117,7 @@ Hz. Yunus vazgeçmedi. Onun görevi insanlara Allah'ı anlatmaktı; onları zorl
 
 **[GÖRSEL — yunus-1-meydan-hurmasi]**
 
-Anlatılanlara göre bir gün Hz. Yunus halkını açıkça uyardı. Belli bir süre içinde Allah'a inanmazlarsa, şehre büyük bir sıkıntı gelecekti.
+Anlatılanlara göre bir gün Hz. Yunus halkını açıkça uyardı. Allah'a inanmazlarsa başlarına büyük bir sıkıntı gelebilirdi.
 
 Hz. Yunus bu uyarıyı herkese duyurmak için yeniden yollara düştü. [[Kapı kapı dolaştı, surların dışındaki köylere bile gitti. Halkının başına böyle bir şey gelsin istemiyordu. Onların kurtulmasını bütün kalbiyle diliyordu.]]
 
@@ -129,7 +130,7 @@ Metin: Peki bu kez dinleyecekler mi?
 
 Ama şehirde pek bir şey değişmedi. [[Kimi omuz silkip yürüdü, kimi yine gülüp geçti, kimi de bu sözleri artık duymak istemediğini söyledi.]] Uyarıya kulak verip Allah'a inananlar yalnızca birkaç kişiydi. [[Hz. Yunus onların inanmasına çok sevindi.]]
 
-[[Akşamları yorgun adımlarla evine dönerken aklı hep şehrin insanlarındaydı. Gökyüzü her akşam aynı sessizlikle kararıyordu.]] Uyarının sonu da her geçen gün biraz daha yaklaşıyordu.
+[[Akşamları yorgun adımlarla evine dönerken aklı hep şehrin insanlarındaydı. Gökyüzü her akşam aynı sessizlikle kararıyordu. Hz. Yunus'un yüreğindeki yük de her geçen gün biraz daha ağırlaşıyordu.]]
 
 **[GÖRSEL — yunus-1-alacakaranlik]**
 
@@ -176,13 +177,13 @@ Rozet: Dürüst İtiraf Rozeti
 
 Rozet sembolü: Dalgalarda beyaz yelken ve ışık
 
-Kaynak: Enbiyâ 21/87 ("öfkeli bir halde geçip gitmiş"), Sâffât 37/140–142 (yüklü gemi; kura; büyük balık); *Kur'an Yolu*, Faz 1 A3. Diyanet'in anlatısı (*Hadislerle İslâm* 6/127–128): halkı ona inanmayınca öfkelenerek ayrılması; tebliğ görevini bırakması; geminin ilerlememesi; Hz. Yunus'un sebebi gemidekilere açıklaması; gemidekilerin bir peygamberi atmaya cesaret edemeyip kura çekmesi; balığın Allah'ın emriyle yutması (dn. 87, İbn Ebû Şeybe, İbn Mes'ûd). Rivayet: süre biterken ayrılış (video 10:59–11:30; PDF s. 61; TDV: Sa'lebî); geminin ilerleyemez olması (PDF s. 62; Hİ 6/128). Çıkan: "halk ona daha çok gülecek" düşüncesi (yalnız PDF s. 61), balığın ona zarar vermemesi (yalnız PDF s. 68; video ve Kisâî aksini söylüyor, Sâffât 145 "sağlığı bozulmuş olarak"), PDF'e birebir son gece ve iç ses cümleleri, "Kuranın sonucu…" açıklaması. Kurgu: son gece, sabah pazarı, iç sesler, uyku, güvertedeki sessizlik.
+Kaynak: Enbiyâ 21/87 ("öfkeli bir halde geçip gitmiş"), Sâffât 37/140–142 (yüklü gemi; kura; büyük balık); *Kur'an Yolu*, Faz 1 A3. Diyanet'in anlatısı (*Hadislerle İslâm* 6/127–128): halkı ona inanmayınca öfkelenerek ayrılması; tebliğ görevini bırakması; geminin ilerlememesi; Hz. Yunus'un sebebi gemidekilere açıklaması; gemidekilerin bir peygamberi atmaya cesaret edemeyip kura çekmesi; balığın Allah'ın emriyle yutması (dn. 87, İbn Ebû Şeybe, İbn Mes'ûd). Rivayet: halkı inanmayınca ayrılış (video 10:59–11:30; PDF s. 61; TDV: Sa'lebî; süre anılmaz, açık karar 1); geminin ilerleyemez olması (PDF s. 62; Hİ 6/128). Çıkan: "halk ona daha çok gülecek" düşüncesi (yalnız PDF s. 61), balığın ona zarar vermemesi (yalnız PDF s. 68; video ve Kisâî aksini söylüyor, Sâffât 145 "sağlığı bozulmuş olarak"), PDF'e birebir gece ve iç ses cümleleri, "Kuranın sonucu…" açıklaması, geminin alt katında uyuması (yalnız PDF, Tevrat'ta Yûnus 1:5'e paralel; açık karar 4). Kurgu: uykusuz gece, sabah pazarı, iç sesler, gemideki bekleyiş, güvertedeki an.
 
 ### HİKÂYE — 1. KISIM
 
 *(Başlangıç harfi: büyük)*
 
-Uyarının son günü gelmişti. [[O gece Hz. Yunus (a.s.) hiç uyumadı. Evinin yakınındaki bir ağacın altına oturdu ve ay ışığında parlayan Dicle'yi uzun uzun seyretti.]]
+[[Bir gece Hz. Yunus (a.s.) hiç uyumadı. Evinin yakınındaki bir ağacın altına oturdu ve ay ışığında parlayan Dicle'yi uzun uzun seyretti.]]
 
 [[Halkını düşündükçe gözleri doluyordu. Oysa nehirdeki kayıklardan gece boyunca şarkılar, kahkahalar yükseliyordu. O kalabalık şehirde uyarıyı düşünen yok gibiydi.]]
 
@@ -197,7 +198,7 @@ Metin: Hz. Yunus'un gitmesi doğru muydu?
 
 [[Bunu birazdan Hz. Yunus'un kendisi fark edecek.]]
 
-İskelede yola çıkmak üzere olan bir gemi vardı. Kur'an'a göre bu gemi yükle doluydu. Hz. Yunus gemiye bindi. [[Geminin alt katındaki bir köşeye uzandı. Günlerdir uykusuz olduğu için hemen derin bir uykuya daldı.]]
+İskelede yola çıkmak üzere olan bir gemi vardı. Kur'an'a göre bu gemi yükle doluydu. Hz. Yunus gemiye bindi. [[Geminin bir köşesine oturdu; aklı hâlâ Ninova'daydı. Geride bıraktığı sokakları, meydanları, kapıları düşündü. Gemi ağır ağır yol alıyordu.]]
 
 **[GÖRSEL — yunus-2-yuklu-gemi]**
 
@@ -212,7 +213,7 @@ Standart sözlükçede mevcut mu?: hayır (yeni terim; kutu Hz. Yunus'ta)
 
 **[GÖRSEL — yunus-2-duran-gemi]**
 
-[[Hz. Yunus bu sırada uyandı. Yukarıdan gelen sesleri duydu.]] Neler olduğunu anladı. [[O an kendi yaptığı da aklına geldi:]]
+[[Gemidekilerin telaşlı seslerini duydu]] ve neler olduğunu anladı. [[O an kendi yaptığı da aklına geldi:]]
 
 [[— Rabbim bana şehrimden ayrılmamı söylememişti. Ben ne yaptım?]]
 
@@ -292,7 +293,7 @@ Hz. Yunus (a.s.) büyük bir balığın karnındaydı. Kur'an onun bu hâlini �
 
 **[GÖRSEL — yunus-3-sessiz-derinlik]**
 
-[[Önce Ninova'nın kalabalık meydanları gözünün önüne geldi. Yıllarca konuştuğu pazarları, kapısını tek tek çaldığı evleri hatırladı. Ağacın altında, ay ışığında halkı için gözyaşı döktüğü o son geceyi düşündü.]]
+[[Önce Ninova'nın kalabalık meydanları gözünün önüne geldi. Yıllarca konuştuğu pazarları, kapısını tek tek çaldığı evleri hatırladı. Ağacın altında, ay ışığında halkı için gözyaşı döktüğü o geceyi düşündü.]]
 
 Sonra o sabahı hatırladı. [[Kırgınlığı ve öfkesi yüzünden aceleyle yola çıkmıştı. Rabbinden bir haber beklemeden şehrinden ayrılmıştı.]]
 
@@ -433,16 +434,11 @@ Hz. Yunus gölgede dinlendikçe yavaş yavaş güç topladı. [[Önce doğrulup 
 
 [[Her sabah serin gölgenin altında uyanıyordu. En zor günlerinde bile Allah onu yalnız bırakmamıştı. Başının üstündeki geniş yapraklar ona bunu her gün hatırlatıyordu.]]
 
-[[Bir sabah kıyıda oturmuş, denize bakıyordu. Dalgalar kuma usulca vurup geri çekiliyordu. Bu sular bir zamanlar onu karanlıklara götürmüştü; şimdi ise sakin ve parlaktı.]]
+[[Bir sabah kıyıda oturmuş, denize bakıyordu. Dalgalar kuma usulca vurup geri çekiliyordu. Bu sular bir zamanlar onu karanlıklara götürmüştü; şimdi ise sakin ve parlaktı. Bir martı suyun üstünde alçaktan uçup uzaklaştı.]]
 
 [[Sonra aklına Ninova geldi. Yıllarca anlattığı insanlar, o pazarlar, o sokaklar… Onları bırakıp gitmişti. Şimdi ne yapıyorlardı acaba?]]
 
-```text
-[IŞIL]
-Metin: Hz. Yunus onları hâlâ düşünüyor mu?
-```
-
-[[Evet, düşünüyordu. İçindeki kırgınlık yavaş yavaş yerini başka bir duyguya bırakıyordu: halkını yeniden görme isteğine.]]
+[[Onları yeniden görmek istiyordu; ama kalbinde eski kırgınlığın izi hâlâ duruyordu.]]
 
 [[Günler geçtikçe gücü yerine geldi, adımları sağlamlaştı. Bir sabah ayağa kalktığında, artık yeniden yola çıkacak kadar güçlendiğini hissetti.]]
 
@@ -605,7 +601,7 @@ C) Birini kabul edip yine de uzak durmak, kırgınlığın sürdüğünü göste
 
 **Rivayet kalıpları:** 3 (yayında 6): B1 2 (Dicle; uyarı), B2 1 (gemi). Uzun kalıp yok.
 
-**Işıl ve yardımcı bloklar:** Işıl 7 (B1 1, B2 2, B3 1, B4 1, B5 2); bütün satırlar ≤11 kelime. "Biliyor muydun?" kutusu 2 (B1 Yûnus suresi, B3 dua). Soru başlığı yok.
+**Işıl ve yardımcı bloklar:** Işıl 6 (B1 1, B2 2, B3 1, B5 2; B4'teki satır açık karar 3 ile çıktı); bütün satırlar ≤11 kelime. "Biliyor muydun?" kutusu 2 (B1 Yûnus suresi, B3 dua). Soru başlığı yok.
 
 **Görseller, sözlük:** 24 sahne görselinden 23'ü aynı bölümde, aynı parçada, aynı sırada; `ninova-gunes` B4 Devam'dan B5 1. kısma taşındı (iman sahnesinden sonra). Beş sözlük kelimesi aynı bölümlerde, aynı parçada, aynı tanımlarla (betikle doğrulandı). Hiçbir kutulu kelime kendi kutusundan önce geçmiyor.
 
@@ -613,13 +609,13 @@ C) Birini kabul edip yine de uzak durmak, kırgınlığın sürdüğünü göste
 
 | Bölüm | Yayındaki | v2 (1. kısım + Devam) | Işıl | Kutu | En uzun düz metin aralığı |
 |---|---:|---:|---:|---:|---:|
-| 1 | 3.350 | 2.995 (1.909 + 1.086) | 1 | 1 | 812 |
-| 2 | 2.942 | 2.516 (1.587 + 929) | 2 | — | 760 |
-| 3 | 2.681 | 2.504 (1.023 + 1.481) | 1 | 1 | 851 |
-| 4 | 2.810 | 2.531 (1.258 + 1.273) | 1 | — | 547 |
+| 1 | 3.350 | 2.994 (1.909 + 1.085) | 1 | 1 | 812 |
+| 2 | 2.942 | 2.511 (1.582 + 929) | 2 | — | 734 |
+| 3 | 2.681 | 2.500 (1.019 + 1.481) | 1 | 1 | 851 |
+| 4 | 2.810 | 2.543 (1.258 + 1.285) | — | — | 738 |
 | 5 | 2.650 | 2.748 (1.223 + 1.525) | 2 | — | 680 |
 
-Bütün cümleler ≤18 kelime (en uzunu B5 Sâffât 147 cümlesi, 18). Kısalan B2–B4'te dönüm anları sahneye çevrildi (dolgu, yeni rivayet ya da tek kaynaklı ayrıntı yok, hepsi `[[…]]`): B2 güvertedeki an; B3 hatırlanan güverte sözleri, duadan önceki an ve kabulden sonraki ferahlık; B4 yaprakların gölgesi ve ilk adımlar.
+(Denetim sonrası kararlardan sonraki hâl.) Bütün cümleler ≤18 kelime (en uzunu B5 Sâffât 147 cümlesi, 18). Kısalan B2–B4'te dönüm anları sahneye çevrildi (dolgu, yeni rivayet ya da tek kaynaklı ayrıntı yok, hepsi `[[…]]`): B2 güvertedeki an; B3 hatırlanan güverte sözleri, duadan önceki an ve kabulden sonraki ferahlık; B4 yaprakların gölgesi ve ilk adımlar.
 
 **Meal notları:** Âyet cümleleri *Kur'an Yolu* ile (Faz 1 A3). Sadeleştirmeler: Sâffât 139 "elçilerimizdendi" → "Allah'ın gönderdiği elçilerden biriydi"; Sâffât 143–144 "diriltilecekleri güne kadar onun karnında kalırdı" ağırlaştırılmadan "kurtuluşuna yol açtı"; Yûnus 98 "zillet azabı" → "büyük sıkıntı" (B1'deki uyarıyla aynı kelime); Kalem 50 "sâlihlerden" → "iyilerden"; Sâffât 148 "bir süreye kadar yaşattık" → "belli bir süreye kadar yaşattı". Enbiyâ 87 duası *Hadislerle İslâm* 6/117 ve 6/128'deki Diyanet mealiyle, "(kendine)" parantezi metne alındı.
 
@@ -627,7 +623,17 @@ Bütün cümleler ≤18 kelime (en uzunu B5 Sâffât 147 cümlesi, 18). Kısalan
 
 **Kurgu işareti konamayan yer:** B4 *rahmet* KELİME bloğunun "Sonrası" alanındaki "Hz. Yunus yaprakların altında dinlenirken Rabbine bütün kalbiyle şükretti. …" kurgudur; betik KELİME bloklarında `[[` silmediği için işaretlenmedi (canlıda da aynı metin).
 
-**İçerik denetimi (24 Ekim 2026; 1 kritik, 9 önemli, 17 küçük).** Uygulanan mekanik bulgular: Ö2 B5'te Kur'an cümlesi yola çıkıştan önceye alındı (önce gönderildi, sonra yola çıktı); Ö3 B4 "Bir an ne olduğunu anlayamadı" çıktı (bir anda biten bitki izlenimi; Faz 1'de dışarıda); Ö5 B1 konuşma ve B2 uyanma kurgu işaretli; Ö7 bu notlar ve "Aktarım için"; Ö8 B1 uyarı cümlesi ikiye bölündü; Ö9 final S2 ve Ne Öğrendik B2-3 dayanağı B2 Devam'da aynı kelimelerle: "Yaptığını gemidekilere kendisi söyledi." Küçük: 1 (karar 2a cümlesi), 2 ("gülüp geçen" tekrarı), 3 (güvertede sessizlik tekrarı), 4 ("Hiçbir şey saklamadan", B3 "Gerçeği saklamamıştı" çıktı), 5 (B4 şükür tekrarı), 6 (Işıl "Orada…"), 8 (B5 kaynak satırı: karşılama kurgu), 9 ("iman eden herkes", tesbih "hiç" çıktı), 10 (kutu Enbiyâ 88'den sonra; tesbih kutusu onun ardından), 11 (son gece ağacın altında), 12 ("şehrin en geniş meydanına"), 13 (askıda kalan "o birkaç kişi" sorusu çıktı), 14 ("zor son" → "büyük sıkıntı", F5 de), 15 ("Sen de bir hata yaptıktan sonra onu hiç…"), 17a–c (F5 beddua, balık, Ninova maddeleri). **Hasan'a bırakılanlar uygulanmadı** (rapordaki açık kararlar): Kritik 1, Önemli 1, 4, 6, Küçük 7, 16, 17d.
+**İçerik denetimi (24 Ekim 2026; 1 kritik, 9 önemli, 17 küçük).** Uygulanan mekanik bulgular: Ö2 B5'te Kur'an cümlesi yola çıkıştan önceye alındı (önce gönderildi, sonra yola çıktı); Ö3 B4 "Bir an ne olduğunu anlayamadı" çıktı (bir anda biten bitki izlenimi; Faz 1'de dışarıda); Ö5 B1 konuşma ve B2 uyanma kurgu işaretli; Ö7 bu notlar ve "Aktarım için"; Ö8 B1 uyarı cümlesi ikiye bölündü; Ö9 final S2 ve Ne Öğrendik B2-3 dayanağı B2 Devam'da aynı kelimelerle: "Yaptığını gemidekilere kendisi söyledi." Küçük: 1 (karar 2a cümlesi), 2 ("gülüp geçen" tekrarı), 3 (güvertede sessizlik tekrarı), 4 ("Hiçbir şey saklamadan", B3 "Gerçeği saklamamıştı" çıktı), 5 (B4 şükür tekrarı), 6 (Işıl "Orada…"), 8 (B5 kaynak satırı: karşılama kurgu), 9 ("iman eden herkes", tesbih "hiç" çıktı), 10 (kutu Enbiyâ 88'den sonra; tesbih kutusu onun ardından), 11 (son gece ağacın altında), 12 ("şehrin en geniş meydanına"), 13 (askıda kalan "o birkaç kişi" sorusu çıktı), 14 ("zor son" → "büyük sıkıntı", F5 de), 15 ("Sen de bir hata yaptıktan sonra onu hiç…"), 17a–c (F5 beddua, balık, Ninova maddeleri). Hasan'a bırakılanlar (Kritik 1, Önemli 1, 4, 6, Küçük 7, 16, 17d) denetim sırasında uygulanmadı; Hasan'ın kararları aşağıda.
+
+**Hasan'ın denetim sonrası kararları (24 Ekim 2026; yedisinde de öneri kabul).** Hasan'ın sözü: "Yunus ve Îsâ: açık kararlarda senin önerilerin kabul. Yan oturumlar düzeltsin, önizlemeyi yenile; sonra okuyacağım."
+1. **Süre kalktı (Kritik 1).** B1 Devam: "Anlatılanlara göre bir gün Hz. Yunus halkını açıkça uyardı. Allah'a inanmazlarsa başlarına büyük bir sıkıntı gelebilirdi." B1 sonu: "[[… Hz. Yunus'un yüreğindeki yük de her geçen gün biraz daha ağırlaşıyordu.]]" B2 açılışı: "[[Bir gece Hz. Yunus (a.s.) hiç uyumadı. …]]" ("Uyarının son günü" yok); B3 "o geceyi". final.md F5 "Ninova'ya ne olacaktı?": "…nasıl bir sıkıntı olacağını ve ne zaman geleceğini Kur'an bildirmez. Kaynağımızdaki süreli uyarı, kasırga ve yıkılan putlar anlatımı kitaba alınmadı."
+2. **B4 kırgınlık (Önemli 1):** "[[Onları yeniden görmek istiyordu; ama kalbinde eski kırgınlığın izi hâlâ duruyordu.]]"
+3. **B4 Işıl satırı çıktı (Küçük 7).** Aralık 738, bölmeye gerek kalmadı.
+4. **Gemide uyku çıktı (Önemli 4):** "[[Geminin bir köşesine oturdu; aklı hâlâ Ninova'daydı. …]]" ve "[[Gemidekilerin telaşlı seslerini duydu]] ve neler olduğunu anladı." Hiçbir B2 görsel alt metninde uyku geçmiyor; alt metin değişikliği yok.
+5. **Final S5 ve S2 (Önemli 6).** S5: A "Kırgın olduğumuz kişilerden uzak durmanın doğru olduğunu" · B "Eski kırgınlıkları her fırsatta hatırlatmanın önemini" · C aynen. S2 A "Kalabalıkta susup kendini göstermemenin değerini" (doğru şık C ile aynı ek).
+6. **Final S1 (Küçük 16).** B "Sarayın salonlarında ve yöneticilerin yanında" · C "Nehirdeki kayıklarda ve gemi iskelelerinde"; "Yalnızca" tekrarı yok, doğru şık A en uzun değil.
+7. **F5 dua maddesi (Küçük 17d).** *Hadislerle İslâm*'da (2/55) bulunan hadis künyesiyle eklendi: "Sizden biriniz, 'Dua ettim de duam karşılık görmedi.' deyip acele etmediği müddetçe duası karşılık bulur." (Ebû Dâvûd, Vitr, 23; Müslim, Zikir, 92) ve Diyanet'in aynı sayfadaki açıklaması (karşılık bu dünyada ya da âhirette). İbn Hanbel III, 18'deki "üç şeyden biri" rivayeti Hİ aramasında çıkmadı, kullanılmadı. Son cümle: "…kabulün her zaman istediğimiz biçimde ve hemen olmadığını, Allah'ın her duayı işittiğini hatırlatabilirsiniz."
+Uzunluk: B2 ve B4 kararlardan sonra 2.500'ün altına indiği için iki kısa kurgu cümle eklendi (B2 gemideki bekleyiş, B4 kıyıdaki sabah); yeni rivayet yok.
 
 **Aktarım için** (betiğin yazmadıkları):
 - **Görsel yeri:** `/kitaplar/hz-yunus/bolum-4/ninova-gunes.jpg` artık B5 `paragraphs` içinde, `yunus-5-sehre-giris`'ten sonra, `yunus-5-huzurlu-sokak`'tan önce. Dosya yeri ve adı değişmez (betik yolu işaretten `bolum-4` olarak kurar). Alt metin değişmez ("Kerpiç surların önündeki açık alanda bir araya gelmiş Ninova halkı; kimi diz çökmüş, kimi ellerini göğe açmış, üzerlerine berrak bir sabahın güneşi düşüyor."); B5'teki iman sahnesine uyuyor. `ICERIK-GORSEL-SICILI.md`'de Hz. Yunus tablosunda bu görselin bölümü "B4 (B5'te gösterilir, v2 karar 6b)" diye not edilmeli.
