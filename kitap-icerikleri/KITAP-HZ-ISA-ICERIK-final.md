@@ -1865,7 +1865,7 @@ Soru türü: değer
 Soru 5: Hz. Îsâ'nın her mucizede "Allah'ın izniyle" demesi bize ne anlatır?
 A) Mucizeleri kendi gücüyle yaptığını
 B) Herkesin mucize gösterebileceğini
-C) Başardığı işi Allah'a bağladığını
+C) Yaptığı işi Allah'a bağladığını
 Doğru seçenek: C
 Kaynak bölüm: 5
 Kaynak PDF sayfası: c12 222–223, 280 (Âl-i İmrân 49; Mâide 110)
