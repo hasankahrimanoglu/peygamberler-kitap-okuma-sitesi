@@ -986,7 +986,7 @@ export const books: BookDefinition[] = [
     chapters: [
       {
         id: "1",
-        title: "Beklenen   Misafir",
+        title: "Beklenen Misafir",
         ozet: "Yeryüzü, Allah'ın kendisine sorumluluk vereceği ilk insanla tanışmaya hazırlanır.",
         badgeName: "İlk Adım Rozeti",
         coverIllustration: {

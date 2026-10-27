@@ -188,13 +188,13 @@ Ekranda, kodda ve metinlerde **yalnızca üç kavram**: **ROZET · MADALYA · UN
   kopyası durur; Hasan aynı adla üzerine yazar. Yer tutucu başka bölümün anlatımıdır.
   Kitap yer tutucularla yayına alınabilir; gerçek görsel ve ses aktarımdan sonraki
   üretim turunda aynı adla üzerine yazılır (KARAR 13 Eki 2026 — Hasan).
-- **Bölüm kapak videosu DENEMEDİR (23 Eki 2026 — PROJE-MODELI 6.6):** yalnız
-  Hz. Yusuf'ta, yalnız okuma ekranının açılış kapağında; bir kez oynar, son
-  karede durur, görsel altında kalır. Kaynak videolar
+- **Bölüm kapak videosu (23 Eki 2026; REVİZE 27 Eki 2026 — PROJE-MODELI 6.6):**
+  lansmanın 12 kitabının bütün bölümlerinde, yalnız okuma ekranının açılış
+  kapağında; bir kez oynar, son karede durur, görsel altında kalır. Kaynak videolar
   `gorsel-kaynaklari/kitaplar/hz-{bookKey}/bölüm kapak videoları/`,
   `npm run kapak-video -- {bookKey}` sitedeki 720p kopyayı ve
   `src/data/kapakVideolari.json` listesini yazar (liste elle değiştirilmez).
-  Başka kitaba yaymak Hasan kararıdır.
+  Yeni yayımlanan kitabın videosu Google Flow'da 6.6'daki prompt yapısıyla üretilir.
 - **Görsel üretim oturumu (KARAR 12 Eki 2026):** kitap görselleri ayrı bir oturumda
   Magnific bağlantısıyla, **yalnız aktarımdan ve yer tutucular açıldıktan sonra**
   üretilir. Liste `ICERIK-GORSEL-SICILI.md`'den, promptlar

@@ -1684,7 +1684,7 @@ public/
       harita-durak.png                 rota durağı: iç sahne + ortak halka (`odul-cerceve -- durak`)
       bolum-{n}/
         kapak.jpg                      bölüm açılış sahnesi (16:9)
-        kapak.mp4                      açılış sahnesinin hareketli hâli (DENEME, yalnız Hz. Yusuf — 6.6)
+        kapak.mp4                      açılış sahnesinin hareketli hâli (lansmanın 12 kitabı — 6.6)
         {kisa-ad}.jpg                  bölüm içi sahneler (16:9)
   rozetler/
     hz-{bookKey}/bolum-{n}.png         bölüm başına bir rozet
@@ -1984,14 +1984,24 @@ ileride istenirse eklenmesi kolaydır.)
 - Dosya bulunamazsa ses kontrolü hiç çizilmez; ekran bozulmaz.
 - Çalma davranışı 5.1'deki **Model A** ile aynıdır (bölümün tamamı baştan sona).
 
-### 6.6 Bölüm kapak videosu (DENEME — 23 Ekim 2026, Hasan)
+### 6.6 Bölüm kapak videosu (23 Ekim 2026; REVİZE 27 Ekim 2026, Hasan)
 
 Bölümün açılış kapağı, görselin hareketlendirilmiş hâliyle (yapay zekâ ile
-üretilmiş 10 sn'lik kamera hareketi) oynayabilir. **Deneme yalnız Hz. Yusuf'un
-10 bölümündedir**; set geneline yayılması çocuk gözlem testinden sonra ayrıca
-kararlaştırılır. Videolar yeniden üretilmeden olduğu gibi kullanılır (Hasan):
-7. bölümde buğday tarlasında kayan bir leke, 9. bölümde ~4. saniyede beliren
-yarı saydam bir ağaç vardır; bilinerek kabul edildi.
+üretilmiş 8–10 sn'lik kamera hareketi) oynayabilir. Deneme Hz. Yusuf'un 10
+bölümüyle başladı (23 Ekim 2026). **REVİZE 27 Ekim 2026 (Hasan):** lansmanın
+12 kitabının 87 bölümünün hepsinde açılış videosu vardır. Yeni videolar Google
+Flow'da üretildi: Hz. Âdem 1 ve Hz. İbrahim 4 Omni 1.1 Flash (10 sn), kalan 75
+video Veo 3.1 Lite (8 sn). Promptun yapısı: tek yavaş kamera hareketi + sahneye
+özgü küçük hareketler + "stil ve kompozisyon aynen korunur" + yasak listesi
+(yeni kişi, hayvan, nesne yok; figürlü sahnede yüz kameraya dönmez). Her
+videonun karesi tek tek kontrol edildi; kusurlu altı video yeniden üretildi,
+ilk sürümleri kaynak klasörde `ilk-surumler/` altındadır. Hafif kusurla bilerek
+bırakılanlar: Âdem 2 (öndeki yaprak büyüyerek kadraja girer), Âdem 5 (vadiye sis
+yuvarlanır), Nûh 1 (ön planda çiçekler büyür), İsmail 5 (sol üst köşeye bir an
+dal girer). Hz. Yusuf videoları yeniden üretilmeden olduğu gibi kullanılır
+(Hasan): 7. bölümde buğday tarlasında kayan bir leke, 9. bölümde ~4. saniyede
+beliren yarı saydam bir ağaç vardır; bilinerek kabul edildi. Şît ve İdrîs
+yayında olmadığı için videoları yoktur; yayına dönerlerse aynı akışla üretilir.
 
 - **Yalnız okuma ekranının açılış kapağında.** Veli paneli, rozet anından sonraki
   "sıradaki bölüm" kartı ve hikâye içi sahneler görsel kalır; hikâye akışındaki
@@ -3000,6 +3010,14 @@ Kurallar:
         `Sohbet.tsx`).
       - Sayılar kuralı (§16/9) aynen kalır; yaş, ömür ve ölçü rakamı çocuk
         metnine girmez.
+
+### 27 Ekim 2026 (bölüm kapak videosu bütün lansman kitaplarına — Hasan kararı, bkz. 6.6)
+
+- [x] Hz. Yusuf'taki kapak videosu denemesi lansmanın 12 kitabına yayıldı;
+      karar çocuk gözlem testini beklemeden Hasan tarafından verildi. 11 kitabın
+      77 kapağı Google Flow'da üretildi (Veo 3.1 Lite ağırlıklı), kare kare
+      kontrol edildi, `npm run kapak-video` ile siteye alındı. Gözlem testinde
+      videonun okumaya etkisi ayrıca izlenir.
 
 ## 11. İçerik Durumu
 
